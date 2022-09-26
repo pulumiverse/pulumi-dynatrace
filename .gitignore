@@ -1,3 +1,5 @@
+**/.gradle
+**/*.jar
 .idea
 .code
 **/vendor/
