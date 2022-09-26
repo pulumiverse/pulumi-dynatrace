@@ -12,6 +12,7 @@
     "license": "Apache-2.0",
     "attribution": "This Pulumi package is based on the [`dynatrace` Terraform Provider](https://github.com/dynatrace-oss/terraform-provider-dynatrace).",
     "repository": "https://github.com/lbrlabs/pulumi-dynatrace",
+    "logoUrl": "https://raw.githubusercontent.com/lbrlabs/pulumi-dynatrace/master/assets/logo.svg",
     "pluginDownloadURL": "github://api.github.com/lbrlabs",
     "publisher": "Lbrlabs",
     "meta": {
