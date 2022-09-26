@@ -13,10 +13,10 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public static class GetProcess
     {
         public static Task<GetProcessResult> InvokeAsync(GetProcessArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetProcessResult>("dynatrace:index/getProcess:getProcess", args ?? new GetProcessArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetProcessResult>("dynatrace:index/getProcess:getProcess", args ?? new GetProcessArgs(), options.WithDefaults());
 
         public static Output<GetProcessResult> Invoke(GetProcessInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetProcessResult>("dynatrace:index/getProcess:getProcess", args ?? new GetProcessInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetProcessResult>("dynatrace:index/getProcess:getProcess", args ?? new GetProcessInvokeArgs(), options.WithDefaults());
     }
 
 

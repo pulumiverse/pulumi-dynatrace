@@ -13,10 +13,10 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public static class GetSyntheticLocations
     {
         public static Task<GetSyntheticLocationsResult> InvokeAsync(GetSyntheticLocationsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSyntheticLocationsResult>("dynatrace:index/getSyntheticLocations:getSyntheticLocations", args ?? new GetSyntheticLocationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSyntheticLocationsResult>("dynatrace:index/getSyntheticLocations:getSyntheticLocations", args ?? new GetSyntheticLocationsArgs(), options.WithDefaults());
 
         public static Output<GetSyntheticLocationsResult> Invoke(GetSyntheticLocationsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSyntheticLocationsResult>("dynatrace:index/getSyntheticLocations:getSyntheticLocations", args ?? new GetSyntheticLocationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSyntheticLocationsResult>("dynatrace:index/getSyntheticLocations:getSyntheticLocations", args ?? new GetSyntheticLocationsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -5,66 +5,305 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 // Export members:
-export * from "./alerting";
-export * from "./alertingProfile";
-export * from "./applicationAnomalies";
-export * from "./applicationDataPrivacy";
-export * from "./applicationDetectionRule";
-export * from "./applicationErrorRules";
-export * from "./autotag";
-export * from "./awsCredentials";
-export * from "./azureCredentials";
-export * from "./browserMonitor";
-export * from "./calculatedServiceMetric";
-export * from "./cloudfoundaryCredentials";
-export * from "./customAnomalies";
-export * from "./customService";
-export * from "./dashboard";
-export * from "./dashboardSharing";
-export * from "./databaseAnomalies";
-export * from "./diskAnomalies";
-export * from "./environment";
-export * from "./getAlertingProfiles";
-export * from "./getApplication";
-export * from "./getAwsIamExternal";
-export * from "./getCredentials";
-export * from "./getHost";
-export * from "./getManagementZone";
-export * from "./getProcess";
-export * from "./getProcessGroup";
-export * from "./getService";
-export * from "./getSyntheticLocation";
-export * from "./getSyntheticLocations";
-export * from "./hostAnomalies";
-export * from "./hostNaming";
-export * from "./httpMonitor";
-export * from "./ibmMqFilters";
-export * from "./imsBridges";
-export * from "./k8sCredentials";
-export * from "./keyRequests";
-export * from "./maintenanceWindow";
-export * from "./managementZone";
-export * from "./mobileApplication";
-export * from "./networkZones";
-export * from "./notification";
-export * from "./processgroupNaming";
-export * from "./provider";
-export * from "./queueManager";
-export * from "./queueSharingGroups";
-export * from "./requestAttribute";
-export * from "./requestNaming";
-export * from "./requestNamings";
-export * from "./resourceAttributes";
-export * from "./serviceAnomalies";
-export * from "./serviceNaming";
-export * from "./slo";
-export * from "./spanAttributed";
-export * from "./spanCaptureRule";
-export * from "./spanContextPropagation";
-export * from "./spanEntryPoint";
-export * from "./user";
-export * from "./userGroup";
-export * from "./webApplication";
+export { AlertingArgs, AlertingState } from "./alerting";
+export type Alerting = import("./alerting").Alerting;
+export const Alerting: typeof import("./alerting").Alerting = null as any;
+
+export { AlertingProfileArgs, AlertingProfileState } from "./alertingProfile";
+export type AlertingProfile = import("./alertingProfile").AlertingProfile;
+export const AlertingProfile: typeof import("./alertingProfile").AlertingProfile = null as any;
+
+export { ApplicationAnomaliesArgs, ApplicationAnomaliesState } from "./applicationAnomalies";
+export type ApplicationAnomalies = import("./applicationAnomalies").ApplicationAnomalies;
+export const ApplicationAnomalies: typeof import("./applicationAnomalies").ApplicationAnomalies = null as any;
+
+export { ApplicationDataPrivacyArgs, ApplicationDataPrivacyState } from "./applicationDataPrivacy";
+export type ApplicationDataPrivacy = import("./applicationDataPrivacy").ApplicationDataPrivacy;
+export const ApplicationDataPrivacy: typeof import("./applicationDataPrivacy").ApplicationDataPrivacy = null as any;
+
+export { ApplicationDetectionRuleArgs, ApplicationDetectionRuleState } from "./applicationDetectionRule";
+export type ApplicationDetectionRule = import("./applicationDetectionRule").ApplicationDetectionRule;
+export const ApplicationDetectionRule: typeof import("./applicationDetectionRule").ApplicationDetectionRule = null as any;
+
+export { ApplicationErrorRulesArgs, ApplicationErrorRulesState } from "./applicationErrorRules";
+export type ApplicationErrorRules = import("./applicationErrorRules").ApplicationErrorRules;
+export const ApplicationErrorRules: typeof import("./applicationErrorRules").ApplicationErrorRules = null as any;
+
+export { AutotagArgs, AutotagState } from "./autotag";
+export type Autotag = import("./autotag").Autotag;
+export const Autotag: typeof import("./autotag").Autotag = null as any;
+
+export { AwsCredentialsArgs, AwsCredentialsState } from "./awsCredentials";
+export type AwsCredentials = import("./awsCredentials").AwsCredentials;
+export const AwsCredentials: typeof import("./awsCredentials").AwsCredentials = null as any;
+
+export { AzureCredentialsArgs, AzureCredentialsState } from "./azureCredentials";
+export type AzureCredentials = import("./azureCredentials").AzureCredentials;
+export const AzureCredentials: typeof import("./azureCredentials").AzureCredentials = null as any;
+
+export { BrowserMonitorArgs, BrowserMonitorState } from "./browserMonitor";
+export type BrowserMonitor = import("./browserMonitor").BrowserMonitor;
+export const BrowserMonitor: typeof import("./browserMonitor").BrowserMonitor = null as any;
+
+export { CalculatedServiceMetricArgs, CalculatedServiceMetricState } from "./calculatedServiceMetric";
+export type CalculatedServiceMetric = import("./calculatedServiceMetric").CalculatedServiceMetric;
+export const CalculatedServiceMetric: typeof import("./calculatedServiceMetric").CalculatedServiceMetric = null as any;
+
+export { CloudfoundaryCredentialsArgs, CloudfoundaryCredentialsState } from "./cloudfoundaryCredentials";
+export type CloudfoundaryCredentials = import("./cloudfoundaryCredentials").CloudfoundaryCredentials;
+export const CloudfoundaryCredentials: typeof import("./cloudfoundaryCredentials").CloudfoundaryCredentials = null as any;
+
+export { CustomAnomaliesArgs, CustomAnomaliesState } from "./customAnomalies";
+export type CustomAnomalies = import("./customAnomalies").CustomAnomalies;
+export const CustomAnomalies: typeof import("./customAnomalies").CustomAnomalies = null as any;
+
+export { CustomServiceArgs, CustomServiceState } from "./customService";
+export type CustomService = import("./customService").CustomService;
+export const CustomService: typeof import("./customService").CustomService = null as any;
+
+export { DashboardArgs, DashboardState } from "./dashboard";
+export type Dashboard = import("./dashboard").Dashboard;
+export const Dashboard: typeof import("./dashboard").Dashboard = null as any;
+
+export { DashboardSharingArgs, DashboardSharingState } from "./dashboardSharing";
+export type DashboardSharing = import("./dashboardSharing").DashboardSharing;
+export const DashboardSharing: typeof import("./dashboardSharing").DashboardSharing = null as any;
+
+export { DatabaseAnomaliesArgs, DatabaseAnomaliesState } from "./databaseAnomalies";
+export type DatabaseAnomalies = import("./databaseAnomalies").DatabaseAnomalies;
+export const DatabaseAnomalies: typeof import("./databaseAnomalies").DatabaseAnomalies = null as any;
+
+export { DiskAnomaliesArgs, DiskAnomaliesState } from "./diskAnomalies";
+export type DiskAnomalies = import("./diskAnomalies").DiskAnomalies;
+export const DiskAnomalies: typeof import("./diskAnomalies").DiskAnomalies = null as any;
+
+export { EnvironmentArgs, EnvironmentState } from "./environment";
+export type Environment = import("./environment").Environment;
+export const Environment: typeof import("./environment").Environment = null as any;
+
+export { GetAlertingProfilesArgs, GetAlertingProfilesResult, GetAlertingProfilesOutputArgs } from "./getAlertingProfiles";
+export const getAlertingProfiles: typeof import("./getAlertingProfiles").getAlertingProfiles = null as any;
+export const getAlertingProfilesOutput: typeof import("./getAlertingProfiles").getAlertingProfilesOutput = null as any;
+
+export { GetApplicationArgs, GetApplicationResult, GetApplicationOutputArgs } from "./getApplication";
+export const getApplication: typeof import("./getApplication").getApplication = null as any;
+export const getApplicationOutput: typeof import("./getApplication").getApplicationOutput = null as any;
+
+export { GetAwsIamExternalResult } from "./getAwsIamExternal";
+export const getAwsIamExternal: typeof import("./getAwsIamExternal").getAwsIamExternal = null as any;
+
+export { GetCredentialsArgs, GetCredentialsResult, GetCredentialsOutputArgs } from "./getCredentials";
+export const getCredentials: typeof import("./getCredentials").getCredentials = null as any;
+export const getCredentialsOutput: typeof import("./getCredentials").getCredentialsOutput = null as any;
+
+export { GetHostArgs, GetHostResult, GetHostOutputArgs } from "./getHost";
+export const getHost: typeof import("./getHost").getHost = null as any;
+export const getHostOutput: typeof import("./getHost").getHostOutput = null as any;
+
+export { GetManagementZoneArgs, GetManagementZoneResult, GetManagementZoneOutputArgs } from "./getManagementZone";
+export const getManagementZone: typeof import("./getManagementZone").getManagementZone = null as any;
+export const getManagementZoneOutput: typeof import("./getManagementZone").getManagementZoneOutput = null as any;
+
+export { GetProcessArgs, GetProcessResult, GetProcessOutputArgs } from "./getProcess";
+export const getProcess: typeof import("./getProcess").getProcess = null as any;
+export const getProcessOutput: typeof import("./getProcess").getProcessOutput = null as any;
+
+export { GetProcessGroupArgs, GetProcessGroupResult, GetProcessGroupOutputArgs } from "./getProcessGroup";
+export const getProcessGroup: typeof import("./getProcessGroup").getProcessGroup = null as any;
+export const getProcessGroupOutput: typeof import("./getProcessGroup").getProcessGroupOutput = null as any;
+
+export { GetServiceArgs, GetServiceResult, GetServiceOutputArgs } from "./getService";
+export const getService: typeof import("./getService").getService = null as any;
+export const getServiceOutput: typeof import("./getService").getServiceOutput = null as any;
+
+export { GetSyntheticLocationArgs, GetSyntheticLocationResult, GetSyntheticLocationOutputArgs } from "./getSyntheticLocation";
+export const getSyntheticLocation: typeof import("./getSyntheticLocation").getSyntheticLocation = null as any;
+export const getSyntheticLocationOutput: typeof import("./getSyntheticLocation").getSyntheticLocationOutput = null as any;
+
+export { GetSyntheticLocationsArgs, GetSyntheticLocationsResult, GetSyntheticLocationsOutputArgs } from "./getSyntheticLocations";
+export const getSyntheticLocations: typeof import("./getSyntheticLocations").getSyntheticLocations = null as any;
+export const getSyntheticLocationsOutput: typeof import("./getSyntheticLocations").getSyntheticLocationsOutput = null as any;
+
+export { HostAnomaliesArgs, HostAnomaliesState } from "./hostAnomalies";
+export type HostAnomalies = import("./hostAnomalies").HostAnomalies;
+export const HostAnomalies: typeof import("./hostAnomalies").HostAnomalies = null as any;
+
+export { HostNamingArgs, HostNamingState } from "./hostNaming";
+export type HostNaming = import("./hostNaming").HostNaming;
+export const HostNaming: typeof import("./hostNaming").HostNaming = null as any;
+
+export { HttpMonitorArgs, HttpMonitorState } from "./httpMonitor";
+export type HttpMonitor = import("./httpMonitor").HttpMonitor;
+export const HttpMonitor: typeof import("./httpMonitor").HttpMonitor = null as any;
+
+export { IbmMqFiltersArgs, IbmMqFiltersState } from "./ibmMqFilters";
+export type IbmMqFilters = import("./ibmMqFilters").IbmMqFilters;
+export const IbmMqFilters: typeof import("./ibmMqFilters").IbmMqFilters = null as any;
+
+export { ImsBridgesArgs, ImsBridgesState } from "./imsBridges";
+export type ImsBridges = import("./imsBridges").ImsBridges;
+export const ImsBridges: typeof import("./imsBridges").ImsBridges = null as any;
+
+export { K8sCredentialsArgs, K8sCredentialsState } from "./k8sCredentials";
+export type K8sCredentials = import("./k8sCredentials").K8sCredentials;
+export const K8sCredentials: typeof import("./k8sCredentials").K8sCredentials = null as any;
+
+export { KeyRequestsArgs, KeyRequestsState } from "./keyRequests";
+export type KeyRequests = import("./keyRequests").KeyRequests;
+export const KeyRequests: typeof import("./keyRequests").KeyRequests = null as any;
+
+export { MaintenanceWindowArgs, MaintenanceWindowState } from "./maintenanceWindow";
+export type MaintenanceWindow = import("./maintenanceWindow").MaintenanceWindow;
+export const MaintenanceWindow: typeof import("./maintenanceWindow").MaintenanceWindow = null as any;
+
+export { ManagementZoneArgs, ManagementZoneState } from "./managementZone";
+export type ManagementZone = import("./managementZone").ManagementZone;
+export const ManagementZone: typeof import("./managementZone").ManagementZone = null as any;
+
+export { MobileApplicationArgs, MobileApplicationState } from "./mobileApplication";
+export type MobileApplication = import("./mobileApplication").MobileApplication;
+export const MobileApplication: typeof import("./mobileApplication").MobileApplication = null as any;
+
+export { NetworkZonesArgs, NetworkZonesState } from "./networkZones";
+export type NetworkZones = import("./networkZones").NetworkZones;
+export const NetworkZones: typeof import("./networkZones").NetworkZones = null as any;
+
+export { NotificationArgs, NotificationState } from "./notification";
+export type Notification = import("./notification").Notification;
+export const Notification: typeof import("./notification").Notification = null as any;
+
+export { ProcessgroupNamingArgs, ProcessgroupNamingState } from "./processgroupNaming";
+export type ProcessgroupNaming = import("./processgroupNaming").ProcessgroupNaming;
+export const ProcessgroupNaming: typeof import("./processgroupNaming").ProcessgroupNaming = null as any;
+
+export { ProviderArgs } from "./provider";
+export type Provider = import("./provider").Provider;
+export const Provider: typeof import("./provider").Provider = null as any;
+
+export { QueueManagerArgs, QueueManagerState } from "./queueManager";
+export type QueueManager = import("./queueManager").QueueManager;
+export const QueueManager: typeof import("./queueManager").QueueManager = null as any;
+
+export { QueueSharingGroupsArgs, QueueSharingGroupsState } from "./queueSharingGroups";
+export type QueueSharingGroups = import("./queueSharingGroups").QueueSharingGroups;
+export const QueueSharingGroups: typeof import("./queueSharingGroups").QueueSharingGroups = null as any;
+
+export { RequestAttributeArgs, RequestAttributeState } from "./requestAttribute";
+export type RequestAttribute = import("./requestAttribute").RequestAttribute;
+export const RequestAttribute: typeof import("./requestAttribute").RequestAttribute = null as any;
+
+export { RequestNamingArgs, RequestNamingState } from "./requestNaming";
+export type RequestNaming = import("./requestNaming").RequestNaming;
+export const RequestNaming: typeof import("./requestNaming").RequestNaming = null as any;
+
+export { RequestNamingsArgs, RequestNamingsState } from "./requestNamings";
+export type RequestNamings = import("./requestNamings").RequestNamings;
+export const RequestNamings: typeof import("./requestNamings").RequestNamings = null as any;
+
+export { ResourceAttributesArgs, ResourceAttributesState } from "./resourceAttributes";
+export type ResourceAttributes = import("./resourceAttributes").ResourceAttributes;
+export const ResourceAttributes: typeof import("./resourceAttributes").ResourceAttributes = null as any;
+
+export { ServiceAnomaliesArgs, ServiceAnomaliesState } from "./serviceAnomalies";
+export type ServiceAnomalies = import("./serviceAnomalies").ServiceAnomalies;
+export const ServiceAnomalies: typeof import("./serviceAnomalies").ServiceAnomalies = null as any;
+
+export { ServiceNamingArgs, ServiceNamingState } from "./serviceNaming";
+export type ServiceNaming = import("./serviceNaming").ServiceNaming;
+export const ServiceNaming: typeof import("./serviceNaming").ServiceNaming = null as any;
+
+export { SloArgs, SloState } from "./slo";
+export type Slo = import("./slo").Slo;
+export const Slo: typeof import("./slo").Slo = null as any;
+
+export { SpanAttributedArgs, SpanAttributedState } from "./spanAttributed";
+export type SpanAttributed = import("./spanAttributed").SpanAttributed;
+export const SpanAttributed: typeof import("./spanAttributed").SpanAttributed = null as any;
+
+export { SpanCaptureRuleArgs, SpanCaptureRuleState } from "./spanCaptureRule";
+export type SpanCaptureRule = import("./spanCaptureRule").SpanCaptureRule;
+export const SpanCaptureRule: typeof import("./spanCaptureRule").SpanCaptureRule = null as any;
+
+export { SpanContextPropagationArgs, SpanContextPropagationState } from "./spanContextPropagation";
+export type SpanContextPropagation = import("./spanContextPropagation").SpanContextPropagation;
+export const SpanContextPropagation: typeof import("./spanContextPropagation").SpanContextPropagation = null as any;
+
+export { SpanEntryPointArgs, SpanEntryPointState } from "./spanEntryPoint";
+export type SpanEntryPoint = import("./spanEntryPoint").SpanEntryPoint;
+export const SpanEntryPoint: typeof import("./spanEntryPoint").SpanEntryPoint = null as any;
+
+export { UserArgs, UserState } from "./user";
+export type User = import("./user").User;
+export const User: typeof import("./user").User = null as any;
+
+export { UserGroupArgs, UserGroupState } from "./userGroup";
+export type UserGroup = import("./userGroup").UserGroup;
+export const UserGroup: typeof import("./userGroup").UserGroup = null as any;
+
+export { WebApplicationArgs, WebApplicationState } from "./webApplication";
+export type WebApplication = import("./webApplication").WebApplication;
+export const WebApplication: typeof import("./webApplication").WebApplication = null as any;
+
+utilities.lazyLoad(exports, ["Alerting"], () => require("./alerting"));
+utilities.lazyLoad(exports, ["AlertingProfile"], () => require("./alertingProfile"));
+utilities.lazyLoad(exports, ["ApplicationAnomalies"], () => require("./applicationAnomalies"));
+utilities.lazyLoad(exports, ["ApplicationDataPrivacy"], () => require("./applicationDataPrivacy"));
+utilities.lazyLoad(exports, ["ApplicationDetectionRule"], () => require("./applicationDetectionRule"));
+utilities.lazyLoad(exports, ["ApplicationErrorRules"], () => require("./applicationErrorRules"));
+utilities.lazyLoad(exports, ["Autotag"], () => require("./autotag"));
+utilities.lazyLoad(exports, ["AwsCredentials"], () => require("./awsCredentials"));
+utilities.lazyLoad(exports, ["AzureCredentials"], () => require("./azureCredentials"));
+utilities.lazyLoad(exports, ["BrowserMonitor"], () => require("./browserMonitor"));
+utilities.lazyLoad(exports, ["CalculatedServiceMetric"], () => require("./calculatedServiceMetric"));
+utilities.lazyLoad(exports, ["CloudfoundaryCredentials"], () => require("./cloudfoundaryCredentials"));
+utilities.lazyLoad(exports, ["CustomAnomalies"], () => require("./customAnomalies"));
+utilities.lazyLoad(exports, ["CustomService"], () => require("./customService"));
+utilities.lazyLoad(exports, ["Dashboard"], () => require("./dashboard"));
+utilities.lazyLoad(exports, ["DashboardSharing"], () => require("./dashboardSharing"));
+utilities.lazyLoad(exports, ["DatabaseAnomalies"], () => require("./databaseAnomalies"));
+utilities.lazyLoad(exports, ["DiskAnomalies"], () => require("./diskAnomalies"));
+utilities.lazyLoad(exports, ["Environment"], () => require("./environment"));
+utilities.lazyLoad(exports, ["getAlertingProfiles","getAlertingProfilesOutput"], () => require("./getAlertingProfiles"));
+utilities.lazyLoad(exports, ["getApplication","getApplicationOutput"], () => require("./getApplication"));
+utilities.lazyLoad(exports, ["getAwsIamExternal"], () => require("./getAwsIamExternal"));
+utilities.lazyLoad(exports, ["getCredentials","getCredentialsOutput"], () => require("./getCredentials"));
+utilities.lazyLoad(exports, ["getHost","getHostOutput"], () => require("./getHost"));
+utilities.lazyLoad(exports, ["getManagementZone","getManagementZoneOutput"], () => require("./getManagementZone"));
+utilities.lazyLoad(exports, ["getProcess","getProcessOutput"], () => require("./getProcess"));
+utilities.lazyLoad(exports, ["getProcessGroup","getProcessGroupOutput"], () => require("./getProcessGroup"));
+utilities.lazyLoad(exports, ["getService","getServiceOutput"], () => require("./getService"));
+utilities.lazyLoad(exports, ["getSyntheticLocation","getSyntheticLocationOutput"], () => require("./getSyntheticLocation"));
+utilities.lazyLoad(exports, ["getSyntheticLocations","getSyntheticLocationsOutput"], () => require("./getSyntheticLocations"));
+utilities.lazyLoad(exports, ["HostAnomalies"], () => require("./hostAnomalies"));
+utilities.lazyLoad(exports, ["HostNaming"], () => require("./hostNaming"));
+utilities.lazyLoad(exports, ["HttpMonitor"], () => require("./httpMonitor"));
+utilities.lazyLoad(exports, ["IbmMqFilters"], () => require("./ibmMqFilters"));
+utilities.lazyLoad(exports, ["ImsBridges"], () => require("./imsBridges"));
+utilities.lazyLoad(exports, ["K8sCredentials"], () => require("./k8sCredentials"));
+utilities.lazyLoad(exports, ["KeyRequests"], () => require("./keyRequests"));
+utilities.lazyLoad(exports, ["MaintenanceWindow"], () => require("./maintenanceWindow"));
+utilities.lazyLoad(exports, ["ManagementZone"], () => require("./managementZone"));
+utilities.lazyLoad(exports, ["MobileApplication"], () => require("./mobileApplication"));
+utilities.lazyLoad(exports, ["NetworkZones"], () => require("./networkZones"));
+utilities.lazyLoad(exports, ["Notification"], () => require("./notification"));
+utilities.lazyLoad(exports, ["ProcessgroupNaming"], () => require("./processgroupNaming"));
+utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
+utilities.lazyLoad(exports, ["QueueManager"], () => require("./queueManager"));
+utilities.lazyLoad(exports, ["QueueSharingGroups"], () => require("./queueSharingGroups"));
+utilities.lazyLoad(exports, ["RequestAttribute"], () => require("./requestAttribute"));
+utilities.lazyLoad(exports, ["RequestNaming"], () => require("./requestNaming"));
+utilities.lazyLoad(exports, ["RequestNamings"], () => require("./requestNamings"));
+utilities.lazyLoad(exports, ["ResourceAttributes"], () => require("./resourceAttributes"));
+utilities.lazyLoad(exports, ["ServiceAnomalies"], () => require("./serviceAnomalies"));
+utilities.lazyLoad(exports, ["ServiceNaming"], () => require("./serviceNaming"));
+utilities.lazyLoad(exports, ["Slo"], () => require("./slo"));
+utilities.lazyLoad(exports, ["SpanAttributed"], () => require("./spanAttributed"));
+utilities.lazyLoad(exports, ["SpanCaptureRule"], () => require("./spanCaptureRule"));
+utilities.lazyLoad(exports, ["SpanContextPropagation"], () => require("./spanContextPropagation"));
+utilities.lazyLoad(exports, ["SpanEntryPoint"], () => require("./spanEntryPoint"));
+utilities.lazyLoad(exports, ["User"], () => require("./user"));
+utilities.lazyLoad(exports, ["UserGroup"], () => require("./userGroup"));
+utilities.lazyLoad(exports, ["WebApplication"], () => require("./webApplication"));
 
 // Export sub-modules:
 import * as config from "./config";
@@ -74,56 +313,6 @@ export {
     config,
     types,
 };
-
-// Import resources to register:
-import { Alerting } from "./alerting";
-import { AlertingProfile } from "./alertingProfile";
-import { ApplicationAnomalies } from "./applicationAnomalies";
-import { ApplicationDataPrivacy } from "./applicationDataPrivacy";
-import { ApplicationDetectionRule } from "./applicationDetectionRule";
-import { ApplicationErrorRules } from "./applicationErrorRules";
-import { Autotag } from "./autotag";
-import { AwsCredentials } from "./awsCredentials";
-import { AzureCredentials } from "./azureCredentials";
-import { BrowserMonitor } from "./browserMonitor";
-import { CalculatedServiceMetric } from "./calculatedServiceMetric";
-import { CloudfoundaryCredentials } from "./cloudfoundaryCredentials";
-import { CustomAnomalies } from "./customAnomalies";
-import { CustomService } from "./customService";
-import { Dashboard } from "./dashboard";
-import { DashboardSharing } from "./dashboardSharing";
-import { DatabaseAnomalies } from "./databaseAnomalies";
-import { DiskAnomalies } from "./diskAnomalies";
-import { Environment } from "./environment";
-import { HostAnomalies } from "./hostAnomalies";
-import { HostNaming } from "./hostNaming";
-import { HttpMonitor } from "./httpMonitor";
-import { IbmMqFilters } from "./ibmMqFilters";
-import { ImsBridges } from "./imsBridges";
-import { K8sCredentials } from "./k8sCredentials";
-import { KeyRequests } from "./keyRequests";
-import { MaintenanceWindow } from "./maintenanceWindow";
-import { ManagementZone } from "./managementZone";
-import { MobileApplication } from "./mobileApplication";
-import { NetworkZones } from "./networkZones";
-import { Notification } from "./notification";
-import { ProcessgroupNaming } from "./processgroupNaming";
-import { QueueManager } from "./queueManager";
-import { QueueSharingGroups } from "./queueSharingGroups";
-import { RequestAttribute } from "./requestAttribute";
-import { RequestNaming } from "./requestNaming";
-import { RequestNamings } from "./requestNamings";
-import { ResourceAttributes } from "./resourceAttributes";
-import { ServiceAnomalies } from "./serviceAnomalies";
-import { ServiceNaming } from "./serviceNaming";
-import { Slo } from "./slo";
-import { SpanAttributed } from "./spanAttributed";
-import { SpanCaptureRule } from "./spanCaptureRule";
-import { SpanContextPropagation } from "./spanContextPropagation";
-import { SpanEntryPoint } from "./spanEntryPoint";
-import { User } from "./user";
-import { UserGroup } from "./userGroup";
-import { WebApplication } from "./webApplication";
 
 const _module = {
     version: utilities.getVersion(),
@@ -278,9 +467,6 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/spanEntryPoint", _modu
 pulumi.runtime.registerResourceModule("dynatrace", "index/user", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/userGroup", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webApplication", _module)
-
-import { Provider } from "./provider";
-
 pulumi.runtime.registerResourcePackage("dynatrace", {
     version: utilities.getVersion(),
     constructProvider: (name: string, type: string, urn: string): pulumi.ProviderResource => {

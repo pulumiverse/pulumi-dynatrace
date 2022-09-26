@@ -13,10 +13,10 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public static class GetManagementZone
     {
         public static Task<GetManagementZoneResult> InvokeAsync(GetManagementZoneArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagementZoneResult>("dynatrace:index/getManagementZone:getManagementZone", args ?? new GetManagementZoneArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementZoneResult>("dynatrace:index/getManagementZone:getManagementZone", args ?? new GetManagementZoneArgs(), options.WithDefaults());
 
         public static Output<GetManagementZoneResult> Invoke(GetManagementZoneInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagementZoneResult>("dynatrace:index/getManagementZone:getManagementZone", args ?? new GetManagementZoneInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementZoneResult>("dynatrace:index/getManagementZone:getManagementZone", args ?? new GetManagementZoneInvokeArgs(), options.WithDefaults());
     }
 
 

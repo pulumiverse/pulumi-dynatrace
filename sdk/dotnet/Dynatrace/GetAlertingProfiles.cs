@@ -13,10 +13,10 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public static class GetAlertingProfiles
     {
         public static Task<GetAlertingProfilesResult> InvokeAsync(GetAlertingProfilesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAlertingProfilesResult>("dynatrace:index/getAlertingProfiles:getAlertingProfiles", args ?? new GetAlertingProfilesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAlertingProfilesResult>("dynatrace:index/getAlertingProfiles:getAlertingProfiles", args ?? new GetAlertingProfilesArgs(), options.WithDefaults());
 
         public static Output<GetAlertingProfilesResult> Invoke(GetAlertingProfilesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAlertingProfilesResult>("dynatrace:index/getAlertingProfiles:getAlertingProfiles", args ?? new GetAlertingProfilesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlertingProfilesResult>("dynatrace:index/getAlertingProfiles:getAlertingProfiles", args ?? new GetAlertingProfilesInvokeArgs(), options.WithDefaults());
     }
 
 

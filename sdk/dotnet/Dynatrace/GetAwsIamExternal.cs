@@ -13,7 +13,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public static class GetAwsIamExternal
     {
         public static Task<GetAwsIamExternalResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAwsIamExternalResult>("dynatrace:index/getAwsIamExternal:getAwsIamExternal", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAwsIamExternalResult>("dynatrace:index/getAwsIamExternal:getAwsIamExternal", InvokeArgs.Empty, options.WithDefaults());
     }
 
 
