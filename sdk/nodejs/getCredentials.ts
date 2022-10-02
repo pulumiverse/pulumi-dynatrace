@@ -4,6 +4,9 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The credentials data source allows retrieval of all credentials.
+ */
 export function getCredentials(args?: GetCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetCredentialsResult> {
     args = args || {};
     if (!opts) {

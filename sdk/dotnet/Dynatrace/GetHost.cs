@@ -12,9 +12,103 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
 {
     public static class GetHost
     {
+        /// <summary>
+        /// The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
+        /// 
+        /// - `name` queries for all hosts with the specified name
+        /// - `tags` (optional) refers to the tags that need to be present for the host (inclusive)
+        /// 
+        /// If multiple hosts match the given criteria, the first result will be retrieved.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using Pulumi;
+        /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Dynatrace.GetHost.Invoke(new()
+        ///     {
+        ///         Name = "Example",
+        ///         Tags = new[]
+        ///         {
+        ///             "TerraformKeyTest",
+        ///             "TerraformKeyValueTest=TestValue",
+        ///         },
+        ///     });
+        /// 
+        ///     var _name_ = new Dynatrace.ManagementZone("#name#", new()
+        ///     {
+        ///         EntitySelectorBasedRules = new[]
+        ///         {
+        ///             new Dynatrace.Inputs.ManagementZoneEntitySelectorBasedRuleArgs
+        ///             {
+        ///                 Enabled = true,
+        ///                 Selector = $"type(\"host\"),entityId(\"{test.Apply(getHostResult =&gt; getHostResult.Id)}\")",
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
         public static Task<GetHostResult> InvokeAsync(GetHostArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetHostResult>("dynatrace:index/getHost:getHost", args ?? new GetHostArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
+        /// 
+        /// - `name` queries for all hosts with the specified name
+        /// - `tags` (optional) refers to the tags that need to be present for the host (inclusive)
+        /// 
+        /// If multiple hosts match the given criteria, the first result will be retrieved.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using Pulumi;
+        /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Dynatrace.GetHost.Invoke(new()
+        ///     {
+        ///         Name = "Example",
+        ///         Tags = new[]
+        ///         {
+        ///             "TerraformKeyTest",
+        ///             "TerraformKeyValueTest=TestValue",
+        ///         },
+        ///     });
+        /// 
+        ///     var _name_ = new Dynatrace.ManagementZone("#name#", new()
+        ///     {
+        ///         EntitySelectorBasedRules = new[]
+        ///         {
+        ///             new Dynatrace.Inputs.ManagementZoneEntitySelectorBasedRuleArgs
+        ///             {
+        ///                 Enabled = true,
+        ///                 Selector = $"type(\"host\"),entityId(\"{test.Apply(getHostResult =&gt; getHostResult.Id)}\")",
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
         public static Output<GetHostResult> Invoke(GetHostInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostResult>("dynatrace:index/getHost:getHost", args ?? new GetHostInvokeArgs(), options.WithDefaults());
     }

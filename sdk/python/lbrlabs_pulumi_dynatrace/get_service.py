@@ -69,7 +69,28 @@ def get_service(name: Optional[str] = None,
                 tags: Optional[Sequence[str]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceResult:
     """
-    Use this data source to access information about an existing resource.
+    The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
+
+    - `name` queries for all services with the specified name
+    - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+
+    If multiple services match the given criteria, the first result will be retrieved.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import lbrlabs_pulumi_dynatrace as dynatrace
+    import pulumi_dynatrace as dynatrace
+
+    test = dynatrace.get_service(name="Example",
+        tags=[
+            "TerraformKeyTest",
+            "TerraformKeyValueTest=TestValue",
+        ])
+    _name_ = dynatrace.KeyRequests("#name#", service=test.id)
+    ```
+
 
     :param Sequence[str] tags: Required tags of the service to find
     """
@@ -90,7 +111,28 @@ def get_service_output(name: Optional[pulumi.Input[str]] = None,
                        tags: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceResult]:
     """
-    Use this data source to access information about an existing resource.
+    The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
+
+    - `name` queries for all services with the specified name
+    - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+
+    If multiple services match the given criteria, the first result will be retrieved.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import lbrlabs_pulumi_dynatrace as dynatrace
+    import pulumi_dynatrace as dynatrace
+
+    test = dynatrace.get_service(name="Example",
+        tags=[
+            "TerraformKeyTest",
+            "TerraformKeyValueTest=TestValue",
+        ])
+    _name_ = dynatrace.KeyRequests("#name#", service=test.id)
+    ```
+
 
     :param Sequence[str] tags: Required tags of the service to find
     """

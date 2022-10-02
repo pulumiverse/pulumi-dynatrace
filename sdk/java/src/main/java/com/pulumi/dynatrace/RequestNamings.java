@@ -14,6 +14,14 @@ import java.lang.String;
 import java.util.List;
 import javax.annotation.Nullable;
 
+/**
+ * ## Dynatrace Documentation
+ * 
+ * - Set up request naming - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/set-up-request-naming
+ * 
+ * - Request naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/request-naming-api
+ * 
+ */
 @ResourceType(type="dynatrace:index/requestNamings:RequestNamings")
 public class RequestNamings extends com.pulumi.resources.CustomResource {
     /**

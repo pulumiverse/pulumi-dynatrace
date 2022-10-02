@@ -4,6 +4,35 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
+ *
+ * - `name` queries for all processes with the specified name
+ * - `tags` (optional) refers to the tags that need to be present for the process (inclusive)
+ *
+ * If multiple processes match the given criteria, the first result will be retrieved.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const test = pulumi.output(dynatrace.getProcess({
+ *     name: "Example",
+ *     tags: [
+ *         "TerraformKeyTest",
+ *         "TerraformKeyValueTest=TestValue",
+ *     ],
+ * }));
+ * const _name_ = new dynatrace.ManagementZone("#name#", {
+ *     entitySelectorBasedRules: [{
+ *         enabled: true,
+ *         selector: pulumi.interpolate`type("process_group_instance"),entityId("${test.id}")`,
+ *     }],
+ * });
+ * ```
+ */
 export function getProcess(args: GetProcessArgs, opts?: pulumi.InvokeOptions): Promise<GetProcessResult> {
     if (!opts) {
         opts = {}

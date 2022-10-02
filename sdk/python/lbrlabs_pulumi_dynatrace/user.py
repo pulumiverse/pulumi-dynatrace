@@ -195,7 +195,12 @@ class User(pulumi.CustomResource):
                  user_name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Create a User resource with the given unique name, props, and options.
+        ## Dynatrace Documentation
+
+        - User management and SSO - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso
+
+        - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] email: User's email address
@@ -211,7 +216,12 @@ class User(pulumi.CustomResource):
                  args: UserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a User resource with the given unique name, props, and options.
+        ## Dynatrace Documentation
+
+        - User management and SSO - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso
+
+        - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+
         :param str resource_name: The name of the resource.
         :param UserArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

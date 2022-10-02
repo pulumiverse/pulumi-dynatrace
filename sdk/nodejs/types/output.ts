@@ -1567,12 +1567,18 @@ export interface BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLo
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokes {
+    credential?: outputs.BrowserMonitorScriptEventsEventKeystrokesCredential;
     masked?: boolean;
     simulateBlurEvent?: boolean;
     target?: outputs.BrowserMonitorScriptEventsEventKeystrokesTarget;
-    text: string;
+    text?: string;
     validate?: outputs.BrowserMonitorScriptEventsEventKeystrokesValidate;
     wait?: outputs.BrowserMonitorScriptEventsEventKeystrokesWait;
+}
+
+export interface BrowserMonitorScriptEventsEventKeystrokesCredential {
+    field: string;
+    vaultId: string;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesTarget {

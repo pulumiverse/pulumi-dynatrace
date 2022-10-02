@@ -56,7 +56,43 @@ class AwaitableGetManagementZoneResult(GetManagementZoneResult):
 def get_management_zone(name: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementZoneResult:
     """
-    Use this data source to access information about an existing resource.
+    The management zone data source allows the management zone ID to be retrieved by its name.
+
+    - `name` queries for all management zones with the specified name
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import lbrlabs_pulumi_dynatrace as dynatrace
+    import pulumi_dynatrace as dynatrace
+
+    test = dynatrace.get_management_zone(name="Example")
+    _name_ = dynatrace.CalculatedServiceMetric("#name#",
+        conditions=[dynatrace.CalculatedServiceMetricConditionArgs(
+            conditions=[dynatrace.CalculatedServiceMetricConditionConditionArgs(
+                attribute="HTTP_REQUEST_METHOD",
+                comparison=dynatrace.CalculatedServiceMetricConditionConditionComparisonArgs(
+                    http_method=dynatrace.CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs(
+                        operator="EQUALS_ANY_OF",
+                        values=[
+                            "POST",
+                            "GET",
+                        ],
+                    ),
+                    negate=False,
+                ),
+            )],
+        )],
+        enabled=True,
+        management_zones=[test.id],
+        metric_definition=dynatrace.CalculatedServiceMetricMetricDefinitionArgs(
+            metric="REQUEST_ATTRIBUTE",
+            request_attribute="foo",
+        ),
+        metric_key="calc:service.#name#",
+        unit="MILLI_SECOND_PER_MINUTE")
+    ```
     """
     __args__ = dict()
     __args__['name'] = name
@@ -72,6 +108,42 @@ def get_management_zone(name: Optional[str] = None,
 def get_management_zone_output(name: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementZoneResult]:
     """
-    Use this data source to access information about an existing resource.
+    The management zone data source allows the management zone ID to be retrieved by its name.
+
+    - `name` queries for all management zones with the specified name
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import lbrlabs_pulumi_dynatrace as dynatrace
+    import pulumi_dynatrace as dynatrace
+
+    test = dynatrace.get_management_zone(name="Example")
+    _name_ = dynatrace.CalculatedServiceMetric("#name#",
+        conditions=[dynatrace.CalculatedServiceMetricConditionArgs(
+            conditions=[dynatrace.CalculatedServiceMetricConditionConditionArgs(
+                attribute="HTTP_REQUEST_METHOD",
+                comparison=dynatrace.CalculatedServiceMetricConditionConditionComparisonArgs(
+                    http_method=dynatrace.CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs(
+                        operator="EQUALS_ANY_OF",
+                        values=[
+                            "POST",
+                            "GET",
+                        ],
+                    ),
+                    negate=False,
+                ),
+            )],
+        )],
+        enabled=True,
+        management_zones=[test.id],
+        metric_definition=dynatrace.CalculatedServiceMetricMetricDefinitionArgs(
+            metric="REQUEST_ATTRIBUTE",
+            request_attribute="foo",
+        ),
+        metric_key="calc:service.#name#",
+        unit="MILLI_SECOND_PER_MINUTE")
+    ```
     """
     ...

@@ -4,6 +4,9 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The alerting profiles data source allows retrieval of all alerting profiles.
+ */
 export function getAlertingProfiles(args?: GetAlertingProfilesArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertingProfilesResult> {
     args = args || {};
     if (!opts) {

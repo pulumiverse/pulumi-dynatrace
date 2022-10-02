@@ -11,6 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// ## Dynatrace Documentation
+//
+// - Set up request naming - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/set-up-request-naming
+//
+// - Request naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/request-naming-api
 type RequestNamings struct {
 	pulumi.CustomResourceState
 

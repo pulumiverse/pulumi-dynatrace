@@ -10,6 +10,48 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
+//
+// - `name` queries for all services with the specified name
+// - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+//
+// If multiple services match the given criteria, the first result will be retrieved.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-dynatrace/sdk/go/dynatrace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			test, err := dynatrace.GetService(ctx, &GetServiceArgs{
+//				Name: "Example",
+//				Tags: []string{
+//					"TerraformKeyTest",
+//					"TerraformKeyValueTest=TestValue",
+//				},
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewKeyRequests(ctx, "#name#", &dynatrace.KeyRequestsArgs{
+//				Service: pulumi.String(test.Id),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetService(ctx *pulumi.Context, args *GetServiceArgs, opts ...pulumi.InvokeOption) (*GetServiceResult, error) {
 	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetServiceResult

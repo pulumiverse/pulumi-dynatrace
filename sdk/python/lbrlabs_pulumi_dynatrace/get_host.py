@@ -69,7 +69,31 @@ def get_host(name: Optional[str] = None,
              tags: Optional[Sequence[str]] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHostResult:
     """
-    Use this data source to access information about an existing resource.
+    The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
+
+    - `name` queries for all hosts with the specified name
+    - `tags` (optional) refers to the tags that need to be present for the host (inclusive)
+
+    If multiple hosts match the given criteria, the first result will be retrieved.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import lbrlabs_pulumi_dynatrace as dynatrace
+    import pulumi_dynatrace as dynatrace
+
+    test = dynatrace.get_host(name="Example",
+        tags=[
+            "TerraformKeyTest",
+            "TerraformKeyValueTest=TestValue",
+        ])
+    _name_ = dynatrace.ManagementZone("#name#", entity_selector_based_rules=[dynatrace.ManagementZoneEntitySelectorBasedRuleArgs(
+        enabled=True,
+        selector=f"type(\\"host\\"),entityId(\\"{test.id}\\")",
+    )])
+    ```
+
 
     :param Sequence[str] tags: Required tags of the host to find
     """
@@ -90,7 +114,31 @@ def get_host_output(name: Optional[pulumi.Input[str]] = None,
                     tags: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHostResult]:
     """
-    Use this data source to access information about an existing resource.
+    The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
+
+    - `name` queries for all hosts with the specified name
+    - `tags` (optional) refers to the tags that need to be present for the host (inclusive)
+
+    If multiple hosts match the given criteria, the first result will be retrieved.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import lbrlabs_pulumi_dynatrace as dynatrace
+    import pulumi_dynatrace as dynatrace
+
+    test = dynatrace.get_host(name="Example",
+        tags=[
+            "TerraformKeyTest",
+            "TerraformKeyValueTest=TestValue",
+        ])
+    _name_ = dynatrace.ManagementZone("#name#", entity_selector_based_rules=[dynatrace.ManagementZoneEntitySelectorBasedRuleArgs(
+        enabled=True,
+        selector=f"type(\\"host\\"),entityId(\\"{test.id}\\")",
+    )])
+    ```
+
 
     :param Sequence[str] tags: Required tags of the host to find
     """

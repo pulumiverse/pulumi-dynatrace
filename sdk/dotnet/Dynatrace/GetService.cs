@@ -12,9 +12,89 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
 {
     public static class GetService
     {
+        /// <summary>
+        /// The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
+        /// 
+        /// - `name` queries for all services with the specified name
+        /// - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+        /// 
+        /// If multiple services match the given criteria, the first result will be retrieved.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using Pulumi;
+        /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Dynatrace.GetService.Invoke(new()
+        ///     {
+        ///         Name = "Example",
+        ///         Tags = new[]
+        ///         {
+        ///             "TerraformKeyTest",
+        ///             "TerraformKeyValueTest=TestValue",
+        ///         },
+        ///     });
+        /// 
+        ///     var _name_ = new Dynatrace.KeyRequests("#name#", new()
+        ///     {
+        ///         Service = test.Apply(getServiceResult =&gt; getServiceResult.Id),
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
         public static Task<GetServiceResult> InvokeAsync(GetServiceArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceResult>("dynatrace:index/getService:getService", args ?? new GetServiceArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
+        /// 
+        /// - `name` queries for all services with the specified name
+        /// - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+        /// 
+        /// If multiple services match the given criteria, the first result will be retrieved.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using Pulumi;
+        /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Dynatrace.GetService.Invoke(new()
+        ///     {
+        ///         Name = "Example",
+        ///         Tags = new[]
+        ///         {
+        ///             "TerraformKeyTest",
+        ///             "TerraformKeyValueTest=TestValue",
+        ///         },
+        ///     });
+        /// 
+        ///     var _name_ = new Dynatrace.KeyRequests("#name#", new()
+        ///     {
+        ///         Service = test.Apply(getServiceResult =&gt; getServiceResult.Id),
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
         public static Output<GetServiceResult> Invoke(GetServiceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceResult>("dynatrace:index/getService:getService", args ?? new GetServiceInvokeArgs(), options.WithDefaults());
     }

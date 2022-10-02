@@ -41,12 +41,14 @@ export class Provider extends pulumi.ProviderResource {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            resourceInputs["dtApiToken"] = (args ? args.dtApiToken : undefined) ?? utilities.getEnv("DYNATRACE_API_TOKEN", "DT_API_TOKEN");
-            resourceInputs["dtClusterApiToken"] = (args ? args.dtClusterApiToken : undefined) ?? utilities.getEnv("DYNATRACE_CLUSTER_API_TOKEN", "DT_CLUSTER_API_TOKEN");
-            resourceInputs["dtClusterUrl"] = (args ? args.dtClusterUrl : undefined) ?? utilities.getEnv("DYNATRACE_CLUSTER_URL", "DT_CLUSTER_URL");
+            resourceInputs["dtApiToken"] = (args?.dtApiToken ? pulumi.secret(args.dtApiToken) : undefined) ?? utilities.getEnv("DYNATRACE_API_TOKEN", "DT_API_TOKEN");
+            resourceInputs["dtClusterApiToken"] = (args?.dtClusterApiToken ? pulumi.secret(args.dtClusterApiToken) : undefined) ?? utilities.getEnv("DYNATRACE_CLUSTER_API_TOKEN", "DT_CLUSTER_API_TOKEN");
+            resourceInputs["dtClusterUrl"] = (args?.dtClusterUrl ? pulumi.secret(args.dtClusterUrl) : undefined) ?? utilities.getEnv("DYNATRACE_CLUSTER_URL", "DT_CLUSTER_URL");
             resourceInputs["dtEnvUrl"] = (args ? args.dtEnvUrl : undefined) ?? utilities.getEnv("DYNATRACE_ENV_URL", "DT_ENV_URL");
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["dtApiToken", "dtClusterApiToken", "dtClusterUrl"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
     }
 }

@@ -10,6 +10,127 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type ManagementZoneRuleConditionCloudTypeComparison struct {
+	Negate   *bool  `pulumi:"negate"`
+	Operator string `pulumi:"operator"`
+	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+	Type     *string `pulumi:"type"`
+	Unknowns *string `pulumi:"unknowns"`
+	Value    *string `pulumi:"value"`
+}
+
+// ManagementZoneRuleConditionCloudTypeComparisonInput is an input type that accepts ManagementZoneRuleConditionCloudTypeComparisonArgs and ManagementZoneRuleConditionCloudTypeComparisonOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionCloudTypeComparisonInput` via:
+//
+//	ManagementZoneRuleConditionCloudTypeComparisonArgs{...}
+type ManagementZoneRuleConditionCloudTypeComparisonInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionCloudTypeComparisonOutput() ManagementZoneRuleConditionCloudTypeComparisonOutput
+	ToManagementZoneRuleConditionCloudTypeComparisonOutputWithContext(context.Context) ManagementZoneRuleConditionCloudTypeComparisonOutput
+}
+
+type ManagementZoneRuleConditionCloudTypeComparisonArgs struct {
+	Negate   pulumi.BoolPtrInput `pulumi:"negate"`
+	Operator pulumi.StringInput  `pulumi:"operator"`
+	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+	Type     pulumi.StringPtrInput `pulumi:"type"`
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	Value    pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ManagementZoneRuleConditionCloudTypeComparisonArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeComparison)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionCloudTypeComparisonArgs) ToManagementZoneRuleConditionCloudTypeComparisonOutput() ManagementZoneRuleConditionCloudTypeComparisonOutput {
+	return i.ToManagementZoneRuleConditionCloudTypeComparisonOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionCloudTypeComparisonArgs) ToManagementZoneRuleConditionCloudTypeComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeComparisonOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionCloudTypeComparisonOutput)
+}
+
+// ManagementZoneRuleConditionCloudTypeComparisonArrayInput is an input type that accepts ManagementZoneRuleConditionCloudTypeComparisonArray and ManagementZoneRuleConditionCloudTypeComparisonArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionCloudTypeComparisonArrayInput` via:
+//
+//	ManagementZoneRuleConditionCloudTypeComparisonArray{ ManagementZoneRuleConditionCloudTypeComparisonArgs{...} }
+type ManagementZoneRuleConditionCloudTypeComparisonArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionCloudTypeComparisonArrayOutput() ManagementZoneRuleConditionCloudTypeComparisonArrayOutput
+	ToManagementZoneRuleConditionCloudTypeComparisonArrayOutputWithContext(context.Context) ManagementZoneRuleConditionCloudTypeComparisonArrayOutput
+}
+
+type ManagementZoneRuleConditionCloudTypeComparisonArray []ManagementZoneRuleConditionCloudTypeComparisonInput
+
+func (ManagementZoneRuleConditionCloudTypeComparisonArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionCloudTypeComparison)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionCloudTypeComparisonArray) ToManagementZoneRuleConditionCloudTypeComparisonArrayOutput() ManagementZoneRuleConditionCloudTypeComparisonArrayOutput {
+	return i.ToManagementZoneRuleConditionCloudTypeComparisonArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionCloudTypeComparisonArray) ToManagementZoneRuleConditionCloudTypeComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeComparisonArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionCloudTypeComparisonArrayOutput)
+}
+
+type ManagementZoneRuleConditionCloudTypeComparisonOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionCloudTypeComparisonOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeComparison)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionCloudTypeComparisonOutput) ToManagementZoneRuleConditionCloudTypeComparisonOutput() ManagementZoneRuleConditionCloudTypeComparisonOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionCloudTypeComparisonOutput) ToManagementZoneRuleConditionCloudTypeComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeComparisonOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionCloudTypeComparisonOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionCloudTypeComparison) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionCloudTypeComparisonOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionCloudTypeComparison) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+func (o ManagementZoneRuleConditionCloudTypeComparisonOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionCloudTypeComparison) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionCloudTypeComparisonOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionCloudTypeComparison) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionCloudTypeComparisonOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionCloudTypeComparison) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionCloudTypeComparisonArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionCloudTypeComparisonArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionCloudTypeComparison)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionCloudTypeComparisonArrayOutput) ToManagementZoneRuleConditionCloudTypeComparisonArrayOutput() ManagementZoneRuleConditionCloudTypeComparisonArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionCloudTypeComparisonArrayOutput) ToManagementZoneRuleConditionCloudTypeComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeComparisonArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionCloudTypeComparisonArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionCloudTypeComparisonOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionCloudTypeComparison {
+		return vs[0].([]ManagementZoneRuleConditionCloudTypeComparison)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionCloudTypeComparisonOutput)
+}
+
 type ManagementZoneRuleConditionComparison struct {
 	Negate   *bool   `pulumi:"negate"`
 	Type     string  `pulumi:"type"`
@@ -51657,6 +51778,8 @@ func (o GetSyntheticLocationsLocationsLocationArrayOutput) Index(i pulumi.IntInp
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeComparisonInput)(nil)).Elem(), ManagementZoneRuleConditionCloudTypeComparisonArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeComparisonArrayInput)(nil)).Elem(), ManagementZoneRuleConditionCloudTypeComparisonArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionComparisonInput)(nil)).Elem(), ManagementZoneRuleConditionComparisonArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionComparisonArrayInput)(nil)).Elem(), ManagementZoneRuleConditionComparisonArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionCustomApplicationTypeInput)(nil)).Elem(), ManagementZoneRuleConditionCustomApplicationTypeArgs{})
@@ -52368,6 +52491,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsLocationInput)(nil)).Elem(), GetSyntheticLocationsLocationsLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsLocationArrayInput)(nil)).Elem(), GetSyntheticLocationsLocationsLocationArray{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionCloudTypeComparisonOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionCloudTypeComparisonArrayOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionComparisonOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionComparisonArrayOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionCustomApplicationTypeOutput{})

@@ -4,6 +4,13 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * ## Dynatrace Documentation
+ *
+ * - User management and SSO - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso
+ *
+ * - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+ */
 export class User extends pulumi.CustomResource {
     /**
      * Get an existing User resource's state with the given name, ID, and optional extra

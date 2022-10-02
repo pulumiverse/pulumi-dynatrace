@@ -12,6 +12,9 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
 {
     public static class GetAwsIamExternal
     {
+        /// <summary>
+        /// The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
+        /// </summary>
         public static Task<GetAwsIamExternalResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAwsIamExternalResult>("dynatrace:index/getAwsIamExternal:getAwsIamExternal", InvokeArgs.Empty, options.WithDefaults());
     }

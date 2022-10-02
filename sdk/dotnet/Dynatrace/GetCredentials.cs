@@ -12,9 +12,15 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
 {
     public static class GetCredentials
     {
+        /// <summary>
+        /// The credentials data source allows retrieval of all credentials.
+        /// </summary>
         public static Task<GetCredentialsResult> InvokeAsync(GetCredentialsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCredentialsResult>("dynatrace:index/getCredentials:getCredentials", args ?? new GetCredentialsArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// The credentials data source allows retrieval of all credentials.
+        /// </summary>
         public static Output<GetCredentialsResult> Invoke(GetCredentialsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCredentialsResult>("dynatrace:index/getCredentials:getCredentials", args ?? new GetCredentialsInvokeArgs(), options.WithDefaults());
     }

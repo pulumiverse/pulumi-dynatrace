@@ -10,6 +10,13 @@ using Pulumi;
 
 namespace Lbrlabs.PulumiPackage.Dynatrace
 {
+    /// <summary>
+    /// ## Dynatrace Documentation
+    /// 
+    /// - User management and SSO - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso
+    /// 
+    /// - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/userGroup:UserGroup")]
     public partial class UserGroup : global::Pulumi.CustomResource
     {

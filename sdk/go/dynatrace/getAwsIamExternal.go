@@ -7,6 +7,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
 func GetAwsIamExternal(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetAwsIamExternalResult, error) {
 	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetAwsIamExternalResult

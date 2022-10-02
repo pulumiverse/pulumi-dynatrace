@@ -14,27 +14,31 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEventsEventKeystrokes
     {
+        public readonly Outputs.BrowserMonitorScriptEventsEventKeystrokesCredential? Credential;
         public readonly bool? Masked;
         public readonly bool? SimulateBlurEvent;
         public readonly Outputs.BrowserMonitorScriptEventsEventKeystrokesTarget? Target;
-        public readonly string Text;
+        public readonly string? Text;
         public readonly Outputs.BrowserMonitorScriptEventsEventKeystrokesValidate? Validate;
         public readonly Outputs.BrowserMonitorScriptEventsEventKeystrokesWait? Wait;
 
         [OutputConstructor]
         private BrowserMonitorScriptEventsEventKeystrokes(
+            Outputs.BrowserMonitorScriptEventsEventKeystrokesCredential? credential,
+
             bool? masked,
 
             bool? simulateBlurEvent,
 
             Outputs.BrowserMonitorScriptEventsEventKeystrokesTarget? target,
 
-            string text,
+            string? text,
 
             Outputs.BrowserMonitorScriptEventsEventKeystrokesValidate? validate,
 
             Outputs.BrowserMonitorScriptEventsEventKeystrokesWait? wait)
         {
+            Credential = credential;
             Masked = masked;
             SimulateBlurEvent = simulateBlurEvent;
             Target = target;

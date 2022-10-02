@@ -4,6 +4,47 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The management zone data source allows the management zone ID to be retrieved by its name.
+ *
+ * - `name` queries for all management zones with the specified name
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const test = pulumi.output(dynatrace.getManagementZone({
+ *     name: "Example",
+ * }));
+ * const _name_ = new dynatrace.CalculatedServiceMetric("#name#", {
+ *     conditions: [{
+ *         conditions: [{
+ *             attribute: "HTTP_REQUEST_METHOD",
+ *             comparison: {
+ *                 httpMethod: {
+ *                     operator: "EQUALS_ANY_OF",
+ *                     values: [
+ *                         "POST",
+ *                         "GET",
+ *                     ],
+ *                 },
+ *                 negate: false,
+ *             },
+ *         }],
+ *     }],
+ *     enabled: true,
+ *     managementZones: [test.id],
+ *     metricDefinition: {
+ *         metric: "REQUEST_ATTRIBUTE",
+ *         requestAttribute: "foo",
+ *     },
+ *     metricKey: "calc:service.#name#",
+ *     unit: "MILLI_SECOND_PER_MINUTE",
+ * });
+ * ```
+ */
 export function getManagementZone(args: GetManagementZoneArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementZoneResult> {
     if (!opts) {
         opts = {}

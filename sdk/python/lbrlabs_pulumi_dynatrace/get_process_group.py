@@ -69,7 +69,31 @@ def get_process_group(name: Optional[str] = None,
                       tags: Optional[Sequence[str]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProcessGroupResult:
     """
-    Use this data source to access information about an existing resource.
+    The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
+
+    - `name` queries for all process groups with the specified name
+    - `tags` (optional) refers to the tags that need to be present for the process group (inclusive)
+
+    If multiple process groups match the given criteria, the first result will be retrieved.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import lbrlabs_pulumi_dynatrace as dynatrace
+    import pulumi_dynatrace as dynatrace
+
+    test = dynatrace.get_process_group(name="Example",
+        tags=[
+            "TerraformKeyTest",
+            "TerraformKeyValueTest=TestValue",
+        ])
+    _name_ = dynatrace.ManagementZone("#name#", entity_selector_based_rules=[dynatrace.ManagementZoneEntitySelectorBasedRuleArgs(
+        enabled=True,
+        selector=f"type(\\"process_group\\"),entityId(\\"{test.id}\\")",
+    )])
+    ```
+
 
     :param Sequence[str] tags: Required tags of the process group to find
     """
@@ -90,7 +114,31 @@ def get_process_group_output(name: Optional[pulumi.Input[str]] = None,
                              tags: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProcessGroupResult]:
     """
-    Use this data source to access information about an existing resource.
+    The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
+
+    - `name` queries for all process groups with the specified name
+    - `tags` (optional) refers to the tags that need to be present for the process group (inclusive)
+
+    If multiple process groups match the given criteria, the first result will be retrieved.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import lbrlabs_pulumi_dynatrace as dynatrace
+    import pulumi_dynatrace as dynatrace
+
+    test = dynatrace.get_process_group(name="Example",
+        tags=[
+            "TerraformKeyTest",
+            "TerraformKeyValueTest=TestValue",
+        ])
+    _name_ = dynatrace.ManagementZone("#name#", entity_selector_based_rules=[dynatrace.ManagementZoneEntitySelectorBasedRuleArgs(
+        enabled=True,
+        selector=f"type(\\"process_group\\"),entityId(\\"{test.id}\\")",
+    )])
+    ```
+
 
     :param Sequence[str] tags: Required tags of the process group to find
     """

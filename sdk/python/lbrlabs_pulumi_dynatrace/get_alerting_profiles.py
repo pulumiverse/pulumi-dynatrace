@@ -56,7 +56,7 @@ class AwaitableGetAlertingProfilesResult(GetAlertingProfilesResult):
 def get_alerting_profiles(profiles: Optional[Mapping[str, str]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlertingProfilesResult:
     """
-    Use this data source to access information about an existing resource.
+    The alerting profiles data source allows retrieval of all alerting profiles.
     """
     __args__ = dict()
     __args__['profiles'] = profiles
@@ -72,6 +72,6 @@ def get_alerting_profiles(profiles: Optional[Mapping[str, str]] = None,
 def get_alerting_profiles_output(profiles: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlertingProfilesResult]:
     """
-    Use this data source to access information about an existing resource.
+    The alerting profiles data source allows retrieval of all alerting profiles.
     """
     ...

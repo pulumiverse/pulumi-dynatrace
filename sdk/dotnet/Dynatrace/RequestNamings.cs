@@ -10,6 +10,13 @@ using Pulumi;
 
 namespace Lbrlabs.PulumiPackage.Dynatrace
 {
+    /// <summary>
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Set up request naming - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/set-up-request-naming
+    /// 
+    /// - Request naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/request-naming-api
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/requestNamings:RequestNamings")]
     public partial class RequestNamings : global::Pulumi.CustomResource
     {

@@ -10,6 +10,55 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
+//
+// - `name` queries for all process groups with the specified name
+// - `tags` (optional) refers to the tags that need to be present for the process group (inclusive)
+//
+// If multiple process groups match the given criteria, the first result will be retrieved.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"fmt"
+//
+//	"github.com/pulumi/pulumi-dynatrace/sdk/go/dynatrace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			test, err := dynatrace.GetProcessGroup(ctx, &GetProcessGroupArgs{
+//				Name: "Example",
+//				Tags: []string{
+//					"TerraformKeyTest",
+//					"TerraformKeyValueTest=TestValue",
+//				},
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewManagementZone(ctx, "#name#", &dynatrace.ManagementZoneArgs{
+//				EntitySelectorBasedRules: ManagementZoneEntitySelectorBasedRuleArray{
+//					&ManagementZoneEntitySelectorBasedRuleArgs{
+//						Enabled:  pulumi.Bool(true),
+//						Selector: pulumi.String(fmt.Sprintf("type(\"process_group\"),entityId(\"%v\")", test.Id)),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetProcessGroup(ctx *pulumi.Context, args *GetProcessGroupArgs, opts ...pulumi.InvokeOption) (*GetProcessGroupResult, error) {
 	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetProcessGroupResult

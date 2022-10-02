@@ -66,7 +66,12 @@ class RequestNamings(pulumi.CustomResource):
                  ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        Create a RequestNamings resource with the given unique name, props, and options.
+        ## Dynatrace Documentation
+
+        - Set up request naming - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/set-up-request-naming
+
+        - Request naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/request-naming-api
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ids: The IDs of the request namings in the order they should be taken into consideration
@@ -78,7 +83,12 @@ class RequestNamings(pulumi.CustomResource):
                  args: RequestNamingsArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a RequestNamings resource with the given unique name, props, and options.
+        ## Dynatrace Documentation
+
+        - Set up request naming - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/set-up-request-naming
+
+        - Request naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/request-naming-api
+
         :param str resource_name: The name of the resource.
         :param RequestNamingsArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

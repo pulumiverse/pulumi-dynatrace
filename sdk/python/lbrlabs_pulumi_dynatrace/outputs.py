@@ -186,6 +186,7 @@ __all__ = [
     'BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocator',
     'BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocatorLocator',
     'BrowserMonitorScriptEventsEventKeystrokes',
+    'BrowserMonitorScriptEventsEventKeystrokesCredential',
     'BrowserMonitorScriptEventsEventKeystrokesTarget',
     'BrowserMonitorScriptEventsEventKeystrokesTargetLocator',
     'BrowserMonitorScriptEventsEventKeystrokesTargetLocatorLocator',
@@ -8514,19 +8515,23 @@ class BrowserMonitorScriptEventsEventKeystrokes(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 text: str,
+                 credential: Optional['outputs.BrowserMonitorScriptEventsEventKeystrokesCredential'] = None,
                  masked: Optional[bool] = None,
                  simulate_blur_event: Optional[bool] = None,
                  target: Optional['outputs.BrowserMonitorScriptEventsEventKeystrokesTarget'] = None,
+                 text: Optional[str] = None,
                  validate: Optional['outputs.BrowserMonitorScriptEventsEventKeystrokesValidate'] = None,
                  wait: Optional['outputs.BrowserMonitorScriptEventsEventKeystrokesWait'] = None):
-        pulumi.set(__self__, "text", text)
+        if credential is not None:
+            pulumi.set(__self__, "credential", credential)
         if masked is not None:
             pulumi.set(__self__, "masked", masked)
         if simulate_blur_event is not None:
             pulumi.set(__self__, "simulate_blur_event", simulate_blur_event)
         if target is not None:
             pulumi.set(__self__, "target", target)
+        if text is not None:
+            pulumi.set(__self__, "text", text)
         if validate is not None:
             pulumi.set(__self__, "validate", validate)
         if wait is not None:
@@ -8534,8 +8539,8 @@ class BrowserMonitorScriptEventsEventKeystrokes(dict):
 
     @property
     @pulumi.getter
-    def text(self) -> str:
-        return pulumi.get(self, "text")
+    def credential(self) -> Optional['outputs.BrowserMonitorScriptEventsEventKeystrokesCredential']:
+        return pulumi.get(self, "credential")
 
     @property
     @pulumi.getter
@@ -8554,6 +8559,11 @@ class BrowserMonitorScriptEventsEventKeystrokes(dict):
 
     @property
     @pulumi.getter
+    def text(self) -> Optional[str]:
+        return pulumi.get(self, "text")
+
+    @property
+    @pulumi.getter
     def validate(self) -> Optional['outputs.BrowserMonitorScriptEventsEventKeystrokesValidate']:
         return pulumi.get(self, "validate")
 
@@ -8561,6 +8571,42 @@ class BrowserMonitorScriptEventsEventKeystrokes(dict):
     @pulumi.getter
     def wait(self) -> Optional['outputs.BrowserMonitorScriptEventsEventKeystrokesWait']:
         return pulumi.get(self, "wait")
+
+
+@pulumi.output_type
+class BrowserMonitorScriptEventsEventKeystrokesCredential(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "vaultId":
+            suggest = "vault_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BrowserMonitorScriptEventsEventKeystrokesCredential. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BrowserMonitorScriptEventsEventKeystrokesCredential.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BrowserMonitorScriptEventsEventKeystrokesCredential.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 field: str,
+                 vault_id: str):
+        pulumi.set(__self__, "field", field)
+        pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter
+    def field(self) -> str:
+        return pulumi.get(self, "field")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> str:
+        return pulumi.get(self, "vault_id")
 
 
 @pulumi.output_type

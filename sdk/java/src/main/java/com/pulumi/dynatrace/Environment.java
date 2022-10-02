@@ -18,6 +18,14 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
+/**
+ * ## Dynatrace Documentation
+ * 
+ * - Manage your monitoring environments - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-managed/operation/manage-your-monitoring-environments
+ * 
+ * - Cluster API v2 - Environments - https://www.dynatrace.com/support/help/shortlink/cluster-api#environments
+ * 
+ */
 @ResourceType(type="dynatrace:index/environment:Environment")
 public class Environment extends com.pulumi.resources.CustomResource {
     /**

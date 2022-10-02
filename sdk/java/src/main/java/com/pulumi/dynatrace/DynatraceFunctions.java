@@ -43,165 +43,1965 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class DynatraceFunctions {
+    /**
+     * The alerting profiles data source allows retrieval of all alerting profiles.
+     * 
+     */
     public static Output<GetAlertingProfilesResult> getAlertingProfiles() {
         return getAlertingProfiles(GetAlertingProfilesArgs.Empty, InvokeOptions.Empty);
     }
+    /**
+     * The alerting profiles data source allows retrieval of all alerting profiles.
+     * 
+     */
     public static CompletableFuture<GetAlertingProfilesResult> getAlertingProfilesPlain() {
         return getAlertingProfilesPlain(GetAlertingProfilesPlainArgs.Empty, InvokeOptions.Empty);
     }
+    /**
+     * The alerting profiles data source allows retrieval of all alerting profiles.
+     * 
+     */
     public static Output<GetAlertingProfilesResult> getAlertingProfiles(GetAlertingProfilesArgs args) {
         return getAlertingProfiles(args, InvokeOptions.Empty);
     }
+    /**
+     * The alerting profiles data source allows retrieval of all alerting profiles.
+     * 
+     */
     public static CompletableFuture<GetAlertingProfilesResult> getAlertingProfilesPlain(GetAlertingProfilesPlainArgs args) {
         return getAlertingProfilesPlain(args, InvokeOptions.Empty);
     }
+    /**
+     * The alerting profiles data source allows retrieval of all alerting profiles.
+     * 
+     */
     public static Output<GetAlertingProfilesResult> getAlertingProfiles(GetAlertingProfilesArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("dynatrace:index/getAlertingProfiles:getAlertingProfiles", TypeShape.of(GetAlertingProfilesResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The alerting profiles data source allows retrieval of all alerting profiles.
+     * 
+     */
     public static CompletableFuture<GetAlertingProfilesResult> getAlertingProfilesPlain(GetAlertingProfilesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getAlertingProfiles:getAlertingProfiles", TypeShape.of(GetAlertingProfilesResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The application data source allows the application ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all applications with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetApplicationArgs;
+     * import com.pulumi.dynatrace.ApplicationDetectionRule;
+     * import com.pulumi.dynatrace.ApplicationDetectionRuleArgs;
+     * import com.pulumi.dynatrace.inputs.ApplicationDetectionRuleFilterConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getApplication(GetApplicationArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ApplicationDetectionRule(&#34;#name#&#34;, ApplicationDetectionRuleArgs.builder()        
+     *             .applicationIdentifier(test.applyValue(getApplicationResult -&gt; getApplicationResult.id()))
+     *             .filterConfig(ApplicationDetectionRuleFilterConfigArgs.builder()
+     *                 .applicationMatchTarget(&#34;DOMAIN&#34;)
+     *                 .applicationMatchType(&#34;MATCHES&#34;)
+     *                 .pattern(&#34;www.google.com&#34;)
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetApplicationResult> getApplication(GetApplicationArgs args) {
         return getApplication(args, InvokeOptions.Empty);
     }
+    /**
+     * The application data source allows the application ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all applications with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetApplicationArgs;
+     * import com.pulumi.dynatrace.ApplicationDetectionRule;
+     * import com.pulumi.dynatrace.ApplicationDetectionRuleArgs;
+     * import com.pulumi.dynatrace.inputs.ApplicationDetectionRuleFilterConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getApplication(GetApplicationArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ApplicationDetectionRule(&#34;#name#&#34;, ApplicationDetectionRuleArgs.builder()        
+     *             .applicationIdentifier(test.applyValue(getApplicationResult -&gt; getApplicationResult.id()))
+     *             .filterConfig(ApplicationDetectionRuleFilterConfigArgs.builder()
+     *                 .applicationMatchTarget(&#34;DOMAIN&#34;)
+     *                 .applicationMatchType(&#34;MATCHES&#34;)
+     *                 .pattern(&#34;www.google.com&#34;)
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetApplicationResult> getApplicationPlain(GetApplicationPlainArgs args) {
         return getApplicationPlain(args, InvokeOptions.Empty);
     }
+    /**
+     * The application data source allows the application ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all applications with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetApplicationArgs;
+     * import com.pulumi.dynatrace.ApplicationDetectionRule;
+     * import com.pulumi.dynatrace.ApplicationDetectionRuleArgs;
+     * import com.pulumi.dynatrace.inputs.ApplicationDetectionRuleFilterConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getApplication(GetApplicationArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ApplicationDetectionRule(&#34;#name#&#34;, ApplicationDetectionRuleArgs.builder()        
+     *             .applicationIdentifier(test.applyValue(getApplicationResult -&gt; getApplicationResult.id()))
+     *             .filterConfig(ApplicationDetectionRuleFilterConfigArgs.builder()
+     *                 .applicationMatchTarget(&#34;DOMAIN&#34;)
+     *                 .applicationMatchType(&#34;MATCHES&#34;)
+     *                 .pattern(&#34;www.google.com&#34;)
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetApplicationResult> getApplication(GetApplicationArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("dynatrace:index/getApplication:getApplication", TypeShape.of(GetApplicationResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The application data source allows the application ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all applications with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetApplicationArgs;
+     * import com.pulumi.dynatrace.ApplicationDetectionRule;
+     * import com.pulumi.dynatrace.ApplicationDetectionRuleArgs;
+     * import com.pulumi.dynatrace.inputs.ApplicationDetectionRuleFilterConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getApplication(GetApplicationArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ApplicationDetectionRule(&#34;#name#&#34;, ApplicationDetectionRuleArgs.builder()        
+     *             .applicationIdentifier(test.applyValue(getApplicationResult -&gt; getApplicationResult.id()))
+     *             .filterConfig(ApplicationDetectionRuleFilterConfigArgs.builder()
+     *                 .applicationMatchTarget(&#34;DOMAIN&#34;)
+     *                 .applicationMatchType(&#34;MATCHES&#34;)
+     *                 .pattern(&#34;www.google.com&#34;)
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetApplicationResult> getApplicationPlain(GetApplicationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getApplication:getApplication", TypeShape.of(GetApplicationResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
+     * 
+     */
     public static Output<GetAwsIamExternalResult> getAwsIamExternal() {
         return getAwsIamExternal(InvokeArgs.Empty, InvokeOptions.Empty);
     }
+    /**
+     * The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
+     * 
+     */
     public static CompletableFuture<GetAwsIamExternalResult> getAwsIamExternalPlain() {
         return getAwsIamExternalPlain(InvokeArgs.Empty, InvokeOptions.Empty);
     }
+    /**
+     * The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
+     * 
+     */
     public static Output<GetAwsIamExternalResult> getAwsIamExternal(InvokeArgs args) {
         return getAwsIamExternal(args, InvokeOptions.Empty);
     }
+    /**
+     * The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
+     * 
+     */
     public static CompletableFuture<GetAwsIamExternalResult> getAwsIamExternalPlain(InvokeArgs args) {
         return getAwsIamExternalPlain(args, InvokeOptions.Empty);
     }
+    /**
+     * The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
+     * 
+     */
     public static Output<GetAwsIamExternalResult> getAwsIamExternal(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("dynatrace:index/getAwsIamExternal:getAwsIamExternal", TypeShape.of(GetAwsIamExternalResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
+     * 
+     */
     public static CompletableFuture<GetAwsIamExternalResult> getAwsIamExternalPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getAwsIamExternal:getAwsIamExternal", TypeShape.of(GetAwsIamExternalResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The credentials data source allows retrieval of all credentials.
+     * 
+     */
     public static Output<GetCredentialsResult> getCredentials() {
         return getCredentials(GetCredentialsArgs.Empty, InvokeOptions.Empty);
     }
+    /**
+     * The credentials data source allows retrieval of all credentials.
+     * 
+     */
     public static CompletableFuture<GetCredentialsResult> getCredentialsPlain() {
         return getCredentialsPlain(GetCredentialsPlainArgs.Empty, InvokeOptions.Empty);
     }
+    /**
+     * The credentials data source allows retrieval of all credentials.
+     * 
+     */
     public static Output<GetCredentialsResult> getCredentials(GetCredentialsArgs args) {
         return getCredentials(args, InvokeOptions.Empty);
     }
+    /**
+     * The credentials data source allows retrieval of all credentials.
+     * 
+     */
     public static CompletableFuture<GetCredentialsResult> getCredentialsPlain(GetCredentialsPlainArgs args) {
         return getCredentialsPlain(args, InvokeOptions.Empty);
     }
+    /**
+     * The credentials data source allows retrieval of all credentials.
+     * 
+     */
     public static Output<GetCredentialsResult> getCredentials(GetCredentialsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("dynatrace:index/getCredentials:getCredentials", TypeShape.of(GetCredentialsResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The credentials data source allows retrieval of all credentials.
+     * 
+     */
     public static CompletableFuture<GetCredentialsResult> getCredentialsPlain(GetCredentialsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getCredentials:getCredentials", TypeShape.of(GetCredentialsResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all hosts with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the host (inclusive)
+     * 
+     * If multiple hosts match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetHostArgs;
+     * import com.pulumi.dynatrace.ManagementZone;
+     * import com.pulumi.dynatrace.ManagementZoneArgs;
+     * import com.pulumi.dynatrace.inputs.ManagementZoneEntitySelectorBasedRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getHost(GetHostArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ManagementZone(&#34;#name#&#34;, ManagementZoneArgs.builder()        
+     *             .entitySelectorBasedRules(ManagementZoneEntitySelectorBasedRuleArgs.builder()
+     *                 .enabled(true)
+     *                 .selector(String.format(&#34;type(\&#34;host\&#34;),entityId(\&#34;%s\&#34;)&#34;, test.applyValue(getHostResult -&gt; getHostResult.id())))
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetHostResult> getHost(GetHostArgs args) {
         return getHost(args, InvokeOptions.Empty);
     }
+    /**
+     * The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all hosts with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the host (inclusive)
+     * 
+     * If multiple hosts match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetHostArgs;
+     * import com.pulumi.dynatrace.ManagementZone;
+     * import com.pulumi.dynatrace.ManagementZoneArgs;
+     * import com.pulumi.dynatrace.inputs.ManagementZoneEntitySelectorBasedRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getHost(GetHostArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ManagementZone(&#34;#name#&#34;, ManagementZoneArgs.builder()        
+     *             .entitySelectorBasedRules(ManagementZoneEntitySelectorBasedRuleArgs.builder()
+     *                 .enabled(true)
+     *                 .selector(String.format(&#34;type(\&#34;host\&#34;),entityId(\&#34;%s\&#34;)&#34;, test.applyValue(getHostResult -&gt; getHostResult.id())))
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetHostResult> getHostPlain(GetHostPlainArgs args) {
         return getHostPlain(args, InvokeOptions.Empty);
     }
+    /**
+     * The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all hosts with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the host (inclusive)
+     * 
+     * If multiple hosts match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetHostArgs;
+     * import com.pulumi.dynatrace.ManagementZone;
+     * import com.pulumi.dynatrace.ManagementZoneArgs;
+     * import com.pulumi.dynatrace.inputs.ManagementZoneEntitySelectorBasedRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getHost(GetHostArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ManagementZone(&#34;#name#&#34;, ManagementZoneArgs.builder()        
+     *             .entitySelectorBasedRules(ManagementZoneEntitySelectorBasedRuleArgs.builder()
+     *                 .enabled(true)
+     *                 .selector(String.format(&#34;type(\&#34;host\&#34;),entityId(\&#34;%s\&#34;)&#34;, test.applyValue(getHostResult -&gt; getHostResult.id())))
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetHostResult> getHost(GetHostArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("dynatrace:index/getHost:getHost", TypeShape.of(GetHostResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all hosts with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the host (inclusive)
+     * 
+     * If multiple hosts match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetHostArgs;
+     * import com.pulumi.dynatrace.ManagementZone;
+     * import com.pulumi.dynatrace.ManagementZoneArgs;
+     * import com.pulumi.dynatrace.inputs.ManagementZoneEntitySelectorBasedRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getHost(GetHostArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ManagementZone(&#34;#name#&#34;, ManagementZoneArgs.builder()        
+     *             .entitySelectorBasedRules(ManagementZoneEntitySelectorBasedRuleArgs.builder()
+     *                 .enabled(true)
+     *                 .selector(String.format(&#34;type(\&#34;host\&#34;),entityId(\&#34;%s\&#34;)&#34;, test.applyValue(getHostResult -&gt; getHostResult.id())))
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetHostResult> getHostPlain(GetHostPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getHost:getHost", TypeShape.of(GetHostResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The management zone data source allows the management zone ID to be retrieved by its name.
+     * 
+     * - `name` queries for all management zones with the specified name
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetManagementZoneArgs;
+     * import com.pulumi.dynatrace.CalculatedServiceMetric;
+     * import com.pulumi.dynatrace.CalculatedServiceMetricArgs;
+     * import com.pulumi.dynatrace.inputs.CalculatedServiceMetricConditionArgs;
+     * import com.pulumi.dynatrace.inputs.CalculatedServiceMetricMetricDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getManagementZone(GetManagementZoneArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new CalculatedServiceMetric(&#34;#name#&#34;, CalculatedServiceMetricArgs.builder()        
+     *             .conditions(CalculatedServiceMetricConditionArgs.builder()
+     *                 .conditions(CalculatedServiceMetricConditionConditionArgs.builder()
+     *                     .attribute(&#34;HTTP_REQUEST_METHOD&#34;)
+     *                     .comparison(CalculatedServiceMetricConditionConditionComparisonArgs.builder()
+     *                         .httpMethod(CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs.builder()
+     *                             .operator(&#34;EQUALS_ANY_OF&#34;)
+     *                             .values(                            
+     *                                 &#34;POST&#34;,
+     *                                 &#34;GET&#34;)
+     *                             .build())
+     *                         .negate(false)
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .enabled(true)
+     *             .managementZones(test.applyValue(getManagementZoneResult -&gt; getManagementZoneResult.id()))
+     *             .metricDefinition(CalculatedServiceMetricMetricDefinitionArgs.builder()
+     *                 .metric(&#34;REQUEST_ATTRIBUTE&#34;)
+     *                 .requestAttribute(&#34;foo&#34;)
+     *                 .build())
+     *             .metricKey(&#34;calc:service.#name#&#34;)
+     *             .unit(&#34;MILLI_SECOND_PER_MINUTE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetManagementZoneResult> getManagementZone(GetManagementZoneArgs args) {
         return getManagementZone(args, InvokeOptions.Empty);
     }
+    /**
+     * The management zone data source allows the management zone ID to be retrieved by its name.
+     * 
+     * - `name` queries for all management zones with the specified name
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetManagementZoneArgs;
+     * import com.pulumi.dynatrace.CalculatedServiceMetric;
+     * import com.pulumi.dynatrace.CalculatedServiceMetricArgs;
+     * import com.pulumi.dynatrace.inputs.CalculatedServiceMetricConditionArgs;
+     * import com.pulumi.dynatrace.inputs.CalculatedServiceMetricMetricDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getManagementZone(GetManagementZoneArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new CalculatedServiceMetric(&#34;#name#&#34;, CalculatedServiceMetricArgs.builder()        
+     *             .conditions(CalculatedServiceMetricConditionArgs.builder()
+     *                 .conditions(CalculatedServiceMetricConditionConditionArgs.builder()
+     *                     .attribute(&#34;HTTP_REQUEST_METHOD&#34;)
+     *                     .comparison(CalculatedServiceMetricConditionConditionComparisonArgs.builder()
+     *                         .httpMethod(CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs.builder()
+     *                             .operator(&#34;EQUALS_ANY_OF&#34;)
+     *                             .values(                            
+     *                                 &#34;POST&#34;,
+     *                                 &#34;GET&#34;)
+     *                             .build())
+     *                         .negate(false)
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .enabled(true)
+     *             .managementZones(test.applyValue(getManagementZoneResult -&gt; getManagementZoneResult.id()))
+     *             .metricDefinition(CalculatedServiceMetricMetricDefinitionArgs.builder()
+     *                 .metric(&#34;REQUEST_ATTRIBUTE&#34;)
+     *                 .requestAttribute(&#34;foo&#34;)
+     *                 .build())
+     *             .metricKey(&#34;calc:service.#name#&#34;)
+     *             .unit(&#34;MILLI_SECOND_PER_MINUTE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetManagementZoneResult> getManagementZonePlain(GetManagementZonePlainArgs args) {
         return getManagementZonePlain(args, InvokeOptions.Empty);
     }
+    /**
+     * The management zone data source allows the management zone ID to be retrieved by its name.
+     * 
+     * - `name` queries for all management zones with the specified name
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetManagementZoneArgs;
+     * import com.pulumi.dynatrace.CalculatedServiceMetric;
+     * import com.pulumi.dynatrace.CalculatedServiceMetricArgs;
+     * import com.pulumi.dynatrace.inputs.CalculatedServiceMetricConditionArgs;
+     * import com.pulumi.dynatrace.inputs.CalculatedServiceMetricMetricDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getManagementZone(GetManagementZoneArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new CalculatedServiceMetric(&#34;#name#&#34;, CalculatedServiceMetricArgs.builder()        
+     *             .conditions(CalculatedServiceMetricConditionArgs.builder()
+     *                 .conditions(CalculatedServiceMetricConditionConditionArgs.builder()
+     *                     .attribute(&#34;HTTP_REQUEST_METHOD&#34;)
+     *                     .comparison(CalculatedServiceMetricConditionConditionComparisonArgs.builder()
+     *                         .httpMethod(CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs.builder()
+     *                             .operator(&#34;EQUALS_ANY_OF&#34;)
+     *                             .values(                            
+     *                                 &#34;POST&#34;,
+     *                                 &#34;GET&#34;)
+     *                             .build())
+     *                         .negate(false)
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .enabled(true)
+     *             .managementZones(test.applyValue(getManagementZoneResult -&gt; getManagementZoneResult.id()))
+     *             .metricDefinition(CalculatedServiceMetricMetricDefinitionArgs.builder()
+     *                 .metric(&#34;REQUEST_ATTRIBUTE&#34;)
+     *                 .requestAttribute(&#34;foo&#34;)
+     *                 .build())
+     *             .metricKey(&#34;calc:service.#name#&#34;)
+     *             .unit(&#34;MILLI_SECOND_PER_MINUTE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetManagementZoneResult> getManagementZone(GetManagementZoneArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("dynatrace:index/getManagementZone:getManagementZone", TypeShape.of(GetManagementZoneResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The management zone data source allows the management zone ID to be retrieved by its name.
+     * 
+     * - `name` queries for all management zones with the specified name
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetManagementZoneArgs;
+     * import com.pulumi.dynatrace.CalculatedServiceMetric;
+     * import com.pulumi.dynatrace.CalculatedServiceMetricArgs;
+     * import com.pulumi.dynatrace.inputs.CalculatedServiceMetricConditionArgs;
+     * import com.pulumi.dynatrace.inputs.CalculatedServiceMetricMetricDefinitionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getManagementZone(GetManagementZoneArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new CalculatedServiceMetric(&#34;#name#&#34;, CalculatedServiceMetricArgs.builder()        
+     *             .conditions(CalculatedServiceMetricConditionArgs.builder()
+     *                 .conditions(CalculatedServiceMetricConditionConditionArgs.builder()
+     *                     .attribute(&#34;HTTP_REQUEST_METHOD&#34;)
+     *                     .comparison(CalculatedServiceMetricConditionConditionComparisonArgs.builder()
+     *                         .httpMethod(CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs.builder()
+     *                             .operator(&#34;EQUALS_ANY_OF&#34;)
+     *                             .values(                            
+     *                                 &#34;POST&#34;,
+     *                                 &#34;GET&#34;)
+     *                             .build())
+     *                         .negate(false)
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .enabled(true)
+     *             .managementZones(test.applyValue(getManagementZoneResult -&gt; getManagementZoneResult.id()))
+     *             .metricDefinition(CalculatedServiceMetricMetricDefinitionArgs.builder()
+     *                 .metric(&#34;REQUEST_ATTRIBUTE&#34;)
+     *                 .requestAttribute(&#34;foo&#34;)
+     *                 .build())
+     *             .metricKey(&#34;calc:service.#name#&#34;)
+     *             .unit(&#34;MILLI_SECOND_PER_MINUTE&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetManagementZoneResult> getManagementZonePlain(GetManagementZonePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getManagementZone:getManagementZone", TypeShape.of(GetManagementZoneResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all processes with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the process (inclusive)
+     * 
+     * If multiple processes match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetProcessArgs;
+     * import com.pulumi.dynatrace.ManagementZone;
+     * import com.pulumi.dynatrace.ManagementZoneArgs;
+     * import com.pulumi.dynatrace.inputs.ManagementZoneEntitySelectorBasedRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getProcess(GetProcessArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ManagementZone(&#34;#name#&#34;, ManagementZoneArgs.builder()        
+     *             .entitySelectorBasedRules(ManagementZoneEntitySelectorBasedRuleArgs.builder()
+     *                 .enabled(true)
+     *                 .selector(String.format(&#34;type(\&#34;process_group_instance\&#34;),entityId(\&#34;%s\&#34;)&#34;, test.applyValue(getProcessResult -&gt; getProcessResult.id())))
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetProcessResult> getProcess(GetProcessArgs args) {
         return getProcess(args, InvokeOptions.Empty);
     }
+    /**
+     * The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all processes with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the process (inclusive)
+     * 
+     * If multiple processes match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetProcessArgs;
+     * import com.pulumi.dynatrace.ManagementZone;
+     * import com.pulumi.dynatrace.ManagementZoneArgs;
+     * import com.pulumi.dynatrace.inputs.ManagementZoneEntitySelectorBasedRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getProcess(GetProcessArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ManagementZone(&#34;#name#&#34;, ManagementZoneArgs.builder()        
+     *             .entitySelectorBasedRules(ManagementZoneEntitySelectorBasedRuleArgs.builder()
+     *                 .enabled(true)
+     *                 .selector(String.format(&#34;type(\&#34;process_group_instance\&#34;),entityId(\&#34;%s\&#34;)&#34;, test.applyValue(getProcessResult -&gt; getProcessResult.id())))
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetProcessResult> getProcessPlain(GetProcessPlainArgs args) {
         return getProcessPlain(args, InvokeOptions.Empty);
     }
+    /**
+     * The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all processes with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the process (inclusive)
+     * 
+     * If multiple processes match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetProcessArgs;
+     * import com.pulumi.dynatrace.ManagementZone;
+     * import com.pulumi.dynatrace.ManagementZoneArgs;
+     * import com.pulumi.dynatrace.inputs.ManagementZoneEntitySelectorBasedRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getProcess(GetProcessArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ManagementZone(&#34;#name#&#34;, ManagementZoneArgs.builder()        
+     *             .entitySelectorBasedRules(ManagementZoneEntitySelectorBasedRuleArgs.builder()
+     *                 .enabled(true)
+     *                 .selector(String.format(&#34;type(\&#34;process_group_instance\&#34;),entityId(\&#34;%s\&#34;)&#34;, test.applyValue(getProcessResult -&gt; getProcessResult.id())))
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetProcessResult> getProcess(GetProcessArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("dynatrace:index/getProcess:getProcess", TypeShape.of(GetProcessResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all processes with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the process (inclusive)
+     * 
+     * If multiple processes match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetProcessArgs;
+     * import com.pulumi.dynatrace.ManagementZone;
+     * import com.pulumi.dynatrace.ManagementZoneArgs;
+     * import com.pulumi.dynatrace.inputs.ManagementZoneEntitySelectorBasedRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getProcess(GetProcessArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ManagementZone(&#34;#name#&#34;, ManagementZoneArgs.builder()        
+     *             .entitySelectorBasedRules(ManagementZoneEntitySelectorBasedRuleArgs.builder()
+     *                 .enabled(true)
+     *                 .selector(String.format(&#34;type(\&#34;process_group_instance\&#34;),entityId(\&#34;%s\&#34;)&#34;, test.applyValue(getProcessResult -&gt; getProcessResult.id())))
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetProcessResult> getProcessPlain(GetProcessPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getProcess:getProcess", TypeShape.of(GetProcessResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all process groups with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the process group (inclusive)
+     * 
+     * If multiple process groups match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetProcessGroupArgs;
+     * import com.pulumi.dynatrace.ManagementZone;
+     * import com.pulumi.dynatrace.ManagementZoneArgs;
+     * import com.pulumi.dynatrace.inputs.ManagementZoneEntitySelectorBasedRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getProcessGroup(GetProcessGroupArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ManagementZone(&#34;#name#&#34;, ManagementZoneArgs.builder()        
+     *             .entitySelectorBasedRules(ManagementZoneEntitySelectorBasedRuleArgs.builder()
+     *                 .enabled(true)
+     *                 .selector(String.format(&#34;type(\&#34;process_group\&#34;),entityId(\&#34;%s\&#34;)&#34;, test.applyValue(getProcessGroupResult -&gt; getProcessGroupResult.id())))
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetProcessGroupResult> getProcessGroup(GetProcessGroupArgs args) {
         return getProcessGroup(args, InvokeOptions.Empty);
     }
+    /**
+     * The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all process groups with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the process group (inclusive)
+     * 
+     * If multiple process groups match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetProcessGroupArgs;
+     * import com.pulumi.dynatrace.ManagementZone;
+     * import com.pulumi.dynatrace.ManagementZoneArgs;
+     * import com.pulumi.dynatrace.inputs.ManagementZoneEntitySelectorBasedRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getProcessGroup(GetProcessGroupArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ManagementZone(&#34;#name#&#34;, ManagementZoneArgs.builder()        
+     *             .entitySelectorBasedRules(ManagementZoneEntitySelectorBasedRuleArgs.builder()
+     *                 .enabled(true)
+     *                 .selector(String.format(&#34;type(\&#34;process_group\&#34;),entityId(\&#34;%s\&#34;)&#34;, test.applyValue(getProcessGroupResult -&gt; getProcessGroupResult.id())))
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetProcessGroupResult> getProcessGroupPlain(GetProcessGroupPlainArgs args) {
         return getProcessGroupPlain(args, InvokeOptions.Empty);
     }
+    /**
+     * The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all process groups with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the process group (inclusive)
+     * 
+     * If multiple process groups match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetProcessGroupArgs;
+     * import com.pulumi.dynatrace.ManagementZone;
+     * import com.pulumi.dynatrace.ManagementZoneArgs;
+     * import com.pulumi.dynatrace.inputs.ManagementZoneEntitySelectorBasedRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getProcessGroup(GetProcessGroupArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ManagementZone(&#34;#name#&#34;, ManagementZoneArgs.builder()        
+     *             .entitySelectorBasedRules(ManagementZoneEntitySelectorBasedRuleArgs.builder()
+     *                 .enabled(true)
+     *                 .selector(String.format(&#34;type(\&#34;process_group\&#34;),entityId(\&#34;%s\&#34;)&#34;, test.applyValue(getProcessGroupResult -&gt; getProcessGroupResult.id())))
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetProcessGroupResult> getProcessGroup(GetProcessGroupArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("dynatrace:index/getProcessGroup:getProcessGroup", TypeShape.of(GetProcessGroupResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all process groups with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the process group (inclusive)
+     * 
+     * If multiple process groups match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetProcessGroupArgs;
+     * import com.pulumi.dynatrace.ManagementZone;
+     * import com.pulumi.dynatrace.ManagementZoneArgs;
+     * import com.pulumi.dynatrace.inputs.ManagementZoneEntitySelectorBasedRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getProcessGroup(GetProcessGroupArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new ManagementZone(&#34;#name#&#34;, ManagementZoneArgs.builder()        
+     *             .entitySelectorBasedRules(ManagementZoneEntitySelectorBasedRuleArgs.builder()
+     *                 .enabled(true)
+     *                 .selector(String.format(&#34;type(\&#34;process_group\&#34;),entityId(\&#34;%s\&#34;)&#34;, test.applyValue(getProcessGroupResult -&gt; getProcessGroupResult.id())))
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetProcessGroupResult> getProcessGroupPlain(GetProcessGroupPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getProcessGroup:getProcessGroup", TypeShape.of(GetProcessGroupResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all services with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetServiceArgs;
+     * import com.pulumi.dynatrace.KeyRequests;
+     * import com.pulumi.dynatrace.KeyRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getService(GetServiceArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new KeyRequests(&#34;#name#&#34;, KeyRequestsArgs.builder()        
+     *             .service(test.applyValue(getServiceResult -&gt; getServiceResult.id()))
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetServiceResult> getService(GetServiceArgs args) {
         return getService(args, InvokeOptions.Empty);
     }
+    /**
+     * The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all services with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetServiceArgs;
+     * import com.pulumi.dynatrace.KeyRequests;
+     * import com.pulumi.dynatrace.KeyRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getService(GetServiceArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new KeyRequests(&#34;#name#&#34;, KeyRequestsArgs.builder()        
+     *             .service(test.applyValue(getServiceResult -&gt; getServiceResult.id()))
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetServiceResult> getServicePlain(GetServicePlainArgs args) {
         return getServicePlain(args, InvokeOptions.Empty);
     }
+    /**
+     * The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all services with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetServiceArgs;
+     * import com.pulumi.dynatrace.KeyRequests;
+     * import com.pulumi.dynatrace.KeyRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getService(GetServiceArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new KeyRequests(&#34;#name#&#34;, KeyRequestsArgs.builder()        
+     *             .service(test.applyValue(getServiceResult -&gt; getServiceResult.id()))
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetServiceResult> getService(GetServiceArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("dynatrace:index/getService:getService", TypeShape.of(GetServiceResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
+     * 
+     * - `name` queries for all services with the specified name
+     * - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetServiceArgs;
+     * import com.pulumi.dynatrace.KeyRequests;
+     * import com.pulumi.dynatrace.KeyRequestsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getService(GetServiceArgs.builder()
+     *             .name(&#34;Example&#34;)
+     *             .tags(            
+     *                 &#34;TerraformKeyTest&#34;,
+     *                 &#34;TerraformKeyValueTest=TestValue&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new KeyRequests(&#34;#name#&#34;, KeyRequestsArgs.builder()        
+     *             .service(test.applyValue(getServiceResult -&gt; getServiceResult.id()))
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetServiceResult> getServicePlain(GetServicePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getService:getService", TypeShape.of(GetServiceResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetSyntheticLocationArgs;
+     * import com.pulumi.dynatrace.HttpMonitor;
+     * import com.pulumi.dynatrace.HttpMonitorArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getSyntheticLocation(GetSyntheticLocationArgs.builder()
+     *             .cloudPlatform(&#34;AMAZON_EC2&#34;)
+     *             .name(&#34;Sydney&#34;)
+     *             .type(&#34;PUBLIC&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new HttpMonitor(&#34;#name#&#34;, HttpMonitorArgs.builder()        
+     *             .anomalyDetections(HttpMonitorAnomalyDetectionArgs.builder()
+     *                 .loadingTimeThresholds(HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs.builder()
+     *                     .enabled(true)
+     *                     .build())
+     *                 .outageHandlings(HttpMonitorAnomalyDetectionOutageHandlingArgs.builder()
+     *                     .globalOutage(true)
+     *                     .localOutage(false)
+     *                     .retryOnError(false)
+     *                     .build())
+     *                 .build())
+     *             .enabled(true)
+     *             .frequency(60)
+     *             .locations(test.applyValue(getSyntheticLocationResult -&gt; getSyntheticLocationResult.id()))
+     *             .script(HttpMonitorScriptArgs.builder()
+     *                 .requests(HttpMonitorScriptRequestArgs.builder()
+     *                     .configuration(HttpMonitorScriptRequestConfigurationArgs.builder()
+     *                         .acceptAnyCertificate(true)
+     *                         .followRedirects(true)
+     *                         .build())
+     *                     .description(&#34;google.com&#34;)
+     *                     .method(&#34;GET&#34;)
+     *                     .url(&#34;https://www.google.com&#34;)
+     *                     .validation(HttpMonitorScriptRequestValidationArgs.builder()
+     *                         .rule(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetSyntheticLocationResult> getSyntheticLocation() {
         return getSyntheticLocation(GetSyntheticLocationArgs.Empty, InvokeOptions.Empty);
     }
+    /**
+     * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetSyntheticLocationArgs;
+     * import com.pulumi.dynatrace.HttpMonitor;
+     * import com.pulumi.dynatrace.HttpMonitorArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getSyntheticLocation(GetSyntheticLocationArgs.builder()
+     *             .cloudPlatform(&#34;AMAZON_EC2&#34;)
+     *             .name(&#34;Sydney&#34;)
+     *             .type(&#34;PUBLIC&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new HttpMonitor(&#34;#name#&#34;, HttpMonitorArgs.builder()        
+     *             .anomalyDetections(HttpMonitorAnomalyDetectionArgs.builder()
+     *                 .loadingTimeThresholds(HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs.builder()
+     *                     .enabled(true)
+     *                     .build())
+     *                 .outageHandlings(HttpMonitorAnomalyDetectionOutageHandlingArgs.builder()
+     *                     .globalOutage(true)
+     *                     .localOutage(false)
+     *                     .retryOnError(false)
+     *                     .build())
+     *                 .build())
+     *             .enabled(true)
+     *             .frequency(60)
+     *             .locations(test.applyValue(getSyntheticLocationResult -&gt; getSyntheticLocationResult.id()))
+     *             .script(HttpMonitorScriptArgs.builder()
+     *                 .requests(HttpMonitorScriptRequestArgs.builder()
+     *                     .configuration(HttpMonitorScriptRequestConfigurationArgs.builder()
+     *                         .acceptAnyCertificate(true)
+     *                         .followRedirects(true)
+     *                         .build())
+     *                     .description(&#34;google.com&#34;)
+     *                     .method(&#34;GET&#34;)
+     *                     .url(&#34;https://www.google.com&#34;)
+     *                     .validation(HttpMonitorScriptRequestValidationArgs.builder()
+     *                         .rule(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetSyntheticLocationResult> getSyntheticLocationPlain() {
         return getSyntheticLocationPlain(GetSyntheticLocationPlainArgs.Empty, InvokeOptions.Empty);
     }
+    /**
+     * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetSyntheticLocationArgs;
+     * import com.pulumi.dynatrace.HttpMonitor;
+     * import com.pulumi.dynatrace.HttpMonitorArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getSyntheticLocation(GetSyntheticLocationArgs.builder()
+     *             .cloudPlatform(&#34;AMAZON_EC2&#34;)
+     *             .name(&#34;Sydney&#34;)
+     *             .type(&#34;PUBLIC&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new HttpMonitor(&#34;#name#&#34;, HttpMonitorArgs.builder()        
+     *             .anomalyDetections(HttpMonitorAnomalyDetectionArgs.builder()
+     *                 .loadingTimeThresholds(HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs.builder()
+     *                     .enabled(true)
+     *                     .build())
+     *                 .outageHandlings(HttpMonitorAnomalyDetectionOutageHandlingArgs.builder()
+     *                     .globalOutage(true)
+     *                     .localOutage(false)
+     *                     .retryOnError(false)
+     *                     .build())
+     *                 .build())
+     *             .enabled(true)
+     *             .frequency(60)
+     *             .locations(test.applyValue(getSyntheticLocationResult -&gt; getSyntheticLocationResult.id()))
+     *             .script(HttpMonitorScriptArgs.builder()
+     *                 .requests(HttpMonitorScriptRequestArgs.builder()
+     *                     .configuration(HttpMonitorScriptRequestConfigurationArgs.builder()
+     *                         .acceptAnyCertificate(true)
+     *                         .followRedirects(true)
+     *                         .build())
+     *                     .description(&#34;google.com&#34;)
+     *                     .method(&#34;GET&#34;)
+     *                     .url(&#34;https://www.google.com&#34;)
+     *                     .validation(HttpMonitorScriptRequestValidationArgs.builder()
+     *                         .rule(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetSyntheticLocationResult> getSyntheticLocation(GetSyntheticLocationArgs args) {
         return getSyntheticLocation(args, InvokeOptions.Empty);
     }
+    /**
+     * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetSyntheticLocationArgs;
+     * import com.pulumi.dynatrace.HttpMonitor;
+     * import com.pulumi.dynatrace.HttpMonitorArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getSyntheticLocation(GetSyntheticLocationArgs.builder()
+     *             .cloudPlatform(&#34;AMAZON_EC2&#34;)
+     *             .name(&#34;Sydney&#34;)
+     *             .type(&#34;PUBLIC&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new HttpMonitor(&#34;#name#&#34;, HttpMonitorArgs.builder()        
+     *             .anomalyDetections(HttpMonitorAnomalyDetectionArgs.builder()
+     *                 .loadingTimeThresholds(HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs.builder()
+     *                     .enabled(true)
+     *                     .build())
+     *                 .outageHandlings(HttpMonitorAnomalyDetectionOutageHandlingArgs.builder()
+     *                     .globalOutage(true)
+     *                     .localOutage(false)
+     *                     .retryOnError(false)
+     *                     .build())
+     *                 .build())
+     *             .enabled(true)
+     *             .frequency(60)
+     *             .locations(test.applyValue(getSyntheticLocationResult -&gt; getSyntheticLocationResult.id()))
+     *             .script(HttpMonitorScriptArgs.builder()
+     *                 .requests(HttpMonitorScriptRequestArgs.builder()
+     *                     .configuration(HttpMonitorScriptRequestConfigurationArgs.builder()
+     *                         .acceptAnyCertificate(true)
+     *                         .followRedirects(true)
+     *                         .build())
+     *                     .description(&#34;google.com&#34;)
+     *                     .method(&#34;GET&#34;)
+     *                     .url(&#34;https://www.google.com&#34;)
+     *                     .validation(HttpMonitorScriptRequestValidationArgs.builder()
+     *                         .rule(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetSyntheticLocationResult> getSyntheticLocationPlain(GetSyntheticLocationPlainArgs args) {
         return getSyntheticLocationPlain(args, InvokeOptions.Empty);
     }
+    /**
+     * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetSyntheticLocationArgs;
+     * import com.pulumi.dynatrace.HttpMonitor;
+     * import com.pulumi.dynatrace.HttpMonitorArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getSyntheticLocation(GetSyntheticLocationArgs.builder()
+     *             .cloudPlatform(&#34;AMAZON_EC2&#34;)
+     *             .name(&#34;Sydney&#34;)
+     *             .type(&#34;PUBLIC&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new HttpMonitor(&#34;#name#&#34;, HttpMonitorArgs.builder()        
+     *             .anomalyDetections(HttpMonitorAnomalyDetectionArgs.builder()
+     *                 .loadingTimeThresholds(HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs.builder()
+     *                     .enabled(true)
+     *                     .build())
+     *                 .outageHandlings(HttpMonitorAnomalyDetectionOutageHandlingArgs.builder()
+     *                     .globalOutage(true)
+     *                     .localOutage(false)
+     *                     .retryOnError(false)
+     *                     .build())
+     *                 .build())
+     *             .enabled(true)
+     *             .frequency(60)
+     *             .locations(test.applyValue(getSyntheticLocationResult -&gt; getSyntheticLocationResult.id()))
+     *             .script(HttpMonitorScriptArgs.builder()
+     *                 .requests(HttpMonitorScriptRequestArgs.builder()
+     *                     .configuration(HttpMonitorScriptRequestConfigurationArgs.builder()
+     *                         .acceptAnyCertificate(true)
+     *                         .followRedirects(true)
+     *                         .build())
+     *                     .description(&#34;google.com&#34;)
+     *                     .method(&#34;GET&#34;)
+     *                     .url(&#34;https://www.google.com&#34;)
+     *                     .validation(HttpMonitorScriptRequestValidationArgs.builder()
+     *                         .rule(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static Output<GetSyntheticLocationResult> getSyntheticLocation(GetSyntheticLocationArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("dynatrace:index/getSyntheticLocation:getSyntheticLocation", TypeShape.of(GetSyntheticLocationResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetSyntheticLocationArgs;
+     * import com.pulumi.dynatrace.HttpMonitor;
+     * import com.pulumi.dynatrace.HttpMonitorArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getSyntheticLocation(GetSyntheticLocationArgs.builder()
+     *             .cloudPlatform(&#34;AMAZON_EC2&#34;)
+     *             .name(&#34;Sydney&#34;)
+     *             .type(&#34;PUBLIC&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new HttpMonitor(&#34;#name#&#34;, HttpMonitorArgs.builder()        
+     *             .anomalyDetections(HttpMonitorAnomalyDetectionArgs.builder()
+     *                 .loadingTimeThresholds(HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs.builder()
+     *                     .enabled(true)
+     *                     .build())
+     *                 .outageHandlings(HttpMonitorAnomalyDetectionOutageHandlingArgs.builder()
+     *                     .globalOutage(true)
+     *                     .localOutage(false)
+     *                     .retryOnError(false)
+     *                     .build())
+     *                 .build())
+     *             .enabled(true)
+     *             .frequency(60)
+     *             .locations(test.applyValue(getSyntheticLocationResult -&gt; getSyntheticLocationResult.id()))
+     *             .script(HttpMonitorScriptArgs.builder()
+     *                 .requests(HttpMonitorScriptRequestArgs.builder()
+     *                     .configuration(HttpMonitorScriptRequestConfigurationArgs.builder()
+     *                         .acceptAnyCertificate(true)
+     *                         .followRedirects(true)
+     *                         .build())
+     *                     .description(&#34;google.com&#34;)
+     *                     .method(&#34;GET&#34;)
+     *                     .url(&#34;https://www.google.com&#34;)
+     *                     .validation(HttpMonitorScriptRequestValidationArgs.builder()
+     *                         .rule(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
     public static CompletableFuture<GetSyntheticLocationResult> getSyntheticLocationPlain(GetSyntheticLocationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getSyntheticLocation:getSyntheticLocation", TypeShape.of(GetSyntheticLocationResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
+     * 
+     */
     public static Output<GetSyntheticLocationsResult> getSyntheticLocations() {
         return getSyntheticLocations(GetSyntheticLocationsArgs.Empty, InvokeOptions.Empty);
     }
+    /**
+     * The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
+     * 
+     */
     public static CompletableFuture<GetSyntheticLocationsResult> getSyntheticLocationsPlain() {
         return getSyntheticLocationsPlain(GetSyntheticLocationsPlainArgs.Empty, InvokeOptions.Empty);
     }
+    /**
+     * The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
+     * 
+     */
     public static Output<GetSyntheticLocationsResult> getSyntheticLocations(GetSyntheticLocationsArgs args) {
         return getSyntheticLocations(args, InvokeOptions.Empty);
     }
+    /**
+     * The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
+     * 
+     */
     public static CompletableFuture<GetSyntheticLocationsResult> getSyntheticLocationsPlain(GetSyntheticLocationsPlainArgs args) {
         return getSyntheticLocationsPlain(args, InvokeOptions.Empty);
     }
+    /**
+     * The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
+     * 
+     */
     public static Output<GetSyntheticLocationsResult> getSyntheticLocations(GetSyntheticLocationsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("dynatrace:index/getSyntheticLocations:getSyntheticLocations", TypeShape.of(GetSyntheticLocationsResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
+     * 
+     */
     public static CompletableFuture<GetSyntheticLocationsResult> getSyntheticLocationsPlain(GetSyntheticLocationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getSyntheticLocations:getSyntheticLocations", TypeShape.of(GetSyntheticLocationsResult.class), args, Utilities.withVersion(options));
     }

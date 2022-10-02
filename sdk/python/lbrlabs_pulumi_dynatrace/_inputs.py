@@ -185,6 +185,7 @@ __all__ = [
     'BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocatorArgs',
     'BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocatorLocatorArgs',
     'BrowserMonitorScriptEventsEventKeystrokesArgs',
+    'BrowserMonitorScriptEventsEventKeystrokesCredentialArgs',
     'BrowserMonitorScriptEventsEventKeystrokesTargetArgs',
     'BrowserMonitorScriptEventsEventKeystrokesTargetLocatorArgs',
     'BrowserMonitorScriptEventsEventKeystrokesTargetLocatorLocatorArgs',
@@ -10182,19 +10183,23 @@ class BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocatorLocato
 @pulumi.input_type
 class BrowserMonitorScriptEventsEventKeystrokesArgs:
     def __init__(__self__, *,
-                 text: pulumi.Input[str],
+                 credential: Optional[pulumi.Input['BrowserMonitorScriptEventsEventKeystrokesCredentialArgs']] = None,
                  masked: Optional[pulumi.Input[bool]] = None,
                  simulate_blur_event: Optional[pulumi.Input[bool]] = None,
                  target: Optional[pulumi.Input['BrowserMonitorScriptEventsEventKeystrokesTargetArgs']] = None,
+                 text: Optional[pulumi.Input[str]] = None,
                  validate: Optional[pulumi.Input['BrowserMonitorScriptEventsEventKeystrokesValidateArgs']] = None,
                  wait: Optional[pulumi.Input['BrowserMonitorScriptEventsEventKeystrokesWaitArgs']] = None):
-        pulumi.set(__self__, "text", text)
+        if credential is not None:
+            pulumi.set(__self__, "credential", credential)
         if masked is not None:
             pulumi.set(__self__, "masked", masked)
         if simulate_blur_event is not None:
             pulumi.set(__self__, "simulate_blur_event", simulate_blur_event)
         if target is not None:
             pulumi.set(__self__, "target", target)
+        if text is not None:
+            pulumi.set(__self__, "text", text)
         if validate is not None:
             pulumi.set(__self__, "validate", validate)
         if wait is not None:
@@ -10202,12 +10207,12 @@ class BrowserMonitorScriptEventsEventKeystrokesArgs:
 
     @property
     @pulumi.getter
-    def text(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "text")
+    def credential(self) -> Optional[pulumi.Input['BrowserMonitorScriptEventsEventKeystrokesCredentialArgs']]:
+        return pulumi.get(self, "credential")
 
-    @text.setter
-    def text(self, value: pulumi.Input[str]):
-        pulumi.set(self, "text", value)
+    @credential.setter
+    def credential(self, value: Optional[pulumi.Input['BrowserMonitorScriptEventsEventKeystrokesCredentialArgs']]):
+        pulumi.set(self, "credential", value)
 
     @property
     @pulumi.getter
@@ -10238,6 +10243,15 @@ class BrowserMonitorScriptEventsEventKeystrokesArgs:
 
     @property
     @pulumi.getter
+    def text(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "text")
+
+    @text.setter
+    def text(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "text", value)
+
+    @property
+    @pulumi.getter
     def validate(self) -> Optional[pulumi.Input['BrowserMonitorScriptEventsEventKeystrokesValidateArgs']]:
         return pulumi.get(self, "validate")
 
@@ -10253,6 +10267,33 @@ class BrowserMonitorScriptEventsEventKeystrokesArgs:
     @wait.setter
     def wait(self, value: Optional[pulumi.Input['BrowserMonitorScriptEventsEventKeystrokesWaitArgs']]):
         pulumi.set(self, "wait", value)
+
+
+@pulumi.input_type
+class BrowserMonitorScriptEventsEventKeystrokesCredentialArgs:
+    def __init__(__self__, *,
+                 field: pulumi.Input[str],
+                 vault_id: pulumi.Input[str]):
+        pulumi.set(__self__, "field", field)
+        pulumi.set(__self__, "vault_id", vault_id)
+
+    @property
+    @pulumi.getter
+    def field(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "field")
+
+    @field.setter
+    def field(self, value: pulumi.Input[str]):
+        pulumi.set(self, "field", value)
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "vault_id")
+
+    @vault_id.setter
+    def vault_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "vault_id", value)
 
 
 @pulumi.input_type

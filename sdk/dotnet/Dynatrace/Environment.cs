@@ -10,6 +10,13 @@ using Pulumi;
 
 namespace Lbrlabs.PulumiPackage.Dynatrace
 {
+    /// <summary>
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Manage your monitoring environments - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-managed/operation/manage-your-monitoring-environments
+    /// 
+    /// - Cluster API v2 - Environments - https://www.dynatrace.com/support/help/shortlink/cluster-api#environments
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/environment:Environment")]
     public partial class Environment : global::Pulumi.CustomResource
     {

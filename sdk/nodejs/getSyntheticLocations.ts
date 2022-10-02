@@ -6,6 +6,9 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
+ */
 export function getSyntheticLocations(args?: GetSyntheticLocationsArgs, opts?: pulumi.InvokeOptions): Promise<GetSyntheticLocationsResult> {
     args = args || {};
     if (!opts) {

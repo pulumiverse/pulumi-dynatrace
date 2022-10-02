@@ -4,6 +4,9 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
+ */
 export function getAwsIamExternal(opts?: pulumi.InvokeOptions): Promise<GetAwsIamExternalResult> {
     if (!opts) {
         opts = {}

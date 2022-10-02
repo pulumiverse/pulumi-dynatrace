@@ -4,6 +4,55 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const test = pulumi.output(dynatrace.getSyntheticLocation({
+ *     cloudPlatform: "AMAZON_EC2",
+ *     name: "Sydney",
+ *     type: "PUBLIC",
+ * }));
+ * const _name_ = new dynatrace.HttpMonitor("#name#", {
+ *     anomalyDetections: [{
+ *         loadingTimeThresholds: [{
+ *             enabled: true,
+ *         }],
+ *         outageHandlings: [{
+ *             globalOutage: true,
+ *             localOutage: false,
+ *             retryOnError: false,
+ *         }],
+ *     }],
+ *     enabled: true,
+ *     frequency: 60,
+ *     locations: [test.id!],
+ *     script: {
+ *         requests: [{
+ *             configuration: {
+ *                 acceptAnyCertificate: true,
+ *                 followRedirects: true,
+ *             },
+ *             description: "google.com",
+ *             method: "GET",
+ *             url: "https://www.google.com",
+ *             validation: {
+ *                 rules: [{
+ *                     passIfFound: false,
+ *                     type: "httpStatusesList",
+ *                     value: ">=400",
+ *                 }],
+ *             },
+ *         }],
+ *     },
+ * });
+ * ```
+ */
 export function getSyntheticLocation(args?: GetSyntheticLocationArgs, opts?: pulumi.InvokeOptions): Promise<GetSyntheticLocationResult> {
     args = args || {};
     if (!opts) {

@@ -23307,12 +23307,13 @@ func (o BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocatorLoca
 }
 
 type BrowserMonitorScriptEventsEventKeystrokes struct {
-	Masked            *bool                                              `pulumi:"masked"`
-	SimulateBlurEvent *bool                                              `pulumi:"simulateBlurEvent"`
-	Target            *BrowserMonitorScriptEventsEventKeystrokesTarget   `pulumi:"target"`
-	Text              string                                             `pulumi:"text"`
-	Validate          *BrowserMonitorScriptEventsEventKeystrokesValidate `pulumi:"validate"`
-	Wait              *BrowserMonitorScriptEventsEventKeystrokesWait     `pulumi:"wait"`
+	Credential        *BrowserMonitorScriptEventsEventKeystrokesCredential `pulumi:"credential"`
+	Masked            *bool                                                `pulumi:"masked"`
+	SimulateBlurEvent *bool                                                `pulumi:"simulateBlurEvent"`
+	Target            *BrowserMonitorScriptEventsEventKeystrokesTarget     `pulumi:"target"`
+	Text              *string                                              `pulumi:"text"`
+	Validate          *BrowserMonitorScriptEventsEventKeystrokesValidate   `pulumi:"validate"`
+	Wait              *BrowserMonitorScriptEventsEventKeystrokesWait       `pulumi:"wait"`
 }
 
 // BrowserMonitorScriptEventsEventKeystrokesInput is an input type that accepts BrowserMonitorScriptEventsEventKeystrokesArgs and BrowserMonitorScriptEventsEventKeystrokesOutput values.
@@ -23327,12 +23328,13 @@ type BrowserMonitorScriptEventsEventKeystrokesInput interface {
 }
 
 type BrowserMonitorScriptEventsEventKeystrokesArgs struct {
-	Masked            pulumi.BoolPtrInput                                       `pulumi:"masked"`
-	SimulateBlurEvent pulumi.BoolPtrInput                                       `pulumi:"simulateBlurEvent"`
-	Target            BrowserMonitorScriptEventsEventKeystrokesTargetPtrInput   `pulumi:"target"`
-	Text              pulumi.StringInput                                        `pulumi:"text"`
-	Validate          BrowserMonitorScriptEventsEventKeystrokesValidatePtrInput `pulumi:"validate"`
-	Wait              BrowserMonitorScriptEventsEventKeystrokesWaitPtrInput     `pulumi:"wait"`
+	Credential        BrowserMonitorScriptEventsEventKeystrokesCredentialPtrInput `pulumi:"credential"`
+	Masked            pulumi.BoolPtrInput                                         `pulumi:"masked"`
+	SimulateBlurEvent pulumi.BoolPtrInput                                         `pulumi:"simulateBlurEvent"`
+	Target            BrowserMonitorScriptEventsEventKeystrokesTargetPtrInput     `pulumi:"target"`
+	Text              pulumi.StringPtrInput                                       `pulumi:"text"`
+	Validate          BrowserMonitorScriptEventsEventKeystrokesValidatePtrInput   `pulumi:"validate"`
+	Wait              BrowserMonitorScriptEventsEventKeystrokesWaitPtrInput       `pulumi:"wait"`
 }
 
 func (BrowserMonitorScriptEventsEventKeystrokesArgs) ElementType() reflect.Type {
@@ -23412,6 +23414,12 @@ func (o BrowserMonitorScriptEventsEventKeystrokesOutput) ToBrowserMonitorScriptE
 	}).(BrowserMonitorScriptEventsEventKeystrokesPtrOutput)
 }
 
+func (o BrowserMonitorScriptEventsEventKeystrokesOutput) Credential() BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput {
+	return o.ApplyT(func(v BrowserMonitorScriptEventsEventKeystrokes) *BrowserMonitorScriptEventsEventKeystrokesCredential {
+		return v.Credential
+	}).(BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput)
+}
+
 func (o BrowserMonitorScriptEventsEventKeystrokesOutput) Masked() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v BrowserMonitorScriptEventsEventKeystrokes) *bool { return v.Masked }).(pulumi.BoolPtrOutput)
 }
@@ -23426,8 +23434,8 @@ func (o BrowserMonitorScriptEventsEventKeystrokesOutput) Target() BrowserMonitor
 	}).(BrowserMonitorScriptEventsEventKeystrokesTargetPtrOutput)
 }
 
-func (o BrowserMonitorScriptEventsEventKeystrokesOutput) Text() pulumi.StringOutput {
-	return o.ApplyT(func(v BrowserMonitorScriptEventsEventKeystrokes) string { return v.Text }).(pulumi.StringOutput)
+func (o BrowserMonitorScriptEventsEventKeystrokesOutput) Text() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BrowserMonitorScriptEventsEventKeystrokes) *string { return v.Text }).(pulumi.StringPtrOutput)
 }
 
 func (o BrowserMonitorScriptEventsEventKeystrokesOutput) Validate() BrowserMonitorScriptEventsEventKeystrokesValidatePtrOutput {
@@ -23466,6 +23474,15 @@ func (o BrowserMonitorScriptEventsEventKeystrokesPtrOutput) Elem() BrowserMonito
 	}).(BrowserMonitorScriptEventsEventKeystrokesOutput)
 }
 
+func (o BrowserMonitorScriptEventsEventKeystrokesPtrOutput) Credential() BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput {
+	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventKeystrokes) *BrowserMonitorScriptEventsEventKeystrokesCredential {
+		if v == nil {
+			return nil
+		}
+		return v.Credential
+	}).(BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput)
+}
+
 func (o BrowserMonitorScriptEventsEventKeystrokesPtrOutput) Masked() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventKeystrokes) *bool {
 		if v == nil {
@@ -23498,7 +23515,7 @@ func (o BrowserMonitorScriptEventsEventKeystrokesPtrOutput) Text() pulumi.String
 		if v == nil {
 			return nil
 		}
-		return &v.Text
+		return v.Text
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -23518,6 +23535,154 @@ func (o BrowserMonitorScriptEventsEventKeystrokesPtrOutput) Wait() BrowserMonito
 		}
 		return v.Wait
 	}).(BrowserMonitorScriptEventsEventKeystrokesWaitPtrOutput)
+}
+
+type BrowserMonitorScriptEventsEventKeystrokesCredential struct {
+	Field   string `pulumi:"field"`
+	VaultId string `pulumi:"vaultId"`
+}
+
+// BrowserMonitorScriptEventsEventKeystrokesCredentialInput is an input type that accepts BrowserMonitorScriptEventsEventKeystrokesCredentialArgs and BrowserMonitorScriptEventsEventKeystrokesCredentialOutput values.
+// You can construct a concrete instance of `BrowserMonitorScriptEventsEventKeystrokesCredentialInput` via:
+//
+//	BrowserMonitorScriptEventsEventKeystrokesCredentialArgs{...}
+type BrowserMonitorScriptEventsEventKeystrokesCredentialInput interface {
+	pulumi.Input
+
+	ToBrowserMonitorScriptEventsEventKeystrokesCredentialOutput() BrowserMonitorScriptEventsEventKeystrokesCredentialOutput
+	ToBrowserMonitorScriptEventsEventKeystrokesCredentialOutputWithContext(context.Context) BrowserMonitorScriptEventsEventKeystrokesCredentialOutput
+}
+
+type BrowserMonitorScriptEventsEventKeystrokesCredentialArgs struct {
+	Field   pulumi.StringInput `pulumi:"field"`
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (BrowserMonitorScriptEventsEventKeystrokesCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BrowserMonitorScriptEventsEventKeystrokesCredential)(nil)).Elem()
+}
+
+func (i BrowserMonitorScriptEventsEventKeystrokesCredentialArgs) ToBrowserMonitorScriptEventsEventKeystrokesCredentialOutput() BrowserMonitorScriptEventsEventKeystrokesCredentialOutput {
+	return i.ToBrowserMonitorScriptEventsEventKeystrokesCredentialOutputWithContext(context.Background())
+}
+
+func (i BrowserMonitorScriptEventsEventKeystrokesCredentialArgs) ToBrowserMonitorScriptEventsEventKeystrokesCredentialOutputWithContext(ctx context.Context) BrowserMonitorScriptEventsEventKeystrokesCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BrowserMonitorScriptEventsEventKeystrokesCredentialOutput)
+}
+
+func (i BrowserMonitorScriptEventsEventKeystrokesCredentialArgs) ToBrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput() BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput {
+	return i.ToBrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutputWithContext(context.Background())
+}
+
+func (i BrowserMonitorScriptEventsEventKeystrokesCredentialArgs) ToBrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutputWithContext(ctx context.Context) BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BrowserMonitorScriptEventsEventKeystrokesCredentialOutput).ToBrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutputWithContext(ctx)
+}
+
+// BrowserMonitorScriptEventsEventKeystrokesCredentialPtrInput is an input type that accepts BrowserMonitorScriptEventsEventKeystrokesCredentialArgs, BrowserMonitorScriptEventsEventKeystrokesCredentialPtr and BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput values.
+// You can construct a concrete instance of `BrowserMonitorScriptEventsEventKeystrokesCredentialPtrInput` via:
+//
+//	        BrowserMonitorScriptEventsEventKeystrokesCredentialArgs{...}
+//
+//	or:
+//
+//	        nil
+type BrowserMonitorScriptEventsEventKeystrokesCredentialPtrInput interface {
+	pulumi.Input
+
+	ToBrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput() BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput
+	ToBrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutputWithContext(context.Context) BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput
+}
+
+type browserMonitorScriptEventsEventKeystrokesCredentialPtrType BrowserMonitorScriptEventsEventKeystrokesCredentialArgs
+
+func BrowserMonitorScriptEventsEventKeystrokesCredentialPtr(v *BrowserMonitorScriptEventsEventKeystrokesCredentialArgs) BrowserMonitorScriptEventsEventKeystrokesCredentialPtrInput {
+	return (*browserMonitorScriptEventsEventKeystrokesCredentialPtrType)(v)
+}
+
+func (*browserMonitorScriptEventsEventKeystrokesCredentialPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BrowserMonitorScriptEventsEventKeystrokesCredential)(nil)).Elem()
+}
+
+func (i *browserMonitorScriptEventsEventKeystrokesCredentialPtrType) ToBrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput() BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput {
+	return i.ToBrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutputWithContext(context.Background())
+}
+
+func (i *browserMonitorScriptEventsEventKeystrokesCredentialPtrType) ToBrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutputWithContext(ctx context.Context) BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput)
+}
+
+type BrowserMonitorScriptEventsEventKeystrokesCredentialOutput struct{ *pulumi.OutputState }
+
+func (BrowserMonitorScriptEventsEventKeystrokesCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BrowserMonitorScriptEventsEventKeystrokesCredential)(nil)).Elem()
+}
+
+func (o BrowserMonitorScriptEventsEventKeystrokesCredentialOutput) ToBrowserMonitorScriptEventsEventKeystrokesCredentialOutput() BrowserMonitorScriptEventsEventKeystrokesCredentialOutput {
+	return o
+}
+
+func (o BrowserMonitorScriptEventsEventKeystrokesCredentialOutput) ToBrowserMonitorScriptEventsEventKeystrokesCredentialOutputWithContext(ctx context.Context) BrowserMonitorScriptEventsEventKeystrokesCredentialOutput {
+	return o
+}
+
+func (o BrowserMonitorScriptEventsEventKeystrokesCredentialOutput) ToBrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput() BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput {
+	return o.ToBrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutputWithContext(context.Background())
+}
+
+func (o BrowserMonitorScriptEventsEventKeystrokesCredentialOutput) ToBrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutputWithContext(ctx context.Context) BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BrowserMonitorScriptEventsEventKeystrokesCredential) *BrowserMonitorScriptEventsEventKeystrokesCredential {
+		return &v
+	}).(BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput)
+}
+
+func (o BrowserMonitorScriptEventsEventKeystrokesCredentialOutput) Field() pulumi.StringOutput {
+	return o.ApplyT(func(v BrowserMonitorScriptEventsEventKeystrokesCredential) string { return v.Field }).(pulumi.StringOutput)
+}
+
+func (o BrowserMonitorScriptEventsEventKeystrokesCredentialOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v BrowserMonitorScriptEventsEventKeystrokesCredential) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+type BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput struct{ *pulumi.OutputState }
+
+func (BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BrowserMonitorScriptEventsEventKeystrokesCredential)(nil)).Elem()
+}
+
+func (o BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput) ToBrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput() BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput {
+	return o
+}
+
+func (o BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput) ToBrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutputWithContext(ctx context.Context) BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput {
+	return o
+}
+
+func (o BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput) Elem() BrowserMonitorScriptEventsEventKeystrokesCredentialOutput {
+	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventKeystrokesCredential) BrowserMonitorScriptEventsEventKeystrokesCredential {
+		if v != nil {
+			return *v
+		}
+		var ret BrowserMonitorScriptEventsEventKeystrokesCredential
+		return ret
+	}).(BrowserMonitorScriptEventsEventKeystrokesCredentialOutput)
+}
+
+func (o BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput) Field() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventKeystrokesCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Field
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BrowserMonitorScriptEventsEventKeystrokesCredential) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.VaultId
+	}).(pulumi.StringPtrOutput)
 }
 
 type BrowserMonitorScriptEventsEventKeystrokesTarget struct {
@@ -68637,127 +68802,6 @@ func (o ManagementZoneRuleConditionCloudTypeArrayOutput) Index(i pulumi.IntInput
 	}).(ManagementZoneRuleConditionCloudTypeOutput)
 }
 
-type ManagementZoneRuleConditionCloudTypeComparison struct {
-	Negate   *bool  `pulumi:"negate"`
-	Operator string `pulumi:"operator"`
-	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-	Type     *string `pulumi:"type"`
-	Unknowns *string `pulumi:"unknowns"`
-	Value    *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionCloudTypeComparisonInput is an input type that accepts ManagementZoneRuleConditionCloudTypeComparisonArgs and ManagementZoneRuleConditionCloudTypeComparisonOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionCloudTypeComparisonInput` via:
-//
-//	ManagementZoneRuleConditionCloudTypeComparisonArgs{...}
-type ManagementZoneRuleConditionCloudTypeComparisonInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionCloudTypeComparisonOutput() ManagementZoneRuleConditionCloudTypeComparisonOutput
-	ToManagementZoneRuleConditionCloudTypeComparisonOutputWithContext(context.Context) ManagementZoneRuleConditionCloudTypeComparisonOutput
-}
-
-type ManagementZoneRuleConditionCloudTypeComparisonArgs struct {
-	Negate   pulumi.BoolPtrInput `pulumi:"negate"`
-	Operator pulumi.StringInput  `pulumi:"operator"`
-	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-	Type     pulumi.StringPtrInput `pulumi:"type"`
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	Value    pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionCloudTypeComparisonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeComparison)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionCloudTypeComparisonArgs) ToManagementZoneRuleConditionCloudTypeComparisonOutput() ManagementZoneRuleConditionCloudTypeComparisonOutput {
-	return i.ToManagementZoneRuleConditionCloudTypeComparisonOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionCloudTypeComparisonArgs) ToManagementZoneRuleConditionCloudTypeComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeComparisonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionCloudTypeComparisonOutput)
-}
-
-// ManagementZoneRuleConditionCloudTypeComparisonArrayInput is an input type that accepts ManagementZoneRuleConditionCloudTypeComparisonArray and ManagementZoneRuleConditionCloudTypeComparisonArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionCloudTypeComparisonArrayInput` via:
-//
-//	ManagementZoneRuleConditionCloudTypeComparisonArray{ ManagementZoneRuleConditionCloudTypeComparisonArgs{...} }
-type ManagementZoneRuleConditionCloudTypeComparisonArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionCloudTypeComparisonArrayOutput() ManagementZoneRuleConditionCloudTypeComparisonArrayOutput
-	ToManagementZoneRuleConditionCloudTypeComparisonArrayOutputWithContext(context.Context) ManagementZoneRuleConditionCloudTypeComparisonArrayOutput
-}
-
-type ManagementZoneRuleConditionCloudTypeComparisonArray []ManagementZoneRuleConditionCloudTypeComparisonInput
-
-func (ManagementZoneRuleConditionCloudTypeComparisonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionCloudTypeComparison)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionCloudTypeComparisonArray) ToManagementZoneRuleConditionCloudTypeComparisonArrayOutput() ManagementZoneRuleConditionCloudTypeComparisonArrayOutput {
-	return i.ToManagementZoneRuleConditionCloudTypeComparisonArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionCloudTypeComparisonArray) ToManagementZoneRuleConditionCloudTypeComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeComparisonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionCloudTypeComparisonArrayOutput)
-}
-
-type ManagementZoneRuleConditionCloudTypeComparisonOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionCloudTypeComparisonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeComparison)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionCloudTypeComparisonOutput) ToManagementZoneRuleConditionCloudTypeComparisonOutput() ManagementZoneRuleConditionCloudTypeComparisonOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionCloudTypeComparisonOutput) ToManagementZoneRuleConditionCloudTypeComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeComparisonOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionCloudTypeComparisonOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionCloudTypeComparison) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionCloudTypeComparisonOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionCloudTypeComparison) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-func (o ManagementZoneRuleConditionCloudTypeComparisonOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionCloudTypeComparison) *string { return v.Type }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionCloudTypeComparisonOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionCloudTypeComparison) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionCloudTypeComparisonOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionCloudTypeComparison) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionCloudTypeComparisonArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionCloudTypeComparisonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionCloudTypeComparison)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionCloudTypeComparisonArrayOutput) ToManagementZoneRuleConditionCloudTypeComparisonArrayOutput() ManagementZoneRuleConditionCloudTypeComparisonArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionCloudTypeComparisonArrayOutput) ToManagementZoneRuleConditionCloudTypeComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeComparisonArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionCloudTypeComparisonArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionCloudTypeComparisonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionCloudTypeComparison {
-		return vs[0].([]ManagementZoneRuleConditionCloudTypeComparison)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionCloudTypeComparisonOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertingFiltersInput)(nil)).Elem(), AlertingFiltersArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertingFiltersPtrInput)(nil)).Elem(), AlertingFiltersArgs{})
@@ -69105,6 +69149,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocatorLocatorArrayInput)(nil)).Elem(), BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocatorLocatorArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BrowserMonitorScriptEventsEventKeystrokesInput)(nil)).Elem(), BrowserMonitorScriptEventsEventKeystrokesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BrowserMonitorScriptEventsEventKeystrokesPtrInput)(nil)).Elem(), BrowserMonitorScriptEventsEventKeystrokesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BrowserMonitorScriptEventsEventKeystrokesCredentialInput)(nil)).Elem(), BrowserMonitorScriptEventsEventKeystrokesCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BrowserMonitorScriptEventsEventKeystrokesCredentialPtrInput)(nil)).Elem(), BrowserMonitorScriptEventsEventKeystrokesCredentialArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BrowserMonitorScriptEventsEventKeystrokesTargetInput)(nil)).Elem(), BrowserMonitorScriptEventsEventKeystrokesTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BrowserMonitorScriptEventsEventKeystrokesTargetPtrInput)(nil)).Elem(), BrowserMonitorScriptEventsEventKeystrokesTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BrowserMonitorScriptEventsEventKeystrokesTargetLocatorInput)(nil)).Elem(), BrowserMonitorScriptEventsEventKeystrokesTargetLocatorArgs{})
@@ -69740,8 +69786,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBitnessComparisionArrayInput)(nil)).Elem(), ManagementZoneRuleConditionBitnessComparisionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeInput)(nil)).Elem(), ManagementZoneRuleConditionCloudTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeArrayInput)(nil)).Elem(), ManagementZoneRuleConditionCloudTypeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeComparisonInput)(nil)).Elem(), ManagementZoneRuleConditionCloudTypeComparisonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeComparisonArrayInput)(nil)).Elem(), ManagementZoneRuleConditionCloudTypeComparisonArray{})
 	pulumi.RegisterOutputType(AlertingFiltersOutput{})
 	pulumi.RegisterOutputType(AlertingFiltersPtrOutput{})
 	pulumi.RegisterOutputType(AlertingFiltersFilterOutput{})
@@ -70088,6 +70132,8 @@ func init() {
 	pulumi.RegisterOutputType(BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocatorLocatorArrayOutput{})
 	pulumi.RegisterOutputType(BrowserMonitorScriptEventsEventKeystrokesOutput{})
 	pulumi.RegisterOutputType(BrowserMonitorScriptEventsEventKeystrokesPtrOutput{})
+	pulumi.RegisterOutputType(BrowserMonitorScriptEventsEventKeystrokesCredentialOutput{})
+	pulumi.RegisterOutputType(BrowserMonitorScriptEventsEventKeystrokesCredentialPtrOutput{})
 	pulumi.RegisterOutputType(BrowserMonitorScriptEventsEventKeystrokesTargetOutput{})
 	pulumi.RegisterOutputType(BrowserMonitorScriptEventsEventKeystrokesTargetPtrOutput{})
 	pulumi.RegisterOutputType(BrowserMonitorScriptEventsEventKeystrokesTargetLocatorOutput{})
@@ -70723,6 +70769,4 @@ func init() {
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionBitnessComparisionArrayOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionCloudTypeOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionCloudTypeArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionCloudTypeComparisonOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionCloudTypeComparisonArrayOutput{})
 }

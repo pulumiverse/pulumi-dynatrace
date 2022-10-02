@@ -108,9 +108,9 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ProviderArgs build() {
-            $.dtApiToken = Codegen.stringProp("dtApiToken").output().arg($.dtApiToken).env("DYNATRACE_API_TOKEN", "DT_API_TOKEN").getNullable();
-            $.dtClusterApiToken = Codegen.stringProp("dtClusterApiToken").output().arg($.dtClusterApiToken).env("DYNATRACE_CLUSTER_API_TOKEN", "DT_CLUSTER_API_TOKEN").getNullable();
-            $.dtClusterUrl = Codegen.stringProp("dtClusterUrl").output().arg($.dtClusterUrl).env("DYNATRACE_CLUSTER_URL", "DT_CLUSTER_URL").getNullable();
+            $.dtApiToken = Codegen.stringProp("dtApiToken").secret().arg($.dtApiToken).env("DYNATRACE_API_TOKEN", "DT_API_TOKEN").getNullable();
+            $.dtClusterApiToken = Codegen.stringProp("dtClusterApiToken").secret().arg($.dtClusterApiToken).env("DYNATRACE_CLUSTER_API_TOKEN", "DT_CLUSTER_API_TOKEN").getNullable();
+            $.dtClusterUrl = Codegen.stringProp("dtClusterUrl").secret().arg($.dtClusterUrl).env("DYNATRACE_CLUSTER_URL", "DT_CLUSTER_URL").getNullable();
             $.dtEnvUrl = Codegen.stringProp("dtEnvUrl").output().arg($.dtEnvUrl).env("DYNATRACE_ENV_URL", "DT_ENV_URL").getNullable();
             return $;
         }

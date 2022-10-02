@@ -1567,12 +1567,18 @@ export interface BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLo
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokes {
+    credential?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesCredential>;
     masked?: pulumi.Input<boolean>;
     simulateBlurEvent?: pulumi.Input<boolean>;
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesTarget>;
-    text: pulumi.Input<string>;
+    text?: pulumi.Input<string>;
     validate?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesValidate>;
     wait?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesWait>;
+}
+
+export interface BrowserMonitorScriptEventsEventKeystrokesCredential {
+    field: pulumi.Input<string>;
+    vaultId: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesTarget {

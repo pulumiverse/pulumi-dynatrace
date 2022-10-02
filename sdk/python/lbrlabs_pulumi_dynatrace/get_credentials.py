@@ -56,7 +56,7 @@ class AwaitableGetCredentialsResult(GetCredentialsResult):
 def get_credentials(credentials: Optional[Mapping[str, str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCredentialsResult:
     """
-    Use this data source to access information about an existing resource.
+    The credentials data source allows retrieval of all credentials.
     """
     __args__ = dict()
     __args__['credentials'] = credentials
@@ -72,6 +72,6 @@ def get_credentials(credentials: Optional[Mapping[str, str]] = None,
 def get_credentials_output(credentials: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCredentialsResult]:
     """
-    Use this data source to access information about an existing resource.
+    The credentials data source allows retrieval of all credentials.
     """
     ...

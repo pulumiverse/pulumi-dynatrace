@@ -12,9 +12,15 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
 {
     public static class GetSyntheticLocations
     {
+        /// <summary>
+        /// The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
+        /// </summary>
         public static Task<GetSyntheticLocationsResult> InvokeAsync(GetSyntheticLocationsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSyntheticLocationsResult>("dynatrace:index/getSyntheticLocations:getSyntheticLocations", args ?? new GetSyntheticLocationsArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
+        /// </summary>
         public static Output<GetSyntheticLocationsResult> Invoke(GetSyntheticLocationsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSyntheticLocationsResult>("dynatrace:index/getSyntheticLocations:getSyntheticLocations", args ?? new GetSyntheticLocationsInvokeArgs(), options.WithDefaults());
     }

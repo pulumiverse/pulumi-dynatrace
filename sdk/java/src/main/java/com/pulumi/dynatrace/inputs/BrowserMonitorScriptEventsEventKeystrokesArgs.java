@@ -5,6 +5,7 @@ package com.pulumi.dynatrace.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.dynatrace.inputs.BrowserMonitorScriptEventsEventKeystrokesCredentialArgs;
 import com.pulumi.dynatrace.inputs.BrowserMonitorScriptEventsEventKeystrokesTargetArgs;
 import com.pulumi.dynatrace.inputs.BrowserMonitorScriptEventsEventKeystrokesValidateArgs;
 import com.pulumi.dynatrace.inputs.BrowserMonitorScriptEventsEventKeystrokesWaitArgs;
@@ -18,6 +19,13 @@ import javax.annotation.Nullable;
 public final class BrowserMonitorScriptEventsEventKeystrokesArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final BrowserMonitorScriptEventsEventKeystrokesArgs Empty = new BrowserMonitorScriptEventsEventKeystrokesArgs();
+
+    @Import(name="credential")
+    private @Nullable Output<BrowserMonitorScriptEventsEventKeystrokesCredentialArgs> credential;
+
+    public Optional<Output<BrowserMonitorScriptEventsEventKeystrokesCredentialArgs>> credential() {
+        return Optional.ofNullable(this.credential);
+    }
 
     @Import(name="masked")
     private @Nullable Output<Boolean> masked;
@@ -40,11 +48,11 @@ public final class BrowserMonitorScriptEventsEventKeystrokesArgs extends com.pul
         return Optional.ofNullable(this.target);
     }
 
-    @Import(name="text", required=true)
-    private Output<String> text;
+    @Import(name="text")
+    private @Nullable Output<String> text;
 
-    public Output<String> text() {
-        return this.text;
+    public Optional<Output<String>> text() {
+        return Optional.ofNullable(this.text);
     }
 
     @Import(name="validate")
@@ -64,6 +72,7 @@ public final class BrowserMonitorScriptEventsEventKeystrokesArgs extends com.pul
     private BrowserMonitorScriptEventsEventKeystrokesArgs() {}
 
     private BrowserMonitorScriptEventsEventKeystrokesArgs(BrowserMonitorScriptEventsEventKeystrokesArgs $) {
+        this.credential = $.credential;
         this.masked = $.masked;
         this.simulateBlurEvent = $.simulateBlurEvent;
         this.target = $.target;
@@ -88,6 +97,15 @@ public final class BrowserMonitorScriptEventsEventKeystrokesArgs extends com.pul
 
         public Builder(BrowserMonitorScriptEventsEventKeystrokesArgs defaults) {
             $ = new BrowserMonitorScriptEventsEventKeystrokesArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder credential(@Nullable Output<BrowserMonitorScriptEventsEventKeystrokesCredentialArgs> credential) {
+            $.credential = credential;
+            return this;
+        }
+
+        public Builder credential(BrowserMonitorScriptEventsEventKeystrokesCredentialArgs credential) {
+            return credential(Output.of(credential));
         }
 
         public Builder masked(@Nullable Output<Boolean> masked) {
@@ -117,7 +135,7 @@ public final class BrowserMonitorScriptEventsEventKeystrokesArgs extends com.pul
             return target(Output.of(target));
         }
 
-        public Builder text(Output<String> text) {
+        public Builder text(@Nullable Output<String> text) {
             $.text = text;
             return this;
         }
@@ -145,7 +163,6 @@ public final class BrowserMonitorScriptEventsEventKeystrokesArgs extends com.pul
         }
 
         public BrowserMonitorScriptEventsEventKeystrokesArgs build() {
-            $.text = Objects.requireNonNull($.text, "expected parameter 'text' to be non-null");
             return $;
         }
     }

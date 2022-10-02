@@ -15,6 +15,14 @@ import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
+/**
+ * ## Dynatrace Documentation
+ * 
+ * - User management and SSO - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso
+ * 
+ * - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
+ * 
+ */
 @ResourceType(type="dynatrace:index/user:User")
 public class User extends com.pulumi.resources.CustomResource {
     /**

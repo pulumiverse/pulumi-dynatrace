@@ -4,6 +4,7 @@
 package com.pulumi.dynatrace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.dynatrace.outputs.BrowserMonitorScriptEventsEventKeystrokesCredential;
 import com.pulumi.dynatrace.outputs.BrowserMonitorScriptEventsEventKeystrokesTarget;
 import com.pulumi.dynatrace.outputs.BrowserMonitorScriptEventsEventKeystrokesValidate;
 import com.pulumi.dynatrace.outputs.BrowserMonitorScriptEventsEventKeystrokesWait;
@@ -15,14 +16,18 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class BrowserMonitorScriptEventsEventKeystrokes {
+    private @Nullable BrowserMonitorScriptEventsEventKeystrokesCredential credential;
     private @Nullable Boolean masked;
     private @Nullable Boolean simulateBlurEvent;
     private @Nullable BrowserMonitorScriptEventsEventKeystrokesTarget target;
-    private String text;
+    private @Nullable String text;
     private @Nullable BrowserMonitorScriptEventsEventKeystrokesValidate validate;
     private @Nullable BrowserMonitorScriptEventsEventKeystrokesWait wait;
 
     private BrowserMonitorScriptEventsEventKeystrokes() {}
+    public Optional<BrowserMonitorScriptEventsEventKeystrokesCredential> credential() {
+        return Optional.ofNullable(this.credential);
+    }
     public Optional<Boolean> masked() {
         return Optional.ofNullable(this.masked);
     }
@@ -32,8 +37,8 @@ public final class BrowserMonitorScriptEventsEventKeystrokes {
     public Optional<BrowserMonitorScriptEventsEventKeystrokesTarget> target() {
         return Optional.ofNullable(this.target);
     }
-    public String text() {
-        return this.text;
+    public Optional<String> text() {
+        return Optional.ofNullable(this.text);
     }
     public Optional<BrowserMonitorScriptEventsEventKeystrokesValidate> validate() {
         return Optional.ofNullable(this.validate);
@@ -51,15 +56,17 @@ public final class BrowserMonitorScriptEventsEventKeystrokes {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable BrowserMonitorScriptEventsEventKeystrokesCredential credential;
         private @Nullable Boolean masked;
         private @Nullable Boolean simulateBlurEvent;
         private @Nullable BrowserMonitorScriptEventsEventKeystrokesTarget target;
-        private String text;
+        private @Nullable String text;
         private @Nullable BrowserMonitorScriptEventsEventKeystrokesValidate validate;
         private @Nullable BrowserMonitorScriptEventsEventKeystrokesWait wait;
         public Builder() {}
         public Builder(BrowserMonitorScriptEventsEventKeystrokes defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.credential = defaults.credential;
     	      this.masked = defaults.masked;
     	      this.simulateBlurEvent = defaults.simulateBlurEvent;
     	      this.target = defaults.target;
@@ -68,6 +75,11 @@ public final class BrowserMonitorScriptEventsEventKeystrokes {
     	      this.wait = defaults.wait;
         }
 
+        @CustomType.Setter
+        public Builder credential(@Nullable BrowserMonitorScriptEventsEventKeystrokesCredential credential) {
+            this.credential = credential;
+            return this;
+        }
         @CustomType.Setter
         public Builder masked(@Nullable Boolean masked) {
             this.masked = masked;
@@ -84,8 +96,8 @@ public final class BrowserMonitorScriptEventsEventKeystrokes {
             return this;
         }
         @CustomType.Setter
-        public Builder text(String text) {
-            this.text = Objects.requireNonNull(text);
+        public Builder text(@Nullable String text) {
+            this.text = text;
             return this;
         }
         @CustomType.Setter
@@ -100,6 +112,7 @@ public final class BrowserMonitorScriptEventsEventKeystrokes {
         }
         public BrowserMonitorScriptEventsEventKeystrokes build() {
             final var o = new BrowserMonitorScriptEventsEventKeystrokes();
+            o.credential = credential;
             o.masked = masked;
             o.simulateBlurEvent = simulateBlurEvent;
             o.target = target;

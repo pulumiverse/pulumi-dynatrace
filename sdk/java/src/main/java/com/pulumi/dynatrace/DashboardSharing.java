@@ -17,6 +17,14 @@ import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
+/**
+ * ## Dynatrace Documentation
+ * 
+ * - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
+ * 
+ * - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+ * 
+ */
 @ResourceType(type="dynatrace:index/dashboardSharing:DashboardSharing")
 public class DashboardSharing extends com.pulumi.resources.CustomResource {
     /**

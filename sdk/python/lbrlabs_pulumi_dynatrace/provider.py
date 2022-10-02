@@ -136,16 +136,18 @@ class Provider(pulumi.ProviderResource):
 
             if dt_api_token is None:
                 dt_api_token = _utilities.get_env('DYNATRACE_API_TOKEN', 'DT_API_TOKEN')
-            __props__.__dict__["dt_api_token"] = dt_api_token
+            __props__.__dict__["dt_api_token"] = None if dt_api_token is None else pulumi.Output.secret(dt_api_token)
             if dt_cluster_api_token is None:
                 dt_cluster_api_token = _utilities.get_env('DYNATRACE_CLUSTER_API_TOKEN', 'DT_CLUSTER_API_TOKEN')
-            __props__.__dict__["dt_cluster_api_token"] = dt_cluster_api_token
+            __props__.__dict__["dt_cluster_api_token"] = None if dt_cluster_api_token is None else pulumi.Output.secret(dt_cluster_api_token)
             if dt_cluster_url is None:
                 dt_cluster_url = _utilities.get_env('DYNATRACE_CLUSTER_URL', 'DT_CLUSTER_URL')
-            __props__.__dict__["dt_cluster_url"] = dt_cluster_url
+            __props__.__dict__["dt_cluster_url"] = None if dt_cluster_url is None else pulumi.Output.secret(dt_cluster_url)
             if dt_env_url is None:
                 dt_env_url = _utilities.get_env('DYNATRACE_ENV_URL', 'DT_ENV_URL')
             __props__.__dict__["dt_env_url"] = dt_env_url
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["dtApiToken", "dtClusterApiToken", "dtClusterUrl"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Provider, __self__).__init__(
             'dynatrace',
             resource_name,

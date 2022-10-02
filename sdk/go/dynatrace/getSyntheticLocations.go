@@ -10,6 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
 func GetSyntheticLocations(ctx *pulumi.Context, args *GetSyntheticLocationsArgs, opts ...pulumi.InvokeOption) (*GetSyntheticLocationsResult, error) {
 	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetSyntheticLocationsResult

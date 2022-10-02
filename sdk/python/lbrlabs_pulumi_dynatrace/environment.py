@@ -232,7 +232,12 @@ class Environment(pulumi.CustomResource):
                  trial: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
-        Create a Environment resource with the given unique name, props, and options.
+        ## Dynatrace Documentation
+
+        - Manage your monitoring environments - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-managed/operation/manage-your-monitoring-environments
+
+        - Cluster API v2 - Environments - https://www.dynatrace.com/support/help/shortlink/cluster-api#environments
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] name: The display name of the environment
@@ -249,7 +254,12 @@ class Environment(pulumi.CustomResource):
                  args: EnvironmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a Environment resource with the given unique name, props, and options.
+        ## Dynatrace Documentation
+
+        - Manage your monitoring environments - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-managed/operation/manage-your-monitoring-environments
+
+        - Cluster API v2 - Environments - https://www.dynatrace.com/support/help/shortlink/cluster-api#environments
+
         :param str resource_name: The name of the resource.
         :param EnvironmentArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

@@ -46,6 +46,13 @@ func NewCloudfoundaryCredentials(ctx *pulumi.Context,
 	if args.Username == nil {
 		return nil, errors.New("invalid value for required argument 'Username'")
 	}
+	if args.Password != nil {
+		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringPtrOutput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"password",
+	})
+	opts = append(opts, secrets)
 	opts = pkgResourceDefaultOpts(opts)
 	var resource CloudfoundaryCredentials
 	err := ctx.RegisterResource("dynatrace:index/cloudfoundaryCredentials:CloudfoundaryCredentials", name, args, &resource, opts...)

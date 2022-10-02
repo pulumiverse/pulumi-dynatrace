@@ -11,6 +11,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// ## Dynatrace Documentation
+//
+// - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
+//
+// - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
 type DashboardSharing struct {
 	pulumi.CustomResourceState
 

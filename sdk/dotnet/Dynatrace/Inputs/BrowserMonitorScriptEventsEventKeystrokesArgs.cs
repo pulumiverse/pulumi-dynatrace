@@ -13,6 +13,9 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BrowserMonitorScriptEventsEventKeystrokesArgs : global::Pulumi.ResourceArgs
     {
+        [Input("credential")]
+        public Input<Inputs.BrowserMonitorScriptEventsEventKeystrokesCredentialArgs>? Credential { get; set; }
+
         [Input("masked")]
         public Input<bool>? Masked { get; set; }
 
@@ -22,8 +25,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         [Input("target")]
         public Input<Inputs.BrowserMonitorScriptEventsEventKeystrokesTargetArgs>? Target { get; set; }
 
-        [Input("text", required: true)]
-        public Input<string> Text { get; set; } = null!;
+        [Input("text")]
+        public Input<string>? Text { get; set; }
 
         [Input("validate")]
         public Input<Inputs.BrowserMonitorScriptEventsEventKeystrokesValidateArgs>? Validate { get; set; }

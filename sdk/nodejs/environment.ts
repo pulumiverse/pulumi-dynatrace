@@ -6,6 +6,13 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * ## Dynatrace Documentation
+ *
+ * - Manage your monitoring environments - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-managed/operation/manage-your-monitoring-environments
+ *
+ * - Cluster API v2 - Environments - https://www.dynatrace.com/support/help/shortlink/cluster-api#environments
+ */
 export class Environment extends pulumi.CustomResource {
     /**
      * Get an existing Environment resource's state with the given name, ID, and optional extra

@@ -45,7 +45,7 @@ class AwaitableGetAwsIamExternalResult(GetAwsIamExternalResult):
 
 def get_aws_iam_external(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAwsIamExternalResult:
     """
-    Use this data source to access information about an existing resource.
+    The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

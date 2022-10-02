@@ -320,11 +320,13 @@ class CloudfoundaryCredentials(pulumi.CustomResource):
                 raise TypeError("Missing required property 'login_url'")
             __props__.__dict__["login_url"] = login_url
             __props__.__dict__["name"] = name
-            __props__.__dict__["password"] = password
+            __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
             __props__.__dict__["unknowns"] = unknowns
             if username is None and not opts.urn:
                 raise TypeError("Missing required property 'username'")
             __props__.__dict__["username"] = username
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["password"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(CloudfoundaryCredentials, __self__).__init__(
             'dynatrace:index/cloudfoundaryCredentials:CloudfoundaryCredentials',
             resource_name,

@@ -107,7 +107,8 @@ def get_synthetic_location(cloud_platform: Optional[str] = None,
                            type: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSyntheticLocationResult:
     """
-    Use this data source to access information about an existing resource.
+    The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
+
 
     :param str cloud_platform: The cloud provider where the location is hosted.
     """
@@ -142,7 +143,8 @@ def get_synthetic_location_output(cloud_platform: Optional[pulumi.Input[Optional
                                   type: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSyntheticLocationResult]:
     """
-    Use this data source to access information about an existing resource.
+    The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
+
 
     :param str cloud_platform: The cloud provider where the location is hosted.
     """

@@ -10,6 +10,13 @@ using Pulumi;
 
 namespace Lbrlabs.PulumiPackage.Dynatrace
 {
+    /// <summary>
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
+    /// 
+    /// - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/dashboardSharing:DashboardSharing")]
     public partial class DashboardSharing : global::Pulumi.CustomResource
     {

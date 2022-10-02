@@ -69,7 +69,32 @@ def get_application(name: Optional[str] = None,
                     tags: Optional[Sequence[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplicationResult:
     """
-    Use this data source to access information about an existing resource.
+    The application data source allows the application ID to be retrieved by its name and optionally tags / tag-value pairs.
+
+    - `name` queries for all applications with the specified name
+    - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import lbrlabs_pulumi_dynatrace as dynatrace
+    import pulumi_dynatrace as dynatrace
+
+    test = dynatrace.get_application(name="Example",
+        tags=[
+            "TerraformKeyTest",
+            "TerraformKeyValueTest=TestValue",
+        ])
+    _name_ = dynatrace.ApplicationDetectionRule("#name#",
+        application_identifier=test.id,
+        filter_config=dynatrace.ApplicationDetectionRuleFilterConfigArgs(
+            application_match_target="DOMAIN",
+            application_match_type="MATCHES",
+            pattern="www.google.com",
+        ))
+    ```
+
 
     :param Sequence[str] tags: Required tags of the application to find
     """
@@ -90,7 +115,32 @@ def get_application_output(name: Optional[pulumi.Input[str]] = None,
                            tags: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationResult]:
     """
-    Use this data source to access information about an existing resource.
+    The application data source allows the application ID to be retrieved by its name and optionally tags / tag-value pairs.
+
+    - `name` queries for all applications with the specified name
+    - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import lbrlabs_pulumi_dynatrace as dynatrace
+    import pulumi_dynatrace as dynatrace
+
+    test = dynatrace.get_application(name="Example",
+        tags=[
+            "TerraformKeyTest",
+            "TerraformKeyValueTest=TestValue",
+        ])
+    _name_ = dynatrace.ApplicationDetectionRule("#name#",
+        application_identifier=test.id,
+        filter_config=dynatrace.ApplicationDetectionRuleFilterConfigArgs(
+            application_match_target="DOMAIN",
+            application_match_type="MATCHES",
+            pattern="www.google.com",
+        ))
+    ```
+
 
     :param Sequence[str] tags: Required tags of the application to find
     """

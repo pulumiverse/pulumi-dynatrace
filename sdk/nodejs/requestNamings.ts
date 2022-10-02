@@ -4,6 +4,13 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * ## Dynatrace Documentation
+ *
+ * - Set up request naming - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/set-up-request-naming
+ *
+ * - Request naming API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/service-api/request-naming-api
+ */
 export class RequestNamings extends pulumi.CustomResource {
     /**
      * Get an existing RequestNamings resource's state with the given name, ID, and optional extra

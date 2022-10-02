@@ -4,6 +4,31 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
+ *
+ * - `name` queries for all services with the specified name
+ * - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+ *
+ * If multiple services match the given criteria, the first result will be retrieved.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const test = dynatrace.getService({
+ *     name: "Example",
+ *     tags: [
+ *         "TerraformKeyTest",
+ *         "TerraformKeyValueTest=TestValue",
+ *     ],
+ * });
+ * const _name_ = new dynatrace.KeyRequests("#name#", {service: test.then(test => test.id)});
+ * ```
+ */
 export function getService(args: GetServiceArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceResult> {
     if (!opts) {
         opts = {}

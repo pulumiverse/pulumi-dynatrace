@@ -42,6 +42,21 @@ func NewProvider(ctx *pulumi.Context,
 	if isZero(args.DtEnvUrl) {
 		args.DtEnvUrl = pulumi.StringPtr(getEnvOrDefault("", nil, "DYNATRACE_ENV_URL", "DT_ENV_URL").(string))
 	}
+	if args.DtApiToken != nil {
+		args.DtApiToken = pulumi.ToSecret(args.DtApiToken).(pulumi.StringPtrOutput)
+	}
+	if args.DtClusterApiToken != nil {
+		args.DtClusterApiToken = pulumi.ToSecret(args.DtClusterApiToken).(pulumi.StringPtrOutput)
+	}
+	if args.DtClusterUrl != nil {
+		args.DtClusterUrl = pulumi.ToSecret(args.DtClusterUrl).(pulumi.StringPtrOutput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"dtApiToken",
+		"dtClusterApiToken",
+		"dtClusterUrl",
+	})
+	opts = append(opts, secrets)
 	opts = pkgResourceDefaultOpts(opts)
 	var resource Provider
 	err := ctx.RegisterResource("pulumi:providers:dynatrace", name, args, &resource, opts...)

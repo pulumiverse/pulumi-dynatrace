@@ -10,6 +10,55 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
+//
+// - `name` queries for all processes with the specified name
+// - `tags` (optional) refers to the tags that need to be present for the process (inclusive)
+//
+// If multiple processes match the given criteria, the first result will be retrieved.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"fmt"
+//
+//	"github.com/pulumi/pulumi-dynatrace/sdk/go/dynatrace"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			test, err := dynatrace.GetProcess(ctx, &GetProcessArgs{
+//				Name: "Example",
+//				Tags: []string{
+//					"TerraformKeyTest",
+//					"TerraformKeyValueTest=TestValue",
+//				},
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewManagementZone(ctx, "#name#", &dynatrace.ManagementZoneArgs{
+//				EntitySelectorBasedRules: ManagementZoneEntitySelectorBasedRuleArray{
+//					&ManagementZoneEntitySelectorBasedRuleArgs{
+//						Enabled:  pulumi.Bool(true),
+//						Selector: pulumi.String(fmt.Sprintf("type(\"process_group_instance\"),entityId(\"%v\")", test.Id)),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetProcess(ctx *pulumi.Context, args *GetProcessArgs, opts ...pulumi.InvokeOption) (*GetProcessResult, error) {
 	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetProcessResult

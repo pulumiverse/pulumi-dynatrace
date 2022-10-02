@@ -200,7 +200,12 @@ class DashboardSharing(pulumi.CustomResource):
                  public: Optional[pulumi.Input[pulumi.InputType['DashboardSharingPublicArgs']]] = None,
                  __props__=None):
         """
-        Create a DashboardSharing resource with the given unique name, props, and options.
+        ## Dynatrace Documentation
+
+        - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
+
+        - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] dashboard_id: The Dynatrace entity ID of the dashboard
@@ -216,7 +221,12 @@ class DashboardSharing(pulumi.CustomResource):
                  args: DashboardSharingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a DashboardSharing resource with the given unique name, props, and options.
+        ## Dynatrace Documentation
+
+        - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
+
+        - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+
         :param str resource_name: The name of the resource.
         :param DashboardSharingArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

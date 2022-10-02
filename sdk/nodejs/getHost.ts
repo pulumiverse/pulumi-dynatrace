@@ -4,6 +4,35 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
+ *
+ * - `name` queries for all hosts with the specified name
+ * - `tags` (optional) refers to the tags that need to be present for the host (inclusive)
+ *
+ * If multiple hosts match the given criteria, the first result will be retrieved.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const test = pulumi.output(dynatrace.getHost({
+ *     name: "Example",
+ *     tags: [
+ *         "TerraformKeyTest",
+ *         "TerraformKeyValueTest=TestValue",
+ *     ],
+ * }));
+ * const _name_ = new dynatrace.ManagementZone("#name#", {
+ *     entitySelectorBasedRules: [{
+ *         enabled: true,
+ *         selector: pulumi.interpolate`type("host"),entityId("${test.id}")`,
+ *     }],
+ * });
+ * ```
+ */
 export function getHost(args: GetHostArgs, opts?: pulumi.InvokeOptions): Promise<GetHostResult> {
     if (!opts) {
         opts = {}

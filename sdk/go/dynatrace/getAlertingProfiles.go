@@ -10,6 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// The alerting profiles data source allows retrieval of all alerting profiles.
 func GetAlertingProfiles(ctx *pulumi.Context, args *GetAlertingProfilesArgs, opts ...pulumi.InvokeOption) (*GetAlertingProfilesResult, error) {
 	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetAlertingProfilesResult

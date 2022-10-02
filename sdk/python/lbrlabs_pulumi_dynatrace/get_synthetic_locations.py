@@ -69,7 +69,8 @@ def get_synthetic_locations(id: Optional[str] = None,
                             name: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSyntheticLocationsResult:
     """
-    Use this data source to access information about an existing resource.
+    The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
+
 
     :param str id: The ID of this resource.
     """
@@ -92,7 +93,8 @@ def get_synthetic_locations_output(id: Optional[pulumi.Input[Optional[str]]] = N
                                    name: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSyntheticLocationsResult]:
     """
-    Use this data source to access information about an existing resource.
+    The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
+
 
     :param str id: The ID of this resource.
     """

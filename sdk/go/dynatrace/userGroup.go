@@ -10,6 +10,11 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// ## Dynatrace Documentation
+//
+// - User management and SSO - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso
+//
+// - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
 type UserGroup struct {
 	pulumi.CustomResourceState
 

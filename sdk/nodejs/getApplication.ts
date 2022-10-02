@@ -4,6 +4,36 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The application data source allows the application ID to be retrieved by its name and optionally tags / tag-value pairs.
+ *
+ * - `name` queries for all applications with the specified name
+ * - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const test = dynatrace.getApplication({
+ *     name: "Example",
+ *     tags: [
+ *         "TerraformKeyTest",
+ *         "TerraformKeyValueTest=TestValue",
+ *     ],
+ * });
+ * const _name_ = new dynatrace.ApplicationDetectionRule("#name#", {
+ *     applicationIdentifier: test.then(test => test.id),
+ *     filterConfig: {
+ *         applicationMatchTarget: "DOMAIN",
+ *         applicationMatchType: "MATCHES",
+ *         pattern: "www.google.com",
+ *     },
+ * });
+ * ```
+ */
 export function getApplication(args: GetApplicationArgs, opts?: pulumi.InvokeOptions): Promise<GetApplicationResult> {
     if (!opts) {
         opts = {}

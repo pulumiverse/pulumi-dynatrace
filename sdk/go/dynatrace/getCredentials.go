@@ -10,6 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// The credentials data source allows retrieval of all credentials.
 func GetCredentials(ctx *pulumi.Context, args *GetCredentialsArgs, opts ...pulumi.InvokeOption) (*GetCredentialsResult, error) {
 	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetCredentialsResult

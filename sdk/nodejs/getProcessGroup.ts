@@ -4,6 +4,35 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
+ *
+ * - `name` queries for all process groups with the specified name
+ * - `tags` (optional) refers to the tags that need to be present for the process group (inclusive)
+ *
+ * If multiple process groups match the given criteria, the first result will be retrieved.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const test = pulumi.output(dynatrace.getProcessGroup({
+ *     name: "Example",
+ *     tags: [
+ *         "TerraformKeyTest",
+ *         "TerraformKeyValueTest=TestValue",
+ *     ],
+ * }));
+ * const _name_ = new dynatrace.ManagementZone("#name#", {
+ *     entitySelectorBasedRules: [{
+ *         enabled: true,
+ *         selector: pulumi.interpolate`type("process_group"),entityId("${test.id}")`,
+ *     }],
+ * });
+ * ```
+ */
 export function getProcessGroup(args: GetProcessGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetProcessGroupResult> {
     if (!opts) {
         opts = {}

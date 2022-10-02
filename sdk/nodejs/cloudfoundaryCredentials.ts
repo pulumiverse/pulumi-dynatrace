@@ -96,11 +96,13 @@ export class CloudfoundaryCredentials extends pulumi.CustomResource {
             resourceInputs["apiUrl"] = args ? args.apiUrl : undefined;
             resourceInputs["loginUrl"] = args ? args.loginUrl : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["password"] = args ? args.password : undefined;
+            resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["unknowns"] = args ? args.unknowns : undefined;
             resourceInputs["username"] = args ? args.username : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["password"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(CloudfoundaryCredentials.__pulumiType, name, resourceInputs, opts);
     }
 }

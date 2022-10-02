@@ -6,6 +6,13 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * ## Dynatrace Documentation
+ *
+ * - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
+ *
+ * - Dashboards API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/dashboards-api
+ */
 export class DashboardSharing extends pulumi.CustomResource {
     /**
      * Get an existing DashboardSharing resource's state with the given name, ID, and optional extra

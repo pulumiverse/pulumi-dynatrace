@@ -50,6 +50,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             {
                 Version = Utilities.Version,
                 PluginDownloadURL = "github://api.github.com/lbrlabs",
+                AdditionalSecretOutputs =
+                {
+                    "dtApiToken",
+                    "dtClusterApiToken",
+                    "dtClusterUrl",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -61,13 +67,40 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
         [Input("dtApiToken")]
-        public Input<string>? DtApiToken { get; set; }
+        private Input<string>? _dtApiToken;
+        public Input<string>? DtApiToken
+        {
+            get => _dtApiToken;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _dtApiToken = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("dtClusterApiToken")]
-        public Input<string>? DtClusterApiToken { get; set; }
+        private Input<string>? _dtClusterApiToken;
+        public Input<string>? DtClusterApiToken
+        {
+            get => _dtClusterApiToken;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _dtClusterApiToken = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("dtClusterUrl")]
-        public Input<string>? DtClusterUrl { get; set; }
+        private Input<string>? _dtClusterUrl;
+        public Input<string>? DtClusterUrl
+        {
+            get => _dtClusterUrl;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _dtClusterUrl = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("dtEnvUrl")]
         public Input<string>? DtEnvUrl { get; set; }
