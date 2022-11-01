@@ -5631,10 +5631,11 @@ func (o ApplicationErrorRulesHttpErrorsRuleArrayOutput) Index(i pulumi.IntInput)
 }
 
 type AutotagEntitySelectorBasedRule struct {
-	Enabled     *bool   `pulumi:"enabled"`
-	Selector    *string `pulumi:"selector"`
-	Unknowns    *string `pulumi:"unknowns"`
-	ValueFormat *string `pulumi:"valueFormat"`
+	Enabled       *bool   `pulumi:"enabled"`
+	Normalization *string `pulumi:"normalization"`
+	Selector      *string `pulumi:"selector"`
+	Unknowns      *string `pulumi:"unknowns"`
+	ValueFormat   *string `pulumi:"valueFormat"`
 }
 
 // AutotagEntitySelectorBasedRuleInput is an input type that accepts AutotagEntitySelectorBasedRuleArgs and AutotagEntitySelectorBasedRuleOutput values.
@@ -5649,10 +5650,11 @@ type AutotagEntitySelectorBasedRuleInput interface {
 }
 
 type AutotagEntitySelectorBasedRuleArgs struct {
-	Enabled     pulumi.BoolPtrInput   `pulumi:"enabled"`
-	Selector    pulumi.StringPtrInput `pulumi:"selector"`
-	Unknowns    pulumi.StringPtrInput `pulumi:"unknowns"`
-	ValueFormat pulumi.StringPtrInput `pulumi:"valueFormat"`
+	Enabled       pulumi.BoolPtrInput   `pulumi:"enabled"`
+	Normalization pulumi.StringPtrInput `pulumi:"normalization"`
+	Selector      pulumi.StringPtrInput `pulumi:"selector"`
+	Unknowns      pulumi.StringPtrInput `pulumi:"unknowns"`
+	ValueFormat   pulumi.StringPtrInput `pulumi:"valueFormat"`
 }
 
 func (AutotagEntitySelectorBasedRuleArgs) ElementType() reflect.Type {
@@ -5708,6 +5710,10 @@ func (o AutotagEntitySelectorBasedRuleOutput) ToAutotagEntitySelectorBasedRuleOu
 
 func (o AutotagEntitySelectorBasedRuleOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v AutotagEntitySelectorBasedRule) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+func (o AutotagEntitySelectorBasedRuleOutput) Normalization() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutotagEntitySelectorBasedRule) *string { return v.Normalization }).(pulumi.StringPtrOutput)
 }
 
 func (o AutotagEntitySelectorBasedRuleOutput) Selector() pulumi.StringPtrOutput {
@@ -41171,6 +41177,8 @@ type DashboardDashboardMetadata struct {
 	Name string `pulumi:"name"`
 	// the owner of the dashboard
 	Owner string `pulumi:"owner"`
+	// the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+	Preset *bool `pulumi:"preset"`
 	// the dashboard is shared (`true`) or private (`false`)
 	Shared *bool `pulumi:"shared"`
 	// represents sharing configuration of a dashboard
@@ -41205,6 +41213,8 @@ type DashboardDashboardMetadataArgs struct {
 	Name pulumi.StringInput `pulumi:"name"`
 	// the owner of the dashboard
 	Owner pulumi.StringInput `pulumi:"owner"`
+	// the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+	Preset pulumi.BoolPtrInput `pulumi:"preset"`
 	// the dashboard is shared (`true`) or private (`false`)
 	Shared pulumi.BoolPtrInput `pulumi:"shared"`
 	// represents sharing configuration of a dashboard
@@ -41319,6 +41329,11 @@ func (o DashboardDashboardMetadataOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v DashboardDashboardMetadata) string { return v.Owner }).(pulumi.StringOutput)
 }
 
+// the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+func (o DashboardDashboardMetadataOutput) Preset() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DashboardDashboardMetadata) *bool { return v.Preset }).(pulumi.BoolPtrOutput)
+}
+
 // the dashboard is shared (`true`) or private (`false`)
 func (o DashboardDashboardMetadataOutput) Shared() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DashboardDashboardMetadata) *bool { return v.Shared }).(pulumi.BoolPtrOutput)
@@ -41416,6 +41431,16 @@ func (o DashboardDashboardMetadataPtrOutput) Owner() pulumi.StringPtrOutput {
 		}
 		return &v.Owner
 	}).(pulumi.StringPtrOutput)
+}
+
+// the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+func (o DashboardDashboardMetadataPtrOutput) Preset() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DashboardDashboardMetadata) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Preset
+	}).(pulumi.BoolPtrOutput)
 }
 
 // the dashboard is shared (`true`) or private (`false`)
@@ -65260,6 +65285,2223 @@ func (o K8sCredentialsEventsFieldSelectorArrayOutput) Index(i pulumi.IntInput) K
 	}).(K8sCredentialsEventsFieldSelectorOutput)
 }
 
+type MaintenanceFilter struct {
+	// A list of matching rules for dynamic filter formation.  If several rules are set, the OR logic applies
+	Filters []MaintenanceFilterFilter `pulumi:"filters"`
+}
+
+// MaintenanceFilterInput is an input type that accepts MaintenanceFilterArgs and MaintenanceFilterOutput values.
+// You can construct a concrete instance of `MaintenanceFilterInput` via:
+//
+//	MaintenanceFilterArgs{...}
+type MaintenanceFilterInput interface {
+	pulumi.Input
+
+	ToMaintenanceFilterOutput() MaintenanceFilterOutput
+	ToMaintenanceFilterOutputWithContext(context.Context) MaintenanceFilterOutput
+}
+
+type MaintenanceFilterArgs struct {
+	// A list of matching rules for dynamic filter formation.  If several rules are set, the OR logic applies
+	Filters MaintenanceFilterFilterArrayInput `pulumi:"filters"`
+}
+
+func (MaintenanceFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceFilter)(nil)).Elem()
+}
+
+func (i MaintenanceFilterArgs) ToMaintenanceFilterOutput() MaintenanceFilterOutput {
+	return i.ToMaintenanceFilterOutputWithContext(context.Background())
+}
+
+func (i MaintenanceFilterArgs) ToMaintenanceFilterOutputWithContext(ctx context.Context) MaintenanceFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceFilterOutput)
+}
+
+// MaintenanceFilterArrayInput is an input type that accepts MaintenanceFilterArray and MaintenanceFilterArrayOutput values.
+// You can construct a concrete instance of `MaintenanceFilterArrayInput` via:
+//
+//	MaintenanceFilterArray{ MaintenanceFilterArgs{...} }
+type MaintenanceFilterArrayInput interface {
+	pulumi.Input
+
+	ToMaintenanceFilterArrayOutput() MaintenanceFilterArrayOutput
+	ToMaintenanceFilterArrayOutputWithContext(context.Context) MaintenanceFilterArrayOutput
+}
+
+type MaintenanceFilterArray []MaintenanceFilterInput
+
+func (MaintenanceFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MaintenanceFilter)(nil)).Elem()
+}
+
+func (i MaintenanceFilterArray) ToMaintenanceFilterArrayOutput() MaintenanceFilterArrayOutput {
+	return i.ToMaintenanceFilterArrayOutputWithContext(context.Background())
+}
+
+func (i MaintenanceFilterArray) ToMaintenanceFilterArrayOutputWithContext(ctx context.Context) MaintenanceFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceFilterArrayOutput)
+}
+
+type MaintenanceFilterOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceFilter)(nil)).Elem()
+}
+
+func (o MaintenanceFilterOutput) ToMaintenanceFilterOutput() MaintenanceFilterOutput {
+	return o
+}
+
+func (o MaintenanceFilterOutput) ToMaintenanceFilterOutputWithContext(ctx context.Context) MaintenanceFilterOutput {
+	return o
+}
+
+// A list of matching rules for dynamic filter formation.  If several rules are set, the OR logic applies
+func (o MaintenanceFilterOutput) Filters() MaintenanceFilterFilterArrayOutput {
+	return o.ApplyT(func(v MaintenanceFilter) []MaintenanceFilterFilter { return v.Filters }).(MaintenanceFilterFilterArrayOutput)
+}
+
+type MaintenanceFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MaintenanceFilter)(nil)).Elem()
+}
+
+func (o MaintenanceFilterArrayOutput) ToMaintenanceFilterArrayOutput() MaintenanceFilterArrayOutput {
+	return o
+}
+
+func (o MaintenanceFilterArrayOutput) ToMaintenanceFilterArrayOutputWithContext(ctx context.Context) MaintenanceFilterArrayOutput {
+	return o
+}
+
+func (o MaintenanceFilterArrayOutput) Index(i pulumi.IntInput) MaintenanceFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MaintenanceFilter {
+		return vs[0].([]MaintenanceFilter)[vs[1].(int)]
+	}).(MaintenanceFilterOutput)
+}
+
+type MaintenanceFilterFilter struct {
+	EntityId        *string  `pulumi:"entityId"`
+	EntityTags      []string `pulumi:"entityTags"`
+	EntityType      *string  `pulumi:"entityType"`
+	ManagementZones []string `pulumi:"managementZones"`
+}
+
+// MaintenanceFilterFilterInput is an input type that accepts MaintenanceFilterFilterArgs and MaintenanceFilterFilterOutput values.
+// You can construct a concrete instance of `MaintenanceFilterFilterInput` via:
+//
+//	MaintenanceFilterFilterArgs{...}
+type MaintenanceFilterFilterInput interface {
+	pulumi.Input
+
+	ToMaintenanceFilterFilterOutput() MaintenanceFilterFilterOutput
+	ToMaintenanceFilterFilterOutputWithContext(context.Context) MaintenanceFilterFilterOutput
+}
+
+type MaintenanceFilterFilterArgs struct {
+	EntityId        pulumi.StringPtrInput   `pulumi:"entityId"`
+	EntityTags      pulumi.StringArrayInput `pulumi:"entityTags"`
+	EntityType      pulumi.StringPtrInput   `pulumi:"entityType"`
+	ManagementZones pulumi.StringArrayInput `pulumi:"managementZones"`
+}
+
+func (MaintenanceFilterFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceFilterFilter)(nil)).Elem()
+}
+
+func (i MaintenanceFilterFilterArgs) ToMaintenanceFilterFilterOutput() MaintenanceFilterFilterOutput {
+	return i.ToMaintenanceFilterFilterOutputWithContext(context.Background())
+}
+
+func (i MaintenanceFilterFilterArgs) ToMaintenanceFilterFilterOutputWithContext(ctx context.Context) MaintenanceFilterFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceFilterFilterOutput)
+}
+
+// MaintenanceFilterFilterArrayInput is an input type that accepts MaintenanceFilterFilterArray and MaintenanceFilterFilterArrayOutput values.
+// You can construct a concrete instance of `MaintenanceFilterFilterArrayInput` via:
+//
+//	MaintenanceFilterFilterArray{ MaintenanceFilterFilterArgs{...} }
+type MaintenanceFilterFilterArrayInput interface {
+	pulumi.Input
+
+	ToMaintenanceFilterFilterArrayOutput() MaintenanceFilterFilterArrayOutput
+	ToMaintenanceFilterFilterArrayOutputWithContext(context.Context) MaintenanceFilterFilterArrayOutput
+}
+
+type MaintenanceFilterFilterArray []MaintenanceFilterFilterInput
+
+func (MaintenanceFilterFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MaintenanceFilterFilter)(nil)).Elem()
+}
+
+func (i MaintenanceFilterFilterArray) ToMaintenanceFilterFilterArrayOutput() MaintenanceFilterFilterArrayOutput {
+	return i.ToMaintenanceFilterFilterArrayOutputWithContext(context.Background())
+}
+
+func (i MaintenanceFilterFilterArray) ToMaintenanceFilterFilterArrayOutputWithContext(ctx context.Context) MaintenanceFilterFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceFilterFilterArrayOutput)
+}
+
+type MaintenanceFilterFilterOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceFilterFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceFilterFilter)(nil)).Elem()
+}
+
+func (o MaintenanceFilterFilterOutput) ToMaintenanceFilterFilterOutput() MaintenanceFilterFilterOutput {
+	return o
+}
+
+func (o MaintenanceFilterFilterOutput) ToMaintenanceFilterFilterOutputWithContext(ctx context.Context) MaintenanceFilterFilterOutput {
+	return o
+}
+
+func (o MaintenanceFilterFilterOutput) EntityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MaintenanceFilterFilter) *string { return v.EntityId }).(pulumi.StringPtrOutput)
+}
+
+func (o MaintenanceFilterFilterOutput) EntityTags() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MaintenanceFilterFilter) []string { return v.EntityTags }).(pulumi.StringArrayOutput)
+}
+
+func (o MaintenanceFilterFilterOutput) EntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MaintenanceFilterFilter) *string { return v.EntityType }).(pulumi.StringPtrOutput)
+}
+
+func (o MaintenanceFilterFilterOutput) ManagementZones() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MaintenanceFilterFilter) []string { return v.ManagementZones }).(pulumi.StringArrayOutput)
+}
+
+type MaintenanceFilterFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceFilterFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MaintenanceFilterFilter)(nil)).Elem()
+}
+
+func (o MaintenanceFilterFilterArrayOutput) ToMaintenanceFilterFilterArrayOutput() MaintenanceFilterFilterArrayOutput {
+	return o
+}
+
+func (o MaintenanceFilterFilterArrayOutput) ToMaintenanceFilterFilterArrayOutputWithContext(ctx context.Context) MaintenanceFilterFilterArrayOutput {
+	return o
+}
+
+func (o MaintenanceFilterFilterArrayOutput) Index(i pulumi.IntInput) MaintenanceFilterFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MaintenanceFilterFilter {
+		return vs[0].([]MaintenanceFilterFilter)[vs[1].(int)]
+	}).(MaintenanceFilterFilterOutput)
+}
+
+type MaintenanceGeneralProperties struct {
+	// A short description of the maintenance purpose
+	Description *string `pulumi:"description"`
+	// Suppress execution of synthetic monitors during the maintenance
+	DisableSynthetic *bool `pulumi:"disableSynthetic"`
+	// The name of the maintenance window, displayed in the UI
+	Name string `pulumi:"name"`
+	// The type of suppression of alerting and problem detection during the maintenance
+	Suppression string `pulumi:"suppression"`
+	// The type of the maintenance: planned or unplanned
+	Type string `pulumi:"type"`
+}
+
+// MaintenanceGeneralPropertiesInput is an input type that accepts MaintenanceGeneralPropertiesArgs and MaintenanceGeneralPropertiesOutput values.
+// You can construct a concrete instance of `MaintenanceGeneralPropertiesInput` via:
+//
+//	MaintenanceGeneralPropertiesArgs{...}
+type MaintenanceGeneralPropertiesInput interface {
+	pulumi.Input
+
+	ToMaintenanceGeneralPropertiesOutput() MaintenanceGeneralPropertiesOutput
+	ToMaintenanceGeneralPropertiesOutputWithContext(context.Context) MaintenanceGeneralPropertiesOutput
+}
+
+type MaintenanceGeneralPropertiesArgs struct {
+	// A short description of the maintenance purpose
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Suppress execution of synthetic monitors during the maintenance
+	DisableSynthetic pulumi.BoolPtrInput `pulumi:"disableSynthetic"`
+	// The name of the maintenance window, displayed in the UI
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of suppression of alerting and problem detection during the maintenance
+	Suppression pulumi.StringInput `pulumi:"suppression"`
+	// The type of the maintenance: planned or unplanned
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (MaintenanceGeneralPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceGeneralProperties)(nil)).Elem()
+}
+
+func (i MaintenanceGeneralPropertiesArgs) ToMaintenanceGeneralPropertiesOutput() MaintenanceGeneralPropertiesOutput {
+	return i.ToMaintenanceGeneralPropertiesOutputWithContext(context.Background())
+}
+
+func (i MaintenanceGeneralPropertiesArgs) ToMaintenanceGeneralPropertiesOutputWithContext(ctx context.Context) MaintenanceGeneralPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceGeneralPropertiesOutput)
+}
+
+func (i MaintenanceGeneralPropertiesArgs) ToMaintenanceGeneralPropertiesPtrOutput() MaintenanceGeneralPropertiesPtrOutput {
+	return i.ToMaintenanceGeneralPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceGeneralPropertiesArgs) ToMaintenanceGeneralPropertiesPtrOutputWithContext(ctx context.Context) MaintenanceGeneralPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceGeneralPropertiesOutput).ToMaintenanceGeneralPropertiesPtrOutputWithContext(ctx)
+}
+
+// MaintenanceGeneralPropertiesPtrInput is an input type that accepts MaintenanceGeneralPropertiesArgs, MaintenanceGeneralPropertiesPtr and MaintenanceGeneralPropertiesPtrOutput values.
+// You can construct a concrete instance of `MaintenanceGeneralPropertiesPtrInput` via:
+//
+//	        MaintenanceGeneralPropertiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceGeneralPropertiesPtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceGeneralPropertiesPtrOutput() MaintenanceGeneralPropertiesPtrOutput
+	ToMaintenanceGeneralPropertiesPtrOutputWithContext(context.Context) MaintenanceGeneralPropertiesPtrOutput
+}
+
+type maintenanceGeneralPropertiesPtrType MaintenanceGeneralPropertiesArgs
+
+func MaintenanceGeneralPropertiesPtr(v *MaintenanceGeneralPropertiesArgs) MaintenanceGeneralPropertiesPtrInput {
+	return (*maintenanceGeneralPropertiesPtrType)(v)
+}
+
+func (*maintenanceGeneralPropertiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceGeneralProperties)(nil)).Elem()
+}
+
+func (i *maintenanceGeneralPropertiesPtrType) ToMaintenanceGeneralPropertiesPtrOutput() MaintenanceGeneralPropertiesPtrOutput {
+	return i.ToMaintenanceGeneralPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceGeneralPropertiesPtrType) ToMaintenanceGeneralPropertiesPtrOutputWithContext(ctx context.Context) MaintenanceGeneralPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceGeneralPropertiesPtrOutput)
+}
+
+type MaintenanceGeneralPropertiesOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceGeneralPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceGeneralProperties)(nil)).Elem()
+}
+
+func (o MaintenanceGeneralPropertiesOutput) ToMaintenanceGeneralPropertiesOutput() MaintenanceGeneralPropertiesOutput {
+	return o
+}
+
+func (o MaintenanceGeneralPropertiesOutput) ToMaintenanceGeneralPropertiesOutputWithContext(ctx context.Context) MaintenanceGeneralPropertiesOutput {
+	return o
+}
+
+func (o MaintenanceGeneralPropertiesOutput) ToMaintenanceGeneralPropertiesPtrOutput() MaintenanceGeneralPropertiesPtrOutput {
+	return o.ToMaintenanceGeneralPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceGeneralPropertiesOutput) ToMaintenanceGeneralPropertiesPtrOutputWithContext(ctx context.Context) MaintenanceGeneralPropertiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceGeneralProperties) *MaintenanceGeneralProperties {
+		return &v
+	}).(MaintenanceGeneralPropertiesPtrOutput)
+}
+
+// A short description of the maintenance purpose
+func (o MaintenanceGeneralPropertiesOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MaintenanceGeneralProperties) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Suppress execution of synthetic monitors during the maintenance
+func (o MaintenanceGeneralPropertiesOutput) DisableSynthetic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MaintenanceGeneralProperties) *bool { return v.DisableSynthetic }).(pulumi.BoolPtrOutput)
+}
+
+// The name of the maintenance window, displayed in the UI
+func (o MaintenanceGeneralPropertiesOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceGeneralProperties) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of suppression of alerting and problem detection during the maintenance
+func (o MaintenanceGeneralPropertiesOutput) Suppression() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceGeneralProperties) string { return v.Suppression }).(pulumi.StringOutput)
+}
+
+// The type of the maintenance: planned or unplanned
+func (o MaintenanceGeneralPropertiesOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceGeneralProperties) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type MaintenanceGeneralPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceGeneralPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceGeneralProperties)(nil)).Elem()
+}
+
+func (o MaintenanceGeneralPropertiesPtrOutput) ToMaintenanceGeneralPropertiesPtrOutput() MaintenanceGeneralPropertiesPtrOutput {
+	return o
+}
+
+func (o MaintenanceGeneralPropertiesPtrOutput) ToMaintenanceGeneralPropertiesPtrOutputWithContext(ctx context.Context) MaintenanceGeneralPropertiesPtrOutput {
+	return o
+}
+
+func (o MaintenanceGeneralPropertiesPtrOutput) Elem() MaintenanceGeneralPropertiesOutput {
+	return o.ApplyT(func(v *MaintenanceGeneralProperties) MaintenanceGeneralProperties {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceGeneralProperties
+		return ret
+	}).(MaintenanceGeneralPropertiesOutput)
+}
+
+// A short description of the maintenance purpose
+func (o MaintenanceGeneralPropertiesPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceGeneralProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// Suppress execution of synthetic monitors during the maintenance
+func (o MaintenanceGeneralPropertiesPtrOutput) DisableSynthetic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MaintenanceGeneralProperties) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.DisableSynthetic
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The name of the maintenance window, displayed in the UI
+func (o MaintenanceGeneralPropertiesPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceGeneralProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of suppression of alerting and problem detection during the maintenance
+func (o MaintenanceGeneralPropertiesPtrOutput) Suppression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceGeneralProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Suppression
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of the maintenance: planned or unplanned
+func (o MaintenanceGeneralPropertiesPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceGeneralProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type MaintenanceSchedule struct {
+	// The configuration for maintenance windows occuring daily
+	DailyRecurrence *MaintenanceScheduleDailyRecurrence `pulumi:"dailyRecurrence"`
+	// The configuration for maintenance windows occuring monthly
+	MonthlyRecurrence *MaintenanceScheduleMonthlyRecurrence `pulumi:"monthlyRecurrence"`
+	// The configuration for maintenance windows occuring once
+	OnceRecurrence *MaintenanceScheduleOnceRecurrence `pulumi:"onceRecurrence"`
+	// The time window of the maintenance window
+	Type string `pulumi:"type"`
+	// The configuration for maintenance windows occuring weekly
+	WeeklyRecurrence *MaintenanceScheduleWeeklyRecurrence `pulumi:"weeklyRecurrence"`
+}
+
+// MaintenanceScheduleInput is an input type that accepts MaintenanceScheduleArgs and MaintenanceScheduleOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleInput` via:
+//
+//	MaintenanceScheduleArgs{...}
+type MaintenanceScheduleInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleOutput() MaintenanceScheduleOutput
+	ToMaintenanceScheduleOutputWithContext(context.Context) MaintenanceScheduleOutput
+}
+
+type MaintenanceScheduleArgs struct {
+	// The configuration for maintenance windows occuring daily
+	DailyRecurrence MaintenanceScheduleDailyRecurrencePtrInput `pulumi:"dailyRecurrence"`
+	// The configuration for maintenance windows occuring monthly
+	MonthlyRecurrence MaintenanceScheduleMonthlyRecurrencePtrInput `pulumi:"monthlyRecurrence"`
+	// The configuration for maintenance windows occuring once
+	OnceRecurrence MaintenanceScheduleOnceRecurrencePtrInput `pulumi:"onceRecurrence"`
+	// The time window of the maintenance window
+	Type pulumi.StringInput `pulumi:"type"`
+	// The configuration for maintenance windows occuring weekly
+	WeeklyRecurrence MaintenanceScheduleWeeklyRecurrencePtrInput `pulumi:"weeklyRecurrence"`
+}
+
+func (MaintenanceScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceSchedule)(nil)).Elem()
+}
+
+func (i MaintenanceScheduleArgs) ToMaintenanceScheduleOutput() MaintenanceScheduleOutput {
+	return i.ToMaintenanceScheduleOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleArgs) ToMaintenanceScheduleOutputWithContext(ctx context.Context) MaintenanceScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleOutput)
+}
+
+func (i MaintenanceScheduleArgs) ToMaintenanceSchedulePtrOutput() MaintenanceSchedulePtrOutput {
+	return i.ToMaintenanceSchedulePtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleArgs) ToMaintenanceSchedulePtrOutputWithContext(ctx context.Context) MaintenanceSchedulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleOutput).ToMaintenanceSchedulePtrOutputWithContext(ctx)
+}
+
+// MaintenanceSchedulePtrInput is an input type that accepts MaintenanceScheduleArgs, MaintenanceSchedulePtr and MaintenanceSchedulePtrOutput values.
+// You can construct a concrete instance of `MaintenanceSchedulePtrInput` via:
+//
+//	        MaintenanceScheduleArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceSchedulePtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceSchedulePtrOutput() MaintenanceSchedulePtrOutput
+	ToMaintenanceSchedulePtrOutputWithContext(context.Context) MaintenanceSchedulePtrOutput
+}
+
+type maintenanceSchedulePtrType MaintenanceScheduleArgs
+
+func MaintenanceSchedulePtr(v *MaintenanceScheduleArgs) MaintenanceSchedulePtrInput {
+	return (*maintenanceSchedulePtrType)(v)
+}
+
+func (*maintenanceSchedulePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceSchedule)(nil)).Elem()
+}
+
+func (i *maintenanceSchedulePtrType) ToMaintenanceSchedulePtrOutput() MaintenanceSchedulePtrOutput {
+	return i.ToMaintenanceSchedulePtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceSchedulePtrType) ToMaintenanceSchedulePtrOutputWithContext(ctx context.Context) MaintenanceSchedulePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceSchedulePtrOutput)
+}
+
+type MaintenanceScheduleOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceSchedule)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleOutput) ToMaintenanceScheduleOutput() MaintenanceScheduleOutput {
+	return o
+}
+
+func (o MaintenanceScheduleOutput) ToMaintenanceScheduleOutputWithContext(ctx context.Context) MaintenanceScheduleOutput {
+	return o
+}
+
+func (o MaintenanceScheduleOutput) ToMaintenanceSchedulePtrOutput() MaintenanceSchedulePtrOutput {
+	return o.ToMaintenanceSchedulePtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceScheduleOutput) ToMaintenanceSchedulePtrOutputWithContext(ctx context.Context) MaintenanceSchedulePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceSchedule) *MaintenanceSchedule {
+		return &v
+	}).(MaintenanceSchedulePtrOutput)
+}
+
+// The configuration for maintenance windows occuring daily
+func (o MaintenanceScheduleOutput) DailyRecurrence() MaintenanceScheduleDailyRecurrencePtrOutput {
+	return o.ApplyT(func(v MaintenanceSchedule) *MaintenanceScheduleDailyRecurrence { return v.DailyRecurrence }).(MaintenanceScheduleDailyRecurrencePtrOutput)
+}
+
+// The configuration for maintenance windows occuring monthly
+func (o MaintenanceScheduleOutput) MonthlyRecurrence() MaintenanceScheduleMonthlyRecurrencePtrOutput {
+	return o.ApplyT(func(v MaintenanceSchedule) *MaintenanceScheduleMonthlyRecurrence { return v.MonthlyRecurrence }).(MaintenanceScheduleMonthlyRecurrencePtrOutput)
+}
+
+// The configuration for maintenance windows occuring once
+func (o MaintenanceScheduleOutput) OnceRecurrence() MaintenanceScheduleOnceRecurrencePtrOutput {
+	return o.ApplyT(func(v MaintenanceSchedule) *MaintenanceScheduleOnceRecurrence { return v.OnceRecurrence }).(MaintenanceScheduleOnceRecurrencePtrOutput)
+}
+
+// The time window of the maintenance window
+func (o MaintenanceScheduleOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceSchedule) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The configuration for maintenance windows occuring weekly
+func (o MaintenanceScheduleOutput) WeeklyRecurrence() MaintenanceScheduleWeeklyRecurrencePtrOutput {
+	return o.ApplyT(func(v MaintenanceSchedule) *MaintenanceScheduleWeeklyRecurrence { return v.WeeklyRecurrence }).(MaintenanceScheduleWeeklyRecurrencePtrOutput)
+}
+
+type MaintenanceSchedulePtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceSchedulePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceSchedule)(nil)).Elem()
+}
+
+func (o MaintenanceSchedulePtrOutput) ToMaintenanceSchedulePtrOutput() MaintenanceSchedulePtrOutput {
+	return o
+}
+
+func (o MaintenanceSchedulePtrOutput) ToMaintenanceSchedulePtrOutputWithContext(ctx context.Context) MaintenanceSchedulePtrOutput {
+	return o
+}
+
+func (o MaintenanceSchedulePtrOutput) Elem() MaintenanceScheduleOutput {
+	return o.ApplyT(func(v *MaintenanceSchedule) MaintenanceSchedule {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceSchedule
+		return ret
+	}).(MaintenanceScheduleOutput)
+}
+
+// The configuration for maintenance windows occuring daily
+func (o MaintenanceSchedulePtrOutput) DailyRecurrence() MaintenanceScheduleDailyRecurrencePtrOutput {
+	return o.ApplyT(func(v *MaintenanceSchedule) *MaintenanceScheduleDailyRecurrence {
+		if v == nil {
+			return nil
+		}
+		return v.DailyRecurrence
+	}).(MaintenanceScheduleDailyRecurrencePtrOutput)
+}
+
+// The configuration for maintenance windows occuring monthly
+func (o MaintenanceSchedulePtrOutput) MonthlyRecurrence() MaintenanceScheduleMonthlyRecurrencePtrOutput {
+	return o.ApplyT(func(v *MaintenanceSchedule) *MaintenanceScheduleMonthlyRecurrence {
+		if v == nil {
+			return nil
+		}
+		return v.MonthlyRecurrence
+	}).(MaintenanceScheduleMonthlyRecurrencePtrOutput)
+}
+
+// The configuration for maintenance windows occuring once
+func (o MaintenanceSchedulePtrOutput) OnceRecurrence() MaintenanceScheduleOnceRecurrencePtrOutput {
+	return o.ApplyT(func(v *MaintenanceSchedule) *MaintenanceScheduleOnceRecurrence {
+		if v == nil {
+			return nil
+		}
+		return v.OnceRecurrence
+	}).(MaintenanceScheduleOnceRecurrencePtrOutput)
+}
+
+// The time window of the maintenance window
+func (o MaintenanceSchedulePtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceSchedule) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+// The configuration for maintenance windows occuring weekly
+func (o MaintenanceSchedulePtrOutput) WeeklyRecurrence() MaintenanceScheduleWeeklyRecurrencePtrOutput {
+	return o.ApplyT(func(v *MaintenanceSchedule) *MaintenanceScheduleWeeklyRecurrence {
+		if v == nil {
+			return nil
+		}
+		return v.WeeklyRecurrence
+	}).(MaintenanceScheduleWeeklyRecurrencePtrOutput)
+}
+
+type MaintenanceScheduleDailyRecurrence struct {
+	RecurrenceRange MaintenanceScheduleDailyRecurrenceRecurrenceRange `pulumi:"recurrenceRange"`
+	TimeWindow      MaintenanceScheduleDailyRecurrenceTimeWindow      `pulumi:"timeWindow"`
+}
+
+// MaintenanceScheduleDailyRecurrenceInput is an input type that accepts MaintenanceScheduleDailyRecurrenceArgs and MaintenanceScheduleDailyRecurrenceOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleDailyRecurrenceInput` via:
+//
+//	MaintenanceScheduleDailyRecurrenceArgs{...}
+type MaintenanceScheduleDailyRecurrenceInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleDailyRecurrenceOutput() MaintenanceScheduleDailyRecurrenceOutput
+	ToMaintenanceScheduleDailyRecurrenceOutputWithContext(context.Context) MaintenanceScheduleDailyRecurrenceOutput
+}
+
+type MaintenanceScheduleDailyRecurrenceArgs struct {
+	RecurrenceRange MaintenanceScheduleDailyRecurrenceRecurrenceRangeInput `pulumi:"recurrenceRange"`
+	TimeWindow      MaintenanceScheduleDailyRecurrenceTimeWindowInput      `pulumi:"timeWindow"`
+}
+
+func (MaintenanceScheduleDailyRecurrenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleDailyRecurrence)(nil)).Elem()
+}
+
+func (i MaintenanceScheduleDailyRecurrenceArgs) ToMaintenanceScheduleDailyRecurrenceOutput() MaintenanceScheduleDailyRecurrenceOutput {
+	return i.ToMaintenanceScheduleDailyRecurrenceOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleDailyRecurrenceArgs) ToMaintenanceScheduleDailyRecurrenceOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleDailyRecurrenceOutput)
+}
+
+func (i MaintenanceScheduleDailyRecurrenceArgs) ToMaintenanceScheduleDailyRecurrencePtrOutput() MaintenanceScheduleDailyRecurrencePtrOutput {
+	return i.ToMaintenanceScheduleDailyRecurrencePtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleDailyRecurrenceArgs) ToMaintenanceScheduleDailyRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrencePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleDailyRecurrenceOutput).ToMaintenanceScheduleDailyRecurrencePtrOutputWithContext(ctx)
+}
+
+// MaintenanceScheduleDailyRecurrencePtrInput is an input type that accepts MaintenanceScheduleDailyRecurrenceArgs, MaintenanceScheduleDailyRecurrencePtr and MaintenanceScheduleDailyRecurrencePtrOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleDailyRecurrencePtrInput` via:
+//
+//	        MaintenanceScheduleDailyRecurrenceArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceScheduleDailyRecurrencePtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleDailyRecurrencePtrOutput() MaintenanceScheduleDailyRecurrencePtrOutput
+	ToMaintenanceScheduleDailyRecurrencePtrOutputWithContext(context.Context) MaintenanceScheduleDailyRecurrencePtrOutput
+}
+
+type maintenanceScheduleDailyRecurrencePtrType MaintenanceScheduleDailyRecurrenceArgs
+
+func MaintenanceScheduleDailyRecurrencePtr(v *MaintenanceScheduleDailyRecurrenceArgs) MaintenanceScheduleDailyRecurrencePtrInput {
+	return (*maintenanceScheduleDailyRecurrencePtrType)(v)
+}
+
+func (*maintenanceScheduleDailyRecurrencePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleDailyRecurrence)(nil)).Elem()
+}
+
+func (i *maintenanceScheduleDailyRecurrencePtrType) ToMaintenanceScheduleDailyRecurrencePtrOutput() MaintenanceScheduleDailyRecurrencePtrOutput {
+	return i.ToMaintenanceScheduleDailyRecurrencePtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceScheduleDailyRecurrencePtrType) ToMaintenanceScheduleDailyRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrencePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleDailyRecurrencePtrOutput)
+}
+
+type MaintenanceScheduleDailyRecurrenceOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleDailyRecurrenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleDailyRecurrence)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleDailyRecurrenceOutput) ToMaintenanceScheduleDailyRecurrenceOutput() MaintenanceScheduleDailyRecurrenceOutput {
+	return o
+}
+
+func (o MaintenanceScheduleDailyRecurrenceOutput) ToMaintenanceScheduleDailyRecurrenceOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrenceOutput {
+	return o
+}
+
+func (o MaintenanceScheduleDailyRecurrenceOutput) ToMaintenanceScheduleDailyRecurrencePtrOutput() MaintenanceScheduleDailyRecurrencePtrOutput {
+	return o.ToMaintenanceScheduleDailyRecurrencePtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceScheduleDailyRecurrenceOutput) ToMaintenanceScheduleDailyRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrencePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceScheduleDailyRecurrence) *MaintenanceScheduleDailyRecurrence {
+		return &v
+	}).(MaintenanceScheduleDailyRecurrencePtrOutput)
+}
+
+func (o MaintenanceScheduleDailyRecurrenceOutput) RecurrenceRange() MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput {
+	return o.ApplyT(func(v MaintenanceScheduleDailyRecurrence) MaintenanceScheduleDailyRecurrenceRecurrenceRange {
+		return v.RecurrenceRange
+	}).(MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput)
+}
+
+func (o MaintenanceScheduleDailyRecurrenceOutput) TimeWindow() MaintenanceScheduleDailyRecurrenceTimeWindowOutput {
+	return o.ApplyT(func(v MaintenanceScheduleDailyRecurrence) MaintenanceScheduleDailyRecurrenceTimeWindow {
+		return v.TimeWindow
+	}).(MaintenanceScheduleDailyRecurrenceTimeWindowOutput)
+}
+
+type MaintenanceScheduleDailyRecurrencePtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleDailyRecurrencePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleDailyRecurrence)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleDailyRecurrencePtrOutput) ToMaintenanceScheduleDailyRecurrencePtrOutput() MaintenanceScheduleDailyRecurrencePtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleDailyRecurrencePtrOutput) ToMaintenanceScheduleDailyRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrencePtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleDailyRecurrencePtrOutput) Elem() MaintenanceScheduleDailyRecurrenceOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleDailyRecurrence) MaintenanceScheduleDailyRecurrence {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceScheduleDailyRecurrence
+		return ret
+	}).(MaintenanceScheduleDailyRecurrenceOutput)
+}
+
+func (o MaintenanceScheduleDailyRecurrencePtrOutput) RecurrenceRange() MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleDailyRecurrence) *MaintenanceScheduleDailyRecurrenceRecurrenceRange {
+		if v == nil {
+			return nil
+		}
+		return &v.RecurrenceRange
+	}).(MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput)
+}
+
+func (o MaintenanceScheduleDailyRecurrencePtrOutput) TimeWindow() MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleDailyRecurrence) *MaintenanceScheduleDailyRecurrenceTimeWindow {
+		if v == nil {
+			return nil
+		}
+		return &v.TimeWindow
+	}).(MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput)
+}
+
+type MaintenanceScheduleDailyRecurrenceRecurrenceRange struct {
+	EndDate   string `pulumi:"endDate"`
+	StartDate string `pulumi:"startDate"`
+}
+
+// MaintenanceScheduleDailyRecurrenceRecurrenceRangeInput is an input type that accepts MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs and MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleDailyRecurrenceRecurrenceRangeInput` via:
+//
+//	MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs{...}
+type MaintenanceScheduleDailyRecurrenceRecurrenceRangeInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput() MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput
+	ToMaintenanceScheduleDailyRecurrenceRecurrenceRangeOutputWithContext(context.Context) MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput
+}
+
+type MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs struct {
+	EndDate   pulumi.StringInput `pulumi:"endDate"`
+	StartDate pulumi.StringInput `pulumi:"startDate"`
+}
+
+func (MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleDailyRecurrenceRecurrenceRange)(nil)).Elem()
+}
+
+func (i MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs) ToMaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput() MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput {
+	return i.ToMaintenanceScheduleDailyRecurrenceRecurrenceRangeOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs) ToMaintenanceScheduleDailyRecurrenceRecurrenceRangeOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput)
+}
+
+func (i MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs) ToMaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput {
+	return i.ToMaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs) ToMaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput).ToMaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutputWithContext(ctx)
+}
+
+// MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrInput is an input type that accepts MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs, MaintenanceScheduleDailyRecurrenceRecurrenceRangePtr and MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrInput` via:
+//
+//	        MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput
+	ToMaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutputWithContext(context.Context) MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput
+}
+
+type maintenanceScheduleDailyRecurrenceRecurrenceRangePtrType MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs
+
+func MaintenanceScheduleDailyRecurrenceRecurrenceRangePtr(v *MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs) MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrInput {
+	return (*maintenanceScheduleDailyRecurrenceRecurrenceRangePtrType)(v)
+}
+
+func (*maintenanceScheduleDailyRecurrenceRecurrenceRangePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleDailyRecurrenceRecurrenceRange)(nil)).Elem()
+}
+
+func (i *maintenanceScheduleDailyRecurrenceRecurrenceRangePtrType) ToMaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput {
+	return i.ToMaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceScheduleDailyRecurrenceRecurrenceRangePtrType) ToMaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput)
+}
+
+type MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleDailyRecurrenceRecurrenceRange)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput) ToMaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput() MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput {
+	return o
+}
+
+func (o MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput) ToMaintenanceScheduleDailyRecurrenceRecurrenceRangeOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput {
+	return o
+}
+
+func (o MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput) ToMaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput {
+	return o.ToMaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput) ToMaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceScheduleDailyRecurrenceRecurrenceRange) *MaintenanceScheduleDailyRecurrenceRecurrenceRange {
+		return &v
+	}).(MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput)
+}
+
+func (o MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput) EndDate() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleDailyRecurrenceRecurrenceRange) string { return v.EndDate }).(pulumi.StringOutput)
+}
+
+func (o MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput) StartDate() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleDailyRecurrenceRecurrenceRange) string { return v.StartDate }).(pulumi.StringOutput)
+}
+
+type MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleDailyRecurrenceRecurrenceRange)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput) ToMaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput) ToMaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput) Elem() MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleDailyRecurrenceRecurrenceRange) MaintenanceScheduleDailyRecurrenceRecurrenceRange {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceScheduleDailyRecurrenceRecurrenceRange
+		return ret
+	}).(MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput)
+}
+
+func (o MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput) EndDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleDailyRecurrenceRecurrenceRange) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.EndDate
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput) StartDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleDailyRecurrenceRecurrenceRange) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.StartDate
+	}).(pulumi.StringPtrOutput)
+}
+
+type MaintenanceScheduleDailyRecurrenceTimeWindow struct {
+	EndTime   string `pulumi:"endTime"`
+	StartTime string `pulumi:"startTime"`
+	TimeZone  string `pulumi:"timeZone"`
+}
+
+// MaintenanceScheduleDailyRecurrenceTimeWindowInput is an input type that accepts MaintenanceScheduleDailyRecurrenceTimeWindowArgs and MaintenanceScheduleDailyRecurrenceTimeWindowOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleDailyRecurrenceTimeWindowInput` via:
+//
+//	MaintenanceScheduleDailyRecurrenceTimeWindowArgs{...}
+type MaintenanceScheduleDailyRecurrenceTimeWindowInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleDailyRecurrenceTimeWindowOutput() MaintenanceScheduleDailyRecurrenceTimeWindowOutput
+	ToMaintenanceScheduleDailyRecurrenceTimeWindowOutputWithContext(context.Context) MaintenanceScheduleDailyRecurrenceTimeWindowOutput
+}
+
+type MaintenanceScheduleDailyRecurrenceTimeWindowArgs struct {
+	EndTime   pulumi.StringInput `pulumi:"endTime"`
+	StartTime pulumi.StringInput `pulumi:"startTime"`
+	TimeZone  pulumi.StringInput `pulumi:"timeZone"`
+}
+
+func (MaintenanceScheduleDailyRecurrenceTimeWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleDailyRecurrenceTimeWindow)(nil)).Elem()
+}
+
+func (i MaintenanceScheduleDailyRecurrenceTimeWindowArgs) ToMaintenanceScheduleDailyRecurrenceTimeWindowOutput() MaintenanceScheduleDailyRecurrenceTimeWindowOutput {
+	return i.ToMaintenanceScheduleDailyRecurrenceTimeWindowOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleDailyRecurrenceTimeWindowArgs) ToMaintenanceScheduleDailyRecurrenceTimeWindowOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrenceTimeWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleDailyRecurrenceTimeWindowOutput)
+}
+
+func (i MaintenanceScheduleDailyRecurrenceTimeWindowArgs) ToMaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput {
+	return i.ToMaintenanceScheduleDailyRecurrenceTimeWindowPtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleDailyRecurrenceTimeWindowArgs) ToMaintenanceScheduleDailyRecurrenceTimeWindowPtrOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleDailyRecurrenceTimeWindowOutput).ToMaintenanceScheduleDailyRecurrenceTimeWindowPtrOutputWithContext(ctx)
+}
+
+// MaintenanceScheduleDailyRecurrenceTimeWindowPtrInput is an input type that accepts MaintenanceScheduleDailyRecurrenceTimeWindowArgs, MaintenanceScheduleDailyRecurrenceTimeWindowPtr and MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleDailyRecurrenceTimeWindowPtrInput` via:
+//
+//	        MaintenanceScheduleDailyRecurrenceTimeWindowArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceScheduleDailyRecurrenceTimeWindowPtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput
+	ToMaintenanceScheduleDailyRecurrenceTimeWindowPtrOutputWithContext(context.Context) MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput
+}
+
+type maintenanceScheduleDailyRecurrenceTimeWindowPtrType MaintenanceScheduleDailyRecurrenceTimeWindowArgs
+
+func MaintenanceScheduleDailyRecurrenceTimeWindowPtr(v *MaintenanceScheduleDailyRecurrenceTimeWindowArgs) MaintenanceScheduleDailyRecurrenceTimeWindowPtrInput {
+	return (*maintenanceScheduleDailyRecurrenceTimeWindowPtrType)(v)
+}
+
+func (*maintenanceScheduleDailyRecurrenceTimeWindowPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleDailyRecurrenceTimeWindow)(nil)).Elem()
+}
+
+func (i *maintenanceScheduleDailyRecurrenceTimeWindowPtrType) ToMaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput {
+	return i.ToMaintenanceScheduleDailyRecurrenceTimeWindowPtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceScheduleDailyRecurrenceTimeWindowPtrType) ToMaintenanceScheduleDailyRecurrenceTimeWindowPtrOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput)
+}
+
+type MaintenanceScheduleDailyRecurrenceTimeWindowOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleDailyRecurrenceTimeWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleDailyRecurrenceTimeWindow)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleDailyRecurrenceTimeWindowOutput) ToMaintenanceScheduleDailyRecurrenceTimeWindowOutput() MaintenanceScheduleDailyRecurrenceTimeWindowOutput {
+	return o
+}
+
+func (o MaintenanceScheduleDailyRecurrenceTimeWindowOutput) ToMaintenanceScheduleDailyRecurrenceTimeWindowOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrenceTimeWindowOutput {
+	return o
+}
+
+func (o MaintenanceScheduleDailyRecurrenceTimeWindowOutput) ToMaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput {
+	return o.ToMaintenanceScheduleDailyRecurrenceTimeWindowPtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceScheduleDailyRecurrenceTimeWindowOutput) ToMaintenanceScheduleDailyRecurrenceTimeWindowPtrOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceScheduleDailyRecurrenceTimeWindow) *MaintenanceScheduleDailyRecurrenceTimeWindow {
+		return &v
+	}).(MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput)
+}
+
+func (o MaintenanceScheduleDailyRecurrenceTimeWindowOutput) EndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleDailyRecurrenceTimeWindow) string { return v.EndTime }).(pulumi.StringOutput)
+}
+
+func (o MaintenanceScheduleDailyRecurrenceTimeWindowOutput) StartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleDailyRecurrenceTimeWindow) string { return v.StartTime }).(pulumi.StringOutput)
+}
+
+func (o MaintenanceScheduleDailyRecurrenceTimeWindowOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleDailyRecurrenceTimeWindow) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+type MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleDailyRecurrenceTimeWindow)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput) ToMaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput) ToMaintenanceScheduleDailyRecurrenceTimeWindowPtrOutputWithContext(ctx context.Context) MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput) Elem() MaintenanceScheduleDailyRecurrenceTimeWindowOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleDailyRecurrenceTimeWindow) MaintenanceScheduleDailyRecurrenceTimeWindow {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceScheduleDailyRecurrenceTimeWindow
+		return ret
+	}).(MaintenanceScheduleDailyRecurrenceTimeWindowOutput)
+}
+
+func (o MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput) EndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleDailyRecurrenceTimeWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.EndTime
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput) StartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleDailyRecurrenceTimeWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.StartTime
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleDailyRecurrenceTimeWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.TimeZone
+	}).(pulumi.StringPtrOutput)
+}
+
+type MaintenanceScheduleMonthlyRecurrence struct {
+	DayOfMonth      int                                                 `pulumi:"dayOfMonth"`
+	RecurrenceRange MaintenanceScheduleMonthlyRecurrenceRecurrenceRange `pulumi:"recurrenceRange"`
+	TimeWindow      MaintenanceScheduleMonthlyRecurrenceTimeWindow      `pulumi:"timeWindow"`
+}
+
+// MaintenanceScheduleMonthlyRecurrenceInput is an input type that accepts MaintenanceScheduleMonthlyRecurrenceArgs and MaintenanceScheduleMonthlyRecurrenceOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleMonthlyRecurrenceInput` via:
+//
+//	MaintenanceScheduleMonthlyRecurrenceArgs{...}
+type MaintenanceScheduleMonthlyRecurrenceInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleMonthlyRecurrenceOutput() MaintenanceScheduleMonthlyRecurrenceOutput
+	ToMaintenanceScheduleMonthlyRecurrenceOutputWithContext(context.Context) MaintenanceScheduleMonthlyRecurrenceOutput
+}
+
+type MaintenanceScheduleMonthlyRecurrenceArgs struct {
+	DayOfMonth      pulumi.IntInput                                          `pulumi:"dayOfMonth"`
+	RecurrenceRange MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeInput `pulumi:"recurrenceRange"`
+	TimeWindow      MaintenanceScheduleMonthlyRecurrenceTimeWindowInput      `pulumi:"timeWindow"`
+}
+
+func (MaintenanceScheduleMonthlyRecurrenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleMonthlyRecurrence)(nil)).Elem()
+}
+
+func (i MaintenanceScheduleMonthlyRecurrenceArgs) ToMaintenanceScheduleMonthlyRecurrenceOutput() MaintenanceScheduleMonthlyRecurrenceOutput {
+	return i.ToMaintenanceScheduleMonthlyRecurrenceOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleMonthlyRecurrenceArgs) ToMaintenanceScheduleMonthlyRecurrenceOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleMonthlyRecurrenceOutput)
+}
+
+func (i MaintenanceScheduleMonthlyRecurrenceArgs) ToMaintenanceScheduleMonthlyRecurrencePtrOutput() MaintenanceScheduleMonthlyRecurrencePtrOutput {
+	return i.ToMaintenanceScheduleMonthlyRecurrencePtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleMonthlyRecurrenceArgs) ToMaintenanceScheduleMonthlyRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrencePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleMonthlyRecurrenceOutput).ToMaintenanceScheduleMonthlyRecurrencePtrOutputWithContext(ctx)
+}
+
+// MaintenanceScheduleMonthlyRecurrencePtrInput is an input type that accepts MaintenanceScheduleMonthlyRecurrenceArgs, MaintenanceScheduleMonthlyRecurrencePtr and MaintenanceScheduleMonthlyRecurrencePtrOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleMonthlyRecurrencePtrInput` via:
+//
+//	        MaintenanceScheduleMonthlyRecurrenceArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceScheduleMonthlyRecurrencePtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleMonthlyRecurrencePtrOutput() MaintenanceScheduleMonthlyRecurrencePtrOutput
+	ToMaintenanceScheduleMonthlyRecurrencePtrOutputWithContext(context.Context) MaintenanceScheduleMonthlyRecurrencePtrOutput
+}
+
+type maintenanceScheduleMonthlyRecurrencePtrType MaintenanceScheduleMonthlyRecurrenceArgs
+
+func MaintenanceScheduleMonthlyRecurrencePtr(v *MaintenanceScheduleMonthlyRecurrenceArgs) MaintenanceScheduleMonthlyRecurrencePtrInput {
+	return (*maintenanceScheduleMonthlyRecurrencePtrType)(v)
+}
+
+func (*maintenanceScheduleMonthlyRecurrencePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleMonthlyRecurrence)(nil)).Elem()
+}
+
+func (i *maintenanceScheduleMonthlyRecurrencePtrType) ToMaintenanceScheduleMonthlyRecurrencePtrOutput() MaintenanceScheduleMonthlyRecurrencePtrOutput {
+	return i.ToMaintenanceScheduleMonthlyRecurrencePtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceScheduleMonthlyRecurrencePtrType) ToMaintenanceScheduleMonthlyRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrencePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleMonthlyRecurrencePtrOutput)
+}
+
+type MaintenanceScheduleMonthlyRecurrenceOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleMonthlyRecurrenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleMonthlyRecurrence)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceOutput) ToMaintenanceScheduleMonthlyRecurrenceOutput() MaintenanceScheduleMonthlyRecurrenceOutput {
+	return o
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceOutput) ToMaintenanceScheduleMonthlyRecurrenceOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrenceOutput {
+	return o
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceOutput) ToMaintenanceScheduleMonthlyRecurrencePtrOutput() MaintenanceScheduleMonthlyRecurrencePtrOutput {
+	return o.ToMaintenanceScheduleMonthlyRecurrencePtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceOutput) ToMaintenanceScheduleMonthlyRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrencePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceScheduleMonthlyRecurrence) *MaintenanceScheduleMonthlyRecurrence {
+		return &v
+	}).(MaintenanceScheduleMonthlyRecurrencePtrOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceOutput) DayOfMonth() pulumi.IntOutput {
+	return o.ApplyT(func(v MaintenanceScheduleMonthlyRecurrence) int { return v.DayOfMonth }).(pulumi.IntOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceOutput) RecurrenceRange() MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput {
+	return o.ApplyT(func(v MaintenanceScheduleMonthlyRecurrence) MaintenanceScheduleMonthlyRecurrenceRecurrenceRange {
+		return v.RecurrenceRange
+	}).(MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceOutput) TimeWindow() MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput {
+	return o.ApplyT(func(v MaintenanceScheduleMonthlyRecurrence) MaintenanceScheduleMonthlyRecurrenceTimeWindow {
+		return v.TimeWindow
+	}).(MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput)
+}
+
+type MaintenanceScheduleMonthlyRecurrencePtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleMonthlyRecurrencePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleMonthlyRecurrence)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleMonthlyRecurrencePtrOutput) ToMaintenanceScheduleMonthlyRecurrencePtrOutput() MaintenanceScheduleMonthlyRecurrencePtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleMonthlyRecurrencePtrOutput) ToMaintenanceScheduleMonthlyRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrencePtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleMonthlyRecurrencePtrOutput) Elem() MaintenanceScheduleMonthlyRecurrenceOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleMonthlyRecurrence) MaintenanceScheduleMonthlyRecurrence {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceScheduleMonthlyRecurrence
+		return ret
+	}).(MaintenanceScheduleMonthlyRecurrenceOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrencePtrOutput) DayOfMonth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleMonthlyRecurrence) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.DayOfMonth
+	}).(pulumi.IntPtrOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrencePtrOutput) RecurrenceRange() MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleMonthlyRecurrence) *MaintenanceScheduleMonthlyRecurrenceRecurrenceRange {
+		if v == nil {
+			return nil
+		}
+		return &v.RecurrenceRange
+	}).(MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrencePtrOutput) TimeWindow() MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleMonthlyRecurrence) *MaintenanceScheduleMonthlyRecurrenceTimeWindow {
+		if v == nil {
+			return nil
+		}
+		return &v.TimeWindow
+	}).(MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput)
+}
+
+type MaintenanceScheduleMonthlyRecurrenceRecurrenceRange struct {
+	EndDate   string `pulumi:"endDate"`
+	StartDate string `pulumi:"startDate"`
+}
+
+// MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeInput is an input type that accepts MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs and MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeInput` via:
+//
+//	MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs{...}
+type MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput() MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput
+	ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutputWithContext(context.Context) MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput
+}
+
+type MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs struct {
+	EndDate   pulumi.StringInput `pulumi:"endDate"`
+	StartDate pulumi.StringInput `pulumi:"startDate"`
+}
+
+func (MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleMonthlyRecurrenceRecurrenceRange)(nil)).Elem()
+}
+
+func (i MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs) ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput() MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput {
+	return i.ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs) ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput)
+}
+
+func (i MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs) ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput {
+	return i.ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs) ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput).ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutputWithContext(ctx)
+}
+
+// MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrInput is an input type that accepts MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs, MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtr and MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrInput` via:
+//
+//	        MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput
+	ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutputWithContext(context.Context) MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput
+}
+
+type maintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrType MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs
+
+func MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtr(v *MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs) MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrInput {
+	return (*maintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrType)(v)
+}
+
+func (*maintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleMonthlyRecurrenceRecurrenceRange)(nil)).Elem()
+}
+
+func (i *maintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrType) ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput {
+	return i.ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrType) ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput)
+}
+
+type MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleMonthlyRecurrenceRecurrenceRange)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput) ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput() MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput {
+	return o
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput) ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput {
+	return o
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput) ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput {
+	return o.ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput) ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceScheduleMonthlyRecurrenceRecurrenceRange) *MaintenanceScheduleMonthlyRecurrenceRecurrenceRange {
+		return &v
+	}).(MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput) EndDate() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleMonthlyRecurrenceRecurrenceRange) string { return v.EndDate }).(pulumi.StringOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput) StartDate() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleMonthlyRecurrenceRecurrenceRange) string { return v.StartDate }).(pulumi.StringOutput)
+}
+
+type MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleMonthlyRecurrenceRecurrenceRange)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput) ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput) ToMaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput) Elem() MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleMonthlyRecurrenceRecurrenceRange) MaintenanceScheduleMonthlyRecurrenceRecurrenceRange {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceScheduleMonthlyRecurrenceRecurrenceRange
+		return ret
+	}).(MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput) EndDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleMonthlyRecurrenceRecurrenceRange) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.EndDate
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput) StartDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleMonthlyRecurrenceRecurrenceRange) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.StartDate
+	}).(pulumi.StringPtrOutput)
+}
+
+type MaintenanceScheduleMonthlyRecurrenceTimeWindow struct {
+	EndTime   string `pulumi:"endTime"`
+	StartTime string `pulumi:"startTime"`
+	TimeZone  string `pulumi:"timeZone"`
+}
+
+// MaintenanceScheduleMonthlyRecurrenceTimeWindowInput is an input type that accepts MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs and MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleMonthlyRecurrenceTimeWindowInput` via:
+//
+//	MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs{...}
+type MaintenanceScheduleMonthlyRecurrenceTimeWindowInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleMonthlyRecurrenceTimeWindowOutput() MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput
+	ToMaintenanceScheduleMonthlyRecurrenceTimeWindowOutputWithContext(context.Context) MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput
+}
+
+type MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs struct {
+	EndTime   pulumi.StringInput `pulumi:"endTime"`
+	StartTime pulumi.StringInput `pulumi:"startTime"`
+	TimeZone  pulumi.StringInput `pulumi:"timeZone"`
+}
+
+func (MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleMonthlyRecurrenceTimeWindow)(nil)).Elem()
+}
+
+func (i MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs) ToMaintenanceScheduleMonthlyRecurrenceTimeWindowOutput() MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput {
+	return i.ToMaintenanceScheduleMonthlyRecurrenceTimeWindowOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs) ToMaintenanceScheduleMonthlyRecurrenceTimeWindowOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput)
+}
+
+func (i MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs) ToMaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput {
+	return i.ToMaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs) ToMaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput).ToMaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutputWithContext(ctx)
+}
+
+// MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrInput is an input type that accepts MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs, MaintenanceScheduleMonthlyRecurrenceTimeWindowPtr and MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrInput` via:
+//
+//	        MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput
+	ToMaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutputWithContext(context.Context) MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput
+}
+
+type maintenanceScheduleMonthlyRecurrenceTimeWindowPtrType MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs
+
+func MaintenanceScheduleMonthlyRecurrenceTimeWindowPtr(v *MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs) MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrInput {
+	return (*maintenanceScheduleMonthlyRecurrenceTimeWindowPtrType)(v)
+}
+
+func (*maintenanceScheduleMonthlyRecurrenceTimeWindowPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleMonthlyRecurrenceTimeWindow)(nil)).Elem()
+}
+
+func (i *maintenanceScheduleMonthlyRecurrenceTimeWindowPtrType) ToMaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput {
+	return i.ToMaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceScheduleMonthlyRecurrenceTimeWindowPtrType) ToMaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput)
+}
+
+type MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleMonthlyRecurrenceTimeWindow)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput) ToMaintenanceScheduleMonthlyRecurrenceTimeWindowOutput() MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput {
+	return o
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput) ToMaintenanceScheduleMonthlyRecurrenceTimeWindowOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput {
+	return o
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput) ToMaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput {
+	return o.ToMaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput) ToMaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceScheduleMonthlyRecurrenceTimeWindow) *MaintenanceScheduleMonthlyRecurrenceTimeWindow {
+		return &v
+	}).(MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput) EndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleMonthlyRecurrenceTimeWindow) string { return v.EndTime }).(pulumi.StringOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput) StartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleMonthlyRecurrenceTimeWindow) string { return v.StartTime }).(pulumi.StringOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleMonthlyRecurrenceTimeWindow) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+type MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleMonthlyRecurrenceTimeWindow)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput) ToMaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput) ToMaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutputWithContext(ctx context.Context) MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput) Elem() MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleMonthlyRecurrenceTimeWindow) MaintenanceScheduleMonthlyRecurrenceTimeWindow {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceScheduleMonthlyRecurrenceTimeWindow
+		return ret
+	}).(MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput) EndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleMonthlyRecurrenceTimeWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.EndTime
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput) StartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleMonthlyRecurrenceTimeWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.StartTime
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleMonthlyRecurrenceTimeWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.TimeZone
+	}).(pulumi.StringPtrOutput)
+}
+
+type MaintenanceScheduleOnceRecurrence struct {
+	EndTime   string `pulumi:"endTime"`
+	StartTime string `pulumi:"startTime"`
+	TimeZone  string `pulumi:"timeZone"`
+}
+
+// MaintenanceScheduleOnceRecurrenceInput is an input type that accepts MaintenanceScheduleOnceRecurrenceArgs and MaintenanceScheduleOnceRecurrenceOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleOnceRecurrenceInput` via:
+//
+//	MaintenanceScheduleOnceRecurrenceArgs{...}
+type MaintenanceScheduleOnceRecurrenceInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleOnceRecurrenceOutput() MaintenanceScheduleOnceRecurrenceOutput
+	ToMaintenanceScheduleOnceRecurrenceOutputWithContext(context.Context) MaintenanceScheduleOnceRecurrenceOutput
+}
+
+type MaintenanceScheduleOnceRecurrenceArgs struct {
+	EndTime   pulumi.StringInput `pulumi:"endTime"`
+	StartTime pulumi.StringInput `pulumi:"startTime"`
+	TimeZone  pulumi.StringInput `pulumi:"timeZone"`
+}
+
+func (MaintenanceScheduleOnceRecurrenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleOnceRecurrence)(nil)).Elem()
+}
+
+func (i MaintenanceScheduleOnceRecurrenceArgs) ToMaintenanceScheduleOnceRecurrenceOutput() MaintenanceScheduleOnceRecurrenceOutput {
+	return i.ToMaintenanceScheduleOnceRecurrenceOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleOnceRecurrenceArgs) ToMaintenanceScheduleOnceRecurrenceOutputWithContext(ctx context.Context) MaintenanceScheduleOnceRecurrenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleOnceRecurrenceOutput)
+}
+
+func (i MaintenanceScheduleOnceRecurrenceArgs) ToMaintenanceScheduleOnceRecurrencePtrOutput() MaintenanceScheduleOnceRecurrencePtrOutput {
+	return i.ToMaintenanceScheduleOnceRecurrencePtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleOnceRecurrenceArgs) ToMaintenanceScheduleOnceRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleOnceRecurrencePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleOnceRecurrenceOutput).ToMaintenanceScheduleOnceRecurrencePtrOutputWithContext(ctx)
+}
+
+// MaintenanceScheduleOnceRecurrencePtrInput is an input type that accepts MaintenanceScheduleOnceRecurrenceArgs, MaintenanceScheduleOnceRecurrencePtr and MaintenanceScheduleOnceRecurrencePtrOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleOnceRecurrencePtrInput` via:
+//
+//	        MaintenanceScheduleOnceRecurrenceArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceScheduleOnceRecurrencePtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleOnceRecurrencePtrOutput() MaintenanceScheduleOnceRecurrencePtrOutput
+	ToMaintenanceScheduleOnceRecurrencePtrOutputWithContext(context.Context) MaintenanceScheduleOnceRecurrencePtrOutput
+}
+
+type maintenanceScheduleOnceRecurrencePtrType MaintenanceScheduleOnceRecurrenceArgs
+
+func MaintenanceScheduleOnceRecurrencePtr(v *MaintenanceScheduleOnceRecurrenceArgs) MaintenanceScheduleOnceRecurrencePtrInput {
+	return (*maintenanceScheduleOnceRecurrencePtrType)(v)
+}
+
+func (*maintenanceScheduleOnceRecurrencePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleOnceRecurrence)(nil)).Elem()
+}
+
+func (i *maintenanceScheduleOnceRecurrencePtrType) ToMaintenanceScheduleOnceRecurrencePtrOutput() MaintenanceScheduleOnceRecurrencePtrOutput {
+	return i.ToMaintenanceScheduleOnceRecurrencePtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceScheduleOnceRecurrencePtrType) ToMaintenanceScheduleOnceRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleOnceRecurrencePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleOnceRecurrencePtrOutput)
+}
+
+type MaintenanceScheduleOnceRecurrenceOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleOnceRecurrenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleOnceRecurrence)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleOnceRecurrenceOutput) ToMaintenanceScheduleOnceRecurrenceOutput() MaintenanceScheduleOnceRecurrenceOutput {
+	return o
+}
+
+func (o MaintenanceScheduleOnceRecurrenceOutput) ToMaintenanceScheduleOnceRecurrenceOutputWithContext(ctx context.Context) MaintenanceScheduleOnceRecurrenceOutput {
+	return o
+}
+
+func (o MaintenanceScheduleOnceRecurrenceOutput) ToMaintenanceScheduleOnceRecurrencePtrOutput() MaintenanceScheduleOnceRecurrencePtrOutput {
+	return o.ToMaintenanceScheduleOnceRecurrencePtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceScheduleOnceRecurrenceOutput) ToMaintenanceScheduleOnceRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleOnceRecurrencePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceScheduleOnceRecurrence) *MaintenanceScheduleOnceRecurrence {
+		return &v
+	}).(MaintenanceScheduleOnceRecurrencePtrOutput)
+}
+
+func (o MaintenanceScheduleOnceRecurrenceOutput) EndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleOnceRecurrence) string { return v.EndTime }).(pulumi.StringOutput)
+}
+
+func (o MaintenanceScheduleOnceRecurrenceOutput) StartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleOnceRecurrence) string { return v.StartTime }).(pulumi.StringOutput)
+}
+
+func (o MaintenanceScheduleOnceRecurrenceOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleOnceRecurrence) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+type MaintenanceScheduleOnceRecurrencePtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleOnceRecurrencePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleOnceRecurrence)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleOnceRecurrencePtrOutput) ToMaintenanceScheduleOnceRecurrencePtrOutput() MaintenanceScheduleOnceRecurrencePtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleOnceRecurrencePtrOutput) ToMaintenanceScheduleOnceRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleOnceRecurrencePtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleOnceRecurrencePtrOutput) Elem() MaintenanceScheduleOnceRecurrenceOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleOnceRecurrence) MaintenanceScheduleOnceRecurrence {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceScheduleOnceRecurrence
+		return ret
+	}).(MaintenanceScheduleOnceRecurrenceOutput)
+}
+
+func (o MaintenanceScheduleOnceRecurrencePtrOutput) EndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleOnceRecurrence) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.EndTime
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MaintenanceScheduleOnceRecurrencePtrOutput) StartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleOnceRecurrence) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.StartTime
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MaintenanceScheduleOnceRecurrencePtrOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleOnceRecurrence) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.TimeZone
+	}).(pulumi.StringPtrOutput)
+}
+
+type MaintenanceScheduleWeeklyRecurrence struct {
+	DayOfWeek       string                                             `pulumi:"dayOfWeek"`
+	RecurrenceRange MaintenanceScheduleWeeklyRecurrenceRecurrenceRange `pulumi:"recurrenceRange"`
+	TimeWindow      MaintenanceScheduleWeeklyRecurrenceTimeWindow      `pulumi:"timeWindow"`
+}
+
+// MaintenanceScheduleWeeklyRecurrenceInput is an input type that accepts MaintenanceScheduleWeeklyRecurrenceArgs and MaintenanceScheduleWeeklyRecurrenceOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleWeeklyRecurrenceInput` via:
+//
+//	MaintenanceScheduleWeeklyRecurrenceArgs{...}
+type MaintenanceScheduleWeeklyRecurrenceInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleWeeklyRecurrenceOutput() MaintenanceScheduleWeeklyRecurrenceOutput
+	ToMaintenanceScheduleWeeklyRecurrenceOutputWithContext(context.Context) MaintenanceScheduleWeeklyRecurrenceOutput
+}
+
+type MaintenanceScheduleWeeklyRecurrenceArgs struct {
+	DayOfWeek       pulumi.StringInput                                      `pulumi:"dayOfWeek"`
+	RecurrenceRange MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeInput `pulumi:"recurrenceRange"`
+	TimeWindow      MaintenanceScheduleWeeklyRecurrenceTimeWindowInput      `pulumi:"timeWindow"`
+}
+
+func (MaintenanceScheduleWeeklyRecurrenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleWeeklyRecurrence)(nil)).Elem()
+}
+
+func (i MaintenanceScheduleWeeklyRecurrenceArgs) ToMaintenanceScheduleWeeklyRecurrenceOutput() MaintenanceScheduleWeeklyRecurrenceOutput {
+	return i.ToMaintenanceScheduleWeeklyRecurrenceOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleWeeklyRecurrenceArgs) ToMaintenanceScheduleWeeklyRecurrenceOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleWeeklyRecurrenceOutput)
+}
+
+func (i MaintenanceScheduleWeeklyRecurrenceArgs) ToMaintenanceScheduleWeeklyRecurrencePtrOutput() MaintenanceScheduleWeeklyRecurrencePtrOutput {
+	return i.ToMaintenanceScheduleWeeklyRecurrencePtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleWeeklyRecurrenceArgs) ToMaintenanceScheduleWeeklyRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrencePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleWeeklyRecurrenceOutput).ToMaintenanceScheduleWeeklyRecurrencePtrOutputWithContext(ctx)
+}
+
+// MaintenanceScheduleWeeklyRecurrencePtrInput is an input type that accepts MaintenanceScheduleWeeklyRecurrenceArgs, MaintenanceScheduleWeeklyRecurrencePtr and MaintenanceScheduleWeeklyRecurrencePtrOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleWeeklyRecurrencePtrInput` via:
+//
+//	        MaintenanceScheduleWeeklyRecurrenceArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceScheduleWeeklyRecurrencePtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleWeeklyRecurrencePtrOutput() MaintenanceScheduleWeeklyRecurrencePtrOutput
+	ToMaintenanceScheduleWeeklyRecurrencePtrOutputWithContext(context.Context) MaintenanceScheduleWeeklyRecurrencePtrOutput
+}
+
+type maintenanceScheduleWeeklyRecurrencePtrType MaintenanceScheduleWeeklyRecurrenceArgs
+
+func MaintenanceScheduleWeeklyRecurrencePtr(v *MaintenanceScheduleWeeklyRecurrenceArgs) MaintenanceScheduleWeeklyRecurrencePtrInput {
+	return (*maintenanceScheduleWeeklyRecurrencePtrType)(v)
+}
+
+func (*maintenanceScheduleWeeklyRecurrencePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleWeeklyRecurrence)(nil)).Elem()
+}
+
+func (i *maintenanceScheduleWeeklyRecurrencePtrType) ToMaintenanceScheduleWeeklyRecurrencePtrOutput() MaintenanceScheduleWeeklyRecurrencePtrOutput {
+	return i.ToMaintenanceScheduleWeeklyRecurrencePtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceScheduleWeeklyRecurrencePtrType) ToMaintenanceScheduleWeeklyRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrencePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleWeeklyRecurrencePtrOutput)
+}
+
+type MaintenanceScheduleWeeklyRecurrenceOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleWeeklyRecurrenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleWeeklyRecurrence)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceOutput) ToMaintenanceScheduleWeeklyRecurrenceOutput() MaintenanceScheduleWeeklyRecurrenceOutput {
+	return o
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceOutput) ToMaintenanceScheduleWeeklyRecurrenceOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrenceOutput {
+	return o
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceOutput) ToMaintenanceScheduleWeeklyRecurrencePtrOutput() MaintenanceScheduleWeeklyRecurrencePtrOutput {
+	return o.ToMaintenanceScheduleWeeklyRecurrencePtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceOutput) ToMaintenanceScheduleWeeklyRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrencePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceScheduleWeeklyRecurrence) *MaintenanceScheduleWeeklyRecurrence {
+		return &v
+	}).(MaintenanceScheduleWeeklyRecurrencePtrOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceOutput) DayOfWeek() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleWeeklyRecurrence) string { return v.DayOfWeek }).(pulumi.StringOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceOutput) RecurrenceRange() MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput {
+	return o.ApplyT(func(v MaintenanceScheduleWeeklyRecurrence) MaintenanceScheduleWeeklyRecurrenceRecurrenceRange {
+		return v.RecurrenceRange
+	}).(MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceOutput) TimeWindow() MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput {
+	return o.ApplyT(func(v MaintenanceScheduleWeeklyRecurrence) MaintenanceScheduleWeeklyRecurrenceTimeWindow {
+		return v.TimeWindow
+	}).(MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput)
+}
+
+type MaintenanceScheduleWeeklyRecurrencePtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleWeeklyRecurrencePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleWeeklyRecurrence)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleWeeklyRecurrencePtrOutput) ToMaintenanceScheduleWeeklyRecurrencePtrOutput() MaintenanceScheduleWeeklyRecurrencePtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleWeeklyRecurrencePtrOutput) ToMaintenanceScheduleWeeklyRecurrencePtrOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrencePtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleWeeklyRecurrencePtrOutput) Elem() MaintenanceScheduleWeeklyRecurrenceOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleWeeklyRecurrence) MaintenanceScheduleWeeklyRecurrence {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceScheduleWeeklyRecurrence
+		return ret
+	}).(MaintenanceScheduleWeeklyRecurrenceOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrencePtrOutput) DayOfWeek() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleWeeklyRecurrence) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DayOfWeek
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrencePtrOutput) RecurrenceRange() MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleWeeklyRecurrence) *MaintenanceScheduleWeeklyRecurrenceRecurrenceRange {
+		if v == nil {
+			return nil
+		}
+		return &v.RecurrenceRange
+	}).(MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrencePtrOutput) TimeWindow() MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleWeeklyRecurrence) *MaintenanceScheduleWeeklyRecurrenceTimeWindow {
+		if v == nil {
+			return nil
+		}
+		return &v.TimeWindow
+	}).(MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput)
+}
+
+type MaintenanceScheduleWeeklyRecurrenceRecurrenceRange struct {
+	EndDate   string `pulumi:"endDate"`
+	StartDate string `pulumi:"startDate"`
+}
+
+// MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeInput is an input type that accepts MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs and MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeInput` via:
+//
+//	MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs{...}
+type MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput() MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput
+	ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutputWithContext(context.Context) MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput
+}
+
+type MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs struct {
+	EndDate   pulumi.StringInput `pulumi:"endDate"`
+	StartDate pulumi.StringInput `pulumi:"startDate"`
+}
+
+func (MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleWeeklyRecurrenceRecurrenceRange)(nil)).Elem()
+}
+
+func (i MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs) ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput() MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput {
+	return i.ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs) ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput)
+}
+
+func (i MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs) ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput {
+	return i.ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs) ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput).ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutputWithContext(ctx)
+}
+
+// MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrInput is an input type that accepts MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs, MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtr and MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrInput` via:
+//
+//	        MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput
+	ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutputWithContext(context.Context) MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput
+}
+
+type maintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrType MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs
+
+func MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtr(v *MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs) MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrInput {
+	return (*maintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrType)(v)
+}
+
+func (*maintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleWeeklyRecurrenceRecurrenceRange)(nil)).Elem()
+}
+
+func (i *maintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrType) ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput {
+	return i.ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrType) ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput)
+}
+
+type MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleWeeklyRecurrenceRecurrenceRange)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput) ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput() MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput {
+	return o
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput) ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput {
+	return o
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput) ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput {
+	return o.ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput) ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceScheduleWeeklyRecurrenceRecurrenceRange) *MaintenanceScheduleWeeklyRecurrenceRecurrenceRange {
+		return &v
+	}).(MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput) EndDate() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleWeeklyRecurrenceRecurrenceRange) string { return v.EndDate }).(pulumi.StringOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput) StartDate() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleWeeklyRecurrenceRecurrenceRange) string { return v.StartDate }).(pulumi.StringOutput)
+}
+
+type MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleWeeklyRecurrenceRecurrenceRange)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput) ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput() MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput) ToMaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput) Elem() MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleWeeklyRecurrenceRecurrenceRange) MaintenanceScheduleWeeklyRecurrenceRecurrenceRange {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceScheduleWeeklyRecurrenceRecurrenceRange
+		return ret
+	}).(MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput) EndDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleWeeklyRecurrenceRecurrenceRange) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.EndDate
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput) StartDate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleWeeklyRecurrenceRecurrenceRange) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.StartDate
+	}).(pulumi.StringPtrOutput)
+}
+
+type MaintenanceScheduleWeeklyRecurrenceTimeWindow struct {
+	EndTime   string `pulumi:"endTime"`
+	StartTime string `pulumi:"startTime"`
+	TimeZone  string `pulumi:"timeZone"`
+}
+
+// MaintenanceScheduleWeeklyRecurrenceTimeWindowInput is an input type that accepts MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs and MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleWeeklyRecurrenceTimeWindowInput` via:
+//
+//	MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs{...}
+type MaintenanceScheduleWeeklyRecurrenceTimeWindowInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleWeeklyRecurrenceTimeWindowOutput() MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput
+	ToMaintenanceScheduleWeeklyRecurrenceTimeWindowOutputWithContext(context.Context) MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput
+}
+
+type MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs struct {
+	EndTime   pulumi.StringInput `pulumi:"endTime"`
+	StartTime pulumi.StringInput `pulumi:"startTime"`
+	TimeZone  pulumi.StringInput `pulumi:"timeZone"`
+}
+
+func (MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleWeeklyRecurrenceTimeWindow)(nil)).Elem()
+}
+
+func (i MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs) ToMaintenanceScheduleWeeklyRecurrenceTimeWindowOutput() MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput {
+	return i.ToMaintenanceScheduleWeeklyRecurrenceTimeWindowOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs) ToMaintenanceScheduleWeeklyRecurrenceTimeWindowOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput)
+}
+
+func (i MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs) ToMaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput {
+	return i.ToMaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutputWithContext(context.Background())
+}
+
+func (i MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs) ToMaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput).ToMaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutputWithContext(ctx)
+}
+
+// MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrInput is an input type that accepts MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs, MaintenanceScheduleWeeklyRecurrenceTimeWindowPtr and MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput values.
+// You can construct a concrete instance of `MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrInput` via:
+//
+//	        MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs{...}
+//
+//	or:
+//
+//	        nil
+type MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrInput interface {
+	pulumi.Input
+
+	ToMaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput
+	ToMaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutputWithContext(context.Context) MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput
+}
+
+type maintenanceScheduleWeeklyRecurrenceTimeWindowPtrType MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs
+
+func MaintenanceScheduleWeeklyRecurrenceTimeWindowPtr(v *MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs) MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrInput {
+	return (*maintenanceScheduleWeeklyRecurrenceTimeWindowPtrType)(v)
+}
+
+func (*maintenanceScheduleWeeklyRecurrenceTimeWindowPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleWeeklyRecurrenceTimeWindow)(nil)).Elem()
+}
+
+func (i *maintenanceScheduleWeeklyRecurrenceTimeWindowPtrType) ToMaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput {
+	return i.ToMaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutputWithContext(context.Background())
+}
+
+func (i *maintenanceScheduleWeeklyRecurrenceTimeWindowPtrType) ToMaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput)
+}
+
+type MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MaintenanceScheduleWeeklyRecurrenceTimeWindow)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput) ToMaintenanceScheduleWeeklyRecurrenceTimeWindowOutput() MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput {
+	return o
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput) ToMaintenanceScheduleWeeklyRecurrenceTimeWindowOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput {
+	return o
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput) ToMaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput {
+	return o.ToMaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutputWithContext(context.Background())
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput) ToMaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MaintenanceScheduleWeeklyRecurrenceTimeWindow) *MaintenanceScheduleWeeklyRecurrenceTimeWindow {
+		return &v
+	}).(MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput) EndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleWeeklyRecurrenceTimeWindow) string { return v.EndTime }).(pulumi.StringOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput) StartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleWeeklyRecurrenceTimeWindow) string { return v.StartTime }).(pulumi.StringOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v MaintenanceScheduleWeeklyRecurrenceTimeWindow) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+type MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput struct{ *pulumi.OutputState }
+
+func (MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MaintenanceScheduleWeeklyRecurrenceTimeWindow)(nil)).Elem()
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput) ToMaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput() MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput) ToMaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutputWithContext(ctx context.Context) MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput {
+	return o
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput) Elem() MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleWeeklyRecurrenceTimeWindow) MaintenanceScheduleWeeklyRecurrenceTimeWindow {
+		if v != nil {
+			return *v
+		}
+		var ret MaintenanceScheduleWeeklyRecurrenceTimeWindow
+		return ret
+	}).(MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput) EndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleWeeklyRecurrenceTimeWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.EndTime
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput) StartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleWeeklyRecurrenceTimeWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.StartTime
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput) TimeZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MaintenanceScheduleWeeklyRecurrenceTimeWindow) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.TimeZone
+	}).(pulumi.StringPtrOutput)
+}
+
 type MaintenanceWindowMetadata struct {
 	// Dynatrace server version
 	ClusterVersion *string `pulumi:"clusterVersion"`
@@ -66614,2194 +68856,6 @@ func (o ManagementZoneEntitySelectorBasedRuleArrayOutput) Index(i pulumi.IntInpu
 	}).(ManagementZoneEntitySelectorBasedRuleOutput)
 }
 
-type ManagementZoneMetadata struct {
-	ClusterVersion               *string  `pulumi:"clusterVersion"`
-	ConfigurationVersions        []int    `pulumi:"configurationVersions"`
-	CurrentConfigurationVersions []string `pulumi:"currentConfigurationVersions"`
-}
-
-// ManagementZoneMetadataInput is an input type that accepts ManagementZoneMetadataArgs and ManagementZoneMetadataOutput values.
-// You can construct a concrete instance of `ManagementZoneMetadataInput` via:
-//
-//	ManagementZoneMetadataArgs{...}
-type ManagementZoneMetadataInput interface {
-	pulumi.Input
-
-	ToManagementZoneMetadataOutput() ManagementZoneMetadataOutput
-	ToManagementZoneMetadataOutputWithContext(context.Context) ManagementZoneMetadataOutput
-}
-
-type ManagementZoneMetadataArgs struct {
-	ClusterVersion               pulumi.StringPtrInput   `pulumi:"clusterVersion"`
-	ConfigurationVersions        pulumi.IntArrayInput    `pulumi:"configurationVersions"`
-	CurrentConfigurationVersions pulumi.StringArrayInput `pulumi:"currentConfigurationVersions"`
-}
-
-func (ManagementZoneMetadataArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneMetadata)(nil)).Elem()
-}
-
-func (i ManagementZoneMetadataArgs) ToManagementZoneMetadataOutput() ManagementZoneMetadataOutput {
-	return i.ToManagementZoneMetadataOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneMetadataArgs) ToManagementZoneMetadataOutputWithContext(ctx context.Context) ManagementZoneMetadataOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneMetadataOutput)
-}
-
-func (i ManagementZoneMetadataArgs) ToManagementZoneMetadataPtrOutput() ManagementZoneMetadataPtrOutput {
-	return i.ToManagementZoneMetadataPtrOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneMetadataArgs) ToManagementZoneMetadataPtrOutputWithContext(ctx context.Context) ManagementZoneMetadataPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneMetadataOutput).ToManagementZoneMetadataPtrOutputWithContext(ctx)
-}
-
-// ManagementZoneMetadataPtrInput is an input type that accepts ManagementZoneMetadataArgs, ManagementZoneMetadataPtr and ManagementZoneMetadataPtrOutput values.
-// You can construct a concrete instance of `ManagementZoneMetadataPtrInput` via:
-//
-//	        ManagementZoneMetadataArgs{...}
-//
-//	or:
-//
-//	        nil
-type ManagementZoneMetadataPtrInput interface {
-	pulumi.Input
-
-	ToManagementZoneMetadataPtrOutput() ManagementZoneMetadataPtrOutput
-	ToManagementZoneMetadataPtrOutputWithContext(context.Context) ManagementZoneMetadataPtrOutput
-}
-
-type managementZoneMetadataPtrType ManagementZoneMetadataArgs
-
-func ManagementZoneMetadataPtr(v *ManagementZoneMetadataArgs) ManagementZoneMetadataPtrInput {
-	return (*managementZoneMetadataPtrType)(v)
-}
-
-func (*managementZoneMetadataPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**ManagementZoneMetadata)(nil)).Elem()
-}
-
-func (i *managementZoneMetadataPtrType) ToManagementZoneMetadataPtrOutput() ManagementZoneMetadataPtrOutput {
-	return i.ToManagementZoneMetadataPtrOutputWithContext(context.Background())
-}
-
-func (i *managementZoneMetadataPtrType) ToManagementZoneMetadataPtrOutputWithContext(ctx context.Context) ManagementZoneMetadataPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneMetadataPtrOutput)
-}
-
-type ManagementZoneMetadataOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneMetadataOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneMetadata)(nil)).Elem()
-}
-
-func (o ManagementZoneMetadataOutput) ToManagementZoneMetadataOutput() ManagementZoneMetadataOutput {
-	return o
-}
-
-func (o ManagementZoneMetadataOutput) ToManagementZoneMetadataOutputWithContext(ctx context.Context) ManagementZoneMetadataOutput {
-	return o
-}
-
-func (o ManagementZoneMetadataOutput) ToManagementZoneMetadataPtrOutput() ManagementZoneMetadataPtrOutput {
-	return o.ToManagementZoneMetadataPtrOutputWithContext(context.Background())
-}
-
-func (o ManagementZoneMetadataOutput) ToManagementZoneMetadataPtrOutputWithContext(ctx context.Context) ManagementZoneMetadataPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagementZoneMetadata) *ManagementZoneMetadata {
-		return &v
-	}).(ManagementZoneMetadataPtrOutput)
-}
-
-func (o ManagementZoneMetadataOutput) ClusterVersion() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneMetadata) *string { return v.ClusterVersion }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneMetadataOutput) ConfigurationVersions() pulumi.IntArrayOutput {
-	return o.ApplyT(func(v ManagementZoneMetadata) []int { return v.ConfigurationVersions }).(pulumi.IntArrayOutput)
-}
-
-func (o ManagementZoneMetadataOutput) CurrentConfigurationVersions() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v ManagementZoneMetadata) []string { return v.CurrentConfigurationVersions }).(pulumi.StringArrayOutput)
-}
-
-type ManagementZoneMetadataPtrOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneMetadataPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**ManagementZoneMetadata)(nil)).Elem()
-}
-
-func (o ManagementZoneMetadataPtrOutput) ToManagementZoneMetadataPtrOutput() ManagementZoneMetadataPtrOutput {
-	return o
-}
-
-func (o ManagementZoneMetadataPtrOutput) ToManagementZoneMetadataPtrOutputWithContext(ctx context.Context) ManagementZoneMetadataPtrOutput {
-	return o
-}
-
-func (o ManagementZoneMetadataPtrOutput) Elem() ManagementZoneMetadataOutput {
-	return o.ApplyT(func(v *ManagementZoneMetadata) ManagementZoneMetadata {
-		if v != nil {
-			return *v
-		}
-		var ret ManagementZoneMetadata
-		return ret
-	}).(ManagementZoneMetadataOutput)
-}
-
-func (o ManagementZoneMetadataPtrOutput) ClusterVersion() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *ManagementZoneMetadata) *string {
-		if v == nil {
-			return nil
-		}
-		return v.ClusterVersion
-	}).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneMetadataPtrOutput) ConfigurationVersions() pulumi.IntArrayOutput {
-	return o.ApplyT(func(v *ManagementZoneMetadata) []int {
-		if v == nil {
-			return nil
-		}
-		return v.ConfigurationVersions
-	}).(pulumi.IntArrayOutput)
-}
-
-func (o ManagementZoneMetadataPtrOutput) CurrentConfigurationVersions() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *ManagementZoneMetadata) []string {
-		if v == nil {
-			return nil
-		}
-		return v.CurrentConfigurationVersions
-	}).(pulumi.StringArrayOutput)
-}
-
-type ManagementZoneRule struct {
-	Conditions       []ManagementZoneRuleCondition `pulumi:"conditions"`
-	Enabled          *bool                         `pulumi:"enabled"`
-	PropagationTypes []string                      `pulumi:"propagationTypes"`
-	Type             string                        `pulumi:"type"`
-	Unknowns         *string                       `pulumi:"unknowns"`
-}
-
-// ManagementZoneRuleInput is an input type that accepts ManagementZoneRuleArgs and ManagementZoneRuleOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleInput` via:
-//
-//	ManagementZoneRuleArgs{...}
-type ManagementZoneRuleInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleOutput() ManagementZoneRuleOutput
-	ToManagementZoneRuleOutputWithContext(context.Context) ManagementZoneRuleOutput
-}
-
-type ManagementZoneRuleArgs struct {
-	Conditions       ManagementZoneRuleConditionArrayInput `pulumi:"conditions"`
-	Enabled          pulumi.BoolPtrInput                   `pulumi:"enabled"`
-	PropagationTypes pulumi.StringArrayInput               `pulumi:"propagationTypes"`
-	Type             pulumi.StringInput                    `pulumi:"type"`
-	Unknowns         pulumi.StringPtrInput                 `pulumi:"unknowns"`
-}
-
-func (ManagementZoneRuleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRule)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleArgs) ToManagementZoneRuleOutput() ManagementZoneRuleOutput {
-	return i.ToManagementZoneRuleOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleArgs) ToManagementZoneRuleOutputWithContext(ctx context.Context) ManagementZoneRuleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleOutput)
-}
-
-// ManagementZoneRuleArrayInput is an input type that accepts ManagementZoneRuleArray and ManagementZoneRuleArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleArrayInput` via:
-//
-//	ManagementZoneRuleArray{ ManagementZoneRuleArgs{...} }
-type ManagementZoneRuleArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleArrayOutput() ManagementZoneRuleArrayOutput
-	ToManagementZoneRuleArrayOutputWithContext(context.Context) ManagementZoneRuleArrayOutput
-}
-
-type ManagementZoneRuleArray []ManagementZoneRuleInput
-
-func (ManagementZoneRuleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRule)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleArray) ToManagementZoneRuleArrayOutput() ManagementZoneRuleArrayOutput {
-	return i.ToManagementZoneRuleArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleArray) ToManagementZoneRuleArrayOutputWithContext(ctx context.Context) ManagementZoneRuleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleArrayOutput)
-}
-
-type ManagementZoneRuleOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRule)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleOutput) ToManagementZoneRuleOutput() ManagementZoneRuleOutput {
-	return o
-}
-
-func (o ManagementZoneRuleOutput) ToManagementZoneRuleOutputWithContext(ctx context.Context) ManagementZoneRuleOutput {
-	return o
-}
-
-func (o ManagementZoneRuleOutput) Conditions() ManagementZoneRuleConditionArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRule) []ManagementZoneRuleCondition { return v.Conditions }).(ManagementZoneRuleConditionArrayOutput)
-}
-
-func (o ManagementZoneRuleOutput) Enabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRule) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
-}
-
-func (o ManagementZoneRuleOutput) PropagationTypes() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRule) []string { return v.PropagationTypes }).(pulumi.StringArrayOutput)
-}
-
-func (o ManagementZoneRuleOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRule) string { return v.Type }).(pulumi.StringOutput)
-}
-
-func (o ManagementZoneRuleOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRule) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRule)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleArrayOutput) ToManagementZoneRuleArrayOutput() ManagementZoneRuleArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleArrayOutput) ToManagementZoneRuleArrayOutputWithContext(ctx context.Context) ManagementZoneRuleArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRule {
-		return vs[0].([]ManagementZoneRule)[vs[1].(int)]
-	}).(ManagementZoneRuleOutput)
-}
-
-type ManagementZoneRuleCondition struct {
-	// Deprecated: You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
-	ApplicationTypeComparisons  []ManagementZoneRuleConditionApplicationTypeComparison  `pulumi:"applicationTypeComparisons"`
-	ApplicationTypes            []ManagementZoneRuleConditionApplicationType            `pulumi:"applicationTypes"`
-	AzureComputeModeComparisons []ManagementZoneRuleConditionAzureComputeModeComparison `pulumi:"azureComputeModeComparisons"`
-	// Deprecated: You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
-	AzureComputeModes []ManagementZoneRuleConditionAzureComputeMode `pulumi:"azureComputeModes"`
-	// Deprecated: You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
-	AzureSkuComparisions []ManagementZoneRuleConditionAzureSkuComparision `pulumi:"azureSkuComparisions"`
-	AzureSkus            []ManagementZoneRuleConditionAzureSkus           `pulumi:"azureSkus"`
-	// Deprecated: You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
-	BaseComparisonBasics []ManagementZoneRuleConditionBaseComparisonBasic `pulumi:"baseComparisonBasics"`
-	// Deprecated: 'base_condition_key' is deprecated. You should use 'key'
-	BaseConditionKeys []ManagementZoneRuleConditionBaseConditionKey `pulumi:"baseConditionKeys"`
-	// Deprecated: You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
-	BitnessComparisions []ManagementZoneRuleConditionBitnessComparision `pulumi:"bitnessComparisions"`
-	Bitnesses           []ManagementZoneRuleConditionBitness            `pulumi:"bitnesses"`
-	// Deprecated: You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
-	CloudTypeComparisons []ManagementZoneRuleConditionCloudTypeComparison `pulumi:"cloudTypeComparisons"`
-	CloudTypes           []ManagementZoneRuleConditionCloudType           `pulumi:"cloudTypes"`
-	Comparisons          []ManagementZoneRuleConditionComparison          `pulumi:"comparisons"`
-	// Deprecated: You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
-	CustomApplicationTypeComparisons []ManagementZoneRuleConditionCustomApplicationTypeComparison `pulumi:"customApplicationTypeComparisons"`
-	CustomApplicationTypes           []ManagementZoneRuleConditionCustomApplicationType           `pulumi:"customApplicationTypes"`
-	// Deprecated: 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
-	CustomHostMetadataConditionKeys []ManagementZoneRuleConditionCustomHostMetadataConditionKey `pulumi:"customHostMetadataConditionKeys"`
-	CustomHostMetadatas             []ManagementZoneRuleConditionCustomHostMetadata             `pulumi:"customHostMetadatas"`
-	// Deprecated: 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
-	CustomProcessMetadataConditionKeys []ManagementZoneRuleConditionCustomProcessMetadataConditionKey `pulumi:"customProcessMetadataConditionKeys"`
-	CustomProcessMetadatas             []ManagementZoneRuleConditionCustomProcessMetadata             `pulumi:"customProcessMetadatas"`
-	DatabaseTopologies                 []ManagementZoneRuleConditionDatabaseTopology                  `pulumi:"databaseTopologies"`
-	// Deprecated: You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
-	DatabaseTopologyComparisons []ManagementZoneRuleConditionDatabaseTopologyComparison `pulumi:"databaseTopologyComparisons"`
-	// Deprecated: You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
-	DcrumDecoderComparisons []ManagementZoneRuleConditionDcrumDecoderComparison `pulumi:"dcrumDecoderComparisons"`
-	DcrumDecoders           []ManagementZoneRuleConditionDcrumDecoder           `pulumi:"dcrumDecoders"`
-	Entities                []ManagementZoneRuleConditionEntity                 `pulumi:"entities"`
-	// Deprecated: You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
-	EntityIdComparisons []ManagementZoneRuleConditionEntityIdComparison `pulumi:"entityIdComparisons"`
-	HostTeches          []ManagementZoneRuleConditionHostTech           `pulumi:"hostTeches"`
-	// Deprecated: `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
-	HypervisorTypeComparisions []ManagementZoneRuleConditionHypervisorTypeComparision `pulumi:"hypervisorTypeComparisions"`
-	Hypervisors                []ManagementZoneRuleConditionHypervisor                `pulumi:"hypervisors"`
-	// Deprecated: You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
-	IndexedNameComparisons []ManagementZoneRuleConditionIndexedNameComparison `pulumi:"indexedNameComparisons"`
-	IndexedNames           []ManagementZoneRuleConditionIndexedName           `pulumi:"indexedNames"`
-	// Deprecated: You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
-	IndexedStringComparisons []ManagementZoneRuleConditionIndexedStringComparison `pulumi:"indexedStringComparisons"`
-	IndexedStrings           []ManagementZoneRuleConditionIndexedString           `pulumi:"indexedStrings"`
-	// Deprecated: You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
-	IndexedTagComparisons []ManagementZoneRuleConditionIndexedTagComparison `pulumi:"indexedTagComparisons"`
-	IndexedTags           []ManagementZoneRuleConditionIndexedTag           `pulumi:"indexedTags"`
-	// Deprecated: You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
-	IntegerComparisons []ManagementZoneRuleConditionIntegerComparison `pulumi:"integerComparisons"`
-	Integers           []ManagementZoneRuleConditionInteger           `pulumi:"integers"`
-	// Deprecated: You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
-	IpaddressComparisons []ManagementZoneRuleConditionIpaddressComparison `pulumi:"ipaddressComparisons"`
-	Ipaddresses          []ManagementZoneRuleConditionIpaddress           `pulumi:"ipaddresses"`
-	Keys                 []ManagementZoneRuleConditionKey                 `pulumi:"keys"`
-	// Deprecated: You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
-	MobilePlatformComparisons []ManagementZoneRuleConditionMobilePlatformComparison `pulumi:"mobilePlatformComparisons"`
-	MobilePlatforms           []ManagementZoneRuleConditionMobilePlatform           `pulumi:"mobilePlatforms"`
-	OsArches                  []ManagementZoneRuleConditionOsArch                   `pulumi:"osArches"`
-	OsTypes                   []ManagementZoneRuleConditionOsType                   `pulumi:"osTypes"`
-	// Deprecated: You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
-	OsarchitectureComparisons []ManagementZoneRuleConditionOsarchitectureComparison `pulumi:"osarchitectureComparisons"`
-	// Deprecated: You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
-	OstypeComparisons []ManagementZoneRuleConditionOstypeComparison `pulumi:"ostypeComparisons"`
-	// Deprecated: You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
-	PaasTypeComparisons []ManagementZoneRuleConditionPaasTypeComparison `pulumi:"paasTypeComparisons"`
-	PaasTypes           []ManagementZoneRuleConditionPaasType           `pulumi:"paasTypes"`
-	// Deprecated: 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
-	ProcessMetadataConditionKeys []ManagementZoneRuleConditionProcessMetadataConditionKey `pulumi:"processMetadataConditionKeys"`
-	ProcessMetadatas             []ManagementZoneRuleConditionProcessMetadata             `pulumi:"processMetadatas"`
-	ServiceTopologies            []ManagementZoneRuleConditionServiceTopology             `pulumi:"serviceTopologies"`
-	// Deprecated: You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
-	ServiceTopologyComparisons []ManagementZoneRuleConditionServiceTopologyComparison `pulumi:"serviceTopologyComparisons"`
-	// Deprecated: You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
-	ServiceTypeComparisons []ManagementZoneRuleConditionServiceTypeComparison `pulumi:"serviceTypeComparisons"`
-	ServiceTypes           []ManagementZoneRuleConditionServiceType           `pulumi:"serviceTypes"`
-	// Deprecated: You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
-	SimpleHostTechComparisons []ManagementZoneRuleConditionSimpleHostTechComparison `pulumi:"simpleHostTechComparisons"`
-	// Deprecated: You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
-	SimpleTechComparisons []ManagementZoneRuleConditionSimpleTechComparison `pulumi:"simpleTechComparisons"`
-	// Deprecated: You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
-	StringComparisons []ManagementZoneRuleConditionStringComparison `pulumi:"stringComparisons"`
-	// Deprecated: 'string_condition_key' is deprecated. You should use 'string_key'
-	StringConditionKeys []ManagementZoneRuleConditionStringConditionKey `pulumi:"stringConditionKeys"`
-	StringKeys          []ManagementZoneRuleConditionStringKey          `pulumi:"stringKeys"`
-	Strings             []ManagementZoneRuleConditionString             `pulumi:"strings"`
-	// Deprecated: You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
-	SyntheticEngineTypeComparisons []ManagementZoneRuleConditionSyntheticEngineTypeComparison `pulumi:"syntheticEngineTypeComparisons"`
-	SyntheticEngines               []ManagementZoneRuleConditionSyntheticEngine               `pulumi:"syntheticEngines"`
-	// Deprecated: You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
-	TagComparisons []ManagementZoneRuleConditionTagComparison `pulumi:"tagComparisons"`
-	Tags           []ManagementZoneRuleConditionTag           `pulumi:"tags"`
-	Teches         []ManagementZoneRuleConditionTech          `pulumi:"teches"`
-	Unknowns       *string                                    `pulumi:"unknowns"`
-}
-
-// ManagementZoneRuleConditionInput is an input type that accepts ManagementZoneRuleConditionArgs and ManagementZoneRuleConditionOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionInput` via:
-//
-//	ManagementZoneRuleConditionArgs{...}
-type ManagementZoneRuleConditionInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionOutput() ManagementZoneRuleConditionOutput
-	ToManagementZoneRuleConditionOutputWithContext(context.Context) ManagementZoneRuleConditionOutput
-}
-
-type ManagementZoneRuleConditionArgs struct {
-	// Deprecated: You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
-	ApplicationTypeComparisons  ManagementZoneRuleConditionApplicationTypeComparisonArrayInput  `pulumi:"applicationTypeComparisons"`
-	ApplicationTypes            ManagementZoneRuleConditionApplicationTypeArrayInput            `pulumi:"applicationTypes"`
-	AzureComputeModeComparisons ManagementZoneRuleConditionAzureComputeModeComparisonArrayInput `pulumi:"azureComputeModeComparisons"`
-	// Deprecated: You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
-	AzureComputeModes ManagementZoneRuleConditionAzureComputeModeArrayInput `pulumi:"azureComputeModes"`
-	// Deprecated: You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
-	AzureSkuComparisions ManagementZoneRuleConditionAzureSkuComparisionArrayInput `pulumi:"azureSkuComparisions"`
-	AzureSkus            ManagementZoneRuleConditionAzureSkusArrayInput           `pulumi:"azureSkus"`
-	// Deprecated: You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
-	BaseComparisonBasics ManagementZoneRuleConditionBaseComparisonBasicArrayInput `pulumi:"baseComparisonBasics"`
-	// Deprecated: 'base_condition_key' is deprecated. You should use 'key'
-	BaseConditionKeys ManagementZoneRuleConditionBaseConditionKeyArrayInput `pulumi:"baseConditionKeys"`
-	// Deprecated: You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
-	BitnessComparisions ManagementZoneRuleConditionBitnessComparisionArrayInput `pulumi:"bitnessComparisions"`
-	Bitnesses           ManagementZoneRuleConditionBitnessArrayInput            `pulumi:"bitnesses"`
-	// Deprecated: You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
-	CloudTypeComparisons ManagementZoneRuleConditionCloudTypeComparisonArrayInput `pulumi:"cloudTypeComparisons"`
-	CloudTypes           ManagementZoneRuleConditionCloudTypeArrayInput           `pulumi:"cloudTypes"`
-	Comparisons          ManagementZoneRuleConditionComparisonArrayInput          `pulumi:"comparisons"`
-	// Deprecated: You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
-	CustomApplicationTypeComparisons ManagementZoneRuleConditionCustomApplicationTypeComparisonArrayInput `pulumi:"customApplicationTypeComparisons"`
-	CustomApplicationTypes           ManagementZoneRuleConditionCustomApplicationTypeArrayInput           `pulumi:"customApplicationTypes"`
-	// Deprecated: 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
-	CustomHostMetadataConditionKeys ManagementZoneRuleConditionCustomHostMetadataConditionKeyArrayInput `pulumi:"customHostMetadataConditionKeys"`
-	CustomHostMetadatas             ManagementZoneRuleConditionCustomHostMetadataArrayInput             `pulumi:"customHostMetadatas"`
-	// Deprecated: 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
-	CustomProcessMetadataConditionKeys ManagementZoneRuleConditionCustomProcessMetadataConditionKeyArrayInput `pulumi:"customProcessMetadataConditionKeys"`
-	CustomProcessMetadatas             ManagementZoneRuleConditionCustomProcessMetadataArrayInput             `pulumi:"customProcessMetadatas"`
-	DatabaseTopologies                 ManagementZoneRuleConditionDatabaseTopologyArrayInput                  `pulumi:"databaseTopologies"`
-	// Deprecated: You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
-	DatabaseTopologyComparisons ManagementZoneRuleConditionDatabaseTopologyComparisonArrayInput `pulumi:"databaseTopologyComparisons"`
-	// Deprecated: You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
-	DcrumDecoderComparisons ManagementZoneRuleConditionDcrumDecoderComparisonArrayInput `pulumi:"dcrumDecoderComparisons"`
-	DcrumDecoders           ManagementZoneRuleConditionDcrumDecoderArrayInput           `pulumi:"dcrumDecoders"`
-	Entities                ManagementZoneRuleConditionEntityArrayInput                 `pulumi:"entities"`
-	// Deprecated: You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
-	EntityIdComparisons ManagementZoneRuleConditionEntityIdComparisonArrayInput `pulumi:"entityIdComparisons"`
-	HostTeches          ManagementZoneRuleConditionHostTechArrayInput           `pulumi:"hostTeches"`
-	// Deprecated: `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
-	HypervisorTypeComparisions ManagementZoneRuleConditionHypervisorTypeComparisionArrayInput `pulumi:"hypervisorTypeComparisions"`
-	Hypervisors                ManagementZoneRuleConditionHypervisorArrayInput                `pulumi:"hypervisors"`
-	// Deprecated: You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
-	IndexedNameComparisons ManagementZoneRuleConditionIndexedNameComparisonArrayInput `pulumi:"indexedNameComparisons"`
-	IndexedNames           ManagementZoneRuleConditionIndexedNameArrayInput           `pulumi:"indexedNames"`
-	// Deprecated: You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
-	IndexedStringComparisons ManagementZoneRuleConditionIndexedStringComparisonArrayInput `pulumi:"indexedStringComparisons"`
-	IndexedStrings           ManagementZoneRuleConditionIndexedStringArrayInput           `pulumi:"indexedStrings"`
-	// Deprecated: You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
-	IndexedTagComparisons ManagementZoneRuleConditionIndexedTagComparisonArrayInput `pulumi:"indexedTagComparisons"`
-	IndexedTags           ManagementZoneRuleConditionIndexedTagArrayInput           `pulumi:"indexedTags"`
-	// Deprecated: You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
-	IntegerComparisons ManagementZoneRuleConditionIntegerComparisonArrayInput `pulumi:"integerComparisons"`
-	Integers           ManagementZoneRuleConditionIntegerArrayInput           `pulumi:"integers"`
-	// Deprecated: You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
-	IpaddressComparisons ManagementZoneRuleConditionIpaddressComparisonArrayInput `pulumi:"ipaddressComparisons"`
-	Ipaddresses          ManagementZoneRuleConditionIpaddressArrayInput           `pulumi:"ipaddresses"`
-	Keys                 ManagementZoneRuleConditionKeyArrayInput                 `pulumi:"keys"`
-	// Deprecated: You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
-	MobilePlatformComparisons ManagementZoneRuleConditionMobilePlatformComparisonArrayInput `pulumi:"mobilePlatformComparisons"`
-	MobilePlatforms           ManagementZoneRuleConditionMobilePlatformArrayInput           `pulumi:"mobilePlatforms"`
-	OsArches                  ManagementZoneRuleConditionOsArchArrayInput                   `pulumi:"osArches"`
-	OsTypes                   ManagementZoneRuleConditionOsTypeArrayInput                   `pulumi:"osTypes"`
-	// Deprecated: You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
-	OsarchitectureComparisons ManagementZoneRuleConditionOsarchitectureComparisonArrayInput `pulumi:"osarchitectureComparisons"`
-	// Deprecated: You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
-	OstypeComparisons ManagementZoneRuleConditionOstypeComparisonArrayInput `pulumi:"ostypeComparisons"`
-	// Deprecated: You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
-	PaasTypeComparisons ManagementZoneRuleConditionPaasTypeComparisonArrayInput `pulumi:"paasTypeComparisons"`
-	PaasTypes           ManagementZoneRuleConditionPaasTypeArrayInput           `pulumi:"paasTypes"`
-	// Deprecated: 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
-	ProcessMetadataConditionKeys ManagementZoneRuleConditionProcessMetadataConditionKeyArrayInput `pulumi:"processMetadataConditionKeys"`
-	ProcessMetadatas             ManagementZoneRuleConditionProcessMetadataArrayInput             `pulumi:"processMetadatas"`
-	ServiceTopologies            ManagementZoneRuleConditionServiceTopologyArrayInput             `pulumi:"serviceTopologies"`
-	// Deprecated: You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
-	ServiceTopologyComparisons ManagementZoneRuleConditionServiceTopologyComparisonArrayInput `pulumi:"serviceTopologyComparisons"`
-	// Deprecated: You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
-	ServiceTypeComparisons ManagementZoneRuleConditionServiceTypeComparisonArrayInput `pulumi:"serviceTypeComparisons"`
-	ServiceTypes           ManagementZoneRuleConditionServiceTypeArrayInput           `pulumi:"serviceTypes"`
-	// Deprecated: You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
-	SimpleHostTechComparisons ManagementZoneRuleConditionSimpleHostTechComparisonArrayInput `pulumi:"simpleHostTechComparisons"`
-	// Deprecated: You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
-	SimpleTechComparisons ManagementZoneRuleConditionSimpleTechComparisonArrayInput `pulumi:"simpleTechComparisons"`
-	// Deprecated: You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
-	StringComparisons ManagementZoneRuleConditionStringComparisonArrayInput `pulumi:"stringComparisons"`
-	// Deprecated: 'string_condition_key' is deprecated. You should use 'string_key'
-	StringConditionKeys ManagementZoneRuleConditionStringConditionKeyArrayInput `pulumi:"stringConditionKeys"`
-	StringKeys          ManagementZoneRuleConditionStringKeyArrayInput          `pulumi:"stringKeys"`
-	Strings             ManagementZoneRuleConditionStringArrayInput             `pulumi:"strings"`
-	// Deprecated: You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
-	SyntheticEngineTypeComparisons ManagementZoneRuleConditionSyntheticEngineTypeComparisonArrayInput `pulumi:"syntheticEngineTypeComparisons"`
-	SyntheticEngines               ManagementZoneRuleConditionSyntheticEngineArrayInput               `pulumi:"syntheticEngines"`
-	// Deprecated: You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
-	TagComparisons ManagementZoneRuleConditionTagComparisonArrayInput `pulumi:"tagComparisons"`
-	Tags           ManagementZoneRuleConditionTagArrayInput           `pulumi:"tags"`
-	Teches         ManagementZoneRuleConditionTechArrayInput          `pulumi:"teches"`
-	Unknowns       pulumi.StringPtrInput                              `pulumi:"unknowns"`
-}
-
-func (ManagementZoneRuleConditionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleCondition)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionArgs) ToManagementZoneRuleConditionOutput() ManagementZoneRuleConditionOutput {
-	return i.ToManagementZoneRuleConditionOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionArgs) ToManagementZoneRuleConditionOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionOutput)
-}
-
-// ManagementZoneRuleConditionArrayInput is an input type that accepts ManagementZoneRuleConditionArray and ManagementZoneRuleConditionArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionArrayInput` via:
-//
-//	ManagementZoneRuleConditionArray{ ManagementZoneRuleConditionArgs{...} }
-type ManagementZoneRuleConditionArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionArrayOutput() ManagementZoneRuleConditionArrayOutput
-	ToManagementZoneRuleConditionArrayOutputWithContext(context.Context) ManagementZoneRuleConditionArrayOutput
-}
-
-type ManagementZoneRuleConditionArray []ManagementZoneRuleConditionInput
-
-func (ManagementZoneRuleConditionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleCondition)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionArray) ToManagementZoneRuleConditionArrayOutput() ManagementZoneRuleConditionArrayOutput {
-	return i.ToManagementZoneRuleConditionArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionArray) ToManagementZoneRuleConditionArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionArrayOutput)
-}
-
-type ManagementZoneRuleConditionOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleCondition)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionOutput) ToManagementZoneRuleConditionOutput() ManagementZoneRuleConditionOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionOutput) ToManagementZoneRuleConditionOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOutput {
-	return o
-}
-
-// Deprecated: You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) ApplicationTypeComparisons() ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionApplicationTypeComparison {
-		return v.ApplicationTypeComparisons
-	}).(ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) ApplicationTypes() ManagementZoneRuleConditionApplicationTypeArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionApplicationType {
-		return v.ApplicationTypes
-	}).(ManagementZoneRuleConditionApplicationTypeArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) AzureComputeModeComparisons() ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionAzureComputeModeComparison {
-		return v.AzureComputeModeComparisons
-	}).(ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput)
-}
-
-// Deprecated: You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) AzureComputeModes() ManagementZoneRuleConditionAzureComputeModeArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionAzureComputeMode {
-		return v.AzureComputeModes
-	}).(ManagementZoneRuleConditionAzureComputeModeArrayOutput)
-}
-
-// Deprecated: You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) AzureSkuComparisions() ManagementZoneRuleConditionAzureSkuComparisionArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionAzureSkuComparision {
-		return v.AzureSkuComparisions
-	}).(ManagementZoneRuleConditionAzureSkuComparisionArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) AzureSkus() ManagementZoneRuleConditionAzureSkusArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionAzureSkus { return v.AzureSkus }).(ManagementZoneRuleConditionAzureSkusArrayOutput)
-}
-
-// Deprecated: You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) BaseComparisonBasics() ManagementZoneRuleConditionBaseComparisonBasicArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionBaseComparisonBasic {
-		return v.BaseComparisonBasics
-	}).(ManagementZoneRuleConditionBaseComparisonBasicArrayOutput)
-}
-
-// Deprecated: 'base_condition_key' is deprecated. You should use 'key'
-func (o ManagementZoneRuleConditionOutput) BaseConditionKeys() ManagementZoneRuleConditionBaseConditionKeyArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionBaseConditionKey {
-		return v.BaseConditionKeys
-	}).(ManagementZoneRuleConditionBaseConditionKeyArrayOutput)
-}
-
-// Deprecated: You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) BitnessComparisions() ManagementZoneRuleConditionBitnessComparisionArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionBitnessComparision {
-		return v.BitnessComparisions
-	}).(ManagementZoneRuleConditionBitnessComparisionArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) Bitnesses() ManagementZoneRuleConditionBitnessArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionBitness { return v.Bitnesses }).(ManagementZoneRuleConditionBitnessArrayOutput)
-}
-
-// Deprecated: You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) CloudTypeComparisons() ManagementZoneRuleConditionCloudTypeComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCloudTypeComparison {
-		return v.CloudTypeComparisons
-	}).(ManagementZoneRuleConditionCloudTypeComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) CloudTypes() ManagementZoneRuleConditionCloudTypeArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCloudType { return v.CloudTypes }).(ManagementZoneRuleConditionCloudTypeArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) Comparisons() ManagementZoneRuleConditionComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionComparison { return v.Comparisons }).(ManagementZoneRuleConditionComparisonArrayOutput)
-}
-
-// Deprecated: You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) CustomApplicationTypeComparisons() ManagementZoneRuleConditionCustomApplicationTypeComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCustomApplicationTypeComparison {
-		return v.CustomApplicationTypeComparisons
-	}).(ManagementZoneRuleConditionCustomApplicationTypeComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) CustomApplicationTypes() ManagementZoneRuleConditionCustomApplicationTypeArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCustomApplicationType {
-		return v.CustomApplicationTypes
-	}).(ManagementZoneRuleConditionCustomApplicationTypeArrayOutput)
-}
-
-// Deprecated: 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
-func (o ManagementZoneRuleConditionOutput) CustomHostMetadataConditionKeys() ManagementZoneRuleConditionCustomHostMetadataConditionKeyArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCustomHostMetadataConditionKey {
-		return v.CustomHostMetadataConditionKeys
-	}).(ManagementZoneRuleConditionCustomHostMetadataConditionKeyArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) CustomHostMetadatas() ManagementZoneRuleConditionCustomHostMetadataArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCustomHostMetadata {
-		return v.CustomHostMetadatas
-	}).(ManagementZoneRuleConditionCustomHostMetadataArrayOutput)
-}
-
-// Deprecated: 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
-func (o ManagementZoneRuleConditionOutput) CustomProcessMetadataConditionKeys() ManagementZoneRuleConditionCustomProcessMetadataConditionKeyArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCustomProcessMetadataConditionKey {
-		return v.CustomProcessMetadataConditionKeys
-	}).(ManagementZoneRuleConditionCustomProcessMetadataConditionKeyArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) CustomProcessMetadatas() ManagementZoneRuleConditionCustomProcessMetadataArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCustomProcessMetadata {
-		return v.CustomProcessMetadatas
-	}).(ManagementZoneRuleConditionCustomProcessMetadataArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) DatabaseTopologies() ManagementZoneRuleConditionDatabaseTopologyArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionDatabaseTopology {
-		return v.DatabaseTopologies
-	}).(ManagementZoneRuleConditionDatabaseTopologyArrayOutput)
-}
-
-// Deprecated: You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) DatabaseTopologyComparisons() ManagementZoneRuleConditionDatabaseTopologyComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionDatabaseTopologyComparison {
-		return v.DatabaseTopologyComparisons
-	}).(ManagementZoneRuleConditionDatabaseTopologyComparisonArrayOutput)
-}
-
-// Deprecated: You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) DcrumDecoderComparisons() ManagementZoneRuleConditionDcrumDecoderComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionDcrumDecoderComparison {
-		return v.DcrumDecoderComparisons
-	}).(ManagementZoneRuleConditionDcrumDecoderComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) DcrumDecoders() ManagementZoneRuleConditionDcrumDecoderArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionDcrumDecoder { return v.DcrumDecoders }).(ManagementZoneRuleConditionDcrumDecoderArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) Entities() ManagementZoneRuleConditionEntityArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionEntity { return v.Entities }).(ManagementZoneRuleConditionEntityArrayOutput)
-}
-
-// Deprecated: You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) EntityIdComparisons() ManagementZoneRuleConditionEntityIdComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionEntityIdComparison {
-		return v.EntityIdComparisons
-	}).(ManagementZoneRuleConditionEntityIdComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) HostTeches() ManagementZoneRuleConditionHostTechArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionHostTech { return v.HostTeches }).(ManagementZoneRuleConditionHostTechArrayOutput)
-}
-
-// Deprecated: `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
-func (o ManagementZoneRuleConditionOutput) HypervisorTypeComparisions() ManagementZoneRuleConditionHypervisorTypeComparisionArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionHypervisorTypeComparision {
-		return v.HypervisorTypeComparisions
-	}).(ManagementZoneRuleConditionHypervisorTypeComparisionArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) Hypervisors() ManagementZoneRuleConditionHypervisorArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionHypervisor { return v.Hypervisors }).(ManagementZoneRuleConditionHypervisorArrayOutput)
-}
-
-// Deprecated: You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) IndexedNameComparisons() ManagementZoneRuleConditionIndexedNameComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIndexedNameComparison {
-		return v.IndexedNameComparisons
-	}).(ManagementZoneRuleConditionIndexedNameComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) IndexedNames() ManagementZoneRuleConditionIndexedNameArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIndexedName { return v.IndexedNames }).(ManagementZoneRuleConditionIndexedNameArrayOutput)
-}
-
-// Deprecated: You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) IndexedStringComparisons() ManagementZoneRuleConditionIndexedStringComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIndexedStringComparison {
-		return v.IndexedStringComparisons
-	}).(ManagementZoneRuleConditionIndexedStringComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) IndexedStrings() ManagementZoneRuleConditionIndexedStringArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIndexedString {
-		return v.IndexedStrings
-	}).(ManagementZoneRuleConditionIndexedStringArrayOutput)
-}
-
-// Deprecated: You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) IndexedTagComparisons() ManagementZoneRuleConditionIndexedTagComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIndexedTagComparison {
-		return v.IndexedTagComparisons
-	}).(ManagementZoneRuleConditionIndexedTagComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) IndexedTags() ManagementZoneRuleConditionIndexedTagArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIndexedTag { return v.IndexedTags }).(ManagementZoneRuleConditionIndexedTagArrayOutput)
-}
-
-// Deprecated: You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) IntegerComparisons() ManagementZoneRuleConditionIntegerComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIntegerComparison {
-		return v.IntegerComparisons
-	}).(ManagementZoneRuleConditionIntegerComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) Integers() ManagementZoneRuleConditionIntegerArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionInteger { return v.Integers }).(ManagementZoneRuleConditionIntegerArrayOutput)
-}
-
-// Deprecated: You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) IpaddressComparisons() ManagementZoneRuleConditionIpaddressComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIpaddressComparison {
-		return v.IpaddressComparisons
-	}).(ManagementZoneRuleConditionIpaddressComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) Ipaddresses() ManagementZoneRuleConditionIpaddressArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIpaddress { return v.Ipaddresses }).(ManagementZoneRuleConditionIpaddressArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) Keys() ManagementZoneRuleConditionKeyArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionKey { return v.Keys }).(ManagementZoneRuleConditionKeyArrayOutput)
-}
-
-// Deprecated: You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) MobilePlatformComparisons() ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionMobilePlatformComparison {
-		return v.MobilePlatformComparisons
-	}).(ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) MobilePlatforms() ManagementZoneRuleConditionMobilePlatformArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionMobilePlatform {
-		return v.MobilePlatforms
-	}).(ManagementZoneRuleConditionMobilePlatformArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) OsArches() ManagementZoneRuleConditionOsArchArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionOsArch { return v.OsArches }).(ManagementZoneRuleConditionOsArchArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) OsTypes() ManagementZoneRuleConditionOsTypeArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionOsType { return v.OsTypes }).(ManagementZoneRuleConditionOsTypeArrayOutput)
-}
-
-// Deprecated: You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) OsarchitectureComparisons() ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionOsarchitectureComparison {
-		return v.OsarchitectureComparisons
-	}).(ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput)
-}
-
-// Deprecated: You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) OstypeComparisons() ManagementZoneRuleConditionOstypeComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionOstypeComparison {
-		return v.OstypeComparisons
-	}).(ManagementZoneRuleConditionOstypeComparisonArrayOutput)
-}
-
-// Deprecated: You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) PaasTypeComparisons() ManagementZoneRuleConditionPaasTypeComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionPaasTypeComparison {
-		return v.PaasTypeComparisons
-	}).(ManagementZoneRuleConditionPaasTypeComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) PaasTypes() ManagementZoneRuleConditionPaasTypeArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionPaasType { return v.PaasTypes }).(ManagementZoneRuleConditionPaasTypeArrayOutput)
-}
-
-// Deprecated: 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
-func (o ManagementZoneRuleConditionOutput) ProcessMetadataConditionKeys() ManagementZoneRuleConditionProcessMetadataConditionKeyArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionProcessMetadataConditionKey {
-		return v.ProcessMetadataConditionKeys
-	}).(ManagementZoneRuleConditionProcessMetadataConditionKeyArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) ProcessMetadatas() ManagementZoneRuleConditionProcessMetadataArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionProcessMetadata {
-		return v.ProcessMetadatas
-	}).(ManagementZoneRuleConditionProcessMetadataArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) ServiceTopologies() ManagementZoneRuleConditionServiceTopologyArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionServiceTopology {
-		return v.ServiceTopologies
-	}).(ManagementZoneRuleConditionServiceTopologyArrayOutput)
-}
-
-// Deprecated: You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) ServiceTopologyComparisons() ManagementZoneRuleConditionServiceTopologyComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionServiceTopologyComparison {
-		return v.ServiceTopologyComparisons
-	}).(ManagementZoneRuleConditionServiceTopologyComparisonArrayOutput)
-}
-
-// Deprecated: You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) ServiceTypeComparisons() ManagementZoneRuleConditionServiceTypeComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionServiceTypeComparison {
-		return v.ServiceTypeComparisons
-	}).(ManagementZoneRuleConditionServiceTypeComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) ServiceTypes() ManagementZoneRuleConditionServiceTypeArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionServiceType { return v.ServiceTypes }).(ManagementZoneRuleConditionServiceTypeArrayOutput)
-}
-
-// Deprecated: You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) SimpleHostTechComparisons() ManagementZoneRuleConditionSimpleHostTechComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionSimpleHostTechComparison {
-		return v.SimpleHostTechComparisons
-	}).(ManagementZoneRuleConditionSimpleHostTechComparisonArrayOutput)
-}
-
-// Deprecated: You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) SimpleTechComparisons() ManagementZoneRuleConditionSimpleTechComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionSimpleTechComparison {
-		return v.SimpleTechComparisons
-	}).(ManagementZoneRuleConditionSimpleTechComparisonArrayOutput)
-}
-
-// Deprecated: You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) StringComparisons() ManagementZoneRuleConditionStringComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionStringComparison {
-		return v.StringComparisons
-	}).(ManagementZoneRuleConditionStringComparisonArrayOutput)
-}
-
-// Deprecated: 'string_condition_key' is deprecated. You should use 'string_key'
-func (o ManagementZoneRuleConditionOutput) StringConditionKeys() ManagementZoneRuleConditionStringConditionKeyArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionStringConditionKey {
-		return v.StringConditionKeys
-	}).(ManagementZoneRuleConditionStringConditionKeyArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) StringKeys() ManagementZoneRuleConditionStringKeyArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionStringKey { return v.StringKeys }).(ManagementZoneRuleConditionStringKeyArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) Strings() ManagementZoneRuleConditionStringArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionString { return v.Strings }).(ManagementZoneRuleConditionStringArrayOutput)
-}
-
-// Deprecated: You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) SyntheticEngineTypeComparisons() ManagementZoneRuleConditionSyntheticEngineTypeComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionSyntheticEngineTypeComparison {
-		return v.SyntheticEngineTypeComparisons
-	}).(ManagementZoneRuleConditionSyntheticEngineTypeComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) SyntheticEngines() ManagementZoneRuleConditionSyntheticEngineArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionSyntheticEngine {
-		return v.SyntheticEngines
-	}).(ManagementZoneRuleConditionSyntheticEngineArrayOutput)
-}
-
-// Deprecated: You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
-func (o ManagementZoneRuleConditionOutput) TagComparisons() ManagementZoneRuleConditionTagComparisonArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionTagComparison {
-		return v.TagComparisons
-	}).(ManagementZoneRuleConditionTagComparisonArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) Tags() ManagementZoneRuleConditionTagArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionTag { return v.Tags }).(ManagementZoneRuleConditionTagArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) Teches() ManagementZoneRuleConditionTechArrayOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionTech { return v.Teches }).(ManagementZoneRuleConditionTechArrayOutput)
-}
-
-func (o ManagementZoneRuleConditionOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleCondition) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleCondition)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionArrayOutput) ToManagementZoneRuleConditionArrayOutput() ManagementZoneRuleConditionArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionArrayOutput) ToManagementZoneRuleConditionArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleCondition {
-		return vs[0].([]ManagementZoneRuleCondition)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionOutput)
-}
-
-type ManagementZoneRuleConditionApplicationType struct {
-	Negate   *bool   `pulumi:"negate"`
-	Operator string  `pulumi:"operator"`
-	Unknowns *string `pulumi:"unknowns"`
-	Value    *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionApplicationTypeInput is an input type that accepts ManagementZoneRuleConditionApplicationTypeArgs and ManagementZoneRuleConditionApplicationTypeOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionApplicationTypeInput` via:
-//
-//	ManagementZoneRuleConditionApplicationTypeArgs{...}
-type ManagementZoneRuleConditionApplicationTypeInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionApplicationTypeOutput() ManagementZoneRuleConditionApplicationTypeOutput
-	ToManagementZoneRuleConditionApplicationTypeOutputWithContext(context.Context) ManagementZoneRuleConditionApplicationTypeOutput
-}
-
-type ManagementZoneRuleConditionApplicationTypeArgs struct {
-	Negate   pulumi.BoolPtrInput   `pulumi:"negate"`
-	Operator pulumi.StringInput    `pulumi:"operator"`
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	Value    pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionApplicationTypeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionApplicationType)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionApplicationTypeArgs) ToManagementZoneRuleConditionApplicationTypeOutput() ManagementZoneRuleConditionApplicationTypeOutput {
-	return i.ToManagementZoneRuleConditionApplicationTypeOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionApplicationTypeArgs) ToManagementZoneRuleConditionApplicationTypeOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionApplicationTypeOutput)
-}
-
-// ManagementZoneRuleConditionApplicationTypeArrayInput is an input type that accepts ManagementZoneRuleConditionApplicationTypeArray and ManagementZoneRuleConditionApplicationTypeArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionApplicationTypeArrayInput` via:
-//
-//	ManagementZoneRuleConditionApplicationTypeArray{ ManagementZoneRuleConditionApplicationTypeArgs{...} }
-type ManagementZoneRuleConditionApplicationTypeArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionApplicationTypeArrayOutput() ManagementZoneRuleConditionApplicationTypeArrayOutput
-	ToManagementZoneRuleConditionApplicationTypeArrayOutputWithContext(context.Context) ManagementZoneRuleConditionApplicationTypeArrayOutput
-}
-
-type ManagementZoneRuleConditionApplicationTypeArray []ManagementZoneRuleConditionApplicationTypeInput
-
-func (ManagementZoneRuleConditionApplicationTypeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionApplicationType)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionApplicationTypeArray) ToManagementZoneRuleConditionApplicationTypeArrayOutput() ManagementZoneRuleConditionApplicationTypeArrayOutput {
-	return i.ToManagementZoneRuleConditionApplicationTypeArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionApplicationTypeArray) ToManagementZoneRuleConditionApplicationTypeArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionApplicationTypeArrayOutput)
-}
-
-type ManagementZoneRuleConditionApplicationTypeOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionApplicationTypeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionApplicationType)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeOutput) ToManagementZoneRuleConditionApplicationTypeOutput() ManagementZoneRuleConditionApplicationTypeOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeOutput) ToManagementZoneRuleConditionApplicationTypeOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationType) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationType) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationType) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationType) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionApplicationTypeArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionApplicationTypeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionApplicationType)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeArrayOutput) ToManagementZoneRuleConditionApplicationTypeArrayOutput() ManagementZoneRuleConditionApplicationTypeArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeArrayOutput) ToManagementZoneRuleConditionApplicationTypeArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionApplicationTypeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionApplicationType {
-		return vs[0].([]ManagementZoneRuleConditionApplicationType)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionApplicationTypeOutput)
-}
-
-type ManagementZoneRuleConditionApplicationTypeComparison struct {
-	Negate   *bool  `pulumi:"negate"`
-	Operator string `pulumi:"operator"`
-	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-	Type     *string `pulumi:"type"`
-	Unknowns *string `pulumi:"unknowns"`
-	Value    *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionApplicationTypeComparisonInput is an input type that accepts ManagementZoneRuleConditionApplicationTypeComparisonArgs and ManagementZoneRuleConditionApplicationTypeComparisonOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionApplicationTypeComparisonInput` via:
-//
-//	ManagementZoneRuleConditionApplicationTypeComparisonArgs{...}
-type ManagementZoneRuleConditionApplicationTypeComparisonInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionApplicationTypeComparisonOutput() ManagementZoneRuleConditionApplicationTypeComparisonOutput
-	ToManagementZoneRuleConditionApplicationTypeComparisonOutputWithContext(context.Context) ManagementZoneRuleConditionApplicationTypeComparisonOutput
-}
-
-type ManagementZoneRuleConditionApplicationTypeComparisonArgs struct {
-	Negate   pulumi.BoolPtrInput `pulumi:"negate"`
-	Operator pulumi.StringInput  `pulumi:"operator"`
-	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-	Type     pulumi.StringPtrInput `pulumi:"type"`
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	Value    pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionApplicationTypeComparisonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionApplicationTypeComparison)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionApplicationTypeComparisonArgs) ToManagementZoneRuleConditionApplicationTypeComparisonOutput() ManagementZoneRuleConditionApplicationTypeComparisonOutput {
-	return i.ToManagementZoneRuleConditionApplicationTypeComparisonOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionApplicationTypeComparisonArgs) ToManagementZoneRuleConditionApplicationTypeComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeComparisonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionApplicationTypeComparisonOutput)
-}
-
-// ManagementZoneRuleConditionApplicationTypeComparisonArrayInput is an input type that accepts ManagementZoneRuleConditionApplicationTypeComparisonArray and ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionApplicationTypeComparisonArrayInput` via:
-//
-//	ManagementZoneRuleConditionApplicationTypeComparisonArray{ ManagementZoneRuleConditionApplicationTypeComparisonArgs{...} }
-type ManagementZoneRuleConditionApplicationTypeComparisonArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionApplicationTypeComparisonArrayOutput() ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput
-	ToManagementZoneRuleConditionApplicationTypeComparisonArrayOutputWithContext(context.Context) ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput
-}
-
-type ManagementZoneRuleConditionApplicationTypeComparisonArray []ManagementZoneRuleConditionApplicationTypeComparisonInput
-
-func (ManagementZoneRuleConditionApplicationTypeComparisonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionApplicationTypeComparison)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionApplicationTypeComparisonArray) ToManagementZoneRuleConditionApplicationTypeComparisonArrayOutput() ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput {
-	return i.ToManagementZoneRuleConditionApplicationTypeComparisonArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionApplicationTypeComparisonArray) ToManagementZoneRuleConditionApplicationTypeComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput)
-}
-
-type ManagementZoneRuleConditionApplicationTypeComparisonOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionApplicationTypeComparisonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionApplicationTypeComparison)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeComparisonOutput) ToManagementZoneRuleConditionApplicationTypeComparisonOutput() ManagementZoneRuleConditionApplicationTypeComparisonOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeComparisonOutput) ToManagementZoneRuleConditionApplicationTypeComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeComparisonOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeComparisonOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationTypeComparison) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeComparisonOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationTypeComparison) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-func (o ManagementZoneRuleConditionApplicationTypeComparisonOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationTypeComparison) *string { return v.Type }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeComparisonOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationTypeComparison) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeComparisonOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationTypeComparison) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionApplicationTypeComparison)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput) ToManagementZoneRuleConditionApplicationTypeComparisonArrayOutput() ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput) ToManagementZoneRuleConditionApplicationTypeComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionApplicationTypeComparisonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionApplicationTypeComparison {
-		return vs[0].([]ManagementZoneRuleConditionApplicationTypeComparison)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionApplicationTypeComparisonOutput)
-}
-
-type ManagementZoneRuleConditionAzureComputeMode struct {
-	Negate   *bool   `pulumi:"negate"`
-	Operator string  `pulumi:"operator"`
-	Unknowns *string `pulumi:"unknowns"`
-	Value    *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionAzureComputeModeInput is an input type that accepts ManagementZoneRuleConditionAzureComputeModeArgs and ManagementZoneRuleConditionAzureComputeModeOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionAzureComputeModeInput` via:
-//
-//	ManagementZoneRuleConditionAzureComputeModeArgs{...}
-type ManagementZoneRuleConditionAzureComputeModeInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionAzureComputeModeOutput() ManagementZoneRuleConditionAzureComputeModeOutput
-	ToManagementZoneRuleConditionAzureComputeModeOutputWithContext(context.Context) ManagementZoneRuleConditionAzureComputeModeOutput
-}
-
-type ManagementZoneRuleConditionAzureComputeModeArgs struct {
-	Negate   pulumi.BoolPtrInput   `pulumi:"negate"`
-	Operator pulumi.StringInput    `pulumi:"operator"`
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	Value    pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionAzureComputeModeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeMode)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionAzureComputeModeArgs) ToManagementZoneRuleConditionAzureComputeModeOutput() ManagementZoneRuleConditionAzureComputeModeOutput {
-	return i.ToManagementZoneRuleConditionAzureComputeModeOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionAzureComputeModeArgs) ToManagementZoneRuleConditionAzureComputeModeOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureComputeModeOutput)
-}
-
-// ManagementZoneRuleConditionAzureComputeModeArrayInput is an input type that accepts ManagementZoneRuleConditionAzureComputeModeArray and ManagementZoneRuleConditionAzureComputeModeArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionAzureComputeModeArrayInput` via:
-//
-//	ManagementZoneRuleConditionAzureComputeModeArray{ ManagementZoneRuleConditionAzureComputeModeArgs{...} }
-type ManagementZoneRuleConditionAzureComputeModeArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionAzureComputeModeArrayOutput() ManagementZoneRuleConditionAzureComputeModeArrayOutput
-	ToManagementZoneRuleConditionAzureComputeModeArrayOutputWithContext(context.Context) ManagementZoneRuleConditionAzureComputeModeArrayOutput
-}
-
-type ManagementZoneRuleConditionAzureComputeModeArray []ManagementZoneRuleConditionAzureComputeModeInput
-
-func (ManagementZoneRuleConditionAzureComputeModeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureComputeMode)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionAzureComputeModeArray) ToManagementZoneRuleConditionAzureComputeModeArrayOutput() ManagementZoneRuleConditionAzureComputeModeArrayOutput {
-	return i.ToManagementZoneRuleConditionAzureComputeModeArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionAzureComputeModeArray) ToManagementZoneRuleConditionAzureComputeModeArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureComputeModeArrayOutput)
-}
-
-type ManagementZoneRuleConditionAzureComputeModeOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionAzureComputeModeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeMode)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeOutput) ToManagementZoneRuleConditionAzureComputeModeOutput() ManagementZoneRuleConditionAzureComputeModeOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeOutput) ToManagementZoneRuleConditionAzureComputeModeOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeMode) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeMode) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeMode) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeMode) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionAzureComputeModeArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionAzureComputeModeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureComputeMode)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeArrayOutput) ToManagementZoneRuleConditionAzureComputeModeArrayOutput() ManagementZoneRuleConditionAzureComputeModeArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeArrayOutput) ToManagementZoneRuleConditionAzureComputeModeArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionAzureComputeModeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionAzureComputeMode {
-		return vs[0].([]ManagementZoneRuleConditionAzureComputeMode)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionAzureComputeModeOutput)
-}
-
-type ManagementZoneRuleConditionAzureComputeModeComparison struct {
-	Negate   *bool   `pulumi:"negate"`
-	Operator string  `pulumi:"operator"`
-	Unknowns *string `pulumi:"unknowns"`
-	Value    *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionAzureComputeModeComparisonInput is an input type that accepts ManagementZoneRuleConditionAzureComputeModeComparisonArgs and ManagementZoneRuleConditionAzureComputeModeComparisonOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionAzureComputeModeComparisonInput` via:
-//
-//	ManagementZoneRuleConditionAzureComputeModeComparisonArgs{...}
-type ManagementZoneRuleConditionAzureComputeModeComparisonInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionAzureComputeModeComparisonOutput() ManagementZoneRuleConditionAzureComputeModeComparisonOutput
-	ToManagementZoneRuleConditionAzureComputeModeComparisonOutputWithContext(context.Context) ManagementZoneRuleConditionAzureComputeModeComparisonOutput
-}
-
-type ManagementZoneRuleConditionAzureComputeModeComparisonArgs struct {
-	Negate   pulumi.BoolPtrInput   `pulumi:"negate"`
-	Operator pulumi.StringInput    `pulumi:"operator"`
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	Value    pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionAzureComputeModeComparisonArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeModeComparison)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionAzureComputeModeComparisonArgs) ToManagementZoneRuleConditionAzureComputeModeComparisonOutput() ManagementZoneRuleConditionAzureComputeModeComparisonOutput {
-	return i.ToManagementZoneRuleConditionAzureComputeModeComparisonOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionAzureComputeModeComparisonArgs) ToManagementZoneRuleConditionAzureComputeModeComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeComparisonOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureComputeModeComparisonOutput)
-}
-
-// ManagementZoneRuleConditionAzureComputeModeComparisonArrayInput is an input type that accepts ManagementZoneRuleConditionAzureComputeModeComparisonArray and ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionAzureComputeModeComparisonArrayInput` via:
-//
-//	ManagementZoneRuleConditionAzureComputeModeComparisonArray{ ManagementZoneRuleConditionAzureComputeModeComparisonArgs{...} }
-type ManagementZoneRuleConditionAzureComputeModeComparisonArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput() ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput
-	ToManagementZoneRuleConditionAzureComputeModeComparisonArrayOutputWithContext(context.Context) ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput
-}
-
-type ManagementZoneRuleConditionAzureComputeModeComparisonArray []ManagementZoneRuleConditionAzureComputeModeComparisonInput
-
-func (ManagementZoneRuleConditionAzureComputeModeComparisonArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureComputeModeComparison)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionAzureComputeModeComparisonArray) ToManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput() ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput {
-	return i.ToManagementZoneRuleConditionAzureComputeModeComparisonArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionAzureComputeModeComparisonArray) ToManagementZoneRuleConditionAzureComputeModeComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput)
-}
-
-type ManagementZoneRuleConditionAzureComputeModeComparisonOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionAzureComputeModeComparisonOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeModeComparison)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeComparisonOutput) ToManagementZoneRuleConditionAzureComputeModeComparisonOutput() ManagementZoneRuleConditionAzureComputeModeComparisonOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeComparisonOutput) ToManagementZoneRuleConditionAzureComputeModeComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeComparisonOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeComparisonOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeModeComparison) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeComparisonOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeModeComparison) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeComparisonOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeModeComparison) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeComparisonOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeModeComparison) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureComputeModeComparison)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput) ToManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput() ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput) ToManagementZoneRuleConditionAzureComputeModeComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionAzureComputeModeComparisonOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionAzureComputeModeComparison {
-		return vs[0].([]ManagementZoneRuleConditionAzureComputeModeComparison)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionAzureComputeModeComparisonOutput)
-}
-
-type ManagementZoneRuleConditionAzureSkuComparision struct {
-	Negate   *bool  `pulumi:"negate"`
-	Operator string `pulumi:"operator"`
-	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-	Type     *string `pulumi:"type"`
-	Unknowns *string `pulumi:"unknowns"`
-	Value    *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionAzureSkuComparisionInput is an input type that accepts ManagementZoneRuleConditionAzureSkuComparisionArgs and ManagementZoneRuleConditionAzureSkuComparisionOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionAzureSkuComparisionInput` via:
-//
-//	ManagementZoneRuleConditionAzureSkuComparisionArgs{...}
-type ManagementZoneRuleConditionAzureSkuComparisionInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionAzureSkuComparisionOutput() ManagementZoneRuleConditionAzureSkuComparisionOutput
-	ToManagementZoneRuleConditionAzureSkuComparisionOutputWithContext(context.Context) ManagementZoneRuleConditionAzureSkuComparisionOutput
-}
-
-type ManagementZoneRuleConditionAzureSkuComparisionArgs struct {
-	Negate   pulumi.BoolPtrInput `pulumi:"negate"`
-	Operator pulumi.StringInput  `pulumi:"operator"`
-	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-	Type     pulumi.StringPtrInput `pulumi:"type"`
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	Value    pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionAzureSkuComparisionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionAzureSkuComparision)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionAzureSkuComparisionArgs) ToManagementZoneRuleConditionAzureSkuComparisionOutput() ManagementZoneRuleConditionAzureSkuComparisionOutput {
-	return i.ToManagementZoneRuleConditionAzureSkuComparisionOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionAzureSkuComparisionArgs) ToManagementZoneRuleConditionAzureSkuComparisionOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkuComparisionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureSkuComparisionOutput)
-}
-
-// ManagementZoneRuleConditionAzureSkuComparisionArrayInput is an input type that accepts ManagementZoneRuleConditionAzureSkuComparisionArray and ManagementZoneRuleConditionAzureSkuComparisionArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionAzureSkuComparisionArrayInput` via:
-//
-//	ManagementZoneRuleConditionAzureSkuComparisionArray{ ManagementZoneRuleConditionAzureSkuComparisionArgs{...} }
-type ManagementZoneRuleConditionAzureSkuComparisionArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionAzureSkuComparisionArrayOutput() ManagementZoneRuleConditionAzureSkuComparisionArrayOutput
-	ToManagementZoneRuleConditionAzureSkuComparisionArrayOutputWithContext(context.Context) ManagementZoneRuleConditionAzureSkuComparisionArrayOutput
-}
-
-type ManagementZoneRuleConditionAzureSkuComparisionArray []ManagementZoneRuleConditionAzureSkuComparisionInput
-
-func (ManagementZoneRuleConditionAzureSkuComparisionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureSkuComparision)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionAzureSkuComparisionArray) ToManagementZoneRuleConditionAzureSkuComparisionArrayOutput() ManagementZoneRuleConditionAzureSkuComparisionArrayOutput {
-	return i.ToManagementZoneRuleConditionAzureSkuComparisionArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionAzureSkuComparisionArray) ToManagementZoneRuleConditionAzureSkuComparisionArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkuComparisionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureSkuComparisionArrayOutput)
-}
-
-type ManagementZoneRuleConditionAzureSkuComparisionOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionAzureSkuComparisionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionAzureSkuComparision)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionAzureSkuComparisionOutput) ToManagementZoneRuleConditionAzureSkuComparisionOutput() ManagementZoneRuleConditionAzureSkuComparisionOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureSkuComparisionOutput) ToManagementZoneRuleConditionAzureSkuComparisionOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkuComparisionOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureSkuComparisionOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkuComparision) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionAzureSkuComparisionOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkuComparision) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-func (o ManagementZoneRuleConditionAzureSkuComparisionOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkuComparision) *string { return v.Type }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionAzureSkuComparisionOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkuComparision) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionAzureSkuComparisionOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkuComparision) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionAzureSkuComparisionArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionAzureSkuComparisionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureSkuComparision)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionAzureSkuComparisionArrayOutput) ToManagementZoneRuleConditionAzureSkuComparisionArrayOutput() ManagementZoneRuleConditionAzureSkuComparisionArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureSkuComparisionArrayOutput) ToManagementZoneRuleConditionAzureSkuComparisionArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkuComparisionArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureSkuComparisionArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionAzureSkuComparisionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionAzureSkuComparision {
-		return vs[0].([]ManagementZoneRuleConditionAzureSkuComparision)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionAzureSkuComparisionOutput)
-}
-
-type ManagementZoneRuleConditionAzureSkus struct {
-	Negate   *bool   `pulumi:"negate"`
-	Operator string  `pulumi:"operator"`
-	Unknowns *string `pulumi:"unknowns"`
-	Value    *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionAzureSkusInput is an input type that accepts ManagementZoneRuleConditionAzureSkusArgs and ManagementZoneRuleConditionAzureSkusOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionAzureSkusInput` via:
-//
-//	ManagementZoneRuleConditionAzureSkusArgs{...}
-type ManagementZoneRuleConditionAzureSkusInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionAzureSkusOutput() ManagementZoneRuleConditionAzureSkusOutput
-	ToManagementZoneRuleConditionAzureSkusOutputWithContext(context.Context) ManagementZoneRuleConditionAzureSkusOutput
-}
-
-type ManagementZoneRuleConditionAzureSkusArgs struct {
-	Negate   pulumi.BoolPtrInput   `pulumi:"negate"`
-	Operator pulumi.StringInput    `pulumi:"operator"`
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	Value    pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionAzureSkusArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionAzureSkus)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionAzureSkusArgs) ToManagementZoneRuleConditionAzureSkusOutput() ManagementZoneRuleConditionAzureSkusOutput {
-	return i.ToManagementZoneRuleConditionAzureSkusOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionAzureSkusArgs) ToManagementZoneRuleConditionAzureSkusOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkusOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureSkusOutput)
-}
-
-// ManagementZoneRuleConditionAzureSkusArrayInput is an input type that accepts ManagementZoneRuleConditionAzureSkusArray and ManagementZoneRuleConditionAzureSkusArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionAzureSkusArrayInput` via:
-//
-//	ManagementZoneRuleConditionAzureSkusArray{ ManagementZoneRuleConditionAzureSkusArgs{...} }
-type ManagementZoneRuleConditionAzureSkusArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionAzureSkusArrayOutput() ManagementZoneRuleConditionAzureSkusArrayOutput
-	ToManagementZoneRuleConditionAzureSkusArrayOutputWithContext(context.Context) ManagementZoneRuleConditionAzureSkusArrayOutput
-}
-
-type ManagementZoneRuleConditionAzureSkusArray []ManagementZoneRuleConditionAzureSkusInput
-
-func (ManagementZoneRuleConditionAzureSkusArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureSkus)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionAzureSkusArray) ToManagementZoneRuleConditionAzureSkusArrayOutput() ManagementZoneRuleConditionAzureSkusArrayOutput {
-	return i.ToManagementZoneRuleConditionAzureSkusArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionAzureSkusArray) ToManagementZoneRuleConditionAzureSkusArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkusArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureSkusArrayOutput)
-}
-
-type ManagementZoneRuleConditionAzureSkusOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionAzureSkusOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionAzureSkus)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionAzureSkusOutput) ToManagementZoneRuleConditionAzureSkusOutput() ManagementZoneRuleConditionAzureSkusOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureSkusOutput) ToManagementZoneRuleConditionAzureSkusOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkusOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureSkusOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkus) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionAzureSkusOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkus) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-func (o ManagementZoneRuleConditionAzureSkusOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkus) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionAzureSkusOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkus) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionAzureSkusArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionAzureSkusArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureSkus)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionAzureSkusArrayOutput) ToManagementZoneRuleConditionAzureSkusArrayOutput() ManagementZoneRuleConditionAzureSkusArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureSkusArrayOutput) ToManagementZoneRuleConditionAzureSkusArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkusArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionAzureSkusArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionAzureSkusOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionAzureSkus {
-		return vs[0].([]ManagementZoneRuleConditionAzureSkus)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionAzureSkusOutput)
-}
-
-type ManagementZoneRuleConditionBaseComparisonBasic struct {
-	Negate   *bool   `pulumi:"negate"`
-	Type     string  `pulumi:"type"`
-	Unknowns *string `pulumi:"unknowns"`
-}
-
-// ManagementZoneRuleConditionBaseComparisonBasicInput is an input type that accepts ManagementZoneRuleConditionBaseComparisonBasicArgs and ManagementZoneRuleConditionBaseComparisonBasicOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionBaseComparisonBasicInput` via:
-//
-//	ManagementZoneRuleConditionBaseComparisonBasicArgs{...}
-type ManagementZoneRuleConditionBaseComparisonBasicInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionBaseComparisonBasicOutput() ManagementZoneRuleConditionBaseComparisonBasicOutput
-	ToManagementZoneRuleConditionBaseComparisonBasicOutputWithContext(context.Context) ManagementZoneRuleConditionBaseComparisonBasicOutput
-}
-
-type ManagementZoneRuleConditionBaseComparisonBasicArgs struct {
-	Negate   pulumi.BoolPtrInput   `pulumi:"negate"`
-	Type     pulumi.StringInput    `pulumi:"type"`
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-}
-
-func (ManagementZoneRuleConditionBaseComparisonBasicArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionBaseComparisonBasic)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionBaseComparisonBasicArgs) ToManagementZoneRuleConditionBaseComparisonBasicOutput() ManagementZoneRuleConditionBaseComparisonBasicOutput {
-	return i.ToManagementZoneRuleConditionBaseComparisonBasicOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionBaseComparisonBasicArgs) ToManagementZoneRuleConditionBaseComparisonBasicOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseComparisonBasicOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBaseComparisonBasicOutput)
-}
-
-// ManagementZoneRuleConditionBaseComparisonBasicArrayInput is an input type that accepts ManagementZoneRuleConditionBaseComparisonBasicArray and ManagementZoneRuleConditionBaseComparisonBasicArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionBaseComparisonBasicArrayInput` via:
-//
-//	ManagementZoneRuleConditionBaseComparisonBasicArray{ ManagementZoneRuleConditionBaseComparisonBasicArgs{...} }
-type ManagementZoneRuleConditionBaseComparisonBasicArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionBaseComparisonBasicArrayOutput() ManagementZoneRuleConditionBaseComparisonBasicArrayOutput
-	ToManagementZoneRuleConditionBaseComparisonBasicArrayOutputWithContext(context.Context) ManagementZoneRuleConditionBaseComparisonBasicArrayOutput
-}
-
-type ManagementZoneRuleConditionBaseComparisonBasicArray []ManagementZoneRuleConditionBaseComparisonBasicInput
-
-func (ManagementZoneRuleConditionBaseComparisonBasicArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionBaseComparisonBasic)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionBaseComparisonBasicArray) ToManagementZoneRuleConditionBaseComparisonBasicArrayOutput() ManagementZoneRuleConditionBaseComparisonBasicArrayOutput {
-	return i.ToManagementZoneRuleConditionBaseComparisonBasicArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionBaseComparisonBasicArray) ToManagementZoneRuleConditionBaseComparisonBasicArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseComparisonBasicArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBaseComparisonBasicArrayOutput)
-}
-
-type ManagementZoneRuleConditionBaseComparisonBasicOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionBaseComparisonBasicOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionBaseComparisonBasic)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionBaseComparisonBasicOutput) ToManagementZoneRuleConditionBaseComparisonBasicOutput() ManagementZoneRuleConditionBaseComparisonBasicOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBaseComparisonBasicOutput) ToManagementZoneRuleConditionBaseComparisonBasicOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseComparisonBasicOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBaseComparisonBasicOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBaseComparisonBasic) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionBaseComparisonBasicOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBaseComparisonBasic) string { return v.Type }).(pulumi.StringOutput)
-}
-
-func (o ManagementZoneRuleConditionBaseComparisonBasicOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBaseComparisonBasic) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionBaseComparisonBasicArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionBaseComparisonBasicArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionBaseComparisonBasic)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionBaseComparisonBasicArrayOutput) ToManagementZoneRuleConditionBaseComparisonBasicArrayOutput() ManagementZoneRuleConditionBaseComparisonBasicArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBaseComparisonBasicArrayOutput) ToManagementZoneRuleConditionBaseComparisonBasicArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseComparisonBasicArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBaseComparisonBasicArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionBaseComparisonBasicOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionBaseComparisonBasic {
-		return vs[0].([]ManagementZoneRuleConditionBaseComparisonBasic)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionBaseComparisonBasicOutput)
-}
-
-type ManagementZoneRuleConditionBaseConditionKey struct {
-	Attribute string  `pulumi:"attribute"`
-	Type      *string `pulumi:"type"`
-	Unknowns  *string `pulumi:"unknowns"`
-}
-
-// ManagementZoneRuleConditionBaseConditionKeyInput is an input type that accepts ManagementZoneRuleConditionBaseConditionKeyArgs and ManagementZoneRuleConditionBaseConditionKeyOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionBaseConditionKeyInput` via:
-//
-//	ManagementZoneRuleConditionBaseConditionKeyArgs{...}
-type ManagementZoneRuleConditionBaseConditionKeyInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionBaseConditionKeyOutput() ManagementZoneRuleConditionBaseConditionKeyOutput
-	ToManagementZoneRuleConditionBaseConditionKeyOutputWithContext(context.Context) ManagementZoneRuleConditionBaseConditionKeyOutput
-}
-
-type ManagementZoneRuleConditionBaseConditionKeyArgs struct {
-	Attribute pulumi.StringInput    `pulumi:"attribute"`
-	Type      pulumi.StringPtrInput `pulumi:"type"`
-	Unknowns  pulumi.StringPtrInput `pulumi:"unknowns"`
-}
-
-func (ManagementZoneRuleConditionBaseConditionKeyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionBaseConditionKey)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionBaseConditionKeyArgs) ToManagementZoneRuleConditionBaseConditionKeyOutput() ManagementZoneRuleConditionBaseConditionKeyOutput {
-	return i.ToManagementZoneRuleConditionBaseConditionKeyOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionBaseConditionKeyArgs) ToManagementZoneRuleConditionBaseConditionKeyOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseConditionKeyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBaseConditionKeyOutput)
-}
-
-// ManagementZoneRuleConditionBaseConditionKeyArrayInput is an input type that accepts ManagementZoneRuleConditionBaseConditionKeyArray and ManagementZoneRuleConditionBaseConditionKeyArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionBaseConditionKeyArrayInput` via:
-//
-//	ManagementZoneRuleConditionBaseConditionKeyArray{ ManagementZoneRuleConditionBaseConditionKeyArgs{...} }
-type ManagementZoneRuleConditionBaseConditionKeyArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionBaseConditionKeyArrayOutput() ManagementZoneRuleConditionBaseConditionKeyArrayOutput
-	ToManagementZoneRuleConditionBaseConditionKeyArrayOutputWithContext(context.Context) ManagementZoneRuleConditionBaseConditionKeyArrayOutput
-}
-
-type ManagementZoneRuleConditionBaseConditionKeyArray []ManagementZoneRuleConditionBaseConditionKeyInput
-
-func (ManagementZoneRuleConditionBaseConditionKeyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionBaseConditionKey)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionBaseConditionKeyArray) ToManagementZoneRuleConditionBaseConditionKeyArrayOutput() ManagementZoneRuleConditionBaseConditionKeyArrayOutput {
-	return i.ToManagementZoneRuleConditionBaseConditionKeyArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionBaseConditionKeyArray) ToManagementZoneRuleConditionBaseConditionKeyArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseConditionKeyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBaseConditionKeyArrayOutput)
-}
-
-type ManagementZoneRuleConditionBaseConditionKeyOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionBaseConditionKeyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionBaseConditionKey)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionBaseConditionKeyOutput) ToManagementZoneRuleConditionBaseConditionKeyOutput() ManagementZoneRuleConditionBaseConditionKeyOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBaseConditionKeyOutput) ToManagementZoneRuleConditionBaseConditionKeyOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseConditionKeyOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBaseConditionKeyOutput) Attribute() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBaseConditionKey) string { return v.Attribute }).(pulumi.StringOutput)
-}
-
-func (o ManagementZoneRuleConditionBaseConditionKeyOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBaseConditionKey) *string { return v.Type }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionBaseConditionKeyOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBaseConditionKey) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionBaseConditionKeyArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionBaseConditionKeyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionBaseConditionKey)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionBaseConditionKeyArrayOutput) ToManagementZoneRuleConditionBaseConditionKeyArrayOutput() ManagementZoneRuleConditionBaseConditionKeyArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBaseConditionKeyArrayOutput) ToManagementZoneRuleConditionBaseConditionKeyArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseConditionKeyArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBaseConditionKeyArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionBaseConditionKeyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionBaseConditionKey {
-		return vs[0].([]ManagementZoneRuleConditionBaseConditionKey)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionBaseConditionKeyOutput)
-}
-
-type ManagementZoneRuleConditionBitness struct {
-	Negate   *bool   `pulumi:"negate"`
-	Operator string  `pulumi:"operator"`
-	Unknowns *string `pulumi:"unknowns"`
-	Value    *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionBitnessInput is an input type that accepts ManagementZoneRuleConditionBitnessArgs and ManagementZoneRuleConditionBitnessOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionBitnessInput` via:
-//
-//	ManagementZoneRuleConditionBitnessArgs{...}
-type ManagementZoneRuleConditionBitnessInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionBitnessOutput() ManagementZoneRuleConditionBitnessOutput
-	ToManagementZoneRuleConditionBitnessOutputWithContext(context.Context) ManagementZoneRuleConditionBitnessOutput
-}
-
-type ManagementZoneRuleConditionBitnessArgs struct {
-	Negate   pulumi.BoolPtrInput   `pulumi:"negate"`
-	Operator pulumi.StringInput    `pulumi:"operator"`
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	Value    pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionBitnessArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionBitness)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionBitnessArgs) ToManagementZoneRuleConditionBitnessOutput() ManagementZoneRuleConditionBitnessOutput {
-	return i.ToManagementZoneRuleConditionBitnessOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionBitnessArgs) ToManagementZoneRuleConditionBitnessOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBitnessOutput)
-}
-
-// ManagementZoneRuleConditionBitnessArrayInput is an input type that accepts ManagementZoneRuleConditionBitnessArray and ManagementZoneRuleConditionBitnessArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionBitnessArrayInput` via:
-//
-//	ManagementZoneRuleConditionBitnessArray{ ManagementZoneRuleConditionBitnessArgs{...} }
-type ManagementZoneRuleConditionBitnessArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionBitnessArrayOutput() ManagementZoneRuleConditionBitnessArrayOutput
-	ToManagementZoneRuleConditionBitnessArrayOutputWithContext(context.Context) ManagementZoneRuleConditionBitnessArrayOutput
-}
-
-type ManagementZoneRuleConditionBitnessArray []ManagementZoneRuleConditionBitnessInput
-
-func (ManagementZoneRuleConditionBitnessArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionBitness)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionBitnessArray) ToManagementZoneRuleConditionBitnessArrayOutput() ManagementZoneRuleConditionBitnessArrayOutput {
-	return i.ToManagementZoneRuleConditionBitnessArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionBitnessArray) ToManagementZoneRuleConditionBitnessArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBitnessArrayOutput)
-}
-
-type ManagementZoneRuleConditionBitnessOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionBitnessOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionBitness)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionBitnessOutput) ToManagementZoneRuleConditionBitnessOutput() ManagementZoneRuleConditionBitnessOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBitnessOutput) ToManagementZoneRuleConditionBitnessOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBitnessOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBitness) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionBitnessOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBitness) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-func (o ManagementZoneRuleConditionBitnessOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBitness) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionBitnessOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBitness) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionBitnessArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionBitnessArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionBitness)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionBitnessArrayOutput) ToManagementZoneRuleConditionBitnessArrayOutput() ManagementZoneRuleConditionBitnessArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBitnessArrayOutput) ToManagementZoneRuleConditionBitnessArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBitnessArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionBitnessOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionBitness {
-		return vs[0].([]ManagementZoneRuleConditionBitness)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionBitnessOutput)
-}
-
-type ManagementZoneRuleConditionBitnessComparision struct {
-	Negate   *bool  `pulumi:"negate"`
-	Operator string `pulumi:"operator"`
-	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-	Type     *string `pulumi:"type"`
-	Unknowns *string `pulumi:"unknowns"`
-	Value    *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionBitnessComparisionInput is an input type that accepts ManagementZoneRuleConditionBitnessComparisionArgs and ManagementZoneRuleConditionBitnessComparisionOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionBitnessComparisionInput` via:
-//
-//	ManagementZoneRuleConditionBitnessComparisionArgs{...}
-type ManagementZoneRuleConditionBitnessComparisionInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionBitnessComparisionOutput() ManagementZoneRuleConditionBitnessComparisionOutput
-	ToManagementZoneRuleConditionBitnessComparisionOutputWithContext(context.Context) ManagementZoneRuleConditionBitnessComparisionOutput
-}
-
-type ManagementZoneRuleConditionBitnessComparisionArgs struct {
-	Negate   pulumi.BoolPtrInput `pulumi:"negate"`
-	Operator pulumi.StringInput  `pulumi:"operator"`
-	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-	Type     pulumi.StringPtrInput `pulumi:"type"`
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	Value    pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionBitnessComparisionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionBitnessComparision)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionBitnessComparisionArgs) ToManagementZoneRuleConditionBitnessComparisionOutput() ManagementZoneRuleConditionBitnessComparisionOutput {
-	return i.ToManagementZoneRuleConditionBitnessComparisionOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionBitnessComparisionArgs) ToManagementZoneRuleConditionBitnessComparisionOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessComparisionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBitnessComparisionOutput)
-}
-
-// ManagementZoneRuleConditionBitnessComparisionArrayInput is an input type that accepts ManagementZoneRuleConditionBitnessComparisionArray and ManagementZoneRuleConditionBitnessComparisionArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionBitnessComparisionArrayInput` via:
-//
-//	ManagementZoneRuleConditionBitnessComparisionArray{ ManagementZoneRuleConditionBitnessComparisionArgs{...} }
-type ManagementZoneRuleConditionBitnessComparisionArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionBitnessComparisionArrayOutput() ManagementZoneRuleConditionBitnessComparisionArrayOutput
-	ToManagementZoneRuleConditionBitnessComparisionArrayOutputWithContext(context.Context) ManagementZoneRuleConditionBitnessComparisionArrayOutput
-}
-
-type ManagementZoneRuleConditionBitnessComparisionArray []ManagementZoneRuleConditionBitnessComparisionInput
-
-func (ManagementZoneRuleConditionBitnessComparisionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionBitnessComparision)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionBitnessComparisionArray) ToManagementZoneRuleConditionBitnessComparisionArrayOutput() ManagementZoneRuleConditionBitnessComparisionArrayOutput {
-	return i.ToManagementZoneRuleConditionBitnessComparisionArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionBitnessComparisionArray) ToManagementZoneRuleConditionBitnessComparisionArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessComparisionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBitnessComparisionArrayOutput)
-}
-
-type ManagementZoneRuleConditionBitnessComparisionOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionBitnessComparisionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionBitnessComparision)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionBitnessComparisionOutput) ToManagementZoneRuleConditionBitnessComparisionOutput() ManagementZoneRuleConditionBitnessComparisionOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBitnessComparisionOutput) ToManagementZoneRuleConditionBitnessComparisionOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessComparisionOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBitnessComparisionOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBitnessComparision) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionBitnessComparisionOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBitnessComparision) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
-func (o ManagementZoneRuleConditionBitnessComparisionOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBitnessComparision) *string { return v.Type }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionBitnessComparisionOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBitnessComparision) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionBitnessComparisionOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionBitnessComparision) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionBitnessComparisionArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionBitnessComparisionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionBitnessComparision)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionBitnessComparisionArrayOutput) ToManagementZoneRuleConditionBitnessComparisionArrayOutput() ManagementZoneRuleConditionBitnessComparisionArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBitnessComparisionArrayOutput) ToManagementZoneRuleConditionBitnessComparisionArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessComparisionArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionBitnessComparisionArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionBitnessComparisionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionBitnessComparision {
-		return vs[0].([]ManagementZoneRuleConditionBitnessComparision)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionBitnessComparisionOutput)
-}
-
-type ManagementZoneRuleConditionCloudType struct {
-	Negate   *bool   `pulumi:"negate"`
-	Operator string  `pulumi:"operator"`
-	Unknowns *string `pulumi:"unknowns"`
-	Value    *string `pulumi:"value"`
-}
-
-// ManagementZoneRuleConditionCloudTypeInput is an input type that accepts ManagementZoneRuleConditionCloudTypeArgs and ManagementZoneRuleConditionCloudTypeOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionCloudTypeInput` via:
-//
-//	ManagementZoneRuleConditionCloudTypeArgs{...}
-type ManagementZoneRuleConditionCloudTypeInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionCloudTypeOutput() ManagementZoneRuleConditionCloudTypeOutput
-	ToManagementZoneRuleConditionCloudTypeOutputWithContext(context.Context) ManagementZoneRuleConditionCloudTypeOutput
-}
-
-type ManagementZoneRuleConditionCloudTypeArgs struct {
-	Negate   pulumi.BoolPtrInput   `pulumi:"negate"`
-	Operator pulumi.StringInput    `pulumi:"operator"`
-	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
-	Value    pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (ManagementZoneRuleConditionCloudTypeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionCloudType)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionCloudTypeArgs) ToManagementZoneRuleConditionCloudTypeOutput() ManagementZoneRuleConditionCloudTypeOutput {
-	return i.ToManagementZoneRuleConditionCloudTypeOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionCloudTypeArgs) ToManagementZoneRuleConditionCloudTypeOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionCloudTypeOutput)
-}
-
-// ManagementZoneRuleConditionCloudTypeArrayInput is an input type that accepts ManagementZoneRuleConditionCloudTypeArray and ManagementZoneRuleConditionCloudTypeArrayOutput values.
-// You can construct a concrete instance of `ManagementZoneRuleConditionCloudTypeArrayInput` via:
-//
-//	ManagementZoneRuleConditionCloudTypeArray{ ManagementZoneRuleConditionCloudTypeArgs{...} }
-type ManagementZoneRuleConditionCloudTypeArrayInput interface {
-	pulumi.Input
-
-	ToManagementZoneRuleConditionCloudTypeArrayOutput() ManagementZoneRuleConditionCloudTypeArrayOutput
-	ToManagementZoneRuleConditionCloudTypeArrayOutputWithContext(context.Context) ManagementZoneRuleConditionCloudTypeArrayOutput
-}
-
-type ManagementZoneRuleConditionCloudTypeArray []ManagementZoneRuleConditionCloudTypeInput
-
-func (ManagementZoneRuleConditionCloudTypeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionCloudType)(nil)).Elem()
-}
-
-func (i ManagementZoneRuleConditionCloudTypeArray) ToManagementZoneRuleConditionCloudTypeArrayOutput() ManagementZoneRuleConditionCloudTypeArrayOutput {
-	return i.ToManagementZoneRuleConditionCloudTypeArrayOutputWithContext(context.Background())
-}
-
-func (i ManagementZoneRuleConditionCloudTypeArray) ToManagementZoneRuleConditionCloudTypeArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionCloudTypeArrayOutput)
-}
-
-type ManagementZoneRuleConditionCloudTypeOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionCloudTypeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ManagementZoneRuleConditionCloudType)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionCloudTypeOutput) ToManagementZoneRuleConditionCloudTypeOutput() ManagementZoneRuleConditionCloudTypeOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionCloudTypeOutput) ToManagementZoneRuleConditionCloudTypeOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionCloudTypeOutput) Negate() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionCloudType) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionCloudTypeOutput) Operator() pulumi.StringOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionCloudType) string { return v.Operator }).(pulumi.StringOutput)
-}
-
-func (o ManagementZoneRuleConditionCloudTypeOutput) Unknowns() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionCloudType) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
-}
-
-func (o ManagementZoneRuleConditionCloudTypeOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ManagementZoneRuleConditionCloudType) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type ManagementZoneRuleConditionCloudTypeArrayOutput struct{ *pulumi.OutputState }
-
-func (ManagementZoneRuleConditionCloudTypeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ManagementZoneRuleConditionCloudType)(nil)).Elem()
-}
-
-func (o ManagementZoneRuleConditionCloudTypeArrayOutput) ToManagementZoneRuleConditionCloudTypeArrayOutput() ManagementZoneRuleConditionCloudTypeArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionCloudTypeArrayOutput) ToManagementZoneRuleConditionCloudTypeArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeArrayOutput {
-	return o
-}
-
-func (o ManagementZoneRuleConditionCloudTypeArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionCloudTypeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionCloudType {
-		return vs[0].([]ManagementZoneRuleConditionCloudType)[vs[1].(int)]
-	}).(ManagementZoneRuleConditionCloudTypeOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertingFiltersInput)(nil)).Elem(), AlertingFiltersArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertingFiltersPtrInput)(nil)).Elem(), AlertingFiltersArgs{})
@@ -69740,6 +69794,34 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ImsBridgesQueueManagerQueueManagerArrayInput)(nil)).Elem(), ImsBridgesQueueManagerQueueManagerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*K8sCredentialsEventsFieldSelectorInput)(nil)).Elem(), K8sCredentialsEventsFieldSelectorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*K8sCredentialsEventsFieldSelectorArrayInput)(nil)).Elem(), K8sCredentialsEventsFieldSelectorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceFilterInput)(nil)).Elem(), MaintenanceFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceFilterArrayInput)(nil)).Elem(), MaintenanceFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceFilterFilterInput)(nil)).Elem(), MaintenanceFilterFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceFilterFilterArrayInput)(nil)).Elem(), MaintenanceFilterFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceGeneralPropertiesInput)(nil)).Elem(), MaintenanceGeneralPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceGeneralPropertiesPtrInput)(nil)).Elem(), MaintenanceGeneralPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleInput)(nil)).Elem(), MaintenanceScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceSchedulePtrInput)(nil)).Elem(), MaintenanceScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleDailyRecurrenceInput)(nil)).Elem(), MaintenanceScheduleDailyRecurrenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleDailyRecurrencePtrInput)(nil)).Elem(), MaintenanceScheduleDailyRecurrenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleDailyRecurrenceRecurrenceRangeInput)(nil)).Elem(), MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrInput)(nil)).Elem(), MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleDailyRecurrenceTimeWindowInput)(nil)).Elem(), MaintenanceScheduleDailyRecurrenceTimeWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleDailyRecurrenceTimeWindowPtrInput)(nil)).Elem(), MaintenanceScheduleDailyRecurrenceTimeWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleMonthlyRecurrenceInput)(nil)).Elem(), MaintenanceScheduleMonthlyRecurrenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleMonthlyRecurrencePtrInput)(nil)).Elem(), MaintenanceScheduleMonthlyRecurrenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeInput)(nil)).Elem(), MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrInput)(nil)).Elem(), MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleMonthlyRecurrenceTimeWindowInput)(nil)).Elem(), MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrInput)(nil)).Elem(), MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleOnceRecurrenceInput)(nil)).Elem(), MaintenanceScheduleOnceRecurrenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleOnceRecurrencePtrInput)(nil)).Elem(), MaintenanceScheduleOnceRecurrenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleWeeklyRecurrenceInput)(nil)).Elem(), MaintenanceScheduleWeeklyRecurrenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleWeeklyRecurrencePtrInput)(nil)).Elem(), MaintenanceScheduleWeeklyRecurrenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeInput)(nil)).Elem(), MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrInput)(nil)).Elem(), MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleWeeklyRecurrenceTimeWindowInput)(nil)).Elem(), MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrInput)(nil)).Elem(), MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowMetadataInput)(nil)).Elem(), MaintenanceWindowMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowMetadataPtrInput)(nil)).Elem(), MaintenanceWindowMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MaintenanceWindowScheduleInput)(nil)).Elem(), MaintenanceWindowScheduleArgs{})
@@ -69758,34 +69840,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneDimensionalRuleConditionArrayInput)(nil)).Elem(), ManagementZoneDimensionalRuleConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneEntitySelectorBasedRuleInput)(nil)).Elem(), ManagementZoneEntitySelectorBasedRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneEntitySelectorBasedRuleArrayInput)(nil)).Elem(), ManagementZoneEntitySelectorBasedRuleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneMetadataInput)(nil)).Elem(), ManagementZoneMetadataArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneMetadataPtrInput)(nil)).Elem(), ManagementZoneMetadataArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleInput)(nil)).Elem(), ManagementZoneRuleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleArrayInput)(nil)).Elem(), ManagementZoneRuleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionInput)(nil)).Elem(), ManagementZoneRuleConditionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionArrayInput)(nil)).Elem(), ManagementZoneRuleConditionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionApplicationTypeInput)(nil)).Elem(), ManagementZoneRuleConditionApplicationTypeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionApplicationTypeArrayInput)(nil)).Elem(), ManagementZoneRuleConditionApplicationTypeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionApplicationTypeComparisonInput)(nil)).Elem(), ManagementZoneRuleConditionApplicationTypeComparisonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionApplicationTypeComparisonArrayInput)(nil)).Elem(), ManagementZoneRuleConditionApplicationTypeComparisonArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeModeInput)(nil)).Elem(), ManagementZoneRuleConditionAzureComputeModeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeModeArrayInput)(nil)).Elem(), ManagementZoneRuleConditionAzureComputeModeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeModeComparisonInput)(nil)).Elem(), ManagementZoneRuleConditionAzureComputeModeComparisonArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeModeComparisonArrayInput)(nil)).Elem(), ManagementZoneRuleConditionAzureComputeModeComparisonArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureSkuComparisionInput)(nil)).Elem(), ManagementZoneRuleConditionAzureSkuComparisionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureSkuComparisionArrayInput)(nil)).Elem(), ManagementZoneRuleConditionAzureSkuComparisionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureSkusInput)(nil)).Elem(), ManagementZoneRuleConditionAzureSkusArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureSkusArrayInput)(nil)).Elem(), ManagementZoneRuleConditionAzureSkusArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBaseComparisonBasicInput)(nil)).Elem(), ManagementZoneRuleConditionBaseComparisonBasicArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBaseComparisonBasicArrayInput)(nil)).Elem(), ManagementZoneRuleConditionBaseComparisonBasicArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBaseConditionKeyInput)(nil)).Elem(), ManagementZoneRuleConditionBaseConditionKeyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBaseConditionKeyArrayInput)(nil)).Elem(), ManagementZoneRuleConditionBaseConditionKeyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBitnessInput)(nil)).Elem(), ManagementZoneRuleConditionBitnessArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBitnessArrayInput)(nil)).Elem(), ManagementZoneRuleConditionBitnessArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBitnessComparisionInput)(nil)).Elem(), ManagementZoneRuleConditionBitnessComparisionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBitnessComparisionArrayInput)(nil)).Elem(), ManagementZoneRuleConditionBitnessComparisionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeInput)(nil)).Elem(), ManagementZoneRuleConditionCloudTypeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeArrayInput)(nil)).Elem(), ManagementZoneRuleConditionCloudTypeArray{})
 	pulumi.RegisterOutputType(AlertingFiltersOutput{})
 	pulumi.RegisterOutputType(AlertingFiltersPtrOutput{})
 	pulumi.RegisterOutputType(AlertingFiltersFilterOutput{})
@@ -70723,6 +70777,34 @@ func init() {
 	pulumi.RegisterOutputType(ImsBridgesQueueManagerQueueManagerArrayOutput{})
 	pulumi.RegisterOutputType(K8sCredentialsEventsFieldSelectorOutput{})
 	pulumi.RegisterOutputType(K8sCredentialsEventsFieldSelectorArrayOutput{})
+	pulumi.RegisterOutputType(MaintenanceFilterOutput{})
+	pulumi.RegisterOutputType(MaintenanceFilterArrayOutput{})
+	pulumi.RegisterOutputType(MaintenanceFilterFilterOutput{})
+	pulumi.RegisterOutputType(MaintenanceFilterFilterArrayOutput{})
+	pulumi.RegisterOutputType(MaintenanceGeneralPropertiesOutput{})
+	pulumi.RegisterOutputType(MaintenanceGeneralPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleOutput{})
+	pulumi.RegisterOutputType(MaintenanceSchedulePtrOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleDailyRecurrenceOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleDailyRecurrencePtrOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleDailyRecurrenceRecurrenceRangeOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleDailyRecurrenceRecurrenceRangePtrOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleDailyRecurrenceTimeWindowOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleDailyRecurrenceTimeWindowPtrOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleMonthlyRecurrenceOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleMonthlyRecurrencePtrOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleMonthlyRecurrenceRecurrenceRangePtrOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleMonthlyRecurrenceTimeWindowOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleMonthlyRecurrenceTimeWindowPtrOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleOnceRecurrenceOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleOnceRecurrencePtrOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleWeeklyRecurrenceOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleWeeklyRecurrencePtrOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleWeeklyRecurrenceRecurrenceRangePtrOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleWeeklyRecurrenceTimeWindowOutput{})
+	pulumi.RegisterOutputType(MaintenanceScheduleWeeklyRecurrenceTimeWindowPtrOutput{})
 	pulumi.RegisterOutputType(MaintenanceWindowMetadataOutput{})
 	pulumi.RegisterOutputType(MaintenanceWindowMetadataPtrOutput{})
 	pulumi.RegisterOutputType(MaintenanceWindowScheduleOutput{})
@@ -70741,32 +70823,4 @@ func init() {
 	pulumi.RegisterOutputType(ManagementZoneDimensionalRuleConditionArrayOutput{})
 	pulumi.RegisterOutputType(ManagementZoneEntitySelectorBasedRuleOutput{})
 	pulumi.RegisterOutputType(ManagementZoneEntitySelectorBasedRuleArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneMetadataOutput{})
-	pulumi.RegisterOutputType(ManagementZoneMetadataPtrOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionApplicationTypeOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionApplicationTypeArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionApplicationTypeComparisonOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureComputeModeOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureComputeModeArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureComputeModeComparisonOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureSkuComparisionOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureSkuComparisionArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureSkusOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureSkusArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionBaseComparisonBasicOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionBaseComparisonBasicArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionBaseConditionKeyOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionBaseConditionKeyArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionBitnessOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionBitnessArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionBitnessComparisionOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionBitnessComparisionArrayOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionCloudTypeOutput{})
-	pulumi.RegisterOutputType(ManagementZoneRuleConditionCloudTypeArrayOutput{})
 }

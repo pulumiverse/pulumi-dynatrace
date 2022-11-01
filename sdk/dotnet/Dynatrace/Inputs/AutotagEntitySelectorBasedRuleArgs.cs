@@ -16,6 +16,9 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        [Input("normalization")]
+        public Input<string>? Normalization { get; set; }
+
         [Input("selector")]
         public Input<string>? Selector { get; set; }
 

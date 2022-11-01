@@ -15,6 +15,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
     public sealed class AutotagEntitySelectorBasedRule
     {
         public readonly bool? Enabled;
+        public readonly string? Normalization;
         public readonly string? Selector;
         public readonly string? Unknowns;
         public readonly string? ValueFormat;
@@ -23,6 +24,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         private AutotagEntitySelectorBasedRule(
             bool? enabled,
 
+            string? normalization,
+
             string? selector,
 
             string? unknowns,
@@ -30,6 +33,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
             string? valueFormat)
         {
             Enabled = enabled;
+            Normalization = normalization;
             Selector = selector;
             Unknowns = unknowns;
             ValueFormat = valueFormat;

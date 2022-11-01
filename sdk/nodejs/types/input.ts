@@ -332,6 +332,7 @@ export interface ApplicationErrorRulesHttpErrorsRule {
 
 export interface AutotagEntitySelectorBasedRule {
     enabled?: pulumi.Input<boolean>;
+    normalization?: pulumi.Input<string>;
     selector?: pulumi.Input<string>;
     unknowns?: pulumi.Input<string>;
     valueFormat?: pulumi.Input<string>;
@@ -2521,6 +2522,10 @@ export interface DashboardDashboardMetadata {
      */
     owner: pulumi.Input<string>;
     /**
+     * the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+     */
+    preset?: pulumi.Input<boolean>;
+    /**
      * the dashboard is shared (`true`) or private (`false`)
      */
     shared?: pulumi.Input<boolean>;
@@ -4208,6 +4213,122 @@ export interface K8sCredentialsEventsFieldSelector {
      * Any attributes that aren't yet supported by this provider
      */
     unknowns?: pulumi.Input<string>;
+}
+
+export interface MaintenanceFilter {
+    /**
+     * A list of matching rules for dynamic filter formation.  If several rules are set, the OR logic applies
+     */
+    filters?: pulumi.Input<pulumi.Input<inputs.MaintenanceFilterFilter>[]>;
+}
+
+export interface MaintenanceFilterFilter {
+    entityId?: pulumi.Input<string>;
+    entityTags?: pulumi.Input<pulumi.Input<string>[]>;
+    entityType?: pulumi.Input<string>;
+    managementZones?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface MaintenanceGeneralProperties {
+    /**
+     * A short description of the maintenance purpose
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Suppress execution of synthetic monitors during the maintenance
+     */
+    disableSynthetic?: pulumi.Input<boolean>;
+    /**
+     * The name of the maintenance window, displayed in the UI
+     */
+    name: pulumi.Input<string>;
+    /**
+     * The type of suppression of alerting and problem detection during the maintenance
+     */
+    suppression: pulumi.Input<string>;
+    /**
+     * The type of the maintenance: planned or unplanned
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface MaintenanceSchedule {
+    /**
+     * The configuration for maintenance windows occuring daily
+     */
+    dailyRecurrence?: pulumi.Input<inputs.MaintenanceScheduleDailyRecurrence>;
+    /**
+     * The configuration for maintenance windows occuring monthly
+     */
+    monthlyRecurrence?: pulumi.Input<inputs.MaintenanceScheduleMonthlyRecurrence>;
+    /**
+     * The configuration for maintenance windows occuring once
+     */
+    onceRecurrence?: pulumi.Input<inputs.MaintenanceScheduleOnceRecurrence>;
+    /**
+     * The time window of the maintenance window
+     */
+    type: pulumi.Input<string>;
+    /**
+     * The configuration for maintenance windows occuring weekly
+     */
+    weeklyRecurrence?: pulumi.Input<inputs.MaintenanceScheduleWeeklyRecurrence>;
+}
+
+export interface MaintenanceScheduleDailyRecurrence {
+    recurrenceRange: pulumi.Input<inputs.MaintenanceScheduleDailyRecurrenceRecurrenceRange>;
+    timeWindow: pulumi.Input<inputs.MaintenanceScheduleDailyRecurrenceTimeWindow>;
+}
+
+export interface MaintenanceScheduleDailyRecurrenceRecurrenceRange {
+    endDate: pulumi.Input<string>;
+    startDate: pulumi.Input<string>;
+}
+
+export interface MaintenanceScheduleDailyRecurrenceTimeWindow {
+    endTime: pulumi.Input<string>;
+    startTime: pulumi.Input<string>;
+    timeZone: pulumi.Input<string>;
+}
+
+export interface MaintenanceScheduleMonthlyRecurrence {
+    dayOfMonth: pulumi.Input<number>;
+    recurrenceRange: pulumi.Input<inputs.MaintenanceScheduleMonthlyRecurrenceRecurrenceRange>;
+    timeWindow: pulumi.Input<inputs.MaintenanceScheduleMonthlyRecurrenceTimeWindow>;
+}
+
+export interface MaintenanceScheduleMonthlyRecurrenceRecurrenceRange {
+    endDate: pulumi.Input<string>;
+    startDate: pulumi.Input<string>;
+}
+
+export interface MaintenanceScheduleMonthlyRecurrenceTimeWindow {
+    endTime: pulumi.Input<string>;
+    startTime: pulumi.Input<string>;
+    timeZone: pulumi.Input<string>;
+}
+
+export interface MaintenanceScheduleOnceRecurrence {
+    endTime: pulumi.Input<string>;
+    startTime: pulumi.Input<string>;
+    timeZone: pulumi.Input<string>;
+}
+
+export interface MaintenanceScheduleWeeklyRecurrence {
+    dayOfWeek: pulumi.Input<string>;
+    recurrenceRange: pulumi.Input<inputs.MaintenanceScheduleWeeklyRecurrenceRecurrenceRange>;
+    timeWindow: pulumi.Input<inputs.MaintenanceScheduleWeeklyRecurrenceTimeWindow>;
+}
+
+export interface MaintenanceScheduleWeeklyRecurrenceRecurrenceRange {
+    endDate: pulumi.Input<string>;
+    startDate: pulumi.Input<string>;
+}
+
+export interface MaintenanceScheduleWeeklyRecurrenceTimeWindow {
+    endTime: pulumi.Input<string>;
+    startTime: pulumi.Input<string>;
+    timeZone: pulumi.Input<string>;
 }
 
 export interface MaintenanceWindowMetadata {
@@ -8405,4 +8526,36 @@ export interface WebApplicationXhrActionApdexSettings {
      * Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
      */
     toleratedThreshold?: pulumi.Input<number>;
+}
+
+export interface WebhookNotificationHeaders {
+    /**
+     * An additional HTTP Header to include when sending requests
+     */
+    headers: pulumi.Input<pulumi.Input<inputs.WebhookNotificationHeadersHeader>[]>;
+}
+
+export interface WebhookNotificationHeadersHeader {
+    /**
+     * The name of the notification configuration
+     */
+    name: pulumi.Input<string>;
+    secretValue?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface XmattersNotificationHeaders {
+    /**
+     * An additional HTTP Header to include when sending requests
+     */
+    headers: pulumi.Input<pulumi.Input<inputs.XmattersNotificationHeadersHeader>[]>;
+}
+
+export interface XmattersNotificationHeadersHeader {
+    /**
+     * The name of the notification configuration
+     */
+    name: pulumi.Input<string>;
+    secretValue?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
 }

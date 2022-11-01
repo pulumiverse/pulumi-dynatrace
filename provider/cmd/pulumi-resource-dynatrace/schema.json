@@ -1454,6 +1454,14 @@
                         }
                     }
                 },
+                "normalization": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
                 "selector": {
                     "type": "string",
                     "language": {
@@ -11789,6 +11797,15 @@
                         }
                     }
                 },
+                "preset": {
+                    "type": "boolean",
+                    "description": "the dashboard is a preset (`true`) or not (`false`). Default is `false`.\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
                 "shared": {
                     "type": "boolean",
                     "description": "the dashboard is shared (`true`) or private (`false`)\n",
@@ -18858,6 +18875,478 @@
                 "active",
                 "fieldSelector",
                 "label"
+            ]
+        },
+        "dynatrace:index/MaintenanceFilter:MaintenanceFilter": {
+            "properties": {
+                "filters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/dynatrace:index/MaintenanceFilterFilter:MaintenanceFilterFilter"
+                    },
+                    "description": "A list of matching rules for dynamic filter formation.  If several rules are set, the OR logic applies\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "dynatrace:index/MaintenanceFilterFilter:MaintenanceFilterFilter": {
+            "properties": {
+                "entityId": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "entityTags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "entityType": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "managementZones": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "dynatrace:index/MaintenanceGeneralProperties:MaintenanceGeneralProperties": {
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "description": "A short description of the maintenance purpose\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "disableSynthetic": {
+                    "type": "boolean",
+                    "description": "Suppress execution of synthetic monitors during the maintenance\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the maintenance window, displayed in the UI\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "suppression": {
+                    "type": "string",
+                    "description": "The type of suppression of alerting and problem detection during the maintenance\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The type of the maintenance: planned or unplanned\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "name",
+                "suppression",
+                "type"
+            ]
+        },
+        "dynatrace:index/MaintenanceSchedule:MaintenanceSchedule": {
+            "properties": {
+                "dailyRecurrence": {
+                    "$ref": "#/types/dynatrace:index/MaintenanceScheduleDailyRecurrence:MaintenanceScheduleDailyRecurrence",
+                    "description": "The configuration for maintenance windows occuring daily\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "monthlyRecurrence": {
+                    "$ref": "#/types/dynatrace:index/MaintenanceScheduleMonthlyRecurrence:MaintenanceScheduleMonthlyRecurrence",
+                    "description": "The configuration for maintenance windows occuring monthly\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "onceRecurrence": {
+                    "$ref": "#/types/dynatrace:index/MaintenanceScheduleOnceRecurrence:MaintenanceScheduleOnceRecurrence",
+                    "description": "The configuration for maintenance windows occuring once\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "type": {
+                    "type": "string",
+                    "description": "The time window of the maintenance window\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "weeklyRecurrence": {
+                    "$ref": "#/types/dynatrace:index/MaintenanceScheduleWeeklyRecurrence:MaintenanceScheduleWeeklyRecurrence",
+                    "description": "The configuration for maintenance windows occuring weekly\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "type"
+            ]
+        },
+        "dynatrace:index/MaintenanceScheduleDailyRecurrence:MaintenanceScheduleDailyRecurrence": {
+            "properties": {
+                "recurrenceRange": {
+                    "$ref": "#/types/dynatrace:index/MaintenanceScheduleDailyRecurrenceRecurrenceRange:MaintenanceScheduleDailyRecurrenceRecurrenceRange",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "timeWindow": {
+                    "$ref": "#/types/dynatrace:index/MaintenanceScheduleDailyRecurrenceTimeWindow:MaintenanceScheduleDailyRecurrenceTimeWindow",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "recurrenceRange",
+                "timeWindow"
+            ]
+        },
+        "dynatrace:index/MaintenanceScheduleDailyRecurrenceRecurrenceRange:MaintenanceScheduleDailyRecurrenceRecurrenceRange": {
+            "properties": {
+                "endDate": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "startDate": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "endDate",
+                "startDate"
+            ]
+        },
+        "dynatrace:index/MaintenanceScheduleDailyRecurrenceTimeWindow:MaintenanceScheduleDailyRecurrenceTimeWindow": {
+            "properties": {
+                "endTime": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "startTime": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "timeZone": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "endTime",
+                "startTime",
+                "timeZone"
+            ]
+        },
+        "dynatrace:index/MaintenanceScheduleMonthlyRecurrence:MaintenanceScheduleMonthlyRecurrence": {
+            "properties": {
+                "dayOfMonth": {
+                    "type": "integer",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "recurrenceRange": {
+                    "$ref": "#/types/dynatrace:index/MaintenanceScheduleMonthlyRecurrenceRecurrenceRange:MaintenanceScheduleMonthlyRecurrenceRecurrenceRange",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "timeWindow": {
+                    "$ref": "#/types/dynatrace:index/MaintenanceScheduleMonthlyRecurrenceTimeWindow:MaintenanceScheduleMonthlyRecurrenceTimeWindow",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "dayOfMonth",
+                "recurrenceRange",
+                "timeWindow"
+            ]
+        },
+        "dynatrace:index/MaintenanceScheduleMonthlyRecurrenceRecurrenceRange:MaintenanceScheduleMonthlyRecurrenceRecurrenceRange": {
+            "properties": {
+                "endDate": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "startDate": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "endDate",
+                "startDate"
+            ]
+        },
+        "dynatrace:index/MaintenanceScheduleMonthlyRecurrenceTimeWindow:MaintenanceScheduleMonthlyRecurrenceTimeWindow": {
+            "properties": {
+                "endTime": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "startTime": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "timeZone": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "endTime",
+                "startTime",
+                "timeZone"
+            ]
+        },
+        "dynatrace:index/MaintenanceScheduleOnceRecurrence:MaintenanceScheduleOnceRecurrence": {
+            "properties": {
+                "endTime": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "startTime": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "timeZone": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "endTime",
+                "startTime",
+                "timeZone"
+            ]
+        },
+        "dynatrace:index/MaintenanceScheduleWeeklyRecurrence:MaintenanceScheduleWeeklyRecurrence": {
+            "properties": {
+                "dayOfWeek": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "recurrenceRange": {
+                    "$ref": "#/types/dynatrace:index/MaintenanceScheduleWeeklyRecurrenceRecurrenceRange:MaintenanceScheduleWeeklyRecurrenceRecurrenceRange",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "timeWindow": {
+                    "$ref": "#/types/dynatrace:index/MaintenanceScheduleWeeklyRecurrenceTimeWindow:MaintenanceScheduleWeeklyRecurrenceTimeWindow",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "dayOfWeek",
+                "recurrenceRange",
+                "timeWindow"
+            ]
+        },
+        "dynatrace:index/MaintenanceScheduleWeeklyRecurrenceRecurrenceRange:MaintenanceScheduleWeeklyRecurrenceRecurrenceRange": {
+            "properties": {
+                "endDate": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "startDate": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "endDate",
+                "startDate"
+            ]
+        },
+        "dynatrace:index/MaintenanceScheduleWeeklyRecurrenceTimeWindow:MaintenanceScheduleWeeklyRecurrenceTimeWindow": {
+            "properties": {
+                "endTime": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "startTime": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "timeZone": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "endTime",
+                "startTime",
+                "timeZone"
             ]
         },
         "dynatrace:index/MaintenanceWindowMetadata:MaintenanceWindowMetadata": {
@@ -37593,6 +38082,114 @@
             },
             "type": "object"
         },
+        "dynatrace:index/WebhookNotificationHeaders:WebhookNotificationHeaders": {
+            "properties": {
+                "headers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/dynatrace:index/WebhookNotificationHeadersHeader:WebhookNotificationHeadersHeader"
+                    },
+                    "description": "An additional HTTP Header to include when sending requests\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "headers"
+            ]
+        },
+        "dynatrace:index/WebhookNotificationHeadersHeader:WebhookNotificationHeadersHeader": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "secretValue": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    },
+                    "secret": true
+                },
+                "value": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "name"
+            ]
+        },
+        "dynatrace:index/XmattersNotificationHeaders:XmattersNotificationHeaders": {
+            "properties": {
+                "headers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/dynatrace:index/XmattersNotificationHeadersHeader:XmattersNotificationHeadersHeader"
+                    },
+                    "description": "An additional HTTP Header to include when sending requests\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "headers"
+            ]
+        },
+        "dynatrace:index/XmattersNotificationHeadersHeader:XmattersNotificationHeadersHeader": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "secretValue": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    },
+                    "secret": true
+                },
+                "value": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "name"
+            ]
+        },
         "dynatrace:index/getSyntheticLocationsLocations:getSyntheticLocationsLocations": {
             "properties": {
                 "locations": {
@@ -37918,6 +38515,130 @@
                     "unknowns": {
                         "type": "string",
                         "description": "allows for configuring properties that are not explicitly supported by the current version of this provider\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "dynatrace:index/ansibleTowerNotification:AnsibleTowerNotification": {
+            "properties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The notification is active (`true`) or inactive (`false`). Default is `false`.\n"
+                },
+                "customMessage": {
+                    "type": "string",
+                    "description": "The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                },
+                "insecure": {
+                    "type": "boolean",
+                    "description": "Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.\n"
+                },
+                "jobTemplateUrl": {
+                    "type": "string",
+                    "description": "The URL of the target Ansible Tower job template\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The display name within the Dynatrace WebUI.\n"
+                },
+                "password": {
+                    "type": "string",
+                    "description": "The password for the Ansible Tower account\n",
+                    "secret": true
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile.\n"
+                },
+                "username": {
+                    "type": "string",
+                    "description": "The username of the Ansible Tower account\n"
+                }
+            },
+            "required": [
+                "customMessage",
+                "jobTemplateUrl",
+                "name",
+                "profile",
+                "username"
+            ],
+            "inputProperties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The notification is active (`true`) or inactive (`false`). Default is `false`.\n"
+                },
+                "customMessage": {
+                    "type": "string",
+                    "description": "The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                },
+                "insecure": {
+                    "type": "boolean",
+                    "description": "Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.\n"
+                },
+                "jobTemplateUrl": {
+                    "type": "string",
+                    "description": "The URL of the target Ansible Tower job template\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The display name within the Dynatrace WebUI.\n"
+                },
+                "password": {
+                    "type": "string",
+                    "description": "The password for the Ansible Tower account\n",
+                    "secret": true
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile.\n"
+                },
+                "username": {
+                    "type": "string",
+                    "description": "The username of the Ansible Tower account\n"
+                }
+            },
+            "requiredInputs": [
+                "customMessage",
+                "jobTemplateUrl",
+                "profile",
+                "username"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AnsibleTowerNotification resources.\n",
+                "properties": {
+                    "active": {
+                        "type": "boolean",
+                        "description": "The notification is active (`true`) or inactive (`false`). Default is `false`.\n"
+                    },
+                    "customMessage": {
+                        "type": "string",
+                        "description": "The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                    },
+                    "insecure": {
+                        "type": "boolean",
+                        "description": "Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.\n"
+                    },
+                    "jobTemplateUrl": {
+                        "type": "string",
+                        "description": "The URL of the target Ansible Tower job template\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The display name within the Dynatrace WebUI.\n"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "The password for the Ansible Tower account\n",
+                        "secret": true
+                    },
+                    "profile": {
+                        "type": "string",
+                        "description": "The ID of the associated alerting profile.\n"
+                    },
+                    "username": {
+                        "type": "string",
+                        "description": "The username of the Ansible Tower account\n"
                     }
                 },
                 "type": "object"
@@ -39748,6 +40469,166 @@
                 "type": "object"
             }
         },
+        "dynatrace:index/emailNotification:EmailNotification": {
+            "properties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "bccs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of the email BCC-recipients\n"
+                },
+                "body": {
+                    "type": "string",
+                    "description": "The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                },
+                "ccs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of the email CC-recipients\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "notifyClosedProblems": {
+                    "type": "boolean",
+                    "description": "Send email if problem is closed\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The subject of the email notifications\n"
+                },
+                "tos": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of the email recipients\n"
+                }
+            },
+            "required": [
+                "body",
+                "name",
+                "profile",
+                "subject",
+                "tos"
+            ],
+            "inputProperties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "bccs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of the email BCC-recipients\n"
+                },
+                "body": {
+                    "type": "string",
+                    "description": "The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                },
+                "ccs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of the email CC-recipients\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "notifyClosedProblems": {
+                    "type": "boolean",
+                    "description": "Send email if problem is closed\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "The subject of the email notifications\n"
+                },
+                "tos": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of the email recipients\n"
+                }
+            },
+            "requiredInputs": [
+                "body",
+                "profile",
+                "subject",
+                "tos"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering EmailNotification resources.\n",
+                "properties": {
+                    "active": {
+                        "type": "boolean",
+                        "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                    },
+                    "bccs": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The list of the email BCC-recipients\n"
+                    },
+                    "body": {
+                        "type": "string",
+                        "description": "The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                    },
+                    "ccs": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The list of the email CC-recipients\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the notification configuration\n"
+                    },
+                    "notifyClosedProblems": {
+                        "type": "boolean",
+                        "description": "Send email if problem is closed\n"
+                    },
+                    "profile": {
+                        "type": "string",
+                        "description": "The ID of the associated alerting profile\n"
+                    },
+                    "subject": {
+                        "type": "string",
+                        "description": "The subject of the email notifications\n"
+                    },
+                    "tos": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "The list of the email recipients\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "dynatrace:index/environment:Environment": {
             "description": "## Dynatrace Documentation\n\n- Manage your monitoring environments - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-managed/operation/manage-your-monitoring-environments\n\n- Cluster API v2 - Environments - https://www.dynatrace.com/support/help/shortlink/cluster-api#environments\n",
             "properties": {
@@ -39846,6 +40727,64 @@
                     "trial": {
                         "type": "boolean",
                         "description": "Specifies whether the environment is a trial environment or a non-trial environment. Creating a trial environment is only possible if your license allows that. The default value is false (non-trial)\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "dynatrace:index/frequentIssues:FrequentIssues": {
+            "properties": {
+                "detectApps": {
+                    "type": "boolean",
+                    "description": "Detect frequent issues within applications, enabled (`true`) or disabled (`false`)\n"
+                },
+                "detectInfra": {
+                    "type": "boolean",
+                    "description": "Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)\n"
+                },
+                "detectTxn": {
+                    "type": "boolean",
+                    "description": "Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)\n"
+                }
+            },
+            "required": [
+                "detectApps",
+                "detectInfra",
+                "detectTxn"
+            ],
+            "inputProperties": {
+                "detectApps": {
+                    "type": "boolean",
+                    "description": "Detect frequent issues within applications, enabled (`true`) or disabled (`false`)\n"
+                },
+                "detectInfra": {
+                    "type": "boolean",
+                    "description": "Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)\n"
+                },
+                "detectTxn": {
+                    "type": "boolean",
+                    "description": "Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)\n"
+                }
+            },
+            "requiredInputs": [
+                "detectApps",
+                "detectInfra",
+                "detectTxn"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering FrequentIssues resources.\n",
+                "properties": {
+                    "detectApps": {
+                        "type": "boolean",
+                        "description": "Detect frequent issues within applications, enabled (`true`) or disabled (`false`)\n"
+                    },
+                    "detectInfra": {
+                        "type": "boolean",
+                        "description": "Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)\n"
+                    },
+                    "detectTxn": {
+                        "type": "boolean",
+                        "description": "Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)\n"
                     }
                 },
                 "type": "object"
@@ -40374,6 +41313,162 @@
                 "type": "object"
             }
         },
+        "dynatrace:index/jiraNotification:JiraNotification": {
+            "properties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "apiToken": {
+                    "type": "string",
+                    "description": "The API token for the Jira profile. Using password authentication [was deprecated by Jira](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-basic-auth-and-cookie-based-auth/)\n",
+                    "secret": true
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The description of the Jira issue to be created by this notification.   You can use same placeholders as in issue summary\n"
+                },
+                "issueType": {
+                    "type": "string",
+                    "description": "The type of the Jira issue to be created by this notification\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "projectKey": {
+                    "type": "string",
+                    "description": "The project key of the Jira issue to be created by this notification\n"
+                },
+                "summary": {
+                    "type": "string",
+                    "description": "The summary of the Jira issue to be created by this notification.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The URL of the Jira API endpoint\n"
+                },
+                "username": {
+                    "type": "string",
+                    "description": "The username of the Jira profile\n"
+                }
+            },
+            "required": [
+                "active",
+                "description",
+                "issueType",
+                "name",
+                "profile",
+                "projectKey",
+                "summary",
+                "url",
+                "username"
+            ],
+            "inputProperties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "apiToken": {
+                    "type": "string",
+                    "description": "The API token for the Jira profile. Using password authentication [was deprecated by Jira](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-basic-auth-and-cookie-based-auth/)\n",
+                    "secret": true
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The description of the Jira issue to be created by this notification.   You can use same placeholders as in issue summary\n"
+                },
+                "issueType": {
+                    "type": "string",
+                    "description": "The type of the Jira issue to be created by this notification\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "projectKey": {
+                    "type": "string",
+                    "description": "The project key of the Jira issue to be created by this notification\n"
+                },
+                "summary": {
+                    "type": "string",
+                    "description": "The summary of the Jira issue to be created by this notification.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The URL of the Jira API endpoint\n"
+                },
+                "username": {
+                    "type": "string",
+                    "description": "The username of the Jira profile\n"
+                }
+            },
+            "requiredInputs": [
+                "active",
+                "description",
+                "issueType",
+                "profile",
+                "projectKey",
+                "summary",
+                "url",
+                "username"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering JiraNotification resources.\n",
+                "properties": {
+                    "active": {
+                        "type": "boolean",
+                        "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                    },
+                    "apiToken": {
+                        "type": "string",
+                        "description": "The API token for the Jira profile. Using password authentication [was deprecated by Jira](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-basic-auth-and-cookie-based-auth/)\n",
+                        "secret": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the Jira issue to be created by this notification.   You can use same placeholders as in issue summary\n"
+                    },
+                    "issueType": {
+                        "type": "string",
+                        "description": "The type of the Jira issue to be created by this notification\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the notification configuration\n"
+                    },
+                    "profile": {
+                        "type": "string",
+                        "description": "The ID of the associated alerting profile\n"
+                    },
+                    "projectKey": {
+                        "type": "string",
+                        "description": "The project key of the Jira issue to be created by this notification\n"
+                    },
+                    "summary": {
+                        "type": "string",
+                        "description": "The summary of the Jira issue to be created by this notification.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The URL of the Jira API endpoint\n"
+                    },
+                    "username": {
+                        "type": "string",
+                        "description": "The username of the Jira profile\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "dynatrace:index/k8sCredentials:K8sCredentials": {
             "properties": {
                 "active": {
@@ -40603,6 +41698,83 @@
                     "service": {
                         "type": "string",
                         "description": "Whether to create an entry point or not\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "dynatrace:index/maintenance:Maintenance": {
+            "properties": {
+                "enabled": {
+                    "type": "boolean",
+                    "description": "The maintenance window is enabled or disabled\n"
+                },
+                "filters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/dynatrace:index/MaintenanceFilter:MaintenanceFilter"
+                    },
+                    "description": "The filters of the maintenance window\n"
+                },
+                "generalProperties": {
+                    "$ref": "#/types/dynatrace:index/MaintenanceGeneralProperties:MaintenanceGeneralProperties",
+                    "description": "The general properties of the maintenance window\n"
+                },
+                "schedule": {
+                    "$ref": "#/types/dynatrace:index/MaintenanceSchedule:MaintenanceSchedule",
+                    "description": "The schedule of the maintenance window\n"
+                }
+            },
+            "required": [
+                "generalProperties",
+                "schedule"
+            ],
+            "inputProperties": {
+                "enabled": {
+                    "type": "boolean",
+                    "description": "The maintenance window is enabled or disabled\n"
+                },
+                "filters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/dynatrace:index/MaintenanceFilter:MaintenanceFilter"
+                    },
+                    "description": "The filters of the maintenance window\n"
+                },
+                "generalProperties": {
+                    "$ref": "#/types/dynatrace:index/MaintenanceGeneralProperties:MaintenanceGeneralProperties",
+                    "description": "The general properties of the maintenance window\n"
+                },
+                "schedule": {
+                    "$ref": "#/types/dynatrace:index/MaintenanceSchedule:MaintenanceSchedule",
+                    "description": "The schedule of the maintenance window\n"
+                }
+            },
+            "requiredInputs": [
+                "generalProperties",
+                "schedule"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Maintenance resources.\n",
+                "properties": {
+                    "enabled": {
+                        "type": "boolean",
+                        "description": "The maintenance window is enabled or disabled\n"
+                    },
+                    "filters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/dynatrace:index/MaintenanceFilter:MaintenanceFilter"
+                        },
+                        "description": "The filters of the maintenance window\n"
+                    },
+                    "generalProperties": {
+                        "$ref": "#/types/dynatrace:index/MaintenanceGeneralProperties:MaintenanceGeneralProperties",
+                        "description": "The general properties of the maintenance window\n"
+                    },
+                    "schedule": {
+                        "$ref": "#/types/dynatrace:index/MaintenanceSchedule:MaintenanceSchedule",
+                        "description": "The schedule of the maintenance window\n"
                     }
                 },
                 "type": "object"
@@ -41230,6 +42402,206 @@
                     "xmatters": {
                         "$ref": "#/types/dynatrace:index/NotificationXmatters:NotificationXmatters",
                         "description": "Configuration for XMatters Notification\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "dynatrace:index/opsGenieNotification:OpsGenieNotification": {
+            "properties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "apiKey": {
+                    "type": "string",
+                    "description": "The API key to access OpsGenie\n",
+                    "secret": true
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The region domain of the OpsGenie\n"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                }
+            },
+            "required": [
+                "active",
+                "domain",
+                "message",
+                "name",
+                "profile"
+            ],
+            "inputProperties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "apiKey": {
+                    "type": "string",
+                    "description": "The API key to access OpsGenie\n",
+                    "secret": true
+                },
+                "domain": {
+                    "type": "string",
+                    "description": "The region domain of the OpsGenie\n"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                }
+            },
+            "requiredInputs": [
+                "active",
+                "domain",
+                "message",
+                "profile"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering OpsGenieNotification resources.\n",
+                "properties": {
+                    "active": {
+                        "type": "boolean",
+                        "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                    },
+                    "apiKey": {
+                        "type": "string",
+                        "description": "The API key to access OpsGenie\n",
+                        "secret": true
+                    },
+                    "domain": {
+                        "type": "string",
+                        "description": "The region domain of the OpsGenie\n"
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the notification configuration\n"
+                    },
+                    "profile": {
+                        "type": "string",
+                        "description": "The ID of the associated alerting profile\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "dynatrace:index/pagerDutyNotification:PagerDutyNotification": {
+            "properties": {
+                "account": {
+                    "type": "string",
+                    "description": "The name of the PagerDuty account\n"
+                },
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "apiKey": {
+                    "type": "string",
+                    "description": "The API key to access PagerDuty\n",
+                    "secret": true
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "service": {
+                    "type": "string",
+                    "description": "The name of the PagerDuty Service\n"
+                }
+            },
+            "required": [
+                "account",
+                "active",
+                "name",
+                "profile",
+                "service"
+            ],
+            "inputProperties": {
+                "account": {
+                    "type": "string",
+                    "description": "The name of the PagerDuty account\n"
+                },
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "apiKey": {
+                    "type": "string",
+                    "description": "The API key to access PagerDuty\n",
+                    "secret": true
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "service": {
+                    "type": "string",
+                    "description": "The name of the PagerDuty Service\n"
+                }
+            },
+            "requiredInputs": [
+                "account",
+                "active",
+                "profile",
+                "service"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering PagerDutyNotification resources.\n",
+                "properties": {
+                    "account": {
+                        "type": "string",
+                        "description": "The name of the PagerDuty account\n"
+                    },
+                    "active": {
+                        "type": "boolean",
+                        "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                    },
+                    "apiKey": {
+                        "type": "string",
+                        "description": "The API key to access PagerDuty\n",
+                        "secret": true
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the notification configuration\n"
+                    },
+                    "profile": {
+                        "type": "string",
+                        "description": "The ID of the associated alerting profile\n"
+                    },
+                    "service": {
+                        "type": "string",
+                        "description": "The name of the PagerDuty Service\n"
                     }
                 },
                 "type": "object"
@@ -41990,6 +43362,258 @@
                 "type": "object"
             }
         },
+        "dynatrace:index/serviceNowNotification:ServiceNowNotification": {
+            "properties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "events": {
+                    "type": "boolean",
+                    "description": "Send events into ServiceNow ITOM\n"
+                },
+                "incidents": {
+                    "type": "boolean",
+                    "description": "Send incidents into ServiceNow ITSM\n"
+                },
+                "instance": {
+                    "type": "string",
+                    "description": "The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them\n"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "password": {
+                    "type": "string",
+                    "description": "The password to the ServiceNow account\n",
+                    "secret": true
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them\n"
+                },
+                "username": {
+                    "type": "string",
+                    "description": "The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles\n"
+                }
+            },
+            "required": [
+                "active",
+                "incidents",
+                "message",
+                "name",
+                "profile",
+                "username"
+            ],
+            "inputProperties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "events": {
+                    "type": "boolean",
+                    "description": "Send events into ServiceNow ITOM\n"
+                },
+                "incidents": {
+                    "type": "boolean",
+                    "description": "Send incidents into ServiceNow ITSM\n"
+                },
+                "instance": {
+                    "type": "string",
+                    "description": "The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them\n"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "password": {
+                    "type": "string",
+                    "description": "The password to the ServiceNow account\n",
+                    "secret": true
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them\n"
+                },
+                "username": {
+                    "type": "string",
+                    "description": "The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles\n"
+                }
+            },
+            "requiredInputs": [
+                "active",
+                "incidents",
+                "message",
+                "profile",
+                "username"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ServiceNowNotification resources.\n",
+                "properties": {
+                    "active": {
+                        "type": "boolean",
+                        "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                    },
+                    "events": {
+                        "type": "boolean",
+                        "description": "Send events into ServiceNow ITOM\n"
+                    },
+                    "incidents": {
+                        "type": "boolean",
+                        "description": "Send incidents into ServiceNow ITSM\n"
+                    },
+                    "instance": {
+                        "type": "string",
+                        "description": "The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them\n"
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the notification configuration\n"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "The password to the ServiceNow account\n",
+                        "secret": true
+                    },
+                    "profile": {
+                        "type": "string",
+                        "description": "The ID of the associated alerting profile\n"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them\n"
+                    },
+                    "username": {
+                        "type": "string",
+                        "description": "The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "dynatrace:index/slackNotification:SlackNotification": {
+            "properties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "channel": {
+                    "type": "string",
+                    "description": "The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to\n"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests\n",
+                    "secret": true
+                }
+            },
+            "required": [
+                "active",
+                "channel",
+                "message",
+                "name",
+                "profile",
+                "url"
+            ],
+            "inputProperties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "channel": {
+                    "type": "string",
+                    "description": "The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to\n"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests\n",
+                    "secret": true
+                }
+            },
+            "requiredInputs": [
+                "active",
+                "channel",
+                "message",
+                "profile",
+                "url"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering SlackNotification resources.\n",
+                "properties": {
+                    "active": {
+                        "type": "boolean",
+                        "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                    },
+                    "channel": {
+                        "type": "string",
+                        "description": "The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to\n"
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the notification configuration\n"
+                    },
+                    "profile": {
+                        "type": "string",
+                        "description": "The ID of the associated alerting profile\n"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests\n",
+                        "secret": true
+                    }
+                },
+                "type": "object"
+            }
+        },
         "dynatrace:index/slo:Slo": {
             "properties": {
                 "denominator": {
@@ -42363,6 +43987,159 @@
                 "type": "object"
             }
         },
+        "dynatrace:index/trrelloNotification:TrrelloNotification": {
+            "properties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "applicationKey": {
+                    "type": "string",
+                    "description": "The application key for the Trello account\n"
+                },
+                "authorizationToken": {
+                    "type": "string",
+                    "description": "The application token for the Trello account\n"
+                },
+                "boardId": {
+                    "type": "string",
+                    "description": "The Trello board to which the card should be assigned\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The description of the Trello card.   You can use same placeholders as in card text\n"
+                },
+                "listId": {
+                    "type": "string",
+                    "description": "The Trello list to which the card should be assigned\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "resolvedListId": {
+                    "type": "string",
+                    "description": "The Trello list to which the card of the resolved problem should be assigned\n"
+                },
+                "text": {
+                    "type": "string",
+                    "description": "The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                }
+            },
+            "required": [
+                "active",
+                "applicationKey",
+                "boardId",
+                "description",
+                "listId",
+                "name",
+                "profile",
+                "resolvedListId",
+                "text"
+            ],
+            "inputProperties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "applicationKey": {
+                    "type": "string",
+                    "description": "The application key for the Trello account\n"
+                },
+                "authorizationToken": {
+                    "type": "string",
+                    "description": "The application token for the Trello account\n"
+                },
+                "boardId": {
+                    "type": "string",
+                    "description": "The Trello board to which the card should be assigned\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The description of the Trello card.   You can use same placeholders as in card text\n"
+                },
+                "listId": {
+                    "type": "string",
+                    "description": "The Trello list to which the card should be assigned\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "resolvedListId": {
+                    "type": "string",
+                    "description": "The Trello list to which the card of the resolved problem should be assigned\n"
+                },
+                "text": {
+                    "type": "string",
+                    "description": "The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                }
+            },
+            "requiredInputs": [
+                "active",
+                "applicationKey",
+                "boardId",
+                "description",
+                "listId",
+                "profile",
+                "resolvedListId",
+                "text"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering TrrelloNotification resources.\n",
+                "properties": {
+                    "active": {
+                        "type": "boolean",
+                        "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                    },
+                    "applicationKey": {
+                        "type": "string",
+                        "description": "The application key for the Trello account\n"
+                    },
+                    "authorizationToken": {
+                        "type": "string",
+                        "description": "The application token for the Trello account\n"
+                    },
+                    "boardId": {
+                        "type": "string",
+                        "description": "The Trello board to which the card should be assigned\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the Trello card.   You can use same placeholders as in card text\n"
+                    },
+                    "listId": {
+                        "type": "string",
+                        "description": "The Trello list to which the card should be assigned\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the notification configuration\n"
+                    },
+                    "profile": {
+                        "type": "string",
+                        "description": "The ID of the associated alerting profile\n"
+                    },
+                    "resolvedListId": {
+                        "type": "string",
+                        "description": "The Trello list to which the card of the resolved problem should be assigned\n"
+                    },
+                    "text": {
+                        "type": "string",
+                        "description": "The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "dynatrace:index/user:User": {
             "description": "## Dynatrace Documentation\n\n- User management and SSO - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso\n\n- User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api\n",
             "properties": {
@@ -42570,6 +44347,106 @@
                             "type": "string"
                         },
                         "description": "SSO group names. If defined it's used to map SSO group name to Dynatrace group name, otherwise mapping is done by group name\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "dynatrace:index/victorOpsNotification:VictorOpsNotification": {
+            "properties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "apiKey": {
+                    "type": "string",
+                    "description": "The API key for the target VictorOps account\n",
+                    "secret": true
+                },
+                "message": {
+                    "type": "string",
+                    "description": "The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "routingKey": {
+                    "type": "string",
+                    "description": "The routing key, defining the group to be notified\n"
+                }
+            },
+            "required": [
+                "active",
+                "message",
+                "name",
+                "profile",
+                "routingKey"
+            ],
+            "inputProperties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "apiKey": {
+                    "type": "string",
+                    "description": "The API key for the target VictorOps account\n",
+                    "secret": true
+                },
+                "message": {
+                    "type": "string",
+                    "description": "The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "routingKey": {
+                    "type": "string",
+                    "description": "The routing key, defining the group to be notified\n"
+                }
+            },
+            "requiredInputs": [
+                "active",
+                "message",
+                "profile",
+                "routingKey"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering VictorOpsNotification resources.\n",
+                "properties": {
+                    "active": {
+                        "type": "boolean",
+                        "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                    },
+                    "apiKey": {
+                        "type": "string",
+                        "description": "The API key for the target VictorOps account\n",
+                        "secret": true
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the notification configuration\n"
+                    },
+                    "profile": {
+                        "type": "string",
+                        "description": "The ID of the associated alerting profile\n"
+                    },
+                    "routingKey": {
+                        "type": "string",
+                        "description": "The routing key, defining the group to be notified\n"
                     }
                 },
                 "type": "object"
@@ -42846,9 +44723,283 @@
                 },
                 "type": "object"
             }
+        },
+        "dynatrace:index/webhookNotification:WebhookNotification": {
+            "properties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "headers": {
+                    "$ref": "#/types/dynatrace:index/WebhookNotificationHeaders:WebhookNotificationHeaders",
+                    "description": "A list of the additional HTTP headers\n"
+                },
+                "insecure": {
+                    "type": "boolean",
+                    "description": "Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "notifyClosedProblems": {
+                    "type": "boolean",
+                    "description": "Send email if problem is closed\n"
+                },
+                "notifyEventMerges": {
+                    "type": "boolean",
+                    "description": "Call webhook if new events merge into existing problems\n"
+                },
+                "payload": {
+                    "type": "string",
+                    "description": "The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The URL of the WebHook endpoint\n"
+                }
+            },
+            "required": [
+                "active",
+                "name",
+                "payload",
+                "profile",
+                "url"
+            ],
+            "inputProperties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "headers": {
+                    "$ref": "#/types/dynatrace:index/WebhookNotificationHeaders:WebhookNotificationHeaders",
+                    "description": "A list of the additional HTTP headers\n"
+                },
+                "insecure": {
+                    "type": "boolean",
+                    "description": "Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "notifyClosedProblems": {
+                    "type": "boolean",
+                    "description": "Send email if problem is closed\n"
+                },
+                "notifyEventMerges": {
+                    "type": "boolean",
+                    "description": "Call webhook if new events merge into existing problems\n"
+                },
+                "payload": {
+                    "type": "string",
+                    "description": "The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The URL of the WebHook endpoint\n"
+                }
+            },
+            "requiredInputs": [
+                "active",
+                "payload",
+                "profile",
+                "url"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering WebhookNotification resources.\n",
+                "properties": {
+                    "active": {
+                        "type": "boolean",
+                        "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                    },
+                    "headers": {
+                        "$ref": "#/types/dynatrace:index/WebhookNotificationHeaders:WebhookNotificationHeaders",
+                        "description": "A list of the additional HTTP headers\n"
+                    },
+                    "insecure": {
+                        "type": "boolean",
+                        "description": "Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the notification configuration\n"
+                    },
+                    "notifyClosedProblems": {
+                        "type": "boolean",
+                        "description": "Send email if problem is closed\n"
+                    },
+                    "notifyEventMerges": {
+                        "type": "boolean",
+                        "description": "Call webhook if new events merge into existing problems\n"
+                    },
+                    "payload": {
+                        "type": "string",
+                        "description": "The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                    },
+                    "profile": {
+                        "type": "string",
+                        "description": "The ID of the associated alerting profile\n"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The URL of the WebHook endpoint\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "dynatrace:index/xmattersNotification:XmattersNotification": {
+            "properties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "headers": {
+                    "$ref": "#/types/dynatrace:index/XmattersNotificationHeaders:XmattersNotificationHeaders",
+                    "description": "A list of the additional HTTP headers\n"
+                },
+                "insecure": {
+                    "type": "boolean",
+                    "description": "Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "payload": {
+                    "type": "string",
+                    "description": "The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The URL of the WebHook endpoint\n"
+                }
+            },
+            "required": [
+                "active",
+                "name",
+                "payload",
+                "profile",
+                "url"
+            ],
+            "inputProperties": {
+                "active": {
+                    "type": "boolean",
+                    "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                },
+                "headers": {
+                    "$ref": "#/types/dynatrace:index/XmattersNotificationHeaders:XmattersNotificationHeaders",
+                    "description": "A list of the additional HTTP headers\n"
+                },
+                "insecure": {
+                    "type": "boolean",
+                    "description": "Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the notification configuration\n"
+                },
+                "payload": {
+                    "type": "string",
+                    "description": "The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                },
+                "profile": {
+                    "type": "string",
+                    "description": "The ID of the associated alerting profile\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "The URL of the WebHook endpoint\n"
+                }
+            },
+            "requiredInputs": [
+                "active",
+                "payload",
+                "profile",
+                "url"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering XmattersNotification resources.\n",
+                "properties": {
+                    "active": {
+                        "type": "boolean",
+                        "description": "The configuration is enabled (`true`) or disabled (`false`)\n"
+                    },
+                    "headers": {
+                        "$ref": "#/types/dynatrace:index/XmattersNotificationHeaders:XmattersNotificationHeaders",
+                        "description": "A list of the additional HTTP headers\n"
+                    },
+                    "insecure": {
+                        "type": "boolean",
+                        "description": "Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the notification configuration\n"
+                    },
+                    "payload": {
+                        "type": "string",
+                        "description": "The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas\n"
+                    },
+                    "profile": {
+                        "type": "string",
+                        "description": "The ID of the associated alerting profile\n"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The URL of the WebHook endpoint\n"
+                    }
+                },
+                "type": "object"
+            }
         }
     },
     "functions": {
+        "dynatrace:index/getAlertingProfile:getAlertingProfile": {
+            "description": "The Alerting Profile queries for an Alerting Profile that has a specified name. In case multiple Alerting Profiles share the same name the first one found will be used.\nThe ID of this Data Resource aligns with the IDs used by the Dynatrace Settings 2.0 API.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as dynatrace from \"@lbrlabs/pulumi-dynatrace\";\nimport * as dynatrace from \"@pulumi/dynatrace\";\n\nconst default = dynatrace.getAlertingProfile({\n    name: \"Default\",\n});\nconst myWebhookNotification = new dynatrace.WebhookNotification(\"myWebhookNotification\", {\n    active: false,\n    profile: _default.then(_default =\u003e _default.id),\n    url: \"https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e\",\n    insecure: true,\n    notifyEventMerges: true,\n    notifyClosedProblems: true,\n    payload: \"web-hook-payload\",\n});\n```\n```python\nimport pulumi\nimport lbrlabs_pulumi_dynatrace as dynatrace\nimport pulumi_dynatrace as dynatrace\n\ndefault = dynatrace.get_alerting_profile(name=\"Default\")\nmy_webhook_notification = dynatrace.WebhookNotification(\"myWebhookNotification\",\n    active=False,\n    profile=default.id,\n    url=\"https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e\",\n    insecure=True,\n    notify_event_merges=True,\n    notify_closed_problems=True,\n    payload=\"web-hook-payload\")\n```\n```csharp\nusing System.Collections.Generic;\nusing Pulumi;\nusing Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;\nusing Dynatrace = Pulumi.Dynatrace;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var @default = Dynatrace.GetAlertingProfile.Invoke(new()\n    {\n        Name = \"Default\",\n    });\n\n    var myWebhookNotification = new Dynatrace.WebhookNotification(\"myWebhookNotification\", new()\n    {\n        Active = false,\n        Profile = @default.Apply(getAlertingProfileResult =\u003e getAlertingProfileResult).Apply(@default =\u003e @default.Apply(getAlertingProfileResult =\u003e getAlertingProfileResult.Id)),\n        Url = \"https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e\",\n        Insecure = true,\n        NotifyEventMerges = true,\n        NotifyClosedProblems = true,\n        Payload = \"web-hook-payload\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-dynatrace/sdk/go/dynatrace\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_default, err := dynatrace.LookupAlertingProfile(ctx, \u0026GetAlertingProfileArgs{\n\t\t\tName: \"Default\",\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = dynatrace.NewWebhookNotification(ctx, \"myWebhookNotification\", \u0026dynatrace.WebhookNotificationArgs{\n\t\t\tActive:               pulumi.Bool(false),\n\t\t\tProfile:              pulumi.String(_default.Id),\n\t\t\tUrl:                  pulumi.String(\"https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e\"),\n\t\t\tInsecure:             pulumi.Bool(true),\n\t\t\tNotifyEventMerges:    pulumi.Bool(true),\n\t\t\tNotifyClosedProblems: pulumi.Bool(true),\n\t\t\tPayload:              pulumi.String(\"web-hook-payload\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.dynatrace.DynatraceFunctions;\nimport com.pulumi.dynatrace.inputs.GetAlertingProfileArgs;\nimport com.pulumi.dynatrace.WebhookNotification;\nimport com.pulumi.dynatrace.WebhookNotificationArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var default = DynatraceFunctions.getAlertingProfile(GetAlertingProfileArgs.builder()\n            .name(\"Default\")\n            .build());\n\n        var myWebhookNotification = new WebhookNotification(\"myWebhookNotification\", WebhookNotificationArgs.builder()        \n            .active(false)\n            .profile(default_.id())\n            .url(\"https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e\")\n            .insecure(true)\n            .notifyEventMerges(true)\n            .notifyClosedProblems(true)\n            .payload(\"web-hook-payload\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  myWebhookNotification:\n    type: dynatrace:WebhookNotification\n    properties:\n      active: false\n      profile: ${default.id}\n      url: https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e\n      insecure: true\n      notifyEventMerges: true\n      notifyClosedProblems: true\n      payload: web-hook-payload\nvariables:\n  default:\n    fn::invoke:\n      Function: dynatrace:getAlertingProfile\n      Arguments:\n        name: Default\n```\n{{% /example %}}\n{{% /examples %}}",
+            "inputs": {
+                "description": "A collection of arguments for invoking getAlertingProfile.\n",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "name"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAlertingProfile.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "name",
+                    "id"
+                ]
+            }
+        },
         "dynatrace:index/getAlertingProfiles:getAlertingProfiles": {
             "description": "The alerting profiles data source allows retrieval of all alerting profiles.\n",
             "inputs": {
@@ -42946,15 +45097,21 @@
             }
         },
         "dynatrace:index/getCredentials:getCredentials": {
-            "description": "The credentials data source allows retrieval of all credentials.\n",
+            "description": "The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as dynatrace from \"@lbrlabs/pulumi-dynatrace\";\nimport * as dynatrace from \"@pulumi/dynatrace\";\n\nconst creds = dynatrace.getCredentials({\n    name: \"Office365 Access Token\",\n});\nconst _name_ = new dynatrace.HttpMonitor(\"#name#\", {\n    enabled: true,\n    frequency: 60,\n    locations: [\"SYNTHETIC_LOCATION-781752216580B1BC\"],\n    anomalyDetections: [{\n        loadingTimeThresholds: [{\n            enabled: true,\n        }],\n        outageHandlings: [{\n            globalOutage: true,\n            localOutage: false,\n            retryOnError: false,\n        }],\n    }],\n    script: {\n        requests: [{\n            description: \"google.com\",\n            method: \"GET\",\n            url: \"https://www.google.com\",\n            authentication: {\n                type: \"BASIC_AUTHENTICATION\",\n                credentials: creds.then(creds =\u003e creds.id),\n            },\n            configuration: {\n                acceptAnyCertificate: true,\n                followRedirects: true,\n            },\n            validation: {\n                rules: [{\n                    type: \"httpStatusesList\",\n                    passIfFound: false,\n                    value: \"\u003e=400\",\n                }],\n            },\n        }],\n    },\n});\n```\n```python\nimport pulumi\nimport lbrlabs_pulumi_dynatrace as dynatrace\nimport pulumi_dynatrace as dynatrace\n\ncreds = dynatrace.get_credentials(name=\"Office365 Access Token\")\n_name_ = dynatrace.HttpMonitor(\"#name#\",\n    enabled=True,\n    frequency=60,\n    locations=[\"SYNTHETIC_LOCATION-781752216580B1BC\"],\n    anomaly_detections=[dynatrace.HttpMonitorAnomalyDetectionArgs(\n        loading_time_thresholds=[dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs(\n            enabled=True,\n        )],\n        outage_handlings=[dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArgs(\n            global_outage=True,\n            local_outage=False,\n            retry_on_error=False,\n        )],\n    )],\n    script=dynatrace.HttpMonitorScriptArgs(\n        requests=[dynatrace.HttpMonitorScriptRequestArgs(\n            description=\"google.com\",\n            method=\"GET\",\n            url=\"https://www.google.com\",\n            authentication=dynatrace.HttpMonitorScriptRequestAuthenticationArgs(\n                type=\"BASIC_AUTHENTICATION\",\n                credentials=creds.id,\n            ),\n            configuration=dynatrace.HttpMonitorScriptRequestConfigurationArgs(\n                accept_any_certificate=True,\n                follow_redirects=True,\n            ),\n            validation=dynatrace.HttpMonitorScriptRequestValidationArgs(\n                rules=[dynatrace.HttpMonitorScriptRequestValidationRuleArgs(\n                    type=\"httpStatusesList\",\n                    pass_if_found=False,\n                    value=\"\u003e=400\",\n                )],\n            ),\n        )],\n    ))\n```\n```csharp\nusing System.Collections.Generic;\nusing Pulumi;\nusing Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;\nusing Dynatrace = Pulumi.Dynatrace;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var creds = Dynatrace.GetCredentials.Invoke(new()\n    {\n        Name = \"Office365 Access Token\",\n    });\n\n    var _name_ = new Dynatrace.HttpMonitor(\"#name#\", new()\n    {\n        Enabled = true,\n        Frequency = 60,\n        Locations = new[]\n        {\n            \"SYNTHETIC_LOCATION-781752216580B1BC\",\n        },\n        AnomalyDetections = new[]\n        {\n            new Dynatrace.Inputs.HttpMonitorAnomalyDetectionArgs\n            {\n                LoadingTimeThresholds = new[]\n                {\n                    new Dynatrace.Inputs.HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs\n                    {\n                        Enabled = true,\n                    },\n                },\n                OutageHandlings = new[]\n                {\n                    new Dynatrace.Inputs.HttpMonitorAnomalyDetectionOutageHandlingArgs\n                    {\n                        GlobalOutage = true,\n                        LocalOutage = false,\n                        RetryOnError = false,\n                    },\n                },\n            },\n        },\n        Script = new Dynatrace.Inputs.HttpMonitorScriptArgs\n        {\n            Requests = new[]\n            {\n                new Dynatrace.Inputs.HttpMonitorScriptRequestArgs\n                {\n                    Description = \"google.com\",\n                    Method = \"GET\",\n                    Url = \"https://www.google.com\",\n                    Authentication = new Dynatrace.Inputs.HttpMonitorScriptRequestAuthenticationArgs\n                    {\n                        Type = \"BASIC_AUTHENTICATION\",\n                        Credentials = creds.Apply(getCredentialsResult =\u003e getCredentialsResult.Id),\n                    },\n                    Configuration = new Dynatrace.Inputs.HttpMonitorScriptRequestConfigurationArgs\n                    {\n                        AcceptAnyCertificate = true,\n                        FollowRedirects = true,\n                    },\n                    Validation = new Dynatrace.Inputs.HttpMonitorScriptRequestValidationArgs\n                    {\n                        Rules = new[]\n                        {\n                            new Dynatrace.Inputs.HttpMonitorScriptRequestValidationRuleArgs\n                            {\n                                Type = \"httpStatusesList\",\n                                PassIfFound = false,\n                                Value = \"\u003e=400\",\n                            },\n                        },\n                    },\n                },\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-dynatrace/sdk/go/dynatrace\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\tcreds, err := dynatrace.GetCredentials(ctx, \u0026GetCredentialsArgs{\n\t\t\tName: pulumi.StringRef(\"Office365 Access Token\"),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = dynatrace.NewHttpMonitor(ctx, \"#name#\", \u0026dynatrace.HttpMonitorArgs{\n\t\t\tEnabled:   pulumi.Bool(true),\n\t\t\tFrequency: pulumi.Int(60),\n\t\t\tLocations: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"SYNTHETIC_LOCATION-781752216580B1BC\"),\n\t\t\t},\n\t\t\tAnomalyDetections: HttpMonitorAnomalyDetectionArray{\n\t\t\t\t\u0026HttpMonitorAnomalyDetectionArgs{\n\t\t\t\t\tLoadingTimeThresholds: HttpMonitorAnomalyDetectionLoadingTimeThresholdArray{\n\t\t\t\t\t\t\u0026HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs{\n\t\t\t\t\t\t\tEnabled: pulumi.Bool(true),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t\tOutageHandlings: HttpMonitorAnomalyDetectionOutageHandlingArray{\n\t\t\t\t\t\t\u0026HttpMonitorAnomalyDetectionOutageHandlingArgs{\n\t\t\t\t\t\t\tGlobalOutage: pulumi.Bool(true),\n\t\t\t\t\t\t\tLocalOutage:  pulumi.Bool(false),\n\t\t\t\t\t\t\tRetryOnError: pulumi.Bool(false),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t\tScript: \u0026HttpMonitorScriptArgs{\n\t\t\t\tRequests: HttpMonitorScriptRequestArray{\n\t\t\t\t\t\u0026HttpMonitorScriptRequestArgs{\n\t\t\t\t\t\tDescription: pulumi.String(\"google.com\"),\n\t\t\t\t\t\tMethod:      pulumi.String(\"GET\"),\n\t\t\t\t\t\tUrl:         pulumi.String(\"https://www.google.com\"),\n\t\t\t\t\t\tAuthentication: \u0026HttpMonitorScriptRequestAuthenticationArgs{\n\t\t\t\t\t\t\tType:        pulumi.String(\"BASIC_AUTHENTICATION\"),\n\t\t\t\t\t\t\tCredentials: pulumi.String(creds.Id),\n\t\t\t\t\t\t},\n\t\t\t\t\t\tConfiguration: \u0026HttpMonitorScriptRequestConfigurationArgs{\n\t\t\t\t\t\t\tAcceptAnyCertificate: pulumi.Bool(true),\n\t\t\t\t\t\t\tFollowRedirects:      pulumi.Bool(true),\n\t\t\t\t\t\t},\n\t\t\t\t\t\tValidation: \u0026HttpMonitorScriptRequestValidationArgs{\n\t\t\t\t\t\t\tRules: HttpMonitorScriptRequestValidationRuleArray{\n\t\t\t\t\t\t\t\t\u0026HttpMonitorScriptRequestValidationRuleArgs{\n\t\t\t\t\t\t\t\t\tType:        pulumi.String(\"httpStatusesList\"),\n\t\t\t\t\t\t\t\t\tPassIfFound: pulumi.Bool(false),\n\t\t\t\t\t\t\t\t\tValue:       pulumi.String(\"\u003e=400\"),\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.dynatrace.DynatraceFunctions;\nimport com.pulumi.dynatrace.inputs.GetCredentialsArgs;\nimport com.pulumi.dynatrace.HttpMonitor;\nimport com.pulumi.dynatrace.HttpMonitorArgs;\nimport com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionArgs;\nimport com.pulumi.dynatrace.inputs.HttpMonitorScriptArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var creds = DynatraceFunctions.getCredentials(GetCredentialsArgs.builder()\n            .name(\"Office365 Access Token\")\n            .build());\n\n        var _name_ = new HttpMonitor(\"#name#\", HttpMonitorArgs.builder()        \n            .enabled(true)\n            .frequency(60)\n            .locations(\"SYNTHETIC_LOCATION-781752216580B1BC\")\n            .anomalyDetections(HttpMonitorAnomalyDetectionArgs.builder()\n                .loadingTimeThresholds(HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs.builder()\n                    .enabled(true)\n                    .build())\n                .outageHandlings(HttpMonitorAnomalyDetectionOutageHandlingArgs.builder()\n                    .globalOutage(true)\n                    .localOutage(false)\n                    .retryOnError(false)\n                    .build())\n                .build())\n            .script(HttpMonitorScriptArgs.builder()\n                .requests(HttpMonitorScriptRequestArgs.builder()\n                    .description(\"google.com\")\n                    .method(\"GET\")\n                    .url(\"https://www.google.com\")\n                    .authentication(HttpMonitorScriptRequestAuthenticationArgs.builder()\n                        .type(\"BASIC_AUTHENTICATION\")\n                        .credentials(creds.applyValue(getCredentialsResult -\u003e getCredentialsResult.id()))\n                        .build())\n                    .configuration(HttpMonitorScriptRequestConfigurationArgs.builder()\n                        .acceptAnyCertificate(true)\n                        .followRedirects(true)\n                        .build())\n                    .validation(HttpMonitorScriptRequestValidationArgs.builder()\n                        .rules(HttpMonitorScriptRequestValidationRuleArgs.builder()\n                            .type(\"httpStatusesList\")\n                            .passIfFound(false)\n                            .value(\"\u003e=400\")\n                            .build())\n                        .build())\n                    .build())\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  '#name#':\n    type: dynatrace:HttpMonitor\n    properties:\n      enabled: true\n      frequency: 60\n      locations:\n        - SYNTHETIC_LOCATION-781752216580B1BC\n      anomalyDetections:\n        - loadingTimeThresholds:\n            - enabled: true\n          outageHandlings:\n            - globalOutage: true\n              localOutage: false\n              retryOnError: false\n      script:\n        requests:\n          - description: google.com\n            method: GET\n            url: https://www.google.com\n            authentication:\n              type: BASIC_AUTHENTICATION\n              credentials: ${creds.id}\n            configuration:\n              acceptAnyCertificate: true\n              followRedirects: true\n            validation:\n              rules:\n                - type: httpStatusesList\n                  passIfFound: false\n                  value: '\u003e=400'\nvariables:\n  creds:\n    fn::invoke:\n      Function: dynatrace:getCredentials\n      Arguments:\n        name: Office365 Access Token\n```\n{{% /example %}}\n{{% /examples %}}",
             "inputs": {
                 "description": "A collection of arguments for invoking getCredentials.\n",
                 "properties": {
-                    "credentials": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "string"
-                        }
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match\n"
+                    },
+                    "scope": {
+                        "type": "string",
+                        "description": "The scope of the credential. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`. If not specified all scopes will match.\n"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The type of the credential. Possible values are `CERTIFICATE`, `PUBLIC_CERTIFICATE`, `TOKEN`, `USERNAME_PASSWORD` and `UNKNOWN`. If not specified all credential types will match\n"
                     }
                 },
                 "type": "object"
@@ -42962,15 +45119,21 @@
             "outputs": {
                 "description": "A collection of values returned by getCredentials.\n",
                 "properties": {
-                    "credentials": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "type": "string"
-                        }
-                    },
                     "id": {
                         "type": "string",
                         "description": "The provider-assigned unique ID for this managed resource.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match\n"
+                    },
+                    "scope": {
+                        "type": "string",
+                        "description": "The scope of the credential. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`. If not specified all scopes will match.\n"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The type of the credential. Possible values are `CERTIFICATE`, `PUBLIC_CERTIFICATE`, `TOKEN`, `USERNAME_PASSWORD` and `UNKNOWN`. If not specified all credential types will match\n"
                     }
                 },
                 "type": "object",

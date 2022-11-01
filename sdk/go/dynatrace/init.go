@@ -24,6 +24,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Alerting{}
 	case "dynatrace:index/alertingProfile:AlertingProfile":
 		r = &AlertingProfile{}
+	case "dynatrace:index/ansibleTowerNotification:AnsibleTowerNotification":
+		r = &AnsibleTowerNotification{}
 	case "dynatrace:index/applicationAnomalies:ApplicationAnomalies":
 		r = &ApplicationAnomalies{}
 	case "dynatrace:index/applicationDataPrivacy:ApplicationDataPrivacy":
@@ -56,8 +58,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DatabaseAnomalies{}
 	case "dynatrace:index/diskAnomalies:DiskAnomalies":
 		r = &DiskAnomalies{}
+	case "dynatrace:index/emailNotification:EmailNotification":
+		r = &EmailNotification{}
 	case "dynatrace:index/environment:Environment":
 		r = &Environment{}
+	case "dynatrace:index/frequentIssues:FrequentIssues":
+		r = &FrequentIssues{}
 	case "dynatrace:index/hostAnomalies:HostAnomalies":
 		r = &HostAnomalies{}
 	case "dynatrace:index/hostNaming:HostNaming":
@@ -68,10 +74,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &IbmMqFilters{}
 	case "dynatrace:index/imsBridges:ImsBridges":
 		r = &ImsBridges{}
+	case "dynatrace:index/jiraNotification:JiraNotification":
+		r = &JiraNotification{}
 	case "dynatrace:index/k8sCredentials:K8sCredentials":
 		r = &K8sCredentials{}
 	case "dynatrace:index/keyRequests:KeyRequests":
 		r = &KeyRequests{}
+	case "dynatrace:index/maintenance:Maintenance":
+		r = &Maintenance{}
 	case "dynatrace:index/maintenanceWindow:MaintenanceWindow":
 		r = &MaintenanceWindow{}
 	case "dynatrace:index/managementZone:ManagementZone":
@@ -82,6 +92,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &NetworkZones{}
 	case "dynatrace:index/notification:Notification":
 		r = &Notification{}
+	case "dynatrace:index/opsGenieNotification:OpsGenieNotification":
+		r = &OpsGenieNotification{}
+	case "dynatrace:index/pagerDutyNotification:PagerDutyNotification":
+		r = &PagerDutyNotification{}
 	case "dynatrace:index/processgroupNaming:ProcessgroupNaming":
 		r = &ProcessgroupNaming{}
 	case "dynatrace:index/queueManager:QueueManager":
@@ -100,6 +114,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ServiceAnomalies{}
 	case "dynatrace:index/serviceNaming:ServiceNaming":
 		r = &ServiceNaming{}
+	case "dynatrace:index/serviceNowNotification:ServiceNowNotification":
+		r = &ServiceNowNotification{}
+	case "dynatrace:index/slackNotification:SlackNotification":
+		r = &SlackNotification{}
 	case "dynatrace:index/slo:Slo":
 		r = &Slo{}
 	case "dynatrace:index/spanAttributed:SpanAttributed":
@@ -110,12 +128,20 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SpanContextPropagation{}
 	case "dynatrace:index/spanEntryPoint:SpanEntryPoint":
 		r = &SpanEntryPoint{}
+	case "dynatrace:index/trrelloNotification:TrrelloNotification":
+		r = &TrrelloNotification{}
 	case "dynatrace:index/user:User":
 		r = &User{}
 	case "dynatrace:index/userGroup:UserGroup":
 		r = &UserGroup{}
+	case "dynatrace:index/victorOpsNotification:VictorOpsNotification":
+		r = &VictorOpsNotification{}
 	case "dynatrace:index/webApplication:WebApplication":
 		r = &WebApplication{}
+	case "dynatrace:index/webhookNotification:WebhookNotification":
+		r = &WebhookNotification{}
+	case "dynatrace:index/xmattersNotification:XmattersNotification":
+		r = &XmattersNotification{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -152,6 +178,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/alertingProfile",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/ansibleTowerNotification",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -236,7 +267,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/emailNotification",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/environment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/frequentIssues",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -266,12 +307,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/jiraNotification",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/k8sCredentials",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/keyRequests",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/maintenance",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -297,6 +348,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/notification",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/opsGenieNotification",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/pagerDutyNotification",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -346,6 +407,16 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/serviceNowNotification",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/slackNotification",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/slo",
 		&module{version},
 	)
@@ -371,6 +442,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/trrelloNotification",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/user",
 		&module{version},
 	)
@@ -381,7 +457,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/victorOpsNotification",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/webApplication",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/webhookNotification",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/xmattersNotification",
 		&module{version},
 	)
 	pulumi.RegisterResourcePackage(

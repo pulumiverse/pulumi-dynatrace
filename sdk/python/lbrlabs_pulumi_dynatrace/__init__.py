@@ -7,6 +7,7 @@ import typing
 # Export this package's modules as members:
 from .alerting import *
 from .alerting_profile import *
+from .ansible_tower_notification import *
 from .application_anomalies import *
 from .application_data_privacy import *
 from .application_detection_rule import *
@@ -23,7 +24,10 @@ from .dashboard import *
 from .dashboard_sharing import *
 from .database_anomalies import *
 from .disk_anomalies import *
+from .email_notification import *
 from .environment import *
+from .frequent_issues import *
+from .get_alerting_profile import *
 from .get_alerting_profiles import *
 from .get_application import *
 from .get_aws_iam_external import *
@@ -40,13 +44,17 @@ from .host_naming import *
 from .http_monitor import *
 from .ibm_mq_filters import *
 from .ims_bridges import *
+from .jira_notification import *
 from .k8s_credentials import *
 from .key_requests import *
+from .maintenance import *
 from .maintenance_window import *
 from .management_zone import *
 from .mobile_application import *
 from .network_zones import *
 from .notification import *
+from .ops_genie_notification import *
+from .pager_duty_notification import *
 from .processgroup_naming import *
 from .provider import *
 from .queue_manager import *
@@ -57,14 +65,20 @@ from .request_namings import *
 from .resource_attributes import *
 from .service_anomalies import *
 from .service_naming import *
+from .service_now_notification import *
+from .slack_notification import *
 from .slo import *
 from .span_attributed import *
 from .span_capture_rule import *
 from .span_context_propagation import *
 from .span_entry_point import *
+from .trrello_notification import *
 from .user import *
 from .user_group import *
+from .victor_ops_notification import *
 from .web_application import *
+from .webhook_notification import *
+from .xmatters_notification import *
 from ._inputs import *
 from . import outputs
 
@@ -92,6 +106,14 @@ _utilities.register(
   "fqn": "lbrlabs_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/alertingProfile:AlertingProfile": "AlertingProfile"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/ansibleTowerNotification",
+  "fqn": "lbrlabs_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/ansibleTowerNotification:AnsibleTowerNotification": "AnsibleTowerNotification"
   }
  },
  {
@@ -224,10 +246,26 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/emailNotification",
+  "fqn": "lbrlabs_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/emailNotification:EmailNotification": "EmailNotification"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/environment",
   "fqn": "lbrlabs_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/environment:Environment": "Environment"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/frequentIssues",
+  "fqn": "lbrlabs_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/frequentIssues:FrequentIssues": "FrequentIssues"
   }
  },
  {
@@ -272,6 +310,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/jiraNotification",
+  "fqn": "lbrlabs_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/jiraNotification:JiraNotification": "JiraNotification"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/k8sCredentials",
   "fqn": "lbrlabs_pulumi_dynatrace",
   "classes": {
@@ -284,6 +330,14 @@ _utilities.register(
   "fqn": "lbrlabs_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/keyRequests:KeyRequests": "KeyRequests"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/maintenance",
+  "fqn": "lbrlabs_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/maintenance:Maintenance": "Maintenance"
   }
  },
  {
@@ -324,6 +378,22 @@ _utilities.register(
   "fqn": "lbrlabs_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/notification:Notification": "Notification"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/opsGenieNotification",
+  "fqn": "lbrlabs_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/opsGenieNotification:OpsGenieNotification": "OpsGenieNotification"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/pagerDutyNotification",
+  "fqn": "lbrlabs_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/pagerDutyNotification:PagerDutyNotification": "PagerDutyNotification"
   }
  },
  {
@@ -400,6 +470,22 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/serviceNowNotification",
+  "fqn": "lbrlabs_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/serviceNowNotification:ServiceNowNotification": "ServiceNowNotification"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/slackNotification",
+  "fqn": "lbrlabs_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/slackNotification:SlackNotification": "SlackNotification"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/slo",
   "fqn": "lbrlabs_pulumi_dynatrace",
   "classes": {
@@ -440,6 +526,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/trrelloNotification",
+  "fqn": "lbrlabs_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/trrelloNotification:TrrelloNotification": "TrrelloNotification"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/user",
   "fqn": "lbrlabs_pulumi_dynatrace",
   "classes": {
@@ -456,10 +550,34 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/victorOpsNotification",
+  "fqn": "lbrlabs_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/victorOpsNotification:VictorOpsNotification": "VictorOpsNotification"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/webApplication",
   "fqn": "lbrlabs_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/webApplication:WebApplication": "WebApplication"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/webhookNotification",
+  "fqn": "lbrlabs_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/webhookNotification:WebhookNotification": "WebhookNotification"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/xmattersNotification",
+  "fqn": "lbrlabs_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/xmattersNotification:XmattersNotification": "XmattersNotification"
   }
  }
 ]

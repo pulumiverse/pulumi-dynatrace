@@ -13,6 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AutotagEntitySelectorBasedRule {
     private @Nullable Boolean enabled;
+    private @Nullable String normalization;
     private @Nullable String selector;
     private @Nullable String unknowns;
     private @Nullable String valueFormat;
@@ -20,6 +21,9 @@ public final class AutotagEntitySelectorBasedRule {
     private AutotagEntitySelectorBasedRule() {}
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
+    }
+    public Optional<String> normalization() {
+        return Optional.ofNullable(this.normalization);
     }
     public Optional<String> selector() {
         return Optional.ofNullable(this.selector);
@@ -41,6 +45,7 @@ public final class AutotagEntitySelectorBasedRule {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean enabled;
+        private @Nullable String normalization;
         private @Nullable String selector;
         private @Nullable String unknowns;
         private @Nullable String valueFormat;
@@ -48,6 +53,7 @@ public final class AutotagEntitySelectorBasedRule {
         public Builder(AutotagEntitySelectorBasedRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.enabled = defaults.enabled;
+    	      this.normalization = defaults.normalization;
     	      this.selector = defaults.selector;
     	      this.unknowns = defaults.unknowns;
     	      this.valueFormat = defaults.valueFormat;
@@ -56,6 +62,11 @@ public final class AutotagEntitySelectorBasedRule {
         @CustomType.Setter
         public Builder enabled(@Nullable Boolean enabled) {
             this.enabled = enabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder normalization(@Nullable String normalization) {
+            this.normalization = normalization;
             return this;
         }
         @CustomType.Setter
@@ -76,6 +87,7 @@ public final class AutotagEntitySelectorBasedRule {
         public AutotagEntitySelectorBasedRule build() {
             final var o = new AutotagEntitySelectorBasedRule();
             o.enabled = enabled;
+            o.normalization = normalization;
             o.selector = selector;
             o.unknowns = unknowns;
             o.valueFormat = valueFormat;

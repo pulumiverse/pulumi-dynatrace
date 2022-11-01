@@ -35,6 +35,10 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly string Owner;
         /// <summary>
+        /// the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+        /// </summary>
+        public readonly bool? Preset;
+        /// <summary>
         /// the dashboard is shared (`true`) or private (`false`)
         /// </summary>
         public readonly bool? Shared;
@@ -67,6 +71,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
 
             string owner,
 
+            bool? preset,
+
             bool? shared,
 
             Outputs.DashboardDashboardMetadataSharingDetails? sharingDetails,
@@ -82,6 +88,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
             Filter = filter;
             Name = name;
             Owner = owner;
+            Preset = preset;
             Shared = shared;
             SharingDetails = sharingDetails;
             Tags = tags;

@@ -488,6 +488,20 @@ __all__ = [
     'ImsBridgesQueueManager',
     'ImsBridgesQueueManagerQueueManager',
     'K8sCredentialsEventsFieldSelector',
+    'MaintenanceFilter',
+    'MaintenanceFilterFilter',
+    'MaintenanceGeneralProperties',
+    'MaintenanceSchedule',
+    'MaintenanceScheduleDailyRecurrence',
+    'MaintenanceScheduleDailyRecurrenceRecurrenceRange',
+    'MaintenanceScheduleDailyRecurrenceTimeWindow',
+    'MaintenanceScheduleMonthlyRecurrence',
+    'MaintenanceScheduleMonthlyRecurrenceRecurrenceRange',
+    'MaintenanceScheduleMonthlyRecurrenceTimeWindow',
+    'MaintenanceScheduleOnceRecurrence',
+    'MaintenanceScheduleWeeklyRecurrence',
+    'MaintenanceScheduleWeeklyRecurrenceRecurrenceRange',
+    'MaintenanceScheduleWeeklyRecurrenceTimeWindow',
     'MaintenanceWindowMetadata',
     'MaintenanceWindowSchedule',
     'MaintenanceWindowScheduleRecurrence',
@@ -872,6 +886,10 @@ __all__ = [
     'WebApplicationUserTagsTag',
     'WebApplicationWaterfallSettings',
     'WebApplicationXhrActionApdexSettings',
+    'WebhookNotificationHeaders',
+    'WebhookNotificationHeadersHeader',
+    'XmattersNotificationHeaders',
+    'XmattersNotificationHeadersHeader',
     'GetSyntheticLocationsLocationsResult',
     'GetSyntheticLocationsLocationsLocationResult',
 ]
@@ -2529,11 +2547,14 @@ class AutotagEntitySelectorBasedRule(dict):
 
     def __init__(__self__, *,
                  enabled: Optional[bool] = None,
+                 normalization: Optional[str] = None,
                  selector: Optional[str] = None,
                  unknowns: Optional[str] = None,
                  value_format: Optional[str] = None):
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if normalization is not None:
+            pulumi.set(__self__, "normalization", normalization)
         if selector is not None:
             pulumi.set(__self__, "selector", selector)
         if unknowns is not None:
@@ -2545,6 +2566,11 @@ class AutotagEntitySelectorBasedRule(dict):
     @pulumi.getter
     def enabled(self) -> Optional[bool]:
         return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def normalization(self) -> Optional[str]:
+        return pulumi.get(self, "normalization")
 
     @property
     @pulumi.getter
@@ -13109,6 +13135,7 @@ class DashboardDashboardMetadata(dict):
                  consistent_colors: Optional[bool] = None,
                  dynamic_filters: Optional['outputs.DashboardDashboardMetadataDynamicFilters'] = None,
                  filter: Optional['outputs.DashboardDashboardMetadataFilter'] = None,
+                 preset: Optional[bool] = None,
                  shared: Optional[bool] = None,
                  sharing_details: Optional['outputs.DashboardDashboardMetadataSharingDetails'] = None,
                  tags: Optional[Sequence[str]] = None,
@@ -13120,6 +13147,7 @@ class DashboardDashboardMetadata(dict):
         :param bool consistent_colors: The tile uses consistent colors when rendering its content
         :param 'DashboardDashboardMetadataDynamicFiltersArgs' dynamic_filters: Dashboard filter configuration of a dashboard
         :param 'DashboardDashboardMetadataFilterArgs' filter: Global filter Settings for the Dashboard
+        :param bool preset: the dashboard is a preset (`true`) or not (`false`). Default is `false`.
         :param bool shared: the dashboard is shared (`true`) or private (`false`)
         :param 'DashboardDashboardMetadataSharingDetailsArgs' sharing_details: represents sharing configuration of a dashboard
         :param Sequence[str] tags: a set of tags assigned to the dashboard
@@ -13134,6 +13162,8 @@ class DashboardDashboardMetadata(dict):
             pulumi.set(__self__, "dynamic_filters", dynamic_filters)
         if filter is not None:
             pulumi.set(__self__, "filter", filter)
+        if preset is not None:
+            pulumi.set(__self__, "preset", preset)
         if shared is not None:
             pulumi.set(__self__, "shared", shared)
         if sharing_details is not None:
@@ -13184,6 +13214,14 @@ class DashboardDashboardMetadata(dict):
         Global filter Settings for the Dashboard
         """
         return pulumi.get(self, "filter")
+
+    @property
+    @pulumi.getter
+    def preset(self) -> Optional[bool]:
+        """
+        the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+        """
+        return pulumi.get(self, "preset")
 
     @property
     @pulumi.getter
@@ -20831,6 +20869,689 @@ class K8sCredentialsEventsFieldSelector(dict):
         Any attributes that aren't yet supported by this provider
         """
         return pulumi.get(self, "unknowns")
+
+
+@pulumi.output_type
+class MaintenanceFilter(dict):
+    def __init__(__self__, *,
+                 filters: Optional[Sequence['outputs.MaintenanceFilterFilter']] = None):
+        """
+        :param Sequence['MaintenanceFilterFilterArgs'] filters: A list of matching rules for dynamic filter formation.  If several rules are set, the OR logic applies
+        """
+        if filters is not None:
+            pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Optional[Sequence['outputs.MaintenanceFilterFilter']]:
+        """
+        A list of matching rules for dynamic filter formation.  If several rules are set, the OR logic applies
+        """
+        return pulumi.get(self, "filters")
+
+
+@pulumi.output_type
+class MaintenanceFilterFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "entityId":
+            suggest = "entity_id"
+        elif key == "entityTags":
+            suggest = "entity_tags"
+        elif key == "entityType":
+            suggest = "entity_type"
+        elif key == "managementZones":
+            suggest = "management_zones"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceFilterFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceFilterFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceFilterFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 entity_id: Optional[str] = None,
+                 entity_tags: Optional[Sequence[str]] = None,
+                 entity_type: Optional[str] = None,
+                 management_zones: Optional[Sequence[str]] = None):
+        if entity_id is not None:
+            pulumi.set(__self__, "entity_id", entity_id)
+        if entity_tags is not None:
+            pulumi.set(__self__, "entity_tags", entity_tags)
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+        if management_zones is not None:
+            pulumi.set(__self__, "management_zones", management_zones)
+
+    @property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> Optional[str]:
+        return pulumi.get(self, "entity_id")
+
+    @property
+    @pulumi.getter(name="entityTags")
+    def entity_tags(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "entity_tags")
+
+    @property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> Optional[str]:
+        return pulumi.get(self, "entity_type")
+
+    @property
+    @pulumi.getter(name="managementZones")
+    def management_zones(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "management_zones")
+
+
+@pulumi.output_type
+class MaintenanceGeneralProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "disableSynthetic":
+            suggest = "disable_synthetic"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceGeneralProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceGeneralProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceGeneralProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: str,
+                 suppression: str,
+                 type: str,
+                 description: Optional[str] = None,
+                 disable_synthetic: Optional[bool] = None):
+        """
+        :param str name: The name of the maintenance window, displayed in the UI
+        :param str suppression: The type of suppression of alerting and problem detection during the maintenance
+        :param str type: The type of the maintenance: planned or unplanned
+        :param str description: A short description of the maintenance purpose
+        :param bool disable_synthetic: Suppress execution of synthetic monitors during the maintenance
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "suppression", suppression)
+        pulumi.set(__self__, "type", type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if disable_synthetic is not None:
+            pulumi.set(__self__, "disable_synthetic", disable_synthetic)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the maintenance window, displayed in the UI
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def suppression(self) -> str:
+        """
+        The type of suppression of alerting and problem detection during the maintenance
+        """
+        return pulumi.get(self, "suppression")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the maintenance: planned or unplanned
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        A short description of the maintenance purpose
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="disableSynthetic")
+    def disable_synthetic(self) -> Optional[bool]:
+        """
+        Suppress execution of synthetic monitors during the maintenance
+        """
+        return pulumi.get(self, "disable_synthetic")
+
+
+@pulumi.output_type
+class MaintenanceSchedule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dailyRecurrence":
+            suggest = "daily_recurrence"
+        elif key == "monthlyRecurrence":
+            suggest = "monthly_recurrence"
+        elif key == "onceRecurrence":
+            suggest = "once_recurrence"
+        elif key == "weeklyRecurrence":
+            suggest = "weekly_recurrence"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceSchedule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceSchedule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceSchedule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 daily_recurrence: Optional['outputs.MaintenanceScheduleDailyRecurrence'] = None,
+                 monthly_recurrence: Optional['outputs.MaintenanceScheduleMonthlyRecurrence'] = None,
+                 once_recurrence: Optional['outputs.MaintenanceScheduleOnceRecurrence'] = None,
+                 weekly_recurrence: Optional['outputs.MaintenanceScheduleWeeklyRecurrence'] = None):
+        """
+        :param str type: The time window of the maintenance window
+        :param 'MaintenanceScheduleDailyRecurrenceArgs' daily_recurrence: The configuration for maintenance windows occuring daily
+        :param 'MaintenanceScheduleMonthlyRecurrenceArgs' monthly_recurrence: The configuration for maintenance windows occuring monthly
+        :param 'MaintenanceScheduleOnceRecurrenceArgs' once_recurrence: The configuration for maintenance windows occuring once
+        :param 'MaintenanceScheduleWeeklyRecurrenceArgs' weekly_recurrence: The configuration for maintenance windows occuring weekly
+        """
+        pulumi.set(__self__, "type", type)
+        if daily_recurrence is not None:
+            pulumi.set(__self__, "daily_recurrence", daily_recurrence)
+        if monthly_recurrence is not None:
+            pulumi.set(__self__, "monthly_recurrence", monthly_recurrence)
+        if once_recurrence is not None:
+            pulumi.set(__self__, "once_recurrence", once_recurrence)
+        if weekly_recurrence is not None:
+            pulumi.set(__self__, "weekly_recurrence", weekly_recurrence)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The time window of the maintenance window
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="dailyRecurrence")
+    def daily_recurrence(self) -> Optional['outputs.MaintenanceScheduleDailyRecurrence']:
+        """
+        The configuration for maintenance windows occuring daily
+        """
+        return pulumi.get(self, "daily_recurrence")
+
+    @property
+    @pulumi.getter(name="monthlyRecurrence")
+    def monthly_recurrence(self) -> Optional['outputs.MaintenanceScheduleMonthlyRecurrence']:
+        """
+        The configuration for maintenance windows occuring monthly
+        """
+        return pulumi.get(self, "monthly_recurrence")
+
+    @property
+    @pulumi.getter(name="onceRecurrence")
+    def once_recurrence(self) -> Optional['outputs.MaintenanceScheduleOnceRecurrence']:
+        """
+        The configuration for maintenance windows occuring once
+        """
+        return pulumi.get(self, "once_recurrence")
+
+    @property
+    @pulumi.getter(name="weeklyRecurrence")
+    def weekly_recurrence(self) -> Optional['outputs.MaintenanceScheduleWeeklyRecurrence']:
+        """
+        The configuration for maintenance windows occuring weekly
+        """
+        return pulumi.get(self, "weekly_recurrence")
+
+
+@pulumi.output_type
+class MaintenanceScheduleDailyRecurrence(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "recurrenceRange":
+            suggest = "recurrence_range"
+        elif key == "timeWindow":
+            suggest = "time_window"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceScheduleDailyRecurrence. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceScheduleDailyRecurrence.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceScheduleDailyRecurrence.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 recurrence_range: 'outputs.MaintenanceScheduleDailyRecurrenceRecurrenceRange',
+                 time_window: 'outputs.MaintenanceScheduleDailyRecurrenceTimeWindow'):
+        pulumi.set(__self__, "recurrence_range", recurrence_range)
+        pulumi.set(__self__, "time_window", time_window)
+
+    @property
+    @pulumi.getter(name="recurrenceRange")
+    def recurrence_range(self) -> 'outputs.MaintenanceScheduleDailyRecurrenceRecurrenceRange':
+        return pulumi.get(self, "recurrence_range")
+
+    @property
+    @pulumi.getter(name="timeWindow")
+    def time_window(self) -> 'outputs.MaintenanceScheduleDailyRecurrenceTimeWindow':
+        return pulumi.get(self, "time_window")
+
+
+@pulumi.output_type
+class MaintenanceScheduleDailyRecurrenceRecurrenceRange(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "endDate":
+            suggest = "end_date"
+        elif key == "startDate":
+            suggest = "start_date"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceScheduleDailyRecurrenceRecurrenceRange. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceScheduleDailyRecurrenceRecurrenceRange.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceScheduleDailyRecurrenceRecurrenceRange.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 end_date: str,
+                 start_date: str):
+        pulumi.set(__self__, "end_date", end_date)
+        pulumi.set(__self__, "start_date", start_date)
+
+    @property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> str:
+        return pulumi.get(self, "end_date")
+
+    @property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> str:
+        return pulumi.get(self, "start_date")
+
+
+@pulumi.output_type
+class MaintenanceScheduleDailyRecurrenceTimeWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "endTime":
+            suggest = "end_time"
+        elif key == "startTime":
+            suggest = "start_time"
+        elif key == "timeZone":
+            suggest = "time_zone"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceScheduleDailyRecurrenceTimeWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceScheduleDailyRecurrenceTimeWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceScheduleDailyRecurrenceTimeWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 end_time: str,
+                 start_time: str,
+                 time_zone: str):
+        pulumi.set(__self__, "end_time", end_time)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> str:
+        return pulumi.get(self, "end_time")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> str:
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        return pulumi.get(self, "time_zone")
+
+
+@pulumi.output_type
+class MaintenanceScheduleMonthlyRecurrence(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dayOfMonth":
+            suggest = "day_of_month"
+        elif key == "recurrenceRange":
+            suggest = "recurrence_range"
+        elif key == "timeWindow":
+            suggest = "time_window"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceScheduleMonthlyRecurrence. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceScheduleMonthlyRecurrence.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceScheduleMonthlyRecurrence.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 day_of_month: int,
+                 recurrence_range: 'outputs.MaintenanceScheduleMonthlyRecurrenceRecurrenceRange',
+                 time_window: 'outputs.MaintenanceScheduleMonthlyRecurrenceTimeWindow'):
+        pulumi.set(__self__, "day_of_month", day_of_month)
+        pulumi.set(__self__, "recurrence_range", recurrence_range)
+        pulumi.set(__self__, "time_window", time_window)
+
+    @property
+    @pulumi.getter(name="dayOfMonth")
+    def day_of_month(self) -> int:
+        return pulumi.get(self, "day_of_month")
+
+    @property
+    @pulumi.getter(name="recurrenceRange")
+    def recurrence_range(self) -> 'outputs.MaintenanceScheduleMonthlyRecurrenceRecurrenceRange':
+        return pulumi.get(self, "recurrence_range")
+
+    @property
+    @pulumi.getter(name="timeWindow")
+    def time_window(self) -> 'outputs.MaintenanceScheduleMonthlyRecurrenceTimeWindow':
+        return pulumi.get(self, "time_window")
+
+
+@pulumi.output_type
+class MaintenanceScheduleMonthlyRecurrenceRecurrenceRange(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "endDate":
+            suggest = "end_date"
+        elif key == "startDate":
+            suggest = "start_date"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceScheduleMonthlyRecurrenceRecurrenceRange. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceScheduleMonthlyRecurrenceRecurrenceRange.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceScheduleMonthlyRecurrenceRecurrenceRange.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 end_date: str,
+                 start_date: str):
+        pulumi.set(__self__, "end_date", end_date)
+        pulumi.set(__self__, "start_date", start_date)
+
+    @property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> str:
+        return pulumi.get(self, "end_date")
+
+    @property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> str:
+        return pulumi.get(self, "start_date")
+
+
+@pulumi.output_type
+class MaintenanceScheduleMonthlyRecurrenceTimeWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "endTime":
+            suggest = "end_time"
+        elif key == "startTime":
+            suggest = "start_time"
+        elif key == "timeZone":
+            suggest = "time_zone"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceScheduleMonthlyRecurrenceTimeWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceScheduleMonthlyRecurrenceTimeWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceScheduleMonthlyRecurrenceTimeWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 end_time: str,
+                 start_time: str,
+                 time_zone: str):
+        pulumi.set(__self__, "end_time", end_time)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> str:
+        return pulumi.get(self, "end_time")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> str:
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        return pulumi.get(self, "time_zone")
+
+
+@pulumi.output_type
+class MaintenanceScheduleOnceRecurrence(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "endTime":
+            suggest = "end_time"
+        elif key == "startTime":
+            suggest = "start_time"
+        elif key == "timeZone":
+            suggest = "time_zone"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceScheduleOnceRecurrence. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceScheduleOnceRecurrence.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceScheduleOnceRecurrence.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 end_time: str,
+                 start_time: str,
+                 time_zone: str):
+        pulumi.set(__self__, "end_time", end_time)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> str:
+        return pulumi.get(self, "end_time")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> str:
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        return pulumi.get(self, "time_zone")
+
+
+@pulumi.output_type
+class MaintenanceScheduleWeeklyRecurrence(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dayOfWeek":
+            suggest = "day_of_week"
+        elif key == "recurrenceRange":
+            suggest = "recurrence_range"
+        elif key == "timeWindow":
+            suggest = "time_window"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceScheduleWeeklyRecurrence. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceScheduleWeeklyRecurrence.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceScheduleWeeklyRecurrence.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 day_of_week: str,
+                 recurrence_range: 'outputs.MaintenanceScheduleWeeklyRecurrenceRecurrenceRange',
+                 time_window: 'outputs.MaintenanceScheduleWeeklyRecurrenceTimeWindow'):
+        pulumi.set(__self__, "day_of_week", day_of_week)
+        pulumi.set(__self__, "recurrence_range", recurrence_range)
+        pulumi.set(__self__, "time_window", time_window)
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> str:
+        return pulumi.get(self, "day_of_week")
+
+    @property
+    @pulumi.getter(name="recurrenceRange")
+    def recurrence_range(self) -> 'outputs.MaintenanceScheduleWeeklyRecurrenceRecurrenceRange':
+        return pulumi.get(self, "recurrence_range")
+
+    @property
+    @pulumi.getter(name="timeWindow")
+    def time_window(self) -> 'outputs.MaintenanceScheduleWeeklyRecurrenceTimeWindow':
+        return pulumi.get(self, "time_window")
+
+
+@pulumi.output_type
+class MaintenanceScheduleWeeklyRecurrenceRecurrenceRange(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "endDate":
+            suggest = "end_date"
+        elif key == "startDate":
+            suggest = "start_date"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceScheduleWeeklyRecurrenceRecurrenceRange. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceScheduleWeeklyRecurrenceRecurrenceRange.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceScheduleWeeklyRecurrenceRecurrenceRange.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 end_date: str,
+                 start_date: str):
+        pulumi.set(__self__, "end_date", end_date)
+        pulumi.set(__self__, "start_date", start_date)
+
+    @property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> str:
+        return pulumi.get(self, "end_date")
+
+    @property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> str:
+        return pulumi.get(self, "start_date")
+
+
+@pulumi.output_type
+class MaintenanceScheduleWeeklyRecurrenceTimeWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "endTime":
+            suggest = "end_time"
+        elif key == "startTime":
+            suggest = "start_time"
+        elif key == "timeZone":
+            suggest = "time_zone"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceScheduleWeeklyRecurrenceTimeWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MaintenanceScheduleWeeklyRecurrenceTimeWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MaintenanceScheduleWeeklyRecurrenceTimeWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 end_time: str,
+                 start_time: str,
+                 time_zone: str):
+        pulumi.set(__self__, "end_time", end_time)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> str:
+        return pulumi.get(self, "end_time")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> str:
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        return pulumi.get(self, "time_zone")
 
 
 @pulumi.output_type
@@ -40787,6 +41508,144 @@ class WebApplicationXhrActionApdexSettings(dict):
         Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
         """
         return pulumi.get(self, "tolerated_threshold")
+
+
+@pulumi.output_type
+class WebhookNotificationHeaders(dict):
+    def __init__(__self__, *,
+                 headers: Sequence['outputs.WebhookNotificationHeadersHeader']):
+        """
+        :param Sequence['WebhookNotificationHeadersHeaderArgs'] headers: An additional HTTP Header to include when sending requests
+        """
+        pulumi.set(__self__, "headers", headers)
+
+    @property
+    @pulumi.getter
+    def headers(self) -> Sequence['outputs.WebhookNotificationHeadersHeader']:
+        """
+        An additional HTTP Header to include when sending requests
+        """
+        return pulumi.get(self, "headers")
+
+
+@pulumi.output_type
+class WebhookNotificationHeadersHeader(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "secretValue":
+            suggest = "secret_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebhookNotificationHeadersHeader. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebhookNotificationHeadersHeader.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebhookNotificationHeadersHeader.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: str,
+                 secret_value: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str name: The name of the notification configuration
+        """
+        pulumi.set(__self__, "name", name)
+        if secret_value is not None:
+            pulumi.set(__self__, "secret_value", secret_value)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the notification configuration
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="secretValue")
+    def secret_value(self) -> Optional[str]:
+        return pulumi.get(self, "secret_value")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class XmattersNotificationHeaders(dict):
+    def __init__(__self__, *,
+                 headers: Sequence['outputs.XmattersNotificationHeadersHeader']):
+        """
+        :param Sequence['XmattersNotificationHeadersHeaderArgs'] headers: An additional HTTP Header to include when sending requests
+        """
+        pulumi.set(__self__, "headers", headers)
+
+    @property
+    @pulumi.getter
+    def headers(self) -> Sequence['outputs.XmattersNotificationHeadersHeader']:
+        """
+        An additional HTTP Header to include when sending requests
+        """
+        return pulumi.get(self, "headers")
+
+
+@pulumi.output_type
+class XmattersNotificationHeadersHeader(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "secretValue":
+            suggest = "secret_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in XmattersNotificationHeadersHeader. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        XmattersNotificationHeadersHeader.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        XmattersNotificationHeadersHeader.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: str,
+                 secret_value: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str name: The name of the notification configuration
+        """
+        pulumi.set(__self__, "name", name)
+        if secret_value is not None:
+            pulumi.set(__self__, "secret_value", secret_value)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the notification configuration
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="secretValue")
+    def secret_value(self) -> Optional[str]:
+        return pulumi.get(self, "secret_value")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type

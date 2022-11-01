@@ -15,6 +15,11 @@ export type AlertingProfile = import("./alertingProfile").AlertingProfile;
 export const AlertingProfile: typeof import("./alertingProfile").AlertingProfile = null as any;
 utilities.lazyLoad(exports, ["AlertingProfile"], () => require("./alertingProfile"));
 
+export { AnsibleTowerNotificationArgs, AnsibleTowerNotificationState } from "./ansibleTowerNotification";
+export type AnsibleTowerNotification = import("./ansibleTowerNotification").AnsibleTowerNotification;
+export const AnsibleTowerNotification: typeof import("./ansibleTowerNotification").AnsibleTowerNotification = null as any;
+utilities.lazyLoad(exports, ["AnsibleTowerNotification"], () => require("./ansibleTowerNotification"));
+
 export { ApplicationAnomaliesArgs, ApplicationAnomaliesState } from "./applicationAnomalies";
 export type ApplicationAnomalies = import("./applicationAnomalies").ApplicationAnomalies;
 export const ApplicationAnomalies: typeof import("./applicationAnomalies").ApplicationAnomalies = null as any;
@@ -95,10 +100,25 @@ export type DiskAnomalies = import("./diskAnomalies").DiskAnomalies;
 export const DiskAnomalies: typeof import("./diskAnomalies").DiskAnomalies = null as any;
 utilities.lazyLoad(exports, ["DiskAnomalies"], () => require("./diskAnomalies"));
 
+export { EmailNotificationArgs, EmailNotificationState } from "./emailNotification";
+export type EmailNotification = import("./emailNotification").EmailNotification;
+export const EmailNotification: typeof import("./emailNotification").EmailNotification = null as any;
+utilities.lazyLoad(exports, ["EmailNotification"], () => require("./emailNotification"));
+
 export { EnvironmentArgs, EnvironmentState } from "./environment";
 export type Environment = import("./environment").Environment;
 export const Environment: typeof import("./environment").Environment = null as any;
 utilities.lazyLoad(exports, ["Environment"], () => require("./environment"));
+
+export { FrequentIssuesArgs, FrequentIssuesState } from "./frequentIssues";
+export type FrequentIssues = import("./frequentIssues").FrequentIssues;
+export const FrequentIssues: typeof import("./frequentIssues").FrequentIssues = null as any;
+utilities.lazyLoad(exports, ["FrequentIssues"], () => require("./frequentIssues"));
+
+export { GetAlertingProfileArgs, GetAlertingProfileResult, GetAlertingProfileOutputArgs } from "./getAlertingProfile";
+export const getAlertingProfile: typeof import("./getAlertingProfile").getAlertingProfile = null as any;
+export const getAlertingProfileOutput: typeof import("./getAlertingProfile").getAlertingProfileOutput = null as any;
+utilities.lazyLoad(exports, ["getAlertingProfile","getAlertingProfileOutput"], () => require("./getAlertingProfile"));
 
 export { GetAlertingProfilesArgs, GetAlertingProfilesResult, GetAlertingProfilesOutputArgs } from "./getAlertingProfiles";
 export const getAlertingProfiles: typeof import("./getAlertingProfiles").getAlertingProfiles = null as any;
@@ -179,6 +199,11 @@ export type ImsBridges = import("./imsBridges").ImsBridges;
 export const ImsBridges: typeof import("./imsBridges").ImsBridges = null as any;
 utilities.lazyLoad(exports, ["ImsBridges"], () => require("./imsBridges"));
 
+export { JiraNotificationArgs, JiraNotificationState } from "./jiraNotification";
+export type JiraNotification = import("./jiraNotification").JiraNotification;
+export const JiraNotification: typeof import("./jiraNotification").JiraNotification = null as any;
+utilities.lazyLoad(exports, ["JiraNotification"], () => require("./jiraNotification"));
+
 export { K8sCredentialsArgs, K8sCredentialsState } from "./k8sCredentials";
 export type K8sCredentials = import("./k8sCredentials").K8sCredentials;
 export const K8sCredentials: typeof import("./k8sCredentials").K8sCredentials = null as any;
@@ -188,6 +213,11 @@ export { KeyRequestsArgs, KeyRequestsState } from "./keyRequests";
 export type KeyRequests = import("./keyRequests").KeyRequests;
 export const KeyRequests: typeof import("./keyRequests").KeyRequests = null as any;
 utilities.lazyLoad(exports, ["KeyRequests"], () => require("./keyRequests"));
+
+export { MaintenanceArgs, MaintenanceState } from "./maintenance";
+export type Maintenance = import("./maintenance").Maintenance;
+export const Maintenance: typeof import("./maintenance").Maintenance = null as any;
+utilities.lazyLoad(exports, ["Maintenance"], () => require("./maintenance"));
 
 export { MaintenanceWindowArgs, MaintenanceWindowState } from "./maintenanceWindow";
 export type MaintenanceWindow = import("./maintenanceWindow").MaintenanceWindow;
@@ -213,6 +243,16 @@ export { NotificationArgs, NotificationState } from "./notification";
 export type Notification = import("./notification").Notification;
 export const Notification: typeof import("./notification").Notification = null as any;
 utilities.lazyLoad(exports, ["Notification"], () => require("./notification"));
+
+export { OpsGenieNotificationArgs, OpsGenieNotificationState } from "./opsGenieNotification";
+export type OpsGenieNotification = import("./opsGenieNotification").OpsGenieNotification;
+export const OpsGenieNotification: typeof import("./opsGenieNotification").OpsGenieNotification = null as any;
+utilities.lazyLoad(exports, ["OpsGenieNotification"], () => require("./opsGenieNotification"));
+
+export { PagerDutyNotificationArgs, PagerDutyNotificationState } from "./pagerDutyNotification";
+export type PagerDutyNotification = import("./pagerDutyNotification").PagerDutyNotification;
+export const PagerDutyNotification: typeof import("./pagerDutyNotification").PagerDutyNotification = null as any;
+utilities.lazyLoad(exports, ["PagerDutyNotification"], () => require("./pagerDutyNotification"));
 
 export { ProcessgroupNamingArgs, ProcessgroupNamingState } from "./processgroupNaming";
 export type ProcessgroupNaming = import("./processgroupNaming").ProcessgroupNaming;
@@ -264,6 +304,16 @@ export type ServiceNaming = import("./serviceNaming").ServiceNaming;
 export const ServiceNaming: typeof import("./serviceNaming").ServiceNaming = null as any;
 utilities.lazyLoad(exports, ["ServiceNaming"], () => require("./serviceNaming"));
 
+export { ServiceNowNotificationArgs, ServiceNowNotificationState } from "./serviceNowNotification";
+export type ServiceNowNotification = import("./serviceNowNotification").ServiceNowNotification;
+export const ServiceNowNotification: typeof import("./serviceNowNotification").ServiceNowNotification = null as any;
+utilities.lazyLoad(exports, ["ServiceNowNotification"], () => require("./serviceNowNotification"));
+
+export { SlackNotificationArgs, SlackNotificationState } from "./slackNotification";
+export type SlackNotification = import("./slackNotification").SlackNotification;
+export const SlackNotification: typeof import("./slackNotification").SlackNotification = null as any;
+utilities.lazyLoad(exports, ["SlackNotification"], () => require("./slackNotification"));
+
 export { SloArgs, SloState } from "./slo";
 export type Slo = import("./slo").Slo;
 export const Slo: typeof import("./slo").Slo = null as any;
@@ -289,6 +339,11 @@ export type SpanEntryPoint = import("./spanEntryPoint").SpanEntryPoint;
 export const SpanEntryPoint: typeof import("./spanEntryPoint").SpanEntryPoint = null as any;
 utilities.lazyLoad(exports, ["SpanEntryPoint"], () => require("./spanEntryPoint"));
 
+export { TrrelloNotificationArgs, TrrelloNotificationState } from "./trrelloNotification";
+export type TrrelloNotification = import("./trrelloNotification").TrrelloNotification;
+export const TrrelloNotification: typeof import("./trrelloNotification").TrrelloNotification = null as any;
+utilities.lazyLoad(exports, ["TrrelloNotification"], () => require("./trrelloNotification"));
+
 export { UserArgs, UserState } from "./user";
 export type User = import("./user").User;
 export const User: typeof import("./user").User = null as any;
@@ -299,10 +354,25 @@ export type UserGroup = import("./userGroup").UserGroup;
 export const UserGroup: typeof import("./userGroup").UserGroup = null as any;
 utilities.lazyLoad(exports, ["UserGroup"], () => require("./userGroup"));
 
+export { VictorOpsNotificationArgs, VictorOpsNotificationState } from "./victorOpsNotification";
+export type VictorOpsNotification = import("./victorOpsNotification").VictorOpsNotification;
+export const VictorOpsNotification: typeof import("./victorOpsNotification").VictorOpsNotification = null as any;
+utilities.lazyLoad(exports, ["VictorOpsNotification"], () => require("./victorOpsNotification"));
+
 export { WebApplicationArgs, WebApplicationState } from "./webApplication";
 export type WebApplication = import("./webApplication").WebApplication;
 export const WebApplication: typeof import("./webApplication").WebApplication = null as any;
 utilities.lazyLoad(exports, ["WebApplication"], () => require("./webApplication"));
+
+export { WebhookNotificationArgs, WebhookNotificationState } from "./webhookNotification";
+export type WebhookNotification = import("./webhookNotification").WebhookNotification;
+export const WebhookNotification: typeof import("./webhookNotification").WebhookNotification = null as any;
+utilities.lazyLoad(exports, ["WebhookNotification"], () => require("./webhookNotification"));
+
+export { XmattersNotificationArgs, XmattersNotificationState } from "./xmattersNotification";
+export type XmattersNotification = import("./xmattersNotification").XmattersNotification;
+export const XmattersNotification: typeof import("./xmattersNotification").XmattersNotification = null as any;
+utilities.lazyLoad(exports, ["XmattersNotification"], () => require("./xmattersNotification"));
 
 
 // Export sub-modules:
@@ -322,6 +392,8 @@ const _module = {
                 return new Alerting(name, <any>undefined, { urn })
             case "dynatrace:index/alertingProfile:AlertingProfile":
                 return new AlertingProfile(name, <any>undefined, { urn })
+            case "dynatrace:index/ansibleTowerNotification:AnsibleTowerNotification":
+                return new AnsibleTowerNotification(name, <any>undefined, { urn })
             case "dynatrace:index/applicationAnomalies:ApplicationAnomalies":
                 return new ApplicationAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/applicationDataPrivacy:ApplicationDataPrivacy":
@@ -354,8 +426,12 @@ const _module = {
                 return new DatabaseAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/diskAnomalies:DiskAnomalies":
                 return new DiskAnomalies(name, <any>undefined, { urn })
+            case "dynatrace:index/emailNotification:EmailNotification":
+                return new EmailNotification(name, <any>undefined, { urn })
             case "dynatrace:index/environment:Environment":
                 return new Environment(name, <any>undefined, { urn })
+            case "dynatrace:index/frequentIssues:FrequentIssues":
+                return new FrequentIssues(name, <any>undefined, { urn })
             case "dynatrace:index/hostAnomalies:HostAnomalies":
                 return new HostAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/hostNaming:HostNaming":
@@ -366,10 +442,14 @@ const _module = {
                 return new IbmMqFilters(name, <any>undefined, { urn })
             case "dynatrace:index/imsBridges:ImsBridges":
                 return new ImsBridges(name, <any>undefined, { urn })
+            case "dynatrace:index/jiraNotification:JiraNotification":
+                return new JiraNotification(name, <any>undefined, { urn })
             case "dynatrace:index/k8sCredentials:K8sCredentials":
                 return new K8sCredentials(name, <any>undefined, { urn })
             case "dynatrace:index/keyRequests:KeyRequests":
                 return new KeyRequests(name, <any>undefined, { urn })
+            case "dynatrace:index/maintenance:Maintenance":
+                return new Maintenance(name, <any>undefined, { urn })
             case "dynatrace:index/maintenanceWindow:MaintenanceWindow":
                 return new MaintenanceWindow(name, <any>undefined, { urn })
             case "dynatrace:index/managementZone:ManagementZone":
@@ -380,6 +460,10 @@ const _module = {
                 return new NetworkZones(name, <any>undefined, { urn })
             case "dynatrace:index/notification:Notification":
                 return new Notification(name, <any>undefined, { urn })
+            case "dynatrace:index/opsGenieNotification:OpsGenieNotification":
+                return new OpsGenieNotification(name, <any>undefined, { urn })
+            case "dynatrace:index/pagerDutyNotification:PagerDutyNotification":
+                return new PagerDutyNotification(name, <any>undefined, { urn })
             case "dynatrace:index/processgroupNaming:ProcessgroupNaming":
                 return new ProcessgroupNaming(name, <any>undefined, { urn })
             case "dynatrace:index/queueManager:QueueManager":
@@ -398,6 +482,10 @@ const _module = {
                 return new ServiceAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/serviceNaming:ServiceNaming":
                 return new ServiceNaming(name, <any>undefined, { urn })
+            case "dynatrace:index/serviceNowNotification:ServiceNowNotification":
+                return new ServiceNowNotification(name, <any>undefined, { urn })
+            case "dynatrace:index/slackNotification:SlackNotification":
+                return new SlackNotification(name, <any>undefined, { urn })
             case "dynatrace:index/slo:Slo":
                 return new Slo(name, <any>undefined, { urn })
             case "dynatrace:index/spanAttributed:SpanAttributed":
@@ -408,12 +496,20 @@ const _module = {
                 return new SpanContextPropagation(name, <any>undefined, { urn })
             case "dynatrace:index/spanEntryPoint:SpanEntryPoint":
                 return new SpanEntryPoint(name, <any>undefined, { urn })
+            case "dynatrace:index/trrelloNotification:TrrelloNotification":
+                return new TrrelloNotification(name, <any>undefined, { urn })
             case "dynatrace:index/user:User":
                 return new User(name, <any>undefined, { urn })
             case "dynatrace:index/userGroup:UserGroup":
                 return new UserGroup(name, <any>undefined, { urn })
+            case "dynatrace:index/victorOpsNotification:VictorOpsNotification":
+                return new VictorOpsNotification(name, <any>undefined, { urn })
             case "dynatrace:index/webApplication:WebApplication":
                 return new WebApplication(name, <any>undefined, { urn })
+            case "dynatrace:index/webhookNotification:WebhookNotification":
+                return new WebhookNotification(name, <any>undefined, { urn })
+            case "dynatrace:index/xmattersNotification:XmattersNotification":
+                return new XmattersNotification(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -421,6 +517,7 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("dynatrace", "index/alerting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/alertingProfile", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/ansibleTowerNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/applicationAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/applicationDataPrivacy", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/applicationDetectionRule", _module)
@@ -437,19 +534,25 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/dashboard", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/dashboardSharing", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/databaseAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskAnomalies", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/emailNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/environment", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/frequentIssues", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hostAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hostNaming", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/httpMonitor", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/ibmMqFilters", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/imsBridges", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/jiraNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/k8sCredentials", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/keyRequests", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/maintenance", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/maintenanceWindow", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/managementZone", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/mobileApplication", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/networkZones", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/notification", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/opsGenieNotification", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/pagerDutyNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/processgroupNaming", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/queueManager", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/queueSharingGroups", _module)
@@ -459,14 +562,20 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/requestNamings", _modu
 pulumi.runtime.registerResourceModule("dynatrace", "index/resourceAttributes", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceNaming", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/serviceNowNotification", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/slackNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/slo", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/spanAttributed", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/spanCaptureRule", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/spanContextPropagation", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/spanEntryPoint", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/trrelloNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/user", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/userGroup", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/victorOpsNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webApplication", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/webhookNotification", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/xmattersNotification", _module)
 pulumi.runtime.registerResourcePackage("dynatrace", {
     version: utilities.getVersion(),
     constructProvider: (name: string, type: string, urn: string): pulumi.ProviderResource => {

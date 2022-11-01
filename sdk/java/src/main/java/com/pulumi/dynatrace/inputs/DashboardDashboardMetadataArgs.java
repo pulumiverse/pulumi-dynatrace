@@ -96,6 +96,21 @@ public final class DashboardDashboardMetadataArgs extends com.pulumi.resources.R
     }
 
     /**
+     * the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+     * 
+     */
+    @Import(name="preset")
+    private @Nullable Output<Boolean> preset;
+
+    /**
+     * @return the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+     * 
+     */
+    public Optional<Output<Boolean>> preset() {
+        return Optional.ofNullable(this.preset);
+    }
+
+    /**
      * the dashboard is shared (`true`) or private (`false`)
      * 
      */
@@ -178,6 +193,7 @@ public final class DashboardDashboardMetadataArgs extends com.pulumi.resources.R
         this.filter = $.filter;
         this.name = $.name;
         this.owner = $.owner;
+        this.preset = $.preset;
         this.shared = $.shared;
         this.sharingDetails = $.sharingDetails;
         this.tags = $.tags;
@@ -306,6 +322,27 @@ public final class DashboardDashboardMetadataArgs extends com.pulumi.resources.R
          */
         public Builder owner(String owner) {
             return owner(Output.of(owner));
+        }
+
+        /**
+         * @param preset the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preset(@Nullable Output<Boolean> preset) {
+            $.preset = preset;
+            return this;
+        }
+
+        /**
+         * @param preset the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preset(Boolean preset) {
+            return preset(Output.of(preset));
         }
 
         /**

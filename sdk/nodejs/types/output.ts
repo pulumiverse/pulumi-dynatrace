@@ -332,6 +332,7 @@ export interface ApplicationErrorRulesHttpErrorsRule {
 
 export interface AutotagEntitySelectorBasedRule {
     enabled?: boolean;
+    normalization?: string;
     selector?: string;
     unknowns?: string;
     valueFormat?: string;
@@ -2521,6 +2522,10 @@ export interface DashboardDashboardMetadata {
      */
     owner: string;
     /**
+     * the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+     */
+    preset?: boolean;
+    /**
      * the dashboard is shared (`true`) or private (`false`)
      */
     shared?: boolean;
@@ -4188,6 +4193,122 @@ export interface K8sCredentialsEventsFieldSelector {
      * Any attributes that aren't yet supported by this provider
      */
     unknowns?: string;
+}
+
+export interface MaintenanceFilter {
+    /**
+     * A list of matching rules for dynamic filter formation.  If several rules are set, the OR logic applies
+     */
+    filters?: outputs.MaintenanceFilterFilter[];
+}
+
+export interface MaintenanceFilterFilter {
+    entityId?: string;
+    entityTags?: string[];
+    entityType?: string;
+    managementZones?: string[];
+}
+
+export interface MaintenanceGeneralProperties {
+    /**
+     * A short description of the maintenance purpose
+     */
+    description?: string;
+    /**
+     * Suppress execution of synthetic monitors during the maintenance
+     */
+    disableSynthetic?: boolean;
+    /**
+     * The name of the maintenance window, displayed in the UI
+     */
+    name: string;
+    /**
+     * The type of suppression of alerting and problem detection during the maintenance
+     */
+    suppression: string;
+    /**
+     * The type of the maintenance: planned or unplanned
+     */
+    type: string;
+}
+
+export interface MaintenanceSchedule {
+    /**
+     * The configuration for maintenance windows occuring daily
+     */
+    dailyRecurrence?: outputs.MaintenanceScheduleDailyRecurrence;
+    /**
+     * The configuration for maintenance windows occuring monthly
+     */
+    monthlyRecurrence?: outputs.MaintenanceScheduleMonthlyRecurrence;
+    /**
+     * The configuration for maintenance windows occuring once
+     */
+    onceRecurrence?: outputs.MaintenanceScheduleOnceRecurrence;
+    /**
+     * The time window of the maintenance window
+     */
+    type: string;
+    /**
+     * The configuration for maintenance windows occuring weekly
+     */
+    weeklyRecurrence?: outputs.MaintenanceScheduleWeeklyRecurrence;
+}
+
+export interface MaintenanceScheduleDailyRecurrence {
+    recurrenceRange: outputs.MaintenanceScheduleDailyRecurrenceRecurrenceRange;
+    timeWindow: outputs.MaintenanceScheduleDailyRecurrenceTimeWindow;
+}
+
+export interface MaintenanceScheduleDailyRecurrenceRecurrenceRange {
+    endDate: string;
+    startDate: string;
+}
+
+export interface MaintenanceScheduleDailyRecurrenceTimeWindow {
+    endTime: string;
+    startTime: string;
+    timeZone: string;
+}
+
+export interface MaintenanceScheduleMonthlyRecurrence {
+    dayOfMonth: number;
+    recurrenceRange: outputs.MaintenanceScheduleMonthlyRecurrenceRecurrenceRange;
+    timeWindow: outputs.MaintenanceScheduleMonthlyRecurrenceTimeWindow;
+}
+
+export interface MaintenanceScheduleMonthlyRecurrenceRecurrenceRange {
+    endDate: string;
+    startDate: string;
+}
+
+export interface MaintenanceScheduleMonthlyRecurrenceTimeWindow {
+    endTime: string;
+    startTime: string;
+    timeZone: string;
+}
+
+export interface MaintenanceScheduleOnceRecurrence {
+    endTime: string;
+    startTime: string;
+    timeZone: string;
+}
+
+export interface MaintenanceScheduleWeeklyRecurrence {
+    dayOfWeek: string;
+    recurrenceRange: outputs.MaintenanceScheduleWeeklyRecurrenceRecurrenceRange;
+    timeWindow: outputs.MaintenanceScheduleWeeklyRecurrenceTimeWindow;
+}
+
+export interface MaintenanceScheduleWeeklyRecurrenceRecurrenceRange {
+    endDate: string;
+    startDate: string;
+}
+
+export interface MaintenanceScheduleWeeklyRecurrenceTimeWindow {
+    endTime: string;
+    startTime: string;
+    timeZone: string;
 }
 
 export interface MaintenanceWindowMetadata {
@@ -8385,5 +8506,37 @@ export interface WebApplicationXhrActionApdexSettings {
      * Maximal value of apdex, which is considered as satisfied user experience. Values between 0 and 60000 are allowed.
      */
     toleratedThreshold?: number;
+}
+
+export interface WebhookNotificationHeaders {
+    /**
+     * An additional HTTP Header to include when sending requests
+     */
+    headers: outputs.WebhookNotificationHeadersHeader[];
+}
+
+export interface WebhookNotificationHeadersHeader {
+    /**
+     * The name of the notification configuration
+     */
+    name: string;
+    secretValue?: string;
+    value?: string;
+}
+
+export interface XmattersNotificationHeaders {
+    /**
+     * An additional HTTP Header to include when sending requests
+     */
+    headers: outputs.XmattersNotificationHeadersHeader[];
+}
+
+export interface XmattersNotificationHeadersHeader {
+    /**
+     * The name of the notification configuration
+     */
+    name: string;
+    secretValue?: string;
+    value?: string;
 }
 

@@ -5,7 +5,56 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The credentials data source allows retrieval of all credentials.
+ * The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const creds = dynatrace.getCredentials({
+ *     name: "Office365 Access Token",
+ * });
+ * const _name_ = new dynatrace.HttpMonitor("#name#", {
+ *     enabled: true,
+ *     frequency: 60,
+ *     locations: ["SYNTHETIC_LOCATION-781752216580B1BC"],
+ *     anomalyDetections: [{
+ *         loadingTimeThresholds: [{
+ *             enabled: true,
+ *         }],
+ *         outageHandlings: [{
+ *             globalOutage: true,
+ *             localOutage: false,
+ *             retryOnError: false,
+ *         }],
+ *     }],
+ *     script: {
+ *         requests: [{
+ *             description: "google.com",
+ *             method: "GET",
+ *             url: "https://www.google.com",
+ *             authentication: {
+ *                 type: "BASIC_AUTHENTICATION",
+ *                 credentials: creds.then(creds => creds.id),
+ *             },
+ *             configuration: {
+ *                 acceptAnyCertificate: true,
+ *                 followRedirects: true,
+ *             },
+ *             validation: {
+ *                 rules: [{
+ *                     type: "httpStatusesList",
+ *                     passIfFound: false,
+ *                     value: ">=400",
+ *                 }],
+ *             },
+ *         }],
+ *     },
+ * });
+ * ```
  */
 export function getCredentials(args?: GetCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetCredentialsResult> {
     args = args || {};
@@ -15,7 +64,9 @@ export function getCredentials(args?: GetCredentialsArgs, opts?: pulumi.InvokeOp
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
     return pulumi.runtime.invoke("dynatrace:index/getCredentials:getCredentials", {
-        "credentials": args.credentials,
+        "name": args.name,
+        "scope": args.scope,
+        "type": args.type,
     }, opts);
 }
 
@@ -23,18 +74,40 @@ export function getCredentials(args?: GetCredentialsArgs, opts?: pulumi.InvokeOp
  * A collection of arguments for invoking getCredentials.
  */
 export interface GetCredentialsArgs {
-    credentials?: {[key: string]: string};
+    /**
+     * The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match
+     */
+    name?: string;
+    /**
+     * The scope of the credential. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`. If not specified all scopes will match.
+     */
+    scope?: string;
+    /**
+     * The type of the credential. Possible values are `CERTIFICATE`, `PUBLIC_CERTIFICATE`, `TOKEN`, `USERNAME_PASSWORD` and `UNKNOWN`. If not specified all credential types will match
+     */
+    type?: string;
 }
 
 /**
  * A collection of values returned by getCredentials.
  */
 export interface GetCredentialsResult {
-    readonly credentials?: {[key: string]: string};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match
+     */
+    readonly name?: string;
+    /**
+     * The scope of the credential. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`. If not specified all scopes will match.
+     */
+    readonly scope?: string;
+    /**
+     * The type of the credential. Possible values are `CERTIFICATE`, `PUBLIC_CERTIFICATE`, `TOKEN`, `USERNAME_PASSWORD` and `UNKNOWN`. If not specified all credential types will match
+     */
+    readonly type?: string;
 }
 
 export function getCredentialsOutput(args?: GetCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCredentialsResult> {
@@ -45,5 +118,16 @@ export function getCredentialsOutput(args?: GetCredentialsOutputArgs, opts?: pul
  * A collection of arguments for invoking getCredentials.
  */
 export interface GetCredentialsOutputArgs {
-    credentials?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * The scope of the credential. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`. If not specified all scopes will match.
+     */
+    scope?: pulumi.Input<string>;
+    /**
+     * The type of the credential. Possible values are `CERTIFICATE`, `PUBLIC_CERTIFICATE`, `TOKEN`, `USERNAME_PASSWORD` and `UNKNOWN`. If not specified all credential types will match
+     */
+    type?: pulumi.Input<string>;
 }

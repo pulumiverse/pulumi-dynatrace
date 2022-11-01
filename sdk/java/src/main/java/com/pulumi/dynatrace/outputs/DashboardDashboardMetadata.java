@@ -42,6 +42,11 @@ public final class DashboardDashboardMetadata {
      */
     private String owner;
     /**
+     * @return the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+     * 
+     */
+    private @Nullable Boolean preset;
+    /**
      * @return the dashboard is shared (`true`) or private (`false`)
      * 
      */
@@ -104,6 +109,13 @@ public final class DashboardDashboardMetadata {
         return this.owner;
     }
     /**
+     * @return the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+     * 
+     */
+    public Optional<Boolean> preset() {
+        return Optional.ofNullable(this.preset);
+    }
+    /**
      * @return the dashboard is shared (`true`) or private (`false`)
      * 
      */
@@ -153,6 +165,7 @@ public final class DashboardDashboardMetadata {
         private @Nullable DashboardDashboardMetadataFilter filter;
         private String name;
         private String owner;
+        private @Nullable Boolean preset;
         private @Nullable Boolean shared;
         private @Nullable DashboardDashboardMetadataSharingDetails sharingDetails;
         private @Nullable List<String> tags;
@@ -166,6 +179,7 @@ public final class DashboardDashboardMetadata {
     	      this.filter = defaults.filter;
     	      this.name = defaults.name;
     	      this.owner = defaults.owner;
+    	      this.preset = defaults.preset;
     	      this.shared = defaults.shared;
     	      this.sharingDetails = defaults.sharingDetails;
     	      this.tags = defaults.tags;
@@ -196,6 +210,11 @@ public final class DashboardDashboardMetadata {
         @CustomType.Setter
         public Builder owner(String owner) {
             this.owner = Objects.requireNonNull(owner);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder preset(@Nullable Boolean preset) {
+            this.preset = preset;
             return this;
         }
         @CustomType.Setter
@@ -236,6 +255,7 @@ public final class DashboardDashboardMetadata {
             o.filter = filter;
             o.name = name;
             o.owner = owner;
+            o.preset = preset;
             o.shared = shared;
             o.sharingDetails = sharingDetails;
             o.tags = tags;

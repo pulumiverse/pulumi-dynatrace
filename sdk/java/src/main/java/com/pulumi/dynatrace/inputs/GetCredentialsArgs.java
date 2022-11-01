@@ -6,7 +6,6 @@ package com.pulumi.dynatrace.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
-import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -16,17 +15,57 @@ public final class GetCredentialsArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetCredentialsArgs Empty = new GetCredentialsArgs();
 
-    @Import(name="credentials")
-    private @Nullable Output<Map<String,String>> credentials;
+    /**
+     * The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match
+     * 
+     */
+    @Import(name="name")
+    private @Nullable Output<String> name;
 
-    public Optional<Output<Map<String,String>>> credentials() {
-        return Optional.ofNullable(this.credentials);
+    /**
+     * @return The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match
+     * 
+     */
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
+    }
+
+    /**
+     * The scope of the credential. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`. If not specified all scopes will match.
+     * 
+     */
+    @Import(name="scope")
+    private @Nullable Output<String> scope;
+
+    /**
+     * @return The scope of the credential. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`. If not specified all scopes will match.
+     * 
+     */
+    public Optional<Output<String>> scope() {
+        return Optional.ofNullable(this.scope);
+    }
+
+    /**
+     * The type of the credential. Possible values are `CERTIFICATE`, `PUBLIC_CERTIFICATE`, `TOKEN`, `USERNAME_PASSWORD` and `UNKNOWN`. If not specified all credential types will match
+     * 
+     */
+    @Import(name="type")
+    private @Nullable Output<String> type;
+
+    /**
+     * @return The type of the credential. Possible values are `CERTIFICATE`, `PUBLIC_CERTIFICATE`, `TOKEN`, `USERNAME_PASSWORD` and `UNKNOWN`. If not specified all credential types will match
+     * 
+     */
+    public Optional<Output<String>> type() {
+        return Optional.ofNullable(this.type);
     }
 
     private GetCredentialsArgs() {}
 
     private GetCredentialsArgs(GetCredentialsArgs $) {
-        this.credentials = $.credentials;
+        this.name = $.name;
+        this.scope = $.scope;
+        this.type = $.type;
     }
 
     public static Builder builder() {
@@ -47,13 +86,67 @@ public final class GetCredentialsArgs extends com.pulumi.resources.InvokeArgs {
             $ = new GetCredentialsArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder credentials(@Nullable Output<Map<String,String>> credentials) {
-            $.credentials = credentials;
+        /**
+         * @param name The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match
+         * 
+         * @return builder
+         * 
+         */
+        public Builder name(@Nullable Output<String> name) {
+            $.name = name;
             return this;
         }
 
-        public Builder credentials(Map<String,String> credentials) {
-            return credentials(Output.of(credentials));
+        /**
+         * @param name The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match
+         * 
+         * @return builder
+         * 
+         */
+        public Builder name(String name) {
+            return name(Output.of(name));
+        }
+
+        /**
+         * @param scope The scope of the credential. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`. If not specified all scopes will match.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scope(@Nullable Output<String> scope) {
+            $.scope = scope;
+            return this;
+        }
+
+        /**
+         * @param scope The scope of the credential. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`. If not specified all scopes will match.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scope(String scope) {
+            return scope(Output.of(scope));
+        }
+
+        /**
+         * @param type The type of the credential. Possible values are `CERTIFICATE`, `PUBLIC_CERTIFICATE`, `TOKEN`, `USERNAME_PASSWORD` and `UNKNOWN`. If not specified all credential types will match
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(@Nullable Output<String> type) {
+            $.type = type;
+            return this;
+        }
+
+        /**
+         * @param type The type of the credential. Possible values are `CERTIFICATE`, `PUBLIC_CERTIFICATE`, `TOKEN`, `USERNAME_PASSWORD` and `UNKNOWN`. If not specified all credential types will match
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(String type) {
+            return type(Output.of(type));
         }
 
         public GetCredentialsArgs build() {

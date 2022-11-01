@@ -23,6 +23,13 @@ public final class AutotagEntitySelectorBasedRuleArgs extends com.pulumi.resourc
         return Optional.ofNullable(this.enabled);
     }
 
+    @Import(name="normalization")
+    private @Nullable Output<String> normalization;
+
+    public Optional<Output<String>> normalization() {
+        return Optional.ofNullable(this.normalization);
+    }
+
     @Import(name="selector")
     private @Nullable Output<String> selector;
 
@@ -48,6 +55,7 @@ public final class AutotagEntitySelectorBasedRuleArgs extends com.pulumi.resourc
 
     private AutotagEntitySelectorBasedRuleArgs(AutotagEntitySelectorBasedRuleArgs $) {
         this.enabled = $.enabled;
+        this.normalization = $.normalization;
         this.selector = $.selector;
         this.unknowns = $.unknowns;
         this.valueFormat = $.valueFormat;
@@ -78,6 +86,15 @@ public final class AutotagEntitySelectorBasedRuleArgs extends com.pulumi.resourc
 
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
+        }
+
+        public Builder normalization(@Nullable Output<String> normalization) {
+            $.normalization = normalization;
+            return this;
+        }
+
+        public Builder normalization(String normalization) {
+            return normalization(Output.of(normalization));
         }
 
         public Builder selector(@Nullable Output<String> selector) {

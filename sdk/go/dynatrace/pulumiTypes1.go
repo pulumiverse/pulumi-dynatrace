@@ -10,6 +10,2194 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type ManagementZoneMetadata struct {
+	ClusterVersion               *string  `pulumi:"clusterVersion"`
+	ConfigurationVersions        []int    `pulumi:"configurationVersions"`
+	CurrentConfigurationVersions []string `pulumi:"currentConfigurationVersions"`
+}
+
+// ManagementZoneMetadataInput is an input type that accepts ManagementZoneMetadataArgs and ManagementZoneMetadataOutput values.
+// You can construct a concrete instance of `ManagementZoneMetadataInput` via:
+//
+//	ManagementZoneMetadataArgs{...}
+type ManagementZoneMetadataInput interface {
+	pulumi.Input
+
+	ToManagementZoneMetadataOutput() ManagementZoneMetadataOutput
+	ToManagementZoneMetadataOutputWithContext(context.Context) ManagementZoneMetadataOutput
+}
+
+type ManagementZoneMetadataArgs struct {
+	ClusterVersion               pulumi.StringPtrInput   `pulumi:"clusterVersion"`
+	ConfigurationVersions        pulumi.IntArrayInput    `pulumi:"configurationVersions"`
+	CurrentConfigurationVersions pulumi.StringArrayInput `pulumi:"currentConfigurationVersions"`
+}
+
+func (ManagementZoneMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneMetadata)(nil)).Elem()
+}
+
+func (i ManagementZoneMetadataArgs) ToManagementZoneMetadataOutput() ManagementZoneMetadataOutput {
+	return i.ToManagementZoneMetadataOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneMetadataArgs) ToManagementZoneMetadataOutputWithContext(ctx context.Context) ManagementZoneMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneMetadataOutput)
+}
+
+func (i ManagementZoneMetadataArgs) ToManagementZoneMetadataPtrOutput() ManagementZoneMetadataPtrOutput {
+	return i.ToManagementZoneMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneMetadataArgs) ToManagementZoneMetadataPtrOutputWithContext(ctx context.Context) ManagementZoneMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneMetadataOutput).ToManagementZoneMetadataPtrOutputWithContext(ctx)
+}
+
+// ManagementZoneMetadataPtrInput is an input type that accepts ManagementZoneMetadataArgs, ManagementZoneMetadataPtr and ManagementZoneMetadataPtrOutput values.
+// You can construct a concrete instance of `ManagementZoneMetadataPtrInput` via:
+//
+//	        ManagementZoneMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagementZoneMetadataPtrInput interface {
+	pulumi.Input
+
+	ToManagementZoneMetadataPtrOutput() ManagementZoneMetadataPtrOutput
+	ToManagementZoneMetadataPtrOutputWithContext(context.Context) ManagementZoneMetadataPtrOutput
+}
+
+type managementZoneMetadataPtrType ManagementZoneMetadataArgs
+
+func ManagementZoneMetadataPtr(v *ManagementZoneMetadataArgs) ManagementZoneMetadataPtrInput {
+	return (*managementZoneMetadataPtrType)(v)
+}
+
+func (*managementZoneMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagementZoneMetadata)(nil)).Elem()
+}
+
+func (i *managementZoneMetadataPtrType) ToManagementZoneMetadataPtrOutput() ManagementZoneMetadataPtrOutput {
+	return i.ToManagementZoneMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *managementZoneMetadataPtrType) ToManagementZoneMetadataPtrOutputWithContext(ctx context.Context) ManagementZoneMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneMetadataPtrOutput)
+}
+
+type ManagementZoneMetadataOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneMetadata)(nil)).Elem()
+}
+
+func (o ManagementZoneMetadataOutput) ToManagementZoneMetadataOutput() ManagementZoneMetadataOutput {
+	return o
+}
+
+func (o ManagementZoneMetadataOutput) ToManagementZoneMetadataOutputWithContext(ctx context.Context) ManagementZoneMetadataOutput {
+	return o
+}
+
+func (o ManagementZoneMetadataOutput) ToManagementZoneMetadataPtrOutput() ManagementZoneMetadataPtrOutput {
+	return o.ToManagementZoneMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o ManagementZoneMetadataOutput) ToManagementZoneMetadataPtrOutputWithContext(ctx context.Context) ManagementZoneMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagementZoneMetadata) *ManagementZoneMetadata {
+		return &v
+	}).(ManagementZoneMetadataPtrOutput)
+}
+
+func (o ManagementZoneMetadataOutput) ClusterVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneMetadata) *string { return v.ClusterVersion }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneMetadataOutput) ConfigurationVersions() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v ManagementZoneMetadata) []int { return v.ConfigurationVersions }).(pulumi.IntArrayOutput)
+}
+
+func (o ManagementZoneMetadataOutput) CurrentConfigurationVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ManagementZoneMetadata) []string { return v.CurrentConfigurationVersions }).(pulumi.StringArrayOutput)
+}
+
+type ManagementZoneMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagementZoneMetadata)(nil)).Elem()
+}
+
+func (o ManagementZoneMetadataPtrOutput) ToManagementZoneMetadataPtrOutput() ManagementZoneMetadataPtrOutput {
+	return o
+}
+
+func (o ManagementZoneMetadataPtrOutput) ToManagementZoneMetadataPtrOutputWithContext(ctx context.Context) ManagementZoneMetadataPtrOutput {
+	return o
+}
+
+func (o ManagementZoneMetadataPtrOutput) Elem() ManagementZoneMetadataOutput {
+	return o.ApplyT(func(v *ManagementZoneMetadata) ManagementZoneMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret ManagementZoneMetadata
+		return ret
+	}).(ManagementZoneMetadataOutput)
+}
+
+func (o ManagementZoneMetadataPtrOutput) ClusterVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementZoneMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClusterVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneMetadataPtrOutput) ConfigurationVersions() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v *ManagementZoneMetadata) []int {
+		if v == nil {
+			return nil
+		}
+		return v.ConfigurationVersions
+	}).(pulumi.IntArrayOutput)
+}
+
+func (o ManagementZoneMetadataPtrOutput) CurrentConfigurationVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ManagementZoneMetadata) []string {
+		if v == nil {
+			return nil
+		}
+		return v.CurrentConfigurationVersions
+	}).(pulumi.StringArrayOutput)
+}
+
+type ManagementZoneRule struct {
+	Conditions       []ManagementZoneRuleCondition `pulumi:"conditions"`
+	Enabled          *bool                         `pulumi:"enabled"`
+	PropagationTypes []string                      `pulumi:"propagationTypes"`
+	Type             string                        `pulumi:"type"`
+	Unknowns         *string                       `pulumi:"unknowns"`
+}
+
+// ManagementZoneRuleInput is an input type that accepts ManagementZoneRuleArgs and ManagementZoneRuleOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleInput` via:
+//
+//	ManagementZoneRuleArgs{...}
+type ManagementZoneRuleInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleOutput() ManagementZoneRuleOutput
+	ToManagementZoneRuleOutputWithContext(context.Context) ManagementZoneRuleOutput
+}
+
+type ManagementZoneRuleArgs struct {
+	Conditions       ManagementZoneRuleConditionArrayInput `pulumi:"conditions"`
+	Enabled          pulumi.BoolPtrInput                   `pulumi:"enabled"`
+	PropagationTypes pulumi.StringArrayInput               `pulumi:"propagationTypes"`
+	Type             pulumi.StringInput                    `pulumi:"type"`
+	Unknowns         pulumi.StringPtrInput                 `pulumi:"unknowns"`
+}
+
+func (ManagementZoneRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRule)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleArgs) ToManagementZoneRuleOutput() ManagementZoneRuleOutput {
+	return i.ToManagementZoneRuleOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleArgs) ToManagementZoneRuleOutputWithContext(ctx context.Context) ManagementZoneRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleOutput)
+}
+
+// ManagementZoneRuleArrayInput is an input type that accepts ManagementZoneRuleArray and ManagementZoneRuleArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleArrayInput` via:
+//
+//	ManagementZoneRuleArray{ ManagementZoneRuleArgs{...} }
+type ManagementZoneRuleArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleArrayOutput() ManagementZoneRuleArrayOutput
+	ToManagementZoneRuleArrayOutputWithContext(context.Context) ManagementZoneRuleArrayOutput
+}
+
+type ManagementZoneRuleArray []ManagementZoneRuleInput
+
+func (ManagementZoneRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRule)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleArray) ToManagementZoneRuleArrayOutput() ManagementZoneRuleArrayOutput {
+	return i.ToManagementZoneRuleArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleArray) ToManagementZoneRuleArrayOutputWithContext(ctx context.Context) ManagementZoneRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleArrayOutput)
+}
+
+type ManagementZoneRuleOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRule)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleOutput) ToManagementZoneRuleOutput() ManagementZoneRuleOutput {
+	return o
+}
+
+func (o ManagementZoneRuleOutput) ToManagementZoneRuleOutputWithContext(ctx context.Context) ManagementZoneRuleOutput {
+	return o
+}
+
+func (o ManagementZoneRuleOutput) Conditions() ManagementZoneRuleConditionArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRule) []ManagementZoneRuleCondition { return v.Conditions }).(ManagementZoneRuleConditionArrayOutput)
+}
+
+func (o ManagementZoneRuleOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRule) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+func (o ManagementZoneRuleOutput) PropagationTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRule) []string { return v.PropagationTypes }).(pulumi.StringArrayOutput)
+}
+
+func (o ManagementZoneRuleOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRule) string { return v.Type }).(pulumi.StringOutput)
+}
+
+func (o ManagementZoneRuleOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRule) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRule)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleArrayOutput) ToManagementZoneRuleArrayOutput() ManagementZoneRuleArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleArrayOutput) ToManagementZoneRuleArrayOutputWithContext(ctx context.Context) ManagementZoneRuleArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRule {
+		return vs[0].([]ManagementZoneRule)[vs[1].(int)]
+	}).(ManagementZoneRuleOutput)
+}
+
+type ManagementZoneRuleCondition struct {
+	// Deprecated: You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
+	ApplicationTypeComparisons  []ManagementZoneRuleConditionApplicationTypeComparison  `pulumi:"applicationTypeComparisons"`
+	ApplicationTypes            []ManagementZoneRuleConditionApplicationType            `pulumi:"applicationTypes"`
+	AzureComputeModeComparisons []ManagementZoneRuleConditionAzureComputeModeComparison `pulumi:"azureComputeModeComparisons"`
+	// Deprecated: You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
+	AzureComputeModes []ManagementZoneRuleConditionAzureComputeMode `pulumi:"azureComputeModes"`
+	// Deprecated: You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
+	AzureSkuComparisions []ManagementZoneRuleConditionAzureSkuComparision `pulumi:"azureSkuComparisions"`
+	AzureSkus            []ManagementZoneRuleConditionAzureSkus           `pulumi:"azureSkus"`
+	// Deprecated: You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
+	BaseComparisonBasics []ManagementZoneRuleConditionBaseComparisonBasic `pulumi:"baseComparisonBasics"`
+	// Deprecated: 'base_condition_key' is deprecated. You should use 'key'
+	BaseConditionKeys []ManagementZoneRuleConditionBaseConditionKey `pulumi:"baseConditionKeys"`
+	// Deprecated: You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
+	BitnessComparisions []ManagementZoneRuleConditionBitnessComparision `pulumi:"bitnessComparisions"`
+	Bitnesses           []ManagementZoneRuleConditionBitness            `pulumi:"bitnesses"`
+	// Deprecated: You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
+	CloudTypeComparisons []ManagementZoneRuleConditionCloudTypeComparison `pulumi:"cloudTypeComparisons"`
+	CloudTypes           []ManagementZoneRuleConditionCloudType           `pulumi:"cloudTypes"`
+	Comparisons          []ManagementZoneRuleConditionComparison          `pulumi:"comparisons"`
+	// Deprecated: You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
+	CustomApplicationTypeComparisons []ManagementZoneRuleConditionCustomApplicationTypeComparison `pulumi:"customApplicationTypeComparisons"`
+	CustomApplicationTypes           []ManagementZoneRuleConditionCustomApplicationType           `pulumi:"customApplicationTypes"`
+	// Deprecated: 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
+	CustomHostMetadataConditionKeys []ManagementZoneRuleConditionCustomHostMetadataConditionKey `pulumi:"customHostMetadataConditionKeys"`
+	CustomHostMetadatas             []ManagementZoneRuleConditionCustomHostMetadata             `pulumi:"customHostMetadatas"`
+	// Deprecated: 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
+	CustomProcessMetadataConditionKeys []ManagementZoneRuleConditionCustomProcessMetadataConditionKey `pulumi:"customProcessMetadataConditionKeys"`
+	CustomProcessMetadatas             []ManagementZoneRuleConditionCustomProcessMetadata             `pulumi:"customProcessMetadatas"`
+	DatabaseTopologies                 []ManagementZoneRuleConditionDatabaseTopology                  `pulumi:"databaseTopologies"`
+	// Deprecated: You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
+	DatabaseTopologyComparisons []ManagementZoneRuleConditionDatabaseTopologyComparison `pulumi:"databaseTopologyComparisons"`
+	// Deprecated: You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
+	DcrumDecoderComparisons []ManagementZoneRuleConditionDcrumDecoderComparison `pulumi:"dcrumDecoderComparisons"`
+	DcrumDecoders           []ManagementZoneRuleConditionDcrumDecoder           `pulumi:"dcrumDecoders"`
+	Entities                []ManagementZoneRuleConditionEntity                 `pulumi:"entities"`
+	// Deprecated: You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
+	EntityIdComparisons []ManagementZoneRuleConditionEntityIdComparison `pulumi:"entityIdComparisons"`
+	HostTeches          []ManagementZoneRuleConditionHostTech           `pulumi:"hostTeches"`
+	// Deprecated: `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+	HypervisorTypeComparisions []ManagementZoneRuleConditionHypervisorTypeComparision `pulumi:"hypervisorTypeComparisions"`
+	Hypervisors                []ManagementZoneRuleConditionHypervisor                `pulumi:"hypervisors"`
+	// Deprecated: You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
+	IndexedNameComparisons []ManagementZoneRuleConditionIndexedNameComparison `pulumi:"indexedNameComparisons"`
+	IndexedNames           []ManagementZoneRuleConditionIndexedName           `pulumi:"indexedNames"`
+	// Deprecated: You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
+	IndexedStringComparisons []ManagementZoneRuleConditionIndexedStringComparison `pulumi:"indexedStringComparisons"`
+	IndexedStrings           []ManagementZoneRuleConditionIndexedString           `pulumi:"indexedStrings"`
+	// Deprecated: You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
+	IndexedTagComparisons []ManagementZoneRuleConditionIndexedTagComparison `pulumi:"indexedTagComparisons"`
+	IndexedTags           []ManagementZoneRuleConditionIndexedTag           `pulumi:"indexedTags"`
+	// Deprecated: You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
+	IntegerComparisons []ManagementZoneRuleConditionIntegerComparison `pulumi:"integerComparisons"`
+	Integers           []ManagementZoneRuleConditionInteger           `pulumi:"integers"`
+	// Deprecated: You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
+	IpaddressComparisons []ManagementZoneRuleConditionIpaddressComparison `pulumi:"ipaddressComparisons"`
+	Ipaddresses          []ManagementZoneRuleConditionIpaddress           `pulumi:"ipaddresses"`
+	Keys                 []ManagementZoneRuleConditionKey                 `pulumi:"keys"`
+	// Deprecated: You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
+	MobilePlatformComparisons []ManagementZoneRuleConditionMobilePlatformComparison `pulumi:"mobilePlatformComparisons"`
+	MobilePlatforms           []ManagementZoneRuleConditionMobilePlatform           `pulumi:"mobilePlatforms"`
+	OsArches                  []ManagementZoneRuleConditionOsArch                   `pulumi:"osArches"`
+	OsTypes                   []ManagementZoneRuleConditionOsType                   `pulumi:"osTypes"`
+	// Deprecated: You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
+	OsarchitectureComparisons []ManagementZoneRuleConditionOsarchitectureComparison `pulumi:"osarchitectureComparisons"`
+	// Deprecated: You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
+	OstypeComparisons []ManagementZoneRuleConditionOstypeComparison `pulumi:"ostypeComparisons"`
+	// Deprecated: You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
+	PaasTypeComparisons []ManagementZoneRuleConditionPaasTypeComparison `pulumi:"paasTypeComparisons"`
+	PaasTypes           []ManagementZoneRuleConditionPaasType           `pulumi:"paasTypes"`
+	// Deprecated: 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
+	ProcessMetadataConditionKeys []ManagementZoneRuleConditionProcessMetadataConditionKey `pulumi:"processMetadataConditionKeys"`
+	ProcessMetadatas             []ManagementZoneRuleConditionProcessMetadata             `pulumi:"processMetadatas"`
+	ServiceTopologies            []ManagementZoneRuleConditionServiceTopology             `pulumi:"serviceTopologies"`
+	// Deprecated: You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
+	ServiceTopologyComparisons []ManagementZoneRuleConditionServiceTopologyComparison `pulumi:"serviceTopologyComparisons"`
+	// Deprecated: You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
+	ServiceTypeComparisons []ManagementZoneRuleConditionServiceTypeComparison `pulumi:"serviceTypeComparisons"`
+	ServiceTypes           []ManagementZoneRuleConditionServiceType           `pulumi:"serviceTypes"`
+	// Deprecated: You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
+	SimpleHostTechComparisons []ManagementZoneRuleConditionSimpleHostTechComparison `pulumi:"simpleHostTechComparisons"`
+	// Deprecated: You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
+	SimpleTechComparisons []ManagementZoneRuleConditionSimpleTechComparison `pulumi:"simpleTechComparisons"`
+	// Deprecated: You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
+	StringComparisons []ManagementZoneRuleConditionStringComparison `pulumi:"stringComparisons"`
+	// Deprecated: 'string_condition_key' is deprecated. You should use 'string_key'
+	StringConditionKeys []ManagementZoneRuleConditionStringConditionKey `pulumi:"stringConditionKeys"`
+	StringKeys          []ManagementZoneRuleConditionStringKey          `pulumi:"stringKeys"`
+	Strings             []ManagementZoneRuleConditionString             `pulumi:"strings"`
+	// Deprecated: You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
+	SyntheticEngineTypeComparisons []ManagementZoneRuleConditionSyntheticEngineTypeComparison `pulumi:"syntheticEngineTypeComparisons"`
+	SyntheticEngines               []ManagementZoneRuleConditionSyntheticEngine               `pulumi:"syntheticEngines"`
+	// Deprecated: You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
+	TagComparisons []ManagementZoneRuleConditionTagComparison `pulumi:"tagComparisons"`
+	Tags           []ManagementZoneRuleConditionTag           `pulumi:"tags"`
+	Teches         []ManagementZoneRuleConditionTech          `pulumi:"teches"`
+	Unknowns       *string                                    `pulumi:"unknowns"`
+}
+
+// ManagementZoneRuleConditionInput is an input type that accepts ManagementZoneRuleConditionArgs and ManagementZoneRuleConditionOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionInput` via:
+//
+//	ManagementZoneRuleConditionArgs{...}
+type ManagementZoneRuleConditionInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionOutput() ManagementZoneRuleConditionOutput
+	ToManagementZoneRuleConditionOutputWithContext(context.Context) ManagementZoneRuleConditionOutput
+}
+
+type ManagementZoneRuleConditionArgs struct {
+	// Deprecated: You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
+	ApplicationTypeComparisons  ManagementZoneRuleConditionApplicationTypeComparisonArrayInput  `pulumi:"applicationTypeComparisons"`
+	ApplicationTypes            ManagementZoneRuleConditionApplicationTypeArrayInput            `pulumi:"applicationTypes"`
+	AzureComputeModeComparisons ManagementZoneRuleConditionAzureComputeModeComparisonArrayInput `pulumi:"azureComputeModeComparisons"`
+	// Deprecated: You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
+	AzureComputeModes ManagementZoneRuleConditionAzureComputeModeArrayInput `pulumi:"azureComputeModes"`
+	// Deprecated: You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
+	AzureSkuComparisions ManagementZoneRuleConditionAzureSkuComparisionArrayInput `pulumi:"azureSkuComparisions"`
+	AzureSkus            ManagementZoneRuleConditionAzureSkusArrayInput           `pulumi:"azureSkus"`
+	// Deprecated: You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
+	BaseComparisonBasics ManagementZoneRuleConditionBaseComparisonBasicArrayInput `pulumi:"baseComparisonBasics"`
+	// Deprecated: 'base_condition_key' is deprecated. You should use 'key'
+	BaseConditionKeys ManagementZoneRuleConditionBaseConditionKeyArrayInput `pulumi:"baseConditionKeys"`
+	// Deprecated: You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
+	BitnessComparisions ManagementZoneRuleConditionBitnessComparisionArrayInput `pulumi:"bitnessComparisions"`
+	Bitnesses           ManagementZoneRuleConditionBitnessArrayInput            `pulumi:"bitnesses"`
+	// Deprecated: You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
+	CloudTypeComparisons ManagementZoneRuleConditionCloudTypeComparisonArrayInput `pulumi:"cloudTypeComparisons"`
+	CloudTypes           ManagementZoneRuleConditionCloudTypeArrayInput           `pulumi:"cloudTypes"`
+	Comparisons          ManagementZoneRuleConditionComparisonArrayInput          `pulumi:"comparisons"`
+	// Deprecated: You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
+	CustomApplicationTypeComparisons ManagementZoneRuleConditionCustomApplicationTypeComparisonArrayInput `pulumi:"customApplicationTypeComparisons"`
+	CustomApplicationTypes           ManagementZoneRuleConditionCustomApplicationTypeArrayInput           `pulumi:"customApplicationTypes"`
+	// Deprecated: 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
+	CustomHostMetadataConditionKeys ManagementZoneRuleConditionCustomHostMetadataConditionKeyArrayInput `pulumi:"customHostMetadataConditionKeys"`
+	CustomHostMetadatas             ManagementZoneRuleConditionCustomHostMetadataArrayInput             `pulumi:"customHostMetadatas"`
+	// Deprecated: 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
+	CustomProcessMetadataConditionKeys ManagementZoneRuleConditionCustomProcessMetadataConditionKeyArrayInput `pulumi:"customProcessMetadataConditionKeys"`
+	CustomProcessMetadatas             ManagementZoneRuleConditionCustomProcessMetadataArrayInput             `pulumi:"customProcessMetadatas"`
+	DatabaseTopologies                 ManagementZoneRuleConditionDatabaseTopologyArrayInput                  `pulumi:"databaseTopologies"`
+	// Deprecated: You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
+	DatabaseTopologyComparisons ManagementZoneRuleConditionDatabaseTopologyComparisonArrayInput `pulumi:"databaseTopologyComparisons"`
+	// Deprecated: You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
+	DcrumDecoderComparisons ManagementZoneRuleConditionDcrumDecoderComparisonArrayInput `pulumi:"dcrumDecoderComparisons"`
+	DcrumDecoders           ManagementZoneRuleConditionDcrumDecoderArrayInput           `pulumi:"dcrumDecoders"`
+	Entities                ManagementZoneRuleConditionEntityArrayInput                 `pulumi:"entities"`
+	// Deprecated: You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
+	EntityIdComparisons ManagementZoneRuleConditionEntityIdComparisonArrayInput `pulumi:"entityIdComparisons"`
+	HostTeches          ManagementZoneRuleConditionHostTechArrayInput           `pulumi:"hostTeches"`
+	// Deprecated: `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+	HypervisorTypeComparisions ManagementZoneRuleConditionHypervisorTypeComparisionArrayInput `pulumi:"hypervisorTypeComparisions"`
+	Hypervisors                ManagementZoneRuleConditionHypervisorArrayInput                `pulumi:"hypervisors"`
+	// Deprecated: You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
+	IndexedNameComparisons ManagementZoneRuleConditionIndexedNameComparisonArrayInput `pulumi:"indexedNameComparisons"`
+	IndexedNames           ManagementZoneRuleConditionIndexedNameArrayInput           `pulumi:"indexedNames"`
+	// Deprecated: You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
+	IndexedStringComparisons ManagementZoneRuleConditionIndexedStringComparisonArrayInput `pulumi:"indexedStringComparisons"`
+	IndexedStrings           ManagementZoneRuleConditionIndexedStringArrayInput           `pulumi:"indexedStrings"`
+	// Deprecated: You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
+	IndexedTagComparisons ManagementZoneRuleConditionIndexedTagComparisonArrayInput `pulumi:"indexedTagComparisons"`
+	IndexedTags           ManagementZoneRuleConditionIndexedTagArrayInput           `pulumi:"indexedTags"`
+	// Deprecated: You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
+	IntegerComparisons ManagementZoneRuleConditionIntegerComparisonArrayInput `pulumi:"integerComparisons"`
+	Integers           ManagementZoneRuleConditionIntegerArrayInput           `pulumi:"integers"`
+	// Deprecated: You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
+	IpaddressComparisons ManagementZoneRuleConditionIpaddressComparisonArrayInput `pulumi:"ipaddressComparisons"`
+	Ipaddresses          ManagementZoneRuleConditionIpaddressArrayInput           `pulumi:"ipaddresses"`
+	Keys                 ManagementZoneRuleConditionKeyArrayInput                 `pulumi:"keys"`
+	// Deprecated: You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
+	MobilePlatformComparisons ManagementZoneRuleConditionMobilePlatformComparisonArrayInput `pulumi:"mobilePlatformComparisons"`
+	MobilePlatforms           ManagementZoneRuleConditionMobilePlatformArrayInput           `pulumi:"mobilePlatforms"`
+	OsArches                  ManagementZoneRuleConditionOsArchArrayInput                   `pulumi:"osArches"`
+	OsTypes                   ManagementZoneRuleConditionOsTypeArrayInput                   `pulumi:"osTypes"`
+	// Deprecated: You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
+	OsarchitectureComparisons ManagementZoneRuleConditionOsarchitectureComparisonArrayInput `pulumi:"osarchitectureComparisons"`
+	// Deprecated: You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
+	OstypeComparisons ManagementZoneRuleConditionOstypeComparisonArrayInput `pulumi:"ostypeComparisons"`
+	// Deprecated: You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
+	PaasTypeComparisons ManagementZoneRuleConditionPaasTypeComparisonArrayInput `pulumi:"paasTypeComparisons"`
+	PaasTypes           ManagementZoneRuleConditionPaasTypeArrayInput           `pulumi:"paasTypes"`
+	// Deprecated: 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
+	ProcessMetadataConditionKeys ManagementZoneRuleConditionProcessMetadataConditionKeyArrayInput `pulumi:"processMetadataConditionKeys"`
+	ProcessMetadatas             ManagementZoneRuleConditionProcessMetadataArrayInput             `pulumi:"processMetadatas"`
+	ServiceTopologies            ManagementZoneRuleConditionServiceTopologyArrayInput             `pulumi:"serviceTopologies"`
+	// Deprecated: You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
+	ServiceTopologyComparisons ManagementZoneRuleConditionServiceTopologyComparisonArrayInput `pulumi:"serviceTopologyComparisons"`
+	// Deprecated: You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
+	ServiceTypeComparisons ManagementZoneRuleConditionServiceTypeComparisonArrayInput `pulumi:"serviceTypeComparisons"`
+	ServiceTypes           ManagementZoneRuleConditionServiceTypeArrayInput           `pulumi:"serviceTypes"`
+	// Deprecated: You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
+	SimpleHostTechComparisons ManagementZoneRuleConditionSimpleHostTechComparisonArrayInput `pulumi:"simpleHostTechComparisons"`
+	// Deprecated: You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
+	SimpleTechComparisons ManagementZoneRuleConditionSimpleTechComparisonArrayInput `pulumi:"simpleTechComparisons"`
+	// Deprecated: You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
+	StringComparisons ManagementZoneRuleConditionStringComparisonArrayInput `pulumi:"stringComparisons"`
+	// Deprecated: 'string_condition_key' is deprecated. You should use 'string_key'
+	StringConditionKeys ManagementZoneRuleConditionStringConditionKeyArrayInput `pulumi:"stringConditionKeys"`
+	StringKeys          ManagementZoneRuleConditionStringKeyArrayInput          `pulumi:"stringKeys"`
+	Strings             ManagementZoneRuleConditionStringArrayInput             `pulumi:"strings"`
+	// Deprecated: You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
+	SyntheticEngineTypeComparisons ManagementZoneRuleConditionSyntheticEngineTypeComparisonArrayInput `pulumi:"syntheticEngineTypeComparisons"`
+	SyntheticEngines               ManagementZoneRuleConditionSyntheticEngineArrayInput               `pulumi:"syntheticEngines"`
+	// Deprecated: You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
+	TagComparisons ManagementZoneRuleConditionTagComparisonArrayInput `pulumi:"tagComparisons"`
+	Tags           ManagementZoneRuleConditionTagArrayInput           `pulumi:"tags"`
+	Teches         ManagementZoneRuleConditionTechArrayInput          `pulumi:"teches"`
+	Unknowns       pulumi.StringPtrInput                              `pulumi:"unknowns"`
+}
+
+func (ManagementZoneRuleConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleCondition)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionArgs) ToManagementZoneRuleConditionOutput() ManagementZoneRuleConditionOutput {
+	return i.ToManagementZoneRuleConditionOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionArgs) ToManagementZoneRuleConditionOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionOutput)
+}
+
+// ManagementZoneRuleConditionArrayInput is an input type that accepts ManagementZoneRuleConditionArray and ManagementZoneRuleConditionArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionArrayInput` via:
+//
+//	ManagementZoneRuleConditionArray{ ManagementZoneRuleConditionArgs{...} }
+type ManagementZoneRuleConditionArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionArrayOutput() ManagementZoneRuleConditionArrayOutput
+	ToManagementZoneRuleConditionArrayOutputWithContext(context.Context) ManagementZoneRuleConditionArrayOutput
+}
+
+type ManagementZoneRuleConditionArray []ManagementZoneRuleConditionInput
+
+func (ManagementZoneRuleConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleCondition)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionArray) ToManagementZoneRuleConditionArrayOutput() ManagementZoneRuleConditionArrayOutput {
+	return i.ToManagementZoneRuleConditionArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionArray) ToManagementZoneRuleConditionArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionArrayOutput)
+}
+
+type ManagementZoneRuleConditionOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleCondition)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionOutput) ToManagementZoneRuleConditionOutput() ManagementZoneRuleConditionOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionOutput) ToManagementZoneRuleConditionOutputWithContext(ctx context.Context) ManagementZoneRuleConditionOutput {
+	return o
+}
+
+// Deprecated: You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) ApplicationTypeComparisons() ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionApplicationTypeComparison {
+		return v.ApplicationTypeComparisons
+	}).(ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) ApplicationTypes() ManagementZoneRuleConditionApplicationTypeArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionApplicationType {
+		return v.ApplicationTypes
+	}).(ManagementZoneRuleConditionApplicationTypeArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) AzureComputeModeComparisons() ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionAzureComputeModeComparison {
+		return v.AzureComputeModeComparisons
+	}).(ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput)
+}
+
+// Deprecated: You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) AzureComputeModes() ManagementZoneRuleConditionAzureComputeModeArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionAzureComputeMode {
+		return v.AzureComputeModes
+	}).(ManagementZoneRuleConditionAzureComputeModeArrayOutput)
+}
+
+// Deprecated: You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) AzureSkuComparisions() ManagementZoneRuleConditionAzureSkuComparisionArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionAzureSkuComparision {
+		return v.AzureSkuComparisions
+	}).(ManagementZoneRuleConditionAzureSkuComparisionArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) AzureSkus() ManagementZoneRuleConditionAzureSkusArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionAzureSkus { return v.AzureSkus }).(ManagementZoneRuleConditionAzureSkusArrayOutput)
+}
+
+// Deprecated: You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) BaseComparisonBasics() ManagementZoneRuleConditionBaseComparisonBasicArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionBaseComparisonBasic {
+		return v.BaseComparisonBasics
+	}).(ManagementZoneRuleConditionBaseComparisonBasicArrayOutput)
+}
+
+// Deprecated: 'base_condition_key' is deprecated. You should use 'key'
+func (o ManagementZoneRuleConditionOutput) BaseConditionKeys() ManagementZoneRuleConditionBaseConditionKeyArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionBaseConditionKey {
+		return v.BaseConditionKeys
+	}).(ManagementZoneRuleConditionBaseConditionKeyArrayOutput)
+}
+
+// Deprecated: You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) BitnessComparisions() ManagementZoneRuleConditionBitnessComparisionArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionBitnessComparision {
+		return v.BitnessComparisions
+	}).(ManagementZoneRuleConditionBitnessComparisionArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) Bitnesses() ManagementZoneRuleConditionBitnessArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionBitness { return v.Bitnesses }).(ManagementZoneRuleConditionBitnessArrayOutput)
+}
+
+// Deprecated: You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) CloudTypeComparisons() ManagementZoneRuleConditionCloudTypeComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCloudTypeComparison {
+		return v.CloudTypeComparisons
+	}).(ManagementZoneRuleConditionCloudTypeComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) CloudTypes() ManagementZoneRuleConditionCloudTypeArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCloudType { return v.CloudTypes }).(ManagementZoneRuleConditionCloudTypeArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) Comparisons() ManagementZoneRuleConditionComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionComparison { return v.Comparisons }).(ManagementZoneRuleConditionComparisonArrayOutput)
+}
+
+// Deprecated: You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) CustomApplicationTypeComparisons() ManagementZoneRuleConditionCustomApplicationTypeComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCustomApplicationTypeComparison {
+		return v.CustomApplicationTypeComparisons
+	}).(ManagementZoneRuleConditionCustomApplicationTypeComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) CustomApplicationTypes() ManagementZoneRuleConditionCustomApplicationTypeArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCustomApplicationType {
+		return v.CustomApplicationTypes
+	}).(ManagementZoneRuleConditionCustomApplicationTypeArrayOutput)
+}
+
+// Deprecated: 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
+func (o ManagementZoneRuleConditionOutput) CustomHostMetadataConditionKeys() ManagementZoneRuleConditionCustomHostMetadataConditionKeyArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCustomHostMetadataConditionKey {
+		return v.CustomHostMetadataConditionKeys
+	}).(ManagementZoneRuleConditionCustomHostMetadataConditionKeyArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) CustomHostMetadatas() ManagementZoneRuleConditionCustomHostMetadataArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCustomHostMetadata {
+		return v.CustomHostMetadatas
+	}).(ManagementZoneRuleConditionCustomHostMetadataArrayOutput)
+}
+
+// Deprecated: 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
+func (o ManagementZoneRuleConditionOutput) CustomProcessMetadataConditionKeys() ManagementZoneRuleConditionCustomProcessMetadataConditionKeyArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCustomProcessMetadataConditionKey {
+		return v.CustomProcessMetadataConditionKeys
+	}).(ManagementZoneRuleConditionCustomProcessMetadataConditionKeyArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) CustomProcessMetadatas() ManagementZoneRuleConditionCustomProcessMetadataArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionCustomProcessMetadata {
+		return v.CustomProcessMetadatas
+	}).(ManagementZoneRuleConditionCustomProcessMetadataArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) DatabaseTopologies() ManagementZoneRuleConditionDatabaseTopologyArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionDatabaseTopology {
+		return v.DatabaseTopologies
+	}).(ManagementZoneRuleConditionDatabaseTopologyArrayOutput)
+}
+
+// Deprecated: You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) DatabaseTopologyComparisons() ManagementZoneRuleConditionDatabaseTopologyComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionDatabaseTopologyComparison {
+		return v.DatabaseTopologyComparisons
+	}).(ManagementZoneRuleConditionDatabaseTopologyComparisonArrayOutput)
+}
+
+// Deprecated: You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) DcrumDecoderComparisons() ManagementZoneRuleConditionDcrumDecoderComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionDcrumDecoderComparison {
+		return v.DcrumDecoderComparisons
+	}).(ManagementZoneRuleConditionDcrumDecoderComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) DcrumDecoders() ManagementZoneRuleConditionDcrumDecoderArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionDcrumDecoder { return v.DcrumDecoders }).(ManagementZoneRuleConditionDcrumDecoderArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) Entities() ManagementZoneRuleConditionEntityArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionEntity { return v.Entities }).(ManagementZoneRuleConditionEntityArrayOutput)
+}
+
+// Deprecated: You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) EntityIdComparisons() ManagementZoneRuleConditionEntityIdComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionEntityIdComparison {
+		return v.EntityIdComparisons
+	}).(ManagementZoneRuleConditionEntityIdComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) HostTeches() ManagementZoneRuleConditionHostTechArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionHostTech { return v.HostTeches }).(ManagementZoneRuleConditionHostTechArrayOutput)
+}
+
+// Deprecated: `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+func (o ManagementZoneRuleConditionOutput) HypervisorTypeComparisions() ManagementZoneRuleConditionHypervisorTypeComparisionArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionHypervisorTypeComparision {
+		return v.HypervisorTypeComparisions
+	}).(ManagementZoneRuleConditionHypervisorTypeComparisionArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) Hypervisors() ManagementZoneRuleConditionHypervisorArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionHypervisor { return v.Hypervisors }).(ManagementZoneRuleConditionHypervisorArrayOutput)
+}
+
+// Deprecated: You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) IndexedNameComparisons() ManagementZoneRuleConditionIndexedNameComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIndexedNameComparison {
+		return v.IndexedNameComparisons
+	}).(ManagementZoneRuleConditionIndexedNameComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) IndexedNames() ManagementZoneRuleConditionIndexedNameArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIndexedName { return v.IndexedNames }).(ManagementZoneRuleConditionIndexedNameArrayOutput)
+}
+
+// Deprecated: You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) IndexedStringComparisons() ManagementZoneRuleConditionIndexedStringComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIndexedStringComparison {
+		return v.IndexedStringComparisons
+	}).(ManagementZoneRuleConditionIndexedStringComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) IndexedStrings() ManagementZoneRuleConditionIndexedStringArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIndexedString {
+		return v.IndexedStrings
+	}).(ManagementZoneRuleConditionIndexedStringArrayOutput)
+}
+
+// Deprecated: You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) IndexedTagComparisons() ManagementZoneRuleConditionIndexedTagComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIndexedTagComparison {
+		return v.IndexedTagComparisons
+	}).(ManagementZoneRuleConditionIndexedTagComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) IndexedTags() ManagementZoneRuleConditionIndexedTagArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIndexedTag { return v.IndexedTags }).(ManagementZoneRuleConditionIndexedTagArrayOutput)
+}
+
+// Deprecated: You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) IntegerComparisons() ManagementZoneRuleConditionIntegerComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIntegerComparison {
+		return v.IntegerComparisons
+	}).(ManagementZoneRuleConditionIntegerComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) Integers() ManagementZoneRuleConditionIntegerArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionInteger { return v.Integers }).(ManagementZoneRuleConditionIntegerArrayOutput)
+}
+
+// Deprecated: You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) IpaddressComparisons() ManagementZoneRuleConditionIpaddressComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIpaddressComparison {
+		return v.IpaddressComparisons
+	}).(ManagementZoneRuleConditionIpaddressComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) Ipaddresses() ManagementZoneRuleConditionIpaddressArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionIpaddress { return v.Ipaddresses }).(ManagementZoneRuleConditionIpaddressArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) Keys() ManagementZoneRuleConditionKeyArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionKey { return v.Keys }).(ManagementZoneRuleConditionKeyArrayOutput)
+}
+
+// Deprecated: You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) MobilePlatformComparisons() ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionMobilePlatformComparison {
+		return v.MobilePlatformComparisons
+	}).(ManagementZoneRuleConditionMobilePlatformComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) MobilePlatforms() ManagementZoneRuleConditionMobilePlatformArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionMobilePlatform {
+		return v.MobilePlatforms
+	}).(ManagementZoneRuleConditionMobilePlatformArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) OsArches() ManagementZoneRuleConditionOsArchArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionOsArch { return v.OsArches }).(ManagementZoneRuleConditionOsArchArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) OsTypes() ManagementZoneRuleConditionOsTypeArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionOsType { return v.OsTypes }).(ManagementZoneRuleConditionOsTypeArrayOutput)
+}
+
+// Deprecated: You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) OsarchitectureComparisons() ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionOsarchitectureComparison {
+		return v.OsarchitectureComparisons
+	}).(ManagementZoneRuleConditionOsarchitectureComparisonArrayOutput)
+}
+
+// Deprecated: You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) OstypeComparisons() ManagementZoneRuleConditionOstypeComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionOstypeComparison {
+		return v.OstypeComparisons
+	}).(ManagementZoneRuleConditionOstypeComparisonArrayOutput)
+}
+
+// Deprecated: You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) PaasTypeComparisons() ManagementZoneRuleConditionPaasTypeComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionPaasTypeComparison {
+		return v.PaasTypeComparisons
+	}).(ManagementZoneRuleConditionPaasTypeComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) PaasTypes() ManagementZoneRuleConditionPaasTypeArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionPaasType { return v.PaasTypes }).(ManagementZoneRuleConditionPaasTypeArrayOutput)
+}
+
+// Deprecated: 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
+func (o ManagementZoneRuleConditionOutput) ProcessMetadataConditionKeys() ManagementZoneRuleConditionProcessMetadataConditionKeyArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionProcessMetadataConditionKey {
+		return v.ProcessMetadataConditionKeys
+	}).(ManagementZoneRuleConditionProcessMetadataConditionKeyArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) ProcessMetadatas() ManagementZoneRuleConditionProcessMetadataArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionProcessMetadata {
+		return v.ProcessMetadatas
+	}).(ManagementZoneRuleConditionProcessMetadataArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) ServiceTopologies() ManagementZoneRuleConditionServiceTopologyArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionServiceTopology {
+		return v.ServiceTopologies
+	}).(ManagementZoneRuleConditionServiceTopologyArrayOutput)
+}
+
+// Deprecated: You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) ServiceTopologyComparisons() ManagementZoneRuleConditionServiceTopologyComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionServiceTopologyComparison {
+		return v.ServiceTopologyComparisons
+	}).(ManagementZoneRuleConditionServiceTopologyComparisonArrayOutput)
+}
+
+// Deprecated: You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) ServiceTypeComparisons() ManagementZoneRuleConditionServiceTypeComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionServiceTypeComparison {
+		return v.ServiceTypeComparisons
+	}).(ManagementZoneRuleConditionServiceTypeComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) ServiceTypes() ManagementZoneRuleConditionServiceTypeArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionServiceType { return v.ServiceTypes }).(ManagementZoneRuleConditionServiceTypeArrayOutput)
+}
+
+// Deprecated: You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) SimpleHostTechComparisons() ManagementZoneRuleConditionSimpleHostTechComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionSimpleHostTechComparison {
+		return v.SimpleHostTechComparisons
+	}).(ManagementZoneRuleConditionSimpleHostTechComparisonArrayOutput)
+}
+
+// Deprecated: You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) SimpleTechComparisons() ManagementZoneRuleConditionSimpleTechComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionSimpleTechComparison {
+		return v.SimpleTechComparisons
+	}).(ManagementZoneRuleConditionSimpleTechComparisonArrayOutput)
+}
+
+// Deprecated: You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) StringComparisons() ManagementZoneRuleConditionStringComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionStringComparison {
+		return v.StringComparisons
+	}).(ManagementZoneRuleConditionStringComparisonArrayOutput)
+}
+
+// Deprecated: 'string_condition_key' is deprecated. You should use 'string_key'
+func (o ManagementZoneRuleConditionOutput) StringConditionKeys() ManagementZoneRuleConditionStringConditionKeyArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionStringConditionKey {
+		return v.StringConditionKeys
+	}).(ManagementZoneRuleConditionStringConditionKeyArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) StringKeys() ManagementZoneRuleConditionStringKeyArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionStringKey { return v.StringKeys }).(ManagementZoneRuleConditionStringKeyArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) Strings() ManagementZoneRuleConditionStringArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionString { return v.Strings }).(ManagementZoneRuleConditionStringArrayOutput)
+}
+
+// Deprecated: You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) SyntheticEngineTypeComparisons() ManagementZoneRuleConditionSyntheticEngineTypeComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionSyntheticEngineTypeComparison {
+		return v.SyntheticEngineTypeComparisons
+	}).(ManagementZoneRuleConditionSyntheticEngineTypeComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) SyntheticEngines() ManagementZoneRuleConditionSyntheticEngineArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionSyntheticEngine {
+		return v.SyntheticEngines
+	}).(ManagementZoneRuleConditionSyntheticEngineArrayOutput)
+}
+
+// Deprecated: You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
+func (o ManagementZoneRuleConditionOutput) TagComparisons() ManagementZoneRuleConditionTagComparisonArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionTagComparison {
+		return v.TagComparisons
+	}).(ManagementZoneRuleConditionTagComparisonArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) Tags() ManagementZoneRuleConditionTagArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionTag { return v.Tags }).(ManagementZoneRuleConditionTagArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) Teches() ManagementZoneRuleConditionTechArrayOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) []ManagementZoneRuleConditionTech { return v.Teches }).(ManagementZoneRuleConditionTechArrayOutput)
+}
+
+func (o ManagementZoneRuleConditionOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleCondition) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleCondition)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionArrayOutput) ToManagementZoneRuleConditionArrayOutput() ManagementZoneRuleConditionArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionArrayOutput) ToManagementZoneRuleConditionArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleCondition {
+		return vs[0].([]ManagementZoneRuleCondition)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionOutput)
+}
+
+type ManagementZoneRuleConditionApplicationType struct {
+	Negate   *bool   `pulumi:"negate"`
+	Operator string  `pulumi:"operator"`
+	Unknowns *string `pulumi:"unknowns"`
+	Value    *string `pulumi:"value"`
+}
+
+// ManagementZoneRuleConditionApplicationTypeInput is an input type that accepts ManagementZoneRuleConditionApplicationTypeArgs and ManagementZoneRuleConditionApplicationTypeOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionApplicationTypeInput` via:
+//
+//	ManagementZoneRuleConditionApplicationTypeArgs{...}
+type ManagementZoneRuleConditionApplicationTypeInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionApplicationTypeOutput() ManagementZoneRuleConditionApplicationTypeOutput
+	ToManagementZoneRuleConditionApplicationTypeOutputWithContext(context.Context) ManagementZoneRuleConditionApplicationTypeOutput
+}
+
+type ManagementZoneRuleConditionApplicationTypeArgs struct {
+	Negate   pulumi.BoolPtrInput   `pulumi:"negate"`
+	Operator pulumi.StringInput    `pulumi:"operator"`
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	Value    pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ManagementZoneRuleConditionApplicationTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionApplicationType)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionApplicationTypeArgs) ToManagementZoneRuleConditionApplicationTypeOutput() ManagementZoneRuleConditionApplicationTypeOutput {
+	return i.ToManagementZoneRuleConditionApplicationTypeOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionApplicationTypeArgs) ToManagementZoneRuleConditionApplicationTypeOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionApplicationTypeOutput)
+}
+
+// ManagementZoneRuleConditionApplicationTypeArrayInput is an input type that accepts ManagementZoneRuleConditionApplicationTypeArray and ManagementZoneRuleConditionApplicationTypeArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionApplicationTypeArrayInput` via:
+//
+//	ManagementZoneRuleConditionApplicationTypeArray{ ManagementZoneRuleConditionApplicationTypeArgs{...} }
+type ManagementZoneRuleConditionApplicationTypeArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionApplicationTypeArrayOutput() ManagementZoneRuleConditionApplicationTypeArrayOutput
+	ToManagementZoneRuleConditionApplicationTypeArrayOutputWithContext(context.Context) ManagementZoneRuleConditionApplicationTypeArrayOutput
+}
+
+type ManagementZoneRuleConditionApplicationTypeArray []ManagementZoneRuleConditionApplicationTypeInput
+
+func (ManagementZoneRuleConditionApplicationTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionApplicationType)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionApplicationTypeArray) ToManagementZoneRuleConditionApplicationTypeArrayOutput() ManagementZoneRuleConditionApplicationTypeArrayOutput {
+	return i.ToManagementZoneRuleConditionApplicationTypeArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionApplicationTypeArray) ToManagementZoneRuleConditionApplicationTypeArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionApplicationTypeArrayOutput)
+}
+
+type ManagementZoneRuleConditionApplicationTypeOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionApplicationTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionApplicationType)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeOutput) ToManagementZoneRuleConditionApplicationTypeOutput() ManagementZoneRuleConditionApplicationTypeOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeOutput) ToManagementZoneRuleConditionApplicationTypeOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationType) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationType) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationType) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationType) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionApplicationTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionApplicationTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionApplicationType)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeArrayOutput) ToManagementZoneRuleConditionApplicationTypeArrayOutput() ManagementZoneRuleConditionApplicationTypeArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeArrayOutput) ToManagementZoneRuleConditionApplicationTypeArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionApplicationTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionApplicationType {
+		return vs[0].([]ManagementZoneRuleConditionApplicationType)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionApplicationTypeOutput)
+}
+
+type ManagementZoneRuleConditionApplicationTypeComparison struct {
+	Negate   *bool  `pulumi:"negate"`
+	Operator string `pulumi:"operator"`
+	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+	Type     *string `pulumi:"type"`
+	Unknowns *string `pulumi:"unknowns"`
+	Value    *string `pulumi:"value"`
+}
+
+// ManagementZoneRuleConditionApplicationTypeComparisonInput is an input type that accepts ManagementZoneRuleConditionApplicationTypeComparisonArgs and ManagementZoneRuleConditionApplicationTypeComparisonOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionApplicationTypeComparisonInput` via:
+//
+//	ManagementZoneRuleConditionApplicationTypeComparisonArgs{...}
+type ManagementZoneRuleConditionApplicationTypeComparisonInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionApplicationTypeComparisonOutput() ManagementZoneRuleConditionApplicationTypeComparisonOutput
+	ToManagementZoneRuleConditionApplicationTypeComparisonOutputWithContext(context.Context) ManagementZoneRuleConditionApplicationTypeComparisonOutput
+}
+
+type ManagementZoneRuleConditionApplicationTypeComparisonArgs struct {
+	Negate   pulumi.BoolPtrInput `pulumi:"negate"`
+	Operator pulumi.StringInput  `pulumi:"operator"`
+	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+	Type     pulumi.StringPtrInput `pulumi:"type"`
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	Value    pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ManagementZoneRuleConditionApplicationTypeComparisonArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionApplicationTypeComparison)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionApplicationTypeComparisonArgs) ToManagementZoneRuleConditionApplicationTypeComparisonOutput() ManagementZoneRuleConditionApplicationTypeComparisonOutput {
+	return i.ToManagementZoneRuleConditionApplicationTypeComparisonOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionApplicationTypeComparisonArgs) ToManagementZoneRuleConditionApplicationTypeComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeComparisonOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionApplicationTypeComparisonOutput)
+}
+
+// ManagementZoneRuleConditionApplicationTypeComparisonArrayInput is an input type that accepts ManagementZoneRuleConditionApplicationTypeComparisonArray and ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionApplicationTypeComparisonArrayInput` via:
+//
+//	ManagementZoneRuleConditionApplicationTypeComparisonArray{ ManagementZoneRuleConditionApplicationTypeComparisonArgs{...} }
+type ManagementZoneRuleConditionApplicationTypeComparisonArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionApplicationTypeComparisonArrayOutput() ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput
+	ToManagementZoneRuleConditionApplicationTypeComparisonArrayOutputWithContext(context.Context) ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput
+}
+
+type ManagementZoneRuleConditionApplicationTypeComparisonArray []ManagementZoneRuleConditionApplicationTypeComparisonInput
+
+func (ManagementZoneRuleConditionApplicationTypeComparisonArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionApplicationTypeComparison)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionApplicationTypeComparisonArray) ToManagementZoneRuleConditionApplicationTypeComparisonArrayOutput() ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput {
+	return i.ToManagementZoneRuleConditionApplicationTypeComparisonArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionApplicationTypeComparisonArray) ToManagementZoneRuleConditionApplicationTypeComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput)
+}
+
+type ManagementZoneRuleConditionApplicationTypeComparisonOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionApplicationTypeComparisonOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionApplicationTypeComparison)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeComparisonOutput) ToManagementZoneRuleConditionApplicationTypeComparisonOutput() ManagementZoneRuleConditionApplicationTypeComparisonOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeComparisonOutput) ToManagementZoneRuleConditionApplicationTypeComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeComparisonOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeComparisonOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationTypeComparison) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeComparisonOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationTypeComparison) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+func (o ManagementZoneRuleConditionApplicationTypeComparisonOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationTypeComparison) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeComparisonOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationTypeComparison) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeComparisonOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionApplicationTypeComparison) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionApplicationTypeComparison)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput) ToManagementZoneRuleConditionApplicationTypeComparisonArrayOutput() ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput) ToManagementZoneRuleConditionApplicationTypeComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionApplicationTypeComparisonOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionApplicationTypeComparison {
+		return vs[0].([]ManagementZoneRuleConditionApplicationTypeComparison)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionApplicationTypeComparisonOutput)
+}
+
+type ManagementZoneRuleConditionAzureComputeMode struct {
+	Negate   *bool   `pulumi:"negate"`
+	Operator string  `pulumi:"operator"`
+	Unknowns *string `pulumi:"unknowns"`
+	Value    *string `pulumi:"value"`
+}
+
+// ManagementZoneRuleConditionAzureComputeModeInput is an input type that accepts ManagementZoneRuleConditionAzureComputeModeArgs and ManagementZoneRuleConditionAzureComputeModeOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionAzureComputeModeInput` via:
+//
+//	ManagementZoneRuleConditionAzureComputeModeArgs{...}
+type ManagementZoneRuleConditionAzureComputeModeInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionAzureComputeModeOutput() ManagementZoneRuleConditionAzureComputeModeOutput
+	ToManagementZoneRuleConditionAzureComputeModeOutputWithContext(context.Context) ManagementZoneRuleConditionAzureComputeModeOutput
+}
+
+type ManagementZoneRuleConditionAzureComputeModeArgs struct {
+	Negate   pulumi.BoolPtrInput   `pulumi:"negate"`
+	Operator pulumi.StringInput    `pulumi:"operator"`
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	Value    pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ManagementZoneRuleConditionAzureComputeModeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeMode)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionAzureComputeModeArgs) ToManagementZoneRuleConditionAzureComputeModeOutput() ManagementZoneRuleConditionAzureComputeModeOutput {
+	return i.ToManagementZoneRuleConditionAzureComputeModeOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionAzureComputeModeArgs) ToManagementZoneRuleConditionAzureComputeModeOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureComputeModeOutput)
+}
+
+// ManagementZoneRuleConditionAzureComputeModeArrayInput is an input type that accepts ManagementZoneRuleConditionAzureComputeModeArray and ManagementZoneRuleConditionAzureComputeModeArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionAzureComputeModeArrayInput` via:
+//
+//	ManagementZoneRuleConditionAzureComputeModeArray{ ManagementZoneRuleConditionAzureComputeModeArgs{...} }
+type ManagementZoneRuleConditionAzureComputeModeArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionAzureComputeModeArrayOutput() ManagementZoneRuleConditionAzureComputeModeArrayOutput
+	ToManagementZoneRuleConditionAzureComputeModeArrayOutputWithContext(context.Context) ManagementZoneRuleConditionAzureComputeModeArrayOutput
+}
+
+type ManagementZoneRuleConditionAzureComputeModeArray []ManagementZoneRuleConditionAzureComputeModeInput
+
+func (ManagementZoneRuleConditionAzureComputeModeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureComputeMode)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionAzureComputeModeArray) ToManagementZoneRuleConditionAzureComputeModeArrayOutput() ManagementZoneRuleConditionAzureComputeModeArrayOutput {
+	return i.ToManagementZoneRuleConditionAzureComputeModeArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionAzureComputeModeArray) ToManagementZoneRuleConditionAzureComputeModeArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureComputeModeArrayOutput)
+}
+
+type ManagementZoneRuleConditionAzureComputeModeOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionAzureComputeModeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeMode)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeOutput) ToManagementZoneRuleConditionAzureComputeModeOutput() ManagementZoneRuleConditionAzureComputeModeOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeOutput) ToManagementZoneRuleConditionAzureComputeModeOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeMode) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeMode) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeMode) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeMode) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionAzureComputeModeArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionAzureComputeModeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureComputeMode)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeArrayOutput) ToManagementZoneRuleConditionAzureComputeModeArrayOutput() ManagementZoneRuleConditionAzureComputeModeArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeArrayOutput) ToManagementZoneRuleConditionAzureComputeModeArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionAzureComputeModeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionAzureComputeMode {
+		return vs[0].([]ManagementZoneRuleConditionAzureComputeMode)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionAzureComputeModeOutput)
+}
+
+type ManagementZoneRuleConditionAzureComputeModeComparison struct {
+	Negate   *bool   `pulumi:"negate"`
+	Operator string  `pulumi:"operator"`
+	Unknowns *string `pulumi:"unknowns"`
+	Value    *string `pulumi:"value"`
+}
+
+// ManagementZoneRuleConditionAzureComputeModeComparisonInput is an input type that accepts ManagementZoneRuleConditionAzureComputeModeComparisonArgs and ManagementZoneRuleConditionAzureComputeModeComparisonOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionAzureComputeModeComparisonInput` via:
+//
+//	ManagementZoneRuleConditionAzureComputeModeComparisonArgs{...}
+type ManagementZoneRuleConditionAzureComputeModeComparisonInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionAzureComputeModeComparisonOutput() ManagementZoneRuleConditionAzureComputeModeComparisonOutput
+	ToManagementZoneRuleConditionAzureComputeModeComparisonOutputWithContext(context.Context) ManagementZoneRuleConditionAzureComputeModeComparisonOutput
+}
+
+type ManagementZoneRuleConditionAzureComputeModeComparisonArgs struct {
+	Negate   pulumi.BoolPtrInput   `pulumi:"negate"`
+	Operator pulumi.StringInput    `pulumi:"operator"`
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	Value    pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ManagementZoneRuleConditionAzureComputeModeComparisonArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeModeComparison)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionAzureComputeModeComparisonArgs) ToManagementZoneRuleConditionAzureComputeModeComparisonOutput() ManagementZoneRuleConditionAzureComputeModeComparisonOutput {
+	return i.ToManagementZoneRuleConditionAzureComputeModeComparisonOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionAzureComputeModeComparisonArgs) ToManagementZoneRuleConditionAzureComputeModeComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeComparisonOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureComputeModeComparisonOutput)
+}
+
+// ManagementZoneRuleConditionAzureComputeModeComparisonArrayInput is an input type that accepts ManagementZoneRuleConditionAzureComputeModeComparisonArray and ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionAzureComputeModeComparisonArrayInput` via:
+//
+//	ManagementZoneRuleConditionAzureComputeModeComparisonArray{ ManagementZoneRuleConditionAzureComputeModeComparisonArgs{...} }
+type ManagementZoneRuleConditionAzureComputeModeComparisonArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput() ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput
+	ToManagementZoneRuleConditionAzureComputeModeComparisonArrayOutputWithContext(context.Context) ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput
+}
+
+type ManagementZoneRuleConditionAzureComputeModeComparisonArray []ManagementZoneRuleConditionAzureComputeModeComparisonInput
+
+func (ManagementZoneRuleConditionAzureComputeModeComparisonArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureComputeModeComparison)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionAzureComputeModeComparisonArray) ToManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput() ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput {
+	return i.ToManagementZoneRuleConditionAzureComputeModeComparisonArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionAzureComputeModeComparisonArray) ToManagementZoneRuleConditionAzureComputeModeComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput)
+}
+
+type ManagementZoneRuleConditionAzureComputeModeComparisonOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionAzureComputeModeComparisonOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeModeComparison)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeComparisonOutput) ToManagementZoneRuleConditionAzureComputeModeComparisonOutput() ManagementZoneRuleConditionAzureComputeModeComparisonOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeComparisonOutput) ToManagementZoneRuleConditionAzureComputeModeComparisonOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeComparisonOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeComparisonOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeModeComparison) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeComparisonOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeModeComparison) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeComparisonOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeModeComparison) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeComparisonOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureComputeModeComparison) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureComputeModeComparison)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput) ToManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput() ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput) ToManagementZoneRuleConditionAzureComputeModeComparisonArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionAzureComputeModeComparisonOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionAzureComputeModeComparison {
+		return vs[0].([]ManagementZoneRuleConditionAzureComputeModeComparison)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionAzureComputeModeComparisonOutput)
+}
+
+type ManagementZoneRuleConditionAzureSkuComparision struct {
+	Negate   *bool  `pulumi:"negate"`
+	Operator string `pulumi:"operator"`
+	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+	Type     *string `pulumi:"type"`
+	Unknowns *string `pulumi:"unknowns"`
+	Value    *string `pulumi:"value"`
+}
+
+// ManagementZoneRuleConditionAzureSkuComparisionInput is an input type that accepts ManagementZoneRuleConditionAzureSkuComparisionArgs and ManagementZoneRuleConditionAzureSkuComparisionOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionAzureSkuComparisionInput` via:
+//
+//	ManagementZoneRuleConditionAzureSkuComparisionArgs{...}
+type ManagementZoneRuleConditionAzureSkuComparisionInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionAzureSkuComparisionOutput() ManagementZoneRuleConditionAzureSkuComparisionOutput
+	ToManagementZoneRuleConditionAzureSkuComparisionOutputWithContext(context.Context) ManagementZoneRuleConditionAzureSkuComparisionOutput
+}
+
+type ManagementZoneRuleConditionAzureSkuComparisionArgs struct {
+	Negate   pulumi.BoolPtrInput `pulumi:"negate"`
+	Operator pulumi.StringInput  `pulumi:"operator"`
+	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+	Type     pulumi.StringPtrInput `pulumi:"type"`
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	Value    pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ManagementZoneRuleConditionAzureSkuComparisionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionAzureSkuComparision)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionAzureSkuComparisionArgs) ToManagementZoneRuleConditionAzureSkuComparisionOutput() ManagementZoneRuleConditionAzureSkuComparisionOutput {
+	return i.ToManagementZoneRuleConditionAzureSkuComparisionOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionAzureSkuComparisionArgs) ToManagementZoneRuleConditionAzureSkuComparisionOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkuComparisionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureSkuComparisionOutput)
+}
+
+// ManagementZoneRuleConditionAzureSkuComparisionArrayInput is an input type that accepts ManagementZoneRuleConditionAzureSkuComparisionArray and ManagementZoneRuleConditionAzureSkuComparisionArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionAzureSkuComparisionArrayInput` via:
+//
+//	ManagementZoneRuleConditionAzureSkuComparisionArray{ ManagementZoneRuleConditionAzureSkuComparisionArgs{...} }
+type ManagementZoneRuleConditionAzureSkuComparisionArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionAzureSkuComparisionArrayOutput() ManagementZoneRuleConditionAzureSkuComparisionArrayOutput
+	ToManagementZoneRuleConditionAzureSkuComparisionArrayOutputWithContext(context.Context) ManagementZoneRuleConditionAzureSkuComparisionArrayOutput
+}
+
+type ManagementZoneRuleConditionAzureSkuComparisionArray []ManagementZoneRuleConditionAzureSkuComparisionInput
+
+func (ManagementZoneRuleConditionAzureSkuComparisionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureSkuComparision)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionAzureSkuComparisionArray) ToManagementZoneRuleConditionAzureSkuComparisionArrayOutput() ManagementZoneRuleConditionAzureSkuComparisionArrayOutput {
+	return i.ToManagementZoneRuleConditionAzureSkuComparisionArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionAzureSkuComparisionArray) ToManagementZoneRuleConditionAzureSkuComparisionArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkuComparisionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureSkuComparisionArrayOutput)
+}
+
+type ManagementZoneRuleConditionAzureSkuComparisionOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionAzureSkuComparisionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionAzureSkuComparision)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionAzureSkuComparisionOutput) ToManagementZoneRuleConditionAzureSkuComparisionOutput() ManagementZoneRuleConditionAzureSkuComparisionOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureSkuComparisionOutput) ToManagementZoneRuleConditionAzureSkuComparisionOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkuComparisionOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureSkuComparisionOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkuComparision) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionAzureSkuComparisionOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkuComparision) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+func (o ManagementZoneRuleConditionAzureSkuComparisionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkuComparision) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionAzureSkuComparisionOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkuComparision) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionAzureSkuComparisionOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkuComparision) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionAzureSkuComparisionArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionAzureSkuComparisionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureSkuComparision)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionAzureSkuComparisionArrayOutput) ToManagementZoneRuleConditionAzureSkuComparisionArrayOutput() ManagementZoneRuleConditionAzureSkuComparisionArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureSkuComparisionArrayOutput) ToManagementZoneRuleConditionAzureSkuComparisionArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkuComparisionArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureSkuComparisionArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionAzureSkuComparisionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionAzureSkuComparision {
+		return vs[0].([]ManagementZoneRuleConditionAzureSkuComparision)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionAzureSkuComparisionOutput)
+}
+
+type ManagementZoneRuleConditionAzureSkus struct {
+	Negate   *bool   `pulumi:"negate"`
+	Operator string  `pulumi:"operator"`
+	Unknowns *string `pulumi:"unknowns"`
+	Value    *string `pulumi:"value"`
+}
+
+// ManagementZoneRuleConditionAzureSkusInput is an input type that accepts ManagementZoneRuleConditionAzureSkusArgs and ManagementZoneRuleConditionAzureSkusOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionAzureSkusInput` via:
+//
+//	ManagementZoneRuleConditionAzureSkusArgs{...}
+type ManagementZoneRuleConditionAzureSkusInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionAzureSkusOutput() ManagementZoneRuleConditionAzureSkusOutput
+	ToManagementZoneRuleConditionAzureSkusOutputWithContext(context.Context) ManagementZoneRuleConditionAzureSkusOutput
+}
+
+type ManagementZoneRuleConditionAzureSkusArgs struct {
+	Negate   pulumi.BoolPtrInput   `pulumi:"negate"`
+	Operator pulumi.StringInput    `pulumi:"operator"`
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	Value    pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ManagementZoneRuleConditionAzureSkusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionAzureSkus)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionAzureSkusArgs) ToManagementZoneRuleConditionAzureSkusOutput() ManagementZoneRuleConditionAzureSkusOutput {
+	return i.ToManagementZoneRuleConditionAzureSkusOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionAzureSkusArgs) ToManagementZoneRuleConditionAzureSkusOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureSkusOutput)
+}
+
+// ManagementZoneRuleConditionAzureSkusArrayInput is an input type that accepts ManagementZoneRuleConditionAzureSkusArray and ManagementZoneRuleConditionAzureSkusArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionAzureSkusArrayInput` via:
+//
+//	ManagementZoneRuleConditionAzureSkusArray{ ManagementZoneRuleConditionAzureSkusArgs{...} }
+type ManagementZoneRuleConditionAzureSkusArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionAzureSkusArrayOutput() ManagementZoneRuleConditionAzureSkusArrayOutput
+	ToManagementZoneRuleConditionAzureSkusArrayOutputWithContext(context.Context) ManagementZoneRuleConditionAzureSkusArrayOutput
+}
+
+type ManagementZoneRuleConditionAzureSkusArray []ManagementZoneRuleConditionAzureSkusInput
+
+func (ManagementZoneRuleConditionAzureSkusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureSkus)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionAzureSkusArray) ToManagementZoneRuleConditionAzureSkusArrayOutput() ManagementZoneRuleConditionAzureSkusArrayOutput {
+	return i.ToManagementZoneRuleConditionAzureSkusArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionAzureSkusArray) ToManagementZoneRuleConditionAzureSkusArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionAzureSkusArrayOutput)
+}
+
+type ManagementZoneRuleConditionAzureSkusOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionAzureSkusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionAzureSkus)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionAzureSkusOutput) ToManagementZoneRuleConditionAzureSkusOutput() ManagementZoneRuleConditionAzureSkusOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureSkusOutput) ToManagementZoneRuleConditionAzureSkusOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkusOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureSkusOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkus) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionAzureSkusOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkus) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+func (o ManagementZoneRuleConditionAzureSkusOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkus) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionAzureSkusOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionAzureSkus) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionAzureSkusArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionAzureSkusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionAzureSkus)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionAzureSkusArrayOutput) ToManagementZoneRuleConditionAzureSkusArrayOutput() ManagementZoneRuleConditionAzureSkusArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureSkusArrayOutput) ToManagementZoneRuleConditionAzureSkusArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionAzureSkusArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionAzureSkusArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionAzureSkusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionAzureSkus {
+		return vs[0].([]ManagementZoneRuleConditionAzureSkus)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionAzureSkusOutput)
+}
+
+type ManagementZoneRuleConditionBaseComparisonBasic struct {
+	Negate   *bool   `pulumi:"negate"`
+	Type     string  `pulumi:"type"`
+	Unknowns *string `pulumi:"unknowns"`
+}
+
+// ManagementZoneRuleConditionBaseComparisonBasicInput is an input type that accepts ManagementZoneRuleConditionBaseComparisonBasicArgs and ManagementZoneRuleConditionBaseComparisonBasicOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionBaseComparisonBasicInput` via:
+//
+//	ManagementZoneRuleConditionBaseComparisonBasicArgs{...}
+type ManagementZoneRuleConditionBaseComparisonBasicInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionBaseComparisonBasicOutput() ManagementZoneRuleConditionBaseComparisonBasicOutput
+	ToManagementZoneRuleConditionBaseComparisonBasicOutputWithContext(context.Context) ManagementZoneRuleConditionBaseComparisonBasicOutput
+}
+
+type ManagementZoneRuleConditionBaseComparisonBasicArgs struct {
+	Negate   pulumi.BoolPtrInput   `pulumi:"negate"`
+	Type     pulumi.StringInput    `pulumi:"type"`
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+}
+
+func (ManagementZoneRuleConditionBaseComparisonBasicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionBaseComparisonBasic)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionBaseComparisonBasicArgs) ToManagementZoneRuleConditionBaseComparisonBasicOutput() ManagementZoneRuleConditionBaseComparisonBasicOutput {
+	return i.ToManagementZoneRuleConditionBaseComparisonBasicOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionBaseComparisonBasicArgs) ToManagementZoneRuleConditionBaseComparisonBasicOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseComparisonBasicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBaseComparisonBasicOutput)
+}
+
+// ManagementZoneRuleConditionBaseComparisonBasicArrayInput is an input type that accepts ManagementZoneRuleConditionBaseComparisonBasicArray and ManagementZoneRuleConditionBaseComparisonBasicArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionBaseComparisonBasicArrayInput` via:
+//
+//	ManagementZoneRuleConditionBaseComparisonBasicArray{ ManagementZoneRuleConditionBaseComparisonBasicArgs{...} }
+type ManagementZoneRuleConditionBaseComparisonBasicArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionBaseComparisonBasicArrayOutput() ManagementZoneRuleConditionBaseComparisonBasicArrayOutput
+	ToManagementZoneRuleConditionBaseComparisonBasicArrayOutputWithContext(context.Context) ManagementZoneRuleConditionBaseComparisonBasicArrayOutput
+}
+
+type ManagementZoneRuleConditionBaseComparisonBasicArray []ManagementZoneRuleConditionBaseComparisonBasicInput
+
+func (ManagementZoneRuleConditionBaseComparisonBasicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionBaseComparisonBasic)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionBaseComparisonBasicArray) ToManagementZoneRuleConditionBaseComparisonBasicArrayOutput() ManagementZoneRuleConditionBaseComparisonBasicArrayOutput {
+	return i.ToManagementZoneRuleConditionBaseComparisonBasicArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionBaseComparisonBasicArray) ToManagementZoneRuleConditionBaseComparisonBasicArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseComparisonBasicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBaseComparisonBasicArrayOutput)
+}
+
+type ManagementZoneRuleConditionBaseComparisonBasicOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionBaseComparisonBasicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionBaseComparisonBasic)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionBaseComparisonBasicOutput) ToManagementZoneRuleConditionBaseComparisonBasicOutput() ManagementZoneRuleConditionBaseComparisonBasicOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBaseComparisonBasicOutput) ToManagementZoneRuleConditionBaseComparisonBasicOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseComparisonBasicOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBaseComparisonBasicOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBaseComparisonBasic) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionBaseComparisonBasicOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBaseComparisonBasic) string { return v.Type }).(pulumi.StringOutput)
+}
+
+func (o ManagementZoneRuleConditionBaseComparisonBasicOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBaseComparisonBasic) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionBaseComparisonBasicArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionBaseComparisonBasicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionBaseComparisonBasic)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionBaseComparisonBasicArrayOutput) ToManagementZoneRuleConditionBaseComparisonBasicArrayOutput() ManagementZoneRuleConditionBaseComparisonBasicArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBaseComparisonBasicArrayOutput) ToManagementZoneRuleConditionBaseComparisonBasicArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseComparisonBasicArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBaseComparisonBasicArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionBaseComparisonBasicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionBaseComparisonBasic {
+		return vs[0].([]ManagementZoneRuleConditionBaseComparisonBasic)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionBaseComparisonBasicOutput)
+}
+
+type ManagementZoneRuleConditionBaseConditionKey struct {
+	Attribute string  `pulumi:"attribute"`
+	Type      *string `pulumi:"type"`
+	Unknowns  *string `pulumi:"unknowns"`
+}
+
+// ManagementZoneRuleConditionBaseConditionKeyInput is an input type that accepts ManagementZoneRuleConditionBaseConditionKeyArgs and ManagementZoneRuleConditionBaseConditionKeyOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionBaseConditionKeyInput` via:
+//
+//	ManagementZoneRuleConditionBaseConditionKeyArgs{...}
+type ManagementZoneRuleConditionBaseConditionKeyInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionBaseConditionKeyOutput() ManagementZoneRuleConditionBaseConditionKeyOutput
+	ToManagementZoneRuleConditionBaseConditionKeyOutputWithContext(context.Context) ManagementZoneRuleConditionBaseConditionKeyOutput
+}
+
+type ManagementZoneRuleConditionBaseConditionKeyArgs struct {
+	Attribute pulumi.StringInput    `pulumi:"attribute"`
+	Type      pulumi.StringPtrInput `pulumi:"type"`
+	Unknowns  pulumi.StringPtrInput `pulumi:"unknowns"`
+}
+
+func (ManagementZoneRuleConditionBaseConditionKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionBaseConditionKey)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionBaseConditionKeyArgs) ToManagementZoneRuleConditionBaseConditionKeyOutput() ManagementZoneRuleConditionBaseConditionKeyOutput {
+	return i.ToManagementZoneRuleConditionBaseConditionKeyOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionBaseConditionKeyArgs) ToManagementZoneRuleConditionBaseConditionKeyOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseConditionKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBaseConditionKeyOutput)
+}
+
+// ManagementZoneRuleConditionBaseConditionKeyArrayInput is an input type that accepts ManagementZoneRuleConditionBaseConditionKeyArray and ManagementZoneRuleConditionBaseConditionKeyArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionBaseConditionKeyArrayInput` via:
+//
+//	ManagementZoneRuleConditionBaseConditionKeyArray{ ManagementZoneRuleConditionBaseConditionKeyArgs{...} }
+type ManagementZoneRuleConditionBaseConditionKeyArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionBaseConditionKeyArrayOutput() ManagementZoneRuleConditionBaseConditionKeyArrayOutput
+	ToManagementZoneRuleConditionBaseConditionKeyArrayOutputWithContext(context.Context) ManagementZoneRuleConditionBaseConditionKeyArrayOutput
+}
+
+type ManagementZoneRuleConditionBaseConditionKeyArray []ManagementZoneRuleConditionBaseConditionKeyInput
+
+func (ManagementZoneRuleConditionBaseConditionKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionBaseConditionKey)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionBaseConditionKeyArray) ToManagementZoneRuleConditionBaseConditionKeyArrayOutput() ManagementZoneRuleConditionBaseConditionKeyArrayOutput {
+	return i.ToManagementZoneRuleConditionBaseConditionKeyArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionBaseConditionKeyArray) ToManagementZoneRuleConditionBaseConditionKeyArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseConditionKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBaseConditionKeyArrayOutput)
+}
+
+type ManagementZoneRuleConditionBaseConditionKeyOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionBaseConditionKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionBaseConditionKey)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionBaseConditionKeyOutput) ToManagementZoneRuleConditionBaseConditionKeyOutput() ManagementZoneRuleConditionBaseConditionKeyOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBaseConditionKeyOutput) ToManagementZoneRuleConditionBaseConditionKeyOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseConditionKeyOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBaseConditionKeyOutput) Attribute() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBaseConditionKey) string { return v.Attribute }).(pulumi.StringOutput)
+}
+
+func (o ManagementZoneRuleConditionBaseConditionKeyOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBaseConditionKey) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionBaseConditionKeyOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBaseConditionKey) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionBaseConditionKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionBaseConditionKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionBaseConditionKey)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionBaseConditionKeyArrayOutput) ToManagementZoneRuleConditionBaseConditionKeyArrayOutput() ManagementZoneRuleConditionBaseConditionKeyArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBaseConditionKeyArrayOutput) ToManagementZoneRuleConditionBaseConditionKeyArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBaseConditionKeyArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBaseConditionKeyArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionBaseConditionKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionBaseConditionKey {
+		return vs[0].([]ManagementZoneRuleConditionBaseConditionKey)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionBaseConditionKeyOutput)
+}
+
+type ManagementZoneRuleConditionBitness struct {
+	Negate   *bool   `pulumi:"negate"`
+	Operator string  `pulumi:"operator"`
+	Unknowns *string `pulumi:"unknowns"`
+	Value    *string `pulumi:"value"`
+}
+
+// ManagementZoneRuleConditionBitnessInput is an input type that accepts ManagementZoneRuleConditionBitnessArgs and ManagementZoneRuleConditionBitnessOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionBitnessInput` via:
+//
+//	ManagementZoneRuleConditionBitnessArgs{...}
+type ManagementZoneRuleConditionBitnessInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionBitnessOutput() ManagementZoneRuleConditionBitnessOutput
+	ToManagementZoneRuleConditionBitnessOutputWithContext(context.Context) ManagementZoneRuleConditionBitnessOutput
+}
+
+type ManagementZoneRuleConditionBitnessArgs struct {
+	Negate   pulumi.BoolPtrInput   `pulumi:"negate"`
+	Operator pulumi.StringInput    `pulumi:"operator"`
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	Value    pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ManagementZoneRuleConditionBitnessArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionBitness)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionBitnessArgs) ToManagementZoneRuleConditionBitnessOutput() ManagementZoneRuleConditionBitnessOutput {
+	return i.ToManagementZoneRuleConditionBitnessOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionBitnessArgs) ToManagementZoneRuleConditionBitnessOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBitnessOutput)
+}
+
+// ManagementZoneRuleConditionBitnessArrayInput is an input type that accepts ManagementZoneRuleConditionBitnessArray and ManagementZoneRuleConditionBitnessArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionBitnessArrayInput` via:
+//
+//	ManagementZoneRuleConditionBitnessArray{ ManagementZoneRuleConditionBitnessArgs{...} }
+type ManagementZoneRuleConditionBitnessArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionBitnessArrayOutput() ManagementZoneRuleConditionBitnessArrayOutput
+	ToManagementZoneRuleConditionBitnessArrayOutputWithContext(context.Context) ManagementZoneRuleConditionBitnessArrayOutput
+}
+
+type ManagementZoneRuleConditionBitnessArray []ManagementZoneRuleConditionBitnessInput
+
+func (ManagementZoneRuleConditionBitnessArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionBitness)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionBitnessArray) ToManagementZoneRuleConditionBitnessArrayOutput() ManagementZoneRuleConditionBitnessArrayOutput {
+	return i.ToManagementZoneRuleConditionBitnessArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionBitnessArray) ToManagementZoneRuleConditionBitnessArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBitnessArrayOutput)
+}
+
+type ManagementZoneRuleConditionBitnessOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionBitnessOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionBitness)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionBitnessOutput) ToManagementZoneRuleConditionBitnessOutput() ManagementZoneRuleConditionBitnessOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBitnessOutput) ToManagementZoneRuleConditionBitnessOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBitnessOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBitness) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionBitnessOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBitness) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+func (o ManagementZoneRuleConditionBitnessOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBitness) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionBitnessOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBitness) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionBitnessArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionBitnessArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionBitness)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionBitnessArrayOutput) ToManagementZoneRuleConditionBitnessArrayOutput() ManagementZoneRuleConditionBitnessArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBitnessArrayOutput) ToManagementZoneRuleConditionBitnessArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBitnessArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionBitnessOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionBitness {
+		return vs[0].([]ManagementZoneRuleConditionBitness)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionBitnessOutput)
+}
+
+type ManagementZoneRuleConditionBitnessComparision struct {
+	Negate   *bool  `pulumi:"negate"`
+	Operator string `pulumi:"operator"`
+	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+	Type     *string `pulumi:"type"`
+	Unknowns *string `pulumi:"unknowns"`
+	Value    *string `pulumi:"value"`
+}
+
+// ManagementZoneRuleConditionBitnessComparisionInput is an input type that accepts ManagementZoneRuleConditionBitnessComparisionArgs and ManagementZoneRuleConditionBitnessComparisionOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionBitnessComparisionInput` via:
+//
+//	ManagementZoneRuleConditionBitnessComparisionArgs{...}
+type ManagementZoneRuleConditionBitnessComparisionInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionBitnessComparisionOutput() ManagementZoneRuleConditionBitnessComparisionOutput
+	ToManagementZoneRuleConditionBitnessComparisionOutputWithContext(context.Context) ManagementZoneRuleConditionBitnessComparisionOutput
+}
+
+type ManagementZoneRuleConditionBitnessComparisionArgs struct {
+	Negate   pulumi.BoolPtrInput `pulumi:"negate"`
+	Operator pulumi.StringInput  `pulumi:"operator"`
+	// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+	Type     pulumi.StringPtrInput `pulumi:"type"`
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	Value    pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ManagementZoneRuleConditionBitnessComparisionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionBitnessComparision)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionBitnessComparisionArgs) ToManagementZoneRuleConditionBitnessComparisionOutput() ManagementZoneRuleConditionBitnessComparisionOutput {
+	return i.ToManagementZoneRuleConditionBitnessComparisionOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionBitnessComparisionArgs) ToManagementZoneRuleConditionBitnessComparisionOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessComparisionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBitnessComparisionOutput)
+}
+
+// ManagementZoneRuleConditionBitnessComparisionArrayInput is an input type that accepts ManagementZoneRuleConditionBitnessComparisionArray and ManagementZoneRuleConditionBitnessComparisionArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionBitnessComparisionArrayInput` via:
+//
+//	ManagementZoneRuleConditionBitnessComparisionArray{ ManagementZoneRuleConditionBitnessComparisionArgs{...} }
+type ManagementZoneRuleConditionBitnessComparisionArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionBitnessComparisionArrayOutput() ManagementZoneRuleConditionBitnessComparisionArrayOutput
+	ToManagementZoneRuleConditionBitnessComparisionArrayOutputWithContext(context.Context) ManagementZoneRuleConditionBitnessComparisionArrayOutput
+}
+
+type ManagementZoneRuleConditionBitnessComparisionArray []ManagementZoneRuleConditionBitnessComparisionInput
+
+func (ManagementZoneRuleConditionBitnessComparisionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionBitnessComparision)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionBitnessComparisionArray) ToManagementZoneRuleConditionBitnessComparisionArrayOutput() ManagementZoneRuleConditionBitnessComparisionArrayOutput {
+	return i.ToManagementZoneRuleConditionBitnessComparisionArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionBitnessComparisionArray) ToManagementZoneRuleConditionBitnessComparisionArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessComparisionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionBitnessComparisionArrayOutput)
+}
+
+type ManagementZoneRuleConditionBitnessComparisionOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionBitnessComparisionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionBitnessComparision)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionBitnessComparisionOutput) ToManagementZoneRuleConditionBitnessComparisionOutput() ManagementZoneRuleConditionBitnessComparisionOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBitnessComparisionOutput) ToManagementZoneRuleConditionBitnessComparisionOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessComparisionOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBitnessComparisionOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBitnessComparision) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionBitnessComparisionOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBitnessComparision) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// Deprecated: The value of the attribute type is implicit, therefore shouldn't get specified
+func (o ManagementZoneRuleConditionBitnessComparisionOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBitnessComparision) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionBitnessComparisionOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBitnessComparision) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionBitnessComparisionOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionBitnessComparision) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionBitnessComparisionArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionBitnessComparisionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionBitnessComparision)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionBitnessComparisionArrayOutput) ToManagementZoneRuleConditionBitnessComparisionArrayOutput() ManagementZoneRuleConditionBitnessComparisionArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBitnessComparisionArrayOutput) ToManagementZoneRuleConditionBitnessComparisionArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionBitnessComparisionArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionBitnessComparisionArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionBitnessComparisionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionBitnessComparision {
+		return vs[0].([]ManagementZoneRuleConditionBitnessComparision)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionBitnessComparisionOutput)
+}
+
+type ManagementZoneRuleConditionCloudType struct {
+	Negate   *bool   `pulumi:"negate"`
+	Operator string  `pulumi:"operator"`
+	Unknowns *string `pulumi:"unknowns"`
+	Value    *string `pulumi:"value"`
+}
+
+// ManagementZoneRuleConditionCloudTypeInput is an input type that accepts ManagementZoneRuleConditionCloudTypeArgs and ManagementZoneRuleConditionCloudTypeOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionCloudTypeInput` via:
+//
+//	ManagementZoneRuleConditionCloudTypeArgs{...}
+type ManagementZoneRuleConditionCloudTypeInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionCloudTypeOutput() ManagementZoneRuleConditionCloudTypeOutput
+	ToManagementZoneRuleConditionCloudTypeOutputWithContext(context.Context) ManagementZoneRuleConditionCloudTypeOutput
+}
+
+type ManagementZoneRuleConditionCloudTypeArgs struct {
+	Negate   pulumi.BoolPtrInput   `pulumi:"negate"`
+	Operator pulumi.StringInput    `pulumi:"operator"`
+	Unknowns pulumi.StringPtrInput `pulumi:"unknowns"`
+	Value    pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ManagementZoneRuleConditionCloudTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionCloudType)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionCloudTypeArgs) ToManagementZoneRuleConditionCloudTypeOutput() ManagementZoneRuleConditionCloudTypeOutput {
+	return i.ToManagementZoneRuleConditionCloudTypeOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionCloudTypeArgs) ToManagementZoneRuleConditionCloudTypeOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionCloudTypeOutput)
+}
+
+// ManagementZoneRuleConditionCloudTypeArrayInput is an input type that accepts ManagementZoneRuleConditionCloudTypeArray and ManagementZoneRuleConditionCloudTypeArrayOutput values.
+// You can construct a concrete instance of `ManagementZoneRuleConditionCloudTypeArrayInput` via:
+//
+//	ManagementZoneRuleConditionCloudTypeArray{ ManagementZoneRuleConditionCloudTypeArgs{...} }
+type ManagementZoneRuleConditionCloudTypeArrayInput interface {
+	pulumi.Input
+
+	ToManagementZoneRuleConditionCloudTypeArrayOutput() ManagementZoneRuleConditionCloudTypeArrayOutput
+	ToManagementZoneRuleConditionCloudTypeArrayOutputWithContext(context.Context) ManagementZoneRuleConditionCloudTypeArrayOutput
+}
+
+type ManagementZoneRuleConditionCloudTypeArray []ManagementZoneRuleConditionCloudTypeInput
+
+func (ManagementZoneRuleConditionCloudTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionCloudType)(nil)).Elem()
+}
+
+func (i ManagementZoneRuleConditionCloudTypeArray) ToManagementZoneRuleConditionCloudTypeArrayOutput() ManagementZoneRuleConditionCloudTypeArrayOutput {
+	return i.ToManagementZoneRuleConditionCloudTypeArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementZoneRuleConditionCloudTypeArray) ToManagementZoneRuleConditionCloudTypeArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementZoneRuleConditionCloudTypeArrayOutput)
+}
+
+type ManagementZoneRuleConditionCloudTypeOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionCloudTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementZoneRuleConditionCloudType)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionCloudTypeOutput) ToManagementZoneRuleConditionCloudTypeOutput() ManagementZoneRuleConditionCloudTypeOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionCloudTypeOutput) ToManagementZoneRuleConditionCloudTypeOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionCloudTypeOutput) Negate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionCloudType) *bool { return v.Negate }).(pulumi.BoolPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionCloudTypeOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionCloudType) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+func (o ManagementZoneRuleConditionCloudTypeOutput) Unknowns() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionCloudType) *string { return v.Unknowns }).(pulumi.StringPtrOutput)
+}
+
+func (o ManagementZoneRuleConditionCloudTypeOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementZoneRuleConditionCloudType) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ManagementZoneRuleConditionCloudTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementZoneRuleConditionCloudTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementZoneRuleConditionCloudType)(nil)).Elem()
+}
+
+func (o ManagementZoneRuleConditionCloudTypeArrayOutput) ToManagementZoneRuleConditionCloudTypeArrayOutput() ManagementZoneRuleConditionCloudTypeArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionCloudTypeArrayOutput) ToManagementZoneRuleConditionCloudTypeArrayOutputWithContext(ctx context.Context) ManagementZoneRuleConditionCloudTypeArrayOutput {
+	return o
+}
+
+func (o ManagementZoneRuleConditionCloudTypeArrayOutput) Index(i pulumi.IntInput) ManagementZoneRuleConditionCloudTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementZoneRuleConditionCloudType {
+		return vs[0].([]ManagementZoneRuleConditionCloudType)[vs[1].(int)]
+	}).(ManagementZoneRuleConditionCloudTypeOutput)
+}
+
 type ManagementZoneRuleConditionCloudTypeComparison struct {
 	Negate   *bool  `pulumi:"negate"`
 	Operator string `pulumi:"operator"`
@@ -51507,6 +53695,498 @@ func (o WebApplicationXhrActionApdexSettingsPtrOutput) ToleratedThreshold() pulu
 	}).(pulumi.IntPtrOutput)
 }
 
+type WebhookNotificationHeaders struct {
+	// An additional HTTP Header to include when sending requests
+	Headers []WebhookNotificationHeadersHeader `pulumi:"headers"`
+}
+
+// WebhookNotificationHeadersInput is an input type that accepts WebhookNotificationHeadersArgs and WebhookNotificationHeadersOutput values.
+// You can construct a concrete instance of `WebhookNotificationHeadersInput` via:
+//
+//	WebhookNotificationHeadersArgs{...}
+type WebhookNotificationHeadersInput interface {
+	pulumi.Input
+
+	ToWebhookNotificationHeadersOutput() WebhookNotificationHeadersOutput
+	ToWebhookNotificationHeadersOutputWithContext(context.Context) WebhookNotificationHeadersOutput
+}
+
+type WebhookNotificationHeadersArgs struct {
+	// An additional HTTP Header to include when sending requests
+	Headers WebhookNotificationHeadersHeaderArrayInput `pulumi:"headers"`
+}
+
+func (WebhookNotificationHeadersArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebhookNotificationHeaders)(nil)).Elem()
+}
+
+func (i WebhookNotificationHeadersArgs) ToWebhookNotificationHeadersOutput() WebhookNotificationHeadersOutput {
+	return i.ToWebhookNotificationHeadersOutputWithContext(context.Background())
+}
+
+func (i WebhookNotificationHeadersArgs) ToWebhookNotificationHeadersOutputWithContext(ctx context.Context) WebhookNotificationHeadersOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebhookNotificationHeadersOutput)
+}
+
+func (i WebhookNotificationHeadersArgs) ToWebhookNotificationHeadersPtrOutput() WebhookNotificationHeadersPtrOutput {
+	return i.ToWebhookNotificationHeadersPtrOutputWithContext(context.Background())
+}
+
+func (i WebhookNotificationHeadersArgs) ToWebhookNotificationHeadersPtrOutputWithContext(ctx context.Context) WebhookNotificationHeadersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebhookNotificationHeadersOutput).ToWebhookNotificationHeadersPtrOutputWithContext(ctx)
+}
+
+// WebhookNotificationHeadersPtrInput is an input type that accepts WebhookNotificationHeadersArgs, WebhookNotificationHeadersPtr and WebhookNotificationHeadersPtrOutput values.
+// You can construct a concrete instance of `WebhookNotificationHeadersPtrInput` via:
+//
+//	        WebhookNotificationHeadersArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebhookNotificationHeadersPtrInput interface {
+	pulumi.Input
+
+	ToWebhookNotificationHeadersPtrOutput() WebhookNotificationHeadersPtrOutput
+	ToWebhookNotificationHeadersPtrOutputWithContext(context.Context) WebhookNotificationHeadersPtrOutput
+}
+
+type webhookNotificationHeadersPtrType WebhookNotificationHeadersArgs
+
+func WebhookNotificationHeadersPtr(v *WebhookNotificationHeadersArgs) WebhookNotificationHeadersPtrInput {
+	return (*webhookNotificationHeadersPtrType)(v)
+}
+
+func (*webhookNotificationHeadersPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebhookNotificationHeaders)(nil)).Elem()
+}
+
+func (i *webhookNotificationHeadersPtrType) ToWebhookNotificationHeadersPtrOutput() WebhookNotificationHeadersPtrOutput {
+	return i.ToWebhookNotificationHeadersPtrOutputWithContext(context.Background())
+}
+
+func (i *webhookNotificationHeadersPtrType) ToWebhookNotificationHeadersPtrOutputWithContext(ctx context.Context) WebhookNotificationHeadersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebhookNotificationHeadersPtrOutput)
+}
+
+type WebhookNotificationHeadersOutput struct{ *pulumi.OutputState }
+
+func (WebhookNotificationHeadersOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebhookNotificationHeaders)(nil)).Elem()
+}
+
+func (o WebhookNotificationHeadersOutput) ToWebhookNotificationHeadersOutput() WebhookNotificationHeadersOutput {
+	return o
+}
+
+func (o WebhookNotificationHeadersOutput) ToWebhookNotificationHeadersOutputWithContext(ctx context.Context) WebhookNotificationHeadersOutput {
+	return o
+}
+
+func (o WebhookNotificationHeadersOutput) ToWebhookNotificationHeadersPtrOutput() WebhookNotificationHeadersPtrOutput {
+	return o.ToWebhookNotificationHeadersPtrOutputWithContext(context.Background())
+}
+
+func (o WebhookNotificationHeadersOutput) ToWebhookNotificationHeadersPtrOutputWithContext(ctx context.Context) WebhookNotificationHeadersPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebhookNotificationHeaders) *WebhookNotificationHeaders {
+		return &v
+	}).(WebhookNotificationHeadersPtrOutput)
+}
+
+// An additional HTTP Header to include when sending requests
+func (o WebhookNotificationHeadersOutput) Headers() WebhookNotificationHeadersHeaderArrayOutput {
+	return o.ApplyT(func(v WebhookNotificationHeaders) []WebhookNotificationHeadersHeader { return v.Headers }).(WebhookNotificationHeadersHeaderArrayOutput)
+}
+
+type WebhookNotificationHeadersPtrOutput struct{ *pulumi.OutputState }
+
+func (WebhookNotificationHeadersPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebhookNotificationHeaders)(nil)).Elem()
+}
+
+func (o WebhookNotificationHeadersPtrOutput) ToWebhookNotificationHeadersPtrOutput() WebhookNotificationHeadersPtrOutput {
+	return o
+}
+
+func (o WebhookNotificationHeadersPtrOutput) ToWebhookNotificationHeadersPtrOutputWithContext(ctx context.Context) WebhookNotificationHeadersPtrOutput {
+	return o
+}
+
+func (o WebhookNotificationHeadersPtrOutput) Elem() WebhookNotificationHeadersOutput {
+	return o.ApplyT(func(v *WebhookNotificationHeaders) WebhookNotificationHeaders {
+		if v != nil {
+			return *v
+		}
+		var ret WebhookNotificationHeaders
+		return ret
+	}).(WebhookNotificationHeadersOutput)
+}
+
+// An additional HTTP Header to include when sending requests
+func (o WebhookNotificationHeadersPtrOutput) Headers() WebhookNotificationHeadersHeaderArrayOutput {
+	return o.ApplyT(func(v *WebhookNotificationHeaders) []WebhookNotificationHeadersHeader {
+		if v == nil {
+			return nil
+		}
+		return v.Headers
+	}).(WebhookNotificationHeadersHeaderArrayOutput)
+}
+
+type WebhookNotificationHeadersHeader struct {
+	// The name of the notification configuration
+	Name        string  `pulumi:"name"`
+	SecretValue *string `pulumi:"secretValue"`
+	Value       *string `pulumi:"value"`
+}
+
+// WebhookNotificationHeadersHeaderInput is an input type that accepts WebhookNotificationHeadersHeaderArgs and WebhookNotificationHeadersHeaderOutput values.
+// You can construct a concrete instance of `WebhookNotificationHeadersHeaderInput` via:
+//
+//	WebhookNotificationHeadersHeaderArgs{...}
+type WebhookNotificationHeadersHeaderInput interface {
+	pulumi.Input
+
+	ToWebhookNotificationHeadersHeaderOutput() WebhookNotificationHeadersHeaderOutput
+	ToWebhookNotificationHeadersHeaderOutputWithContext(context.Context) WebhookNotificationHeadersHeaderOutput
+}
+
+type WebhookNotificationHeadersHeaderArgs struct {
+	// The name of the notification configuration
+	Name        pulumi.StringInput    `pulumi:"name"`
+	SecretValue pulumi.StringPtrInput `pulumi:"secretValue"`
+	Value       pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (WebhookNotificationHeadersHeaderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebhookNotificationHeadersHeader)(nil)).Elem()
+}
+
+func (i WebhookNotificationHeadersHeaderArgs) ToWebhookNotificationHeadersHeaderOutput() WebhookNotificationHeadersHeaderOutput {
+	return i.ToWebhookNotificationHeadersHeaderOutputWithContext(context.Background())
+}
+
+func (i WebhookNotificationHeadersHeaderArgs) ToWebhookNotificationHeadersHeaderOutputWithContext(ctx context.Context) WebhookNotificationHeadersHeaderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebhookNotificationHeadersHeaderOutput)
+}
+
+// WebhookNotificationHeadersHeaderArrayInput is an input type that accepts WebhookNotificationHeadersHeaderArray and WebhookNotificationHeadersHeaderArrayOutput values.
+// You can construct a concrete instance of `WebhookNotificationHeadersHeaderArrayInput` via:
+//
+//	WebhookNotificationHeadersHeaderArray{ WebhookNotificationHeadersHeaderArgs{...} }
+type WebhookNotificationHeadersHeaderArrayInput interface {
+	pulumi.Input
+
+	ToWebhookNotificationHeadersHeaderArrayOutput() WebhookNotificationHeadersHeaderArrayOutput
+	ToWebhookNotificationHeadersHeaderArrayOutputWithContext(context.Context) WebhookNotificationHeadersHeaderArrayOutput
+}
+
+type WebhookNotificationHeadersHeaderArray []WebhookNotificationHeadersHeaderInput
+
+func (WebhookNotificationHeadersHeaderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebhookNotificationHeadersHeader)(nil)).Elem()
+}
+
+func (i WebhookNotificationHeadersHeaderArray) ToWebhookNotificationHeadersHeaderArrayOutput() WebhookNotificationHeadersHeaderArrayOutput {
+	return i.ToWebhookNotificationHeadersHeaderArrayOutputWithContext(context.Background())
+}
+
+func (i WebhookNotificationHeadersHeaderArray) ToWebhookNotificationHeadersHeaderArrayOutputWithContext(ctx context.Context) WebhookNotificationHeadersHeaderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebhookNotificationHeadersHeaderArrayOutput)
+}
+
+type WebhookNotificationHeadersHeaderOutput struct{ *pulumi.OutputState }
+
+func (WebhookNotificationHeadersHeaderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebhookNotificationHeadersHeader)(nil)).Elem()
+}
+
+func (o WebhookNotificationHeadersHeaderOutput) ToWebhookNotificationHeadersHeaderOutput() WebhookNotificationHeadersHeaderOutput {
+	return o
+}
+
+func (o WebhookNotificationHeadersHeaderOutput) ToWebhookNotificationHeadersHeaderOutputWithContext(ctx context.Context) WebhookNotificationHeadersHeaderOutput {
+	return o
+}
+
+// The name of the notification configuration
+func (o WebhookNotificationHeadersHeaderOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v WebhookNotificationHeadersHeader) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o WebhookNotificationHeadersHeaderOutput) SecretValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebhookNotificationHeadersHeader) *string { return v.SecretValue }).(pulumi.StringPtrOutput)
+}
+
+func (o WebhookNotificationHeadersHeaderOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebhookNotificationHeadersHeader) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type WebhookNotificationHeadersHeaderArrayOutput struct{ *pulumi.OutputState }
+
+func (WebhookNotificationHeadersHeaderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebhookNotificationHeadersHeader)(nil)).Elem()
+}
+
+func (o WebhookNotificationHeadersHeaderArrayOutput) ToWebhookNotificationHeadersHeaderArrayOutput() WebhookNotificationHeadersHeaderArrayOutput {
+	return o
+}
+
+func (o WebhookNotificationHeadersHeaderArrayOutput) ToWebhookNotificationHeadersHeaderArrayOutputWithContext(ctx context.Context) WebhookNotificationHeadersHeaderArrayOutput {
+	return o
+}
+
+func (o WebhookNotificationHeadersHeaderArrayOutput) Index(i pulumi.IntInput) WebhookNotificationHeadersHeaderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebhookNotificationHeadersHeader {
+		return vs[0].([]WebhookNotificationHeadersHeader)[vs[1].(int)]
+	}).(WebhookNotificationHeadersHeaderOutput)
+}
+
+type XmattersNotificationHeaders struct {
+	// An additional HTTP Header to include when sending requests
+	Headers []XmattersNotificationHeadersHeader `pulumi:"headers"`
+}
+
+// XmattersNotificationHeadersInput is an input type that accepts XmattersNotificationHeadersArgs and XmattersNotificationHeadersOutput values.
+// You can construct a concrete instance of `XmattersNotificationHeadersInput` via:
+//
+//	XmattersNotificationHeadersArgs{...}
+type XmattersNotificationHeadersInput interface {
+	pulumi.Input
+
+	ToXmattersNotificationHeadersOutput() XmattersNotificationHeadersOutput
+	ToXmattersNotificationHeadersOutputWithContext(context.Context) XmattersNotificationHeadersOutput
+}
+
+type XmattersNotificationHeadersArgs struct {
+	// An additional HTTP Header to include when sending requests
+	Headers XmattersNotificationHeadersHeaderArrayInput `pulumi:"headers"`
+}
+
+func (XmattersNotificationHeadersArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*XmattersNotificationHeaders)(nil)).Elem()
+}
+
+func (i XmattersNotificationHeadersArgs) ToXmattersNotificationHeadersOutput() XmattersNotificationHeadersOutput {
+	return i.ToXmattersNotificationHeadersOutputWithContext(context.Background())
+}
+
+func (i XmattersNotificationHeadersArgs) ToXmattersNotificationHeadersOutputWithContext(ctx context.Context) XmattersNotificationHeadersOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(XmattersNotificationHeadersOutput)
+}
+
+func (i XmattersNotificationHeadersArgs) ToXmattersNotificationHeadersPtrOutput() XmattersNotificationHeadersPtrOutput {
+	return i.ToXmattersNotificationHeadersPtrOutputWithContext(context.Background())
+}
+
+func (i XmattersNotificationHeadersArgs) ToXmattersNotificationHeadersPtrOutputWithContext(ctx context.Context) XmattersNotificationHeadersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(XmattersNotificationHeadersOutput).ToXmattersNotificationHeadersPtrOutputWithContext(ctx)
+}
+
+// XmattersNotificationHeadersPtrInput is an input type that accepts XmattersNotificationHeadersArgs, XmattersNotificationHeadersPtr and XmattersNotificationHeadersPtrOutput values.
+// You can construct a concrete instance of `XmattersNotificationHeadersPtrInput` via:
+//
+//	        XmattersNotificationHeadersArgs{...}
+//
+//	or:
+//
+//	        nil
+type XmattersNotificationHeadersPtrInput interface {
+	pulumi.Input
+
+	ToXmattersNotificationHeadersPtrOutput() XmattersNotificationHeadersPtrOutput
+	ToXmattersNotificationHeadersPtrOutputWithContext(context.Context) XmattersNotificationHeadersPtrOutput
+}
+
+type xmattersNotificationHeadersPtrType XmattersNotificationHeadersArgs
+
+func XmattersNotificationHeadersPtr(v *XmattersNotificationHeadersArgs) XmattersNotificationHeadersPtrInput {
+	return (*xmattersNotificationHeadersPtrType)(v)
+}
+
+func (*xmattersNotificationHeadersPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**XmattersNotificationHeaders)(nil)).Elem()
+}
+
+func (i *xmattersNotificationHeadersPtrType) ToXmattersNotificationHeadersPtrOutput() XmattersNotificationHeadersPtrOutput {
+	return i.ToXmattersNotificationHeadersPtrOutputWithContext(context.Background())
+}
+
+func (i *xmattersNotificationHeadersPtrType) ToXmattersNotificationHeadersPtrOutputWithContext(ctx context.Context) XmattersNotificationHeadersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(XmattersNotificationHeadersPtrOutput)
+}
+
+type XmattersNotificationHeadersOutput struct{ *pulumi.OutputState }
+
+func (XmattersNotificationHeadersOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*XmattersNotificationHeaders)(nil)).Elem()
+}
+
+func (o XmattersNotificationHeadersOutput) ToXmattersNotificationHeadersOutput() XmattersNotificationHeadersOutput {
+	return o
+}
+
+func (o XmattersNotificationHeadersOutput) ToXmattersNotificationHeadersOutputWithContext(ctx context.Context) XmattersNotificationHeadersOutput {
+	return o
+}
+
+func (o XmattersNotificationHeadersOutput) ToXmattersNotificationHeadersPtrOutput() XmattersNotificationHeadersPtrOutput {
+	return o.ToXmattersNotificationHeadersPtrOutputWithContext(context.Background())
+}
+
+func (o XmattersNotificationHeadersOutput) ToXmattersNotificationHeadersPtrOutputWithContext(ctx context.Context) XmattersNotificationHeadersPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v XmattersNotificationHeaders) *XmattersNotificationHeaders {
+		return &v
+	}).(XmattersNotificationHeadersPtrOutput)
+}
+
+// An additional HTTP Header to include when sending requests
+func (o XmattersNotificationHeadersOutput) Headers() XmattersNotificationHeadersHeaderArrayOutput {
+	return o.ApplyT(func(v XmattersNotificationHeaders) []XmattersNotificationHeadersHeader { return v.Headers }).(XmattersNotificationHeadersHeaderArrayOutput)
+}
+
+type XmattersNotificationHeadersPtrOutput struct{ *pulumi.OutputState }
+
+func (XmattersNotificationHeadersPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**XmattersNotificationHeaders)(nil)).Elem()
+}
+
+func (o XmattersNotificationHeadersPtrOutput) ToXmattersNotificationHeadersPtrOutput() XmattersNotificationHeadersPtrOutput {
+	return o
+}
+
+func (o XmattersNotificationHeadersPtrOutput) ToXmattersNotificationHeadersPtrOutputWithContext(ctx context.Context) XmattersNotificationHeadersPtrOutput {
+	return o
+}
+
+func (o XmattersNotificationHeadersPtrOutput) Elem() XmattersNotificationHeadersOutput {
+	return o.ApplyT(func(v *XmattersNotificationHeaders) XmattersNotificationHeaders {
+		if v != nil {
+			return *v
+		}
+		var ret XmattersNotificationHeaders
+		return ret
+	}).(XmattersNotificationHeadersOutput)
+}
+
+// An additional HTTP Header to include when sending requests
+func (o XmattersNotificationHeadersPtrOutput) Headers() XmattersNotificationHeadersHeaderArrayOutput {
+	return o.ApplyT(func(v *XmattersNotificationHeaders) []XmattersNotificationHeadersHeader {
+		if v == nil {
+			return nil
+		}
+		return v.Headers
+	}).(XmattersNotificationHeadersHeaderArrayOutput)
+}
+
+type XmattersNotificationHeadersHeader struct {
+	// The name of the notification configuration
+	Name        string  `pulumi:"name"`
+	SecretValue *string `pulumi:"secretValue"`
+	Value       *string `pulumi:"value"`
+}
+
+// XmattersNotificationHeadersHeaderInput is an input type that accepts XmattersNotificationHeadersHeaderArgs and XmattersNotificationHeadersHeaderOutput values.
+// You can construct a concrete instance of `XmattersNotificationHeadersHeaderInput` via:
+//
+//	XmattersNotificationHeadersHeaderArgs{...}
+type XmattersNotificationHeadersHeaderInput interface {
+	pulumi.Input
+
+	ToXmattersNotificationHeadersHeaderOutput() XmattersNotificationHeadersHeaderOutput
+	ToXmattersNotificationHeadersHeaderOutputWithContext(context.Context) XmattersNotificationHeadersHeaderOutput
+}
+
+type XmattersNotificationHeadersHeaderArgs struct {
+	// The name of the notification configuration
+	Name        pulumi.StringInput    `pulumi:"name"`
+	SecretValue pulumi.StringPtrInput `pulumi:"secretValue"`
+	Value       pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (XmattersNotificationHeadersHeaderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*XmattersNotificationHeadersHeader)(nil)).Elem()
+}
+
+func (i XmattersNotificationHeadersHeaderArgs) ToXmattersNotificationHeadersHeaderOutput() XmattersNotificationHeadersHeaderOutput {
+	return i.ToXmattersNotificationHeadersHeaderOutputWithContext(context.Background())
+}
+
+func (i XmattersNotificationHeadersHeaderArgs) ToXmattersNotificationHeadersHeaderOutputWithContext(ctx context.Context) XmattersNotificationHeadersHeaderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(XmattersNotificationHeadersHeaderOutput)
+}
+
+// XmattersNotificationHeadersHeaderArrayInput is an input type that accepts XmattersNotificationHeadersHeaderArray and XmattersNotificationHeadersHeaderArrayOutput values.
+// You can construct a concrete instance of `XmattersNotificationHeadersHeaderArrayInput` via:
+//
+//	XmattersNotificationHeadersHeaderArray{ XmattersNotificationHeadersHeaderArgs{...} }
+type XmattersNotificationHeadersHeaderArrayInput interface {
+	pulumi.Input
+
+	ToXmattersNotificationHeadersHeaderArrayOutput() XmattersNotificationHeadersHeaderArrayOutput
+	ToXmattersNotificationHeadersHeaderArrayOutputWithContext(context.Context) XmattersNotificationHeadersHeaderArrayOutput
+}
+
+type XmattersNotificationHeadersHeaderArray []XmattersNotificationHeadersHeaderInput
+
+func (XmattersNotificationHeadersHeaderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]XmattersNotificationHeadersHeader)(nil)).Elem()
+}
+
+func (i XmattersNotificationHeadersHeaderArray) ToXmattersNotificationHeadersHeaderArrayOutput() XmattersNotificationHeadersHeaderArrayOutput {
+	return i.ToXmattersNotificationHeadersHeaderArrayOutputWithContext(context.Background())
+}
+
+func (i XmattersNotificationHeadersHeaderArray) ToXmattersNotificationHeadersHeaderArrayOutputWithContext(ctx context.Context) XmattersNotificationHeadersHeaderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(XmattersNotificationHeadersHeaderArrayOutput)
+}
+
+type XmattersNotificationHeadersHeaderOutput struct{ *pulumi.OutputState }
+
+func (XmattersNotificationHeadersHeaderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*XmattersNotificationHeadersHeader)(nil)).Elem()
+}
+
+func (o XmattersNotificationHeadersHeaderOutput) ToXmattersNotificationHeadersHeaderOutput() XmattersNotificationHeadersHeaderOutput {
+	return o
+}
+
+func (o XmattersNotificationHeadersHeaderOutput) ToXmattersNotificationHeadersHeaderOutputWithContext(ctx context.Context) XmattersNotificationHeadersHeaderOutput {
+	return o
+}
+
+// The name of the notification configuration
+func (o XmattersNotificationHeadersHeaderOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v XmattersNotificationHeadersHeader) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o XmattersNotificationHeadersHeaderOutput) SecretValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v XmattersNotificationHeadersHeader) *string { return v.SecretValue }).(pulumi.StringPtrOutput)
+}
+
+func (o XmattersNotificationHeadersHeaderOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v XmattersNotificationHeadersHeader) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type XmattersNotificationHeadersHeaderArrayOutput struct{ *pulumi.OutputState }
+
+func (XmattersNotificationHeadersHeaderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]XmattersNotificationHeadersHeader)(nil)).Elem()
+}
+
+func (o XmattersNotificationHeadersHeaderArrayOutput) ToXmattersNotificationHeadersHeaderArrayOutput() XmattersNotificationHeadersHeaderArrayOutput {
+	return o
+}
+
+func (o XmattersNotificationHeadersHeaderArrayOutput) ToXmattersNotificationHeadersHeaderArrayOutputWithContext(ctx context.Context) XmattersNotificationHeadersHeaderArrayOutput {
+	return o
+}
+
+func (o XmattersNotificationHeadersHeaderArrayOutput) Index(i pulumi.IntInput) XmattersNotificationHeadersHeaderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) XmattersNotificationHeadersHeader {
+		return vs[0].([]XmattersNotificationHeadersHeader)[vs[1].(int)]
+	}).(XmattersNotificationHeadersHeaderOutput)
+}
+
 type GetSyntheticLocationsLocations struct {
 	// The name of the location
 	Locations []GetSyntheticLocationsLocationsLocation `pulumi:"locations"`
@@ -51778,6 +54458,34 @@ func (o GetSyntheticLocationsLocationsLocationArrayOutput) Index(i pulumi.IntInp
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneMetadataInput)(nil)).Elem(), ManagementZoneMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneMetadataPtrInput)(nil)).Elem(), ManagementZoneMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleInput)(nil)).Elem(), ManagementZoneRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleArrayInput)(nil)).Elem(), ManagementZoneRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionInput)(nil)).Elem(), ManagementZoneRuleConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionArrayInput)(nil)).Elem(), ManagementZoneRuleConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionApplicationTypeInput)(nil)).Elem(), ManagementZoneRuleConditionApplicationTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionApplicationTypeArrayInput)(nil)).Elem(), ManagementZoneRuleConditionApplicationTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionApplicationTypeComparisonInput)(nil)).Elem(), ManagementZoneRuleConditionApplicationTypeComparisonArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionApplicationTypeComparisonArrayInput)(nil)).Elem(), ManagementZoneRuleConditionApplicationTypeComparisonArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeModeInput)(nil)).Elem(), ManagementZoneRuleConditionAzureComputeModeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeModeArrayInput)(nil)).Elem(), ManagementZoneRuleConditionAzureComputeModeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeModeComparisonInput)(nil)).Elem(), ManagementZoneRuleConditionAzureComputeModeComparisonArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureComputeModeComparisonArrayInput)(nil)).Elem(), ManagementZoneRuleConditionAzureComputeModeComparisonArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureSkuComparisionInput)(nil)).Elem(), ManagementZoneRuleConditionAzureSkuComparisionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureSkuComparisionArrayInput)(nil)).Elem(), ManagementZoneRuleConditionAzureSkuComparisionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureSkusInput)(nil)).Elem(), ManagementZoneRuleConditionAzureSkusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionAzureSkusArrayInput)(nil)).Elem(), ManagementZoneRuleConditionAzureSkusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBaseComparisonBasicInput)(nil)).Elem(), ManagementZoneRuleConditionBaseComparisonBasicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBaseComparisonBasicArrayInput)(nil)).Elem(), ManagementZoneRuleConditionBaseComparisonBasicArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBaseConditionKeyInput)(nil)).Elem(), ManagementZoneRuleConditionBaseConditionKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBaseConditionKeyArrayInput)(nil)).Elem(), ManagementZoneRuleConditionBaseConditionKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBitnessInput)(nil)).Elem(), ManagementZoneRuleConditionBitnessArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBitnessArrayInput)(nil)).Elem(), ManagementZoneRuleConditionBitnessArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBitnessComparisionInput)(nil)).Elem(), ManagementZoneRuleConditionBitnessComparisionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionBitnessComparisionArrayInput)(nil)).Elem(), ManagementZoneRuleConditionBitnessComparisionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeInput)(nil)).Elem(), ManagementZoneRuleConditionCloudTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeArrayInput)(nil)).Elem(), ManagementZoneRuleConditionCloudTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeComparisonInput)(nil)).Elem(), ManagementZoneRuleConditionCloudTypeComparisonArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionCloudTypeComparisonArrayInput)(nil)).Elem(), ManagementZoneRuleConditionCloudTypeComparisonArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementZoneRuleConditionComparisonInput)(nil)).Elem(), ManagementZoneRuleConditionComparisonArgs{})
@@ -52487,10 +55195,46 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationWaterfallSettingsPtrInput)(nil)).Elem(), WebApplicationWaterfallSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationXhrActionApdexSettingsInput)(nil)).Elem(), WebApplicationXhrActionApdexSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationXhrActionApdexSettingsPtrInput)(nil)).Elem(), WebApplicationXhrActionApdexSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebhookNotificationHeadersInput)(nil)).Elem(), WebhookNotificationHeadersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebhookNotificationHeadersPtrInput)(nil)).Elem(), WebhookNotificationHeadersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebhookNotificationHeadersHeaderInput)(nil)).Elem(), WebhookNotificationHeadersHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebhookNotificationHeadersHeaderArrayInput)(nil)).Elem(), WebhookNotificationHeadersHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*XmattersNotificationHeadersInput)(nil)).Elem(), XmattersNotificationHeadersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*XmattersNotificationHeadersPtrInput)(nil)).Elem(), XmattersNotificationHeadersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*XmattersNotificationHeadersHeaderInput)(nil)).Elem(), XmattersNotificationHeadersHeaderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*XmattersNotificationHeadersHeaderArrayInput)(nil)).Elem(), XmattersNotificationHeadersHeaderArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsLocationInput)(nil)).Elem(), GetSyntheticLocationsLocationsLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsLocationArrayInput)(nil)).Elem(), GetSyntheticLocationsLocationsLocationArray{})
+	pulumi.RegisterOutputType(ManagementZoneMetadataOutput{})
+	pulumi.RegisterOutputType(ManagementZoneMetadataPtrOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleArrayOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionArrayOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionApplicationTypeOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionApplicationTypeArrayOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionApplicationTypeComparisonOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionApplicationTypeComparisonArrayOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureComputeModeOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureComputeModeArrayOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureComputeModeComparisonOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureComputeModeComparisonArrayOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureSkuComparisionOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureSkuComparisionArrayOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureSkusOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionAzureSkusArrayOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionBaseComparisonBasicOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionBaseComparisonBasicArrayOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionBaseConditionKeyOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionBaseConditionKeyArrayOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionBitnessOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionBitnessArrayOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionBitnessComparisionOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionBitnessComparisionArrayOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionCloudTypeOutput{})
+	pulumi.RegisterOutputType(ManagementZoneRuleConditionCloudTypeArrayOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionCloudTypeComparisonOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionCloudTypeComparisonArrayOutput{})
 	pulumi.RegisterOutputType(ManagementZoneRuleConditionComparisonOutput{})
@@ -53200,6 +55944,14 @@ func init() {
 	pulumi.RegisterOutputType(WebApplicationWaterfallSettingsPtrOutput{})
 	pulumi.RegisterOutputType(WebApplicationXhrActionApdexSettingsOutput{})
 	pulumi.RegisterOutputType(WebApplicationXhrActionApdexSettingsPtrOutput{})
+	pulumi.RegisterOutputType(WebhookNotificationHeadersOutput{})
+	pulumi.RegisterOutputType(WebhookNotificationHeadersPtrOutput{})
+	pulumi.RegisterOutputType(WebhookNotificationHeadersHeaderOutput{})
+	pulumi.RegisterOutputType(WebhookNotificationHeadersHeaderArrayOutput{})
+	pulumi.RegisterOutputType(XmattersNotificationHeadersOutput{})
+	pulumi.RegisterOutputType(XmattersNotificationHeadersPtrOutput{})
+	pulumi.RegisterOutputType(XmattersNotificationHeadersHeaderOutput{})
+	pulumi.RegisterOutputType(XmattersNotificationHeadersHeaderArrayOutput{})
 	pulumi.RegisterOutputType(GetSyntheticLocationsLocationsOutput{})
 	pulumi.RegisterOutputType(GetSyntheticLocationsLocationsPtrOutput{})
 	pulumi.RegisterOutputType(GetSyntheticLocationsLocationsLocationOutput{})

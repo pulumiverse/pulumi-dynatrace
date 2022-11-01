@@ -487,6 +487,20 @@ __all__ = [
     'ImsBridgesQueueManagerArgs',
     'ImsBridgesQueueManagerQueueManagerArgs',
     'K8sCredentialsEventsFieldSelectorArgs',
+    'MaintenanceFilterArgs',
+    'MaintenanceFilterFilterArgs',
+    'MaintenanceGeneralPropertiesArgs',
+    'MaintenanceScheduleArgs',
+    'MaintenanceScheduleDailyRecurrenceArgs',
+    'MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs',
+    'MaintenanceScheduleDailyRecurrenceTimeWindowArgs',
+    'MaintenanceScheduleMonthlyRecurrenceArgs',
+    'MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs',
+    'MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs',
+    'MaintenanceScheduleOnceRecurrenceArgs',
+    'MaintenanceScheduleWeeklyRecurrenceArgs',
+    'MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs',
+    'MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs',
     'MaintenanceWindowMetadataArgs',
     'MaintenanceWindowScheduleArgs',
     'MaintenanceWindowScheduleRecurrenceArgs',
@@ -871,6 +885,10 @@ __all__ = [
     'WebApplicationUserTagsTagArgs',
     'WebApplicationWaterfallSettingsArgs',
     'WebApplicationXhrActionApdexSettingsArgs',
+    'WebhookNotificationHeadersArgs',
+    'WebhookNotificationHeadersHeaderArgs',
+    'XmattersNotificationHeadersArgs',
+    'XmattersNotificationHeadersHeaderArgs',
     'GetSyntheticLocationsLocationsArgs',
     'GetSyntheticLocationsLocationsLocationArgs',
 ]
@@ -2626,11 +2644,14 @@ class ApplicationErrorRulesHttpErrorsRuleArgs:
 class AutotagEntitySelectorBasedRuleArgs:
     def __init__(__self__, *,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 normalization: Optional[pulumi.Input[str]] = None,
                  selector: Optional[pulumi.Input[str]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  value_format: Optional[pulumi.Input[str]] = None):
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if normalization is not None:
+            pulumi.set(__self__, "normalization", normalization)
         if selector is not None:
             pulumi.set(__self__, "selector", selector)
         if unknowns is not None:
@@ -2646,6 +2667,15 @@ class AutotagEntitySelectorBasedRuleArgs:
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def normalization(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "normalization")
+
+    @normalization.setter
+    def normalization(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "normalization", value)
 
     @property
     @pulumi.getter
@@ -15767,6 +15797,7 @@ class DashboardDashboardMetadataArgs:
                  consistent_colors: Optional[pulumi.Input[bool]] = None,
                  dynamic_filters: Optional[pulumi.Input['DashboardDashboardMetadataDynamicFiltersArgs']] = None,
                  filter: Optional[pulumi.Input['DashboardDashboardMetadataFilterArgs']] = None,
+                 preset: Optional[pulumi.Input[bool]] = None,
                  shared: Optional[pulumi.Input[bool]] = None,
                  sharing_details: Optional[pulumi.Input['DashboardDashboardMetadataSharingDetailsArgs']] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -15778,6 +15809,7 @@ class DashboardDashboardMetadataArgs:
         :param pulumi.Input[bool] consistent_colors: The tile uses consistent colors when rendering its content
         :param pulumi.Input['DashboardDashboardMetadataDynamicFiltersArgs'] dynamic_filters: Dashboard filter configuration of a dashboard
         :param pulumi.Input['DashboardDashboardMetadataFilterArgs'] filter: Global filter Settings for the Dashboard
+        :param pulumi.Input[bool] preset: the dashboard is a preset (`true`) or not (`false`). Default is `false`.
         :param pulumi.Input[bool] shared: the dashboard is shared (`true`) or private (`false`)
         :param pulumi.Input['DashboardDashboardMetadataSharingDetailsArgs'] sharing_details: represents sharing configuration of a dashboard
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: a set of tags assigned to the dashboard
@@ -15792,6 +15824,8 @@ class DashboardDashboardMetadataArgs:
             pulumi.set(__self__, "dynamic_filters", dynamic_filters)
         if filter is not None:
             pulumi.set(__self__, "filter", filter)
+        if preset is not None:
+            pulumi.set(__self__, "preset", preset)
         if shared is not None:
             pulumi.set(__self__, "shared", shared)
         if sharing_details is not None:
@@ -15862,6 +15896,18 @@ class DashboardDashboardMetadataArgs:
     @filter.setter
     def filter(self, value: Optional[pulumi.Input['DashboardDashboardMetadataFilterArgs']]):
         pulumi.set(self, "filter", value)
+
+    @property
+    @pulumi.getter
+    def preset(self) -> Optional[pulumi.Input[bool]]:
+        """
+        the dashboard is a preset (`true`) or not (`false`). Default is `false`.
+        """
+        return pulumi.get(self, "preset")
+
+    @preset.setter
+    def preset(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "preset", value)
 
     @property
     @pulumi.getter
@@ -25090,6 +25136,588 @@ class K8sCredentialsEventsFieldSelectorArgs:
     @unknowns.setter
     def unknowns(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "unknowns", value)
+
+
+@pulumi.input_type
+class MaintenanceFilterArgs:
+    def __init__(__self__, *,
+                 filters: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterFilterArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterFilterArgs']]] filters: A list of matching rules for dynamic filter formation.  If several rules are set, the OR logic applies
+        """
+        if filters is not None:
+            pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterFilterArgs']]]]:
+        """
+        A list of matching rules for dynamic filter formation.  If several rules are set, the OR logic applies
+        """
+        return pulumi.get(self, "filters")
+
+    @filters.setter
+    def filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterFilterArgs']]]]):
+        pulumi.set(self, "filters", value)
+
+
+@pulumi.input_type
+class MaintenanceFilterFilterArgs:
+    def __init__(__self__, *,
+                 entity_id: Optional[pulumi.Input[str]] = None,
+                 entity_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 entity_type: Optional[pulumi.Input[str]] = None,
+                 management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        if entity_id is not None:
+            pulumi.set(__self__, "entity_id", entity_id)
+        if entity_tags is not None:
+            pulumi.set(__self__, "entity_tags", entity_tags)
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+        if management_zones is not None:
+            pulumi.set(__self__, "management_zones", management_zones)
+
+    @property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "entity_id")
+
+    @entity_id.setter
+    def entity_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "entity_id", value)
+
+    @property
+    @pulumi.getter(name="entityTags")
+    def entity_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "entity_tags")
+
+    @entity_tags.setter
+    def entity_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "entity_tags", value)
+
+    @property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "entity_type")
+
+    @entity_type.setter
+    def entity_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "entity_type", value)
+
+    @property
+    @pulumi.getter(name="managementZones")
+    def management_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "management_zones")
+
+    @management_zones.setter
+    def management_zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "management_zones", value)
+
+
+@pulumi.input_type
+class MaintenanceGeneralPropertiesArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 suppression: pulumi.Input[str],
+                 type: pulumi.Input[str],
+                 description: Optional[pulumi.Input[str]] = None,
+                 disable_synthetic: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] name: The name of the maintenance window, displayed in the UI
+        :param pulumi.Input[str] suppression: The type of suppression of alerting and problem detection during the maintenance
+        :param pulumi.Input[str] type: The type of the maintenance: planned or unplanned
+        :param pulumi.Input[str] description: A short description of the maintenance purpose
+        :param pulumi.Input[bool] disable_synthetic: Suppress execution of synthetic monitors during the maintenance
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "suppression", suppression)
+        pulumi.set(__self__, "type", type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if disable_synthetic is not None:
+            pulumi.set(__self__, "disable_synthetic", disable_synthetic)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        The name of the maintenance window, displayed in the UI
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def suppression(self) -> pulumi.Input[str]:
+        """
+        The type of suppression of alerting and problem detection during the maintenance
+        """
+        return pulumi.get(self, "suppression")
+
+    @suppression.setter
+    def suppression(self, value: pulumi.Input[str]):
+        pulumi.set(self, "suppression", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        The type of the maintenance: planned or unplanned
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        A short description of the maintenance purpose
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="disableSynthetic")
+    def disable_synthetic(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Suppress execution of synthetic monitors during the maintenance
+        """
+        return pulumi.get(self, "disable_synthetic")
+
+    @disable_synthetic.setter
+    def disable_synthetic(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "disable_synthetic", value)
+
+
+@pulumi.input_type
+class MaintenanceScheduleArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 daily_recurrence: Optional[pulumi.Input['MaintenanceScheduleDailyRecurrenceArgs']] = None,
+                 monthly_recurrence: Optional[pulumi.Input['MaintenanceScheduleMonthlyRecurrenceArgs']] = None,
+                 once_recurrence: Optional[pulumi.Input['MaintenanceScheduleOnceRecurrenceArgs']] = None,
+                 weekly_recurrence: Optional[pulumi.Input['MaintenanceScheduleWeeklyRecurrenceArgs']] = None):
+        """
+        :param pulumi.Input[str] type: The time window of the maintenance window
+        :param pulumi.Input['MaintenanceScheduleDailyRecurrenceArgs'] daily_recurrence: The configuration for maintenance windows occuring daily
+        :param pulumi.Input['MaintenanceScheduleMonthlyRecurrenceArgs'] monthly_recurrence: The configuration for maintenance windows occuring monthly
+        :param pulumi.Input['MaintenanceScheduleOnceRecurrenceArgs'] once_recurrence: The configuration for maintenance windows occuring once
+        :param pulumi.Input['MaintenanceScheduleWeeklyRecurrenceArgs'] weekly_recurrence: The configuration for maintenance windows occuring weekly
+        """
+        pulumi.set(__self__, "type", type)
+        if daily_recurrence is not None:
+            pulumi.set(__self__, "daily_recurrence", daily_recurrence)
+        if monthly_recurrence is not None:
+            pulumi.set(__self__, "monthly_recurrence", monthly_recurrence)
+        if once_recurrence is not None:
+            pulumi.set(__self__, "once_recurrence", once_recurrence)
+        if weekly_recurrence is not None:
+            pulumi.set(__self__, "weekly_recurrence", weekly_recurrence)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        The time window of the maintenance window
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="dailyRecurrence")
+    def daily_recurrence(self) -> Optional[pulumi.Input['MaintenanceScheduleDailyRecurrenceArgs']]:
+        """
+        The configuration for maintenance windows occuring daily
+        """
+        return pulumi.get(self, "daily_recurrence")
+
+    @daily_recurrence.setter
+    def daily_recurrence(self, value: Optional[pulumi.Input['MaintenanceScheduleDailyRecurrenceArgs']]):
+        pulumi.set(self, "daily_recurrence", value)
+
+    @property
+    @pulumi.getter(name="monthlyRecurrence")
+    def monthly_recurrence(self) -> Optional[pulumi.Input['MaintenanceScheduleMonthlyRecurrenceArgs']]:
+        """
+        The configuration for maintenance windows occuring monthly
+        """
+        return pulumi.get(self, "monthly_recurrence")
+
+    @monthly_recurrence.setter
+    def monthly_recurrence(self, value: Optional[pulumi.Input['MaintenanceScheduleMonthlyRecurrenceArgs']]):
+        pulumi.set(self, "monthly_recurrence", value)
+
+    @property
+    @pulumi.getter(name="onceRecurrence")
+    def once_recurrence(self) -> Optional[pulumi.Input['MaintenanceScheduleOnceRecurrenceArgs']]:
+        """
+        The configuration for maintenance windows occuring once
+        """
+        return pulumi.get(self, "once_recurrence")
+
+    @once_recurrence.setter
+    def once_recurrence(self, value: Optional[pulumi.Input['MaintenanceScheduleOnceRecurrenceArgs']]):
+        pulumi.set(self, "once_recurrence", value)
+
+    @property
+    @pulumi.getter(name="weeklyRecurrence")
+    def weekly_recurrence(self) -> Optional[pulumi.Input['MaintenanceScheduleWeeklyRecurrenceArgs']]:
+        """
+        The configuration for maintenance windows occuring weekly
+        """
+        return pulumi.get(self, "weekly_recurrence")
+
+    @weekly_recurrence.setter
+    def weekly_recurrence(self, value: Optional[pulumi.Input['MaintenanceScheduleWeeklyRecurrenceArgs']]):
+        pulumi.set(self, "weekly_recurrence", value)
+
+
+@pulumi.input_type
+class MaintenanceScheduleDailyRecurrenceArgs:
+    def __init__(__self__, *,
+                 recurrence_range: pulumi.Input['MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs'],
+                 time_window: pulumi.Input['MaintenanceScheduleDailyRecurrenceTimeWindowArgs']):
+        pulumi.set(__self__, "recurrence_range", recurrence_range)
+        pulumi.set(__self__, "time_window", time_window)
+
+    @property
+    @pulumi.getter(name="recurrenceRange")
+    def recurrence_range(self) -> pulumi.Input['MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs']:
+        return pulumi.get(self, "recurrence_range")
+
+    @recurrence_range.setter
+    def recurrence_range(self, value: pulumi.Input['MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs']):
+        pulumi.set(self, "recurrence_range", value)
+
+    @property
+    @pulumi.getter(name="timeWindow")
+    def time_window(self) -> pulumi.Input['MaintenanceScheduleDailyRecurrenceTimeWindowArgs']:
+        return pulumi.get(self, "time_window")
+
+    @time_window.setter
+    def time_window(self, value: pulumi.Input['MaintenanceScheduleDailyRecurrenceTimeWindowArgs']):
+        pulumi.set(self, "time_window", value)
+
+
+@pulumi.input_type
+class MaintenanceScheduleDailyRecurrenceRecurrenceRangeArgs:
+    def __init__(__self__, *,
+                 end_date: pulumi.Input[str],
+                 start_date: pulumi.Input[str]):
+        pulumi.set(__self__, "end_date", end_date)
+        pulumi.set(__self__, "start_date", start_date)
+
+    @property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "end_date")
+
+    @end_date.setter
+    def end_date(self, value: pulumi.Input[str]):
+        pulumi.set(self, "end_date", value)
+
+    @property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "start_date")
+
+    @start_date.setter
+    def start_date(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start_date", value)
+
+
+@pulumi.input_type
+class MaintenanceScheduleDailyRecurrenceTimeWindowArgs:
+    def __init__(__self__, *,
+                 end_time: pulumi.Input[str],
+                 start_time: pulumi.Input[str],
+                 time_zone: pulumi.Input[str]):
+        pulumi.set(__self__, "end_time", end_time)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "end_time")
+
+    @end_time.setter
+    def end_time(self, value: pulumi.Input[str]):
+        pulumi.set(self, "end_time", value)
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "start_time")
+
+    @start_time.setter
+    def start_time(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start_time", value)
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "time_zone")
+
+    @time_zone.setter
+    def time_zone(self, value: pulumi.Input[str]):
+        pulumi.set(self, "time_zone", value)
+
+
+@pulumi.input_type
+class MaintenanceScheduleMonthlyRecurrenceArgs:
+    def __init__(__self__, *,
+                 day_of_month: pulumi.Input[int],
+                 recurrence_range: pulumi.Input['MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs'],
+                 time_window: pulumi.Input['MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs']):
+        pulumi.set(__self__, "day_of_month", day_of_month)
+        pulumi.set(__self__, "recurrence_range", recurrence_range)
+        pulumi.set(__self__, "time_window", time_window)
+
+    @property
+    @pulumi.getter(name="dayOfMonth")
+    def day_of_month(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "day_of_month")
+
+    @day_of_month.setter
+    def day_of_month(self, value: pulumi.Input[int]):
+        pulumi.set(self, "day_of_month", value)
+
+    @property
+    @pulumi.getter(name="recurrenceRange")
+    def recurrence_range(self) -> pulumi.Input['MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs']:
+        return pulumi.get(self, "recurrence_range")
+
+    @recurrence_range.setter
+    def recurrence_range(self, value: pulumi.Input['MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs']):
+        pulumi.set(self, "recurrence_range", value)
+
+    @property
+    @pulumi.getter(name="timeWindow")
+    def time_window(self) -> pulumi.Input['MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs']:
+        return pulumi.get(self, "time_window")
+
+    @time_window.setter
+    def time_window(self, value: pulumi.Input['MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs']):
+        pulumi.set(self, "time_window", value)
+
+
+@pulumi.input_type
+class MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs:
+    def __init__(__self__, *,
+                 end_date: pulumi.Input[str],
+                 start_date: pulumi.Input[str]):
+        pulumi.set(__self__, "end_date", end_date)
+        pulumi.set(__self__, "start_date", start_date)
+
+    @property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "end_date")
+
+    @end_date.setter
+    def end_date(self, value: pulumi.Input[str]):
+        pulumi.set(self, "end_date", value)
+
+    @property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "start_date")
+
+    @start_date.setter
+    def start_date(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start_date", value)
+
+
+@pulumi.input_type
+class MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs:
+    def __init__(__self__, *,
+                 end_time: pulumi.Input[str],
+                 start_time: pulumi.Input[str],
+                 time_zone: pulumi.Input[str]):
+        pulumi.set(__self__, "end_time", end_time)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "end_time")
+
+    @end_time.setter
+    def end_time(self, value: pulumi.Input[str]):
+        pulumi.set(self, "end_time", value)
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "start_time")
+
+    @start_time.setter
+    def start_time(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start_time", value)
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "time_zone")
+
+    @time_zone.setter
+    def time_zone(self, value: pulumi.Input[str]):
+        pulumi.set(self, "time_zone", value)
+
+
+@pulumi.input_type
+class MaintenanceScheduleOnceRecurrenceArgs:
+    def __init__(__self__, *,
+                 end_time: pulumi.Input[str],
+                 start_time: pulumi.Input[str],
+                 time_zone: pulumi.Input[str]):
+        pulumi.set(__self__, "end_time", end_time)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "end_time")
+
+    @end_time.setter
+    def end_time(self, value: pulumi.Input[str]):
+        pulumi.set(self, "end_time", value)
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "start_time")
+
+    @start_time.setter
+    def start_time(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start_time", value)
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "time_zone")
+
+    @time_zone.setter
+    def time_zone(self, value: pulumi.Input[str]):
+        pulumi.set(self, "time_zone", value)
+
+
+@pulumi.input_type
+class MaintenanceScheduleWeeklyRecurrenceArgs:
+    def __init__(__self__, *,
+                 day_of_week: pulumi.Input[str],
+                 recurrence_range: pulumi.Input['MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs'],
+                 time_window: pulumi.Input['MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs']):
+        pulumi.set(__self__, "day_of_week", day_of_week)
+        pulumi.set(__self__, "recurrence_range", recurrence_range)
+        pulumi.set(__self__, "time_window", time_window)
+
+    @property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "day_of_week")
+
+    @day_of_week.setter
+    def day_of_week(self, value: pulumi.Input[str]):
+        pulumi.set(self, "day_of_week", value)
+
+    @property
+    @pulumi.getter(name="recurrenceRange")
+    def recurrence_range(self) -> pulumi.Input['MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs']:
+        return pulumi.get(self, "recurrence_range")
+
+    @recurrence_range.setter
+    def recurrence_range(self, value: pulumi.Input['MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs']):
+        pulumi.set(self, "recurrence_range", value)
+
+    @property
+    @pulumi.getter(name="timeWindow")
+    def time_window(self) -> pulumi.Input['MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs']:
+        return pulumi.get(self, "time_window")
+
+    @time_window.setter
+    def time_window(self, value: pulumi.Input['MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs']):
+        pulumi.set(self, "time_window", value)
+
+
+@pulumi.input_type
+class MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs:
+    def __init__(__self__, *,
+                 end_date: pulumi.Input[str],
+                 start_date: pulumi.Input[str]):
+        pulumi.set(__self__, "end_date", end_date)
+        pulumi.set(__self__, "start_date", start_date)
+
+    @property
+    @pulumi.getter(name="endDate")
+    def end_date(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "end_date")
+
+    @end_date.setter
+    def end_date(self, value: pulumi.Input[str]):
+        pulumi.set(self, "end_date", value)
+
+    @property
+    @pulumi.getter(name="startDate")
+    def start_date(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "start_date")
+
+    @start_date.setter
+    def start_date(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start_date", value)
+
+
+@pulumi.input_type
+class MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs:
+    def __init__(__self__, *,
+                 end_time: pulumi.Input[str],
+                 start_time: pulumi.Input[str],
+                 time_zone: pulumi.Input[str]):
+        pulumi.set(__self__, "end_time", end_time)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "end_time")
+
+    @end_time.setter
+    def end_time(self, value: pulumi.Input[str]):
+        pulumi.set(self, "end_time", value)
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "start_time")
+
+    @start_time.setter
+    def start_time(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start_time", value)
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "time_zone")
+
+    @time_zone.setter
+    def time_zone(self, value: pulumi.Input[str]):
+        pulumi.set(self, "time_zone", value)
 
 
 @pulumi.input_type
@@ -49856,6 +50484,142 @@ class WebApplicationXhrActionApdexSettingsArgs:
     @tolerated_threshold.setter
     def tolerated_threshold(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "tolerated_threshold", value)
+
+
+@pulumi.input_type
+class WebhookNotificationHeadersArgs:
+    def __init__(__self__, *,
+                 headers: pulumi.Input[Sequence[pulumi.Input['WebhookNotificationHeadersHeaderArgs']]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['WebhookNotificationHeadersHeaderArgs']]] headers: An additional HTTP Header to include when sending requests
+        """
+        pulumi.set(__self__, "headers", headers)
+
+    @property
+    @pulumi.getter
+    def headers(self) -> pulumi.Input[Sequence[pulumi.Input['WebhookNotificationHeadersHeaderArgs']]]:
+        """
+        An additional HTTP Header to include when sending requests
+        """
+        return pulumi.get(self, "headers")
+
+    @headers.setter
+    def headers(self, value: pulumi.Input[Sequence[pulumi.Input['WebhookNotificationHeadersHeaderArgs']]]):
+        pulumi.set(self, "headers", value)
+
+
+@pulumi.input_type
+class WebhookNotificationHeadersHeaderArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 secret_value: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: The name of the notification configuration
+        """
+        pulumi.set(__self__, "name", name)
+        if secret_value is not None:
+            pulumi.set(__self__, "secret_value", secret_value)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        The name of the notification configuration
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="secretValue")
+    def secret_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "secret_value")
+
+    @secret_value.setter
+    def secret_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "secret_value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class XmattersNotificationHeadersArgs:
+    def __init__(__self__, *,
+                 headers: pulumi.Input[Sequence[pulumi.Input['XmattersNotificationHeadersHeaderArgs']]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['XmattersNotificationHeadersHeaderArgs']]] headers: An additional HTTP Header to include when sending requests
+        """
+        pulumi.set(__self__, "headers", headers)
+
+    @property
+    @pulumi.getter
+    def headers(self) -> pulumi.Input[Sequence[pulumi.Input['XmattersNotificationHeadersHeaderArgs']]]:
+        """
+        An additional HTTP Header to include when sending requests
+        """
+        return pulumi.get(self, "headers")
+
+    @headers.setter
+    def headers(self, value: pulumi.Input[Sequence[pulumi.Input['XmattersNotificationHeadersHeaderArgs']]]):
+        pulumi.set(self, "headers", value)
+
+
+@pulumi.input_type
+class XmattersNotificationHeadersHeaderArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 secret_value: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: The name of the notification configuration
+        """
+        pulumi.set(__self__, "name", name)
+        if secret_value is not None:
+            pulumi.set(__self__, "secret_value", secret_value)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        The name of the notification configuration
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="secretValue")
+    def secret_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "secret_value")
+
+    @secret_value.setter
+    def secret_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "secret_value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
 
 
 @pulumi.input_type

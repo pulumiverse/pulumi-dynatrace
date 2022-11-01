@@ -8,6 +8,8 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.dynatrace.Utilities;
+import com.pulumi.dynatrace.inputs.GetAlertingProfileArgs;
+import com.pulumi.dynatrace.inputs.GetAlertingProfilePlainArgs;
 import com.pulumi.dynatrace.inputs.GetAlertingProfilesArgs;
 import com.pulumi.dynatrace.inputs.GetAlertingProfilesPlainArgs;
 import com.pulumi.dynatrace.inputs.GetApplicationArgs;
@@ -28,6 +30,7 @@ import com.pulumi.dynatrace.inputs.GetSyntheticLocationArgs;
 import com.pulumi.dynatrace.inputs.GetSyntheticLocationPlainArgs;
 import com.pulumi.dynatrace.inputs.GetSyntheticLocationsArgs;
 import com.pulumi.dynatrace.inputs.GetSyntheticLocationsPlainArgs;
+import com.pulumi.dynatrace.outputs.GetAlertingProfileResult;
 import com.pulumi.dynatrace.outputs.GetAlertingProfilesResult;
 import com.pulumi.dynatrace.outputs.GetApplicationResult;
 import com.pulumi.dynatrace.outputs.GetAwsIamExternalResult;
@@ -43,6 +46,206 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class DynatraceFunctions {
+    /**
+     * The Alerting Profile queries for an Alerting Profile that has a specified name. In case multiple Alerting Profiles share the same name the first one found will be used.
+     * The ID of this Data Resource aligns with the IDs used by the Dynatrace Settings 2.0 API.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetAlertingProfileArgs;
+     * import com.pulumi.dynatrace.WebhookNotification;
+     * import com.pulumi.dynatrace.WebhookNotificationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var default = DynatraceFunctions.getAlertingProfile(GetAlertingProfileArgs.builder()
+     *             .name(&#34;Default&#34;)
+     *             .build());
+     * 
+     *         var myWebhookNotification = new WebhookNotification(&#34;myWebhookNotification&#34;, WebhookNotificationArgs.builder()        
+     *             .active(false)
+     *             .profile(default_.id())
+     *             .url(&#34;https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e&#34;)
+     *             .insecure(true)
+     *             .notifyEventMerges(true)
+     *             .notifyClosedProblems(true)
+     *             .payload(&#34;web-hook-payload&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAlertingProfileResult> getAlertingProfile(GetAlertingProfileArgs args) {
+        return getAlertingProfile(args, InvokeOptions.Empty);
+    }
+    /**
+     * The Alerting Profile queries for an Alerting Profile that has a specified name. In case multiple Alerting Profiles share the same name the first one found will be used.
+     * The ID of this Data Resource aligns with the IDs used by the Dynatrace Settings 2.0 API.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetAlertingProfileArgs;
+     * import com.pulumi.dynatrace.WebhookNotification;
+     * import com.pulumi.dynatrace.WebhookNotificationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var default = DynatraceFunctions.getAlertingProfile(GetAlertingProfileArgs.builder()
+     *             .name(&#34;Default&#34;)
+     *             .build());
+     * 
+     *         var myWebhookNotification = new WebhookNotification(&#34;myWebhookNotification&#34;, WebhookNotificationArgs.builder()        
+     *             .active(false)
+     *             .profile(default_.id())
+     *             .url(&#34;https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e&#34;)
+     *             .insecure(true)
+     *             .notifyEventMerges(true)
+     *             .notifyClosedProblems(true)
+     *             .payload(&#34;web-hook-payload&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAlertingProfileResult> getAlertingProfilePlain(GetAlertingProfilePlainArgs args) {
+        return getAlertingProfilePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * The Alerting Profile queries for an Alerting Profile that has a specified name. In case multiple Alerting Profiles share the same name the first one found will be used.
+     * The ID of this Data Resource aligns with the IDs used by the Dynatrace Settings 2.0 API.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetAlertingProfileArgs;
+     * import com.pulumi.dynatrace.WebhookNotification;
+     * import com.pulumi.dynatrace.WebhookNotificationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var default = DynatraceFunctions.getAlertingProfile(GetAlertingProfileArgs.builder()
+     *             .name(&#34;Default&#34;)
+     *             .build());
+     * 
+     *         var myWebhookNotification = new WebhookNotification(&#34;myWebhookNotification&#34;, WebhookNotificationArgs.builder()        
+     *             .active(false)
+     *             .profile(default_.id())
+     *             .url(&#34;https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e&#34;)
+     *             .insecure(true)
+     *             .notifyEventMerges(true)
+     *             .notifyClosedProblems(true)
+     *             .payload(&#34;web-hook-payload&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAlertingProfileResult> getAlertingProfile(GetAlertingProfileArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("dynatrace:index/getAlertingProfile:getAlertingProfile", TypeShape.of(GetAlertingProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * The Alerting Profile queries for an Alerting Profile that has a specified name. In case multiple Alerting Profiles share the same name the first one found will be used.
+     * The ID of this Data Resource aligns with the IDs used by the Dynatrace Settings 2.0 API.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetAlertingProfileArgs;
+     * import com.pulumi.dynatrace.WebhookNotification;
+     * import com.pulumi.dynatrace.WebhookNotificationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var default = DynatraceFunctions.getAlertingProfile(GetAlertingProfileArgs.builder()
+     *             .name(&#34;Default&#34;)
+     *             .build());
+     * 
+     *         var myWebhookNotification = new WebhookNotification(&#34;myWebhookNotification&#34;, WebhookNotificationArgs.builder()        
+     *             .active(false)
+     *             .profile(default_.id())
+     *             .url(&#34;https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e&#34;)
+     *             .insecure(true)
+     *             .notifyEventMerges(true)
+     *             .notifyClosedProblems(true)
+     *             .payload(&#34;web-hook-payload&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAlertingProfileResult> getAlertingProfilePlain(GetAlertingProfilePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("dynatrace:index/getAlertingProfile:getAlertingProfile", TypeShape.of(GetAlertingProfileResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * The alerting profiles data source allows retrieval of all alerting profiles.
      * 
@@ -348,42 +551,474 @@ public final class DynatraceFunctions {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getAwsIamExternal:getAwsIamExternal", TypeShape.of(GetAwsIamExternalResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * The credentials data source allows retrieval of all credentials.
+     * The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetCredentialsArgs;
+     * import com.pulumi.dynatrace.HttpMonitor;
+     * import com.pulumi.dynatrace.HttpMonitorArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var creds = DynatraceFunctions.getCredentials(GetCredentialsArgs.builder()
+     *             .name(&#34;Office365 Access Token&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new HttpMonitor(&#34;#name#&#34;, HttpMonitorArgs.builder()        
+     *             .enabled(true)
+     *             .frequency(60)
+     *             .locations(&#34;SYNTHETIC_LOCATION-781752216580B1BC&#34;)
+     *             .anomalyDetections(HttpMonitorAnomalyDetectionArgs.builder()
+     *                 .loadingTimeThresholds(HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs.builder()
+     *                     .enabled(true)
+     *                     .build())
+     *                 .outageHandlings(HttpMonitorAnomalyDetectionOutageHandlingArgs.builder()
+     *                     .globalOutage(true)
+     *                     .localOutage(false)
+     *                     .retryOnError(false)
+     *                     .build())
+     *                 .build())
+     *             .script(HttpMonitorScriptArgs.builder()
+     *                 .requests(HttpMonitorScriptRequestArgs.builder()
+     *                     .description(&#34;google.com&#34;)
+     *                     .method(&#34;GET&#34;)
+     *                     .url(&#34;https://www.google.com&#34;)
+     *                     .authentication(HttpMonitorScriptRequestAuthenticationArgs.builder()
+     *                         .type(&#34;BASIC_AUTHENTICATION&#34;)
+     *                         .credentials(creds.applyValue(getCredentialsResult -&gt; getCredentialsResult.id()))
+     *                         .build())
+     *                     .configuration(HttpMonitorScriptRequestConfigurationArgs.builder()
+     *                         .acceptAnyCertificate(true)
+     *                         .followRedirects(true)
+     *                         .build())
+     *                     .validation(HttpMonitorScriptRequestValidationArgs.builder()
+     *                         .rules(HttpMonitorScriptRequestValidationRuleArgs.builder()
+     *                             .type(&#34;httpStatusesList&#34;)
+     *                             .passIfFound(false)
+     *                             .value(&#34;&gt;=400&#34;)
+     *                             .build())
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCredentialsResult> getCredentials() {
         return getCredentials(GetCredentialsArgs.Empty, InvokeOptions.Empty);
     }
     /**
-     * The credentials data source allows retrieval of all credentials.
+     * The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetCredentialsArgs;
+     * import com.pulumi.dynatrace.HttpMonitor;
+     * import com.pulumi.dynatrace.HttpMonitorArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var creds = DynatraceFunctions.getCredentials(GetCredentialsArgs.builder()
+     *             .name(&#34;Office365 Access Token&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new HttpMonitor(&#34;#name#&#34;, HttpMonitorArgs.builder()        
+     *             .enabled(true)
+     *             .frequency(60)
+     *             .locations(&#34;SYNTHETIC_LOCATION-781752216580B1BC&#34;)
+     *             .anomalyDetections(HttpMonitorAnomalyDetectionArgs.builder()
+     *                 .loadingTimeThresholds(HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs.builder()
+     *                     .enabled(true)
+     *                     .build())
+     *                 .outageHandlings(HttpMonitorAnomalyDetectionOutageHandlingArgs.builder()
+     *                     .globalOutage(true)
+     *                     .localOutage(false)
+     *                     .retryOnError(false)
+     *                     .build())
+     *                 .build())
+     *             .script(HttpMonitorScriptArgs.builder()
+     *                 .requests(HttpMonitorScriptRequestArgs.builder()
+     *                     .description(&#34;google.com&#34;)
+     *                     .method(&#34;GET&#34;)
+     *                     .url(&#34;https://www.google.com&#34;)
+     *                     .authentication(HttpMonitorScriptRequestAuthenticationArgs.builder()
+     *                         .type(&#34;BASIC_AUTHENTICATION&#34;)
+     *                         .credentials(creds.applyValue(getCredentialsResult -&gt; getCredentialsResult.id()))
+     *                         .build())
+     *                     .configuration(HttpMonitorScriptRequestConfigurationArgs.builder()
+     *                         .acceptAnyCertificate(true)
+     *                         .followRedirects(true)
+     *                         .build())
+     *                     .validation(HttpMonitorScriptRequestValidationArgs.builder()
+     *                         .rules(HttpMonitorScriptRequestValidationRuleArgs.builder()
+     *                             .type(&#34;httpStatusesList&#34;)
+     *                             .passIfFound(false)
+     *                             .value(&#34;&gt;=400&#34;)
+     *                             .build())
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCredentialsResult> getCredentialsPlain() {
         return getCredentialsPlain(GetCredentialsPlainArgs.Empty, InvokeOptions.Empty);
     }
     /**
-     * The credentials data source allows retrieval of all credentials.
+     * The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetCredentialsArgs;
+     * import com.pulumi.dynatrace.HttpMonitor;
+     * import com.pulumi.dynatrace.HttpMonitorArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var creds = DynatraceFunctions.getCredentials(GetCredentialsArgs.builder()
+     *             .name(&#34;Office365 Access Token&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new HttpMonitor(&#34;#name#&#34;, HttpMonitorArgs.builder()        
+     *             .enabled(true)
+     *             .frequency(60)
+     *             .locations(&#34;SYNTHETIC_LOCATION-781752216580B1BC&#34;)
+     *             .anomalyDetections(HttpMonitorAnomalyDetectionArgs.builder()
+     *                 .loadingTimeThresholds(HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs.builder()
+     *                     .enabled(true)
+     *                     .build())
+     *                 .outageHandlings(HttpMonitorAnomalyDetectionOutageHandlingArgs.builder()
+     *                     .globalOutage(true)
+     *                     .localOutage(false)
+     *                     .retryOnError(false)
+     *                     .build())
+     *                 .build())
+     *             .script(HttpMonitorScriptArgs.builder()
+     *                 .requests(HttpMonitorScriptRequestArgs.builder()
+     *                     .description(&#34;google.com&#34;)
+     *                     .method(&#34;GET&#34;)
+     *                     .url(&#34;https://www.google.com&#34;)
+     *                     .authentication(HttpMonitorScriptRequestAuthenticationArgs.builder()
+     *                         .type(&#34;BASIC_AUTHENTICATION&#34;)
+     *                         .credentials(creds.applyValue(getCredentialsResult -&gt; getCredentialsResult.id()))
+     *                         .build())
+     *                     .configuration(HttpMonitorScriptRequestConfigurationArgs.builder()
+     *                         .acceptAnyCertificate(true)
+     *                         .followRedirects(true)
+     *                         .build())
+     *                     .validation(HttpMonitorScriptRequestValidationArgs.builder()
+     *                         .rules(HttpMonitorScriptRequestValidationRuleArgs.builder()
+     *                             .type(&#34;httpStatusesList&#34;)
+     *                             .passIfFound(false)
+     *                             .value(&#34;&gt;=400&#34;)
+     *                             .build())
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCredentialsResult> getCredentials(GetCredentialsArgs args) {
         return getCredentials(args, InvokeOptions.Empty);
     }
     /**
-     * The credentials data source allows retrieval of all credentials.
+     * The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetCredentialsArgs;
+     * import com.pulumi.dynatrace.HttpMonitor;
+     * import com.pulumi.dynatrace.HttpMonitorArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var creds = DynatraceFunctions.getCredentials(GetCredentialsArgs.builder()
+     *             .name(&#34;Office365 Access Token&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new HttpMonitor(&#34;#name#&#34;, HttpMonitorArgs.builder()        
+     *             .enabled(true)
+     *             .frequency(60)
+     *             .locations(&#34;SYNTHETIC_LOCATION-781752216580B1BC&#34;)
+     *             .anomalyDetections(HttpMonitorAnomalyDetectionArgs.builder()
+     *                 .loadingTimeThresholds(HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs.builder()
+     *                     .enabled(true)
+     *                     .build())
+     *                 .outageHandlings(HttpMonitorAnomalyDetectionOutageHandlingArgs.builder()
+     *                     .globalOutage(true)
+     *                     .localOutage(false)
+     *                     .retryOnError(false)
+     *                     .build())
+     *                 .build())
+     *             .script(HttpMonitorScriptArgs.builder()
+     *                 .requests(HttpMonitorScriptRequestArgs.builder()
+     *                     .description(&#34;google.com&#34;)
+     *                     .method(&#34;GET&#34;)
+     *                     .url(&#34;https://www.google.com&#34;)
+     *                     .authentication(HttpMonitorScriptRequestAuthenticationArgs.builder()
+     *                         .type(&#34;BASIC_AUTHENTICATION&#34;)
+     *                         .credentials(creds.applyValue(getCredentialsResult -&gt; getCredentialsResult.id()))
+     *                         .build())
+     *                     .configuration(HttpMonitorScriptRequestConfigurationArgs.builder()
+     *                         .acceptAnyCertificate(true)
+     *                         .followRedirects(true)
+     *                         .build())
+     *                     .validation(HttpMonitorScriptRequestValidationArgs.builder()
+     *                         .rules(HttpMonitorScriptRequestValidationRuleArgs.builder()
+     *                             .type(&#34;httpStatusesList&#34;)
+     *                             .passIfFound(false)
+     *                             .value(&#34;&gt;=400&#34;)
+     *                             .build())
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCredentialsResult> getCredentialsPlain(GetCredentialsPlainArgs args) {
         return getCredentialsPlain(args, InvokeOptions.Empty);
     }
     /**
-     * The credentials data source allows retrieval of all credentials.
+     * The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetCredentialsArgs;
+     * import com.pulumi.dynatrace.HttpMonitor;
+     * import com.pulumi.dynatrace.HttpMonitorArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var creds = DynatraceFunctions.getCredentials(GetCredentialsArgs.builder()
+     *             .name(&#34;Office365 Access Token&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new HttpMonitor(&#34;#name#&#34;, HttpMonitorArgs.builder()        
+     *             .enabled(true)
+     *             .frequency(60)
+     *             .locations(&#34;SYNTHETIC_LOCATION-781752216580B1BC&#34;)
+     *             .anomalyDetections(HttpMonitorAnomalyDetectionArgs.builder()
+     *                 .loadingTimeThresholds(HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs.builder()
+     *                     .enabled(true)
+     *                     .build())
+     *                 .outageHandlings(HttpMonitorAnomalyDetectionOutageHandlingArgs.builder()
+     *                     .globalOutage(true)
+     *                     .localOutage(false)
+     *                     .retryOnError(false)
+     *                     .build())
+     *                 .build())
+     *             .script(HttpMonitorScriptArgs.builder()
+     *                 .requests(HttpMonitorScriptRequestArgs.builder()
+     *                     .description(&#34;google.com&#34;)
+     *                     .method(&#34;GET&#34;)
+     *                     .url(&#34;https://www.google.com&#34;)
+     *                     .authentication(HttpMonitorScriptRequestAuthenticationArgs.builder()
+     *                         .type(&#34;BASIC_AUTHENTICATION&#34;)
+     *                         .credentials(creds.applyValue(getCredentialsResult -&gt; getCredentialsResult.id()))
+     *                         .build())
+     *                     .configuration(HttpMonitorScriptRequestConfigurationArgs.builder()
+     *                         .acceptAnyCertificate(true)
+     *                         .followRedirects(true)
+     *                         .build())
+     *                     .validation(HttpMonitorScriptRequestValidationArgs.builder()
+     *                         .rules(HttpMonitorScriptRequestValidationRuleArgs.builder()
+     *                             .type(&#34;httpStatusesList&#34;)
+     *                             .passIfFound(false)
+     *                             .value(&#34;&gt;=400&#34;)
+     *                             .build())
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static Output<GetCredentialsResult> getCredentials(GetCredentialsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("dynatrace:index/getCredentials:getCredentials", TypeShape.of(GetCredentialsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * The credentials data source allows retrieval of all credentials.
+     * The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetCredentialsArgs;
+     * import com.pulumi.dynatrace.HttpMonitor;
+     * import com.pulumi.dynatrace.HttpMonitorArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionArgs;
+     * import com.pulumi.dynatrace.inputs.HttpMonitorScriptArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var creds = DynatraceFunctions.getCredentials(GetCredentialsArgs.builder()
+     *             .name(&#34;Office365 Access Token&#34;)
+     *             .build());
+     * 
+     *         var _name_ = new HttpMonitor(&#34;#name#&#34;, HttpMonitorArgs.builder()        
+     *             .enabled(true)
+     *             .frequency(60)
+     *             .locations(&#34;SYNTHETIC_LOCATION-781752216580B1BC&#34;)
+     *             .anomalyDetections(HttpMonitorAnomalyDetectionArgs.builder()
+     *                 .loadingTimeThresholds(HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs.builder()
+     *                     .enabled(true)
+     *                     .build())
+     *                 .outageHandlings(HttpMonitorAnomalyDetectionOutageHandlingArgs.builder()
+     *                     .globalOutage(true)
+     *                     .localOutage(false)
+     *                     .retryOnError(false)
+     *                     .build())
+     *                 .build())
+     *             .script(HttpMonitorScriptArgs.builder()
+     *                 .requests(HttpMonitorScriptRequestArgs.builder()
+     *                     .description(&#34;google.com&#34;)
+     *                     .method(&#34;GET&#34;)
+     *                     .url(&#34;https://www.google.com&#34;)
+     *                     .authentication(HttpMonitorScriptRequestAuthenticationArgs.builder()
+     *                         .type(&#34;BASIC_AUTHENTICATION&#34;)
+     *                         .credentials(creds.applyValue(getCredentialsResult -&gt; getCredentialsResult.id()))
+     *                         .build())
+     *                     .configuration(HttpMonitorScriptRequestConfigurationArgs.builder()
+     *                         .acceptAnyCertificate(true)
+     *                         .followRedirects(true)
+     *                         .build())
+     *                     .validation(HttpMonitorScriptRequestValidationArgs.builder()
+     *                         .rules(HttpMonitorScriptRequestValidationRuleArgs.builder()
+     *                             .type(&#34;httpStatusesList&#34;)
+     *                             .passIfFound(false)
+     *                             .value(&#34;&gt;=400&#34;)
+     *                             .build())
+     *                         .build())
+     *                     .build())
+     *                 .build())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
      * 
      */
     public static CompletableFuture<GetCredentialsResult> getCredentialsPlain(GetCredentialsPlainArgs args, InvokeOptions options) {
