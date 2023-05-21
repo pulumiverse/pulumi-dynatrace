@@ -157,7 +157,7 @@ func Provider() tfbridge.ProviderInfo {
 			"dynatrace_business_events_oneagent":      {Tok: dynatraceResource(mainMod, "BusinessEventsOneagent")},
 			"dynatrace_business_events_processing":    {Tok: dynatraceResource(mainMod, "BusinessEventsProcessing")},
 			"dynatrace_calculated_service_metric":     {Tok: dynatraceResource(mainMod, "CalculatedServiceMetric")},
-			"dynatrace_cloudfoundry_credentials":      {Tok: dynatraceResource(mainMod, "CloudfoundaryCredentials")},
+			"dynatrace_cloudfoundry_credentials":      {Tok: dynatraceResource(mainMod, "CloudfoundryCredentials")},
 			"dynatrace_cloud_foundry":                 {Tok: dynatraceResource(mainMod, "CloudFoundry")},
 			"dynatrace_cloudapp_workloaddetection":    {Tok: dynatraceResource(mainMod, "CloudappWorkloaddetection")},
 			"dynatrace_connectivity_alerts": {
