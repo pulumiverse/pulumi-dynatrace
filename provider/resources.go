@@ -262,7 +262,7 @@ func Provider() tfbridge.ProviderInfo {
 			"dynatrace_span_capture_rule":        {Tok: dynatraceResource(mainMod, "SpanCaptureRule")},
 			"dynatrace_span_context_propagation": {Tok: dynatraceResource(mainMod, "SpanContextPropagation")},
 			"dynatrace_span_entry_point":         {Tok: dynatraceResource(mainMod, "SpanEntryPoint")},
-			"dynatrace_trello_notification":      {Tok: dynatraceResource(mainMod, "TrrelloNotification")},
+			"dynatrace_trello_notification":      {Tok: dynatraceResource(mainMod, "TrelloNotification")},
 			"dynatrace_user":                     {Tok: dynatraceResource(mainMod, "User")},
 			"dynatrace_user_group":               {Tok: dynatraceResource(mainMod, "UserGroup")},
 			"dynatrace_victor_ops_notification":  {Tok: dynatraceResource(mainMod, "VictorOpsNotification")},
