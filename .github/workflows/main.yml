@@ -49,6 +49,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: ${{matrix.dotnetversion}}
+    - name: Setup DotNet 6.0.408
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.408
     - name: Setup Python
       uses: actions/setup-python@v2
       with:
@@ -152,14 +156,8 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        dotnetversion:
-        - 3.1.301
         goversion:
         - 1.19.x
-        nodeversion:
-        - 14.x
-        pythonversion:
-        - "3.7"
   publish:
     name: publish
     needs: test
@@ -190,14 +188,8 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        dotnetversion:
-        - 3.1.301
         goversion:
         - 1.19.x
-        nodeversion:
-        - 14.x
-        pythonversion:
-        - "3.7"
   publish_sdk:
     name: publish_sdk
     needs: publish
@@ -232,6 +224,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: ${{matrix.dotnetversion}}
+    - name: Setup DotNet 6.0.408
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.408
     - name: Setup Python
       uses: actions/setup-python@v2
       with:
@@ -307,6 +303,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: ${{matrix.dotnetversion}}
+    - name: Setup DotNet 6.0.408
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.408
     - name: Setup Python
       uses: actions/setup-python@v2
       with:
