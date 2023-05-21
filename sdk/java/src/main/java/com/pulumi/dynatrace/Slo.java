@@ -22,7 +22,7 @@ public class Slo extends com.pulumi.resources.CustomResource {
      * The total count metric (the denominator in rate calculation)
      * 
      */
-    @Export(name="denominator", type=String.class, parameters={})
+    @Export(name="denominator", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> denominator;
 
     /**
@@ -36,7 +36,7 @@ public class Slo extends com.pulumi.resources.CustomResource {
      * The custom description of the SLO (optional)
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     /**
@@ -50,7 +50,7 @@ public class Slo extends com.pulumi.resources.CustomResource {
      * The SLO is enabled (`false`) or disabled (`true`)
      * 
      */
-    @Export(name="disabled", type=Boolean.class, parameters={})
+    @Export(name="disabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> disabled;
 
     /**
@@ -64,7 +64,7 @@ public class Slo extends com.pulumi.resources.CustomResource {
      * The evaluation type of the SLO. Currently only `AGGREGATE` is supported
      * 
      */
-    @Export(name="evaluation", type=String.class, parameters={})
+    @Export(name="evaluation", refs={String.class}, tree="[0]")
     private Output<String> evaluation;
 
     /**
@@ -78,7 +78,7 @@ public class Slo extends com.pulumi.resources.CustomResource {
      * The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
      * 
      */
-    @Export(name="filter", type=String.class, parameters={})
+    @Export(name="filter", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> filter;
 
     /**
@@ -92,7 +92,7 @@ public class Slo extends com.pulumi.resources.CustomResource {
      * The percentage-based metric expression for the calculation of the SLO
      * 
      */
-    @Export(name="metricExpression", type=String.class, parameters={})
+    @Export(name="metricExpression", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> metricExpression;
 
     /**
@@ -106,7 +106,7 @@ public class Slo extends com.pulumi.resources.CustomResource {
      * The name of the rule
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -124,7 +124,7 @@ public class Slo extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* `numerator` and `denominator` have been replaced by `metric_expression` */
-    @Export(name="numerator", type=String.class, parameters={})
+    @Export(name="numerator", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> numerator;
 
     /**
@@ -138,7 +138,7 @@ public class Slo extends com.pulumi.resources.CustomResource {
      * The percentage-based metric for the calculation of the SLO
      * 
      */
-    @Export(name="rate", type=String.class, parameters={})
+    @Export(name="rate", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> rate;
 
     /**
@@ -152,7 +152,7 @@ public class Slo extends com.pulumi.resources.CustomResource {
      * The target value of the SLO
      * 
      */
-    @Export(name="target", type=Double.class, parameters={})
+    @Export(name="target", refs={Double.class}, tree="[0]")
     private Output<Double> target;
 
     /**
@@ -166,7 +166,7 @@ public class Slo extends com.pulumi.resources.CustomResource {
      * The timeframe for the SLO evaluation. Use the syntax of the global timeframe selector
      * 
      */
-    @Export(name="timeframe", type=String.class, parameters={})
+    @Export(name="timeframe", refs={String.class}, tree="[0]")
     private Output<String> timeframe;
 
     /**
@@ -180,7 +180,7 @@ public class Slo extends com.pulumi.resources.CustomResource {
      * The warning value of the SLO. At warning state the SLO is still fulfilled but is getting close to failure
      * 
      */
-    @Export(name="warning", type=Double.class, parameters={})
+    @Export(name="warning", refs={Double.class}, tree="[0]")
     private Output<Double> warning;
 
     /**

@@ -67,15 +67,19 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         public readonly string Id;
         public readonly ImmutableDictionary<string, string>? Profiles;
+        public readonly ImmutableArray<Outputs.GetAlertingProfilesValueResult> Values;
 
         [OutputConstructor]
         private GetAlertingProfilesResult(
             string id,
 
-            ImmutableDictionary<string, string>? profiles)
+            ImmutableDictionary<string, string>? profiles,
+
+            ImmutableArray<Outputs.GetAlertingProfilesValueResult> values)
         {
             Id = id;
             Profiles = profiles;
+            Values = values;
         }
     }
 }

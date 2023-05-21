@@ -21,7 +21,7 @@ public class IbmMqFilters extends com.pulumi.resources.CustomResource {
      * CICS: Excluded MQ queues
      * 
      */
-    @Export(name="cicsMqQueueIdExcludes", type=List.class, parameters={String.class})
+    @Export(name="cicsMqQueueIdExcludes", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> cicsMqQueueIdExcludes;
 
     /**
@@ -35,7 +35,7 @@ public class IbmMqFilters extends com.pulumi.resources.CustomResource {
      * CICS: Included MQ queues
      * 
      */
-    @Export(name="cicsMqQueueIdIncludes", type=List.class, parameters={String.class})
+    @Export(name="cicsMqQueueIdIncludes", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> cicsMqQueueIdIncludes;
 
     /**
@@ -49,7 +49,7 @@ public class IbmMqFilters extends com.pulumi.resources.CustomResource {
      * IMS bridge: Excluded transaction IDs
      * 
      */
-    @Export(name="imsCrTrnIdExcludes", type=List.class, parameters={String.class})
+    @Export(name="imsCrTrnIdExcludes", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> imsCrTrnIdExcludes;
 
     /**
@@ -63,7 +63,7 @@ public class IbmMqFilters extends com.pulumi.resources.CustomResource {
      * IMS bridge: Included transaction IDs
      * 
      */
-    @Export(name="imsCrTrnIdIncludes", type=List.class, parameters={String.class})
+    @Export(name="imsCrTrnIdIncludes", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> imsCrTrnIdIncludes;
 
     /**
@@ -77,7 +77,7 @@ public class IbmMqFilters extends com.pulumi.resources.CustomResource {
      * IMS: Excluded MQ queues
      * 
      */
-    @Export(name="imsMqQueueIdExcludes", type=List.class, parameters={String.class})
+    @Export(name="imsMqQueueIdExcludes", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> imsMqQueueIdExcludes;
 
     /**
@@ -91,7 +91,7 @@ public class IbmMqFilters extends com.pulumi.resources.CustomResource {
      * IMS: Included MQ queues
      * 
      */
-    @Export(name="imsMqQueueIdIncludes", type=List.class, parameters={String.class})
+    @Export(name="imsMqQueueIdIncludes", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> imsMqQueueIdIncludes;
 
     /**

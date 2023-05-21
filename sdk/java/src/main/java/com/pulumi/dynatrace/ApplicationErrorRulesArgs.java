@@ -19,14 +19,14 @@ public final class ApplicationErrorRulesArgs extends com.pulumi.resources.Resour
     public static final ApplicationErrorRulesArgs Empty = new ApplicationErrorRulesArgs();
 
     /**
-     * An ordered list of HTTP errors.
+     * (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
      * 
      */
     @Import(name="customErrors")
     private @Nullable Output<ApplicationErrorRulesCustomErrorsArgs> customErrors;
 
     /**
-     * @return An ordered list of HTTP errors.
+     * @return (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
      * 
      */
     public Optional<Output<ApplicationErrorRulesCustomErrorsArgs>> customErrors() {
@@ -34,14 +34,16 @@ public final class ApplicationErrorRulesArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+     * (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+     * to bottom; the first matching rule applies
      * 
      */
     @Import(name="httpErrors")
     private @Nullable Output<ApplicationErrorRulesHttpErrorsArgs> httpErrors;
 
     /**
-     * @return An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+     * @return (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+     * to bottom; the first matching rule applies
      * 
      */
     public Optional<Output<ApplicationErrorRulesHttpErrorsArgs>> httpErrors() {
@@ -49,14 +51,16 @@ public final class ApplicationErrorRulesArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+     * (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+     * **customErrorRules** in Apdex calculation
      * 
      */
     @Import(name="ignoreCustomErrorsApdex")
     private @Nullable Output<Boolean> ignoreCustomErrorsApdex;
 
     /**
-     * @return Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+     * @return (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+     * **customErrorRules** in Apdex calculation
      * 
      */
     public Optional<Output<Boolean>> ignoreCustomErrorsApdex() {
@@ -64,14 +68,16 @@ public final class ApplicationErrorRulesArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+     * (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+     * **httpErrorRules** in Apdex calculation
      * 
      */
     @Import(name="ignoreHttpErrorsApdex")
     private @Nullable Output<Boolean> ignoreHttpErrorsApdex;
 
     /**
-     * @return Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+     * @return (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+     * **httpErrorRules** in Apdex calculation
      * 
      */
     public Optional<Output<Boolean>> ignoreHttpErrorsApdex() {
@@ -138,7 +144,7 @@ public final class ApplicationErrorRulesArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param customErrors An ordered list of HTTP errors.
+         * @param customErrors (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
          * 
          * @return builder
          * 
@@ -149,7 +155,7 @@ public final class ApplicationErrorRulesArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param customErrors An ordered list of HTTP errors.
+         * @param customErrors (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
          * 
          * @return builder
          * 
@@ -159,7 +165,8 @@ public final class ApplicationErrorRulesArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param httpErrors An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+         * @param httpErrors (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+         * to bottom; the first matching rule applies
          * 
          * @return builder
          * 
@@ -170,7 +177,8 @@ public final class ApplicationErrorRulesArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param httpErrors An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+         * @param httpErrors (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+         * to bottom; the first matching rule applies
          * 
          * @return builder
          * 
@@ -180,7 +188,8 @@ public final class ApplicationErrorRulesArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ignoreCustomErrorsApdex Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+         * @param ignoreCustomErrorsApdex (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+         * **customErrorRules** in Apdex calculation
          * 
          * @return builder
          * 
@@ -191,7 +200,8 @@ public final class ApplicationErrorRulesArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ignoreCustomErrorsApdex Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+         * @param ignoreCustomErrorsApdex (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+         * **customErrorRules** in Apdex calculation
          * 
          * @return builder
          * 
@@ -201,7 +211,8 @@ public final class ApplicationErrorRulesArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ignoreHttpErrorsApdex Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+         * @param ignoreHttpErrorsApdex (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+         * **httpErrorRules** in Apdex calculation
          * 
          * @return builder
          * 
@@ -212,7 +223,8 @@ public final class ApplicationErrorRulesArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ignoreHttpErrorsApdex Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+         * @param ignoreHttpErrorsApdex (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+         * **httpErrorRules** in Apdex calculation
          * 
          * @return builder
          * 

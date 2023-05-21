@@ -19,8 +19,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 
-        [Input("value")]
-        public Input<bool>? Value { get; set; }
+        [Input("value", required: true)]
+        public Input<bool> Value { get; set; } = null!;
 
         [Input("values")]
         private InputList<bool>? _values;

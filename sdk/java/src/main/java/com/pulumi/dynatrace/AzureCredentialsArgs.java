@@ -81,14 +81,14 @@ public final class AzureCredentialsArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+     * The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+     * @return The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
      * 
      */
     public Optional<Output<String>> key() {
@@ -171,6 +171,23 @@ public final class AzureCredentialsArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+     * manage them via WebUI without interference by Terraform.
+     * 
+     */
+    @Import(name="supportingServicesManagedInDynatrace")
+    private @Nullable Output<Boolean> supportingServicesManagedInDynatrace;
+
+    /**
+     * @return If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+     * manage them via WebUI without interference by Terraform.
+     * 
+     */
+    public Optional<Output<Boolean>> supportingServicesManagedInDynatrace() {
+        return Optional.ofNullable(this.supportingServicesManagedInDynatrace);
+    }
+
+    /**
      * Any attributes that aren&#39;t yet supported by this provider
      * 
      */
@@ -198,6 +215,7 @@ public final class AzureCredentialsArgs extends com.pulumi.resources.ResourceArg
         this.monitorOnlyTagPairs = $.monitorOnlyTagPairs;
         this.monitorOnlyTaggedEntities = $.monitorOnlyTaggedEntities;
         this.supportingServices = $.supportingServices;
+        this.supportingServicesManagedInDynatrace = $.supportingServicesManagedInDynatrace;
         this.unknowns = $.unknowns;
     }
 
@@ -304,7 +322,7 @@ public final class AzureCredentialsArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param key The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+         * @param key The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
          * 
          * @return builder
          * 
@@ -315,7 +333,7 @@ public final class AzureCredentialsArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param key The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+         * @param key The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
          * 
          * @return builder
          * 
@@ -457,6 +475,29 @@ public final class AzureCredentialsArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder supportingServices(AzureCredentialsSupportingServiceArgs... supportingServices) {
             return supportingServices(List.of(supportingServices));
+        }
+
+        /**
+         * @param supportingServicesManagedInDynatrace If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+         * manage them via WebUI without interference by Terraform.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder supportingServicesManagedInDynatrace(@Nullable Output<Boolean> supportingServicesManagedInDynatrace) {
+            $.supportingServicesManagedInDynatrace = supportingServicesManagedInDynatrace;
+            return this;
+        }
+
+        /**
+         * @param supportingServicesManagedInDynatrace If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+         * manage them via WebUI without interference by Terraform.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder supportingServicesManagedInDynatrace(Boolean supportingServicesManagedInDynatrace) {
+            return supportingServicesManagedInDynatrace(Output.of(supportingServicesManagedInDynatrace));
         }
 
         /**

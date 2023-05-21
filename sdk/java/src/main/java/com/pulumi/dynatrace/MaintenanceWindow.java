@@ -10,7 +10,6 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.dynatrace.MaintenanceWindowArgs;
 import com.pulumi.dynatrace.Utilities;
 import com.pulumi.dynatrace.inputs.MaintenanceWindowState;
-import com.pulumi.dynatrace.outputs.MaintenanceWindowMetadata;
 import com.pulumi.dynatrace.outputs.MaintenanceWindowSchedule;
 import com.pulumi.dynatrace.outputs.MaintenanceWindowScope;
 import java.lang.Boolean;
@@ -24,7 +23,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * A short description of the maintenance purpose
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     /**
@@ -38,7 +37,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * The Maintenance Window is enabled or disabled
      * 
      */
-    @Export(name="enabled", type=Boolean.class, parameters={})
+    @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enabled;
 
     /**
@@ -49,28 +48,10 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.enabled);
     }
     /**
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     * @deprecated
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     */
-    @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-    @Export(name="metadata", type=MaintenanceWindowMetadata.class, parameters={})
-    private Output</* @Nullable */ MaintenanceWindowMetadata> metadata;
-
-    /**
-     * @return `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     */
-    public Output<Optional<MaintenanceWindowMetadata>> metadata() {
-        return Codegen.optional(this.metadata);
-    }
-    /**
      * The name of the maintenance window, displayed in the UI
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -84,7 +65,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * The schedule of the maintenance window
      * 
      */
-    @Export(name="schedule", type=MaintenanceWindowSchedule.class, parameters={})
+    @Export(name="schedule", refs={MaintenanceWindowSchedule.class}, tree="[0]")
     private Output</* @Nullable */ MaintenanceWindowSchedule> schedule;
 
     /**
@@ -98,7 +79,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * the tiles this Dashboard consist of
      * 
      */
-    @Export(name="scope", type=MaintenanceWindowScope.class, parameters={})
+    @Export(name="scope", refs={MaintenanceWindowScope.class}, tree="[0]")
     private Output</* @Nullable */ MaintenanceWindowScope> scope;
 
     /**
@@ -112,7 +93,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * Suppress execution of synthetic monitors during the maintenance
      * 
      */
-    @Export(name="suppressSynthMonExec", type=Boolean.class, parameters={})
+    @Export(name="suppressSynthMonExec", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> suppressSynthMonExec;
 
     /**
@@ -126,7 +107,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * The type of suppression of alerting and problem detection during the maintenance
      * 
      */
-    @Export(name="suppression", type=String.class, parameters={})
+    @Export(name="suppression", refs={String.class}, tree="[0]")
     private Output<String> suppression;
 
     /**
@@ -140,7 +121,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * The type of the maintenance: planned or unplanned
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -154,7 +135,7 @@ public class MaintenanceWindow extends com.pulumi.resources.CustomResource {
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**

@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -20,6 +20,8 @@ type PagerDutyNotification struct {
 	Active pulumi.BoolOutput `pulumi:"active"`
 	// The API key to access PagerDuty
 	ApiKey pulumi.StringPtrOutput `pulumi:"apiKey"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
 	// The name of the notification configuration
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The ID of the associated alerting profile
@@ -48,7 +50,7 @@ func NewPagerDutyNotification(ctx *pulumi.Context,
 		return nil, errors.New("invalid value for required argument 'Service'")
 	}
 	if args.ApiKey != nil {
-		args.ApiKey = pulumi.ToSecret(args.ApiKey).(pulumi.StringPtrOutput)
+		args.ApiKey = pulumi.ToSecret(args.ApiKey).(pulumi.StringPtrInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"apiKey",
@@ -83,6 +85,8 @@ type pagerDutyNotificationState struct {
 	Active *bool `pulumi:"active"`
 	// The API key to access PagerDuty
 	ApiKey *string `pulumi:"apiKey"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The name of the notification configuration
 	Name *string `pulumi:"name"`
 	// The ID of the associated alerting profile
@@ -98,6 +102,8 @@ type PagerDutyNotificationState struct {
 	Active pulumi.BoolPtrInput
 	// The API key to access PagerDuty
 	ApiKey pulumi.StringPtrInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The name of the notification configuration
 	Name pulumi.StringPtrInput
 	// The ID of the associated alerting profile
@@ -117,6 +123,8 @@ type pagerDutyNotificationArgs struct {
 	Active bool `pulumi:"active"`
 	// The API key to access PagerDuty
 	ApiKey *string `pulumi:"apiKey"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The name of the notification configuration
 	Name *string `pulumi:"name"`
 	// The ID of the associated alerting profile
@@ -133,6 +141,8 @@ type PagerDutyNotificationArgs struct {
 	Active pulumi.BoolInput
 	// The API key to access PagerDuty
 	ApiKey pulumi.StringPtrInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The name of the notification configuration
 	Name pulumi.StringPtrInput
 	// The ID of the associated alerting profile
@@ -241,6 +251,11 @@ func (o PagerDutyNotificationOutput) Active() pulumi.BoolOutput {
 // The API key to access PagerDuty
 func (o PagerDutyNotificationOutput) ApiKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PagerDutyNotification) pulumi.StringPtrOutput { return v.ApiKey }).(pulumi.StringPtrOutput)
+}
+
+// The ID of these settings when referred to from resources requiring the REST API V1 keys
+func (o PagerDutyNotificationOutput) LegacyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *PagerDutyNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
 // The name of the notification configuration

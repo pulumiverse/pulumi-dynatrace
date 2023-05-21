@@ -6,10 +6,7 @@ package com.pulumi.dynatrace.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
-import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class GetApplicationArgs extends com.pulumi.resources.InvokeArgs {
@@ -23,26 +20,10 @@ public final class GetApplicationArgs extends com.pulumi.resources.InvokeArgs {
         return this.name;
     }
 
-    /**
-     * Required tags of the application to find
-     * 
-     */
-    @Import(name="tags")
-    private @Nullable Output<List<String>> tags;
-
-    /**
-     * @return Required tags of the application to find
-     * 
-     */
-    public Optional<Output<List<String>>> tags() {
-        return Optional.ofNullable(this.tags);
-    }
-
     private GetApplicationArgs() {}
 
     private GetApplicationArgs(GetApplicationArgs $) {
         this.name = $.name;
-        this.tags = $.tags;
     }
 
     public static Builder builder() {
@@ -70,37 +51,6 @@ public final class GetApplicationArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder name(String name) {
             return name(Output.of(name));
-        }
-
-        /**
-         * @param tags Required tags of the application to find
-         * 
-         * @return builder
-         * 
-         */
-        public Builder tags(@Nullable Output<List<String>> tags) {
-            $.tags = tags;
-            return this;
-        }
-
-        /**
-         * @param tags Required tags of the application to find
-         * 
-         * @return builder
-         * 
-         */
-        public Builder tags(List<String> tags) {
-            return tags(Output.of(tags));
-        }
-
-        /**
-         * @param tags Required tags of the application to find
-         * 
-         * @return builder
-         * 
-         */
-        public Builder tags(String... tags) {
-            return tags(List.of(tags));
         }
 
         public GetApplicationArgs build() {

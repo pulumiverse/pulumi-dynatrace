@@ -19,7 +19,9 @@ class MobileApplicationArgs:
                  apdex: pulumi.Input['MobileApplicationApdexArgs'],
                  beacon_endpoint_type: pulumi.Input[str],
                  application_id: Optional[pulumi.Input[str]] = None,
+                 application_type: Optional[pulumi.Input[str]] = None,
                  beacon_endpoint_url: Optional[pulumi.Input[str]] = None,
+                 icon_type: Optional[pulumi.Input[str]] = None,
                  key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  opt_in_mode: Optional[pulumi.Input[bool]] = None,
@@ -32,23 +34,30 @@ class MobileApplicationArgs:
         :param pulumi.Input['MobileApplicationApdexArgs'] apdex: Apdex configuration of a mobile application. A duration less than the **tolerable** threshold is considered satisfied
         :param pulumi.Input[str] beacon_endpoint_type: The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
         :param pulumi.Input[str] application_id: The UUID of the application.
+        :param pulumi.Input[str] application_type: The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
         :param pulumi.Input[str] beacon_endpoint_url: The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
                `INSTRUMENTED_WEB_SERVER`
+        :param pulumi.Input[str] icon_type: Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] key_user_actions: User Action names to be flagged as Key User Actions
         :param pulumi.Input[str] name: The name of the application
         :param pulumi.Input[bool] opt_in_mode: The opt-in mode is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['MobileApplicationPropertiesArgs'] properties: User Action and Session Properties
-        :param pulumi.Input[bool] session_replay: The session replay is enabled (`true`) or disabled (`false`).
+        :param pulumi.Input[bool] session_replay: (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
                and **optInModeEnabled** values set to `true`.
-        :param pulumi.Input[int] user_session_percentage: The percentage of user sessions to be analyzed
+        :param pulumi.Input[int] user_session_percentage: (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+               apps) The percentage of user sessions to be analyzed
         """
         pulumi.set(__self__, "apdex", apdex)
         pulumi.set(__self__, "beacon_endpoint_type", beacon_endpoint_type)
         if application_id is not None:
             pulumi.set(__self__, "application_id", application_id)
+        if application_type is not None:
+            pulumi.set(__self__, "application_type", application_type)
         if beacon_endpoint_url is not None:
             pulumi.set(__self__, "beacon_endpoint_url", beacon_endpoint_url)
+        if icon_type is not None:
+            pulumi.set(__self__, "icon_type", icon_type)
         if key_user_actions is not None:
             pulumi.set(__self__, "key_user_actions", key_user_actions)
         if name is not None:
@@ -101,6 +110,18 @@ class MobileApplicationArgs:
         pulumi.set(self, "application_id", value)
 
     @property
+    @pulumi.getter(name="applicationType")
+    def application_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+        """
+        return pulumi.get(self, "application_type")
+
+    @application_type.setter
+    def application_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "application_type", value)
+
+    @property
     @pulumi.getter(name="beaconEndpointUrl")
     def beacon_endpoint_url(self) -> Optional[pulumi.Input[str]]:
         """
@@ -112,6 +133,18 @@ class MobileApplicationArgs:
     @beacon_endpoint_url.setter
     def beacon_endpoint_url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "beacon_endpoint_url", value)
+
+    @property
+    @pulumi.getter(name="iconType")
+    def icon_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+        """
+        return pulumi.get(self, "icon_type")
+
+    @icon_type.setter
+    def icon_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "icon_type", value)
 
     @property
     @pulumi.getter(name="keyUserActions")
@@ -165,7 +198,7 @@ class MobileApplicationArgs:
     @pulumi.getter(name="sessionReplay")
     def session_replay(self) -> Optional[pulumi.Input[bool]]:
         """
-        The session replay is enabled (`true`) or disabled (`false`).
+        (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
         """
         return pulumi.get(self, "session_replay")
 
@@ -190,7 +223,8 @@ class MobileApplicationArgs:
     @pulumi.getter(name="userSessionPercentage")
     def user_session_percentage(self) -> Optional[pulumi.Input[int]]:
         """
-        The percentage of user sessions to be analyzed
+        (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+        apps) The percentage of user sessions to be analyzed
         """
         return pulumi.get(self, "user_session_percentage")
 
@@ -204,8 +238,10 @@ class _MobileApplicationState:
     def __init__(__self__, *,
                  apdex: Optional[pulumi.Input['MobileApplicationApdexArgs']] = None,
                  application_id: Optional[pulumi.Input[str]] = None,
+                 application_type: Optional[pulumi.Input[str]] = None,
                  beacon_endpoint_type: Optional[pulumi.Input[str]] = None,
                  beacon_endpoint_url: Optional[pulumi.Input[str]] = None,
+                 icon_type: Optional[pulumi.Input[str]] = None,
                  key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  opt_in_mode: Optional[pulumi.Input[bool]] = None,
@@ -217,26 +253,33 @@ class _MobileApplicationState:
         Input properties used for looking up and filtering MobileApplication resources.
         :param pulumi.Input['MobileApplicationApdexArgs'] apdex: Apdex configuration of a mobile application. A duration less than the **tolerable** threshold is considered satisfied
         :param pulumi.Input[str] application_id: The UUID of the application.
+        :param pulumi.Input[str] application_type: The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
         :param pulumi.Input[str] beacon_endpoint_type: The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
         :param pulumi.Input[str] beacon_endpoint_url: The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
                `INSTRUMENTED_WEB_SERVER`
+        :param pulumi.Input[str] icon_type: Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] key_user_actions: User Action names to be flagged as Key User Actions
         :param pulumi.Input[str] name: The name of the application
         :param pulumi.Input[bool] opt_in_mode: The opt-in mode is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['MobileApplicationPropertiesArgs'] properties: User Action and Session Properties
-        :param pulumi.Input[bool] session_replay: The session replay is enabled (`true`) or disabled (`false`).
+        :param pulumi.Input[bool] session_replay: (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
                and **optInModeEnabled** values set to `true`.
-        :param pulumi.Input[int] user_session_percentage: The percentage of user sessions to be analyzed
+        :param pulumi.Input[int] user_session_percentage: (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+               apps) The percentage of user sessions to be analyzed
         """
         if apdex is not None:
             pulumi.set(__self__, "apdex", apdex)
         if application_id is not None:
             pulumi.set(__self__, "application_id", application_id)
+        if application_type is not None:
+            pulumi.set(__self__, "application_type", application_type)
         if beacon_endpoint_type is not None:
             pulumi.set(__self__, "beacon_endpoint_type", beacon_endpoint_type)
         if beacon_endpoint_url is not None:
             pulumi.set(__self__, "beacon_endpoint_url", beacon_endpoint_url)
+        if icon_type is not None:
+            pulumi.set(__self__, "icon_type", icon_type)
         if key_user_actions is not None:
             pulumi.set(__self__, "key_user_actions", key_user_actions)
         if name is not None:
@@ -277,6 +320,18 @@ class _MobileApplicationState:
         pulumi.set(self, "application_id", value)
 
     @property
+    @pulumi.getter(name="applicationType")
+    def application_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+        """
+        return pulumi.get(self, "application_type")
+
+    @application_type.setter
+    def application_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "application_type", value)
+
+    @property
     @pulumi.getter(name="beaconEndpointType")
     def beacon_endpoint_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -300,6 +355,18 @@ class _MobileApplicationState:
     @beacon_endpoint_url.setter
     def beacon_endpoint_url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "beacon_endpoint_url", value)
+
+    @property
+    @pulumi.getter(name="iconType")
+    def icon_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+        """
+        return pulumi.get(self, "icon_type")
+
+    @icon_type.setter
+    def icon_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "icon_type", value)
 
     @property
     @pulumi.getter(name="keyUserActions")
@@ -353,7 +420,7 @@ class _MobileApplicationState:
     @pulumi.getter(name="sessionReplay")
     def session_replay(self) -> Optional[pulumi.Input[bool]]:
         """
-        The session replay is enabled (`true`) or disabled (`false`).
+        (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
         """
         return pulumi.get(self, "session_replay")
 
@@ -378,7 +445,8 @@ class _MobileApplicationState:
     @pulumi.getter(name="userSessionPercentage")
     def user_session_percentage(self) -> Optional[pulumi.Input[int]]:
         """
-        The percentage of user sessions to be analyzed
+        (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+        apps) The percentage of user sessions to be analyzed
         """
         return pulumi.get(self, "user_session_percentage")
 
@@ -394,8 +462,10 @@ class MobileApplication(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  apdex: Optional[pulumi.Input[pulumi.InputType['MobileApplicationApdexArgs']]] = None,
                  application_id: Optional[pulumi.Input[str]] = None,
+                 application_type: Optional[pulumi.Input[str]] = None,
                  beacon_endpoint_type: Optional[pulumi.Input[str]] = None,
                  beacon_endpoint_url: Optional[pulumi.Input[str]] = None,
+                 icon_type: Optional[pulumi.Input[str]] = None,
                  key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  opt_in_mode: Optional[pulumi.Input[bool]] = None,
@@ -410,17 +480,20 @@ class MobileApplication(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['MobileApplicationApdexArgs']] apdex: Apdex configuration of a mobile application. A duration less than the **tolerable** threshold is considered satisfied
         :param pulumi.Input[str] application_id: The UUID of the application.
+        :param pulumi.Input[str] application_type: The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
         :param pulumi.Input[str] beacon_endpoint_type: The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
         :param pulumi.Input[str] beacon_endpoint_url: The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
                `INSTRUMENTED_WEB_SERVER`
+        :param pulumi.Input[str] icon_type: Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] key_user_actions: User Action names to be flagged as Key User Actions
         :param pulumi.Input[str] name: The name of the application
         :param pulumi.Input[bool] opt_in_mode: The opt-in mode is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[pulumi.InputType['MobileApplicationPropertiesArgs']] properties: User Action and Session Properties
-        :param pulumi.Input[bool] session_replay: The session replay is enabled (`true`) or disabled (`false`).
+        :param pulumi.Input[bool] session_replay: (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
                and **optInModeEnabled** values set to `true`.
-        :param pulumi.Input[int] user_session_percentage: The percentage of user sessions to be analyzed
+        :param pulumi.Input[int] user_session_percentage: (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+               apps) The percentage of user sessions to be analyzed
         """
         ...
     @overload
@@ -447,8 +520,10 @@ class MobileApplication(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  apdex: Optional[pulumi.Input[pulumi.InputType['MobileApplicationApdexArgs']]] = None,
                  application_id: Optional[pulumi.Input[str]] = None,
+                 application_type: Optional[pulumi.Input[str]] = None,
                  beacon_endpoint_type: Optional[pulumi.Input[str]] = None,
                  beacon_endpoint_url: Optional[pulumi.Input[str]] = None,
+                 icon_type: Optional[pulumi.Input[str]] = None,
                  key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  opt_in_mode: Optional[pulumi.Input[bool]] = None,
@@ -469,10 +544,12 @@ class MobileApplication(pulumi.CustomResource):
                 raise TypeError("Missing required property 'apdex'")
             __props__.__dict__["apdex"] = apdex
             __props__.__dict__["application_id"] = application_id
+            __props__.__dict__["application_type"] = application_type
             if beacon_endpoint_type is None and not opts.urn:
                 raise TypeError("Missing required property 'beacon_endpoint_type'")
             __props__.__dict__["beacon_endpoint_type"] = beacon_endpoint_type
             __props__.__dict__["beacon_endpoint_url"] = beacon_endpoint_url
+            __props__.__dict__["icon_type"] = icon_type
             __props__.__dict__["key_user_actions"] = key_user_actions
             __props__.__dict__["name"] = name
             __props__.__dict__["opt_in_mode"] = opt_in_mode
@@ -492,8 +569,10 @@ class MobileApplication(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             apdex: Optional[pulumi.Input[pulumi.InputType['MobileApplicationApdexArgs']]] = None,
             application_id: Optional[pulumi.Input[str]] = None,
+            application_type: Optional[pulumi.Input[str]] = None,
             beacon_endpoint_type: Optional[pulumi.Input[str]] = None,
             beacon_endpoint_url: Optional[pulumi.Input[str]] = None,
+            icon_type: Optional[pulumi.Input[str]] = None,
             key_user_actions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             opt_in_mode: Optional[pulumi.Input[bool]] = None,
@@ -510,17 +589,20 @@ class MobileApplication(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['MobileApplicationApdexArgs']] apdex: Apdex configuration of a mobile application. A duration less than the **tolerable** threshold is considered satisfied
         :param pulumi.Input[str] application_id: The UUID of the application.
+        :param pulumi.Input[str] application_type: The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
         :param pulumi.Input[str] beacon_endpoint_type: The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
         :param pulumi.Input[str] beacon_endpoint_url: The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
                `INSTRUMENTED_WEB_SERVER`
+        :param pulumi.Input[str] icon_type: Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] key_user_actions: User Action names to be flagged as Key User Actions
         :param pulumi.Input[str] name: The name of the application
         :param pulumi.Input[bool] opt_in_mode: The opt-in mode is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[pulumi.InputType['MobileApplicationPropertiesArgs']] properties: User Action and Session Properties
-        :param pulumi.Input[bool] session_replay: The session replay is enabled (`true`) or disabled (`false`).
+        :param pulumi.Input[bool] session_replay: (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
                and **optInModeEnabled** values set to `true`.
-        :param pulumi.Input[int] user_session_percentage: The percentage of user sessions to be analyzed
+        :param pulumi.Input[int] user_session_percentage: (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+               apps) The percentage of user sessions to be analyzed
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -528,8 +610,10 @@ class MobileApplication(pulumi.CustomResource):
 
         __props__.__dict__["apdex"] = apdex
         __props__.__dict__["application_id"] = application_id
+        __props__.__dict__["application_type"] = application_type
         __props__.__dict__["beacon_endpoint_type"] = beacon_endpoint_type
         __props__.__dict__["beacon_endpoint_url"] = beacon_endpoint_url
+        __props__.__dict__["icon_type"] = icon_type
         __props__.__dict__["key_user_actions"] = key_user_actions
         __props__.__dict__["name"] = name
         __props__.__dict__["opt_in_mode"] = opt_in_mode
@@ -556,6 +640,14 @@ class MobileApplication(pulumi.CustomResource):
         return pulumi.get(self, "application_id")
 
     @property
+    @pulumi.getter(name="applicationType")
+    def application_type(self) -> pulumi.Output[Optional[str]]:
+        """
+        The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+        """
+        return pulumi.get(self, "application_type")
+
+    @property
     @pulumi.getter(name="beaconEndpointType")
     def beacon_endpoint_type(self) -> pulumi.Output[str]:
         """
@@ -571,6 +663,14 @@ class MobileApplication(pulumi.CustomResource):
         `INSTRUMENTED_WEB_SERVER`
         """
         return pulumi.get(self, "beacon_endpoint_url")
+
+    @property
+    @pulumi.getter(name="iconType")
+    def icon_type(self) -> pulumi.Output[Optional[str]]:
+        """
+        Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+        """
+        return pulumi.get(self, "icon_type")
 
     @property
     @pulumi.getter(name="keyUserActions")
@@ -608,7 +708,7 @@ class MobileApplication(pulumi.CustomResource):
     @pulumi.getter(name="sessionReplay")
     def session_replay(self) -> pulumi.Output[Optional[bool]]:
         """
-        The session replay is enabled (`true`) or disabled (`false`).
+        (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
         """
         return pulumi.get(self, "session_replay")
 
@@ -625,7 +725,8 @@ class MobileApplication(pulumi.CustomResource):
     @pulumi.getter(name="userSessionPercentage")
     def user_session_percentage(self) -> pulumi.Output[Optional[int]]:
         """
-        The percentage of user sessions to be analyzed
+        (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+        apps) The percentage of user sessions to be analyzed
         """
         return pulumi.get(self, "user_session_percentage")
 

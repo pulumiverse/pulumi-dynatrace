@@ -4,6 +4,7 @@
 package com.pulumi.dynatrace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -11,7 +12,13 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CustomAnomaliesDimensionDimension {
+    private @Nullable Integer index;
     private @Nullable String key;
+    /**
+     * @return The name of the metric event displayed in the UI
+     * 
+     */
+    private @Nullable String name;
     private String type;
     /**
      * @return allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -20,8 +27,18 @@ public final class CustomAnomaliesDimensionDimension {
     private @Nullable String unknowns;
 
     private CustomAnomaliesDimensionDimension() {}
+    public Optional<Integer> index() {
+        return Optional.ofNullable(this.index);
+    }
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
+    }
+    /**
+     * @return The name of the metric event displayed in the UI
+     * 
+     */
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     public String type() {
         return this.type;
@@ -43,20 +60,34 @@ public final class CustomAnomaliesDimensionDimension {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Integer index;
         private @Nullable String key;
+        private @Nullable String name;
         private String type;
         private @Nullable String unknowns;
         public Builder() {}
         public Builder(CustomAnomaliesDimensionDimension defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.index = defaults.index;
     	      this.key = defaults.key;
+    	      this.name = defaults.name;
     	      this.type = defaults.type;
     	      this.unknowns = defaults.unknowns;
         }
 
         @CustomType.Setter
+        public Builder index(@Nullable Integer index) {
+            this.index = index;
+            return this;
+        }
+        @CustomType.Setter
         public Builder key(@Nullable String key) {
             this.key = key;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
@@ -71,7 +102,9 @@ public final class CustomAnomaliesDimensionDimension {
         }
         public CustomAnomaliesDimensionDimension build() {
             final var o = new CustomAnomaliesDimensionDimension();
+            o.index = index;
             o.key = key;
+            o.name = name;
             o.type = type;
             o.unknowns = unknowns;
             return o;

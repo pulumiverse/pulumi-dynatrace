@@ -16,34 +16,43 @@ __all__ = ['AutotagArgs', 'Autotag']
 @pulumi.input_type
 class AutotagArgs:
     def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
                  entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input['AutotagEntitySelectorBasedRuleArgs']]]] = None,
-                 metadata: Optional[pulumi.Input['AutotagMetadataArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input['AutotagRuleArgs']]]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Autotag resource.
+        :param pulumi.Input[str] description: The description of the auto-tag.
         :param pulumi.Input[Sequence[pulumi.Input['AutotagEntitySelectorBasedRuleArgs']]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
-        :param pulumi.Input['AutotagMetadataArgs'] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[str] name: The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
                In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
                `Infrastructure:Windows` and `Infrastructure:Linux`.
         :param pulumi.Input[Sequence[pulumi.Input['AutotagRuleArgs']]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if entity_selector_based_rules is not None:
             pulumi.set(__self__, "entity_selector_based_rules", entity_selector_based_rules)
-        if metadata is not None:
-            warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
-            pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-        if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        The description of the auto-tag.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
 
     @property
     @pulumi.getter(name="entitySelectorBasedRules")
@@ -56,18 +65,6 @@ class AutotagArgs:
     @entity_selector_based_rules.setter
     def entity_selector_based_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutotagEntitySelectorBasedRuleArgs']]]]):
         pulumi.set(self, "entity_selector_based_rules", value)
-
-    @property
-    @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['AutotagMetadataArgs']]:
-        """
-        `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        """
-        return pulumi.get(self, "metadata")
-
-    @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['AutotagMetadataArgs']]):
-        pulumi.set(self, "metadata", value)
 
     @property
     @pulumi.getter
@@ -111,34 +108,43 @@ class AutotagArgs:
 @pulumi.input_type
 class _AutotagState:
     def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
                  entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input['AutotagEntitySelectorBasedRuleArgs']]]] = None,
-                 metadata: Optional[pulumi.Input['AutotagMetadataArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input['AutotagRuleArgs']]]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Autotag resources.
+        :param pulumi.Input[str] description: The description of the auto-tag.
         :param pulumi.Input[Sequence[pulumi.Input['AutotagEntitySelectorBasedRuleArgs']]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
-        :param pulumi.Input['AutotagMetadataArgs'] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[str] name: The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
                In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
                `Infrastructure:Windows` and `Infrastructure:Linux`.
         :param pulumi.Input[Sequence[pulumi.Input['AutotagRuleArgs']]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
         if entity_selector_based_rules is not None:
             pulumi.set(__self__, "entity_selector_based_rules", entity_selector_based_rules)
-        if metadata is not None:
-            warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
-            pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-        if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        The description of the auto-tag.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
 
     @property
     @pulumi.getter(name="entitySelectorBasedRules")
@@ -151,18 +157,6 @@ class _AutotagState:
     @entity_selector_based_rules.setter
     def entity_selector_based_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutotagEntitySelectorBasedRuleArgs']]]]):
         pulumi.set(self, "entity_selector_based_rules", value)
-
-    @property
-    @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['AutotagMetadataArgs']]:
-        """
-        `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        """
-        return pulumi.get(self, "metadata")
-
-    @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['AutotagMetadataArgs']]):
-        pulumi.set(self, "metadata", value)
 
     @property
     @pulumi.getter
@@ -208,8 +202,8 @@ class Autotag(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 description: Optional[pulumi.Input[str]] = None,
                  entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutotagEntitySelectorBasedRuleArgs']]]]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['AutotagMetadataArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutotagRuleArgs']]]]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
@@ -218,8 +212,8 @@ class Autotag(pulumi.CustomResource):
         Create a Autotag resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] description: The description of the auto-tag.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutotagEntitySelectorBasedRuleArgs']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
-        :param pulumi.Input[pulumi.InputType['AutotagMetadataArgs']] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[str] name: The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
                In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
                `Infrastructure:Windows` and `Infrastructure:Linux`.
@@ -249,8 +243,8 @@ class Autotag(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 description: Optional[pulumi.Input[str]] = None,
                  entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutotagEntitySelectorBasedRuleArgs']]]]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['AutotagMetadataArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutotagRuleArgs']]]]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
@@ -263,11 +257,8 @@ class Autotag(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AutotagArgs.__new__(AutotagArgs)
 
+            __props__.__dict__["description"] = description
             __props__.__dict__["entity_selector_based_rules"] = entity_selector_based_rules
-            if metadata is not None and not opts.urn:
-                warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
-                pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-            __props__.__dict__["metadata"] = metadata
             __props__.__dict__["name"] = name
             __props__.__dict__["rules"] = rules
             __props__.__dict__["unknowns"] = unknowns
@@ -281,8 +272,8 @@ class Autotag(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            description: Optional[pulumi.Input[str]] = None,
             entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutotagEntitySelectorBasedRuleArgs']]]]] = None,
-            metadata: Optional[pulumi.Input[pulumi.InputType['AutotagMetadataArgs']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutotagRuleArgs']]]]] = None,
             unknowns: Optional[pulumi.Input[str]] = None) -> 'Autotag':
@@ -293,8 +284,8 @@ class Autotag(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] description: The description of the auto-tag.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutotagEntitySelectorBasedRuleArgs']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
-        :param pulumi.Input[pulumi.InputType['AutotagMetadataArgs']] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[str] name: The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
                In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
                `Infrastructure:Windows` and `Infrastructure:Linux`.
@@ -305,12 +296,20 @@ class Autotag(pulumi.CustomResource):
 
         __props__ = _AutotagState.__new__(_AutotagState)
 
+        __props__.__dict__["description"] = description
         __props__.__dict__["entity_selector_based_rules"] = entity_selector_based_rules
-        __props__.__dict__["metadata"] = metadata
         __props__.__dict__["name"] = name
         __props__.__dict__["rules"] = rules
         __props__.__dict__["unknowns"] = unknowns
         return Autotag(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter
+    def description(self) -> pulumi.Output[Optional[str]]:
+        """
+        The description of the auto-tag.
+        """
+        return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="entitySelectorBasedRules")
@@ -319,14 +318,6 @@ class Autotag(pulumi.CustomResource):
         A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         """
         return pulumi.get(self, "entity_selector_based_rules")
-
-    @property
-    @pulumi.getter
-    def metadata(self) -> pulumi.Output[Optional['outputs.AutotagMetadata']]:
-        """
-        `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        """
-        return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter

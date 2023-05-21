@@ -16,29 +16,25 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
  * import * as dynatrace from "@pulumi/dynatrace";
  *
- * const test = pulumi.output(dynatrace.getProcessGroup({
+ * const test = dynatrace.getProcessGroup({
  *     name: "Example",
  *     tags: [
  *         "TerraformKeyTest",
  *         "TerraformKeyValueTest=TestValue",
  *     ],
- * }));
- * const _name_ = new dynatrace.ManagementZone("#name#", {
- *     entitySelectorBasedRules: [{
- *         enabled: true,
- *         selector: pulumi.interpolate`type("process_group"),entityId("${test.id}")`,
- *     }],
  * });
+ * const _name_ = new dynatrace.ManagementZone("#name#", {entitySelectorBasedRules: [{
+ *     enabled: true,
+ *     selector: test.then(test => `type("process_group"),entityId("${test.id}")`),
+ * }]});
  * ```
  */
 export function getProcessGroup(args: GetProcessGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetProcessGroupResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getProcessGroup:getProcessGroup", {
         "name": args.name,
         "tags": args.tags,
@@ -70,9 +66,36 @@ export interface GetProcessGroupResult {
      */
     readonly tags?: string[];
 }
-
+/**
+ * The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
+ *
+ * - `name` queries for all process groups with the specified name
+ * - `tags` (optional) refers to the tags that need to be present for the process group (inclusive)
+ *
+ * If multiple process groups match the given criteria, the first result will be retrieved.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const test = dynatrace.getProcessGroup({
+ *     name: "Example",
+ *     tags: [
+ *         "TerraformKeyTest",
+ *         "TerraformKeyValueTest=TestValue",
+ *     ],
+ * });
+ * const _name_ = new dynatrace.ManagementZone("#name#", {entitySelectorBasedRules: [{
+ *     enabled: true,
+ *     selector: test.then(test => `type("process_group"),entityId("${test.id}")`),
+ * }]});
+ * ```
+ */
 export function getProcessGroupOutput(args: GetProcessGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProcessGroupResult> {
-    return pulumi.output(args).apply(a => getProcessGroup(a, opts))
+    return pulumi.output(args).apply((a: any) => getProcessGroup(a, opts))
 }
 
 /**

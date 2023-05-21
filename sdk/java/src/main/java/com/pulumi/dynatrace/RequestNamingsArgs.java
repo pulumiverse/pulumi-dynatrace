@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class RequestNamingsArgs extends com.pulumi.resources.ResourceArgs {
@@ -18,15 +20,15 @@ public final class RequestNamingsArgs extends com.pulumi.resources.ResourceArgs 
      * The IDs of the request namings in the order they should be taken into consideration
      * 
      */
-    @Import(name="ids", required=true)
-    private Output<List<String>> ids;
+    @Import(name="ids")
+    private @Nullable Output<List<String>> ids;
 
     /**
      * @return The IDs of the request namings in the order they should be taken into consideration
      * 
      */
-    public Output<List<String>> ids() {
-        return this.ids;
+    public Optional<Output<List<String>>> ids() {
+        return Optional.ofNullable(this.ids);
     }
 
     private RequestNamingsArgs() {}
@@ -59,7 +61,7 @@ public final class RequestNamingsArgs extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder ids(Output<List<String>> ids) {
+        public Builder ids(@Nullable Output<List<String>> ids) {
             $.ids = ids;
             return this;
         }
@@ -85,7 +87,6 @@ public final class RequestNamingsArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         public RequestNamingsArgs build() {
-            $.ids = Objects.requireNonNull($.ids, "expected parameter 'ids' to be non-null");
             return $;
         }
     }

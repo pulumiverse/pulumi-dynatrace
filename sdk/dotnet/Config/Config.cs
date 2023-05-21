@@ -60,5 +60,26 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             set => _dtEnvUrl.Set(value);
         }
 
+        private static readonly __Value<string?> _iamAccountId = new __Value<string?>(() => __config.Get("iamAccountId"));
+        public static string? IamAccountId
+        {
+            get => _iamAccountId.Get();
+            set => _iamAccountId.Set(value);
+        }
+
+        private static readonly __Value<string?> _iamClientId = new __Value<string?>(() => __config.Get("iamClientId"));
+        public static string? IamClientId
+        {
+            get => _iamClientId.Get();
+            set => _iamClientId.Set(value);
+        }
+
+        private static readonly __Value<string?> _iamClientSecret = new __Value<string?>(() => __config.Get("iamClientSecret"));
+        public static string? IamClientSecret
+        {
+            get => _iamClientSecret.Get();
+            set => _iamClientSecret.Set(value);
+        }
+
     }
 }

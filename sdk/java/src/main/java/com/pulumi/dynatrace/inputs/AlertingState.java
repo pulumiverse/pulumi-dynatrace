@@ -33,6 +33,21 @@ public final class AlertingState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The ID of this setting when referred to by the Config REST API V1
+     * 
+     */
+    @Import(name="legacyId")
+    private @Nullable Output<String> legacyId;
+
+    /**
+     * @return The ID of this setting when referred to by the Config REST API V1
+     * 
+     */
+    public Optional<Output<String>> legacyId() {
+        return Optional.ofNullable(this.legacyId);
+    }
+
+    /**
      * The ID of the management zone to which the alerting profile applies
      * 
      */
@@ -81,6 +96,7 @@ public final class AlertingState extends com.pulumi.resources.ResourceArgs {
 
     private AlertingState(AlertingState $) {
         this.filters = $.filters;
+        this.legacyId = $.legacyId;
         this.managementZone = $.managementZone;
         this.name = $.name;
         this.rules = $.rules;
@@ -123,6 +139,27 @@ public final class AlertingState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder filters(AlertingFiltersArgs filters) {
             return filters(Output.of(filters));
+        }
+
+        /**
+         * @param legacyId The ID of this setting when referred to by the Config REST API V1
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(@Nullable Output<String> legacyId) {
+            $.legacyId = legacyId;
+            return this;
+        }
+
+        /**
+         * @param legacyId The ID of this setting when referred to by the Config REST API V1
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(String legacyId) {
+            return legacyId(Output.of(legacyId));
         }
 
         /**

@@ -20,6 +20,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<Outputs.AlertingFilters?> Filters { get; private set; } = null!;
 
         /// <summary>
+        /// The ID of this setting when referred to by the Config REST API V1
+        /// </summary>
+        [Output("legacyId")]
+        public Output<string> LegacyId { get; private set; } = null!;
+
+        /// <summary>
         /// The ID of the management zone to which the alerting profile applies
         /// </summary>
         [Output("managementZone")]
@@ -91,6 +97,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<Inputs.AlertingFiltersArgs>? Filters { get; set; }
 
         /// <summary>
+        /// The ID of this setting when referred to by the Config REST API V1
+        /// </summary>
+        [Input("legacyId")]
+        public Input<string>? LegacyId { get; set; }
+
+        /// <summary>
         /// The ID of the management zone to which the alerting profile applies
         /// </summary>
         [Input("managementZone")]
@@ -121,6 +133,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         [Input("filters")]
         public Input<Inputs.AlertingFiltersGetArgs>? Filters { get; set; }
+
+        /// <summary>
+        /// The ID of this setting when referred to by the Config REST API V1
+        /// </summary>
+        [Input("legacyId")]
+        public Input<string>? LegacyId { get; set; }
 
         /// <summary>
         /// The ID of the management zone to which the alerting profile applies

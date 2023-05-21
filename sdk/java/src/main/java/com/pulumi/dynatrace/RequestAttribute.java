@@ -23,7 +23,7 @@ public class RequestAttribute extends com.pulumi.resources.CustomResource {
      * Aggregation type for the request values
      * 
      */
-    @Export(name="aggregation", type=String.class, parameters={})
+    @Export(name="aggregation", refs={String.class}, tree="[0]")
     private Output<String> aggregation;
 
     /**
@@ -37,7 +37,7 @@ public class RequestAttribute extends com.pulumi.resources.CustomResource {
      * Confidential data flag. Set `true` to treat the captured data as confidential
      * 
      */
-    @Export(name="confidential", type=Boolean.class, parameters={})
+    @Export(name="confidential", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> confidential;
 
     /**
@@ -51,7 +51,7 @@ public class RequestAttribute extends com.pulumi.resources.CustomResource {
      * The list of data sources
      * 
      */
-    @Export(name="dataSources", type=List.class, parameters={RequestAttributeDataSource.class})
+    @Export(name="dataSources", refs={List.class,RequestAttributeDataSource.class}, tree="[0,1]")
     private Output</* @Nullable */ List<RequestAttributeDataSource>> dataSources;
 
     /**
@@ -65,7 +65,7 @@ public class RequestAttribute extends com.pulumi.resources.CustomResource {
      * The data type of the request attribute
      * 
      */
-    @Export(name="dataType", type=String.class, parameters={})
+    @Export(name="dataType", refs={String.class}, tree="[0]")
     private Output<String> dataType;
 
     /**
@@ -79,7 +79,7 @@ public class RequestAttribute extends com.pulumi.resources.CustomResource {
      * The request attribute is enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="enabled", type=Boolean.class, parameters={})
+    @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enabled;
 
     /**
@@ -93,7 +93,7 @@ public class RequestAttribute extends com.pulumi.resources.CustomResource {
      * The name of the request attribute
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -107,7 +107,7 @@ public class RequestAttribute extends com.pulumi.resources.CustomResource {
      * String values transformation.   If the **dataType** is not `string`, set the `Original` here
      * 
      */
-    @Export(name="normalization", type=String.class, parameters={})
+    @Export(name="normalization", refs={String.class}, tree="[0]")
     private Output<String> normalization;
 
     /**
@@ -121,7 +121,7 @@ public class RequestAttribute extends com.pulumi.resources.CustomResource {
      * Personal data masking flag. Set `true` to skip masking.   Warning: This will potentially access personalized data
      * 
      */
-    @Export(name="skipPersonalDataMasking", type=Boolean.class, parameters={})
+    @Export(name="skipPersonalDataMasking", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> skipPersonalDataMasking;
 
     /**
@@ -135,7 +135,7 @@ public class RequestAttribute extends com.pulumi.resources.CustomResource {
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**

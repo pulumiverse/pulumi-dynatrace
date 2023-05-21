@@ -7,11 +7,14 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.dynatrace.outputs.CalculatedServiceMetricConditionConditionComparison;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class CalculatedServiceMetricConditionCondition {
     private String attribute;
     private CalculatedServiceMetricConditionConditionComparison comparison;
+    private @Nullable String unknowns;
 
     private CalculatedServiceMetricConditionCondition() {}
     public String attribute() {
@@ -19,6 +22,9 @@ public final class CalculatedServiceMetricConditionCondition {
     }
     public CalculatedServiceMetricConditionConditionComparison comparison() {
         return this.comparison;
+    }
+    public Optional<String> unknowns() {
+        return Optional.ofNullable(this.unknowns);
     }
 
     public static Builder builder() {
@@ -32,11 +38,13 @@ public final class CalculatedServiceMetricConditionCondition {
     public static final class Builder {
         private String attribute;
         private CalculatedServiceMetricConditionConditionComparison comparison;
+        private @Nullable String unknowns;
         public Builder() {}
         public Builder(CalculatedServiceMetricConditionCondition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.attribute = defaults.attribute;
     	      this.comparison = defaults.comparison;
+    	      this.unknowns = defaults.unknowns;
         }
 
         @CustomType.Setter
@@ -49,10 +57,16 @@ public final class CalculatedServiceMetricConditionCondition {
             this.comparison = Objects.requireNonNull(comparison);
             return this;
         }
+        @CustomType.Setter
+        public Builder unknowns(@Nullable String unknowns) {
+            this.unknowns = unknowns;
+            return this;
+        }
         public CalculatedServiceMetricConditionCondition build() {
             final var o = new CalculatedServiceMetricConditionCondition();
             o.attribute = attribute;
             o.comparison = comparison;
+            o.unknowns = unknowns;
             return o;
         }
     }

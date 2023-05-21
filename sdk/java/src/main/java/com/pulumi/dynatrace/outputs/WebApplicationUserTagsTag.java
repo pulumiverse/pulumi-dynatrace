@@ -18,10 +18,11 @@ public final class WebApplicationUserTagsTag {
      * @return The ID of this resource.
      * 
      */
-    private Integer id;
+    private @Nullable Integer id;
     private @Nullable Boolean ignoreCase;
     private @Nullable Integer metadataId;
     private @Nullable String serverSideRequestAttribute;
+    private @Nullable Integer uniqueId;
 
     private WebApplicationUserTagsTag() {}
     public Optional<String> cleanupRule() {
@@ -31,8 +32,8 @@ public final class WebApplicationUserTagsTag {
      * @return The ID of this resource.
      * 
      */
-    public Integer id() {
-        return this.id;
+    public Optional<Integer> id() {
+        return Optional.ofNullable(this.id);
     }
     public Optional<Boolean> ignoreCase() {
         return Optional.ofNullable(this.ignoreCase);
@@ -42,6 +43,9 @@ public final class WebApplicationUserTagsTag {
     }
     public Optional<String> serverSideRequestAttribute() {
         return Optional.ofNullable(this.serverSideRequestAttribute);
+    }
+    public Optional<Integer> uniqueId() {
+        return Optional.ofNullable(this.uniqueId);
     }
 
     public static Builder builder() {
@@ -54,10 +58,11 @@ public final class WebApplicationUserTagsTag {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String cleanupRule;
-        private Integer id;
+        private @Nullable Integer id;
         private @Nullable Boolean ignoreCase;
         private @Nullable Integer metadataId;
         private @Nullable String serverSideRequestAttribute;
+        private @Nullable Integer uniqueId;
         public Builder() {}
         public Builder(WebApplicationUserTagsTag defaults) {
     	      Objects.requireNonNull(defaults);
@@ -66,6 +71,7 @@ public final class WebApplicationUserTagsTag {
     	      this.ignoreCase = defaults.ignoreCase;
     	      this.metadataId = defaults.metadataId;
     	      this.serverSideRequestAttribute = defaults.serverSideRequestAttribute;
+    	      this.uniqueId = defaults.uniqueId;
         }
 
         @CustomType.Setter
@@ -74,8 +80,8 @@ public final class WebApplicationUserTagsTag {
             return this;
         }
         @CustomType.Setter
-        public Builder id(Integer id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable Integer id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -93,6 +99,11 @@ public final class WebApplicationUserTagsTag {
             this.serverSideRequestAttribute = serverSideRequestAttribute;
             return this;
         }
+        @CustomType.Setter
+        public Builder uniqueId(@Nullable Integer uniqueId) {
+            this.uniqueId = uniqueId;
+            return this;
+        }
         public WebApplicationUserTagsTag build() {
             final var o = new WebApplicationUserTagsTag();
             o.cleanupRule = cleanupRule;
@@ -100,6 +111,7 @@ public final class WebApplicationUserTagsTag {
             o.ignoreCase = ignoreCase;
             o.metadataId = metadataId;
             o.serverSideRequestAttribute = serverSideRequestAttribute;
+            o.uniqueId = uniqueId;
             return o;
         }
     }

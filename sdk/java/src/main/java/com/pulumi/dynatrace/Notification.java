@@ -13,7 +13,6 @@ import com.pulumi.dynatrace.inputs.NotificationState;
 import com.pulumi.dynatrace.outputs.NotificationAnsibleTower;
 import com.pulumi.dynatrace.outputs.NotificationConfig;
 import com.pulumi.dynatrace.outputs.NotificationEmail;
-import com.pulumi.dynatrace.outputs.NotificationHipchat;
 import com.pulumi.dynatrace.outputs.NotificationJira;
 import com.pulumi.dynatrace.outputs.NotificationOpsGenie;
 import com.pulumi.dynatrace.outputs.NotificationPagerDuty;
@@ -32,7 +31,7 @@ public class Notification extends com.pulumi.resources.CustomResource {
      * Configuration for Ansible Tower Notification
      * 
      */
-    @Export(name="ansibleTower", type=NotificationAnsibleTower.class, parameters={})
+    @Export(name="ansibleTower", refs={NotificationAnsibleTower.class}, tree="[0]")
     private Output</* @Nullable */ NotificationAnsibleTower> ansibleTower;
 
     /**
@@ -46,7 +45,7 @@ public class Notification extends com.pulumi.resources.CustomResource {
      * Configuration for Generic Notification
      * 
      */
-    @Export(name="config", type=NotificationConfig.class, parameters={})
+    @Export(name="config", refs={NotificationConfig.class}, tree="[0]")
     private Output</* @Nullable */ NotificationConfig> config;
 
     /**
@@ -60,7 +59,7 @@ public class Notification extends com.pulumi.resources.CustomResource {
      * Configuration for Email Notification
      * 
      */
-    @Export(name="email", type=NotificationEmail.class, parameters={})
+    @Export(name="email", refs={NotificationEmail.class}, tree="[0]")
     private Output</* @Nullable */ NotificationEmail> email;
 
     /**
@@ -71,24 +70,10 @@ public class Notification extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.email);
     }
     /**
-     * Configuration for HipChat Notification
-     * 
-     */
-    @Export(name="hipchat", type=NotificationHipchat.class, parameters={})
-    private Output</* @Nullable */ NotificationHipchat> hipchat;
-
-    /**
-     * @return Configuration for HipChat Notification
-     * 
-     */
-    public Output<Optional<NotificationHipchat>> hipchat() {
-        return Codegen.optional(this.hipchat);
-    }
-    /**
      * Configuration for Jira Notification
      * 
      */
-    @Export(name="jira", type=NotificationJira.class, parameters={})
+    @Export(name="jira", refs={NotificationJira.class}, tree="[0]")
     private Output</* @Nullable */ NotificationJira> jira;
 
     /**
@@ -102,7 +87,7 @@ public class Notification extends com.pulumi.resources.CustomResource {
      * Configuration for OpsGenie Notification
      * 
      */
-    @Export(name="opsGenie", type=NotificationOpsGenie.class, parameters={})
+    @Export(name="opsGenie", refs={NotificationOpsGenie.class}, tree="[0]")
     private Output</* @Nullable */ NotificationOpsGenie> opsGenie;
 
     /**
@@ -116,7 +101,7 @@ public class Notification extends com.pulumi.resources.CustomResource {
      * Configuration for PagerDuty Notification
      * 
      */
-    @Export(name="pagerDuty", type=NotificationPagerDuty.class, parameters={})
+    @Export(name="pagerDuty", refs={NotificationPagerDuty.class}, tree="[0]")
     private Output</* @Nullable */ NotificationPagerDuty> pagerDuty;
 
     /**
@@ -130,7 +115,7 @@ public class Notification extends com.pulumi.resources.CustomResource {
      * Configuration for ServiceNow Notification
      * 
      */
-    @Export(name="serviceNow", type=NotificationServiceNow.class, parameters={})
+    @Export(name="serviceNow", refs={NotificationServiceNow.class}, tree="[0]")
     private Output</* @Nullable */ NotificationServiceNow> serviceNow;
 
     /**
@@ -144,7 +129,7 @@ public class Notification extends com.pulumi.resources.CustomResource {
      * Configuration for Slack Notification
      * 
      */
-    @Export(name="slack", type=NotificationSlack.class, parameters={})
+    @Export(name="slack", refs={NotificationSlack.class}, tree="[0]")
     private Output</* @Nullable */ NotificationSlack> slack;
 
     /**
@@ -158,7 +143,7 @@ public class Notification extends com.pulumi.resources.CustomResource {
      * Configuration for Trello Notification
      * 
      */
-    @Export(name="trello", type=NotificationTrello.class, parameters={})
+    @Export(name="trello", refs={NotificationTrello.class}, tree="[0]")
     private Output</* @Nullable */ NotificationTrello> trello;
 
     /**
@@ -172,7 +157,7 @@ public class Notification extends com.pulumi.resources.CustomResource {
      * Configuration for VictorOps Notification
      * 
      */
-    @Export(name="victorOps", type=NotificationVictorOps.class, parameters={})
+    @Export(name="victorOps", refs={NotificationVictorOps.class}, tree="[0]")
     private Output</* @Nullable */ NotificationVictorOps> victorOps;
 
     /**
@@ -186,7 +171,7 @@ public class Notification extends com.pulumi.resources.CustomResource {
      * Configuration for WebHook Notification
      * 
      */
-    @Export(name="webHook", type=NotificationWebHook.class, parameters={})
+    @Export(name="webHook", refs={NotificationWebHook.class}, tree="[0]")
     private Output</* @Nullable */ NotificationWebHook> webHook;
 
     /**
@@ -200,7 +185,7 @@ public class Notification extends com.pulumi.resources.CustomResource {
      * Configuration for XMatters Notification
      * 
      */
-    @Export(name="xmatters", type=NotificationXmatters.class, parameters={})
+    @Export(name="xmatters", refs={NotificationXmatters.class}, tree="[0]")
     private Output</* @Nullable */ NotificationXmatters> xmatters;
 
     /**

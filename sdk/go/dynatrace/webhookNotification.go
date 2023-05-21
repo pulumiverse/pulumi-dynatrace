@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -20,6 +20,8 @@ type WebhookNotification struct {
 	Headers WebhookNotificationHeadersPtrOutput `pulumi:"headers"`
 	// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
 	Insecure pulumi.BoolPtrOutput `pulumi:"insecure"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
 	// The name of the notification configuration
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Send email if problem is closed
@@ -82,6 +84,8 @@ type webhookNotificationState struct {
 	Headers *WebhookNotificationHeaders `pulumi:"headers"`
 	// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
 	Insecure *bool `pulumi:"insecure"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The name of the notification configuration
 	Name *string `pulumi:"name"`
 	// Send email if problem is closed
@@ -103,6 +107,8 @@ type WebhookNotificationState struct {
 	Headers WebhookNotificationHeadersPtrInput
 	// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
 	Insecure pulumi.BoolPtrInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The name of the notification configuration
 	Name pulumi.StringPtrInput
 	// Send email if problem is closed
@@ -128,6 +134,8 @@ type webhookNotificationArgs struct {
 	Headers *WebhookNotificationHeaders `pulumi:"headers"`
 	// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
 	Insecure *bool `pulumi:"insecure"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The name of the notification configuration
 	Name *string `pulumi:"name"`
 	// Send email if problem is closed
@@ -150,6 +158,8 @@ type WebhookNotificationArgs struct {
 	Headers WebhookNotificationHeadersPtrInput
 	// Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
 	Insecure pulumi.BoolPtrInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The name of the notification configuration
 	Name pulumi.StringPtrInput
 	// Send email if problem is closed
@@ -264,6 +274,11 @@ func (o WebhookNotificationOutput) Headers() WebhookNotificationHeadersPtrOutput
 // Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
 func (o WebhookNotificationOutput) Insecure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *WebhookNotification) pulumi.BoolPtrOutput { return v.Insecure }).(pulumi.BoolPtrOutput)
+}
+
+// The ID of these settings when referred to from resources requiring the REST API V1 keys
+func (o WebhookNotificationOutput) LegacyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *WebhookNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
 // The name of the notification configuration

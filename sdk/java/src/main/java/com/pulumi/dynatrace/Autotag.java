@@ -11,7 +11,6 @@ import com.pulumi.dynatrace.AutotagArgs;
 import com.pulumi.dynatrace.Utilities;
 import com.pulumi.dynatrace.inputs.AutotagState;
 import com.pulumi.dynatrace.outputs.AutotagEntitySelectorBasedRule;
-import com.pulumi.dynatrace.outputs.AutotagMetadata;
 import com.pulumi.dynatrace.outputs.AutotagRule;
 import java.lang.String;
 import java.util.List;
@@ -21,10 +20,24 @@ import javax.annotation.Nullable;
 @ResourceType(type="dynatrace:index/autotag:Autotag")
 public class Autotag extends com.pulumi.resources.CustomResource {
     /**
+     * The description of the auto-tag.
+     * 
+     */
+    @Export(name="description", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> description;
+
+    /**
+     * @return The description of the auto-tag.
+     * 
+     */
+    public Output<Optional<String>> description() {
+        return Codegen.optional(this.description);
+    }
+    /**
      * A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
      * 
      */
-    @Export(name="entitySelectorBasedRules", type=List.class, parameters={AutotagEntitySelectorBasedRule.class})
+    @Export(name="entitySelectorBasedRules", refs={List.class,AutotagEntitySelectorBasedRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<AutotagEntitySelectorBasedRule>> entitySelectorBasedRules;
 
     /**
@@ -35,30 +48,12 @@ public class Autotag extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.entitySelectorBasedRules);
     }
     /**
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     * @deprecated
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     */
-    @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-    @Export(name="metadata", type=AutotagMetadata.class, parameters={})
-    private Output</* @Nullable */ AutotagMetadata> metadata;
-
-    /**
-     * @return `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     */
-    public Output<Optional<AutotagMetadata>> metadata() {
-        return Codegen.optional(this.metadata);
-    }
-    /**
      * The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
      * In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
      * `Infrastructure:Windows` and `Infrastructure:Linux`.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -74,7 +69,7 @@ public class Autotag extends com.pulumi.resources.CustomResource {
      * A list of rules for management zone usage. Each rule is evaluated independently of all other rules
      * 
      */
-    @Export(name="rules", type=List.class, parameters={AutotagRule.class})
+    @Export(name="rules", refs={List.class,AutotagRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<AutotagRule>> rules;
 
     /**
@@ -88,7 +83,7 @@ public class Autotag extends com.pulumi.resources.CustomResource {
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**

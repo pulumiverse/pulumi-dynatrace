@@ -16,15 +16,19 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
     {
         public readonly string Attribute;
         public readonly Outputs.CalculatedServiceMetricConditionConditionComparison Comparison;
+        public readonly string? Unknowns;
 
         [OutputConstructor]
         private CalculatedServiceMetricConditionCondition(
             string attribute,
 
-            Outputs.CalculatedServiceMetricConditionConditionComparison comparison)
+            Outputs.CalculatedServiceMetricConditionConditionComparison comparison,
+
+            string? unknowns)
         {
             Attribute = attribute;
             Comparison = comparison;
+            Unknowns = unknowns;
         }
     }
 }

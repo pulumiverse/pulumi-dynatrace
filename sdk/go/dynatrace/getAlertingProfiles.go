@@ -29,8 +29,9 @@ type GetAlertingProfilesArgs struct {
 // A collection of values returned by getAlertingProfiles.
 type GetAlertingProfilesResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id       string            `pulumi:"id"`
-	Profiles map[string]string `pulumi:"profiles"`
+	Id       string                     `pulumi:"id"`
+	Profiles map[string]string          `pulumi:"profiles"`
+	Values   []GetAlertingProfilesValue `pulumi:"values"`
 }
 
 func GetAlertingProfilesOutput(ctx *pulumi.Context, args GetAlertingProfilesOutputArgs, opts ...pulumi.InvokeOption) GetAlertingProfilesResultOutput {
@@ -77,6 +78,10 @@ func (o GetAlertingProfilesResultOutput) Id() pulumi.StringOutput {
 
 func (o GetAlertingProfilesResultOutput) Profiles() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetAlertingProfilesResult) map[string]string { return v.Profiles }).(pulumi.StringMapOutput)
+}
+
+func (o GetAlertingProfilesResultOutput) Values() GetAlertingProfilesValueArrayOutput {
+	return o.ApplyT(func(v GetAlertingProfilesResult) []GetAlertingProfilesValue { return v.Values }).(GetAlertingProfilesValueArrayOutput)
 }
 
 func init() {

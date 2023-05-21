@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.dynatrace.inputs.HttpMonitorScriptRequestAuthenticationArgs;
 import com.pulumi.dynatrace.inputs.HttpMonitorScriptRequestConfigurationArgs;
 import com.pulumi.dynatrace.inputs.HttpMonitorScriptRequestValidationArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -67,6 +68,13 @@ public final class HttpMonitorScriptRequestArgs extends com.pulumi.resources.Res
         return Optional.ofNullable(this.preProcessing);
     }
 
+    @Import(name="requestTimeout")
+    private @Nullable Output<Integer> requestTimeout;
+
+    public Optional<Output<Integer>> requestTimeout() {
+        return Optional.ofNullable(this.requestTimeout);
+    }
+
     @Import(name="url", required=true)
     private Output<String> url;
 
@@ -91,6 +99,7 @@ public final class HttpMonitorScriptRequestArgs extends com.pulumi.resources.Res
         this.method = $.method;
         this.postProcessing = $.postProcessing;
         this.preProcessing = $.preProcessing;
+        this.requestTimeout = $.requestTimeout;
         this.url = $.url;
         this.validation = $.validation;
     }
@@ -174,6 +183,15 @@ public final class HttpMonitorScriptRequestArgs extends com.pulumi.resources.Res
 
         public Builder preProcessing(String preProcessing) {
             return preProcessing(Output.of(preProcessing));
+        }
+
+        public Builder requestTimeout(@Nullable Output<Integer> requestTimeout) {
+            $.requestTimeout = requestTimeout;
+            return this;
+        }
+
+        public Builder requestTimeout(Integer requestTimeout) {
+            return requestTimeout(Output.of(requestTimeout));
         }
 
         public Builder url(Output<String> url) {

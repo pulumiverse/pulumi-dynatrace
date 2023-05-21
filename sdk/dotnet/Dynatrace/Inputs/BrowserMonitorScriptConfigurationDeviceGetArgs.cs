@@ -26,7 +26,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         public Input<string>? Orientation { get; set; }
 
         [Input("scaleFactor")]
-        public Input<int>? ScaleFactor { get; set; }
+        public Input<double>? ScaleFactor { get; set; }
 
         [Input("touchEnabled")]
         public Input<bool>? TouchEnabled { get; set; }

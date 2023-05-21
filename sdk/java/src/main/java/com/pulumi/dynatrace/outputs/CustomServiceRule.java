@@ -37,11 +37,6 @@ public final class CustomServiceRule {
      */
     private @Nullable CustomServiceRuleFile file;
     /**
-     * @return The ID of the detection rule
-     * 
-     */
-    private @Nullable String id;
-    /**
      * @return methods to instrument
      * 
      */
@@ -82,13 +77,6 @@ public final class CustomServiceRule {
         return Optional.ofNullable(this.file);
     }
     /**
-     * @return The ID of the detection rule
-     * 
-     */
-    public Optional<String> id() {
-        return Optional.ofNullable(this.id);
-    }
-    /**
      * @return methods to instrument
      * 
      */
@@ -116,7 +104,6 @@ public final class CustomServiceRule {
         private @Nullable CustomServiceRuleClass class_;
         private Boolean enabled;
         private @Nullable CustomServiceRuleFile file;
-        private @Nullable String id;
         private List<CustomServiceRuleMethod> methods;
         private @Nullable String unknowns;
         public Builder() {}
@@ -126,7 +113,6 @@ public final class CustomServiceRule {
     	      this.class_ = defaults.class_;
     	      this.enabled = defaults.enabled;
     	      this.file = defaults.file;
-    	      this.id = defaults.id;
     	      this.methods = defaults.methods;
     	      this.unknowns = defaults.unknowns;
         }
@@ -155,11 +141,6 @@ public final class CustomServiceRule {
             return this;
         }
         @CustomType.Setter
-        public Builder id(@Nullable String id) {
-            this.id = id;
-            return this;
-        }
-        @CustomType.Setter
         public Builder methods(List<CustomServiceRuleMethod> methods) {
             this.methods = Objects.requireNonNull(methods);
             return this;
@@ -178,7 +159,6 @@ public final class CustomServiceRule {
             o.class_ = class_;
             o.enabled = enabled;
             o.file = file;
-            o.id = id;
             o.methods = methods;
             o.unknowns = unknowns;
             return o;

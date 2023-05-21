@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.dynatrace.outputs.HttpMonitorScriptRequestAuthentication;
 import com.pulumi.dynatrace.outputs.HttpMonitorScriptRequestConfiguration;
 import com.pulumi.dynatrace.outputs.HttpMonitorScriptRequestValidation;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -21,6 +22,7 @@ public final class HttpMonitorScriptRequest {
     private String method;
     private @Nullable String postProcessing;
     private @Nullable String preProcessing;
+    private @Nullable Integer requestTimeout;
     private String url;
     private @Nullable HttpMonitorScriptRequestValidation validation;
 
@@ -46,6 +48,9 @@ public final class HttpMonitorScriptRequest {
     public Optional<String> preProcessing() {
         return Optional.ofNullable(this.preProcessing);
     }
+    public Optional<Integer> requestTimeout() {
+        return Optional.ofNullable(this.requestTimeout);
+    }
     public String url() {
         return this.url;
     }
@@ -69,6 +74,7 @@ public final class HttpMonitorScriptRequest {
         private String method;
         private @Nullable String postProcessing;
         private @Nullable String preProcessing;
+        private @Nullable Integer requestTimeout;
         private String url;
         private @Nullable HttpMonitorScriptRequestValidation validation;
         public Builder() {}
@@ -81,6 +87,7 @@ public final class HttpMonitorScriptRequest {
     	      this.method = defaults.method;
     	      this.postProcessing = defaults.postProcessing;
     	      this.preProcessing = defaults.preProcessing;
+    	      this.requestTimeout = defaults.requestTimeout;
     	      this.url = defaults.url;
     	      this.validation = defaults.validation;
         }
@@ -121,6 +128,11 @@ public final class HttpMonitorScriptRequest {
             return this;
         }
         @CustomType.Setter
+        public Builder requestTimeout(@Nullable Integer requestTimeout) {
+            this.requestTimeout = requestTimeout;
+            return this;
+        }
+        @CustomType.Setter
         public Builder url(String url) {
             this.url = Objects.requireNonNull(url);
             return this;
@@ -139,6 +151,7 @@ public final class HttpMonitorScriptRequest {
             o.method = method;
             o.postProcessing = postProcessing;
             o.preProcessing = preProcessing;
+            o.requestTimeout = requestTimeout;
             o.url = url;
             o.validation = validation;
             return o;

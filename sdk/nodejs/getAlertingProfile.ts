@@ -30,11 +30,8 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getAlertingProfile(args: GetAlertingProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertingProfileResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getAlertingProfile:getAlertingProfile", {
         "name": args.name,
     }, opts);
@@ -55,11 +52,36 @@ export interface GetAlertingProfileResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly legacyId: string;
     readonly name: string;
 }
-
+/**
+ * The Alerting Profile queries for an Alerting Profile that has a specified name. In case multiple Alerting Profiles share the same name the first one found will be used.
+ * The ID of this Data Resource aligns with the IDs used by the Dynatrace Settings 2.0 API.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const default = dynatrace.getAlertingProfile({
+ *     name: "Default",
+ * });
+ * const myWebhookNotification = new dynatrace.WebhookNotification("myWebhookNotification", {
+ *     active: false,
+ *     profile: _default.then(_default => _default.id),
+ *     url: "https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e",
+ *     insecure: true,
+ *     notifyEventMerges: true,
+ *     notifyClosedProblems: true,
+ *     payload: "web-hook-payload",
+ * });
+ * ```
+ */
 export function getAlertingProfileOutput(args: GetAlertingProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertingProfileResult> {
-    return pulumi.output(args).apply(a => getAlertingProfile(a, opts))
+    return pulumi.output(args).apply((a: any) => getAlertingProfile(a, opts))
 }
 
 /**

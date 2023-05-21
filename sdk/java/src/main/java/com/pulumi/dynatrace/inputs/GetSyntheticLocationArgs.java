@@ -31,11 +31,11 @@ public final class GetSyntheticLocationArgs extends com.pulumi.resources.InvokeA
         return Optional.ofNullable(this.cloudPlatform);
     }
 
-    @Import(name="id")
-    private @Nullable Output<String> id;
+    @Import(name="entityId")
+    private @Nullable Output<String> entityId;
 
-    public Optional<Output<String>> id() {
-        return Optional.ofNullable(this.id);
+    public Optional<Output<String>> entityId() {
+        return Optional.ofNullable(this.entityId);
     }
 
     @Import(name="ips")
@@ -77,7 +77,7 @@ public final class GetSyntheticLocationArgs extends com.pulumi.resources.InvokeA
 
     private GetSyntheticLocationArgs(GetSyntheticLocationArgs $) {
         this.cloudPlatform = $.cloudPlatform;
-        this.id = $.id;
+        this.entityId = $.entityId;
         this.ips = $.ips;
         this.name = $.name;
         this.stage = $.stage;
@@ -124,13 +124,13 @@ public final class GetSyntheticLocationArgs extends com.pulumi.resources.InvokeA
             return cloudPlatform(Output.of(cloudPlatform));
         }
 
-        public Builder id(@Nullable Output<String> id) {
-            $.id = id;
+        public Builder entityId(@Nullable Output<String> entityId) {
+            $.entityId = entityId;
             return this;
         }
 
-        public Builder id(String id) {
-            return id(Output.of(id));
+        public Builder entityId(String entityId) {
+            return entityId(Output.of(entityId));
         }
 
         public Builder ips(@Nullable Output<List<String>> ips) {

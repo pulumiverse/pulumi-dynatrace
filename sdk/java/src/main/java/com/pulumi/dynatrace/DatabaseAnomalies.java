@@ -23,7 +23,7 @@ public class DatabaseAnomalies extends com.pulumi.resources.CustomResource {
      * Parameters of the failed database connections detection.  The alert is triggered when failed connections number exceeds **connectionFailsCount** during any **timePeriodMinutes** minutes period
      * 
      */
-    @Export(name="dbConnectFailures", type=DatabaseAnomaliesDbConnectFailures.class, parameters={})
+    @Export(name="dbConnectFailures", refs={DatabaseAnomaliesDbConnectFailures.class}, tree="[0]")
     private Output</* @Nullable */ DatabaseAnomaliesDbConnectFailures> dbConnectFailures;
 
     /**
@@ -37,7 +37,7 @@ public class DatabaseAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration of failure rate increase detection
      * 
      */
-    @Export(name="failureRate", type=DatabaseAnomaliesFailureRate.class, parameters={})
+    @Export(name="failureRate", refs={DatabaseAnomaliesFailureRate.class}, tree="[0]")
     private Output</* @Nullable */ DatabaseAnomaliesFailureRate> failureRate;
 
     /**
@@ -51,7 +51,7 @@ public class DatabaseAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration for anomalies regarding load drops and spikes
      * 
      */
-    @Export(name="load", type=DatabaseAnomaliesLoad.class, parameters={})
+    @Export(name="load", refs={DatabaseAnomaliesLoad.class}, tree="[0]")
     private Output</* @Nullable */ DatabaseAnomaliesLoad> load;
 
     /**
@@ -65,7 +65,7 @@ public class DatabaseAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration of response time degradation detection
      * 
      */
-    @Export(name="responseTime", type=DatabaseAnomaliesResponseTime.class, parameters={})
+    @Export(name="responseTime", refs={DatabaseAnomaliesResponseTime.class}, tree="[0]")
     private Output</* @Nullable */ DatabaseAnomaliesResponseTime> responseTime;
 
     /**

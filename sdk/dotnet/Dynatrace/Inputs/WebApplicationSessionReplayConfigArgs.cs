@@ -14,7 +14,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
     public sealed class WebApplicationSessionReplayConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Session replay sampling rating in percent
+        /// (Field has overlap with `dynatrace.WebAppEnablement`) Session replay sampling rating in percent
         /// </summary>
         [Input("costControlPercentage", required: true)]
         public Input<int> CostControlPercentage { get; set; } = null!;
@@ -23,7 +23,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         private InputList<string>? _cssResourceCapturingExclusionRules;
 
         /// <summary>
-        /// A list of URLs to be excluded from CSS resource capturing
+        /// (Field has overlap with `dynatrace.SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
         /// </summary>
         public InputList<string> CssResourceCapturingExclusionRules
         {
@@ -32,13 +32,13 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// Capture (`true`) or don't capture (`false`) CSS resources from the session
+        /// (Field has overlap with `dynatrace.SessionReplayResourceCapture`) Capture (`true`) or don't capture (`false`) CSS resources from the session
         /// </summary>
         [Input("enableCssResourceCapturing")]
         public Input<bool>? EnableCssResourceCapturing { get; set; }
 
         /// <summary>
-        /// SessionReplay Enabled/Disabled
+        /// (Field has overlap with `dynatrace.WebAppEnablement`) SessionReplay Enabled/Disabled
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }

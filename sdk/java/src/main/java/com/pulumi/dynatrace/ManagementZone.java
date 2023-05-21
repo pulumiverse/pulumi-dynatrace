@@ -12,7 +12,6 @@ import com.pulumi.dynatrace.Utilities;
 import com.pulumi.dynatrace.inputs.ManagementZoneState;
 import com.pulumi.dynatrace.outputs.ManagementZoneDimensionalRule;
 import com.pulumi.dynatrace.outputs.ManagementZoneEntitySelectorBasedRule;
-import com.pulumi.dynatrace.outputs.ManagementZoneMetadata;
 import com.pulumi.dynatrace.outputs.ManagementZoneRule;
 import java.lang.String;
 import java.util.List;
@@ -25,7 +24,7 @@ public class ManagementZone extends com.pulumi.resources.CustomResource {
      * The description of the management zone
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     /**
@@ -39,7 +38,7 @@ public class ManagementZone extends com.pulumi.resources.CustomResource {
      * A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
      * 
      */
-    @Export(name="dimensionalRules", type=List.class, parameters={ManagementZoneDimensionalRule.class})
+    @Export(name="dimensionalRules", refs={List.class,ManagementZoneDimensionalRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<ManagementZoneDimensionalRule>> dimensionalRules;
 
     /**
@@ -53,7 +52,7 @@ public class ManagementZone extends com.pulumi.resources.CustomResource {
      * A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
      * 
      */
-    @Export(name="entitySelectorBasedRules", type=List.class, parameters={ManagementZoneEntitySelectorBasedRule.class})
+    @Export(name="entitySelectorBasedRules", refs={List.class,ManagementZoneEntitySelectorBasedRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<ManagementZoneEntitySelectorBasedRule>> entitySelectorBasedRules;
 
     /**
@@ -64,28 +63,10 @@ public class ManagementZone extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.entitySelectorBasedRules);
     }
     /**
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     * @deprecated
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     */
-    @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-    @Export(name="metadata", type=ManagementZoneMetadata.class, parameters={})
-    private Output</* @Nullable */ ManagementZoneMetadata> metadata;
-
-    /**
-     * @return `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     */
-    public Output<Optional<ManagementZoneMetadata>> metadata() {
-        return Codegen.optional(this.metadata);
-    }
-    /**
      * The name of the management zone
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -99,7 +80,7 @@ public class ManagementZone extends com.pulumi.resources.CustomResource {
      * A list of rules for management zone usage. Each rule is evaluated independently of all other rules
      * 
      */
-    @Export(name="rules", type=List.class, parameters={ManagementZoneRule.class})
+    @Export(name="rules", refs={List.class,ManagementZoneRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<ManagementZoneRule>> rules;
 
     /**
@@ -113,7 +94,7 @@ public class ManagementZone extends com.pulumi.resources.CustomResource {
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**

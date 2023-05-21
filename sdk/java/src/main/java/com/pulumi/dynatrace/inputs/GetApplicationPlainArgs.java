@@ -5,10 +5,7 @@ package com.pulumi.dynatrace.inputs;
 
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
-import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class GetApplicationPlainArgs extends com.pulumi.resources.InvokeArgs {
@@ -22,26 +19,10 @@ public final class GetApplicationPlainArgs extends com.pulumi.resources.InvokeAr
         return this.name;
     }
 
-    /**
-     * Required tags of the application to find
-     * 
-     */
-    @Import(name="tags")
-    private @Nullable List<String> tags;
-
-    /**
-     * @return Required tags of the application to find
-     * 
-     */
-    public Optional<List<String>> tags() {
-        return Optional.ofNullable(this.tags);
-    }
-
     private GetApplicationPlainArgs() {}
 
     private GetApplicationPlainArgs(GetApplicationPlainArgs $) {
         this.name = $.name;
-        this.tags = $.tags;
     }
 
     public static Builder builder() {
@@ -65,27 +46,6 @@ public final class GetApplicationPlainArgs extends com.pulumi.resources.InvokeAr
         public Builder name(String name) {
             $.name = name;
             return this;
-        }
-
-        /**
-         * @param tags Required tags of the application to find
-         * 
-         * @return builder
-         * 
-         */
-        public Builder tags(@Nullable List<String> tags) {
-            $.tags = tags;
-            return this;
-        }
-
-        /**
-         * @param tags Required tags of the application to find
-         * 
-         * @return builder
-         * 
-         */
-        public Builder tags(String... tags) {
-            return tags(List.of(tags));
         }
 
         public GetApplicationPlainArgs build() {

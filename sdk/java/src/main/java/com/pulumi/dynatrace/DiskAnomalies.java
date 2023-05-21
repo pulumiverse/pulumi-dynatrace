@@ -25,7 +25,7 @@ public class DiskAnomalies extends com.pulumi.resources.CustomResource {
      * Narrows the rule usage down to disks, matching the specified criteria
      * 
      */
-    @Export(name="diskName", type=DiskAnomaliesDiskName.class, parameters={})
+    @Export(name="diskName", refs={DiskAnomaliesDiskName.class}, tree="[0]")
     private Output</* @Nullable */ DiskAnomaliesDiskName> diskName;
 
     /**
@@ -39,7 +39,7 @@ public class DiskAnomalies extends com.pulumi.resources.CustomResource {
      * Disk event rule enabled/disabled
      * 
      */
-    @Export(name="enabled", type=Boolean.class, parameters={})
+    @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enabled;
 
     /**
@@ -53,7 +53,7 @@ public class DiskAnomalies extends com.pulumi.resources.CustomResource {
      * Narrows the rule usage down to disks that run on hosts that themselves run on the specified host group
      * 
      */
-    @Export(name="hostGroupId", type=String.class, parameters={})
+    @Export(name="hostGroupId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> hostGroupId;
 
     /**
@@ -67,7 +67,7 @@ public class DiskAnomalies extends com.pulumi.resources.CustomResource {
      * The metric to monitor. Possible values are: `LOW_DISK_SPACE`, `LOW_INODES`, `READ_TIME_EXCEEDING` and `WRITE_TIME_EXCEEDING`
      * 
      */
-    @Export(name="metric", type=String.class, parameters={})
+    @Export(name="metric", refs={String.class}, tree="[0]")
     private Output<String> metric;
 
     /**
@@ -81,7 +81,7 @@ public class DiskAnomalies extends com.pulumi.resources.CustomResource {
      * The name of the disk event rule
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -95,7 +95,7 @@ public class DiskAnomalies extends com.pulumi.resources.CustomResource {
      * The number of samples to evaluate
      * 
      */
-    @Export(name="samples", type=Integer.class, parameters={})
+    @Export(name="samples", refs={Integer.class}, tree="[0]")
     private Output<Integer> samples;
 
     /**
@@ -109,7 +109,7 @@ public class DiskAnomalies extends com.pulumi.resources.CustomResource {
      * Narrows the rule usage down to the hosts matching the specified tags
      * 
      */
-    @Export(name="tags", type=DiskAnomaliesTags.class, parameters={})
+    @Export(name="tags", refs={DiskAnomaliesTags.class}, tree="[0]")
     private Output</* @Nullable */ DiskAnomaliesTags> tags;
 
     /**
@@ -123,7 +123,7 @@ public class DiskAnomalies extends com.pulumi.resources.CustomResource {
      * The threshold to trigger disk event.   * A percentage for `LowDiskSpace` or `LowInodes` metrics.   * In milliseconds for `ReadTimeExceeding` or `WriteTimeExceeding` metrics
      * 
      */
-    @Export(name="threshold", type=Double.class, parameters={})
+    @Export(name="threshold", refs={Double.class}, tree="[0]")
     private Output<Double> threshold;
 
     /**
@@ -137,7 +137,7 @@ public class DiskAnomalies extends com.pulumi.resources.CustomResource {
      * The number of samples that must violate the threshold to trigger an event. Must not exceed the number of evaluated samples
      * 
      */
-    @Export(name="violatingSamples", type=Integer.class, parameters={})
+    @Export(name="violatingSamples", refs={Integer.class}, tree="[0]")
     private Output<Integer> violatingSamples;
 
     /**

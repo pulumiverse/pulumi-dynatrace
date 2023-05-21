@@ -25,7 +25,7 @@ public class MobileApplication extends com.pulumi.resources.CustomResource {
      * Apdex configuration of a mobile application. A duration less than the **tolerable** threshold is considered satisfied
      * 
      */
-    @Export(name="apdex", type=MobileApplicationApdex.class, parameters={})
+    @Export(name="apdex", refs={MobileApplicationApdex.class}, tree="[0]")
     private Output<MobileApplicationApdex> apdex;
 
     /**
@@ -39,7 +39,7 @@ public class MobileApplication extends com.pulumi.resources.CustomResource {
      * The UUID of the application.
      * 
      */
-    @Export(name="applicationId", type=String.class, parameters={})
+    @Export(name="applicationId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> applicationId;
 
     /**
@@ -50,10 +50,24 @@ public class MobileApplication extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.applicationId);
     }
     /**
+     * The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+     * 
+     */
+    @Export(name="applicationType", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> applicationType;
+
+    /**
+     * @return The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+     * 
+     */
+    public Output<Optional<String>> applicationType() {
+        return Codegen.optional(this.applicationType);
+    }
+    /**
      * The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
      * 
      */
-    @Export(name="beaconEndpointType", type=String.class, parameters={})
+    @Export(name="beaconEndpointType", refs={String.class}, tree="[0]")
     private Output<String> beaconEndpointType;
 
     /**
@@ -68,7 +82,7 @@ public class MobileApplication extends com.pulumi.resources.CustomResource {
      * `INSTRUMENTED_WEB_SERVER`
      * 
      */
-    @Export(name="beaconEndpointUrl", type=String.class, parameters={})
+    @Export(name="beaconEndpointUrl", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> beaconEndpointUrl;
 
     /**
@@ -80,10 +94,24 @@ public class MobileApplication extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.beaconEndpointUrl);
     }
     /**
+     * Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+     * 
+     */
+    @Export(name="iconType", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> iconType;
+
+    /**
+     * @return Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+     * 
+     */
+    public Output<Optional<String>> iconType() {
+        return Codegen.optional(this.iconType);
+    }
+    /**
      * User Action names to be flagged as Key User Actions
      * 
      */
-    @Export(name="keyUserActions", type=List.class, parameters={String.class})
+    @Export(name="keyUserActions", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> keyUserActions;
 
     /**
@@ -97,7 +125,7 @@ public class MobileApplication extends com.pulumi.resources.CustomResource {
      * The name of the application
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -111,7 +139,7 @@ public class MobileApplication extends com.pulumi.resources.CustomResource {
      * The opt-in mode is enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="optInMode", type=Boolean.class, parameters={})
+    @Export(name="optInMode", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> optInMode;
 
     /**
@@ -125,7 +153,7 @@ public class MobileApplication extends com.pulumi.resources.CustomResource {
      * User Action and Session Properties
      * 
      */
-    @Export(name="properties", type=MobileApplicationProperties.class, parameters={})
+    @Export(name="properties", refs={MobileApplicationProperties.class}, tree="[0]")
     private Output</* @Nullable */ MobileApplicationProperties> properties;
 
     /**
@@ -136,14 +164,14 @@ public class MobileApplication extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.properties);
     }
     /**
-     * The session replay is enabled (`true`) or disabled (`false`).
+     * (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
      * 
      */
-    @Export(name="sessionReplay", type=Boolean.class, parameters={})
+    @Export(name="sessionReplay", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> sessionReplay;
 
     /**
-     * @return The session replay is enabled (`true`) or disabled (`false`).
+     * @return (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
      * 
      */
     public Output<Optional<Boolean>> sessionReplay() {
@@ -154,7 +182,7 @@ public class MobileApplication extends com.pulumi.resources.CustomResource {
      * and **optInModeEnabled** values set to `true`.
      * 
      */
-    @Export(name="sessionReplayOnCrash", type=Boolean.class, parameters={})
+    @Export(name="sessionReplayOnCrash", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> sessionReplayOnCrash;
 
     /**
@@ -166,14 +194,16 @@ public class MobileApplication extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.sessionReplayOnCrash);
     }
     /**
-     * The percentage of user sessions to be analyzed
+     * (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+     * apps) The percentage of user sessions to be analyzed
      * 
      */
-    @Export(name="userSessionPercentage", type=Integer.class, parameters={})
+    @Export(name="userSessionPercentage", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> userSessionPercentage;
 
     /**
-     * @return The percentage of user sessions to be analyzed
+     * @return (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+     * apps) The percentage of user sessions to be analyzed
      * 
      */
     public Output<Optional<Integer>> userSessionPercentage() {

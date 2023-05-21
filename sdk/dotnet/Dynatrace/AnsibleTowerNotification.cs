@@ -38,6 +38,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<string> JobTemplateUrl { get; private set; } = null!;
 
         /// <summary>
+        /// The ID of these settings when referred to from resources requiring the REST API V1 keys
+        /// </summary>
+        [Output("legacyId")]
+        public Output<string> LegacyId { get; private set; } = null!;
+
+        /// <summary>
         /// The display name within the Dynatrace WebUI.
         /// </summary>
         [Output("name")]
@@ -137,6 +143,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<string> JobTemplateUrl { get; set; } = null!;
 
         /// <summary>
+        /// The ID of these settings when referred to from resources requiring the REST API V1 keys
+        /// </summary>
+        [Input("legacyId")]
+        public Input<string>? LegacyId { get; set; }
+
+        /// <summary>
         /// The display name within the Dynatrace WebUI.
         /// </summary>
         [Input("name")]
@@ -201,6 +213,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         [Input("jobTemplateUrl")]
         public Input<string>? JobTemplateUrl { get; set; }
+
+        /// <summary>
+        /// The ID of these settings when referred to from resources requiring the REST API V1 keys
+        /// </summary>
+        [Input("legacyId")]
+        public Input<string>? LegacyId { get; set; }
 
         /// <summary>
         /// The display name within the Dynatrace WebUI.

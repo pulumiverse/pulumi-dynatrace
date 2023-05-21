@@ -21,7 +21,7 @@ public class QueueSharingGroups extends com.pulumi.resources.CustomResource {
      * The name of the queue sharing group
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -35,7 +35,7 @@ public class QueueSharingGroups extends com.pulumi.resources.CustomResource {
      * Queue manager(s) that belong to the queue sharing group
      * 
      */
-    @Export(name="queueManagers", type=List.class, parameters={String.class})
+    @Export(name="queueManagers", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> queueManagers;
 
     /**
@@ -49,7 +49,7 @@ public class QueueSharingGroups extends com.pulumi.resources.CustomResource {
      * Shared queue(s) that belong to the queue sharing group
      * 
      */
-    @Export(name="sharedQueues", type=List.class, parameters={String.class})
+    @Export(name="sharedQueues", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> sharedQueues;
 
     /**

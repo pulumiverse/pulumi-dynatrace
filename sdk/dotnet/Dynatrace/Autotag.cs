@@ -14,16 +14,16 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public partial class Autotag : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// The description of the auto-tag.
+        /// </summary>
+        [Output("description")]
+        public Output<string?> Description { get; private set; } = null!;
+
+        /// <summary>
         /// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         /// </summary>
         [Output("entitySelectorBasedRules")]
         public Output<ImmutableArray<Outputs.AutotagEntitySelectorBasedRule>> EntitySelectorBasedRules { get; private set; } = null!;
-
-        /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        /// </summary>
-        [Output("metadata")]
-        public Output<Outputs.AutotagMetadata?> Metadata { get; private set; } = null!;
 
         /// <summary>
         /// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
@@ -92,6 +92,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
 
     public sealed class AutotagArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The description of the auto-tag.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
         [Input("entitySelectorBasedRules")]
         private InputList<Inputs.AutotagEntitySelectorBasedRuleArgs>? _entitySelectorBasedRules;
 
@@ -103,12 +109,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             get => _entitySelectorBasedRules ?? (_entitySelectorBasedRules = new InputList<Inputs.AutotagEntitySelectorBasedRuleArgs>());
             set => _entitySelectorBasedRules = value;
         }
-
-        /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        /// </summary>
-        [Input("metadata")]
-        public Input<Inputs.AutotagMetadataArgs>? Metadata { get; set; }
 
         /// <summary>
         /// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
@@ -144,6 +144,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
 
     public sealed class AutotagState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The description of the auto-tag.
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
         [Input("entitySelectorBasedRules")]
         private InputList<Inputs.AutotagEntitySelectorBasedRuleGetArgs>? _entitySelectorBasedRules;
 
@@ -155,12 +161,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             get => _entitySelectorBasedRules ?? (_entitySelectorBasedRules = new InputList<Inputs.AutotagEntitySelectorBasedRuleGetArgs>());
             set => _entitySelectorBasedRules = value;
         }
-
-        /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        /// </summary>
-        [Input("metadata")]
-        public Input<Inputs.AutotagMetadataGetArgs>? Metadata { get; set; }
 
         /// <summary>
         /// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.

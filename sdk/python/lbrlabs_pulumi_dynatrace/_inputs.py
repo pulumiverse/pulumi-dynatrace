@@ -14,6 +14,9 @@ __all__ = [
     'AlertingFiltersFilterArgs',
     'AlertingFiltersFilterCustomArgs',
     'AlertingFiltersFilterCustomDescriptionArgs',
+    'AlertingFiltersFilterCustomMetadataArgs',
+    'AlertingFiltersFilterCustomMetadataItemsArgs',
+    'AlertingFiltersFilterCustomMetadataItemsFilterArgs',
     'AlertingFiltersFilterCustomTitleArgs',
     'AlertingFiltersFilterPredefinedArgs',
     'AlertingProfileEventTypeFilterArgs',
@@ -27,6 +30,8 @@ __all__ = [
     'AlertingProfileRuleTagFilterTagFilterArgs',
     'AlertingRulesArgs',
     'AlertingRulesRuleArgs',
+    'ApiDetectionConditionsArgs',
+    'ApiDetectionConditionsConditionArgs',
     'ApplicationAnomaliesFailureRateArgs',
     'ApplicationAnomaliesFailureRateAutoArgs',
     'ApplicationAnomaliesFailureRateThresholdsArgs',
@@ -50,7 +55,6 @@ __all__ = [
     'ApplicationErrorRulesHttpErrorsArgs',
     'ApplicationErrorRulesHttpErrorsRuleArgs',
     'AutotagEntitySelectorBasedRuleArgs',
-    'AutotagMetadataArgs',
     'AutotagRuleArgs',
     'AutotagRuleConditionArgs',
     'AutotagRuleConditionApplicationTypeArgs',
@@ -129,6 +133,27 @@ __all__ = [
     'AutotagRuleConditionTagValueArgs',
     'AutotagRuleConditionTechArgs',
     'AutotagRuleConditionTechValueArgs',
+    'AutotagV2RulesArgs',
+    'AutotagV2RulesRuleArgs',
+    'AutotagV2RulesRuleAttributeRuleArgs',
+    'AutotagV2RulesRuleAttributeRuleConditionsArgs',
+    'AutotagV2RulesRuleAttributeRuleConditionsConditionArgs',
+    'AwsAnomaliesEc2CandidateHighCpuDetectionArgs',
+    'AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholdsArgs',
+    'AwsAnomaliesElbHighConnectionErrorsDetectionArgs',
+    'AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholdsArgs',
+    'AwsAnomaliesLambdaHighErrorRateDetectionArgs',
+    'AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholdsArgs',
+    'AwsAnomaliesRdsHighCpuDetectionArgs',
+    'AwsAnomaliesRdsHighCpuDetectionCustomThresholdsArgs',
+    'AwsAnomaliesRdsHighMemoryDetectionArgs',
+    'AwsAnomaliesRdsHighMemoryDetectionCustomThresholdsArgs',
+    'AwsAnomaliesRdsHighWriteReadLatencyDetectionArgs',
+    'AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholdsArgs',
+    'AwsAnomaliesRdsLowStorageDetectionArgs',
+    'AwsAnomaliesRdsLowStorageDetectionCustomThresholdsArgs',
+    'AwsAnomaliesRdsRestartsSequenceDetectionArgs',
+    'AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholdsArgs',
     'AwsCredentialsAuthenticationDataArgs',
     'AwsCredentialsSupportingServicesToMonitorArgs',
     'AwsCredentialsSupportingServicesToMonitorMonitoredMetricArgs',
@@ -142,8 +167,11 @@ __all__ = [
     'BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdArgs',
     'BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThresholdArgs',
     'BrowserMonitorAnomalyDetectionOutageHandlingArgs',
+    'BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs',
     'BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicyArgs',
     'BrowserMonitorKeyPerformanceMetricsArgs',
+    'BrowserMonitorPerformanceThresholdsArgs',
+    'BrowserMonitorPerformanceThresholdsThresholdArgs',
     'BrowserMonitorScriptArgs',
     'BrowserMonitorScriptConfigurationArgs',
     'BrowserMonitorScriptConfigurationBandwidthArgs',
@@ -246,6 +274,19 @@ __all__ = [
     'BrowserMonitorScriptEventsEventTapWaitValidationTargetLocatorLocatorArgs',
     'BrowserMonitorTagArgs',
     'BrowserMonitorTagTagArgs',
+    'BusinessEventsOneagentEventArgs',
+    'BusinessEventsOneagentEventCategoryArgs',
+    'BusinessEventsOneagentEventDataArgs',
+    'BusinessEventsOneagentEventDataEventDataFieldComplexArgs',
+    'BusinessEventsOneagentEventDataEventDataFieldComplexSourceArgs',
+    'BusinessEventsOneagentEventProviderArgs',
+    'BusinessEventsOneagentEventTypeArgs',
+    'BusinessEventsOneagentTriggersArgs',
+    'BusinessEventsOneagentTriggersTriggerArgs',
+    'BusinessEventsOneagentTriggersTriggerSourceArgs',
+    'BusinessEventsProcessingRuleTestingArgs',
+    'BusinessEventsProcessingTransformationFieldsArgs',
+    'BusinessEventsProcessingTransformationFieldsTransformationFieldArgs',
     'CalculatedServiceMetricConditionArgs',
     'CalculatedServiceMetricConditionConditionArgs',
     'CalculatedServiceMetricConditionConditionComparisonArgs',
@@ -282,6 +323,15 @@ __all__ = [
     'CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSourceServiceTagArgs',
     'CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSourceServiceTagTagKeyArgs',
     'CalculatedServiceMetricMetricDefinitionArgs',
+    'CloudappWorkloaddetectionCloudFoundryArgs',
+    'CloudappWorkloaddetectionDockerArgs',
+    'CloudappWorkloaddetectionKubernetesArgs',
+    'CloudappWorkloaddetectionKubernetesFiltersArgs',
+    'CloudappWorkloaddetectionKubernetesFiltersFilterArgs',
+    'CloudappWorkloaddetectionKubernetesFiltersFilterInclusionTogglesArgs',
+    'CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilterArgs',
+    'CredentialsCredentialUsageSummaryArgs',
+    'CredentialsExternalArgs',
     'CustomAnomaliesDimensionArgs',
     'CustomAnomaliesDimensionDimensionArgs',
     'CustomAnomaliesDimensionEntityArgs',
@@ -309,12 +359,34 @@ __all__ = [
     'CustomAnomaliesStrategyAutoArgs',
     'CustomAnomaliesStrategyGenericArgs',
     'CustomAnomaliesStrategyStaticArgs',
+    'CustomAppAnomaliesErrorRateIncreaseArgs',
+    'CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs',
+    'CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs',
+    'CustomAppAnomaliesSlowUserActionsArgs',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoArgs',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralertingArgs',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAllArgs',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowestArgs',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralertingArgs',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixedArgs',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowestArgs',
+    'CustomAppAnomaliesUnexpectedHighLoadArgs',
+    'CustomAppAnomaliesUnexpectedLowLoadArgs',
+    'CustomAppCrashRateCrashRateIncreaseArgs',
+    'CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoArgs',
+    'CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs',
+    'CustomAppEnablementRumArgs',
     'CustomServiceRuleArgs',
     'CustomServiceRuleClassArgs',
     'CustomServiceRuleFileArgs',
     'CustomServiceRuleMethodArgs',
+    'CustomTagsTagsArgs',
+    'CustomTagsTagsFilterArgs',
     'DashboardDashboardMetadataArgs',
     'DashboardDashboardMetadataDynamicFiltersArgs',
+    'DashboardDashboardMetadataDynamicFiltersGenericTagFiltersArgs',
+    'DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilterArgs',
     'DashboardDashboardMetadataFilterArgs',
     'DashboardDashboardMetadataFilterManagementZoneArgs',
     'DashboardDashboardMetadataSharingDetailsArgs',
@@ -336,6 +408,16 @@ __all__ = [
     'DashboardTileFilterConfigFiltersFilterMatchArgs',
     'DashboardTileFilterManagementZoneArgs',
     'DashboardTileVisualizationConfigArgs',
+    'DashboardsAllowlistAllowlistArgs',
+    'DashboardsAllowlistAllowlistUrlpatternArgs',
+    'DashboardsGeneralDefaultDashboardListArgs',
+    'DashboardsGeneralDefaultDashboardListDefaultDashboardArgs',
+    'DashboardsPresetsDashboardPresetsListArgs',
+    'DashboardsPresetsDashboardPresetsListDashboardPresetArgs',
+    'DataPrivacyDataCollectionArgs',
+    'DataPrivacyDoNotTrackArgs',
+    'DataPrivacyMaskingArgs',
+    'DataPrivacyUserTrackingArgs',
     'DatabaseAnomaliesDbConnectFailuresArgs',
     'DatabaseAnomaliesFailureRateArgs',
     'DatabaseAnomaliesFailureRateAutoArgs',
@@ -346,9 +428,52 @@ __all__ = [
     'DatabaseAnomaliesResponseTimeArgs',
     'DatabaseAnomaliesResponseTimeAutoArgs',
     'DatabaseAnomaliesResponseTimeThresholdsArgs',
+    'DatabaseAnomaliesV2DatabaseConnectionsArgs',
+    'DatabaseAnomaliesV2FailureRateArgs',
+    'DatabaseAnomaliesV2FailureRateAutoDetectionArgs',
+    'DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtectionArgs',
+    'DatabaseAnomaliesV2FailureRateFixedDetectionArgs',
+    'DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtectionArgs',
+    'DatabaseAnomaliesV2LoadDropsArgs',
+    'DatabaseAnomaliesV2LoadSpikesArgs',
+    'DatabaseAnomaliesV2ResponseTimeArgs',
+    'DatabaseAnomaliesV2ResponseTimeAutoDetectionArgs',
+    'DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtectionArgs',
+    'DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAllArgs',
+    'DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowestArgs',
+    'DatabaseAnomaliesV2ResponseTimeFixedDetectionArgs',
+    'DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtectionArgs',
+    'DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAllArgs',
+    'DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs',
+    'DduPoolEventsArgs',
+    'DduPoolLogMonitoringArgs',
+    'DduPoolMetricsArgs',
+    'DduPoolServerlessArgs',
+    'DduPoolTracesArgs',
+    'DeclarativeGroupingDetectionArgs',
+    'DeclarativeGroupingDetectionProcessDefinitionArgs',
+    'DeclarativeGroupingDetectionProcessDefinitionRulesArgs',
+    'DeclarativeGroupingDetectionProcessDefinitionRulesRuleArgs',
     'DiskAnomaliesDiskNameArgs',
     'DiskAnomaliesTagsArgs',
     'DiskAnomaliesTagsFilterArgs',
+    'DiskAnomaliesV2DiskArgs',
+    'DiskAnomaliesV2DiskDiskLowInodesDetectionArgs',
+    'DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholdsArgs',
+    'DiskAnomaliesV2DiskDiskLowSpaceDetectionArgs',
+    'DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholdsArgs',
+    'DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionArgs',
+    'DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholdsArgs',
+    'DiskAnomalyRulesDiskNameFilterArgs',
+    'DiskAnomalyRulesSampleLimitArgs',
+    'DiskOptionsExclusionsArgs',
+    'DiskOptionsExclusionsExclusionArgs',
+    'DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs',
+    'DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholdsArgs',
+    'DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs',
+    'DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholdsArgs',
+    'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs',
+    'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholdsArgs',
     'EnvironmentQuotasArgs',
     'EnvironmentQuotasDdusArgs',
     'EnvironmentQuotasDemUnitsArgs',
@@ -358,6 +483,33 @@ __all__ = [
     'EnvironmentStorageArgs',
     'EnvironmentStorageLimitsArgs',
     'EnvironmentStorageRetentionArgs',
+    'FailureDetectionParametersBrokenLinksArgs',
+    'FailureDetectionParametersExceptionRulesArgs',
+    'FailureDetectionParametersExceptionRulesCustomErrorRulesArgs',
+    'FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleArgs',
+    'FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs',
+    'FailureDetectionParametersExceptionRulesCustomHandledExceptionsArgs',
+    'FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs',
+    'FailureDetectionParametersExceptionRulesIgnoredExceptionsArgs',
+    'FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledExceptionArgs',
+    'FailureDetectionParametersExceptionRulesSuccessForcingExceptionsArgs',
+    'FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledExceptionArgs',
+    'FailureDetectionParametersHttpResponseCodesArgs',
+    'FailureDetectionRulesConditionsArgs',
+    'FailureDetectionRulesConditionsConditionArgs',
+    'FailureDetectionRulesConditionsConditionPredicateArgs',
+    'GenericRelationshipsSourcesArgs',
+    'GenericRelationshipsSourcesSourceArgs',
+    'GenericRelationshipsSourcesSourceMappingRulesArgs',
+    'GenericRelationshipsSourcesSourceMappingRulesMappingRuleArgs',
+    'GenericTypesRulesArgs',
+    'GenericTypesRulesRuleArgs',
+    'GenericTypesRulesRuleAttributesArgs',
+    'GenericTypesRulesRuleAttributesAttributeArgs',
+    'GenericTypesRulesRuleRequiredDimensionsArgs',
+    'GenericTypesRulesRuleRequiredDimensionsRequiredDimensionArgs',
+    'GenericTypesRulesRuleSourcesArgs',
+    'GenericTypesRulesRuleSourcesSourceArgs',
     'HostAnomaliesConnectionsArgs',
     'HostAnomaliesCpuArgs',
     'HostAnomaliesCpuThresholdsArgs',
@@ -390,6 +542,42 @@ __all__ = [
     'HostAnomaliesNetworkRetransmissionThresholdsArgs',
     'HostAnomaliesNetworkUtilizationArgs',
     'HostAnomaliesNetworkUtilizationThresholdsArgs',
+    'HostAnomaliesV2HostArgs',
+    'HostAnomaliesV2HostConnectionLostDetectionArgs',
+    'HostAnomaliesV2HostHighCpuSaturationDetectionArgs',
+    'HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsArgs',
+    'HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholdsArgs',
+    'HostAnomaliesV2HostHighGcActivityDetectionArgs',
+    'HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsArgs',
+    'HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholdsArgs',
+    'HostAnomaliesV2HostHighMemoryDetectionArgs',
+    'HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsArgs',
+    'HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholdsArgs',
+    'HostAnomaliesV2HostHighSystemLoadDetectionArgs',
+    'HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsArgs',
+    'HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholdsArgs',
+    'HostAnomaliesV2HostOutOfMemoryDetectionArgs',
+    'HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsArgs',
+    'HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholdsArgs',
+    'HostAnomaliesV2HostOutOfThreadsDetectionArgs',
+    'HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsArgs',
+    'HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholdsArgs',
+    'HostAnomaliesV2NetworkArgs',
+    'HostAnomaliesV2NetworkHighNetworkDetectionArgs',
+    'HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsArgs',
+    'HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholdsArgs',
+    'HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionArgs',
+    'HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsArgs',
+    'HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholdsArgs',
+    'HostAnomaliesV2NetworkNetworkErrorsDetectionArgs',
+    'HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsArgs',
+    'HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholdsArgs',
+    'HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionArgs',
+    'HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsArgs',
+    'HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholdsArgs',
+    'HostAnomaliesV2NetworkNetworkTcpProblemsDetectionArgs',
+    'HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsArgs',
+    'HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholdsArgs',
     'HostNamingConditionArgs',
     'HostNamingConditionConditionArgs',
     'HostNamingConditionConditionApplicationTypeArgs',
@@ -473,7 +661,12 @@ __all__ = [
     'HttpMonitorAnomalyDetectionLoadingTimeThresholdThresholdArgs',
     'HttpMonitorAnomalyDetectionLoadingTimeThresholdThresholdThresholdArgs',
     'HttpMonitorAnomalyDetectionOutageHandlingArgs',
+    'HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs',
     'HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicyArgs',
+    'HttpMonitorCookiesCookiesArgs',
+    'HttpMonitorCookiesCookiesCookieArgs',
+    'HttpMonitorPerformanceThresholdsArgs',
+    'HttpMonitorPerformanceThresholdsThresholdArgs',
     'HttpMonitorScriptArgs',
     'HttpMonitorScriptRequestArgs',
     'HttpMonitorScriptRequestAuthenticationArgs',
@@ -484,9 +677,80 @@ __all__ = [
     'HttpMonitorScriptRequestValidationRuleArgs',
     'HttpMonitorTagArgs',
     'HttpMonitorTagTagArgs',
+    'IamGroupPermissionsArgs',
+    'IamGroupPermissionsPermissionArgs',
     'ImsBridgesQueueManagerArgs',
     'ImsBridgesQueueManagerQueueManagerArgs',
+    'K8sClusterAnomaliesCpuRequestsSaturationArgs',
+    'K8sClusterAnomaliesCpuRequestsSaturationConfigurationArgs',
+    'K8sClusterAnomaliesMemoryRequestsSaturationArgs',
+    'K8sClusterAnomaliesMemoryRequestsSaturationConfigurationArgs',
+    'K8sClusterAnomaliesMonitoringIssuesArgs',
+    'K8sClusterAnomaliesMonitoringIssuesConfigurationArgs',
+    'K8sClusterAnomaliesPodsSaturationArgs',
+    'K8sClusterAnomaliesPodsSaturationConfigurationArgs',
+    'K8sClusterAnomaliesReadinessIssuesArgs',
+    'K8sClusterAnomaliesReadinessIssuesConfigurationArgs',
     'K8sCredentialsEventsFieldSelectorArgs',
+    'K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs',
+    'K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfigurationArgs',
+    'K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs',
+    'K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfigurationArgs',
+    'K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs',
+    'K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfigurationArgs',
+    'K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgs',
+    'K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfigurationArgs',
+    'K8sNamespaceAnomaliesPodsQuotaSaturationArgs',
+    'K8sNamespaceAnomaliesPodsQuotaSaturationConfigurationArgs',
+    'K8sNodeAnomaliesCpuRequestsSaturationArgs',
+    'K8sNodeAnomaliesCpuRequestsSaturationConfigurationArgs',
+    'K8sNodeAnomaliesMemoryRequestsSaturationArgs',
+    'K8sNodeAnomaliesMemoryRequestsSaturationConfigurationArgs',
+    'K8sNodeAnomaliesNodeProblematicConditionArgs',
+    'K8sNodeAnomaliesNodeProblematicConditionConfigurationArgs',
+    'K8sNodeAnomaliesPodsSaturationArgs',
+    'K8sNodeAnomaliesPodsSaturationConfigurationArgs',
+    'K8sNodeAnomaliesReadinessIssuesArgs',
+    'K8sNodeAnomaliesReadinessIssuesConfigurationArgs',
+    'K8sPvcAnomaliesLowDiskSpaceCriticalArgs',
+    'K8sPvcAnomaliesLowDiskSpaceCriticalConfigurationArgs',
+    'K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs',
+    'K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfigurationArgs',
+    'K8sWorkloadAnomaliesContainerRestartsArgs',
+    'K8sWorkloadAnomaliesContainerRestartsConfigurationArgs',
+    'K8sWorkloadAnomaliesDeploymentStuckArgs',
+    'K8sWorkloadAnomaliesDeploymentStuckConfigurationArgs',
+    'K8sWorkloadAnomaliesHighCpuThrottlingArgs',
+    'K8sWorkloadAnomaliesHighCpuThrottlingConfigurationArgs',
+    'K8sWorkloadAnomaliesHighCpuUsageArgs',
+    'K8sWorkloadAnomaliesHighCpuUsageConfigurationArgs',
+    'K8sWorkloadAnomaliesHighMemoryUsageArgs',
+    'K8sWorkloadAnomaliesHighMemoryUsageConfigurationArgs',
+    'K8sWorkloadAnomaliesNotAllPodsReadyArgs',
+    'K8sWorkloadAnomaliesNotAllPodsReadyConfigurationArgs',
+    'K8sWorkloadAnomaliesPendingPodsArgs',
+    'K8sWorkloadAnomaliesPendingPodsConfigurationArgs',
+    'K8sWorkloadAnomaliesPodStuckInTerminatingArgs',
+    'K8sWorkloadAnomaliesPodStuckInTerminatingConfigurationArgs',
+    'K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs',
+    'K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfigurationArgs',
+    'KubernetesEventPatternsArgs',
+    'KubernetesEventPatternsEventPatternArgs',
+    'LogCustomSourceContextArgs',
+    'LogCustomSourceContextContextArgs',
+    'LogCustomSourceCustomLogSourceArgs',
+    'LogEventsEventTemplateArgs',
+    'LogEventsEventTemplateMetadataArgs',
+    'LogEventsEventTemplateMetadataItemArgs',
+    'LogProcessingProcessorDefinitionArgs',
+    'LogProcessingRuleTestingArgs',
+    'LogSensitiveDataMaskingMaskingArgs',
+    'LogSensitiveDataMaskingMatchersArgs',
+    'LogSensitiveDataMaskingMatchersMatcherArgs',
+    'LogStorageMatchersArgs',
+    'LogStorageMatchersMatcherArgs',
+    'LogTimestampMatchersArgs',
+    'LogTimestampMatchersMatcherArgs',
     'MaintenanceFilterArgs',
     'MaintenanceFilterFilterArgs',
     'MaintenanceGeneralPropertiesArgs',
@@ -501,7 +765,6 @@ __all__ = [
     'MaintenanceScheduleWeeklyRecurrenceArgs',
     'MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs',
     'MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs',
-    'MaintenanceWindowMetadataArgs',
     'MaintenanceWindowScheduleArgs',
     'MaintenanceWindowScheduleRecurrenceArgs',
     'MaintenanceWindowScopeArgs',
@@ -510,7 +773,6 @@ __all__ = [
     'ManagementZoneDimensionalRuleArgs',
     'ManagementZoneDimensionalRuleConditionArgs',
     'ManagementZoneEntitySelectorBasedRuleArgs',
-    'ManagementZoneMetadataArgs',
     'ManagementZoneRuleArgs',
     'ManagementZoneRuleConditionArgs',
     'ManagementZoneRuleConditionApplicationTypeArgs',
@@ -589,14 +851,58 @@ __all__ = [
     'ManagementZoneRuleConditionTagValueArgs',
     'ManagementZoneRuleConditionTechArgs',
     'ManagementZoneRuleConditionTechValueArgs',
+    'ManagementZoneV2RulesArgs',
+    'ManagementZoneV2RulesRuleArgs',
+    'ManagementZoneV2RulesRuleAttributeRuleArgs',
+    'ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsArgs',
+    'ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsConditionArgs',
+    'ManagementZoneV2RulesRuleDimensionRuleArgs',
+    'ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsArgs',
+    'ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsConditionArgs',
+    'MetricEventsEventTemplateArgs',
+    'MetricEventsEventTemplateMetadataArgs',
+    'MetricEventsModelPropertiesArgs',
+    'MetricEventsQueryDefinitionArgs',
+    'MetricEventsQueryDefinitionDimensionFilterArgs',
+    'MetricEventsQueryDefinitionDimensionFilterFilterArgs',
+    'MetricEventsQueryDefinitionEntityFilterArgs',
+    'MetricEventsQueryDefinitionEntityFilterConditionArgs',
+    'MetricEventsQueryDefinitionEntityFilterConditionConditionArgs',
+    'MetricMetadataDimensionsArgs',
+    'MetricMetadataDimensionsDimensionArgs',
+    'MetricMetadataMetricPropertiesArgs',
+    'MobileAppAnomaliesErrorRateIncreaseArgs',
+    'MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs',
+    'MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs',
+    'MobileAppAnomaliesSlowUserActionsArgs',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoArgs',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralertingArgs',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAllArgs',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowestArgs',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralertingArgs',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixedArgs',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowestArgs',
+    'MobileAppAnomaliesUnexpectedHighLoadArgs',
+    'MobileAppAnomaliesUnexpectedLowLoadArgs',
+    'MobileAppCrashRateCrashRateIncreaseArgs',
+    'MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoArgs',
+    'MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs',
+    'MobileAppEnablementRumArgs',
+    'MobileAppEnablementSessionReplayArgs',
+    'MobileAppRequestErrorsErrorRulesArgs',
+    'MobileAppRequestErrorsErrorRulesErrorRuleArgs',
     'MobileApplicationApdexArgs',
     'MobileApplicationPropertiesArgs',
     'MobileApplicationPropertiesApiValueArgs',
     'MobileApplicationPropertiesRequestAttributeArgs',
+    'NetworkTrafficExcludeIpArgs',
+    'NetworkTrafficExcludeIpIpAddressFormArgs',
+    'NetworkTrafficExcludeNicArgs',
+    'NetworkTrafficExcludeNicNicFormArgs',
     'NotificationAnsibleTowerArgs',
     'NotificationConfigArgs',
     'NotificationEmailArgs',
-    'NotificationHipchatArgs',
     'NotificationJiraArgs',
     'NotificationOpsGenieArgs',
     'NotificationPagerDutyArgs',
@@ -608,6 +914,41 @@ __all__ = [
     'NotificationWebHookHeaderArgs',
     'NotificationXmattersArgs',
     'NotificationXmattersHeaderArgs',
+    'OneagentUpdatesMaintenanceWindowsArgs',
+    'OneagentUpdatesMaintenanceWindowsMaintenanceWindowArgs',
+    'OpentelemetryMetricsAdditionalAttributesArgs',
+    'OpentelemetryMetricsAdditionalAttributesAdditionalAttributeArgs',
+    'OpentelemetryMetricsToDropAttributesArgs',
+    'OpentelemetryMetricsToDropAttributesToDropAttributeArgs',
+    'OsServicesDetectionConditionsLinuxArgs',
+    'OsServicesDetectionConditionsLinuxLinuxDetectionConditionArgs',
+    'OsServicesDetectionConditionsWindowsArgs',
+    'OsServicesDetectionConditionsWindowsDetectionConditionsWindowArgs',
+    'OsServicesMetadataArgs',
+    'OsServicesMetadataItemArgs',
+    'OwnershipConfigOwnershipIdentifiersArgs',
+    'OwnershipConfigOwnershipIdentifiersOwnershipIdentifierArgs',
+    'OwnershipTeamsAdditionalInformationArgs',
+    'OwnershipTeamsAdditionalInformationAdditionalInformationArgs',
+    'OwnershipTeamsContactDetailsArgs',
+    'OwnershipTeamsContactDetailsContactDetailArgs',
+    'OwnershipTeamsContactDetailsContactDetailJiraArgs',
+    'OwnershipTeamsLinksArgs',
+    'OwnershipTeamsLinksLinkArgs',
+    'OwnershipTeamsResponsibilitiesArgs',
+    'OwnershipTeamsSupplementaryIdentifiersArgs',
+    'OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArgs',
+    'PgAnomaliesAvailabilityArgs',
+    'ProcessAvailabilityMetadataArgs',
+    'ProcessAvailabilityMetadataItemArgs',
+    'ProcessAvailabilityRulesArgs',
+    'ProcessAvailabilityRulesRuleArgs',
+    'ProcessGroupDetectionGroupExtractionArgs',
+    'ProcessGroupDetectionGroupExtractionDelimiterArgs',
+    'ProcessGroupDetectionInstanceExtractionArgs',
+    'ProcessGroupDetectionInstanceExtractionDelimiterArgs',
+    'ProcessGroupDetectionProcessDetectionArgs',
+    'ProcessMonitoringRuleConditionArgs',
     'ProcessgroupNamingConditionArgs',
     'ProcessgroupNamingConditionConditionArgs',
     'ProcessgroupNamingConditionConditionApplicationTypeArgs',
@@ -736,6 +1077,10 @@ __all__ = [
     'RequestNamingPlaceholdersPlaceholderSourceArgs',
     'RequestNamingPlaceholdersPlaceholderSourceServiceTagArgs',
     'RequestNamingPlaceholdersPlaceholderSourceServiceTagTagKeyArgs',
+    'ResourceAttributesKeysArgs',
+    'ResourceAttributesKeysRuleArgs',
+    'RumProviderBreakdownDomainNamePatternListArgs',
+    'RumProviderBreakdownDomainNamePatternListDomainNamePatternArgs',
     'ServiceAnomaliesFailureRatesArgs',
     'ServiceAnomaliesFailureRatesAutoArgs',
     'ServiceAnomaliesFailureRatesThresholdsArgs',
@@ -745,6 +1090,106 @@ __all__ = [
     'ServiceAnomaliesResponseTimesArgs',
     'ServiceAnomaliesResponseTimesAutoArgs',
     'ServiceAnomaliesResponseTimesThresholdsArgs',
+    'ServiceAnomaliesV2FailureRateArgs',
+    'ServiceAnomaliesV2FailureRateAutoDetectionArgs',
+    'ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtectionArgs',
+    'ServiceAnomaliesV2FailureRateFixedDetectionArgs',
+    'ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtectionArgs',
+    'ServiceAnomaliesV2LoadDropsArgs',
+    'ServiceAnomaliesV2LoadSpikesArgs',
+    'ServiceAnomaliesV2ResponseTimeArgs',
+    'ServiceAnomaliesV2ResponseTimeAutoDetectionArgs',
+    'ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtectionArgs',
+    'ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAllArgs',
+    'ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowestArgs',
+    'ServiceAnomaliesV2ResponseTimeFixedDetectionArgs',
+    'ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtectionArgs',
+    'ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAllArgs',
+    'ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs',
+    'ServiceExternalWebRequestConditionsArgs',
+    'ServiceExternalWebRequestConditionsConditionArgs',
+    'ServiceExternalWebRequestIdContributorsArgs',
+    'ServiceExternalWebRequestIdContributorsApplicationIdArgs',
+    'ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs',
+    'ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs',
+    'ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs',
+    'ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs',
+    'ServiceExternalWebRequestIdContributorsContextRootArgs',
+    'ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs',
+    'ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs',
+    'ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs',
+    'ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverrideArgs',
+    'ServiceExternalWebRequestIdContributorsPublicDomainNameArgs',
+    'ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorArgs',
+    'ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsArgs',
+    'ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformationArgs',
+    'ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverrideArgs',
+    'ServiceExternalWebServiceConditionsArgs',
+    'ServiceExternalWebServiceConditionsConditionArgs',
+    'ServiceExternalWebServiceIdContributorsArgs',
+    'ServiceExternalWebServiceIdContributorsUrlPathArgs',
+    'ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs',
+    'ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs',
+    'ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArgs',
+    'ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs',
+    'ServiceFailureExceptionRulesArgs',
+    'ServiceFailureExceptionRulesCustomErrorRulesArgs',
+    'ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArgs',
+    'ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs',
+    'ServiceFailureExceptionRulesCustomHandledExceptionsArgs',
+    'ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs',
+    'ServiceFailureExceptionRulesIgnoredExceptionsArgs',
+    'ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledExceptionArgs',
+    'ServiceFailureExceptionRulesSuccessForcingExceptionsArgs',
+    'ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledExceptionArgs',
+    'ServiceFullWebRequestConditionsArgs',
+    'ServiceFullWebRequestConditionsConditionArgs',
+    'ServiceFullWebRequestIdContributorsArgs',
+    'ServiceFullWebRequestIdContributorsApplicationIdArgs',
+    'ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorArgs',
+    'ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs',
+    'ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs',
+    'ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs',
+    'ServiceFullWebRequestIdContributorsContextRootArgs',
+    'ServiceFullWebRequestIdContributorsContextRootServiceIdContributorArgs',
+    'ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs',
+    'ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs',
+    'ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverrideArgs',
+    'ServiceFullWebRequestIdContributorsServerNameArgs',
+    'ServiceFullWebRequestIdContributorsServerNameServiceIdContributorArgs',
+    'ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsArgs',
+    'ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformationArgs',
+    'ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverrideArgs',
+    'ServiceFullWebServiceConditionsArgs',
+    'ServiceFullWebServiceConditionsConditionArgs',
+    'ServiceFullWebServiceIdContributorsArgs',
+    'ServiceFullWebServiceIdContributorsApplicationIdArgs',
+    'ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorArgs',
+    'ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsArgs',
+    'ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs',
+    'ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverrideArgs',
+    'ServiceFullWebServiceIdContributorsContextRootArgs',
+    'ServiceFullWebServiceIdContributorsContextRootServiceIdContributorArgs',
+    'ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsArgs',
+    'ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs',
+    'ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverrideArgs',
+    'ServiceFullWebServiceIdContributorsServerNameArgs',
+    'ServiceFullWebServiceIdContributorsServerNameServiceIdContributorArgs',
+    'ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsArgs',
+    'ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformationArgs',
+    'ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverrideArgs',
+    'ServiceFullWebServiceIdContributorsWebServiceNameArgs',
+    'ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorArgs',
+    'ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsArgs',
+    'ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArgs',
+    'ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs',
+    'ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs',
+    'ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs',
+    'ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs',
+    'ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationArgs',
+    'ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverrideArgs',
+    'ServiceHttpFailureBrokenLinksArgs',
+    'ServiceHttpFailureHttpResponseCodesArgs',
     'ServiceNamingConditionArgs',
     'ServiceNamingConditionConditionArgs',
     'ServiceNamingConditionConditionApplicationTypeArgs',
@@ -823,14 +1268,84 @@ __all__ = [
     'ServiceNamingConditionConditionTagValueArgs',
     'ServiceNamingConditionConditionTechArgs',
     'ServiceNamingConditionConditionTechValueArgs',
+    'SessionReplayWebPrivacyMaskingPresetsArgs',
+    'SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs',
+    'SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArgs',
+    'SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs',
+    'SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArgs',
+    'SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs',
+    'SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArgs',
+    'SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs',
+    'SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArgs',
+    'SloV2ErrorBudgetBurnRateArgs',
     'SpanCaptureRuleMatchesArgs',
     'SpanCaptureRuleMatchesMatchArgs',
     'SpanContextPropagationMatchesArgs',
     'SpanContextPropagationMatchesMatchArgs',
     'SpanEntryPointMatchesArgs',
     'SpanEntryPointMatchesMatchArgs',
+    'UpdateWindowsDailyRecurrenceArgs',
+    'UpdateWindowsDailyRecurrenceRecurrenceRangeArgs',
+    'UpdateWindowsDailyRecurrenceUpdateTimeArgs',
+    'UpdateWindowsMonthlyRecurrenceArgs',
+    'UpdateWindowsMonthlyRecurrenceRecurrenceRangeArgs',
+    'UpdateWindowsMonthlyRecurrenceUpdateTimeArgs',
+    'UpdateWindowsOnceRecurrenceArgs',
+    'UpdateWindowsOnceRecurrenceRecurrenceRangeArgs',
+    'UpdateWindowsWeeklyRecurrenceArgs',
+    'UpdateWindowsWeeklyRecurrenceRecurrenceRangeArgs',
+    'UpdateWindowsWeeklyRecurrenceSelectedWeekDaysArgs',
+    'UpdateWindowsWeeklyRecurrenceUpdateTimeArgs',
+    'UserActionMetricsFiltersArgs',
+    'UserActionMetricsFiltersFilterArgs',
+    'UserActionMetricsValueArgs',
     'UserGroupPermissionsArgs',
     'UserGroupPermissionsGrantArgs',
+    'UserSessionMetricsFiltersArgs',
+    'UserSessionMetricsFiltersFilterArgs',
+    'UserSessionMetricsValueArgs',
+    'VmwareAnomaliesDroppedPacketsDetectionArgs',
+    'VmwareAnomaliesDroppedPacketsDetectionCustomThresholdsArgs',
+    'VmwareAnomaliesEsxiHighCpuDetectionArgs',
+    'VmwareAnomaliesEsxiHighCpuDetectionCustomThresholdsArgs',
+    'VmwareAnomaliesEsxiHighMemoryDetectionArgs',
+    'VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholdsArgs',
+    'VmwareAnomaliesGuestCpuLimitDetectionArgs',
+    'VmwareAnomaliesGuestCpuLimitDetectionCustomThresholdsArgs',
+    'VmwareAnomaliesLowDatastoreSpaceDetectionArgs',
+    'VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholdsArgs',
+    'VmwareAnomaliesOverloadedStorageDetectionArgs',
+    'VmwareAnomaliesOverloadedStorageDetectionCustomThresholdsArgs',
+    'VmwareAnomaliesSlowPhysicalStorageDetectionArgs',
+    'VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholdsArgs',
+    'VmwareAnomaliesUndersizedStorageDetectionArgs',
+    'VmwareAnomaliesUndersizedStorageDetectionCustomThresholdsArgs',
+    'WebAppAnomaliesErrorRateArgs',
+    'WebAppAnomaliesErrorRateErrorRateAutoArgs',
+    'WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs',
+    'WebAppAnomaliesErrorRateErrorRateFixedArgs',
+    'WebAppAnomaliesResponseTimeArgs',
+    'WebAppAnomaliesResponseTimeResponseTimeAutoArgs',
+    'WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs',
+    'WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs',
+    'WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs',
+    'WebAppAnomaliesResponseTimeResponseTimeFixedArgs',
+    'WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs',
+    'WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs',
+    'WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs',
+    'WebAppAnomaliesTrafficDropsArgs',
+    'WebAppAnomaliesTrafficDropsTrafficDropsArgs',
+    'WebAppAnomaliesTrafficSpikesArgs',
+    'WebAppAnomaliesTrafficSpikesTrafficSpikesArgs',
+    'WebAppCustomErrorsErrorRulesArgs',
+    'WebAppCustomErrorsErrorRulesErrorRuleArgs',
+    'WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsArgs',
+    'WebAppEnablementRumArgs',
+    'WebAppEnablementSessionReplayArgs',
+    'WebAppRequestErrorsErrorRulesArgs',
+    'WebAppRequestErrorsErrorRulesErrorRuleArgs',
+    'WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs',
+    'WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs',
     'WebApplicationConversionGoalsArgs',
     'WebApplicationConversionGoalsGoalArgs',
     'WebApplicationConversionGoalsGoalDestinationArgs',
@@ -889,8 +1404,11 @@ __all__ = [
     'WebhookNotificationHeadersHeaderArgs',
     'XmattersNotificationHeadersArgs',
     'XmattersNotificationHeadersHeaderArgs',
+    'GetEntitiesEntitiesArgs',
+    'GetEntitiesEntitiesEntityArgs',
+    'GetEntitiesEntitiesEntityTagArgs',
+    'GetEntitiesEntitiesEntityTagTagArgs',
     'GetSyntheticLocationsLocationsArgs',
-    'GetSyntheticLocationsLocationsLocationArgs',
 ]
 
 @pulumi.input_type
@@ -949,9 +1467,12 @@ class AlertingFiltersFilterArgs:
 class AlertingFiltersFilterCustomArgs:
     def __init__(__self__, *,
                  description: Optional[pulumi.Input['AlertingFiltersFilterCustomDescriptionArgs']] = None,
+                 metadata: Optional[pulumi.Input['AlertingFiltersFilterCustomMetadataArgs']] = None,
                  title: Optional[pulumi.Input['AlertingFiltersFilterCustomTitleArgs']] = None):
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
         if title is not None:
             pulumi.set(__self__, "title", title)
 
@@ -963,6 +1484,15 @@ class AlertingFiltersFilterCustomArgs:
     @description.setter
     def description(self, value: Optional[pulumi.Input['AlertingFiltersFilterCustomDescriptionArgs']]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> Optional[pulumi.Input['AlertingFiltersFilterCustomMetadataArgs']]:
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: Optional[pulumi.Input['AlertingFiltersFilterCustomMetadataArgs']]):
+        pulumi.set(self, "metadata", value)
 
     @property
     @pulumi.getter
@@ -1035,6 +1565,65 @@ class AlertingFiltersFilterCustomDescriptionArgs:
     @negate.setter
     def negate(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "negate", value)
+
+
+@pulumi.input_type
+class AlertingFiltersFilterCustomMetadataArgs:
+    def __init__(__self__, *,
+                 items: pulumi.Input['AlertingFiltersFilterCustomMetadataItemsArgs']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> pulumi.Input['AlertingFiltersFilterCustomMetadataItemsArgs']:
+        return pulumi.get(self, "items")
+
+    @items.setter
+    def items(self, value: pulumi.Input['AlertingFiltersFilterCustomMetadataItemsArgs']):
+        pulumi.set(self, "items", value)
+
+
+@pulumi.input_type
+class AlertingFiltersFilterCustomMetadataItemsArgs:
+    def __init__(__self__, *,
+                 filters: pulumi.Input[Sequence[pulumi.Input['AlertingFiltersFilterCustomMetadataItemsFilterArgs']]]):
+        pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> pulumi.Input[Sequence[pulumi.Input['AlertingFiltersFilterCustomMetadataItemsFilterArgs']]]:
+        return pulumi.get(self, "filters")
+
+    @filters.setter
+    def filters(self, value: pulumi.Input[Sequence[pulumi.Input['AlertingFiltersFilterCustomMetadataItemsFilterArgs']]]):
+        pulumi.set(self, "filters", value)
+
+
+@pulumi.input_type
+class AlertingFiltersFilterCustomMetadataItemsFilterArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
 
 
 @pulumi.input_type
@@ -1720,6 +2309,60 @@ class AlertingRulesRuleArgs:
 
 
 @pulumi.input_type
+class ApiDetectionConditionsArgs:
+    def __init__(__self__, *,
+                 conditions: pulumi.Input[Sequence[pulumi.Input['ApiDetectionConditionsConditionArgs']]]):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> pulumi.Input[Sequence[pulumi.Input['ApiDetectionConditionsConditionArgs']]]:
+        return pulumi.get(self, "conditions")
+
+    @conditions.setter
+    def conditions(self, value: pulumi.Input[Sequence[pulumi.Input['ApiDetectionConditionsConditionArgs']]]):
+        pulumi.set(self, "conditions", value)
+
+
+@pulumi.input_type
+class ApiDetectionConditionsConditionArgs:
+    def __init__(__self__, *,
+                 base: pulumi.Input[str],
+                 matcher: pulumi.Input[str],
+                 pattern: pulumi.Input[str]):
+        pulumi.set(__self__, "base", base)
+        pulumi.set(__self__, "matcher", matcher)
+        pulumi.set(__self__, "pattern", pattern)
+
+    @property
+    @pulumi.getter
+    def base(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "base")
+
+    @base.setter
+    def base(self, value: pulumi.Input[str]):
+        pulumi.set(self, "base", value)
+
+    @property
+    @pulumi.getter
+    def matcher(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "matcher")
+
+    @matcher.setter
+    def matcher(self, value: pulumi.Input[str]):
+        pulumi.set(self, "matcher", value)
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "pattern")
+
+    @pattern.setter
+    def pattern(self, value: pulumi.Input[str]):
+        pulumi.set(self, "pattern", value)
+
+
+@pulumi.input_type
 class ApplicationAnomaliesFailureRateArgs:
     def __init__(__self__, *,
                  auto: Optional[pulumi.Input['ApplicationAnomaliesFailureRateAutoArgs']] = None,
@@ -2110,7 +2753,7 @@ class ApplicationDataPrivacySessionReplayDataPrivacyArgs:
                  opt_in: Optional[pulumi.Input[bool]] = None,
                  url_exclusion_rules: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input['ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsArgs'] content_masking_settings: Content masking settings for Session Replay.
+        :param pulumi.Input['ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsArgs'] content_masking_settings: (Field has overlap with `SessionReplayWebPrivacy`) Content masking settings for Session Replay.
         """
         pulumi.set(__self__, "content_masking_settings", content_masking_settings)
         if opt_in is not None:
@@ -2122,7 +2765,7 @@ class ApplicationDataPrivacySessionReplayDataPrivacyArgs:
     @pulumi.getter(name="contentMaskingSettings")
     def content_masking_settings(self) -> pulumi.Input['ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsArgs']:
         """
-        Content masking settings for Session Replay.
+        (Field has overlap with `SessionReplayWebPrivacy`) Content masking settings for Session Replay.
         """
         return pulumi.get(self, "content_masking_settings")
 
@@ -2703,47 +3346,6 @@ class AutotagEntitySelectorBasedRuleArgs:
     @value_format.setter
     def value_format(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value_format", value)
-
-
-@pulumi.input_type
-class AutotagMetadataArgs:
-    def __init__(__self__, *,
-                 cluster_version: Optional[pulumi.Input[str]] = None,
-                 configuration_versions: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
-                 current_configuration_versions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        if cluster_version is not None:
-            pulumi.set(__self__, "cluster_version", cluster_version)
-        if configuration_versions is not None:
-            pulumi.set(__self__, "configuration_versions", configuration_versions)
-        if current_configuration_versions is not None:
-            pulumi.set(__self__, "current_configuration_versions", current_configuration_versions)
-
-    @property
-    @pulumi.getter(name="clusterVersion")
-    def cluster_version(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "cluster_version")
-
-    @cluster_version.setter
-    def cluster_version(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "cluster_version", value)
-
-    @property
-    @pulumi.getter(name="configurationVersions")
-    def configuration_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        return pulumi.get(self, "configuration_versions")
-
-    @configuration_versions.setter
-    def configuration_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
-        pulumi.set(self, "configuration_versions", value)
-
-    @property
-    @pulumi.getter(name="currentConfigurationVersions")
-    def current_configuration_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        return pulumi.get(self, "current_configuration_versions")
-
-    @current_configuration_versions.setter
-    def current_configuration_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
-        pulumi.set(self, "current_configuration_versions", value)
 
 
 @pulumi.input_type
@@ -7899,6 +8501,917 @@ class AutotagRuleConditionTechValueArgs:
 
 
 @pulumi.input_type
+class AutotagV2RulesArgs:
+    def __init__(__self__, *,
+                 rules: pulumi.Input[Sequence[pulumi.Input['AutotagV2RulesRuleArgs']]]):
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> pulumi.Input[Sequence[pulumi.Input['AutotagV2RulesRuleArgs']]]:
+        return pulumi.get(self, "rules")
+
+    @rules.setter
+    def rules(self, value: pulumi.Input[Sequence[pulumi.Input['AutotagV2RulesRuleArgs']]]):
+        pulumi.set(self, "rules", value)
+
+
+@pulumi.input_type
+class AutotagV2RulesRuleArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 type: pulumi.Input[str],
+                 value_normalization: pulumi.Input[str],
+                 attribute_rule: Optional[pulumi.Input['AutotagV2RulesRuleAttributeRuleArgs']] = None,
+                 entity_selector: Optional[pulumi.Input[str]] = None,
+                 value_format: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value_normalization", value_normalization)
+        if attribute_rule is not None:
+            pulumi.set(__self__, "attribute_rule", attribute_rule)
+        if entity_selector is not None:
+            pulumi.set(__self__, "entity_selector", entity_selector)
+        if value_format is not None:
+            pulumi.set(__self__, "value_format", value_format)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="valueNormalization")
+    def value_normalization(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value_normalization")
+
+    @value_normalization.setter
+    def value_normalization(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value_normalization", value)
+
+    @property
+    @pulumi.getter(name="attributeRule")
+    def attribute_rule(self) -> Optional[pulumi.Input['AutotagV2RulesRuleAttributeRuleArgs']]:
+        return pulumi.get(self, "attribute_rule")
+
+    @attribute_rule.setter
+    def attribute_rule(self, value: Optional[pulumi.Input['AutotagV2RulesRuleAttributeRuleArgs']]):
+        pulumi.set(self, "attribute_rule", value)
+
+    @property
+    @pulumi.getter(name="entitySelector")
+    def entity_selector(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "entity_selector")
+
+    @entity_selector.setter
+    def entity_selector(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "entity_selector", value)
+
+    @property
+    @pulumi.getter(name="valueFormat")
+    def value_format(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "value_format")
+
+    @value_format.setter
+    def value_format(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value_format", value)
+
+
+@pulumi.input_type
+class AutotagV2RulesRuleAttributeRuleArgs:
+    def __init__(__self__, *,
+                 conditions: pulumi.Input['AutotagV2RulesRuleAttributeRuleConditionsArgs'],
+                 entity_type: pulumi.Input[str],
+                 azure_to_pgpropagation: Optional[pulumi.Input[bool]] = None,
+                 azure_to_service_propagation: Optional[pulumi.Input[bool]] = None,
+                 host_to_pgpropagation: Optional[pulumi.Input[bool]] = None,
+                 pg_to_host_propagation: Optional[pulumi.Input[bool]] = None,
+                 pg_to_service_propagation: Optional[pulumi.Input[bool]] = None,
+                 service_to_host_propagation: Optional[pulumi.Input[bool]] = None,
+                 service_to_pgpropagation: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "entity_type", entity_type)
+        if azure_to_pgpropagation is not None:
+            pulumi.set(__self__, "azure_to_pgpropagation", azure_to_pgpropagation)
+        if azure_to_service_propagation is not None:
+            pulumi.set(__self__, "azure_to_service_propagation", azure_to_service_propagation)
+        if host_to_pgpropagation is not None:
+            pulumi.set(__self__, "host_to_pgpropagation", host_to_pgpropagation)
+        if pg_to_host_propagation is not None:
+            pulumi.set(__self__, "pg_to_host_propagation", pg_to_host_propagation)
+        if pg_to_service_propagation is not None:
+            pulumi.set(__self__, "pg_to_service_propagation", pg_to_service_propagation)
+        if service_to_host_propagation is not None:
+            pulumi.set(__self__, "service_to_host_propagation", service_to_host_propagation)
+        if service_to_pgpropagation is not None:
+            pulumi.set(__self__, "service_to_pgpropagation", service_to_pgpropagation)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> pulumi.Input['AutotagV2RulesRuleAttributeRuleConditionsArgs']:
+        return pulumi.get(self, "conditions")
+
+    @conditions.setter
+    def conditions(self, value: pulumi.Input['AutotagV2RulesRuleAttributeRuleConditionsArgs']):
+        pulumi.set(self, "conditions", value)
+
+    @property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "entity_type")
+
+    @entity_type.setter
+    def entity_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "entity_type", value)
+
+    @property
+    @pulumi.getter(name="azureToPgpropagation")
+    def azure_to_pgpropagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "azure_to_pgpropagation")
+
+    @azure_to_pgpropagation.setter
+    def azure_to_pgpropagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "azure_to_pgpropagation", value)
+
+    @property
+    @pulumi.getter(name="azureToServicePropagation")
+    def azure_to_service_propagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "azure_to_service_propagation")
+
+    @azure_to_service_propagation.setter
+    def azure_to_service_propagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "azure_to_service_propagation", value)
+
+    @property
+    @pulumi.getter(name="hostToPgpropagation")
+    def host_to_pgpropagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "host_to_pgpropagation")
+
+    @host_to_pgpropagation.setter
+    def host_to_pgpropagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "host_to_pgpropagation", value)
+
+    @property
+    @pulumi.getter(name="pgToHostPropagation")
+    def pg_to_host_propagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "pg_to_host_propagation")
+
+    @pg_to_host_propagation.setter
+    def pg_to_host_propagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "pg_to_host_propagation", value)
+
+    @property
+    @pulumi.getter(name="pgToServicePropagation")
+    def pg_to_service_propagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "pg_to_service_propagation")
+
+    @pg_to_service_propagation.setter
+    def pg_to_service_propagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "pg_to_service_propagation", value)
+
+    @property
+    @pulumi.getter(name="serviceToHostPropagation")
+    def service_to_host_propagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "service_to_host_propagation")
+
+    @service_to_host_propagation.setter
+    def service_to_host_propagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "service_to_host_propagation", value)
+
+    @property
+    @pulumi.getter(name="serviceToPgpropagation")
+    def service_to_pgpropagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "service_to_pgpropagation")
+
+    @service_to_pgpropagation.setter
+    def service_to_pgpropagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "service_to_pgpropagation", value)
+
+
+@pulumi.input_type
+class AutotagV2RulesRuleAttributeRuleConditionsArgs:
+    def __init__(__self__, *,
+                 conditions: pulumi.Input[Sequence[pulumi.Input['AutotagV2RulesRuleAttributeRuleConditionsConditionArgs']]]):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> pulumi.Input[Sequence[pulumi.Input['AutotagV2RulesRuleAttributeRuleConditionsConditionArgs']]]:
+        return pulumi.get(self, "conditions")
+
+    @conditions.setter
+    def conditions(self, value: pulumi.Input[Sequence[pulumi.Input['AutotagV2RulesRuleAttributeRuleConditionsConditionArgs']]]):
+        pulumi.set(self, "conditions", value)
+
+
+@pulumi.input_type
+class AutotagV2RulesRuleAttributeRuleConditionsConditionArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 operator: pulumi.Input[str],
+                 case_sensitive: Optional[pulumi.Input[bool]] = None,
+                 dynamic_key: Optional[pulumi.Input[str]] = None,
+                 dynamic_key_source: Optional[pulumi.Input[str]] = None,
+                 entity_id: Optional[pulumi.Input[str]] = None,
+                 enum_value: Optional[pulumi.Input[str]] = None,
+                 integer_value: Optional[pulumi.Input[int]] = None,
+                 string_value: Optional[pulumi.Input[str]] = None,
+                 tag: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "operator", operator)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if dynamic_key is not None:
+            pulumi.set(__self__, "dynamic_key", dynamic_key)
+        if dynamic_key_source is not None:
+            pulumi.set(__self__, "dynamic_key_source", dynamic_key_source)
+        if entity_id is not None:
+            pulumi.set(__self__, "entity_id", entity_id)
+        if enum_value is not None:
+            pulumi.set(__self__, "enum_value", enum_value)
+        if integer_value is not None:
+            pulumi.set(__self__, "integer_value", integer_value)
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+        if tag is not None:
+            pulumi.set(__self__, "tag", tag)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "operator")
+
+    @operator.setter
+    def operator(self, value: pulumi.Input[str]):
+        pulumi.set(self, "operator", value)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "case_sensitive")
+
+    @case_sensitive.setter
+    def case_sensitive(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "case_sensitive", value)
+
+    @property
+    @pulumi.getter(name="dynamicKey")
+    def dynamic_key(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "dynamic_key")
+
+    @dynamic_key.setter
+    def dynamic_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dynamic_key", value)
+
+    @property
+    @pulumi.getter(name="dynamicKeySource")
+    def dynamic_key_source(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "dynamic_key_source")
+
+    @dynamic_key_source.setter
+    def dynamic_key_source(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dynamic_key_source", value)
+
+    @property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "entity_id")
+
+    @entity_id.setter
+    def entity_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "entity_id", value)
+
+    @property
+    @pulumi.getter(name="enumValue")
+    def enum_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "enum_value")
+
+    @enum_value.setter
+    def enum_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "enum_value", value)
+
+    @property
+    @pulumi.getter(name="integerValue")
+    def integer_value(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "integer_value")
+
+    @integer_value.setter
+    def integer_value(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "integer_value", value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "string_value")
+
+    @string_value.setter
+    def string_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "string_value", value)
+
+    @property
+    @pulumi.getter
+    def tag(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "tag")
+
+    @tag.setter
+    def tag(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tag", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesEc2CandidateHighCpuDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholdsArgs'] custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholdsArgs']]:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 cpu_usage: pulumi.Input[float]):
+        pulumi.set(__self__, "cpu_usage", cpu_usage)
+
+    @property
+    @pulumi.getter(name="cpuUsage")
+    def cpu_usage(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "cpu_usage")
+
+    @cpu_usage.setter
+    def cpu_usage(self, value: pulumi.Input[float]):
+        pulumi.set(self, "cpu_usage", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesElbHighConnectionErrorsDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholdsArgs'] custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholdsArgs']]:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 connection_errors_per_minute: pulumi.Input[int]):
+        pulumi.set(__self__, "connection_errors_per_minute", connection_errors_per_minute)
+
+    @property
+    @pulumi.getter(name="connectionErrorsPerMinute")
+    def connection_errors_per_minute(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "connection_errors_per_minute")
+
+    @connection_errors_per_minute.setter
+    def connection_errors_per_minute(self, value: pulumi.Input[int]):
+        pulumi.set(self, "connection_errors_per_minute", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesLambdaHighErrorRateDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholdsArgs'] custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholdsArgs']]:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 failed_invocations_rate: pulumi.Input[int]):
+        pulumi.set(__self__, "failed_invocations_rate", failed_invocations_rate)
+
+    @property
+    @pulumi.getter(name="failedInvocationsRate")
+    def failed_invocations_rate(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "failed_invocations_rate")
+
+    @failed_invocations_rate.setter
+    def failed_invocations_rate(self, value: pulumi.Input[int]):
+        pulumi.set(self, "failed_invocations_rate", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesRdsHighCpuDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['AwsAnomaliesRdsHighCpuDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['AwsAnomaliesRdsHighCpuDetectionCustomThresholdsArgs'] custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['AwsAnomaliesRdsHighCpuDetectionCustomThresholdsArgs']]:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['AwsAnomaliesRdsHighCpuDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesRdsHighCpuDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 cpu_usage: pulumi.Input[float]):
+        pulumi.set(__self__, "cpu_usage", cpu_usage)
+
+    @property
+    @pulumi.getter(name="cpuUsage")
+    def cpu_usage(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "cpu_usage")
+
+    @cpu_usage.setter
+    def cpu_usage(self, value: pulumi.Input[float]):
+        pulumi.set(self, "cpu_usage", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesRdsHighMemoryDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['AwsAnomaliesRdsHighMemoryDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['AwsAnomaliesRdsHighMemoryDetectionCustomThresholdsArgs'] custom_thresholds: Alert if **both** conditions is met in 3 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['AwsAnomaliesRdsHighMemoryDetectionCustomThresholdsArgs']]:
+        """
+        Alert if **both** conditions is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['AwsAnomaliesRdsHighMemoryDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesRdsHighMemoryDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 free_memory: pulumi.Input[float],
+                 swap_usage: pulumi.Input[float]):
+        pulumi.set(__self__, "free_memory", free_memory)
+        pulumi.set(__self__, "swap_usage", swap_usage)
+
+    @property
+    @pulumi.getter(name="freeMemory")
+    def free_memory(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "free_memory")
+
+    @free_memory.setter
+    def free_memory(self, value: pulumi.Input[float]):
+        pulumi.set(self, "free_memory", value)
+
+    @property
+    @pulumi.getter(name="swapUsage")
+    def swap_usage(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "swap_usage")
+
+    @swap_usage.setter
+    def swap_usage(self, value: pulumi.Input[float]):
+        pulumi.set(self, "swap_usage", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesRdsHighWriteReadLatencyDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholdsArgs'] custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholdsArgs']]:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 read_write_latency: pulumi.Input[int]):
+        pulumi.set(__self__, "read_write_latency", read_write_latency)
+
+    @property
+    @pulumi.getter(name="readWriteLatency")
+    def read_write_latency(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "read_write_latency")
+
+    @read_write_latency.setter
+    def read_write_latency(self, value: pulumi.Input[int]):
+        pulumi.set(self, "read_write_latency", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesRdsLowStorageDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['AwsAnomaliesRdsLowStorageDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['AwsAnomaliesRdsLowStorageDetectionCustomThresholdsArgs'] custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['AwsAnomaliesRdsLowStorageDetectionCustomThresholdsArgs']]:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['AwsAnomaliesRdsLowStorageDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesRdsLowStorageDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 free_storage_percentage: pulumi.Input[int]):
+        pulumi.set(__self__, "free_storage_percentage", free_storage_percentage)
+
+    @property
+    @pulumi.getter(name="freeStoragePercentage")
+    def free_storage_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "free_storage_percentage")
+
+    @free_storage_percentage.setter
+    def free_storage_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "free_storage_percentage", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesRdsRestartsSequenceDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholdsArgs'] custom_thresholds: Alert if the condition is met in 2 out of 20 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholdsArgs']]:
+        """
+        Alert if the condition is met in 2 out of 20 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 restarts_per_minute: pulumi.Input[int]):
+        pulumi.set(__self__, "restarts_per_minute", restarts_per_minute)
+
+    @property
+    @pulumi.getter(name="restartsPerMinute")
+    def restarts_per_minute(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "restarts_per_minute")
+
+    @restarts_per_minute.setter
+    def restarts_per_minute(self, value: pulumi.Input[int]):
+        pulumi.set(self, "restarts_per_minute", value)
+
+
+@pulumi.input_type
 class AwsCredentialsAuthenticationDataArgs:
     def __init__(__self__, *,
                  access_key: Optional[pulumi.Input[str]] = None,
@@ -7910,7 +9423,7 @@ class AwsCredentialsAuthenticationDataArgs:
         """
         :param pulumi.Input[str] access_key: the access key
         :param pulumi.Input[str] account_id: the ID of the Amazon account
-        :param pulumi.Input[str] external_id: the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
+        :param pulumi.Input[str] external_id: (Read only) the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
         :param pulumi.Input[str] iam_role: the IAM role to be used by Dynatrace to get monitoring data
         :param pulumi.Input[str] secret_key: the secret access key
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
@@ -7956,7 +9469,7 @@ class AwsCredentialsAuthenticationDataArgs:
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
         """
-        the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
+        (Read only) the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
         """
         return pulumi.get(self, "external_id")
 
@@ -8522,11 +10035,14 @@ class BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThresholdArgs:
 class BrowserMonitorAnomalyDetectionOutageHandlingArgs:
     def __init__(__self__, *,
                  global_outage: Optional[pulumi.Input[bool]] = None,
+                 global_outage_policies: Optional[pulumi.Input[Sequence[pulumi.Input['BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs']]]] = None,
                  local_outage: Optional[pulumi.Input[bool]] = None,
                  local_outage_policies: Optional[pulumi.Input[Sequence[pulumi.Input['BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicyArgs']]]] = None,
                  retry_on_error: Optional[pulumi.Input[bool]] = None):
         if global_outage is not None:
             pulumi.set(__self__, "global_outage", global_outage)
+        if global_outage_policies is not None:
+            pulumi.set(__self__, "global_outage_policies", global_outage_policies)
         if local_outage is not None:
             pulumi.set(__self__, "local_outage", local_outage)
         if local_outage_policies is not None:
@@ -8542,6 +10058,15 @@ class BrowserMonitorAnomalyDetectionOutageHandlingArgs:
     @global_outage.setter
     def global_outage(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "global_outage", value)
+
+    @property
+    @pulumi.getter(name="globalOutagePolicies")
+    def global_outage_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs']]]]:
+        return pulumi.get(self, "global_outage_policies")
+
+    @global_outage_policies.setter
+    def global_outage_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs']]]]):
+        pulumi.set(self, "global_outage_policies", value)
 
     @property
     @pulumi.getter(name="localOutage")
@@ -8569,6 +10094,22 @@ class BrowserMonitorAnomalyDetectionOutageHandlingArgs:
     @retry_on_error.setter
     def retry_on_error(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "retry_on_error", value)
+
+
+@pulumi.input_type
+class BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs:
+    def __init__(__self__, *,
+                 consecutive_runs: pulumi.Input[int]):
+        pulumi.set(__self__, "consecutive_runs", consecutive_runs)
+
+    @property
+    @pulumi.getter(name="consecutiveRuns")
+    def consecutive_runs(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "consecutive_runs")
+
+    @consecutive_runs.setter
+    def consecutive_runs(self, value: pulumi.Input[int]):
+        pulumi.set(self, "consecutive_runs", value)
 
 
 @pulumi.input_type
@@ -8633,6 +10174,49 @@ class BrowserMonitorKeyPerformanceMetricsArgs:
     @xhr_action_kpm.setter
     def xhr_action_kpm(self, value: pulumi.Input[str]):
         pulumi.set(self, "xhr_action_kpm", value)
+
+
+@pulumi.input_type
+class BrowserMonitorPerformanceThresholdsArgs:
+    def __init__(__self__, *,
+                 thresholds: pulumi.Input[Sequence[pulumi.Input['BrowserMonitorPerformanceThresholdsThresholdArgs']]]):
+        pulumi.set(__self__, "thresholds", thresholds)
+
+    @property
+    @pulumi.getter
+    def thresholds(self) -> pulumi.Input[Sequence[pulumi.Input['BrowserMonitorPerformanceThresholdsThresholdArgs']]]:
+        return pulumi.get(self, "thresholds")
+
+    @thresholds.setter
+    def thresholds(self, value: pulumi.Input[Sequence[pulumi.Input['BrowserMonitorPerformanceThresholdsThresholdArgs']]]):
+        pulumi.set(self, "thresholds", value)
+
+
+@pulumi.input_type
+class BrowserMonitorPerformanceThresholdsThresholdArgs:
+    def __init__(__self__, *,
+                 event: pulumi.Input[str],
+                 threshold: pulumi.Input[float]):
+        pulumi.set(__self__, "event", event)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter
+    def event(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "event")
+
+    @event.setter
+    def event(self, value: pulumi.Input[str]):
+        pulumi.set(self, "event", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[float]):
+        pulumi.set(self, "threshold", value)
 
 
 @pulumi.input_type
@@ -8952,7 +10536,7 @@ class BrowserMonitorScriptConfigurationDeviceArgs:
                  mobile: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  orientation: Optional[pulumi.Input[str]] = None,
-                 scale_factor: Optional[pulumi.Input[int]] = None,
+                 scale_factor: Optional[pulumi.Input[float]] = None,
                  touch_enabled: Optional[pulumi.Input[bool]] = None,
                  width: Optional[pulumi.Input[int]] = None):
         if height is not None:
@@ -9008,11 +10592,11 @@ class BrowserMonitorScriptConfigurationDeviceArgs:
 
     @property
     @pulumi.getter(name="scaleFactor")
-    def scale_factor(self) -> Optional[pulumi.Input[int]]:
+    def scale_factor(self) -> Optional[pulumi.Input[float]]:
         return pulumi.get(self, "scale_factor")
 
     @scale_factor.setter
-    def scale_factor(self, value: Optional[pulumi.Input[int]]):
+    def scale_factor(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "scale_factor", value)
 
     @property
@@ -12287,6 +13871,464 @@ class BrowserMonitorTagTagArgs:
 
 
 @pulumi.input_type
+class BusinessEventsOneagentEventArgs:
+    def __init__(__self__, *,
+                 category: pulumi.Input['BusinessEventsOneagentEventCategoryArgs'],
+                 provider: pulumi.Input['BusinessEventsOneagentEventProviderArgs'],
+                 type: pulumi.Input['BusinessEventsOneagentEventTypeArgs'],
+                 data: Optional[pulumi.Input['BusinessEventsOneagentEventDataArgs']] = None):
+        """
+        :param pulumi.Input['BusinessEventsOneagentEventCategoryArgs'] category: Event category
+        :param pulumi.Input['BusinessEventsOneagentEventProviderArgs'] provider: Event provider
+        :param pulumi.Input['BusinessEventsOneagentEventTypeArgs'] type: Event type
+        :param pulumi.Input['BusinessEventsOneagentEventDataArgs'] data: Additional attributes for the business event.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "provider", provider)
+        pulumi.set(__self__, "type", type)
+        if data is not None:
+            pulumi.set(__self__, "data", data)
+
+    @property
+    @pulumi.getter
+    def category(self) -> pulumi.Input['BusinessEventsOneagentEventCategoryArgs']:
+        """
+        Event category
+        """
+        return pulumi.get(self, "category")
+
+    @category.setter
+    def category(self, value: pulumi.Input['BusinessEventsOneagentEventCategoryArgs']):
+        pulumi.set(self, "category", value)
+
+    @property
+    @pulumi.getter
+    def provider(self) -> pulumi.Input['BusinessEventsOneagentEventProviderArgs']:
+        """
+        Event provider
+        """
+        return pulumi.get(self, "provider")
+
+    @provider.setter
+    def provider(self, value: pulumi.Input['BusinessEventsOneagentEventProviderArgs']):
+        pulumi.set(self, "provider", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input['BusinessEventsOneagentEventTypeArgs']:
+        """
+        Event type
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input['BusinessEventsOneagentEventTypeArgs']):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def data(self) -> Optional[pulumi.Input['BusinessEventsOneagentEventDataArgs']]:
+        """
+        Additional attributes for the business event.
+        """
+        return pulumi.get(self, "data")
+
+    @data.setter
+    def data(self, value: Optional[pulumi.Input['BusinessEventsOneagentEventDataArgs']]):
+        pulumi.set(self, "data", value)
+
+
+@pulumi.input_type
+class BusinessEventsOneagentEventCategoryArgs:
+    def __init__(__self__, *,
+                 source_type: pulumi.Input[str],
+                 path: Optional[pulumi.Input[str]] = None,
+                 source: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "source_type", source_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source_type", value)
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "path")
+
+    @path.setter
+    def path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "path", value)
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source", value)
+
+
+@pulumi.input_type
+class BusinessEventsOneagentEventDataArgs:
+    def __init__(__self__, *,
+                 event_data_field_complexes: pulumi.Input[Sequence[pulumi.Input['BusinessEventsOneagentEventDataEventDataFieldComplexArgs']]]):
+        pulumi.set(__self__, "event_data_field_complexes", event_data_field_complexes)
+
+    @property
+    @pulumi.getter(name="eventDataFieldComplexes")
+    def event_data_field_complexes(self) -> pulumi.Input[Sequence[pulumi.Input['BusinessEventsOneagentEventDataEventDataFieldComplexArgs']]]:
+        return pulumi.get(self, "event_data_field_complexes")
+
+    @event_data_field_complexes.setter
+    def event_data_field_complexes(self, value: pulumi.Input[Sequence[pulumi.Input['BusinessEventsOneagentEventDataEventDataFieldComplexArgs']]]):
+        pulumi.set(self, "event_data_field_complexes", value)
+
+
+@pulumi.input_type
+class BusinessEventsOneagentEventDataEventDataFieldComplexArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 source: pulumi.Input['BusinessEventsOneagentEventDataEventDataFieldComplexSourceArgs']):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def source(self) -> pulumi.Input['BusinessEventsOneagentEventDataEventDataFieldComplexSourceArgs']:
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: pulumi.Input['BusinessEventsOneagentEventDataEventDataFieldComplexSourceArgs']):
+        pulumi.set(self, "source", value)
+
+
+@pulumi.input_type
+class BusinessEventsOneagentEventDataEventDataFieldComplexSourceArgs:
+    def __init__(__self__, *,
+                 source_type: pulumi.Input[str],
+                 path: Optional[pulumi.Input[str]] = None,
+                 source: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "source_type", source_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source_type", value)
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "path")
+
+    @path.setter
+    def path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "path", value)
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source", value)
+
+
+@pulumi.input_type
+class BusinessEventsOneagentEventProviderArgs:
+    def __init__(__self__, *,
+                 source_type: pulumi.Input[str],
+                 path: Optional[pulumi.Input[str]] = None,
+                 source: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "source_type", source_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source_type", value)
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "path")
+
+    @path.setter
+    def path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "path", value)
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source", value)
+
+
+@pulumi.input_type
+class BusinessEventsOneagentEventTypeArgs:
+    def __init__(__self__, *,
+                 source_type: pulumi.Input[str],
+                 path: Optional[pulumi.Input[str]] = None,
+                 source: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "source_type", source_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source_type", value)
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "path")
+
+    @path.setter
+    def path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "path", value)
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "source", value)
+
+
+@pulumi.input_type
+class BusinessEventsOneagentTriggersArgs:
+    def __init__(__self__, *,
+                 triggers: pulumi.Input[Sequence[pulumi.Input['BusinessEventsOneagentTriggersTriggerArgs']]]):
+        pulumi.set(__self__, "triggers", triggers)
+
+    @property
+    @pulumi.getter
+    def triggers(self) -> pulumi.Input[Sequence[pulumi.Input['BusinessEventsOneagentTriggersTriggerArgs']]]:
+        return pulumi.get(self, "triggers")
+
+    @triggers.setter
+    def triggers(self, value: pulumi.Input[Sequence[pulumi.Input['BusinessEventsOneagentTriggersTriggerArgs']]]):
+        pulumi.set(self, "triggers", value)
+
+
+@pulumi.input_type
+class BusinessEventsOneagentTriggersTriggerArgs:
+    def __init__(__self__, *,
+                 source: pulumi.Input['BusinessEventsOneagentTriggersTriggerSourceArgs'],
+                 type: pulumi.Input[str],
+                 case_sensitive: Optional[pulumi.Input[bool]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "type", type)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def source(self) -> pulumi.Input['BusinessEventsOneagentTriggersTriggerSourceArgs']:
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: pulumi.Input['BusinessEventsOneagentTriggersTriggerSourceArgs']):
+        pulumi.set(self, "source", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "case_sensitive")
+
+    @case_sensitive.setter
+    def case_sensitive(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "case_sensitive", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class BusinessEventsOneagentTriggersTriggerSourceArgs:
+    def __init__(__self__, *,
+                 data_source: pulumi.Input[str],
+                 path: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "data_source", data_source)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+
+    @property
+    @pulumi.getter(name="dataSource")
+    def data_source(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "data_source")
+
+    @data_source.setter
+    def data_source(self, value: pulumi.Input[str]):
+        pulumi.set(self, "data_source", value)
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "path")
+
+    @path.setter
+    def path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "path", value)
+
+
+@pulumi.input_type
+class BusinessEventsProcessingRuleTestingArgs:
+    def __init__(__self__, *,
+                 sample_event: pulumi.Input[str]):
+        pulumi.set(__self__, "sample_event", sample_event)
+
+    @property
+    @pulumi.getter(name="sampleEvent")
+    def sample_event(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "sample_event")
+
+    @sample_event.setter
+    def sample_event(self, value: pulumi.Input[str]):
+        pulumi.set(self, "sample_event", value)
+
+
+@pulumi.input_type
+class BusinessEventsProcessingTransformationFieldsArgs:
+    def __init__(__self__, *,
+                 transformation_fields: pulumi.Input[Sequence[pulumi.Input['BusinessEventsProcessingTransformationFieldsTransformationFieldArgs']]]):
+        pulumi.set(__self__, "transformation_fields", transformation_fields)
+
+    @property
+    @pulumi.getter(name="transformationFields")
+    def transformation_fields(self) -> pulumi.Input[Sequence[pulumi.Input['BusinessEventsProcessingTransformationFieldsTransformationFieldArgs']]]:
+        return pulumi.get(self, "transformation_fields")
+
+    @transformation_fields.setter
+    def transformation_fields(self, value: pulumi.Input[Sequence[pulumi.Input['BusinessEventsProcessingTransformationFieldsTransformationFieldArgs']]]):
+        pulumi.set(self, "transformation_fields", value)
+
+
+@pulumi.input_type
+class BusinessEventsProcessingTransformationFieldsTransformationFieldArgs:
+    def __init__(__self__, *,
+                 array: pulumi.Input[bool],
+                 name: pulumi.Input[str],
+                 optional: pulumi.Input[bool],
+                 readonly: pulumi.Input[bool],
+                 type: pulumi.Input[str]):
+        pulumi.set(__self__, "array", array)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "optional", optional)
+        pulumi.set(__self__, "readonly", readonly)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def array(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "array")
+
+    @array.setter
+    def array(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "array", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def optional(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "optional")
+
+    @optional.setter
+    def optional(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "optional", value)
+
+    @property
+    @pulumi.getter
+    def readonly(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "readonly")
+
+    @readonly.setter
+    def readonly(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "readonly", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
 class CalculatedServiceMetricConditionArgs:
     def __init__(__self__, *,
                  conditions: Optional[pulumi.Input[Sequence[pulumi.Input['CalculatedServiceMetricConditionConditionArgs']]]] = None):
@@ -12307,9 +14349,12 @@ class CalculatedServiceMetricConditionArgs:
 class CalculatedServiceMetricConditionConditionArgs:
     def __init__(__self__, *,
                  attribute: pulumi.Input[str],
-                 comparison: pulumi.Input['CalculatedServiceMetricConditionConditionComparisonArgs']):
+                 comparison: pulumi.Input['CalculatedServiceMetricConditionConditionComparisonArgs'],
+                 unknowns: Optional[pulumi.Input[str]] = None):
         pulumi.set(__self__, "attribute", attribute)
         pulumi.set(__self__, "comparison", comparison)
+        if unknowns is not None:
+            pulumi.set(__self__, "unknowns", unknowns)
 
     @property
     @pulumi.getter
@@ -12328,6 +14373,15 @@ class CalculatedServiceMetricConditionConditionArgs:
     @comparison.setter
     def comparison(self, value: pulumi.Input['CalculatedServiceMetricConditionConditionComparisonArgs']):
         pulumi.set(self, "comparison", value)
+
+    @property
+    @pulumi.getter
+    def unknowns(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "unknowns")
+
+    @unknowns.setter
+    def unknowns(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "unknowns", value)
 
 
 @pulumi.input_type
@@ -12554,18 +14608,26 @@ class CalculatedServiceMetricConditionConditionComparisonArgs:
 @pulumi.input_type
 class CalculatedServiceMetricConditionConditionComparisonBooleanArgs:
     def __init__(__self__, *,
+                 value: pulumi.Input[bool],
                  operator: Optional[pulumi.Input[str]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
-                 value: Optional[pulumi.Input[bool]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None):
+        pulumi.set(__self__, "value", value)
         if operator is not None:
             pulumi.set(__self__, "operator", operator)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
-        if value is not None:
-            pulumi.set(__self__, "value", value)
         if values is not None:
             pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "value", value)
 
     @property
     @pulumi.getter
@@ -12584,15 +14646,6 @@ class CalculatedServiceMetricConditionConditionComparisonBooleanArgs:
     @unknowns.setter
     def unknowns(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "unknowns", value)
-
-    @property
-    @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[bool]]:
-        return pulumi.get(self, "value")
-
-    @value.setter
-    def value(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "value", value)
 
     @property
     @pulumi.getter
@@ -14282,6 +16335,460 @@ class CalculatedServiceMetricMetricDefinitionArgs:
 
 
 @pulumi.input_type
+class CloudappWorkloaddetectionCloudFoundryArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool]):
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+
+@pulumi.input_type
+class CloudappWorkloaddetectionDockerArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool]):
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+
+@pulumi.input_type
+class CloudappWorkloaddetectionKubernetesArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 filters: Optional[pulumi.Input['CloudappWorkloaddetectionKubernetesFiltersArgs']] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if filters is not None:
+            pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Optional[pulumi.Input['CloudappWorkloaddetectionKubernetesFiltersArgs']]:
+        return pulumi.get(self, "filters")
+
+    @filters.setter
+    def filters(self, value: Optional[pulumi.Input['CloudappWorkloaddetectionKubernetesFiltersArgs']]):
+        pulumi.set(self, "filters", value)
+
+
+@pulumi.input_type
+class CloudappWorkloaddetectionKubernetesFiltersArgs:
+    def __init__(__self__, *,
+                 filters: pulumi.Input[Sequence[pulumi.Input['CloudappWorkloaddetectionKubernetesFiltersFilterArgs']]]):
+        pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> pulumi.Input[Sequence[pulumi.Input['CloudappWorkloaddetectionKubernetesFiltersFilterArgs']]]:
+        return pulumi.get(self, "filters")
+
+    @filters.setter
+    def filters(self, value: pulumi.Input[Sequence[pulumi.Input['CloudappWorkloaddetectionKubernetesFiltersFilterArgs']]]):
+        pulumi.set(self, "filters", value)
+
+
+@pulumi.input_type
+class CloudappWorkloaddetectionKubernetesFiltersFilterArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 inclusion_toggles: pulumi.Input['CloudappWorkloaddetectionKubernetesFiltersFilterInclusionTogglesArgs'],
+                 match_filter: pulumi.Input['CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilterArgs']):
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "inclusion_toggles", inclusion_toggles)
+        pulumi.set(__self__, "match_filter", match_filter)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="inclusionToggles")
+    def inclusion_toggles(self) -> pulumi.Input['CloudappWorkloaddetectionKubernetesFiltersFilterInclusionTogglesArgs']:
+        return pulumi.get(self, "inclusion_toggles")
+
+    @inclusion_toggles.setter
+    def inclusion_toggles(self, value: pulumi.Input['CloudappWorkloaddetectionKubernetesFiltersFilterInclusionTogglesArgs']):
+        pulumi.set(self, "inclusion_toggles", value)
+
+    @property
+    @pulumi.getter(name="matchFilter")
+    def match_filter(self) -> pulumi.Input['CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilterArgs']:
+        return pulumi.get(self, "match_filter")
+
+    @match_filter.setter
+    def match_filter(self, value: pulumi.Input['CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilterArgs']):
+        pulumi.set(self, "match_filter", value)
+
+
+@pulumi.input_type
+class CloudappWorkloaddetectionKubernetesFiltersFilterInclusionTogglesArgs:
+    def __init__(__self__, *,
+                 inc_basepod: pulumi.Input[bool],
+                 inc_container: pulumi.Input[bool],
+                 inc_namespace: pulumi.Input[bool],
+                 inc_product: pulumi.Input[bool],
+                 inc_stage: pulumi.Input[bool]):
+        pulumi.set(__self__, "inc_basepod", inc_basepod)
+        pulumi.set(__self__, "inc_container", inc_container)
+        pulumi.set(__self__, "inc_namespace", inc_namespace)
+        pulumi.set(__self__, "inc_product", inc_product)
+        pulumi.set(__self__, "inc_stage", inc_stage)
+
+    @property
+    @pulumi.getter(name="incBasepod")
+    def inc_basepod(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "inc_basepod")
+
+    @inc_basepod.setter
+    def inc_basepod(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "inc_basepod", value)
+
+    @property
+    @pulumi.getter(name="incContainer")
+    def inc_container(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "inc_container")
+
+    @inc_container.setter
+    def inc_container(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "inc_container", value)
+
+    @property
+    @pulumi.getter(name="incNamespace")
+    def inc_namespace(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "inc_namespace")
+
+    @inc_namespace.setter
+    def inc_namespace(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "inc_namespace", value)
+
+    @property
+    @pulumi.getter(name="incProduct")
+    def inc_product(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "inc_product")
+
+    @inc_product.setter
+    def inc_product(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "inc_product", value)
+
+    @property
+    @pulumi.getter(name="incStage")
+    def inc_stage(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "inc_stage")
+
+    @inc_stage.setter
+    def inc_stage(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "inc_stage", value)
+
+
+@pulumi.input_type
+class CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilterArgs:
+    def __init__(__self__, *,
+                 match_operator: pulumi.Input[str],
+                 namespace: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "match_operator", match_operator)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+
+    @property
+    @pulumi.getter(name="matchOperator")
+    def match_operator(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "match_operator")
+
+    @match_operator.setter
+    def match_operator(self, value: pulumi.Input[str]):
+        pulumi.set(self, "match_operator", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "namespace", value)
+
+
+@pulumi.input_type
+class CredentialsCredentialUsageSummaryArgs:
+    def __init__(__self__, *,
+                 count: pulumi.Input[int],
+                 type: pulumi.Input[str]):
+        """
+        :param pulumi.Input[int] count: The number of uses
+        :param pulumi.Input[str] type: Type of usage, `HTTP_MONITOR` or `BROWSER_MONITOR`
+        """
+        pulumi.set(__self__, "count", count)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def count(self) -> pulumi.Input[int]:
+        """
+        The number of uses
+        """
+        return pulumi.get(self, "count")
+
+    @count.setter
+    def count(self, value: pulumi.Input[int]):
+        pulumi.set(self, "count", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Type of usage, `HTTP_MONITOR` or `BROWSER_MONITOR`
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class CredentialsExternalArgs:
+    def __init__(__self__, *,
+                 certificate: Optional[pulumi.Input[str]] = None,
+                 client_secret: Optional[pulumi.Input[str]] = None,
+                 clientid: Optional[pulumi.Input[str]] = None,
+                 credentials_used_for_external_synchronizations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 password_secret_name: Optional[pulumi.Input[str]] = None,
+                 path_to_credentials: Optional[pulumi.Input[str]] = None,
+                 roleid: Optional[pulumi.Input[str]] = None,
+                 secretid: Optional[pulumi.Input[str]] = None,
+                 tenantid: Optional[pulumi.Input[str]] = None,
+                 token_secret_name: Optional[pulumi.Input[str]] = None,
+                 username_secret_name: Optional[pulumi.Input[str]] = None,
+                 vault_namespace: Optional[pulumi.Input[str]] = None,
+                 vault_url: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] certificate: Required for Hashicorp Certificate. The ID of Credentials within the Certificate Vault holding the certificate
+        :param pulumi.Input[str] client_secret: Required for Azure Client Secret. No further documentation available
+        :param pulumi.Input[str] clientid: Required for Azure Client Secret. No further documentation available
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] credentials_used_for_external_synchronizations: No documentation available
+        :param pulumi.Input[str] password_secret_name: No documentation available
+        :param pulumi.Input[str] path_to_credentials: Required for Hashicorp App Role or Hashicorp Certificate. No further documentation available
+        :param pulumi.Input[str] roleid: Required for Hashicorp App Role. No further documentation available
+        :param pulumi.Input[str] secretid: Required for Hashicorp App Role. The ID of Credentials within the Certificate Vault holding the secret id
+        :param pulumi.Input[str] tenantid: Required for Azure Client Secret. No further documentation available
+        :param pulumi.Input[str] token_secret_name: No documentation available
+        :param pulumi.Input[str] username_secret_name: No documentation available
+        :param pulumi.Input[str] vault_namespace: Required for Hashicorp App Role. No further documentation available
+        :param pulumi.Input[str] vault_url: No documentation available
+        """
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
+        if clientid is not None:
+            pulumi.set(__self__, "clientid", clientid)
+        if credentials_used_for_external_synchronizations is not None:
+            pulumi.set(__self__, "credentials_used_for_external_synchronizations", credentials_used_for_external_synchronizations)
+        if password_secret_name is not None:
+            pulumi.set(__self__, "password_secret_name", password_secret_name)
+        if path_to_credentials is not None:
+            pulumi.set(__self__, "path_to_credentials", path_to_credentials)
+        if roleid is not None:
+            pulumi.set(__self__, "roleid", roleid)
+        if secretid is not None:
+            pulumi.set(__self__, "secretid", secretid)
+        if tenantid is not None:
+            pulumi.set(__self__, "tenantid", tenantid)
+        if token_secret_name is not None:
+            pulumi.set(__self__, "token_secret_name", token_secret_name)
+        if username_secret_name is not None:
+            pulumi.set(__self__, "username_secret_name", username_secret_name)
+        if vault_namespace is not None:
+            pulumi.set(__self__, "vault_namespace", vault_namespace)
+        if vault_url is not None:
+            pulumi.set(__self__, "vault_url", vault_url)
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional[pulumi.Input[str]]:
+        """
+        Required for Hashicorp Certificate. The ID of Credentials within the Certificate Vault holding the certificate
+        """
+        return pulumi.get(self, "certificate")
+
+    @certificate.setter
+    def certificate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "certificate", value)
+
+    @property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> Optional[pulumi.Input[str]]:
+        """
+        Required for Azure Client Secret. No further documentation available
+        """
+        return pulumi.get(self, "client_secret")
+
+    @client_secret.setter
+    def client_secret(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "client_secret", value)
+
+    @property
+    @pulumi.getter
+    def clientid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Required for Azure Client Secret. No further documentation available
+        """
+        return pulumi.get(self, "clientid")
+
+    @clientid.setter
+    def clientid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "clientid", value)
+
+    @property
+    @pulumi.getter(name="credentialsUsedForExternalSynchronizations")
+    def credentials_used_for_external_synchronizations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "credentials_used_for_external_synchronizations")
+
+    @credentials_used_for_external_synchronizations.setter
+    def credentials_used_for_external_synchronizations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "credentials_used_for_external_synchronizations", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretName")
+    def password_secret_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "password_secret_name")
+
+    @password_secret_name.setter
+    def password_secret_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_name", value)
+
+    @property
+    @pulumi.getter(name="pathToCredentials")
+    def path_to_credentials(self) -> Optional[pulumi.Input[str]]:
+        """
+        Required for Hashicorp App Role or Hashicorp Certificate. No further documentation available
+        """
+        return pulumi.get(self, "path_to_credentials")
+
+    @path_to_credentials.setter
+    def path_to_credentials(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "path_to_credentials", value)
+
+    @property
+    @pulumi.getter
+    def roleid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Required for Hashicorp App Role. No further documentation available
+        """
+        return pulumi.get(self, "roleid")
+
+    @roleid.setter
+    def roleid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "roleid", value)
+
+    @property
+    @pulumi.getter
+    def secretid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Required for Hashicorp App Role. The ID of Credentials within the Certificate Vault holding the secret id
+        """
+        return pulumi.get(self, "secretid")
+
+    @secretid.setter
+    def secretid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "secretid", value)
+
+    @property
+    @pulumi.getter
+    def tenantid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Required for Azure Client Secret. No further documentation available
+        """
+        return pulumi.get(self, "tenantid")
+
+    @tenantid.setter
+    def tenantid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tenantid", value)
+
+    @property
+    @pulumi.getter(name="tokenSecretName")
+    def token_secret_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "token_secret_name")
+
+    @token_secret_name.setter
+    def token_secret_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "token_secret_name", value)
+
+    @property
+    @pulumi.getter(name="usernameSecretName")
+    def username_secret_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "username_secret_name")
+
+    @username_secret_name.setter
+    def username_secret_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "username_secret_name", value)
+
+    @property
+    @pulumi.getter(name="vaultNamespace")
+    def vault_namespace(self) -> Optional[pulumi.Input[str]]:
+        """
+        Required for Hashicorp App Role. No further documentation available
+        """
+        return pulumi.get(self, "vault_namespace")
+
+    @vault_namespace.setter
+    def vault_namespace(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vault_namespace", value)
+
+    @property
+    @pulumi.getter(name="vaultUrl")
+    def vault_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "vault_url")
+
+    @vault_url.setter
+    def vault_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vault_url", value)
+
+
+@pulumi.input_type
 class CustomAnomaliesDimensionArgs:
     def __init__(__self__, *,
                  dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['CustomAnomaliesDimensionDimensionArgs']]]] = None,
@@ -14340,14 +16847,21 @@ class CustomAnomaliesDimensionArgs:
 class CustomAnomaliesDimensionDimensionArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[str],
+                 index: Optional[pulumi.Input[int]] = None,
                  key: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] name: The name of the metric event displayed in the UI
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         pulumi.set(__self__, "type", type)
+        if index is not None:
+            pulumi.set(__self__, "index", index)
         if key is not None:
             pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
 
@@ -14362,12 +16876,33 @@ class CustomAnomaliesDimensionDimensionArgs:
 
     @property
     @pulumi.getter
+    def index(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "index")
+
+    @index.setter
+    def index(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "index", value)
+
+    @property
+    @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "key")
 
     @key.setter
     def key(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the metric event displayed in the UI
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -14459,14 +16994,21 @@ class CustomAnomaliesDimensionEntityFilterArgs:
 class CustomAnomaliesDimensionStringArgs:
     def __init__(__self__, *,
                  filter: pulumi.Input['CustomAnomaliesDimensionStringFilterArgs'],
+                 index: Optional[pulumi.Input[int]] = None,
                  key: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] name: The name of the metric event displayed in the UI
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         pulumi.set(__self__, "filter", filter)
+        if index is not None:
+            pulumi.set(__self__, "index", index)
         if key is not None:
             pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
 
@@ -14481,12 +17023,33 @@ class CustomAnomaliesDimensionStringArgs:
 
     @property
     @pulumi.getter
+    def index(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "index")
+
+    @index.setter
+    def index(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "index", value)
+
+    @property
+    @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "key")
 
     @key.setter
     def key(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the metric event displayed in the UI
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
     @property
     @pulumi.getter
@@ -15503,6 +18066,653 @@ class CustomAnomaliesStrategyStaticArgs:
 
 
 @pulumi.input_type
+class CustomAppAnomaliesErrorRateIncreaseArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 detection_mode: Optional[pulumi.Input[str]] = None,
+                 error_rate_increase_auto: Optional[pulumi.Input['CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs']] = None,
+                 error_rate_increase_fixed: Optional[pulumi.Input['CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Fixed`
+        :param pulumi.Input['CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs'] error_rate_increase_auto: Alert if the percentage of user actions affected by reported errors exceeds **both** the absolute threshold and the relative threshold
+        :param pulumi.Input['CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs'] error_rate_increase_fixed: Alert if the custom reported error rate threshold is exceeded during any 5-minute period
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if error_rate_increase_auto is not None:
+            pulumi.set(__self__, "error_rate_increase_auto", error_rate_increase_auto)
+        if error_rate_increase_fixed is not None:
+            pulumi.set(__self__, "error_rate_increase_fixed", error_rate_increase_fixed)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+    @property
+    @pulumi.getter(name="errorRateIncreaseAuto")
+    def error_rate_increase_auto(self) -> Optional[pulumi.Input['CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs']]:
+        """
+        Alert if the percentage of user actions affected by reported errors exceeds **both** the absolute threshold and the relative threshold
+        """
+        return pulumi.get(self, "error_rate_increase_auto")
+
+    @error_rate_increase_auto.setter
+    def error_rate_increase_auto(self, value: Optional[pulumi.Input['CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs']]):
+        pulumi.set(self, "error_rate_increase_auto", value)
+
+    @property
+    @pulumi.getter(name="errorRateIncreaseFixed")
+    def error_rate_increase_fixed(self) -> Optional[pulumi.Input['CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs']]:
+        """
+        Alert if the custom reported error rate threshold is exceeded during any 5-minute period
+        """
+        return pulumi.get(self, "error_rate_increase_fixed")
+
+    @error_rate_increase_fixed.setter
+    def error_rate_increase_fixed(self, value: Optional[pulumi.Input['CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs']]):
+        pulumi.set(self, "error_rate_increase_fixed", value)
+
+
+@pulumi.input_type
+class CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs:
+    def __init__(__self__, *,
+                 threshold_absolute: pulumi.Input[float],
+                 threshold_relative: pulumi.Input[float]):
+        pulumi.set(__self__, "threshold_absolute", threshold_absolute)
+        pulumi.set(__self__, "threshold_relative", threshold_relative)
+
+    @property
+    @pulumi.getter(name="thresholdAbsolute")
+    def threshold_absolute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "threshold_absolute")
+
+    @threshold_absolute.setter
+    def threshold_absolute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "threshold_absolute", value)
+
+    @property
+    @pulumi.getter(name="thresholdRelative")
+    def threshold_relative(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "threshold_relative")
+
+    @threshold_relative.setter
+    def threshold_relative(self, value: pulumi.Input[float]):
+        pulumi.set(self, "threshold_relative", value)
+
+
+@pulumi.input_type
+class CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs:
+    def __init__(__self__, *,
+                 sensitivity: pulumi.Input[str],
+                 threshold_absolute: pulumi.Input[float]):
+        pulumi.set(__self__, "sensitivity", sensitivity)
+        pulumi.set(__self__, "threshold_absolute", threshold_absolute)
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "sensitivity")
+
+    @sensitivity.setter
+    def sensitivity(self, value: pulumi.Input[str]):
+        pulumi.set(self, "sensitivity", value)
+
+    @property
+    @pulumi.getter(name="thresholdAbsolute")
+    def threshold_absolute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "threshold_absolute")
+
+    @threshold_absolute.setter
+    def threshold_absolute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "threshold_absolute", value)
+
+
+@pulumi.input_type
+class CustomAppAnomaliesSlowUserActionsArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 detection_mode: Optional[pulumi.Input[str]] = None,
+                 slow_user_actions_auto: Optional[pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoArgs']] = None,
+                 slow_user_actions_fixed: Optional[pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Fixed`
+        :param pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoArgs'] slow_user_actions_auto: no documentation available
+        :param pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs'] slow_user_actions_fixed: no documentation available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if slow_user_actions_auto is not None:
+            pulumi.set(__self__, "slow_user_actions_auto", slow_user_actions_auto)
+        if slow_user_actions_fixed is not None:
+            pulumi.set(__self__, "slow_user_actions_fixed", slow_user_actions_fixed)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+    @property
+    @pulumi.getter(name="slowUserActionsAuto")
+    def slow_user_actions_auto(self) -> Optional[pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoArgs']]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "slow_user_actions_auto")
+
+    @slow_user_actions_auto.setter
+    def slow_user_actions_auto(self, value: Optional[pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoArgs']]):
+        pulumi.set(self, "slow_user_actions_auto", value)
+
+    @property
+    @pulumi.getter(name="slowUserActionsFixed")
+    def slow_user_actions_fixed(self) -> Optional[pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs']]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "slow_user_actions_fixed")
+
+    @slow_user_actions_fixed.setter
+    def slow_user_actions_fixed(self, value: Optional[pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs']]):
+        pulumi.set(self, "slow_user_actions_fixed", value)
+
+
+@pulumi.input_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoArgs:
+    def __init__(__self__, *,
+                 duration_avoid_overalerting: pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralertingArgs'],
+                 duration_threshold_all: pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAllArgs'],
+                 duration_threshold_slowest: pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowestArgs']):
+        pulumi.set(__self__, "duration_avoid_overalerting", duration_avoid_overalerting)
+        pulumi.set(__self__, "duration_threshold_all", duration_threshold_all)
+        pulumi.set(__self__, "duration_threshold_slowest", duration_threshold_slowest)
+
+    @property
+    @pulumi.getter(name="durationAvoidOveralerting")
+    def duration_avoid_overalerting(self) -> pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralertingArgs']:
+        return pulumi.get(self, "duration_avoid_overalerting")
+
+    @duration_avoid_overalerting.setter
+    def duration_avoid_overalerting(self, value: pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralertingArgs']):
+        pulumi.set(self, "duration_avoid_overalerting", value)
+
+    @property
+    @pulumi.getter(name="durationThresholdAll")
+    def duration_threshold_all(self) -> pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAllArgs']:
+        return pulumi.get(self, "duration_threshold_all")
+
+    @duration_threshold_all.setter
+    def duration_threshold_all(self, value: pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAllArgs']):
+        pulumi.set(self, "duration_threshold_all", value)
+
+    @property
+    @pulumi.getter(name="durationThresholdSlowest")
+    def duration_threshold_slowest(self) -> pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowestArgs']:
+        return pulumi.get(self, "duration_threshold_slowest")
+
+    @duration_threshold_slowest.setter
+    def duration_threshold_slowest(self, value: pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowestArgs']):
+        pulumi.set(self, "duration_threshold_slowest", value)
+
+
+@pulumi.input_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralertingArgs:
+    def __init__(__self__, *,
+                 min_action_rate: pulumi.Input[int]):
+        pulumi.set(__self__, "min_action_rate", min_action_rate)
+
+    @property
+    @pulumi.getter(name="minActionRate")
+    def min_action_rate(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "min_action_rate")
+
+    @min_action_rate.setter
+    def min_action_rate(self, value: pulumi.Input[int]):
+        pulumi.set(self, "min_action_rate", value)
+
+
+@pulumi.input_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAllArgs:
+    def __init__(__self__, *,
+                 duration_threshold: pulumi.Input[float],
+                 slowdown_percentage: pulumi.Input[float]):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+        pulumi.set(__self__, "slowdown_percentage", slowdown_percentage)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "duration_threshold")
+
+    @duration_threshold.setter
+    def duration_threshold(self, value: pulumi.Input[float]):
+        pulumi.set(self, "duration_threshold", value)
+
+    @property
+    @pulumi.getter(name="slowdownPercentage")
+    def slowdown_percentage(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "slowdown_percentage")
+
+    @slowdown_percentage.setter
+    def slowdown_percentage(self, value: pulumi.Input[float]):
+        pulumi.set(self, "slowdown_percentage", value)
+
+
+@pulumi.input_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowestArgs:
+    def __init__(__self__, *,
+                 duration_threshold: pulumi.Input[float],
+                 slowdown_percentage: pulumi.Input[float]):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+        pulumi.set(__self__, "slowdown_percentage", slowdown_percentage)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "duration_threshold")
+
+    @duration_threshold.setter
+    def duration_threshold(self, value: pulumi.Input[float]):
+        pulumi.set(self, "duration_threshold", value)
+
+    @property
+    @pulumi.getter(name="slowdownPercentage")
+    def slowdown_percentage(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "slowdown_percentage")
+
+    @slowdown_percentage.setter
+    def slowdown_percentage(self, value: pulumi.Input[float]):
+        pulumi.set(self, "slowdown_percentage", value)
+
+
+@pulumi.input_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs:
+    def __init__(__self__, *,
+                 duration_avoid_overalerting: pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralertingArgs'],
+                 duration_threshold_all_fixed: pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixedArgs'],
+                 duration_threshold_slowest: pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowestArgs'],
+                 sensitivity: pulumi.Input[str]):
+        pulumi.set(__self__, "duration_avoid_overalerting", duration_avoid_overalerting)
+        pulumi.set(__self__, "duration_threshold_all_fixed", duration_threshold_all_fixed)
+        pulumi.set(__self__, "duration_threshold_slowest", duration_threshold_slowest)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+
+    @property
+    @pulumi.getter(name="durationAvoidOveralerting")
+    def duration_avoid_overalerting(self) -> pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralertingArgs']:
+        return pulumi.get(self, "duration_avoid_overalerting")
+
+    @duration_avoid_overalerting.setter
+    def duration_avoid_overalerting(self, value: pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralertingArgs']):
+        pulumi.set(self, "duration_avoid_overalerting", value)
+
+    @property
+    @pulumi.getter(name="durationThresholdAllFixed")
+    def duration_threshold_all_fixed(self) -> pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixedArgs']:
+        return pulumi.get(self, "duration_threshold_all_fixed")
+
+    @duration_threshold_all_fixed.setter
+    def duration_threshold_all_fixed(self, value: pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixedArgs']):
+        pulumi.set(self, "duration_threshold_all_fixed", value)
+
+    @property
+    @pulumi.getter(name="durationThresholdSlowest")
+    def duration_threshold_slowest(self) -> pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowestArgs']:
+        return pulumi.get(self, "duration_threshold_slowest")
+
+    @duration_threshold_slowest.setter
+    def duration_threshold_slowest(self, value: pulumi.Input['CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowestArgs']):
+        pulumi.set(self, "duration_threshold_slowest", value)
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "sensitivity")
+
+    @sensitivity.setter
+    def sensitivity(self, value: pulumi.Input[str]):
+        pulumi.set(self, "sensitivity", value)
+
+
+@pulumi.input_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralertingArgs:
+    def __init__(__self__, *,
+                 min_action_rate: pulumi.Input[int]):
+        pulumi.set(__self__, "min_action_rate", min_action_rate)
+
+    @property
+    @pulumi.getter(name="minActionRate")
+    def min_action_rate(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "min_action_rate")
+
+    @min_action_rate.setter
+    def min_action_rate(self, value: pulumi.Input[int]):
+        pulumi.set(self, "min_action_rate", value)
+
+
+@pulumi.input_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixedArgs:
+    def __init__(__self__, *,
+                 duration_threshold: pulumi.Input[float]):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "duration_threshold")
+
+    @duration_threshold.setter
+    def duration_threshold(self, value: pulumi.Input[float]):
+        pulumi.set(self, "duration_threshold", value)
+
+
+@pulumi.input_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowestArgs:
+    def __init__(__self__, *,
+                 duration_threshold: pulumi.Input[float]):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "duration_threshold")
+
+    @duration_threshold.setter
+    def duration_threshold(self, value: pulumi.Input[float]):
+        pulumi.set(self, "duration_threshold", value)
+
+
+@pulumi.input_type
+class CustomAppAnomaliesUnexpectedHighLoadArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 threshold_percentage: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[float] threshold_percentage: Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic spikes within your application.
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if threshold_percentage is not None:
+            pulumi.set(__self__, "threshold_percentage", threshold_percentage)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="thresholdPercentage")
+    def threshold_percentage(self) -> Optional[pulumi.Input[float]]:
+        """
+        Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic spikes within your application.
+        """
+        return pulumi.get(self, "threshold_percentage")
+
+    @threshold_percentage.setter
+    def threshold_percentage(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "threshold_percentage", value)
+
+
+@pulumi.input_type
+class CustomAppAnomaliesUnexpectedLowLoadArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 threshold_percentage: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[float] threshold_percentage: Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic drops within your application.
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if threshold_percentage is not None:
+            pulumi.set(__self__, "threshold_percentage", threshold_percentage)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="thresholdPercentage")
+    def threshold_percentage(self) -> Optional[pulumi.Input[float]]:
+        """
+        Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic drops within your application.
+        """
+        return pulumi.get(self, "threshold_percentage")
+
+    @threshold_percentage.setter
+    def threshold_percentage(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "threshold_percentage", value)
+
+
+@pulumi.input_type
+class CustomAppCrashRateCrashRateIncreaseArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 crash_rate_increase_auto: Optional[pulumi.Input['CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoArgs']] = None,
+                 crash_rate_increase_fixed: Optional[pulumi.Input['CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoArgs'] crash_rate_increase_auto: Alert crash rate increases when auto-detected baseline is exceeded by a certain number of users
+        :param pulumi.Input['CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs'] crash_rate_increase_fixed: Alert crash rate increases when the defined threshold is exceeded by a certain number of users
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Fixed`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if crash_rate_increase_auto is not None:
+            pulumi.set(__self__, "crash_rate_increase_auto", crash_rate_increase_auto)
+        if crash_rate_increase_fixed is not None:
+            pulumi.set(__self__, "crash_rate_increase_fixed", crash_rate_increase_fixed)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="crashRateIncreaseAuto")
+    def crash_rate_increase_auto(self) -> Optional[pulumi.Input['CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoArgs']]:
+        """
+        Alert crash rate increases when auto-detected baseline is exceeded by a certain number of users
+        """
+        return pulumi.get(self, "crash_rate_increase_auto")
+
+    @crash_rate_increase_auto.setter
+    def crash_rate_increase_auto(self, value: Optional[pulumi.Input['CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoArgs']]):
+        pulumi.set(self, "crash_rate_increase_auto", value)
+
+    @property
+    @pulumi.getter(name="crashRateIncreaseFixed")
+    def crash_rate_increase_fixed(self) -> Optional[pulumi.Input['CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs']]:
+        """
+        Alert crash rate increases when the defined threshold is exceeded by a certain number of users
+        """
+        return pulumi.get(self, "crash_rate_increase_fixed")
+
+    @crash_rate_increase_fixed.setter
+    def crash_rate_increase_fixed(self, value: Optional[pulumi.Input['CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs']]):
+        pulumi.set(self, "crash_rate_increase_fixed", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoArgs:
+    def __init__(__self__, *,
+                 baseline_violation_percentage: pulumi.Input[float],
+                 concurrent_users: pulumi.Input[float],
+                 sensitivity: pulumi.Input[str]):
+        pulumi.set(__self__, "baseline_violation_percentage", baseline_violation_percentage)
+        pulumi.set(__self__, "concurrent_users", concurrent_users)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+
+    @property
+    @pulumi.getter(name="baselineViolationPercentage")
+    def baseline_violation_percentage(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "baseline_violation_percentage")
+
+    @baseline_violation_percentage.setter
+    def baseline_violation_percentage(self, value: pulumi.Input[float]):
+        pulumi.set(self, "baseline_violation_percentage", value)
+
+    @property
+    @pulumi.getter(name="concurrentUsers")
+    def concurrent_users(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "concurrent_users")
+
+    @concurrent_users.setter
+    def concurrent_users(self, value: pulumi.Input[float]):
+        pulumi.set(self, "concurrent_users", value)
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "sensitivity")
+
+    @sensitivity.setter
+    def sensitivity(self, value: pulumi.Input[str]):
+        pulumi.set(self, "sensitivity", value)
+
+
+@pulumi.input_type
+class CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs:
+    def __init__(__self__, *,
+                 absolute_crash_rate: pulumi.Input[float],
+                 concurrent_users: pulumi.Input[int]):
+        pulumi.set(__self__, "absolute_crash_rate", absolute_crash_rate)
+        pulumi.set(__self__, "concurrent_users", concurrent_users)
+
+    @property
+    @pulumi.getter(name="absoluteCrashRate")
+    def absolute_crash_rate(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "absolute_crash_rate")
+
+    @absolute_crash_rate.setter
+    def absolute_crash_rate(self, value: pulumi.Input[float]):
+        pulumi.set(self, "absolute_crash_rate", value)
+
+    @property
+    @pulumi.getter(name="concurrentUsers")
+    def concurrent_users(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "concurrent_users")
+
+    @concurrent_users.setter
+    def concurrent_users(self, value: pulumi.Input[int]):
+        pulumi.set(self, "concurrent_users", value)
+
+
+@pulumi.input_type
+class CustomAppEnablementRumArgs:
+    def __init__(__self__, *,
+                 cost_and_traffic_control: pulumi.Input[int],
+                 enabled: pulumi.Input[bool]):
+        """
+        :param pulumi.Input[int] cost_and_traffic_control: (Field has overlap with `MobileApplication`) Percentage of user sessions captured and analyzed. By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application’s performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session.
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        """
+        pulumi.set(__self__, "cost_and_traffic_control", cost_and_traffic_control)
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter(name="costAndTrafficControl")
+    def cost_and_traffic_control(self) -> pulumi.Input[int]:
+        """
+        (Field has overlap with `MobileApplication`) Percentage of user sessions captured and analyzed. By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application’s performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session.
+        """
+        return pulumi.get(self, "cost_and_traffic_control")
+
+    @cost_and_traffic_control.setter
+    def cost_and_traffic_control(self, value: pulumi.Input[int]):
+        pulumi.set(self, "cost_and_traffic_control", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+
+@pulumi.input_type
 class CustomServiceRuleArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[bool],
@@ -15510,7 +18720,6 @@ class CustomServiceRuleArgs:
                  annotations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  class_: Optional[pulumi.Input['CustomServiceRuleClassArgs']] = None,
                  file: Optional[pulumi.Input['CustomServiceRuleFileArgs']] = None,
-                 id: Optional[pulumi.Input[str]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[bool] enabled: Rule enabled/disabled
@@ -15518,7 +18727,6 @@ class CustomServiceRuleArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] annotations: Additional annotations filter of the rule. Only classes where all listed annotations are available in the class itself or any of its superclasses are instrumented. Not applicable to PHP
         :param pulumi.Input['CustomServiceRuleClassArgs'] class_: The fully qualified class or interface to instrument (or a substring if matching to a string). Required for Java and .NET custom services. Not applicable to PHP
         :param pulumi.Input['CustomServiceRuleFileArgs'] file: The PHP file containing the class or methods to instrument. Required for PHP custom service. Not applicable to Java and .NET
-        :param pulumi.Input[str] id: The ID of the detection rule
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         pulumi.set(__self__, "enabled", enabled)
@@ -15529,8 +18737,6 @@ class CustomServiceRuleArgs:
             pulumi.set(__self__, "class_", class_)
         if file is not None:
             pulumi.set(__self__, "file", file)
-        if id is not None:
-            pulumi.set(__self__, "id", id)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
 
@@ -15593,18 +18799,6 @@ class CustomServiceRuleArgs:
     @file.setter
     def file(self, value: Optional[pulumi.Input['CustomServiceRuleFileArgs']]):
         pulumi.set(self, "file", value)
-
-    @property
-    @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The ID of the detection rule
-        """
-        return pulumi.get(self, "id")
-
-    @id.setter
-    def id(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "id", value)
 
     @property
     @pulumi.getter
@@ -15790,6 +18984,68 @@ class CustomServiceRuleMethodArgs:
 
 
 @pulumi.input_type
+class CustomTagsTagsArgs:
+    def __init__(__self__, *,
+                 filters: Optional[pulumi.Input[Sequence[pulumi.Input['CustomTagsTagsFilterArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CustomTagsTagsFilterArgs']]] filters: A Tag Filter
+        """
+        if filters is not None:
+            pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CustomTagsTagsFilterArgs']]]]:
+        """
+        A Tag Filter
+        """
+        return pulumi.get(self, "filters")
+
+    @filters.setter
+    def filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CustomTagsTagsFilterArgs']]]]):
+        pulumi.set(self, "filters", value)
+
+
+@pulumi.input_type
+class CustomTagsTagsFilterArgs:
+    def __init__(__self__, *,
+                 context: pulumi.Input[str],
+                 key: pulumi.Input[str],
+                 value: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "context", context)
+        pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def context(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "context")
+
+    @context.setter
+    def context(self, value: pulumi.Input[str]):
+        pulumi.set(self, "context", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
 class DashboardDashboardMetadataArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
@@ -15801,6 +19057,7 @@ class DashboardDashboardMetadataArgs:
                  shared: Optional[pulumi.Input[bool]] = None,
                  sharing_details: Optional[pulumi.Input['DashboardDashboardMetadataSharingDetailsArgs']] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 tiles_name_size: Optional[pulumi.Input[str]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  valid_filter_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
@@ -15813,6 +19070,7 @@ class DashboardDashboardMetadataArgs:
         :param pulumi.Input[bool] shared: the dashboard is shared (`true`) or private (`false`)
         :param pulumi.Input['DashboardDashboardMetadataSharingDetailsArgs'] sharing_details: represents sharing configuration of a dashboard
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: a set of tags assigned to the dashboard
+        :param pulumi.Input[str] tiles_name_size: No documentation available
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         :param pulumi.Input[Sequence[pulumi.Input[str]]] valid_filter_keys: a set of all possible global dashboard filters that can be applied to dashboard
         """
@@ -15827,11 +19085,19 @@ class DashboardDashboardMetadataArgs:
         if preset is not None:
             pulumi.set(__self__, "preset", preset)
         if shared is not None:
+            warnings.warn("""Please use the resource `dynatrace_dashboard_sharing` to configure share settings""", DeprecationWarning)
+            pulumi.log.warn("""shared is deprecated: Please use the resource `dynatrace_dashboard_sharing` to configure share settings""")
+        if shared is not None:
             pulumi.set(__self__, "shared", shared)
+        if sharing_details is not None:
+            warnings.warn("""Please use the resource `dynatrace_dashboard_sharing` to configure share settings""", DeprecationWarning)
+            pulumi.log.warn("""sharing_details is deprecated: Please use the resource `dynatrace_dashboard_sharing` to configure share settings""")
         if sharing_details is not None:
             pulumi.set(__self__, "sharing_details", sharing_details)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
+        if tiles_name_size is not None:
+            pulumi.set(__self__, "tiles_name_size", tiles_name_size)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
         if valid_filter_keys is not None:
@@ -15946,6 +19212,18 @@ class DashboardDashboardMetadataArgs:
         pulumi.set(self, "tags", value)
 
     @property
+    @pulumi.getter(name="tilesNameSize")
+    def tiles_name_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "tiles_name_size")
+
+    @tiles_name_size.setter
+    def tiles_name_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tiles_name_size", value)
+
+    @property
     @pulumi.getter
     def unknowns(self) -> Optional[pulumi.Input[str]]:
         """
@@ -15974,12 +19252,15 @@ class DashboardDashboardMetadataArgs:
 class DashboardDashboardMetadataDynamicFiltersArgs:
     def __init__(__self__, *,
                  filters: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 generic_tag_filters: Optional[pulumi.Input['DashboardDashboardMetadataDynamicFiltersGenericTagFiltersArgs']] = None,
                  tag_suggestion_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         pulumi.set(__self__, "filters", filters)
+        if generic_tag_filters is not None:
+            pulumi.set(__self__, "generic_tag_filters", generic_tag_filters)
         if tag_suggestion_types is not None:
             pulumi.set(__self__, "tag_suggestion_types", tag_suggestion_types)
         if unknowns is not None:
@@ -15993,6 +19274,15 @@ class DashboardDashboardMetadataDynamicFiltersArgs:
     @filters.setter
     def filters(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
         pulumi.set(self, "filters", value)
+
+    @property
+    @pulumi.getter(name="genericTagFilters")
+    def generic_tag_filters(self) -> Optional[pulumi.Input['DashboardDashboardMetadataDynamicFiltersGenericTagFiltersArgs']]:
+        return pulumi.get(self, "generic_tag_filters")
+
+    @generic_tag_filters.setter
+    def generic_tag_filters(self, value: Optional[pulumi.Input['DashboardDashboardMetadataDynamicFiltersGenericTagFiltersArgs']]):
+        pulumi.set(self, "generic_tag_filters", value)
 
     @property
     @pulumi.getter(name="tagSuggestionTypes")
@@ -16014,6 +19304,74 @@ class DashboardDashboardMetadataDynamicFiltersArgs:
     @unknowns.setter
     def unknowns(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "unknowns", value)
+
+
+@pulumi.input_type
+class DashboardDashboardMetadataDynamicFiltersGenericTagFiltersArgs:
+    def __init__(__self__, *,
+                 filters: pulumi.Input[Sequence[pulumi.Input['DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilterArgs']]]):
+        pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> pulumi.Input[Sequence[pulumi.Input['DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilterArgs']]]:
+        return pulumi.get(self, "filters")
+
+    @filters.setter
+    def filters(self, value: pulumi.Input[Sequence[pulumi.Input['DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilterArgs']]]):
+        pulumi.set(self, "filters", value)
+
+
+@pulumi.input_type
+class DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilterArgs:
+    def __init__(__self__, *,
+                 entity_types: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 name: Optional[pulumi.Input[str]] = None,
+                 suggestions_from_entity_type: Optional[pulumi.Input[str]] = None,
+                 tag_key: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "entity_types", entity_types)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if suggestions_from_entity_type is not None:
+            pulumi.set(__self__, "suggestions_from_entity_type", suggestions_from_entity_type)
+        if tag_key is not None:
+            pulumi.set(__self__, "tag_key", tag_key)
+
+    @property
+    @pulumi.getter(name="entityTypes")
+    def entity_types(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        return pulumi.get(self, "entity_types")
+
+    @entity_types.setter
+    def entity_types(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "entity_types", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="suggestionsFromEntityType")
+    def suggestions_from_entity_type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "suggestions_from_entity_type")
+
+    @suggestions_from_entity_type.setter
+    def suggestions_from_entity_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "suggestions_from_entity_type", value)
+
+    @property
+    @pulumi.getter(name="tagKey")
+    def tag_key(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "tag_key")
+
+    @tag_key.setter
+    def tag_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tag_key", value)
 
 
 @pulumi.input_type
@@ -16298,11 +19656,14 @@ class DashboardSharingPermissionsPermissionArgs:
 @pulumi.input_type
 class DashboardSharingPublicArgs:
     def __init__(__self__, *,
-                 management_zones: pulumi.Input[Sequence[pulumi.Input[str]]]):
+                 management_zones: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 urls: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[str]]] management_zones: A list of management zones that can display data on the publicly shared dashboard.
         """
         pulumi.set(__self__, "management_zones", management_zones)
+        if urls is not None:
+            pulumi.set(__self__, "urls", urls)
 
     @property
     @pulumi.getter(name="managementZones")
@@ -16316,6 +19677,15 @@ class DashboardSharingPublicArgs:
     def management_zones(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
         pulumi.set(self, "management_zones", value)
 
+    @property
+    @pulumi.getter
+    def urls(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        return pulumi.get(self, "urls")
+
+    @urls.setter
+    def urls(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
+        pulumi.set(self, "urls", value)
+
 
 @pulumi.input_type
 class DashboardTileArgs:
@@ -16323,6 +19693,7 @@ class DashboardTileArgs:
                  name: pulumi.Input[str],
                  tile_type: pulumi.Input[str],
                  assigned_entities: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 auto_refresh_disabled: Optional[pulumi.Input[bool]] = None,
                  bounds: Optional[pulumi.Input['DashboardTileBoundsArgs']] = None,
                  chart_visible: Optional[pulumi.Input[bool]] = None,
                  configured: Optional[pulumi.Input[bool]] = None,
@@ -16344,6 +19715,7 @@ class DashboardTileArgs:
         :param pulumi.Input[str] name: the name of the tile
         :param pulumi.Input[str] tile_type: the type of the tile. Must be either `APPLICATION_WORLDMAP`, `RESOURCES`, `THIRD_PARTY_MOST_ACTIVE`, `UEM_CONVERSIONS_PER_GOAL`, `PROCESS_GROUPS_ONE` or `HOST` .
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assigned_entities: The list of Dynatrace entities, assigned to the tile
+        :param pulumi.Input[bool] auto_refresh_disabled: Auto Refresh is disabled (`true`)
         :param pulumi.Input['DashboardTileBoundsArgs'] bounds: the position and size of a tile
         :param pulumi.Input[bool] configured: The tile is configured and ready to use (`true`) or just placed on the dashboard (`false`)
         :param pulumi.Input[str] custom_name: The name of the tile, set by user
@@ -16365,6 +19737,8 @@ class DashboardTileArgs:
         pulumi.set(__self__, "tile_type", tile_type)
         if assigned_entities is not None:
             pulumi.set(__self__, "assigned_entities", assigned_entities)
+        if auto_refresh_disabled is not None:
+            pulumi.set(__self__, "auto_refresh_disabled", auto_refresh_disabled)
         if bounds is not None:
             pulumi.set(__self__, "bounds", bounds)
         if chart_visible is not None:
@@ -16435,6 +19809,18 @@ class DashboardTileArgs:
     @assigned_entities.setter
     def assigned_entities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "assigned_entities", value)
+
+    @property
+    @pulumi.getter(name="autoRefreshDisabled")
+    def auto_refresh_disabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Auto Refresh is disabled (`true`)
+        """
+        return pulumi.get(self, "auto_refresh_disabled")
+
+    @auto_refresh_disabled.setter
+    def auto_refresh_disabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "auto_refresh_disabled", value)
 
     @property
     @pulumi.getter
@@ -17386,6 +20772,273 @@ class DashboardTileVisualizationConfigArgs:
 
 
 @pulumi.input_type
+class DashboardsAllowlistAllowlistArgs:
+    def __init__(__self__, *,
+                 urlpatterns: pulumi.Input[Sequence[pulumi.Input['DashboardsAllowlistAllowlistUrlpatternArgs']]]):
+        pulumi.set(__self__, "urlpatterns", urlpatterns)
+
+    @property
+    @pulumi.getter
+    def urlpatterns(self) -> pulumi.Input[Sequence[pulumi.Input['DashboardsAllowlistAllowlistUrlpatternArgs']]]:
+        return pulumi.get(self, "urlpatterns")
+
+    @urlpatterns.setter
+    def urlpatterns(self, value: pulumi.Input[Sequence[pulumi.Input['DashboardsAllowlistAllowlistUrlpatternArgs']]]):
+        pulumi.set(self, "urlpatterns", value)
+
+
+@pulumi.input_type
+class DashboardsAllowlistAllowlistUrlpatternArgs:
+    def __init__(__self__, *,
+                 rule: pulumi.Input[str],
+                 template: pulumi.Input[str]):
+        pulumi.set(__self__, "rule", rule)
+        pulumi.set(__self__, "template", template)
+
+    @property
+    @pulumi.getter
+    def rule(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "rule")
+
+    @rule.setter
+    def rule(self, value: pulumi.Input[str]):
+        pulumi.set(self, "rule", value)
+
+    @property
+    @pulumi.getter
+    def template(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "template")
+
+    @template.setter
+    def template(self, value: pulumi.Input[str]):
+        pulumi.set(self, "template", value)
+
+
+@pulumi.input_type
+class DashboardsGeneralDefaultDashboardListArgs:
+    def __init__(__self__, *,
+                 default_dashboards: pulumi.Input[Sequence[pulumi.Input['DashboardsGeneralDefaultDashboardListDefaultDashboardArgs']]]):
+        pulumi.set(__self__, "default_dashboards", default_dashboards)
+
+    @property
+    @pulumi.getter(name="defaultDashboards")
+    def default_dashboards(self) -> pulumi.Input[Sequence[pulumi.Input['DashboardsGeneralDefaultDashboardListDefaultDashboardArgs']]]:
+        return pulumi.get(self, "default_dashboards")
+
+    @default_dashboards.setter
+    def default_dashboards(self, value: pulumi.Input[Sequence[pulumi.Input['DashboardsGeneralDefaultDashboardListDefaultDashboardArgs']]]):
+        pulumi.set(self, "default_dashboards", value)
+
+
+@pulumi.input_type
+class DashboardsGeneralDefaultDashboardListDefaultDashboardArgs:
+    def __init__(__self__, *,
+                 dashboard: pulumi.Input[str],
+                 user_group: pulumi.Input[str]):
+        pulumi.set(__self__, "dashboard", dashboard)
+        pulumi.set(__self__, "user_group", user_group)
+
+    @property
+    @pulumi.getter
+    def dashboard(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "dashboard")
+
+    @dashboard.setter
+    def dashboard(self, value: pulumi.Input[str]):
+        pulumi.set(self, "dashboard", value)
+
+    @property
+    @pulumi.getter(name="userGroup")
+    def user_group(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "user_group")
+
+    @user_group.setter
+    def user_group(self, value: pulumi.Input[str]):
+        pulumi.set(self, "user_group", value)
+
+
+@pulumi.input_type
+class DashboardsPresetsDashboardPresetsListArgs:
+    def __init__(__self__, *,
+                 dashboard_presets: pulumi.Input[Sequence[pulumi.Input['DashboardsPresetsDashboardPresetsListDashboardPresetArgs']]]):
+        pulumi.set(__self__, "dashboard_presets", dashboard_presets)
+
+    @property
+    @pulumi.getter(name="dashboardPresets")
+    def dashboard_presets(self) -> pulumi.Input[Sequence[pulumi.Input['DashboardsPresetsDashboardPresetsListDashboardPresetArgs']]]:
+        return pulumi.get(self, "dashboard_presets")
+
+    @dashboard_presets.setter
+    def dashboard_presets(self, value: pulumi.Input[Sequence[pulumi.Input['DashboardsPresetsDashboardPresetsListDashboardPresetArgs']]]):
+        pulumi.set(self, "dashboard_presets", value)
+
+
+@pulumi.input_type
+class DashboardsPresetsDashboardPresetsListDashboardPresetArgs:
+    def __init__(__self__, *,
+                 dashboard_preset: pulumi.Input[str],
+                 user_group: pulumi.Input[str]):
+        pulumi.set(__self__, "dashboard_preset", dashboard_preset)
+        pulumi.set(__self__, "user_group", user_group)
+
+    @property
+    @pulumi.getter(name="dashboardPreset")
+    def dashboard_preset(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "dashboard_preset")
+
+    @dashboard_preset.setter
+    def dashboard_preset(self, value: pulumi.Input[str]):
+        pulumi.set(self, "dashboard_preset", value)
+
+    @property
+    @pulumi.getter(name="userGroup")
+    def user_group(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "user_group")
+
+    @user_group.setter
+    def user_group(self, value: pulumi.Input[str]):
+        pulumi.set(self, "user_group", value)
+
+
+@pulumi.input_type
+class DataPrivacyDataCollectionArgs:
+    def __init__(__self__, *,
+                 opt_in_mode_enabled: pulumi.Input[bool]):
+        """
+        :param pulumi.Input[bool] opt_in_mode_enabled: With [Data-collection and opt-in mode](https://dt-url.net/7l3p0p3h) enabled, Real User Monitoring data isn't captured until dtrum.enable() is called for specific user sessions.
+        """
+        pulumi.set(__self__, "opt_in_mode_enabled", opt_in_mode_enabled)
+
+    @property
+    @pulumi.getter(name="optInModeEnabled")
+    def opt_in_mode_enabled(self) -> pulumi.Input[bool]:
+        """
+        With [Data-collection and opt-in mode](https://dt-url.net/7l3p0p3h) enabled, Real User Monitoring data isn't captured until dtrum.enable() is called for specific user sessions.
+        """
+        return pulumi.get(self, "opt_in_mode_enabled")
+
+    @opt_in_mode_enabled.setter
+    def opt_in_mode_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "opt_in_mode_enabled", value)
+
+
+@pulumi.input_type
+class DataPrivacyDoNotTrackArgs:
+    def __init__(__self__, *,
+                 comply_with_do_not_track: pulumi.Input[bool],
+                 do_not_track: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] comply_with_do_not_track: Comply with "Do Not Track" browser settings
+        :param pulumi.Input[str] do_not_track: Possible Values: `Anonymous`, `Disable_rum`
+        """
+        pulumi.set(__self__, "comply_with_do_not_track", comply_with_do_not_track)
+        if do_not_track is not None:
+            pulumi.set(__self__, "do_not_track", do_not_track)
+
+    @property
+    @pulumi.getter(name="complyWithDoNotTrack")
+    def comply_with_do_not_track(self) -> pulumi.Input[bool]:
+        """
+        Comply with "Do Not Track" browser settings
+        """
+        return pulumi.get(self, "comply_with_do_not_track")
+
+    @comply_with_do_not_track.setter
+    def comply_with_do_not_track(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "comply_with_do_not_track", value)
+
+    @property
+    @pulumi.getter(name="doNotTrack")
+    def do_not_track(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Anonymous`, `Disable_rum`
+        """
+        return pulumi.get(self, "do_not_track")
+
+    @do_not_track.setter
+    def do_not_track(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "do_not_track", value)
+
+
+@pulumi.input_type
+class DataPrivacyMaskingArgs:
+    def __init__(__self__, *,
+                 ip_address_masking_enabled: pulumi.Input[bool],
+                 personal_data_uri_masking_enabled: pulumi.Input[bool],
+                 user_action_masking_enabled: pulumi.Input[bool],
+                 ip_address_masking: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] ip_address_masking_enabled: Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
+        """
+        pulumi.set(__self__, "ip_address_masking_enabled", ip_address_masking_enabled)
+        pulumi.set(__self__, "personal_data_uri_masking_enabled", personal_data_uri_masking_enabled)
+        pulumi.set(__self__, "user_action_masking_enabled", user_action_masking_enabled)
+        if ip_address_masking is not None:
+            pulumi.set(__self__, "ip_address_masking", ip_address_masking)
+
+    @property
+    @pulumi.getter(name="ipAddressMaskingEnabled")
+    def ip_address_masking_enabled(self) -> pulumi.Input[bool]:
+        """
+        Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
+        """
+        return pulumi.get(self, "ip_address_masking_enabled")
+
+    @ip_address_masking_enabled.setter
+    def ip_address_masking_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "ip_address_masking_enabled", value)
+
+    @property
+    @pulumi.getter(name="personalDataUriMaskingEnabled")
+    def personal_data_uri_masking_enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "personal_data_uri_masking_enabled")
+
+    @personal_data_uri_masking_enabled.setter
+    def personal_data_uri_masking_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "personal_data_uri_masking_enabled", value)
+
+    @property
+    @pulumi.getter(name="userActionMaskingEnabled")
+    def user_action_masking_enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "user_action_masking_enabled")
+
+    @user_action_masking_enabled.setter
+    def user_action_masking_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "user_action_masking_enabled", value)
+
+    @property
+    @pulumi.getter(name="ipAddressMasking")
+    def ip_address_masking(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ip_address_masking")
+
+    @ip_address_masking.setter
+    def ip_address_masking(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ip_address_masking", value)
+
+
+@pulumi.input_type
+class DataPrivacyUserTrackingArgs:
+    def __init__(__self__, *,
+                 persistent_cookie_enabled: pulumi.Input[bool]):
+        """
+        :param pulumi.Input[bool] persistent_cookie_enabled: When enabled, Dynatrace places a [persistent cookie](https://dt-url.net/313o0p4n) on all end-user devices to identify returning users.
+        """
+        pulumi.set(__self__, "persistent_cookie_enabled", persistent_cookie_enabled)
+
+    @property
+    @pulumi.getter(name="persistentCookieEnabled")
+    def persistent_cookie_enabled(self) -> pulumi.Input[bool]:
+        """
+        When enabled, Dynatrace places a [persistent cookie](https://dt-url.net/313o0p4n) on all end-user devices to identify returning users.
+        """
+        return pulumi.get(self, "persistent_cookie_enabled")
+
+    @persistent_cookie_enabled.setter
+    def persistent_cookie_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "persistent_cookie_enabled", value)
+
+
+@pulumi.input_type
 class DatabaseAnomaliesDbConnectFailuresArgs:
     def __init__(__self__, *,
                  connection_fails_count: Optional[pulumi.Input[int]] = None,
@@ -17835,6 +21488,1044 @@ class DatabaseAnomaliesResponseTimeThresholdsArgs:
 
 
 @pulumi.input_type
+class DatabaseAnomaliesV2DatabaseConnectionsArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 max_failed_connects: Optional[pulumi.Input[int]] = None,
+                 time_period: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[bool] enabled: Detect failed database connects
+        :param pulumi.Input[int] max_failed_connects: Threshold
+        :param pulumi.Input[int] time_period: Time span
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if max_failed_connects is not None:
+            pulumi.set(__self__, "max_failed_connects", max_failed_connects)
+        if time_period is not None:
+            pulumi.set(__self__, "time_period", time_period)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Detect failed database connects
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="maxFailedConnects")
+    def max_failed_connects(self) -> Optional[pulumi.Input[int]]:
+        """
+        Threshold
+        """
+        return pulumi.get(self, "max_failed_connects")
+
+    @max_failed_connects.setter
+    def max_failed_connects(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_failed_connects", value)
+
+    @property
+    @pulumi.getter(name="timePeriod")
+    def time_period(self) -> Optional[pulumi.Input[int]]:
+        """
+        Time span
+        """
+        return pulumi.get(self, "time_period")
+
+    @time_period.setter
+    def time_period(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "time_period", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2FailureRateArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 auto_detection: Optional[pulumi.Input['DatabaseAnomaliesV2FailureRateAutoDetectionArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None,
+                 fixed_detection: Optional[pulumi.Input['DatabaseAnomaliesV2FailureRateFixedDetectionArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: Detect increases in failure rate
+        :param pulumi.Input['DatabaseAnomaliesV2FailureRateAutoDetectionArgs'] auto_detection: Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+        :param pulumi.Input[str] detection_mode: Detection mode for increases in failure rate
+        :param pulumi.Input['DatabaseAnomaliesV2FailureRateFixedDetectionArgs'] fixed_detection: Alert if a given failure rate is exceeded during any 5-minute-period
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if auto_detection is not None:
+            pulumi.set(__self__, "auto_detection", auto_detection)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if fixed_detection is not None:
+            pulumi.set(__self__, "fixed_detection", fixed_detection)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Detect increases in failure rate
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="autoDetection")
+    def auto_detection(self) -> Optional[pulumi.Input['DatabaseAnomaliesV2FailureRateAutoDetectionArgs']]:
+        """
+        Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+        """
+        return pulumi.get(self, "auto_detection")
+
+    @auto_detection.setter
+    def auto_detection(self, value: Optional[pulumi.Input['DatabaseAnomaliesV2FailureRateAutoDetectionArgs']]):
+        pulumi.set(self, "auto_detection", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Detection mode for increases in failure rate
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+    @property
+    @pulumi.getter(name="fixedDetection")
+    def fixed_detection(self) -> Optional[pulumi.Input['DatabaseAnomaliesV2FailureRateFixedDetectionArgs']]:
+        """
+        Alert if a given failure rate is exceeded during any 5-minute-period
+        """
+        return pulumi.get(self, "fixed_detection")
+
+    @fixed_detection.setter
+    def fixed_detection(self, value: Optional[pulumi.Input['DatabaseAnomaliesV2FailureRateFixedDetectionArgs']]):
+        pulumi.set(self, "fixed_detection", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2FailureRateAutoDetectionArgs:
+    def __init__(__self__, *,
+                 absolute_increase: pulumi.Input[float],
+                 over_alerting_protection: pulumi.Input['DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtectionArgs'],
+                 relative_increase: pulumi.Input[float]):
+        pulumi.set(__self__, "absolute_increase", absolute_increase)
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "relative_increase", relative_increase)
+
+    @property
+    @pulumi.getter(name="absoluteIncrease")
+    def absolute_increase(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "absolute_increase")
+
+    @absolute_increase.setter
+    def absolute_increase(self, value: pulumi.Input[float]):
+        pulumi.set(self, "absolute_increase", value)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> pulumi.Input['DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtectionArgs']:
+        return pulumi.get(self, "over_alerting_protection")
+
+    @over_alerting_protection.setter
+    def over_alerting_protection(self, value: pulumi.Input['DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtectionArgs']):
+        pulumi.set(self, "over_alerting_protection", value)
+
+    @property
+    @pulumi.getter(name="relativeIncrease")
+    def relative_increase(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "relative_increase")
+
+    @relative_increase.setter
+    def relative_increase(self, value: pulumi.Input[float]):
+        pulumi.set(self, "relative_increase", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtectionArgs:
+    def __init__(__self__, *,
+                 minutes_abnormal_state: pulumi.Input[int],
+                 requests_per_minute: pulumi.Input[float]):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: pulumi.Input[int]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "requests_per_minute")
+
+    @requests_per_minute.setter
+    def requests_per_minute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "requests_per_minute", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2FailureRateFixedDetectionArgs:
+    def __init__(__self__, *,
+                 over_alerting_protection: pulumi.Input['DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtectionArgs'],
+                 sensitivity: pulumi.Input[str],
+                 threshold: pulumi.Input[float]):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> pulumi.Input['DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtectionArgs']:
+        return pulumi.get(self, "over_alerting_protection")
+
+    @over_alerting_protection.setter
+    def over_alerting_protection(self, value: pulumi.Input['DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtectionArgs']):
+        pulumi.set(self, "over_alerting_protection", value)
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "sensitivity")
+
+    @sensitivity.setter
+    def sensitivity(self, value: pulumi.Input[str]):
+        pulumi.set(self, "sensitivity", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[float]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtectionArgs:
+    def __init__(__self__, *,
+                 minutes_abnormal_state: pulumi.Input[int],
+                 requests_per_minute: pulumi.Input[float]):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: pulumi.Input[int]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "requests_per_minute")
+
+    @requests_per_minute.setter
+    def requests_per_minute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "requests_per_minute", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2LoadDropsArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 load_drop_percent: Optional[pulumi.Input[float]] = None,
+                 minutes_abnormal_state: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[bool] enabled: Detect service load drops
+        :param pulumi.Input[float] load_drop_percent: Threshold
+        :param pulumi.Input[int] minutes_abnormal_state: Time span
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if load_drop_percent is not None:
+            pulumi.set(__self__, "load_drop_percent", load_drop_percent)
+        if minutes_abnormal_state is not None:
+            pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Detect service load drops
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="loadDropPercent")
+    def load_drop_percent(self) -> Optional[pulumi.Input[float]]:
+        """
+        Threshold
+        """
+        return pulumi.get(self, "load_drop_percent")
+
+    @load_drop_percent.setter
+    def load_drop_percent(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "load_drop_percent", value)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> Optional[pulumi.Input[int]]:
+        """
+        Time span
+        """
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2LoadSpikesArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 load_spike_percent: Optional[pulumi.Input[float]] = None,
+                 minutes_abnormal_state: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[bool] enabled: Detect service load spikes
+        :param pulumi.Input[float] load_spike_percent: Threshold
+        :param pulumi.Input[int] minutes_abnormal_state: Time span
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if load_spike_percent is not None:
+            pulumi.set(__self__, "load_spike_percent", load_spike_percent)
+        if minutes_abnormal_state is not None:
+            pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Detect service load spikes
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="loadSpikePercent")
+    def load_spike_percent(self) -> Optional[pulumi.Input[float]]:
+        """
+        Threshold
+        """
+        return pulumi.get(self, "load_spike_percent")
+
+    @load_spike_percent.setter
+    def load_spike_percent(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "load_spike_percent", value)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> Optional[pulumi.Input[int]]:
+        """
+        Time span
+        """
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2ResponseTimeArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 auto_detection: Optional[pulumi.Input['DatabaseAnomaliesV2ResponseTimeAutoDetectionArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None,
+                 fixed_detection: Optional[pulumi.Input['DatabaseAnomaliesV2ResponseTimeFixedDetectionArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: Detect response time degradations
+        :param pulumi.Input['DatabaseAnomaliesV2ResponseTimeAutoDetectionArgs'] auto_detection: no documentation available
+        :param pulumi.Input[str] detection_mode: Detection mode for response time degradations
+        :param pulumi.Input['DatabaseAnomaliesV2ResponseTimeFixedDetectionArgs'] fixed_detection: no documentation available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if auto_detection is not None:
+            pulumi.set(__self__, "auto_detection", auto_detection)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if fixed_detection is not None:
+            pulumi.set(__self__, "fixed_detection", fixed_detection)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Detect response time degradations
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="autoDetection")
+    def auto_detection(self) -> Optional[pulumi.Input['DatabaseAnomaliesV2ResponseTimeAutoDetectionArgs']]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "auto_detection")
+
+    @auto_detection.setter
+    def auto_detection(self, value: Optional[pulumi.Input['DatabaseAnomaliesV2ResponseTimeAutoDetectionArgs']]):
+        pulumi.set(self, "auto_detection", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Detection mode for response time degradations
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+    @property
+    @pulumi.getter(name="fixedDetection")
+    def fixed_detection(self) -> Optional[pulumi.Input['DatabaseAnomaliesV2ResponseTimeFixedDetectionArgs']]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "fixed_detection")
+
+    @fixed_detection.setter
+    def fixed_detection(self, value: Optional[pulumi.Input['DatabaseAnomaliesV2ResponseTimeFixedDetectionArgs']]):
+        pulumi.set(self, "fixed_detection", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2ResponseTimeAutoDetectionArgs:
+    def __init__(__self__, *,
+                 over_alerting_protection: pulumi.Input['DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtectionArgs'],
+                 response_time_all: pulumi.Input['DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAllArgs'],
+                 response_time_slowest: pulumi.Input['DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowestArgs']):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "response_time_all", response_time_all)
+        pulumi.set(__self__, "response_time_slowest", response_time_slowest)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> pulumi.Input['DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtectionArgs']:
+        return pulumi.get(self, "over_alerting_protection")
+
+    @over_alerting_protection.setter
+    def over_alerting_protection(self, value: pulumi.Input['DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtectionArgs']):
+        pulumi.set(self, "over_alerting_protection", value)
+
+    @property
+    @pulumi.getter(name="responseTimeAll")
+    def response_time_all(self) -> pulumi.Input['DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAllArgs']:
+        return pulumi.get(self, "response_time_all")
+
+    @response_time_all.setter
+    def response_time_all(self, value: pulumi.Input['DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAllArgs']):
+        pulumi.set(self, "response_time_all", value)
+
+    @property
+    @pulumi.getter(name="responseTimeSlowest")
+    def response_time_slowest(self) -> pulumi.Input['DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowestArgs']:
+        return pulumi.get(self, "response_time_slowest")
+
+    @response_time_slowest.setter
+    def response_time_slowest(self, value: pulumi.Input['DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowestArgs']):
+        pulumi.set(self, "response_time_slowest", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtectionArgs:
+    def __init__(__self__, *,
+                 minutes_abnormal_state: pulumi.Input[int],
+                 requests_per_minute: pulumi.Input[float]):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: pulumi.Input[int]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "requests_per_minute")
+
+    @requests_per_minute.setter
+    def requests_per_minute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "requests_per_minute", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAllArgs:
+    def __init__(__self__, *,
+                 degradation_milliseconds: pulumi.Input[float],
+                 degradation_percent: pulumi.Input[float]):
+        pulumi.set(__self__, "degradation_milliseconds", degradation_milliseconds)
+        pulumi.set(__self__, "degradation_percent", degradation_percent)
+
+    @property
+    @pulumi.getter(name="degradationMilliseconds")
+    def degradation_milliseconds(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "degradation_milliseconds")
+
+    @degradation_milliseconds.setter
+    def degradation_milliseconds(self, value: pulumi.Input[float]):
+        pulumi.set(self, "degradation_milliseconds", value)
+
+    @property
+    @pulumi.getter(name="degradationPercent")
+    def degradation_percent(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "degradation_percent")
+
+    @degradation_percent.setter
+    def degradation_percent(self, value: pulumi.Input[float]):
+        pulumi.set(self, "degradation_percent", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowestArgs:
+    def __init__(__self__, *,
+                 slowest_degradation_milliseconds: pulumi.Input[float],
+                 slowest_degradation_percent: pulumi.Input[float]):
+        pulumi.set(__self__, "slowest_degradation_milliseconds", slowest_degradation_milliseconds)
+        pulumi.set(__self__, "slowest_degradation_percent", slowest_degradation_percent)
+
+    @property
+    @pulumi.getter(name="slowestDegradationMilliseconds")
+    def slowest_degradation_milliseconds(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "slowest_degradation_milliseconds")
+
+    @slowest_degradation_milliseconds.setter
+    def slowest_degradation_milliseconds(self, value: pulumi.Input[float]):
+        pulumi.set(self, "slowest_degradation_milliseconds", value)
+
+    @property
+    @pulumi.getter(name="slowestDegradationPercent")
+    def slowest_degradation_percent(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "slowest_degradation_percent")
+
+    @slowest_degradation_percent.setter
+    def slowest_degradation_percent(self, value: pulumi.Input[float]):
+        pulumi.set(self, "slowest_degradation_percent", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2ResponseTimeFixedDetectionArgs:
+    def __init__(__self__, *,
+                 over_alerting_protection: pulumi.Input['DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtectionArgs'],
+                 response_time_all: pulumi.Input['DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAllArgs'],
+                 response_time_slowest: pulumi.Input['DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs'],
+                 sensitivity: pulumi.Input[str]):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "response_time_all", response_time_all)
+        pulumi.set(__self__, "response_time_slowest", response_time_slowest)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> pulumi.Input['DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtectionArgs']:
+        return pulumi.get(self, "over_alerting_protection")
+
+    @over_alerting_protection.setter
+    def over_alerting_protection(self, value: pulumi.Input['DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtectionArgs']):
+        pulumi.set(self, "over_alerting_protection", value)
+
+    @property
+    @pulumi.getter(name="responseTimeAll")
+    def response_time_all(self) -> pulumi.Input['DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAllArgs']:
+        return pulumi.get(self, "response_time_all")
+
+    @response_time_all.setter
+    def response_time_all(self, value: pulumi.Input['DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAllArgs']):
+        pulumi.set(self, "response_time_all", value)
+
+    @property
+    @pulumi.getter(name="responseTimeSlowest")
+    def response_time_slowest(self) -> pulumi.Input['DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs']:
+        return pulumi.get(self, "response_time_slowest")
+
+    @response_time_slowest.setter
+    def response_time_slowest(self, value: pulumi.Input['DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs']):
+        pulumi.set(self, "response_time_slowest", value)
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "sensitivity")
+
+    @sensitivity.setter
+    def sensitivity(self, value: pulumi.Input[str]):
+        pulumi.set(self, "sensitivity", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtectionArgs:
+    def __init__(__self__, *,
+                 minutes_abnormal_state: pulumi.Input[int],
+                 requests_per_minute: pulumi.Input[float]):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: pulumi.Input[int]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "requests_per_minute")
+
+    @requests_per_minute.setter
+    def requests_per_minute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "requests_per_minute", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAllArgs:
+    def __init__(__self__, *,
+                 degradation_milliseconds: pulumi.Input[float]):
+        pulumi.set(__self__, "degradation_milliseconds", degradation_milliseconds)
+
+    @property
+    @pulumi.getter(name="degradationMilliseconds")
+    def degradation_milliseconds(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "degradation_milliseconds")
+
+    @degradation_milliseconds.setter
+    def degradation_milliseconds(self, value: pulumi.Input[float]):
+        pulumi.set(self, "degradation_milliseconds", value)
+
+
+@pulumi.input_type
+class DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs:
+    def __init__(__self__, *,
+                 slowest_degradation_milliseconds: pulumi.Input[float]):
+        pulumi.set(__self__, "slowest_degradation_milliseconds", slowest_degradation_milliseconds)
+
+    @property
+    @pulumi.getter(name="slowestDegradationMilliseconds")
+    def slowest_degradation_milliseconds(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "slowest_degradation_milliseconds")
+
+    @slowest_degradation_milliseconds.setter
+    def slowest_degradation_milliseconds(self, value: pulumi.Input[float]):
+        pulumi.set(self, "slowest_degradation_milliseconds", value)
+
+
+@pulumi.input_type
+class DduPoolEventsArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 type: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[bool] enabled: Is the limit configuration enabled
+        :param pulumi.Input[str] type: Type of the limit applied: MONTHLY or ANNUAL
+        :param pulumi.Input[int] value: Value of the DDU limit applied for provided timerange
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Is the limit configuration enabled
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of the limit applied: MONTHLY or ANNUAL
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[int]]:
+        """
+        Value of the DDU limit applied for provided timerange
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DduPoolLogMonitoringArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 type: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[bool] enabled: Is the limit configuration enabled
+        :param pulumi.Input[str] type: Type of the limit applied: MONTHLY or ANNUAL
+        :param pulumi.Input[int] value: Value of the DDU limit applied for provided timerange
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Is the limit configuration enabled
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of the limit applied: MONTHLY or ANNUAL
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[int]]:
+        """
+        Value of the DDU limit applied for provided timerange
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DduPoolMetricsArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 type: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[bool] enabled: Is the limit configuration enabled
+        :param pulumi.Input[str] type: Type of the limit applied: MONTHLY or ANNUAL
+        :param pulumi.Input[int] value: Value of the DDU limit applied for provided timerange
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Is the limit configuration enabled
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of the limit applied: MONTHLY or ANNUAL
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[int]]:
+        """
+        Value of the DDU limit applied for provided timerange
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DduPoolServerlessArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 type: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[bool] enabled: Is the limit configuration enabled
+        :param pulumi.Input[str] type: Type of the limit applied: MONTHLY or ANNUAL
+        :param pulumi.Input[int] value: Value of the DDU limit applied for provided timerange
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Is the limit configuration enabled
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of the limit applied: MONTHLY or ANNUAL
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[int]]:
+        """
+        Value of the DDU limit applied for provided timerange
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DduPoolTracesArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 type: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[bool] enabled: Is the limit configuration enabled
+        :param pulumi.Input[str] type: Type of the limit applied: MONTHLY or ANNUAL
+        :param pulumi.Input[int] value: Value of the DDU limit applied for provided timerange
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Is the limit configuration enabled
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of the limit applied: MONTHLY or ANNUAL
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[int]]:
+        """
+        Value of the DDU limit applied for provided timerange
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DeclarativeGroupingDetectionArgs:
+    def __init__(__self__, *,
+                 process_definitions: pulumi.Input[Sequence[pulumi.Input['DeclarativeGroupingDetectionProcessDefinitionArgs']]]):
+        pulumi.set(__self__, "process_definitions", process_definitions)
+
+    @property
+    @pulumi.getter(name="processDefinitions")
+    def process_definitions(self) -> pulumi.Input[Sequence[pulumi.Input['DeclarativeGroupingDetectionProcessDefinitionArgs']]]:
+        return pulumi.get(self, "process_definitions")
+
+    @process_definitions.setter
+    def process_definitions(self, value: pulumi.Input[Sequence[pulumi.Input['DeclarativeGroupingDetectionProcessDefinitionArgs']]]):
+        pulumi.set(self, "process_definitions", value)
+
+
+@pulumi.input_type
+class DeclarativeGroupingDetectionProcessDefinitionArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[str],
+                 process_group_name: pulumi.Input[str],
+                 report: pulumi.Input[str],
+                 rules: Optional[pulumi.Input['DeclarativeGroupingDetectionProcessDefinitionRulesArgs']] = None):
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "process_group_name", process_group_name)
+        pulumi.set(__self__, "report", report)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="processGroupName")
+    def process_group_name(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "process_group_name")
+
+    @process_group_name.setter
+    def process_group_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "process_group_name", value)
+
+    @property
+    @pulumi.getter
+    def report(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "report")
+
+    @report.setter
+    def report(self, value: pulumi.Input[str]):
+        pulumi.set(self, "report", value)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Optional[pulumi.Input['DeclarativeGroupingDetectionProcessDefinitionRulesArgs']]:
+        return pulumi.get(self, "rules")
+
+    @rules.setter
+    def rules(self, value: Optional[pulumi.Input['DeclarativeGroupingDetectionProcessDefinitionRulesArgs']]):
+        pulumi.set(self, "rules", value)
+
+
+@pulumi.input_type
+class DeclarativeGroupingDetectionProcessDefinitionRulesArgs:
+    def __init__(__self__, *,
+                 rules: pulumi.Input[Sequence[pulumi.Input['DeclarativeGroupingDetectionProcessDefinitionRulesRuleArgs']]]):
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> pulumi.Input[Sequence[pulumi.Input['DeclarativeGroupingDetectionProcessDefinitionRulesRuleArgs']]]:
+        return pulumi.get(self, "rules")
+
+    @rules.setter
+    def rules(self, value: pulumi.Input[Sequence[pulumi.Input['DeclarativeGroupingDetectionProcessDefinitionRulesRuleArgs']]]):
+        pulumi.set(self, "rules", value)
+
+
+@pulumi.input_type
+class DeclarativeGroupingDetectionProcessDefinitionRulesRuleArgs:
+    def __init__(__self__, *,
+                 condition: pulumi.Input[str],
+                 property: pulumi.Input[str]):
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "property", property)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "condition")
+
+    @condition.setter
+    def condition(self, value: pulumi.Input[str]):
+        pulumi.set(self, "condition", value)
+
+    @property
+    @pulumi.getter
+    def property(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "property")
+
+    @property.setter
+    def property(self, value: pulumi.Input[str]):
+        pulumi.set(self, "property", value)
+
+
+@pulumi.input_type
 class DiskAnomaliesDiskNameArgs:
     def __init__(__self__, *,
                  operator: pulumi.Input[str],
@@ -17931,6 +22622,567 @@ class DiskAnomaliesTagsFilterArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DiskAnomaliesV2DiskArgs:
+    def __init__(__self__, *,
+                 disk_low_inodes_detection: pulumi.Input['DiskAnomaliesV2DiskDiskLowInodesDetectionArgs'],
+                 disk_low_space_detection: pulumi.Input['DiskAnomaliesV2DiskDiskLowSpaceDetectionArgs'],
+                 disk_slow_writes_and_reads_detection: pulumi.Input['DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionArgs']):
+        """
+        :param pulumi.Input['DiskAnomaliesV2DiskDiskLowInodesDetectionArgs'] disk_low_inodes_detection: no documentation available
+        :param pulumi.Input['DiskAnomaliesV2DiskDiskLowSpaceDetectionArgs'] disk_low_space_detection: no documentation available
+        :param pulumi.Input['DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionArgs'] disk_slow_writes_and_reads_detection: no documentation available
+        """
+        pulumi.set(__self__, "disk_low_inodes_detection", disk_low_inodes_detection)
+        pulumi.set(__self__, "disk_low_space_detection", disk_low_space_detection)
+        pulumi.set(__self__, "disk_slow_writes_and_reads_detection", disk_slow_writes_and_reads_detection)
+
+    @property
+    @pulumi.getter(name="diskLowInodesDetection")
+    def disk_low_inodes_detection(self) -> pulumi.Input['DiskAnomaliesV2DiskDiskLowInodesDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "disk_low_inodes_detection")
+
+    @disk_low_inodes_detection.setter
+    def disk_low_inodes_detection(self, value: pulumi.Input['DiskAnomaliesV2DiskDiskLowInodesDetectionArgs']):
+        pulumi.set(self, "disk_low_inodes_detection", value)
+
+    @property
+    @pulumi.getter(name="diskLowSpaceDetection")
+    def disk_low_space_detection(self) -> pulumi.Input['DiskAnomaliesV2DiskDiskLowSpaceDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "disk_low_space_detection")
+
+    @disk_low_space_detection.setter
+    def disk_low_space_detection(self, value: pulumi.Input['DiskAnomaliesV2DiskDiskLowSpaceDetectionArgs']):
+        pulumi.set(self, "disk_low_space_detection", value)
+
+    @property
+    @pulumi.getter(name="diskSlowWritesAndReadsDetection")
+    def disk_slow_writes_and_reads_detection(self) -> pulumi.Input['DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "disk_slow_writes_and_reads_detection")
+
+    @disk_slow_writes_and_reads_detection.setter
+    def disk_slow_writes_and_reads_detection(self, value: pulumi.Input['DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionArgs']):
+        pulumi.set(self, "disk_slow_writes_and_reads_detection", value)
+
+
+@pulumi.input_type
+class DiskAnomaliesV2DiskDiskLowInodesDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholdsArgs']]:
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 free_inodes_percentage: pulumi.Input[int]):
+        pulumi.set(__self__, "free_inodes_percentage", free_inodes_percentage)
+
+    @property
+    @pulumi.getter(name="freeInodesPercentage")
+    def free_inodes_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "free_inodes_percentage")
+
+    @free_inodes_percentage.setter
+    def free_inodes_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "free_inodes_percentage", value)
+
+
+@pulumi.input_type
+class DiskAnomaliesV2DiskDiskLowSpaceDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholdsArgs']]:
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 free_space_percentage: pulumi.Input[int]):
+        pulumi.set(__self__, "free_space_percentage", free_space_percentage)
+
+    @property
+    @pulumi.getter(name="freeSpacePercentage")
+    def free_space_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "free_space_percentage")
+
+    @free_space_percentage.setter
+    def free_space_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "free_space_percentage", value)
+
+
+@pulumi.input_type
+class DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholdsArgs']]:
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 write_and_read_time: pulumi.Input[int]):
+        pulumi.set(__self__, "write_and_read_time", write_and_read_time)
+
+    @property
+    @pulumi.getter(name="writeAndReadTime")
+    def write_and_read_time(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "write_and_read_time")
+
+    @write_and_read_time.setter
+    def write_and_read_time(self, value: pulumi.Input[int]):
+        pulumi.set(self, "write_and_read_time", value)
+
+
+@pulumi.input_type
+class DiskAnomalyRulesDiskNameFilterArgs:
+    def __init__(__self__, *,
+                 operator: pulumi.Input[str],
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] operator: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS`, `STARTS_WITH`
+        :param pulumi.Input[str] value: Matching text
+        """
+        pulumi.set(__self__, "operator", operator)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> pulumi.Input[str]:
+        """
+        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS`, `STARTS_WITH`
+        """
+        return pulumi.get(self, "operator")
+
+    @operator.setter
+    def operator(self, value: pulumi.Input[str]):
+        pulumi.set(self, "operator", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        Matching text
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class DiskAnomalyRulesSampleLimitArgs:
+    def __init__(__self__, *,
+                 samples: pulumi.Input[int],
+                 violating_samples: pulumi.Input[int]):
+        """
+        :param pulumi.Input[int] samples: .. within the last
+        :param pulumi.Input[int] violating_samples: Minimum number of violating samples
+        """
+        pulumi.set(__self__, "samples", samples)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter
+    def samples(self) -> pulumi.Input[int]:
+        """
+        .. within the last
+        """
+        return pulumi.get(self, "samples")
+
+    @samples.setter
+    def samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "samples", value)
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> pulumi.Input[int]:
+        """
+        Minimum number of violating samples
+        """
+        return pulumi.get(self, "violating_samples")
+
+    @violating_samples.setter
+    def violating_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_samples", value)
+
+
+@pulumi.input_type
+class DiskOptionsExclusionsArgs:
+    def __init__(__self__, *,
+                 exclusions: pulumi.Input[Sequence[pulumi.Input['DiskOptionsExclusionsExclusionArgs']]]):
+        pulumi.set(__self__, "exclusions", exclusions)
+
+    @property
+    @pulumi.getter
+    def exclusions(self) -> pulumi.Input[Sequence[pulumi.Input['DiskOptionsExclusionsExclusionArgs']]]:
+        return pulumi.get(self, "exclusions")
+
+    @exclusions.setter
+    def exclusions(self, value: pulumi.Input[Sequence[pulumi.Input['DiskOptionsExclusionsExclusionArgs']]]):
+        pulumi.set(self, "exclusions", value)
+
+
+@pulumi.input_type
+class DiskOptionsExclusionsExclusionArgs:
+    def __init__(__self__, *,
+                 os: pulumi.Input[str],
+                 filesystem: Optional[pulumi.Input[str]] = None,
+                 mountpoint: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "os", os)
+        if filesystem is not None:
+            pulumi.set(__self__, "filesystem", filesystem)
+        if mountpoint is not None:
+            pulumi.set(__self__, "mountpoint", mountpoint)
+
+    @property
+    @pulumi.getter
+    def os(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "os")
+
+    @os.setter
+    def os(self, value: pulumi.Input[str]):
+        pulumi.set(self, "os", value)
+
+    @property
+    @pulumi.getter
+    def filesystem(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "filesystem")
+
+    @filesystem.setter
+    def filesystem(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "filesystem", value)
+
+    @property
+    @pulumi.getter
+    def mountpoint(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "mountpoint")
+
+    @mountpoint.setter
+    def mountpoint(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mountpoint", value)
+
+
+@pulumi.input_type
+class DiskSpecificAnomaliesV2DiskLowInodesDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: Detect low inodes number available
+        :param pulumi.Input['DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholdsArgs'] custom_thresholds: no documentation available
+        :param pulumi.Input[str] detection_mode: Detection mode for low inodes number available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Detect low inodes number available
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholdsArgs']]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Detection mode for low inodes number available
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 free_inodes_percentage: pulumi.Input[int]):
+        pulumi.set(__self__, "free_inodes_percentage", free_inodes_percentage)
+
+    @property
+    @pulumi.getter(name="freeInodesPercentage")
+    def free_inodes_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "free_inodes_percentage")
+
+    @free_inodes_percentage.setter
+    def free_inodes_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "free_inodes_percentage", value)
+
+
+@pulumi.input_type
+class DiskSpecificAnomaliesV2DiskLowSpaceDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: Detect low disk space
+        :param pulumi.Input['DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholdsArgs'] custom_thresholds: no documentation available
+        :param pulumi.Input[str] detection_mode: Detection mode for low disk space
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Detect low disk space
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholdsArgs']]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Detection mode for low disk space
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 free_space_percentage: pulumi.Input[int]):
+        pulumi.set(__self__, "free_space_percentage", free_space_percentage)
+
+    @property
+    @pulumi.getter(name="freeSpacePercentage")
+    def free_space_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "free_space_percentage")
+
+    @free_space_percentage.setter
+    def free_space_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "free_space_percentage", value)
+
+
+@pulumi.input_type
+class DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: Detect slow-running disks
+        :param pulumi.Input['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholdsArgs'] custom_thresholds: no documentation available
+        :param pulumi.Input[str] detection_mode: Detection mode for slow running disks
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Detect slow-running disks
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholdsArgs']]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Detection mode for slow running disks
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 write_and_read_time: pulumi.Input[int]):
+        pulumi.set(__self__, "write_and_read_time", write_and_read_time)
+
+    @property
+    @pulumi.getter(name="writeAndReadTime")
+    def write_and_read_time(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "write_and_read_time")
+
+    @write_and_read_time.setter
+    def write_and_read_time(self, value: pulumi.Input[int]):
+        pulumi.set(self, "write_and_read_time", value)
 
 
 @pulumi.input_type
@@ -18299,27 +23551,19 @@ class EnvironmentStorageLimitsArgs:
 @pulumi.input_type
 class EnvironmentStorageRetentionArgs:
     def __init__(__self__, *,
-                 logs: pulumi.Input[int],
                  rum: pulumi.Input[int],
                  service_code_level: pulumi.Input[int],
                  service_request_level: pulumi.Input[int],
                  session_replay: pulumi.Input[int],
-                 synthetic: pulumi.Input[int]):
-        pulumi.set(__self__, "logs", logs)
+                 synthetic: pulumi.Input[int],
+                 logs: Optional[pulumi.Input[int]] = None):
         pulumi.set(__self__, "rum", rum)
         pulumi.set(__self__, "service_code_level", service_code_level)
         pulumi.set(__self__, "service_request_level", service_request_level)
         pulumi.set(__self__, "session_replay", session_replay)
         pulumi.set(__self__, "synthetic", synthetic)
-
-    @property
-    @pulumi.getter
-    def logs(self) -> pulumi.Input[int]:
-        return pulumi.get(self, "logs")
-
-    @logs.setter
-    def logs(self, value: pulumi.Input[int]):
-        pulumi.set(self, "logs", value)
+        if logs is not None:
+            pulumi.set(__self__, "logs", logs)
 
     @property
     @pulumi.getter
@@ -18365,6 +23609,967 @@ class EnvironmentStorageRetentionArgs:
     @synthetic.setter
     def synthetic(self, value: pulumi.Input[int]):
         pulumi.set(self, "synthetic", value)
+
+    @property
+    @pulumi.getter
+    def logs(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "logs")
+
+    @logs.setter
+    def logs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "logs", value)
+
+
+@pulumi.input_type
+class FailureDetectionParametersBrokenLinksArgs:
+    def __init__(__self__, *,
+                 http404_not_found_failures: pulumi.Input[bool],
+                 broken_link_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[bool] http404_not_found_failures: Consider 404 HTTP response codes as failures
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] broken_link_domains: If your application relies on other hosts at other domains, add the associated domain names here. Once configured, Dynatrace will consider 404s thrown by hosts at these domains to be service failures related to your application.
+        """
+        pulumi.set(__self__, "http404_not_found_failures", http404_not_found_failures)
+        if broken_link_domains is not None:
+            pulumi.set(__self__, "broken_link_domains", broken_link_domains)
+
+    @property
+    @pulumi.getter(name="http404NotFoundFailures")
+    def http404_not_found_failures(self) -> pulumi.Input[bool]:
+        """
+        Consider 404 HTTP response codes as failures
+        """
+        return pulumi.get(self, "http404_not_found_failures")
+
+    @http404_not_found_failures.setter
+    def http404_not_found_failures(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "http404_not_found_failures", value)
+
+    @property
+    @pulumi.getter(name="brokenLinkDomains")
+    def broken_link_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        If your application relies on other hosts at other domains, add the associated domain names here. Once configured, Dynatrace will consider 404s thrown by hosts at these domains to be service failures related to your application.
+        """
+        return pulumi.get(self, "broken_link_domains")
+
+    @broken_link_domains.setter
+    def broken_link_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "broken_link_domains", value)
+
+
+@pulumi.input_type
+class FailureDetectionParametersExceptionRulesArgs:
+    def __init__(__self__, *,
+                 ignore_all_exceptions: pulumi.Input[bool],
+                 ignore_span_failure_detection: pulumi.Input[bool],
+                 custom_error_rules: Optional[pulumi.Input['FailureDetectionParametersExceptionRulesCustomErrorRulesArgs']] = None,
+                 custom_handled_exceptions: Optional[pulumi.Input['FailureDetectionParametersExceptionRulesCustomHandledExceptionsArgs']] = None,
+                 ignored_exceptions: Optional[pulumi.Input['FailureDetectionParametersExceptionRulesIgnoredExceptionsArgs']] = None,
+                 success_forcing_exceptions: Optional[pulumi.Input['FailureDetectionParametersExceptionRulesSuccessForcingExceptionsArgs']] = None):
+        """
+        :param pulumi.Input[bool] ignore_all_exceptions: Ignore all exceptions
+        :param pulumi.Input[bool] ignore_span_failure_detection: Ignore span failure detection
+        :param pulumi.Input['FailureDetectionParametersExceptionRulesCustomErrorRulesArgs'] custom_error_rules: Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+        :param pulumi.Input['FailureDetectionParametersExceptionRulesCustomHandledExceptionsArgs'] custom_handled_exceptions: There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+        :param pulumi.Input['FailureDetectionParametersExceptionRulesIgnoredExceptionsArgs'] ignored_exceptions: Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+        :param pulumi.Input['FailureDetectionParametersExceptionRulesSuccessForcingExceptionsArgs'] success_forcing_exceptions: Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+        """
+        pulumi.set(__self__, "ignore_all_exceptions", ignore_all_exceptions)
+        pulumi.set(__self__, "ignore_span_failure_detection", ignore_span_failure_detection)
+        if custom_error_rules is not None:
+            pulumi.set(__self__, "custom_error_rules", custom_error_rules)
+        if custom_handled_exceptions is not None:
+            pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+        if ignored_exceptions is not None:
+            pulumi.set(__self__, "ignored_exceptions", ignored_exceptions)
+        if success_forcing_exceptions is not None:
+            pulumi.set(__self__, "success_forcing_exceptions", success_forcing_exceptions)
+
+    @property
+    @pulumi.getter(name="ignoreAllExceptions")
+    def ignore_all_exceptions(self) -> pulumi.Input[bool]:
+        """
+        Ignore all exceptions
+        """
+        return pulumi.get(self, "ignore_all_exceptions")
+
+    @ignore_all_exceptions.setter
+    def ignore_all_exceptions(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "ignore_all_exceptions", value)
+
+    @property
+    @pulumi.getter(name="ignoreSpanFailureDetection")
+    def ignore_span_failure_detection(self) -> pulumi.Input[bool]:
+        """
+        Ignore span failure detection
+        """
+        return pulumi.get(self, "ignore_span_failure_detection")
+
+    @ignore_span_failure_detection.setter
+    def ignore_span_failure_detection(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "ignore_span_failure_detection", value)
+
+    @property
+    @pulumi.getter(name="customErrorRules")
+    def custom_error_rules(self) -> Optional[pulumi.Input['FailureDetectionParametersExceptionRulesCustomErrorRulesArgs']]:
+        """
+        Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+        """
+        return pulumi.get(self, "custom_error_rules")
+
+    @custom_error_rules.setter
+    def custom_error_rules(self, value: Optional[pulumi.Input['FailureDetectionParametersExceptionRulesCustomErrorRulesArgs']]):
+        pulumi.set(self, "custom_error_rules", value)
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> Optional[pulumi.Input['FailureDetectionParametersExceptionRulesCustomHandledExceptionsArgs']]:
+        """
+        There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+        """
+        return pulumi.get(self, "custom_handled_exceptions")
+
+    @custom_handled_exceptions.setter
+    def custom_handled_exceptions(self, value: Optional[pulumi.Input['FailureDetectionParametersExceptionRulesCustomHandledExceptionsArgs']]):
+        pulumi.set(self, "custom_handled_exceptions", value)
+
+    @property
+    @pulumi.getter(name="ignoredExceptions")
+    def ignored_exceptions(self) -> Optional[pulumi.Input['FailureDetectionParametersExceptionRulesIgnoredExceptionsArgs']]:
+        """
+        Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+        """
+        return pulumi.get(self, "ignored_exceptions")
+
+    @ignored_exceptions.setter
+    def ignored_exceptions(self, value: Optional[pulumi.Input['FailureDetectionParametersExceptionRulesIgnoredExceptionsArgs']]):
+        pulumi.set(self, "ignored_exceptions", value)
+
+    @property
+    @pulumi.getter(name="successForcingExceptions")
+    def success_forcing_exceptions(self) -> Optional[pulumi.Input['FailureDetectionParametersExceptionRulesSuccessForcingExceptionsArgs']]:
+        """
+        Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+        """
+        return pulumi.get(self, "success_forcing_exceptions")
+
+    @success_forcing_exceptions.setter
+    def success_forcing_exceptions(self, value: Optional[pulumi.Input['FailureDetectionParametersExceptionRulesSuccessForcingExceptionsArgs']]):
+        pulumi.set(self, "success_forcing_exceptions", value)
+
+
+@pulumi.input_type
+class FailureDetectionParametersExceptionRulesCustomErrorRulesArgs:
+    def __init__(__self__, *,
+                 custom_error_rules: pulumi.Input[Sequence[pulumi.Input['FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleArgs']]]):
+        pulumi.set(__self__, "custom_error_rules", custom_error_rules)
+
+    @property
+    @pulumi.getter(name="customErrorRules")
+    def custom_error_rules(self) -> pulumi.Input[Sequence[pulumi.Input['FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleArgs']]]:
+        return pulumi.get(self, "custom_error_rules")
+
+    @custom_error_rules.setter
+    def custom_error_rules(self, value: pulumi.Input[Sequence[pulumi.Input['FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleArgs']]]):
+        pulumi.set(self, "custom_error_rules", value)
+
+
+@pulumi.input_type
+class FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleArgs:
+    def __init__(__self__, *,
+                 condition: pulumi.Input['FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs'],
+                 request_attribute: pulumi.Input[str]):
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "request_attribute", request_attribute)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> pulumi.Input['FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs']:
+        return pulumi.get(self, "condition")
+
+    @condition.setter
+    def condition(self, value: pulumi.Input['FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs']):
+        pulumi.set(self, "condition", value)
+
+    @property
+    @pulumi.getter(name="requestAttribute")
+    def request_attribute(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "request_attribute")
+
+    @request_attribute.setter
+    def request_attribute(self, value: pulumi.Input[str]):
+        pulumi.set(self, "request_attribute", value)
+
+
+@pulumi.input_type
+class FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs:
+    def __init__(__self__, *,
+                 compare_operation_type: pulumi.Input[str],
+                 case_sensitive: Optional[pulumi.Input[bool]] = None,
+                 double_value: Optional[pulumi.Input[float]] = None,
+                 int_value: Optional[pulumi.Input[int]] = None,
+                 text_value: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "compare_operation_type", compare_operation_type)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if double_value is not None:
+            pulumi.set(__self__, "double_value", double_value)
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if text_value is not None:
+            pulumi.set(__self__, "text_value", text_value)
+
+    @property
+    @pulumi.getter(name="compareOperationType")
+    def compare_operation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "compare_operation_type")
+
+    @compare_operation_type.setter
+    def compare_operation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "compare_operation_type", value)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "case_sensitive")
+
+    @case_sensitive.setter
+    def case_sensitive(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "case_sensitive", value)
+
+    @property
+    @pulumi.getter(name="doubleValue")
+    def double_value(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "double_value")
+
+    @double_value.setter
+    def double_value(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "double_value", value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "int_value")
+
+    @int_value.setter
+    def int_value(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "int_value", value)
+
+    @property
+    @pulumi.getter(name="textValue")
+    def text_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "text_value")
+
+    @text_value.setter
+    def text_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "text_value", value)
+
+
+@pulumi.input_type
+class FailureDetectionParametersExceptionRulesCustomHandledExceptionsArgs:
+    def __init__(__self__, *,
+                 custom_handled_exceptions: pulumi.Input[Sequence[pulumi.Input['FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs']]]):
+        pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> pulumi.Input[Sequence[pulumi.Input['FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs']]]:
+        return pulumi.get(self, "custom_handled_exceptions")
+
+    @custom_handled_exceptions.setter
+    def custom_handled_exceptions(self, value: pulumi.Input[Sequence[pulumi.Input['FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs']]]):
+        pulumi.set(self, "custom_handled_exceptions", value)
+
+
+@pulumi.input_type
+class FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs:
+    def __init__(__self__, *,
+                 class_pattern: Optional[pulumi.Input[str]] = None,
+                 message_pattern: Optional[pulumi.Input[str]] = None):
+        if class_pattern is not None:
+            pulumi.set(__self__, "class_pattern", class_pattern)
+        if message_pattern is not None:
+            pulumi.set(__self__, "message_pattern", message_pattern)
+
+    @property
+    @pulumi.getter(name="classPattern")
+    def class_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "class_pattern")
+
+    @class_pattern.setter
+    def class_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "class_pattern", value)
+
+    @property
+    @pulumi.getter(name="messagePattern")
+    def message_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "message_pattern")
+
+    @message_pattern.setter
+    def message_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message_pattern", value)
+
+
+@pulumi.input_type
+class FailureDetectionParametersExceptionRulesIgnoredExceptionsArgs:
+    def __init__(__self__, *,
+                 custom_handled_exceptions: pulumi.Input[Sequence[pulumi.Input['FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledExceptionArgs']]]):
+        pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> pulumi.Input[Sequence[pulumi.Input['FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledExceptionArgs']]]:
+        return pulumi.get(self, "custom_handled_exceptions")
+
+    @custom_handled_exceptions.setter
+    def custom_handled_exceptions(self, value: pulumi.Input[Sequence[pulumi.Input['FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledExceptionArgs']]]):
+        pulumi.set(self, "custom_handled_exceptions", value)
+
+
+@pulumi.input_type
+class FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledExceptionArgs:
+    def __init__(__self__, *,
+                 class_pattern: Optional[pulumi.Input[str]] = None,
+                 message_pattern: Optional[pulumi.Input[str]] = None):
+        if class_pattern is not None:
+            pulumi.set(__self__, "class_pattern", class_pattern)
+        if message_pattern is not None:
+            pulumi.set(__self__, "message_pattern", message_pattern)
+
+    @property
+    @pulumi.getter(name="classPattern")
+    def class_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "class_pattern")
+
+    @class_pattern.setter
+    def class_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "class_pattern", value)
+
+    @property
+    @pulumi.getter(name="messagePattern")
+    def message_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "message_pattern")
+
+    @message_pattern.setter
+    def message_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message_pattern", value)
+
+
+@pulumi.input_type
+class FailureDetectionParametersExceptionRulesSuccessForcingExceptionsArgs:
+    def __init__(__self__, *,
+                 custom_handled_exceptions: pulumi.Input[Sequence[pulumi.Input['FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledExceptionArgs']]]):
+        pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> pulumi.Input[Sequence[pulumi.Input['FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledExceptionArgs']]]:
+        return pulumi.get(self, "custom_handled_exceptions")
+
+    @custom_handled_exceptions.setter
+    def custom_handled_exceptions(self, value: pulumi.Input[Sequence[pulumi.Input['FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledExceptionArgs']]]):
+        pulumi.set(self, "custom_handled_exceptions", value)
+
+
+@pulumi.input_type
+class FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledExceptionArgs:
+    def __init__(__self__, *,
+                 class_pattern: Optional[pulumi.Input[str]] = None,
+                 message_pattern: Optional[pulumi.Input[str]] = None):
+        if class_pattern is not None:
+            pulumi.set(__self__, "class_pattern", class_pattern)
+        if message_pattern is not None:
+            pulumi.set(__self__, "message_pattern", message_pattern)
+
+    @property
+    @pulumi.getter(name="classPattern")
+    def class_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "class_pattern")
+
+    @class_pattern.setter
+    def class_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "class_pattern", value)
+
+    @property
+    @pulumi.getter(name="messagePattern")
+    def message_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "message_pattern")
+
+    @message_pattern.setter
+    def message_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message_pattern", value)
+
+
+@pulumi.input_type
+class FailureDetectionParametersHttpResponseCodesArgs:
+    def __init__(__self__, *,
+                 client_side_errors: pulumi.Input[str],
+                 fail_on_missing_response_code_client_side: pulumi.Input[bool],
+                 fail_on_missing_response_code_server_side: pulumi.Input[bool],
+                 server_side_errors: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] client_side_errors: HTTP response codes which indicate client side errors
+        :param pulumi.Input[bool] fail_on_missing_response_code_client_side: Treat missing HTTP response code as client side error
+        :param pulumi.Input[bool] fail_on_missing_response_code_server_side: Treat missing HTTP response code as server side errors
+        :param pulumi.Input[str] server_side_errors: HTTP response codes which indicate an error on the server side
+        """
+        pulumi.set(__self__, "client_side_errors", client_side_errors)
+        pulumi.set(__self__, "fail_on_missing_response_code_client_side", fail_on_missing_response_code_client_side)
+        pulumi.set(__self__, "fail_on_missing_response_code_server_side", fail_on_missing_response_code_server_side)
+        pulumi.set(__self__, "server_side_errors", server_side_errors)
+
+    @property
+    @pulumi.getter(name="clientSideErrors")
+    def client_side_errors(self) -> pulumi.Input[str]:
+        """
+        HTTP response codes which indicate client side errors
+        """
+        return pulumi.get(self, "client_side_errors")
+
+    @client_side_errors.setter
+    def client_side_errors(self, value: pulumi.Input[str]):
+        pulumi.set(self, "client_side_errors", value)
+
+    @property
+    @pulumi.getter(name="failOnMissingResponseCodeClientSide")
+    def fail_on_missing_response_code_client_side(self) -> pulumi.Input[bool]:
+        """
+        Treat missing HTTP response code as client side error
+        """
+        return pulumi.get(self, "fail_on_missing_response_code_client_side")
+
+    @fail_on_missing_response_code_client_side.setter
+    def fail_on_missing_response_code_client_side(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "fail_on_missing_response_code_client_side", value)
+
+    @property
+    @pulumi.getter(name="failOnMissingResponseCodeServerSide")
+    def fail_on_missing_response_code_server_side(self) -> pulumi.Input[bool]:
+        """
+        Treat missing HTTP response code as server side errors
+        """
+        return pulumi.get(self, "fail_on_missing_response_code_server_side")
+
+    @fail_on_missing_response_code_server_side.setter
+    def fail_on_missing_response_code_server_side(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "fail_on_missing_response_code_server_side", value)
+
+    @property
+    @pulumi.getter(name="serverSideErrors")
+    def server_side_errors(self) -> pulumi.Input[str]:
+        """
+        HTTP response codes which indicate an error on the server side
+        """
+        return pulumi.get(self, "server_side_errors")
+
+    @server_side_errors.setter
+    def server_side_errors(self, value: pulumi.Input[str]):
+        pulumi.set(self, "server_side_errors", value)
+
+
+@pulumi.input_type
+class FailureDetectionRulesConditionsArgs:
+    def __init__(__self__, *,
+                 conditions: pulumi.Input[Sequence[pulumi.Input['FailureDetectionRulesConditionsConditionArgs']]]):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> pulumi.Input[Sequence[pulumi.Input['FailureDetectionRulesConditionsConditionArgs']]]:
+        return pulumi.get(self, "conditions")
+
+    @conditions.setter
+    def conditions(self, value: pulumi.Input[Sequence[pulumi.Input['FailureDetectionRulesConditionsConditionArgs']]]):
+        pulumi.set(self, "conditions", value)
+
+
+@pulumi.input_type
+class FailureDetectionRulesConditionsConditionArgs:
+    def __init__(__self__, *,
+                 attribute: pulumi.Input[str],
+                 predicate: pulumi.Input['FailureDetectionRulesConditionsConditionPredicateArgs']):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "predicate", predicate)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "attribute")
+
+    @attribute.setter
+    def attribute(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attribute", value)
+
+    @property
+    @pulumi.getter
+    def predicate(self) -> pulumi.Input['FailureDetectionRulesConditionsConditionPredicateArgs']:
+        return pulumi.get(self, "predicate")
+
+    @predicate.setter
+    def predicate(self, value: pulumi.Input['FailureDetectionRulesConditionsConditionPredicateArgs']):
+        pulumi.set(self, "predicate", value)
+
+
+@pulumi.input_type
+class FailureDetectionRulesConditionsConditionPredicateArgs:
+    def __init__(__self__, *,
+                 predicate_type: pulumi.Input[str],
+                 case_sensitive: Optional[pulumi.Input[bool]] = None,
+                 management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 service_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 tag_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 text_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        pulumi.set(__self__, "predicate_type", predicate_type)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if management_zones is not None:
+            pulumi.set(__self__, "management_zones", management_zones)
+        if service_types is not None:
+            pulumi.set(__self__, "service_types", service_types)
+        if tag_keys is not None:
+            pulumi.set(__self__, "tag_keys", tag_keys)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if text_values is not None:
+            pulumi.set(__self__, "text_values", text_values)
+
+    @property
+    @pulumi.getter(name="predicateType")
+    def predicate_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "predicate_type")
+
+    @predicate_type.setter
+    def predicate_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "predicate_type", value)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "case_sensitive")
+
+    @case_sensitive.setter
+    def case_sensitive(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "case_sensitive", value)
+
+    @property
+    @pulumi.getter(name="managementZones")
+    def management_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "management_zones")
+
+    @management_zones.setter
+    def management_zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "management_zones", value)
+
+    @property
+    @pulumi.getter(name="serviceTypes")
+    def service_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "service_types")
+
+    @service_types.setter
+    def service_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "service_types", value)
+
+    @property
+    @pulumi.getter(name="tagKeys")
+    def tag_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "tag_keys")
+
+    @tag_keys.setter
+    def tag_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "tag_keys", value)
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "tags", value)
+
+    @property
+    @pulumi.getter(name="textValues")
+    def text_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "text_values")
+
+    @text_values.setter
+    def text_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "text_values", value)
+
+
+@pulumi.input_type
+class GenericRelationshipsSourcesArgs:
+    def __init__(__self__, *,
+                 sources: pulumi.Input[Sequence[pulumi.Input['GenericRelationshipsSourcesSourceArgs']]]):
+        pulumi.set(__self__, "sources", sources)
+
+    @property
+    @pulumi.getter
+    def sources(self) -> pulumi.Input[Sequence[pulumi.Input['GenericRelationshipsSourcesSourceArgs']]]:
+        return pulumi.get(self, "sources")
+
+    @sources.setter
+    def sources(self, value: pulumi.Input[Sequence[pulumi.Input['GenericRelationshipsSourcesSourceArgs']]]):
+        pulumi.set(self, "sources", value)
+
+
+@pulumi.input_type
+class GenericRelationshipsSourcesSourceArgs:
+    def __init__(__self__, *,
+                 source_type: pulumi.Input[str],
+                 condition: Optional[pulumi.Input[str]] = None,
+                 mapping_rules: Optional[pulumi.Input['GenericRelationshipsSourcesSourceMappingRulesArgs']] = None):
+        pulumi.set(__self__, "source_type", source_type)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if mapping_rules is not None:
+            pulumi.set(__self__, "mapping_rules", mapping_rules)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source_type", value)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "condition")
+
+    @condition.setter
+    def condition(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "condition", value)
+
+    @property
+    @pulumi.getter(name="mappingRules")
+    def mapping_rules(self) -> Optional[pulumi.Input['GenericRelationshipsSourcesSourceMappingRulesArgs']]:
+        return pulumi.get(self, "mapping_rules")
+
+    @mapping_rules.setter
+    def mapping_rules(self, value: Optional[pulumi.Input['GenericRelationshipsSourcesSourceMappingRulesArgs']]):
+        pulumi.set(self, "mapping_rules", value)
+
+
+@pulumi.input_type
+class GenericRelationshipsSourcesSourceMappingRulesArgs:
+    def __init__(__self__, *,
+                 mapping_rules: pulumi.Input[Sequence[pulumi.Input['GenericRelationshipsSourcesSourceMappingRulesMappingRuleArgs']]]):
+        pulumi.set(__self__, "mapping_rules", mapping_rules)
+
+    @property
+    @pulumi.getter(name="mappingRules")
+    def mapping_rules(self) -> pulumi.Input[Sequence[pulumi.Input['GenericRelationshipsSourcesSourceMappingRulesMappingRuleArgs']]]:
+        return pulumi.get(self, "mapping_rules")
+
+    @mapping_rules.setter
+    def mapping_rules(self, value: pulumi.Input[Sequence[pulumi.Input['GenericRelationshipsSourcesSourceMappingRulesMappingRuleArgs']]]):
+        pulumi.set(self, "mapping_rules", value)
+
+
+@pulumi.input_type
+class GenericRelationshipsSourcesSourceMappingRulesMappingRuleArgs:
+    def __init__(__self__, *,
+                 destination_property: pulumi.Input[str],
+                 destination_transformation: pulumi.Input[str],
+                 source_property: pulumi.Input[str],
+                 source_transformation: pulumi.Input[str]):
+        pulumi.set(__self__, "destination_property", destination_property)
+        pulumi.set(__self__, "destination_transformation", destination_transformation)
+        pulumi.set(__self__, "source_property", source_property)
+        pulumi.set(__self__, "source_transformation", source_transformation)
+
+    @property
+    @pulumi.getter(name="destinationProperty")
+    def destination_property(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "destination_property")
+
+    @destination_property.setter
+    def destination_property(self, value: pulumi.Input[str]):
+        pulumi.set(self, "destination_property", value)
+
+    @property
+    @pulumi.getter(name="destinationTransformation")
+    def destination_transformation(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "destination_transformation")
+
+    @destination_transformation.setter
+    def destination_transformation(self, value: pulumi.Input[str]):
+        pulumi.set(self, "destination_transformation", value)
+
+    @property
+    @pulumi.getter(name="sourceProperty")
+    def source_property(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "source_property")
+
+    @source_property.setter
+    def source_property(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source_property", value)
+
+    @property
+    @pulumi.getter(name="sourceTransformation")
+    def source_transformation(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "source_transformation")
+
+    @source_transformation.setter
+    def source_transformation(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source_transformation", value)
+
+
+@pulumi.input_type
+class GenericTypesRulesArgs:
+    def __init__(__self__, *,
+                 rules: pulumi.Input[Sequence[pulumi.Input['GenericTypesRulesRuleArgs']]]):
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> pulumi.Input[Sequence[pulumi.Input['GenericTypesRulesRuleArgs']]]:
+        return pulumi.get(self, "rules")
+
+    @rules.setter
+    def rules(self, value: pulumi.Input[Sequence[pulumi.Input['GenericTypesRulesRuleArgs']]]):
+        pulumi.set(self, "rules", value)
+
+
+@pulumi.input_type
+class GenericTypesRulesRuleArgs:
+    def __init__(__self__, *,
+                 id_pattern: pulumi.Input[str],
+                 sources: pulumi.Input['GenericTypesRulesRuleSourcesArgs'],
+                 attributes: Optional[pulumi.Input['GenericTypesRulesRuleAttributesArgs']] = None,
+                 icon_pattern: Optional[pulumi.Input[str]] = None,
+                 instance_name_pattern: Optional[pulumi.Input[str]] = None,
+                 required_dimensions: Optional[pulumi.Input['GenericTypesRulesRuleRequiredDimensionsArgs']] = None,
+                 role: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "id_pattern", id_pattern)
+        pulumi.set(__self__, "sources", sources)
+        if attributes is not None:
+            pulumi.set(__self__, "attributes", attributes)
+        if icon_pattern is not None:
+            pulumi.set(__self__, "icon_pattern", icon_pattern)
+        if instance_name_pattern is not None:
+            pulumi.set(__self__, "instance_name_pattern", instance_name_pattern)
+        if required_dimensions is not None:
+            pulumi.set(__self__, "required_dimensions", required_dimensions)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+
+    @property
+    @pulumi.getter(name="idPattern")
+    def id_pattern(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "id_pattern")
+
+    @id_pattern.setter
+    def id_pattern(self, value: pulumi.Input[str]):
+        pulumi.set(self, "id_pattern", value)
+
+    @property
+    @pulumi.getter
+    def sources(self) -> pulumi.Input['GenericTypesRulesRuleSourcesArgs']:
+        return pulumi.get(self, "sources")
+
+    @sources.setter
+    def sources(self, value: pulumi.Input['GenericTypesRulesRuleSourcesArgs']):
+        pulumi.set(self, "sources", value)
+
+    @property
+    @pulumi.getter
+    def attributes(self) -> Optional[pulumi.Input['GenericTypesRulesRuleAttributesArgs']]:
+        return pulumi.get(self, "attributes")
+
+    @attributes.setter
+    def attributes(self, value: Optional[pulumi.Input['GenericTypesRulesRuleAttributesArgs']]):
+        pulumi.set(self, "attributes", value)
+
+    @property
+    @pulumi.getter(name="iconPattern")
+    def icon_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "icon_pattern")
+
+    @icon_pattern.setter
+    def icon_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "icon_pattern", value)
+
+    @property
+    @pulumi.getter(name="instanceNamePattern")
+    def instance_name_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "instance_name_pattern")
+
+    @instance_name_pattern.setter
+    def instance_name_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "instance_name_pattern", value)
+
+    @property
+    @pulumi.getter(name="requiredDimensions")
+    def required_dimensions(self) -> Optional[pulumi.Input['GenericTypesRulesRuleRequiredDimensionsArgs']]:
+        return pulumi.get(self, "required_dimensions")
+
+    @required_dimensions.setter
+    def required_dimensions(self, value: Optional[pulumi.Input['GenericTypesRulesRuleRequiredDimensionsArgs']]):
+        pulumi.set(self, "required_dimensions", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+
+@pulumi.input_type
+class GenericTypesRulesRuleAttributesArgs:
+    def __init__(__self__, *,
+                 attributes: pulumi.Input[Sequence[pulumi.Input['GenericTypesRulesRuleAttributesAttributeArgs']]]):
+        pulumi.set(__self__, "attributes", attributes)
+
+    @property
+    @pulumi.getter
+    def attributes(self) -> pulumi.Input[Sequence[pulumi.Input['GenericTypesRulesRuleAttributesAttributeArgs']]]:
+        return pulumi.get(self, "attributes")
+
+    @attributes.setter
+    def attributes(self, value: pulumi.Input[Sequence[pulumi.Input['GenericTypesRulesRuleAttributesAttributeArgs']]]):
+        pulumi.set(self, "attributes", value)
+
+
+@pulumi.input_type
+class GenericTypesRulesRuleAttributesAttributeArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 pattern: pulumi.Input[str],
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: The human readable type name for this entity type.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "pattern", pattern)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "pattern")
+
+    @pattern.setter
+    def pattern(self, value: pulumi.Input[str]):
+        pulumi.set(self, "pattern", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The human readable type name for this entity type.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class GenericTypesRulesRuleRequiredDimensionsArgs:
+    def __init__(__self__, *,
+                 required_dimensions: pulumi.Input[Sequence[pulumi.Input['GenericTypesRulesRuleRequiredDimensionsRequiredDimensionArgs']]]):
+        pulumi.set(__self__, "required_dimensions", required_dimensions)
+
+    @property
+    @pulumi.getter(name="requiredDimensions")
+    def required_dimensions(self) -> pulumi.Input[Sequence[pulumi.Input['GenericTypesRulesRuleRequiredDimensionsRequiredDimensionArgs']]]:
+        return pulumi.get(self, "required_dimensions")
+
+    @required_dimensions.setter
+    def required_dimensions(self, value: pulumi.Input[Sequence[pulumi.Input['GenericTypesRulesRuleRequiredDimensionsRequiredDimensionArgs']]]):
+        pulumi.set(self, "required_dimensions", value)
+
+
+@pulumi.input_type
+class GenericTypesRulesRuleRequiredDimensionsRequiredDimensionArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value_pattern: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "key", key)
+        if value_pattern is not None:
+            pulumi.set(__self__, "value_pattern", value_pattern)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter(name="valuePattern")
+    def value_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "value_pattern")
+
+    @value_pattern.setter
+    def value_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value_pattern", value)
+
+
+@pulumi.input_type
+class GenericTypesRulesRuleSourcesArgs:
+    def __init__(__self__, *,
+                 sources: pulumi.Input[Sequence[pulumi.Input['GenericTypesRulesRuleSourcesSourceArgs']]]):
+        pulumi.set(__self__, "sources", sources)
+
+    @property
+    @pulumi.getter
+    def sources(self) -> pulumi.Input[Sequence[pulumi.Input['GenericTypesRulesRuleSourcesSourceArgs']]]:
+        return pulumi.get(self, "sources")
+
+    @sources.setter
+    def sources(self, value: pulumi.Input[Sequence[pulumi.Input['GenericTypesRulesRuleSourcesSourceArgs']]]):
+        pulumi.set(self, "sources", value)
+
+
+@pulumi.input_type
+class GenericTypesRulesRuleSourcesSourceArgs:
+    def __init__(__self__, *,
+                 source_type: pulumi.Input[str],
+                 condition: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "source_type", source_type)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source_type", value)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "condition")
+
+    @condition.setter
+    def condition(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "condition", value)
 
 
 @pulumi.input_type
@@ -19305,6 +25510,1592 @@ class HostAnomaliesNetworkUtilizationThresholdsArgs:
     @utilization.setter
     def utilization(self, value: pulumi.Input[int]):
         pulumi.set(self, "utilization", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostArgs:
+    def __init__(__self__, *,
+                 connection_lost_detection: pulumi.Input['HostAnomaliesV2HostConnectionLostDetectionArgs'],
+                 high_cpu_saturation_detection: pulumi.Input['HostAnomaliesV2HostHighCpuSaturationDetectionArgs'],
+                 high_gc_activity_detection: pulumi.Input['HostAnomaliesV2HostHighGcActivityDetectionArgs'],
+                 high_memory_detection: pulumi.Input['HostAnomaliesV2HostHighMemoryDetectionArgs'],
+                 high_system_load_detection: pulumi.Input['HostAnomaliesV2HostHighSystemLoadDetectionArgs'],
+                 out_of_memory_detection: pulumi.Input['HostAnomaliesV2HostOutOfMemoryDetectionArgs'],
+                 out_of_threads_detection: pulumi.Input['HostAnomaliesV2HostOutOfThreadsDetectionArgs']):
+        """
+        :param pulumi.Input['HostAnomaliesV2HostConnectionLostDetectionArgs'] connection_lost_detection: no documentation available
+        :param pulumi.Input['HostAnomaliesV2HostHighCpuSaturationDetectionArgs'] high_cpu_saturation_detection: no documentation available
+        :param pulumi.Input['HostAnomaliesV2HostHighGcActivityDetectionArgs'] high_gc_activity_detection: no documentation available
+        :param pulumi.Input['HostAnomaliesV2HostHighMemoryDetectionArgs'] high_memory_detection: no documentation available
+        :param pulumi.Input['HostAnomaliesV2HostHighSystemLoadDetectionArgs'] high_system_load_detection: no documentation available
+        :param pulumi.Input['HostAnomaliesV2HostOutOfMemoryDetectionArgs'] out_of_memory_detection: no documentation available
+        :param pulumi.Input['HostAnomaliesV2HostOutOfThreadsDetectionArgs'] out_of_threads_detection: no documentation available
+        """
+        pulumi.set(__self__, "connection_lost_detection", connection_lost_detection)
+        pulumi.set(__self__, "high_cpu_saturation_detection", high_cpu_saturation_detection)
+        pulumi.set(__self__, "high_gc_activity_detection", high_gc_activity_detection)
+        pulumi.set(__self__, "high_memory_detection", high_memory_detection)
+        pulumi.set(__self__, "high_system_load_detection", high_system_load_detection)
+        pulumi.set(__self__, "out_of_memory_detection", out_of_memory_detection)
+        pulumi.set(__self__, "out_of_threads_detection", out_of_threads_detection)
+
+    @property
+    @pulumi.getter(name="connectionLostDetection")
+    def connection_lost_detection(self) -> pulumi.Input['HostAnomaliesV2HostConnectionLostDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "connection_lost_detection")
+
+    @connection_lost_detection.setter
+    def connection_lost_detection(self, value: pulumi.Input['HostAnomaliesV2HostConnectionLostDetectionArgs']):
+        pulumi.set(self, "connection_lost_detection", value)
+
+    @property
+    @pulumi.getter(name="highCpuSaturationDetection")
+    def high_cpu_saturation_detection(self) -> pulumi.Input['HostAnomaliesV2HostHighCpuSaturationDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "high_cpu_saturation_detection")
+
+    @high_cpu_saturation_detection.setter
+    def high_cpu_saturation_detection(self, value: pulumi.Input['HostAnomaliesV2HostHighCpuSaturationDetectionArgs']):
+        pulumi.set(self, "high_cpu_saturation_detection", value)
+
+    @property
+    @pulumi.getter(name="highGcActivityDetection")
+    def high_gc_activity_detection(self) -> pulumi.Input['HostAnomaliesV2HostHighGcActivityDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "high_gc_activity_detection")
+
+    @high_gc_activity_detection.setter
+    def high_gc_activity_detection(self, value: pulumi.Input['HostAnomaliesV2HostHighGcActivityDetectionArgs']):
+        pulumi.set(self, "high_gc_activity_detection", value)
+
+    @property
+    @pulumi.getter(name="highMemoryDetection")
+    def high_memory_detection(self) -> pulumi.Input['HostAnomaliesV2HostHighMemoryDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "high_memory_detection")
+
+    @high_memory_detection.setter
+    def high_memory_detection(self, value: pulumi.Input['HostAnomaliesV2HostHighMemoryDetectionArgs']):
+        pulumi.set(self, "high_memory_detection", value)
+
+    @property
+    @pulumi.getter(name="highSystemLoadDetection")
+    def high_system_load_detection(self) -> pulumi.Input['HostAnomaliesV2HostHighSystemLoadDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "high_system_load_detection")
+
+    @high_system_load_detection.setter
+    def high_system_load_detection(self, value: pulumi.Input['HostAnomaliesV2HostHighSystemLoadDetectionArgs']):
+        pulumi.set(self, "high_system_load_detection", value)
+
+    @property
+    @pulumi.getter(name="outOfMemoryDetection")
+    def out_of_memory_detection(self) -> pulumi.Input['HostAnomaliesV2HostOutOfMemoryDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "out_of_memory_detection")
+
+    @out_of_memory_detection.setter
+    def out_of_memory_detection(self, value: pulumi.Input['HostAnomaliesV2HostOutOfMemoryDetectionArgs']):
+        pulumi.set(self, "out_of_memory_detection", value)
+
+    @property
+    @pulumi.getter(name="outOfThreadsDetection")
+    def out_of_threads_detection(self) -> pulumi.Input['HostAnomaliesV2HostOutOfThreadsDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "out_of_threads_detection")
+
+    @out_of_threads_detection.setter
+    def out_of_threads_detection(self, value: pulumi.Input['HostAnomaliesV2HostOutOfThreadsDetectionArgs']):
+        pulumi.set(self, "out_of_threads_detection", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostConnectionLostDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 on_graceful_shutdowns: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if on_graceful_shutdowns is not None:
+            pulumi.set(__self__, "on_graceful_shutdowns", on_graceful_shutdowns)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="onGracefulShutdowns")
+    def on_graceful_shutdowns(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "on_graceful_shutdowns")
+
+    @on_graceful_shutdowns.setter
+    def on_graceful_shutdowns(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "on_graceful_shutdowns", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostHighCpuSaturationDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsArgs']]:
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 cpu_saturation: pulumi.Input[int],
+                 event_thresholds: pulumi.Input['HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholdsArgs']):
+        pulumi.set(__self__, "cpu_saturation", cpu_saturation)
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+
+    @property
+    @pulumi.getter(name="cpuSaturation")
+    def cpu_saturation(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "cpu_saturation")
+
+    @cpu_saturation.setter
+    def cpu_saturation(self, value: pulumi.Input[int]):
+        pulumi.set(self, "cpu_saturation", value)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> pulumi.Input['HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholdsArgs']:
+        return pulumi.get(self, "event_thresholds")
+
+    @event_thresholds.setter
+    def event_thresholds(self, value: pulumi.Input['HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholdsArgs']):
+        pulumi.set(self, "event_thresholds", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholdsArgs:
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: pulumi.Input[int],
+                 dealerting_samples: pulumi.Input[int],
+                 violating_evaluation_window: pulumi.Input[int],
+                 violating_samples: pulumi.Input[int]):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @dealerting_evaluation_window.setter
+    def dealerting_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_samples")
+
+    @dealerting_samples.setter
+    def dealerting_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_samples", value)
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @violating_evaluation_window.setter
+    def violating_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_samples")
+
+    @violating_samples.setter
+    def violating_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_samples", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostHighGcActivityDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsArgs']]:
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 event_thresholds: pulumi.Input['HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholdsArgs'],
+                 gc_suspension_percentage: pulumi.Input[int],
+                 gc_time_percentage: pulumi.Input[int]):
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "gc_suspension_percentage", gc_suspension_percentage)
+        pulumi.set(__self__, "gc_time_percentage", gc_time_percentage)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> pulumi.Input['HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholdsArgs']:
+        return pulumi.get(self, "event_thresholds")
+
+    @event_thresholds.setter
+    def event_thresholds(self, value: pulumi.Input['HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholdsArgs']):
+        pulumi.set(self, "event_thresholds", value)
+
+    @property
+    @pulumi.getter(name="gcSuspensionPercentage")
+    def gc_suspension_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "gc_suspension_percentage")
+
+    @gc_suspension_percentage.setter
+    def gc_suspension_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "gc_suspension_percentage", value)
+
+    @property
+    @pulumi.getter(name="gcTimePercentage")
+    def gc_time_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "gc_time_percentage")
+
+    @gc_time_percentage.setter
+    def gc_time_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "gc_time_percentage", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholdsArgs:
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: pulumi.Input[int],
+                 dealerting_samples: pulumi.Input[int],
+                 violating_evaluation_window: pulumi.Input[int],
+                 violating_samples: pulumi.Input[int]):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @dealerting_evaluation_window.setter
+    def dealerting_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_samples")
+
+    @dealerting_samples.setter
+    def dealerting_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_samples", value)
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @violating_evaluation_window.setter
+    def violating_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_samples")
+
+    @violating_samples.setter
+    def violating_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_samples", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostHighMemoryDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsArgs']]:
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 event_thresholds: pulumi.Input['HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholdsArgs'],
+                 page_faults_per_second_non_windows: pulumi.Input[int],
+                 page_faults_per_second_windows: pulumi.Input[int],
+                 used_memory_percentage_non_windows: pulumi.Input[int],
+                 used_memory_percentage_windows: pulumi.Input[int]):
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "page_faults_per_second_non_windows", page_faults_per_second_non_windows)
+        pulumi.set(__self__, "page_faults_per_second_windows", page_faults_per_second_windows)
+        pulumi.set(__self__, "used_memory_percentage_non_windows", used_memory_percentage_non_windows)
+        pulumi.set(__self__, "used_memory_percentage_windows", used_memory_percentage_windows)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> pulumi.Input['HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholdsArgs']:
+        return pulumi.get(self, "event_thresholds")
+
+    @event_thresholds.setter
+    def event_thresholds(self, value: pulumi.Input['HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholdsArgs']):
+        pulumi.set(self, "event_thresholds", value)
+
+    @property
+    @pulumi.getter(name="pageFaultsPerSecondNonWindows")
+    def page_faults_per_second_non_windows(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "page_faults_per_second_non_windows")
+
+    @page_faults_per_second_non_windows.setter
+    def page_faults_per_second_non_windows(self, value: pulumi.Input[int]):
+        pulumi.set(self, "page_faults_per_second_non_windows", value)
+
+    @property
+    @pulumi.getter(name="pageFaultsPerSecondWindows")
+    def page_faults_per_second_windows(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "page_faults_per_second_windows")
+
+    @page_faults_per_second_windows.setter
+    def page_faults_per_second_windows(self, value: pulumi.Input[int]):
+        pulumi.set(self, "page_faults_per_second_windows", value)
+
+    @property
+    @pulumi.getter(name="usedMemoryPercentageNonWindows")
+    def used_memory_percentage_non_windows(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "used_memory_percentage_non_windows")
+
+    @used_memory_percentage_non_windows.setter
+    def used_memory_percentage_non_windows(self, value: pulumi.Input[int]):
+        pulumi.set(self, "used_memory_percentage_non_windows", value)
+
+    @property
+    @pulumi.getter(name="usedMemoryPercentageWindows")
+    def used_memory_percentage_windows(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "used_memory_percentage_windows")
+
+    @used_memory_percentage_windows.setter
+    def used_memory_percentage_windows(self, value: pulumi.Input[int]):
+        pulumi.set(self, "used_memory_percentage_windows", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholdsArgs:
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: pulumi.Input[int],
+                 dealerting_samples: pulumi.Input[int],
+                 violating_evaluation_window: pulumi.Input[int],
+                 violating_samples: pulumi.Input[int]):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @dealerting_evaluation_window.setter
+    def dealerting_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_samples")
+
+    @dealerting_samples.setter
+    def dealerting_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_samples", value)
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @violating_evaluation_window.setter
+    def violating_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_samples")
+
+    @violating_samples.setter
+    def violating_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_samples", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostHighSystemLoadDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsArgs']]:
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 event_thresholds: pulumi.Input['HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholdsArgs'],
+                 system_load: pulumi.Input[float]):
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "system_load", system_load)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> pulumi.Input['HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholdsArgs']:
+        return pulumi.get(self, "event_thresholds")
+
+    @event_thresholds.setter
+    def event_thresholds(self, value: pulumi.Input['HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholdsArgs']):
+        pulumi.set(self, "event_thresholds", value)
+
+    @property
+    @pulumi.getter(name="systemLoad")
+    def system_load(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "system_load")
+
+    @system_load.setter
+    def system_load(self, value: pulumi.Input[float]):
+        pulumi.set(self, "system_load", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholdsArgs:
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: pulumi.Input[int],
+                 dealerting_samples: pulumi.Input[int],
+                 violating_evaluation_window: pulumi.Input[int],
+                 violating_samples: pulumi.Input[int]):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @dealerting_evaluation_window.setter
+    def dealerting_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_samples")
+
+    @dealerting_samples.setter
+    def dealerting_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_samples", value)
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @violating_evaluation_window.setter
+    def violating_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_samples")
+
+    @violating_samples.setter
+    def violating_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_samples", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostOutOfMemoryDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsArgs']]:
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 event_thresholds: pulumi.Input['HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholdsArgs'],
+                 out_of_memory_exceptions_number: pulumi.Input[int]):
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "out_of_memory_exceptions_number", out_of_memory_exceptions_number)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> pulumi.Input['HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholdsArgs']:
+        return pulumi.get(self, "event_thresholds")
+
+    @event_thresholds.setter
+    def event_thresholds(self, value: pulumi.Input['HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholdsArgs']):
+        pulumi.set(self, "event_thresholds", value)
+
+    @property
+    @pulumi.getter(name="outOfMemoryExceptionsNumber")
+    def out_of_memory_exceptions_number(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "out_of_memory_exceptions_number")
+
+    @out_of_memory_exceptions_number.setter
+    def out_of_memory_exceptions_number(self, value: pulumi.Input[int]):
+        pulumi.set(self, "out_of_memory_exceptions_number", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholdsArgs:
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: pulumi.Input[int],
+                 dealerting_samples: pulumi.Input[int],
+                 violating_evaluation_window: pulumi.Input[int],
+                 violating_samples: pulumi.Input[int]):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @dealerting_evaluation_window.setter
+    def dealerting_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_samples")
+
+    @dealerting_samples.setter
+    def dealerting_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_samples", value)
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @violating_evaluation_window.setter
+    def violating_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_samples")
+
+    @violating_samples.setter
+    def violating_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_samples", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostOutOfThreadsDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsArgs']]:
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 event_thresholds: pulumi.Input['HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholdsArgs'],
+                 out_of_threads_exceptions_number: pulumi.Input[int]):
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "out_of_threads_exceptions_number", out_of_threads_exceptions_number)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> pulumi.Input['HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholdsArgs']:
+        return pulumi.get(self, "event_thresholds")
+
+    @event_thresholds.setter
+    def event_thresholds(self, value: pulumi.Input['HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholdsArgs']):
+        pulumi.set(self, "event_thresholds", value)
+
+    @property
+    @pulumi.getter(name="outOfThreadsExceptionsNumber")
+    def out_of_threads_exceptions_number(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "out_of_threads_exceptions_number")
+
+    @out_of_threads_exceptions_number.setter
+    def out_of_threads_exceptions_number(self, value: pulumi.Input[int]):
+        pulumi.set(self, "out_of_threads_exceptions_number", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholdsArgs:
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: pulumi.Input[int],
+                 dealerting_samples: pulumi.Input[int],
+                 violating_evaluation_window: pulumi.Input[int],
+                 violating_samples: pulumi.Input[int]):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @dealerting_evaluation_window.setter
+    def dealerting_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_samples")
+
+    @dealerting_samples.setter
+    def dealerting_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_samples", value)
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @violating_evaluation_window.setter
+    def violating_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_samples")
+
+    @violating_samples.setter
+    def violating_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_samples", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkArgs:
+    def __init__(__self__, *,
+                 high_network_detection: pulumi.Input['HostAnomaliesV2NetworkHighNetworkDetectionArgs'],
+                 network_dropped_packets_detection: pulumi.Input['HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionArgs'],
+                 network_errors_detection: pulumi.Input['HostAnomaliesV2NetworkNetworkErrorsDetectionArgs'],
+                 network_high_retransmission_detection: pulumi.Input['HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionArgs'],
+                 network_tcp_problems_detection: pulumi.Input['HostAnomaliesV2NetworkNetworkTcpProblemsDetectionArgs']):
+        """
+        :param pulumi.Input['HostAnomaliesV2NetworkHighNetworkDetectionArgs'] high_network_detection: no documentation available
+        :param pulumi.Input['HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionArgs'] network_dropped_packets_detection: no documentation available
+        :param pulumi.Input['HostAnomaliesV2NetworkNetworkErrorsDetectionArgs'] network_errors_detection: no documentation available
+        :param pulumi.Input['HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionArgs'] network_high_retransmission_detection: no documentation available
+        :param pulumi.Input['HostAnomaliesV2NetworkNetworkTcpProblemsDetectionArgs'] network_tcp_problems_detection: no documentation available
+        """
+        pulumi.set(__self__, "high_network_detection", high_network_detection)
+        pulumi.set(__self__, "network_dropped_packets_detection", network_dropped_packets_detection)
+        pulumi.set(__self__, "network_errors_detection", network_errors_detection)
+        pulumi.set(__self__, "network_high_retransmission_detection", network_high_retransmission_detection)
+        pulumi.set(__self__, "network_tcp_problems_detection", network_tcp_problems_detection)
+
+    @property
+    @pulumi.getter(name="highNetworkDetection")
+    def high_network_detection(self) -> pulumi.Input['HostAnomaliesV2NetworkHighNetworkDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "high_network_detection")
+
+    @high_network_detection.setter
+    def high_network_detection(self, value: pulumi.Input['HostAnomaliesV2NetworkHighNetworkDetectionArgs']):
+        pulumi.set(self, "high_network_detection", value)
+
+    @property
+    @pulumi.getter(name="networkDroppedPacketsDetection")
+    def network_dropped_packets_detection(self) -> pulumi.Input['HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "network_dropped_packets_detection")
+
+    @network_dropped_packets_detection.setter
+    def network_dropped_packets_detection(self, value: pulumi.Input['HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionArgs']):
+        pulumi.set(self, "network_dropped_packets_detection", value)
+
+    @property
+    @pulumi.getter(name="networkErrorsDetection")
+    def network_errors_detection(self) -> pulumi.Input['HostAnomaliesV2NetworkNetworkErrorsDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "network_errors_detection")
+
+    @network_errors_detection.setter
+    def network_errors_detection(self, value: pulumi.Input['HostAnomaliesV2NetworkNetworkErrorsDetectionArgs']):
+        pulumi.set(self, "network_errors_detection", value)
+
+    @property
+    @pulumi.getter(name="networkHighRetransmissionDetection")
+    def network_high_retransmission_detection(self) -> pulumi.Input['HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "network_high_retransmission_detection")
+
+    @network_high_retransmission_detection.setter
+    def network_high_retransmission_detection(self, value: pulumi.Input['HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionArgs']):
+        pulumi.set(self, "network_high_retransmission_detection", value)
+
+    @property
+    @pulumi.getter(name="networkTcpProblemsDetection")
+    def network_tcp_problems_detection(self) -> pulumi.Input['HostAnomaliesV2NetworkNetworkTcpProblemsDetectionArgs']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "network_tcp_problems_detection")
+
+    @network_tcp_problems_detection.setter
+    def network_tcp_problems_detection(self, value: pulumi.Input['HostAnomaliesV2NetworkNetworkTcpProblemsDetectionArgs']):
+        pulumi.set(self, "network_tcp_problems_detection", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkHighNetworkDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsArgs']]:
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 errors_percentage: pulumi.Input[int],
+                 event_thresholds: pulumi.Input['HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholdsArgs']):
+        pulumi.set(__self__, "errors_percentage", errors_percentage)
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+
+    @property
+    @pulumi.getter(name="errorsPercentage")
+    def errors_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "errors_percentage")
+
+    @errors_percentage.setter
+    def errors_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "errors_percentage", value)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> pulumi.Input['HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholdsArgs']:
+        return pulumi.get(self, "event_thresholds")
+
+    @event_thresholds.setter
+    def event_thresholds(self, value: pulumi.Input['HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholdsArgs']):
+        pulumi.set(self, "event_thresholds", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholdsArgs:
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: pulumi.Input[int],
+                 dealerting_samples: pulumi.Input[int],
+                 violating_evaluation_window: pulumi.Input[int],
+                 violating_samples: pulumi.Input[int]):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @dealerting_evaluation_window.setter
+    def dealerting_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_samples")
+
+    @dealerting_samples.setter
+    def dealerting_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_samples", value)
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @violating_evaluation_window.setter
+    def violating_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_samples")
+
+    @violating_samples.setter
+    def violating_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_samples", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsArgs']]:
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 dropped_packets_percentage: pulumi.Input[int],
+                 event_thresholds: pulumi.Input['HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholdsArgs'],
+                 total_packets_rate: pulumi.Input[int]):
+        pulumi.set(__self__, "dropped_packets_percentage", dropped_packets_percentage)
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "total_packets_rate", total_packets_rate)
+
+    @property
+    @pulumi.getter(name="droppedPacketsPercentage")
+    def dropped_packets_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dropped_packets_percentage")
+
+    @dropped_packets_percentage.setter
+    def dropped_packets_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dropped_packets_percentage", value)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> pulumi.Input['HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholdsArgs']:
+        return pulumi.get(self, "event_thresholds")
+
+    @event_thresholds.setter
+    def event_thresholds(self, value: pulumi.Input['HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholdsArgs']):
+        pulumi.set(self, "event_thresholds", value)
+
+    @property
+    @pulumi.getter(name="totalPacketsRate")
+    def total_packets_rate(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "total_packets_rate")
+
+    @total_packets_rate.setter
+    def total_packets_rate(self, value: pulumi.Input[int]):
+        pulumi.set(self, "total_packets_rate", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholdsArgs:
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: pulumi.Input[int],
+                 dealerting_samples: pulumi.Input[int],
+                 violating_evaluation_window: pulumi.Input[int],
+                 violating_samples: pulumi.Input[int]):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @dealerting_evaluation_window.setter
+    def dealerting_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_samples")
+
+    @dealerting_samples.setter
+    def dealerting_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_samples", value)
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @violating_evaluation_window.setter
+    def violating_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_samples")
+
+    @violating_samples.setter
+    def violating_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_samples", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkNetworkErrorsDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsArgs']]:
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 errors_percentage: pulumi.Input[int],
+                 event_thresholds: pulumi.Input['HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholdsArgs'],
+                 total_packets_rate: pulumi.Input[int]):
+        pulumi.set(__self__, "errors_percentage", errors_percentage)
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "total_packets_rate", total_packets_rate)
+
+    @property
+    @pulumi.getter(name="errorsPercentage")
+    def errors_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "errors_percentage")
+
+    @errors_percentage.setter
+    def errors_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "errors_percentage", value)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> pulumi.Input['HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholdsArgs']:
+        return pulumi.get(self, "event_thresholds")
+
+    @event_thresholds.setter
+    def event_thresholds(self, value: pulumi.Input['HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholdsArgs']):
+        pulumi.set(self, "event_thresholds", value)
+
+    @property
+    @pulumi.getter(name="totalPacketsRate")
+    def total_packets_rate(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "total_packets_rate")
+
+    @total_packets_rate.setter
+    def total_packets_rate(self, value: pulumi.Input[int]):
+        pulumi.set(self, "total_packets_rate", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholdsArgs:
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: pulumi.Input[int],
+                 dealerting_samples: pulumi.Input[int],
+                 violating_evaluation_window: pulumi.Input[int],
+                 violating_samples: pulumi.Input[int]):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @dealerting_evaluation_window.setter
+    def dealerting_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_samples")
+
+    @dealerting_samples.setter
+    def dealerting_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_samples", value)
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @violating_evaluation_window.setter
+    def violating_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_samples")
+
+    @violating_samples.setter
+    def violating_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_samples", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsArgs']]:
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 event_thresholds: pulumi.Input['HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholdsArgs'],
+                 retransmission_rate_percentage: pulumi.Input[int],
+                 retransmitted_packets_number_per_minute: pulumi.Input[int]):
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "retransmission_rate_percentage", retransmission_rate_percentage)
+        pulumi.set(__self__, "retransmitted_packets_number_per_minute", retransmitted_packets_number_per_minute)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> pulumi.Input['HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholdsArgs']:
+        return pulumi.get(self, "event_thresholds")
+
+    @event_thresholds.setter
+    def event_thresholds(self, value: pulumi.Input['HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholdsArgs']):
+        pulumi.set(self, "event_thresholds", value)
+
+    @property
+    @pulumi.getter(name="retransmissionRatePercentage")
+    def retransmission_rate_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "retransmission_rate_percentage")
+
+    @retransmission_rate_percentage.setter
+    def retransmission_rate_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "retransmission_rate_percentage", value)
+
+    @property
+    @pulumi.getter(name="retransmittedPacketsNumberPerMinute")
+    def retransmitted_packets_number_per_minute(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "retransmitted_packets_number_per_minute")
+
+    @retransmitted_packets_number_per_minute.setter
+    def retransmitted_packets_number_per_minute(self, value: pulumi.Input[int]):
+        pulumi.set(self, "retransmitted_packets_number_per_minute", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholdsArgs:
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: pulumi.Input[int],
+                 dealerting_samples: pulumi.Input[int],
+                 violating_evaluation_window: pulumi.Input[int],
+                 violating_samples: pulumi.Input[int]):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @dealerting_evaluation_window.setter
+    def dealerting_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_samples")
+
+    @dealerting_samples.setter
+    def dealerting_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_samples", value)
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @violating_evaluation_window.setter
+    def violating_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_samples")
+
+    @violating_samples.setter
+    def violating_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_samples", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkNetworkTcpProblemsDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsArgs']]:
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 event_thresholds: pulumi.Input['HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholdsArgs'],
+                 failed_connections_number_per_minute: pulumi.Input[int],
+                 new_connection_failures_percentage: pulumi.Input[int]):
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "failed_connections_number_per_minute", failed_connections_number_per_minute)
+        pulumi.set(__self__, "new_connection_failures_percentage", new_connection_failures_percentage)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> pulumi.Input['HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholdsArgs']:
+        return pulumi.get(self, "event_thresholds")
+
+    @event_thresholds.setter
+    def event_thresholds(self, value: pulumi.Input['HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholdsArgs']):
+        pulumi.set(self, "event_thresholds", value)
+
+    @property
+    @pulumi.getter(name="failedConnectionsNumberPerMinute")
+    def failed_connections_number_per_minute(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "failed_connections_number_per_minute")
+
+    @failed_connections_number_per_minute.setter
+    def failed_connections_number_per_minute(self, value: pulumi.Input[int]):
+        pulumi.set(self, "failed_connections_number_per_minute", value)
+
+    @property
+    @pulumi.getter(name="newConnectionFailuresPercentage")
+    def new_connection_failures_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "new_connection_failures_percentage")
+
+    @new_connection_failures_percentage.setter
+    def new_connection_failures_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "new_connection_failures_percentage", value)
+
+
+@pulumi.input_type
+class HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholdsArgs:
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: pulumi.Input[int],
+                 dealerting_samples: pulumi.Input[int],
+                 violating_evaluation_window: pulumi.Input[int],
+                 violating_samples: pulumi.Input[int]):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @dealerting_evaluation_window.setter
+    def dealerting_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dealerting_samples")
+
+    @dealerting_samples.setter
+    def dealerting_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_samples", value)
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @violating_evaluation_window.setter
+    def violating_evaluation_window(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_evaluation_window", value)
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "violating_samples")
+
+    @violating_samples.setter
+    def violating_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_samples", value)
 
 
 @pulumi.input_type
@@ -24528,11 +32319,14 @@ class HttpMonitorAnomalyDetectionLoadingTimeThresholdThresholdThresholdArgs:
 class HttpMonitorAnomalyDetectionOutageHandlingArgs:
     def __init__(__self__, *,
                  global_outage: Optional[pulumi.Input[bool]] = None,
+                 global_outage_policies: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs']]]] = None,
                  local_outage: Optional[pulumi.Input[bool]] = None,
                  local_outage_policies: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicyArgs']]]] = None,
                  retry_on_error: Optional[pulumi.Input[bool]] = None):
         if global_outage is not None:
             pulumi.set(__self__, "global_outage", global_outage)
+        if global_outage_policies is not None:
+            pulumi.set(__self__, "global_outage_policies", global_outage_policies)
         if local_outage is not None:
             pulumi.set(__self__, "local_outage", local_outage)
         if local_outage_policies is not None:
@@ -24548,6 +32342,15 @@ class HttpMonitorAnomalyDetectionOutageHandlingArgs:
     @global_outage.setter
     def global_outage(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "global_outage", value)
+
+    @property
+    @pulumi.getter(name="globalOutagePolicies")
+    def global_outage_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs']]]]:
+        return pulumi.get(self, "global_outage_policies")
+
+    @global_outage_policies.setter
+    def global_outage_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs']]]]):
+        pulumi.set(self, "global_outage_policies", value)
 
     @property
     @pulumi.getter(name="localOutage")
@@ -24578,6 +32381,22 @@ class HttpMonitorAnomalyDetectionOutageHandlingArgs:
 
 
 @pulumi.input_type
+class HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs:
+    def __init__(__self__, *,
+                 consecutive_runs: pulumi.Input[int]):
+        pulumi.set(__self__, "consecutive_runs", consecutive_runs)
+
+    @property
+    @pulumi.getter(name="consecutiveRuns")
+    def consecutive_runs(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "consecutive_runs")
+
+    @consecutive_runs.setter
+    def consecutive_runs(self, value: pulumi.Input[int]):
+        pulumi.set(self, "consecutive_runs", value)
+
+
+@pulumi.input_type
 class HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicyArgs:
     def __init__(__self__, *,
                  affected_locations: pulumi.Input[int],
@@ -24602,6 +32421,115 @@ class HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicyArgs:
     @consecutive_runs.setter
     def consecutive_runs(self, value: pulumi.Input[int]):
         pulumi.set(self, "consecutive_runs", value)
+
+
+@pulumi.input_type
+class HttpMonitorCookiesCookiesArgs:
+    def __init__(__self__, *,
+                 cookies: pulumi.Input[Sequence[pulumi.Input['HttpMonitorCookiesCookiesCookieArgs']]]):
+        pulumi.set(__self__, "cookies", cookies)
+
+    @property
+    @pulumi.getter
+    def cookies(self) -> pulumi.Input[Sequence[pulumi.Input['HttpMonitorCookiesCookiesCookieArgs']]]:
+        return pulumi.get(self, "cookies")
+
+    @cookies.setter
+    def cookies(self, value: pulumi.Input[Sequence[pulumi.Input['HttpMonitorCookiesCookiesCookieArgs']]]):
+        pulumi.set(self, "cookies", value)
+
+
+@pulumi.input_type
+class HttpMonitorCookiesCookiesCookieArgs:
+    def __init__(__self__, *,
+                 domain: pulumi.Input[str],
+                 name: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 path: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: pulumi.Input[str]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "path")
+
+    @path.setter
+    def path(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "path", value)
+
+
+@pulumi.input_type
+class HttpMonitorPerformanceThresholdsArgs:
+    def __init__(__self__, *,
+                 thresholds: pulumi.Input[Sequence[pulumi.Input['HttpMonitorPerformanceThresholdsThresholdArgs']]]):
+        pulumi.set(__self__, "thresholds", thresholds)
+
+    @property
+    @pulumi.getter
+    def thresholds(self) -> pulumi.Input[Sequence[pulumi.Input['HttpMonitorPerformanceThresholdsThresholdArgs']]]:
+        return pulumi.get(self, "thresholds")
+
+    @thresholds.setter
+    def thresholds(self, value: pulumi.Input[Sequence[pulumi.Input['HttpMonitorPerformanceThresholdsThresholdArgs']]]):
+        pulumi.set(self, "thresholds", value)
+
+
+@pulumi.input_type
+class HttpMonitorPerformanceThresholdsThresholdArgs:
+    def __init__(__self__, *,
+                 event: pulumi.Input[str],
+                 threshold: pulumi.Input[float]):
+        pulumi.set(__self__, "event", event)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter
+    def event(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "event")
+
+    @event.setter
+    def event(self, value: pulumi.Input[str]):
+        pulumi.set(self, "event", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[float]):
+        pulumi.set(self, "threshold", value)
 
 
 @pulumi.input_type
@@ -24637,6 +32565,7 @@ class HttpMonitorScriptRequestArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  post_processing: Optional[pulumi.Input[str]] = None,
                  pre_processing: Optional[pulumi.Input[str]] = None,
+                 request_timeout: Optional[pulumi.Input[int]] = None,
                  validation: Optional[pulumi.Input['HttpMonitorScriptRequestValidationArgs']] = None):
         pulumi.set(__self__, "method", method)
         pulumi.set(__self__, "url", url)
@@ -24652,6 +32581,8 @@ class HttpMonitorScriptRequestArgs:
             pulumi.set(__self__, "post_processing", post_processing)
         if pre_processing is not None:
             pulumi.set(__self__, "pre_processing", pre_processing)
+        if request_timeout is not None:
+            pulumi.set(__self__, "request_timeout", request_timeout)
         if validation is not None:
             pulumi.set(__self__, "validation", validation)
 
@@ -24728,6 +32659,15 @@ class HttpMonitorScriptRequestArgs:
         pulumi.set(self, "pre_processing", value)
 
     @property
+    @pulumi.getter(name="requestTimeout")
+    def request_timeout(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "request_timeout")
+
+    @request_timeout.setter
+    def request_timeout(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "request_timeout", value)
+
+    @property
     @pulumi.getter
     def validation(self) -> Optional[pulumi.Input['HttpMonitorScriptRequestValidationArgs']]:
         return pulumi.get(self, "validation")
@@ -24792,15 +32732,21 @@ class HttpMonitorScriptRequestAuthenticationArgs:
 class HttpMonitorScriptRequestConfigurationArgs:
     def __init__(__self__, *,
                  accept_any_certificate: Optional[pulumi.Input[bool]] = None,
+                 client_certificate: Optional[pulumi.Input[str]] = None,
                  follow_redirects: Optional[pulumi.Input[bool]] = None,
                  headers: Optional[pulumi.Input['HttpMonitorScriptRequestConfigurationHeadersArgs']] = None,
+                 sensitive_data: Optional[pulumi.Input[bool]] = None,
                  user_agent: Optional[pulumi.Input[str]] = None):
         if accept_any_certificate is not None:
             pulumi.set(__self__, "accept_any_certificate", accept_any_certificate)
+        if client_certificate is not None:
+            pulumi.set(__self__, "client_certificate", client_certificate)
         if follow_redirects is not None:
             pulumi.set(__self__, "follow_redirects", follow_redirects)
         if headers is not None:
             pulumi.set(__self__, "headers", headers)
+        if sensitive_data is not None:
+            pulumi.set(__self__, "sensitive_data", sensitive_data)
         if user_agent is not None:
             pulumi.set(__self__, "user_agent", user_agent)
 
@@ -24812,6 +32758,15 @@ class HttpMonitorScriptRequestConfigurationArgs:
     @accept_any_certificate.setter
     def accept_any_certificate(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "accept_any_certificate", value)
+
+    @property
+    @pulumi.getter(name="clientCertificate")
+    def client_certificate(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "client_certificate")
+
+    @client_certificate.setter
+    def client_certificate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "client_certificate", value)
 
     @property
     @pulumi.getter(name="followRedirects")
@@ -24830,6 +32785,15 @@ class HttpMonitorScriptRequestConfigurationArgs:
     @headers.setter
     def headers(self, value: Optional[pulumi.Input['HttpMonitorScriptRequestConfigurationHeadersArgs']]):
         pulumi.set(self, "headers", value)
+
+    @property
+    @pulumi.getter(name="sensitiveData")
+    def sensitive_data(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "sensitive_data")
+
+    @sensitive_data.setter
+    def sensitive_data(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "sensitive_data", value)
 
     @property
     @pulumi.getter(name="userAgent")
@@ -25014,6 +32978,66 @@ class HttpMonitorTagTagArgs:
 
 
 @pulumi.input_type
+class IamGroupPermissionsArgs:
+    def __init__(__self__, *,
+                 permissions: pulumi.Input[Sequence[pulumi.Input['IamGroupPermissionsPermissionArgs']]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['IamGroupPermissionsPermissionArgs']]] permissions: A Permission
+        """
+        pulumi.set(__self__, "permissions", permissions)
+
+    @property
+    @pulumi.getter
+    def permissions(self) -> pulumi.Input[Sequence[pulumi.Input['IamGroupPermissionsPermissionArgs']]]:
+        """
+        A Permission
+        """
+        return pulumi.get(self, "permissions")
+
+    @permissions.setter
+    def permissions(self, value: pulumi.Input[Sequence[pulumi.Input['IamGroupPermissionsPermissionArgs']]]):
+        pulumi.set(self, "permissions", value)
+
+
+@pulumi.input_type
+class IamGroupPermissionsPermissionArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 scope: pulumi.Input[str],
+                 type: pulumi.Input[str]):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "scope", scope)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def scope(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: pulumi.Input[str]):
+        pulumi.set(self, "scope", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
 class ImsBridgesQueueManagerArgs:
     def __init__(__self__, *,
                  queue_managers: Optional[pulumi.Input[Sequence[pulumi.Input['ImsBridgesQueueManagerQueueManagerArgs']]]] = None):
@@ -25068,6 +33092,364 @@ class ImsBridgesQueueManagerQueueManagerArgs:
     @queue_manager_queues.setter
     def queue_manager_queues(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "queue_manager_queues", value)
+
+
+@pulumi.input_type
+class K8sClusterAnomaliesCpuRequestsSaturationArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sClusterAnomaliesCpuRequestsSaturationConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sClusterAnomaliesCpuRequestsSaturationConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sClusterAnomaliesCpuRequestsSaturationConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sClusterAnomaliesCpuRequestsSaturationConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sClusterAnomaliesCpuRequestsSaturationConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sClusterAnomaliesMemoryRequestsSaturationArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sClusterAnomaliesMemoryRequestsSaturationConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sClusterAnomaliesMemoryRequestsSaturationConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sClusterAnomaliesMemoryRequestsSaturationConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sClusterAnomaliesMemoryRequestsSaturationConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sClusterAnomaliesMemoryRequestsSaturationConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sClusterAnomaliesMonitoringIssuesArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sClusterAnomaliesMonitoringIssuesConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sClusterAnomaliesMonitoringIssuesConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sClusterAnomaliesMonitoringIssuesConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sClusterAnomaliesMonitoringIssuesConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sClusterAnomaliesMonitoringIssuesConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+
+@pulumi.input_type
+class K8sClusterAnomaliesPodsSaturationArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sClusterAnomaliesPodsSaturationConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sClusterAnomaliesPodsSaturationConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sClusterAnomaliesPodsSaturationConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sClusterAnomaliesPodsSaturationConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sClusterAnomaliesPodsSaturationConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sClusterAnomaliesReadinessIssuesArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sClusterAnomaliesReadinessIssuesConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sClusterAnomaliesReadinessIssuesConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sClusterAnomaliesReadinessIssuesConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sClusterAnomaliesReadinessIssuesConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sClusterAnomaliesReadinessIssuesConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
 
 
 @pulumi.input_type
@@ -25136,6 +33518,2050 @@ class K8sCredentialsEventsFieldSelectorArgs:
     @unknowns.setter
     def unknowns(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "unknowns", value)
+
+
+@pulumi.input_type
+class K8sNamespaceAnomaliesCpuLimitsQuotaSaturationArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sNamespaceAnomaliesCpuRequestsQuotaSaturationArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sNamespaceAnomaliesPodsQuotaSaturationArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sNamespaceAnomaliesPodsQuotaSaturationConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sNamespaceAnomaliesPodsQuotaSaturationConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sNamespaceAnomaliesPodsQuotaSaturationConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sNamespaceAnomaliesPodsQuotaSaturationConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sNamespaceAnomaliesPodsQuotaSaturationConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sNodeAnomaliesCpuRequestsSaturationArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sNodeAnomaliesCpuRequestsSaturationConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sNodeAnomaliesCpuRequestsSaturationConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sNodeAnomaliesCpuRequestsSaturationConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sNodeAnomaliesCpuRequestsSaturationConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sNodeAnomaliesCpuRequestsSaturationConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sNodeAnomaliesMemoryRequestsSaturationArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sNodeAnomaliesMemoryRequestsSaturationConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sNodeAnomaliesMemoryRequestsSaturationConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sNodeAnomaliesMemoryRequestsSaturationConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sNodeAnomaliesMemoryRequestsSaturationConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sNodeAnomaliesMemoryRequestsSaturationConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sNodeAnomaliesNodeProblematicConditionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sNodeAnomaliesNodeProblematicConditionConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sNodeAnomaliesNodeProblematicConditionConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sNodeAnomaliesNodeProblematicConditionConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sNodeAnomaliesNodeProblematicConditionConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sNodeAnomaliesNodeProblematicConditionConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+
+@pulumi.input_type
+class K8sNodeAnomaliesPodsSaturationArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sNodeAnomaliesPodsSaturationConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sNodeAnomaliesPodsSaturationConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sNodeAnomaliesPodsSaturationConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sNodeAnomaliesPodsSaturationConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sNodeAnomaliesPodsSaturationConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sNodeAnomaliesReadinessIssuesArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sNodeAnomaliesReadinessIssuesConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sNodeAnomaliesReadinessIssuesConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sNodeAnomaliesReadinessIssuesConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sNodeAnomaliesReadinessIssuesConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sNodeAnomaliesReadinessIssuesConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+
+@pulumi.input_type
+class K8sPvcAnomaliesLowDiskSpaceCriticalArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sPvcAnomaliesLowDiskSpaceCriticalConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sPvcAnomaliesLowDiskSpaceCriticalPercentageArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesContainerRestartsArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sWorkloadAnomaliesContainerRestartsConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sWorkloadAnomaliesContainerRestartsConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesContainerRestartsConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesContainerRestartsConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesContainerRestartsConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesDeploymentStuckArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sWorkloadAnomaliesDeploymentStuckConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sWorkloadAnomaliesDeploymentStuckConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesDeploymentStuckConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesDeploymentStuckConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesDeploymentStuckConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesHighCpuThrottlingArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sWorkloadAnomaliesHighCpuThrottlingConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sWorkloadAnomaliesHighCpuThrottlingConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesHighCpuThrottlingConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesHighCpuThrottlingConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesHighCpuThrottlingConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesHighCpuUsageArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sWorkloadAnomaliesHighCpuUsageConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sWorkloadAnomaliesHighCpuUsageConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesHighCpuUsageConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesHighCpuUsageConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesHighCpuUsageConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesHighMemoryUsageArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sWorkloadAnomaliesHighMemoryUsageConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sWorkloadAnomaliesHighMemoryUsageConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesHighMemoryUsageConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesHighMemoryUsageConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesHighMemoryUsageConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesNotAllPodsReadyArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sWorkloadAnomaliesNotAllPodsReadyConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sWorkloadAnomaliesNotAllPodsReadyConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesNotAllPodsReadyConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesNotAllPodsReadyConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesNotAllPodsReadyConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesPendingPodsArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sWorkloadAnomaliesPendingPodsConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sWorkloadAnomaliesPendingPodsConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesPendingPodsConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesPendingPodsConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesPendingPodsConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int],
+                 threshold: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[int]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesPodStuckInTerminatingArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sWorkloadAnomaliesPodStuckInTerminatingConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sWorkloadAnomaliesPodStuckInTerminatingConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesPodStuckInTerminatingConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesPodStuckInTerminatingConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesPodStuckInTerminatingConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesWorkloadWithoutReadyPodsArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 configuration: Optional[pulumi.Input['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfigurationArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfigurationArgs'] configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfigurationArgs']]:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input['K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfigurationArgs']]):
+        pulumi.set(self, "configuration", value)
+
+
+@pulumi.input_type
+class K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfigurationArgs:
+    def __init__(__self__, *,
+                 observation_period_in_minutes: pulumi.Input[int],
+                 sample_period_in_minutes: pulumi.Input[int]):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @observation_period_in_minutes.setter
+    def observation_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "observation_period_in_minutes", value)
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @sample_period_in_minutes.setter
+    def sample_period_in_minutes(self, value: pulumi.Input[int]):
+        pulumi.set(self, "sample_period_in_minutes", value)
+
+
+@pulumi.input_type
+class KubernetesEventPatternsArgs:
+    def __init__(__self__, *,
+                 event_patterns: pulumi.Input[Sequence[pulumi.Input['KubernetesEventPatternsEventPatternArgs']]]):
+        pulumi.set(__self__, "event_patterns", event_patterns)
+
+    @property
+    @pulumi.getter(name="eventPatterns")
+    def event_patterns(self) -> pulumi.Input[Sequence[pulumi.Input['KubernetesEventPatternsEventPatternArgs']]]:
+        return pulumi.get(self, "event_patterns")
+
+    @event_patterns.setter
+    def event_patterns(self, value: pulumi.Input[Sequence[pulumi.Input['KubernetesEventPatternsEventPatternArgs']]]):
+        pulumi.set(self, "event_patterns", value)
+
+
+@pulumi.input_type
+class KubernetesEventPatternsEventPatternArgs:
+    def __init__(__self__, *,
+                 active: pulumi.Input[bool],
+                 label: pulumi.Input[str],
+                 pattern: pulumi.Input[str]):
+        pulumi.set(__self__, "active", active)
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "pattern", pattern)
+
+    @property
+    @pulumi.getter
+    def active(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "active")
+
+    @active.setter
+    def active(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "active", value)
+
+    @property
+    @pulumi.getter
+    def label(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: pulumi.Input[str]):
+        pulumi.set(self, "label", value)
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "pattern")
+
+    @pattern.setter
+    def pattern(self, value: pulumi.Input[str]):
+        pulumi.set(self, "pattern", value)
+
+
+@pulumi.input_type
+class LogCustomSourceContextArgs:
+    def __init__(__self__, *,
+                 contexts: pulumi.Input[Sequence[pulumi.Input['LogCustomSourceContextContextArgs']]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['LogCustomSourceContextContextArgs']]] contexts: Define Custom Log Source only within context if provided
+        """
+        pulumi.set(__self__, "contexts", contexts)
+
+    @property
+    @pulumi.getter
+    def contexts(self) -> pulumi.Input[Sequence[pulumi.Input['LogCustomSourceContextContextArgs']]]:
+        """
+        Define Custom Log Source only within context if provided
+        """
+        return pulumi.get(self, "contexts")
+
+    @contexts.setter
+    def contexts(self, value: pulumi.Input[Sequence[pulumi.Input['LogCustomSourceContextContextArgs']]]):
+        pulumi.set(self, "contexts", value)
+
+
+@pulumi.input_type
+class LogCustomSourceContextContextArgs:
+    def __init__(__self__, *,
+                 attribute: pulumi.Input[str],
+                 values: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "attribute")
+
+    @attribute.setter
+    def attribute(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attribute", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "values", value)
+
+
+@pulumi.input_type
+class LogCustomSourceCustomLogSourceArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 values: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        """
+        :param pulumi.Input[str] type: Possible Values: `LOG_PATH_PATTERN`, `WINDOWS_EVENT_LOG`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] values: It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Possible Values: `LOG_PATH_PATTERN`, `WINDOWS_EVENT_LOG`
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        """
+        It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+        """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "values", value)
+
+
+@pulumi.input_type
+class LogEventsEventTemplateArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[str],
+                 event_type: pulumi.Input[str],
+                 title: pulumi.Input[str],
+                 davis_merge: Optional[pulumi.Input[bool]] = None,
+                 metadata: Optional[pulumi.Input['LogEventsEventTemplateMetadataArgs']] = None):
+        """
+        :param pulumi.Input[str] description: The description of the event to trigger.
+        :param pulumi.Input[str] event_type: Possible Values: `AVAILABILITY`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `ERROR`, `INFO`, `MARKED_FOR_TERMINATION`, `RESOURCE`, `SLOWDOWN`
+        :param pulumi.Input[str] title: The title of the event to trigger.
+        :param pulumi.Input[bool] davis_merge: Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created.
+        :param pulumi.Input['LogEventsEventTemplateMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "event_type", event_type)
+        pulumi.set(__self__, "title", title)
+        if davis_merge is not None:
+            pulumi.set(__self__, "davis_merge", davis_merge)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+
+    @property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[str]:
+        """
+        The description of the event to trigger.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[str]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="eventType")
+    def event_type(self) -> pulumi.Input[str]:
+        """
+        Possible Values: `AVAILABILITY`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `ERROR`, `INFO`, `MARKED_FOR_TERMINATION`, `RESOURCE`, `SLOWDOWN`
+        """
+        return pulumi.get(self, "event_type")
+
+    @event_type.setter
+    def event_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "event_type", value)
+
+    @property
+    @pulumi.getter
+    def title(self) -> pulumi.Input[str]:
+        """
+        The title of the event to trigger.
+        """
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: pulumi.Input[str]):
+        pulumi.set(self, "title", value)
+
+    @property
+    @pulumi.getter(name="davisMerge")
+    def davis_merge(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created.
+        """
+        return pulumi.get(self, "davis_merge")
+
+    @davis_merge.setter
+    def davis_merge(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "davis_merge", value)
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> Optional[pulumi.Input['LogEventsEventTemplateMetadataArgs']]:
+        """
+        Set of additional key-value properties to be attached to the triggered event.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: Optional[pulumi.Input['LogEventsEventTemplateMetadataArgs']]):
+        pulumi.set(self, "metadata", value)
+
+
+@pulumi.input_type
+class LogEventsEventTemplateMetadataArgs:
+    def __init__(__self__, *,
+                 items: pulumi.Input[Sequence[pulumi.Input['LogEventsEventTemplateMetadataItemArgs']]]):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> pulumi.Input[Sequence[pulumi.Input['LogEventsEventTemplateMetadataItemArgs']]]:
+        return pulumi.get(self, "items")
+
+    @items.setter
+    def items(self, value: pulumi.Input[Sequence[pulumi.Input['LogEventsEventTemplateMetadataItemArgs']]]):
+        pulumi.set(self, "items", value)
+
+
+@pulumi.input_type
+class LogEventsEventTemplateMetadataItemArgs:
+    def __init__(__self__, *,
+                 metadata_key: pulumi.Input[str],
+                 metadata_value: pulumi.Input[str]):
+        pulumi.set(__self__, "metadata_key", metadata_key)
+        pulumi.set(__self__, "metadata_value", metadata_value)
+
+    @property
+    @pulumi.getter(name="metadataKey")
+    def metadata_key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "metadata_key")
+
+    @metadata_key.setter
+    def metadata_key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "metadata_key", value)
+
+    @property
+    @pulumi.getter(name="metadataValue")
+    def metadata_value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "metadata_value")
+
+    @metadata_value.setter
+    def metadata_value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "metadata_value", value)
+
+
+@pulumi.input_type
+class LogProcessingProcessorDefinitionArgs:
+    def __init__(__self__, *,
+                 rule: pulumi.Input[str]):
+        pulumi.set(__self__, "rule", rule)
+
+    @property
+    @pulumi.getter
+    def rule(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "rule")
+
+    @rule.setter
+    def rule(self, value: pulumi.Input[str]):
+        pulumi.set(self, "rule", value)
+
+
+@pulumi.input_type
+class LogProcessingRuleTestingArgs:
+    def __init__(__self__, *,
+                 sample_log: pulumi.Input[str]):
+        pulumi.set(__self__, "sample_log", sample_log)
+
+    @property
+    @pulumi.getter(name="sampleLog")
+    def sample_log(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "sample_log")
+
+    @sample_log.setter
+    def sample_log(self, value: pulumi.Input[str]):
+        pulumi.set(self, "sample_log", value)
+
+
+@pulumi.input_type
+class LogSensitiveDataMaskingMaskingArgs:
+    def __init__(__self__, *,
+                 expression: pulumi.Input[str],
+                 type: pulumi.Input[str],
+                 replacement: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] expression: Maximum one capture group is allowed. If none was given, the whole expression will be treated as a capture group.
+        :param pulumi.Input[str] type: Possible Values: `SHA1`, `STRING`
+        :param pulumi.Input[str] replacement: The string to replace the masked expression with. Irrelevant if `type` is `SHA1`.
+        """
+        pulumi.set(__self__, "expression", expression)
+        pulumi.set(__self__, "type", type)
+        if replacement is not None:
+            pulumi.set(__self__, "replacement", replacement)
+
+    @property
+    @pulumi.getter
+    def expression(self) -> pulumi.Input[str]:
+        """
+        Maximum one capture group is allowed. If none was given, the whole expression will be treated as a capture group.
+        """
+        return pulumi.get(self, "expression")
+
+    @expression.setter
+    def expression(self, value: pulumi.Input[str]):
+        pulumi.set(self, "expression", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Possible Values: `SHA1`, `STRING`
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def replacement(self) -> Optional[pulumi.Input[str]]:
+        """
+        The string to replace the masked expression with. Irrelevant if `type` is `SHA1`.
+        """
+        return pulumi.get(self, "replacement")
+
+    @replacement.setter
+    def replacement(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replacement", value)
+
+
+@pulumi.input_type
+class LogSensitiveDataMaskingMatchersArgs:
+    def __init__(__self__, *,
+                 matchers: pulumi.Input[Sequence[pulumi.Input['LogSensitiveDataMaskingMatchersMatcherArgs']]]):
+        pulumi.set(__self__, "matchers", matchers)
+
+    @property
+    @pulumi.getter
+    def matchers(self) -> pulumi.Input[Sequence[pulumi.Input['LogSensitiveDataMaskingMatchersMatcherArgs']]]:
+        return pulumi.get(self, "matchers")
+
+    @matchers.setter
+    def matchers(self, value: pulumi.Input[Sequence[pulumi.Input['LogSensitiveDataMaskingMatchersMatcherArgs']]]):
+        pulumi.set(self, "matchers", value)
+
+
+@pulumi.input_type
+class LogSensitiveDataMaskingMatchersMatcherArgs:
+    def __init__(__self__, *,
+                 attribute: pulumi.Input[str],
+                 operator: pulumi.Input[str],
+                 values: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "attribute")
+
+    @attribute.setter
+    def attribute(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attribute", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "operator")
+
+    @operator.setter
+    def operator(self, value: pulumi.Input[str]):
+        pulumi.set(self, "operator", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "values", value)
+
+
+@pulumi.input_type
+class LogStorageMatchersArgs:
+    def __init__(__self__, *,
+                 matchers: pulumi.Input[Sequence[pulumi.Input['LogStorageMatchersMatcherArgs']]]):
+        pulumi.set(__self__, "matchers", matchers)
+
+    @property
+    @pulumi.getter
+    def matchers(self) -> pulumi.Input[Sequence[pulumi.Input['LogStorageMatchersMatcherArgs']]]:
+        return pulumi.get(self, "matchers")
+
+    @matchers.setter
+    def matchers(self, value: pulumi.Input[Sequence[pulumi.Input['LogStorageMatchersMatcherArgs']]]):
+        pulumi.set(self, "matchers", value)
+
+
+@pulumi.input_type
+class LogStorageMatchersMatcherArgs:
+    def __init__(__self__, *,
+                 attribute: pulumi.Input[str],
+                 operator: pulumi.Input[str],
+                 values: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "attribute")
+
+    @attribute.setter
+    def attribute(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attribute", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "operator")
+
+    @operator.setter
+    def operator(self, value: pulumi.Input[str]):
+        pulumi.set(self, "operator", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "values", value)
+
+
+@pulumi.input_type
+class LogTimestampMatchersArgs:
+    def __init__(__self__, *,
+                 matchers: pulumi.Input[Sequence[pulumi.Input['LogTimestampMatchersMatcherArgs']]]):
+        pulumi.set(__self__, "matchers", matchers)
+
+    @property
+    @pulumi.getter
+    def matchers(self) -> pulumi.Input[Sequence[pulumi.Input['LogTimestampMatchersMatcherArgs']]]:
+        return pulumi.get(self, "matchers")
+
+    @matchers.setter
+    def matchers(self, value: pulumi.Input[Sequence[pulumi.Input['LogTimestampMatchersMatcherArgs']]]):
+        pulumi.set(self, "matchers", value)
+
+
+@pulumi.input_type
+class LogTimestampMatchersMatcherArgs:
+    def __init__(__self__, *,
+                 attribute: pulumi.Input[str],
+                 operator: pulumi.Input[str],
+                 values: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "attribute")
+
+    @attribute.setter
+    def attribute(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attribute", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "operator")
+
+    @operator.setter
+    def operator(self, value: pulumi.Input[str]):
+        pulumi.set(self, "operator", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+        pulumi.set(self, "values", value)
 
 
 @pulumi.input_type
@@ -25721,61 +36147,6 @@ class MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs:
 
 
 @pulumi.input_type
-class MaintenanceWindowMetadataArgs:
-    def __init__(__self__, *,
-                 cluster_version: Optional[pulumi.Input[str]] = None,
-                 configuration_versions: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
-                 current_configuration_versions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        """
-        :param pulumi.Input[str] cluster_version: Dynatrace server version
-        :param pulumi.Input[Sequence[pulumi.Input[int]]] configuration_versions: A Sorted list of the version numbers of the configuration
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] current_configuration_versions: A Sorted list of the version numbers of the configuration
-        """
-        if cluster_version is not None:
-            pulumi.set(__self__, "cluster_version", cluster_version)
-        if configuration_versions is not None:
-            pulumi.set(__self__, "configuration_versions", configuration_versions)
-        if current_configuration_versions is not None:
-            pulumi.set(__self__, "current_configuration_versions", current_configuration_versions)
-
-    @property
-    @pulumi.getter(name="clusterVersion")
-    def cluster_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Dynatrace server version
-        """
-        return pulumi.get(self, "cluster_version")
-
-    @cluster_version.setter
-    def cluster_version(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "cluster_version", value)
-
-    @property
-    @pulumi.getter(name="configurationVersions")
-    def configuration_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        """
-        A Sorted list of the version numbers of the configuration
-        """
-        return pulumi.get(self, "configuration_versions")
-
-    @configuration_versions.setter
-    def configuration_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
-        pulumi.set(self, "configuration_versions", value)
-
-    @property
-    @pulumi.getter(name="currentConfigurationVersions")
-    def current_configuration_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A Sorted list of the version numbers of the configuration
-        """
-        return pulumi.get(self, "current_configuration_versions")
-
-    @current_configuration_versions.setter
-    def current_configuration_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
-        pulumi.set(self, "current_configuration_versions", value)
-
-
-@pulumi.input_type
 class MaintenanceWindowScheduleArgs:
     def __init__(__self__, *,
                  end: pulumi.Input[str],
@@ -26283,47 +36654,6 @@ class ManagementZoneEntitySelectorBasedRuleArgs:
     @unknowns.setter
     def unknowns(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "unknowns", value)
-
-
-@pulumi.input_type
-class ManagementZoneMetadataArgs:
-    def __init__(__self__, *,
-                 cluster_version: Optional[pulumi.Input[str]] = None,
-                 configuration_versions: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
-                 current_configuration_versions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
-        if cluster_version is not None:
-            pulumi.set(__self__, "cluster_version", cluster_version)
-        if configuration_versions is not None:
-            pulumi.set(__self__, "configuration_versions", configuration_versions)
-        if current_configuration_versions is not None:
-            pulumi.set(__self__, "current_configuration_versions", current_configuration_versions)
-
-    @property
-    @pulumi.getter(name="clusterVersion")
-    def cluster_version(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "cluster_version")
-
-    @cluster_version.setter
-    def cluster_version(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "cluster_version", value)
-
-    @property
-    @pulumi.getter(name="configurationVersions")
-    def configuration_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
-        return pulumi.get(self, "configuration_versions")
-
-    @configuration_versions.setter
-    def configuration_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
-        pulumi.set(self, "configuration_versions", value)
-
-    @property
-    @pulumi.getter(name="currentConfigurationVersions")
-    def current_configuration_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        return pulumi.get(self, "current_configuration_versions")
-
-    @current_configuration_versions.setter
-    def current_configuration_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
-        pulumi.set(self, "current_configuration_versions", value)
 
 
 @pulumi.input_type
@@ -31455,6 +41785,1788 @@ class ManagementZoneRuleConditionTechValueArgs:
 
 
 @pulumi.input_type
+class ManagementZoneV2RulesArgs:
+    def __init__(__self__, *,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneV2RulesRuleArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneV2RulesRuleArgs']]] rules: A management zone rule
+        """
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneV2RulesRuleArgs']]]]:
+        """
+        A management zone rule
+        """
+        return pulumi.get(self, "rules")
+
+    @rules.setter
+    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneV2RulesRuleArgs']]]]):
+        pulumi.set(self, "rules", value)
+
+
+@pulumi.input_type
+class ManagementZoneV2RulesRuleArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 type: pulumi.Input[str],
+                 attribute_rule: Optional[pulumi.Input['ManagementZoneV2RulesRuleAttributeRuleArgs']] = None,
+                 dimension_rule: Optional[pulumi.Input['ManagementZoneV2RulesRuleDimensionRuleArgs']] = None,
+                 entity_selector: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "type", type)
+        if attribute_rule is not None:
+            pulumi.set(__self__, "attribute_rule", attribute_rule)
+        if dimension_rule is not None:
+            pulumi.set(__self__, "dimension_rule", dimension_rule)
+        if entity_selector is not None:
+            pulumi.set(__self__, "entity_selector", entity_selector)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="attributeRule")
+    def attribute_rule(self) -> Optional[pulumi.Input['ManagementZoneV2RulesRuleAttributeRuleArgs']]:
+        return pulumi.get(self, "attribute_rule")
+
+    @attribute_rule.setter
+    def attribute_rule(self, value: Optional[pulumi.Input['ManagementZoneV2RulesRuleAttributeRuleArgs']]):
+        pulumi.set(self, "attribute_rule", value)
+
+    @property
+    @pulumi.getter(name="dimensionRule")
+    def dimension_rule(self) -> Optional[pulumi.Input['ManagementZoneV2RulesRuleDimensionRuleArgs']]:
+        return pulumi.get(self, "dimension_rule")
+
+    @dimension_rule.setter
+    def dimension_rule(self, value: Optional[pulumi.Input['ManagementZoneV2RulesRuleDimensionRuleArgs']]):
+        pulumi.set(self, "dimension_rule", value)
+
+    @property
+    @pulumi.getter(name="entitySelector")
+    def entity_selector(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "entity_selector")
+
+    @entity_selector.setter
+    def entity_selector(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "entity_selector", value)
+
+
+@pulumi.input_type
+class ManagementZoneV2RulesRuleAttributeRuleArgs:
+    def __init__(__self__, *,
+                 attribute_conditions: pulumi.Input['ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsArgs'],
+                 entity_type: pulumi.Input[str],
+                 azure_to_pgpropagation: Optional[pulumi.Input[bool]] = None,
+                 azure_to_service_propagation: Optional[pulumi.Input[bool]] = None,
+                 custom_device_group_to_custom_device_propagation: Optional[pulumi.Input[bool]] = None,
+                 host_to_pgpropagation: Optional[pulumi.Input[bool]] = None,
+                 pg_to_host_propagation: Optional[pulumi.Input[bool]] = None,
+                 pg_to_service_propagation: Optional[pulumi.Input[bool]] = None,
+                 service_to_host_propagation: Optional[pulumi.Input[bool]] = None,
+                 service_to_pgpropagation: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "attribute_conditions", attribute_conditions)
+        pulumi.set(__self__, "entity_type", entity_type)
+        if azure_to_pgpropagation is not None:
+            pulumi.set(__self__, "azure_to_pgpropagation", azure_to_pgpropagation)
+        if azure_to_service_propagation is not None:
+            pulumi.set(__self__, "azure_to_service_propagation", azure_to_service_propagation)
+        if custom_device_group_to_custom_device_propagation is not None:
+            pulumi.set(__self__, "custom_device_group_to_custom_device_propagation", custom_device_group_to_custom_device_propagation)
+        if host_to_pgpropagation is not None:
+            pulumi.set(__self__, "host_to_pgpropagation", host_to_pgpropagation)
+        if pg_to_host_propagation is not None:
+            pulumi.set(__self__, "pg_to_host_propagation", pg_to_host_propagation)
+        if pg_to_service_propagation is not None:
+            pulumi.set(__self__, "pg_to_service_propagation", pg_to_service_propagation)
+        if service_to_host_propagation is not None:
+            pulumi.set(__self__, "service_to_host_propagation", service_to_host_propagation)
+        if service_to_pgpropagation is not None:
+            pulumi.set(__self__, "service_to_pgpropagation", service_to_pgpropagation)
+
+    @property
+    @pulumi.getter(name="attributeConditions")
+    def attribute_conditions(self) -> pulumi.Input['ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsArgs']:
+        return pulumi.get(self, "attribute_conditions")
+
+    @attribute_conditions.setter
+    def attribute_conditions(self, value: pulumi.Input['ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsArgs']):
+        pulumi.set(self, "attribute_conditions", value)
+
+    @property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "entity_type")
+
+    @entity_type.setter
+    def entity_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "entity_type", value)
+
+    @property
+    @pulumi.getter(name="azureToPgpropagation")
+    def azure_to_pgpropagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "azure_to_pgpropagation")
+
+    @azure_to_pgpropagation.setter
+    def azure_to_pgpropagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "azure_to_pgpropagation", value)
+
+    @property
+    @pulumi.getter(name="azureToServicePropagation")
+    def azure_to_service_propagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "azure_to_service_propagation")
+
+    @azure_to_service_propagation.setter
+    def azure_to_service_propagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "azure_to_service_propagation", value)
+
+    @property
+    @pulumi.getter(name="customDeviceGroupToCustomDevicePropagation")
+    def custom_device_group_to_custom_device_propagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "custom_device_group_to_custom_device_propagation")
+
+    @custom_device_group_to_custom_device_propagation.setter
+    def custom_device_group_to_custom_device_propagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "custom_device_group_to_custom_device_propagation", value)
+
+    @property
+    @pulumi.getter(name="hostToPgpropagation")
+    def host_to_pgpropagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "host_to_pgpropagation")
+
+    @host_to_pgpropagation.setter
+    def host_to_pgpropagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "host_to_pgpropagation", value)
+
+    @property
+    @pulumi.getter(name="pgToHostPropagation")
+    def pg_to_host_propagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "pg_to_host_propagation")
+
+    @pg_to_host_propagation.setter
+    def pg_to_host_propagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "pg_to_host_propagation", value)
+
+    @property
+    @pulumi.getter(name="pgToServicePropagation")
+    def pg_to_service_propagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "pg_to_service_propagation")
+
+    @pg_to_service_propagation.setter
+    def pg_to_service_propagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "pg_to_service_propagation", value)
+
+    @property
+    @pulumi.getter(name="serviceToHostPropagation")
+    def service_to_host_propagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "service_to_host_propagation")
+
+    @service_to_host_propagation.setter
+    def service_to_host_propagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "service_to_host_propagation", value)
+
+    @property
+    @pulumi.getter(name="serviceToPgpropagation")
+    def service_to_pgpropagation(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "service_to_pgpropagation")
+
+    @service_to_pgpropagation.setter
+    def service_to_pgpropagation(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "service_to_pgpropagation", value)
+
+
+@pulumi.input_type
+class ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsArgs:
+    def __init__(__self__, *,
+                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsConditionArgs']]]] = None):
+        if conditions is not None:
+            pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsConditionArgs']]]]:
+        return pulumi.get(self, "conditions")
+
+    @conditions.setter
+    def conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsConditionArgs']]]]):
+        pulumi.set(self, "conditions", value)
+
+
+@pulumi.input_type
+class ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsConditionArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 operator: pulumi.Input[str],
+                 case_sensitive: Optional[pulumi.Input[bool]] = None,
+                 dynamic_key: Optional[pulumi.Input[str]] = None,
+                 dynamic_key_source: Optional[pulumi.Input[str]] = None,
+                 entity_id: Optional[pulumi.Input[str]] = None,
+                 enum_value: Optional[pulumi.Input[str]] = None,
+                 integer_value: Optional[pulumi.Input[int]] = None,
+                 string_value: Optional[pulumi.Input[str]] = None,
+                 tag: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "operator", operator)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if dynamic_key is not None:
+            pulumi.set(__self__, "dynamic_key", dynamic_key)
+        if dynamic_key_source is not None:
+            pulumi.set(__self__, "dynamic_key_source", dynamic_key_source)
+        if entity_id is not None:
+            pulumi.set(__self__, "entity_id", entity_id)
+        if enum_value is not None:
+            pulumi.set(__self__, "enum_value", enum_value)
+        if integer_value is not None:
+            pulumi.set(__self__, "integer_value", integer_value)
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+        if tag is not None:
+            pulumi.set(__self__, "tag", tag)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "operator")
+
+    @operator.setter
+    def operator(self, value: pulumi.Input[str]):
+        pulumi.set(self, "operator", value)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "case_sensitive")
+
+    @case_sensitive.setter
+    def case_sensitive(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "case_sensitive", value)
+
+    @property
+    @pulumi.getter(name="dynamicKey")
+    def dynamic_key(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "dynamic_key")
+
+    @dynamic_key.setter
+    def dynamic_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dynamic_key", value)
+
+    @property
+    @pulumi.getter(name="dynamicKeySource")
+    def dynamic_key_source(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "dynamic_key_source")
+
+    @dynamic_key_source.setter
+    def dynamic_key_source(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dynamic_key_source", value)
+
+    @property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "entity_id")
+
+    @entity_id.setter
+    def entity_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "entity_id", value)
+
+    @property
+    @pulumi.getter(name="enumValue")
+    def enum_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "enum_value")
+
+    @enum_value.setter
+    def enum_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "enum_value", value)
+
+    @property
+    @pulumi.getter(name="integerValue")
+    def integer_value(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "integer_value")
+
+    @integer_value.setter
+    def integer_value(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "integer_value", value)
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "string_value")
+
+    @string_value.setter
+    def string_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "string_value", value)
+
+    @property
+    @pulumi.getter
+    def tag(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "tag")
+
+    @tag.setter
+    def tag(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "tag", value)
+
+
+@pulumi.input_type
+class ManagementZoneV2RulesRuleDimensionRuleArgs:
+    def __init__(__self__, *,
+                 applies_to: pulumi.Input[str],
+                 dimension_conditions: Optional[pulumi.Input['ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsArgs']] = None):
+        pulumi.set(__self__, "applies_to", applies_to)
+        if dimension_conditions is not None:
+            pulumi.set(__self__, "dimension_conditions", dimension_conditions)
+
+    @property
+    @pulumi.getter(name="appliesTo")
+    def applies_to(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "applies_to")
+
+    @applies_to.setter
+    def applies_to(self, value: pulumi.Input[str]):
+        pulumi.set(self, "applies_to", value)
+
+    @property
+    @pulumi.getter(name="dimensionConditions")
+    def dimension_conditions(self) -> Optional[pulumi.Input['ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsArgs']]:
+        return pulumi.get(self, "dimension_conditions")
+
+    @dimension_conditions.setter
+    def dimension_conditions(self, value: Optional[pulumi.Input['ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsArgs']]):
+        pulumi.set(self, "dimension_conditions", value)
+
+
+@pulumi.input_type
+class ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsArgs:
+    def __init__(__self__, *,
+                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsConditionArgs']]]] = None):
+        if conditions is not None:
+            pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsConditionArgs']]]]:
+        return pulumi.get(self, "conditions")
+
+    @conditions.setter
+    def conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsConditionArgs']]]]):
+        pulumi.set(self, "conditions", value)
+
+
+@pulumi.input_type
+class ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsConditionArgs:
+    def __init__(__self__, *,
+                 condition_type: pulumi.Input[str],
+                 rule_matcher: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 key: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "condition_type", condition_type)
+        pulumi.set(__self__, "rule_matcher", rule_matcher)
+        pulumi.set(__self__, "value", value)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="conditionType")
+    def condition_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "condition_type")
+
+    @condition_type.setter
+    def condition_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "condition_type", value)
+
+    @property
+    @pulumi.getter(name="ruleMatcher")
+    def rule_matcher(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "rule_matcher")
+
+    @rule_matcher.setter
+    def rule_matcher(self, value: pulumi.Input[str]):
+        pulumi.set(self, "rule_matcher", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key", value)
+
+
+@pulumi.input_type
+class MetricEventsEventTemplateArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[str],
+                 event_type: pulumi.Input[str],
+                 title: pulumi.Input[str],
+                 davis_merge: Optional[pulumi.Input[bool]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['MetricEventsEventTemplateMetadataArgs']]]] = None):
+        """
+        :param pulumi.Input[str] description: The description of the event to trigger.
+        :param pulumi.Input[str] event_type: The event type to trigger.
+        :param pulumi.Input[str] title: The title of the event to trigger.
+        :param pulumi.Input[bool] davis_merge: Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created.
+        :param pulumi.Input[Sequence[pulumi.Input['MetricEventsEventTemplateMetadataArgs']]] metadatas: Set of additional key-value properties to be attached to the triggered event.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "event_type", event_type)
+        pulumi.set(__self__, "title", title)
+        if davis_merge is not None:
+            pulumi.set(__self__, "davis_merge", davis_merge)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+
+    @property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[str]:
+        """
+        The description of the event to trigger.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[str]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="eventType")
+    def event_type(self) -> pulumi.Input[str]:
+        """
+        The event type to trigger.
+        """
+        return pulumi.get(self, "event_type")
+
+    @event_type.setter
+    def event_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "event_type", value)
+
+    @property
+    @pulumi.getter
+    def title(self) -> pulumi.Input[str]:
+        """
+        The title of the event to trigger.
+        """
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: pulumi.Input[str]):
+        pulumi.set(self, "title", value)
+
+    @property
+    @pulumi.getter(name="davisMerge")
+    def davis_merge(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created.
+        """
+        return pulumi.get(self, "davis_merge")
+
+    @davis_merge.setter
+    def davis_merge(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "davis_merge", value)
+
+    @property
+    @pulumi.getter
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MetricEventsEventTemplateMetadataArgs']]]]:
+        """
+        Set of additional key-value properties to be attached to the triggered event.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @metadatas.setter
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MetricEventsEventTemplateMetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
+
+
+@pulumi.input_type
+class MetricEventsEventTemplateMetadataArgs:
+    def __init__(__self__, *,
+                 metadata_key: pulumi.Input[str],
+                 metadata_value: pulumi.Input[str]):
+        pulumi.set(__self__, "metadata_key", metadata_key)
+        pulumi.set(__self__, "metadata_value", metadata_value)
+
+    @property
+    @pulumi.getter(name="metadataKey")
+    def metadata_key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "metadata_key")
+
+    @metadata_key.setter
+    def metadata_key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "metadata_key", value)
+
+    @property
+    @pulumi.getter(name="metadataValue")
+    def metadata_value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "metadata_value")
+
+    @metadata_value.setter
+    def metadata_value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "metadata_value", value)
+
+
+@pulumi.input_type
+class MetricEventsModelPropertiesArgs:
+    def __init__(__self__, *,
+                 alert_condition: pulumi.Input[str],
+                 alert_on_no_data: pulumi.Input[bool],
+                 dealerting_samples: pulumi.Input[int],
+                 samples: pulumi.Input[int],
+                 type: pulumi.Input[str],
+                 violating_samples: pulumi.Input[int],
+                 signal_fluctuation: Optional[pulumi.Input[float]] = None,
+                 threshold: Optional[pulumi.Input[float]] = None,
+                 tolerance: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[str] alert_condition: The alert condition of the model properties
+        :param pulumi.Input[bool] alert_on_no_data: The ability to set an alert on missing data in a metric. When enabled, missing data samples will contribute as violating samples defined in advanced model properties. We recommend to not alert on missing data for sparse timeseries as this leads to alert spam.
+        :param pulumi.Input[int] dealerting_samples: The number of one-minute samples within the evaluation window that must go back to normal to close the event.
+        :param pulumi.Input[int] samples: The number of one-minute samples that form the sliding evaluation window.
+        :param pulumi.Input[str] type: Metric-key-based query definitions only support static thresholds.
+        :param pulumi.Input[int] violating_samples: The number of one-minute samples within the evaluation window that must violate to trigger an event.
+        :param pulumi.Input[float] signal_fluctuation: Controls how many times the signal fluctuation is added to the baseline to produce the actual threshold for alerting
+        :param pulumi.Input[float] threshold: Raise an event if this value is violated
+        :param pulumi.Input[float] tolerance: Controls the width of the confidence band and larger values lead to a less sensitive model
+        """
+        pulumi.set(__self__, "alert_condition", alert_condition)
+        pulumi.set(__self__, "alert_on_no_data", alert_on_no_data)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "samples", samples)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+        if signal_fluctuation is not None:
+            pulumi.set(__self__, "signal_fluctuation", signal_fluctuation)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
+        if tolerance is not None:
+            pulumi.set(__self__, "tolerance", tolerance)
+
+    @property
+    @pulumi.getter(name="alertCondition")
+    def alert_condition(self) -> pulumi.Input[str]:
+        """
+        The alert condition of the model properties
+        """
+        return pulumi.get(self, "alert_condition")
+
+    @alert_condition.setter
+    def alert_condition(self, value: pulumi.Input[str]):
+        pulumi.set(self, "alert_condition", value)
+
+    @property
+    @pulumi.getter(name="alertOnNoData")
+    def alert_on_no_data(self) -> pulumi.Input[bool]:
+        """
+        The ability to set an alert on missing data in a metric. When enabled, missing data samples will contribute as violating samples defined in advanced model properties. We recommend to not alert on missing data for sparse timeseries as this leads to alert spam.
+        """
+        return pulumi.get(self, "alert_on_no_data")
+
+    @alert_on_no_data.setter
+    def alert_on_no_data(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "alert_on_no_data", value)
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> pulumi.Input[int]:
+        """
+        The number of one-minute samples within the evaluation window that must go back to normal to close the event.
+        """
+        return pulumi.get(self, "dealerting_samples")
+
+    @dealerting_samples.setter
+    def dealerting_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dealerting_samples", value)
+
+    @property
+    @pulumi.getter
+    def samples(self) -> pulumi.Input[int]:
+        """
+        The number of one-minute samples that form the sliding evaluation window.
+        """
+        return pulumi.get(self, "samples")
+
+    @samples.setter
+    def samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "samples", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Metric-key-based query definitions only support static thresholds.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> pulumi.Input[int]:
+        """
+        The number of one-minute samples within the evaluation window that must violate to trigger an event.
+        """
+        return pulumi.get(self, "violating_samples")
+
+    @violating_samples.setter
+    def violating_samples(self, value: pulumi.Input[int]):
+        pulumi.set(self, "violating_samples", value)
+
+    @property
+    @pulumi.getter(name="signalFluctuation")
+    def signal_fluctuation(self) -> Optional[pulumi.Input[float]]:
+        """
+        Controls how many times the signal fluctuation is added to the baseline to produce the actual threshold for alerting
+        """
+        return pulumi.get(self, "signal_fluctuation")
+
+    @signal_fluctuation.setter
+    def signal_fluctuation(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "signal_fluctuation", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> Optional[pulumi.Input[float]]:
+        """
+        Raise an event if this value is violated
+        """
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "threshold", value)
+
+    @property
+    @pulumi.getter
+    def tolerance(self) -> Optional[pulumi.Input[float]]:
+        """
+        Controls the width of the confidence band and larger values lead to a less sensitive model
+        """
+        return pulumi.get(self, "tolerance")
+
+    @tolerance.setter
+    def tolerance(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "tolerance", value)
+
+
+@pulumi.input_type
+class MetricEventsQueryDefinitionArgs:
+    def __init__(__self__, *,
+                 metric_key: pulumi.Input[str],
+                 type: pulumi.Input[str],
+                 aggregation: Optional[pulumi.Input[str]] = None,
+                 dimension_filter: Optional[pulumi.Input['MetricEventsQueryDefinitionDimensionFilterArgs']] = None,
+                 entity_filter: Optional[pulumi.Input['MetricEventsQueryDefinitionEntityFilterArgs']] = None,
+                 metric_selector: Optional[pulumi.Input[str]] = None,
+                 query_offset: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] metric_key: The metric key of the query definition
+        :param pulumi.Input[str] type: The type of query definition
+        :param pulumi.Input[str] aggregation: The aggregation of the query definition
+        :param pulumi.Input['MetricEventsQueryDefinitionDimensionFilterArgs'] dimension_filter: The dimension filters of the query definition
+        :param pulumi.Input['MetricEventsQueryDefinitionEntityFilterArgs'] entity_filter: Use rule-based filters to define the scope this event monitors.
+        :param pulumi.Input[str] metric_selector: To learn more, visit [Metric Selector](https://dt-url.net/metselad)
+        :param pulumi.Input[int] query_offset: Minute offset of sliding evaluation window for metrics with latency
+        """
+        pulumi.set(__self__, "metric_key", metric_key)
+        pulumi.set(__self__, "type", type)
+        if aggregation is not None:
+            pulumi.set(__self__, "aggregation", aggregation)
+        if dimension_filter is not None:
+            pulumi.set(__self__, "dimension_filter", dimension_filter)
+        if entity_filter is not None:
+            pulumi.set(__self__, "entity_filter", entity_filter)
+        if metric_selector is not None:
+            pulumi.set(__self__, "metric_selector", metric_selector)
+        if query_offset is not None:
+            pulumi.set(__self__, "query_offset", query_offset)
+
+    @property
+    @pulumi.getter(name="metricKey")
+    def metric_key(self) -> pulumi.Input[str]:
+        """
+        The metric key of the query definition
+        """
+        return pulumi.get(self, "metric_key")
+
+    @metric_key.setter
+    def metric_key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "metric_key", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        The type of query definition
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def aggregation(self) -> Optional[pulumi.Input[str]]:
+        """
+        The aggregation of the query definition
+        """
+        return pulumi.get(self, "aggregation")
+
+    @aggregation.setter
+    def aggregation(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "aggregation", value)
+
+    @property
+    @pulumi.getter(name="dimensionFilter")
+    def dimension_filter(self) -> Optional[pulumi.Input['MetricEventsQueryDefinitionDimensionFilterArgs']]:
+        """
+        The dimension filters of the query definition
+        """
+        return pulumi.get(self, "dimension_filter")
+
+    @dimension_filter.setter
+    def dimension_filter(self, value: Optional[pulumi.Input['MetricEventsQueryDefinitionDimensionFilterArgs']]):
+        pulumi.set(self, "dimension_filter", value)
+
+    @property
+    @pulumi.getter(name="entityFilter")
+    def entity_filter(self) -> Optional[pulumi.Input['MetricEventsQueryDefinitionEntityFilterArgs']]:
+        """
+        Use rule-based filters to define the scope this event monitors.
+        """
+        return pulumi.get(self, "entity_filter")
+
+    @entity_filter.setter
+    def entity_filter(self, value: Optional[pulumi.Input['MetricEventsQueryDefinitionEntityFilterArgs']]):
+        pulumi.set(self, "entity_filter", value)
+
+    @property
+    @pulumi.getter(name="metricSelector")
+    def metric_selector(self) -> Optional[pulumi.Input[str]]:
+        """
+        To learn more, visit [Metric Selector](https://dt-url.net/metselad)
+        """
+        return pulumi.get(self, "metric_selector")
+
+    @metric_selector.setter
+    def metric_selector(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "metric_selector", value)
+
+    @property
+    @pulumi.getter(name="queryOffset")
+    def query_offset(self) -> Optional[pulumi.Input[int]]:
+        """
+        Minute offset of sliding evaluation window for metrics with latency
+        """
+        return pulumi.get(self, "query_offset")
+
+    @query_offset.setter
+    def query_offset(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "query_offset", value)
+
+
+@pulumi.input_type
+class MetricEventsQueryDefinitionDimensionFilterArgs:
+    def __init__(__self__, *,
+                 filters: Optional[pulumi.Input[Sequence[pulumi.Input['MetricEventsQueryDefinitionDimensionFilterFilterArgs']]]] = None):
+        if filters is not None:
+            pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MetricEventsQueryDefinitionDimensionFilterFilterArgs']]]]:
+        return pulumi.get(self, "filters")
+
+    @filters.setter
+    def filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MetricEventsQueryDefinitionDimensionFilterFilterArgs']]]]):
+        pulumi.set(self, "filters", value)
+
+
+@pulumi.input_type
+class MetricEventsQueryDefinitionDimensionFilterFilterArgs:
+    def __init__(__self__, *,
+                 dimension_key: pulumi.Input[str],
+                 dimension_value: pulumi.Input[str]):
+        pulumi.set(__self__, "dimension_key", dimension_key)
+        pulumi.set(__self__, "dimension_value", dimension_value)
+
+    @property
+    @pulumi.getter(name="dimensionKey")
+    def dimension_key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "dimension_key")
+
+    @dimension_key.setter
+    def dimension_key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "dimension_key", value)
+
+    @property
+    @pulumi.getter(name="dimensionValue")
+    def dimension_value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "dimension_value")
+
+    @dimension_value.setter
+    def dimension_value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "dimension_value", value)
+
+
+@pulumi.input_type
+class MetricEventsQueryDefinitionEntityFilterArgs:
+    def __init__(__self__, *,
+                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input['MetricEventsQueryDefinitionEntityFilterConditionArgs']]]] = None,
+                 dimension_key: Optional[pulumi.Input[str]] = None):
+        if conditions is not None:
+            pulumi.set(__self__, "conditions", conditions)
+        if dimension_key is not None:
+            pulumi.set(__self__, "dimension_key", dimension_key)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MetricEventsQueryDefinitionEntityFilterConditionArgs']]]]:
+        return pulumi.get(self, "conditions")
+
+    @conditions.setter
+    def conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MetricEventsQueryDefinitionEntityFilterConditionArgs']]]]):
+        pulumi.set(self, "conditions", value)
+
+    @property
+    @pulumi.getter(name="dimensionKey")
+    def dimension_key(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "dimension_key")
+
+    @dimension_key.setter
+    def dimension_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dimension_key", value)
+
+
+@pulumi.input_type
+class MetricEventsQueryDefinitionEntityFilterConditionArgs:
+    def __init__(__self__, *,
+                 conditions: Optional[pulumi.Input[Sequence[pulumi.Input['MetricEventsQueryDefinitionEntityFilterConditionConditionArgs']]]] = None):
+        if conditions is not None:
+            pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MetricEventsQueryDefinitionEntityFilterConditionConditionArgs']]]]:
+        return pulumi.get(self, "conditions")
+
+    @conditions.setter
+    def conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MetricEventsQueryDefinitionEntityFilterConditionConditionArgs']]]]):
+        pulumi.set(self, "conditions", value)
+
+
+@pulumi.input_type
+class MetricEventsQueryDefinitionEntityFilterConditionConditionArgs:
+    def __init__(__self__, *,
+                 operator: pulumi.Input[str],
+                 type: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "operator")
+
+    @operator.setter
+    def operator(self, value: pulumi.Input[str]):
+        pulumi.set(self, "operator", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class MetricMetadataDimensionsArgs:
+    def __init__(__self__, *,
+                 dimensions: pulumi.Input[Sequence[pulumi.Input['MetricMetadataDimensionsDimensionArgs']]]):
+        pulumi.set(__self__, "dimensions", dimensions)
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> pulumi.Input[Sequence[pulumi.Input['MetricMetadataDimensionsDimensionArgs']]]:
+        return pulumi.get(self, "dimensions")
+
+    @dimensions.setter
+    def dimensions(self, value: pulumi.Input[Sequence[pulumi.Input['MetricMetadataDimensionsDimensionArgs']]]):
+        pulumi.set(self, "dimensions", value)
+
+
+@pulumi.input_type
+class MetricMetadataDimensionsDimensionArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 display_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: Display name
+        """
+        pulumi.set(__self__, "key", key)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Display name
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+
+@pulumi.input_type
+class MetricMetadataMetricPropertiesArgs:
+    def __init__(__self__, *,
+                 value_type: pulumi.Input[str],
+                 impact_relevant: Optional[pulumi.Input[bool]] = None,
+                 latency: Optional[pulumi.Input[int]] = None,
+                 max_value: Optional[pulumi.Input[float]] = None,
+                 min_value: Optional[pulumi.Input[float]] = None,
+                 root_cause_relevant: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] value_type: Possible Values: `Error`, `Score`, `Unknown`
+        :param pulumi.Input[bool] impact_relevant: Whether (true or false) the metric is relevant to a problem's impact.
+        """
+        pulumi.set(__self__, "value_type", value_type)
+        if impact_relevant is not None:
+            pulumi.set(__self__, "impact_relevant", impact_relevant)
+        if latency is not None:
+            pulumi.set(__self__, "latency", latency)
+        if max_value is not None:
+            pulumi.set(__self__, "max_value", max_value)
+        if min_value is not None:
+            pulumi.set(__self__, "min_value", min_value)
+        if root_cause_relevant is not None:
+            pulumi.set(__self__, "root_cause_relevant", root_cause_relevant)
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> pulumi.Input[str]:
+        """
+        Possible Values: `Error`, `Score`, `Unknown`
+        """
+        return pulumi.get(self, "value_type")
+
+    @value_type.setter
+    def value_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value_type", value)
+
+    @property
+    @pulumi.getter(name="impactRelevant")
+    def impact_relevant(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether (true or false) the metric is relevant to a problem's impact.
+        """
+        return pulumi.get(self, "impact_relevant")
+
+    @impact_relevant.setter
+    def impact_relevant(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "impact_relevant", value)
+
+    @property
+    @pulumi.getter
+    def latency(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "latency")
+
+    @latency.setter
+    def latency(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "latency", value)
+
+    @property
+    @pulumi.getter(name="maxValue")
+    def max_value(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "max_value")
+
+    @max_value.setter
+    def max_value(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "max_value", value)
+
+    @property
+    @pulumi.getter(name="minValue")
+    def min_value(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "min_value")
+
+    @min_value.setter
+    def min_value(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "min_value", value)
+
+    @property
+    @pulumi.getter(name="rootCauseRelevant")
+    def root_cause_relevant(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "root_cause_relevant")
+
+    @root_cause_relevant.setter
+    def root_cause_relevant(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "root_cause_relevant", value)
+
+
+@pulumi.input_type
+class MobileAppAnomaliesErrorRateIncreaseArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 detection_mode: Optional[pulumi.Input[str]] = None,
+                 error_rate_increase_auto: Optional[pulumi.Input['MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs']] = None,
+                 error_rate_increase_fixed: Optional[pulumi.Input['MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Fixed`
+        :param pulumi.Input['MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs'] error_rate_increase_auto: Alert if the percentage of user actions affected by reported errors exceeds **both** the absolute threshold and the relative threshold
+        :param pulumi.Input['MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs'] error_rate_increase_fixed: Alert if the custom reported error rate threshold is exceeded during any 5-minute period
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if error_rate_increase_auto is not None:
+            pulumi.set(__self__, "error_rate_increase_auto", error_rate_increase_auto)
+        if error_rate_increase_fixed is not None:
+            pulumi.set(__self__, "error_rate_increase_fixed", error_rate_increase_fixed)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+    @property
+    @pulumi.getter(name="errorRateIncreaseAuto")
+    def error_rate_increase_auto(self) -> Optional[pulumi.Input['MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs']]:
+        """
+        Alert if the percentage of user actions affected by reported errors exceeds **both** the absolute threshold and the relative threshold
+        """
+        return pulumi.get(self, "error_rate_increase_auto")
+
+    @error_rate_increase_auto.setter
+    def error_rate_increase_auto(self, value: Optional[pulumi.Input['MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs']]):
+        pulumi.set(self, "error_rate_increase_auto", value)
+
+    @property
+    @pulumi.getter(name="errorRateIncreaseFixed")
+    def error_rate_increase_fixed(self) -> Optional[pulumi.Input['MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs']]:
+        """
+        Alert if the custom reported error rate threshold is exceeded during any 5-minute period
+        """
+        return pulumi.get(self, "error_rate_increase_fixed")
+
+    @error_rate_increase_fixed.setter
+    def error_rate_increase_fixed(self, value: Optional[pulumi.Input['MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs']]):
+        pulumi.set(self, "error_rate_increase_fixed", value)
+
+
+@pulumi.input_type
+class MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs:
+    def __init__(__self__, *,
+                 threshold_absolute: pulumi.Input[float],
+                 threshold_relative: pulumi.Input[float]):
+        pulumi.set(__self__, "threshold_absolute", threshold_absolute)
+        pulumi.set(__self__, "threshold_relative", threshold_relative)
+
+    @property
+    @pulumi.getter(name="thresholdAbsolute")
+    def threshold_absolute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "threshold_absolute")
+
+    @threshold_absolute.setter
+    def threshold_absolute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "threshold_absolute", value)
+
+    @property
+    @pulumi.getter(name="thresholdRelative")
+    def threshold_relative(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "threshold_relative")
+
+    @threshold_relative.setter
+    def threshold_relative(self, value: pulumi.Input[float]):
+        pulumi.set(self, "threshold_relative", value)
+
+
+@pulumi.input_type
+class MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs:
+    def __init__(__self__, *,
+                 sensitivity: pulumi.Input[str],
+                 threshold_absolute: pulumi.Input[float]):
+        pulumi.set(__self__, "sensitivity", sensitivity)
+        pulumi.set(__self__, "threshold_absolute", threshold_absolute)
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "sensitivity")
+
+    @sensitivity.setter
+    def sensitivity(self, value: pulumi.Input[str]):
+        pulumi.set(self, "sensitivity", value)
+
+    @property
+    @pulumi.getter(name="thresholdAbsolute")
+    def threshold_absolute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "threshold_absolute")
+
+    @threshold_absolute.setter
+    def threshold_absolute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "threshold_absolute", value)
+
+
+@pulumi.input_type
+class MobileAppAnomaliesSlowUserActionsArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 detection_mode: Optional[pulumi.Input[str]] = None,
+                 slow_user_actions_auto: Optional[pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoArgs']] = None,
+                 slow_user_actions_fixed: Optional[pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Fixed`
+        :param pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoArgs'] slow_user_actions_auto: no documentation available
+        :param pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs'] slow_user_actions_fixed: no documentation available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if slow_user_actions_auto is not None:
+            pulumi.set(__self__, "slow_user_actions_auto", slow_user_actions_auto)
+        if slow_user_actions_fixed is not None:
+            pulumi.set(__self__, "slow_user_actions_fixed", slow_user_actions_fixed)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+    @property
+    @pulumi.getter(name="slowUserActionsAuto")
+    def slow_user_actions_auto(self) -> Optional[pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoArgs']]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "slow_user_actions_auto")
+
+    @slow_user_actions_auto.setter
+    def slow_user_actions_auto(self, value: Optional[pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoArgs']]):
+        pulumi.set(self, "slow_user_actions_auto", value)
+
+    @property
+    @pulumi.getter(name="slowUserActionsFixed")
+    def slow_user_actions_fixed(self) -> Optional[pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs']]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "slow_user_actions_fixed")
+
+    @slow_user_actions_fixed.setter
+    def slow_user_actions_fixed(self, value: Optional[pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs']]):
+        pulumi.set(self, "slow_user_actions_fixed", value)
+
+
+@pulumi.input_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoArgs:
+    def __init__(__self__, *,
+                 duration_avoid_overalerting: pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralertingArgs'],
+                 duration_threshold_all: pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAllArgs'],
+                 duration_threshold_slowest: pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowestArgs']):
+        pulumi.set(__self__, "duration_avoid_overalerting", duration_avoid_overalerting)
+        pulumi.set(__self__, "duration_threshold_all", duration_threshold_all)
+        pulumi.set(__self__, "duration_threshold_slowest", duration_threshold_slowest)
+
+    @property
+    @pulumi.getter(name="durationAvoidOveralerting")
+    def duration_avoid_overalerting(self) -> pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralertingArgs']:
+        return pulumi.get(self, "duration_avoid_overalerting")
+
+    @duration_avoid_overalerting.setter
+    def duration_avoid_overalerting(self, value: pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralertingArgs']):
+        pulumi.set(self, "duration_avoid_overalerting", value)
+
+    @property
+    @pulumi.getter(name="durationThresholdAll")
+    def duration_threshold_all(self) -> pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAllArgs']:
+        return pulumi.get(self, "duration_threshold_all")
+
+    @duration_threshold_all.setter
+    def duration_threshold_all(self, value: pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAllArgs']):
+        pulumi.set(self, "duration_threshold_all", value)
+
+    @property
+    @pulumi.getter(name="durationThresholdSlowest")
+    def duration_threshold_slowest(self) -> pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowestArgs']:
+        return pulumi.get(self, "duration_threshold_slowest")
+
+    @duration_threshold_slowest.setter
+    def duration_threshold_slowest(self, value: pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowestArgs']):
+        pulumi.set(self, "duration_threshold_slowest", value)
+
+
+@pulumi.input_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralertingArgs:
+    def __init__(__self__, *,
+                 min_action_rate: pulumi.Input[int]):
+        pulumi.set(__self__, "min_action_rate", min_action_rate)
+
+    @property
+    @pulumi.getter(name="minActionRate")
+    def min_action_rate(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "min_action_rate")
+
+    @min_action_rate.setter
+    def min_action_rate(self, value: pulumi.Input[int]):
+        pulumi.set(self, "min_action_rate", value)
+
+
+@pulumi.input_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAllArgs:
+    def __init__(__self__, *,
+                 duration_threshold: pulumi.Input[float],
+                 slowdown_percentage: pulumi.Input[float]):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+        pulumi.set(__self__, "slowdown_percentage", slowdown_percentage)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "duration_threshold")
+
+    @duration_threshold.setter
+    def duration_threshold(self, value: pulumi.Input[float]):
+        pulumi.set(self, "duration_threshold", value)
+
+    @property
+    @pulumi.getter(name="slowdownPercentage")
+    def slowdown_percentage(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "slowdown_percentage")
+
+    @slowdown_percentage.setter
+    def slowdown_percentage(self, value: pulumi.Input[float]):
+        pulumi.set(self, "slowdown_percentage", value)
+
+
+@pulumi.input_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowestArgs:
+    def __init__(__self__, *,
+                 duration_threshold: pulumi.Input[float],
+                 slowdown_percentage: pulumi.Input[float]):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+        pulumi.set(__self__, "slowdown_percentage", slowdown_percentage)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "duration_threshold")
+
+    @duration_threshold.setter
+    def duration_threshold(self, value: pulumi.Input[float]):
+        pulumi.set(self, "duration_threshold", value)
+
+    @property
+    @pulumi.getter(name="slowdownPercentage")
+    def slowdown_percentage(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "slowdown_percentage")
+
+    @slowdown_percentage.setter
+    def slowdown_percentage(self, value: pulumi.Input[float]):
+        pulumi.set(self, "slowdown_percentage", value)
+
+
+@pulumi.input_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs:
+    def __init__(__self__, *,
+                 duration_avoid_overalerting: pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralertingArgs'],
+                 duration_threshold_all_fixed: pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixedArgs'],
+                 duration_threshold_slowest: pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowestArgs'],
+                 sensitivity: pulumi.Input[str]):
+        pulumi.set(__self__, "duration_avoid_overalerting", duration_avoid_overalerting)
+        pulumi.set(__self__, "duration_threshold_all_fixed", duration_threshold_all_fixed)
+        pulumi.set(__self__, "duration_threshold_slowest", duration_threshold_slowest)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+
+    @property
+    @pulumi.getter(name="durationAvoidOveralerting")
+    def duration_avoid_overalerting(self) -> pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralertingArgs']:
+        return pulumi.get(self, "duration_avoid_overalerting")
+
+    @duration_avoid_overalerting.setter
+    def duration_avoid_overalerting(self, value: pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralertingArgs']):
+        pulumi.set(self, "duration_avoid_overalerting", value)
+
+    @property
+    @pulumi.getter(name="durationThresholdAllFixed")
+    def duration_threshold_all_fixed(self) -> pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixedArgs']:
+        return pulumi.get(self, "duration_threshold_all_fixed")
+
+    @duration_threshold_all_fixed.setter
+    def duration_threshold_all_fixed(self, value: pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixedArgs']):
+        pulumi.set(self, "duration_threshold_all_fixed", value)
+
+    @property
+    @pulumi.getter(name="durationThresholdSlowest")
+    def duration_threshold_slowest(self) -> pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowestArgs']:
+        return pulumi.get(self, "duration_threshold_slowest")
+
+    @duration_threshold_slowest.setter
+    def duration_threshold_slowest(self, value: pulumi.Input['MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowestArgs']):
+        pulumi.set(self, "duration_threshold_slowest", value)
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "sensitivity")
+
+    @sensitivity.setter
+    def sensitivity(self, value: pulumi.Input[str]):
+        pulumi.set(self, "sensitivity", value)
+
+
+@pulumi.input_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralertingArgs:
+    def __init__(__self__, *,
+                 min_action_rate: pulumi.Input[int]):
+        pulumi.set(__self__, "min_action_rate", min_action_rate)
+
+    @property
+    @pulumi.getter(name="minActionRate")
+    def min_action_rate(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "min_action_rate")
+
+    @min_action_rate.setter
+    def min_action_rate(self, value: pulumi.Input[int]):
+        pulumi.set(self, "min_action_rate", value)
+
+
+@pulumi.input_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixedArgs:
+    def __init__(__self__, *,
+                 duration_threshold: pulumi.Input[float]):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "duration_threshold")
+
+    @duration_threshold.setter
+    def duration_threshold(self, value: pulumi.Input[float]):
+        pulumi.set(self, "duration_threshold", value)
+
+
+@pulumi.input_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowestArgs:
+    def __init__(__self__, *,
+                 duration_threshold: pulumi.Input[float]):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "duration_threshold")
+
+    @duration_threshold.setter
+    def duration_threshold(self, value: pulumi.Input[float]):
+        pulumi.set(self, "duration_threshold", value)
+
+
+@pulumi.input_type
+class MobileAppAnomaliesUnexpectedHighLoadArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 threshold_percentage: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[float] threshold_percentage: Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic spikes within your application.
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if threshold_percentage is not None:
+            pulumi.set(__self__, "threshold_percentage", threshold_percentage)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="thresholdPercentage")
+    def threshold_percentage(self) -> Optional[pulumi.Input[float]]:
+        """
+        Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic spikes within your application.
+        """
+        return pulumi.get(self, "threshold_percentage")
+
+    @threshold_percentage.setter
+    def threshold_percentage(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "threshold_percentage", value)
+
+
+@pulumi.input_type
+class MobileAppAnomaliesUnexpectedLowLoadArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 threshold_percentage: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[float] threshold_percentage: Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic drops within your application.
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if threshold_percentage is not None:
+            pulumi.set(__self__, "threshold_percentage", threshold_percentage)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="thresholdPercentage")
+    def threshold_percentage(self) -> Optional[pulumi.Input[float]]:
+        """
+        Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic drops within your application.
+        """
+        return pulumi.get(self, "threshold_percentage")
+
+    @threshold_percentage.setter
+    def threshold_percentage(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "threshold_percentage", value)
+
+
+@pulumi.input_type
+class MobileAppCrashRateCrashRateIncreaseArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 crash_rate_increase_auto: Optional[pulumi.Input['MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoArgs']] = None,
+                 crash_rate_increase_fixed: Optional[pulumi.Input['MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoArgs'] crash_rate_increase_auto: Alert crash rate increases when auto-detected baseline is exceeded by a certain number of users
+        :param pulumi.Input['MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs'] crash_rate_increase_fixed: Alert crash rate increases when the defined threshold is exceeded by a certain number of users
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Fixed`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if crash_rate_increase_auto is not None:
+            pulumi.set(__self__, "crash_rate_increase_auto", crash_rate_increase_auto)
+        if crash_rate_increase_fixed is not None:
+            pulumi.set(__self__, "crash_rate_increase_fixed", crash_rate_increase_fixed)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="crashRateIncreaseAuto")
+    def crash_rate_increase_auto(self) -> Optional[pulumi.Input['MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoArgs']]:
+        """
+        Alert crash rate increases when auto-detected baseline is exceeded by a certain number of users
+        """
+        return pulumi.get(self, "crash_rate_increase_auto")
+
+    @crash_rate_increase_auto.setter
+    def crash_rate_increase_auto(self, value: Optional[pulumi.Input['MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoArgs']]):
+        pulumi.set(self, "crash_rate_increase_auto", value)
+
+    @property
+    @pulumi.getter(name="crashRateIncreaseFixed")
+    def crash_rate_increase_fixed(self) -> Optional[pulumi.Input['MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs']]:
+        """
+        Alert crash rate increases when the defined threshold is exceeded by a certain number of users
+        """
+        return pulumi.get(self, "crash_rate_increase_fixed")
+
+    @crash_rate_increase_fixed.setter
+    def crash_rate_increase_fixed(self, value: Optional[pulumi.Input['MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs']]):
+        pulumi.set(self, "crash_rate_increase_fixed", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoArgs:
+    def __init__(__self__, *,
+                 baseline_violation_percentage: pulumi.Input[float],
+                 concurrent_users: pulumi.Input[float],
+                 sensitivity: pulumi.Input[str]):
+        pulumi.set(__self__, "baseline_violation_percentage", baseline_violation_percentage)
+        pulumi.set(__self__, "concurrent_users", concurrent_users)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+
+    @property
+    @pulumi.getter(name="baselineViolationPercentage")
+    def baseline_violation_percentage(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "baseline_violation_percentage")
+
+    @baseline_violation_percentage.setter
+    def baseline_violation_percentage(self, value: pulumi.Input[float]):
+        pulumi.set(self, "baseline_violation_percentage", value)
+
+    @property
+    @pulumi.getter(name="concurrentUsers")
+    def concurrent_users(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "concurrent_users")
+
+    @concurrent_users.setter
+    def concurrent_users(self, value: pulumi.Input[float]):
+        pulumi.set(self, "concurrent_users", value)
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "sensitivity")
+
+    @sensitivity.setter
+    def sensitivity(self, value: pulumi.Input[str]):
+        pulumi.set(self, "sensitivity", value)
+
+
+@pulumi.input_type
+class MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs:
+    def __init__(__self__, *,
+                 absolute_crash_rate: pulumi.Input[float],
+                 concurrent_users: pulumi.Input[int]):
+        pulumi.set(__self__, "absolute_crash_rate", absolute_crash_rate)
+        pulumi.set(__self__, "concurrent_users", concurrent_users)
+
+    @property
+    @pulumi.getter(name="absoluteCrashRate")
+    def absolute_crash_rate(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "absolute_crash_rate")
+
+    @absolute_crash_rate.setter
+    def absolute_crash_rate(self, value: pulumi.Input[float]):
+        pulumi.set(self, "absolute_crash_rate", value)
+
+    @property
+    @pulumi.getter(name="concurrentUsers")
+    def concurrent_users(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "concurrent_users")
+
+    @concurrent_users.setter
+    def concurrent_users(self, value: pulumi.Input[int]):
+        pulumi.set(self, "concurrent_users", value)
+
+
+@pulumi.input_type
+class MobileAppEnablementRumArgs:
+    def __init__(__self__, *,
+                 cost_and_traffic_control: pulumi.Input[int],
+                 enabled: pulumi.Input[bool]):
+        """
+        :param pulumi.Input[int] cost_and_traffic_control: Percentage of user sessions captured and analyzed. By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application’s performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session.
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        """
+        pulumi.set(__self__, "cost_and_traffic_control", cost_and_traffic_control)
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter(name="costAndTrafficControl")
+    def cost_and_traffic_control(self) -> pulumi.Input[int]:
+        """
+        Percentage of user sessions captured and analyzed. By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application’s performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session.
+        """
+        return pulumi.get(self, "cost_and_traffic_control")
+
+    @cost_and_traffic_control.setter
+    def cost_and_traffic_control(self, value: pulumi.Input[int]):
+        pulumi.set(self, "cost_and_traffic_control", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+
+@pulumi.input_type
+class MobileAppEnablementSessionReplayArgs:
+    def __init__(__self__, *,
+                 on_crash: pulumi.Input[bool]):
+        """
+        :param pulumi.Input[bool] on_crash: Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay](https://dt-url.net/t23s0ppi).
+        """
+        pulumi.set(__self__, "on_crash", on_crash)
+
+    @property
+    @pulumi.getter(name="onCrash")
+    def on_crash(self) -> pulumi.Input[bool]:
+        """
+        Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay](https://dt-url.net/t23s0ppi).
+        """
+        return pulumi.get(self, "on_crash")
+
+    @on_crash.setter
+    def on_crash(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "on_crash", value)
+
+
+@pulumi.input_type
+class MobileAppRequestErrorsErrorRulesArgs:
+    def __init__(__self__, *,
+                 error_rules: pulumi.Input[Sequence[pulumi.Input['MobileAppRequestErrorsErrorRulesErrorRuleArgs']]]):
+        pulumi.set(__self__, "error_rules", error_rules)
+
+    @property
+    @pulumi.getter(name="errorRules")
+    def error_rules(self) -> pulumi.Input[Sequence[pulumi.Input['MobileAppRequestErrorsErrorRulesErrorRuleArgs']]]:
+        return pulumi.get(self, "error_rules")
+
+    @error_rules.setter
+    def error_rules(self, value: pulumi.Input[Sequence[pulumi.Input['MobileAppRequestErrorsErrorRulesErrorRuleArgs']]]):
+        pulumi.set(self, "error_rules", value)
+
+
+@pulumi.input_type
+class MobileAppRequestErrorsErrorRulesErrorRuleArgs:
+    def __init__(__self__, *,
+                 error_codes: pulumi.Input[str]):
+        pulumi.set(__self__, "error_codes", error_codes)
+
+    @property
+    @pulumi.getter(name="errorCodes")
+    def error_codes(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "error_codes")
+
+    @error_codes.setter
+    def error_codes(self, value: pulumi.Input[str]):
+        pulumi.set(self, "error_codes", value)
+
+
+@pulumi.input_type
 class MobileApplicationApdexArgs:
     def __init__(__self__, *,
                  frustrated: pulumi.Input[int],
@@ -31747,6 +43859,81 @@ class MobileApplicationPropertiesRequestAttributeArgs:
     @store_as_user_action_property.setter
     def store_as_user_action_property(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "store_as_user_action_property", value)
+
+
+@pulumi.input_type
+class NetworkTrafficExcludeIpArgs:
+    def __init__(__self__, *,
+                 ip_address_forms: pulumi.Input[Sequence[pulumi.Input['NetworkTrafficExcludeIpIpAddressFormArgs']]]):
+        pulumi.set(__self__, "ip_address_forms", ip_address_forms)
+
+    @property
+    @pulumi.getter(name="ipAddressForms")
+    def ip_address_forms(self) -> pulumi.Input[Sequence[pulumi.Input['NetworkTrafficExcludeIpIpAddressFormArgs']]]:
+        return pulumi.get(self, "ip_address_forms")
+
+    @ip_address_forms.setter
+    def ip_address_forms(self, value: pulumi.Input[Sequence[pulumi.Input['NetworkTrafficExcludeIpIpAddressFormArgs']]]):
+        pulumi.set(self, "ip_address_forms", value)
+
+
+@pulumi.input_type
+class NetworkTrafficExcludeIpIpAddressFormArgs:
+    def __init__(__self__, *,
+                 ip_address: pulumi.Input[str]):
+        pulumi.set(__self__, "ip_address", ip_address)
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "ip_address")
+
+    @ip_address.setter
+    def ip_address(self, value: pulumi.Input[str]):
+        pulumi.set(self, "ip_address", value)
+
+
+@pulumi.input_type
+class NetworkTrafficExcludeNicArgs:
+    def __init__(__self__, *,
+                 nic_forms: pulumi.Input[Sequence[pulumi.Input['NetworkTrafficExcludeNicNicFormArgs']]]):
+        pulumi.set(__self__, "nic_forms", nic_forms)
+
+    @property
+    @pulumi.getter(name="nicForms")
+    def nic_forms(self) -> pulumi.Input[Sequence[pulumi.Input['NetworkTrafficExcludeNicNicFormArgs']]]:
+        return pulumi.get(self, "nic_forms")
+
+    @nic_forms.setter
+    def nic_forms(self, value: pulumi.Input[Sequence[pulumi.Input['NetworkTrafficExcludeNicNicFormArgs']]]):
+        pulumi.set(self, "nic_forms", value)
+
+
+@pulumi.input_type
+class NetworkTrafficExcludeNicNicFormArgs:
+    def __init__(__self__, *,
+                 interface: pulumi.Input[str],
+                 os: pulumi.Input[str]):
+        pulumi.set(__self__, "interface", interface)
+        pulumi.set(__self__, "os", os)
+
+    @property
+    @pulumi.getter
+    def interface(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "interface")
+
+    @interface.setter
+    def interface(self, value: pulumi.Input[str]):
+        pulumi.set(self, "interface", value)
+
+    @property
+    @pulumi.getter
+    def os(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "os")
+
+    @os.setter
+    def os(self, value: pulumi.Input[str]):
+        pulumi.set(self, "os", value)
 
 
 @pulumi.input_type
@@ -32135,105 +44322,6 @@ class NotificationEmailArgs:
     @unknowns.setter
     def unknowns(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "unknowns", value)
-
-
-@pulumi.input_type
-class NotificationHipchatArgs:
-    def __init__(__self__, *,
-                 active: pulumi.Input[bool],
-                 alerting_profile: pulumi.Input[str],
-                 message: pulumi.Input[str],
-                 name: pulumi.Input[str],
-                 unknowns: Optional[pulumi.Input[str]] = None,
-                 url: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[str] alerting_profile: The ID of the associated alerting profile
-        :param pulumi.Input[str] message: The content of the notification message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
-        :param pulumi.Input[str] name: The name of the notification configuration
-        :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
-        :param pulumi.Input[str] url: The URL of the HipChat WebHook.  This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
-        """
-        pulumi.set(__self__, "active", active)
-        pulumi.set(__self__, "alerting_profile", alerting_profile)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "name", name)
-        if unknowns is not None:
-            pulumi.set(__self__, "unknowns", unknowns)
-        if url is not None:
-            pulumi.set(__self__, "url", url)
-
-    @property
-    @pulumi.getter
-    def active(self) -> pulumi.Input[bool]:
-        """
-        The configuration is enabled (`true`) or disabled (`false`)
-        """
-        return pulumi.get(self, "active")
-
-    @active.setter
-    def active(self, value: pulumi.Input[bool]):
-        pulumi.set(self, "active", value)
-
-    @property
-    @pulumi.getter(name="alertingProfile")
-    def alerting_profile(self) -> pulumi.Input[str]:
-        """
-        The ID of the associated alerting profile
-        """
-        return pulumi.get(self, "alerting_profile")
-
-    @alerting_profile.setter
-    def alerting_profile(self, value: pulumi.Input[str]):
-        pulumi.set(self, "alerting_profile", value)
-
-    @property
-    @pulumi.getter
-    def message(self) -> pulumi.Input[str]:
-        """
-        The content of the notification message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
-        """
-        return pulumi.get(self, "message")
-
-    @message.setter
-    def message(self, value: pulumi.Input[str]):
-        pulumi.set(self, "message", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> pulumi.Input[str]:
-        """
-        The name of the notification configuration
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def unknowns(self) -> Optional[pulumi.Input[str]]:
-        """
-        allows for configuring properties that are not explicitly supported by the current version of this provider
-        """
-        return pulumi.get(self, "unknowns")
-
-    @unknowns.setter
-    def unknowns(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "unknowns", value)
-
-    @property
-    @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The URL of the HipChat WebHook.  This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
-        """
-        return pulumi.get(self, "url")
-
-    @url.setter
-    def url(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "url", value)
 
 
 @pulumi.input_type
@@ -33539,6 +45627,1077 @@ class NotificationXmattersHeaderArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class OneagentUpdatesMaintenanceWindowsArgs:
+    def __init__(__self__, *,
+                 maintenance_windows: pulumi.Input[Sequence[pulumi.Input['OneagentUpdatesMaintenanceWindowsMaintenanceWindowArgs']]]):
+        pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+
+    @property
+    @pulumi.getter(name="maintenanceWindows")
+    def maintenance_windows(self) -> pulumi.Input[Sequence[pulumi.Input['OneagentUpdatesMaintenanceWindowsMaintenanceWindowArgs']]]:
+        return pulumi.get(self, "maintenance_windows")
+
+    @maintenance_windows.setter
+    def maintenance_windows(self, value: pulumi.Input[Sequence[pulumi.Input['OneagentUpdatesMaintenanceWindowsMaintenanceWindowArgs']]]):
+        pulumi.set(self, "maintenance_windows", value)
+
+
+@pulumi.input_type
+class OneagentUpdatesMaintenanceWindowsMaintenanceWindowArgs:
+    def __init__(__self__, *,
+                 maintenance_window: pulumi.Input[str]):
+        pulumi.set(__self__, "maintenance_window", maintenance_window)
+
+    @property
+    @pulumi.getter(name="maintenanceWindow")
+    def maintenance_window(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "maintenance_window")
+
+    @maintenance_window.setter
+    def maintenance_window(self, value: pulumi.Input[str]):
+        pulumi.set(self, "maintenance_window", value)
+
+
+@pulumi.input_type
+class OpentelemetryMetricsAdditionalAttributesArgs:
+    def __init__(__self__, *,
+                 additional_attributes: pulumi.Input[Sequence[pulumi.Input['OpentelemetryMetricsAdditionalAttributesAdditionalAttributeArgs']]]):
+        pulumi.set(__self__, "additional_attributes", additional_attributes)
+
+    @property
+    @pulumi.getter(name="additionalAttributes")
+    def additional_attributes(self) -> pulumi.Input[Sequence[pulumi.Input['OpentelemetryMetricsAdditionalAttributesAdditionalAttributeArgs']]]:
+        return pulumi.get(self, "additional_attributes")
+
+    @additional_attributes.setter
+    def additional_attributes(self, value: pulumi.Input[Sequence[pulumi.Input['OpentelemetryMetricsAdditionalAttributesAdditionalAttributeArgs']]]):
+        pulumi.set(self, "additional_attributes", value)
+
+
+@pulumi.input_type
+class OpentelemetryMetricsAdditionalAttributesAdditionalAttributeArgs:
+    def __init__(__self__, *,
+                 attribute_key: pulumi.Input[str],
+                 enabled: pulumi.Input[bool]):
+        pulumi.set(__self__, "attribute_key", attribute_key)
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter(name="attributeKey")
+    def attribute_key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "attribute_key")
+
+    @attribute_key.setter
+    def attribute_key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attribute_key", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+
+@pulumi.input_type
+class OpentelemetryMetricsToDropAttributesArgs:
+    def __init__(__self__, *,
+                 to_drop_attributes: pulumi.Input[Sequence[pulumi.Input['OpentelemetryMetricsToDropAttributesToDropAttributeArgs']]]):
+        pulumi.set(__self__, "to_drop_attributes", to_drop_attributes)
+
+    @property
+    @pulumi.getter(name="toDropAttributes")
+    def to_drop_attributes(self) -> pulumi.Input[Sequence[pulumi.Input['OpentelemetryMetricsToDropAttributesToDropAttributeArgs']]]:
+        return pulumi.get(self, "to_drop_attributes")
+
+    @to_drop_attributes.setter
+    def to_drop_attributes(self, value: pulumi.Input[Sequence[pulumi.Input['OpentelemetryMetricsToDropAttributesToDropAttributeArgs']]]):
+        pulumi.set(self, "to_drop_attributes", value)
+
+
+@pulumi.input_type
+class OpentelemetryMetricsToDropAttributesToDropAttributeArgs:
+    def __init__(__self__, *,
+                 attribute_key: pulumi.Input[str],
+                 enabled: pulumi.Input[bool]):
+        pulumi.set(__self__, "attribute_key", attribute_key)
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter(name="attributeKey")
+    def attribute_key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "attribute_key")
+
+    @attribute_key.setter
+    def attribute_key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attribute_key", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+
+@pulumi.input_type
+class OsServicesDetectionConditionsLinuxArgs:
+    def __init__(__self__, *,
+                 linux_detection_conditions: pulumi.Input[Sequence[pulumi.Input['OsServicesDetectionConditionsLinuxLinuxDetectionConditionArgs']]]):
+        pulumi.set(__self__, "linux_detection_conditions", linux_detection_conditions)
+
+    @property
+    @pulumi.getter(name="linuxDetectionConditions")
+    def linux_detection_conditions(self) -> pulumi.Input[Sequence[pulumi.Input['OsServicesDetectionConditionsLinuxLinuxDetectionConditionArgs']]]:
+        return pulumi.get(self, "linux_detection_conditions")
+
+    @linux_detection_conditions.setter
+    def linux_detection_conditions(self, value: pulumi.Input[Sequence[pulumi.Input['OsServicesDetectionConditionsLinuxLinuxDetectionConditionArgs']]]):
+        pulumi.set(self, "linux_detection_conditions", value)
+
+
+@pulumi.input_type
+class OsServicesDetectionConditionsLinuxLinuxDetectionConditionArgs:
+    def __init__(__self__, *,
+                 property: pulumi.Input[str],
+                 condition: Optional[pulumi.Input[str]] = None,
+                 startup_condition: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "property", property)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if startup_condition is not None:
+            pulumi.set(__self__, "startup_condition", startup_condition)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "condition")
+
+    @condition.setter
+    def condition(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "condition", value)
+
+    @property
+    @pulumi.getter(name="startupCondition")
+    def startup_condition(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "startup_condition")
+
+    @startup_condition.setter
+    def startup_condition(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "startup_condition", value)
+
+    @property
+    @pulumi.getter
+    def property(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "property")
+
+    @property.setter
+    def property(self, value: pulumi.Input[str]):
+        pulumi.set(self, "property", value)
+
+
+@pulumi.input_type
+class OsServicesDetectionConditionsWindowsArgs:
+    def __init__(__self__, *,
+                 detection_conditions_windows: pulumi.Input[Sequence[pulumi.Input['OsServicesDetectionConditionsWindowsDetectionConditionsWindowArgs']]]):
+        pulumi.set(__self__, "detection_conditions_windows", detection_conditions_windows)
+
+    @property
+    @pulumi.getter(name="detectionConditionsWindows")
+    def detection_conditions_windows(self) -> pulumi.Input[Sequence[pulumi.Input['OsServicesDetectionConditionsWindowsDetectionConditionsWindowArgs']]]:
+        return pulumi.get(self, "detection_conditions_windows")
+
+    @detection_conditions_windows.setter
+    def detection_conditions_windows(self, value: pulumi.Input[Sequence[pulumi.Input['OsServicesDetectionConditionsWindowsDetectionConditionsWindowArgs']]]):
+        pulumi.set(self, "detection_conditions_windows", value)
+
+
+@pulumi.input_type
+class OsServicesDetectionConditionsWindowsDetectionConditionsWindowArgs:
+    def __init__(__self__, *,
+                 property: pulumi.Input[str],
+                 condition: Optional[pulumi.Input[str]] = None,
+                 startup_condition: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "property", property)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if startup_condition is not None:
+            pulumi.set(__self__, "startup_condition", startup_condition)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "condition")
+
+    @condition.setter
+    def condition(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "condition", value)
+
+    @property
+    @pulumi.getter(name="startupCondition")
+    def startup_condition(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "startup_condition")
+
+    @startup_condition.setter
+    def startup_condition(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "startup_condition", value)
+
+    @property
+    @pulumi.getter
+    def property(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "property")
+
+    @property.setter
+    def property(self, value: pulumi.Input[str]):
+        pulumi.set(self, "property", value)
+
+
+@pulumi.input_type
+class OsServicesMetadataArgs:
+    def __init__(__self__, *,
+                 items: pulumi.Input[Sequence[pulumi.Input['OsServicesMetadataItemArgs']]]):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> pulumi.Input[Sequence[pulumi.Input['OsServicesMetadataItemArgs']]]:
+        return pulumi.get(self, "items")
+
+    @items.setter
+    def items(self, value: pulumi.Input[Sequence[pulumi.Input['OsServicesMetadataItemArgs']]]):
+        pulumi.set(self, "items", value)
+
+
+@pulumi.input_type
+class OsServicesMetadataItemArgs:
+    def __init__(__self__, *,
+                 metadata_key: pulumi.Input[str],
+                 metadata_value: pulumi.Input[str]):
+        pulumi.set(__self__, "metadata_key", metadata_key)
+        pulumi.set(__self__, "metadata_value", metadata_value)
+
+    @property
+    @pulumi.getter(name="metadataKey")
+    def metadata_key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "metadata_key")
+
+    @metadata_key.setter
+    def metadata_key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "metadata_key", value)
+
+    @property
+    @pulumi.getter(name="metadataValue")
+    def metadata_value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "metadata_value")
+
+    @metadata_value.setter
+    def metadata_value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "metadata_value", value)
+
+
+@pulumi.input_type
+class OwnershipConfigOwnershipIdentifiersArgs:
+    def __init__(__self__, *,
+                 ownership_identifiers: pulumi.Input[Sequence[pulumi.Input['OwnershipConfigOwnershipIdentifiersOwnershipIdentifierArgs']]]):
+        pulumi.set(__self__, "ownership_identifiers", ownership_identifiers)
+
+    @property
+    @pulumi.getter(name="ownershipIdentifiers")
+    def ownership_identifiers(self) -> pulumi.Input[Sequence[pulumi.Input['OwnershipConfigOwnershipIdentifiersOwnershipIdentifierArgs']]]:
+        return pulumi.get(self, "ownership_identifiers")
+
+    @ownership_identifiers.setter
+    def ownership_identifiers(self, value: pulumi.Input[Sequence[pulumi.Input['OwnershipConfigOwnershipIdentifiersOwnershipIdentifierArgs']]]):
+        pulumi.set(self, "ownership_identifiers", value)
+
+
+@pulumi.input_type
+class OwnershipConfigOwnershipIdentifiersOwnershipIdentifierArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 key: pulumi.Input[str]):
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+
+@pulumi.input_type
+class OwnershipTeamsAdditionalInformationArgs:
+    def __init__(__self__, *,
+                 additional_informations: pulumi.Input[Sequence[pulumi.Input['OwnershipTeamsAdditionalInformationAdditionalInformationArgs']]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['OwnershipTeamsAdditionalInformationAdditionalInformationArgs']]] additional_informations: Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
+        """
+        pulumi.set(__self__, "additional_informations", additional_informations)
+
+    @property
+    @pulumi.getter(name="additionalInformations")
+    def additional_informations(self) -> pulumi.Input[Sequence[pulumi.Input['OwnershipTeamsAdditionalInformationAdditionalInformationArgs']]]:
+        """
+        Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
+        """
+        return pulumi.get(self, "additional_informations")
+
+    @additional_informations.setter
+    def additional_informations(self, value: pulumi.Input[Sequence[pulumi.Input['OwnershipTeamsAdditionalInformationAdditionalInformationArgs']]]):
+        pulumi.set(self, "additional_informations", value)
+
+
+@pulumi.input_type
+class OwnershipTeamsAdditionalInformationAdditionalInformationArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str],
+                 url: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "url", value)
+
+
+@pulumi.input_type
+class OwnershipTeamsContactDetailsArgs:
+    def __init__(__self__, *,
+                 contact_details: pulumi.Input[Sequence[pulumi.Input['OwnershipTeamsContactDetailsContactDetailArgs']]]):
+        pulumi.set(__self__, "contact_details", contact_details)
+
+    @property
+    @pulumi.getter(name="contactDetails")
+    def contact_details(self) -> pulumi.Input[Sequence[pulumi.Input['OwnershipTeamsContactDetailsContactDetailArgs']]]:
+        return pulumi.get(self, "contact_details")
+
+    @contact_details.setter
+    def contact_details(self, value: pulumi.Input[Sequence[pulumi.Input['OwnershipTeamsContactDetailsContactDetailArgs']]]):
+        pulumi.set(self, "contact_details", value)
+
+
+@pulumi.input_type
+class OwnershipTeamsContactDetailsContactDetailArgs:
+    def __init__(__self__, *,
+                 integration_type: pulumi.Input[str],
+                 email: Optional[pulumi.Input[str]] = None,
+                 jira: Optional[pulumi.Input['OwnershipTeamsContactDetailsContactDetailJiraArgs']] = None,
+                 ms_teams: Optional[pulumi.Input[str]] = None,
+                 slack_channel: Optional[pulumi.Input[str]] = None,
+                 url: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "integration_type", integration_type)
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if jira is not None:
+            pulumi.set(__self__, "jira", jira)
+        if ms_teams is not None:
+            pulumi.set(__self__, "ms_teams", ms_teams)
+        if slack_channel is not None:
+            pulumi.set(__self__, "slack_channel", slack_channel)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter(name="integrationType")
+    def integration_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "integration_type")
+
+    @integration_type.setter
+    def integration_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "integration_type", value)
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "email", value)
+
+    @property
+    @pulumi.getter
+    def jira(self) -> Optional[pulumi.Input['OwnershipTeamsContactDetailsContactDetailJiraArgs']]:
+        return pulumi.get(self, "jira")
+
+    @jira.setter
+    def jira(self, value: Optional[pulumi.Input['OwnershipTeamsContactDetailsContactDetailJiraArgs']]):
+        pulumi.set(self, "jira", value)
+
+    @property
+    @pulumi.getter(name="msTeams")
+    def ms_teams(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ms_teams")
+
+    @ms_teams.setter
+    def ms_teams(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ms_teams", value)
+
+    @property
+    @pulumi.getter(name="slackChannel")
+    def slack_channel(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "slack_channel")
+
+    @slack_channel.setter
+    def slack_channel(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "slack_channel", value)
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "url", value)
+
+
+@pulumi.input_type
+class OwnershipTeamsContactDetailsContactDetailJiraArgs:
+    def __init__(__self__, *,
+                 default_assignee: pulumi.Input[str],
+                 project: pulumi.Input[str]):
+        pulumi.set(__self__, "default_assignee", default_assignee)
+        pulumi.set(__self__, "project", project)
+
+    @property
+    @pulumi.getter(name="defaultAssignee")
+    def default_assignee(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "default_assignee")
+
+    @default_assignee.setter
+    def default_assignee(self, value: pulumi.Input[str]):
+        pulumi.set(self, "default_assignee", value)
+
+    @property
+    @pulumi.getter
+    def project(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "project")
+
+    @project.setter
+    def project(self, value: pulumi.Input[str]):
+        pulumi.set(self, "project", value)
+
+
+@pulumi.input_type
+class OwnershipTeamsLinksArgs:
+    def __init__(__self__, *,
+                 links: pulumi.Input[Sequence[pulumi.Input['OwnershipTeamsLinksLinkArgs']]]):
+        pulumi.set(__self__, "links", links)
+
+    @property
+    @pulumi.getter
+    def links(self) -> pulumi.Input[Sequence[pulumi.Input['OwnershipTeamsLinksLinkArgs']]]:
+        return pulumi.get(self, "links")
+
+    @links.setter
+    def links(self, value: pulumi.Input[Sequence[pulumi.Input['OwnershipTeamsLinksLinkArgs']]]):
+        pulumi.set(self, "links", value)
+
+
+@pulumi.input_type
+class OwnershipTeamsLinksLinkArgs:
+    def __init__(__self__, *,
+                 link_type: pulumi.Input[str],
+                 url: pulumi.Input[str]):
+        pulumi.set(__self__, "link_type", link_type)
+        pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter(name="linkType")
+    def link_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "link_type")
+
+    @link_type.setter
+    def link_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "link_type", value)
+
+    @property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[str]):
+        pulumi.set(self, "url", value)
+
+
+@pulumi.input_type
+class OwnershipTeamsResponsibilitiesArgs:
+    def __init__(__self__, *,
+                 development: pulumi.Input[bool],
+                 infrastructure: pulumi.Input[bool],
+                 line_of_business: pulumi.Input[bool],
+                 operations: pulumi.Input[bool],
+                 security: pulumi.Input[bool]):
+        """
+        :param pulumi.Input[bool] development: Responsible for developing and maintaining high quality software. Development teams are responsible for making code changes to address performance regressions, errors, or security vulnerabilities.
+        :param pulumi.Input[bool] infrastructure: Responsible for the administration, management, and support of the IT infrastructure including physical servers, virtualization, and cloud. Teams with infrastructure responsibility are responsible for addressing hardware issues, resource limits, and operating system vulnerabilities.
+        :param pulumi.Input[bool] line_of_business: Responsible for ensuring that applications in development align with business needs and meet the usability requirements of users, stakeholders, customers, and external partners. Teams with line of business responsibility are responsible for understanding the customer experience and how it affects business goals.
+        :param pulumi.Input[bool] operations: Responsible for deploying and managing software, with a focus on high availability and performance. Teams with operations responsibilities needs to understand the impact, priority, and team responsible for addressing problems detected by Dynatrace.
+        :param pulumi.Input[bool] security: Responsible for the security posture of the organization. Teams with security responsibility must understand the impact, priority, and team responsible for addressing security vulnerabilities.
+        """
+        pulumi.set(__self__, "development", development)
+        pulumi.set(__self__, "infrastructure", infrastructure)
+        pulumi.set(__self__, "line_of_business", line_of_business)
+        pulumi.set(__self__, "operations", operations)
+        pulumi.set(__self__, "security", security)
+
+    @property
+    @pulumi.getter
+    def development(self) -> pulumi.Input[bool]:
+        """
+        Responsible for developing and maintaining high quality software. Development teams are responsible for making code changes to address performance regressions, errors, or security vulnerabilities.
+        """
+        return pulumi.get(self, "development")
+
+    @development.setter
+    def development(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "development", value)
+
+    @property
+    @pulumi.getter
+    def infrastructure(self) -> pulumi.Input[bool]:
+        """
+        Responsible for the administration, management, and support of the IT infrastructure including physical servers, virtualization, and cloud. Teams with infrastructure responsibility are responsible for addressing hardware issues, resource limits, and operating system vulnerabilities.
+        """
+        return pulumi.get(self, "infrastructure")
+
+    @infrastructure.setter
+    def infrastructure(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "infrastructure", value)
+
+    @property
+    @pulumi.getter(name="lineOfBusiness")
+    def line_of_business(self) -> pulumi.Input[bool]:
+        """
+        Responsible for ensuring that applications in development align with business needs and meet the usability requirements of users, stakeholders, customers, and external partners. Teams with line of business responsibility are responsible for understanding the customer experience and how it affects business goals.
+        """
+        return pulumi.get(self, "line_of_business")
+
+    @line_of_business.setter
+    def line_of_business(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "line_of_business", value)
+
+    @property
+    @pulumi.getter
+    def operations(self) -> pulumi.Input[bool]:
+        """
+        Responsible for deploying and managing software, with a focus on high availability and performance. Teams with operations responsibilities needs to understand the impact, priority, and team responsible for addressing problems detected by Dynatrace.
+        """
+        return pulumi.get(self, "operations")
+
+    @operations.setter
+    def operations(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "operations", value)
+
+    @property
+    @pulumi.getter
+    def security(self) -> pulumi.Input[bool]:
+        """
+        Responsible for the security posture of the organization. Teams with security responsibility must understand the impact, priority, and team responsible for addressing security vulnerabilities.
+        """
+        return pulumi.get(self, "security")
+
+    @security.setter
+    def security(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "security", value)
+
+
+@pulumi.input_type
+class OwnershipTeamsSupplementaryIdentifiersArgs:
+    def __init__(__self__, *,
+                 supplementary_identifiers: pulumi.Input[Sequence[pulumi.Input['OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArgs']]]):
+        pulumi.set(__self__, "supplementary_identifiers", supplementary_identifiers)
+
+    @property
+    @pulumi.getter(name="supplementaryIdentifiers")
+    def supplementary_identifiers(self) -> pulumi.Input[Sequence[pulumi.Input['OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArgs']]]:
+        return pulumi.get(self, "supplementary_identifiers")
+
+    @supplementary_identifiers.setter
+    def supplementary_identifiers(self, value: pulumi.Input[Sequence[pulumi.Input['OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArgs']]]):
+        pulumi.set(self, "supplementary_identifiers", value)
+
+
+@pulumi.input_type
+class OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArgs:
+    def __init__(__self__, *,
+                 supplementary_identifier: pulumi.Input[str]):
+        pulumi.set(__self__, "supplementary_identifier", supplementary_identifier)
+
+    @property
+    @pulumi.getter(name="supplementaryIdentifier")
+    def supplementary_identifier(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "supplementary_identifier")
+
+    @supplementary_identifier.setter
+    def supplementary_identifier(self, value: pulumi.Input[str]):
+        pulumi.set(self, "supplementary_identifier", value)
+
+
+@pulumi.input_type
+class PgAnomaliesAvailabilityArgs:
+    def __init__(__self__, *,
+                 method: pulumi.Input[str],
+                 minimum_threshold: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] method: How to monitor the availability of the process group:  * `PROCESS_IMPACT`: Alert if any process of the group becomes unavailable.  * `MINIMUM_THRESHOLD`: Alert if the number of active processes in the group falls below the specified threshold.  * `OFF`: Availability monitoring is disabled.
+        :param pulumi.Input[int] minimum_threshold: Alert if the number of active processes in the group is lower than this value.
+        """
+        pulumi.set(__self__, "method", method)
+        if minimum_threshold is not None:
+            pulumi.set(__self__, "minimum_threshold", minimum_threshold)
+
+    @property
+    @pulumi.getter
+    def method(self) -> pulumi.Input[str]:
+        """
+        How to monitor the availability of the process group:  * `PROCESS_IMPACT`: Alert if any process of the group becomes unavailable.  * `MINIMUM_THRESHOLD`: Alert if the number of active processes in the group falls below the specified threshold.  * `OFF`: Availability monitoring is disabled.
+        """
+        return pulumi.get(self, "method")
+
+    @method.setter
+    def method(self, value: pulumi.Input[str]):
+        pulumi.set(self, "method", value)
+
+    @property
+    @pulumi.getter(name="minimumThreshold")
+    def minimum_threshold(self) -> Optional[pulumi.Input[int]]:
+        """
+        Alert if the number of active processes in the group is lower than this value.
+        """
+        return pulumi.get(self, "minimum_threshold")
+
+    @minimum_threshold.setter
+    def minimum_threshold(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "minimum_threshold", value)
+
+
+@pulumi.input_type
+class ProcessAvailabilityMetadataArgs:
+    def __init__(__self__, *,
+                 items: pulumi.Input[Sequence[pulumi.Input['ProcessAvailabilityMetadataItemArgs']]]):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> pulumi.Input[Sequence[pulumi.Input['ProcessAvailabilityMetadataItemArgs']]]:
+        return pulumi.get(self, "items")
+
+    @items.setter
+    def items(self, value: pulumi.Input[Sequence[pulumi.Input['ProcessAvailabilityMetadataItemArgs']]]):
+        pulumi.set(self, "items", value)
+
+
+@pulumi.input_type
+class ProcessAvailabilityMetadataItemArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ProcessAvailabilityRulesArgs:
+    def __init__(__self__, *,
+                 rules: pulumi.Input[Sequence[pulumi.Input['ProcessAvailabilityRulesRuleArgs']]]):
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> pulumi.Input[Sequence[pulumi.Input['ProcessAvailabilityRulesRuleArgs']]]:
+        return pulumi.get(self, "rules")
+
+    @rules.setter
+    def rules(self, value: pulumi.Input[Sequence[pulumi.Input['ProcessAvailabilityRulesRuleArgs']]]):
+        pulumi.set(self, "rules", value)
+
+
+@pulumi.input_type
+class ProcessAvailabilityRulesRuleArgs:
+    def __init__(__self__, *,
+                 condition: pulumi.Input[str],
+                 property: pulumi.Input[str]):
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "property", property)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "condition")
+
+    @condition.setter
+    def condition(self, value: pulumi.Input[str]):
+        pulumi.set(self, "condition", value)
+
+    @property
+    @pulumi.getter
+    def property(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "property")
+
+    @property.setter
+    def property(self, value: pulumi.Input[str]):
+        pulumi.set(self, "property", value)
+
+
+@pulumi.input_type
+class ProcessGroupDetectionGroupExtractionArgs:
+    def __init__(__self__, *,
+                 delimiter: pulumi.Input['ProcessGroupDetectionGroupExtractionDelimiterArgs'],
+                 property: pulumi.Input[str],
+                 standalone_rule: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input['ProcessGroupDetectionGroupExtractionDelimiterArgs'] delimiter: Optionally delimit this property between *From* and *To*.
+        :param pulumi.Input[str] property: Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+        :param pulumi.Input[bool] standalone_rule: If this option is selected, the default Dynatrace behavior is disabled for these detected processes. Only this rule is used to separate the process group.
+        """
+        pulumi.set(__self__, "delimiter", delimiter)
+        pulumi.set(__self__, "property", property)
+        if standalone_rule is not None:
+            pulumi.set(__self__, "standalone_rule", standalone_rule)
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> pulumi.Input['ProcessGroupDetectionGroupExtractionDelimiterArgs']:
+        """
+        Optionally delimit this property between *From* and *To*.
+        """
+        return pulumi.get(self, "delimiter")
+
+    @delimiter.setter
+    def delimiter(self, value: pulumi.Input['ProcessGroupDetectionGroupExtractionDelimiterArgs']):
+        pulumi.set(self, "delimiter", value)
+
+    @property
+    @pulumi.getter(name="standaloneRule")
+    def standalone_rule(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If this option is selected, the default Dynatrace behavior is disabled for these detected processes. Only this rule is used to separate the process group.
+        """
+        return pulumi.get(self, "standalone_rule")
+
+    @standalone_rule.setter
+    def standalone_rule(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "standalone_rule", value)
+
+    @property
+    @pulumi.getter
+    def property(self) -> pulumi.Input[str]:
+        """
+        Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+        """
+        return pulumi.get(self, "property")
+
+    @property.setter
+    def property(self, value: pulumi.Input[str]):
+        pulumi.set(self, "property", value)
+
+
+@pulumi.input_type
+class ProcessGroupDetectionGroupExtractionDelimiterArgs:
+    def __init__(__self__, *,
+                 remove_ids: pulumi.Input[bool],
+                 from_: Optional[pulumi.Input[str]] = None,
+                 to: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "remove_ids", remove_ids)
+        if from_ is not None:
+            pulumi.set(__self__, "from_", from_)
+        if to is not None:
+            pulumi.set(__self__, "to", to)
+
+    @property
+    @pulumi.getter(name="removeIds")
+    def remove_ids(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "remove_ids")
+
+    @remove_ids.setter
+    def remove_ids(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "remove_ids", value)
+
+    @property
+    @pulumi.getter(name="from")
+    def from_(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "from_")
+
+    @from_.setter
+    def from_(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "from_", value)
+
+    @property
+    @pulumi.getter
+    def to(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "to")
+
+    @to.setter
+    def to(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "to", value)
+
+
+@pulumi.input_type
+class ProcessGroupDetectionInstanceExtractionArgs:
+    def __init__(__self__, *,
+                 delimiter: Optional[pulumi.Input['ProcessGroupDetectionInstanceExtractionDelimiterArgs']] = None,
+                 property: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input['ProcessGroupDetectionInstanceExtractionDelimiterArgs'] delimiter: Optionally delimit this property between *From* and *To*.
+        :param pulumi.Input[str] property: Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+        """
+        if delimiter is not None:
+            pulumi.set(__self__, "delimiter", delimiter)
+        if property is not None:
+            pulumi.set(__self__, "property", property)
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> Optional[pulumi.Input['ProcessGroupDetectionInstanceExtractionDelimiterArgs']]:
+        """
+        Optionally delimit this property between *From* and *To*.
+        """
+        return pulumi.get(self, "delimiter")
+
+    @delimiter.setter
+    def delimiter(self, value: Optional[pulumi.Input['ProcessGroupDetectionInstanceExtractionDelimiterArgs']]):
+        pulumi.set(self, "delimiter", value)
+
+    @property
+    @pulumi.getter
+    def property(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+        """
+        return pulumi.get(self, "property")
+
+    @property.setter
+    def property(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "property", value)
+
+
+@pulumi.input_type
+class ProcessGroupDetectionInstanceExtractionDelimiterArgs:
+    def __init__(__self__, *,
+                 remove_ids: pulumi.Input[bool],
+                 from_: Optional[pulumi.Input[str]] = None,
+                 to: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "remove_ids", remove_ids)
+        if from_ is not None:
+            pulumi.set(__self__, "from_", from_)
+        if to is not None:
+            pulumi.set(__self__, "to", to)
+
+    @property
+    @pulumi.getter(name="removeIds")
+    def remove_ids(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "remove_ids")
+
+    @remove_ids.setter
+    def remove_ids(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "remove_ids", value)
+
+    @property
+    @pulumi.getter(name="from")
+    def from_(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "from_")
+
+    @from_.setter
+    def from_(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "from_", value)
+
+    @property
+    @pulumi.getter
+    def to(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "to")
+
+    @to.setter
+    def to(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "to", value)
+
+
+@pulumi.input_type
+class ProcessGroupDetectionProcessDetectionArgs:
+    def __init__(__self__, *,
+                 contained_string: pulumi.Input[str],
+                 property: pulumi.Input[str],
+                 restrict_to_process_type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] contained_string: The substring to be contained in the value `property` refers to. Case Sensitive
+        :param pulumi.Input[str] property: Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+        :param pulumi.Input[str] restrict_to_process_type: Restrict this rule to specific process types. Note: Not all types can be detected at startup. Possible values: `PROCESS_TYPE_APACHE_HTTPD`, `PROCESS_TYPE_GLASSFISH`, `PROCESS_TYPE_GO`, `PROCESS_TYPE_IIS_APP_POOL`, `PROCESS_TYPE_JBOSS`, `PROCESS_TYPE_JAVA`, `PROCESS_TYPE_NGINX`, `PROCESS_TYPE_NODE_JS`, `PROCESS_TYPE_PHP`, `PROCESS_TYPE_TOMCAT`, `PROCESS_TYPE_WEBLOGIC`, `PROCESS_TYPE_WEBSPHERE`
+        """
+        pulumi.set(__self__, "contained_string", contained_string)
+        pulumi.set(__self__, "property", property)
+        if restrict_to_process_type is not None:
+            pulumi.set(__self__, "restrict_to_process_type", restrict_to_process_type)
+
+    @property
+    @pulumi.getter(name="containedString")
+    def contained_string(self) -> pulumi.Input[str]:
+        """
+        The substring to be contained in the value `property` refers to. Case Sensitive
+        """
+        return pulumi.get(self, "contained_string")
+
+    @contained_string.setter
+    def contained_string(self, value: pulumi.Input[str]):
+        pulumi.set(self, "contained_string", value)
+
+    @property
+    @pulumi.getter(name="restrictToProcessType")
+    def restrict_to_process_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Restrict this rule to specific process types. Note: Not all types can be detected at startup. Possible values: `PROCESS_TYPE_APACHE_HTTPD`, `PROCESS_TYPE_GLASSFISH`, `PROCESS_TYPE_GO`, `PROCESS_TYPE_IIS_APP_POOL`, `PROCESS_TYPE_JBOSS`, `PROCESS_TYPE_JAVA`, `PROCESS_TYPE_NGINX`, `PROCESS_TYPE_NODE_JS`, `PROCESS_TYPE_PHP`, `PROCESS_TYPE_TOMCAT`, `PROCESS_TYPE_WEBLOGIC`, `PROCESS_TYPE_WEBSPHERE`
+        """
+        return pulumi.get(self, "restrict_to_process_type")
+
+    @restrict_to_process_type.setter
+    def restrict_to_process_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "restrict_to_process_type", value)
+
+    @property
+    @pulumi.getter
+    def property(self) -> pulumi.Input[str]:
+        """
+        Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+        """
+        return pulumi.get(self, "property")
+
+    @property.setter
+    def property(self, value: pulumi.Input[str]):
+        pulumi.set(self, "property", value)
+
+
+@pulumi.input_type
+class ProcessMonitoringRuleConditionArgs:
+    def __init__(__self__, *,
+                 item: pulumi.Input[str],
+                 operator: pulumi.Input[str],
+                 env_var: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] item: Condition target
+        :param pulumi.Input[str] operator: Condition operator
+        :param pulumi.Input[str] env_var: supported only with OneAgent 1.167+
+        :param pulumi.Input[str] value: Condition value
+        """
+        pulumi.set(__self__, "item", item)
+        pulumi.set(__self__, "operator", operator)
+        if env_var is not None:
+            pulumi.set(__self__, "env_var", env_var)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def item(self) -> pulumi.Input[str]:
+        """
+        Condition target
+        """
+        return pulumi.get(self, "item")
+
+    @item.setter
+    def item(self, value: pulumi.Input[str]):
+        pulumi.set(self, "item", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> pulumi.Input[str]:
+        """
+        Condition operator
+        """
+        return pulumi.get(self, "operator")
+
+    @operator.setter
+    def operator(self, value: pulumi.Input[str]):
+        pulumi.set(self, "operator", value)
+
+    @property
+    @pulumi.getter(name="envVar")
+    def env_var(self) -> Optional[pulumi.Input[str]]:
+        """
+        supported only with OneAgent 1.167+
+        """
+        return pulumi.get(self, "env_var")
+
+    @env_var.setter
+    def env_var(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "env_var", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        Condition value
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -39680,9 +52839,12 @@ class RequestNamingConditionsArgs:
 class RequestNamingConditionsConditionArgs:
     def __init__(__self__, *,
                  attribute: pulumi.Input[str],
-                 comparison: pulumi.Input['RequestNamingConditionsConditionComparisonArgs']):
+                 comparison: pulumi.Input['RequestNamingConditionsConditionComparisonArgs'],
+                 unknowns: Optional[pulumi.Input[str]] = None):
         pulumi.set(__self__, "attribute", attribute)
         pulumi.set(__self__, "comparison", comparison)
+        if unknowns is not None:
+            pulumi.set(__self__, "unknowns", unknowns)
 
     @property
     @pulumi.getter
@@ -39701,6 +52863,15 @@ class RequestNamingConditionsConditionArgs:
     @comparison.setter
     def comparison(self, value: pulumi.Input['RequestNamingConditionsConditionComparisonArgs']):
         pulumi.set(self, "comparison", value)
+
+    @property
+    @pulumi.getter
+    def unknowns(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "unknowns")
+
+    @unknowns.setter
+    def unknowns(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "unknowns", value)
 
 
 @pulumi.input_type
@@ -39927,18 +53098,26 @@ class RequestNamingConditionsConditionComparisonArgs:
 @pulumi.input_type
 class RequestNamingConditionsConditionComparisonBooleanArgs:
     def __init__(__self__, *,
+                 value: pulumi.Input[bool],
                  operator: Optional[pulumi.Input[str]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
-                 value: Optional[pulumi.Input[bool]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input[bool]]]] = None):
+        pulumi.set(__self__, "value", value)
         if operator is not None:
             pulumi.set(__self__, "operator", operator)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
-        if value is not None:
-            pulumi.set(__self__, "value", value)
         if values is not None:
             pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "value", value)
 
     @property
     @pulumi.getter
@@ -39957,15 +53136,6 @@ class RequestNamingConditionsConditionComparisonBooleanArgs:
     @unknowns.setter
     def unknowns(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "unknowns", value)
-
-    @property
-    @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[bool]]:
-        return pulumi.get(self, "value")
-
-    @value.setter
-    def value(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "value", value)
 
     @property
     @pulumi.getter
@@ -41543,6 +54713,93 @@ class RequestNamingPlaceholdersPlaceholderSourceServiceTagTagKeyArgs:
 
 
 @pulumi.input_type
+class ResourceAttributesKeysArgs:
+    def __init__(__self__, *,
+                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['ResourceAttributesKeysRuleArgs']]]] = None):
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ResourceAttributesKeysRuleArgs']]]]:
+        return pulumi.get(self, "rules")
+
+    @rules.setter
+    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ResourceAttributesKeysRuleArgs']]]]):
+        pulumi.set(self, "rules", value)
+
+
+@pulumi.input_type
+class ResourceAttributesKeysRuleArgs:
+    def __init__(__self__, *,
+                 attribute_key: pulumi.Input[str],
+                 enabled: pulumi.Input[bool],
+                 masking: pulumi.Input[str]):
+        pulumi.set(__self__, "attribute_key", attribute_key)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "masking", masking)
+
+    @property
+    @pulumi.getter(name="attributeKey")
+    def attribute_key(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "attribute_key")
+
+    @attribute_key.setter
+    def attribute_key(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attribute_key", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def masking(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "masking")
+
+    @masking.setter
+    def masking(self, value: pulumi.Input[str]):
+        pulumi.set(self, "masking", value)
+
+
+@pulumi.input_type
+class RumProviderBreakdownDomainNamePatternListArgs:
+    def __init__(__self__, *,
+                 domain_name_patterns: pulumi.Input[Sequence[pulumi.Input['RumProviderBreakdownDomainNamePatternListDomainNamePatternArgs']]]):
+        pulumi.set(__self__, "domain_name_patterns", domain_name_patterns)
+
+    @property
+    @pulumi.getter(name="domainNamePatterns")
+    def domain_name_patterns(self) -> pulumi.Input[Sequence[pulumi.Input['RumProviderBreakdownDomainNamePatternListDomainNamePatternArgs']]]:
+        return pulumi.get(self, "domain_name_patterns")
+
+    @domain_name_patterns.setter
+    def domain_name_patterns(self, value: pulumi.Input[Sequence[pulumi.Input['RumProviderBreakdownDomainNamePatternListDomainNamePatternArgs']]]):
+        pulumi.set(self, "domain_name_patterns", value)
+
+
+@pulumi.input_type
+class RumProviderBreakdownDomainNamePatternListDomainNamePatternArgs:
+    def __init__(__self__, *,
+                 pattern: pulumi.Input[str]):
+        pulumi.set(__self__, "pattern", pattern)
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "pattern")
+
+    @pattern.setter
+    def pattern(self, value: pulumi.Input[str]):
+        pulumi.set(self, "pattern", value)
+
+
+@pulumi.input_type
 class ServiceAnomaliesFailureRatesArgs:
     def __init__(__self__, *,
                  auto: Optional[pulumi.Input['ServiceAnomaliesFailureRatesAutoArgs']] = None,
@@ -41960,6 +55217,4454 @@ class ServiceAnomaliesResponseTimesThresholdsArgs:
     @unknowns.setter
     def unknowns(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "unknowns", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2FailureRateArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 auto_detection: Optional[pulumi.Input['ServiceAnomaliesV2FailureRateAutoDetectionArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None,
+                 fixed_detection: Optional[pulumi.Input['ServiceAnomaliesV2FailureRateFixedDetectionArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: Detect increases in failure rate
+        :param pulumi.Input['ServiceAnomaliesV2FailureRateAutoDetectionArgs'] auto_detection: . Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+        :param pulumi.Input[str] detection_mode: Detection mode for increases in failure rate
+        :param pulumi.Input['ServiceAnomaliesV2FailureRateFixedDetectionArgs'] fixed_detection: . Alert if a given failure rate is exceeded during any 5-minute-period
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if auto_detection is not None:
+            pulumi.set(__self__, "auto_detection", auto_detection)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if fixed_detection is not None:
+            pulumi.set(__self__, "fixed_detection", fixed_detection)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Detect increases in failure rate
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="autoDetection")
+    def auto_detection(self) -> Optional[pulumi.Input['ServiceAnomaliesV2FailureRateAutoDetectionArgs']]:
+        """
+        . Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+        """
+        return pulumi.get(self, "auto_detection")
+
+    @auto_detection.setter
+    def auto_detection(self, value: Optional[pulumi.Input['ServiceAnomaliesV2FailureRateAutoDetectionArgs']]):
+        pulumi.set(self, "auto_detection", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Detection mode for increases in failure rate
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+    @property
+    @pulumi.getter(name="fixedDetection")
+    def fixed_detection(self) -> Optional[pulumi.Input['ServiceAnomaliesV2FailureRateFixedDetectionArgs']]:
+        """
+        . Alert if a given failure rate is exceeded during any 5-minute-period
+        """
+        return pulumi.get(self, "fixed_detection")
+
+    @fixed_detection.setter
+    def fixed_detection(self, value: Optional[pulumi.Input['ServiceAnomaliesV2FailureRateFixedDetectionArgs']]):
+        pulumi.set(self, "fixed_detection", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2FailureRateAutoDetectionArgs:
+    def __init__(__self__, *,
+                 absolute_increase: pulumi.Input[float],
+                 over_alerting_protection: pulumi.Input['ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtectionArgs'],
+                 relative_increase: pulumi.Input[float]):
+        pulumi.set(__self__, "absolute_increase", absolute_increase)
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "relative_increase", relative_increase)
+
+    @property
+    @pulumi.getter(name="absoluteIncrease")
+    def absolute_increase(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "absolute_increase")
+
+    @absolute_increase.setter
+    def absolute_increase(self, value: pulumi.Input[float]):
+        pulumi.set(self, "absolute_increase", value)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> pulumi.Input['ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtectionArgs']:
+        return pulumi.get(self, "over_alerting_protection")
+
+    @over_alerting_protection.setter
+    def over_alerting_protection(self, value: pulumi.Input['ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtectionArgs']):
+        pulumi.set(self, "over_alerting_protection", value)
+
+    @property
+    @pulumi.getter(name="relativeIncrease")
+    def relative_increase(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "relative_increase")
+
+    @relative_increase.setter
+    def relative_increase(self, value: pulumi.Input[float]):
+        pulumi.set(self, "relative_increase", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtectionArgs:
+    def __init__(__self__, *,
+                 minutes_abnormal_state: pulumi.Input[int],
+                 requests_per_minute: pulumi.Input[float]):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: pulumi.Input[int]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "requests_per_minute")
+
+    @requests_per_minute.setter
+    def requests_per_minute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "requests_per_minute", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2FailureRateFixedDetectionArgs:
+    def __init__(__self__, *,
+                 over_alerting_protection: pulumi.Input['ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtectionArgs'],
+                 sensitivity: pulumi.Input[str],
+                 threshold: pulumi.Input[float]):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> pulumi.Input['ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtectionArgs']:
+        return pulumi.get(self, "over_alerting_protection")
+
+    @over_alerting_protection.setter
+    def over_alerting_protection(self, value: pulumi.Input['ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtectionArgs']):
+        pulumi.set(self, "over_alerting_protection", value)
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "sensitivity")
+
+    @sensitivity.setter
+    def sensitivity(self, value: pulumi.Input[str]):
+        pulumi.set(self, "sensitivity", value)
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "threshold")
+
+    @threshold.setter
+    def threshold(self, value: pulumi.Input[float]):
+        pulumi.set(self, "threshold", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtectionArgs:
+    def __init__(__self__, *,
+                 minutes_abnormal_state: pulumi.Input[int],
+                 requests_per_minute: pulumi.Input[float]):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: pulumi.Input[int]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "requests_per_minute")
+
+    @requests_per_minute.setter
+    def requests_per_minute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "requests_per_minute", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2LoadDropsArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 load_drop_percent: Optional[pulumi.Input[float]] = None,
+                 minutes_abnormal_state: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[bool] enabled: Detect service load drops
+        :param pulumi.Input[float] load_drop_percent: Threshold
+        :param pulumi.Input[int] minutes_abnormal_state: Time span
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if load_drop_percent is not None:
+            pulumi.set(__self__, "load_drop_percent", load_drop_percent)
+        if minutes_abnormal_state is not None:
+            pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Detect service load drops
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="loadDropPercent")
+    def load_drop_percent(self) -> Optional[pulumi.Input[float]]:
+        """
+        Threshold
+        """
+        return pulumi.get(self, "load_drop_percent")
+
+    @load_drop_percent.setter
+    def load_drop_percent(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "load_drop_percent", value)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> Optional[pulumi.Input[int]]:
+        """
+        Time span
+        """
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2LoadSpikesArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 load_spike_percent: Optional[pulumi.Input[float]] = None,
+                 minutes_abnormal_state: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[bool] enabled: Detect service load spikes
+        :param pulumi.Input[float] load_spike_percent: Threshold
+        :param pulumi.Input[int] minutes_abnormal_state: Time span
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if load_spike_percent is not None:
+            pulumi.set(__self__, "load_spike_percent", load_spike_percent)
+        if minutes_abnormal_state is not None:
+            pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Detect service load spikes
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="loadSpikePercent")
+    def load_spike_percent(self) -> Optional[pulumi.Input[float]]:
+        """
+        Threshold
+        """
+        return pulumi.get(self, "load_spike_percent")
+
+    @load_spike_percent.setter
+    def load_spike_percent(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "load_spike_percent", value)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> Optional[pulumi.Input[int]]:
+        """
+        Time span
+        """
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2ResponseTimeArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 auto_detection: Optional[pulumi.Input['ServiceAnomaliesV2ResponseTimeAutoDetectionArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None,
+                 fixed_detection: Optional[pulumi.Input['ServiceAnomaliesV2ResponseTimeFixedDetectionArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: Detect response time degradations
+        :param pulumi.Input['ServiceAnomaliesV2ResponseTimeAutoDetectionArgs'] auto_detection: No documentation available
+        :param pulumi.Input[str] detection_mode: Detection mode for response time degradations
+        :param pulumi.Input['ServiceAnomaliesV2ResponseTimeFixedDetectionArgs'] fixed_detection: No documentation available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if auto_detection is not None:
+            pulumi.set(__self__, "auto_detection", auto_detection)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if fixed_detection is not None:
+            pulumi.set(__self__, "fixed_detection", fixed_detection)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        Detect response time degradations
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="autoDetection")
+    def auto_detection(self) -> Optional[pulumi.Input['ServiceAnomaliesV2ResponseTimeAutoDetectionArgs']]:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "auto_detection")
+
+    @auto_detection.setter
+    def auto_detection(self, value: Optional[pulumi.Input['ServiceAnomaliesV2ResponseTimeAutoDetectionArgs']]):
+        pulumi.set(self, "auto_detection", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Detection mode for response time degradations
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+    @property
+    @pulumi.getter(name="fixedDetection")
+    def fixed_detection(self) -> Optional[pulumi.Input['ServiceAnomaliesV2ResponseTimeFixedDetectionArgs']]:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "fixed_detection")
+
+    @fixed_detection.setter
+    def fixed_detection(self, value: Optional[pulumi.Input['ServiceAnomaliesV2ResponseTimeFixedDetectionArgs']]):
+        pulumi.set(self, "fixed_detection", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2ResponseTimeAutoDetectionArgs:
+    def __init__(__self__, *,
+                 over_alerting_protection: pulumi.Input['ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtectionArgs'],
+                 response_time_all: pulumi.Input['ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAllArgs'],
+                 response_time_slowest: pulumi.Input['ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowestArgs']):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "response_time_all", response_time_all)
+        pulumi.set(__self__, "response_time_slowest", response_time_slowest)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> pulumi.Input['ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtectionArgs']:
+        return pulumi.get(self, "over_alerting_protection")
+
+    @over_alerting_protection.setter
+    def over_alerting_protection(self, value: pulumi.Input['ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtectionArgs']):
+        pulumi.set(self, "over_alerting_protection", value)
+
+    @property
+    @pulumi.getter(name="responseTimeAll")
+    def response_time_all(self) -> pulumi.Input['ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAllArgs']:
+        return pulumi.get(self, "response_time_all")
+
+    @response_time_all.setter
+    def response_time_all(self, value: pulumi.Input['ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAllArgs']):
+        pulumi.set(self, "response_time_all", value)
+
+    @property
+    @pulumi.getter(name="responseTimeSlowest")
+    def response_time_slowest(self) -> pulumi.Input['ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowestArgs']:
+        return pulumi.get(self, "response_time_slowest")
+
+    @response_time_slowest.setter
+    def response_time_slowest(self, value: pulumi.Input['ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowestArgs']):
+        pulumi.set(self, "response_time_slowest", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtectionArgs:
+    def __init__(__self__, *,
+                 minutes_abnormal_state: pulumi.Input[int],
+                 requests_per_minute: pulumi.Input[float]):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: pulumi.Input[int]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "requests_per_minute")
+
+    @requests_per_minute.setter
+    def requests_per_minute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "requests_per_minute", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAllArgs:
+    def __init__(__self__, *,
+                 degradation_milliseconds: pulumi.Input[float],
+                 degradation_percent: pulumi.Input[float]):
+        pulumi.set(__self__, "degradation_milliseconds", degradation_milliseconds)
+        pulumi.set(__self__, "degradation_percent", degradation_percent)
+
+    @property
+    @pulumi.getter(name="degradationMilliseconds")
+    def degradation_milliseconds(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "degradation_milliseconds")
+
+    @degradation_milliseconds.setter
+    def degradation_milliseconds(self, value: pulumi.Input[float]):
+        pulumi.set(self, "degradation_milliseconds", value)
+
+    @property
+    @pulumi.getter(name="degradationPercent")
+    def degradation_percent(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "degradation_percent")
+
+    @degradation_percent.setter
+    def degradation_percent(self, value: pulumi.Input[float]):
+        pulumi.set(self, "degradation_percent", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowestArgs:
+    def __init__(__self__, *,
+                 slowest_degradation_milliseconds: pulumi.Input[float],
+                 slowest_degradation_percent: pulumi.Input[float]):
+        pulumi.set(__self__, "slowest_degradation_milliseconds", slowest_degradation_milliseconds)
+        pulumi.set(__self__, "slowest_degradation_percent", slowest_degradation_percent)
+
+    @property
+    @pulumi.getter(name="slowestDegradationMilliseconds")
+    def slowest_degradation_milliseconds(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "slowest_degradation_milliseconds")
+
+    @slowest_degradation_milliseconds.setter
+    def slowest_degradation_milliseconds(self, value: pulumi.Input[float]):
+        pulumi.set(self, "slowest_degradation_milliseconds", value)
+
+    @property
+    @pulumi.getter(name="slowestDegradationPercent")
+    def slowest_degradation_percent(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "slowest_degradation_percent")
+
+    @slowest_degradation_percent.setter
+    def slowest_degradation_percent(self, value: pulumi.Input[float]):
+        pulumi.set(self, "slowest_degradation_percent", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2ResponseTimeFixedDetectionArgs:
+    def __init__(__self__, *,
+                 over_alerting_protection: pulumi.Input['ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtectionArgs'],
+                 response_time_all: pulumi.Input['ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAllArgs'],
+                 response_time_slowest: pulumi.Input['ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs'],
+                 sensitivity: pulumi.Input[str]):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "response_time_all", response_time_all)
+        pulumi.set(__self__, "response_time_slowest", response_time_slowest)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> pulumi.Input['ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtectionArgs']:
+        return pulumi.get(self, "over_alerting_protection")
+
+    @over_alerting_protection.setter
+    def over_alerting_protection(self, value: pulumi.Input['ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtectionArgs']):
+        pulumi.set(self, "over_alerting_protection", value)
+
+    @property
+    @pulumi.getter(name="responseTimeAll")
+    def response_time_all(self) -> pulumi.Input['ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAllArgs']:
+        return pulumi.get(self, "response_time_all")
+
+    @response_time_all.setter
+    def response_time_all(self, value: pulumi.Input['ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAllArgs']):
+        pulumi.set(self, "response_time_all", value)
+
+    @property
+    @pulumi.getter(name="responseTimeSlowest")
+    def response_time_slowest(self) -> pulumi.Input['ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs']:
+        return pulumi.get(self, "response_time_slowest")
+
+    @response_time_slowest.setter
+    def response_time_slowest(self, value: pulumi.Input['ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs']):
+        pulumi.set(self, "response_time_slowest", value)
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "sensitivity")
+
+    @sensitivity.setter
+    def sensitivity(self, value: pulumi.Input[str]):
+        pulumi.set(self, "sensitivity", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtectionArgs:
+    def __init__(__self__, *,
+                 minutes_abnormal_state: pulumi.Input[int],
+                 requests_per_minute: pulumi.Input[float]):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: pulumi.Input[int]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "requests_per_minute")
+
+    @requests_per_minute.setter
+    def requests_per_minute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "requests_per_minute", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAllArgs:
+    def __init__(__self__, *,
+                 degradation_milliseconds: pulumi.Input[float]):
+        pulumi.set(__self__, "degradation_milliseconds", degradation_milliseconds)
+
+    @property
+    @pulumi.getter(name="degradationMilliseconds")
+    def degradation_milliseconds(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "degradation_milliseconds")
+
+    @degradation_milliseconds.setter
+    def degradation_milliseconds(self, value: pulumi.Input[float]):
+        pulumi.set(self, "degradation_milliseconds", value)
+
+
+@pulumi.input_type
+class ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs:
+    def __init__(__self__, *,
+                 slowest_degradation_milliseconds: pulumi.Input[float]):
+        pulumi.set(__self__, "slowest_degradation_milliseconds", slowest_degradation_milliseconds)
+
+    @property
+    @pulumi.getter(name="slowestDegradationMilliseconds")
+    def slowest_degradation_milliseconds(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "slowest_degradation_milliseconds")
+
+    @slowest_degradation_milliseconds.setter
+    def slowest_degradation_milliseconds(self, value: pulumi.Input[float]):
+        pulumi.set(self, "slowest_degradation_milliseconds", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestConditionsArgs:
+    def __init__(__self__, *,
+                 conditions: pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebRequestConditionsConditionArgs']]]):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebRequestConditionsConditionArgs']]]:
+        return pulumi.get(self, "conditions")
+
+    @conditions.setter
+    def conditions(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebRequestConditionsConditionArgs']]]):
+        pulumi.set(self, "conditions", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestConditionsConditionArgs:
+    def __init__(__self__, *,
+                 attribute: pulumi.Input[str],
+                 compare_operation_type: pulumi.Input[str],
+                 frameworks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 ignore_case: Optional[pulumi.Input[bool]] = None,
+                 int_value: Optional[pulumi.Input[int]] = None,
+                 int_values: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 ip_range_from: Optional[pulumi.Input[str]] = None,
+                 ip_range_to: Optional[pulumi.Input[str]] = None,
+                 tag_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 text_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "compare_operation_type", compare_operation_type)
+        if frameworks is not None:
+            pulumi.set(__self__, "frameworks", frameworks)
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if int_values is not None:
+            pulumi.set(__self__, "int_values", int_values)
+        if ip_range_from is not None:
+            pulumi.set(__self__, "ip_range_from", ip_range_from)
+        if ip_range_to is not None:
+            pulumi.set(__self__, "ip_range_to", ip_range_to)
+        if tag_values is not None:
+            pulumi.set(__self__, "tag_values", tag_values)
+        if text_values is not None:
+            pulumi.set(__self__, "text_values", text_values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "attribute")
+
+    @attribute.setter
+    def attribute(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attribute", value)
+
+    @property
+    @pulumi.getter(name="compareOperationType")
+    def compare_operation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "compare_operation_type")
+
+    @compare_operation_type.setter
+    def compare_operation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "compare_operation_type", value)
+
+    @property
+    @pulumi.getter
+    def frameworks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "frameworks")
+
+    @frameworks.setter
+    def frameworks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "frameworks", value)
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "ignore_case")
+
+    @ignore_case.setter
+    def ignore_case(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "ignore_case", value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "int_value")
+
+    @int_value.setter
+    def int_value(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "int_value", value)
+
+    @property
+    @pulumi.getter(name="intValues")
+    def int_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        return pulumi.get(self, "int_values")
+
+    @int_values.setter
+    def int_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "int_values", value)
+
+    @property
+    @pulumi.getter(name="ipRangeFrom")
+    def ip_range_from(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ip_range_from")
+
+    @ip_range_from.setter
+    def ip_range_from(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ip_range_from", value)
+
+    @property
+    @pulumi.getter(name="ipRangeTo")
+    def ip_range_to(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ip_range_to")
+
+    @ip_range_to.setter
+    def ip_range_to(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ip_range_to", value)
+
+    @property
+    @pulumi.getter(name="tagValues")
+    def tag_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "tag_values")
+
+    @tag_values.setter
+    def tag_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "tag_values", value)
+
+    @property
+    @pulumi.getter(name="textValues")
+    def text_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "text_values")
+
+    @text_values.setter
+    def text_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "text_values", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsArgs:
+    def __init__(__self__, *,
+                 application_id: pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdArgs'],
+                 context_root: pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootArgs'],
+                 port_for_service_id: pulumi.Input[bool],
+                 public_domain_name: pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameArgs']):
+        """
+        :param pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdArgs'] application_id: Application identifier
+        :param pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootArgs'] context_root: URL context root
+        :param pulumi.Input[bool] port_for_service_id: Let the Port contribute to the Service Id
+        :param pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameArgs'] public_domain_name: Public domain name
+        """
+        pulumi.set(__self__, "application_id", application_id)
+        pulumi.set(__self__, "context_root", context_root)
+        pulumi.set(__self__, "port_for_service_id", port_for_service_id)
+        pulumi.set(__self__, "public_domain_name", public_domain_name)
+
+    @property
+    @pulumi.getter(name="applicationId")
+    def application_id(self) -> pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdArgs']:
+        """
+        Application identifier
+        """
+        return pulumi.get(self, "application_id")
+
+    @application_id.setter
+    def application_id(self, value: pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdArgs']):
+        pulumi.set(self, "application_id", value)
+
+    @property
+    @pulumi.getter(name="contextRoot")
+    def context_root(self) -> pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootArgs']:
+        """
+        URL context root
+        """
+        return pulumi.get(self, "context_root")
+
+    @context_root.setter
+    def context_root(self, value: pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootArgs']):
+        pulumi.set(self, "context_root", value)
+
+    @property
+    @pulumi.getter(name="portForServiceId")
+    def port_for_service_id(self) -> pulumi.Input[bool]:
+        """
+        Let the Port contribute to the Service Id
+        """
+        return pulumi.get(self, "port_for_service_id")
+
+    @port_for_service_id.setter
+    def port_for_service_id(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "port_for_service_id", value)
+
+    @property
+    @pulumi.getter(name="publicDomainName")
+    def public_domain_name(self) -> pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameArgs']:
+        """
+        Public domain name
+        """
+        return pulumi.get(self, "public_domain_name")
+
+    @public_domain_name.setter
+    def public_domain_name(self, value: pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameArgs']):
+        pulumi.set(self, "public_domain_name", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsApplicationIdArgs:
+    def __init__(__self__, *,
+                 enable_id_contributor: pulumi.Input[bool],
+                 service_id_contributor: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs']] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @enable_id_contributor.setter
+    def enable_id_contributor(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_id_contributor", value)
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs']]:
+        return pulumi.get(self, "service_id_contributor")
+
+    @service_id_contributor.setter
+    def service_id_contributor(self, value: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs']]):
+        pulumi.set(self, "service_id_contributor", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs:
+    def __init__(__self__, *,
+                 contribution_type: pulumi.Input[str],
+                 transformations: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs']] = None,
+                 value_override: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs']] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "contribution_type")
+
+    @contribution_type.setter
+    def contribution_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "contribution_type", value)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs']]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs']]):
+        pulumi.set(self, "transformations", value)
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs']]:
+        return pulumi.get(self, "value_override")
+
+    @value_override.setter
+    def value_override(self, value: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs']]):
+        pulumi.set(self, "value_override", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs:
+    def __init__(__self__, *,
+                 transformations: pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs']]]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(self, "transformations", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs:
+    def __init__(__self__, *,
+                 transformation_type: pulumi.Input[str],
+                 include_hex_numbers: Optional[pulumi.Input[bool]] = None,
+                 min_digit_count: Optional[pulumi.Input[int]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None,
+                 replacement_value: Optional[pulumi.Input[str]] = None,
+                 segment_count: Optional[pulumi.Input[int]] = None,
+                 select_index: Optional[pulumi.Input[int]] = None,
+                 split_delimiter: Optional[pulumi.Input[str]] = None,
+                 suffix: Optional[pulumi.Input[str]] = None,
+                 take_from_end: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "transformation_type")
+
+    @transformation_type.setter
+    def transformation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "transformation_type", value)
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @include_hex_numbers.setter
+    def include_hex_numbers(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "include_hex_numbers", value)
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "min_digit_count")
+
+    @min_digit_count.setter
+    def min_digit_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_digit_count", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "replacement_value")
+
+    @replacement_value.setter
+    def replacement_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replacement_value", value)
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "segment_count")
+
+    @segment_count.setter
+    def segment_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "segment_count", value)
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "select_index")
+
+    @select_index.setter
+    def select_index(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "select_index", value)
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "split_delimiter")
+
+    @split_delimiter.setter
+    def split_delimiter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "split_delimiter", value)
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "suffix")
+
+    @suffix.setter
+    def suffix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "suffix", value)
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "take_from_end")
+
+    @take_from_end.setter
+    def take_from_end(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "take_from_end", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsContextRootArgs:
+    def __init__(__self__, *,
+                 enable_id_contributor: pulumi.Input[bool],
+                 service_id_contributor: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs']] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @enable_id_contributor.setter
+    def enable_id_contributor(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_id_contributor", value)
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs']]:
+        return pulumi.get(self, "service_id_contributor")
+
+    @service_id_contributor.setter
+    def service_id_contributor(self, value: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs']]):
+        pulumi.set(self, "service_id_contributor", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorArgs:
+    def __init__(__self__, *,
+                 contribution_type: pulumi.Input[str],
+                 segment_count: Optional[pulumi.Input[int]] = None,
+                 transformations: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs']] = None,
+                 value_override: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverrideArgs']] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "contribution_type")
+
+    @contribution_type.setter
+    def contribution_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "contribution_type", value)
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "segment_count")
+
+    @segment_count.setter
+    def segment_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "segment_count", value)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs']]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs']]):
+        pulumi.set(self, "transformations", value)
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverrideArgs']]:
+        return pulumi.get(self, "value_override")
+
+    @value_override.setter
+    def value_override(self, value: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverrideArgs']]):
+        pulumi.set(self, "value_override", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs:
+    def __init__(__self__, *,
+                 transformations: pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs']]]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(self, "transformations", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs:
+    def __init__(__self__, *,
+                 transformation_type: pulumi.Input[str],
+                 include_hex_numbers: Optional[pulumi.Input[bool]] = None,
+                 min_digit_count: Optional[pulumi.Input[int]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None,
+                 replacement_value: Optional[pulumi.Input[str]] = None,
+                 suffix: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "transformation_type")
+
+    @transformation_type.setter
+    def transformation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "transformation_type", value)
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @include_hex_numbers.setter
+    def include_hex_numbers(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "include_hex_numbers", value)
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "min_digit_count")
+
+    @min_digit_count.setter
+    def min_digit_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_digit_count", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "replacement_value")
+
+    @replacement_value.setter
+    def replacement_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replacement_value", value)
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "suffix")
+
+    @suffix.setter
+    def suffix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "suffix", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverrideArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsPublicDomainNameArgs:
+    def __init__(__self__, *,
+                 enable_id_contributor: pulumi.Input[bool],
+                 service_id_contributor: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorArgs']] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @enable_id_contributor.setter
+    def enable_id_contributor(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_id_contributor", value)
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorArgs']]:
+        return pulumi.get(self, "service_id_contributor")
+
+    @service_id_contributor.setter
+    def service_id_contributor(self, value: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorArgs']]):
+        pulumi.set(self, "service_id_contributor", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorArgs:
+    def __init__(__self__, *,
+                 contribution_type: pulumi.Input[str],
+                 copy_from_host_name: Optional[pulumi.Input[bool]] = None,
+                 transformations: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsArgs']] = None,
+                 value_override: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverrideArgs']] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if copy_from_host_name is not None:
+            pulumi.set(__self__, "copy_from_host_name", copy_from_host_name)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "contribution_type")
+
+    @contribution_type.setter
+    def contribution_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "contribution_type", value)
+
+    @property
+    @pulumi.getter(name="copyFromHostName")
+    def copy_from_host_name(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "copy_from_host_name")
+
+    @copy_from_host_name.setter
+    def copy_from_host_name(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "copy_from_host_name", value)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsArgs']]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsArgs']]):
+        pulumi.set(self, "transformations", value)
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverrideArgs']]:
+        return pulumi.get(self, "value_override")
+
+    @value_override.setter
+    def value_override(self, value: Optional[pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverrideArgs']]):
+        pulumi.set(self, "value_override", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsArgs:
+    def __init__(__self__, *,
+                 transformations: pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformationArgs']]]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(self, "transformations", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformationArgs:
+    def __init__(__self__, *,
+                 transformation_type: pulumi.Input[str],
+                 include_hex_numbers: Optional[pulumi.Input[bool]] = None,
+                 min_digit_count: Optional[pulumi.Input[int]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None,
+                 replacement_value: Optional[pulumi.Input[str]] = None,
+                 segment_count: Optional[pulumi.Input[int]] = None,
+                 select_index: Optional[pulumi.Input[int]] = None,
+                 split_delimiter: Optional[pulumi.Input[str]] = None,
+                 suffix: Optional[pulumi.Input[str]] = None,
+                 take_from_end: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "transformation_type")
+
+    @transformation_type.setter
+    def transformation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "transformation_type", value)
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @include_hex_numbers.setter
+    def include_hex_numbers(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "include_hex_numbers", value)
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "min_digit_count")
+
+    @min_digit_count.setter
+    def min_digit_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_digit_count", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "replacement_value")
+
+    @replacement_value.setter
+    def replacement_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replacement_value", value)
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "segment_count")
+
+    @segment_count.setter
+    def segment_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "segment_count", value)
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "select_index")
+
+    @select_index.setter
+    def select_index(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "select_index", value)
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "split_delimiter")
+
+    @split_delimiter.setter
+    def split_delimiter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "split_delimiter", value)
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "suffix")
+
+    @suffix.setter
+    def suffix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "suffix", value)
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "take_from_end")
+
+    @take_from_end.setter
+    def take_from_end(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "take_from_end", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverrideArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebServiceConditionsArgs:
+    def __init__(__self__, *,
+                 conditions: pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebServiceConditionsConditionArgs']]]):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebServiceConditionsConditionArgs']]]:
+        return pulumi.get(self, "conditions")
+
+    @conditions.setter
+    def conditions(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebServiceConditionsConditionArgs']]]):
+        pulumi.set(self, "conditions", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebServiceConditionsConditionArgs:
+    def __init__(__self__, *,
+                 attribute: pulumi.Input[str],
+                 compare_operation_type: pulumi.Input[str],
+                 frameworks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 ignore_case: Optional[pulumi.Input[bool]] = None,
+                 int_value: Optional[pulumi.Input[int]] = None,
+                 int_values: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 ip_range_from: Optional[pulumi.Input[str]] = None,
+                 ip_range_to: Optional[pulumi.Input[str]] = None,
+                 tag_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 text_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "compare_operation_type", compare_operation_type)
+        if frameworks is not None:
+            pulumi.set(__self__, "frameworks", frameworks)
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if int_values is not None:
+            pulumi.set(__self__, "int_values", int_values)
+        if ip_range_from is not None:
+            pulumi.set(__self__, "ip_range_from", ip_range_from)
+        if ip_range_to is not None:
+            pulumi.set(__self__, "ip_range_to", ip_range_to)
+        if tag_values is not None:
+            pulumi.set(__self__, "tag_values", tag_values)
+        if text_values is not None:
+            pulumi.set(__self__, "text_values", text_values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "attribute")
+
+    @attribute.setter
+    def attribute(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attribute", value)
+
+    @property
+    @pulumi.getter(name="compareOperationType")
+    def compare_operation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "compare_operation_type")
+
+    @compare_operation_type.setter
+    def compare_operation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "compare_operation_type", value)
+
+    @property
+    @pulumi.getter
+    def frameworks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "frameworks")
+
+    @frameworks.setter
+    def frameworks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "frameworks", value)
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "ignore_case")
+
+    @ignore_case.setter
+    def ignore_case(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "ignore_case", value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "int_value")
+
+    @int_value.setter
+    def int_value(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "int_value", value)
+
+    @property
+    @pulumi.getter(name="intValues")
+    def int_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        return pulumi.get(self, "int_values")
+
+    @int_values.setter
+    def int_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "int_values", value)
+
+    @property
+    @pulumi.getter(name="ipRangeFrom")
+    def ip_range_from(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ip_range_from")
+
+    @ip_range_from.setter
+    def ip_range_from(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ip_range_from", value)
+
+    @property
+    @pulumi.getter(name="ipRangeTo")
+    def ip_range_to(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ip_range_to")
+
+    @ip_range_to.setter
+    def ip_range_to(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ip_range_to", value)
+
+    @property
+    @pulumi.getter(name="tagValues")
+    def tag_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "tag_values")
+
+    @tag_values.setter
+    def tag_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "tag_values", value)
+
+    @property
+    @pulumi.getter(name="textValues")
+    def text_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "text_values")
+
+    @text_values.setter
+    def text_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "text_values", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebServiceIdContributorsArgs:
+    def __init__(__self__, *,
+                 detect_as_web_request_service: pulumi.Input[bool],
+                 port_for_service_id: Optional[pulumi.Input[bool]] = None,
+                 url_path: Optional[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathArgs']] = None):
+        """
+        :param pulumi.Input[bool] detect_as_web_request_service: Detect the matching requests as web request services instead of web services.
+        """
+        pulumi.set(__self__, "detect_as_web_request_service", detect_as_web_request_service)
+        if port_for_service_id is not None:
+            pulumi.set(__self__, "port_for_service_id", port_for_service_id)
+        if url_path is not None:
+            pulumi.set(__self__, "url_path", url_path)
+
+    @property
+    @pulumi.getter(name="detectAsWebRequestService")
+    def detect_as_web_request_service(self) -> pulumi.Input[bool]:
+        """
+        Detect the matching requests as web request services instead of web services.
+        """
+        return pulumi.get(self, "detect_as_web_request_service")
+
+    @detect_as_web_request_service.setter
+    def detect_as_web_request_service(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "detect_as_web_request_service", value)
+
+    @property
+    @pulumi.getter(name="portForServiceId")
+    def port_for_service_id(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "port_for_service_id")
+
+    @port_for_service_id.setter
+    def port_for_service_id(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "port_for_service_id", value)
+
+    @property
+    @pulumi.getter(name="urlPath")
+    def url_path(self) -> Optional[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathArgs']]:
+        return pulumi.get(self, "url_path")
+
+    @url_path.setter
+    def url_path(self, value: Optional[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathArgs']]):
+        pulumi.set(self, "url_path", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebServiceIdContributorsUrlPathArgs:
+    def __init__(__self__, *,
+                 enable_id_contributor: pulumi.Input[bool],
+                 service_id_contributor: Optional[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs']] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @enable_id_contributor.setter
+    def enable_id_contributor(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_id_contributor", value)
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs']]:
+        return pulumi.get(self, "service_id_contributor")
+
+    @service_id_contributor.setter
+    def service_id_contributor(self, value: Optional[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs']]):
+        pulumi.set(self, "service_id_contributor", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorArgs:
+    def __init__(__self__, *,
+                 contribution_type: pulumi.Input[str],
+                 transformations: Optional[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs']] = None,
+                 value_override: Optional[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs']] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "contribution_type")
+
+    @contribution_type.setter
+    def contribution_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "contribution_type", value)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs']]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: Optional[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs']]):
+        pulumi.set(self, "transformations", value)
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs']]:
+        return pulumi.get(self, "value_override")
+
+    @value_override.setter
+    def value_override(self, value: Optional[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs']]):
+        pulumi.set(self, "value_override", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs:
+    def __init__(__self__, *,
+                 transformations: pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArgs']]]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(self, "transformations", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformationArgs:
+    def __init__(__self__, *,
+                 transformation_type: pulumi.Input[str],
+                 include_hex_numbers: Optional[pulumi.Input[bool]] = None,
+                 min_digit_count: Optional[pulumi.Input[int]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None,
+                 replacement_value: Optional[pulumi.Input[str]] = None,
+                 segment_count: Optional[pulumi.Input[int]] = None,
+                 select_index: Optional[pulumi.Input[int]] = None,
+                 split_delimiter: Optional[pulumi.Input[str]] = None,
+                 suffix: Optional[pulumi.Input[str]] = None,
+                 take_from_end: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "transformation_type")
+
+    @transformation_type.setter
+    def transformation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "transformation_type", value)
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @include_hex_numbers.setter
+    def include_hex_numbers(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "include_hex_numbers", value)
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "min_digit_count")
+
+    @min_digit_count.setter
+    def min_digit_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_digit_count", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "replacement_value")
+
+    @replacement_value.setter
+    def replacement_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replacement_value", value)
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "segment_count")
+
+    @segment_count.setter
+    def segment_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "segment_count", value)
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "select_index")
+
+    @select_index.setter
+    def select_index(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "select_index", value)
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "split_delimiter")
+
+    @split_delimiter.setter
+    def split_delimiter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "split_delimiter", value)
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "suffix")
+
+    @suffix.setter
+    def suffix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "suffix", value)
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "take_from_end")
+
+    @take_from_end.setter
+    def take_from_end(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "take_from_end", value)
+
+
+@pulumi.input_type
+class ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ServiceFailureExceptionRulesArgs:
+    def __init__(__self__, *,
+                 ignore_all_exceptions: pulumi.Input[bool],
+                 ignore_span_failure_detection: pulumi.Input[bool],
+                 custom_error_rules: Optional[pulumi.Input['ServiceFailureExceptionRulesCustomErrorRulesArgs']] = None,
+                 custom_handled_exceptions: Optional[pulumi.Input['ServiceFailureExceptionRulesCustomHandledExceptionsArgs']] = None,
+                 ignored_exceptions: Optional[pulumi.Input['ServiceFailureExceptionRulesIgnoredExceptionsArgs']] = None,
+                 success_forcing_exceptions: Optional[pulumi.Input['ServiceFailureExceptionRulesSuccessForcingExceptionsArgs']] = None):
+        """
+        :param pulumi.Input[bool] ignore_all_exceptions: Ignore all exceptions
+        :param pulumi.Input[bool] ignore_span_failure_detection: Ignore span failure detection
+        :param pulumi.Input['ServiceFailureExceptionRulesCustomErrorRulesArgs'] custom_error_rules: Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+        :param pulumi.Input['ServiceFailureExceptionRulesCustomHandledExceptionsArgs'] custom_handled_exceptions: There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+        :param pulumi.Input['ServiceFailureExceptionRulesIgnoredExceptionsArgs'] ignored_exceptions: Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+        :param pulumi.Input['ServiceFailureExceptionRulesSuccessForcingExceptionsArgs'] success_forcing_exceptions: Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+        """
+        pulumi.set(__self__, "ignore_all_exceptions", ignore_all_exceptions)
+        pulumi.set(__self__, "ignore_span_failure_detection", ignore_span_failure_detection)
+        if custom_error_rules is not None:
+            pulumi.set(__self__, "custom_error_rules", custom_error_rules)
+        if custom_handled_exceptions is not None:
+            pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+        if ignored_exceptions is not None:
+            pulumi.set(__self__, "ignored_exceptions", ignored_exceptions)
+        if success_forcing_exceptions is not None:
+            pulumi.set(__self__, "success_forcing_exceptions", success_forcing_exceptions)
+
+    @property
+    @pulumi.getter(name="ignoreAllExceptions")
+    def ignore_all_exceptions(self) -> pulumi.Input[bool]:
+        """
+        Ignore all exceptions
+        """
+        return pulumi.get(self, "ignore_all_exceptions")
+
+    @ignore_all_exceptions.setter
+    def ignore_all_exceptions(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "ignore_all_exceptions", value)
+
+    @property
+    @pulumi.getter(name="ignoreSpanFailureDetection")
+    def ignore_span_failure_detection(self) -> pulumi.Input[bool]:
+        """
+        Ignore span failure detection
+        """
+        return pulumi.get(self, "ignore_span_failure_detection")
+
+    @ignore_span_failure_detection.setter
+    def ignore_span_failure_detection(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "ignore_span_failure_detection", value)
+
+    @property
+    @pulumi.getter(name="customErrorRules")
+    def custom_error_rules(self) -> Optional[pulumi.Input['ServiceFailureExceptionRulesCustomErrorRulesArgs']]:
+        """
+        Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+        """
+        return pulumi.get(self, "custom_error_rules")
+
+    @custom_error_rules.setter
+    def custom_error_rules(self, value: Optional[pulumi.Input['ServiceFailureExceptionRulesCustomErrorRulesArgs']]):
+        pulumi.set(self, "custom_error_rules", value)
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> Optional[pulumi.Input['ServiceFailureExceptionRulesCustomHandledExceptionsArgs']]:
+        """
+        There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+        """
+        return pulumi.get(self, "custom_handled_exceptions")
+
+    @custom_handled_exceptions.setter
+    def custom_handled_exceptions(self, value: Optional[pulumi.Input['ServiceFailureExceptionRulesCustomHandledExceptionsArgs']]):
+        pulumi.set(self, "custom_handled_exceptions", value)
+
+    @property
+    @pulumi.getter(name="ignoredExceptions")
+    def ignored_exceptions(self) -> Optional[pulumi.Input['ServiceFailureExceptionRulesIgnoredExceptionsArgs']]:
+        """
+        Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+        """
+        return pulumi.get(self, "ignored_exceptions")
+
+    @ignored_exceptions.setter
+    def ignored_exceptions(self, value: Optional[pulumi.Input['ServiceFailureExceptionRulesIgnoredExceptionsArgs']]):
+        pulumi.set(self, "ignored_exceptions", value)
+
+    @property
+    @pulumi.getter(name="successForcingExceptions")
+    def success_forcing_exceptions(self) -> Optional[pulumi.Input['ServiceFailureExceptionRulesSuccessForcingExceptionsArgs']]:
+        """
+        Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+        """
+        return pulumi.get(self, "success_forcing_exceptions")
+
+    @success_forcing_exceptions.setter
+    def success_forcing_exceptions(self, value: Optional[pulumi.Input['ServiceFailureExceptionRulesSuccessForcingExceptionsArgs']]):
+        pulumi.set(self, "success_forcing_exceptions", value)
+
+
+@pulumi.input_type
+class ServiceFailureExceptionRulesCustomErrorRulesArgs:
+    def __init__(__self__, *,
+                 custom_error_rules: pulumi.Input[Sequence[pulumi.Input['ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArgs']]]):
+        pulumi.set(__self__, "custom_error_rules", custom_error_rules)
+
+    @property
+    @pulumi.getter(name="customErrorRules")
+    def custom_error_rules(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArgs']]]:
+        return pulumi.get(self, "custom_error_rules")
+
+    @custom_error_rules.setter
+    def custom_error_rules(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArgs']]]):
+        pulumi.set(self, "custom_error_rules", value)
+
+
+@pulumi.input_type
+class ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleArgs:
+    def __init__(__self__, *,
+                 condition: pulumi.Input['ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs'],
+                 request_attribute: pulumi.Input[str]):
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "request_attribute", request_attribute)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> pulumi.Input['ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs']:
+        return pulumi.get(self, "condition")
+
+    @condition.setter
+    def condition(self, value: pulumi.Input['ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs']):
+        pulumi.set(self, "condition", value)
+
+    @property
+    @pulumi.getter(name="requestAttribute")
+    def request_attribute(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "request_attribute")
+
+    @request_attribute.setter
+    def request_attribute(self, value: pulumi.Input[str]):
+        pulumi.set(self, "request_attribute", value)
+
+
+@pulumi.input_type
+class ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs:
+    def __init__(__self__, *,
+                 compare_operation_type: pulumi.Input[str],
+                 case_sensitive: Optional[pulumi.Input[bool]] = None,
+                 double_value: Optional[pulumi.Input[float]] = None,
+                 int_value: Optional[pulumi.Input[int]] = None,
+                 text_value: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "compare_operation_type", compare_operation_type)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if double_value is not None:
+            pulumi.set(__self__, "double_value", double_value)
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if text_value is not None:
+            pulumi.set(__self__, "text_value", text_value)
+
+    @property
+    @pulumi.getter(name="compareOperationType")
+    def compare_operation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "compare_operation_type")
+
+    @compare_operation_type.setter
+    def compare_operation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "compare_operation_type", value)
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "case_sensitive")
+
+    @case_sensitive.setter
+    def case_sensitive(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "case_sensitive", value)
+
+    @property
+    @pulumi.getter(name="doubleValue")
+    def double_value(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "double_value")
+
+    @double_value.setter
+    def double_value(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "double_value", value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "int_value")
+
+    @int_value.setter
+    def int_value(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "int_value", value)
+
+    @property
+    @pulumi.getter(name="textValue")
+    def text_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "text_value")
+
+    @text_value.setter
+    def text_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "text_value", value)
+
+
+@pulumi.input_type
+class ServiceFailureExceptionRulesCustomHandledExceptionsArgs:
+    def __init__(__self__, *,
+                 custom_handled_exceptions: pulumi.Input[Sequence[pulumi.Input['ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs']]]):
+        pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs']]]:
+        return pulumi.get(self, "custom_handled_exceptions")
+
+    @custom_handled_exceptions.setter
+    def custom_handled_exceptions(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs']]]):
+        pulumi.set(self, "custom_handled_exceptions", value)
+
+
+@pulumi.input_type
+class ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledExceptionArgs:
+    def __init__(__self__, *,
+                 class_pattern: Optional[pulumi.Input[str]] = None,
+                 message_pattern: Optional[pulumi.Input[str]] = None):
+        if class_pattern is not None:
+            pulumi.set(__self__, "class_pattern", class_pattern)
+        if message_pattern is not None:
+            pulumi.set(__self__, "message_pattern", message_pattern)
+
+    @property
+    @pulumi.getter(name="classPattern")
+    def class_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "class_pattern")
+
+    @class_pattern.setter
+    def class_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "class_pattern", value)
+
+    @property
+    @pulumi.getter(name="messagePattern")
+    def message_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "message_pattern")
+
+    @message_pattern.setter
+    def message_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message_pattern", value)
+
+
+@pulumi.input_type
+class ServiceFailureExceptionRulesIgnoredExceptionsArgs:
+    def __init__(__self__, *,
+                 custom_handled_exceptions: pulumi.Input[Sequence[pulumi.Input['ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledExceptionArgs']]]):
+        pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledExceptionArgs']]]:
+        return pulumi.get(self, "custom_handled_exceptions")
+
+    @custom_handled_exceptions.setter
+    def custom_handled_exceptions(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledExceptionArgs']]]):
+        pulumi.set(self, "custom_handled_exceptions", value)
+
+
+@pulumi.input_type
+class ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledExceptionArgs:
+    def __init__(__self__, *,
+                 class_pattern: Optional[pulumi.Input[str]] = None,
+                 message_pattern: Optional[pulumi.Input[str]] = None):
+        if class_pattern is not None:
+            pulumi.set(__self__, "class_pattern", class_pattern)
+        if message_pattern is not None:
+            pulumi.set(__self__, "message_pattern", message_pattern)
+
+    @property
+    @pulumi.getter(name="classPattern")
+    def class_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "class_pattern")
+
+    @class_pattern.setter
+    def class_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "class_pattern", value)
+
+    @property
+    @pulumi.getter(name="messagePattern")
+    def message_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "message_pattern")
+
+    @message_pattern.setter
+    def message_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message_pattern", value)
+
+
+@pulumi.input_type
+class ServiceFailureExceptionRulesSuccessForcingExceptionsArgs:
+    def __init__(__self__, *,
+                 custom_handled_exceptions: pulumi.Input[Sequence[pulumi.Input['ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledExceptionArgs']]]):
+        pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledExceptionArgs']]]:
+        return pulumi.get(self, "custom_handled_exceptions")
+
+    @custom_handled_exceptions.setter
+    def custom_handled_exceptions(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledExceptionArgs']]]):
+        pulumi.set(self, "custom_handled_exceptions", value)
+
+
+@pulumi.input_type
+class ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledExceptionArgs:
+    def __init__(__self__, *,
+                 class_pattern: Optional[pulumi.Input[str]] = None,
+                 message_pattern: Optional[pulumi.Input[str]] = None):
+        if class_pattern is not None:
+            pulumi.set(__self__, "class_pattern", class_pattern)
+        if message_pattern is not None:
+            pulumi.set(__self__, "message_pattern", message_pattern)
+
+    @property
+    @pulumi.getter(name="classPattern")
+    def class_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "class_pattern")
+
+    @class_pattern.setter
+    def class_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "class_pattern", value)
+
+    @property
+    @pulumi.getter(name="messagePattern")
+    def message_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "message_pattern")
+
+    @message_pattern.setter
+    def message_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message_pattern", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestConditionsArgs:
+    def __init__(__self__, *,
+                 conditions: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebRequestConditionsConditionArgs']]]):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceFullWebRequestConditionsConditionArgs']]]:
+        return pulumi.get(self, "conditions")
+
+    @conditions.setter
+    def conditions(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebRequestConditionsConditionArgs']]]):
+        pulumi.set(self, "conditions", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestConditionsConditionArgs:
+    def __init__(__self__, *,
+                 attribute: pulumi.Input[str],
+                 compare_operation_type: pulumi.Input[str],
+                 frameworks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 ignore_case: Optional[pulumi.Input[bool]] = None,
+                 int_value: Optional[pulumi.Input[int]] = None,
+                 int_values: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 ip_range_from: Optional[pulumi.Input[str]] = None,
+                 ip_range_to: Optional[pulumi.Input[str]] = None,
+                 tag_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 text_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "compare_operation_type", compare_operation_type)
+        if frameworks is not None:
+            pulumi.set(__self__, "frameworks", frameworks)
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if int_values is not None:
+            pulumi.set(__self__, "int_values", int_values)
+        if ip_range_from is not None:
+            pulumi.set(__self__, "ip_range_from", ip_range_from)
+        if ip_range_to is not None:
+            pulumi.set(__self__, "ip_range_to", ip_range_to)
+        if tag_values is not None:
+            pulumi.set(__self__, "tag_values", tag_values)
+        if text_values is not None:
+            pulumi.set(__self__, "text_values", text_values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "attribute")
+
+    @attribute.setter
+    def attribute(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attribute", value)
+
+    @property
+    @pulumi.getter(name="compareOperationType")
+    def compare_operation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "compare_operation_type")
+
+    @compare_operation_type.setter
+    def compare_operation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "compare_operation_type", value)
+
+    @property
+    @pulumi.getter
+    def frameworks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "frameworks")
+
+    @frameworks.setter
+    def frameworks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "frameworks", value)
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "ignore_case")
+
+    @ignore_case.setter
+    def ignore_case(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "ignore_case", value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "int_value")
+
+    @int_value.setter
+    def int_value(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "int_value", value)
+
+    @property
+    @pulumi.getter(name="intValues")
+    def int_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        return pulumi.get(self, "int_values")
+
+    @int_values.setter
+    def int_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "int_values", value)
+
+    @property
+    @pulumi.getter(name="ipRangeFrom")
+    def ip_range_from(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ip_range_from")
+
+    @ip_range_from.setter
+    def ip_range_from(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ip_range_from", value)
+
+    @property
+    @pulumi.getter(name="ipRangeTo")
+    def ip_range_to(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ip_range_to")
+
+    @ip_range_to.setter
+    def ip_range_to(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ip_range_to", value)
+
+    @property
+    @pulumi.getter(name="tagValues")
+    def tag_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "tag_values")
+
+    @tag_values.setter
+    def tag_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "tag_values", value)
+
+    @property
+    @pulumi.getter(name="textValues")
+    def text_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "text_values")
+
+    @text_values.setter
+    def text_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "text_values", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsArgs:
+    def __init__(__self__, *,
+                 application_id: pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdArgs'],
+                 context_root: pulumi.Input['ServiceFullWebRequestIdContributorsContextRootArgs'],
+                 server_name: pulumi.Input['ServiceFullWebRequestIdContributorsServerNameArgs']):
+        """
+        :param pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdArgs'] application_id: Application identifier
+        :param pulumi.Input['ServiceFullWebRequestIdContributorsContextRootArgs'] context_root: The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+        :param pulumi.Input['ServiceFullWebRequestIdContributorsServerNameArgs'] server_name: Server Name
+        """
+        pulumi.set(__self__, "application_id", application_id)
+        pulumi.set(__self__, "context_root", context_root)
+        pulumi.set(__self__, "server_name", server_name)
+
+    @property
+    @pulumi.getter(name="applicationId")
+    def application_id(self) -> pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdArgs']:
+        """
+        Application identifier
+        """
+        return pulumi.get(self, "application_id")
+
+    @application_id.setter
+    def application_id(self, value: pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdArgs']):
+        pulumi.set(self, "application_id", value)
+
+    @property
+    @pulumi.getter(name="contextRoot")
+    def context_root(self) -> pulumi.Input['ServiceFullWebRequestIdContributorsContextRootArgs']:
+        """
+        The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+        """
+        return pulumi.get(self, "context_root")
+
+    @context_root.setter
+    def context_root(self, value: pulumi.Input['ServiceFullWebRequestIdContributorsContextRootArgs']):
+        pulumi.set(self, "context_root", value)
+
+    @property
+    @pulumi.getter(name="serverName")
+    def server_name(self) -> pulumi.Input['ServiceFullWebRequestIdContributorsServerNameArgs']:
+        """
+        Server Name
+        """
+        return pulumi.get(self, "server_name")
+
+    @server_name.setter
+    def server_name(self, value: pulumi.Input['ServiceFullWebRequestIdContributorsServerNameArgs']):
+        pulumi.set(self, "server_name", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsApplicationIdArgs:
+    def __init__(__self__, *,
+                 enable_id_contributor: pulumi.Input[bool],
+                 service_id_contributor: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorArgs']] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @enable_id_contributor.setter
+    def enable_id_contributor(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_id_contributor", value)
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional[pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorArgs']]:
+        return pulumi.get(self, "service_id_contributor")
+
+    @service_id_contributor.setter
+    def service_id_contributor(self, value: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorArgs']]):
+        pulumi.set(self, "service_id_contributor", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorArgs:
+    def __init__(__self__, *,
+                 contribution_type: pulumi.Input[str],
+                 transformations: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs']] = None,
+                 value_override: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs']] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "contribution_type")
+
+    @contribution_type.setter
+    def contribution_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "contribution_type", value)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional[pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs']]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs']]):
+        pulumi.set(self, "transformations", value)
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional[pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs']]:
+        return pulumi.get(self, "value_override")
+
+    @value_override.setter
+    def value_override(self, value: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs']]):
+        pulumi.set(self, "value_override", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs:
+    def __init__(__self__, *,
+                 transformations: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs']]]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(self, "transformations", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs:
+    def __init__(__self__, *,
+                 transformation_type: pulumi.Input[str],
+                 include_hex_numbers: Optional[pulumi.Input[bool]] = None,
+                 min_digit_count: Optional[pulumi.Input[int]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None,
+                 replacement_value: Optional[pulumi.Input[str]] = None,
+                 segment_count: Optional[pulumi.Input[int]] = None,
+                 select_index: Optional[pulumi.Input[int]] = None,
+                 split_delimiter: Optional[pulumi.Input[str]] = None,
+                 suffix: Optional[pulumi.Input[str]] = None,
+                 take_from_end: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "transformation_type")
+
+    @transformation_type.setter
+    def transformation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "transformation_type", value)
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @include_hex_numbers.setter
+    def include_hex_numbers(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "include_hex_numbers", value)
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "min_digit_count")
+
+    @min_digit_count.setter
+    def min_digit_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_digit_count", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "replacement_value")
+
+    @replacement_value.setter
+    def replacement_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replacement_value", value)
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "segment_count")
+
+    @segment_count.setter
+    def segment_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "segment_count", value)
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "select_index")
+
+    @select_index.setter
+    def select_index(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "select_index", value)
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "split_delimiter")
+
+    @split_delimiter.setter
+    def split_delimiter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "split_delimiter", value)
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "suffix")
+
+    @suffix.setter
+    def suffix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "suffix", value)
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "take_from_end")
+
+    @take_from_end.setter
+    def take_from_end(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "take_from_end", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsContextRootArgs:
+    def __init__(__self__, *,
+                 enable_id_contributor: pulumi.Input[bool],
+                 service_id_contributor: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsContextRootServiceIdContributorArgs']] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @enable_id_contributor.setter
+    def enable_id_contributor(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_id_contributor", value)
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional[pulumi.Input['ServiceFullWebRequestIdContributorsContextRootServiceIdContributorArgs']]:
+        return pulumi.get(self, "service_id_contributor")
+
+    @service_id_contributor.setter
+    def service_id_contributor(self, value: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsContextRootServiceIdContributorArgs']]):
+        pulumi.set(self, "service_id_contributor", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsContextRootServiceIdContributorArgs:
+    def __init__(__self__, *,
+                 contribution_type: pulumi.Input[str],
+                 segment_count: Optional[pulumi.Input[int]] = None,
+                 transformations: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs']] = None,
+                 value_override: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverrideArgs']] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "contribution_type")
+
+    @contribution_type.setter
+    def contribution_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "contribution_type", value)
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "segment_count")
+
+    @segment_count.setter
+    def segment_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "segment_count", value)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional[pulumi.Input['ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs']]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs']]):
+        pulumi.set(self, "transformations", value)
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional[pulumi.Input['ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverrideArgs']]:
+        return pulumi.get(self, "value_override")
+
+    @value_override.setter
+    def value_override(self, value: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverrideArgs']]):
+        pulumi.set(self, "value_override", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs:
+    def __init__(__self__, *,
+                 transformations: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs']]]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(self, "transformations", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs:
+    def __init__(__self__, *,
+                 transformation_type: pulumi.Input[str],
+                 include_hex_numbers: Optional[pulumi.Input[bool]] = None,
+                 min_digit_count: Optional[pulumi.Input[int]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None,
+                 replacement_value: Optional[pulumi.Input[str]] = None,
+                 suffix: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "transformation_type")
+
+    @transformation_type.setter
+    def transformation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "transformation_type", value)
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @include_hex_numbers.setter
+    def include_hex_numbers(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "include_hex_numbers", value)
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "min_digit_count")
+
+    @min_digit_count.setter
+    def min_digit_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_digit_count", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "replacement_value")
+
+    @replacement_value.setter
+    def replacement_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replacement_value", value)
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "suffix")
+
+    @suffix.setter
+    def suffix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "suffix", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverrideArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsServerNameArgs:
+    def __init__(__self__, *,
+                 enable_id_contributor: pulumi.Input[bool],
+                 service_id_contributor: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsServerNameServiceIdContributorArgs']] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @enable_id_contributor.setter
+    def enable_id_contributor(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_id_contributor", value)
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional[pulumi.Input['ServiceFullWebRequestIdContributorsServerNameServiceIdContributorArgs']]:
+        return pulumi.get(self, "service_id_contributor")
+
+    @service_id_contributor.setter
+    def service_id_contributor(self, value: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsServerNameServiceIdContributorArgs']]):
+        pulumi.set(self, "service_id_contributor", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsServerNameServiceIdContributorArgs:
+    def __init__(__self__, *,
+                 contribution_type: pulumi.Input[str],
+                 transformations: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsArgs']] = None,
+                 value_override: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverrideArgs']] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "contribution_type")
+
+    @contribution_type.setter
+    def contribution_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "contribution_type", value)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional[pulumi.Input['ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsArgs']]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsArgs']]):
+        pulumi.set(self, "transformations", value)
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional[pulumi.Input['ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverrideArgs']]:
+        return pulumi.get(self, "value_override")
+
+    @value_override.setter
+    def value_override(self, value: Optional[pulumi.Input['ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverrideArgs']]):
+        pulumi.set(self, "value_override", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsArgs:
+    def __init__(__self__, *,
+                 transformations: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformationArgs']]]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(self, "transformations", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformationArgs:
+    def __init__(__self__, *,
+                 transformation_type: pulumi.Input[str],
+                 include_hex_numbers: Optional[pulumi.Input[bool]] = None,
+                 min_digit_count: Optional[pulumi.Input[int]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None,
+                 replacement_value: Optional[pulumi.Input[str]] = None,
+                 segment_count: Optional[pulumi.Input[int]] = None,
+                 select_index: Optional[pulumi.Input[int]] = None,
+                 split_delimiter: Optional[pulumi.Input[str]] = None,
+                 suffix: Optional[pulumi.Input[str]] = None,
+                 take_from_end: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "transformation_type")
+
+    @transformation_type.setter
+    def transformation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "transformation_type", value)
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @include_hex_numbers.setter
+    def include_hex_numbers(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "include_hex_numbers", value)
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "min_digit_count")
+
+    @min_digit_count.setter
+    def min_digit_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_digit_count", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "replacement_value")
+
+    @replacement_value.setter
+    def replacement_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replacement_value", value)
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "segment_count")
+
+    @segment_count.setter
+    def segment_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "segment_count", value)
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "select_index")
+
+    @select_index.setter
+    def select_index(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "select_index", value)
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "split_delimiter")
+
+    @split_delimiter.setter
+    def split_delimiter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "split_delimiter", value)
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "suffix")
+
+    @suffix.setter
+    def suffix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "suffix", value)
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "take_from_end")
+
+    @take_from_end.setter
+    def take_from_end(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "take_from_end", value)
+
+
+@pulumi.input_type
+class ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverrideArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceConditionsArgs:
+    def __init__(__self__, *,
+                 conditions: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceConditionsConditionArgs']]]):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceConditionsConditionArgs']]]:
+        return pulumi.get(self, "conditions")
+
+    @conditions.setter
+    def conditions(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceConditionsConditionArgs']]]):
+        pulumi.set(self, "conditions", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceConditionsConditionArgs:
+    def __init__(__self__, *,
+                 attribute: pulumi.Input[str],
+                 compare_operation_type: pulumi.Input[str],
+                 frameworks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 ignore_case: Optional[pulumi.Input[bool]] = None,
+                 int_value: Optional[pulumi.Input[int]] = None,
+                 int_values: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 ip_range_from: Optional[pulumi.Input[str]] = None,
+                 ip_range_to: Optional[pulumi.Input[str]] = None,
+                 tag_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 text_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "compare_operation_type", compare_operation_type)
+        if frameworks is not None:
+            pulumi.set(__self__, "frameworks", frameworks)
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if int_values is not None:
+            pulumi.set(__self__, "int_values", int_values)
+        if ip_range_from is not None:
+            pulumi.set(__self__, "ip_range_from", ip_range_from)
+        if ip_range_to is not None:
+            pulumi.set(__self__, "ip_range_to", ip_range_to)
+        if tag_values is not None:
+            pulumi.set(__self__, "tag_values", tag_values)
+        if text_values is not None:
+            pulumi.set(__self__, "text_values", text_values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "attribute")
+
+    @attribute.setter
+    def attribute(self, value: pulumi.Input[str]):
+        pulumi.set(self, "attribute", value)
+
+    @property
+    @pulumi.getter(name="compareOperationType")
+    def compare_operation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "compare_operation_type")
+
+    @compare_operation_type.setter
+    def compare_operation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "compare_operation_type", value)
+
+    @property
+    @pulumi.getter
+    def frameworks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "frameworks")
+
+    @frameworks.setter
+    def frameworks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "frameworks", value)
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "ignore_case")
+
+    @ignore_case.setter
+    def ignore_case(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "ignore_case", value)
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "int_value")
+
+    @int_value.setter
+    def int_value(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "int_value", value)
+
+    @property
+    @pulumi.getter(name="intValues")
+    def int_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        return pulumi.get(self, "int_values")
+
+    @int_values.setter
+    def int_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "int_values", value)
+
+    @property
+    @pulumi.getter(name="ipRangeFrom")
+    def ip_range_from(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ip_range_from")
+
+    @ip_range_from.setter
+    def ip_range_from(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ip_range_from", value)
+
+    @property
+    @pulumi.getter(name="ipRangeTo")
+    def ip_range_to(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ip_range_to")
+
+    @ip_range_to.setter
+    def ip_range_to(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ip_range_to", value)
+
+    @property
+    @pulumi.getter(name="tagValues")
+    def tag_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "tag_values")
+
+    @tag_values.setter
+    def tag_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "tag_values", value)
+
+    @property
+    @pulumi.getter(name="textValues")
+    def text_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "text_values")
+
+    @text_values.setter
+    def text_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "text_values", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsArgs:
+    def __init__(__self__, *,
+                 detect_as_web_request_service: pulumi.Input[bool],
+                 application_id: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdArgs']] = None,
+                 context_root: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootArgs']] = None,
+                 server_name: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameArgs']] = None,
+                 web_service_name: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameArgs']] = None,
+                 web_service_namespace: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs']] = None):
+        """
+        :param pulumi.Input[bool] detect_as_web_request_service: Detect the matching requests as full web services (false) or web request services (true).
+        """
+        pulumi.set(__self__, "detect_as_web_request_service", detect_as_web_request_service)
+        if application_id is not None:
+            pulumi.set(__self__, "application_id", application_id)
+        if context_root is not None:
+            pulumi.set(__self__, "context_root", context_root)
+        if server_name is not None:
+            pulumi.set(__self__, "server_name", server_name)
+        if web_service_name is not None:
+            pulumi.set(__self__, "web_service_name", web_service_name)
+        if web_service_namespace is not None:
+            pulumi.set(__self__, "web_service_namespace", web_service_namespace)
+
+    @property
+    @pulumi.getter(name="detectAsWebRequestService")
+    def detect_as_web_request_service(self) -> pulumi.Input[bool]:
+        """
+        Detect the matching requests as full web services (false) or web request services (true).
+        """
+        return pulumi.get(self, "detect_as_web_request_service")
+
+    @detect_as_web_request_service.setter
+    def detect_as_web_request_service(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "detect_as_web_request_service", value)
+
+    @property
+    @pulumi.getter(name="applicationId")
+    def application_id(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdArgs']]:
+        return pulumi.get(self, "application_id")
+
+    @application_id.setter
+    def application_id(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdArgs']]):
+        pulumi.set(self, "application_id", value)
+
+    @property
+    @pulumi.getter(name="contextRoot")
+    def context_root(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootArgs']]:
+        return pulumi.get(self, "context_root")
+
+    @context_root.setter
+    def context_root(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootArgs']]):
+        pulumi.set(self, "context_root", value)
+
+    @property
+    @pulumi.getter(name="serverName")
+    def server_name(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameArgs']]:
+        return pulumi.get(self, "server_name")
+
+    @server_name.setter
+    def server_name(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameArgs']]):
+        pulumi.set(self, "server_name", value)
+
+    @property
+    @pulumi.getter(name="webServiceName")
+    def web_service_name(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameArgs']]:
+        return pulumi.get(self, "web_service_name")
+
+    @web_service_name.setter
+    def web_service_name(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameArgs']]):
+        pulumi.set(self, "web_service_name", value)
+
+    @property
+    @pulumi.getter(name="webServiceNamespace")
+    def web_service_namespace(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs']]:
+        return pulumi.get(self, "web_service_namespace")
+
+    @web_service_namespace.setter
+    def web_service_namespace(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs']]):
+        pulumi.set(self, "web_service_namespace", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsApplicationIdArgs:
+    def __init__(__self__, *,
+                 enable_id_contributor: pulumi.Input[bool],
+                 service_id_contributor: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorArgs']] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @enable_id_contributor.setter
+    def enable_id_contributor(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_id_contributor", value)
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorArgs']]:
+        return pulumi.get(self, "service_id_contributor")
+
+    @service_id_contributor.setter
+    def service_id_contributor(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorArgs']]):
+        pulumi.set(self, "service_id_contributor", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorArgs:
+    def __init__(__self__, *,
+                 contribution_type: pulumi.Input[str],
+                 transformations: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsArgs']] = None,
+                 value_override: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverrideArgs']] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "contribution_type")
+
+    @contribution_type.setter
+    def contribution_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "contribution_type", value)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsArgs']]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsArgs']]):
+        pulumi.set(self, "transformations", value)
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverrideArgs']]:
+        return pulumi.get(self, "value_override")
+
+    @value_override.setter
+    def value_override(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverrideArgs']]):
+        pulumi.set(self, "value_override", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsArgs:
+    def __init__(__self__, *,
+                 transformations: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs']]]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(self, "transformations", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformationArgs:
+    def __init__(__self__, *,
+                 transformation_type: pulumi.Input[str],
+                 include_hex_numbers: Optional[pulumi.Input[bool]] = None,
+                 min_digit_count: Optional[pulumi.Input[int]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None,
+                 replacement_value: Optional[pulumi.Input[str]] = None,
+                 segment_count: Optional[pulumi.Input[int]] = None,
+                 select_index: Optional[pulumi.Input[int]] = None,
+                 split_delimiter: Optional[pulumi.Input[str]] = None,
+                 suffix: Optional[pulumi.Input[str]] = None,
+                 take_from_end: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "transformation_type")
+
+    @transformation_type.setter
+    def transformation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "transformation_type", value)
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @include_hex_numbers.setter
+    def include_hex_numbers(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "include_hex_numbers", value)
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "min_digit_count")
+
+    @min_digit_count.setter
+    def min_digit_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_digit_count", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "replacement_value")
+
+    @replacement_value.setter
+    def replacement_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replacement_value", value)
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "segment_count")
+
+    @segment_count.setter
+    def segment_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "segment_count", value)
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "select_index")
+
+    @select_index.setter
+    def select_index(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "select_index", value)
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "split_delimiter")
+
+    @split_delimiter.setter
+    def split_delimiter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "split_delimiter", value)
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "suffix")
+
+    @suffix.setter
+    def suffix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "suffix", value)
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "take_from_end")
+
+    @take_from_end.setter
+    def take_from_end(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "take_from_end", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverrideArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsContextRootArgs:
+    def __init__(__self__, *,
+                 enable_id_contributor: pulumi.Input[bool],
+                 service_id_contributor: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootServiceIdContributorArgs']] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @enable_id_contributor.setter
+    def enable_id_contributor(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_id_contributor", value)
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootServiceIdContributorArgs']]:
+        return pulumi.get(self, "service_id_contributor")
+
+    @service_id_contributor.setter
+    def service_id_contributor(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootServiceIdContributorArgs']]):
+        pulumi.set(self, "service_id_contributor", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsContextRootServiceIdContributorArgs:
+    def __init__(__self__, *,
+                 contribution_type: pulumi.Input[str],
+                 segment_count: Optional[pulumi.Input[int]] = None,
+                 transformations: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsArgs']] = None,
+                 value_override: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverrideArgs']] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "contribution_type")
+
+    @contribution_type.setter
+    def contribution_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "contribution_type", value)
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "segment_count")
+
+    @segment_count.setter
+    def segment_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "segment_count", value)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsArgs']]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsArgs']]):
+        pulumi.set(self, "transformations", value)
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverrideArgs']]:
+        return pulumi.get(self, "value_override")
+
+    @value_override.setter
+    def value_override(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverrideArgs']]):
+        pulumi.set(self, "value_override", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsArgs:
+    def __init__(__self__, *,
+                 transformations: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs']]]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(self, "transformations", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs:
+    def __init__(__self__, *,
+                 transformation_type: pulumi.Input[str],
+                 include_hex_numbers: Optional[pulumi.Input[bool]] = None,
+                 min_digit_count: Optional[pulumi.Input[int]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None,
+                 replacement_value: Optional[pulumi.Input[str]] = None,
+                 suffix: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "transformation_type")
+
+    @transformation_type.setter
+    def transformation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "transformation_type", value)
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @include_hex_numbers.setter
+    def include_hex_numbers(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "include_hex_numbers", value)
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "min_digit_count")
+
+    @min_digit_count.setter
+    def min_digit_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_digit_count", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "replacement_value")
+
+    @replacement_value.setter
+    def replacement_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replacement_value", value)
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "suffix")
+
+    @suffix.setter
+    def suffix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "suffix", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverrideArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsServerNameArgs:
+    def __init__(__self__, *,
+                 enable_id_contributor: pulumi.Input[bool],
+                 service_id_contributor: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameServiceIdContributorArgs']] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @enable_id_contributor.setter
+    def enable_id_contributor(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_id_contributor", value)
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameServiceIdContributorArgs']]:
+        return pulumi.get(self, "service_id_contributor")
+
+    @service_id_contributor.setter
+    def service_id_contributor(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameServiceIdContributorArgs']]):
+        pulumi.set(self, "service_id_contributor", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsServerNameServiceIdContributorArgs:
+    def __init__(__self__, *,
+                 contribution_type: pulumi.Input[str],
+                 transformations: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsArgs']] = None,
+                 value_override: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverrideArgs']] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "contribution_type")
+
+    @contribution_type.setter
+    def contribution_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "contribution_type", value)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsArgs']]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsArgs']]):
+        pulumi.set(self, "transformations", value)
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverrideArgs']]:
+        return pulumi.get(self, "value_override")
+
+    @value_override.setter
+    def value_override(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverrideArgs']]):
+        pulumi.set(self, "value_override", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsArgs:
+    def __init__(__self__, *,
+                 transformations: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformationArgs']]]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(self, "transformations", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformationArgs:
+    def __init__(__self__, *,
+                 transformation_type: pulumi.Input[str],
+                 include_hex_numbers: Optional[pulumi.Input[bool]] = None,
+                 min_digit_count: Optional[pulumi.Input[int]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None,
+                 replacement_value: Optional[pulumi.Input[str]] = None,
+                 segment_count: Optional[pulumi.Input[int]] = None,
+                 select_index: Optional[pulumi.Input[int]] = None,
+                 split_delimiter: Optional[pulumi.Input[str]] = None,
+                 suffix: Optional[pulumi.Input[str]] = None,
+                 take_from_end: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "transformation_type")
+
+    @transformation_type.setter
+    def transformation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "transformation_type", value)
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @include_hex_numbers.setter
+    def include_hex_numbers(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "include_hex_numbers", value)
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "min_digit_count")
+
+    @min_digit_count.setter
+    def min_digit_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_digit_count", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "replacement_value")
+
+    @replacement_value.setter
+    def replacement_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replacement_value", value)
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "segment_count")
+
+    @segment_count.setter
+    def segment_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "segment_count", value)
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "select_index")
+
+    @select_index.setter
+    def select_index(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "select_index", value)
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "split_delimiter")
+
+    @split_delimiter.setter
+    def split_delimiter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "split_delimiter", value)
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "suffix")
+
+    @suffix.setter
+    def suffix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "suffix", value)
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "take_from_end")
+
+    @take_from_end.setter
+    def take_from_end(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "take_from_end", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverrideArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsWebServiceNameArgs:
+    def __init__(__self__, *,
+                 enable_id_contributor: pulumi.Input[bool],
+                 service_id_contributor: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorArgs']] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @enable_id_contributor.setter
+    def enable_id_contributor(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_id_contributor", value)
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorArgs']]:
+        return pulumi.get(self, "service_id_contributor")
+
+    @service_id_contributor.setter
+    def service_id_contributor(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorArgs']]):
+        pulumi.set(self, "service_id_contributor", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorArgs:
+    def __init__(__self__, *,
+                 contribution_type: pulumi.Input[str],
+                 transformations: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsArgs']] = None,
+                 value_override: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs']] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "contribution_type")
+
+    @contribution_type.setter
+    def contribution_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "contribution_type", value)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsArgs']]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsArgs']]):
+        pulumi.set(self, "transformations", value)
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs']]:
+        return pulumi.get(self, "value_override")
+
+    @value_override.setter
+    def value_override(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs']]):
+        pulumi.set(self, "value_override", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsArgs:
+    def __init__(__self__, *,
+                 transformations: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArgs']]]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(self, "transformations", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformationArgs:
+    def __init__(__self__, *,
+                 transformation_type: pulumi.Input[str],
+                 include_hex_numbers: Optional[pulumi.Input[bool]] = None,
+                 min_digit_count: Optional[pulumi.Input[int]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None,
+                 replacement_value: Optional[pulumi.Input[str]] = None,
+                 segment_count: Optional[pulumi.Input[int]] = None,
+                 select_index: Optional[pulumi.Input[int]] = None,
+                 split_delimiter: Optional[pulumi.Input[str]] = None,
+                 suffix: Optional[pulumi.Input[str]] = None,
+                 take_from_end: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "transformation_type")
+
+    @transformation_type.setter
+    def transformation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "transformation_type", value)
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @include_hex_numbers.setter
+    def include_hex_numbers(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "include_hex_numbers", value)
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "min_digit_count")
+
+    @min_digit_count.setter
+    def min_digit_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_digit_count", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "replacement_value")
+
+    @replacement_value.setter
+    def replacement_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replacement_value", value)
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "segment_count")
+
+    @segment_count.setter
+    def segment_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "segment_count", value)
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "select_index")
+
+    @select_index.setter
+    def select_index(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "select_index", value)
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "split_delimiter")
+
+    @split_delimiter.setter
+    def split_delimiter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "split_delimiter", value)
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "suffix")
+
+    @suffix.setter
+    def suffix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "suffix", value)
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "take_from_end")
+
+    @take_from_end.setter
+    def take_from_end(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "take_from_end", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs:
+    def __init__(__self__, *,
+                 enable_id_contributor: pulumi.Input[bool],
+                 service_id_contributor: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs']] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @enable_id_contributor.setter
+    def enable_id_contributor(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_id_contributor", value)
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs']]:
+        return pulumi.get(self, "service_id_contributor")
+
+    @service_id_contributor.setter
+    def service_id_contributor(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs']]):
+        pulumi.set(self, "service_id_contributor", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorArgs:
+    def __init__(__self__, *,
+                 contribution_type: pulumi.Input[str],
+                 transformations: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs']] = None,
+                 value_override: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverrideArgs']] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "contribution_type")
+
+    @contribution_type.setter
+    def contribution_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "contribution_type", value)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs']]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs']]):
+        pulumi.set(self, "transformations", value)
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverrideArgs']]:
+        return pulumi.get(self, "value_override")
+
+    @value_override.setter
+    def value_override(self, value: Optional[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverrideArgs']]):
+        pulumi.set(self, "value_override", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs:
+    def __init__(__self__, *,
+                 transformations: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationArgs']]]:
+        return pulumi.get(self, "transformations")
+
+    @transformations.setter
+    def transformations(self, value: pulumi.Input[Sequence[pulumi.Input['ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationArgs']]]):
+        pulumi.set(self, "transformations", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformationArgs:
+    def __init__(__self__, *,
+                 transformation_type: pulumi.Input[str],
+                 include_hex_numbers: Optional[pulumi.Input[bool]] = None,
+                 min_digit_count: Optional[pulumi.Input[int]] = None,
+                 prefix: Optional[pulumi.Input[str]] = None,
+                 replacement_value: Optional[pulumi.Input[str]] = None,
+                 segment_count: Optional[pulumi.Input[int]] = None,
+                 select_index: Optional[pulumi.Input[int]] = None,
+                 split_delimiter: Optional[pulumi.Input[str]] = None,
+                 suffix: Optional[pulumi.Input[str]] = None,
+                 take_from_end: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "transformation_type")
+
+    @transformation_type.setter
+    def transformation_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "transformation_type", value)
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @include_hex_numbers.setter
+    def include_hex_numbers(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "include_hex_numbers", value)
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "min_digit_count")
+
+    @min_digit_count.setter
+    def min_digit_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_digit_count", value)
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "prefix", value)
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "replacement_value")
+
+    @replacement_value.setter
+    def replacement_value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replacement_value", value)
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "segment_count")
+
+    @segment_count.setter
+    def segment_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "segment_count", value)
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "select_index")
+
+    @select_index.setter
+    def select_index(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "select_index", value)
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "split_delimiter")
+
+    @split_delimiter.setter
+    def split_delimiter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "split_delimiter", value)
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "suffix")
+
+    @suffix.setter
+    def suffix(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "suffix", value)
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "take_from_end")
+
+    @take_from_end.setter
+    def take_from_end(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "take_from_end", value)
+
+
+@pulumi.input_type
+class ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverrideArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ServiceHttpFailureBrokenLinksArgs:
+    def __init__(__self__, *,
+                 http404_not_found_failures: pulumi.Input[bool],
+                 broken_link_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[bool] http404_not_found_failures: Consider 404 HTTP response codes as failures
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] broken_link_domains: If your application relies on other hosts at other domains, add the associated domain names here. Once configured, Dynatrace will consider 404s thrown by hosts at these domains to be service failures related to your application.
+        """
+        pulumi.set(__self__, "http404_not_found_failures", http404_not_found_failures)
+        if broken_link_domains is not None:
+            pulumi.set(__self__, "broken_link_domains", broken_link_domains)
+
+    @property
+    @pulumi.getter(name="http404NotFoundFailures")
+    def http404_not_found_failures(self) -> pulumi.Input[bool]:
+        """
+        Consider 404 HTTP response codes as failures
+        """
+        return pulumi.get(self, "http404_not_found_failures")
+
+    @http404_not_found_failures.setter
+    def http404_not_found_failures(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "http404_not_found_failures", value)
+
+    @property
+    @pulumi.getter(name="brokenLinkDomains")
+    def broken_link_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        If your application relies on other hosts at other domains, add the associated domain names here. Once configured, Dynatrace will consider 404s thrown by hosts at these domains to be service failures related to your application.
+        """
+        return pulumi.get(self, "broken_link_domains")
+
+    @broken_link_domains.setter
+    def broken_link_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "broken_link_domains", value)
+
+
+@pulumi.input_type
+class ServiceHttpFailureHttpResponseCodesArgs:
+    def __init__(__self__, *,
+                 client_side_errors: pulumi.Input[str],
+                 fail_on_missing_response_code_client_side: pulumi.Input[bool],
+                 fail_on_missing_response_code_server_side: pulumi.Input[bool],
+                 server_side_errors: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] client_side_errors: HTTP response codes which indicate client side errors
+        :param pulumi.Input[bool] fail_on_missing_response_code_client_side: Treat missing HTTP response code as client side error
+        :param pulumi.Input[bool] fail_on_missing_response_code_server_side: Treat missing HTTP response code as server side errors
+        :param pulumi.Input[str] server_side_errors: HTTP response codes which indicate an error on the server side
+        """
+        pulumi.set(__self__, "client_side_errors", client_side_errors)
+        pulumi.set(__self__, "fail_on_missing_response_code_client_side", fail_on_missing_response_code_client_side)
+        pulumi.set(__self__, "fail_on_missing_response_code_server_side", fail_on_missing_response_code_server_side)
+        pulumi.set(__self__, "server_side_errors", server_side_errors)
+
+    @property
+    @pulumi.getter(name="clientSideErrors")
+    def client_side_errors(self) -> pulumi.Input[str]:
+        """
+        HTTP response codes which indicate client side errors
+        """
+        return pulumi.get(self, "client_side_errors")
+
+    @client_side_errors.setter
+    def client_side_errors(self, value: pulumi.Input[str]):
+        pulumi.set(self, "client_side_errors", value)
+
+    @property
+    @pulumi.getter(name="failOnMissingResponseCodeClientSide")
+    def fail_on_missing_response_code_client_side(self) -> pulumi.Input[bool]:
+        """
+        Treat missing HTTP response code as client side error
+        """
+        return pulumi.get(self, "fail_on_missing_response_code_client_side")
+
+    @fail_on_missing_response_code_client_side.setter
+    def fail_on_missing_response_code_client_side(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "fail_on_missing_response_code_client_side", value)
+
+    @property
+    @pulumi.getter(name="failOnMissingResponseCodeServerSide")
+    def fail_on_missing_response_code_server_side(self) -> pulumi.Input[bool]:
+        """
+        Treat missing HTTP response code as server side errors
+        """
+        return pulumi.get(self, "fail_on_missing_response_code_server_side")
+
+    @fail_on_missing_response_code_server_side.setter
+    def fail_on_missing_response_code_server_side(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "fail_on_missing_response_code_server_side", value)
+
+    @property
+    @pulumi.getter(name="serverSideErrors")
+    def server_side_errors(self) -> pulumi.Input[str]:
+        """
+        HTTP response codes which indicate an error on the server side
+        """
+        return pulumi.get(self, "server_side_errors")
+
+    @server_side_errors.setter
+    def server_side_errors(self, value: pulumi.Input[str]):
+        pulumi.set(self, "server_side_errors", value)
 
 
 @pulumi.input_type
@@ -47044,6 +64749,393 @@ class ServiceNamingConditionConditionTechValueArgs:
 
 
 @pulumi.input_type
+class SessionReplayWebPrivacyMaskingPresetsArgs:
+    def __init__(__self__, *,
+                 playback_masking_preset: pulumi.Input[str],
+                 recording_masking_preset: pulumi.Input[str],
+                 playback_masking_allow_list_rules: Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs']] = None,
+                 playback_masking_block_list_rules: Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs']] = None,
+                 recording_masking_allow_list_rules: Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs']] = None,
+                 recording_masking_block_list_rules: Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs']] = None):
+        """
+        :param pulumi.Input[str] playback_masking_preset: (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_ALL`, `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`
+        :param pulumi.Input[str] recording_masking_preset: (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`, `MASK_ALL`
+        :param pulumi.Input['SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs'] playback_masking_allow_list_rules: (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        :param pulumi.Input['SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs'] playback_masking_block_list_rules: (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        :param pulumi.Input['SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs'] recording_masking_allow_list_rules: (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        :param pulumi.Input['SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs'] recording_masking_block_list_rules: (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        """
+        pulumi.set(__self__, "playback_masking_preset", playback_masking_preset)
+        pulumi.set(__self__, "recording_masking_preset", recording_masking_preset)
+        if playback_masking_allow_list_rules is not None:
+            pulumi.set(__self__, "playback_masking_allow_list_rules", playback_masking_allow_list_rules)
+        if playback_masking_block_list_rules is not None:
+            pulumi.set(__self__, "playback_masking_block_list_rules", playback_masking_block_list_rules)
+        if recording_masking_allow_list_rules is not None:
+            pulumi.set(__self__, "recording_masking_allow_list_rules", recording_masking_allow_list_rules)
+        if recording_masking_block_list_rules is not None:
+            pulumi.set(__self__, "recording_masking_block_list_rules", recording_masking_block_list_rules)
+
+    @property
+    @pulumi.getter(name="playbackMaskingPreset")
+    def playback_masking_preset(self) -> pulumi.Input[str]:
+        """
+        (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_ALL`, `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`
+        """
+        return pulumi.get(self, "playback_masking_preset")
+
+    @playback_masking_preset.setter
+    def playback_masking_preset(self, value: pulumi.Input[str]):
+        pulumi.set(self, "playback_masking_preset", value)
+
+    @property
+    @pulumi.getter(name="recordingMaskingPreset")
+    def recording_masking_preset(self) -> pulumi.Input[str]:
+        """
+        (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`, `MASK_ALL`
+        """
+        return pulumi.get(self, "recording_masking_preset")
+
+    @recording_masking_preset.setter
+    def recording_masking_preset(self, value: pulumi.Input[str]):
+        pulumi.set(self, "recording_masking_preset", value)
+
+    @property
+    @pulumi.getter(name="playbackMaskingAllowListRules")
+    def playback_masking_allow_list_rules(self) -> Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs']]:
+        """
+        (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        """
+        return pulumi.get(self, "playback_masking_allow_list_rules")
+
+    @playback_masking_allow_list_rules.setter
+    def playback_masking_allow_list_rules(self, value: Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs']]):
+        pulumi.set(self, "playback_masking_allow_list_rules", value)
+
+    @property
+    @pulumi.getter(name="playbackMaskingBlockListRules")
+    def playback_masking_block_list_rules(self) -> Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs']]:
+        """
+        (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        """
+        return pulumi.get(self, "playback_masking_block_list_rules")
+
+    @playback_masking_block_list_rules.setter
+    def playback_masking_block_list_rules(self, value: Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs']]):
+        pulumi.set(self, "playback_masking_block_list_rules", value)
+
+    @property
+    @pulumi.getter(name="recordingMaskingAllowListRules")
+    def recording_masking_allow_list_rules(self) -> Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs']]:
+        """
+        (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        """
+        return pulumi.get(self, "recording_masking_allow_list_rules")
+
+    @recording_masking_allow_list_rules.setter
+    def recording_masking_allow_list_rules(self, value: Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs']]):
+        pulumi.set(self, "recording_masking_allow_list_rules", value)
+
+    @property
+    @pulumi.getter(name="recordingMaskingBlockListRules")
+    def recording_masking_block_list_rules(self) -> Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs']]:
+        """
+        (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        """
+        return pulumi.get(self, "recording_masking_block_list_rules")
+
+    @recording_masking_block_list_rules.setter
+    def recording_masking_block_list_rules(self, value: Optional[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs']]):
+        pulumi.set(self, "recording_masking_block_list_rules", value)
+
+
+@pulumi.input_type
+class SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs:
+    def __init__(__self__, *,
+                 allow_list_rules: pulumi.Input[Sequence[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArgs']]]):
+        pulumi.set(__self__, "allow_list_rules", allow_list_rules)
+
+    @property
+    @pulumi.getter(name="allowListRules")
+    def allow_list_rules(self) -> pulumi.Input[Sequence[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArgs']]]:
+        return pulumi.get(self, "allow_list_rules")
+
+    @allow_list_rules.setter
+    def allow_list_rules(self, value: pulumi.Input[Sequence[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArgs']]]):
+        pulumi.set(self, "allow_list_rules", value)
+
+
+@pulumi.input_type
+class SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRuleArgs:
+    def __init__(__self__, *,
+                 target: pulumi.Input[str],
+                 attribute_expression: Optional[pulumi.Input[str]] = None,
+                 css_expression: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "target", target)
+        if attribute_expression is not None:
+            pulumi.set(__self__, "attribute_expression", attribute_expression)
+        if css_expression is not None:
+            pulumi.set(__self__, "css_expression", css_expression)
+
+    @property
+    @pulumi.getter
+    def target(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: pulumi.Input[str]):
+        pulumi.set(self, "target", value)
+
+    @property
+    @pulumi.getter(name="attributeExpression")
+    def attribute_expression(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "attribute_expression")
+
+    @attribute_expression.setter
+    def attribute_expression(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "attribute_expression", value)
+
+    @property
+    @pulumi.getter(name="cssExpression")
+    def css_expression(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "css_expression")
+
+    @css_expression.setter
+    def css_expression(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "css_expression", value)
+
+
+@pulumi.input_type
+class SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs:
+    def __init__(__self__, *,
+                 block_list_rules: pulumi.Input[Sequence[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArgs']]]):
+        pulumi.set(__self__, "block_list_rules", block_list_rules)
+
+    @property
+    @pulumi.getter(name="blockListRules")
+    def block_list_rules(self) -> pulumi.Input[Sequence[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArgs']]]:
+        return pulumi.get(self, "block_list_rules")
+
+    @block_list_rules.setter
+    def block_list_rules(self, value: pulumi.Input[Sequence[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArgs']]]):
+        pulumi.set(self, "block_list_rules", value)
+
+
+@pulumi.input_type
+class SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRuleArgs:
+    def __init__(__self__, *,
+                 target: pulumi.Input[str],
+                 attribute_expression: Optional[pulumi.Input[str]] = None,
+                 css_expression: Optional[pulumi.Input[str]] = None,
+                 hide_user_interaction: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "target", target)
+        if attribute_expression is not None:
+            pulumi.set(__self__, "attribute_expression", attribute_expression)
+        if css_expression is not None:
+            pulumi.set(__self__, "css_expression", css_expression)
+        if hide_user_interaction is not None:
+            pulumi.set(__self__, "hide_user_interaction", hide_user_interaction)
+
+    @property
+    @pulumi.getter
+    def target(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: pulumi.Input[str]):
+        pulumi.set(self, "target", value)
+
+    @property
+    @pulumi.getter(name="attributeExpression")
+    def attribute_expression(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "attribute_expression")
+
+    @attribute_expression.setter
+    def attribute_expression(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "attribute_expression", value)
+
+    @property
+    @pulumi.getter(name="cssExpression")
+    def css_expression(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "css_expression")
+
+    @css_expression.setter
+    def css_expression(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "css_expression", value)
+
+    @property
+    @pulumi.getter(name="hideUserInteraction")
+    def hide_user_interaction(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "hide_user_interaction")
+
+    @hide_user_interaction.setter
+    def hide_user_interaction(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "hide_user_interaction", value)
+
+
+@pulumi.input_type
+class SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs:
+    def __init__(__self__, *,
+                 allow_list_rules: pulumi.Input[Sequence[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArgs']]]):
+        pulumi.set(__self__, "allow_list_rules", allow_list_rules)
+
+    @property
+    @pulumi.getter(name="allowListRules")
+    def allow_list_rules(self) -> pulumi.Input[Sequence[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArgs']]]:
+        return pulumi.get(self, "allow_list_rules")
+
+    @allow_list_rules.setter
+    def allow_list_rules(self, value: pulumi.Input[Sequence[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArgs']]]):
+        pulumi.set(self, "allow_list_rules", value)
+
+
+@pulumi.input_type
+class SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRuleArgs:
+    def __init__(__self__, *,
+                 target: pulumi.Input[str],
+                 attribute_expression: Optional[pulumi.Input[str]] = None,
+                 css_expression: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "target", target)
+        if attribute_expression is not None:
+            pulumi.set(__self__, "attribute_expression", attribute_expression)
+        if css_expression is not None:
+            pulumi.set(__self__, "css_expression", css_expression)
+
+    @property
+    @pulumi.getter
+    def target(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: pulumi.Input[str]):
+        pulumi.set(self, "target", value)
+
+    @property
+    @pulumi.getter(name="attributeExpression")
+    def attribute_expression(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "attribute_expression")
+
+    @attribute_expression.setter
+    def attribute_expression(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "attribute_expression", value)
+
+    @property
+    @pulumi.getter(name="cssExpression")
+    def css_expression(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "css_expression")
+
+    @css_expression.setter
+    def css_expression(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "css_expression", value)
+
+
+@pulumi.input_type
+class SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs:
+    def __init__(__self__, *,
+                 block_list_rules: pulumi.Input[Sequence[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArgs']]]):
+        pulumi.set(__self__, "block_list_rules", block_list_rules)
+
+    @property
+    @pulumi.getter(name="blockListRules")
+    def block_list_rules(self) -> pulumi.Input[Sequence[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArgs']]]:
+        return pulumi.get(self, "block_list_rules")
+
+    @block_list_rules.setter
+    def block_list_rules(self, value: pulumi.Input[Sequence[pulumi.Input['SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArgs']]]):
+        pulumi.set(self, "block_list_rules", value)
+
+
+@pulumi.input_type
+class SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleArgs:
+    def __init__(__self__, *,
+                 target: pulumi.Input[str],
+                 attribute_expression: Optional[pulumi.Input[str]] = None,
+                 css_expression: Optional[pulumi.Input[str]] = None,
+                 hide_user_interaction: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "target", target)
+        if attribute_expression is not None:
+            pulumi.set(__self__, "attribute_expression", attribute_expression)
+        if css_expression is not None:
+            pulumi.set(__self__, "css_expression", css_expression)
+        if hide_user_interaction is not None:
+            pulumi.set(__self__, "hide_user_interaction", hide_user_interaction)
+
+    @property
+    @pulumi.getter
+    def target(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: pulumi.Input[str]):
+        pulumi.set(self, "target", value)
+
+    @property
+    @pulumi.getter(name="attributeExpression")
+    def attribute_expression(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "attribute_expression")
+
+    @attribute_expression.setter
+    def attribute_expression(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "attribute_expression", value)
+
+    @property
+    @pulumi.getter(name="cssExpression")
+    def css_expression(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "css_expression")
+
+    @css_expression.setter
+    def css_expression(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "css_expression", value)
+
+    @property
+    @pulumi.getter(name="hideUserInteraction")
+    def hide_user_interaction(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "hide_user_interaction")
+
+    @hide_user_interaction.setter
+    def hide_user_interaction(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "hide_user_interaction", value)
+
+
+@pulumi.input_type
+class SloV2ErrorBudgetBurnRateArgs:
+    def __init__(__self__, *,
+                 burn_rate_visualization_enabled: pulumi.Input[bool],
+                 fast_burn_threshold: Optional[pulumi.Input[float]] = None):
+        """
+        :param pulumi.Input[bool] burn_rate_visualization_enabled: Burn rate visualization enabled
+        :param pulumi.Input[float] fast_burn_threshold: The threshold defines when a burn rate is marked as fast-burning (high-emergency). Burn rates lower than this threshold (and greater than 1) are highlighted as slow-burn (low-emergency).
+        """
+        pulumi.set(__self__, "burn_rate_visualization_enabled", burn_rate_visualization_enabled)
+        if fast_burn_threshold is not None:
+            pulumi.set(__self__, "fast_burn_threshold", fast_burn_threshold)
+
+    @property
+    @pulumi.getter(name="burnRateVisualizationEnabled")
+    def burn_rate_visualization_enabled(self) -> pulumi.Input[bool]:
+        """
+        Burn rate visualization enabled
+        """
+        return pulumi.get(self, "burn_rate_visualization_enabled")
+
+    @burn_rate_visualization_enabled.setter
+    def burn_rate_visualization_enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "burn_rate_visualization_enabled", value)
+
+    @property
+    @pulumi.getter(name="fastBurnThreshold")
+    def fast_burn_threshold(self) -> Optional[pulumi.Input[float]]:
+        """
+        The threshold defines when a burn rate is marked as fast-burning (high-emergency). Burn rates lower than this threshold (and greater than 1) are highlighted as slow-burn (low-emergency).
+        """
+        return pulumi.get(self, "fast_burn_threshold")
+
+    @fast_burn_threshold.setter
+    def fast_burn_threshold(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "fast_burn_threshold", value)
+
+
+@pulumi.input_type
 class SpanCaptureRuleMatchesArgs:
     def __init__(__self__, *,
                  matches: pulumi.Input[Sequence[pulumi.Input['SpanCaptureRuleMatchesMatchArgs']]]):
@@ -47299,6 +65391,573 @@ class SpanEntryPointMatchesMatchArgs:
 
 
 @pulumi.input_type
+class UpdateWindowsDailyRecurrenceArgs:
+    def __init__(__self__, *,
+                 every: pulumi.Input[int],
+                 recurrence_range: pulumi.Input['UpdateWindowsDailyRecurrenceRecurrenceRangeArgs'],
+                 update_time: pulumi.Input['UpdateWindowsDailyRecurrenceUpdateTimeArgs']):
+        pulumi.set(__self__, "every", every)
+        pulumi.set(__self__, "recurrence_range", recurrence_range)
+        pulumi.set(__self__, "update_time", update_time)
+
+    @property
+    @pulumi.getter
+    def every(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "every")
+
+    @every.setter
+    def every(self, value: pulumi.Input[int]):
+        pulumi.set(self, "every", value)
+
+    @property
+    @pulumi.getter(name="recurrenceRange")
+    def recurrence_range(self) -> pulumi.Input['UpdateWindowsDailyRecurrenceRecurrenceRangeArgs']:
+        return pulumi.get(self, "recurrence_range")
+
+    @recurrence_range.setter
+    def recurrence_range(self, value: pulumi.Input['UpdateWindowsDailyRecurrenceRecurrenceRangeArgs']):
+        pulumi.set(self, "recurrence_range", value)
+
+    @property
+    @pulumi.getter(name="updateTime")
+    def update_time(self) -> pulumi.Input['UpdateWindowsDailyRecurrenceUpdateTimeArgs']:
+        return pulumi.get(self, "update_time")
+
+    @update_time.setter
+    def update_time(self, value: pulumi.Input['UpdateWindowsDailyRecurrenceUpdateTimeArgs']):
+        pulumi.set(self, "update_time", value)
+
+
+@pulumi.input_type
+class UpdateWindowsDailyRecurrenceRecurrenceRangeArgs:
+    def __init__(__self__, *,
+                 end: pulumi.Input[str],
+                 start: pulumi.Input[str]):
+        pulumi.set(__self__, "end", end)
+        pulumi.set(__self__, "start", start)
+
+    @property
+    @pulumi.getter
+    def end(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "end")
+
+    @end.setter
+    def end(self, value: pulumi.Input[str]):
+        pulumi.set(self, "end", value)
+
+    @property
+    @pulumi.getter
+    def start(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "start")
+
+    @start.setter
+    def start(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start", value)
+
+
+@pulumi.input_type
+class UpdateWindowsDailyRecurrenceUpdateTimeArgs:
+    def __init__(__self__, *,
+                 duration: pulumi.Input[int],
+                 start_time: pulumi.Input[str],
+                 time_zone: pulumi.Input[str]):
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "duration")
+
+    @duration.setter
+    def duration(self, value: pulumi.Input[int]):
+        pulumi.set(self, "duration", value)
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "start_time")
+
+    @start_time.setter
+    def start_time(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start_time", value)
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "time_zone")
+
+    @time_zone.setter
+    def time_zone(self, value: pulumi.Input[str]):
+        pulumi.set(self, "time_zone", value)
+
+
+@pulumi.input_type
+class UpdateWindowsMonthlyRecurrenceArgs:
+    def __init__(__self__, *,
+                 every: pulumi.Input[int],
+                 recurrence_range: pulumi.Input['UpdateWindowsMonthlyRecurrenceRecurrenceRangeArgs'],
+                 selected_month_day: pulumi.Input[int],
+                 update_time: pulumi.Input['UpdateWindowsMonthlyRecurrenceUpdateTimeArgs']):
+        pulumi.set(__self__, "every", every)
+        pulumi.set(__self__, "recurrence_range", recurrence_range)
+        pulumi.set(__self__, "selected_month_day", selected_month_day)
+        pulumi.set(__self__, "update_time", update_time)
+
+    @property
+    @pulumi.getter
+    def every(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "every")
+
+    @every.setter
+    def every(self, value: pulumi.Input[int]):
+        pulumi.set(self, "every", value)
+
+    @property
+    @pulumi.getter(name="recurrenceRange")
+    def recurrence_range(self) -> pulumi.Input['UpdateWindowsMonthlyRecurrenceRecurrenceRangeArgs']:
+        return pulumi.get(self, "recurrence_range")
+
+    @recurrence_range.setter
+    def recurrence_range(self, value: pulumi.Input['UpdateWindowsMonthlyRecurrenceRecurrenceRangeArgs']):
+        pulumi.set(self, "recurrence_range", value)
+
+    @property
+    @pulumi.getter(name="selectedMonthDay")
+    def selected_month_day(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "selected_month_day")
+
+    @selected_month_day.setter
+    def selected_month_day(self, value: pulumi.Input[int]):
+        pulumi.set(self, "selected_month_day", value)
+
+    @property
+    @pulumi.getter(name="updateTime")
+    def update_time(self) -> pulumi.Input['UpdateWindowsMonthlyRecurrenceUpdateTimeArgs']:
+        return pulumi.get(self, "update_time")
+
+    @update_time.setter
+    def update_time(self, value: pulumi.Input['UpdateWindowsMonthlyRecurrenceUpdateTimeArgs']):
+        pulumi.set(self, "update_time", value)
+
+
+@pulumi.input_type
+class UpdateWindowsMonthlyRecurrenceRecurrenceRangeArgs:
+    def __init__(__self__, *,
+                 end: pulumi.Input[str],
+                 start: pulumi.Input[str]):
+        pulumi.set(__self__, "end", end)
+        pulumi.set(__self__, "start", start)
+
+    @property
+    @pulumi.getter
+    def end(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "end")
+
+    @end.setter
+    def end(self, value: pulumi.Input[str]):
+        pulumi.set(self, "end", value)
+
+    @property
+    @pulumi.getter
+    def start(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "start")
+
+    @start.setter
+    def start(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start", value)
+
+
+@pulumi.input_type
+class UpdateWindowsMonthlyRecurrenceUpdateTimeArgs:
+    def __init__(__self__, *,
+                 duration: pulumi.Input[int],
+                 start_time: pulumi.Input[str],
+                 time_zone: pulumi.Input[str]):
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "duration")
+
+    @duration.setter
+    def duration(self, value: pulumi.Input[int]):
+        pulumi.set(self, "duration", value)
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "start_time")
+
+    @start_time.setter
+    def start_time(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start_time", value)
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "time_zone")
+
+    @time_zone.setter
+    def time_zone(self, value: pulumi.Input[str]):
+        pulumi.set(self, "time_zone", value)
+
+
+@pulumi.input_type
+class UpdateWindowsOnceRecurrenceArgs:
+    def __init__(__self__, *,
+                 recurrence_range: pulumi.Input['UpdateWindowsOnceRecurrenceRecurrenceRangeArgs']):
+        pulumi.set(__self__, "recurrence_range", recurrence_range)
+
+    @property
+    @pulumi.getter(name="recurrenceRange")
+    def recurrence_range(self) -> pulumi.Input['UpdateWindowsOnceRecurrenceRecurrenceRangeArgs']:
+        return pulumi.get(self, "recurrence_range")
+
+    @recurrence_range.setter
+    def recurrence_range(self, value: pulumi.Input['UpdateWindowsOnceRecurrenceRecurrenceRangeArgs']):
+        pulumi.set(self, "recurrence_range", value)
+
+
+@pulumi.input_type
+class UpdateWindowsOnceRecurrenceRecurrenceRangeArgs:
+    def __init__(__self__, *,
+                 end: pulumi.Input[str],
+                 start: pulumi.Input[str]):
+        pulumi.set(__self__, "end", end)
+        pulumi.set(__self__, "start", start)
+
+    @property
+    @pulumi.getter
+    def end(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "end")
+
+    @end.setter
+    def end(self, value: pulumi.Input[str]):
+        pulumi.set(self, "end", value)
+
+    @property
+    @pulumi.getter
+    def start(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "start")
+
+    @start.setter
+    def start(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start", value)
+
+
+@pulumi.input_type
+class UpdateWindowsWeeklyRecurrenceArgs:
+    def __init__(__self__, *,
+                 every: pulumi.Input[int],
+                 recurrence_range: pulumi.Input['UpdateWindowsWeeklyRecurrenceRecurrenceRangeArgs'],
+                 selected_week_days: pulumi.Input['UpdateWindowsWeeklyRecurrenceSelectedWeekDaysArgs'],
+                 update_time: pulumi.Input['UpdateWindowsWeeklyRecurrenceUpdateTimeArgs']):
+        pulumi.set(__self__, "every", every)
+        pulumi.set(__self__, "recurrence_range", recurrence_range)
+        pulumi.set(__self__, "selected_week_days", selected_week_days)
+        pulumi.set(__self__, "update_time", update_time)
+
+    @property
+    @pulumi.getter
+    def every(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "every")
+
+    @every.setter
+    def every(self, value: pulumi.Input[int]):
+        pulumi.set(self, "every", value)
+
+    @property
+    @pulumi.getter(name="recurrenceRange")
+    def recurrence_range(self) -> pulumi.Input['UpdateWindowsWeeklyRecurrenceRecurrenceRangeArgs']:
+        return pulumi.get(self, "recurrence_range")
+
+    @recurrence_range.setter
+    def recurrence_range(self, value: pulumi.Input['UpdateWindowsWeeklyRecurrenceRecurrenceRangeArgs']):
+        pulumi.set(self, "recurrence_range", value)
+
+    @property
+    @pulumi.getter(name="selectedWeekDays")
+    def selected_week_days(self) -> pulumi.Input['UpdateWindowsWeeklyRecurrenceSelectedWeekDaysArgs']:
+        return pulumi.get(self, "selected_week_days")
+
+    @selected_week_days.setter
+    def selected_week_days(self, value: pulumi.Input['UpdateWindowsWeeklyRecurrenceSelectedWeekDaysArgs']):
+        pulumi.set(self, "selected_week_days", value)
+
+    @property
+    @pulumi.getter(name="updateTime")
+    def update_time(self) -> pulumi.Input['UpdateWindowsWeeklyRecurrenceUpdateTimeArgs']:
+        return pulumi.get(self, "update_time")
+
+    @update_time.setter
+    def update_time(self, value: pulumi.Input['UpdateWindowsWeeklyRecurrenceUpdateTimeArgs']):
+        pulumi.set(self, "update_time", value)
+
+
+@pulumi.input_type
+class UpdateWindowsWeeklyRecurrenceRecurrenceRangeArgs:
+    def __init__(__self__, *,
+                 end: pulumi.Input[str],
+                 start: pulumi.Input[str]):
+        pulumi.set(__self__, "end", end)
+        pulumi.set(__self__, "start", start)
+
+    @property
+    @pulumi.getter
+    def end(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "end")
+
+    @end.setter
+    def end(self, value: pulumi.Input[str]):
+        pulumi.set(self, "end", value)
+
+    @property
+    @pulumi.getter
+    def start(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "start")
+
+    @start.setter
+    def start(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start", value)
+
+
+@pulumi.input_type
+class UpdateWindowsWeeklyRecurrenceSelectedWeekDaysArgs:
+    def __init__(__self__, *,
+                 friday: pulumi.Input[bool],
+                 monday: pulumi.Input[bool],
+                 saturday: pulumi.Input[bool],
+                 sunday: pulumi.Input[bool],
+                 thursday: pulumi.Input[bool],
+                 tuesday: pulumi.Input[bool],
+                 wednesday: pulumi.Input[bool]):
+        pulumi.set(__self__, "friday", friday)
+        pulumi.set(__self__, "monday", monday)
+        pulumi.set(__self__, "saturday", saturday)
+        pulumi.set(__self__, "sunday", sunday)
+        pulumi.set(__self__, "thursday", thursday)
+        pulumi.set(__self__, "tuesday", tuesday)
+        pulumi.set(__self__, "wednesday", wednesday)
+
+    @property
+    @pulumi.getter
+    def friday(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "friday")
+
+    @friday.setter
+    def friday(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "friday", value)
+
+    @property
+    @pulumi.getter
+    def monday(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "monday")
+
+    @monday.setter
+    def monday(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "monday", value)
+
+    @property
+    @pulumi.getter
+    def saturday(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "saturday")
+
+    @saturday.setter
+    def saturday(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "saturday", value)
+
+    @property
+    @pulumi.getter
+    def sunday(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "sunday")
+
+    @sunday.setter
+    def sunday(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "sunday", value)
+
+    @property
+    @pulumi.getter
+    def thursday(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "thursday")
+
+    @thursday.setter
+    def thursday(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "thursday", value)
+
+    @property
+    @pulumi.getter
+    def tuesday(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "tuesday")
+
+    @tuesday.setter
+    def tuesday(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "tuesday", value)
+
+    @property
+    @pulumi.getter
+    def wednesday(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "wednesday")
+
+    @wednesday.setter
+    def wednesday(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "wednesday", value)
+
+
+@pulumi.input_type
+class UpdateWindowsWeeklyRecurrenceUpdateTimeArgs:
+    def __init__(__self__, *,
+                 duration: pulumi.Input[int],
+                 start_time: pulumi.Input[str],
+                 time_zone: pulumi.Input[str]):
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "duration")
+
+    @duration.setter
+    def duration(self, value: pulumi.Input[int]):
+        pulumi.set(self, "duration", value)
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "start_time")
+
+    @start_time.setter
+    def start_time(self, value: pulumi.Input[str]):
+        pulumi.set(self, "start_time", value)
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "time_zone")
+
+    @time_zone.setter
+    def time_zone(self, value: pulumi.Input[str]):
+        pulumi.set(self, "time_zone", value)
+
+
+@pulumi.input_type
+class UserActionMetricsFiltersArgs:
+    def __init__(__self__, *,
+                 filters: pulumi.Input[Sequence[pulumi.Input['UserActionMetricsFiltersFilterArgs']]]):
+        pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> pulumi.Input[Sequence[pulumi.Input['UserActionMetricsFiltersFilterArgs']]]:
+        return pulumi.get(self, "filters")
+
+    @filters.setter
+    def filters(self, value: pulumi.Input[Sequence[pulumi.Input['UserActionMetricsFiltersFilterArgs']]]):
+        pulumi.set(self, "filters", value)
+
+
+@pulumi.input_type
+class UserActionMetricsFiltersFilterArgs:
+    def __init__(__self__, *,
+                 field_name: pulumi.Input[str],
+                 operator: pulumi.Input[str],
+                 value: Optional[pulumi.Input[str]] = None,
+                 value_ins: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] value: Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
+        """
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "operator", operator)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if value_ins is not None:
+            pulumi.set(__self__, "value_ins", value_ins)
+
+    @property
+    @pulumi.getter(name="fieldName")
+    def field_name(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "field_name")
+
+    @field_name.setter
+    def field_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "field_name", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "operator")
+
+    @operator.setter
+    def operator(self, value: pulumi.Input[str]):
+        pulumi.set(self, "operator", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="valueIns")
+    def value_ins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "value_ins")
+
+    @value_ins.setter
+    def value_ins(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "value_ins", value)
+
+
+@pulumi.input_type
+class UserActionMetricsValueArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 field_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Possible Values: `COUNTER`, `FIELD`
+        :param pulumi.Input[str] field_name: Field name
+        """
+        pulumi.set(__self__, "type", type)
+        if field_name is not None:
+            pulumi.set(__self__, "field_name", field_name)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Possible Values: `COUNTER`, `FIELD`
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="fieldName")
+    def field_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Field name
+        """
+        return pulumi.get(self, "field_name")
+
+    @field_name.setter
+    def field_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "field_name", value)
+
+
+@pulumi.input_type
 class UserGroupPermissionsArgs:
     def __init__(__self__, *,
                  grants: pulumi.Input[Sequence[pulumi.Input['UserGroupPermissionsGrantArgs']]]):
@@ -47346,6 +66005,1692 @@ class UserGroupPermissionsGrantArgs:
     @environments.setter
     def environments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "environments", value)
+
+
+@pulumi.input_type
+class UserSessionMetricsFiltersArgs:
+    def __init__(__self__, *,
+                 filters: pulumi.Input[Sequence[pulumi.Input['UserSessionMetricsFiltersFilterArgs']]]):
+        pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> pulumi.Input[Sequence[pulumi.Input['UserSessionMetricsFiltersFilterArgs']]]:
+        return pulumi.get(self, "filters")
+
+    @filters.setter
+    def filters(self, value: pulumi.Input[Sequence[pulumi.Input['UserSessionMetricsFiltersFilterArgs']]]):
+        pulumi.set(self, "filters", value)
+
+
+@pulumi.input_type
+class UserSessionMetricsFiltersFilterArgs:
+    def __init__(__self__, *,
+                 field_name: pulumi.Input[str],
+                 operator: pulumi.Input[str],
+                 value: Optional[pulumi.Input[str]] = None,
+                 value_ins: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] value: Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
+        """
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "operator", operator)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if value_ins is not None:
+            pulumi.set(__self__, "value_ins", value_ins)
+
+    @property
+    @pulumi.getter(name="fieldName")
+    def field_name(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "field_name")
+
+    @field_name.setter
+    def field_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "field_name", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "operator")
+
+    @operator.setter
+    def operator(self, value: pulumi.Input[str]):
+        pulumi.set(self, "operator", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+    @property
+    @pulumi.getter(name="valueIns")
+    def value_ins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        return pulumi.get(self, "value_ins")
+
+    @value_ins.setter
+    def value_ins(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "value_ins", value)
+
+
+@pulumi.input_type
+class UserSessionMetricsValueArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 field_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Possible Values: `COUNTER`, `FIELD`
+        :param pulumi.Input[str] field_name: Field name
+        """
+        pulumi.set(__self__, "type", type)
+        if field_name is not None:
+            pulumi.set(__self__, "field_name", field_name)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Possible Values: `COUNTER`, `FIELD`
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="fieldName")
+    def field_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Field name
+        """
+        return pulumi.get(self, "field_name")
+
+    @field_name.setter
+    def field_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "field_name", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesDroppedPacketsDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['VmwareAnomaliesDroppedPacketsDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['VmwareAnomaliesDroppedPacketsDetectionCustomThresholdsArgs'] custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['VmwareAnomaliesDroppedPacketsDetectionCustomThresholdsArgs']]:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['VmwareAnomaliesDroppedPacketsDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesDroppedPacketsDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 dropped_packets_per_second: pulumi.Input[int]):
+        pulumi.set(__self__, "dropped_packets_per_second", dropped_packets_per_second)
+
+    @property
+    @pulumi.getter(name="droppedPacketsPerSecond")
+    def dropped_packets_per_second(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "dropped_packets_per_second")
+
+    @dropped_packets_per_second.setter
+    def dropped_packets_per_second(self, value: pulumi.Input[int]):
+        pulumi.set(self, "dropped_packets_per_second", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesEsxiHighCpuDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['VmwareAnomaliesEsxiHighCpuDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['VmwareAnomaliesEsxiHighCpuDetectionCustomThresholdsArgs'] custom_thresholds: Alert if **all three** conditions are met in 3 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['VmwareAnomaliesEsxiHighCpuDetectionCustomThresholdsArgs']]:
+        """
+        Alert if **all three** conditions are met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['VmwareAnomaliesEsxiHighCpuDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesEsxiHighCpuDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 cpu_peak_percentage: pulumi.Input[int],
+                 cpu_usage_percentage: pulumi.Input[int],
+                 vm_cpu_ready_percentage: pulumi.Input[int]):
+        pulumi.set(__self__, "cpu_peak_percentage", cpu_peak_percentage)
+        pulumi.set(__self__, "cpu_usage_percentage", cpu_usage_percentage)
+        pulumi.set(__self__, "vm_cpu_ready_percentage", vm_cpu_ready_percentage)
+
+    @property
+    @pulumi.getter(name="cpuPeakPercentage")
+    def cpu_peak_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "cpu_peak_percentage")
+
+    @cpu_peak_percentage.setter
+    def cpu_peak_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "cpu_peak_percentage", value)
+
+    @property
+    @pulumi.getter(name="cpuUsagePercentage")
+    def cpu_usage_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "cpu_usage_percentage")
+
+    @cpu_usage_percentage.setter
+    def cpu_usage_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "cpu_usage_percentage", value)
+
+    @property
+    @pulumi.getter(name="vmCpuReadyPercentage")
+    def vm_cpu_ready_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "vm_cpu_ready_percentage")
+
+    @vm_cpu_ready_percentage.setter
+    def vm_cpu_ready_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "vm_cpu_ready_percentage", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesEsxiHighMemoryDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholdsArgs'] custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholdsArgs']]:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 compression_decompression_rate: pulumi.Input[float]):
+        pulumi.set(__self__, "compression_decompression_rate", compression_decompression_rate)
+
+    @property
+    @pulumi.getter(name="compressionDecompressionRate")
+    def compression_decompression_rate(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "compression_decompression_rate")
+
+    @compression_decompression_rate.setter
+    def compression_decompression_rate(self, value: pulumi.Input[float]):
+        pulumi.set(self, "compression_decompression_rate", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesGuestCpuLimitDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['VmwareAnomaliesGuestCpuLimitDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['VmwareAnomaliesGuestCpuLimitDetectionCustomThresholdsArgs'] custom_thresholds: Alert if **all three** conditions are met in 3 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['VmwareAnomaliesGuestCpuLimitDetectionCustomThresholdsArgs']]:
+        """
+        Alert if **all three** conditions are met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['VmwareAnomaliesGuestCpuLimitDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesGuestCpuLimitDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 host_cpu_usage_percentage: pulumi.Input[int],
+                 vm_cpu_ready_percentage: pulumi.Input[int],
+                 vm_cpu_usage_percentage: pulumi.Input[int]):
+        pulumi.set(__self__, "host_cpu_usage_percentage", host_cpu_usage_percentage)
+        pulumi.set(__self__, "vm_cpu_ready_percentage", vm_cpu_ready_percentage)
+        pulumi.set(__self__, "vm_cpu_usage_percentage", vm_cpu_usage_percentage)
+
+    @property
+    @pulumi.getter(name="hostCpuUsagePercentage")
+    def host_cpu_usage_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "host_cpu_usage_percentage")
+
+    @host_cpu_usage_percentage.setter
+    def host_cpu_usage_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "host_cpu_usage_percentage", value)
+
+    @property
+    @pulumi.getter(name="vmCpuReadyPercentage")
+    def vm_cpu_ready_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "vm_cpu_ready_percentage")
+
+    @vm_cpu_ready_percentage.setter
+    def vm_cpu_ready_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "vm_cpu_ready_percentage", value)
+
+    @property
+    @pulumi.getter(name="vmCpuUsagePercentage")
+    def vm_cpu_usage_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "vm_cpu_usage_percentage")
+
+    @vm_cpu_usage_percentage.setter
+    def vm_cpu_usage_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "vm_cpu_usage_percentage", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesLowDatastoreSpaceDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholdsArgs'] custom_thresholds: Alert if the condition is met in 1 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholdsArgs']]:
+        """
+        Alert if the condition is met in 1 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 free_space_percentage: pulumi.Input[int]):
+        pulumi.set(__self__, "free_space_percentage", free_space_percentage)
+
+    @property
+    @pulumi.getter(name="freeSpacePercentage")
+    def free_space_percentage(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "free_space_percentage")
+
+    @free_space_percentage.setter
+    def free_space_percentage(self, value: pulumi.Input[int]):
+        pulumi.set(self, "free_space_percentage", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesOverloadedStorageDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['VmwareAnomaliesOverloadedStorageDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['VmwareAnomaliesOverloadedStorageDetectionCustomThresholdsArgs'] custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['VmwareAnomaliesOverloadedStorageDetectionCustomThresholdsArgs']]:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['VmwareAnomaliesOverloadedStorageDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesOverloadedStorageDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 command_aborts_number: pulumi.Input[int]):
+        pulumi.set(__self__, "command_aborts_number", command_aborts_number)
+
+    @property
+    @pulumi.getter(name="commandAbortsNumber")
+    def command_aborts_number(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "command_aborts_number")
+
+    @command_aborts_number.setter
+    def command_aborts_number(self, value: pulumi.Input[int]):
+        pulumi.set(self, "command_aborts_number", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesSlowPhysicalStorageDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholdsArgs'] custom_thresholds: Alert if **any** condition is met in 4 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholdsArgs']]:
+        """
+        Alert if **any** condition is met in 4 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 avg_read_write_latency: pulumi.Input[int],
+                 peak_read_write_latency: pulumi.Input[int]):
+        pulumi.set(__self__, "avg_read_write_latency", avg_read_write_latency)
+        pulumi.set(__self__, "peak_read_write_latency", peak_read_write_latency)
+
+    @property
+    @pulumi.getter(name="avgReadWriteLatency")
+    def avg_read_write_latency(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "avg_read_write_latency")
+
+    @avg_read_write_latency.setter
+    def avg_read_write_latency(self, value: pulumi.Input[int]):
+        pulumi.set(self, "avg_read_write_latency", value)
+
+    @property
+    @pulumi.getter(name="peakReadWriteLatency")
+    def peak_read_write_latency(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "peak_read_write_latency")
+
+    @peak_read_write_latency.setter
+    def peak_read_write_latency(self, value: pulumi.Input[int]):
+        pulumi.set(self, "peak_read_write_latency", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesUndersizedStorageDetectionArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 custom_thresholds: Optional[pulumi.Input['VmwareAnomaliesUndersizedStorageDetectionCustomThresholdsArgs']] = None,
+                 detection_mode: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['VmwareAnomaliesUndersizedStorageDetectionCustomThresholdsArgs'] custom_thresholds: Alert if **any** condition is met in 3 out of 5 samples
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional[pulumi.Input['VmwareAnomaliesUndersizedStorageDetectionCustomThresholdsArgs']]:
+        """
+        Alert if **any** condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @custom_thresholds.setter
+    def custom_thresholds(self, value: Optional[pulumi.Input['VmwareAnomaliesUndersizedStorageDetectionCustomThresholdsArgs']]):
+        pulumi.set(self, "custom_thresholds", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+
+@pulumi.input_type
+class VmwareAnomaliesUndersizedStorageDetectionCustomThresholdsArgs:
+    def __init__(__self__, *,
+                 average_queue_command_latency: pulumi.Input[int],
+                 peak_queue_command_latency: pulumi.Input[int]):
+        pulumi.set(__self__, "average_queue_command_latency", average_queue_command_latency)
+        pulumi.set(__self__, "peak_queue_command_latency", peak_queue_command_latency)
+
+    @property
+    @pulumi.getter(name="averageQueueCommandLatency")
+    def average_queue_command_latency(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "average_queue_command_latency")
+
+    @average_queue_command_latency.setter
+    def average_queue_command_latency(self, value: pulumi.Input[int]):
+        pulumi.set(self, "average_queue_command_latency", value)
+
+    @property
+    @pulumi.getter(name="peakQueueCommandLatency")
+    def peak_queue_command_latency(self) -> pulumi.Input[int]:
+        return pulumi.get(self, "peak_queue_command_latency")
+
+    @peak_queue_command_latency.setter
+    def peak_queue_command_latency(self, value: pulumi.Input[int]):
+        pulumi.set(self, "peak_queue_command_latency", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesErrorRateArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 error_rate_auto: Optional[pulumi.Input['WebAppAnomaliesErrorRateErrorRateAutoArgs']] = None,
+                 error_rate_detection_mode: Optional[pulumi.Input[str]] = None,
+                 error_rate_fixed: Optional[pulumi.Input['WebAppAnomaliesErrorRateErrorRateFixedArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['WebAppAnomaliesErrorRateErrorRateAutoArgs'] error_rate_auto: Alert if the percentage of failing user actions increases by **both** the absolute and relative thresholds:
+        :param pulumi.Input[str] error_rate_detection_mode: Possible Values: `Auto`, `Fixed`
+        :param pulumi.Input['WebAppAnomaliesErrorRateErrorRateFixedArgs'] error_rate_fixed: no documentation available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if error_rate_auto is not None:
+            pulumi.set(__self__, "error_rate_auto", error_rate_auto)
+        if error_rate_detection_mode is not None:
+            pulumi.set(__self__, "error_rate_detection_mode", error_rate_detection_mode)
+        if error_rate_fixed is not None:
+            pulumi.set(__self__, "error_rate_fixed", error_rate_fixed)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="errorRateAuto")
+    def error_rate_auto(self) -> Optional[pulumi.Input['WebAppAnomaliesErrorRateErrorRateAutoArgs']]:
+        """
+        Alert if the percentage of failing user actions increases by **both** the absolute and relative thresholds:
+        """
+        return pulumi.get(self, "error_rate_auto")
+
+    @error_rate_auto.setter
+    def error_rate_auto(self, value: Optional[pulumi.Input['WebAppAnomaliesErrorRateErrorRateAutoArgs']]):
+        pulumi.set(self, "error_rate_auto", value)
+
+    @property
+    @pulumi.getter(name="errorRateDetectionMode")
+    def error_rate_detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "error_rate_detection_mode")
+
+    @error_rate_detection_mode.setter
+    def error_rate_detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "error_rate_detection_mode", value)
+
+    @property
+    @pulumi.getter(name="errorRateFixed")
+    def error_rate_fixed(self) -> Optional[pulumi.Input['WebAppAnomaliesErrorRateErrorRateFixedArgs']]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "error_rate_fixed")
+
+    @error_rate_fixed.setter
+    def error_rate_fixed(self, value: Optional[pulumi.Input['WebAppAnomaliesErrorRateErrorRateFixedArgs']]):
+        pulumi.set(self, "error_rate_fixed", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesErrorRateErrorRateAutoArgs:
+    def __init__(__self__, *,
+                 absolute_increase: pulumi.Input[float],
+                 over_alerting_protection: pulumi.Input['WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs'],
+                 relative_increase: pulumi.Input[float]):
+        pulumi.set(__self__, "absolute_increase", absolute_increase)
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "relative_increase", relative_increase)
+
+    @property
+    @pulumi.getter(name="absoluteIncrease")
+    def absolute_increase(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "absolute_increase")
+
+    @absolute_increase.setter
+    def absolute_increase(self, value: pulumi.Input[float]):
+        pulumi.set(self, "absolute_increase", value)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> pulumi.Input['WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs']:
+        return pulumi.get(self, "over_alerting_protection")
+
+    @over_alerting_protection.setter
+    def over_alerting_protection(self, value: pulumi.Input['WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs']):
+        pulumi.set(self, "over_alerting_protection", value)
+
+    @property
+    @pulumi.getter(name="relativeIncrease")
+    def relative_increase(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "relative_increase")
+
+    @relative_increase.setter
+    def relative_increase(self, value: pulumi.Input[float]):
+        pulumi.set(self, "relative_increase", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtectionArgs:
+    def __init__(__self__, *,
+                 actions_per_minute: pulumi.Input[float],
+                 minutes_abnormal_state: pulumi.Input[float]):
+        pulumi.set(__self__, "actions_per_minute", actions_per_minute)
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter(name="actionsPerMinute")
+    def actions_per_minute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "actions_per_minute")
+
+    @actions_per_minute.setter
+    def actions_per_minute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "actions_per_minute", value)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: pulumi.Input[float]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesErrorRateErrorRateFixedArgs:
+    def __init__(__self__, *,
+                 error_rate_req_per_min: pulumi.Input[float],
+                 error_rate_sensitivity: pulumi.Input[str],
+                 max_failure_rate_increase: pulumi.Input[float],
+                 minutes_abnormal_state: pulumi.Input[float]):
+        pulumi.set(__self__, "error_rate_req_per_min", error_rate_req_per_min)
+        pulumi.set(__self__, "error_rate_sensitivity", error_rate_sensitivity)
+        pulumi.set(__self__, "max_failure_rate_increase", max_failure_rate_increase)
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter(name="errorRateReqPerMin")
+    def error_rate_req_per_min(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "error_rate_req_per_min")
+
+    @error_rate_req_per_min.setter
+    def error_rate_req_per_min(self, value: pulumi.Input[float]):
+        pulumi.set(self, "error_rate_req_per_min", value)
+
+    @property
+    @pulumi.getter(name="errorRateSensitivity")
+    def error_rate_sensitivity(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "error_rate_sensitivity")
+
+    @error_rate_sensitivity.setter
+    def error_rate_sensitivity(self, value: pulumi.Input[str]):
+        pulumi.set(self, "error_rate_sensitivity", value)
+
+    @property
+    @pulumi.getter(name="maxFailureRateIncrease")
+    def max_failure_rate_increase(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "max_failure_rate_increase")
+
+    @max_failure_rate_increase.setter
+    def max_failure_rate_increase(self, value: pulumi.Input[float]):
+        pulumi.set(self, "max_failure_rate_increase", value)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: pulumi.Input[float]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesResponseTimeArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 detection_mode: Optional[pulumi.Input[str]] = None,
+                 response_time_auto: Optional[pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeAutoArgs']] = None,
+                 response_time_fixed: Optional[pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeFixedArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] detection_mode: Possible Values: `Auto`, `Fixed`
+        :param pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeAutoArgs'] response_time_auto: no documentation available
+        :param pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeFixedArgs'] response_time_fixed: no documentation available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if response_time_auto is not None:
+            pulumi.set(__self__, "response_time_auto", response_time_auto)
+        if response_time_fixed is not None:
+            pulumi.set(__self__, "response_time_fixed", response_time_fixed)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @detection_mode.setter
+    def detection_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "detection_mode", value)
+
+    @property
+    @pulumi.getter(name="responseTimeAuto")
+    def response_time_auto(self) -> Optional[pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeAutoArgs']]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "response_time_auto")
+
+    @response_time_auto.setter
+    def response_time_auto(self, value: Optional[pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeAutoArgs']]):
+        pulumi.set(self, "response_time_auto", value)
+
+    @property
+    @pulumi.getter(name="responseTimeFixed")
+    def response_time_fixed(self) -> Optional[pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeFixedArgs']]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "response_time_fixed")
+
+    @response_time_fixed.setter
+    def response_time_fixed(self, value: Optional[pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeFixedArgs']]):
+        pulumi.set(self, "response_time_fixed", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesResponseTimeResponseTimeAutoArgs:
+    def __init__(__self__, *,
+                 over_alerting_protection: pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs'],
+                 response_time_all: pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs'],
+                 response_time_slowest: pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs']):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "response_time_all", response_time_all)
+        pulumi.set(__self__, "response_time_slowest", response_time_slowest)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs']:
+        return pulumi.get(self, "over_alerting_protection")
+
+    @over_alerting_protection.setter
+    def over_alerting_protection(self, value: pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs']):
+        pulumi.set(self, "over_alerting_protection", value)
+
+    @property
+    @pulumi.getter(name="responseTimeAll")
+    def response_time_all(self) -> pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs']:
+        return pulumi.get(self, "response_time_all")
+
+    @response_time_all.setter
+    def response_time_all(self, value: pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs']):
+        pulumi.set(self, "response_time_all", value)
+
+    @property
+    @pulumi.getter(name="responseTimeSlowest")
+    def response_time_slowest(self) -> pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs']:
+        return pulumi.get(self, "response_time_slowest")
+
+    @response_time_slowest.setter
+    def response_time_slowest(self, value: pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs']):
+        pulumi.set(self, "response_time_slowest", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionArgs:
+    def __init__(__self__, *,
+                 actions_per_minute: pulumi.Input[float],
+                 minutes_abnormal_state: pulumi.Input[float]):
+        pulumi.set(__self__, "actions_per_minute", actions_per_minute)
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter(name="actionsPerMinute")
+    def actions_per_minute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "actions_per_minute")
+
+    @actions_per_minute.setter
+    def actions_per_minute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "actions_per_minute", value)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: pulumi.Input[float]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllArgs:
+    def __init__(__self__, *,
+                 degradation_milliseconds: pulumi.Input[float],
+                 degradation_percent: pulumi.Input[float]):
+        pulumi.set(__self__, "degradation_milliseconds", degradation_milliseconds)
+        pulumi.set(__self__, "degradation_percent", degradation_percent)
+
+    @property
+    @pulumi.getter(name="degradationMilliseconds")
+    def degradation_milliseconds(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "degradation_milliseconds")
+
+    @degradation_milliseconds.setter
+    def degradation_milliseconds(self, value: pulumi.Input[float]):
+        pulumi.set(self, "degradation_milliseconds", value)
+
+    @property
+    @pulumi.getter(name="degradationPercent")
+    def degradation_percent(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "degradation_percent")
+
+    @degradation_percent.setter
+    def degradation_percent(self, value: pulumi.Input[float]):
+        pulumi.set(self, "degradation_percent", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestArgs:
+    def __init__(__self__, *,
+                 slowest_degradation_milliseconds: pulumi.Input[float],
+                 slowest_degradation_percent: pulumi.Input[float]):
+        pulumi.set(__self__, "slowest_degradation_milliseconds", slowest_degradation_milliseconds)
+        pulumi.set(__self__, "slowest_degradation_percent", slowest_degradation_percent)
+
+    @property
+    @pulumi.getter(name="slowestDegradationMilliseconds")
+    def slowest_degradation_milliseconds(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "slowest_degradation_milliseconds")
+
+    @slowest_degradation_milliseconds.setter
+    def slowest_degradation_milliseconds(self, value: pulumi.Input[float]):
+        pulumi.set(self, "slowest_degradation_milliseconds", value)
+
+    @property
+    @pulumi.getter(name="slowestDegradationPercent")
+    def slowest_degradation_percent(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "slowest_degradation_percent")
+
+    @slowest_degradation_percent.setter
+    def slowest_degradation_percent(self, value: pulumi.Input[float]):
+        pulumi.set(self, "slowest_degradation_percent", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesResponseTimeResponseTimeFixedArgs:
+    def __init__(__self__, *,
+                 over_alerting_protection: pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs'],
+                 response_time_all: pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs'],
+                 response_time_slowest: pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs'],
+                 sensitivity: pulumi.Input[str]):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "response_time_all", response_time_all)
+        pulumi.set(__self__, "response_time_slowest", response_time_slowest)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs']:
+        return pulumi.get(self, "over_alerting_protection")
+
+    @over_alerting_protection.setter
+    def over_alerting_protection(self, value: pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs']):
+        pulumi.set(self, "over_alerting_protection", value)
+
+    @property
+    @pulumi.getter(name="responseTimeAll")
+    def response_time_all(self) -> pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs']:
+        return pulumi.get(self, "response_time_all")
+
+    @response_time_all.setter
+    def response_time_all(self, value: pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs']):
+        pulumi.set(self, "response_time_all", value)
+
+    @property
+    @pulumi.getter(name="responseTimeSlowest")
+    def response_time_slowest(self) -> pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs']:
+        return pulumi.get(self, "response_time_slowest")
+
+    @response_time_slowest.setter
+    def response_time_slowest(self, value: pulumi.Input['WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs']):
+        pulumi.set(self, "response_time_slowest", value)
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "sensitivity")
+
+    @sensitivity.setter
+    def sensitivity(self, value: pulumi.Input[str]):
+        pulumi.set(self, "sensitivity", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionArgs:
+    def __init__(__self__, *,
+                 actions_per_minute: pulumi.Input[float],
+                 minutes_abnormal_state: pulumi.Input[float]):
+        pulumi.set(__self__, "actions_per_minute", actions_per_minute)
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter(name="actionsPerMinute")
+    def actions_per_minute(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "actions_per_minute")
+
+    @actions_per_minute.setter
+    def actions_per_minute(self, value: pulumi.Input[float]):
+        pulumi.set(self, "actions_per_minute", value)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: pulumi.Input[float]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAllArgs:
+    def __init__(__self__, *,
+                 degradation_milliseconds: pulumi.Input[float]):
+        pulumi.set(__self__, "degradation_milliseconds", degradation_milliseconds)
+
+    @property
+    @pulumi.getter(name="degradationMilliseconds")
+    def degradation_milliseconds(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "degradation_milliseconds")
+
+    @degradation_milliseconds.setter
+    def degradation_milliseconds(self, value: pulumi.Input[float]):
+        pulumi.set(self, "degradation_milliseconds", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestArgs:
+    def __init__(__self__, *,
+                 slowest_degradation_milliseconds: pulumi.Input[float]):
+        pulumi.set(__self__, "slowest_degradation_milliseconds", slowest_degradation_milliseconds)
+
+    @property
+    @pulumi.getter(name="slowestDegradationMilliseconds")
+    def slowest_degradation_milliseconds(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "slowest_degradation_milliseconds")
+
+    @slowest_degradation_milliseconds.setter
+    def slowest_degradation_milliseconds(self, value: pulumi.Input[float]):
+        pulumi.set(self, "slowest_degradation_milliseconds", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesTrafficDropsArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 traffic_drops: Optional[pulumi.Input['WebAppAnomaliesTrafficDropsTrafficDropsArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['WebAppAnomaliesTrafficDropsTrafficDropsArgs'] traffic_drops: Dynatrace learns your typical application traffic over an observation period of one week.
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if traffic_drops is not None:
+            pulumi.set(__self__, "traffic_drops", traffic_drops)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="trafficDrops")
+    def traffic_drops(self) -> Optional[pulumi.Input['WebAppAnomaliesTrafficDropsTrafficDropsArgs']]:
+        """
+        Dynatrace learns your typical application traffic over an observation period of one week.
+        """
+        return pulumi.get(self, "traffic_drops")
+
+    @traffic_drops.setter
+    def traffic_drops(self, value: Optional[pulumi.Input['WebAppAnomaliesTrafficDropsTrafficDropsArgs']]):
+        pulumi.set(self, "traffic_drops", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesTrafficDropsTrafficDropsArgs:
+    def __init__(__self__, *,
+                 abnormal_state_abnormal_state: pulumi.Input[float],
+                 traffic_drop_percentage: pulumi.Input[float]):
+        pulumi.set(__self__, "abnormal_state_abnormal_state", abnormal_state_abnormal_state)
+        pulumi.set(__self__, "traffic_drop_percentage", traffic_drop_percentage)
+
+    @property
+    @pulumi.getter(name="abnormalStateAbnormalState")
+    def abnormal_state_abnormal_state(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "abnormal_state_abnormal_state")
+
+    @abnormal_state_abnormal_state.setter
+    def abnormal_state_abnormal_state(self, value: pulumi.Input[float]):
+        pulumi.set(self, "abnormal_state_abnormal_state", value)
+
+    @property
+    @pulumi.getter(name="trafficDropPercentage")
+    def traffic_drop_percentage(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "traffic_drop_percentage")
+
+    @traffic_drop_percentage.setter
+    def traffic_drop_percentage(self, value: pulumi.Input[float]):
+        pulumi.set(self, "traffic_drop_percentage", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesTrafficSpikesArgs:
+    def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
+                 traffic_spikes: Optional[pulumi.Input['WebAppAnomaliesTrafficSpikesTrafficSpikesArgs']] = None):
+        """
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['WebAppAnomaliesTrafficSpikesTrafficSpikesArgs'] traffic_spikes: Dynatrace learns your typical application traffic over an observation period of one week.
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if traffic_spikes is not None:
+            pulumi.set(__self__, "traffic_spikes", traffic_spikes)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="trafficSpikes")
+    def traffic_spikes(self) -> Optional[pulumi.Input['WebAppAnomaliesTrafficSpikesTrafficSpikesArgs']]:
+        """
+        Dynatrace learns your typical application traffic over an observation period of one week.
+        """
+        return pulumi.get(self, "traffic_spikes")
+
+    @traffic_spikes.setter
+    def traffic_spikes(self, value: Optional[pulumi.Input['WebAppAnomaliesTrafficSpikesTrafficSpikesArgs']]):
+        pulumi.set(self, "traffic_spikes", value)
+
+
+@pulumi.input_type
+class WebAppAnomaliesTrafficSpikesTrafficSpikesArgs:
+    def __init__(__self__, *,
+                 minutes_abnormal_state: pulumi.Input[float],
+                 traffic_spike_percentage: pulumi.Input[float]):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "traffic_spike_percentage", traffic_spike_percentage)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @minutes_abnormal_state.setter
+    def minutes_abnormal_state(self, value: pulumi.Input[float]):
+        pulumi.set(self, "minutes_abnormal_state", value)
+
+    @property
+    @pulumi.getter(name="trafficSpikePercentage")
+    def traffic_spike_percentage(self) -> pulumi.Input[float]:
+        return pulumi.get(self, "traffic_spike_percentage")
+
+    @traffic_spike_percentage.setter
+    def traffic_spike_percentage(self, value: pulumi.Input[float]):
+        pulumi.set(self, "traffic_spike_percentage", value)
+
+
+@pulumi.input_type
+class WebAppCustomErrorsErrorRulesArgs:
+    def __init__(__self__, *,
+                 error_rules: pulumi.Input[Sequence[pulumi.Input['WebAppCustomErrorsErrorRulesErrorRuleArgs']]]):
+        pulumi.set(__self__, "error_rules", error_rules)
+
+    @property
+    @pulumi.getter(name="errorRules")
+    def error_rules(self) -> pulumi.Input[Sequence[pulumi.Input['WebAppCustomErrorsErrorRulesErrorRuleArgs']]]:
+        return pulumi.get(self, "error_rules")
+
+    @error_rules.setter
+    def error_rules(self, value: pulumi.Input[Sequence[pulumi.Input['WebAppCustomErrorsErrorRulesErrorRuleArgs']]]):
+        pulumi.set(self, "error_rules", value)
+
+
+@pulumi.input_type
+class WebAppCustomErrorsErrorRulesErrorRuleArgs:
+    def __init__(__self__, *,
+                 capture_settings: pulumi.Input['WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsArgs'],
+                 key_matcher: pulumi.Input[str],
+                 value_matcher: pulumi.Input[str],
+                 key_pattern: Optional[pulumi.Input[str]] = None,
+                 value_pattern: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "capture_settings", capture_settings)
+        pulumi.set(__self__, "key_matcher", key_matcher)
+        pulumi.set(__self__, "value_matcher", value_matcher)
+        if key_pattern is not None:
+            pulumi.set(__self__, "key_pattern", key_pattern)
+        if value_pattern is not None:
+            pulumi.set(__self__, "value_pattern", value_pattern)
+
+    @property
+    @pulumi.getter(name="captureSettings")
+    def capture_settings(self) -> pulumi.Input['WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsArgs']:
+        return pulumi.get(self, "capture_settings")
+
+    @capture_settings.setter
+    def capture_settings(self, value: pulumi.Input['WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsArgs']):
+        pulumi.set(self, "capture_settings", value)
+
+    @property
+    @pulumi.getter(name="keyMatcher")
+    def key_matcher(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "key_matcher")
+
+    @key_matcher.setter
+    def key_matcher(self, value: pulumi.Input[str]):
+        pulumi.set(self, "key_matcher", value)
+
+    @property
+    @pulumi.getter(name="valueMatcher")
+    def value_matcher(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value_matcher")
+
+    @value_matcher.setter
+    def value_matcher(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value_matcher", value)
+
+    @property
+    @pulumi.getter(name="keyPattern")
+    def key_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "key_pattern")
+
+    @key_pattern.setter
+    def key_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "key_pattern", value)
+
+    @property
+    @pulumi.getter(name="valuePattern")
+    def value_pattern(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "value_pattern")
+
+    @value_pattern.setter
+    def value_pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value_pattern", value)
+
+
+@pulumi.input_type
+class WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsArgs:
+    def __init__(__self__, *,
+                 capture: pulumi.Input[bool],
+                 consider_for_ai: Optional[pulumi.Input[bool]] = None,
+                 impact_apdex: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "capture", capture)
+        if consider_for_ai is not None:
+            pulumi.set(__self__, "consider_for_ai", consider_for_ai)
+        if impact_apdex is not None:
+            pulumi.set(__self__, "impact_apdex", impact_apdex)
+
+    @property
+    @pulumi.getter
+    def capture(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "capture")
+
+    @capture.setter
+    def capture(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "capture", value)
+
+    @property
+    @pulumi.getter(name="considerForAi")
+    def consider_for_ai(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "consider_for_ai")
+
+    @consider_for_ai.setter
+    def consider_for_ai(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "consider_for_ai", value)
+
+    @property
+    @pulumi.getter(name="impactApdex")
+    def impact_apdex(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "impact_apdex")
+
+    @impact_apdex.setter
+    def impact_apdex(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "impact_apdex", value)
+
+
+@pulumi.input_type
+class WebAppEnablementRumArgs:
+    def __init__(__self__, *,
+                 cost_and_traffic_control: pulumi.Input[int],
+                 enabled: pulumi.Input[bool]):
+        """
+        :param pulumi.Input[int] cost_and_traffic_control: (Field has overlap with `WebApplication`) Percentage of user sessions captured and analyzed
+        :param pulumi.Input[bool] enabled: (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+        """
+        pulumi.set(__self__, "cost_and_traffic_control", cost_and_traffic_control)
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter(name="costAndTrafficControl")
+    def cost_and_traffic_control(self) -> pulumi.Input[int]:
+        """
+        (Field has overlap with `WebApplication`) Percentage of user sessions captured and analyzed
+        """
+        return pulumi.get(self, "cost_and_traffic_control")
+
+    @cost_and_traffic_control.setter
+    def cost_and_traffic_control(self, value: pulumi.Input[int]):
+        pulumi.set(self, "cost_and_traffic_control", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+
+@pulumi.input_type
+class WebAppEnablementSessionReplayArgs:
+    def __init__(__self__, *,
+                 cost_and_traffic_control: pulumi.Input[int],
+                 enabled: pulumi.Input[bool]):
+        """
+        :param pulumi.Input[int] cost_and_traffic_control: (Field has overlap with `WebApplication`) [Percentage of user sessions recorded with Session Replay](https://dt-url.net/sr-cost-traffic-control). For example, if you have 50% for RUM and 50% for Session Replay, it results in 25% of sessions recorded with Session Replay.
+        :param pulumi.Input[bool] enabled: (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+        """
+        pulumi.set(__self__, "cost_and_traffic_control", cost_and_traffic_control)
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter(name="costAndTrafficControl")
+    def cost_and_traffic_control(self) -> pulumi.Input[int]:
+        """
+        (Field has overlap with `WebApplication`) [Percentage of user sessions recorded with Session Replay](https://dt-url.net/sr-cost-traffic-control). For example, if you have 50% for RUM and 50% for Session Replay, it results in 25% of sessions recorded with Session Replay.
+        """
+        return pulumi.get(self, "cost_and_traffic_control")
+
+    @cost_and_traffic_control.setter
+    def cost_and_traffic_control(self, value: pulumi.Input[int]):
+        pulumi.set(self, "cost_and_traffic_control", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+
+@pulumi.input_type
+class WebAppRequestErrorsErrorRulesArgs:
+    def __init__(__self__, *,
+                 error_rules: pulumi.Input[Sequence[pulumi.Input['WebAppRequestErrorsErrorRulesErrorRuleArgs']]]):
+        pulumi.set(__self__, "error_rules", error_rules)
+
+    @property
+    @pulumi.getter(name="errorRules")
+    def error_rules(self) -> pulumi.Input[Sequence[pulumi.Input['WebAppRequestErrorsErrorRulesErrorRuleArgs']]]:
+        return pulumi.get(self, "error_rules")
+
+    @error_rules.setter
+    def error_rules(self, value: pulumi.Input[Sequence[pulumi.Input['WebAppRequestErrorsErrorRulesErrorRuleArgs']]]):
+        pulumi.set(self, "error_rules", value)
+
+
+@pulumi.input_type
+class WebAppRequestErrorsErrorRulesErrorRuleArgs:
+    def __init__(__self__, *,
+                 capture_settings: pulumi.Input['WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs'],
+                 consider_csp_violations: pulumi.Input[bool],
+                 consider_failed_images: pulumi.Input[bool],
+                 filter_settings: pulumi.Input['WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs'],
+                 error_codes: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "capture_settings", capture_settings)
+        pulumi.set(__self__, "consider_csp_violations", consider_csp_violations)
+        pulumi.set(__self__, "consider_failed_images", consider_failed_images)
+        pulumi.set(__self__, "filter_settings", filter_settings)
+        if error_codes is not None:
+            pulumi.set(__self__, "error_codes", error_codes)
+
+    @property
+    @pulumi.getter(name="captureSettings")
+    def capture_settings(self) -> pulumi.Input['WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs']:
+        return pulumi.get(self, "capture_settings")
+
+    @capture_settings.setter
+    def capture_settings(self, value: pulumi.Input['WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs']):
+        pulumi.set(self, "capture_settings", value)
+
+    @property
+    @pulumi.getter(name="considerCspViolations")
+    def consider_csp_violations(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "consider_csp_violations")
+
+    @consider_csp_violations.setter
+    def consider_csp_violations(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "consider_csp_violations", value)
+
+    @property
+    @pulumi.getter(name="considerFailedImages")
+    def consider_failed_images(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "consider_failed_images")
+
+    @consider_failed_images.setter
+    def consider_failed_images(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "consider_failed_images", value)
+
+    @property
+    @pulumi.getter(name="filterSettings")
+    def filter_settings(self) -> pulumi.Input['WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs']:
+        return pulumi.get(self, "filter_settings")
+
+    @filter_settings.setter
+    def filter_settings(self, value: pulumi.Input['WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs']):
+        pulumi.set(self, "filter_settings", value)
+
+    @property
+    @pulumi.getter(name="errorCodes")
+    def error_codes(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "error_codes")
+
+    @error_codes.setter
+    def error_codes(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "error_codes", value)
+
+
+@pulumi.input_type
+class WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsArgs:
+    def __init__(__self__, *,
+                 capture: pulumi.Input[bool],
+                 consider_for_ai: Optional[pulumi.Input[bool]] = None,
+                 impact_apdex: Optional[pulumi.Input[bool]] = None):
+        pulumi.set(__self__, "capture", capture)
+        if consider_for_ai is not None:
+            pulumi.set(__self__, "consider_for_ai", consider_for_ai)
+        if impact_apdex is not None:
+            pulumi.set(__self__, "impact_apdex", impact_apdex)
+
+    @property
+    @pulumi.getter
+    def capture(self) -> pulumi.Input[bool]:
+        return pulumi.get(self, "capture")
+
+    @capture.setter
+    def capture(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "capture", value)
+
+    @property
+    @pulumi.getter(name="considerForAi")
+    def consider_for_ai(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "consider_for_ai")
+
+    @consider_for_ai.setter
+    def consider_for_ai(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "consider_for_ai", value)
+
+    @property
+    @pulumi.getter(name="impactApdex")
+    def impact_apdex(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "impact_apdex")
+
+    @impact_apdex.setter
+    def impact_apdex(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "impact_apdex", value)
+
+
+@pulumi.input_type
+class WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsArgs:
+    def __init__(__self__, *,
+                 filter: Optional[pulumi.Input[str]] = None,
+                 url: Optional[pulumi.Input[str]] = None):
+        if filter is not None:
+            pulumi.set(__self__, "filter", filter)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter
+    def filter(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "filter")
+
+    @filter.setter
+    def filter(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "filter", value)
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "url", value)
 
 
 @pulumi.input_type
@@ -49245,10 +69590,10 @@ class WebApplicationSessionReplayConfigArgs:
                  enable_css_resource_capturing: Optional[pulumi.Input[bool]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[int] cost_control_percentage: Session replay sampling rating in percent
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] css_resource_capturing_exclusion_rules: A list of URLs to be excluded from CSS resource capturing
-        :param pulumi.Input[bool] enable_css_resource_capturing: Capture (`true`) or don't capture (`false`) CSS resources from the session
-        :param pulumi.Input[bool] enabled: SessionReplay Enabled/Disabled
+        :param pulumi.Input[int] cost_control_percentage: (Field has overlap with `WebAppEnablement`) Session replay sampling rating in percent
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] css_resource_capturing_exclusion_rules: (Field has overlap with `SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
+        :param pulumi.Input[bool] enable_css_resource_capturing: (Field has overlap with `SessionReplayResourceCapture`) Capture (`true`) or don't capture (`false`) CSS resources from the session
+        :param pulumi.Input[bool] enabled: (Field has overlap with `WebAppEnablement`) SessionReplay Enabled/Disabled
         """
         pulumi.set(__self__, "cost_control_percentage", cost_control_percentage)
         if css_resource_capturing_exclusion_rules is not None:
@@ -49262,7 +69607,7 @@ class WebApplicationSessionReplayConfigArgs:
     @pulumi.getter(name="costControlPercentage")
     def cost_control_percentage(self) -> pulumi.Input[int]:
         """
-        Session replay sampling rating in percent
+        (Field has overlap with `WebAppEnablement`) Session replay sampling rating in percent
         """
         return pulumi.get(self, "cost_control_percentage")
 
@@ -49274,7 +69619,7 @@ class WebApplicationSessionReplayConfigArgs:
     @pulumi.getter(name="cssResourceCapturingExclusionRules")
     def css_resource_capturing_exclusion_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        A list of URLs to be excluded from CSS resource capturing
+        (Field has overlap with `SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
         """
         return pulumi.get(self, "css_resource_capturing_exclusion_rules")
 
@@ -49286,7 +69631,7 @@ class WebApplicationSessionReplayConfigArgs:
     @pulumi.getter(name="enableCssResourceCapturing")
     def enable_css_resource_capturing(self) -> Optional[pulumi.Input[bool]]:
         """
-        Capture (`true`) or don't capture (`false`) CSS resources from the session
+        (Field has overlap with `SessionReplayResourceCapture`) Capture (`true`) or don't capture (`false`) CSS resources from the session
         """
         return pulumi.get(self, "enable_css_resource_capturing")
 
@@ -49298,7 +69643,7 @@ class WebApplicationSessionReplayConfigArgs:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        SessionReplay Enabled/Disabled
+        (Field has overlap with `WebAppEnablement`) SessionReplay Enabled/Disabled
         """
         return pulumi.get(self, "enabled")
 
@@ -50220,35 +70565,27 @@ class WebApplicationUserTagsArgs:
 @pulumi.input_type
 class WebApplicationUserTagsTagArgs:
     def __init__(__self__, *,
-                 id: pulumi.Input[int],
                  cleanup_rule: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[int]] = None,
                  ignore_case: Optional[pulumi.Input[bool]] = None,
                  metadata_id: Optional[pulumi.Input[int]] = None,
-                 server_side_request_attribute: Optional[pulumi.Input[str]] = None):
+                 server_side_request_attribute: Optional[pulumi.Input[str]] = None,
+                 unique_id: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[int] id: The ID of this resource.
         """
-        pulumi.set(__self__, "id", id)
         if cleanup_rule is not None:
             pulumi.set(__self__, "cleanup_rule", cleanup_rule)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
         if ignore_case is not None:
             pulumi.set(__self__, "ignore_case", ignore_case)
         if metadata_id is not None:
             pulumi.set(__self__, "metadata_id", metadata_id)
         if server_side_request_attribute is not None:
             pulumi.set(__self__, "server_side_request_attribute", server_side_request_attribute)
-
-    @property
-    @pulumi.getter
-    def id(self) -> pulumi.Input[int]:
-        """
-        The ID of this resource.
-        """
-        return pulumi.get(self, "id")
-
-    @id.setter
-    def id(self, value: pulumi.Input[int]):
-        pulumi.set(self, "id", value)
+        if unique_id is not None:
+            pulumi.set(__self__, "unique_id", unique_id)
 
     @property
     @pulumi.getter(name="cleanupRule")
@@ -50258,6 +70595,18 @@ class WebApplicationUserTagsTagArgs:
     @cleanup_rule.setter
     def cleanup_rule(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "cleanup_rule", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[int]]:
+        """
+        The ID of this resource.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "id", value)
 
     @property
     @pulumi.getter(name="ignoreCase")
@@ -50285,6 +70634,15 @@ class WebApplicationUserTagsTagArgs:
     @server_side_request_attribute.setter
     def server_side_request_attribute(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "server_side_request_attribute", value)
+
+    @property
+    @pulumi.getter(name="uniqueId")
+    def unique_id(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "unique_id")
+
+    @unique_id.setter
+    def unique_id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "unique_id", value)
 
 
 @pulumi.input_type
@@ -50623,47 +70981,168 @@ class XmattersNotificationHeadersHeaderArgs:
 
 
 @pulumi.input_type
-class GetSyntheticLocationsLocationsArgs:
+class GetEntitiesEntitiesArgs:
     def __init__(__self__, *,
-                 locations: Optional[Sequence['GetSyntheticLocationsLocationsLocationArgs']] = None):
+                 entities: Optional[Sequence['GetEntitiesEntitiesEntityArgs']] = None):
         """
-        :param Sequence['GetSyntheticLocationsLocationsLocationArgs'] locations: The name of the location
+        :param Sequence['GetEntitiesEntitiesEntityArgs'] entities: A list of monitored entities.
         """
-        if locations is not None:
-            pulumi.set(__self__, "locations", locations)
+        if entities is not None:
+            pulumi.set(__self__, "entities", entities)
 
     @property
     @pulumi.getter
-    def locations(self) -> Optional[Sequence['GetSyntheticLocationsLocationsLocationArgs']]:
+    def entities(self) -> Optional[Sequence['GetEntitiesEntitiesEntityArgs']]:
         """
-        The name of the location
+        A list of monitored entities.
         """
-        return pulumi.get(self, "locations")
+        return pulumi.get(self, "entities")
 
-    @locations.setter
-    def locations(self, value: Optional[Sequence['GetSyntheticLocationsLocationsLocationArgs']]):
-        pulumi.set(self, "locations", value)
+    @entities.setter
+    def entities(self, value: Optional[Sequence['GetEntitiesEntitiesEntityArgs']]):
+        pulumi.set(self, "entities", value)
 
 
 @pulumi.input_type
-class GetSyntheticLocationsLocationsLocationArgs:
+class GetEntitiesEntitiesEntityArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 entity_id: Optional[str] = None,
+                 tags: Optional[Sequence['GetEntitiesEntitiesEntityTagArgs']] = None,
+                 type: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if entity_id is not None:
+            pulumi.set(__self__, "entity_id", entity_id)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[str]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> Optional[str]:
+        return pulumi.get(self, "entity_id")
+
+    @entity_id.setter
+    def entity_id(self, value: Optional[str]):
+        pulumi.set(self, "entity_id", value)
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[Sequence['GetEntitiesEntitiesEntityTagArgs']]:
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: Optional[Sequence['GetEntitiesEntitiesEntityTagArgs']]):
+        pulumi.set(self, "tags", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[str]):
+        pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class GetEntitiesEntitiesEntityTagArgs:
+    def __init__(__self__, *,
+                 tags: Optional[Sequence['GetEntitiesEntitiesEntityTagTagArgs']] = None):
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[Sequence['GetEntitiesEntitiesEntityTagTagArgs']]:
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: Optional[Sequence['GetEntitiesEntitiesEntityTagTagArgs']]):
+        pulumi.set(self, "tags", value)
+
+
+@pulumi.input_type
+class GetEntitiesEntitiesEntityTagTagArgs:
+    def __init__(__self__, *,
+                 context: str,
+                 key: str,
+                 string_representation: Optional[str] = None,
+                 value: Optional[str] = None):
+        pulumi.set(__self__, "context", context)
+        pulumi.set(__self__, "key", key)
+        if string_representation is not None:
+            pulumi.set(__self__, "string_representation", string_representation)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def context(self) -> str:
+        return pulumi.get(self, "context")
+
+    @context.setter
+    def context(self, value: str):
+        pulumi.set(self, "context", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: str):
+        pulumi.set(self, "key", value)
+
+    @property
+    @pulumi.getter(name="stringRepresentation")
+    def string_representation(self) -> Optional[str]:
+        return pulumi.get(self, "string_representation")
+
+    @string_representation.setter
+    def string_representation(self, value: Optional[str]):
+        pulumi.set(self, "string_representation", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class GetSyntheticLocationsLocationsArgs:
     def __init__(__self__, *,
                  cloud_platform: str,
                  ips: Sequence[str],
                  stage: str,
                  status: str,
-                 id: Optional[str] = None,
+                 entity_id: Optional[str] = None,
                  name: Optional[str] = None,
                  type: Optional[str] = None):
         """
-        :param str id: The ID of this resource.
+        :param str cloud_platform: The cloud provider where the location is hosted.
         """
         pulumi.set(__self__, "cloud_platform", cloud_platform)
         pulumi.set(__self__, "ips", ips)
         pulumi.set(__self__, "stage", stage)
         pulumi.set(__self__, "status", status)
-        if id is not None:
-            pulumi.set(__self__, "id", id)
+        if entity_id is not None:
+            pulumi.set(__self__, "entity_id", entity_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if type is not None:
@@ -50672,6 +71151,9 @@ class GetSyntheticLocationsLocationsLocationArgs:
     @property
     @pulumi.getter(name="cloudPlatform")
     def cloud_platform(self) -> str:
+        """
+        The cloud provider where the location is hosted.
+        """
         return pulumi.get(self, "cloud_platform")
 
     @cloud_platform.setter
@@ -50706,16 +71188,13 @@ class GetSyntheticLocationsLocationsLocationArgs:
         pulumi.set(self, "status", value)
 
     @property
-    @pulumi.getter
-    def id(self) -> Optional[str]:
-        """
-        The ID of this resource.
-        """
-        return pulumi.get(self, "id")
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> Optional[str]:
+        return pulumi.get(self, "entity_id")
 
-    @id.setter
-    def id(self, value: Optional[str]):
-        pulumi.set(self, "id", value)
+    @entity_id.setter
+    def entity_id(self, value: Optional[str]):
+        pulumi.set(self, "entity_id", value)
 
     @property
     @pulumi.getter

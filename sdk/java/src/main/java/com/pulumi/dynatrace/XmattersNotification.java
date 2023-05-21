@@ -22,7 +22,7 @@ public class XmattersNotification extends com.pulumi.resources.CustomResource {
      * The configuration is enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="active", type=Boolean.class, parameters={})
+    @Export(name="active", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> active;
 
     /**
@@ -36,7 +36,7 @@ public class XmattersNotification extends com.pulumi.resources.CustomResource {
      * A list of the additional HTTP headers
      * 
      */
-    @Export(name="headers", type=XmattersNotificationHeaders.class, parameters={})
+    @Export(name="headers", refs={XmattersNotificationHeaders.class}, tree="[0]")
     private Output</* @Nullable */ XmattersNotificationHeaders> headers;
 
     /**
@@ -50,7 +50,7 @@ public class XmattersNotification extends com.pulumi.resources.CustomResource {
      * Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
      * 
      */
-    @Export(name="insecure", type=Boolean.class, parameters={})
+    @Export(name="insecure", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> insecure;
 
     /**
@@ -61,10 +61,24 @@ public class XmattersNotification extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.insecure);
     }
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    @Export(name="legacyId", refs={String.class}, tree="[0]")
+    private Output<String> legacyId;
+
+    /**
+     * @return The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    public Output<String> legacyId() {
+        return this.legacyId;
+    }
+    /**
      * The name of the notification configuration
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -78,7 +92,7 @@ public class XmattersNotification extends com.pulumi.resources.CustomResource {
      * The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      * 
      */
-    @Export(name="payload", type=String.class, parameters={})
+    @Export(name="payload", refs={String.class}, tree="[0]")
     private Output<String> payload;
 
     /**
@@ -92,7 +106,7 @@ public class XmattersNotification extends com.pulumi.resources.CustomResource {
      * The ID of the associated alerting profile
      * 
      */
-    @Export(name="profile", type=String.class, parameters={})
+    @Export(name="profile", refs={String.class}, tree="[0]")
     private Output<String> profile;
 
     /**
@@ -106,7 +120,7 @@ public class XmattersNotification extends com.pulumi.resources.CustomResource {
      * The URL of the WebHook endpoint
      * 
      */
-    @Export(name="url", type=String.class, parameters={})
+    @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**

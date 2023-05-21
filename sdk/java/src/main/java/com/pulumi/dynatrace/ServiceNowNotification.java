@@ -22,7 +22,7 @@ public class ServiceNowNotification extends com.pulumi.resources.CustomResource 
      * The configuration is enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="active", type=Boolean.class, parameters={})
+    @Export(name="active", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> active;
 
     /**
@@ -36,7 +36,7 @@ public class ServiceNowNotification extends com.pulumi.resources.CustomResource 
      * Send events into ServiceNow ITOM
      * 
      */
-    @Export(name="events", type=Boolean.class, parameters={})
+    @Export(name="events", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> events;
 
     /**
@@ -50,7 +50,7 @@ public class ServiceNowNotification extends com.pulumi.resources.CustomResource 
      * Send incidents into ServiceNow ITSM
      * 
      */
-    @Export(name="incidents", type=Boolean.class, parameters={})
+    @Export(name="incidents", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> incidents;
 
     /**
@@ -64,7 +64,7 @@ public class ServiceNowNotification extends com.pulumi.resources.CustomResource 
      * The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
      * 
      */
-    @Export(name="instance", type=String.class, parameters={})
+    @Export(name="instance", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> instance;
 
     /**
@@ -75,10 +75,24 @@ public class ServiceNowNotification extends com.pulumi.resources.CustomResource 
         return Codegen.optional(this.instance);
     }
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    @Export(name="legacyId", refs={String.class}, tree="[0]")
+    private Output<String> legacyId;
+
+    /**
+     * @return The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    public Output<String> legacyId() {
+        return this.legacyId;
+    }
+    /**
      * The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      * 
      */
-    @Export(name="message", type=String.class, parameters={})
+    @Export(name="message", refs={String.class}, tree="[0]")
     private Output<String> message;
 
     /**
@@ -92,7 +106,7 @@ public class ServiceNowNotification extends com.pulumi.resources.CustomResource 
      * The name of the notification configuration
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -106,7 +120,7 @@ public class ServiceNowNotification extends com.pulumi.resources.CustomResource 
      * The password to the ServiceNow account
      * 
      */
-    @Export(name="password", type=String.class, parameters={})
+    @Export(name="password", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> password;
 
     /**
@@ -120,7 +134,7 @@ public class ServiceNowNotification extends com.pulumi.resources.CustomResource 
      * The ID of the associated alerting profile
      * 
      */
-    @Export(name="profile", type=String.class, parameters={})
+    @Export(name="profile", refs={String.class}, tree="[0]")
     private Output<String> profile;
 
     /**
@@ -134,7 +148,7 @@ public class ServiceNowNotification extends com.pulumi.resources.CustomResource 
      * The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
      * 
      */
-    @Export(name="url", type=String.class, parameters={})
+    @Export(name="url", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> url;
 
     /**
@@ -148,7 +162,7 @@ public class ServiceNowNotification extends com.pulumi.resources.CustomResource 
      * The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
      * 
      */
-    @Export(name="username", type=String.class, parameters={})
+    @Export(name="username", refs={String.class}, tree="[0]")
     private Output<String> username;
 
     /**

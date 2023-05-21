@@ -19,56 +19,56 @@ import javax.annotation.Nullable;
 @ResourceType(type="dynatrace:index/applicationDataPrivacy:ApplicationDataPrivacy")
 public class ApplicationDataPrivacy extends com.pulumi.resources.CustomResource {
     /**
-     * Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
+     * (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
      * 
      */
-    @Export(name="dataCaptureOptIn", type=Boolean.class, parameters={})
+    @Export(name="dataCaptureOptIn", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> dataCaptureOptIn;
 
     /**
-     * @return Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
+     * @return (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
      * 
      */
     public Output<Optional<Boolean>> dataCaptureOptIn() {
         return Codegen.optional(this.dataCaptureOptIn);
     }
     /**
-     * How to handle the &#34;Do Not Track&#34; header:
+     * (Field has overlap with `dynatrace.DataPrivacy`) How to handle the &#34;Do Not Track&#34; header:
      * 
      */
-    @Export(name="doNotTrackBehaviour", type=String.class, parameters={})
+    @Export(name="doNotTrackBehaviour", refs={String.class}, tree="[0]")
     private Output<String> doNotTrackBehaviour;
 
     /**
-     * @return How to handle the &#34;Do Not Track&#34; header:
+     * @return (Field has overlap with `dynatrace.DataPrivacy`) How to handle the &#34;Do Not Track&#34; header:
      * 
      */
     public Output<String> doNotTrackBehaviour() {
         return this.doNotTrackBehaviour;
     }
     /**
-     * Set to `true` to set persistent cookie in order to recognize returning devices
+     * (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
      * 
      */
-    @Export(name="persistentCookieForUserTracking", type=Boolean.class, parameters={})
+    @Export(name="persistentCookieForUserTracking", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> persistentCookieForUserTracking;
 
     /**
-     * @return Set to `true` to set persistent cookie in order to recognize returning devices
+     * @return (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
      * 
      */
     public Output<Optional<Boolean>> persistentCookieForUserTracking() {
         return Codegen.optional(this.persistentCookieForUserTracking);
     }
     /**
-     * Data privacy settings for Session Replay
+     * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Data privacy settings for Session Replay
      * 
      */
-    @Export(name="sessionReplayDataPrivacy", type=ApplicationDataPrivacySessionReplayDataPrivacy.class, parameters={})
+    @Export(name="sessionReplayDataPrivacy", refs={ApplicationDataPrivacySessionReplayDataPrivacy.class}, tree="[0]")
     private Output<ApplicationDataPrivacySessionReplayDataPrivacy> sessionReplayDataPrivacy;
 
     /**
-     * @return Data privacy settings for Session Replay
+     * @return (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Data privacy settings for Session Replay
      * 
      */
     public Output<ApplicationDataPrivacySessionReplayDataPrivacy> sessionReplayDataPrivacy() {
@@ -78,7 +78,7 @@ public class ApplicationDataPrivacy extends com.pulumi.resources.CustomResource 
      * Dynatrace entity ID of the web application
      * 
      */
-    @Export(name="webApplicationId", type=String.class, parameters={})
+    @Export(name="webApplicationId", refs={String.class}, tree="[0]")
     private Output<String> webApplicationId;
 
     /**

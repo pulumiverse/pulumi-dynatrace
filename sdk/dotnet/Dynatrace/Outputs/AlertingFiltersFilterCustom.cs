@@ -15,15 +15,19 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
     public sealed class AlertingFiltersFilterCustom
     {
         public readonly Outputs.AlertingFiltersFilterCustomDescription? Description;
+        public readonly Outputs.AlertingFiltersFilterCustomMetadata? Metadata;
         public readonly Outputs.AlertingFiltersFilterCustomTitle? Title;
 
         [OutputConstructor]
         private AlertingFiltersFilterCustom(
             Outputs.AlertingFiltersFilterCustomDescription? description,
 
+            Outputs.AlertingFiltersFilterCustomMetadata? metadata,
+
             Outputs.AlertingFiltersFilterCustomTitle? title)
         {
             Description = description;
+            Metadata = metadata;
             Title = title;
         }
     }

@@ -21,13 +21,19 @@ class GetManagementZoneResult:
     """
     A collection of values returned by getManagementZone.
     """
-    def __init__(__self__, id=None, name=None):
+    def __init__(__self__, id=None, legacy_id=None, name=None, settings20_id=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if legacy_id and not isinstance(legacy_id, str):
+            raise TypeError("Expected argument 'legacy_id' to be a str")
+        pulumi.set(__self__, "legacy_id", legacy_id)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if settings20_id and not isinstance(settings20_id, str):
+            raise TypeError("Expected argument 'settings20_id' to be a str")
+        pulumi.set(__self__, "settings20_id", settings20_id)
 
     @property
     @pulumi.getter
@@ -38,9 +44,19 @@ class GetManagementZoneResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> str:
+        return pulumi.get(self, "legacy_id")
+
+    @property
     @pulumi.getter
     def name(self) -> str:
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="settings20Id")
+    def settings20_id(self) -> str:
+        return pulumi.get(self, "settings20_id")
 
 
 class AwaitableGetManagementZoneResult(GetManagementZoneResult):
@@ -50,7 +66,9 @@ class AwaitableGetManagementZoneResult(GetManagementZoneResult):
             yield self
         return GetManagementZoneResult(
             id=self.id,
-            name=self.name)
+            legacy_id=self.legacy_id,
+            name=self.name,
+            settings20_id=self.settings20_id)
 
 
 def get_management_zone(name: Optional[str] = None,
@@ -101,7 +119,9 @@ def get_management_zone(name: Optional[str] = None,
 
     return AwaitableGetManagementZoneResult(
         id=__ret__.id,
-        name=__ret__.name)
+        legacy_id=__ret__.legacy_id,
+        name=__ret__.name,
+        settings20_id=__ret__.settings20_id)
 
 
 @_utilities.lift_output_func(get_management_zone)

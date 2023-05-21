@@ -27,7 +27,7 @@ public class BrowserMonitor extends com.pulumi.resources.CustomResource {
      * The anomaly detection configuration.
      * 
      */
-    @Export(name="anomalyDetection", type=BrowserMonitorAnomalyDetection.class, parameters={})
+    @Export(name="anomalyDetection", refs={BrowserMonitorAnomalyDetection.class}, tree="[0]")
     private Output</* @Nullable */ BrowserMonitorAnomalyDetection> anomalyDetection;
 
     /**
@@ -41,7 +41,7 @@ public class BrowserMonitor extends com.pulumi.resources.CustomResource {
      * The monitor is enabled (`true`) or disabled (`false`).
      * 
      */
-    @Export(name="enabled", type=Boolean.class, parameters={})
+    @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enabled;
 
     /**
@@ -55,7 +55,7 @@ public class BrowserMonitor extends com.pulumi.resources.CustomResource {
      * The frequency of the monitor, in minutes.
      * 
      */
-    @Export(name="frequency", type=Integer.class, parameters={})
+    @Export(name="frequency", refs={Integer.class}, tree="[0]")
     private Output<Integer> frequency;
 
     /**
@@ -69,7 +69,7 @@ public class BrowserMonitor extends com.pulumi.resources.CustomResource {
      * The key performance metrics configuration
      * 
      */
-    @Export(name="keyPerformanceMetrics", type=BrowserMonitorKeyPerformanceMetrics.class, parameters={})
+    @Export(name="keyPerformanceMetrics", refs={BrowserMonitorKeyPerformanceMetrics.class}, tree="[0]")
     private Output</* @Nullable */ BrowserMonitorKeyPerformanceMetrics> keyPerformanceMetrics;
 
     /**
@@ -83,7 +83,7 @@ public class BrowserMonitor extends com.pulumi.resources.CustomResource {
      * A list of locations from which the monitor is executed. To specify a location, use its entity ID.
      * 
      */
-    @Export(name="locations", type=List.class, parameters={String.class})
+    @Export(name="locations", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> locations;
 
     /**
@@ -97,7 +97,7 @@ public class BrowserMonitor extends com.pulumi.resources.CustomResource {
      * A set of manually assigned applications.
      * 
      */
-    @Export(name="manuallyAssignedApps", type=List.class, parameters={String.class})
+    @Export(name="manuallyAssignedApps", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> manuallyAssignedApps;
 
     /**
@@ -111,7 +111,7 @@ public class BrowserMonitor extends com.pulumi.resources.CustomResource {
      * The name of the monitor.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -125,7 +125,7 @@ public class BrowserMonitor extends com.pulumi.resources.CustomResource {
      * The Browser Script
      * 
      */
-    @Export(name="script", type=BrowserMonitorScript.class, parameters={})
+    @Export(name="script", refs={BrowserMonitorScript.class}, tree="[0]")
     private Output</* @Nullable */ BrowserMonitorScript> script;
 
     /**
@@ -140,7 +140,7 @@ public class BrowserMonitor extends com.pulumi.resources.CustomResource {
      * source &#39;USER&#39; will be added automatically.
      * 
      */
-    @Export(name="tags", type=List.class, parameters={BrowserMonitorTag.class})
+    @Export(name="tags", refs={List.class,BrowserMonitorTag.class}, tree="[0,1]")
     private Output</* @Nullable */ List<BrowserMonitorTag>> tags;
 
     /**

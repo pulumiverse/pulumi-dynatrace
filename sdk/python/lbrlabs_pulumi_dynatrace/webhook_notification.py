@@ -22,6 +22,7 @@ class WebhookNotificationArgs:
                  url: pulumi.Input[str],
                  headers: Optional[pulumi.Input['WebhookNotificationHeadersArgs']] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  notify_closed_problems: Optional[pulumi.Input[bool]] = None,
                  notify_event_merges: Optional[pulumi.Input[bool]] = None):
@@ -33,6 +34,7 @@ class WebhookNotificationArgs:
         :param pulumi.Input[str] url: The URL of the WebHook endpoint
         :param pulumi.Input['WebhookNotificationHeadersArgs'] headers: A list of the additional HTTP headers
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
         :param pulumi.Input[bool] notify_event_merges: Call webhook if new events merge into existing problems
@@ -45,6 +47,8 @@ class WebhookNotificationArgs:
             pulumi.set(__self__, "headers", headers)
         if insecure is not None:
             pulumi.set(__self__, "insecure", insecure)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if notify_closed_problems is not None:
@@ -125,6 +129,18 @@ class WebhookNotificationArgs:
         pulumi.set(self, "insecure", value)
 
     @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -167,6 +183,7 @@ class _WebhookNotificationState:
                  active: Optional[pulumi.Input[bool]] = None,
                  headers: Optional[pulumi.Input['WebhookNotificationHeadersArgs']] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  notify_closed_problems: Optional[pulumi.Input[bool]] = None,
                  notify_event_merges: Optional[pulumi.Input[bool]] = None,
@@ -178,6 +195,7 @@ class _WebhookNotificationState:
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['WebhookNotificationHeadersArgs'] headers: A list of the additional HTTP headers
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
         :param pulumi.Input[bool] notify_event_merges: Call webhook if new events merge into existing problems
@@ -191,6 +209,8 @@ class _WebhookNotificationState:
             pulumi.set(__self__, "headers", headers)
         if insecure is not None:
             pulumi.set(__self__, "insecure", insecure)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if notify_closed_problems is not None:
@@ -239,6 +259,18 @@ class _WebhookNotificationState:
     @insecure.setter
     def insecure(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "insecure", value)
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
 
     @property
     @pulumi.getter
@@ -321,6 +353,7 @@ class WebhookNotification(pulumi.CustomResource):
                  active: Optional[pulumi.Input[bool]] = None,
                  headers: Optional[pulumi.Input[pulumi.InputType['WebhookNotificationHeadersArgs']]] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  notify_closed_problems: Optional[pulumi.Input[bool]] = None,
                  notify_event_merges: Optional[pulumi.Input[bool]] = None,
@@ -335,6 +368,7 @@ class WebhookNotification(pulumi.CustomResource):
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[pulumi.InputType['WebhookNotificationHeadersArgs']] headers: A list of the additional HTTP headers
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
         :param pulumi.Input[bool] notify_event_merges: Call webhook if new events merge into existing problems
@@ -368,6 +402,7 @@ class WebhookNotification(pulumi.CustomResource):
                  active: Optional[pulumi.Input[bool]] = None,
                  headers: Optional[pulumi.Input[pulumi.InputType['WebhookNotificationHeadersArgs']]] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  notify_closed_problems: Optional[pulumi.Input[bool]] = None,
                  notify_event_merges: Optional[pulumi.Input[bool]] = None,
@@ -388,6 +423,7 @@ class WebhookNotification(pulumi.CustomResource):
             __props__.__dict__["active"] = active
             __props__.__dict__["headers"] = headers
             __props__.__dict__["insecure"] = insecure
+            __props__.__dict__["legacy_id"] = legacy_id
             __props__.__dict__["name"] = name
             __props__.__dict__["notify_closed_problems"] = notify_closed_problems
             __props__.__dict__["notify_event_merges"] = notify_event_merges
@@ -413,6 +449,7 @@ class WebhookNotification(pulumi.CustomResource):
             active: Optional[pulumi.Input[bool]] = None,
             headers: Optional[pulumi.Input[pulumi.InputType['WebhookNotificationHeadersArgs']]] = None,
             insecure: Optional[pulumi.Input[bool]] = None,
+            legacy_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             notify_closed_problems: Optional[pulumi.Input[bool]] = None,
             notify_event_merges: Optional[pulumi.Input[bool]] = None,
@@ -429,6 +466,7 @@ class WebhookNotification(pulumi.CustomResource):
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[pulumi.InputType['WebhookNotificationHeadersArgs']] headers: A list of the additional HTTP headers
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
         :param pulumi.Input[bool] notify_event_merges: Call webhook if new events merge into existing problems
@@ -443,6 +481,7 @@ class WebhookNotification(pulumi.CustomResource):
         __props__.__dict__["active"] = active
         __props__.__dict__["headers"] = headers
         __props__.__dict__["insecure"] = insecure
+        __props__.__dict__["legacy_id"] = legacy_id
         __props__.__dict__["name"] = name
         __props__.__dict__["notify_closed_problems"] = notify_closed_problems
         __props__.__dict__["notify_event_merges"] = notify_event_merges
@@ -474,6 +513,14 @@ class WebhookNotification(pulumi.CustomResource):
         Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
         """
         return pulumi.get(self, "insecure")
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> pulumi.Output[str]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
 
     @property
     @pulumi.getter

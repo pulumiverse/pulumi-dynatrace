@@ -35,7 +35,7 @@ export class NetworkZones extends pulumi.CustomResource {
     /**
      * Network Zones are enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean | undefined>;
+    public readonly enabled!: pulumi.Output<boolean>;
 
     /**
      * Create a NetworkZones resource with the given unique name, arguments, and options.
@@ -44,7 +44,7 @@ export class NetworkZones extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args?: NetworkZonesArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args: NetworkZonesArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: NetworkZonesArgs | NetworkZonesState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
@@ -53,6 +53,9 @@ export class NetworkZones extends pulumi.CustomResource {
             resourceInputs["enabled"] = state ? state.enabled : undefined;
         } else {
             const args = argsOrState as NetworkZonesArgs | undefined;
+            if ((!args || args.enabled === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'enabled'");
+            }
             resourceInputs["enabled"] = args ? args.enabled : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -77,5 +80,5 @@ export interface NetworkZonesArgs {
     /**
      * Network Zones are enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled: pulumi.Input<boolean>;
 }

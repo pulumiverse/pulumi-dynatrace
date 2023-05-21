@@ -17,7 +17,10 @@ class ProviderArgs:
                  dt_api_token: Optional[pulumi.Input[str]] = None,
                  dt_cluster_api_token: Optional[pulumi.Input[str]] = None,
                  dt_cluster_url: Optional[pulumi.Input[str]] = None,
-                 dt_env_url: Optional[pulumi.Input[str]] = None):
+                 dt_env_url: Optional[pulumi.Input[str]] = None,
+                 iam_account_id: Optional[pulumi.Input[str]] = None,
+                 iam_client_id: Optional[pulumi.Input[str]] = None,
+                 iam_client_secret: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Provider resource.
         """
@@ -37,6 +40,12 @@ class ProviderArgs:
             dt_env_url = _utilities.get_env('DYNATRACE_ENV_URL', 'DT_ENV_URL')
         if dt_env_url is not None:
             pulumi.set(__self__, "dt_env_url", dt_env_url)
+        if iam_account_id is not None:
+            pulumi.set(__self__, "iam_account_id", iam_account_id)
+        if iam_client_id is not None:
+            pulumi.set(__self__, "iam_client_id", iam_client_id)
+        if iam_client_secret is not None:
+            pulumi.set(__self__, "iam_client_secret", iam_client_secret)
 
     @property
     @pulumi.getter(name="dtApiToken")
@@ -74,6 +83,33 @@ class ProviderArgs:
     def dt_env_url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "dt_env_url", value)
 
+    @property
+    @pulumi.getter(name="iamAccountId")
+    def iam_account_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "iam_account_id")
+
+    @iam_account_id.setter
+    def iam_account_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "iam_account_id", value)
+
+    @property
+    @pulumi.getter(name="iamClientId")
+    def iam_client_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "iam_client_id")
+
+    @iam_client_id.setter
+    def iam_client_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "iam_client_id", value)
+
+    @property
+    @pulumi.getter(name="iamClientSecret")
+    def iam_client_secret(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "iam_client_secret")
+
+    @iam_client_secret.setter
+    def iam_client_secret(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "iam_client_secret", value)
+
 
 class Provider(pulumi.ProviderResource):
     @overload
@@ -84,6 +120,9 @@ class Provider(pulumi.ProviderResource):
                  dt_cluster_api_token: Optional[pulumi.Input[str]] = None,
                  dt_cluster_url: Optional[pulumi.Input[str]] = None,
                  dt_env_url: Optional[pulumi.Input[str]] = None,
+                 iam_account_id: Optional[pulumi.Input[str]] = None,
+                 iam_client_id: Optional[pulumi.Input[str]] = None,
+                 iam_client_secret: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         The provider type for the dynatrace package. By default, resources use package-wide configuration
@@ -125,6 +164,9 @@ class Provider(pulumi.ProviderResource):
                  dt_cluster_api_token: Optional[pulumi.Input[str]] = None,
                  dt_cluster_url: Optional[pulumi.Input[str]] = None,
                  dt_env_url: Optional[pulumi.Input[str]] = None,
+                 iam_account_id: Optional[pulumi.Input[str]] = None,
+                 iam_client_id: Optional[pulumi.Input[str]] = None,
+                 iam_client_secret: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -146,7 +188,10 @@ class Provider(pulumi.ProviderResource):
             if dt_env_url is None:
                 dt_env_url = _utilities.get_env('DYNATRACE_ENV_URL', 'DT_ENV_URL')
             __props__.__dict__["dt_env_url"] = dt_env_url
-        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["dtApiToken", "dtClusterApiToken", "dtClusterUrl"])
+            __props__.__dict__["iam_account_id"] = None if iam_account_id is None else pulumi.Output.secret(iam_account_id)
+            __props__.__dict__["iam_client_id"] = None if iam_client_id is None else pulumi.Output.secret(iam_client_id)
+            __props__.__dict__["iam_client_secret"] = None if iam_client_secret is None else pulumi.Output.secret(iam_client_secret)
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["dtApiToken", "dtClusterApiToken", "dtClusterUrl", "iamAccountId", "iamClientId", "iamClientSecret"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Provider, __self__).__init__(
             'dynatrace',
@@ -173,4 +218,19 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="dtEnvUrl")
     def dt_env_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "dt_env_url")
+
+    @property
+    @pulumi.getter(name="iamAccountId")
+    def iam_account_id(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "iam_account_id")
+
+    @property
+    @pulumi.getter(name="iamClientId")
+    def iam_client_id(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "iam_client_id")
+
+    @property
+    @pulumi.getter(name="iamClientSecret")
+    def iam_client_secret(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "iam_client_secret")
 

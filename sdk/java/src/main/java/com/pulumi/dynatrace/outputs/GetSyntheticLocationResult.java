@@ -17,7 +17,12 @@ public final class GetSyntheticLocationResult {
      * 
      */
     private String cloudPlatform;
-    private @Nullable String id;
+    private @Nullable String entityId;
+    /**
+     * @return The provider-assigned unique ID for this managed resource.
+     * 
+     */
+    private String id;
     private List<String> ips;
     private @Nullable String name;
     private String stage;
@@ -32,8 +37,15 @@ public final class GetSyntheticLocationResult {
     public String cloudPlatform() {
         return this.cloudPlatform;
     }
-    public Optional<String> id() {
-        return Optional.ofNullable(this.id);
+    public Optional<String> entityId() {
+        return Optional.ofNullable(this.entityId);
+    }
+    /**
+     * @return The provider-assigned unique ID for this managed resource.
+     * 
+     */
+    public String id() {
+        return this.id;
     }
     public List<String> ips() {
         return this.ips;
@@ -61,7 +73,8 @@ public final class GetSyntheticLocationResult {
     @CustomType.Builder
     public static final class Builder {
         private String cloudPlatform;
-        private @Nullable String id;
+        private @Nullable String entityId;
+        private String id;
         private List<String> ips;
         private @Nullable String name;
         private String stage;
@@ -71,6 +84,7 @@ public final class GetSyntheticLocationResult {
         public Builder(GetSyntheticLocationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cloudPlatform = defaults.cloudPlatform;
+    	      this.entityId = defaults.entityId;
     	      this.id = defaults.id;
     	      this.ips = defaults.ips;
     	      this.name = defaults.name;
@@ -85,8 +99,13 @@ public final class GetSyntheticLocationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder id(@Nullable String id) {
-            this.id = id;
+        public Builder entityId(@Nullable String entityId) {
+            this.entityId = entityId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder id(String id) {
+            this.id = Objects.requireNonNull(id);
             return this;
         }
         @CustomType.Setter
@@ -120,6 +139,7 @@ public final class GetSyntheticLocationResult {
         public GetSyntheticLocationResult build() {
             final var o = new GetSyntheticLocationResult();
             o.cloudPlatform = cloudPlatform;
+            o.entityId = entityId;
             o.id = id;
             o.ips = ips;
             o.name = name;

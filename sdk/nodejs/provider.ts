@@ -29,6 +29,9 @@ export class Provider extends pulumi.ProviderResource {
     public readonly dtClusterApiToken!: pulumi.Output<string | undefined>;
     public readonly dtClusterUrl!: pulumi.Output<string | undefined>;
     public readonly dtEnvUrl!: pulumi.Output<string | undefined>;
+    public readonly iamAccountId!: pulumi.Output<string | undefined>;
+    public readonly iamClientId!: pulumi.Output<string | undefined>;
+    public readonly iamClientSecret!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -45,9 +48,12 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["dtClusterApiToken"] = (args?.dtClusterApiToken ? pulumi.secret(args.dtClusterApiToken) : undefined) ?? utilities.getEnv("DYNATRACE_CLUSTER_API_TOKEN", "DT_CLUSTER_API_TOKEN");
             resourceInputs["dtClusterUrl"] = (args?.dtClusterUrl ? pulumi.secret(args.dtClusterUrl) : undefined) ?? utilities.getEnv("DYNATRACE_CLUSTER_URL", "DT_CLUSTER_URL");
             resourceInputs["dtEnvUrl"] = (args ? args.dtEnvUrl : undefined) ?? utilities.getEnv("DYNATRACE_ENV_URL", "DT_ENV_URL");
+            resourceInputs["iamAccountId"] = args?.iamAccountId ? pulumi.secret(args.iamAccountId) : undefined;
+            resourceInputs["iamClientId"] = args?.iamClientId ? pulumi.secret(args.iamClientId) : undefined;
+            resourceInputs["iamClientSecret"] = args?.iamClientSecret ? pulumi.secret(args.iamClientSecret) : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["dtApiToken", "dtClusterApiToken", "dtClusterUrl"] };
+        const secretOpts = { additionalSecretOutputs: ["dtApiToken", "dtClusterApiToken", "dtClusterUrl", "iamAccountId", "iamClientId", "iamClientSecret"] };
         opts = pulumi.mergeOptions(opts, secretOpts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
     }
@@ -61,4 +67,7 @@ export interface ProviderArgs {
     dtClusterApiToken?: pulumi.Input<string>;
     dtClusterUrl?: pulumi.Input<string>;
     dtEnvUrl?: pulumi.Input<string>;
+    iamAccountId?: pulumi.Input<string>;
+    iamClientId?: pulumi.Input<string>;
+    iamClientSecret?: pulumi.Input<string>;
 }

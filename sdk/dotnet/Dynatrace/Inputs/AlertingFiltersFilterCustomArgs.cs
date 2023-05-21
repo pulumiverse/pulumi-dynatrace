@@ -16,6 +16,9 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         [Input("description")]
         public Input<Inputs.AlertingFiltersFilterCustomDescriptionArgs>? Description { get; set; }
 
+        [Input("metadata")]
+        public Input<Inputs.AlertingFiltersFilterCustomMetadataArgs>? Metadata { get; set; }
+
         [Input("title")]
         public Input<Inputs.AlertingFiltersFilterCustomTitleArgs>? Title { get; set; }
 

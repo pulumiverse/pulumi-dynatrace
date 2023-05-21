@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
- * The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+ * The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
  *
  * ## Example Usage
  *
@@ -58,11 +58,8 @@ import * as utilities from "./utilities";
  */
 export function getCredentials(args?: GetCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetCredentialsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getCredentials:getCredentials", {
         "name": args.name,
         "scope": args.scope,
@@ -109,9 +106,60 @@ export interface GetCredentialsResult {
      */
     readonly type?: string;
 }
-
+/**
+ * The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const creds = dynatrace.getCredentials({
+ *     name: "Office365 Access Token",
+ * });
+ * const _name_ = new dynatrace.HttpMonitor("#name#", {
+ *     enabled: true,
+ *     frequency: 60,
+ *     locations: ["SYNTHETIC_LOCATION-781752216580B1BC"],
+ *     anomalyDetections: [{
+ *         loadingTimeThresholds: [{
+ *             enabled: true,
+ *         }],
+ *         outageHandlings: [{
+ *             globalOutage: true,
+ *             localOutage: false,
+ *             retryOnError: false,
+ *         }],
+ *     }],
+ *     script: {
+ *         requests: [{
+ *             description: "google.com",
+ *             method: "GET",
+ *             url: "https://www.google.com",
+ *             authentication: {
+ *                 type: "BASIC_AUTHENTICATION",
+ *                 credentials: creds.then(creds => creds.id),
+ *             },
+ *             configuration: {
+ *                 acceptAnyCertificate: true,
+ *                 followRedirects: true,
+ *             },
+ *             validation: {
+ *                 rules: [{
+ *                     type: "httpStatusesList",
+ *                     passIfFound: false,
+ *                     value: ">=400",
+ *                 }],
+ *             },
+ *         }],
+ *     },
+ * });
+ * ```
+ */
 export function getCredentialsOutput(args?: GetCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCredentialsResult> {
-    return pulumi.output(args).apply(a => getCredentials(a, opts))
+    return pulumi.output(args).apply((a: any) => getCredentials(a, opts))
 }
 
 /**

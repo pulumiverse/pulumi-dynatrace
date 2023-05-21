@@ -14,25 +14,28 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public partial class ApplicationErrorRules : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// An ordered list of HTTP errors.
+        /// (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
         /// </summary>
         [Output("customErrors")]
         public Output<Outputs.ApplicationErrorRulesCustomErrors?> CustomErrors { get; private set; } = null!;
 
         /// <summary>
-        /// An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+        /// (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+        /// to bottom; the first matching rule applies
         /// </summary>
         [Output("httpErrors")]
         public Output<Outputs.ApplicationErrorRulesHttpErrors?> HttpErrors { get; private set; } = null!;
 
         /// <summary>
-        /// Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+        /// (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+        /// **customErrorRules** in Apdex calculation
         /// </summary>
         [Output("ignoreCustomErrorsApdex")]
         public Output<bool?> IgnoreCustomErrorsApdex { get; private set; } = null!;
 
         /// <summary>
-        /// Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+        /// (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+        /// **httpErrorRules** in Apdex calculation
         /// </summary>
         [Output("ignoreHttpErrorsApdex")]
         public Output<bool?> IgnoreHttpErrorsApdex { get; private set; } = null!;
@@ -97,25 +100,28 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public sealed class ApplicationErrorRulesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// An ordered list of HTTP errors.
+        /// (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
         /// </summary>
         [Input("customErrors")]
         public Input<Inputs.ApplicationErrorRulesCustomErrorsArgs>? CustomErrors { get; set; }
 
         /// <summary>
-        /// An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+        /// (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+        /// to bottom; the first matching rule applies
         /// </summary>
         [Input("httpErrors")]
         public Input<Inputs.ApplicationErrorRulesHttpErrorsArgs>? HttpErrors { get; set; }
 
         /// <summary>
-        /// Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+        /// (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+        /// **customErrorRules** in Apdex calculation
         /// </summary>
         [Input("ignoreCustomErrorsApdex")]
         public Input<bool>? IgnoreCustomErrorsApdex { get; set; }
 
         /// <summary>
-        /// Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+        /// (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+        /// **httpErrorRules** in Apdex calculation
         /// </summary>
         [Input("ignoreHttpErrorsApdex")]
         public Input<bool>? IgnoreHttpErrorsApdex { get; set; }
@@ -141,25 +147,28 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public sealed class ApplicationErrorRulesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// An ordered list of HTTP errors.
+        /// (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
         /// </summary>
         [Input("customErrors")]
         public Input<Inputs.ApplicationErrorRulesCustomErrorsGetArgs>? CustomErrors { get; set; }
 
         /// <summary>
-        /// An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+        /// (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+        /// to bottom; the first matching rule applies
         /// </summary>
         [Input("httpErrors")]
         public Input<Inputs.ApplicationErrorRulesHttpErrorsGetArgs>? HttpErrors { get; set; }
 
         /// <summary>
-        /// Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+        /// (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+        /// **customErrorRules** in Apdex calculation
         /// </summary>
         [Input("ignoreCustomErrorsApdex")]
         public Input<bool>? IgnoreCustomErrorsApdex { get; set; }
 
         /// <summary>
-        /// Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+        /// (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+        /// **httpErrorRules** in Apdex calculation
         /// </summary>
         [Input("ignoreHttpErrorsApdex")]
         public Input<bool>? IgnoreHttpErrorsApdex { get; set; }

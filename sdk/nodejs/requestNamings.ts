@@ -42,7 +42,7 @@ export class RequestNamings extends pulumi.CustomResource {
     /**
      * The IDs of the request namings in the order they should be taken into consideration
      */
-    public readonly ids!: pulumi.Output<string[]>;
+    public readonly ids!: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a RequestNamings resource with the given unique name, arguments, and options.
@@ -51,7 +51,7 @@ export class RequestNamings extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: RequestNamingsArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args?: RequestNamingsArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: RequestNamingsArgs | RequestNamingsState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
@@ -60,9 +60,6 @@ export class RequestNamings extends pulumi.CustomResource {
             resourceInputs["ids"] = state ? state.ids : undefined;
         } else {
             const args = argsOrState as RequestNamingsArgs | undefined;
-            if ((!args || args.ids === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'ids'");
-            }
             resourceInputs["ids"] = args ? args.ids : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -87,5 +84,5 @@ export interface RequestNamingsArgs {
     /**
      * The IDs of the request namings in the order they should be taken into consideration
      */
-    ids: pulumi.Input<pulumi.Input<string>[]>;
+    ids?: pulumi.Input<pulumi.Input<string>[]>;
 }

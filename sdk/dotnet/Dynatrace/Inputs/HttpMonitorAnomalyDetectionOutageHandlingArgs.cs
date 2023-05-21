@@ -16,6 +16,14 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         [Input("globalOutage")]
         public Input<bool>? GlobalOutage { get; set; }
 
+        [Input("globalOutagePolicies")]
+        private InputList<Inputs.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs>? _globalOutagePolicies;
+        public InputList<Inputs.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs> GlobalOutagePolicies
+        {
+            get => _globalOutagePolicies ?? (_globalOutagePolicies = new InputList<Inputs.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs>());
+            set => _globalOutagePolicies = value;
+        }
+
         [Input("localOutage")]
         public Input<bool>? LocalOutage { get; set; }
 

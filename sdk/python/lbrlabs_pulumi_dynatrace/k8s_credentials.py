@@ -18,6 +18,7 @@ class K8sCredentialsArgs:
     def __init__(__self__, *,
                  label: pulumi.Input[str],
                  active: Optional[pulumi.Input[bool]] = None,
+                 active_gate_group: Optional[pulumi.Input[str]] = None,
                  auth_token: Optional[pulumi.Input[str]] = None,
                  certificate_check_enabled: Optional[pulumi.Input[bool]] = None,
                  davis_events_integration_enabled: Optional[pulumi.Input[bool]] = None,
@@ -33,6 +34,7 @@ class K8sCredentialsArgs:
         The set of arguments for constructing a K8sCredentials resource.
         :param pulumi.Input[str] label: The name of the Kubernetes credentials configuration.  Allowed characters are letters, numbers, whitespaces, and the following characters: `.+-_`. Leading or trailing whitespace is not allowed.
         :param pulumi.Input[bool] active: Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        :param pulumi.Input[str] active_gate_group: Active Gate group to filter active gates for this credentials.
         :param pulumi.Input[str] auth_token: The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[bool] certificate_check_enabled: The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[bool] davis_events_integration_enabled: Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
@@ -48,6 +50,8 @@ class K8sCredentialsArgs:
         pulumi.set(__self__, "label", label)
         if active is not None:
             pulumi.set(__self__, "active", active)
+        if active_gate_group is not None:
+            pulumi.set(__self__, "active_gate_group", active_gate_group)
         if auth_token is not None:
             pulumi.set(__self__, "auth_token", auth_token)
         if certificate_check_enabled is not None:
@@ -94,6 +98,18 @@ class K8sCredentialsArgs:
     @active.setter
     def active(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "active", value)
+
+    @property
+    @pulumi.getter(name="activeGateGroup")
+    def active_gate_group(self) -> Optional[pulumi.Input[str]]:
+        """
+        Active Gate group to filter active gates for this credentials.
+        """
+        return pulumi.get(self, "active_gate_group")
+
+    @active_gate_group.setter
+    def active_gate_group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "active_gate_group", value)
 
     @property
     @pulumi.getter(name="authToken")
@@ -232,6 +248,7 @@ class K8sCredentialsArgs:
 class _K8sCredentialsState:
     def __init__(__self__, *,
                  active: Optional[pulumi.Input[bool]] = None,
+                 active_gate_group: Optional[pulumi.Input[str]] = None,
                  auth_token: Optional[pulumi.Input[str]] = None,
                  certificate_check_enabled: Optional[pulumi.Input[bool]] = None,
                  davis_events_integration_enabled: Optional[pulumi.Input[bool]] = None,
@@ -247,6 +264,7 @@ class _K8sCredentialsState:
         """
         Input properties used for looking up and filtering K8sCredentials resources.
         :param pulumi.Input[bool] active: Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        :param pulumi.Input[str] active_gate_group: Active Gate group to filter active gates for this credentials.
         :param pulumi.Input[str] auth_token: The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[bool] certificate_check_enabled: The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[bool] davis_events_integration_enabled: Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
@@ -262,6 +280,8 @@ class _K8sCredentialsState:
         """
         if active is not None:
             pulumi.set(__self__, "active", active)
+        if active_gate_group is not None:
+            pulumi.set(__self__, "active_gate_group", active_gate_group)
         if auth_token is not None:
             pulumi.set(__self__, "auth_token", auth_token)
         if certificate_check_enabled is not None:
@@ -298,6 +318,18 @@ class _K8sCredentialsState:
     @active.setter
     def active(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "active", value)
+
+    @property
+    @pulumi.getter(name="activeGateGroup")
+    def active_gate_group(self) -> Optional[pulumi.Input[str]]:
+        """
+        Active Gate group to filter active gates for this credentials.
+        """
+        return pulumi.get(self, "active_gate_group")
+
+    @active_gate_group.setter
+    def active_gate_group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "active_gate_group", value)
 
     @property
     @pulumi.getter(name="authToken")
@@ -450,6 +482,7 @@ class K8sCredentials(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: Optional[pulumi.Input[bool]] = None,
+                 active_gate_group: Optional[pulumi.Input[str]] = None,
                  auth_token: Optional[pulumi.Input[str]] = None,
                  certificate_check_enabled: Optional[pulumi.Input[bool]] = None,
                  davis_events_integration_enabled: Optional[pulumi.Input[bool]] = None,
@@ -468,6 +501,7 @@ class K8sCredentials(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        :param pulumi.Input[str] active_gate_group: Active Gate group to filter active gates for this credentials.
         :param pulumi.Input[str] auth_token: The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[bool] certificate_check_enabled: The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[bool] davis_events_integration_enabled: Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
@@ -505,6 +539,7 @@ class K8sCredentials(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: Optional[pulumi.Input[bool]] = None,
+                 active_gate_group: Optional[pulumi.Input[str]] = None,
                  auth_token: Optional[pulumi.Input[str]] = None,
                  certificate_check_enabled: Optional[pulumi.Input[bool]] = None,
                  davis_events_integration_enabled: Optional[pulumi.Input[bool]] = None,
@@ -527,7 +562,8 @@ class K8sCredentials(pulumi.CustomResource):
             __props__ = K8sCredentialsArgs.__new__(K8sCredentialsArgs)
 
             __props__.__dict__["active"] = active
-            __props__.__dict__["auth_token"] = auth_token
+            __props__.__dict__["active_gate_group"] = active_gate_group
+            __props__.__dict__["auth_token"] = None if auth_token is None else pulumi.Output.secret(auth_token)
             __props__.__dict__["certificate_check_enabled"] = certificate_check_enabled
             __props__.__dict__["davis_events_integration_enabled"] = davis_events_integration_enabled
             __props__.__dict__["endpoint_url"] = endpoint_url
@@ -541,6 +577,8 @@ class K8sCredentials(pulumi.CustomResource):
             __props__.__dict__["prometheus_exporters"] = prometheus_exporters
             __props__.__dict__["unknowns"] = unknowns
             __props__.__dict__["workload_integration_enabled"] = workload_integration_enabled
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["authToken"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(K8sCredentials, __self__).__init__(
             'dynatrace:index/k8sCredentials:K8sCredentials',
             resource_name,
@@ -552,6 +590,7 @@ class K8sCredentials(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             active: Optional[pulumi.Input[bool]] = None,
+            active_gate_group: Optional[pulumi.Input[str]] = None,
             auth_token: Optional[pulumi.Input[str]] = None,
             certificate_check_enabled: Optional[pulumi.Input[bool]] = None,
             davis_events_integration_enabled: Optional[pulumi.Input[bool]] = None,
@@ -572,6 +611,7 @@ class K8sCredentials(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
+        :param pulumi.Input[str] active_gate_group: Active Gate group to filter active gates for this credentials.
         :param pulumi.Input[str] auth_token: The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[bool] certificate_check_enabled: The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[bool] davis_events_integration_enabled: Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
@@ -590,6 +630,7 @@ class K8sCredentials(pulumi.CustomResource):
         __props__ = _K8sCredentialsState.__new__(_K8sCredentialsState)
 
         __props__.__dict__["active"] = active
+        __props__.__dict__["active_gate_group"] = active_gate_group
         __props__.__dict__["auth_token"] = auth_token
         __props__.__dict__["certificate_check_enabled"] = certificate_check_enabled
         __props__.__dict__["davis_events_integration_enabled"] = davis_events_integration_enabled
@@ -611,6 +652,14 @@ class K8sCredentials(pulumi.CustomResource):
         Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter(name="activeGateGroup")
+    def active_gate_group(self) -> pulumi.Output[Optional[str]]:
+        """
+        Active Gate group to filter active gates for this credentials.
+        """
+        return pulumi.get(self, "active_gate_group")
 
     @property
     @pulumi.getter(name="authToken")

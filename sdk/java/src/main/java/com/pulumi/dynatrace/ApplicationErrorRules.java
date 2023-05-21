@@ -20,56 +20,62 @@ import javax.annotation.Nullable;
 @ResourceType(type="dynatrace:index/applicationErrorRules:ApplicationErrorRules")
 public class ApplicationErrorRules extends com.pulumi.resources.CustomResource {
     /**
-     * An ordered list of HTTP errors.
+     * (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
      * 
      */
-    @Export(name="customErrors", type=ApplicationErrorRulesCustomErrors.class, parameters={})
+    @Export(name="customErrors", refs={ApplicationErrorRulesCustomErrors.class}, tree="[0]")
     private Output</* @Nullable */ ApplicationErrorRulesCustomErrors> customErrors;
 
     /**
-     * @return An ordered list of HTTP errors.
+     * @return (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
      * 
      */
     public Output<Optional<ApplicationErrorRulesCustomErrors>> customErrors() {
         return Codegen.optional(this.customErrors);
     }
     /**
-     * An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+     * (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+     * to bottom; the first matching rule applies
      * 
      */
-    @Export(name="httpErrors", type=ApplicationErrorRulesHttpErrors.class, parameters={})
+    @Export(name="httpErrors", refs={ApplicationErrorRulesHttpErrors.class}, tree="[0]")
     private Output</* @Nullable */ ApplicationErrorRulesHttpErrors> httpErrors;
 
     /**
-     * @return An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+     * @return (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+     * to bottom; the first matching rule applies
      * 
      */
     public Output<Optional<ApplicationErrorRulesHttpErrors>> httpErrors() {
         return Codegen.optional(this.httpErrors);
     }
     /**
-     * Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+     * (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+     * **customErrorRules** in Apdex calculation
      * 
      */
-    @Export(name="ignoreCustomErrorsApdex", type=Boolean.class, parameters={})
+    @Export(name="ignoreCustomErrorsApdex", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> ignoreCustomErrorsApdex;
 
     /**
-     * @return Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+     * @return (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+     * **customErrorRules** in Apdex calculation
      * 
      */
     public Output<Optional<Boolean>> ignoreCustomErrorsApdex() {
         return Codegen.optional(this.ignoreCustomErrorsApdex);
     }
     /**
-     * Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+     * (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+     * **httpErrorRules** in Apdex calculation
      * 
      */
-    @Export(name="ignoreHttpErrorsApdex", type=Boolean.class, parameters={})
+    @Export(name="ignoreHttpErrorsApdex", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> ignoreHttpErrorsApdex;
 
     /**
-     * @return Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+     * @return (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+     * **httpErrorRules** in Apdex calculation
      * 
      */
     public Output<Optional<Boolean>> ignoreHttpErrorsApdex() {
@@ -79,7 +85,7 @@ public class ApplicationErrorRules extends com.pulumi.resources.CustomResource {
      * Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
      * 
      */
-    @Export(name="ignoreJsErrorsApdex", type=Boolean.class, parameters={})
+    @Export(name="ignoreJsErrorsApdex", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> ignoreJsErrorsApdex;
 
     /**
@@ -93,7 +99,7 @@ public class ApplicationErrorRules extends com.pulumi.resources.CustomResource {
      * The EntityID of the the WebApplication
      * 
      */
-    @Export(name="webApplicationId", type=String.class, parameters={})
+    @Export(name="webApplicationId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> webApplicationId;
 
     /**

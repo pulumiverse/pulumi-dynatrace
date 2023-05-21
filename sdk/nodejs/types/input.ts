@@ -19,6 +19,7 @@ export interface AlertingFiltersFilter {
 
 export interface AlertingFiltersFilterCustom {
     description?: pulumi.Input<inputs.AlertingFiltersFilterCustomDescription>;
+    metadata?: pulumi.Input<inputs.AlertingFiltersFilterCustomMetadata>;
     title?: pulumi.Input<inputs.AlertingFiltersFilterCustomTitle>;
 }
 
@@ -27,6 +28,19 @@ export interface AlertingFiltersFilterCustomDescription {
     enabled?: pulumi.Input<boolean>;
     negate?: pulumi.Input<boolean>;
     operator: pulumi.Input<string>;
+    value: pulumi.Input<string>;
+}
+
+export interface AlertingFiltersFilterCustomMetadata {
+    items: pulumi.Input<inputs.AlertingFiltersFilterCustomMetadataItems>;
+}
+
+export interface AlertingFiltersFilterCustomMetadataItems {
+    filters: pulumi.Input<pulumi.Input<inputs.AlertingFiltersFilterCustomMetadataItemsFilter>[]>;
+}
+
+export interface AlertingFiltersFilterCustomMetadataItemsFilter {
+    key: pulumi.Input<string>;
     value: pulumi.Input<string>;
 }
 
@@ -163,6 +177,16 @@ export interface AlertingRulesRule {
     tags?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
+export interface ApiDetectionConditions {
+    conditions: pulumi.Input<pulumi.Input<inputs.ApiDetectionConditionsCondition>[]>;
+}
+
+export interface ApiDetectionConditionsCondition {
+    base: pulumi.Input<string>;
+    matcher: pulumi.Input<string>;
+    pattern: pulumi.Input<string>;
+}
+
 export interface ApplicationAnomaliesFailureRate {
     /**
      * Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%
@@ -237,7 +261,7 @@ export interface ApplicationAnomaliesTrafficSpikes {
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacy {
     /**
-     * Content masking settings for Session Replay.
+     * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Content masking settings for Session Replay.
      */
     contentMaskingSettings: pulumi.Input<inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettings>;
     optIn?: pulumi.Input<boolean>;
@@ -336,12 +360,6 @@ export interface AutotagEntitySelectorBasedRule {
     selector?: pulumi.Input<string>;
     unknowns?: pulumi.Input<string>;
     valueFormat?: pulumi.Input<string>;
-}
-
-export interface AutotagMetadata {
-    clusterVersion?: pulumi.Input<string>;
-    configurationVersions?: pulumi.Input<pulumi.Input<number>[]>;
-    currentConfigurationVersions?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface AutotagRule {
@@ -1150,6 +1168,201 @@ export interface AutotagRuleConditionTechValue {
     verbatimType?: pulumi.Input<string>;
 }
 
+export interface AutotagV2Rules {
+    rules: pulumi.Input<pulumi.Input<inputs.AutotagV2RulesRule>[]>;
+}
+
+export interface AutotagV2RulesRule {
+    attributeRule?: pulumi.Input<inputs.AutotagV2RulesRuleAttributeRule>;
+    enabled: pulumi.Input<boolean>;
+    entitySelector?: pulumi.Input<string>;
+    type: pulumi.Input<string>;
+    valueFormat?: pulumi.Input<string>;
+    valueNormalization: pulumi.Input<string>;
+}
+
+export interface AutotagV2RulesRuleAttributeRule {
+    azureToPgpropagation?: pulumi.Input<boolean>;
+    azureToServicePropagation?: pulumi.Input<boolean>;
+    conditions: pulumi.Input<inputs.AutotagV2RulesRuleAttributeRuleConditions>;
+    entityType: pulumi.Input<string>;
+    hostToPgpropagation?: pulumi.Input<boolean>;
+    pgToHostPropagation?: pulumi.Input<boolean>;
+    pgToServicePropagation?: pulumi.Input<boolean>;
+    serviceToHostPropagation?: pulumi.Input<boolean>;
+    serviceToPgpropagation?: pulumi.Input<boolean>;
+}
+
+export interface AutotagV2RulesRuleAttributeRuleConditions {
+    conditions: pulumi.Input<pulumi.Input<inputs.AutotagV2RulesRuleAttributeRuleConditionsCondition>[]>;
+}
+
+export interface AutotagV2RulesRuleAttributeRuleConditionsCondition {
+    caseSensitive?: pulumi.Input<boolean>;
+    dynamicKey?: pulumi.Input<string>;
+    dynamicKeySource?: pulumi.Input<string>;
+    entityId?: pulumi.Input<string>;
+    enumValue?: pulumi.Input<string>;
+    integerValue?: pulumi.Input<number>;
+    key: pulumi.Input<string>;
+    operator: pulumi.Input<string>;
+    stringValue?: pulumi.Input<string>;
+    tag?: pulumi.Input<string>;
+}
+
+export interface AwsAnomaliesEc2CandidateHighCpuDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholds {
+    cpuUsage: pulumi.Input<number>;
+}
+
+export interface AwsAnomaliesElbHighConnectionErrorsDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholds {
+    connectionErrorsPerMinute: pulumi.Input<number>;
+}
+
+export interface AwsAnomaliesLambdaHighErrorRateDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholds {
+    failedInvocationsRate: pulumi.Input<number>;
+}
+
+export interface AwsAnomaliesRdsHighCpuDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.AwsAnomaliesRdsHighCpuDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface AwsAnomaliesRdsHighCpuDetectionCustomThresholds {
+    cpuUsage: pulumi.Input<number>;
+}
+
+export interface AwsAnomaliesRdsHighMemoryDetection {
+    /**
+     * Alert if **both** conditions is met in 3 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.AwsAnomaliesRdsHighMemoryDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface AwsAnomaliesRdsHighMemoryDetectionCustomThresholds {
+    freeMemory: pulumi.Input<number>;
+    swapUsage: pulumi.Input<number>;
+}
+
+export interface AwsAnomaliesRdsHighWriteReadLatencyDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholds {
+    readWriteLatency: pulumi.Input<number>;
+}
+
+export interface AwsAnomaliesRdsLowStorageDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.AwsAnomaliesRdsLowStorageDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface AwsAnomaliesRdsLowStorageDetectionCustomThresholds {
+    freeStoragePercentage: pulumi.Input<number>;
+}
+
+export interface AwsAnomaliesRdsRestartsSequenceDetection {
+    /**
+     * Alert if the condition is met in 2 out of 20 samples
+     */
+    customThresholds?: pulumi.Input<inputs.AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds {
+    restartsPerMinute: pulumi.Input<number>;
+}
+
 export interface AwsCredentialsAuthenticationData {
     /**
      * the access key
@@ -1160,7 +1373,7 @@ export interface AwsCredentialsAuthenticationData {
      */
     accountId?: pulumi.Input<string>;
     /**
-     * the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
+     * (Read only) the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
      */
     externalId?: pulumi.Input<string>;
     /**
@@ -1300,9 +1513,14 @@ export interface BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThre
 
 export interface BrowserMonitorAnomalyDetectionOutageHandling {
     globalOutage?: pulumi.Input<boolean>;
+    globalOutagePolicies?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy>[]>;
     localOutage?: pulumi.Input<boolean>;
     localOutagePolicies?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy>[]>;
     retryOnError?: pulumi.Input<boolean>;
+}
+
+export interface BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy {
+    consecutiveRuns: pulumi.Input<number>;
 }
 
 export interface BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy {
@@ -1319,6 +1537,15 @@ export interface BrowserMonitorKeyPerformanceMetrics {
      * Defines the key performance metric for XHR actions. Supported values are `VISUALLY_COMPLETE`, `USER_ACTION_DURATION`, `TIME_TO_FIRST_BYTE` and `RESPONSE_END`.
      */
     xhrActionKpm: pulumi.Input<string>;
+}
+
+export interface BrowserMonitorPerformanceThresholds {
+    thresholds: pulumi.Input<pulumi.Input<inputs.BrowserMonitorPerformanceThresholdsThreshold>[]>;
+}
+
+export interface BrowserMonitorPerformanceThresholdsThreshold {
+    event: pulumi.Input<string>;
+    threshold: pulumi.Input<number>;
 }
 
 export interface BrowserMonitorScript {
@@ -1908,6 +2135,90 @@ export interface BrowserMonitorTagTag {
     value?: pulumi.Input<string>;
 }
 
+export interface BusinessEventsOneagentEvent {
+    /**
+     * Event category
+     */
+    category: pulumi.Input<inputs.BusinessEventsOneagentEventCategory>;
+    /**
+     * Additional attributes for the business event.
+     */
+    data?: pulumi.Input<inputs.BusinessEventsOneagentEventData>;
+    /**
+     * Event provider
+     */
+    provider: pulumi.Input<inputs.BusinessEventsOneagentEventProvider>;
+    /**
+     * Event type
+     */
+    type: pulumi.Input<inputs.BusinessEventsOneagentEventType>;
+}
+
+export interface BusinessEventsOneagentEventCategory {
+    path?: pulumi.Input<string>;
+    source?: pulumi.Input<string>;
+    sourceType: pulumi.Input<string>;
+}
+
+export interface BusinessEventsOneagentEventData {
+    eventDataFieldComplexes: pulumi.Input<pulumi.Input<inputs.BusinessEventsOneagentEventDataEventDataFieldComplex>[]>;
+}
+
+export interface BusinessEventsOneagentEventDataEventDataFieldComplex {
+    name: pulumi.Input<string>;
+    source: pulumi.Input<inputs.BusinessEventsOneagentEventDataEventDataFieldComplexSource>;
+}
+
+export interface BusinessEventsOneagentEventDataEventDataFieldComplexSource {
+    path?: pulumi.Input<string>;
+    source?: pulumi.Input<string>;
+    sourceType: pulumi.Input<string>;
+}
+
+export interface BusinessEventsOneagentEventProvider {
+    path?: pulumi.Input<string>;
+    source?: pulumi.Input<string>;
+    sourceType: pulumi.Input<string>;
+}
+
+export interface BusinessEventsOneagentEventType {
+    path?: pulumi.Input<string>;
+    source?: pulumi.Input<string>;
+    sourceType: pulumi.Input<string>;
+}
+
+export interface BusinessEventsOneagentTriggers {
+    triggers: pulumi.Input<pulumi.Input<inputs.BusinessEventsOneagentTriggersTrigger>[]>;
+}
+
+export interface BusinessEventsOneagentTriggersTrigger {
+    caseSensitive?: pulumi.Input<boolean>;
+    source: pulumi.Input<inputs.BusinessEventsOneagentTriggersTriggerSource>;
+    type: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface BusinessEventsOneagentTriggersTriggerSource {
+    dataSource: pulumi.Input<string>;
+    path?: pulumi.Input<string>;
+}
+
+export interface BusinessEventsProcessingRuleTesting {
+    sampleEvent: pulumi.Input<string>;
+}
+
+export interface BusinessEventsProcessingTransformationFields {
+    transformationFields: pulumi.Input<pulumi.Input<inputs.BusinessEventsProcessingTransformationFieldsTransformationField>[]>;
+}
+
+export interface BusinessEventsProcessingTransformationFieldsTransformationField {
+    array: pulumi.Input<boolean>;
+    name: pulumi.Input<string>;
+    optional: pulumi.Input<boolean>;
+    readonly: pulumi.Input<boolean>;
+    type: pulumi.Input<string>;
+}
+
 export interface CalculatedServiceMetricCondition {
     conditions?: pulumi.Input<pulumi.Input<inputs.CalculatedServiceMetricConditionCondition>[]>;
 }
@@ -1915,6 +2226,7 @@ export interface CalculatedServiceMetricCondition {
 export interface CalculatedServiceMetricConditionCondition {
     attribute: pulumi.Input<string>;
     comparison: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparison>;
+    unknowns?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparison {
@@ -1941,7 +2253,7 @@ export interface CalculatedServiceMetricConditionConditionComparison {
 export interface CalculatedServiceMetricConditionConditionComparisonBoolean {
     operator?: pulumi.Input<string>;
     unknowns?: pulumi.Input<string>;
-    value?: pulumi.Input<boolean>;
+    value: pulumi.Input<boolean>;
     values?: pulumi.Input<pulumi.Input<boolean>[]>;
 }
 
@@ -2169,6 +2481,108 @@ export interface CalculatedServiceMetricMetricDefinition {
     requestAttribute?: pulumi.Input<string>;
 }
 
+export interface CloudappWorkloaddetectionCloudFoundry {
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface CloudappWorkloaddetectionDocker {
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface CloudappWorkloaddetectionKubernetes {
+    enabled: pulumi.Input<boolean>;
+    filters?: pulumi.Input<inputs.CloudappWorkloaddetectionKubernetesFilters>;
+}
+
+export interface CloudappWorkloaddetectionKubernetesFilters {
+    filters: pulumi.Input<pulumi.Input<inputs.CloudappWorkloaddetectionKubernetesFiltersFilter>[]>;
+}
+
+export interface CloudappWorkloaddetectionKubernetesFiltersFilter {
+    enabled: pulumi.Input<boolean>;
+    inclusionToggles: pulumi.Input<inputs.CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles>;
+    matchFilter: pulumi.Input<inputs.CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter>;
+}
+
+export interface CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles {
+    incBasepod: pulumi.Input<boolean>;
+    incContainer: pulumi.Input<boolean>;
+    incNamespace: pulumi.Input<boolean>;
+    incProduct: pulumi.Input<boolean>;
+    incStage: pulumi.Input<boolean>;
+}
+
+export interface CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter {
+    matchOperator: pulumi.Input<string>;
+    namespace?: pulumi.Input<string>;
+}
+
+export interface CredentialsCredentialUsageSummary {
+    /**
+     * The number of uses
+     */
+    count: pulumi.Input<number>;
+    /**
+     * Type of usage, `HTTP_MONITOR` or `BROWSER_MONITOR`
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface CredentialsExternal {
+    /**
+     * Required for Hashicorp Certificate. The ID of Credentials within the Certificate Vault holding the certificate
+     */
+    certificate?: pulumi.Input<string>;
+    /**
+     * Required for Azure Client Secret. No further documentation available
+     */
+    clientSecret?: pulumi.Input<string>;
+    /**
+     * Required for Azure Client Secret. No further documentation available
+     */
+    clientid?: pulumi.Input<string>;
+    /**
+     * No documentation available
+     */
+    credentialsUsedForExternalSynchronizations?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * No documentation available
+     */
+    passwordSecretName?: pulumi.Input<string>;
+    /**
+     * Required for Hashicorp App Role or Hashicorp Certificate. No further documentation available
+     */
+    pathToCredentials?: pulumi.Input<string>;
+    /**
+     * Required for Hashicorp App Role. No further documentation available
+     */
+    roleid?: pulumi.Input<string>;
+    /**
+     * Required for Hashicorp App Role. The ID of Credentials within the Certificate Vault holding the secret id
+     */
+    secretid?: pulumi.Input<string>;
+    /**
+     * Required for Azure Client Secret. No further documentation available
+     */
+    tenantid?: pulumi.Input<string>;
+    /**
+     * No documentation available
+     */
+    tokenSecretName?: pulumi.Input<string>;
+    /**
+     * No documentation available
+     */
+    usernameSecretName?: pulumi.Input<string>;
+    /**
+     * Required for Hashicorp App Role. No further documentation available
+     */
+    vaultNamespace?: pulumi.Input<string>;
+    /**
+     * No documentation available
+     */
+    vaultUrl?: pulumi.Input<string>;
+}
+
 export interface CustomAnomaliesDimension {
     /**
      * A generic definition for a filter
@@ -2185,7 +2599,12 @@ export interface CustomAnomaliesDimension {
 }
 
 export interface CustomAnomaliesDimensionDimension {
+    index?: pulumi.Input<number>;
     key?: pulumi.Input<string>;
+    /**
+     * The name of the metric event displayed in the UI
+     */
+    name?: pulumi.Input<string>;
     type: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2209,7 +2628,12 @@ export interface CustomAnomaliesDimensionEntityFilter {
 
 export interface CustomAnomaliesDimensionString {
     filter: pulumi.Input<inputs.CustomAnomaliesDimensionStringFilter>;
+    index?: pulumi.Input<number>;
     key?: pulumi.Input<string>;
+    /**
+     * The name of the metric event displayed in the UI
+     */
+    name?: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
@@ -2434,6 +2858,156 @@ export interface CustomAnomaliesStrategyStatic {
     violatingSamples: pulumi.Input<number>;
 }
 
+export interface CustomAppAnomaliesErrorRateIncrease {
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Alert if the percentage of user actions affected by reported errors exceeds **both** the absolute threshold and the relative threshold
+     */
+    errorRateIncreaseAuto?: pulumi.Input<inputs.CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto>;
+    /**
+     * Alert if the custom reported error rate threshold is exceeded during any 5-minute period
+     */
+    errorRateIncreaseFixed?: pulumi.Input<inputs.CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed>;
+}
+
+export interface CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto {
+    thresholdAbsolute: pulumi.Input<number>;
+    thresholdRelative: pulumi.Input<number>;
+}
+
+export interface CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed {
+    sensitivity: pulumi.Input<string>;
+    thresholdAbsolute: pulumi.Input<number>;
+}
+
+export interface CustomAppAnomaliesSlowUserActions {
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
+    slowUserActionsAuto?: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAuto>;
+    /**
+     * no documentation available
+     */
+    slowUserActionsFixed?: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixed>;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAuto {
+    durationAvoidOveralerting: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting>;
+    durationThresholdAll: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll>;
+    durationThresholdSlowest: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest>;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting {
+    minActionRate: pulumi.Input<number>;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll {
+    durationThreshold: pulumi.Input<number>;
+    slowdownPercentage: pulumi.Input<number>;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest {
+    durationThreshold: pulumi.Input<number>;
+    slowdownPercentage: pulumi.Input<number>;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixed {
+    durationAvoidOveralerting: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting>;
+    durationThresholdAllFixed: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed>;
+    durationThresholdSlowest: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest>;
+    sensitivity: pulumi.Input<string>;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting {
+    minActionRate: pulumi.Input<number>;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed {
+    durationThreshold: pulumi.Input<number>;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest {
+    durationThreshold: pulumi.Input<number>;
+}
+
+export interface CustomAppAnomaliesUnexpectedHighLoad {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic spikes within your application.
+     */
+    thresholdPercentage?: pulumi.Input<number>;
+}
+
+export interface CustomAppAnomaliesUnexpectedLowLoad {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic drops within your application.
+     */
+    thresholdPercentage?: pulumi.Input<number>;
+}
+
+export interface CustomAppCrashRateCrashRateIncrease {
+    /**
+     * Alert crash rate increases when auto-detected baseline is exceeded by a certain number of users
+     */
+    crashRateIncreaseAuto?: pulumi.Input<inputs.CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto>;
+    /**
+     * Alert crash rate increases when the defined threshold is exceeded by a certain number of users
+     */
+    crashRateIncreaseFixed?: pulumi.Input<inputs.CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed>;
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto {
+    baselineViolationPercentage: pulumi.Input<number>;
+    concurrentUsers: pulumi.Input<number>;
+    sensitivity: pulumi.Input<string>;
+}
+
+export interface CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed {
+    absoluteCrashRate: pulumi.Input<number>;
+    concurrentUsers: pulumi.Input<number>;
+}
+
+export interface CustomAppEnablementRum {
+    /**
+     * (Field has overlap with `dynatrace.MobileApplication`) Percentage of user sessions captured and analyzed. By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application’s performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session.
+     */
+    costAndTrafficControl: pulumi.Input<number>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
 export interface CustomServiceRule {
     /**
      * Additional annotations filter of the rule. Only classes where all listed annotations are available in the class itself or any of its superclasses are instrumented. Not applicable to PHP
@@ -2451,10 +3025,6 @@ export interface CustomServiceRule {
      * The PHP file containing the class or methods to instrument. Required for PHP custom service. Not applicable to Java and .NET
      */
     file?: pulumi.Input<inputs.CustomServiceRuleFile>;
-    /**
-     * The ID of the detection rule
-     */
-    id?: pulumi.Input<string>;
     /**
      * methods to instrument
      */
@@ -2500,6 +3070,19 @@ export interface CustomServiceRuleMethod {
     visibility?: pulumi.Input<string>;
 }
 
+export interface CustomTagsTags {
+    /**
+     * A Tag Filter
+     */
+    filters?: pulumi.Input<pulumi.Input<inputs.CustomTagsTagsFilter>[]>;
+}
+
+export interface CustomTagsTagsFilter {
+    context: pulumi.Input<string>;
+    key: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
 export interface DashboardDashboardMetadata {
     /**
      * The tile uses consistent colors when rendering its content
@@ -2527,16 +3110,24 @@ export interface DashboardDashboardMetadata {
     preset?: pulumi.Input<boolean>;
     /**
      * the dashboard is shared (`true`) or private (`false`)
+     *
+     * @deprecated Please use the resource `dynatrace_dashboard_sharing` to configure share settings
      */
     shared?: pulumi.Input<boolean>;
     /**
      * represents sharing configuration of a dashboard
+     *
+     * @deprecated Please use the resource `dynatrace_dashboard_sharing` to configure share settings
      */
     sharingDetails?: pulumi.Input<inputs.DashboardDashboardMetadataSharingDetails>;
     /**
      * a set of tags assigned to the dashboard
      */
     tags?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * No documentation available
+     */
+    tilesNameSize?: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
@@ -2549,11 +3140,23 @@ export interface DashboardDashboardMetadata {
 
 export interface DashboardDashboardMetadataDynamicFilters {
     filters: pulumi.Input<pulumi.Input<string>[]>;
+    genericTagFilters?: pulumi.Input<inputs.DashboardDashboardMetadataDynamicFiltersGenericTagFilters>;
     tagSuggestionTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+}
+
+export interface DashboardDashboardMetadataDynamicFiltersGenericTagFilters {
+    filters: pulumi.Input<pulumi.Input<inputs.DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilter>[]>;
+}
+
+export interface DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilter {
+    entityTypes: pulumi.Input<pulumi.Input<string>[]>;
+    name?: pulumi.Input<string>;
+    suggestionsFromEntityType?: pulumi.Input<string>;
+    tagKey?: pulumi.Input<string>;
 }
 
 export interface DashboardDashboardMetadataFilter {
@@ -2623,6 +3226,7 @@ export interface DashboardSharingPublic {
      * A list of management zones that can display data on the publicly shared dashboard.
      */
     managementZones: pulumi.Input<pulumi.Input<string>[]>;
+    urls?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }
 
 export interface DashboardTile {
@@ -2630,6 +3234,10 @@ export interface DashboardTile {
      * The list of Dynatrace entities, assigned to the tile
      */
     assignedEntities?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Auto Refresh is disabled (`true`)
+     */
+    autoRefreshDisabled?: pulumi.Input<boolean>;
     /**
      * the position and size of a tile
      */
@@ -2830,6 +3438,68 @@ export interface DashboardTileVisualizationConfig {
     unknowns?: pulumi.Input<string>;
 }
 
+export interface DashboardsAllowlistAllowlist {
+    urlpatterns: pulumi.Input<pulumi.Input<inputs.DashboardsAllowlistAllowlistUrlpattern>[]>;
+}
+
+export interface DashboardsAllowlistAllowlistUrlpattern {
+    rule: pulumi.Input<string>;
+    template: pulumi.Input<string>;
+}
+
+export interface DashboardsGeneralDefaultDashboardList {
+    defaultDashboards: pulumi.Input<pulumi.Input<inputs.DashboardsGeneralDefaultDashboardListDefaultDashboard>[]>;
+}
+
+export interface DashboardsGeneralDefaultDashboardListDefaultDashboard {
+    dashboard: pulumi.Input<string>;
+    userGroup: pulumi.Input<string>;
+}
+
+export interface DashboardsPresetsDashboardPresetsList {
+    dashboardPresets: pulumi.Input<pulumi.Input<inputs.DashboardsPresetsDashboardPresetsListDashboardPreset>[]>;
+}
+
+export interface DashboardsPresetsDashboardPresetsListDashboardPreset {
+    dashboardPreset: pulumi.Input<string>;
+    userGroup: pulumi.Input<string>;
+}
+
+export interface DataPrivacyDataCollection {
+    /**
+     * With [Data-collection and opt-in mode](https://dt-url.net/7l3p0p3h) enabled, Real User Monitoring data isn't captured until dtrum.enable() is called for specific user sessions.
+     */
+    optInModeEnabled: pulumi.Input<boolean>;
+}
+
+export interface DataPrivacyDoNotTrack {
+    /**
+     * Comply with "Do Not Track" browser settings
+     */
+    complyWithDoNotTrack: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `Anonymous`, `Disable_rum`
+     */
+    doNotTrack?: pulumi.Input<string>;
+}
+
+export interface DataPrivacyMasking {
+    ipAddressMasking?: pulumi.Input<string>;
+    /**
+     * Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
+     */
+    ipAddressMaskingEnabled: pulumi.Input<boolean>;
+    personalDataUriMaskingEnabled: pulumi.Input<boolean>;
+    userActionMaskingEnabled: pulumi.Input<boolean>;
+}
+
+export interface DataPrivacyUserTracking {
+    /**
+     * When enabled, Dynatrace places a [persistent cookie](https://dt-url.net/313o0p4n) on all end-user devices to identify returning users.
+     */
+    persistentCookieEnabled: pulumi.Input<boolean>;
+}
+
 export interface DatabaseAnomaliesDbConnectFailures {
     /**
      * Number of failed database connections during any **eval_period** minutes period to trigger an alert
@@ -2920,6 +3590,247 @@ export interface DatabaseAnomaliesResponseTimeThresholds {
     unknowns?: pulumi.Input<string>;
 }
 
+export interface DatabaseAnomaliesV2DatabaseConnections {
+    /**
+     * Detect failed database connects
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Threshold
+     */
+    maxFailedConnects?: pulumi.Input<number>;
+    /**
+     * Time span
+     */
+    timePeriod?: pulumi.Input<number>;
+}
+
+export interface DatabaseAnomaliesV2FailureRate {
+    /**
+     * Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+     */
+    autoDetection?: pulumi.Input<inputs.DatabaseAnomaliesV2FailureRateAutoDetection>;
+    /**
+     * Detection mode for increases in failure rate
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect increases in failure rate
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Alert if a given failure rate is exceeded during any 5-minute-period
+     */
+    fixedDetection?: pulumi.Input<inputs.DatabaseAnomaliesV2FailureRateFixedDetection>;
+}
+
+export interface DatabaseAnomaliesV2FailureRateAutoDetection {
+    absoluteIncrease: pulumi.Input<number>;
+    overAlertingProtection: pulumi.Input<inputs.DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection>;
+    relativeIncrease: pulumi.Input<number>;
+}
+
+export interface DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection {
+    minutesAbnormalState: pulumi.Input<number>;
+    requestsPerMinute: pulumi.Input<number>;
+}
+
+export interface DatabaseAnomaliesV2FailureRateFixedDetection {
+    overAlertingProtection: pulumi.Input<inputs.DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection>;
+    sensitivity: pulumi.Input<string>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection {
+    minutesAbnormalState: pulumi.Input<number>;
+    requestsPerMinute: pulumi.Input<number>;
+}
+
+export interface DatabaseAnomaliesV2LoadDrops {
+    /**
+     * Detect service load drops
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Threshold
+     */
+    loadDropPercent?: pulumi.Input<number>;
+    /**
+     * Time span
+     */
+    minutesAbnormalState?: pulumi.Input<number>;
+}
+
+export interface DatabaseAnomaliesV2LoadSpikes {
+    /**
+     * Detect service load spikes
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Threshold
+     */
+    loadSpikePercent?: pulumi.Input<number>;
+    /**
+     * Time span
+     */
+    minutesAbnormalState?: pulumi.Input<number>;
+}
+
+export interface DatabaseAnomaliesV2ResponseTime {
+    /**
+     * no documentation available
+     */
+    autoDetection?: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTimeAutoDetection>;
+    /**
+     * Detection mode for response time degradations
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect response time degradations
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
+    fixedDetection?: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTimeFixedDetection>;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeAutoDetection {
+    overAlertingProtection: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection>;
+    responseTimeAll: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll>;
+    responseTimeSlowest: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest>;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection {
+    minutesAbnormalState: pulumi.Input<number>;
+    requestsPerMinute: pulumi.Input<number>;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll {
+    degradationMilliseconds: pulumi.Input<number>;
+    degradationPercent: pulumi.Input<number>;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest {
+    slowestDegradationMilliseconds: pulumi.Input<number>;
+    slowestDegradationPercent: pulumi.Input<number>;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeFixedDetection {
+    overAlertingProtection: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection>;
+    responseTimeAll: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll>;
+    responseTimeSlowest: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest>;
+    sensitivity: pulumi.Input<string>;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection {
+    minutesAbnormalState: pulumi.Input<number>;
+    requestsPerMinute: pulumi.Input<number>;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll {
+    degradationMilliseconds: pulumi.Input<number>;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest {
+    slowestDegradationMilliseconds: pulumi.Input<number>;
+}
+
+export interface DduPoolEvents {
+    /**
+     * Is the limit configuration enabled
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Type of the limit applied: MONTHLY or ANNUAL
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * Value of the DDU limit applied for provided timerange
+     */
+    value?: pulumi.Input<number>;
+}
+
+export interface DduPoolLogMonitoring {
+    /**
+     * Is the limit configuration enabled
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Type of the limit applied: MONTHLY or ANNUAL
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * Value of the DDU limit applied for provided timerange
+     */
+    value?: pulumi.Input<number>;
+}
+
+export interface DduPoolMetrics {
+    /**
+     * Is the limit configuration enabled
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Type of the limit applied: MONTHLY or ANNUAL
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * Value of the DDU limit applied for provided timerange
+     */
+    value?: pulumi.Input<number>;
+}
+
+export interface DduPoolServerless {
+    /**
+     * Is the limit configuration enabled
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Type of the limit applied: MONTHLY or ANNUAL
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * Value of the DDU limit applied for provided timerange
+     */
+    value?: pulumi.Input<number>;
+}
+
+export interface DduPoolTraces {
+    /**
+     * Is the limit configuration enabled
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Type of the limit applied: MONTHLY or ANNUAL
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * Value of the DDU limit applied for provided timerange
+     */
+    value?: pulumi.Input<number>;
+}
+
+export interface DeclarativeGroupingDetection {
+    processDefinitions: pulumi.Input<pulumi.Input<inputs.DeclarativeGroupingDetectionProcessDefinition>[]>;
+}
+
+export interface DeclarativeGroupingDetectionProcessDefinition {
+    id: pulumi.Input<string>;
+    processGroupName: pulumi.Input<string>;
+    report: pulumi.Input<string>;
+    rules?: pulumi.Input<inputs.DeclarativeGroupingDetectionProcessDefinitionRules>;
+}
+
+export interface DeclarativeGroupingDetectionProcessDefinitionRules {
+    rules: pulumi.Input<pulumi.Input<inputs.DeclarativeGroupingDetectionProcessDefinitionRulesRule>[]>;
+}
+
+export interface DeclarativeGroupingDetectionProcessDefinitionRulesRule {
+    condition: pulumi.Input<string>;
+    property: pulumi.Input<string>;
+}
+
 export interface DiskAnomaliesDiskName {
     /**
      * Possible values are: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS` and `STARTS_WITH`
@@ -2942,6 +3853,140 @@ export interface DiskAnomaliesTagsFilter {
     context: pulumi.Input<string>;
     key: pulumi.Input<string>;
     value?: pulumi.Input<string>;
+}
+
+export interface DiskAnomaliesV2Disk {
+    /**
+     * no documentation available
+     */
+    diskLowInodesDetection: pulumi.Input<inputs.DiskAnomaliesV2DiskDiskLowInodesDetection>;
+    /**
+     * no documentation available
+     */
+    diskLowSpaceDetection: pulumi.Input<inputs.DiskAnomaliesV2DiskDiskLowSpaceDetection>;
+    /**
+     * no documentation available
+     */
+    diskSlowWritesAndReadsDetection: pulumi.Input<inputs.DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetection>;
+}
+
+export interface DiskAnomaliesV2DiskDiskLowInodesDetection {
+    customThresholds?: pulumi.Input<inputs.DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds>;
+    detectionMode?: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds {
+    freeInodesPercentage: pulumi.Input<number>;
+}
+
+export interface DiskAnomaliesV2DiskDiskLowSpaceDetection {
+    customThresholds?: pulumi.Input<inputs.DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds>;
+    detectionMode?: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds {
+    freeSpacePercentage: pulumi.Input<number>;
+}
+
+export interface DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetection {
+    customThresholds?: pulumi.Input<inputs.DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds>;
+    detectionMode?: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds {
+    writeAndReadTime: pulumi.Input<number>;
+}
+
+export interface DiskAnomalyRulesDiskNameFilter {
+    /**
+     * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS`, `STARTS_WITH`
+     */
+    operator: pulumi.Input<string>;
+    /**
+     * Matching text
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface DiskAnomalyRulesSampleLimit {
+    /**
+     * .. within the last
+     */
+    samples: pulumi.Input<number>;
+    /**
+     * Minimum number of violating samples
+     */
+    violatingSamples: pulumi.Input<number>;
+}
+
+export interface DiskOptionsExclusions {
+    exclusions: pulumi.Input<pulumi.Input<inputs.DiskOptionsExclusionsExclusion>[]>;
+}
+
+export interface DiskOptionsExclusionsExclusion {
+    filesystem?: pulumi.Input<string>;
+    mountpoint?: pulumi.Input<string>;
+    os: pulumi.Input<string>;
+}
+
+export interface DiskSpecificAnomaliesV2DiskLowInodesDetection {
+    /**
+     * no documentation available
+     */
+    customThresholds?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholds>;
+    /**
+     * Detection mode for low inodes number available
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect low inodes number available
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholds {
+    freeInodesPercentage: pulumi.Input<number>;
+}
+
+export interface DiskSpecificAnomaliesV2DiskLowSpaceDetection {
+    /**
+     * no documentation available
+     */
+    customThresholds?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholds>;
+    /**
+     * Detection mode for low disk space
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect low disk space
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholds {
+    freeSpacePercentage: pulumi.Input<number>;
+}
+
+export interface DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection {
+    /**
+     * no documentation available
+     */
+    customThresholds?: pulumi.Input<inputs.DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholds>;
+    /**
+     * Detection mode for slow running disks
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect slow-running disks
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholds {
+    writeAndReadTime: pulumi.Input<number>;
 }
 
 export interface EnvironmentQuotas {
@@ -3017,7 +4062,7 @@ export interface EnvironmentStorageLimits {
 }
 
 export interface EnvironmentStorageRetention {
-    logs: pulumi.Input<number>;
+    logs?: pulumi.Input<number>;
     rum: pulumi.Input<number>;
     serviceCodeLevel: pulumi.Input<number>;
     serviceRequestLevel: pulumi.Input<number>;
@@ -3025,26 +4070,248 @@ export interface EnvironmentStorageRetention {
     synthetic: pulumi.Input<number>;
 }
 
+export interface FailureDetectionParametersBrokenLinks {
+    /**
+     * If your application relies on other hosts at other domains, add the associated domain names here. Once configured, Dynatrace will consider 404s thrown by hosts at these domains to be service failures related to your application.
+     */
+    brokenLinkDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Consider 404 HTTP response codes as failures
+     */
+    http404NotFoundFailures: pulumi.Input<boolean>;
+}
+
+export interface FailureDetectionParametersExceptionRules {
+    /**
+     * Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+     */
+    customErrorRules?: pulumi.Input<inputs.FailureDetectionParametersExceptionRulesCustomErrorRules>;
+    /**
+     * There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+     */
+    customHandledExceptions?: pulumi.Input<inputs.FailureDetectionParametersExceptionRulesCustomHandledExceptions>;
+    /**
+     * Ignore all exceptions
+     */
+    ignoreAllExceptions: pulumi.Input<boolean>;
+    /**
+     * Ignore span failure detection
+     */
+    ignoreSpanFailureDetection: pulumi.Input<boolean>;
+    /**
+     * Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+     */
+    ignoredExceptions?: pulumi.Input<inputs.FailureDetectionParametersExceptionRulesIgnoredExceptions>;
+    /**
+     * Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+     */
+    successForcingExceptions?: pulumi.Input<inputs.FailureDetectionParametersExceptionRulesSuccessForcingExceptions>;
+}
+
+export interface FailureDetectionParametersExceptionRulesCustomErrorRules {
+    customErrorRules: pulumi.Input<pulumi.Input<inputs.FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule>[]>;
+}
+
+export interface FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule {
+    condition: pulumi.Input<inputs.FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition>;
+    requestAttribute: pulumi.Input<string>;
+}
+
+export interface FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition {
+    caseSensitive?: pulumi.Input<boolean>;
+    compareOperationType: pulumi.Input<string>;
+    doubleValue?: pulumi.Input<number>;
+    intValue?: pulumi.Input<number>;
+    textValue?: pulumi.Input<string>;
+}
+
+export interface FailureDetectionParametersExceptionRulesCustomHandledExceptions {
+    customHandledExceptions: pulumi.Input<pulumi.Input<inputs.FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledException>[]>;
+}
+
+export interface FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledException {
+    classPattern?: pulumi.Input<string>;
+    messagePattern?: pulumi.Input<string>;
+}
+
+export interface FailureDetectionParametersExceptionRulesIgnoredExceptions {
+    customHandledExceptions: pulumi.Input<pulumi.Input<inputs.FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledException>[]>;
+}
+
+export interface FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledException {
+    classPattern?: pulumi.Input<string>;
+    messagePattern?: pulumi.Input<string>;
+}
+
+export interface FailureDetectionParametersExceptionRulesSuccessForcingExceptions {
+    customHandledExceptions: pulumi.Input<pulumi.Input<inputs.FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledException>[]>;
+}
+
+export interface FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledException {
+    classPattern?: pulumi.Input<string>;
+    messagePattern?: pulumi.Input<string>;
+}
+
+export interface FailureDetectionParametersHttpResponseCodes {
+    /**
+     * HTTP response codes which indicate client side errors
+     */
+    clientSideErrors: pulumi.Input<string>;
+    /**
+     * Treat missing HTTP response code as client side error
+     */
+    failOnMissingResponseCodeClientSide: pulumi.Input<boolean>;
+    /**
+     * Treat missing HTTP response code as server side errors
+     */
+    failOnMissingResponseCodeServerSide: pulumi.Input<boolean>;
+    /**
+     * HTTP response codes which indicate an error on the server side
+     */
+    serverSideErrors: pulumi.Input<string>;
+}
+
+export interface FailureDetectionRulesConditions {
+    conditions: pulumi.Input<pulumi.Input<inputs.FailureDetectionRulesConditionsCondition>[]>;
+}
+
+export interface FailureDetectionRulesConditionsCondition {
+    attribute: pulumi.Input<string>;
+    predicate: pulumi.Input<inputs.FailureDetectionRulesConditionsConditionPredicate>;
+}
+
+export interface FailureDetectionRulesConditionsConditionPredicate {
+    caseSensitive?: pulumi.Input<boolean>;
+    managementZones?: pulumi.Input<pulumi.Input<string>[]>;
+    predicateType: pulumi.Input<string>;
+    serviceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    tagKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    tags?: pulumi.Input<pulumi.Input<string>[]>;
+    textValues?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface GenericRelationshipsSources {
+    sources: pulumi.Input<pulumi.Input<inputs.GenericRelationshipsSourcesSource>[]>;
+}
+
+export interface GenericRelationshipsSourcesSource {
+    condition?: pulumi.Input<string>;
+    mappingRules?: pulumi.Input<inputs.GenericRelationshipsSourcesSourceMappingRules>;
+    sourceType: pulumi.Input<string>;
+}
+
+export interface GenericRelationshipsSourcesSourceMappingRules {
+    mappingRules: pulumi.Input<pulumi.Input<inputs.GenericRelationshipsSourcesSourceMappingRulesMappingRule>[]>;
+}
+
+export interface GenericRelationshipsSourcesSourceMappingRulesMappingRule {
+    destinationProperty: pulumi.Input<string>;
+    destinationTransformation: pulumi.Input<string>;
+    sourceProperty: pulumi.Input<string>;
+    sourceTransformation: pulumi.Input<string>;
+}
+
+export interface GenericTypesRules {
+    rules: pulumi.Input<pulumi.Input<inputs.GenericTypesRulesRule>[]>;
+}
+
+export interface GenericTypesRulesRule {
+    attributes?: pulumi.Input<inputs.GenericTypesRulesRuleAttributes>;
+    iconPattern?: pulumi.Input<string>;
+    idPattern: pulumi.Input<string>;
+    instanceNamePattern?: pulumi.Input<string>;
+    requiredDimensions?: pulumi.Input<inputs.GenericTypesRulesRuleRequiredDimensions>;
+    role?: pulumi.Input<string>;
+    sources: pulumi.Input<inputs.GenericTypesRulesRuleSources>;
+}
+
+export interface GenericTypesRulesRuleAttributes {
+    attributes: pulumi.Input<pulumi.Input<inputs.GenericTypesRulesRuleAttributesAttribute>[]>;
+}
+
+export interface GenericTypesRulesRuleAttributesAttribute {
+    /**
+     * The human readable type name for this entity type.
+     */
+    displayName?: pulumi.Input<string>;
+    key: pulumi.Input<string>;
+    pattern: pulumi.Input<string>;
+}
+
+export interface GenericTypesRulesRuleRequiredDimensions {
+    requiredDimensions: pulumi.Input<pulumi.Input<inputs.GenericTypesRulesRuleRequiredDimensionsRequiredDimension>[]>;
+}
+
+export interface GenericTypesRulesRuleRequiredDimensionsRequiredDimension {
+    key: pulumi.Input<string>;
+    valuePattern?: pulumi.Input<string>;
+}
+
+export interface GenericTypesRulesRuleSources {
+    sources: pulumi.Input<pulumi.Input<inputs.GenericTypesRulesRuleSourcesSource>[]>;
+}
+
+export interface GenericTypesRulesRuleSourcesSource {
+    condition?: pulumi.Input<string>;
+    sourceType: pulumi.Input<string>;
+}
+
+export interface GetEntitiesEntities {
+    /**
+     * A list of monitored entities.
+     */
+    entities?: inputs.GetEntitiesEntitiesEntity[];
+}
+
+export interface GetEntitiesEntitiesArgs {
+    /**
+     * A list of monitored entities.
+     */
+    entities?: pulumi.Input<pulumi.Input<inputs.GetEntitiesEntitiesEntityArgs>[]>;
+}
+
+export interface GetEntitiesEntitiesEntity {
+    displayName?: string;
+    entityId?: string;
+    tags?: inputs.GetEntitiesEntitiesEntityTag[];
+    type?: string;
+}
+
+export interface GetEntitiesEntitiesEntityArgs {
+    displayName?: pulumi.Input<string>;
+    entityId?: pulumi.Input<string>;
+    tags?: pulumi.Input<pulumi.Input<inputs.GetEntitiesEntitiesEntityTagArgs>[]>;
+    type?: pulumi.Input<string>;
+}
+
+export interface GetEntitiesEntitiesEntityTag {
+    tags?: inputs.GetEntitiesEntitiesEntityTagTag[];
+}
+
+export interface GetEntitiesEntitiesEntityTagArgs {
+    tags?: pulumi.Input<pulumi.Input<inputs.GetEntitiesEntitiesEntityTagTagArgs>[]>;
+}
+
+export interface GetEntitiesEntitiesEntityTagTag {
+    context: string;
+    key: string;
+    stringRepresentation?: string;
+    value?: string;
+}
+
+export interface GetEntitiesEntitiesEntityTagTagArgs {
+    context: pulumi.Input<string>;
+    key: pulumi.Input<string>;
+    stringRepresentation?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
 export interface GetSyntheticLocationsLocations {
     /**
-     * The name of the location
+     * The cloud provider where the location is hosted.
      */
-    locations?: inputs.GetSyntheticLocationsLocationsLocation[];
-}
-
-export interface GetSyntheticLocationsLocationsArgs {
-    /**
-     * The name of the location
-     */
-    locations?: pulumi.Input<pulumi.Input<inputs.GetSyntheticLocationsLocationsLocationArgs>[]>;
-}
-
-export interface GetSyntheticLocationsLocationsLocation {
     cloudPlatform?: string;
-    /**
-     * The ID of this resource.
-     */
-    id?: string;
+    entityId?: string;
     ips?: string[];
     name?: string;
     stage?: string;
@@ -3052,12 +4319,12 @@ export interface GetSyntheticLocationsLocationsLocation {
     type?: string;
 }
 
-export interface GetSyntheticLocationsLocationsLocationArgs {
-    cloudPlatform?: pulumi.Input<string>;
+export interface GetSyntheticLocationsLocationsArgs {
     /**
-     * The ID of this resource.
+     * The cloud provider where the location is hosted.
      */
-    id?: pulumi.Input<string>;
+    cloudPlatform?: pulumi.Input<string>;
+    entityId?: pulumi.Input<string>;
     ips?: pulumi.Input<pulumi.Input<string>[]>;
     name?: pulumi.Input<string>;
     stage?: pulumi.Input<string>;
@@ -3274,6 +4541,271 @@ export interface HostAnomaliesNetworkUtilization {
 
 export interface HostAnomaliesNetworkUtilizationThresholds {
     utilization: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2Host {
+    /**
+     * no documentation available
+     */
+    connectionLostDetection: pulumi.Input<inputs.HostAnomaliesV2HostConnectionLostDetection>;
+    /**
+     * no documentation available
+     */
+    highCpuSaturationDetection: pulumi.Input<inputs.HostAnomaliesV2HostHighCpuSaturationDetection>;
+    /**
+     * no documentation available
+     */
+    highGcActivityDetection: pulumi.Input<inputs.HostAnomaliesV2HostHighGcActivityDetection>;
+    /**
+     * no documentation available
+     */
+    highMemoryDetection: pulumi.Input<inputs.HostAnomaliesV2HostHighMemoryDetection>;
+    /**
+     * no documentation available
+     */
+    highSystemLoadDetection: pulumi.Input<inputs.HostAnomaliesV2HostHighSystemLoadDetection>;
+    /**
+     * no documentation available
+     */
+    outOfMemoryDetection: pulumi.Input<inputs.HostAnomaliesV2HostOutOfMemoryDetection>;
+    /**
+     * no documentation available
+     */
+    outOfThreadsDetection: pulumi.Input<inputs.HostAnomaliesV2HostOutOfThreadsDetection>;
+}
+
+export interface HostAnomaliesV2HostConnectionLostDetection {
+    enabled: pulumi.Input<boolean>;
+    onGracefulShutdowns?: pulumi.Input<string>;
+}
+
+export interface HostAnomaliesV2HostHighCpuSaturationDetection {
+    customThresholds?: pulumi.Input<inputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds>;
+    detectionMode?: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds {
+    cpuSaturation: pulumi.Input<number>;
+    eventThresholds: pulumi.Input<inputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds>;
+}
+
+export interface HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: pulumi.Input<number>;
+    dealertingSamples: pulumi.Input<number>;
+    violatingEvaluationWindow: pulumi.Input<number>;
+    violatingSamples: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2HostHighGcActivityDetection {
+    customThresholds?: pulumi.Input<inputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds>;
+    detectionMode?: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds {
+    eventThresholds: pulumi.Input<inputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds>;
+    gcSuspensionPercentage: pulumi.Input<number>;
+    gcTimePercentage: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: pulumi.Input<number>;
+    dealertingSamples: pulumi.Input<number>;
+    violatingEvaluationWindow: pulumi.Input<number>;
+    violatingSamples: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2HostHighMemoryDetection {
+    customThresholds?: pulumi.Input<inputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholds>;
+    detectionMode?: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface HostAnomaliesV2HostHighMemoryDetectionCustomThresholds {
+    eventThresholds: pulumi.Input<inputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds>;
+    pageFaultsPerSecondNonWindows: pulumi.Input<number>;
+    pageFaultsPerSecondWindows: pulumi.Input<number>;
+    usedMemoryPercentageNonWindows: pulumi.Input<number>;
+    usedMemoryPercentageWindows: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: pulumi.Input<number>;
+    dealertingSamples: pulumi.Input<number>;
+    violatingEvaluationWindow: pulumi.Input<number>;
+    violatingSamples: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2HostHighSystemLoadDetection {
+    customThresholds?: pulumi.Input<inputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds>;
+    detectionMode?: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds {
+    eventThresholds: pulumi.Input<inputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds>;
+    systemLoad: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: pulumi.Input<number>;
+    dealertingSamples: pulumi.Input<number>;
+    violatingEvaluationWindow: pulumi.Input<number>;
+    violatingSamples: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2HostOutOfMemoryDetection {
+    customThresholds?: pulumi.Input<inputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds>;
+    detectionMode?: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds {
+    eventThresholds: pulumi.Input<inputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds>;
+    outOfMemoryExceptionsNumber: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: pulumi.Input<number>;
+    dealertingSamples: pulumi.Input<number>;
+    violatingEvaluationWindow: pulumi.Input<number>;
+    violatingSamples: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2HostOutOfThreadsDetection {
+    customThresholds?: pulumi.Input<inputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds>;
+    detectionMode?: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds {
+    eventThresholds: pulumi.Input<inputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds>;
+    outOfThreadsExceptionsNumber: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: pulumi.Input<number>;
+    dealertingSamples: pulumi.Input<number>;
+    violatingEvaluationWindow: pulumi.Input<number>;
+    violatingSamples: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2Network {
+    /**
+     * no documentation available
+     */
+    highNetworkDetection: pulumi.Input<inputs.HostAnomaliesV2NetworkHighNetworkDetection>;
+    /**
+     * no documentation available
+     */
+    networkDroppedPacketsDetection: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetection>;
+    /**
+     * no documentation available
+     */
+    networkErrorsDetection: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkErrorsDetection>;
+    /**
+     * no documentation available
+     */
+    networkHighRetransmissionDetection: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetection>;
+    /**
+     * no documentation available
+     */
+    networkTcpProblemsDetection: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetection>;
+}
+
+export interface HostAnomaliesV2NetworkHighNetworkDetection {
+    customThresholds?: pulumi.Input<inputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds>;
+    detectionMode?: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds {
+    errorsPercentage: pulumi.Input<number>;
+    eventThresholds: pulumi.Input<inputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds>;
+}
+
+export interface HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: pulumi.Input<number>;
+    dealertingSamples: pulumi.Input<number>;
+    violatingEvaluationWindow: pulumi.Input<number>;
+    violatingSamples: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2NetworkNetworkDroppedPacketsDetection {
+    customThresholds?: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds>;
+    detectionMode?: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds {
+    droppedPacketsPercentage: pulumi.Input<number>;
+    eventThresholds: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds>;
+    totalPacketsRate: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: pulumi.Input<number>;
+    dealertingSamples: pulumi.Input<number>;
+    violatingEvaluationWindow: pulumi.Input<number>;
+    violatingSamples: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2NetworkNetworkErrorsDetection {
+    customThresholds?: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds>;
+    detectionMode?: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds {
+    errorsPercentage: pulumi.Input<number>;
+    eventThresholds: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds>;
+    totalPacketsRate: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: pulumi.Input<number>;
+    dealertingSamples: pulumi.Input<number>;
+    violatingEvaluationWindow: pulumi.Input<number>;
+    violatingSamples: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2NetworkNetworkHighRetransmissionDetection {
+    customThresholds?: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds>;
+    detectionMode?: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds {
+    eventThresholds: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds>;
+    retransmissionRatePercentage: pulumi.Input<number>;
+    retransmittedPacketsNumberPerMinute: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: pulumi.Input<number>;
+    dealertingSamples: pulumi.Input<number>;
+    violatingEvaluationWindow: pulumi.Input<number>;
+    violatingSamples: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2NetworkNetworkTcpProblemsDetection {
+    customThresholds?: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds>;
+    detectionMode?: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds {
+    eventThresholds: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds>;
+    failedConnectionsNumberPerMinute: pulumi.Input<number>;
+    newConnectionFailuresPercentage: pulumi.Input<number>;
+}
+
+export interface HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: pulumi.Input<number>;
+    dealertingSamples: pulumi.Input<number>;
+    violatingEvaluationWindow: pulumi.Input<number>;
+    violatingSamples: pulumi.Input<number>;
 }
 
 export interface HostNamingCondition {
@@ -4105,14 +5637,39 @@ export interface HttpMonitorAnomalyDetectionLoadingTimeThresholdThresholdThresho
 
 export interface HttpMonitorAnomalyDetectionOutageHandling {
     globalOutage?: pulumi.Input<boolean>;
+    globalOutagePolicies?: pulumi.Input<pulumi.Input<inputs.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy>[]>;
     localOutage?: pulumi.Input<boolean>;
     localOutagePolicies?: pulumi.Input<pulumi.Input<inputs.HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy>[]>;
     retryOnError?: pulumi.Input<boolean>;
 }
 
+export interface HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy {
+    consecutiveRuns: pulumi.Input<number>;
+}
+
 export interface HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy {
     affectedLocations: pulumi.Input<number>;
     consecutiveRuns: pulumi.Input<number>;
+}
+
+export interface HttpMonitorCookiesCookies {
+    cookies: pulumi.Input<pulumi.Input<inputs.HttpMonitorCookiesCookiesCookie>[]>;
+}
+
+export interface HttpMonitorCookiesCookiesCookie {
+    domain: pulumi.Input<string>;
+    name: pulumi.Input<string>;
+    path?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
+}
+
+export interface HttpMonitorPerformanceThresholds {
+    thresholds: pulumi.Input<pulumi.Input<inputs.HttpMonitorPerformanceThresholdsThreshold>[]>;
+}
+
+export interface HttpMonitorPerformanceThresholdsThreshold {
+    event: pulumi.Input<string>;
+    threshold: pulumi.Input<number>;
 }
 
 export interface HttpMonitorScript {
@@ -4130,6 +5687,7 @@ export interface HttpMonitorScriptRequest {
     method: pulumi.Input<string>;
     postProcessing?: pulumi.Input<string>;
     preProcessing?: pulumi.Input<string>;
+    requestTimeout?: pulumi.Input<number>;
     url: pulumi.Input<string>;
     validation?: pulumi.Input<inputs.HttpMonitorScriptRequestValidation>;
 }
@@ -4143,8 +5701,10 @@ export interface HttpMonitorScriptRequestAuthentication {
 
 export interface HttpMonitorScriptRequestConfiguration {
     acceptAnyCertificate?: pulumi.Input<boolean>;
+    clientCertificate?: pulumi.Input<string>;
     followRedirects?: pulumi.Input<boolean>;
     headers?: pulumi.Input<inputs.HttpMonitorScriptRequestConfigurationHeaders>;
+    sensitiveData?: pulumi.Input<boolean>;
     userAgent?: pulumi.Input<string>;
 }
 
@@ -4181,6 +5741,19 @@ export interface HttpMonitorTagTag {
     value?: pulumi.Input<string>;
 }
 
+export interface IamGroupPermissions {
+    /**
+     * A Permission
+     */
+    permissions: pulumi.Input<pulumi.Input<inputs.IamGroupPermissionsPermission>[]>;
+}
+
+export interface IamGroupPermissionsPermission {
+    name: pulumi.Input<string>;
+    scope: pulumi.Input<string>;
+    type: pulumi.Input<string>;
+}
+
 export interface ImsBridgesQueueManager {
     /**
      * Queue manager definition for IMS bridge
@@ -4194,6 +5767,89 @@ export interface ImsBridgesQueueManagerQueueManager {
      */
     name: pulumi.Input<string>;
     queueManagerQueues?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface K8sClusterAnomaliesCpuRequestsSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sClusterAnomaliesCpuRequestsSaturationConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sClusterAnomaliesCpuRequestsSaturationConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sClusterAnomaliesMemoryRequestsSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sClusterAnomaliesMemoryRequestsSaturationConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sClusterAnomaliesMemoryRequestsSaturationConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sClusterAnomaliesMonitoringIssues {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sClusterAnomaliesMonitoringIssuesConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sClusterAnomaliesMonitoringIssuesConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+}
+
+export interface K8sClusterAnomaliesPodsSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sClusterAnomaliesPodsSaturationConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sClusterAnomaliesPodsSaturationConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sClusterAnomaliesReadinessIssues {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sClusterAnomaliesReadinessIssuesConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sClusterAnomaliesReadinessIssuesConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
 }
 
 export interface K8sCredentialsEventsFieldSelector {
@@ -4213,6 +5869,475 @@ export interface K8sCredentialsEventsFieldSelector {
      * Any attributes that aren't yet supported by this provider
      */
     unknowns?: pulumi.Input<string>;
+}
+
+export interface K8sNamespaceAnomaliesCpuLimitsQuotaSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sNamespaceAnomaliesCpuRequestsQuotaSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sNamespaceAnomaliesMemoryLimitsQuotaSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sNamespaceAnomaliesMemoryRequestsQuotaSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sNamespaceAnomaliesPodsQuotaSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sNamespaceAnomaliesPodsQuotaSaturationConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sNamespaceAnomaliesPodsQuotaSaturationConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sNodeAnomaliesCpuRequestsSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sNodeAnomaliesCpuRequestsSaturationConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sNodeAnomaliesCpuRequestsSaturationConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sNodeAnomaliesMemoryRequestsSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sNodeAnomaliesMemoryRequestsSaturationConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sNodeAnomaliesMemoryRequestsSaturationConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sNodeAnomaliesNodeProblematicCondition {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sNodeAnomaliesNodeProblematicConditionConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sNodeAnomaliesNodeProblematicConditionConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+}
+
+export interface K8sNodeAnomaliesPodsSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sNodeAnomaliesPodsSaturationConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sNodeAnomaliesPodsSaturationConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sNodeAnomaliesReadinessIssues {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sNodeAnomaliesReadinessIssuesConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sNodeAnomaliesReadinessIssuesConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+}
+
+export interface K8sPvcAnomaliesLowDiskSpaceCritical {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sPvcAnomaliesLowDiskSpaceCriticalConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sPvcAnomaliesLowDiskSpaceCriticalConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sPvcAnomaliesLowDiskSpaceCriticalPercentage {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sWorkloadAnomaliesContainerRestarts {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sWorkloadAnomaliesContainerRestartsConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sWorkloadAnomaliesContainerRestartsConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sWorkloadAnomaliesDeploymentStuck {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sWorkloadAnomaliesDeploymentStuckConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sWorkloadAnomaliesDeploymentStuckConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+}
+
+export interface K8sWorkloadAnomaliesHighCpuThrottling {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sWorkloadAnomaliesHighCpuThrottlingConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sWorkloadAnomaliesHighCpuThrottlingConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sWorkloadAnomaliesHighCpuUsage {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sWorkloadAnomaliesHighCpuUsageConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sWorkloadAnomaliesHighCpuUsageConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sWorkloadAnomaliesHighMemoryUsage {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sWorkloadAnomaliesHighMemoryUsageConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sWorkloadAnomaliesHighMemoryUsageConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sWorkloadAnomaliesNotAllPodsReady {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sWorkloadAnomaliesNotAllPodsReadyConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sWorkloadAnomaliesNotAllPodsReadyConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+}
+
+export interface K8sWorkloadAnomaliesPendingPods {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sWorkloadAnomaliesPendingPodsConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sWorkloadAnomaliesPendingPodsConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface K8sWorkloadAnomaliesPodStuckInTerminating {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodStuckInTerminatingConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sWorkloadAnomaliesPodStuckInTerminatingConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+}
+
+export interface K8sWorkloadAnomaliesWorkloadWithoutReadyPods {
+    /**
+     * Alert if
+     */
+    configuration?: pulumi.Input<inputs.K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration {
+    observationPeriodInMinutes: pulumi.Input<number>;
+    samplePeriodInMinutes: pulumi.Input<number>;
+}
+
+export interface KubernetesEventPatterns {
+    eventPatterns: pulumi.Input<pulumi.Input<inputs.KubernetesEventPatternsEventPattern>[]>;
+}
+
+export interface KubernetesEventPatternsEventPattern {
+    active: pulumi.Input<boolean>;
+    label: pulumi.Input<string>;
+    pattern: pulumi.Input<string>;
+}
+
+export interface LogCustomSourceContext {
+    /**
+     * Define Custom Log Source only within context if provided
+     */
+    contexts: pulumi.Input<pulumi.Input<inputs.LogCustomSourceContextContext>[]>;
+}
+
+export interface LogCustomSourceContextContext {
+    attribute: pulumi.Input<string>;
+    values: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface LogCustomSourceCustomLogSource {
+    /**
+     * Possible Values: `LOG_PATH_PATTERN`, `WINDOWS_EVENT_LOG`
+     */
+    type: pulumi.Input<string>;
+    /**
+     * It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+     */
+    values: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface LogEventsEventTemplate {
+    /**
+     * Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created.
+     */
+    davisMerge?: pulumi.Input<boolean>;
+    /**
+     * The description of the event to trigger.
+     */
+    description: pulumi.Input<string>;
+    /**
+     * Possible Values: `AVAILABILITY`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `ERROR`, `INFO`, `MARKED_FOR_TERMINATION`, `RESOURCE`, `SLOWDOWN`
+     */
+    eventType: pulumi.Input<string>;
+    /**
+     * Set of additional key-value properties to be attached to the triggered event.
+     */
+    metadata?: pulumi.Input<inputs.LogEventsEventTemplateMetadata>;
+    /**
+     * The title of the event to trigger.
+     */
+    title: pulumi.Input<string>;
+}
+
+export interface LogEventsEventTemplateMetadata {
+    items: pulumi.Input<pulumi.Input<inputs.LogEventsEventTemplateMetadataItem>[]>;
+}
+
+export interface LogEventsEventTemplateMetadataItem {
+    metadataKey: pulumi.Input<string>;
+    metadataValue: pulumi.Input<string>;
+}
+
+export interface LogProcessingProcessorDefinition {
+    rule: pulumi.Input<string>;
+}
+
+export interface LogProcessingRuleTesting {
+    sampleLog: pulumi.Input<string>;
+}
+
+export interface LogSensitiveDataMaskingMasking {
+    /**
+     * Maximum one capture group is allowed. If none was given, the whole expression will be treated as a capture group.
+     */
+    expression: pulumi.Input<string>;
+    /**
+     * The string to replace the masked expression with. Irrelevant if `type` is `SHA1`.
+     */
+    replacement?: pulumi.Input<string>;
+    /**
+     * Possible Values: `SHA1`, `STRING`
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface LogSensitiveDataMaskingMatchers {
+    matchers: pulumi.Input<pulumi.Input<inputs.LogSensitiveDataMaskingMatchersMatcher>[]>;
+}
+
+export interface LogSensitiveDataMaskingMatchersMatcher {
+    attribute: pulumi.Input<string>;
+    operator: pulumi.Input<string>;
+    values: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface LogStorageMatchers {
+    matchers: pulumi.Input<pulumi.Input<inputs.LogStorageMatchersMatcher>[]>;
+}
+
+export interface LogStorageMatchersMatcher {
+    attribute: pulumi.Input<string>;
+    operator: pulumi.Input<string>;
+    values: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface LogTimestampMatchers {
+    matchers: pulumi.Input<pulumi.Input<inputs.LogTimestampMatchersMatcher>[]>;
+}
+
+export interface LogTimestampMatchersMatcher {
+    attribute: pulumi.Input<string>;
+    operator: pulumi.Input<string>;
+    values: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface MaintenanceFilter {
@@ -4331,21 +6456,6 @@ export interface MaintenanceScheduleWeeklyRecurrenceTimeWindow {
     timeZone: pulumi.Input<string>;
 }
 
-export interface MaintenanceWindowMetadata {
-    /**
-     * Dynatrace server version
-     */
-    clusterVersion?: pulumi.Input<string>;
-    /**
-     * A Sorted list of the version numbers of the configuration
-     */
-    configurationVersions?: pulumi.Input<pulumi.Input<number>[]>;
-    /**
-     * A Sorted list of the version numbers of the configuration
-     */
-    currentConfigurationVersions?: pulumi.Input<pulumi.Input<string>[]>;
-}
-
 export interface MaintenanceWindowSchedule {
     /**
      * The end date and time of the maintenance window validity period in yyyy-mm-dd HH:mm format
@@ -4442,12 +6552,6 @@ export interface ManagementZoneEntitySelectorBasedRule {
     enabled?: pulumi.Input<boolean>;
     selector?: pulumi.Input<string>;
     unknowns?: pulumi.Input<string>;
-}
-
-export interface ManagementZoneMetadata {
-    clusterVersion?: pulumi.Input<string>;
-    configurationVersions?: pulumi.Input<pulumi.Input<number>[]>;
-    currentConfigurationVersions?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface ManagementZoneRule {
@@ -5254,6 +7358,381 @@ export interface ManagementZoneRuleConditionTechValue {
     verbatimType?: pulumi.Input<string>;
 }
 
+export interface ManagementZoneV2Rules {
+    /**
+     * A management zone rule
+     */
+    rules?: pulumi.Input<pulumi.Input<inputs.ManagementZoneV2RulesRule>[]>;
+}
+
+export interface ManagementZoneV2RulesRule {
+    attributeRule?: pulumi.Input<inputs.ManagementZoneV2RulesRuleAttributeRule>;
+    dimensionRule?: pulumi.Input<inputs.ManagementZoneV2RulesRuleDimensionRule>;
+    enabled: pulumi.Input<boolean>;
+    entitySelector?: pulumi.Input<string>;
+    type: pulumi.Input<string>;
+}
+
+export interface ManagementZoneV2RulesRuleAttributeRule {
+    attributeConditions: pulumi.Input<inputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditions>;
+    azureToPgpropagation?: pulumi.Input<boolean>;
+    azureToServicePropagation?: pulumi.Input<boolean>;
+    customDeviceGroupToCustomDevicePropagation?: pulumi.Input<boolean>;
+    entityType: pulumi.Input<string>;
+    hostToPgpropagation?: pulumi.Input<boolean>;
+    pgToHostPropagation?: pulumi.Input<boolean>;
+    pgToServicePropagation?: pulumi.Input<boolean>;
+    serviceToHostPropagation?: pulumi.Input<boolean>;
+    serviceToPgpropagation?: pulumi.Input<boolean>;
+}
+
+export interface ManagementZoneV2RulesRuleAttributeRuleAttributeConditions {
+    conditions?: pulumi.Input<pulumi.Input<inputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition>[]>;
+}
+
+export interface ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition {
+    caseSensitive?: pulumi.Input<boolean>;
+    dynamicKey?: pulumi.Input<string>;
+    dynamicKeySource?: pulumi.Input<string>;
+    entityId?: pulumi.Input<string>;
+    enumValue?: pulumi.Input<string>;
+    integerValue?: pulumi.Input<number>;
+    key: pulumi.Input<string>;
+    operator: pulumi.Input<string>;
+    stringValue?: pulumi.Input<string>;
+    tag?: pulumi.Input<string>;
+}
+
+export interface ManagementZoneV2RulesRuleDimensionRule {
+    appliesTo: pulumi.Input<string>;
+    dimensionConditions?: pulumi.Input<inputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditions>;
+}
+
+export interface ManagementZoneV2RulesRuleDimensionRuleDimensionConditions {
+    conditions?: pulumi.Input<pulumi.Input<inputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition>[]>;
+}
+
+export interface ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition {
+    conditionType: pulumi.Input<string>;
+    key?: pulumi.Input<string>;
+    ruleMatcher: pulumi.Input<string>;
+    value: pulumi.Input<string>;
+}
+
+export interface MetricEventsEventTemplate {
+    /**
+     * Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created.
+     */
+    davisMerge?: pulumi.Input<boolean>;
+    /**
+     * The description of the event to trigger.
+     */
+    description: pulumi.Input<string>;
+    /**
+     * The event type to trigger.
+     */
+    eventType: pulumi.Input<string>;
+    /**
+     * Set of additional key-value properties to be attached to the triggered event.
+     */
+    metadatas?: pulumi.Input<pulumi.Input<inputs.MetricEventsEventTemplateMetadata>[]>;
+    /**
+     * The title of the event to trigger.
+     */
+    title: pulumi.Input<string>;
+}
+
+export interface MetricEventsEventTemplateMetadata {
+    metadataKey: pulumi.Input<string>;
+    metadataValue: pulumi.Input<string>;
+}
+
+export interface MetricEventsModelProperties {
+    /**
+     * The alert condition of the model properties
+     */
+    alertCondition: pulumi.Input<string>;
+    /**
+     * The ability to set an alert on missing data in a metric. When enabled, missing data samples will contribute as violating samples defined in advanced model properties. We recommend to not alert on missing data for sparse timeseries as this leads to alert spam.
+     */
+    alertOnNoData: pulumi.Input<boolean>;
+    /**
+     * The number of one-minute samples within the evaluation window that must go back to normal to close the event.
+     */
+    dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of one-minute samples that form the sliding evaluation window.
+     */
+    samples: pulumi.Input<number>;
+    /**
+     * Controls how many times the signal fluctuation is added to the baseline to produce the actual threshold for alerting
+     */
+    signalFluctuation?: pulumi.Input<number>;
+    /**
+     * Raise an event if this value is violated
+     */
+    threshold?: pulumi.Input<number>;
+    /**
+     * Controls the width of the confidence band and larger values lead to a less sensitive model
+     */
+    tolerance?: pulumi.Input<number>;
+    /**
+     * Metric-key-based query definitions only support static thresholds.
+     */
+    type: pulumi.Input<string>;
+    /**
+     * The number of one-minute samples within the evaluation window that must violate to trigger an event.
+     */
+    violatingSamples: pulumi.Input<number>;
+}
+
+export interface MetricEventsQueryDefinition {
+    /**
+     * The aggregation of the query definition
+     */
+    aggregation?: pulumi.Input<string>;
+    /**
+     * The dimension filters of the query definition
+     */
+    dimensionFilter?: pulumi.Input<inputs.MetricEventsQueryDefinitionDimensionFilter>;
+    /**
+     * Use rule-based filters to define the scope this event monitors.
+     */
+    entityFilter?: pulumi.Input<inputs.MetricEventsQueryDefinitionEntityFilter>;
+    /**
+     * The metric key of the query definition
+     */
+    metricKey: pulumi.Input<string>;
+    /**
+     * To learn more, visit [Metric Selector](https://dt-url.net/metselad)
+     */
+    metricSelector?: pulumi.Input<string>;
+    /**
+     * Minute offset of sliding evaluation window for metrics with latency
+     */
+    queryOffset?: pulumi.Input<number>;
+    /**
+     * The type of query definition
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface MetricEventsQueryDefinitionDimensionFilter {
+    filters?: pulumi.Input<pulumi.Input<inputs.MetricEventsQueryDefinitionDimensionFilterFilter>[]>;
+}
+
+export interface MetricEventsQueryDefinitionDimensionFilterFilter {
+    dimensionKey: pulumi.Input<string>;
+    dimensionValue: pulumi.Input<string>;
+}
+
+export interface MetricEventsQueryDefinitionEntityFilter {
+    conditions?: pulumi.Input<pulumi.Input<inputs.MetricEventsQueryDefinitionEntityFilterCondition>[]>;
+    dimensionKey?: pulumi.Input<string>;
+}
+
+export interface MetricEventsQueryDefinitionEntityFilterCondition {
+    conditions?: pulumi.Input<pulumi.Input<inputs.MetricEventsQueryDefinitionEntityFilterConditionCondition>[]>;
+}
+
+export interface MetricEventsQueryDefinitionEntityFilterConditionCondition {
+    operator: pulumi.Input<string>;
+    type: pulumi.Input<string>;
+    value: pulumi.Input<string>;
+}
+
+export interface MetricMetadataDimensions {
+    dimensions: pulumi.Input<pulumi.Input<inputs.MetricMetadataDimensionsDimension>[]>;
+}
+
+export interface MetricMetadataDimensionsDimension {
+    /**
+     * Display name
+     */
+    displayName?: pulumi.Input<string>;
+    key: pulumi.Input<string>;
+}
+
+export interface MetricMetadataMetricProperties {
+    /**
+     * Whether (true or false) the metric is relevant to a problem's impact.
+     */
+    impactRelevant?: pulumi.Input<boolean>;
+    latency?: pulumi.Input<number>;
+    maxValue?: pulumi.Input<number>;
+    minValue?: pulumi.Input<number>;
+    rootCauseRelevant?: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `Error`, `Score`, `Unknown`
+     */
+    valueType: pulumi.Input<string>;
+}
+
+export interface MobileAppAnomaliesErrorRateIncrease {
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Alert if the percentage of user actions affected by reported errors exceeds **both** the absolute threshold and the relative threshold
+     */
+    errorRateIncreaseAuto?: pulumi.Input<inputs.MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto>;
+    /**
+     * Alert if the custom reported error rate threshold is exceeded during any 5-minute period
+     */
+    errorRateIncreaseFixed?: pulumi.Input<inputs.MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed>;
+}
+
+export interface MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto {
+    thresholdAbsolute: pulumi.Input<number>;
+    thresholdRelative: pulumi.Input<number>;
+}
+
+export interface MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed {
+    sensitivity: pulumi.Input<string>;
+    thresholdAbsolute: pulumi.Input<number>;
+}
+
+export interface MobileAppAnomaliesSlowUserActions {
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
+    slowUserActionsAuto?: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAuto>;
+    /**
+     * no documentation available
+     */
+    slowUserActionsFixed?: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixed>;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAuto {
+    durationAvoidOveralerting: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting>;
+    durationThresholdAll: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll>;
+    durationThresholdSlowest: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest>;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting {
+    minActionRate: pulumi.Input<number>;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll {
+    durationThreshold: pulumi.Input<number>;
+    slowdownPercentage: pulumi.Input<number>;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest {
+    durationThreshold: pulumi.Input<number>;
+    slowdownPercentage: pulumi.Input<number>;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixed {
+    durationAvoidOveralerting: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting>;
+    durationThresholdAllFixed: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed>;
+    durationThresholdSlowest: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest>;
+    sensitivity: pulumi.Input<string>;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting {
+    minActionRate: pulumi.Input<number>;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed {
+    durationThreshold: pulumi.Input<number>;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest {
+    durationThreshold: pulumi.Input<number>;
+}
+
+export interface MobileAppAnomaliesUnexpectedHighLoad {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic spikes within your application.
+     */
+    thresholdPercentage?: pulumi.Input<number>;
+}
+
+export interface MobileAppAnomaliesUnexpectedLowLoad {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic drops within your application.
+     */
+    thresholdPercentage?: pulumi.Input<number>;
+}
+
+export interface MobileAppCrashRateCrashRateIncrease {
+    /**
+     * Alert crash rate increases when auto-detected baseline is exceeded by a certain number of users
+     */
+    crashRateIncreaseAuto?: pulumi.Input<inputs.MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto>;
+    /**
+     * Alert crash rate increases when the defined threshold is exceeded by a certain number of users
+     */
+    crashRateIncreaseFixed?: pulumi.Input<inputs.MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed>;
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto {
+    baselineViolationPercentage: pulumi.Input<number>;
+    concurrentUsers: pulumi.Input<number>;
+    sensitivity: pulumi.Input<string>;
+}
+
+export interface MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed {
+    absoluteCrashRate: pulumi.Input<number>;
+    concurrentUsers: pulumi.Input<number>;
+}
+
+export interface MobileAppEnablementRum {
+    /**
+     * Percentage of user sessions captured and analyzed. By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application’s performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session.
+     */
+    costAndTrafficControl: pulumi.Input<number>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface MobileAppEnablementSessionReplay {
+    /**
+     * Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay](https://dt-url.net/t23s0ppi).
+     */
+    onCrash: pulumi.Input<boolean>;
+}
+
+export interface MobileAppRequestErrorsErrorRules {
+    errorRules: pulumi.Input<pulumi.Input<inputs.MobileAppRequestErrorsErrorRulesErrorRule>[]>;
+}
+
+export interface MobileAppRequestErrorsErrorRulesErrorRule {
+    errorCodes: pulumi.Input<string>;
+}
+
 export interface MobileApplicationApdex {
     /**
      * Apdex **frustrated** threshold, in milliseconds: a duration greater than or equal to this value is considered frustrated
@@ -5303,6 +7782,23 @@ export interface MobileApplicationPropertiesRequestAttribute {
     storeAsSessionProperty?: pulumi.Input<boolean>;
     storeAsUserActionProperty?: pulumi.Input<boolean>;
     type: pulumi.Input<string>;
+}
+
+export interface NetworkTrafficExcludeIp {
+    ipAddressForms: pulumi.Input<pulumi.Input<inputs.NetworkTrafficExcludeIpIpAddressForm>[]>;
+}
+
+export interface NetworkTrafficExcludeIpIpAddressForm {
+    ipAddress: pulumi.Input<string>;
+}
+
+export interface NetworkTrafficExcludeNic {
+    nicForms: pulumi.Input<pulumi.Input<inputs.NetworkTrafficExcludeNicNicForm>[]>;
+}
+
+export interface NetworkTrafficExcludeNicNicForm {
+    interface: pulumi.Input<string>;
+    os: pulumi.Input<string>;
 }
 
 export interface NotificationAnsibleTower {
@@ -5408,33 +7904,6 @@ export interface NotificationEmail {
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
-}
-
-export interface NotificationHipchat {
-    /**
-     * The configuration is enabled (`true`) or disabled (`false`)
-     */
-    active: pulumi.Input<boolean>;
-    /**
-     * The ID of the associated alerting profile
-     */
-    alertingProfile: pulumi.Input<string>;
-    /**
-     * The content of the notification message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
-     */
-    message: pulumi.Input<string>;
-    /**
-     * The name of the notification configuration
-     */
-    name: pulumi.Input<string>;
-    /**
-     * allows for configuring properties that are not explicitly supported by the current version of this provider
-     */
-    unknowns?: pulumi.Input<string>;
-    /**
-     * The URL of the HipChat WebHook.  This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
-     */
-    url?: pulumi.Input<string>;
 }
 
 export interface NotificationJira {
@@ -5783,6 +8252,242 @@ export interface NotificationXmatters {
 
 export interface NotificationXmattersHeader {
     name: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface OneagentUpdatesMaintenanceWindows {
+    maintenanceWindows: pulumi.Input<pulumi.Input<inputs.OneagentUpdatesMaintenanceWindowsMaintenanceWindow>[]>;
+}
+
+export interface OneagentUpdatesMaintenanceWindowsMaintenanceWindow {
+    maintenanceWindow: pulumi.Input<string>;
+}
+
+export interface OpentelemetryMetricsAdditionalAttributes {
+    additionalAttributes: pulumi.Input<pulumi.Input<inputs.OpentelemetryMetricsAdditionalAttributesAdditionalAttribute>[]>;
+}
+
+export interface OpentelemetryMetricsAdditionalAttributesAdditionalAttribute {
+    attributeKey: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface OpentelemetryMetricsToDropAttributes {
+    toDropAttributes: pulumi.Input<pulumi.Input<inputs.OpentelemetryMetricsToDropAttributesToDropAttribute>[]>;
+}
+
+export interface OpentelemetryMetricsToDropAttributesToDropAttribute {
+    attributeKey: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface OsServicesDetectionConditionsLinux {
+    linuxDetectionConditions: pulumi.Input<pulumi.Input<inputs.OsServicesDetectionConditionsLinuxLinuxDetectionCondition>[]>;
+}
+
+export interface OsServicesDetectionConditionsLinuxLinuxDetectionCondition {
+    condition?: pulumi.Input<string>;
+    property: pulumi.Input<string>;
+    startupCondition?: pulumi.Input<string>;
+}
+
+export interface OsServicesDetectionConditionsWindows {
+    detectionConditionsWindows: pulumi.Input<pulumi.Input<inputs.OsServicesDetectionConditionsWindowsDetectionConditionsWindow>[]>;
+}
+
+export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindow {
+    condition?: pulumi.Input<string>;
+    property: pulumi.Input<string>;
+    startupCondition?: pulumi.Input<string>;
+}
+
+export interface OsServicesMetadata {
+    items: pulumi.Input<pulumi.Input<inputs.OsServicesMetadataItem>[]>;
+}
+
+export interface OsServicesMetadataItem {
+    metadataKey: pulumi.Input<string>;
+    metadataValue: pulumi.Input<string>;
+}
+
+export interface OwnershipConfigOwnershipIdentifiers {
+    ownershipIdentifiers: pulumi.Input<pulumi.Input<inputs.OwnershipConfigOwnershipIdentifiersOwnershipIdentifier>[]>;
+}
+
+export interface OwnershipConfigOwnershipIdentifiersOwnershipIdentifier {
+    enabled: pulumi.Input<boolean>;
+    key: pulumi.Input<string>;
+}
+
+export interface OwnershipTeamsAdditionalInformation {
+    /**
+     * Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
+     */
+    additionalInformations: pulumi.Input<pulumi.Input<inputs.OwnershipTeamsAdditionalInformationAdditionalInformation>[]>;
+}
+
+export interface OwnershipTeamsAdditionalInformationAdditionalInformation {
+    key: pulumi.Input<string>;
+    url?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
+}
+
+export interface OwnershipTeamsContactDetails {
+    contactDetails: pulumi.Input<pulumi.Input<inputs.OwnershipTeamsContactDetailsContactDetail>[]>;
+}
+
+export interface OwnershipTeamsContactDetailsContactDetail {
+    email?: pulumi.Input<string>;
+    integrationType: pulumi.Input<string>;
+    jira?: pulumi.Input<inputs.OwnershipTeamsContactDetailsContactDetailJira>;
+    msTeams?: pulumi.Input<string>;
+    slackChannel?: pulumi.Input<string>;
+    url?: pulumi.Input<string>;
+}
+
+export interface OwnershipTeamsContactDetailsContactDetailJira {
+    defaultAssignee: pulumi.Input<string>;
+    project: pulumi.Input<string>;
+}
+
+export interface OwnershipTeamsLinks {
+    links: pulumi.Input<pulumi.Input<inputs.OwnershipTeamsLinksLink>[]>;
+}
+
+export interface OwnershipTeamsLinksLink {
+    linkType: pulumi.Input<string>;
+    url: pulumi.Input<string>;
+}
+
+export interface OwnershipTeamsResponsibilities {
+    /**
+     * Responsible for developing and maintaining high quality software. Development teams are responsible for making code changes to address performance regressions, errors, or security vulnerabilities.
+     */
+    development: pulumi.Input<boolean>;
+    /**
+     * Responsible for the administration, management, and support of the IT infrastructure including physical servers, virtualization, and cloud. Teams with infrastructure responsibility are responsible for addressing hardware issues, resource limits, and operating system vulnerabilities.
+     */
+    infrastructure: pulumi.Input<boolean>;
+    /**
+     * Responsible for ensuring that applications in development align with business needs and meet the usability requirements of users, stakeholders, customers, and external partners. Teams with line of business responsibility are responsible for understanding the customer experience and how it affects business goals.
+     */
+    lineOfBusiness: pulumi.Input<boolean>;
+    /**
+     * Responsible for deploying and managing software, with a focus on high availability and performance. Teams with operations responsibilities needs to understand the impact, priority, and team responsible for addressing problems detected by Dynatrace.
+     */
+    operations: pulumi.Input<boolean>;
+    /**
+     * Responsible for the security posture of the organization. Teams with security responsibility must understand the impact, priority, and team responsible for addressing security vulnerabilities.
+     */
+    security: pulumi.Input<boolean>;
+}
+
+export interface OwnershipTeamsSupplementaryIdentifiers {
+    supplementaryIdentifiers: pulumi.Input<pulumi.Input<inputs.OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier>[]>;
+}
+
+export interface OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier {
+    supplementaryIdentifier: pulumi.Input<string>;
+}
+
+export interface PgAnomaliesAvailability {
+    /**
+     * How to monitor the availability of the process group:  * `PROCESS_IMPACT`: Alert if any process of the group becomes unavailable.  * `MINIMUM_THRESHOLD`: Alert if the number of active processes in the group falls below the specified threshold.  * `OFF`: Availability monitoring is disabled.
+     */
+    method: pulumi.Input<string>;
+    /**
+     * Alert if the number of active processes in the group is lower than this value.
+     */
+    minimumThreshold?: pulumi.Input<number>;
+}
+
+export interface ProcessAvailabilityMetadata {
+    items: pulumi.Input<pulumi.Input<inputs.ProcessAvailabilityMetadataItem>[]>;
+}
+
+export interface ProcessAvailabilityMetadataItem {
+    key: pulumi.Input<string>;
+    value: pulumi.Input<string>;
+}
+
+export interface ProcessAvailabilityRules {
+    rules: pulumi.Input<pulumi.Input<inputs.ProcessAvailabilityRulesRule>[]>;
+}
+
+export interface ProcessAvailabilityRulesRule {
+    condition: pulumi.Input<string>;
+    property: pulumi.Input<string>;
+}
+
+export interface ProcessGroupDetectionGroupExtraction {
+    /**
+     * Optionally delimit this property between *From* and *To*.
+     */
+    delimiter: pulumi.Input<inputs.ProcessGroupDetectionGroupExtractionDelimiter>;
+    /**
+     * Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+     */
+    property: pulumi.Input<string>;
+    /**
+     * If this option is selected, the default Dynatrace behavior is disabled for these detected processes. Only this rule is used to separate the process group.
+     */
+    standaloneRule?: pulumi.Input<boolean>;
+}
+
+export interface ProcessGroupDetectionGroupExtractionDelimiter {
+    from?: pulumi.Input<string>;
+    removeIds: pulumi.Input<boolean>;
+    to?: pulumi.Input<string>;
+}
+
+export interface ProcessGroupDetectionInstanceExtraction {
+    /**
+     * Optionally delimit this property between *From* and *To*.
+     */
+    delimiter?: pulumi.Input<inputs.ProcessGroupDetectionInstanceExtractionDelimiter>;
+    /**
+     * Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+     */
+    property?: pulumi.Input<string>;
+}
+
+export interface ProcessGroupDetectionInstanceExtractionDelimiter {
+    from?: pulumi.Input<string>;
+    removeIds: pulumi.Input<boolean>;
+    to?: pulumi.Input<string>;
+}
+
+export interface ProcessGroupDetectionProcessDetection {
+    /**
+     * The substring to be contained in the value `property` refers to. Case Sensitive
+     */
+    containedString: pulumi.Input<string>;
+    /**
+     * Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+     */
+    property: pulumi.Input<string>;
+    /**
+     * Restrict this rule to specific process types. Note: Not all types can be detected at startup. Possible values: `PROCESS_TYPE_APACHE_HTTPD`, `PROCESS_TYPE_GLASSFISH`, `PROCESS_TYPE_GO`, `PROCESS_TYPE_IIS_APP_POOL`, `PROCESS_TYPE_JBOSS`, `PROCESS_TYPE_JAVA`, `PROCESS_TYPE_NGINX`, `PROCESS_TYPE_NODE_JS`, `PROCESS_TYPE_PHP`, `PROCESS_TYPE_TOMCAT`, `PROCESS_TYPE_WEBLOGIC`, `PROCESS_TYPE_WEBSPHERE`
+     */
+    restrictToProcessType?: pulumi.Input<string>;
+}
+
+export interface ProcessMonitoringRuleCondition {
+    /**
+     * supported only with OneAgent 1.167+
+     */
+    envVar?: pulumi.Input<string>;
+    /**
+     * Condition target
+     */
+    item: pulumi.Input<string>;
+    /**
+     * Condition operator
+     */
+    operator: pulumi.Input<string>;
+    /**
+     * Condition value
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -6784,6 +9489,7 @@ export interface RequestNamingConditions {
 export interface RequestNamingConditionsCondition {
     attribute: pulumi.Input<string>;
     comparison: pulumi.Input<inputs.RequestNamingConditionsConditionComparison>;
+    unknowns?: pulumi.Input<string>;
 }
 
 export interface RequestNamingConditionsConditionComparison {
@@ -6810,7 +9516,7 @@ export interface RequestNamingConditionsConditionComparison {
 export interface RequestNamingConditionsConditionComparisonBoolean {
     operator?: pulumi.Input<string>;
     unknowns?: pulumi.Input<string>;
-    value?: pulumi.Input<boolean>;
+    value: pulumi.Input<boolean>;
     values?: pulumi.Input<pulumi.Input<boolean>[]>;
 }
 
@@ -7023,6 +9729,24 @@ export interface RequestNamingPlaceholdersPlaceholderSourceServiceTagTagKey {
     key?: pulumi.Input<string>;
 }
 
+export interface ResourceAttributesKeys {
+    rules?: pulumi.Input<pulumi.Input<inputs.ResourceAttributesKeysRule>[]>;
+}
+
+export interface ResourceAttributesKeysRule {
+    attributeKey: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+    masking: pulumi.Input<string>;
+}
+
+export interface RumProviderBreakdownDomainNamePatternList {
+    domainNamePatterns: pulumi.Input<pulumi.Input<inputs.RumProviderBreakdownDomainNamePatternListDomainNamePattern>[]>;
+}
+
+export interface RumProviderBreakdownDomainNamePatternListDomainNamePattern {
+    pattern: pulumi.Input<string>;
+}
+
 export interface ServiceAnomaliesFailureRates {
     /**
      * Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%
@@ -7106,6 +9830,737 @@ export interface ServiceAnomaliesResponseTimesThresholds {
     sensitivity: pulumi.Input<string>;
     slowestMilliseconds: pulumi.Input<number>;
     unknowns?: pulumi.Input<string>;
+}
+
+export interface ServiceAnomaliesV2FailureRate {
+    /**
+     * . Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+     */
+    autoDetection?: pulumi.Input<inputs.ServiceAnomaliesV2FailureRateAutoDetection>;
+    /**
+     * Detection mode for increases in failure rate
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect increases in failure rate
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * . Alert if a given failure rate is exceeded during any 5-minute-period
+     */
+    fixedDetection?: pulumi.Input<inputs.ServiceAnomaliesV2FailureRateFixedDetection>;
+}
+
+export interface ServiceAnomaliesV2FailureRateAutoDetection {
+    absoluteIncrease: pulumi.Input<number>;
+    overAlertingProtection: pulumi.Input<inputs.ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection>;
+    relativeIncrease: pulumi.Input<number>;
+}
+
+export interface ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection {
+    minutesAbnormalState: pulumi.Input<number>;
+    requestsPerMinute: pulumi.Input<number>;
+}
+
+export interface ServiceAnomaliesV2FailureRateFixedDetection {
+    overAlertingProtection: pulumi.Input<inputs.ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection>;
+    sensitivity: pulumi.Input<string>;
+    threshold: pulumi.Input<number>;
+}
+
+export interface ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection {
+    minutesAbnormalState: pulumi.Input<number>;
+    requestsPerMinute: pulumi.Input<number>;
+}
+
+export interface ServiceAnomaliesV2LoadDrops {
+    /**
+     * Detect service load drops
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Threshold
+     */
+    loadDropPercent?: pulumi.Input<number>;
+    /**
+     * Time span
+     */
+    minutesAbnormalState?: pulumi.Input<number>;
+}
+
+export interface ServiceAnomaliesV2LoadSpikes {
+    /**
+     * Detect service load spikes
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Threshold
+     */
+    loadSpikePercent?: pulumi.Input<number>;
+    /**
+     * Time span
+     */
+    minutesAbnormalState?: pulumi.Input<number>;
+}
+
+export interface ServiceAnomaliesV2ResponseTime {
+    /**
+     * No documentation available
+     */
+    autoDetection?: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTimeAutoDetection>;
+    /**
+     * Detection mode for response time degradations
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect response time degradations
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * No documentation available
+     */
+    fixedDetection?: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTimeFixedDetection>;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeAutoDetection {
+    overAlertingProtection: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection>;
+    responseTimeAll: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll>;
+    responseTimeSlowest: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest>;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection {
+    minutesAbnormalState: pulumi.Input<number>;
+    requestsPerMinute: pulumi.Input<number>;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll {
+    degradationMilliseconds: pulumi.Input<number>;
+    degradationPercent: pulumi.Input<number>;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest {
+    slowestDegradationMilliseconds: pulumi.Input<number>;
+    slowestDegradationPercent: pulumi.Input<number>;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeFixedDetection {
+    overAlertingProtection: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection>;
+    responseTimeAll: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll>;
+    responseTimeSlowest: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest>;
+    sensitivity: pulumi.Input<string>;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection {
+    minutesAbnormalState: pulumi.Input<number>;
+    requestsPerMinute: pulumi.Input<number>;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll {
+    degradationMilliseconds: pulumi.Input<number>;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest {
+    slowestDegradationMilliseconds: pulumi.Input<number>;
+}
+
+export interface ServiceExternalWebRequestConditions {
+    conditions: pulumi.Input<pulumi.Input<inputs.ServiceExternalWebRequestConditionsCondition>[]>;
+}
+
+export interface ServiceExternalWebRequestConditionsCondition {
+    attribute: pulumi.Input<string>;
+    compareOperationType: pulumi.Input<string>;
+    frameworks?: pulumi.Input<pulumi.Input<string>[]>;
+    ignoreCase?: pulumi.Input<boolean>;
+    intValue?: pulumi.Input<number>;
+    intValues?: pulumi.Input<pulumi.Input<number>[]>;
+    ipRangeFrom?: pulumi.Input<string>;
+    ipRangeTo?: pulumi.Input<string>;
+    tagValues?: pulumi.Input<pulumi.Input<string>[]>;
+    textValues?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface ServiceExternalWebRequestIdContributors {
+    /**
+     * Application identifier
+     */
+    applicationId: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsApplicationId>;
+    /**
+     * URL context root
+     */
+    contextRoot: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsContextRoot>;
+    /**
+     * Let the Port contribute to the Service Id
+     */
+    portForServiceId: pulumi.Input<boolean>;
+    /**
+     * Public domain name
+     */
+    publicDomainName: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsPublicDomainName>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsApplicationId {
+    enableIdContributor: pulumi.Input<boolean>;
+    serviceIdContributor?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor {
+    contributionType: pulumi.Input<string>;
+    transformations?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations>;
+    valueOverride?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations {
+    transformations: pulumi.Input<pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation>[]>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: pulumi.Input<boolean>;
+    minDigitCount?: pulumi.Input<number>;
+    prefix?: pulumi.Input<string>;
+    replacementValue?: pulumi.Input<string>;
+    segmentCount?: pulumi.Input<number>;
+    selectIndex?: pulumi.Input<number>;
+    splitDelimiter?: pulumi.Input<string>;
+    suffix?: pulumi.Input<string>;
+    takeFromEnd?: pulumi.Input<boolean>;
+    transformationType: pulumi.Input<string>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride {
+    value: pulumi.Input<string>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsContextRoot {
+    enableIdContributor: pulumi.Input<boolean>;
+    serviceIdContributor?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor {
+    contributionType: pulumi.Input<string>;
+    segmentCount?: pulumi.Input<number>;
+    transformations?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations>;
+    valueOverride?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations {
+    transformations: pulumi.Input<pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation>[]>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: pulumi.Input<boolean>;
+    minDigitCount?: pulumi.Input<number>;
+    prefix?: pulumi.Input<string>;
+    replacementValue?: pulumi.Input<string>;
+    suffix?: pulumi.Input<string>;
+    transformationType: pulumi.Input<string>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride {
+    value: pulumi.Input<string>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsPublicDomainName {
+    enableIdContributor: pulumi.Input<boolean>;
+    serviceIdContributor?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor {
+    contributionType: pulumi.Input<string>;
+    copyFromHostName?: pulumi.Input<boolean>;
+    transformations?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformations>;
+    valueOverride?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverride>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformations {
+    transformations: pulumi.Input<pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformation>[]>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: pulumi.Input<boolean>;
+    minDigitCount?: pulumi.Input<number>;
+    prefix?: pulumi.Input<string>;
+    replacementValue?: pulumi.Input<string>;
+    segmentCount?: pulumi.Input<number>;
+    selectIndex?: pulumi.Input<number>;
+    splitDelimiter?: pulumi.Input<string>;
+    suffix?: pulumi.Input<string>;
+    takeFromEnd?: pulumi.Input<boolean>;
+    transformationType: pulumi.Input<string>;
+}
+
+export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverride {
+    value: pulumi.Input<string>;
+}
+
+export interface ServiceExternalWebServiceConditions {
+    conditions: pulumi.Input<pulumi.Input<inputs.ServiceExternalWebServiceConditionsCondition>[]>;
+}
+
+export interface ServiceExternalWebServiceConditionsCondition {
+    attribute: pulumi.Input<string>;
+    compareOperationType: pulumi.Input<string>;
+    frameworks?: pulumi.Input<pulumi.Input<string>[]>;
+    ignoreCase?: pulumi.Input<boolean>;
+    intValue?: pulumi.Input<number>;
+    intValues?: pulumi.Input<pulumi.Input<number>[]>;
+    ipRangeFrom?: pulumi.Input<string>;
+    ipRangeTo?: pulumi.Input<string>;
+    tagValues?: pulumi.Input<pulumi.Input<string>[]>;
+    textValues?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface ServiceExternalWebServiceIdContributors {
+    /**
+     * Detect the matching requests as web request services instead of web services.
+     */
+    detectAsWebRequestService: pulumi.Input<boolean>;
+    portForServiceId?: pulumi.Input<boolean>;
+    urlPath?: pulumi.Input<inputs.ServiceExternalWebServiceIdContributorsUrlPath>;
+}
+
+export interface ServiceExternalWebServiceIdContributorsUrlPath {
+    enableIdContributor: pulumi.Input<boolean>;
+    serviceIdContributor?: pulumi.Input<inputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor>;
+}
+
+export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor {
+    contributionType: pulumi.Input<string>;
+    transformations?: pulumi.Input<inputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations>;
+    valueOverride?: pulumi.Input<inputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride>;
+}
+
+export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations {
+    transformations: pulumi.Input<pulumi.Input<inputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation>[]>;
+}
+
+export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: pulumi.Input<boolean>;
+    minDigitCount?: pulumi.Input<number>;
+    prefix?: pulumi.Input<string>;
+    replacementValue?: pulumi.Input<string>;
+    segmentCount?: pulumi.Input<number>;
+    selectIndex?: pulumi.Input<number>;
+    splitDelimiter?: pulumi.Input<string>;
+    suffix?: pulumi.Input<string>;
+    takeFromEnd?: pulumi.Input<boolean>;
+    transformationType: pulumi.Input<string>;
+}
+
+export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride {
+    value: pulumi.Input<string>;
+}
+
+export interface ServiceFailureExceptionRules {
+    /**
+     * Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+     */
+    customErrorRules?: pulumi.Input<inputs.ServiceFailureExceptionRulesCustomErrorRules>;
+    /**
+     * There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+     */
+    customHandledExceptions?: pulumi.Input<inputs.ServiceFailureExceptionRulesCustomHandledExceptions>;
+    /**
+     * Ignore all exceptions
+     */
+    ignoreAllExceptions: pulumi.Input<boolean>;
+    /**
+     * Ignore span failure detection
+     */
+    ignoreSpanFailureDetection: pulumi.Input<boolean>;
+    /**
+     * Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+     */
+    ignoredExceptions?: pulumi.Input<inputs.ServiceFailureExceptionRulesIgnoredExceptions>;
+    /**
+     * Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+     */
+    successForcingExceptions?: pulumi.Input<inputs.ServiceFailureExceptionRulesSuccessForcingExceptions>;
+}
+
+export interface ServiceFailureExceptionRulesCustomErrorRules {
+    customErrorRules: pulumi.Input<pulumi.Input<inputs.ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule>[]>;
+}
+
+export interface ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule {
+    condition: pulumi.Input<inputs.ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition>;
+    requestAttribute: pulumi.Input<string>;
+}
+
+export interface ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition {
+    caseSensitive?: pulumi.Input<boolean>;
+    compareOperationType: pulumi.Input<string>;
+    doubleValue?: pulumi.Input<number>;
+    intValue?: pulumi.Input<number>;
+    textValue?: pulumi.Input<string>;
+}
+
+export interface ServiceFailureExceptionRulesCustomHandledExceptions {
+    customHandledExceptions: pulumi.Input<pulumi.Input<inputs.ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException>[]>;
+}
+
+export interface ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException {
+    classPattern?: pulumi.Input<string>;
+    messagePattern?: pulumi.Input<string>;
+}
+
+export interface ServiceFailureExceptionRulesIgnoredExceptions {
+    customHandledExceptions: pulumi.Input<pulumi.Input<inputs.ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledException>[]>;
+}
+
+export interface ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledException {
+    classPattern?: pulumi.Input<string>;
+    messagePattern?: pulumi.Input<string>;
+}
+
+export interface ServiceFailureExceptionRulesSuccessForcingExceptions {
+    customHandledExceptions: pulumi.Input<pulumi.Input<inputs.ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledException>[]>;
+}
+
+export interface ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledException {
+    classPattern?: pulumi.Input<string>;
+    messagePattern?: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebRequestConditions {
+    conditions: pulumi.Input<pulumi.Input<inputs.ServiceFullWebRequestConditionsCondition>[]>;
+}
+
+export interface ServiceFullWebRequestConditionsCondition {
+    attribute: pulumi.Input<string>;
+    compareOperationType: pulumi.Input<string>;
+    frameworks?: pulumi.Input<pulumi.Input<string>[]>;
+    ignoreCase?: pulumi.Input<boolean>;
+    intValue?: pulumi.Input<number>;
+    intValues?: pulumi.Input<pulumi.Input<number>[]>;
+    ipRangeFrom?: pulumi.Input<string>;
+    ipRangeTo?: pulumi.Input<string>;
+    tagValues?: pulumi.Input<pulumi.Input<string>[]>;
+    textValues?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface ServiceFullWebRequestIdContributors {
+    /**
+     * Application identifier
+     */
+    applicationId: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsApplicationId>;
+    /**
+     * The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+     */
+    contextRoot: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsContextRoot>;
+    /**
+     * Server Name
+     */
+    serverName: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsServerName>;
+}
+
+export interface ServiceFullWebRequestIdContributorsApplicationId {
+    enableIdContributor: pulumi.Input<boolean>;
+    serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor>;
+}
+
+export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor {
+    contributionType: pulumi.Input<string>;
+    transformations?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformations>;
+    valueOverride?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride>;
+}
+
+export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformations {
+    transformations: pulumi.Input<pulumi.Input<inputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation>[]>;
+}
+
+export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: pulumi.Input<boolean>;
+    minDigitCount?: pulumi.Input<number>;
+    prefix?: pulumi.Input<string>;
+    replacementValue?: pulumi.Input<string>;
+    segmentCount?: pulumi.Input<number>;
+    selectIndex?: pulumi.Input<number>;
+    splitDelimiter?: pulumi.Input<string>;
+    suffix?: pulumi.Input<string>;
+    takeFromEnd?: pulumi.Input<boolean>;
+    transformationType: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride {
+    value: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebRequestIdContributorsContextRoot {
+    enableIdContributor: pulumi.Input<boolean>;
+    serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributor>;
+}
+
+export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContributor {
+    contributionType: pulumi.Input<string>;
+    segmentCount?: pulumi.Input<number>;
+    transformations?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformations>;
+    valueOverride?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverride>;
+}
+
+export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformations {
+    transformations: pulumi.Input<pulumi.Input<inputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation>[]>;
+}
+
+export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: pulumi.Input<boolean>;
+    minDigitCount?: pulumi.Input<number>;
+    prefix?: pulumi.Input<string>;
+    replacementValue?: pulumi.Input<string>;
+    suffix?: pulumi.Input<string>;
+    transformationType: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverride {
+    value: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebRequestIdContributorsServerName {
+    enableIdContributor: pulumi.Input<boolean>;
+    serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributor>;
+}
+
+export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContributor {
+    contributionType: pulumi.Input<string>;
+    transformations?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformations>;
+    valueOverride?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverride>;
+}
+
+export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformations {
+    transformations: pulumi.Input<pulumi.Input<inputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformation>[]>;
+}
+
+export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: pulumi.Input<boolean>;
+    minDigitCount?: pulumi.Input<number>;
+    prefix?: pulumi.Input<string>;
+    replacementValue?: pulumi.Input<string>;
+    segmentCount?: pulumi.Input<number>;
+    selectIndex?: pulumi.Input<number>;
+    splitDelimiter?: pulumi.Input<string>;
+    suffix?: pulumi.Input<string>;
+    takeFromEnd?: pulumi.Input<boolean>;
+    transformationType: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverride {
+    value: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebServiceConditions {
+    conditions: pulumi.Input<pulumi.Input<inputs.ServiceFullWebServiceConditionsCondition>[]>;
+}
+
+export interface ServiceFullWebServiceConditionsCondition {
+    attribute: pulumi.Input<string>;
+    compareOperationType: pulumi.Input<string>;
+    frameworks?: pulumi.Input<pulumi.Input<string>[]>;
+    ignoreCase?: pulumi.Input<boolean>;
+    intValue?: pulumi.Input<number>;
+    intValues?: pulumi.Input<pulumi.Input<number>[]>;
+    ipRangeFrom?: pulumi.Input<string>;
+    ipRangeTo?: pulumi.Input<string>;
+    tagValues?: pulumi.Input<pulumi.Input<string>[]>;
+    textValues?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface ServiceFullWebServiceIdContributors {
+    applicationId?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsApplicationId>;
+    contextRoot?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsContextRoot>;
+    /**
+     * Detect the matching requests as full web services (false) or web request services (true).
+     */
+    detectAsWebRequestService: pulumi.Input<boolean>;
+    serverName?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsServerName>;
+    webServiceName?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceName>;
+    webServiceNamespace?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNamespace>;
+}
+
+export interface ServiceFullWebServiceIdContributorsApplicationId {
+    enableIdContributor: pulumi.Input<boolean>;
+    serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor>;
+}
+
+export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor {
+    contributionType: pulumi.Input<string>;
+    transformations?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformations>;
+    valueOverride?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverride>;
+}
+
+export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformations {
+    transformations: pulumi.Input<pulumi.Input<inputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformation>[]>;
+}
+
+export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: pulumi.Input<boolean>;
+    minDigitCount?: pulumi.Input<number>;
+    prefix?: pulumi.Input<string>;
+    replacementValue?: pulumi.Input<string>;
+    segmentCount?: pulumi.Input<number>;
+    selectIndex?: pulumi.Input<number>;
+    splitDelimiter?: pulumi.Input<string>;
+    suffix?: pulumi.Input<string>;
+    takeFromEnd?: pulumi.Input<boolean>;
+    transformationType: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverride {
+    value: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebServiceIdContributorsContextRoot {
+    enableIdContributor: pulumi.Input<boolean>;
+    serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributor>;
+}
+
+export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContributor {
+    contributionType: pulumi.Input<string>;
+    segmentCount?: pulumi.Input<number>;
+    transformations?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformations>;
+    valueOverride?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverride>;
+}
+
+export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformations {
+    transformations: pulumi.Input<pulumi.Input<inputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformation>[]>;
+}
+
+export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: pulumi.Input<boolean>;
+    minDigitCount?: pulumi.Input<number>;
+    prefix?: pulumi.Input<string>;
+    replacementValue?: pulumi.Input<string>;
+    suffix?: pulumi.Input<string>;
+    transformationType: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverride {
+    value: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebServiceIdContributorsServerName {
+    enableIdContributor: pulumi.Input<boolean>;
+    serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributor>;
+}
+
+export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContributor {
+    contributionType: pulumi.Input<string>;
+    transformations?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformations>;
+    valueOverride?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverride>;
+}
+
+export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformations {
+    transformations: pulumi.Input<pulumi.Input<inputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformation>[]>;
+}
+
+export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: pulumi.Input<boolean>;
+    minDigitCount?: pulumi.Input<number>;
+    prefix?: pulumi.Input<string>;
+    replacementValue?: pulumi.Input<string>;
+    segmentCount?: pulumi.Input<number>;
+    selectIndex?: pulumi.Input<number>;
+    splitDelimiter?: pulumi.Input<string>;
+    suffix?: pulumi.Input<string>;
+    takeFromEnd?: pulumi.Input<boolean>;
+    transformationType: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverride {
+    value: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceName {
+    enableIdContributor: pulumi.Input<boolean>;
+    serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor>;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor {
+    contributionType: pulumi.Input<string>;
+    transformations?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformations>;
+    valueOverride?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride>;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformations {
+    transformations: pulumi.Input<pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation>[]>;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: pulumi.Input<boolean>;
+    minDigitCount?: pulumi.Input<number>;
+    prefix?: pulumi.Input<string>;
+    replacementValue?: pulumi.Input<string>;
+    segmentCount?: pulumi.Input<number>;
+    selectIndex?: pulumi.Input<number>;
+    splitDelimiter?: pulumi.Input<string>;
+    suffix?: pulumi.Input<string>;
+    takeFromEnd?: pulumi.Input<boolean>;
+    transformationType: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride {
+    value: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNamespace {
+    enableIdContributor: pulumi.Input<boolean>;
+    serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor>;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor {
+    contributionType: pulumi.Input<string>;
+    transformations?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations>;
+    valueOverride?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride>;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations {
+    transformations: pulumi.Input<pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation>[]>;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: pulumi.Input<boolean>;
+    minDigitCount?: pulumi.Input<number>;
+    prefix?: pulumi.Input<string>;
+    replacementValue?: pulumi.Input<string>;
+    segmentCount?: pulumi.Input<number>;
+    selectIndex?: pulumi.Input<number>;
+    splitDelimiter?: pulumi.Input<string>;
+    suffix?: pulumi.Input<string>;
+    takeFromEnd?: pulumi.Input<boolean>;
+    transformationType: pulumi.Input<string>;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride {
+    value: pulumi.Input<string>;
+}
+
+export interface ServiceHttpFailureBrokenLinks {
+    /**
+     * If your application relies on other hosts at other domains, add the associated domain names here. Once configured, Dynatrace will consider 404s thrown by hosts at these domains to be service failures related to your application.
+     */
+    brokenLinkDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Consider 404 HTTP response codes as failures
+     */
+    http404NotFoundFailures: pulumi.Input<boolean>;
+}
+
+export interface ServiceHttpFailureHttpResponseCodes {
+    /**
+     * HTTP response codes which indicate client side errors
+     */
+    clientSideErrors: pulumi.Input<string>;
+    /**
+     * Treat missing HTTP response code as client side error
+     */
+    failOnMissingResponseCodeClientSide: pulumi.Input<boolean>;
+    /**
+     * Treat missing HTTP response code as server side errors
+     */
+    failOnMissingResponseCodeServerSide: pulumi.Input<boolean>;
+    /**
+     * HTTP response codes which indicate an error on the server side
+     */
+    serverSideErrors: pulumi.Input<string>;
 }
 
 export interface ServiceNamingCondition {
@@ -7908,6 +11363,86 @@ export interface ServiceNamingConditionConditionTechValue {
     verbatimType?: pulumi.Input<string>;
 }
 
+export interface SessionReplayWebPrivacyMaskingPresets {
+    /**
+     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+     */
+    playbackMaskingAllowListRules?: pulumi.Input<inputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules>;
+    /**
+     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+     */
+    playbackMaskingBlockListRules?: pulumi.Input<inputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules>;
+    /**
+     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) Possible Values: `MASK_ALL`, `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`
+     */
+    playbackMaskingPreset: pulumi.Input<string>;
+    /**
+     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+     */
+    recordingMaskingAllowListRules?: pulumi.Input<inputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules>;
+    /**
+     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+     */
+    recordingMaskingBlockListRules?: pulumi.Input<inputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules>;
+    /**
+     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) Possible Values: `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`, `MASK_ALL`
+     */
+    recordingMaskingPreset: pulumi.Input<string>;
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules {
+    allowListRules: pulumi.Input<pulumi.Input<inputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule>[]>;
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule {
+    attributeExpression?: pulumi.Input<string>;
+    cssExpression?: pulumi.Input<string>;
+    target: pulumi.Input<string>;
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules {
+    blockListRules: pulumi.Input<pulumi.Input<inputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule>[]>;
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule {
+    attributeExpression?: pulumi.Input<string>;
+    cssExpression?: pulumi.Input<string>;
+    hideUserInteraction?: pulumi.Input<boolean>;
+    target: pulumi.Input<string>;
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules {
+    allowListRules: pulumi.Input<pulumi.Input<inputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule>[]>;
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule {
+    attributeExpression?: pulumi.Input<string>;
+    cssExpression?: pulumi.Input<string>;
+    target: pulumi.Input<string>;
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules {
+    blockListRules: pulumi.Input<pulumi.Input<inputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule>[]>;
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule {
+    attributeExpression?: pulumi.Input<string>;
+    cssExpression?: pulumi.Input<string>;
+    hideUserInteraction?: pulumi.Input<boolean>;
+    target: pulumi.Input<string>;
+}
+
+export interface SloV2ErrorBudgetBurnRate {
+    /**
+     * Burn rate visualization enabled
+     */
+    burnRateVisualizationEnabled: pulumi.Input<boolean>;
+    /**
+     * The threshold defines when a burn rate is marked as fast-burning (high-emergency). Burn rates lower than this threshold (and greater than 1) are highlighted as slow-burn (low-emergency).
+     */
+    fastBurnThreshold?: pulumi.Input<number>;
+}
+
 export interface SpanCaptureRuleMatches {
     /**
      * Matching strategies for the Span
@@ -7953,6 +11488,103 @@ export interface SpanEntryPointMatchesMatch {
     value?: pulumi.Input<string>;
 }
 
+export interface UpdateWindowsDailyRecurrence {
+    every: pulumi.Input<number>;
+    recurrenceRange: pulumi.Input<inputs.UpdateWindowsDailyRecurrenceRecurrenceRange>;
+    updateTime: pulumi.Input<inputs.UpdateWindowsDailyRecurrenceUpdateTime>;
+}
+
+export interface UpdateWindowsDailyRecurrenceRecurrenceRange {
+    end: pulumi.Input<string>;
+    start: pulumi.Input<string>;
+}
+
+export interface UpdateWindowsDailyRecurrenceUpdateTime {
+    duration: pulumi.Input<number>;
+    startTime: pulumi.Input<string>;
+    timeZone: pulumi.Input<string>;
+}
+
+export interface UpdateWindowsMonthlyRecurrence {
+    every: pulumi.Input<number>;
+    recurrenceRange: pulumi.Input<inputs.UpdateWindowsMonthlyRecurrenceRecurrenceRange>;
+    selectedMonthDay: pulumi.Input<number>;
+    updateTime: pulumi.Input<inputs.UpdateWindowsMonthlyRecurrenceUpdateTime>;
+}
+
+export interface UpdateWindowsMonthlyRecurrenceRecurrenceRange {
+    end: pulumi.Input<string>;
+    start: pulumi.Input<string>;
+}
+
+export interface UpdateWindowsMonthlyRecurrenceUpdateTime {
+    duration: pulumi.Input<number>;
+    startTime: pulumi.Input<string>;
+    timeZone: pulumi.Input<string>;
+}
+
+export interface UpdateWindowsOnceRecurrence {
+    recurrenceRange: pulumi.Input<inputs.UpdateWindowsOnceRecurrenceRecurrenceRange>;
+}
+
+export interface UpdateWindowsOnceRecurrenceRecurrenceRange {
+    end: pulumi.Input<string>;
+    start: pulumi.Input<string>;
+}
+
+export interface UpdateWindowsWeeklyRecurrence {
+    every: pulumi.Input<number>;
+    recurrenceRange: pulumi.Input<inputs.UpdateWindowsWeeklyRecurrenceRecurrenceRange>;
+    selectedWeekDays: pulumi.Input<inputs.UpdateWindowsWeeklyRecurrenceSelectedWeekDays>;
+    updateTime: pulumi.Input<inputs.UpdateWindowsWeeklyRecurrenceUpdateTime>;
+}
+
+export interface UpdateWindowsWeeklyRecurrenceRecurrenceRange {
+    end: pulumi.Input<string>;
+    start: pulumi.Input<string>;
+}
+
+export interface UpdateWindowsWeeklyRecurrenceSelectedWeekDays {
+    friday: pulumi.Input<boolean>;
+    monday: pulumi.Input<boolean>;
+    saturday: pulumi.Input<boolean>;
+    sunday: pulumi.Input<boolean>;
+    thursday: pulumi.Input<boolean>;
+    tuesday: pulumi.Input<boolean>;
+    wednesday: pulumi.Input<boolean>;
+}
+
+export interface UpdateWindowsWeeklyRecurrenceUpdateTime {
+    duration: pulumi.Input<number>;
+    startTime: pulumi.Input<string>;
+    timeZone: pulumi.Input<string>;
+}
+
+export interface UserActionMetricsFilters {
+    filters: pulumi.Input<pulumi.Input<inputs.UserActionMetricsFiltersFilter>[]>;
+}
+
+export interface UserActionMetricsFiltersFilter {
+    fieldName: pulumi.Input<string>;
+    operator: pulumi.Input<string>;
+    /**
+     * Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
+     */
+    value?: pulumi.Input<string>;
+    valueIns?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface UserActionMetricsValue {
+    /**
+     * Field name
+     */
+    fieldName?: pulumi.Input<string>;
+    /**
+     * Possible Values: `COUNTER`, `FIELD`
+     */
+    type: pulumi.Input<string>;
+}
+
 export interface UserGroupPermissions {
     /**
      * A permission granted to one or multiple environments
@@ -7963,6 +11595,381 @@ export interface UserGroupPermissions {
 export interface UserGroupPermissionsGrant {
     environments?: pulumi.Input<pulumi.Input<string>[]>;
     permission: pulumi.Input<string>;
+}
+
+export interface UserSessionMetricsFilters {
+    filters: pulumi.Input<pulumi.Input<inputs.UserSessionMetricsFiltersFilter>[]>;
+}
+
+export interface UserSessionMetricsFiltersFilter {
+    fieldName: pulumi.Input<string>;
+    operator: pulumi.Input<string>;
+    /**
+     * Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
+     */
+    value?: pulumi.Input<string>;
+    valueIns?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface UserSessionMetricsValue {
+    /**
+     * Field name
+     */
+    fieldName?: pulumi.Input<string>;
+    /**
+     * Possible Values: `COUNTER`, `FIELD`
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface VmwareAnomaliesDroppedPacketsDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.VmwareAnomaliesDroppedPacketsDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface VmwareAnomaliesDroppedPacketsDetectionCustomThresholds {
+    droppedPacketsPerSecond: pulumi.Input<number>;
+}
+
+export interface VmwareAnomaliesEsxiHighCpuDetection {
+    /**
+     * Alert if **all three** conditions are met in 3 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.VmwareAnomaliesEsxiHighCpuDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface VmwareAnomaliesEsxiHighCpuDetectionCustomThresholds {
+    cpuPeakPercentage: pulumi.Input<number>;
+    cpuUsagePercentage: pulumi.Input<number>;
+    vmCpuReadyPercentage: pulumi.Input<number>;
+}
+
+export interface VmwareAnomaliesEsxiHighMemoryDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholds {
+    compressionDecompressionRate: pulumi.Input<number>;
+}
+
+export interface VmwareAnomaliesGuestCpuLimitDetection {
+    /**
+     * Alert if **all three** conditions are met in 3 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.VmwareAnomaliesGuestCpuLimitDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface VmwareAnomaliesGuestCpuLimitDetectionCustomThresholds {
+    hostCpuUsagePercentage: pulumi.Input<number>;
+    vmCpuReadyPercentage: pulumi.Input<number>;
+    vmCpuUsagePercentage: pulumi.Input<number>;
+}
+
+export interface VmwareAnomaliesLowDatastoreSpaceDetection {
+    /**
+     * Alert if the condition is met in 1 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholds {
+    freeSpacePercentage: pulumi.Input<number>;
+}
+
+export interface VmwareAnomaliesOverloadedStorageDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.VmwareAnomaliesOverloadedStorageDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface VmwareAnomaliesOverloadedStorageDetectionCustomThresholds {
+    commandAbortsNumber: pulumi.Input<number>;
+}
+
+export interface VmwareAnomaliesSlowPhysicalStorageDetection {
+    /**
+     * Alert if **any** condition is met in 4 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds {
+    avgReadWriteLatency: pulumi.Input<number>;
+    peakReadWriteLatency: pulumi.Input<number>;
+}
+
+export interface VmwareAnomaliesUndersizedStorageDetection {
+    /**
+     * Alert if **any** condition is met in 3 out of 5 samples
+     */
+    customThresholds?: pulumi.Input<inputs.VmwareAnomaliesUndersizedStorageDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface VmwareAnomaliesUndersizedStorageDetectionCustomThresholds {
+    averageQueueCommandLatency: pulumi.Input<number>;
+    peakQueueCommandLatency: pulumi.Input<number>;
+}
+
+export interface WebAppAnomaliesErrorRate {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Alert if the percentage of failing user actions increases by **both** the absolute and relative thresholds:
+     */
+    errorRateAuto?: pulumi.Input<inputs.WebAppAnomaliesErrorRateErrorRateAuto>;
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    errorRateDetectionMode?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
+    errorRateFixed?: pulumi.Input<inputs.WebAppAnomaliesErrorRateErrorRateFixed>;
+}
+
+export interface WebAppAnomaliesErrorRateErrorRateAuto {
+    absoluteIncrease: pulumi.Input<number>;
+    overAlertingProtection: pulumi.Input<inputs.WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection>;
+    relativeIncrease: pulumi.Input<number>;
+}
+
+export interface WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection {
+    actionsPerMinute: pulumi.Input<number>;
+    minutesAbnormalState: pulumi.Input<number>;
+}
+
+export interface WebAppAnomaliesErrorRateErrorRateFixed {
+    errorRateReqPerMin: pulumi.Input<number>;
+    errorRateSensitivity: pulumi.Input<string>;
+    maxFailureRateIncrease: pulumi.Input<number>;
+    minutesAbnormalState: pulumi.Input<number>;
+}
+
+export interface WebAppAnomaliesResponseTime {
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
+    responseTimeAuto?: pulumi.Input<inputs.WebAppAnomaliesResponseTimeResponseTimeAuto>;
+    /**
+     * no documentation available
+     */
+    responseTimeFixed?: pulumi.Input<inputs.WebAppAnomaliesResponseTimeResponseTimeFixed>;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeAuto {
+    overAlertingProtection: pulumi.Input<inputs.WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection>;
+    responseTimeAll: pulumi.Input<inputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll>;
+    responseTimeSlowest: pulumi.Input<inputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest>;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection {
+    actionsPerMinute: pulumi.Input<number>;
+    minutesAbnormalState: pulumi.Input<number>;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll {
+    degradationMilliseconds: pulumi.Input<number>;
+    degradationPercent: pulumi.Input<number>;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest {
+    slowestDegradationMilliseconds: pulumi.Input<number>;
+    slowestDegradationPercent: pulumi.Input<number>;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeFixed {
+    overAlertingProtection: pulumi.Input<inputs.WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection>;
+    responseTimeAll: pulumi.Input<inputs.WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll>;
+    responseTimeSlowest: pulumi.Input<inputs.WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest>;
+    sensitivity: pulumi.Input<string>;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection {
+    actionsPerMinute: pulumi.Input<number>;
+    minutesAbnormalState: pulumi.Input<number>;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll {
+    degradationMilliseconds: pulumi.Input<number>;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest {
+    slowestDegradationMilliseconds: pulumi.Input<number>;
+}
+
+export interface WebAppAnomaliesTrafficDrops {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Dynatrace learns your typical application traffic over an observation period of one week.
+     */
+    trafficDrops?: pulumi.Input<inputs.WebAppAnomaliesTrafficDropsTrafficDrops>;
+}
+
+export interface WebAppAnomaliesTrafficDropsTrafficDrops {
+    abnormalStateAbnormalState: pulumi.Input<number>;
+    trafficDropPercentage: pulumi.Input<number>;
+}
+
+export interface WebAppAnomaliesTrafficSpikes {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * Dynatrace learns your typical application traffic over an observation period of one week.
+     */
+    trafficSpikes?: pulumi.Input<inputs.WebAppAnomaliesTrafficSpikesTrafficSpikes>;
+}
+
+export interface WebAppAnomaliesTrafficSpikesTrafficSpikes {
+    minutesAbnormalState: pulumi.Input<number>;
+    trafficSpikePercentage: pulumi.Input<number>;
+}
+
+export interface WebAppCustomErrorsErrorRules {
+    errorRules: pulumi.Input<pulumi.Input<inputs.WebAppCustomErrorsErrorRulesErrorRule>[]>;
+}
+
+export interface WebAppCustomErrorsErrorRulesErrorRule {
+    captureSettings: pulumi.Input<inputs.WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings>;
+    keyMatcher: pulumi.Input<string>;
+    keyPattern?: pulumi.Input<string>;
+    valueMatcher: pulumi.Input<string>;
+    valuePattern?: pulumi.Input<string>;
+}
+
+export interface WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings {
+    capture: pulumi.Input<boolean>;
+    considerForAi?: pulumi.Input<boolean>;
+    impactApdex?: pulumi.Input<boolean>;
+}
+
+export interface WebAppEnablementRum {
+    /**
+     * (Field has overlap with `dynatrace.WebApplication`) Percentage of user sessions captured and analyzed
+     */
+    costAndTrafficControl: pulumi.Input<number>;
+    /**
+     * (Field has overlap with `dynatrace.WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface WebAppEnablementSessionReplay {
+    /**
+     * (Field has overlap with `dynatrace.WebApplication`) [Percentage of user sessions recorded with Session Replay](https://dt-url.net/sr-cost-traffic-control). For example, if you have 50% for RUM and 50% for Session Replay, it results in 25% of sessions recorded with Session Replay.
+     */
+    costAndTrafficControl: pulumi.Input<number>;
+    /**
+     * (Field has overlap with `dynatrace.WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface WebAppRequestErrorsErrorRules {
+    errorRules: pulumi.Input<pulumi.Input<inputs.WebAppRequestErrorsErrorRulesErrorRule>[]>;
+}
+
+export interface WebAppRequestErrorsErrorRulesErrorRule {
+    captureSettings: pulumi.Input<inputs.WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings>;
+    considerCspViolations: pulumi.Input<boolean>;
+    considerFailedImages: pulumi.Input<boolean>;
+    errorCodes?: pulumi.Input<string>;
+    filterSettings: pulumi.Input<inputs.WebAppRequestErrorsErrorRulesErrorRuleFilterSettings>;
+}
+
+export interface WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings {
+    capture: pulumi.Input<boolean>;
+    considerForAi?: pulumi.Input<boolean>;
+    impactApdex?: pulumi.Input<boolean>;
+}
+
+export interface WebAppRequestErrorsErrorRulesErrorRuleFilterSettings {
+    filter?: pulumi.Input<string>;
+    url?: pulumi.Input<string>;
 }
 
 export interface WebApplicationConversionGoals {
@@ -8280,19 +12287,19 @@ export interface WebApplicationMonitoringSettingsJavascriptInjectionRulesRule {
 
 export interface WebApplicationSessionReplayConfig {
     /**
-     * Session replay sampling rating in percent
+     * (Field has overlap with `dynatrace.WebAppEnablement`) Session replay sampling rating in percent
      */
     costControlPercentage: pulumi.Input<number>;
     /**
-     * A list of URLs to be excluded from CSS resource capturing
+     * (Field has overlap with `dynatrace.SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
      */
     cssResourceCapturingExclusionRules?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Capture (`true`) or don't capture (`false`) CSS resources from the session
+     * (Field has overlap with `dynatrace.SessionReplayResourceCapture`) Capture (`true`) or don't capture (`false`) CSS resources from the session
      */
     enableCssResourceCapturing?: pulumi.Input<boolean>;
     /**
-     * SessionReplay Enabled/Disabled
+     * (Field has overlap with `dynatrace.WebAppEnablement`) SessionReplay Enabled/Disabled
      */
     enabled?: pulumi.Input<boolean>;
 }
@@ -8468,10 +12475,11 @@ export interface WebApplicationUserTagsTag {
     /**
      * The ID of this resource.
      */
-    id: pulumi.Input<number>;
+    id?: pulumi.Input<number>;
     ignoreCase?: pulumi.Input<boolean>;
     metadataId?: pulumi.Input<number>;
     serverSideRequestAttribute?: pulumi.Input<string>;
+    uniqueId?: pulumi.Input<number>;
 }
 
 export interface WebApplicationWaterfallSettings {

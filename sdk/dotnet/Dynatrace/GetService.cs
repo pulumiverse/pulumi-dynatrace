@@ -26,6 +26,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
         /// using Dynatrace = Pulumi.Dynatrace;
@@ -69,6 +70,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
         /// using Dynatrace = Pulumi.Dynatrace;
@@ -105,6 +107,9 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 
+        [Input("operator")]
+        public string? Operator { get; set; }
+
         [Input("tags")]
         private List<string>? _tags;
 
@@ -127,6 +132,9 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
+
+        [Input("operator")]
+        public Input<string>? Operator { get; set; }
 
         [Input("tags")]
         private InputList<string>? _tags;
@@ -155,6 +163,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         public readonly string Id;
         public readonly string Name;
+        public readonly string? Operator;
         /// <summary>
         /// Required tags of the service to find
         /// </summary>
@@ -166,10 +175,13 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
 
             string name,
 
+            string? @operator,
+
             ImmutableArray<string> tags)
         {
             Id = id;
             Name = name;
+            Operator = @operator;
             Tags = tags;
         }
     }

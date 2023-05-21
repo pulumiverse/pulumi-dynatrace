@@ -22,6 +22,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
         /// using Dynatrace = Pulumi.Dynatrace;
@@ -36,7 +37,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         ///     var myWebhookNotification = new Dynatrace.WebhookNotification("myWebhookNotification", new()
         ///     {
         ///         Active = false,
-        ///         Profile = @default.Apply(getAlertingProfileResult =&gt; getAlertingProfileResult).Apply(@default =&gt; @default.Apply(getAlertingProfileResult =&gt; getAlertingProfileResult.Id)),
+        ///         Profile = @default.Apply(@default =&gt; @default.Apply(getAlertingProfileResult =&gt; getAlertingProfileResult.Id)),
         ///         Url = "https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e",
         ///         Insecure = true,
         ///         NotifyEventMerges = true,
@@ -62,6 +63,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
         /// using Dynatrace = Pulumi.Dynatrace;
@@ -76,7 +78,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         ///     var myWebhookNotification = new Dynatrace.WebhookNotification("myWebhookNotification", new()
         ///     {
         ///         Active = false,
-        ///         Profile = @default.Apply(getAlertingProfileResult =&gt; getAlertingProfileResult).Apply(@default =&gt; @default.Apply(getAlertingProfileResult =&gt; getAlertingProfileResult.Id)),
+        ///         Profile = @default.Apply(@default =&gt; @default.Apply(getAlertingProfileResult =&gt; getAlertingProfileResult.Id)),
         ///         Url = "https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e",
         ///         Insecure = true,
         ///         NotifyEventMerges = true,
@@ -124,15 +126,19 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string LegacyId;
         public readonly string Name;
 
         [OutputConstructor]
         private GetAlertingProfileResult(
             string id,
 
+            string legacyId,
+
             string name)
         {
             Id = id;
+            LegacyId = legacyId;
             Name = name;
         }
     }

@@ -20,7 +20,7 @@ public class SpanCaptureRule extends com.pulumi.resources.CustomResource {
      * Whether to create an entry point or not
      * 
      */
-    @Export(name="action", type=String.class, parameters={})
+    @Export(name="action", refs={String.class}, tree="[0]")
     private Output<String> action;
 
     /**
@@ -34,7 +34,7 @@ public class SpanCaptureRule extends com.pulumi.resources.CustomResource {
      * Matching strategies for the Span
      * 
      */
-    @Export(name="matches", type=SpanCaptureRuleMatches.class, parameters={})
+    @Export(name="matches", refs={SpanCaptureRuleMatches.class}, tree="[0]")
     private Output<SpanCaptureRuleMatches> matches;
 
     /**
@@ -48,7 +48,7 @@ public class SpanCaptureRule extends com.pulumi.resources.CustomResource {
      * The name of the rule
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**

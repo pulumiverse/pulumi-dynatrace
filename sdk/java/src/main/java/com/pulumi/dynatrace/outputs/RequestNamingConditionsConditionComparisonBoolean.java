@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class RequestNamingConditionsConditionComparisonBoolean {
     private @Nullable String operator;
     private @Nullable String unknowns;
-    private @Nullable Boolean value;
+    private Boolean value;
     private @Nullable List<Boolean> values;
 
     private RequestNamingConditionsConditionComparisonBoolean() {}
@@ -25,8 +25,8 @@ public final class RequestNamingConditionsConditionComparisonBoolean {
     public Optional<String> unknowns() {
         return Optional.ofNullable(this.unknowns);
     }
-    public Optional<Boolean> value() {
-        return Optional.ofNullable(this.value);
+    public Boolean value() {
+        return this.value;
     }
     public List<Boolean> values() {
         return this.values == null ? List.of() : this.values;
@@ -43,7 +43,7 @@ public final class RequestNamingConditionsConditionComparisonBoolean {
     public static final class Builder {
         private @Nullable String operator;
         private @Nullable String unknowns;
-        private @Nullable Boolean value;
+        private Boolean value;
         private @Nullable List<Boolean> values;
         public Builder() {}
         public Builder(RequestNamingConditionsConditionComparisonBoolean defaults) {
@@ -65,8 +65,8 @@ public final class RequestNamingConditionsConditionComparisonBoolean {
             return this;
         }
         @CustomType.Setter
-        public Builder value(@Nullable Boolean value) {
-            this.value = value;
+        public Builder value(Boolean value) {
+            this.value = Objects.requireNonNull(value);
             return this;
         }
         @CustomType.Setter

@@ -19,7 +19,6 @@ class NotificationArgs:
                  ansible_tower: Optional[pulumi.Input['NotificationAnsibleTowerArgs']] = None,
                  config: Optional[pulumi.Input['NotificationConfigArgs']] = None,
                  email: Optional[pulumi.Input['NotificationEmailArgs']] = None,
-                 hipchat: Optional[pulumi.Input['NotificationHipchatArgs']] = None,
                  jira: Optional[pulumi.Input['NotificationJiraArgs']] = None,
                  ops_genie: Optional[pulumi.Input['NotificationOpsGenieArgs']] = None,
                  pager_duty: Optional[pulumi.Input['NotificationPagerDutyArgs']] = None,
@@ -34,7 +33,6 @@ class NotificationArgs:
         :param pulumi.Input['NotificationAnsibleTowerArgs'] ansible_tower: Configuration for Ansible Tower Notification
         :param pulumi.Input['NotificationConfigArgs'] config: Configuration for Generic Notification
         :param pulumi.Input['NotificationEmailArgs'] email: Configuration for Email Notification
-        :param pulumi.Input['NotificationHipchatArgs'] hipchat: Configuration for HipChat Notification
         :param pulumi.Input['NotificationJiraArgs'] jira: Configuration for Jira Notification
         :param pulumi.Input['NotificationOpsGenieArgs'] ops_genie: Configuration for OpsGenie Notification
         :param pulumi.Input['NotificationPagerDutyArgs'] pager_duty: Configuration for PagerDuty Notification
@@ -51,8 +49,6 @@ class NotificationArgs:
             pulumi.set(__self__, "config", config)
         if email is not None:
             pulumi.set(__self__, "email", email)
-        if hipchat is not None:
-            pulumi.set(__self__, "hipchat", hipchat)
         if jira is not None:
             pulumi.set(__self__, "jira", jira)
         if ops_genie is not None:
@@ -107,18 +103,6 @@ class NotificationArgs:
     @email.setter
     def email(self, value: Optional[pulumi.Input['NotificationEmailArgs']]):
         pulumi.set(self, "email", value)
-
-    @property
-    @pulumi.getter
-    def hipchat(self) -> Optional[pulumi.Input['NotificationHipchatArgs']]:
-        """
-        Configuration for HipChat Notification
-        """
-        return pulumi.get(self, "hipchat")
-
-    @hipchat.setter
-    def hipchat(self, value: Optional[pulumi.Input['NotificationHipchatArgs']]):
-        pulumi.set(self, "hipchat", value)
 
     @property
     @pulumi.getter
@@ -235,7 +219,6 @@ class _NotificationState:
                  ansible_tower: Optional[pulumi.Input['NotificationAnsibleTowerArgs']] = None,
                  config: Optional[pulumi.Input['NotificationConfigArgs']] = None,
                  email: Optional[pulumi.Input['NotificationEmailArgs']] = None,
-                 hipchat: Optional[pulumi.Input['NotificationHipchatArgs']] = None,
                  jira: Optional[pulumi.Input['NotificationJiraArgs']] = None,
                  ops_genie: Optional[pulumi.Input['NotificationOpsGenieArgs']] = None,
                  pager_duty: Optional[pulumi.Input['NotificationPagerDutyArgs']] = None,
@@ -250,7 +233,6 @@ class _NotificationState:
         :param pulumi.Input['NotificationAnsibleTowerArgs'] ansible_tower: Configuration for Ansible Tower Notification
         :param pulumi.Input['NotificationConfigArgs'] config: Configuration for Generic Notification
         :param pulumi.Input['NotificationEmailArgs'] email: Configuration for Email Notification
-        :param pulumi.Input['NotificationHipchatArgs'] hipchat: Configuration for HipChat Notification
         :param pulumi.Input['NotificationJiraArgs'] jira: Configuration for Jira Notification
         :param pulumi.Input['NotificationOpsGenieArgs'] ops_genie: Configuration for OpsGenie Notification
         :param pulumi.Input['NotificationPagerDutyArgs'] pager_duty: Configuration for PagerDuty Notification
@@ -267,8 +249,6 @@ class _NotificationState:
             pulumi.set(__self__, "config", config)
         if email is not None:
             pulumi.set(__self__, "email", email)
-        if hipchat is not None:
-            pulumi.set(__self__, "hipchat", hipchat)
         if jira is not None:
             pulumi.set(__self__, "jira", jira)
         if ops_genie is not None:
@@ -323,18 +303,6 @@ class _NotificationState:
     @email.setter
     def email(self, value: Optional[pulumi.Input['NotificationEmailArgs']]):
         pulumi.set(self, "email", value)
-
-    @property
-    @pulumi.getter
-    def hipchat(self) -> Optional[pulumi.Input['NotificationHipchatArgs']]:
-        """
-        Configuration for HipChat Notification
-        """
-        return pulumi.get(self, "hipchat")
-
-    @hipchat.setter
-    def hipchat(self, value: Optional[pulumi.Input['NotificationHipchatArgs']]):
-        pulumi.set(self, "hipchat", value)
 
     @property
     @pulumi.getter
@@ -453,7 +421,6 @@ class Notification(pulumi.CustomResource):
                  ansible_tower: Optional[pulumi.Input[pulumi.InputType['NotificationAnsibleTowerArgs']]] = None,
                  config: Optional[pulumi.Input[pulumi.InputType['NotificationConfigArgs']]] = None,
                  email: Optional[pulumi.Input[pulumi.InputType['NotificationEmailArgs']]] = None,
-                 hipchat: Optional[pulumi.Input[pulumi.InputType['NotificationHipchatArgs']]] = None,
                  jira: Optional[pulumi.Input[pulumi.InputType['NotificationJiraArgs']]] = None,
                  ops_genie: Optional[pulumi.Input[pulumi.InputType['NotificationOpsGenieArgs']]] = None,
                  pager_duty: Optional[pulumi.Input[pulumi.InputType['NotificationPagerDutyArgs']]] = None,
@@ -471,7 +438,6 @@ class Notification(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['NotificationAnsibleTowerArgs']] ansible_tower: Configuration for Ansible Tower Notification
         :param pulumi.Input[pulumi.InputType['NotificationConfigArgs']] config: Configuration for Generic Notification
         :param pulumi.Input[pulumi.InputType['NotificationEmailArgs']] email: Configuration for Email Notification
-        :param pulumi.Input[pulumi.InputType['NotificationHipchatArgs']] hipchat: Configuration for HipChat Notification
         :param pulumi.Input[pulumi.InputType['NotificationJiraArgs']] jira: Configuration for Jira Notification
         :param pulumi.Input[pulumi.InputType['NotificationOpsGenieArgs']] ops_genie: Configuration for OpsGenie Notification
         :param pulumi.Input[pulumi.InputType['NotificationPagerDutyArgs']] pager_duty: Configuration for PagerDuty Notification
@@ -508,7 +474,6 @@ class Notification(pulumi.CustomResource):
                  ansible_tower: Optional[pulumi.Input[pulumi.InputType['NotificationAnsibleTowerArgs']]] = None,
                  config: Optional[pulumi.Input[pulumi.InputType['NotificationConfigArgs']]] = None,
                  email: Optional[pulumi.Input[pulumi.InputType['NotificationEmailArgs']]] = None,
-                 hipchat: Optional[pulumi.Input[pulumi.InputType['NotificationHipchatArgs']]] = None,
                  jira: Optional[pulumi.Input[pulumi.InputType['NotificationJiraArgs']]] = None,
                  ops_genie: Optional[pulumi.Input[pulumi.InputType['NotificationOpsGenieArgs']]] = None,
                  pager_duty: Optional[pulumi.Input[pulumi.InputType['NotificationPagerDutyArgs']]] = None,
@@ -530,7 +495,6 @@ class Notification(pulumi.CustomResource):
             __props__.__dict__["ansible_tower"] = ansible_tower
             __props__.__dict__["config"] = config
             __props__.__dict__["email"] = email
-            __props__.__dict__["hipchat"] = hipchat
             __props__.__dict__["jira"] = jira
             __props__.__dict__["ops_genie"] = ops_genie
             __props__.__dict__["pager_duty"] = pager_duty
@@ -553,7 +517,6 @@ class Notification(pulumi.CustomResource):
             ansible_tower: Optional[pulumi.Input[pulumi.InputType['NotificationAnsibleTowerArgs']]] = None,
             config: Optional[pulumi.Input[pulumi.InputType['NotificationConfigArgs']]] = None,
             email: Optional[pulumi.Input[pulumi.InputType['NotificationEmailArgs']]] = None,
-            hipchat: Optional[pulumi.Input[pulumi.InputType['NotificationHipchatArgs']]] = None,
             jira: Optional[pulumi.Input[pulumi.InputType['NotificationJiraArgs']]] = None,
             ops_genie: Optional[pulumi.Input[pulumi.InputType['NotificationOpsGenieArgs']]] = None,
             pager_duty: Optional[pulumi.Input[pulumi.InputType['NotificationPagerDutyArgs']]] = None,
@@ -573,7 +536,6 @@ class Notification(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['NotificationAnsibleTowerArgs']] ansible_tower: Configuration for Ansible Tower Notification
         :param pulumi.Input[pulumi.InputType['NotificationConfigArgs']] config: Configuration for Generic Notification
         :param pulumi.Input[pulumi.InputType['NotificationEmailArgs']] email: Configuration for Email Notification
-        :param pulumi.Input[pulumi.InputType['NotificationHipchatArgs']] hipchat: Configuration for HipChat Notification
         :param pulumi.Input[pulumi.InputType['NotificationJiraArgs']] jira: Configuration for Jira Notification
         :param pulumi.Input[pulumi.InputType['NotificationOpsGenieArgs']] ops_genie: Configuration for OpsGenie Notification
         :param pulumi.Input[pulumi.InputType['NotificationPagerDutyArgs']] pager_duty: Configuration for PagerDuty Notification
@@ -591,7 +553,6 @@ class Notification(pulumi.CustomResource):
         __props__.__dict__["ansible_tower"] = ansible_tower
         __props__.__dict__["config"] = config
         __props__.__dict__["email"] = email
-        __props__.__dict__["hipchat"] = hipchat
         __props__.__dict__["jira"] = jira
         __props__.__dict__["ops_genie"] = ops_genie
         __props__.__dict__["pager_duty"] = pager_duty
@@ -626,14 +587,6 @@ class Notification(pulumi.CustomResource):
         Configuration for Email Notification
         """
         return pulumi.get(self, "email")
-
-    @property
-    @pulumi.getter
-    def hipchat(self) -> pulumi.Output[Optional['outputs.NotificationHipchat']]:
-        """
-        Configuration for HipChat Notification
-        """
-        return pulumi.get(self, "hipchat")
 
     @property
     @pulumi.getter

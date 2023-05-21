@@ -23,7 +23,7 @@ public class CustomService extends com.pulumi.resources.CustomResource {
      * Custom service enabled/disabled
      * 
      */
-    @Export(name="enabled", type=Boolean.class, parameters={})
+    @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enabled;
 
     /**
@@ -37,7 +37,7 @@ public class CustomService extends com.pulumi.resources.CustomResource {
      * The name of the custom service, displayed in the UI
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -51,7 +51,7 @@ public class CustomService extends com.pulumi.resources.CustomResource {
      * The list of process groups the custom service should belong to
      * 
      */
-    @Export(name="processGroups", type=List.class, parameters={String.class})
+    @Export(name="processGroups", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> processGroups;
 
     /**
@@ -65,7 +65,7 @@ public class CustomService extends com.pulumi.resources.CustomResource {
      * The queue entry point flag. Set to `true` for custom messaging services
      * 
      */
-    @Export(name="queueEntryPoint", type=Boolean.class, parameters={})
+    @Export(name="queueEntryPoint", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> queueEntryPoint;
 
     /**
@@ -79,7 +79,7 @@ public class CustomService extends com.pulumi.resources.CustomResource {
      * The queue entry point type (IBM*MQ, JMS, KAFKA, MSMQ or RABBIT*MQ)
      * 
      */
-    @Export(name="queueEntryPointType", type=String.class, parameters={})
+    @Export(name="queueEntryPointType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> queueEntryPointType;
 
     /**
@@ -93,7 +93,7 @@ public class CustomService extends com.pulumi.resources.CustomResource {
      * The list of rules defining the custom service
      * 
      */
-    @Export(name="rules", type=List.class, parameters={CustomServiceRule.class})
+    @Export(name="rules", refs={List.class,CustomServiceRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<CustomServiceRule>> rules;
 
     /**
@@ -107,7 +107,7 @@ public class CustomService extends com.pulumi.resources.CustomResource {
      * Matcher applying to the file name (ENDS*WITH, EQUALS or STARTS*WITH). Default value is ENDS_WITH (if applicable)
      * 
      */
-    @Export(name="technology", type=String.class, parameters={})
+    @Export(name="technology", refs={String.class}, tree="[0]")
     private Output<String> technology;
 
     /**
@@ -121,7 +121,7 @@ public class CustomService extends com.pulumi.resources.CustomResource {
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**

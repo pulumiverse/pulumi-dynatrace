@@ -14,24 +14,23 @@ __all__ = ['NetworkZonesArgs', 'NetworkZones']
 @pulumi.input_type
 class NetworkZonesArgs:
     def __init__(__self__, *,
-                 enabled: Optional[pulumi.Input[bool]] = None):
+                 enabled: pulumi.Input[bool]):
         """
         The set of arguments for constructing a NetworkZones resource.
         :param pulumi.Input[bool] enabled: Network Zones are enabled (`true`) or disabled (`false`)
         """
-        if enabled is not None:
-            pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "enabled", enabled)
 
     @property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[bool]]:
+    def enabled(self) -> pulumi.Input[bool]:
         """
         Network Zones are enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[bool]]):
+    def enabled(self, value: pulumi.Input[bool]):
         pulumi.set(self, "enabled", value)
 
 
@@ -76,7 +75,7 @@ class NetworkZones(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: Optional[NetworkZonesArgs] = None,
+                 args: NetworkZonesArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a NetworkZones resource with the given unique name, props, and options.
@@ -105,6 +104,8 @@ class NetworkZones(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = NetworkZonesArgs.__new__(NetworkZonesArgs)
 
+            if enabled is None and not opts.urn:
+                raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
         super(NetworkZones, __self__).__init__(
             'dynatrace:index/networkZones:NetworkZones',
@@ -135,7 +136,7 @@ class NetworkZones(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def enabled(self) -> pulumi.Output[Optional[bool]]:
+    def enabled(self) -> pulumi.Output[bool]:
         """
         Network Zones are enabled (`true`) or disabled (`false`)
         """

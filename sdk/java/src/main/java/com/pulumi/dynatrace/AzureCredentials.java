@@ -25,7 +25,7 @@ public class AzureCredentials extends com.pulumi.resources.CustomResource {
      * The monitoring is enabled (`true`) or disabled (`false`).  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected
      * 
      */
-    @Export(name="active", type=Boolean.class, parameters={})
+    @Export(name="active", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> active;
 
     /**
@@ -39,7 +39,7 @@ public class AzureCredentials extends com.pulumi.resources.CustomResource {
      * The Application ID (also referred to as Client ID)  The combination of Application ID and Directory ID must be unique
      * 
      */
-    @Export(name="appId", type=String.class, parameters={})
+    @Export(name="appId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> appId;
 
     /**
@@ -53,7 +53,7 @@ public class AzureCredentials extends com.pulumi.resources.CustomResource {
      * The automatic capture of Azure tags is on (`true`) or off (`false`)
      * 
      */
-    @Export(name="autoTagging", type=Boolean.class, parameters={})
+    @Export(name="autoTagging", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> autoTagging;
 
     /**
@@ -67,7 +67,7 @@ public class AzureCredentials extends com.pulumi.resources.CustomResource {
      * The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
      * 
      */
-    @Export(name="directoryId", type=String.class, parameters={})
+    @Export(name="directoryId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> directoryId;
 
     /**
@@ -78,14 +78,14 @@ public class AzureCredentials extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.directoryId);
     }
     /**
-     * The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+     * The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
      * 
      */
-    @Export(name="key", type=String.class, parameters={})
+    @Export(name="key", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> key;
 
     /**
-     * @return The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+     * @return The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
      * 
      */
     public Output<Optional<String>> key() {
@@ -95,7 +95,7 @@ public class AzureCredentials extends com.pulumi.resources.CustomResource {
      * The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
      * 
      */
-    @Export(name="label", type=String.class, parameters={})
+    @Export(name="label", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> label;
 
     /**
@@ -109,7 +109,7 @@ public class AzureCredentials extends com.pulumi.resources.CustomResource {
      * A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
      * 
      */
-    @Export(name="monitorOnlyExcludingTagPairs", type=List.class, parameters={AzureCredentialsMonitorOnlyExcludingTagPair.class})
+    @Export(name="monitorOnlyExcludingTagPairs", refs={List.class,AzureCredentialsMonitorOnlyExcludingTagPair.class}, tree="[0,1]")
     private Output</* @Nullable */ List<AzureCredentialsMonitorOnlyExcludingTagPair>> monitorOnlyExcludingTagPairs;
 
     /**
@@ -123,7 +123,7 @@ public class AzureCredentials extends com.pulumi.resources.CustomResource {
      * A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
      * 
      */
-    @Export(name="monitorOnlyTagPairs", type=List.class, parameters={AzureCredentialsMonitorOnlyTagPair.class})
+    @Export(name="monitorOnlyTagPairs", refs={List.class,AzureCredentialsMonitorOnlyTagPair.class}, tree="[0,1]")
     private Output</* @Nullable */ List<AzureCredentialsMonitorOnlyTagPair>> monitorOnlyTagPairs;
 
     /**
@@ -137,7 +137,7 @@ public class AzureCredentials extends com.pulumi.resources.CustomResource {
      * Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
      * 
      */
-    @Export(name="monitorOnlyTaggedEntities", type=Boolean.class, parameters={})
+    @Export(name="monitorOnlyTaggedEntities", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> monitorOnlyTaggedEntities;
 
     /**
@@ -151,7 +151,7 @@ public class AzureCredentials extends com.pulumi.resources.CustomResource {
      * A list of Azure supporting services to be monitored. For each service there&#39;s a sublist of its metrics and the metrics&#39; dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
      * 
      */
-    @Export(name="supportingServices", type=List.class, parameters={AzureCredentialsSupportingService.class})
+    @Export(name="supportingServices", refs={List.class,AzureCredentialsSupportingService.class}, tree="[0,1]")
     private Output</* @Nullable */ List<AzureCredentialsSupportingService>> supportingServices;
 
     /**
@@ -162,10 +162,26 @@ public class AzureCredentials extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.supportingServices);
     }
     /**
+     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+     * manage them via WebUI without interference by Terraform.
+     * 
+     */
+    @Export(name="supportingServicesManagedInDynatrace", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> supportingServicesManagedInDynatrace;
+
+    /**
+     * @return If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+     * manage them via WebUI without interference by Terraform.
+     * 
+     */
+    public Output<Optional<Boolean>> supportingServicesManagedInDynatrace() {
+        return Codegen.optional(this.supportingServicesManagedInDynatrace);
+    }
+    /**
      * Any attributes that aren&#39;t yet supported by this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**
@@ -208,6 +224,9 @@ public class AzureCredentials extends com.pulumi.resources.CustomResource {
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "key"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

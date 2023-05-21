@@ -8,7 +8,6 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.dynatrace.inputs.NotificationAnsibleTowerArgs;
 import com.pulumi.dynatrace.inputs.NotificationConfigArgs;
 import com.pulumi.dynatrace.inputs.NotificationEmailArgs;
-import com.pulumi.dynatrace.inputs.NotificationHipchatArgs;
 import com.pulumi.dynatrace.inputs.NotificationJiraArgs;
 import com.pulumi.dynatrace.inputs.NotificationOpsGenieArgs;
 import com.pulumi.dynatrace.inputs.NotificationPagerDutyArgs;
@@ -70,21 +69,6 @@ public final class NotificationArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<NotificationEmailArgs>> email() {
         return Optional.ofNullable(this.email);
-    }
-
-    /**
-     * Configuration for HipChat Notification
-     * 
-     */
-    @Import(name="hipchat")
-    private @Nullable Output<NotificationHipchatArgs> hipchat;
-
-    /**
-     * @return Configuration for HipChat Notification
-     * 
-     */
-    public Optional<Output<NotificationHipchatArgs>> hipchat() {
-        return Optional.ofNullable(this.hipchat);
     }
 
     /**
@@ -228,7 +212,6 @@ public final class NotificationArgs extends com.pulumi.resources.ResourceArgs {
         this.ansibleTower = $.ansibleTower;
         this.config = $.config;
         this.email = $.email;
-        this.hipchat = $.hipchat;
         this.jira = $.jira;
         this.opsGenie = $.opsGenie;
         this.pagerDuty = $.pagerDuty;
@@ -319,27 +302,6 @@ public final class NotificationArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder email(NotificationEmailArgs email) {
             return email(Output.of(email));
-        }
-
-        /**
-         * @param hipchat Configuration for HipChat Notification
-         * 
-         * @return builder
-         * 
-         */
-        public Builder hipchat(@Nullable Output<NotificationHipchatArgs> hipchat) {
-            $.hipchat = hipchat;
-            return this;
-        }
-
-        /**
-         * @param hipchat Configuration for HipChat Notification
-         * 
-         * @return builder
-         * 
-         */
-        public Builder hipchat(NotificationHipchatArgs hipchat) {
-            return hipchat(Output.of(hipchat));
         }
 
         /**

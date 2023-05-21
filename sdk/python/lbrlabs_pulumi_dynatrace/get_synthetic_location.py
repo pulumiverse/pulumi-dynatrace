@@ -21,10 +21,13 @@ class GetSyntheticLocationResult:
     """
     A collection of values returned by getSyntheticLocation.
     """
-    def __init__(__self__, cloud_platform=None, id=None, ips=None, name=None, stage=None, status=None, type=None):
+    def __init__(__self__, cloud_platform=None, entity_id=None, id=None, ips=None, name=None, stage=None, status=None, type=None):
         if cloud_platform and not isinstance(cloud_platform, str):
             raise TypeError("Expected argument 'cloud_platform' to be a str")
         pulumi.set(__self__, "cloud_platform", cloud_platform)
+        if entity_id and not isinstance(entity_id, str):
+            raise TypeError("Expected argument 'entity_id' to be a str")
+        pulumi.set(__self__, "entity_id", entity_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -53,8 +56,16 @@ class GetSyntheticLocationResult:
         return pulumi.get(self, "cloud_platform")
 
     @property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> Optional[str]:
+        return pulumi.get(self, "entity_id")
+
+    @property
     @pulumi.getter
-    def id(self) -> Optional[str]:
+    def id(self) -> str:
+        """
+        The provider-assigned unique ID for this managed resource.
+        """
         return pulumi.get(self, "id")
 
     @property
@@ -90,6 +101,7 @@ class AwaitableGetSyntheticLocationResult(GetSyntheticLocationResult):
             yield self
         return GetSyntheticLocationResult(
             cloud_platform=self.cloud_platform,
+            entity_id=self.entity_id,
             id=self.id,
             ips=self.ips,
             name=self.name,
@@ -99,7 +111,7 @@ class AwaitableGetSyntheticLocationResult(GetSyntheticLocationResult):
 
 
 def get_synthetic_location(cloud_platform: Optional[str] = None,
-                           id: Optional[str] = None,
+                           entity_id: Optional[str] = None,
                            ips: Optional[Sequence[str]] = None,
                            name: Optional[str] = None,
                            stage: Optional[str] = None,
@@ -114,7 +126,7 @@ def get_synthetic_location(cloud_platform: Optional[str] = None,
     """
     __args__ = dict()
     __args__['cloudPlatform'] = cloud_platform
-    __args__['id'] = id
+    __args__['entityId'] = entity_id
     __args__['ips'] = ips
     __args__['name'] = name
     __args__['stage'] = stage
@@ -125,6 +137,7 @@ def get_synthetic_location(cloud_platform: Optional[str] = None,
 
     return AwaitableGetSyntheticLocationResult(
         cloud_platform=__ret__.cloud_platform,
+        entity_id=__ret__.entity_id,
         id=__ret__.id,
         ips=__ret__.ips,
         name=__ret__.name,
@@ -135,7 +148,7 @@ def get_synthetic_location(cloud_platform: Optional[str] = None,
 
 @_utilities.lift_output_func(get_synthetic_location)
 def get_synthetic_location_output(cloud_platform: Optional[pulumi.Input[Optional[str]]] = None,
-                                  id: Optional[pulumi.Input[Optional[str]]] = None,
+                                  entity_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   ips: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                   name: Optional[pulumi.Input[Optional[str]]] = None,
                                   stage: Optional[pulumi.Input[Optional[str]]] = None,

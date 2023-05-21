@@ -19,6 +19,7 @@ export interface AlertingFiltersFilter {
 
 export interface AlertingFiltersFilterCustom {
     description?: outputs.AlertingFiltersFilterCustomDescription;
+    metadata?: outputs.AlertingFiltersFilterCustomMetadata;
     title?: outputs.AlertingFiltersFilterCustomTitle;
 }
 
@@ -27,6 +28,19 @@ export interface AlertingFiltersFilterCustomDescription {
     enabled?: boolean;
     negate?: boolean;
     operator: string;
+    value: string;
+}
+
+export interface AlertingFiltersFilterCustomMetadata {
+    items: outputs.AlertingFiltersFilterCustomMetadataItems;
+}
+
+export interface AlertingFiltersFilterCustomMetadataItems {
+    filters: outputs.AlertingFiltersFilterCustomMetadataItemsFilter[];
+}
+
+export interface AlertingFiltersFilterCustomMetadataItemsFilter {
+    key: string;
     value: string;
 }
 
@@ -163,6 +177,16 @@ export interface AlertingRulesRule {
     tags?: string[];
 }
 
+export interface ApiDetectionConditions {
+    conditions: outputs.ApiDetectionConditionsCondition[];
+}
+
+export interface ApiDetectionConditionsCondition {
+    base: string;
+    matcher: string;
+    pattern: string;
+}
+
 export interface ApplicationAnomaliesFailureRate {
     /**
      * Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%
@@ -237,7 +261,7 @@ export interface ApplicationAnomaliesTrafficSpikes {
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacy {
     /**
-     * Content masking settings for Session Replay.
+     * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Content masking settings for Session Replay.
      */
     contentMaskingSettings: outputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettings;
     optIn?: boolean;
@@ -336,12 +360,6 @@ export interface AutotagEntitySelectorBasedRule {
     selector?: string;
     unknowns?: string;
     valueFormat?: string;
-}
-
-export interface AutotagMetadata {
-    clusterVersion?: string;
-    configurationVersions?: number[];
-    currentConfigurationVersions?: string[];
 }
 
 export interface AutotagRule {
@@ -1150,6 +1168,201 @@ export interface AutotagRuleConditionTechValue {
     verbatimType?: string;
 }
 
+export interface AutotagV2Rules {
+    rules: outputs.AutotagV2RulesRule[];
+}
+
+export interface AutotagV2RulesRule {
+    attributeRule?: outputs.AutotagV2RulesRuleAttributeRule;
+    enabled: boolean;
+    entitySelector?: string;
+    type: string;
+    valueFormat?: string;
+    valueNormalization: string;
+}
+
+export interface AutotagV2RulesRuleAttributeRule {
+    azureToPgpropagation?: boolean;
+    azureToServicePropagation?: boolean;
+    conditions: outputs.AutotagV2RulesRuleAttributeRuleConditions;
+    entityType: string;
+    hostToPgpropagation?: boolean;
+    pgToHostPropagation?: boolean;
+    pgToServicePropagation?: boolean;
+    serviceToHostPropagation?: boolean;
+    serviceToPgpropagation?: boolean;
+}
+
+export interface AutotagV2RulesRuleAttributeRuleConditions {
+    conditions: outputs.AutotagV2RulesRuleAttributeRuleConditionsCondition[];
+}
+
+export interface AutotagV2RulesRuleAttributeRuleConditionsCondition {
+    caseSensitive?: boolean;
+    dynamicKey?: string;
+    dynamicKeySource?: string;
+    entityId?: string;
+    enumValue?: string;
+    integerValue?: number;
+    key: string;
+    operator: string;
+    stringValue?: string;
+    tag?: string;
+}
+
+export interface AwsAnomaliesEc2CandidateHighCpuDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: outputs.AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholds {
+    cpuUsage: number;
+}
+
+export interface AwsAnomaliesElbHighConnectionErrorsDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: outputs.AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholds {
+    connectionErrorsPerMinute: number;
+}
+
+export interface AwsAnomaliesLambdaHighErrorRateDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: outputs.AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholds {
+    failedInvocationsRate: number;
+}
+
+export interface AwsAnomaliesRdsHighCpuDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: outputs.AwsAnomaliesRdsHighCpuDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface AwsAnomaliesRdsHighCpuDetectionCustomThresholds {
+    cpuUsage: number;
+}
+
+export interface AwsAnomaliesRdsHighMemoryDetection {
+    /**
+     * Alert if **both** conditions is met in 3 out of 5 samples
+     */
+    customThresholds?: outputs.AwsAnomaliesRdsHighMemoryDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface AwsAnomaliesRdsHighMemoryDetectionCustomThresholds {
+    freeMemory: number;
+    swapUsage: number;
+}
+
+export interface AwsAnomaliesRdsHighWriteReadLatencyDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: outputs.AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholds {
+    readWriteLatency: number;
+}
+
+export interface AwsAnomaliesRdsLowStorageDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: outputs.AwsAnomaliesRdsLowStorageDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface AwsAnomaliesRdsLowStorageDetectionCustomThresholds {
+    freeStoragePercentage: number;
+}
+
+export interface AwsAnomaliesRdsRestartsSequenceDetection {
+    /**
+     * Alert if the condition is met in 2 out of 20 samples
+     */
+    customThresholds?: outputs.AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds {
+    restartsPerMinute: number;
+}
+
 export interface AwsCredentialsAuthenticationData {
     /**
      * the access key
@@ -1160,9 +1373,9 @@ export interface AwsCredentialsAuthenticationData {
      */
     accountId?: string;
     /**
-     * the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
+     * (Read only) the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
      */
-    externalId?: string;
+    externalId: string;
     /**
      * the IAM role to be used by Dynatrace to get monitoring data
      */
@@ -1300,9 +1513,14 @@ export interface BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThre
 
 export interface BrowserMonitorAnomalyDetectionOutageHandling {
     globalOutage?: boolean;
+    globalOutagePolicies?: outputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy[];
     localOutage?: boolean;
     localOutagePolicies?: outputs.BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy[];
     retryOnError?: boolean;
+}
+
+export interface BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy {
+    consecutiveRuns: number;
 }
 
 export interface BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy {
@@ -1319,6 +1537,15 @@ export interface BrowserMonitorKeyPerformanceMetrics {
      * Defines the key performance metric for XHR actions. Supported values are `VISUALLY_COMPLETE`, `USER_ACTION_DURATION`, `TIME_TO_FIRST_BYTE` and `RESPONSE_END`.
      */
     xhrActionKpm: string;
+}
+
+export interface BrowserMonitorPerformanceThresholds {
+    thresholds: outputs.BrowserMonitorPerformanceThresholdsThreshold[];
+}
+
+export interface BrowserMonitorPerformanceThresholdsThreshold {
+    event: string;
+    threshold: number;
 }
 
 export interface BrowserMonitorScript {
@@ -1908,6 +2135,90 @@ export interface BrowserMonitorTagTag {
     value?: string;
 }
 
+export interface BusinessEventsOneagentEvent {
+    /**
+     * Event category
+     */
+    category: outputs.BusinessEventsOneagentEventCategory;
+    /**
+     * Additional attributes for the business event.
+     */
+    data?: outputs.BusinessEventsOneagentEventData;
+    /**
+     * Event provider
+     */
+    provider: outputs.BusinessEventsOneagentEventProvider;
+    /**
+     * Event type
+     */
+    type: outputs.BusinessEventsOneagentEventType;
+}
+
+export interface BusinessEventsOneagentEventCategory {
+    path?: string;
+    source?: string;
+    sourceType: string;
+}
+
+export interface BusinessEventsOneagentEventData {
+    eventDataFieldComplexes: outputs.BusinessEventsOneagentEventDataEventDataFieldComplex[];
+}
+
+export interface BusinessEventsOneagentEventDataEventDataFieldComplex {
+    name: string;
+    source: outputs.BusinessEventsOneagentEventDataEventDataFieldComplexSource;
+}
+
+export interface BusinessEventsOneagentEventDataEventDataFieldComplexSource {
+    path?: string;
+    source?: string;
+    sourceType: string;
+}
+
+export interface BusinessEventsOneagentEventProvider {
+    path?: string;
+    source?: string;
+    sourceType: string;
+}
+
+export interface BusinessEventsOneagentEventType {
+    path?: string;
+    source?: string;
+    sourceType: string;
+}
+
+export interface BusinessEventsOneagentTriggers {
+    triggers: outputs.BusinessEventsOneagentTriggersTrigger[];
+}
+
+export interface BusinessEventsOneagentTriggersTrigger {
+    caseSensitive?: boolean;
+    source: outputs.BusinessEventsOneagentTriggersTriggerSource;
+    type: string;
+    value?: string;
+}
+
+export interface BusinessEventsOneagentTriggersTriggerSource {
+    dataSource: string;
+    path?: string;
+}
+
+export interface BusinessEventsProcessingRuleTesting {
+    sampleEvent: string;
+}
+
+export interface BusinessEventsProcessingTransformationFields {
+    transformationFields: outputs.BusinessEventsProcessingTransformationFieldsTransformationField[];
+}
+
+export interface BusinessEventsProcessingTransformationFieldsTransformationField {
+    array: boolean;
+    name: string;
+    optional: boolean;
+    readonly: boolean;
+    type: string;
+}
+
 export interface CalculatedServiceMetricCondition {
     conditions?: outputs.CalculatedServiceMetricConditionCondition[];
 }
@@ -1915,6 +2226,7 @@ export interface CalculatedServiceMetricCondition {
 export interface CalculatedServiceMetricConditionCondition {
     attribute: string;
     comparison: outputs.CalculatedServiceMetricConditionConditionComparison;
+    unknowns?: string;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparison {
@@ -1941,7 +2253,7 @@ export interface CalculatedServiceMetricConditionConditionComparison {
 export interface CalculatedServiceMetricConditionConditionComparisonBoolean {
     operator?: string;
     unknowns?: string;
-    value?: boolean;
+    value: boolean;
     values?: boolean[];
 }
 
@@ -2169,6 +2481,108 @@ export interface CalculatedServiceMetricMetricDefinition {
     requestAttribute?: string;
 }
 
+export interface CloudappWorkloaddetectionCloudFoundry {
+    enabled: boolean;
+}
+
+export interface CloudappWorkloaddetectionDocker {
+    enabled: boolean;
+}
+
+export interface CloudappWorkloaddetectionKubernetes {
+    enabled: boolean;
+    filters?: outputs.CloudappWorkloaddetectionKubernetesFilters;
+}
+
+export interface CloudappWorkloaddetectionKubernetesFilters {
+    filters: outputs.CloudappWorkloaddetectionKubernetesFiltersFilter[];
+}
+
+export interface CloudappWorkloaddetectionKubernetesFiltersFilter {
+    enabled: boolean;
+    inclusionToggles: outputs.CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles;
+    matchFilter: outputs.CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter;
+}
+
+export interface CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles {
+    incBasepod: boolean;
+    incContainer: boolean;
+    incNamespace: boolean;
+    incProduct: boolean;
+    incStage: boolean;
+}
+
+export interface CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter {
+    matchOperator: string;
+    namespace?: string;
+}
+
+export interface CredentialsCredentialUsageSummary {
+    /**
+     * The number of uses
+     */
+    count: number;
+    /**
+     * Type of usage, `HTTP_MONITOR` or `BROWSER_MONITOR`
+     */
+    type: string;
+}
+
+export interface CredentialsExternal {
+    /**
+     * Required for Hashicorp Certificate. The ID of Credentials within the Certificate Vault holding the certificate
+     */
+    certificate?: string;
+    /**
+     * Required for Azure Client Secret. No further documentation available
+     */
+    clientSecret?: string;
+    /**
+     * Required for Azure Client Secret. No further documentation available
+     */
+    clientid?: string;
+    /**
+     * No documentation available
+     */
+    credentialsUsedForExternalSynchronizations?: string[];
+    /**
+     * No documentation available
+     */
+    passwordSecretName?: string;
+    /**
+     * Required for Hashicorp App Role or Hashicorp Certificate. No further documentation available
+     */
+    pathToCredentials?: string;
+    /**
+     * Required for Hashicorp App Role. No further documentation available
+     */
+    roleid?: string;
+    /**
+     * Required for Hashicorp App Role. The ID of Credentials within the Certificate Vault holding the secret id
+     */
+    secretid?: string;
+    /**
+     * Required for Azure Client Secret. No further documentation available
+     */
+    tenantid?: string;
+    /**
+     * No documentation available
+     */
+    tokenSecretName?: string;
+    /**
+     * No documentation available
+     */
+    usernameSecretName?: string;
+    /**
+     * Required for Hashicorp App Role. No further documentation available
+     */
+    vaultNamespace?: string;
+    /**
+     * No documentation available
+     */
+    vaultUrl?: string;
+}
+
 export interface CustomAnomaliesDimension {
     /**
      * A generic definition for a filter
@@ -2185,7 +2599,12 @@ export interface CustomAnomaliesDimension {
 }
 
 export interface CustomAnomaliesDimensionDimension {
+    index?: number;
     key?: string;
+    /**
+     * The name of the metric event displayed in the UI
+     */
+    name?: string;
     type: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2209,7 +2628,12 @@ export interface CustomAnomaliesDimensionEntityFilter {
 
 export interface CustomAnomaliesDimensionString {
     filter: outputs.CustomAnomaliesDimensionStringFilter;
+    index?: number;
     key?: string;
+    /**
+     * The name of the metric event displayed in the UI
+     */
+    name?: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
@@ -2434,6 +2858,156 @@ export interface CustomAnomaliesStrategyStatic {
     violatingSamples: number;
 }
 
+export interface CustomAppAnomaliesErrorRateIncrease {
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * Alert if the percentage of user actions affected by reported errors exceeds **both** the absolute threshold and the relative threshold
+     */
+    errorRateIncreaseAuto?: outputs.CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto;
+    /**
+     * Alert if the custom reported error rate threshold is exceeded during any 5-minute period
+     */
+    errorRateIncreaseFixed?: outputs.CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed;
+}
+
+export interface CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto {
+    thresholdAbsolute: number;
+    thresholdRelative: number;
+}
+
+export interface CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed {
+    sensitivity: string;
+    thresholdAbsolute: number;
+}
+
+export interface CustomAppAnomaliesSlowUserActions {
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * no documentation available
+     */
+    slowUserActionsAuto?: outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAuto;
+    /**
+     * no documentation available
+     */
+    slowUserActionsFixed?: outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixed;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAuto {
+    durationAvoidOveralerting: outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting;
+    durationThresholdAll: outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll;
+    durationThresholdSlowest: outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting {
+    minActionRate: number;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll {
+    durationThreshold: number;
+    slowdownPercentage: number;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest {
+    durationThreshold: number;
+    slowdownPercentage: number;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixed {
+    durationAvoidOveralerting: outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting;
+    durationThresholdAllFixed: outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed;
+    durationThresholdSlowest: outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest;
+    sensitivity: string;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting {
+    minActionRate: number;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed {
+    durationThreshold: number;
+}
+
+export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest {
+    durationThreshold: number;
+}
+
+export interface CustomAppAnomaliesUnexpectedHighLoad {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic spikes within your application.
+     */
+    thresholdPercentage?: number;
+}
+
+export interface CustomAppAnomaliesUnexpectedLowLoad {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic drops within your application.
+     */
+    thresholdPercentage?: number;
+}
+
+export interface CustomAppCrashRateCrashRateIncrease {
+    /**
+     * Alert crash rate increases when auto-detected baseline is exceeded by a certain number of users
+     */
+    crashRateIncreaseAuto?: outputs.CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto;
+    /**
+     * Alert crash rate increases when the defined threshold is exceeded by a certain number of users
+     */
+    crashRateIncreaseFixed?: outputs.CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed;
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto {
+    baselineViolationPercentage: number;
+    concurrentUsers: number;
+    sensitivity: string;
+}
+
+export interface CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed {
+    absoluteCrashRate: number;
+    concurrentUsers: number;
+}
+
+export interface CustomAppEnablementRum {
+    /**
+     * (Field has overlap with `dynatrace.MobileApplication`) Percentage of user sessions captured and analyzed. By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application’s performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session.
+     */
+    costAndTrafficControl: number;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
 export interface CustomServiceRule {
     /**
      * Additional annotations filter of the rule. Only classes where all listed annotations are available in the class itself or any of its superclasses are instrumented. Not applicable to PHP
@@ -2451,10 +3025,6 @@ export interface CustomServiceRule {
      * The PHP file containing the class or methods to instrument. Required for PHP custom service. Not applicable to Java and .NET
      */
     file?: outputs.CustomServiceRuleFile;
-    /**
-     * The ID of the detection rule
-     */
-    id: string;
     /**
      * methods to instrument
      */
@@ -2500,6 +3070,19 @@ export interface CustomServiceRuleMethod {
     visibility?: string;
 }
 
+export interface CustomTagsTags {
+    /**
+     * A Tag Filter
+     */
+    filters?: outputs.CustomTagsTagsFilter[];
+}
+
+export interface CustomTagsTagsFilter {
+    context: string;
+    key: string;
+    value?: string;
+}
+
 export interface DashboardDashboardMetadata {
     /**
      * The tile uses consistent colors when rendering its content
@@ -2527,16 +3110,24 @@ export interface DashboardDashboardMetadata {
     preset?: boolean;
     /**
      * the dashboard is shared (`true`) or private (`false`)
+     *
+     * @deprecated Please use the resource `dynatrace_dashboard_sharing` to configure share settings
      */
     shared?: boolean;
     /**
      * represents sharing configuration of a dashboard
+     *
+     * @deprecated Please use the resource `dynatrace_dashboard_sharing` to configure share settings
      */
     sharingDetails?: outputs.DashboardDashboardMetadataSharingDetails;
     /**
      * a set of tags assigned to the dashboard
      */
     tags?: string[];
+    /**
+     * No documentation available
+     */
+    tilesNameSize?: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
@@ -2549,11 +3140,23 @@ export interface DashboardDashboardMetadata {
 
 export interface DashboardDashboardMetadataDynamicFilters {
     filters: string[];
+    genericTagFilters?: outputs.DashboardDashboardMetadataDynamicFiltersGenericTagFilters;
     tagSuggestionTypes?: string[];
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+}
+
+export interface DashboardDashboardMetadataDynamicFiltersGenericTagFilters {
+    filters: outputs.DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilter[];
+}
+
+export interface DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilter {
+    entityTypes: string[];
+    name?: string;
+    suggestionsFromEntityType?: string;
+    tagKey?: string;
 }
 
 export interface DashboardDashboardMetadataFilter {
@@ -2623,6 +3226,7 @@ export interface DashboardSharingPublic {
      * A list of management zones that can display data on the publicly shared dashboard.
      */
     managementZones: string[];
+    urls: {[key: string]: string};
 }
 
 export interface DashboardTile {
@@ -2630,6 +3234,10 @@ export interface DashboardTile {
      * The list of Dynatrace entities, assigned to the tile
      */
     assignedEntities?: string[];
+    /**
+     * Auto Refresh is disabled (`true`)
+     */
+    autoRefreshDisabled?: boolean;
     /**
      * the position and size of a tile
      */
@@ -2830,6 +3438,68 @@ export interface DashboardTileVisualizationConfig {
     unknowns?: string;
 }
 
+export interface DashboardsAllowlistAllowlist {
+    urlpatterns: outputs.DashboardsAllowlistAllowlistUrlpattern[];
+}
+
+export interface DashboardsAllowlistAllowlistUrlpattern {
+    rule: string;
+    template: string;
+}
+
+export interface DashboardsGeneralDefaultDashboardList {
+    defaultDashboards: outputs.DashboardsGeneralDefaultDashboardListDefaultDashboard[];
+}
+
+export interface DashboardsGeneralDefaultDashboardListDefaultDashboard {
+    dashboard: string;
+    userGroup: string;
+}
+
+export interface DashboardsPresetsDashboardPresetsList {
+    dashboardPresets: outputs.DashboardsPresetsDashboardPresetsListDashboardPreset[];
+}
+
+export interface DashboardsPresetsDashboardPresetsListDashboardPreset {
+    dashboardPreset: string;
+    userGroup: string;
+}
+
+export interface DataPrivacyDataCollection {
+    /**
+     * With [Data-collection and opt-in mode](https://dt-url.net/7l3p0p3h) enabled, Real User Monitoring data isn't captured until dtrum.enable() is called for specific user sessions.
+     */
+    optInModeEnabled: boolean;
+}
+
+export interface DataPrivacyDoNotTrack {
+    /**
+     * Comply with "Do Not Track" browser settings
+     */
+    complyWithDoNotTrack: boolean;
+    /**
+     * Possible Values: `Anonymous`, `Disable_rum`
+     */
+    doNotTrack?: string;
+}
+
+export interface DataPrivacyMasking {
+    ipAddressMasking?: string;
+    /**
+     * Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
+     */
+    ipAddressMaskingEnabled: boolean;
+    personalDataUriMaskingEnabled: boolean;
+    userActionMaskingEnabled: boolean;
+}
+
+export interface DataPrivacyUserTracking {
+    /**
+     * When enabled, Dynatrace places a [persistent cookie](https://dt-url.net/313o0p4n) on all end-user devices to identify returning users.
+     */
+    persistentCookieEnabled: boolean;
+}
+
 export interface DatabaseAnomaliesDbConnectFailures {
     /**
      * Number of failed database connections during any **eval_period** minutes period to trigger an alert
@@ -2920,6 +3590,247 @@ export interface DatabaseAnomaliesResponseTimeThresholds {
     unknowns?: string;
 }
 
+export interface DatabaseAnomaliesV2DatabaseConnections {
+    /**
+     * Detect failed database connects
+     */
+    enabled: boolean;
+    /**
+     * Threshold
+     */
+    maxFailedConnects?: number;
+    /**
+     * Time span
+     */
+    timePeriod?: number;
+}
+
+export interface DatabaseAnomaliesV2FailureRate {
+    /**
+     * Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+     */
+    autoDetection?: outputs.DatabaseAnomaliesV2FailureRateAutoDetection;
+    /**
+     * Detection mode for increases in failure rate
+     */
+    detectionMode?: string;
+    /**
+     * Detect increases in failure rate
+     */
+    enabled: boolean;
+    /**
+     * Alert if a given failure rate is exceeded during any 5-minute-period
+     */
+    fixedDetection?: outputs.DatabaseAnomaliesV2FailureRateFixedDetection;
+}
+
+export interface DatabaseAnomaliesV2FailureRateAutoDetection {
+    absoluteIncrease: number;
+    overAlertingProtection: outputs.DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection;
+    relativeIncrease: number;
+}
+
+export interface DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection {
+    minutesAbnormalState: number;
+    requestsPerMinute: number;
+}
+
+export interface DatabaseAnomaliesV2FailureRateFixedDetection {
+    overAlertingProtection: outputs.DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection;
+    sensitivity: string;
+    threshold: number;
+}
+
+export interface DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection {
+    minutesAbnormalState: number;
+    requestsPerMinute: number;
+}
+
+export interface DatabaseAnomaliesV2LoadDrops {
+    /**
+     * Detect service load drops
+     */
+    enabled: boolean;
+    /**
+     * Threshold
+     */
+    loadDropPercent?: number;
+    /**
+     * Time span
+     */
+    minutesAbnormalState?: number;
+}
+
+export interface DatabaseAnomaliesV2LoadSpikes {
+    /**
+     * Detect service load spikes
+     */
+    enabled: boolean;
+    /**
+     * Threshold
+     */
+    loadSpikePercent?: number;
+    /**
+     * Time span
+     */
+    minutesAbnormalState?: number;
+}
+
+export interface DatabaseAnomaliesV2ResponseTime {
+    /**
+     * no documentation available
+     */
+    autoDetection?: outputs.DatabaseAnomaliesV2ResponseTimeAutoDetection;
+    /**
+     * Detection mode for response time degradations
+     */
+    detectionMode?: string;
+    /**
+     * Detect response time degradations
+     */
+    enabled: boolean;
+    /**
+     * no documentation available
+     */
+    fixedDetection?: outputs.DatabaseAnomaliesV2ResponseTimeFixedDetection;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeAutoDetection {
+    overAlertingProtection: outputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection;
+    responseTimeAll: outputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll;
+    responseTimeSlowest: outputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection {
+    minutesAbnormalState: number;
+    requestsPerMinute: number;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll {
+    degradationMilliseconds: number;
+    degradationPercent: number;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest {
+    slowestDegradationMilliseconds: number;
+    slowestDegradationPercent: number;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeFixedDetection {
+    overAlertingProtection: outputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection;
+    responseTimeAll: outputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll;
+    responseTimeSlowest: outputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest;
+    sensitivity: string;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection {
+    minutesAbnormalState: number;
+    requestsPerMinute: number;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll {
+    degradationMilliseconds: number;
+}
+
+export interface DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest {
+    slowestDegradationMilliseconds: number;
+}
+
+export interface DduPoolEvents {
+    /**
+     * Is the limit configuration enabled
+     */
+    enabled: boolean;
+    /**
+     * Type of the limit applied: MONTHLY or ANNUAL
+     */
+    type?: string;
+    /**
+     * Value of the DDU limit applied for provided timerange
+     */
+    value?: number;
+}
+
+export interface DduPoolLogMonitoring {
+    /**
+     * Is the limit configuration enabled
+     */
+    enabled: boolean;
+    /**
+     * Type of the limit applied: MONTHLY or ANNUAL
+     */
+    type?: string;
+    /**
+     * Value of the DDU limit applied for provided timerange
+     */
+    value?: number;
+}
+
+export interface DduPoolMetrics {
+    /**
+     * Is the limit configuration enabled
+     */
+    enabled: boolean;
+    /**
+     * Type of the limit applied: MONTHLY or ANNUAL
+     */
+    type?: string;
+    /**
+     * Value of the DDU limit applied for provided timerange
+     */
+    value?: number;
+}
+
+export interface DduPoolServerless {
+    /**
+     * Is the limit configuration enabled
+     */
+    enabled: boolean;
+    /**
+     * Type of the limit applied: MONTHLY or ANNUAL
+     */
+    type?: string;
+    /**
+     * Value of the DDU limit applied for provided timerange
+     */
+    value?: number;
+}
+
+export interface DduPoolTraces {
+    /**
+     * Is the limit configuration enabled
+     */
+    enabled: boolean;
+    /**
+     * Type of the limit applied: MONTHLY or ANNUAL
+     */
+    type?: string;
+    /**
+     * Value of the DDU limit applied for provided timerange
+     */
+    value?: number;
+}
+
+export interface DeclarativeGroupingDetection {
+    processDefinitions: outputs.DeclarativeGroupingDetectionProcessDefinition[];
+}
+
+export interface DeclarativeGroupingDetectionProcessDefinition {
+    id: string;
+    processGroupName: string;
+    report: string;
+    rules?: outputs.DeclarativeGroupingDetectionProcessDefinitionRules;
+}
+
+export interface DeclarativeGroupingDetectionProcessDefinitionRules {
+    rules: outputs.DeclarativeGroupingDetectionProcessDefinitionRulesRule[];
+}
+
+export interface DeclarativeGroupingDetectionProcessDefinitionRulesRule {
+    condition: string;
+    property: string;
+}
+
 export interface DiskAnomaliesDiskName {
     /**
      * Possible values are: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS` and `STARTS_WITH`
@@ -2942,6 +3853,140 @@ export interface DiskAnomaliesTagsFilter {
     context: string;
     key: string;
     value?: string;
+}
+
+export interface DiskAnomaliesV2Disk {
+    /**
+     * no documentation available
+     */
+    diskLowInodesDetection: outputs.DiskAnomaliesV2DiskDiskLowInodesDetection;
+    /**
+     * no documentation available
+     */
+    diskLowSpaceDetection: outputs.DiskAnomaliesV2DiskDiskLowSpaceDetection;
+    /**
+     * no documentation available
+     */
+    diskSlowWritesAndReadsDetection: outputs.DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetection;
+}
+
+export interface DiskAnomaliesV2DiskDiskLowInodesDetection {
+    customThresholds?: outputs.DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds;
+    detectionMode?: string;
+    enabled: boolean;
+}
+
+export interface DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds {
+    freeInodesPercentage: number;
+}
+
+export interface DiskAnomaliesV2DiskDiskLowSpaceDetection {
+    customThresholds?: outputs.DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds;
+    detectionMode?: string;
+    enabled: boolean;
+}
+
+export interface DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds {
+    freeSpacePercentage: number;
+}
+
+export interface DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetection {
+    customThresholds?: outputs.DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds;
+    detectionMode?: string;
+    enabled: boolean;
+}
+
+export interface DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds {
+    writeAndReadTime: number;
+}
+
+export interface DiskAnomalyRulesDiskNameFilter {
+    /**
+     * Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS`, `STARTS_WITH`
+     */
+    operator: string;
+    /**
+     * Matching text
+     */
+    value?: string;
+}
+
+export interface DiskAnomalyRulesSampleLimit {
+    /**
+     * .. within the last
+     */
+    samples: number;
+    /**
+     * Minimum number of violating samples
+     */
+    violatingSamples: number;
+}
+
+export interface DiskOptionsExclusions {
+    exclusions: outputs.DiskOptionsExclusionsExclusion[];
+}
+
+export interface DiskOptionsExclusionsExclusion {
+    filesystem?: string;
+    mountpoint?: string;
+    os: string;
+}
+
+export interface DiskSpecificAnomaliesV2DiskLowInodesDetection {
+    /**
+     * no documentation available
+     */
+    customThresholds?: outputs.DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholds;
+    /**
+     * Detection mode for low inodes number available
+     */
+    detectionMode?: string;
+    /**
+     * Detect low inodes number available
+     */
+    enabled: boolean;
+}
+
+export interface DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholds {
+    freeInodesPercentage: number;
+}
+
+export interface DiskSpecificAnomaliesV2DiskLowSpaceDetection {
+    /**
+     * no documentation available
+     */
+    customThresholds?: outputs.DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholds;
+    /**
+     * Detection mode for low disk space
+     */
+    detectionMode?: string;
+    /**
+     * Detect low disk space
+     */
+    enabled: boolean;
+}
+
+export interface DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholds {
+    freeSpacePercentage: number;
+}
+
+export interface DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection {
+    /**
+     * no documentation available
+     */
+    customThresholds?: outputs.DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholds;
+    /**
+     * Detection mode for slow running disks
+     */
+    detectionMode?: string;
+    /**
+     * Detect slow-running disks
+     */
+    enabled: boolean;
+}
+
+export interface DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholds {
+    writeAndReadTime: number;
 }
 
 export interface EnvironmentQuotas {
@@ -3017,7 +4062,7 @@ export interface EnvironmentStorageLimits {
 }
 
 export interface EnvironmentStorageRetention {
-    logs: number;
+    logs?: number;
     rum: number;
     serviceCodeLevel: number;
     serviceRequestLevel: number;
@@ -3025,19 +4070,244 @@ export interface EnvironmentStorageRetention {
     synthetic: number;
 }
 
-export interface GetSyntheticLocationsLocations {
+export interface FailureDetectionParametersBrokenLinks {
     /**
-     * The name of the location
+     * If your application relies on other hosts at other domains, add the associated domain names here. Once configured, Dynatrace will consider 404s thrown by hosts at these domains to be service failures related to your application.
      */
-    locations?: outputs.GetSyntheticLocationsLocationsLocation[];
+    brokenLinkDomains?: string[];
+    /**
+     * Consider 404 HTTP response codes as failures
+     */
+    http404NotFoundFailures: boolean;
 }
 
-export interface GetSyntheticLocationsLocationsLocation {
-    cloudPlatform: string;
+export interface FailureDetectionParametersExceptionRules {
+    /**
+     * Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+     */
+    customErrorRules?: outputs.FailureDetectionParametersExceptionRulesCustomErrorRules;
+    /**
+     * There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+     */
+    customHandledExceptions?: outputs.FailureDetectionParametersExceptionRulesCustomHandledExceptions;
+    /**
+     * Ignore all exceptions
+     */
+    ignoreAllExceptions: boolean;
+    /**
+     * Ignore span failure detection
+     */
+    ignoreSpanFailureDetection: boolean;
+    /**
+     * Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+     */
+    ignoredExceptions?: outputs.FailureDetectionParametersExceptionRulesIgnoredExceptions;
+    /**
+     * Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+     */
+    successForcingExceptions?: outputs.FailureDetectionParametersExceptionRulesSuccessForcingExceptions;
+}
+
+export interface FailureDetectionParametersExceptionRulesCustomErrorRules {
+    customErrorRules: outputs.FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule[];
+}
+
+export interface FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule {
+    condition: outputs.FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition;
+    requestAttribute: string;
+}
+
+export interface FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition {
+    caseSensitive?: boolean;
+    compareOperationType: string;
+    doubleValue?: number;
+    intValue?: number;
+    textValue?: string;
+}
+
+export interface FailureDetectionParametersExceptionRulesCustomHandledExceptions {
+    customHandledExceptions: outputs.FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledException[];
+}
+
+export interface FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledException {
+    classPattern?: string;
+    messagePattern?: string;
+}
+
+export interface FailureDetectionParametersExceptionRulesIgnoredExceptions {
+    customHandledExceptions: outputs.FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledException[];
+}
+
+export interface FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledException {
+    classPattern?: string;
+    messagePattern?: string;
+}
+
+export interface FailureDetectionParametersExceptionRulesSuccessForcingExceptions {
+    customHandledExceptions: outputs.FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledException[];
+}
+
+export interface FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledException {
+    classPattern?: string;
+    messagePattern?: string;
+}
+
+export interface FailureDetectionParametersHttpResponseCodes {
+    /**
+     * HTTP response codes which indicate client side errors
+     */
+    clientSideErrors: string;
+    /**
+     * Treat missing HTTP response code as client side error
+     */
+    failOnMissingResponseCodeClientSide: boolean;
+    /**
+     * Treat missing HTTP response code as server side errors
+     */
+    failOnMissingResponseCodeServerSide: boolean;
+    /**
+     * HTTP response codes which indicate an error on the server side
+     */
+    serverSideErrors: string;
+}
+
+export interface FailureDetectionRulesConditions {
+    conditions: outputs.FailureDetectionRulesConditionsCondition[];
+}
+
+export interface FailureDetectionRulesConditionsCondition {
+    attribute: string;
+    predicate: outputs.FailureDetectionRulesConditionsConditionPredicate;
+}
+
+export interface FailureDetectionRulesConditionsConditionPredicate {
+    caseSensitive?: boolean;
+    managementZones?: string[];
+    predicateType: string;
+    serviceTypes?: string[];
+    tagKeys?: string[];
+    tags?: string[];
+    textValues?: string[];
+}
+
+export interface GenericRelationshipsSources {
+    sources: outputs.GenericRelationshipsSourcesSource[];
+}
+
+export interface GenericRelationshipsSourcesSource {
+    condition?: string;
+    mappingRules?: outputs.GenericRelationshipsSourcesSourceMappingRules;
+    sourceType: string;
+}
+
+export interface GenericRelationshipsSourcesSourceMappingRules {
+    mappingRules: outputs.GenericRelationshipsSourcesSourceMappingRulesMappingRule[];
+}
+
+export interface GenericRelationshipsSourcesSourceMappingRulesMappingRule {
+    destinationProperty: string;
+    destinationTransformation: string;
+    sourceProperty: string;
+    sourceTransformation: string;
+}
+
+export interface GenericTypesRules {
+    rules: outputs.GenericTypesRulesRule[];
+}
+
+export interface GenericTypesRulesRule {
+    attributes?: outputs.GenericTypesRulesRuleAttributes;
+    iconPattern?: string;
+    idPattern: string;
+    instanceNamePattern?: string;
+    requiredDimensions?: outputs.GenericTypesRulesRuleRequiredDimensions;
+    role?: string;
+    sources: outputs.GenericTypesRulesRuleSources;
+}
+
+export interface GenericTypesRulesRuleAttributes {
+    attributes: outputs.GenericTypesRulesRuleAttributesAttribute[];
+}
+
+export interface GenericTypesRulesRuleAttributesAttribute {
+    /**
+     * The human readable type name for this entity type.
+     */
+    displayName?: string;
+    key: string;
+    pattern: string;
+}
+
+export interface GenericTypesRulesRuleRequiredDimensions {
+    requiredDimensions: outputs.GenericTypesRulesRuleRequiredDimensionsRequiredDimension[];
+}
+
+export interface GenericTypesRulesRuleRequiredDimensionsRequiredDimension {
+    key: string;
+    valuePattern?: string;
+}
+
+export interface GenericTypesRulesRuleSources {
+    sources: outputs.GenericTypesRulesRuleSourcesSource[];
+}
+
+export interface GenericTypesRulesRuleSourcesSource {
+    condition?: string;
+    sourceType: string;
+}
+
+export interface GetAlertingProfilesValue {
     /**
      * The ID of this resource.
      */
-    id?: string;
+    id: string;
+    legacyId: string;
+    managementZoneId: string;
+    managementZoneLegacyId: string;
+    name: string;
+}
+
+export interface GetEntitiesEntities {
+    /**
+     * A list of monitored entities.
+     */
+    entities?: outputs.GetEntitiesEntitiesEntity[];
+}
+
+export interface GetEntitiesEntitiesEntity {
+    displayName?: string;
+    entityId?: string;
+    tags?: outputs.GetEntitiesEntitiesEntityTag[];
+    type?: string;
+}
+
+export interface GetEntitiesEntitiesEntityTag {
+    tags?: outputs.GetEntitiesEntitiesEntityTagTag[];
+}
+
+export interface GetEntitiesEntitiesEntityTagTag {
+    context: string;
+    key: string;
+    stringRepresentation?: string;
+    value?: string;
+}
+
+export interface GetManagementZonesValue {
+    description: string;
+    /**
+     * The ID of this resource.
+     */
+    id: string;
+    legacyId: string;
+    name: string;
+}
+
+export interface GetSyntheticLocationsLocations {
+    /**
+     * The cloud provider where the location is hosted.
+     */
+    cloudPlatform: string;
+    entityId?: string;
     ips: string[];
     name?: string;
     stage: string;
@@ -3254,6 +4524,271 @@ export interface HostAnomaliesNetworkUtilization {
 
 export interface HostAnomaliesNetworkUtilizationThresholds {
     utilization: number;
+}
+
+export interface HostAnomaliesV2Host {
+    /**
+     * no documentation available
+     */
+    connectionLostDetection: outputs.HostAnomaliesV2HostConnectionLostDetection;
+    /**
+     * no documentation available
+     */
+    highCpuSaturationDetection: outputs.HostAnomaliesV2HostHighCpuSaturationDetection;
+    /**
+     * no documentation available
+     */
+    highGcActivityDetection: outputs.HostAnomaliesV2HostHighGcActivityDetection;
+    /**
+     * no documentation available
+     */
+    highMemoryDetection: outputs.HostAnomaliesV2HostHighMemoryDetection;
+    /**
+     * no documentation available
+     */
+    highSystemLoadDetection: outputs.HostAnomaliesV2HostHighSystemLoadDetection;
+    /**
+     * no documentation available
+     */
+    outOfMemoryDetection: outputs.HostAnomaliesV2HostOutOfMemoryDetection;
+    /**
+     * no documentation available
+     */
+    outOfThreadsDetection: outputs.HostAnomaliesV2HostOutOfThreadsDetection;
+}
+
+export interface HostAnomaliesV2HostConnectionLostDetection {
+    enabled: boolean;
+    onGracefulShutdowns?: string;
+}
+
+export interface HostAnomaliesV2HostHighCpuSaturationDetection {
+    customThresholds?: outputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds;
+    detectionMode?: string;
+    enabled: boolean;
+}
+
+export interface HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds {
+    cpuSaturation: number;
+    eventThresholds: outputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds;
+}
+
+export interface HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: number;
+    dealertingSamples: number;
+    violatingEvaluationWindow: number;
+    violatingSamples: number;
+}
+
+export interface HostAnomaliesV2HostHighGcActivityDetection {
+    customThresholds?: outputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds;
+    detectionMode?: string;
+    enabled: boolean;
+}
+
+export interface HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds {
+    eventThresholds: outputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds;
+    gcSuspensionPercentage: number;
+    gcTimePercentage: number;
+}
+
+export interface HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: number;
+    dealertingSamples: number;
+    violatingEvaluationWindow: number;
+    violatingSamples: number;
+}
+
+export interface HostAnomaliesV2HostHighMemoryDetection {
+    customThresholds?: outputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholds;
+    detectionMode?: string;
+    enabled: boolean;
+}
+
+export interface HostAnomaliesV2HostHighMemoryDetectionCustomThresholds {
+    eventThresholds: outputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds;
+    pageFaultsPerSecondNonWindows: number;
+    pageFaultsPerSecondWindows: number;
+    usedMemoryPercentageNonWindows: number;
+    usedMemoryPercentageWindows: number;
+}
+
+export interface HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: number;
+    dealertingSamples: number;
+    violatingEvaluationWindow: number;
+    violatingSamples: number;
+}
+
+export interface HostAnomaliesV2HostHighSystemLoadDetection {
+    customThresholds?: outputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds;
+    detectionMode?: string;
+    enabled: boolean;
+}
+
+export interface HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds {
+    eventThresholds: outputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds;
+    systemLoad: number;
+}
+
+export interface HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: number;
+    dealertingSamples: number;
+    violatingEvaluationWindow: number;
+    violatingSamples: number;
+}
+
+export interface HostAnomaliesV2HostOutOfMemoryDetection {
+    customThresholds?: outputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds;
+    detectionMode?: string;
+    enabled: boolean;
+}
+
+export interface HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds {
+    eventThresholds: outputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds;
+    outOfMemoryExceptionsNumber: number;
+}
+
+export interface HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: number;
+    dealertingSamples: number;
+    violatingEvaluationWindow: number;
+    violatingSamples: number;
+}
+
+export interface HostAnomaliesV2HostOutOfThreadsDetection {
+    customThresholds?: outputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds;
+    detectionMode?: string;
+    enabled: boolean;
+}
+
+export interface HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds {
+    eventThresholds: outputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds;
+    outOfThreadsExceptionsNumber: number;
+}
+
+export interface HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: number;
+    dealertingSamples: number;
+    violatingEvaluationWindow: number;
+    violatingSamples: number;
+}
+
+export interface HostAnomaliesV2Network {
+    /**
+     * no documentation available
+     */
+    highNetworkDetection: outputs.HostAnomaliesV2NetworkHighNetworkDetection;
+    /**
+     * no documentation available
+     */
+    networkDroppedPacketsDetection: outputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetection;
+    /**
+     * no documentation available
+     */
+    networkErrorsDetection: outputs.HostAnomaliesV2NetworkNetworkErrorsDetection;
+    /**
+     * no documentation available
+     */
+    networkHighRetransmissionDetection: outputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetection;
+    /**
+     * no documentation available
+     */
+    networkTcpProblemsDetection: outputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetection;
+}
+
+export interface HostAnomaliesV2NetworkHighNetworkDetection {
+    customThresholds?: outputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds;
+    detectionMode?: string;
+    enabled: boolean;
+}
+
+export interface HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds {
+    errorsPercentage: number;
+    eventThresholds: outputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds;
+}
+
+export interface HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: number;
+    dealertingSamples: number;
+    violatingEvaluationWindow: number;
+    violatingSamples: number;
+}
+
+export interface HostAnomaliesV2NetworkNetworkDroppedPacketsDetection {
+    customThresholds?: outputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds;
+    detectionMode?: string;
+    enabled: boolean;
+}
+
+export interface HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds {
+    droppedPacketsPercentage: number;
+    eventThresholds: outputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds;
+    totalPacketsRate: number;
+}
+
+export interface HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: number;
+    dealertingSamples: number;
+    violatingEvaluationWindow: number;
+    violatingSamples: number;
+}
+
+export interface HostAnomaliesV2NetworkNetworkErrorsDetection {
+    customThresholds?: outputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds;
+    detectionMode?: string;
+    enabled: boolean;
+}
+
+export interface HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds {
+    errorsPercentage: number;
+    eventThresholds: outputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds;
+    totalPacketsRate: number;
+}
+
+export interface HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: number;
+    dealertingSamples: number;
+    violatingEvaluationWindow: number;
+    violatingSamples: number;
+}
+
+export interface HostAnomaliesV2NetworkNetworkHighRetransmissionDetection {
+    customThresholds?: outputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds;
+    detectionMode?: string;
+    enabled: boolean;
+}
+
+export interface HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds {
+    eventThresholds: outputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds;
+    retransmissionRatePercentage: number;
+    retransmittedPacketsNumberPerMinute: number;
+}
+
+export interface HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: number;
+    dealertingSamples: number;
+    violatingEvaluationWindow: number;
+    violatingSamples: number;
+}
+
+export interface HostAnomaliesV2NetworkNetworkTcpProblemsDetection {
+    customThresholds?: outputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds;
+    detectionMode?: string;
+    enabled: boolean;
+}
+
+export interface HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds {
+    eventThresholds: outputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds;
+    failedConnectionsNumberPerMinute: number;
+    newConnectionFailuresPercentage: number;
+}
+
+export interface HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds {
+    dealertingEvaluationWindow: number;
+    dealertingSamples: number;
+    violatingEvaluationWindow: number;
+    violatingSamples: number;
 }
 
 export interface HostNamingCondition {
@@ -4085,14 +5620,39 @@ export interface HttpMonitorAnomalyDetectionLoadingTimeThresholdThresholdThresho
 
 export interface HttpMonitorAnomalyDetectionOutageHandling {
     globalOutage?: boolean;
+    globalOutagePolicies?: outputs.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy[];
     localOutage?: boolean;
     localOutagePolicies?: outputs.HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy[];
     retryOnError?: boolean;
 }
 
+export interface HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy {
+    consecutiveRuns: number;
+}
+
 export interface HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy {
     affectedLocations: number;
     consecutiveRuns: number;
+}
+
+export interface HttpMonitorCookiesCookies {
+    cookies: outputs.HttpMonitorCookiesCookiesCookie[];
+}
+
+export interface HttpMonitorCookiesCookiesCookie {
+    domain: string;
+    name: string;
+    path?: string;
+    value: string;
+}
+
+export interface HttpMonitorPerformanceThresholds {
+    thresholds: outputs.HttpMonitorPerformanceThresholdsThreshold[];
+}
+
+export interface HttpMonitorPerformanceThresholdsThreshold {
+    event: string;
+    threshold: number;
 }
 
 export interface HttpMonitorScript {
@@ -4110,6 +5670,7 @@ export interface HttpMonitorScriptRequest {
     method: string;
     postProcessing?: string;
     preProcessing?: string;
+    requestTimeout?: number;
     url: string;
     validation?: outputs.HttpMonitorScriptRequestValidation;
 }
@@ -4123,8 +5684,10 @@ export interface HttpMonitorScriptRequestAuthentication {
 
 export interface HttpMonitorScriptRequestConfiguration {
     acceptAnyCertificate?: boolean;
+    clientCertificate?: string;
     followRedirects?: boolean;
     headers?: outputs.HttpMonitorScriptRequestConfigurationHeaders;
+    sensitiveData?: boolean;
     userAgent?: string;
 }
 
@@ -4161,6 +5724,19 @@ export interface HttpMonitorTagTag {
     value?: string;
 }
 
+export interface IamGroupPermissions {
+    /**
+     * A Permission
+     */
+    permissions: outputs.IamGroupPermissionsPermission[];
+}
+
+export interface IamGroupPermissionsPermission {
+    name: string;
+    scope: string;
+    type: string;
+}
+
 export interface ImsBridgesQueueManager {
     /**
      * Queue manager definition for IMS bridge
@@ -4174,6 +5750,89 @@ export interface ImsBridgesQueueManagerQueueManager {
      */
     name: string;
     queueManagerQueues?: string[];
+}
+
+export interface K8sClusterAnomaliesCpuRequestsSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sClusterAnomaliesCpuRequestsSaturationConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sClusterAnomaliesCpuRequestsSaturationConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sClusterAnomaliesMemoryRequestsSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sClusterAnomaliesMemoryRequestsSaturationConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sClusterAnomaliesMemoryRequestsSaturationConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sClusterAnomaliesMonitoringIssues {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sClusterAnomaliesMonitoringIssuesConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sClusterAnomaliesMonitoringIssuesConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+}
+
+export interface K8sClusterAnomaliesPodsSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sClusterAnomaliesPodsSaturationConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sClusterAnomaliesPodsSaturationConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sClusterAnomaliesReadinessIssues {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sClusterAnomaliesReadinessIssuesConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sClusterAnomaliesReadinessIssuesConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
 }
 
 export interface K8sCredentialsEventsFieldSelector {
@@ -4193,6 +5852,475 @@ export interface K8sCredentialsEventsFieldSelector {
      * Any attributes that aren't yet supported by this provider
      */
     unknowns?: string;
+}
+
+export interface K8sNamespaceAnomaliesCpuLimitsQuotaSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sNamespaceAnomaliesCpuRequestsQuotaSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sNamespaceAnomaliesMemoryLimitsQuotaSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sNamespaceAnomaliesMemoryRequestsQuotaSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sNamespaceAnomaliesPodsQuotaSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sNamespaceAnomaliesPodsQuotaSaturationConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sNamespaceAnomaliesPodsQuotaSaturationConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sNodeAnomaliesCpuRequestsSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sNodeAnomaliesCpuRequestsSaturationConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sNodeAnomaliesCpuRequestsSaturationConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sNodeAnomaliesMemoryRequestsSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sNodeAnomaliesMemoryRequestsSaturationConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sNodeAnomaliesMemoryRequestsSaturationConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sNodeAnomaliesNodeProblematicCondition {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sNodeAnomaliesNodeProblematicConditionConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sNodeAnomaliesNodeProblematicConditionConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+}
+
+export interface K8sNodeAnomaliesPodsSaturation {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sNodeAnomaliesPodsSaturationConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sNodeAnomaliesPodsSaturationConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sNodeAnomaliesReadinessIssues {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sNodeAnomaliesReadinessIssuesConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sNodeAnomaliesReadinessIssuesConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+}
+
+export interface K8sPvcAnomaliesLowDiskSpaceCritical {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sPvcAnomaliesLowDiskSpaceCriticalConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sPvcAnomaliesLowDiskSpaceCriticalConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sPvcAnomaliesLowDiskSpaceCriticalPercentage {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sWorkloadAnomaliesContainerRestarts {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sWorkloadAnomaliesContainerRestartsConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sWorkloadAnomaliesContainerRestartsConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sWorkloadAnomaliesDeploymentStuck {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sWorkloadAnomaliesDeploymentStuckConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sWorkloadAnomaliesDeploymentStuckConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+}
+
+export interface K8sWorkloadAnomaliesHighCpuThrottling {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sWorkloadAnomaliesHighCpuThrottlingConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sWorkloadAnomaliesHighCpuThrottlingConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sWorkloadAnomaliesHighCpuUsage {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sWorkloadAnomaliesHighCpuUsageConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sWorkloadAnomaliesHighCpuUsageConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sWorkloadAnomaliesHighMemoryUsage {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sWorkloadAnomaliesHighMemoryUsageConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sWorkloadAnomaliesHighMemoryUsageConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sWorkloadAnomaliesNotAllPodsReady {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sWorkloadAnomaliesNotAllPodsReadyConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sWorkloadAnomaliesNotAllPodsReadyConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+}
+
+export interface K8sWorkloadAnomaliesPendingPods {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sWorkloadAnomaliesPendingPodsConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sWorkloadAnomaliesPendingPodsConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+    threshold: number;
+}
+
+export interface K8sWorkloadAnomaliesPodStuckInTerminating {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sWorkloadAnomaliesPodStuckInTerminatingConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sWorkloadAnomaliesPodStuckInTerminatingConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+}
+
+export interface K8sWorkloadAnomaliesWorkloadWithoutReadyPods {
+    /**
+     * Alert if
+     */
+    configuration?: outputs.K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration {
+    observationPeriodInMinutes: number;
+    samplePeriodInMinutes: number;
+}
+
+export interface KubernetesEventPatterns {
+    eventPatterns: outputs.KubernetesEventPatternsEventPattern[];
+}
+
+export interface KubernetesEventPatternsEventPattern {
+    active: boolean;
+    label: string;
+    pattern: string;
+}
+
+export interface LogCustomSourceContext {
+    /**
+     * Define Custom Log Source only within context if provided
+     */
+    contexts: outputs.LogCustomSourceContextContext[];
+}
+
+export interface LogCustomSourceContextContext {
+    attribute: string;
+    values: string[];
+}
+
+export interface LogCustomSourceCustomLogSource {
+    /**
+     * Possible Values: `LOG_PATH_PATTERN`, `WINDOWS_EVENT_LOG`
+     */
+    type: string;
+    /**
+     * It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+     */
+    values: string[];
+}
+
+export interface LogEventsEventTemplate {
+    /**
+     * Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created.
+     */
+    davisMerge?: boolean;
+    /**
+     * The description of the event to trigger.
+     */
+    description: string;
+    /**
+     * Possible Values: `AVAILABILITY`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `ERROR`, `INFO`, `MARKED_FOR_TERMINATION`, `RESOURCE`, `SLOWDOWN`
+     */
+    eventType: string;
+    /**
+     * Set of additional key-value properties to be attached to the triggered event.
+     */
+    metadata?: outputs.LogEventsEventTemplateMetadata;
+    /**
+     * The title of the event to trigger.
+     */
+    title: string;
+}
+
+export interface LogEventsEventTemplateMetadata {
+    items: outputs.LogEventsEventTemplateMetadataItem[];
+}
+
+export interface LogEventsEventTemplateMetadataItem {
+    metadataKey: string;
+    metadataValue: string;
+}
+
+export interface LogProcessingProcessorDefinition {
+    rule: string;
+}
+
+export interface LogProcessingRuleTesting {
+    sampleLog: string;
+}
+
+export interface LogSensitiveDataMaskingMasking {
+    /**
+     * Maximum one capture group is allowed. If none was given, the whole expression will be treated as a capture group.
+     */
+    expression: string;
+    /**
+     * The string to replace the masked expression with. Irrelevant if `type` is `SHA1`.
+     */
+    replacement?: string;
+    /**
+     * Possible Values: `SHA1`, `STRING`
+     */
+    type: string;
+}
+
+export interface LogSensitiveDataMaskingMatchers {
+    matchers: outputs.LogSensitiveDataMaskingMatchersMatcher[];
+}
+
+export interface LogSensitiveDataMaskingMatchersMatcher {
+    attribute: string;
+    operator: string;
+    values: string[];
+}
+
+export interface LogStorageMatchers {
+    matchers: outputs.LogStorageMatchersMatcher[];
+}
+
+export interface LogStorageMatchersMatcher {
+    attribute: string;
+    operator: string;
+    values: string[];
+}
+
+export interface LogTimestampMatchers {
+    matchers: outputs.LogTimestampMatchersMatcher[];
+}
+
+export interface LogTimestampMatchersMatcher {
+    attribute: string;
+    operator: string;
+    values: string[];
 }
 
 export interface MaintenanceFilter {
@@ -4311,21 +6439,6 @@ export interface MaintenanceScheduleWeeklyRecurrenceTimeWindow {
     timeZone: string;
 }
 
-export interface MaintenanceWindowMetadata {
-    /**
-     * Dynatrace server version
-     */
-    clusterVersion?: string;
-    /**
-     * A Sorted list of the version numbers of the configuration
-     */
-    configurationVersions?: number[];
-    /**
-     * A Sorted list of the version numbers of the configuration
-     */
-    currentConfigurationVersions?: string[];
-}
-
 export interface MaintenanceWindowSchedule {
     /**
      * The end date and time of the maintenance window validity period in yyyy-mm-dd HH:mm format
@@ -4422,12 +6535,6 @@ export interface ManagementZoneEntitySelectorBasedRule {
     enabled?: boolean;
     selector?: string;
     unknowns?: string;
-}
-
-export interface ManagementZoneMetadata {
-    clusterVersion?: string;
-    configurationVersions?: number[];
-    currentConfigurationVersions?: string[];
 }
 
 export interface ManagementZoneRule {
@@ -5234,6 +7341,381 @@ export interface ManagementZoneRuleConditionTechValue {
     verbatimType?: string;
 }
 
+export interface ManagementZoneV2Rules {
+    /**
+     * A management zone rule
+     */
+    rules?: outputs.ManagementZoneV2RulesRule[];
+}
+
+export interface ManagementZoneV2RulesRule {
+    attributeRule?: outputs.ManagementZoneV2RulesRuleAttributeRule;
+    dimensionRule?: outputs.ManagementZoneV2RulesRuleDimensionRule;
+    enabled: boolean;
+    entitySelector?: string;
+    type: string;
+}
+
+export interface ManagementZoneV2RulesRuleAttributeRule {
+    attributeConditions: outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditions;
+    azureToPgpropagation?: boolean;
+    azureToServicePropagation?: boolean;
+    customDeviceGroupToCustomDevicePropagation?: boolean;
+    entityType: string;
+    hostToPgpropagation?: boolean;
+    pgToHostPropagation?: boolean;
+    pgToServicePropagation?: boolean;
+    serviceToHostPropagation?: boolean;
+    serviceToPgpropagation?: boolean;
+}
+
+export interface ManagementZoneV2RulesRuleAttributeRuleAttributeConditions {
+    conditions?: outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition[];
+}
+
+export interface ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition {
+    caseSensitive?: boolean;
+    dynamicKey?: string;
+    dynamicKeySource?: string;
+    entityId?: string;
+    enumValue?: string;
+    integerValue?: number;
+    key: string;
+    operator: string;
+    stringValue?: string;
+    tag?: string;
+}
+
+export interface ManagementZoneV2RulesRuleDimensionRule {
+    appliesTo: string;
+    dimensionConditions?: outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditions;
+}
+
+export interface ManagementZoneV2RulesRuleDimensionRuleDimensionConditions {
+    conditions?: outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition[];
+}
+
+export interface ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition {
+    conditionType: string;
+    key?: string;
+    ruleMatcher: string;
+    value: string;
+}
+
+export interface MetricEventsEventTemplate {
+    /**
+     * Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created.
+     */
+    davisMerge?: boolean;
+    /**
+     * The description of the event to trigger.
+     */
+    description: string;
+    /**
+     * The event type to trigger.
+     */
+    eventType: string;
+    /**
+     * Set of additional key-value properties to be attached to the triggered event.
+     */
+    metadatas?: outputs.MetricEventsEventTemplateMetadata[];
+    /**
+     * The title of the event to trigger.
+     */
+    title: string;
+}
+
+export interface MetricEventsEventTemplateMetadata {
+    metadataKey: string;
+    metadataValue: string;
+}
+
+export interface MetricEventsModelProperties {
+    /**
+     * The alert condition of the model properties
+     */
+    alertCondition: string;
+    /**
+     * The ability to set an alert on missing data in a metric. When enabled, missing data samples will contribute as violating samples defined in advanced model properties. We recommend to not alert on missing data for sparse timeseries as this leads to alert spam.
+     */
+    alertOnNoData: boolean;
+    /**
+     * The number of one-minute samples within the evaluation window that must go back to normal to close the event.
+     */
+    dealertingSamples: number;
+    /**
+     * The number of one-minute samples that form the sliding evaluation window.
+     */
+    samples: number;
+    /**
+     * Controls how many times the signal fluctuation is added to the baseline to produce the actual threshold for alerting
+     */
+    signalFluctuation?: number;
+    /**
+     * Raise an event if this value is violated
+     */
+    threshold?: number;
+    /**
+     * Controls the width of the confidence band and larger values lead to a less sensitive model
+     */
+    tolerance?: number;
+    /**
+     * Metric-key-based query definitions only support static thresholds.
+     */
+    type: string;
+    /**
+     * The number of one-minute samples within the evaluation window that must violate to trigger an event.
+     */
+    violatingSamples: number;
+}
+
+export interface MetricEventsQueryDefinition {
+    /**
+     * The aggregation of the query definition
+     */
+    aggregation?: string;
+    /**
+     * The dimension filters of the query definition
+     */
+    dimensionFilter?: outputs.MetricEventsQueryDefinitionDimensionFilter;
+    /**
+     * Use rule-based filters to define the scope this event monitors.
+     */
+    entityFilter?: outputs.MetricEventsQueryDefinitionEntityFilter;
+    /**
+     * The metric key of the query definition
+     */
+    metricKey: string;
+    /**
+     * To learn more, visit [Metric Selector](https://dt-url.net/metselad)
+     */
+    metricSelector?: string;
+    /**
+     * Minute offset of sliding evaluation window for metrics with latency
+     */
+    queryOffset?: number;
+    /**
+     * The type of query definition
+     */
+    type: string;
+}
+
+export interface MetricEventsQueryDefinitionDimensionFilter {
+    filters?: outputs.MetricEventsQueryDefinitionDimensionFilterFilter[];
+}
+
+export interface MetricEventsQueryDefinitionDimensionFilterFilter {
+    dimensionKey: string;
+    dimensionValue: string;
+}
+
+export interface MetricEventsQueryDefinitionEntityFilter {
+    conditions?: outputs.MetricEventsQueryDefinitionEntityFilterCondition[];
+    dimensionKey?: string;
+}
+
+export interface MetricEventsQueryDefinitionEntityFilterCondition {
+    conditions?: outputs.MetricEventsQueryDefinitionEntityFilterConditionCondition[];
+}
+
+export interface MetricEventsQueryDefinitionEntityFilterConditionCondition {
+    operator: string;
+    type: string;
+    value: string;
+}
+
+export interface MetricMetadataDimensions {
+    dimensions: outputs.MetricMetadataDimensionsDimension[];
+}
+
+export interface MetricMetadataDimensionsDimension {
+    /**
+     * Display name
+     */
+    displayName?: string;
+    key: string;
+}
+
+export interface MetricMetadataMetricProperties {
+    /**
+     * Whether (true or false) the metric is relevant to a problem's impact.
+     */
+    impactRelevant?: boolean;
+    latency?: number;
+    maxValue?: number;
+    minValue?: number;
+    rootCauseRelevant?: boolean;
+    /**
+     * Possible Values: `Error`, `Score`, `Unknown`
+     */
+    valueType: string;
+}
+
+export interface MobileAppAnomaliesErrorRateIncrease {
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * Alert if the percentage of user actions affected by reported errors exceeds **both** the absolute threshold and the relative threshold
+     */
+    errorRateIncreaseAuto?: outputs.MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto;
+    /**
+     * Alert if the custom reported error rate threshold is exceeded during any 5-minute period
+     */
+    errorRateIncreaseFixed?: outputs.MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed;
+}
+
+export interface MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto {
+    thresholdAbsolute: number;
+    thresholdRelative: number;
+}
+
+export interface MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed {
+    sensitivity: string;
+    thresholdAbsolute: number;
+}
+
+export interface MobileAppAnomaliesSlowUserActions {
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * no documentation available
+     */
+    slowUserActionsAuto?: outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAuto;
+    /**
+     * no documentation available
+     */
+    slowUserActionsFixed?: outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixed;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAuto {
+    durationAvoidOveralerting: outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting;
+    durationThresholdAll: outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll;
+    durationThresholdSlowest: outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting {
+    minActionRate: number;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll {
+    durationThreshold: number;
+    slowdownPercentage: number;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest {
+    durationThreshold: number;
+    slowdownPercentage: number;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixed {
+    durationAvoidOveralerting: outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting;
+    durationThresholdAllFixed: outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed;
+    durationThresholdSlowest: outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest;
+    sensitivity: string;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting {
+    minActionRate: number;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed {
+    durationThreshold: number;
+}
+
+export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest {
+    durationThreshold: number;
+}
+
+export interface MobileAppAnomaliesUnexpectedHighLoad {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic spikes within your application.
+     */
+    thresholdPercentage?: number;
+}
+
+export interface MobileAppAnomaliesUnexpectedLowLoad {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic drops within your application.
+     */
+    thresholdPercentage?: number;
+}
+
+export interface MobileAppCrashRateCrashRateIncrease {
+    /**
+     * Alert crash rate increases when auto-detected baseline is exceeded by a certain number of users
+     */
+    crashRateIncreaseAuto?: outputs.MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto;
+    /**
+     * Alert crash rate increases when the defined threshold is exceeded by a certain number of users
+     */
+    crashRateIncreaseFixed?: outputs.MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed;
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto {
+    baselineViolationPercentage: number;
+    concurrentUsers: number;
+    sensitivity: string;
+}
+
+export interface MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed {
+    absoluteCrashRate: number;
+    concurrentUsers: number;
+}
+
+export interface MobileAppEnablementRum {
+    /**
+     * Percentage of user sessions captured and analyzed. By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application’s performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session.
+     */
+    costAndTrafficControl: number;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface MobileAppEnablementSessionReplay {
+    /**
+     * Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay](https://dt-url.net/t23s0ppi).
+     */
+    onCrash: boolean;
+}
+
+export interface MobileAppRequestErrorsErrorRules {
+    errorRules: outputs.MobileAppRequestErrorsErrorRulesErrorRule[];
+}
+
+export interface MobileAppRequestErrorsErrorRulesErrorRule {
+    errorCodes: string;
+}
+
 export interface MobileApplicationApdex {
     /**
      * Apdex **frustrated** threshold, in milliseconds: a duration greater than or equal to this value is considered frustrated
@@ -5283,6 +7765,23 @@ export interface MobileApplicationPropertiesRequestAttribute {
     storeAsSessionProperty?: boolean;
     storeAsUserActionProperty?: boolean;
     type: string;
+}
+
+export interface NetworkTrafficExcludeIp {
+    ipAddressForms: outputs.NetworkTrafficExcludeIpIpAddressForm[];
+}
+
+export interface NetworkTrafficExcludeIpIpAddressForm {
+    ipAddress: string;
+}
+
+export interface NetworkTrafficExcludeNic {
+    nicForms: outputs.NetworkTrafficExcludeNicNicForm[];
+}
+
+export interface NetworkTrafficExcludeNicNicForm {
+    interface: string;
+    os: string;
 }
 
 export interface NotificationAnsibleTower {
@@ -5388,33 +7887,6 @@ export interface NotificationEmail {
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
-}
-
-export interface NotificationHipchat {
-    /**
-     * The configuration is enabled (`true`) or disabled (`false`)
-     */
-    active: boolean;
-    /**
-     * The ID of the associated alerting profile
-     */
-    alertingProfile: string;
-    /**
-     * The content of the notification message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
-     */
-    message: string;
-    /**
-     * The name of the notification configuration
-     */
-    name: string;
-    /**
-     * allows for configuring properties that are not explicitly supported by the current version of this provider
-     */
-    unknowns?: string;
-    /**
-     * The URL of the HipChat WebHook.  This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
-     */
-    url?: string;
 }
 
 export interface NotificationJira {
@@ -5763,6 +8235,242 @@ export interface NotificationXmatters {
 
 export interface NotificationXmattersHeader {
     name: string;
+    value?: string;
+}
+
+export interface OneagentUpdatesMaintenanceWindows {
+    maintenanceWindows: outputs.OneagentUpdatesMaintenanceWindowsMaintenanceWindow[];
+}
+
+export interface OneagentUpdatesMaintenanceWindowsMaintenanceWindow {
+    maintenanceWindow: string;
+}
+
+export interface OpentelemetryMetricsAdditionalAttributes {
+    additionalAttributes: outputs.OpentelemetryMetricsAdditionalAttributesAdditionalAttribute[];
+}
+
+export interface OpentelemetryMetricsAdditionalAttributesAdditionalAttribute {
+    attributeKey: string;
+    enabled: boolean;
+}
+
+export interface OpentelemetryMetricsToDropAttributes {
+    toDropAttributes: outputs.OpentelemetryMetricsToDropAttributesToDropAttribute[];
+}
+
+export interface OpentelemetryMetricsToDropAttributesToDropAttribute {
+    attributeKey: string;
+    enabled: boolean;
+}
+
+export interface OsServicesDetectionConditionsLinux {
+    linuxDetectionConditions: outputs.OsServicesDetectionConditionsLinuxLinuxDetectionCondition[];
+}
+
+export interface OsServicesDetectionConditionsLinuxLinuxDetectionCondition {
+    condition?: string;
+    property: string;
+    startupCondition?: string;
+}
+
+export interface OsServicesDetectionConditionsWindows {
+    detectionConditionsWindows: outputs.OsServicesDetectionConditionsWindowsDetectionConditionsWindow[];
+}
+
+export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindow {
+    condition?: string;
+    property: string;
+    startupCondition?: string;
+}
+
+export interface OsServicesMetadata {
+    items: outputs.OsServicesMetadataItem[];
+}
+
+export interface OsServicesMetadataItem {
+    metadataKey: string;
+    metadataValue: string;
+}
+
+export interface OwnershipConfigOwnershipIdentifiers {
+    ownershipIdentifiers: outputs.OwnershipConfigOwnershipIdentifiersOwnershipIdentifier[];
+}
+
+export interface OwnershipConfigOwnershipIdentifiersOwnershipIdentifier {
+    enabled: boolean;
+    key: string;
+}
+
+export interface OwnershipTeamsAdditionalInformation {
+    /**
+     * Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
+     */
+    additionalInformations: outputs.OwnershipTeamsAdditionalInformationAdditionalInformation[];
+}
+
+export interface OwnershipTeamsAdditionalInformationAdditionalInformation {
+    key: string;
+    url?: string;
+    value: string;
+}
+
+export interface OwnershipTeamsContactDetails {
+    contactDetails: outputs.OwnershipTeamsContactDetailsContactDetail[];
+}
+
+export interface OwnershipTeamsContactDetailsContactDetail {
+    email?: string;
+    integrationType: string;
+    jira?: outputs.OwnershipTeamsContactDetailsContactDetailJira;
+    msTeams?: string;
+    slackChannel?: string;
+    url?: string;
+}
+
+export interface OwnershipTeamsContactDetailsContactDetailJira {
+    defaultAssignee: string;
+    project: string;
+}
+
+export interface OwnershipTeamsLinks {
+    links: outputs.OwnershipTeamsLinksLink[];
+}
+
+export interface OwnershipTeamsLinksLink {
+    linkType: string;
+    url: string;
+}
+
+export interface OwnershipTeamsResponsibilities {
+    /**
+     * Responsible for developing and maintaining high quality software. Development teams are responsible for making code changes to address performance regressions, errors, or security vulnerabilities.
+     */
+    development: boolean;
+    /**
+     * Responsible for the administration, management, and support of the IT infrastructure including physical servers, virtualization, and cloud. Teams with infrastructure responsibility are responsible for addressing hardware issues, resource limits, and operating system vulnerabilities.
+     */
+    infrastructure: boolean;
+    /**
+     * Responsible for ensuring that applications in development align with business needs and meet the usability requirements of users, stakeholders, customers, and external partners. Teams with line of business responsibility are responsible for understanding the customer experience and how it affects business goals.
+     */
+    lineOfBusiness: boolean;
+    /**
+     * Responsible for deploying and managing software, with a focus on high availability and performance. Teams with operations responsibilities needs to understand the impact, priority, and team responsible for addressing problems detected by Dynatrace.
+     */
+    operations: boolean;
+    /**
+     * Responsible for the security posture of the organization. Teams with security responsibility must understand the impact, priority, and team responsible for addressing security vulnerabilities.
+     */
+    security: boolean;
+}
+
+export interface OwnershipTeamsSupplementaryIdentifiers {
+    supplementaryIdentifiers: outputs.OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier[];
+}
+
+export interface OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier {
+    supplementaryIdentifier: string;
+}
+
+export interface PgAnomaliesAvailability {
+    /**
+     * How to monitor the availability of the process group:  * `PROCESS_IMPACT`: Alert if any process of the group becomes unavailable.  * `MINIMUM_THRESHOLD`: Alert if the number of active processes in the group falls below the specified threshold.  * `OFF`: Availability monitoring is disabled.
+     */
+    method: string;
+    /**
+     * Alert if the number of active processes in the group is lower than this value.
+     */
+    minimumThreshold?: number;
+}
+
+export interface ProcessAvailabilityMetadata {
+    items: outputs.ProcessAvailabilityMetadataItem[];
+}
+
+export interface ProcessAvailabilityMetadataItem {
+    key: string;
+    value: string;
+}
+
+export interface ProcessAvailabilityRules {
+    rules: outputs.ProcessAvailabilityRulesRule[];
+}
+
+export interface ProcessAvailabilityRulesRule {
+    condition: string;
+    property: string;
+}
+
+export interface ProcessGroupDetectionGroupExtraction {
+    /**
+     * Optionally delimit this property between *From* and *To*.
+     */
+    delimiter: outputs.ProcessGroupDetectionGroupExtractionDelimiter;
+    /**
+     * Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+     */
+    property: string;
+    /**
+     * If this option is selected, the default Dynatrace behavior is disabled for these detected processes. Only this rule is used to separate the process group.
+     */
+    standaloneRule?: boolean;
+}
+
+export interface ProcessGroupDetectionGroupExtractionDelimiter {
+    from?: string;
+    removeIds: boolean;
+    to?: string;
+}
+
+export interface ProcessGroupDetectionInstanceExtraction {
+    /**
+     * Optionally delimit this property between *From* and *To*.
+     */
+    delimiter?: outputs.ProcessGroupDetectionInstanceExtractionDelimiter;
+    /**
+     * Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+     */
+    property?: string;
+}
+
+export interface ProcessGroupDetectionInstanceExtractionDelimiter {
+    from?: string;
+    removeIds: boolean;
+    to?: string;
+}
+
+export interface ProcessGroupDetectionProcessDetection {
+    /**
+     * The substring to be contained in the value `property` refers to. Case Sensitive
+     */
+    containedString: string;
+    /**
+     * Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+     */
+    property: string;
+    /**
+     * Restrict this rule to specific process types. Note: Not all types can be detected at startup. Possible values: `PROCESS_TYPE_APACHE_HTTPD`, `PROCESS_TYPE_GLASSFISH`, `PROCESS_TYPE_GO`, `PROCESS_TYPE_IIS_APP_POOL`, `PROCESS_TYPE_JBOSS`, `PROCESS_TYPE_JAVA`, `PROCESS_TYPE_NGINX`, `PROCESS_TYPE_NODE_JS`, `PROCESS_TYPE_PHP`, `PROCESS_TYPE_TOMCAT`, `PROCESS_TYPE_WEBLOGIC`, `PROCESS_TYPE_WEBSPHERE`
+     */
+    restrictToProcessType?: string;
+}
+
+export interface ProcessMonitoringRuleCondition {
+    /**
+     * supported only with OneAgent 1.167+
+     */
+    envVar?: string;
+    /**
+     * Condition target
+     */
+    item: string;
+    /**
+     * Condition operator
+     */
+    operator: string;
+    /**
+     * Condition value
+     */
     value?: string;
 }
 
@@ -6764,6 +9472,7 @@ export interface RequestNamingConditions {
 export interface RequestNamingConditionsCondition {
     attribute: string;
     comparison: outputs.RequestNamingConditionsConditionComparison;
+    unknowns?: string;
 }
 
 export interface RequestNamingConditionsConditionComparison {
@@ -6790,7 +9499,7 @@ export interface RequestNamingConditionsConditionComparison {
 export interface RequestNamingConditionsConditionComparisonBoolean {
     operator?: string;
     unknowns?: string;
-    value?: boolean;
+    value: boolean;
     values?: boolean[];
 }
 
@@ -7003,6 +9712,24 @@ export interface RequestNamingPlaceholdersPlaceholderSourceServiceTagTagKey {
     key?: string;
 }
 
+export interface ResourceAttributesKeys {
+    rules?: outputs.ResourceAttributesKeysRule[];
+}
+
+export interface ResourceAttributesKeysRule {
+    attributeKey: string;
+    enabled: boolean;
+    masking: string;
+}
+
+export interface RumProviderBreakdownDomainNamePatternList {
+    domainNamePatterns: outputs.RumProviderBreakdownDomainNamePatternListDomainNamePattern[];
+}
+
+export interface RumProviderBreakdownDomainNamePatternListDomainNamePattern {
+    pattern: string;
+}
+
 export interface ServiceAnomaliesFailureRates {
     /**
      * Parameters of failure rate increase auto-detection. Example: If the expected error rate is 1.5%, and you set an absolute increase of 1%, and a relative increase of 50%, the thresholds will be:  Absolute: 1.5% + **1%** = 2.5%  Relative: 1.5% + 1.5% * **50%** = 2.25%
@@ -7086,6 +9813,737 @@ export interface ServiceAnomaliesResponseTimesThresholds {
     sensitivity: string;
     slowestMilliseconds: number;
     unknowns?: string;
+}
+
+export interface ServiceAnomaliesV2FailureRate {
+    /**
+     * . Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+     */
+    autoDetection?: outputs.ServiceAnomaliesV2FailureRateAutoDetection;
+    /**
+     * Detection mode for increases in failure rate
+     */
+    detectionMode?: string;
+    /**
+     * Detect increases in failure rate
+     */
+    enabled: boolean;
+    /**
+     * . Alert if a given failure rate is exceeded during any 5-minute-period
+     */
+    fixedDetection?: outputs.ServiceAnomaliesV2FailureRateFixedDetection;
+}
+
+export interface ServiceAnomaliesV2FailureRateAutoDetection {
+    absoluteIncrease: number;
+    overAlertingProtection: outputs.ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection;
+    relativeIncrease: number;
+}
+
+export interface ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection {
+    minutesAbnormalState: number;
+    requestsPerMinute: number;
+}
+
+export interface ServiceAnomaliesV2FailureRateFixedDetection {
+    overAlertingProtection: outputs.ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection;
+    sensitivity: string;
+    threshold: number;
+}
+
+export interface ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection {
+    minutesAbnormalState: number;
+    requestsPerMinute: number;
+}
+
+export interface ServiceAnomaliesV2LoadDrops {
+    /**
+     * Detect service load drops
+     */
+    enabled: boolean;
+    /**
+     * Threshold
+     */
+    loadDropPercent?: number;
+    /**
+     * Time span
+     */
+    minutesAbnormalState?: number;
+}
+
+export interface ServiceAnomaliesV2LoadSpikes {
+    /**
+     * Detect service load spikes
+     */
+    enabled: boolean;
+    /**
+     * Threshold
+     */
+    loadSpikePercent?: number;
+    /**
+     * Time span
+     */
+    minutesAbnormalState?: number;
+}
+
+export interface ServiceAnomaliesV2ResponseTime {
+    /**
+     * No documentation available
+     */
+    autoDetection?: outputs.ServiceAnomaliesV2ResponseTimeAutoDetection;
+    /**
+     * Detection mode for response time degradations
+     */
+    detectionMode?: string;
+    /**
+     * Detect response time degradations
+     */
+    enabled: boolean;
+    /**
+     * No documentation available
+     */
+    fixedDetection?: outputs.ServiceAnomaliesV2ResponseTimeFixedDetection;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeAutoDetection {
+    overAlertingProtection: outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection;
+    responseTimeAll: outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll;
+    responseTimeSlowest: outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection {
+    minutesAbnormalState: number;
+    requestsPerMinute: number;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll {
+    degradationMilliseconds: number;
+    degradationPercent: number;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest {
+    slowestDegradationMilliseconds: number;
+    slowestDegradationPercent: number;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeFixedDetection {
+    overAlertingProtection: outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection;
+    responseTimeAll: outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll;
+    responseTimeSlowest: outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest;
+    sensitivity: string;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection {
+    minutesAbnormalState: number;
+    requestsPerMinute: number;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll {
+    degradationMilliseconds: number;
+}
+
+export interface ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest {
+    slowestDegradationMilliseconds: number;
+}
+
+export interface ServiceExternalWebRequestConditions {
+    conditions: outputs.ServiceExternalWebRequestConditionsCondition[];
+}
+
+export interface ServiceExternalWebRequestConditionsCondition {
+    attribute: string;
+    compareOperationType: string;
+    frameworks?: string[];
+    ignoreCase?: boolean;
+    intValue?: number;
+    intValues?: number[];
+    ipRangeFrom?: string;
+    ipRangeTo?: string;
+    tagValues?: string[];
+    textValues?: string[];
+}
+
+export interface ServiceExternalWebRequestIdContributors {
+    /**
+     * Application identifier
+     */
+    applicationId: outputs.ServiceExternalWebRequestIdContributorsApplicationId;
+    /**
+     * URL context root
+     */
+    contextRoot: outputs.ServiceExternalWebRequestIdContributorsContextRoot;
+    /**
+     * Let the Port contribute to the Service Id
+     */
+    portForServiceId: boolean;
+    /**
+     * Public domain name
+     */
+    publicDomainName: outputs.ServiceExternalWebRequestIdContributorsPublicDomainName;
+}
+
+export interface ServiceExternalWebRequestIdContributorsApplicationId {
+    enableIdContributor: boolean;
+    serviceIdContributor?: outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor;
+}
+
+export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor {
+    contributionType: string;
+    transformations?: outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations;
+    valueOverride?: outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride;
+}
+
+export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations {
+    transformations: outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation[];
+}
+
+export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: boolean;
+    minDigitCount?: number;
+    prefix?: string;
+    replacementValue?: string;
+    segmentCount?: number;
+    selectIndex?: number;
+    splitDelimiter?: string;
+    suffix?: string;
+    takeFromEnd?: boolean;
+    transformationType: string;
+}
+
+export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride {
+    value: string;
+}
+
+export interface ServiceExternalWebRequestIdContributorsContextRoot {
+    enableIdContributor: boolean;
+    serviceIdContributor?: outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor;
+}
+
+export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor {
+    contributionType: string;
+    segmentCount?: number;
+    transformations?: outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations;
+    valueOverride?: outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride;
+}
+
+export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations {
+    transformations: outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation[];
+}
+
+export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: boolean;
+    minDigitCount?: number;
+    prefix?: string;
+    replacementValue?: string;
+    suffix?: string;
+    transformationType: string;
+}
+
+export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride {
+    value: string;
+}
+
+export interface ServiceExternalWebRequestIdContributorsPublicDomainName {
+    enableIdContributor: boolean;
+    serviceIdContributor?: outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor;
+}
+
+export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor {
+    contributionType: string;
+    copyFromHostName?: boolean;
+    transformations?: outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformations;
+    valueOverride?: outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverride;
+}
+
+export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformations {
+    transformations: outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformation[];
+}
+
+export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: boolean;
+    minDigitCount?: number;
+    prefix?: string;
+    replacementValue?: string;
+    segmentCount?: number;
+    selectIndex?: number;
+    splitDelimiter?: string;
+    suffix?: string;
+    takeFromEnd?: boolean;
+    transformationType: string;
+}
+
+export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverride {
+    value: string;
+}
+
+export interface ServiceExternalWebServiceConditions {
+    conditions: outputs.ServiceExternalWebServiceConditionsCondition[];
+}
+
+export interface ServiceExternalWebServiceConditionsCondition {
+    attribute: string;
+    compareOperationType: string;
+    frameworks?: string[];
+    ignoreCase?: boolean;
+    intValue?: number;
+    intValues?: number[];
+    ipRangeFrom?: string;
+    ipRangeTo?: string;
+    tagValues?: string[];
+    textValues?: string[];
+}
+
+export interface ServiceExternalWebServiceIdContributors {
+    /**
+     * Detect the matching requests as web request services instead of web services.
+     */
+    detectAsWebRequestService: boolean;
+    portForServiceId?: boolean;
+    urlPath?: outputs.ServiceExternalWebServiceIdContributorsUrlPath;
+}
+
+export interface ServiceExternalWebServiceIdContributorsUrlPath {
+    enableIdContributor: boolean;
+    serviceIdContributor?: outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor;
+}
+
+export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor {
+    contributionType: string;
+    transformations?: outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations;
+    valueOverride?: outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride;
+}
+
+export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations {
+    transformations: outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation[];
+}
+
+export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: boolean;
+    minDigitCount?: number;
+    prefix?: string;
+    replacementValue?: string;
+    segmentCount?: number;
+    selectIndex?: number;
+    splitDelimiter?: string;
+    suffix?: string;
+    takeFromEnd?: boolean;
+    transformationType: string;
+}
+
+export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride {
+    value: string;
+}
+
+export interface ServiceFailureExceptionRules {
+    /**
+     * Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+     */
+    customErrorRules?: outputs.ServiceFailureExceptionRulesCustomErrorRules;
+    /**
+     * There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+     */
+    customHandledExceptions?: outputs.ServiceFailureExceptionRulesCustomHandledExceptions;
+    /**
+     * Ignore all exceptions
+     */
+    ignoreAllExceptions: boolean;
+    /**
+     * Ignore span failure detection
+     */
+    ignoreSpanFailureDetection: boolean;
+    /**
+     * Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+     */
+    ignoredExceptions?: outputs.ServiceFailureExceptionRulesIgnoredExceptions;
+    /**
+     * Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+     */
+    successForcingExceptions?: outputs.ServiceFailureExceptionRulesSuccessForcingExceptions;
+}
+
+export interface ServiceFailureExceptionRulesCustomErrorRules {
+    customErrorRules: outputs.ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule[];
+}
+
+export interface ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule {
+    condition: outputs.ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition;
+    requestAttribute: string;
+}
+
+export interface ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition {
+    caseSensitive?: boolean;
+    compareOperationType: string;
+    doubleValue?: number;
+    intValue?: number;
+    textValue?: string;
+}
+
+export interface ServiceFailureExceptionRulesCustomHandledExceptions {
+    customHandledExceptions: outputs.ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException[];
+}
+
+export interface ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException {
+    classPattern?: string;
+    messagePattern?: string;
+}
+
+export interface ServiceFailureExceptionRulesIgnoredExceptions {
+    customHandledExceptions: outputs.ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledException[];
+}
+
+export interface ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledException {
+    classPattern?: string;
+    messagePattern?: string;
+}
+
+export interface ServiceFailureExceptionRulesSuccessForcingExceptions {
+    customHandledExceptions: outputs.ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledException[];
+}
+
+export interface ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledException {
+    classPattern?: string;
+    messagePattern?: string;
+}
+
+export interface ServiceFullWebRequestConditions {
+    conditions: outputs.ServiceFullWebRequestConditionsCondition[];
+}
+
+export interface ServiceFullWebRequestConditionsCondition {
+    attribute: string;
+    compareOperationType: string;
+    frameworks?: string[];
+    ignoreCase?: boolean;
+    intValue?: number;
+    intValues?: number[];
+    ipRangeFrom?: string;
+    ipRangeTo?: string;
+    tagValues?: string[];
+    textValues?: string[];
+}
+
+export interface ServiceFullWebRequestIdContributors {
+    /**
+     * Application identifier
+     */
+    applicationId: outputs.ServiceFullWebRequestIdContributorsApplicationId;
+    /**
+     * The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+     */
+    contextRoot: outputs.ServiceFullWebRequestIdContributorsContextRoot;
+    /**
+     * Server Name
+     */
+    serverName: outputs.ServiceFullWebRequestIdContributorsServerName;
+}
+
+export interface ServiceFullWebRequestIdContributorsApplicationId {
+    enableIdContributor: boolean;
+    serviceIdContributor?: outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor;
+}
+
+export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor {
+    contributionType: string;
+    transformations?: outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformations;
+    valueOverride?: outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride;
+}
+
+export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformations {
+    transformations: outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation[];
+}
+
+export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: boolean;
+    minDigitCount?: number;
+    prefix?: string;
+    replacementValue?: string;
+    segmentCount?: number;
+    selectIndex?: number;
+    splitDelimiter?: string;
+    suffix?: string;
+    takeFromEnd?: boolean;
+    transformationType: string;
+}
+
+export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride {
+    value: string;
+}
+
+export interface ServiceFullWebRequestIdContributorsContextRoot {
+    enableIdContributor: boolean;
+    serviceIdContributor?: outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributor;
+}
+
+export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContributor {
+    contributionType: string;
+    segmentCount?: number;
+    transformations?: outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformations;
+    valueOverride?: outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverride;
+}
+
+export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformations {
+    transformations: outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation[];
+}
+
+export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: boolean;
+    minDigitCount?: number;
+    prefix?: string;
+    replacementValue?: string;
+    suffix?: string;
+    transformationType: string;
+}
+
+export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverride {
+    value: string;
+}
+
+export interface ServiceFullWebRequestIdContributorsServerName {
+    enableIdContributor: boolean;
+    serviceIdContributor?: outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributor;
+}
+
+export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContributor {
+    contributionType: string;
+    transformations?: outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformations;
+    valueOverride?: outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverride;
+}
+
+export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformations {
+    transformations: outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformation[];
+}
+
+export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: boolean;
+    minDigitCount?: number;
+    prefix?: string;
+    replacementValue?: string;
+    segmentCount?: number;
+    selectIndex?: number;
+    splitDelimiter?: string;
+    suffix?: string;
+    takeFromEnd?: boolean;
+    transformationType: string;
+}
+
+export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverride {
+    value: string;
+}
+
+export interface ServiceFullWebServiceConditions {
+    conditions: outputs.ServiceFullWebServiceConditionsCondition[];
+}
+
+export interface ServiceFullWebServiceConditionsCondition {
+    attribute: string;
+    compareOperationType: string;
+    frameworks?: string[];
+    ignoreCase?: boolean;
+    intValue?: number;
+    intValues?: number[];
+    ipRangeFrom?: string;
+    ipRangeTo?: string;
+    tagValues?: string[];
+    textValues?: string[];
+}
+
+export interface ServiceFullWebServiceIdContributors {
+    applicationId?: outputs.ServiceFullWebServiceIdContributorsApplicationId;
+    contextRoot?: outputs.ServiceFullWebServiceIdContributorsContextRoot;
+    /**
+     * Detect the matching requests as full web services (false) or web request services (true).
+     */
+    detectAsWebRequestService: boolean;
+    serverName?: outputs.ServiceFullWebServiceIdContributorsServerName;
+    webServiceName?: outputs.ServiceFullWebServiceIdContributorsWebServiceName;
+    webServiceNamespace?: outputs.ServiceFullWebServiceIdContributorsWebServiceNamespace;
+}
+
+export interface ServiceFullWebServiceIdContributorsApplicationId {
+    enableIdContributor: boolean;
+    serviceIdContributor?: outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor;
+}
+
+export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor {
+    contributionType: string;
+    transformations?: outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformations;
+    valueOverride?: outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverride;
+}
+
+export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformations {
+    transformations: outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformation[];
+}
+
+export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: boolean;
+    minDigitCount?: number;
+    prefix?: string;
+    replacementValue?: string;
+    segmentCount?: number;
+    selectIndex?: number;
+    splitDelimiter?: string;
+    suffix?: string;
+    takeFromEnd?: boolean;
+    transformationType: string;
+}
+
+export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverride {
+    value: string;
+}
+
+export interface ServiceFullWebServiceIdContributorsContextRoot {
+    enableIdContributor: boolean;
+    serviceIdContributor?: outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributor;
+}
+
+export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContributor {
+    contributionType: string;
+    segmentCount?: number;
+    transformations?: outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformations;
+    valueOverride?: outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverride;
+}
+
+export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformations {
+    transformations: outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformation[];
+}
+
+export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: boolean;
+    minDigitCount?: number;
+    prefix?: string;
+    replacementValue?: string;
+    suffix?: string;
+    transformationType: string;
+}
+
+export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverride {
+    value: string;
+}
+
+export interface ServiceFullWebServiceIdContributorsServerName {
+    enableIdContributor: boolean;
+    serviceIdContributor?: outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributor;
+}
+
+export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContributor {
+    contributionType: string;
+    transformations?: outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformations;
+    valueOverride?: outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverride;
+}
+
+export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformations {
+    transformations: outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformation[];
+}
+
+export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: boolean;
+    minDigitCount?: number;
+    prefix?: string;
+    replacementValue?: string;
+    segmentCount?: number;
+    selectIndex?: number;
+    splitDelimiter?: string;
+    suffix?: string;
+    takeFromEnd?: boolean;
+    transformationType: string;
+}
+
+export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverride {
+    value: string;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceName {
+    enableIdContributor: boolean;
+    serviceIdContributor?: outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor {
+    contributionType: string;
+    transformations?: outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformations;
+    valueOverride?: outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformations {
+    transformations: outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation[];
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: boolean;
+    minDigitCount?: number;
+    prefix?: string;
+    replacementValue?: string;
+    segmentCount?: number;
+    selectIndex?: number;
+    splitDelimiter?: string;
+    suffix?: string;
+    takeFromEnd?: boolean;
+    transformationType: string;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride {
+    value: string;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNamespace {
+    enableIdContributor: boolean;
+    serviceIdContributor?: outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor {
+    contributionType: string;
+    transformations?: outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations;
+    valueOverride?: outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations {
+    transformations: outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation[];
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation {
+    includeHexNumbers?: boolean;
+    minDigitCount?: number;
+    prefix?: string;
+    replacementValue?: string;
+    segmentCount?: number;
+    selectIndex?: number;
+    splitDelimiter?: string;
+    suffix?: string;
+    takeFromEnd?: boolean;
+    transformationType: string;
+}
+
+export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride {
+    value: string;
+}
+
+export interface ServiceHttpFailureBrokenLinks {
+    /**
+     * If your application relies on other hosts at other domains, add the associated domain names here. Once configured, Dynatrace will consider 404s thrown by hosts at these domains to be service failures related to your application.
+     */
+    brokenLinkDomains?: string[];
+    /**
+     * Consider 404 HTTP response codes as failures
+     */
+    http404NotFoundFailures: boolean;
+}
+
+export interface ServiceHttpFailureHttpResponseCodes {
+    /**
+     * HTTP response codes which indicate client side errors
+     */
+    clientSideErrors: string;
+    /**
+     * Treat missing HTTP response code as client side error
+     */
+    failOnMissingResponseCodeClientSide: boolean;
+    /**
+     * Treat missing HTTP response code as server side errors
+     */
+    failOnMissingResponseCodeServerSide: boolean;
+    /**
+     * HTTP response codes which indicate an error on the server side
+     */
+    serverSideErrors: string;
 }
 
 export interface ServiceNamingCondition {
@@ -7888,6 +11346,86 @@ export interface ServiceNamingConditionConditionTechValue {
     verbatimType?: string;
 }
 
+export interface SessionReplayWebPrivacyMaskingPresets {
+    /**
+     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+     */
+    playbackMaskingAllowListRules?: outputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules;
+    /**
+     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+     */
+    playbackMaskingBlockListRules?: outputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules;
+    /**
+     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) Possible Values: `MASK_ALL`, `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`
+     */
+    playbackMaskingPreset: string;
+    /**
+     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+     */
+    recordingMaskingAllowListRules?: outputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules;
+    /**
+     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+     */
+    recordingMaskingBlockListRules?: outputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules;
+    /**
+     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) Possible Values: `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`, `MASK_ALL`
+     */
+    recordingMaskingPreset: string;
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules {
+    allowListRules: outputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule[];
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule {
+    attributeExpression?: string;
+    cssExpression?: string;
+    target: string;
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules {
+    blockListRules: outputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule[];
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule {
+    attributeExpression?: string;
+    cssExpression?: string;
+    hideUserInteraction?: boolean;
+    target: string;
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules {
+    allowListRules: outputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule[];
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule {
+    attributeExpression?: string;
+    cssExpression?: string;
+    target: string;
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules {
+    blockListRules: outputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule[];
+}
+
+export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule {
+    attributeExpression?: string;
+    cssExpression?: string;
+    hideUserInteraction?: boolean;
+    target: string;
+}
+
+export interface SloV2ErrorBudgetBurnRate {
+    /**
+     * Burn rate visualization enabled
+     */
+    burnRateVisualizationEnabled: boolean;
+    /**
+     * The threshold defines when a burn rate is marked as fast-burning (high-emergency). Burn rates lower than this threshold (and greater than 1) are highlighted as slow-burn (low-emergency).
+     */
+    fastBurnThreshold?: number;
+}
+
 export interface SpanCaptureRuleMatches {
     /**
      * Matching strategies for the Span
@@ -7933,6 +11471,103 @@ export interface SpanEntryPointMatchesMatch {
     value?: string;
 }
 
+export interface UpdateWindowsDailyRecurrence {
+    every: number;
+    recurrenceRange: outputs.UpdateWindowsDailyRecurrenceRecurrenceRange;
+    updateTime: outputs.UpdateWindowsDailyRecurrenceUpdateTime;
+}
+
+export interface UpdateWindowsDailyRecurrenceRecurrenceRange {
+    end: string;
+    start: string;
+}
+
+export interface UpdateWindowsDailyRecurrenceUpdateTime {
+    duration: number;
+    startTime: string;
+    timeZone: string;
+}
+
+export interface UpdateWindowsMonthlyRecurrence {
+    every: number;
+    recurrenceRange: outputs.UpdateWindowsMonthlyRecurrenceRecurrenceRange;
+    selectedMonthDay: number;
+    updateTime: outputs.UpdateWindowsMonthlyRecurrenceUpdateTime;
+}
+
+export interface UpdateWindowsMonthlyRecurrenceRecurrenceRange {
+    end: string;
+    start: string;
+}
+
+export interface UpdateWindowsMonthlyRecurrenceUpdateTime {
+    duration: number;
+    startTime: string;
+    timeZone: string;
+}
+
+export interface UpdateWindowsOnceRecurrence {
+    recurrenceRange: outputs.UpdateWindowsOnceRecurrenceRecurrenceRange;
+}
+
+export interface UpdateWindowsOnceRecurrenceRecurrenceRange {
+    end: string;
+    start: string;
+}
+
+export interface UpdateWindowsWeeklyRecurrence {
+    every: number;
+    recurrenceRange: outputs.UpdateWindowsWeeklyRecurrenceRecurrenceRange;
+    selectedWeekDays: outputs.UpdateWindowsWeeklyRecurrenceSelectedWeekDays;
+    updateTime: outputs.UpdateWindowsWeeklyRecurrenceUpdateTime;
+}
+
+export interface UpdateWindowsWeeklyRecurrenceRecurrenceRange {
+    end: string;
+    start: string;
+}
+
+export interface UpdateWindowsWeeklyRecurrenceSelectedWeekDays {
+    friday: boolean;
+    monday: boolean;
+    saturday: boolean;
+    sunday: boolean;
+    thursday: boolean;
+    tuesday: boolean;
+    wednesday: boolean;
+}
+
+export interface UpdateWindowsWeeklyRecurrenceUpdateTime {
+    duration: number;
+    startTime: string;
+    timeZone: string;
+}
+
+export interface UserActionMetricsFilters {
+    filters: outputs.UserActionMetricsFiltersFilter[];
+}
+
+export interface UserActionMetricsFiltersFilter {
+    fieldName: string;
+    operator: string;
+    /**
+     * Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
+     */
+    value?: string;
+    valueIns?: string[];
+}
+
+export interface UserActionMetricsValue {
+    /**
+     * Field name
+     */
+    fieldName?: string;
+    /**
+     * Possible Values: `COUNTER`, `FIELD`
+     */
+    type: string;
+}
+
 export interface UserGroupPermissions {
     /**
      * A permission granted to one or multiple environments
@@ -7943,6 +11578,381 @@ export interface UserGroupPermissions {
 export interface UserGroupPermissionsGrant {
     environments?: string[];
     permission: string;
+}
+
+export interface UserSessionMetricsFilters {
+    filters: outputs.UserSessionMetricsFiltersFilter[];
+}
+
+export interface UserSessionMetricsFiltersFilter {
+    fieldName: string;
+    operator: string;
+    /**
+     * Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
+     */
+    value?: string;
+    valueIns?: string[];
+}
+
+export interface UserSessionMetricsValue {
+    /**
+     * Field name
+     */
+    fieldName?: string;
+    /**
+     * Possible Values: `COUNTER`, `FIELD`
+     */
+    type: string;
+}
+
+export interface VmwareAnomaliesDroppedPacketsDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: outputs.VmwareAnomaliesDroppedPacketsDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface VmwareAnomaliesDroppedPacketsDetectionCustomThresholds {
+    droppedPacketsPerSecond: number;
+}
+
+export interface VmwareAnomaliesEsxiHighCpuDetection {
+    /**
+     * Alert if **all three** conditions are met in 3 out of 5 samples
+     */
+    customThresholds?: outputs.VmwareAnomaliesEsxiHighCpuDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface VmwareAnomaliesEsxiHighCpuDetectionCustomThresholds {
+    cpuPeakPercentage: number;
+    cpuUsagePercentage: number;
+    vmCpuReadyPercentage: number;
+}
+
+export interface VmwareAnomaliesEsxiHighMemoryDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: outputs.VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholds {
+    compressionDecompressionRate: number;
+}
+
+export interface VmwareAnomaliesGuestCpuLimitDetection {
+    /**
+     * Alert if **all three** conditions are met in 3 out of 5 samples
+     */
+    customThresholds?: outputs.VmwareAnomaliesGuestCpuLimitDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface VmwareAnomaliesGuestCpuLimitDetectionCustomThresholds {
+    hostCpuUsagePercentage: number;
+    vmCpuReadyPercentage: number;
+    vmCpuUsagePercentage: number;
+}
+
+export interface VmwareAnomaliesLowDatastoreSpaceDetection {
+    /**
+     * Alert if the condition is met in 1 out of 5 samples
+     */
+    customThresholds?: outputs.VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholds {
+    freeSpacePercentage: number;
+}
+
+export interface VmwareAnomaliesOverloadedStorageDetection {
+    /**
+     * Alert if the condition is met in 3 out of 5 samples
+     */
+    customThresholds?: outputs.VmwareAnomaliesOverloadedStorageDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface VmwareAnomaliesOverloadedStorageDetectionCustomThresholds {
+    commandAbortsNumber: number;
+}
+
+export interface VmwareAnomaliesSlowPhysicalStorageDetection {
+    /**
+     * Alert if **any** condition is met in 4 out of 5 samples
+     */
+    customThresholds?: outputs.VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds {
+    avgReadWriteLatency: number;
+    peakReadWriteLatency: number;
+}
+
+export interface VmwareAnomaliesUndersizedStorageDetection {
+    /**
+     * Alert if **any** condition is met in 3 out of 5 samples
+     */
+    customThresholds?: outputs.VmwareAnomaliesUndersizedStorageDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface VmwareAnomaliesUndersizedStorageDetectionCustomThresholds {
+    averageQueueCommandLatency: number;
+    peakQueueCommandLatency: number;
+}
+
+export interface WebAppAnomaliesErrorRate {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * Alert if the percentage of failing user actions increases by **both** the absolute and relative thresholds:
+     */
+    errorRateAuto?: outputs.WebAppAnomaliesErrorRateErrorRateAuto;
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    errorRateDetectionMode?: string;
+    /**
+     * no documentation available
+     */
+    errorRateFixed?: outputs.WebAppAnomaliesErrorRateErrorRateFixed;
+}
+
+export interface WebAppAnomaliesErrorRateErrorRateAuto {
+    absoluteIncrease: number;
+    overAlertingProtection: outputs.WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection;
+    relativeIncrease: number;
+}
+
+export interface WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection {
+    actionsPerMinute: number;
+    minutesAbnormalState: number;
+}
+
+export interface WebAppAnomaliesErrorRateErrorRateFixed {
+    errorRateReqPerMin: number;
+    errorRateSensitivity: string;
+    maxFailureRateIncrease: number;
+    minutesAbnormalState: number;
+}
+
+export interface WebAppAnomaliesResponseTime {
+    /**
+     * Possible Values: `Auto`, `Fixed`
+     */
+    detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * no documentation available
+     */
+    responseTimeAuto?: outputs.WebAppAnomaliesResponseTimeResponseTimeAuto;
+    /**
+     * no documentation available
+     */
+    responseTimeFixed?: outputs.WebAppAnomaliesResponseTimeResponseTimeFixed;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeAuto {
+    overAlertingProtection: outputs.WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection;
+    responseTimeAll: outputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll;
+    responseTimeSlowest: outputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection {
+    actionsPerMinute: number;
+    minutesAbnormalState: number;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll {
+    degradationMilliseconds: number;
+    degradationPercent: number;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest {
+    slowestDegradationMilliseconds: number;
+    slowestDegradationPercent: number;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeFixed {
+    overAlertingProtection: outputs.WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection;
+    responseTimeAll: outputs.WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll;
+    responseTimeSlowest: outputs.WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest;
+    sensitivity: string;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection {
+    actionsPerMinute: number;
+    minutesAbnormalState: number;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll {
+    degradationMilliseconds: number;
+}
+
+export interface WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest {
+    slowestDegradationMilliseconds: number;
+}
+
+export interface WebAppAnomaliesTrafficDrops {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * Dynatrace learns your typical application traffic over an observation period of one week.
+     */
+    trafficDrops?: outputs.WebAppAnomaliesTrafficDropsTrafficDrops;
+}
+
+export interface WebAppAnomaliesTrafficDropsTrafficDrops {
+    abnormalStateAbnormalState: number;
+    trafficDropPercentage: number;
+}
+
+export interface WebAppAnomaliesTrafficSpikes {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * Dynatrace learns your typical application traffic over an observation period of one week.
+     */
+    trafficSpikes?: outputs.WebAppAnomaliesTrafficSpikesTrafficSpikes;
+}
+
+export interface WebAppAnomaliesTrafficSpikesTrafficSpikes {
+    minutesAbnormalState: number;
+    trafficSpikePercentage: number;
+}
+
+export interface WebAppCustomErrorsErrorRules {
+    errorRules: outputs.WebAppCustomErrorsErrorRulesErrorRule[];
+}
+
+export interface WebAppCustomErrorsErrorRulesErrorRule {
+    captureSettings: outputs.WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings;
+    keyMatcher: string;
+    keyPattern?: string;
+    valueMatcher: string;
+    valuePattern?: string;
+}
+
+export interface WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings {
+    capture: boolean;
+    considerForAi?: boolean;
+    impactApdex?: boolean;
+}
+
+export interface WebAppEnablementRum {
+    /**
+     * (Field has overlap with `dynatrace.WebApplication`) Percentage of user sessions captured and analyzed
+     */
+    costAndTrafficControl: number;
+    /**
+     * (Field has overlap with `dynatrace.WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface WebAppEnablementSessionReplay {
+    /**
+     * (Field has overlap with `dynatrace.WebApplication`) [Percentage of user sessions recorded with Session Replay](https://dt-url.net/sr-cost-traffic-control). For example, if you have 50% for RUM and 50% for Session Replay, it results in 25% of sessions recorded with Session Replay.
+     */
+    costAndTrafficControl: number;
+    /**
+     * (Field has overlap with `dynatrace.WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface WebAppRequestErrorsErrorRules {
+    errorRules: outputs.WebAppRequestErrorsErrorRulesErrorRule[];
+}
+
+export interface WebAppRequestErrorsErrorRulesErrorRule {
+    captureSettings: outputs.WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings;
+    considerCspViolations: boolean;
+    considerFailedImages: boolean;
+    errorCodes?: string;
+    filterSettings: outputs.WebAppRequestErrorsErrorRulesErrorRuleFilterSettings;
+}
+
+export interface WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings {
+    capture: boolean;
+    considerForAi?: boolean;
+    impactApdex?: boolean;
+}
+
+export interface WebAppRequestErrorsErrorRulesErrorRuleFilterSettings {
+    filter?: string;
+    url?: string;
 }
 
 export interface WebApplicationConversionGoals {
@@ -8260,19 +12270,19 @@ export interface WebApplicationMonitoringSettingsJavascriptInjectionRulesRule {
 
 export interface WebApplicationSessionReplayConfig {
     /**
-     * Session replay sampling rating in percent
+     * (Field has overlap with `dynatrace.WebAppEnablement`) Session replay sampling rating in percent
      */
     costControlPercentage: number;
     /**
-     * A list of URLs to be excluded from CSS resource capturing
+     * (Field has overlap with `dynatrace.SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
      */
     cssResourceCapturingExclusionRules?: string[];
     /**
-     * Capture (`true`) or don't capture (`false`) CSS resources from the session
+     * (Field has overlap with `dynatrace.SessionReplayResourceCapture`) Capture (`true`) or don't capture (`false`) CSS resources from the session
      */
     enableCssResourceCapturing?: boolean;
     /**
-     * SessionReplay Enabled/Disabled
+     * (Field has overlap with `dynatrace.WebAppEnablement`) SessionReplay Enabled/Disabled
      */
     enabled?: boolean;
 }
@@ -8448,10 +12458,11 @@ export interface WebApplicationUserTagsTag {
     /**
      * The ID of this resource.
      */
-    id: number;
+    id?: number;
     ignoreCase?: boolean;
     metadataId?: number;
     serverSideRequestAttribute?: string;
+    uniqueId: number;
 }
 
 export interface WebApplicationWaterfallSettings {

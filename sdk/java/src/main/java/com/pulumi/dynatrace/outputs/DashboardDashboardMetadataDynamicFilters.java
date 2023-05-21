@@ -4,6 +4,7 @@
 package com.pulumi.dynatrace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.dynatrace.outputs.DashboardDashboardMetadataDynamicFiltersGenericTagFilters;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -13,6 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DashboardDashboardMetadataDynamicFilters {
     private List<String> filters;
+    private @Nullable DashboardDashboardMetadataDynamicFiltersGenericTagFilters genericTagFilters;
     private @Nullable List<String> tagSuggestionTypes;
     /**
      * @return allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -23,6 +25,9 @@ public final class DashboardDashboardMetadataDynamicFilters {
     private DashboardDashboardMetadataDynamicFilters() {}
     public List<String> filters() {
         return this.filters;
+    }
+    public Optional<DashboardDashboardMetadataDynamicFiltersGenericTagFilters> genericTagFilters() {
+        return Optional.ofNullable(this.genericTagFilters);
     }
     public List<String> tagSuggestionTypes() {
         return this.tagSuggestionTypes == null ? List.of() : this.tagSuggestionTypes;
@@ -45,12 +50,14 @@ public final class DashboardDashboardMetadataDynamicFilters {
     @CustomType.Builder
     public static final class Builder {
         private List<String> filters;
+        private @Nullable DashboardDashboardMetadataDynamicFiltersGenericTagFilters genericTagFilters;
         private @Nullable List<String> tagSuggestionTypes;
         private @Nullable String unknowns;
         public Builder() {}
         public Builder(DashboardDashboardMetadataDynamicFilters defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.filters = defaults.filters;
+    	      this.genericTagFilters = defaults.genericTagFilters;
     	      this.tagSuggestionTypes = defaults.tagSuggestionTypes;
     	      this.unknowns = defaults.unknowns;
         }
@@ -62,6 +69,11 @@ public final class DashboardDashboardMetadataDynamicFilters {
         }
         public Builder filters(String... filters) {
             return filters(List.of(filters));
+        }
+        @CustomType.Setter
+        public Builder genericTagFilters(@Nullable DashboardDashboardMetadataDynamicFiltersGenericTagFilters genericTagFilters) {
+            this.genericTagFilters = genericTagFilters;
+            return this;
         }
         @CustomType.Setter
         public Builder tagSuggestionTypes(@Nullable List<String> tagSuggestionTypes) {
@@ -79,6 +91,7 @@ public final class DashboardDashboardMetadataDynamicFilters {
         public DashboardDashboardMetadataDynamicFilters build() {
             final var o = new DashboardDashboardMetadataDynamicFilters();
             o.filters = filters;
+            o.genericTagFilters = genericTagFilters;
             o.tagSuggestionTypes = tagSuggestionTypes;
             o.unknowns = unknowns;
             return o;

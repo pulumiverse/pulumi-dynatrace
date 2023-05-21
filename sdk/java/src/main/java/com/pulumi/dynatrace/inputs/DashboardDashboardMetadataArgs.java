@@ -113,14 +113,22 @@ public final class DashboardDashboardMetadataArgs extends com.pulumi.resources.R
     /**
      * the dashboard is shared (`true`) or private (`false`)
      * 
+     * @deprecated
+     * Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+     * 
      */
+    @Deprecated /* Please use the resource `dynatrace_dashboard_sharing` to configure share settings */
     @Import(name="shared")
     private @Nullable Output<Boolean> shared;
 
     /**
      * @return the dashboard is shared (`true`) or private (`false`)
      * 
+     * @deprecated
+     * Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+     * 
      */
+    @Deprecated /* Please use the resource `dynatrace_dashboard_sharing` to configure share settings */
     public Optional<Output<Boolean>> shared() {
         return Optional.ofNullable(this.shared);
     }
@@ -128,14 +136,22 @@ public final class DashboardDashboardMetadataArgs extends com.pulumi.resources.R
     /**
      * represents sharing configuration of a dashboard
      * 
+     * @deprecated
+     * Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+     * 
      */
+    @Deprecated /* Please use the resource `dynatrace_dashboard_sharing` to configure share settings */
     @Import(name="sharingDetails")
     private @Nullable Output<DashboardDashboardMetadataSharingDetailsArgs> sharingDetails;
 
     /**
      * @return represents sharing configuration of a dashboard
      * 
+     * @deprecated
+     * Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+     * 
      */
+    @Deprecated /* Please use the resource `dynatrace_dashboard_sharing` to configure share settings */
     public Optional<Output<DashboardDashboardMetadataSharingDetailsArgs>> sharingDetails() {
         return Optional.ofNullable(this.sharingDetails);
     }
@@ -153,6 +169,21 @@ public final class DashboardDashboardMetadataArgs extends com.pulumi.resources.R
      */
     public Optional<Output<List<String>>> tags() {
         return Optional.ofNullable(this.tags);
+    }
+
+    /**
+     * No documentation available
+     * 
+     */
+    @Import(name="tilesNameSize")
+    private @Nullable Output<String> tilesNameSize;
+
+    /**
+     * @return No documentation available
+     * 
+     */
+    public Optional<Output<String>> tilesNameSize() {
+        return Optional.ofNullable(this.tilesNameSize);
     }
 
     /**
@@ -197,6 +228,7 @@ public final class DashboardDashboardMetadataArgs extends com.pulumi.resources.R
         this.shared = $.shared;
         this.sharingDetails = $.sharingDetails;
         this.tags = $.tags;
+        this.tilesNameSize = $.tilesNameSize;
         this.unknowns = $.unknowns;
         this.validFilterKeys = $.validFilterKeys;
     }
@@ -350,7 +382,11 @@ public final class DashboardDashboardMetadataArgs extends com.pulumi.resources.R
          * 
          * @return builder
          * 
+         * @deprecated
+         * Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+         * 
          */
+        @Deprecated /* Please use the resource `dynatrace_dashboard_sharing` to configure share settings */
         public Builder shared(@Nullable Output<Boolean> shared) {
             $.shared = shared;
             return this;
@@ -361,7 +397,11 @@ public final class DashboardDashboardMetadataArgs extends com.pulumi.resources.R
          * 
          * @return builder
          * 
+         * @deprecated
+         * Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+         * 
          */
+        @Deprecated /* Please use the resource `dynatrace_dashboard_sharing` to configure share settings */
         public Builder shared(Boolean shared) {
             return shared(Output.of(shared));
         }
@@ -371,7 +411,11 @@ public final class DashboardDashboardMetadataArgs extends com.pulumi.resources.R
          * 
          * @return builder
          * 
+         * @deprecated
+         * Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+         * 
          */
+        @Deprecated /* Please use the resource `dynatrace_dashboard_sharing` to configure share settings */
         public Builder sharingDetails(@Nullable Output<DashboardDashboardMetadataSharingDetailsArgs> sharingDetails) {
             $.sharingDetails = sharingDetails;
             return this;
@@ -382,7 +426,11 @@ public final class DashboardDashboardMetadataArgs extends com.pulumi.resources.R
          * 
          * @return builder
          * 
+         * @deprecated
+         * Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+         * 
          */
+        @Deprecated /* Please use the resource `dynatrace_dashboard_sharing` to configure share settings */
         public Builder sharingDetails(DashboardDashboardMetadataSharingDetailsArgs sharingDetails) {
             return sharingDetails(Output.of(sharingDetails));
         }
@@ -416,6 +464,27 @@ public final class DashboardDashboardMetadataArgs extends com.pulumi.resources.R
          */
         public Builder tags(String... tags) {
             return tags(List.of(tags));
+        }
+
+        /**
+         * @param tilesNameSize No documentation available
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tilesNameSize(@Nullable Output<String> tilesNameSize) {
+            $.tilesNameSize = tilesNameSize;
+            return this;
+        }
+
+        /**
+         * @param tilesNameSize No documentation available
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tilesNameSize(String tilesNameSize) {
+            return tilesNameSize(Output.of(tilesNameSize));
         }
 
         /**

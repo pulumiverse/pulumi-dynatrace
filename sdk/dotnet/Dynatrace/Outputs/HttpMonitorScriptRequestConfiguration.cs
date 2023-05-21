@@ -15,23 +15,31 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
     public sealed class HttpMonitorScriptRequestConfiguration
     {
         public readonly bool? AcceptAnyCertificate;
+        public readonly string? ClientCertificate;
         public readonly bool? FollowRedirects;
         public readonly Outputs.HttpMonitorScriptRequestConfigurationHeaders? Headers;
+        public readonly bool? SensitiveData;
         public readonly string? UserAgent;
 
         [OutputConstructor]
         private HttpMonitorScriptRequestConfiguration(
             bool? acceptAnyCertificate,
 
+            string? clientCertificate,
+
             bool? followRedirects,
 
             Outputs.HttpMonitorScriptRequestConfigurationHeaders? headers,
 
+            bool? sensitiveData,
+
             string? userAgent)
         {
             AcceptAnyCertificate = acceptAnyCertificate;
+            ClientCertificate = clientCertificate;
             FollowRedirects = followRedirects;
             Headers = headers;
+            SensitiveData = sensitiveData;
             UserAgent = userAgent;
         }
     }

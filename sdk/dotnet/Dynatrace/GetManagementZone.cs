@@ -23,6 +23,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
         /// using Dynatrace = Pulumi.Dynatrace;
@@ -95,6 +96,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
         /// using Dynatrace = Pulumi.Dynatrace;
@@ -188,16 +190,24 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string LegacyId;
         public readonly string Name;
+        public readonly string Settings20Id;
 
         [OutputConstructor]
         private GetManagementZoneResult(
             string id,
 
-            string name)
+            string legacyId,
+
+            string name,
+
+            string settings20Id)
         {
             Id = id;
+            LegacyId = legacyId;
             Name = name;
+            Settings20Id = settings20Id;
         }
     }
 }

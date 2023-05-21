@@ -6,6 +6,7 @@ package com.pulumi.dynatrace.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -46,9 +47,9 @@ public final class BrowserMonitorScriptConfigurationDeviceArgs extends com.pulum
     }
 
     @Import(name="scaleFactor")
-    private @Nullable Output<Integer> scaleFactor;
+    private @Nullable Output<Double> scaleFactor;
 
-    public Optional<Output<Integer>> scaleFactor() {
+    public Optional<Output<Double>> scaleFactor() {
         return Optional.ofNullable(this.scaleFactor);
     }
 
@@ -132,12 +133,12 @@ public final class BrowserMonitorScriptConfigurationDeviceArgs extends com.pulum
             return orientation(Output.of(orientation));
         }
 
-        public Builder scaleFactor(@Nullable Output<Integer> scaleFactor) {
+        public Builder scaleFactor(@Nullable Output<Double> scaleFactor) {
             $.scaleFactor = scaleFactor;
             return this;
         }
 
-        public Builder scaleFactor(Integer scaleFactor) {
+        public Builder scaleFactor(Double scaleFactor) {
             return scaleFactor(Output.of(scaleFactor));
         }
 

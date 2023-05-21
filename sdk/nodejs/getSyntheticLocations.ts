@@ -11,11 +11,8 @@ import * as utilities from "./utilities";
  */
 export function getSyntheticLocations(args?: GetSyntheticLocationsArgs, opts?: pulumi.InvokeOptions): Promise<GetSyntheticLocationsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getSyntheticLocations:getSyntheticLocations", {
         "id": args.id,
         "locations": args.locations,
@@ -46,9 +43,11 @@ export interface GetSyntheticLocationsResult {
     readonly locations: outputs.GetSyntheticLocationsLocations;
     readonly name?: string;
 }
-
+/**
+ * The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
+ */
 export function getSyntheticLocationsOutput(args?: GetSyntheticLocationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSyntheticLocationsResult> {
-    return pulumi.output(args).apply(a => getSyntheticLocations(a, opts))
+    return pulumi.output(args).apply((a: any) => getSyntheticLocations(a, opts))
 }
 
 /**

@@ -14,6 +14,7 @@ public final class GetAlertingProfileResult {
      * 
      */
     private String id;
+    private String legacyId;
     private String name;
 
     private GetAlertingProfileResult() {}
@@ -23,6 +24,9 @@ public final class GetAlertingProfileResult {
      */
     public String id() {
         return this.id;
+    }
+    public String legacyId() {
+        return this.legacyId;
     }
     public String name() {
         return this.name;
@@ -38,17 +42,24 @@ public final class GetAlertingProfileResult {
     @CustomType.Builder
     public static final class Builder {
         private String id;
+        private String legacyId;
         private String name;
         public Builder() {}
         public Builder(GetAlertingProfileResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
+    	      this.legacyId = defaults.legacyId;
     	      this.name = defaults.name;
         }
 
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder legacyId(String legacyId) {
+            this.legacyId = Objects.requireNonNull(legacyId);
             return this;
         }
         @CustomType.Setter
@@ -59,6 +70,7 @@ public final class GetAlertingProfileResult {
         public GetAlertingProfileResult build() {
             final var o = new GetAlertingProfileResult();
             o.id = id;
+            o.legacyId = legacyId;
             o.name = name;
             return o;
         }

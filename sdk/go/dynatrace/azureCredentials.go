@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ type AzureCredentials struct {
 	AutoTagging pulumi.BoolPtrOutput `pulumi:"autoTagging"`
 	// The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
 	DirectoryId pulumi.StringPtrOutput `pulumi:"directoryId"`
-	// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+	// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
 	Key pulumi.StringPtrOutput `pulumi:"key"`
 	// The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
 	Label pulumi.StringPtrOutput `pulumi:"label"`
@@ -34,6 +34,9 @@ type AzureCredentials struct {
 	MonitorOnlyTaggedEntities pulumi.BoolOutput `pulumi:"monitorOnlyTaggedEntities"`
 	// A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
 	SupportingServices AzureCredentialsSupportingServiceArrayOutput `pulumi:"supportingServices"`
+	// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+	// manage them via WebUI without interference by Terraform.
+	SupportingServicesManagedInDynatrace pulumi.BoolPtrOutput `pulumi:"supportingServicesManagedInDynatrace"`
 	// Any attributes that aren't yet supported by this provider
 	Unknowns pulumi.StringPtrOutput `pulumi:"unknowns"`
 }
@@ -51,6 +54,13 @@ func NewAzureCredentials(ctx *pulumi.Context,
 	if args.MonitorOnlyTaggedEntities == nil {
 		return nil, errors.New("invalid value for required argument 'MonitorOnlyTaggedEntities'")
 	}
+	if args.Key != nil {
+		args.Key = pulumi.ToSecret(args.Key).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"key",
+	})
+	opts = append(opts, secrets)
 	opts = pkgResourceDefaultOpts(opts)
 	var resource AzureCredentials
 	err := ctx.RegisterResource("dynatrace:index/azureCredentials:AzureCredentials", name, args, &resource, opts...)
@@ -82,7 +92,7 @@ type azureCredentialsState struct {
 	AutoTagging *bool `pulumi:"autoTagging"`
 	// The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
 	DirectoryId *string `pulumi:"directoryId"`
-	// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+	// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
 	Key *string `pulumi:"key"`
 	// The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
 	Label *string `pulumi:"label"`
@@ -94,6 +104,9 @@ type azureCredentialsState struct {
 	MonitorOnlyTaggedEntities *bool `pulumi:"monitorOnlyTaggedEntities"`
 	// A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
 	SupportingServices []AzureCredentialsSupportingService `pulumi:"supportingServices"`
+	// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+	// manage them via WebUI without interference by Terraform.
+	SupportingServicesManagedInDynatrace *bool `pulumi:"supportingServicesManagedInDynatrace"`
 	// Any attributes that aren't yet supported by this provider
 	Unknowns *string `pulumi:"unknowns"`
 }
@@ -107,7 +120,7 @@ type AzureCredentialsState struct {
 	AutoTagging pulumi.BoolPtrInput
 	// The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
 	DirectoryId pulumi.StringPtrInput
-	// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+	// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
 	Key pulumi.StringPtrInput
 	// The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
 	Label pulumi.StringPtrInput
@@ -119,6 +132,9 @@ type AzureCredentialsState struct {
 	MonitorOnlyTaggedEntities pulumi.BoolPtrInput
 	// A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
 	SupportingServices AzureCredentialsSupportingServiceArrayInput
+	// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+	// manage them via WebUI without interference by Terraform.
+	SupportingServicesManagedInDynatrace pulumi.BoolPtrInput
 	// Any attributes that aren't yet supported by this provider
 	Unknowns pulumi.StringPtrInput
 }
@@ -136,7 +152,7 @@ type azureCredentialsArgs struct {
 	AutoTagging *bool `pulumi:"autoTagging"`
 	// The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
 	DirectoryId *string `pulumi:"directoryId"`
-	// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+	// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
 	Key *string `pulumi:"key"`
 	// The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
 	Label *string `pulumi:"label"`
@@ -148,6 +164,9 @@ type azureCredentialsArgs struct {
 	MonitorOnlyTaggedEntities bool `pulumi:"monitorOnlyTaggedEntities"`
 	// A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
 	SupportingServices []AzureCredentialsSupportingService `pulumi:"supportingServices"`
+	// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+	// manage them via WebUI without interference by Terraform.
+	SupportingServicesManagedInDynatrace *bool `pulumi:"supportingServicesManagedInDynatrace"`
 	// Any attributes that aren't yet supported by this provider
 	Unknowns *string `pulumi:"unknowns"`
 }
@@ -162,7 +181,7 @@ type AzureCredentialsArgs struct {
 	AutoTagging pulumi.BoolPtrInput
 	// The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
 	DirectoryId pulumi.StringPtrInput
-	// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+	// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
 	Key pulumi.StringPtrInput
 	// The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
 	Label pulumi.StringPtrInput
@@ -174,6 +193,9 @@ type AzureCredentialsArgs struct {
 	MonitorOnlyTaggedEntities pulumi.BoolInput
 	// A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
 	SupportingServices AzureCredentialsSupportingServiceArrayInput
+	// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+	// manage them via WebUI without interference by Terraform.
+	SupportingServicesManagedInDynatrace pulumi.BoolPtrInput
 	// Any attributes that aren't yet supported by this provider
 	Unknowns pulumi.StringPtrInput
 }
@@ -285,7 +307,7 @@ func (o AzureCredentialsOutput) DirectoryId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AzureCredentials) pulumi.StringPtrOutput { return v.DirectoryId }).(pulumi.StringPtrOutput)
 }
 
-// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
 func (o AzureCredentialsOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AzureCredentials) pulumi.StringPtrOutput { return v.Key }).(pulumi.StringPtrOutput)
 }
@@ -315,6 +337,12 @@ func (o AzureCredentialsOutput) MonitorOnlyTaggedEntities() pulumi.BoolOutput {
 // A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
 func (o AzureCredentialsOutput) SupportingServices() AzureCredentialsSupportingServiceArrayOutput {
 	return o.ApplyT(func(v *AzureCredentials) AzureCredentialsSupportingServiceArrayOutput { return v.SupportingServices }).(AzureCredentialsSupportingServiceArrayOutput)
+}
+
+// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+// manage them via WebUI without interference by Terraform.
+func (o AzureCredentialsOutput) SupportingServicesManagedInDynatrace() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AzureCredentials) pulumi.BoolPtrOutput { return v.SupportingServicesManagedInDynatrace }).(pulumi.BoolPtrOutput)
 }
 
 // Any attributes that aren't yet supported by this provider

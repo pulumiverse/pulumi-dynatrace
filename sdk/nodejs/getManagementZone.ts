@@ -13,11 +13,12 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
  * import * as dynatrace from "@pulumi/dynatrace";
  *
- * const test = pulumi.output(dynatrace.getManagementZone({
+ * const test = dynatrace.getManagementZone({
  *     name: "Example",
- * }));
+ * });
  * const _name_ = new dynatrace.CalculatedServiceMetric("#name#", {
  *     conditions: [{
  *         conditions: [{
@@ -35,7 +36,7 @@ import * as utilities from "./utilities";
  *         }],
  *     }],
  *     enabled: true,
- *     managementZones: [test.id],
+ *     managementZones: [test.then(test => test.id)],
  *     metricDefinition: {
  *         metric: "REQUEST_ATTRIBUTE",
  *         requestAttribute: "foo",
@@ -46,11 +47,8 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getManagementZone(args: GetManagementZoneArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementZoneResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getManagementZone:getManagementZone", {
         "name": args.name,
     }, opts);
@@ -71,11 +69,54 @@ export interface GetManagementZoneResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly legacyId: string;
     readonly name: string;
+    readonly settings20Id: string;
 }
-
+/**
+ * The management zone data source allows the management zone ID to be retrieved by its name.
+ *
+ * - `name` queries for all management zones with the specified name
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const test = dynatrace.getManagementZone({
+ *     name: "Example",
+ * });
+ * const _name_ = new dynatrace.CalculatedServiceMetric("#name#", {
+ *     conditions: [{
+ *         conditions: [{
+ *             attribute: "HTTP_REQUEST_METHOD",
+ *             comparison: {
+ *                 httpMethod: {
+ *                     operator: "EQUALS_ANY_OF",
+ *                     values: [
+ *                         "POST",
+ *                         "GET",
+ *                     ],
+ *                 },
+ *                 negate: false,
+ *             },
+ *         }],
+ *     }],
+ *     enabled: true,
+ *     managementZones: [test.then(test => test.id)],
+ *     metricDefinition: {
+ *         metric: "REQUEST_ATTRIBUTE",
+ *         requestAttribute: "foo",
+ *     },
+ *     metricKey: "calc:service.#name#",
+ *     unit: "MILLI_SECOND_PER_MINUTE",
+ * });
+ * ```
+ */
 export function getManagementZoneOutput(args: GetManagementZoneOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementZoneResult> {
-    return pulumi.output(args).apply(a => getManagementZone(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagementZone(a, opts))
 }
 
 /**

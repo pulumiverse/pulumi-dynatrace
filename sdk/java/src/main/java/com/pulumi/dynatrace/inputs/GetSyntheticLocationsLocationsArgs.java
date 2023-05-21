@@ -5,7 +5,7 @@ package com.pulumi.dynatrace.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.dynatrace.inputs.GetSyntheticLocationsLocationsLocationArgs;
+import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,24 +17,72 @@ public final class GetSyntheticLocationsLocationsArgs extends com.pulumi.resourc
     public static final GetSyntheticLocationsLocationsArgs Empty = new GetSyntheticLocationsLocationsArgs();
 
     /**
-     * The name of the location
+     * The cloud provider where the location is hosted.
      * 
      */
-    @Import(name="locations")
-    private @Nullable Output<List<GetSyntheticLocationsLocationsLocationArgs>> locations;
+    @Import(name="cloudPlatform", required=true)
+    private Output<String> cloudPlatform;
 
     /**
-     * @return The name of the location
+     * @return The cloud provider where the location is hosted.
      * 
      */
-    public Optional<Output<List<GetSyntheticLocationsLocationsLocationArgs>>> locations() {
-        return Optional.ofNullable(this.locations);
+    public Output<String> cloudPlatform() {
+        return this.cloudPlatform;
+    }
+
+    @Import(name="entityId")
+    private @Nullable Output<String> entityId;
+
+    public Optional<Output<String>> entityId() {
+        return Optional.ofNullable(this.entityId);
+    }
+
+    @Import(name="ips", required=true)
+    private Output<List<String>> ips;
+
+    public Output<List<String>> ips() {
+        return this.ips;
+    }
+
+    @Import(name="name")
+    private @Nullable Output<String> name;
+
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
+    }
+
+    @Import(name="stage", required=true)
+    private Output<String> stage;
+
+    public Output<String> stage() {
+        return this.stage;
+    }
+
+    @Import(name="status", required=true)
+    private Output<String> status;
+
+    public Output<String> status() {
+        return this.status;
+    }
+
+    @Import(name="type")
+    private @Nullable Output<String> type;
+
+    public Optional<Output<String>> type() {
+        return Optional.ofNullable(this.type);
     }
 
     private GetSyntheticLocationsLocationsArgs() {}
 
     private GetSyntheticLocationsLocationsArgs(GetSyntheticLocationsLocationsArgs $) {
-        this.locations = $.locations;
+        this.cloudPlatform = $.cloudPlatform;
+        this.entityId = $.entityId;
+        this.ips = $.ips;
+        this.name = $.name;
+        this.stage = $.stage;
+        this.status = $.status;
+        this.type = $.type;
     }
 
     public static Builder builder() {
@@ -56,37 +104,89 @@ public final class GetSyntheticLocationsLocationsArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param locations The name of the location
+         * @param cloudPlatform The cloud provider where the location is hosted.
          * 
          * @return builder
          * 
          */
-        public Builder locations(@Nullable Output<List<GetSyntheticLocationsLocationsLocationArgs>> locations) {
-            $.locations = locations;
+        public Builder cloudPlatform(Output<String> cloudPlatform) {
+            $.cloudPlatform = cloudPlatform;
             return this;
         }
 
         /**
-         * @param locations The name of the location
+         * @param cloudPlatform The cloud provider where the location is hosted.
          * 
          * @return builder
          * 
          */
-        public Builder locations(List<GetSyntheticLocationsLocationsLocationArgs> locations) {
-            return locations(Output.of(locations));
+        public Builder cloudPlatform(String cloudPlatform) {
+            return cloudPlatform(Output.of(cloudPlatform));
         }
 
-        /**
-         * @param locations The name of the location
-         * 
-         * @return builder
-         * 
-         */
-        public Builder locations(GetSyntheticLocationsLocationsLocationArgs... locations) {
-            return locations(List.of(locations));
+        public Builder entityId(@Nullable Output<String> entityId) {
+            $.entityId = entityId;
+            return this;
+        }
+
+        public Builder entityId(String entityId) {
+            return entityId(Output.of(entityId));
+        }
+
+        public Builder ips(Output<List<String>> ips) {
+            $.ips = ips;
+            return this;
+        }
+
+        public Builder ips(List<String> ips) {
+            return ips(Output.of(ips));
+        }
+
+        public Builder ips(String... ips) {
+            return ips(List.of(ips));
+        }
+
+        public Builder name(@Nullable Output<String> name) {
+            $.name = name;
+            return this;
+        }
+
+        public Builder name(String name) {
+            return name(Output.of(name));
+        }
+
+        public Builder stage(Output<String> stage) {
+            $.stage = stage;
+            return this;
+        }
+
+        public Builder stage(String stage) {
+            return stage(Output.of(stage));
+        }
+
+        public Builder status(Output<String> status) {
+            $.status = status;
+            return this;
+        }
+
+        public Builder status(String status) {
+            return status(Output.of(status));
+        }
+
+        public Builder type(@Nullable Output<String> type) {
+            $.type = type;
+            return this;
+        }
+
+        public Builder type(String type) {
+            return type(Output.of(type));
         }
 
         public GetSyntheticLocationsLocationsArgs build() {
+            $.cloudPlatform = Objects.requireNonNull($.cloudPlatform, "expected parameter 'cloudPlatform' to be non-null");
+            $.ips = Objects.requireNonNull($.ips, "expected parameter 'ips' to be non-null");
+            $.stage = Objects.requireNonNull($.stage, "expected parameter 'stage' to be non-null");
+            $.status = Objects.requireNonNull($.status, "expected parameter 'status' to be non-null");
             return $;
         }
     }

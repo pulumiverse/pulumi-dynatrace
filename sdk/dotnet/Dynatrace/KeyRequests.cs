@@ -20,7 +20,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<ImmutableArray<string>> Names { get; private set; } = null!;
 
         /// <summary>
-        /// Whether to create an entry point or not
+        /// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
         /// </summary>
         [Output("service")]
         public Output<string> Service { get; private set; } = null!;
@@ -85,7 +85,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         }
 
         /// <summary>
-        /// Whether to create an entry point or not
+        /// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
         /// </summary>
         [Input("service", required: true)]
         public Input<string> Service { get; set; } = null!;
@@ -111,7 +111,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         }
 
         /// <summary>
-        /// Whether to create an entry point or not
+        /// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
         /// </summary>
         [Input("service")]
         public Input<string>? Service { get; set; }

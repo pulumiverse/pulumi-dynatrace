@@ -13,10 +13,8 @@ import (
 type ResourceAttributes struct {
 	pulumi.CustomResourceState
 
-	// configured attributes that currently shouldn't be taken into consideration
-	Disableds pulumi.StringArrayOutput `pulumi:"disableds"`
-	// attributes that should get captured
-	Enableds pulumi.StringArrayOutput `pulumi:"enableds"`
+	// Attribute key allow-list
+	Keys ResourceAttributesKeysPtrOutput `pulumi:"keys"`
 }
 
 // NewResourceAttributes registers a new resource with the given unique name, arguments, and options.
@@ -49,17 +47,13 @@ func GetResourceAttributes(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ResourceAttributes resources.
 type resourceAttributesState struct {
-	// configured attributes that currently shouldn't be taken into consideration
-	Disableds []string `pulumi:"disableds"`
-	// attributes that should get captured
-	Enableds []string `pulumi:"enableds"`
+	// Attribute key allow-list
+	Keys *ResourceAttributesKeys `pulumi:"keys"`
 }
 
 type ResourceAttributesState struct {
-	// configured attributes that currently shouldn't be taken into consideration
-	Disableds pulumi.StringArrayInput
-	// attributes that should get captured
-	Enableds pulumi.StringArrayInput
+	// Attribute key allow-list
+	Keys ResourceAttributesKeysPtrInput
 }
 
 func (ResourceAttributesState) ElementType() reflect.Type {
@@ -67,18 +61,14 @@ func (ResourceAttributesState) ElementType() reflect.Type {
 }
 
 type resourceAttributesArgs struct {
-	// configured attributes that currently shouldn't be taken into consideration
-	Disableds []string `pulumi:"disableds"`
-	// attributes that should get captured
-	Enableds []string `pulumi:"enableds"`
+	// Attribute key allow-list
+	Keys *ResourceAttributesKeys `pulumi:"keys"`
 }
 
 // The set of arguments for constructing a ResourceAttributes resource.
 type ResourceAttributesArgs struct {
-	// configured attributes that currently shouldn't be taken into consideration
-	Disableds pulumi.StringArrayInput
-	// attributes that should get captured
-	Enableds pulumi.StringArrayInput
+	// Attribute key allow-list
+	Keys ResourceAttributesKeysPtrInput
 }
 
 func (ResourceAttributesArgs) ElementType() reflect.Type {
@@ -168,14 +158,9 @@ func (o ResourceAttributesOutput) ToResourceAttributesOutputWithContext(ctx cont
 	return o
 }
 
-// configured attributes that currently shouldn't be taken into consideration
-func (o ResourceAttributesOutput) Disableds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *ResourceAttributes) pulumi.StringArrayOutput { return v.Disableds }).(pulumi.StringArrayOutput)
-}
-
-// attributes that should get captured
-func (o ResourceAttributesOutput) Enableds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v *ResourceAttributes) pulumi.StringArrayOutput { return v.Enableds }).(pulumi.StringArrayOutput)
+// Attribute key allow-list
+func (o ResourceAttributesOutput) Keys() ResourceAttributesKeysPtrOutput {
+	return o.ApplyT(func(v *ResourceAttributes) ResourceAttributesKeysPtrOutput { return v.Keys }).(ResourceAttributesKeysPtrOutput)
 }
 
 type ResourceAttributesArrayOutput struct{ *pulumi.OutputState }

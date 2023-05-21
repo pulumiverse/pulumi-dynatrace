@@ -31,3 +31,15 @@ class _ExportableConfig(types.ModuleType):
     def dt_env_url(self) -> Optional[str]:
         return __config__.get('dtEnvUrl') or _utilities.get_env('DYNATRACE_ENV_URL', 'DT_ENV_URL')
 
+    @property
+    def iam_account_id(self) -> Optional[str]:
+        return __config__.get('iamAccountId')
+
+    @property
+    def iam_client_id(self) -> Optional[str]:
+        return __config__.get('iamClientId')
+
+    @property
+    def iam_client_secret(self) -> Optional[str]:
+        return __config__.get('iamClientSecret')
+

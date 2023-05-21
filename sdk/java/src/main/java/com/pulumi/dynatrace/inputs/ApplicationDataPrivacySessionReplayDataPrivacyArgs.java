@@ -19,14 +19,14 @@ public final class ApplicationDataPrivacySessionReplayDataPrivacyArgs extends co
     public static final ApplicationDataPrivacySessionReplayDataPrivacyArgs Empty = new ApplicationDataPrivacySessionReplayDataPrivacyArgs();
 
     /**
-     * Content masking settings for Session Replay.
+     * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Content masking settings for Session Replay.
      * 
      */
     @Import(name="contentMaskingSettings", required=true)
     private Output<ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsArgs> contentMaskingSettings;
 
     /**
-     * @return Content masking settings for Session Replay.
+     * @return (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Content masking settings for Session Replay.
      * 
      */
     public Output<ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsArgs> contentMaskingSettings() {
@@ -74,7 +74,7 @@ public final class ApplicationDataPrivacySessionReplayDataPrivacyArgs extends co
         }
 
         /**
-         * @param contentMaskingSettings Content masking settings for Session Replay.
+         * @param contentMaskingSettings (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Content masking settings for Session Replay.
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class ApplicationDataPrivacySessionReplayDataPrivacyArgs extends co
         }
 
         /**
-         * @param contentMaskingSettings Content masking settings for Session Replay.
+         * @param contentMaskingSettings (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Content masking settings for Session Replay.
          * 
          * @return builder
          * 

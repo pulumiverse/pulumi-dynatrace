@@ -32,14 +32,14 @@ public final class KeyRequestsArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Whether to create an entry point or not
+     * ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
      * 
      */
     @Import(name="service", required=true)
     private Output<String> service;
 
     /**
-     * @return Whether to create an entry point or not
+     * @return ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
      * 
      */
     public Output<String> service() {
@@ -103,7 +103,7 @@ public final class KeyRequestsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param service Whether to create an entry point or not
+         * @param service ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class KeyRequestsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param service Whether to create an entry point or not
+         * @param service ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
          * 
          * @return builder
          * 

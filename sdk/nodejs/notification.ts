@@ -47,10 +47,6 @@ export class Notification extends pulumi.CustomResource {
      */
     public readonly email!: pulumi.Output<outputs.NotificationEmail | undefined>;
     /**
-     * Configuration for HipChat Notification
-     */
-    public readonly hipchat!: pulumi.Output<outputs.NotificationHipchat | undefined>;
-    /**
      * Configuration for Jira Notification
      */
     public readonly jira!: pulumi.Output<outputs.NotificationJira | undefined>;
@@ -103,7 +99,6 @@ export class Notification extends pulumi.CustomResource {
             resourceInputs["ansibleTower"] = state ? state.ansibleTower : undefined;
             resourceInputs["config"] = state ? state.config : undefined;
             resourceInputs["email"] = state ? state.email : undefined;
-            resourceInputs["hipchat"] = state ? state.hipchat : undefined;
             resourceInputs["jira"] = state ? state.jira : undefined;
             resourceInputs["opsGenie"] = state ? state.opsGenie : undefined;
             resourceInputs["pagerDuty"] = state ? state.pagerDuty : undefined;
@@ -118,7 +113,6 @@ export class Notification extends pulumi.CustomResource {
             resourceInputs["ansibleTower"] = args ? args.ansibleTower : undefined;
             resourceInputs["config"] = args ? args.config : undefined;
             resourceInputs["email"] = args ? args.email : undefined;
-            resourceInputs["hipchat"] = args ? args.hipchat : undefined;
             resourceInputs["jira"] = args ? args.jira : undefined;
             resourceInputs["opsGenie"] = args ? args.opsGenie : undefined;
             resourceInputs["pagerDuty"] = args ? args.pagerDuty : undefined;
@@ -150,10 +144,6 @@ export interface NotificationState {
      * Configuration for Email Notification
      */
     email?: pulumi.Input<inputs.NotificationEmail>;
-    /**
-     * Configuration for HipChat Notification
-     */
-    hipchat?: pulumi.Input<inputs.NotificationHipchat>;
     /**
      * Configuration for Jira Notification
      */
@@ -208,10 +198,6 @@ export interface NotificationArgs {
      * Configuration for Email Notification
      */
     email?: pulumi.Input<inputs.NotificationEmail>;
-    /**
-     * Configuration for HipChat Notification
-     */
-    hipchat?: pulumi.Input<inputs.NotificationHipchat>;
     /**
      * Configuration for Jira Notification
      */

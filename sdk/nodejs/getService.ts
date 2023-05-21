@@ -30,13 +30,11 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getService(args: GetServiceArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getService:getService", {
         "name": args.name,
+        "operator": args.operator,
         "tags": args.tags,
     }, opts);
 }
@@ -46,6 +44,7 @@ export function getService(args: GetServiceArgs, opts?: pulumi.InvokeOptions): P
  */
 export interface GetServiceArgs {
     name: string;
+    operator?: string;
     /**
      * Required tags of the service to find
      */
@@ -61,14 +60,39 @@ export interface GetServiceResult {
      */
     readonly id: string;
     readonly name: string;
+    readonly operator?: string;
     /**
      * Required tags of the service to find
      */
     readonly tags?: string[];
 }
-
+/**
+ * The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
+ *
+ * - `name` queries for all services with the specified name
+ * - `tags` (optional) refers to the tags that need to be present for the service (inclusive)
+ *
+ * If multiple services match the given criteria, the first result will be retrieved.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const test = dynatrace.getService({
+ *     name: "Example",
+ *     tags: [
+ *         "TerraformKeyTest",
+ *         "TerraformKeyValueTest=TestValue",
+ *     ],
+ * });
+ * const _name_ = new dynatrace.KeyRequests("#name#", {service: test.then(test => test.id)});
+ * ```
+ */
 export function getServiceOutput(args: GetServiceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceResult> {
-    return pulumi.output(args).apply(a => getService(a, opts))
+    return pulumi.output(args).apply((a: any) => getService(a, opts))
 }
 
 /**
@@ -76,6 +100,7 @@ export function getServiceOutput(args: GetServiceOutputArgs, opts?: pulumi.Invok
  */
 export interface GetServiceOutputArgs {
     name: pulumi.Input<string>;
+    operator?: pulumi.Input<string>;
     /**
      * Required tags of the service to find
      */

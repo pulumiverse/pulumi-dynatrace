@@ -15,14 +15,39 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
     public sealed class GetSyntheticLocationsLocationsResult
     {
         /// <summary>
-        /// The name of the location
+        /// The cloud provider where the location is hosted.
         /// </summary>
-        public readonly ImmutableArray<Outputs.GetSyntheticLocationsLocationsLocationResult> Locations;
+        public readonly string CloudPlatform;
+        public readonly string? EntityId;
+        public readonly ImmutableArray<string> Ips;
+        public readonly string? Name;
+        public readonly string Stage;
+        public readonly string Status;
+        public readonly string? Type;
 
         [OutputConstructor]
-        private GetSyntheticLocationsLocationsResult(ImmutableArray<Outputs.GetSyntheticLocationsLocationsLocationResult> locations)
+        private GetSyntheticLocationsLocationsResult(
+            string cloudPlatform,
+
+            string? entityId,
+
+            ImmutableArray<string> ips,
+
+            string? name,
+
+            string stage,
+
+            string status,
+
+            string? type)
         {
-            Locations = locations;
+            CloudPlatform = cloudPlatform;
+            EntityId = entityId;
+            Ips = ips;
+            Name = name;
+            Stage = stage;
+            Status = status;
+            Type = type;
         }
     }
 }

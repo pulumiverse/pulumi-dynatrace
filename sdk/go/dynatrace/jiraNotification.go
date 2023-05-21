@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,6 +22,8 @@ type JiraNotification struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// The type of the Jira issue to be created by this notification
 	IssueType pulumi.StringOutput `pulumi:"issueType"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
 	// The name of the notification configuration
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The ID of the associated alerting profile
@@ -68,7 +70,7 @@ func NewJiraNotification(ctx *pulumi.Context,
 		return nil, errors.New("invalid value for required argument 'Username'")
 	}
 	if args.ApiToken != nil {
-		args.ApiToken = pulumi.ToSecret(args.ApiToken).(pulumi.StringPtrOutput)
+		args.ApiToken = pulumi.ToSecret(args.ApiToken).(pulumi.StringPtrInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"apiToken",
@@ -105,6 +107,8 @@ type jiraNotificationState struct {
 	Description *string `pulumi:"description"`
 	// The type of the Jira issue to be created by this notification
 	IssueType *string `pulumi:"issueType"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The name of the notification configuration
 	Name *string `pulumi:"name"`
 	// The ID of the associated alerting profile
@@ -128,6 +132,8 @@ type JiraNotificationState struct {
 	Description pulumi.StringPtrInput
 	// The type of the Jira issue to be created by this notification
 	IssueType pulumi.StringPtrInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The name of the notification configuration
 	Name pulumi.StringPtrInput
 	// The ID of the associated alerting profile
@@ -155,6 +161,8 @@ type jiraNotificationArgs struct {
 	Description string `pulumi:"description"`
 	// The type of the Jira issue to be created by this notification
 	IssueType string `pulumi:"issueType"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The name of the notification configuration
 	Name *string `pulumi:"name"`
 	// The ID of the associated alerting profile
@@ -179,6 +187,8 @@ type JiraNotificationArgs struct {
 	Description pulumi.StringInput
 	// The type of the Jira issue to be created by this notification
 	IssueType pulumi.StringInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The name of the notification configuration
 	Name pulumi.StringPtrInput
 	// The ID of the associated alerting profile
@@ -298,6 +308,11 @@ func (o JiraNotificationOutput) Description() pulumi.StringOutput {
 // The type of the Jira issue to be created by this notification
 func (o JiraNotificationOutput) IssueType() pulumi.StringOutput {
 	return o.ApplyT(func(v *JiraNotification) pulumi.StringOutput { return v.IssueType }).(pulumi.StringOutput)
+}
+
+// The ID of these settings when referred to from resources requiring the REST API V1 keys
+func (o JiraNotificationOutput) LegacyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *JiraNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
 // The name of the notification configuration

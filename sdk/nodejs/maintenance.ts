@@ -47,6 +47,10 @@ export class Maintenance extends pulumi.CustomResource {
      */
     public readonly generalProperties!: pulumi.Output<outputs.MaintenanceGeneralProperties>;
     /**
+     * The ID of this setting when referred to by the Config REST API V1
+     */
+    public readonly legacyId!: pulumi.Output<string>;
+    /**
      * The schedule of the maintenance window
      */
     public readonly schedule!: pulumi.Output<outputs.MaintenanceSchedule>;
@@ -67,6 +71,7 @@ export class Maintenance extends pulumi.CustomResource {
             resourceInputs["enabled"] = state ? state.enabled : undefined;
             resourceInputs["filters"] = state ? state.filters : undefined;
             resourceInputs["generalProperties"] = state ? state.generalProperties : undefined;
+            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
             resourceInputs["schedule"] = state ? state.schedule : undefined;
         } else {
             const args = argsOrState as MaintenanceArgs | undefined;
@@ -79,6 +84,7 @@ export class Maintenance extends pulumi.CustomResource {
             resourceInputs["enabled"] = args ? args.enabled : undefined;
             resourceInputs["filters"] = args ? args.filters : undefined;
             resourceInputs["generalProperties"] = args ? args.generalProperties : undefined;
+            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
             resourceInputs["schedule"] = args ? args.schedule : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -103,6 +109,10 @@ export interface MaintenanceState {
      */
     generalProperties?: pulumi.Input<inputs.MaintenanceGeneralProperties>;
     /**
+     * The ID of this setting when referred to by the Config REST API V1
+     */
+    legacyId?: pulumi.Input<string>;
+    /**
      * The schedule of the maintenance window
      */
     schedule?: pulumi.Input<inputs.MaintenanceSchedule>;
@@ -124,6 +134,10 @@ export interface MaintenanceArgs {
      * The general properties of the maintenance window
      */
     generalProperties: pulumi.Input<inputs.MaintenanceGeneralProperties>;
+    /**
+     * The ID of this setting when referred to by the Config REST API V1
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The schedule of the maintenance window
      */

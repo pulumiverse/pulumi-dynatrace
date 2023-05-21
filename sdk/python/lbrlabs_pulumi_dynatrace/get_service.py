@@ -21,13 +21,16 @@ class GetServiceResult:
     """
     A collection of values returned by getService.
     """
-    def __init__(__self__, id=None, name=None, tags=None):
+    def __init__(__self__, id=None, name=None, operator=None, tags=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if operator and not isinstance(operator, str):
+            raise TypeError("Expected argument 'operator' to be a str")
+        pulumi.set(__self__, "operator", operator)
         if tags and not isinstance(tags, list):
             raise TypeError("Expected argument 'tags' to be a list")
         pulumi.set(__self__, "tags", tags)
@@ -47,6 +50,11 @@ class GetServiceResult:
 
     @property
     @pulumi.getter
+    def operator(self) -> Optional[str]:
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
     def tags(self) -> Optional[Sequence[str]]:
         """
         Required tags of the service to find
@@ -62,10 +70,12 @@ class AwaitableGetServiceResult(GetServiceResult):
         return GetServiceResult(
             id=self.id,
             name=self.name,
+            operator=self.operator,
             tags=self.tags)
 
 
 def get_service(name: Optional[str] = None,
+                operator: Optional[str] = None,
                 tags: Optional[Sequence[str]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceResult:
     """
@@ -96,6 +106,7 @@ def get_service(name: Optional[str] = None,
     """
     __args__ = dict()
     __args__['name'] = name
+    __args__['operator'] = operator
     __args__['tags'] = tags
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getService:getService', __args__, opts=opts, typ=GetServiceResult).value
@@ -103,11 +114,13 @@ def get_service(name: Optional[str] = None,
     return AwaitableGetServiceResult(
         id=__ret__.id,
         name=__ret__.name,
+        operator=__ret__.operator,
         tags=__ret__.tags)
 
 
 @_utilities.lift_output_func(get_service)
 def get_service_output(name: Optional[pulumi.Input[str]] = None,
+                       operator: Optional[pulumi.Input[Optional[str]]] = None,
                        tags: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceResult]:
     """

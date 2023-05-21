@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,6 +22,8 @@ type EmailNotification struct {
 	Body pulumi.StringOutput `pulumi:"body"`
 	// The list of the email CC-recipients
 	Ccs pulumi.StringArrayOutput `pulumi:"ccs"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
 	// The name of the notification configuration
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Send email if problem is closed
@@ -84,6 +86,8 @@ type emailNotificationState struct {
 	Body *string `pulumi:"body"`
 	// The list of the email CC-recipients
 	Ccs []string `pulumi:"ccs"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The name of the notification configuration
 	Name *string `pulumi:"name"`
 	// Send email if problem is closed
@@ -105,6 +109,8 @@ type EmailNotificationState struct {
 	Body pulumi.StringPtrInput
 	// The list of the email CC-recipients
 	Ccs pulumi.StringArrayInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The name of the notification configuration
 	Name pulumi.StringPtrInput
 	// Send email if problem is closed
@@ -130,6 +136,8 @@ type emailNotificationArgs struct {
 	Body string `pulumi:"body"`
 	// The list of the email CC-recipients
 	Ccs []string `pulumi:"ccs"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The name of the notification configuration
 	Name *string `pulumi:"name"`
 	// Send email if problem is closed
@@ -152,6 +160,8 @@ type EmailNotificationArgs struct {
 	Body pulumi.StringInput
 	// The list of the email CC-recipients
 	Ccs pulumi.StringArrayInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The name of the notification configuration
 	Name pulumi.StringPtrInput
 	// Send email if problem is closed
@@ -269,6 +279,11 @@ func (o EmailNotificationOutput) Body() pulumi.StringOutput {
 // The list of the email CC-recipients
 func (o EmailNotificationOutput) Ccs() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *EmailNotification) pulumi.StringArrayOutput { return v.Ccs }).(pulumi.StringArrayOutput)
+}
+
+// The ID of these settings when referred to from resources requiring the REST API V1 keys
+func (o EmailNotificationOutput) LegacyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *EmailNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
 // The name of the notification configuration

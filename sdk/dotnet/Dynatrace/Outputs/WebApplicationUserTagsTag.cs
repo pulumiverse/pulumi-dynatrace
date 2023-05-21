@@ -18,28 +18,32 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         /// <summary>
         /// The ID of this resource.
         /// </summary>
-        public readonly int Id;
+        public readonly int? Id;
         public readonly bool? IgnoreCase;
         public readonly int? MetadataId;
         public readonly string? ServerSideRequestAttribute;
+        public readonly int? UniqueId;
 
         [OutputConstructor]
         private WebApplicationUserTagsTag(
             string? cleanupRule,
 
-            int id,
+            int? id,
 
             bool? ignoreCase,
 
             int? metadataId,
 
-            string? serverSideRequestAttribute)
+            string? serverSideRequestAttribute,
+
+            int? uniqueId)
         {
             CleanupRule = cleanupRule;
             Id = id;
             IgnoreCase = ignoreCase;
             MetadataId = metadataId;
             ServerSideRequestAttribute = serverSideRequestAttribute;
+            UniqueId = uniqueId;
         }
     }
 }

@@ -15,6 +15,9 @@ __all__ = [
     'AlertingFiltersFilter',
     'AlertingFiltersFilterCustom',
     'AlertingFiltersFilterCustomDescription',
+    'AlertingFiltersFilterCustomMetadata',
+    'AlertingFiltersFilterCustomMetadataItems',
+    'AlertingFiltersFilterCustomMetadataItemsFilter',
     'AlertingFiltersFilterCustomTitle',
     'AlertingFiltersFilterPredefined',
     'AlertingProfileEventTypeFilter',
@@ -28,6 +31,8 @@ __all__ = [
     'AlertingProfileRuleTagFilterTagFilter',
     'AlertingRules',
     'AlertingRulesRule',
+    'ApiDetectionConditions',
+    'ApiDetectionConditionsCondition',
     'ApplicationAnomaliesFailureRate',
     'ApplicationAnomaliesFailureRateAuto',
     'ApplicationAnomaliesFailureRateThresholds',
@@ -51,7 +56,6 @@ __all__ = [
     'ApplicationErrorRulesHttpErrors',
     'ApplicationErrorRulesHttpErrorsRule',
     'AutotagEntitySelectorBasedRule',
-    'AutotagMetadata',
     'AutotagRule',
     'AutotagRuleCondition',
     'AutotagRuleConditionApplicationType',
@@ -130,6 +134,27 @@ __all__ = [
     'AutotagRuleConditionTagValue',
     'AutotagRuleConditionTech',
     'AutotagRuleConditionTechValue',
+    'AutotagV2Rules',
+    'AutotagV2RulesRule',
+    'AutotagV2RulesRuleAttributeRule',
+    'AutotagV2RulesRuleAttributeRuleConditions',
+    'AutotagV2RulesRuleAttributeRuleConditionsCondition',
+    'AwsAnomaliesEc2CandidateHighCpuDetection',
+    'AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholds',
+    'AwsAnomaliesElbHighConnectionErrorsDetection',
+    'AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholds',
+    'AwsAnomaliesLambdaHighErrorRateDetection',
+    'AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholds',
+    'AwsAnomaliesRdsHighCpuDetection',
+    'AwsAnomaliesRdsHighCpuDetectionCustomThresholds',
+    'AwsAnomaliesRdsHighMemoryDetection',
+    'AwsAnomaliesRdsHighMemoryDetectionCustomThresholds',
+    'AwsAnomaliesRdsHighWriteReadLatencyDetection',
+    'AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholds',
+    'AwsAnomaliesRdsLowStorageDetection',
+    'AwsAnomaliesRdsLowStorageDetectionCustomThresholds',
+    'AwsAnomaliesRdsRestartsSequenceDetection',
+    'AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds',
     'AwsCredentialsAuthenticationData',
     'AwsCredentialsSupportingServicesToMonitor',
     'AwsCredentialsSupportingServicesToMonitorMonitoredMetric',
@@ -143,8 +168,11 @@ __all__ = [
     'BrowserMonitorAnomalyDetectionLoadingTimeThresholdThreshold',
     'BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThreshold',
     'BrowserMonitorAnomalyDetectionOutageHandling',
+    'BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy',
     'BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy',
     'BrowserMonitorKeyPerformanceMetrics',
+    'BrowserMonitorPerformanceThresholds',
+    'BrowserMonitorPerformanceThresholdsThreshold',
     'BrowserMonitorScript',
     'BrowserMonitorScriptConfiguration',
     'BrowserMonitorScriptConfigurationBandwidth',
@@ -247,6 +275,19 @@ __all__ = [
     'BrowserMonitorScriptEventsEventTapWaitValidationTargetLocatorLocator',
     'BrowserMonitorTag',
     'BrowserMonitorTagTag',
+    'BusinessEventsOneagentEvent',
+    'BusinessEventsOneagentEventCategory',
+    'BusinessEventsOneagentEventData',
+    'BusinessEventsOneagentEventDataEventDataFieldComplex',
+    'BusinessEventsOneagentEventDataEventDataFieldComplexSource',
+    'BusinessEventsOneagentEventProvider',
+    'BusinessEventsOneagentEventType',
+    'BusinessEventsOneagentTriggers',
+    'BusinessEventsOneagentTriggersTrigger',
+    'BusinessEventsOneagentTriggersTriggerSource',
+    'BusinessEventsProcessingRuleTesting',
+    'BusinessEventsProcessingTransformationFields',
+    'BusinessEventsProcessingTransformationFieldsTransformationField',
     'CalculatedServiceMetricCondition',
     'CalculatedServiceMetricConditionCondition',
     'CalculatedServiceMetricConditionConditionComparison',
@@ -283,6 +324,15 @@ __all__ = [
     'CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSourceServiceTag',
     'CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSourceServiceTagTagKey',
     'CalculatedServiceMetricMetricDefinition',
+    'CloudappWorkloaddetectionCloudFoundry',
+    'CloudappWorkloaddetectionDocker',
+    'CloudappWorkloaddetectionKubernetes',
+    'CloudappWorkloaddetectionKubernetesFilters',
+    'CloudappWorkloaddetectionKubernetesFiltersFilter',
+    'CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles',
+    'CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter',
+    'CredentialsCredentialUsageSummary',
+    'CredentialsExternal',
     'CustomAnomaliesDimension',
     'CustomAnomaliesDimensionDimension',
     'CustomAnomaliesDimensionEntity',
@@ -310,12 +360,34 @@ __all__ = [
     'CustomAnomaliesStrategyAuto',
     'CustomAnomaliesStrategyGeneric',
     'CustomAnomaliesStrategyStatic',
+    'CustomAppAnomaliesErrorRateIncrease',
+    'CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto',
+    'CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed',
+    'CustomAppAnomaliesSlowUserActions',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsAuto',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsFixed',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed',
+    'CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest',
+    'CustomAppAnomaliesUnexpectedHighLoad',
+    'CustomAppAnomaliesUnexpectedLowLoad',
+    'CustomAppCrashRateCrashRateIncrease',
+    'CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto',
+    'CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed',
+    'CustomAppEnablementRum',
     'CustomServiceRule',
     'CustomServiceRuleClass',
     'CustomServiceRuleFile',
     'CustomServiceRuleMethod',
+    'CustomTagsTags',
+    'CustomTagsTagsFilter',
     'DashboardDashboardMetadata',
     'DashboardDashboardMetadataDynamicFilters',
+    'DashboardDashboardMetadataDynamicFiltersGenericTagFilters',
+    'DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilter',
     'DashboardDashboardMetadataFilter',
     'DashboardDashboardMetadataFilterManagementZone',
     'DashboardDashboardMetadataSharingDetails',
@@ -337,6 +409,16 @@ __all__ = [
     'DashboardTileFilterConfigFiltersFilterMatch',
     'DashboardTileFilterManagementZone',
     'DashboardTileVisualizationConfig',
+    'DashboardsAllowlistAllowlist',
+    'DashboardsAllowlistAllowlistUrlpattern',
+    'DashboardsGeneralDefaultDashboardList',
+    'DashboardsGeneralDefaultDashboardListDefaultDashboard',
+    'DashboardsPresetsDashboardPresetsList',
+    'DashboardsPresetsDashboardPresetsListDashboardPreset',
+    'DataPrivacyDataCollection',
+    'DataPrivacyDoNotTrack',
+    'DataPrivacyMasking',
+    'DataPrivacyUserTracking',
     'DatabaseAnomaliesDbConnectFailures',
     'DatabaseAnomaliesFailureRate',
     'DatabaseAnomaliesFailureRateAuto',
@@ -347,9 +429,52 @@ __all__ = [
     'DatabaseAnomaliesResponseTime',
     'DatabaseAnomaliesResponseTimeAuto',
     'DatabaseAnomaliesResponseTimeThresholds',
+    'DatabaseAnomaliesV2DatabaseConnections',
+    'DatabaseAnomaliesV2FailureRate',
+    'DatabaseAnomaliesV2FailureRateAutoDetection',
+    'DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection',
+    'DatabaseAnomaliesV2FailureRateFixedDetection',
+    'DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection',
+    'DatabaseAnomaliesV2LoadDrops',
+    'DatabaseAnomaliesV2LoadSpikes',
+    'DatabaseAnomaliesV2ResponseTime',
+    'DatabaseAnomaliesV2ResponseTimeAutoDetection',
+    'DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection',
+    'DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll',
+    'DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest',
+    'DatabaseAnomaliesV2ResponseTimeFixedDetection',
+    'DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection',
+    'DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll',
+    'DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest',
+    'DduPoolEvents',
+    'DduPoolLogMonitoring',
+    'DduPoolMetrics',
+    'DduPoolServerless',
+    'DduPoolTraces',
+    'DeclarativeGroupingDetection',
+    'DeclarativeGroupingDetectionProcessDefinition',
+    'DeclarativeGroupingDetectionProcessDefinitionRules',
+    'DeclarativeGroupingDetectionProcessDefinitionRulesRule',
     'DiskAnomaliesDiskName',
     'DiskAnomaliesTags',
     'DiskAnomaliesTagsFilter',
+    'DiskAnomaliesV2Disk',
+    'DiskAnomaliesV2DiskDiskLowInodesDetection',
+    'DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds',
+    'DiskAnomaliesV2DiskDiskLowSpaceDetection',
+    'DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds',
+    'DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetection',
+    'DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds',
+    'DiskAnomalyRulesDiskNameFilter',
+    'DiskAnomalyRulesSampleLimit',
+    'DiskOptionsExclusions',
+    'DiskOptionsExclusionsExclusion',
+    'DiskSpecificAnomaliesV2DiskLowInodesDetection',
+    'DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholds',
+    'DiskSpecificAnomaliesV2DiskLowSpaceDetection',
+    'DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholds',
+    'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection',
+    'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholds',
     'EnvironmentQuotas',
     'EnvironmentQuotasDdus',
     'EnvironmentQuotasDemUnits',
@@ -359,6 +484,33 @@ __all__ = [
     'EnvironmentStorage',
     'EnvironmentStorageLimits',
     'EnvironmentStorageRetention',
+    'FailureDetectionParametersBrokenLinks',
+    'FailureDetectionParametersExceptionRules',
+    'FailureDetectionParametersExceptionRulesCustomErrorRules',
+    'FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule',
+    'FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition',
+    'FailureDetectionParametersExceptionRulesCustomHandledExceptions',
+    'FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledException',
+    'FailureDetectionParametersExceptionRulesIgnoredExceptions',
+    'FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledException',
+    'FailureDetectionParametersExceptionRulesSuccessForcingExceptions',
+    'FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledException',
+    'FailureDetectionParametersHttpResponseCodes',
+    'FailureDetectionRulesConditions',
+    'FailureDetectionRulesConditionsCondition',
+    'FailureDetectionRulesConditionsConditionPredicate',
+    'GenericRelationshipsSources',
+    'GenericRelationshipsSourcesSource',
+    'GenericRelationshipsSourcesSourceMappingRules',
+    'GenericRelationshipsSourcesSourceMappingRulesMappingRule',
+    'GenericTypesRules',
+    'GenericTypesRulesRule',
+    'GenericTypesRulesRuleAttributes',
+    'GenericTypesRulesRuleAttributesAttribute',
+    'GenericTypesRulesRuleRequiredDimensions',
+    'GenericTypesRulesRuleRequiredDimensionsRequiredDimension',
+    'GenericTypesRulesRuleSources',
+    'GenericTypesRulesRuleSourcesSource',
     'HostAnomaliesConnections',
     'HostAnomaliesCpu',
     'HostAnomaliesCpuThresholds',
@@ -391,6 +543,42 @@ __all__ = [
     'HostAnomaliesNetworkRetransmissionThresholds',
     'HostAnomaliesNetworkUtilization',
     'HostAnomaliesNetworkUtilizationThresholds',
+    'HostAnomaliesV2Host',
+    'HostAnomaliesV2HostConnectionLostDetection',
+    'HostAnomaliesV2HostHighCpuSaturationDetection',
+    'HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds',
+    'HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds',
+    'HostAnomaliesV2HostHighGcActivityDetection',
+    'HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds',
+    'HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds',
+    'HostAnomaliesV2HostHighMemoryDetection',
+    'HostAnomaliesV2HostHighMemoryDetectionCustomThresholds',
+    'HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds',
+    'HostAnomaliesV2HostHighSystemLoadDetection',
+    'HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds',
+    'HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds',
+    'HostAnomaliesV2HostOutOfMemoryDetection',
+    'HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds',
+    'HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds',
+    'HostAnomaliesV2HostOutOfThreadsDetection',
+    'HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds',
+    'HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds',
+    'HostAnomaliesV2Network',
+    'HostAnomaliesV2NetworkHighNetworkDetection',
+    'HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds',
+    'HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds',
+    'HostAnomaliesV2NetworkNetworkDroppedPacketsDetection',
+    'HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds',
+    'HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds',
+    'HostAnomaliesV2NetworkNetworkErrorsDetection',
+    'HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds',
+    'HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds',
+    'HostAnomaliesV2NetworkNetworkHighRetransmissionDetection',
+    'HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds',
+    'HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds',
+    'HostAnomaliesV2NetworkNetworkTcpProblemsDetection',
+    'HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds',
+    'HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds',
     'HostNamingCondition',
     'HostNamingConditionCondition',
     'HostNamingConditionConditionApplicationType',
@@ -474,7 +662,12 @@ __all__ = [
     'HttpMonitorAnomalyDetectionLoadingTimeThresholdThreshold',
     'HttpMonitorAnomalyDetectionLoadingTimeThresholdThresholdThreshold',
     'HttpMonitorAnomalyDetectionOutageHandling',
+    'HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy',
     'HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy',
+    'HttpMonitorCookiesCookies',
+    'HttpMonitorCookiesCookiesCookie',
+    'HttpMonitorPerformanceThresholds',
+    'HttpMonitorPerformanceThresholdsThreshold',
     'HttpMonitorScript',
     'HttpMonitorScriptRequest',
     'HttpMonitorScriptRequestAuthentication',
@@ -485,9 +678,80 @@ __all__ = [
     'HttpMonitorScriptRequestValidationRule',
     'HttpMonitorTag',
     'HttpMonitorTagTag',
+    'IamGroupPermissions',
+    'IamGroupPermissionsPermission',
     'ImsBridgesQueueManager',
     'ImsBridgesQueueManagerQueueManager',
+    'K8sClusterAnomaliesCpuRequestsSaturation',
+    'K8sClusterAnomaliesCpuRequestsSaturationConfiguration',
+    'K8sClusterAnomaliesMemoryRequestsSaturation',
+    'K8sClusterAnomaliesMemoryRequestsSaturationConfiguration',
+    'K8sClusterAnomaliesMonitoringIssues',
+    'K8sClusterAnomaliesMonitoringIssuesConfiguration',
+    'K8sClusterAnomaliesPodsSaturation',
+    'K8sClusterAnomaliesPodsSaturationConfiguration',
+    'K8sClusterAnomaliesReadinessIssues',
+    'K8sClusterAnomaliesReadinessIssuesConfiguration',
     'K8sCredentialsEventsFieldSelector',
+    'K8sNamespaceAnomaliesCpuLimitsQuotaSaturation',
+    'K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfiguration',
+    'K8sNamespaceAnomaliesCpuRequestsQuotaSaturation',
+    'K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfiguration',
+    'K8sNamespaceAnomaliesMemoryLimitsQuotaSaturation',
+    'K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfiguration',
+    'K8sNamespaceAnomaliesMemoryRequestsQuotaSaturation',
+    'K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfiguration',
+    'K8sNamespaceAnomaliesPodsQuotaSaturation',
+    'K8sNamespaceAnomaliesPodsQuotaSaturationConfiguration',
+    'K8sNodeAnomaliesCpuRequestsSaturation',
+    'K8sNodeAnomaliesCpuRequestsSaturationConfiguration',
+    'K8sNodeAnomaliesMemoryRequestsSaturation',
+    'K8sNodeAnomaliesMemoryRequestsSaturationConfiguration',
+    'K8sNodeAnomaliesNodeProblematicCondition',
+    'K8sNodeAnomaliesNodeProblematicConditionConfiguration',
+    'K8sNodeAnomaliesPodsSaturation',
+    'K8sNodeAnomaliesPodsSaturationConfiguration',
+    'K8sNodeAnomaliesReadinessIssues',
+    'K8sNodeAnomaliesReadinessIssuesConfiguration',
+    'K8sPvcAnomaliesLowDiskSpaceCritical',
+    'K8sPvcAnomaliesLowDiskSpaceCriticalConfiguration',
+    'K8sPvcAnomaliesLowDiskSpaceCriticalPercentage',
+    'K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfiguration',
+    'K8sWorkloadAnomaliesContainerRestarts',
+    'K8sWorkloadAnomaliesContainerRestartsConfiguration',
+    'K8sWorkloadAnomaliesDeploymentStuck',
+    'K8sWorkloadAnomaliesDeploymentStuckConfiguration',
+    'K8sWorkloadAnomaliesHighCpuThrottling',
+    'K8sWorkloadAnomaliesHighCpuThrottlingConfiguration',
+    'K8sWorkloadAnomaliesHighCpuUsage',
+    'K8sWorkloadAnomaliesHighCpuUsageConfiguration',
+    'K8sWorkloadAnomaliesHighMemoryUsage',
+    'K8sWorkloadAnomaliesHighMemoryUsageConfiguration',
+    'K8sWorkloadAnomaliesNotAllPodsReady',
+    'K8sWorkloadAnomaliesNotAllPodsReadyConfiguration',
+    'K8sWorkloadAnomaliesPendingPods',
+    'K8sWorkloadAnomaliesPendingPodsConfiguration',
+    'K8sWorkloadAnomaliesPodStuckInTerminating',
+    'K8sWorkloadAnomaliesPodStuckInTerminatingConfiguration',
+    'K8sWorkloadAnomaliesWorkloadWithoutReadyPods',
+    'K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration',
+    'KubernetesEventPatterns',
+    'KubernetesEventPatternsEventPattern',
+    'LogCustomSourceContext',
+    'LogCustomSourceContextContext',
+    'LogCustomSourceCustomLogSource',
+    'LogEventsEventTemplate',
+    'LogEventsEventTemplateMetadata',
+    'LogEventsEventTemplateMetadataItem',
+    'LogProcessingProcessorDefinition',
+    'LogProcessingRuleTesting',
+    'LogSensitiveDataMaskingMasking',
+    'LogSensitiveDataMaskingMatchers',
+    'LogSensitiveDataMaskingMatchersMatcher',
+    'LogStorageMatchers',
+    'LogStorageMatchersMatcher',
+    'LogTimestampMatchers',
+    'LogTimestampMatchersMatcher',
     'MaintenanceFilter',
     'MaintenanceFilterFilter',
     'MaintenanceGeneralProperties',
@@ -502,7 +766,6 @@ __all__ = [
     'MaintenanceScheduleWeeklyRecurrence',
     'MaintenanceScheduleWeeklyRecurrenceRecurrenceRange',
     'MaintenanceScheduleWeeklyRecurrenceTimeWindow',
-    'MaintenanceWindowMetadata',
     'MaintenanceWindowSchedule',
     'MaintenanceWindowScheduleRecurrence',
     'MaintenanceWindowScope',
@@ -511,7 +774,6 @@ __all__ = [
     'ManagementZoneDimensionalRule',
     'ManagementZoneDimensionalRuleCondition',
     'ManagementZoneEntitySelectorBasedRule',
-    'ManagementZoneMetadata',
     'ManagementZoneRule',
     'ManagementZoneRuleCondition',
     'ManagementZoneRuleConditionApplicationType',
@@ -590,14 +852,58 @@ __all__ = [
     'ManagementZoneRuleConditionTagValue',
     'ManagementZoneRuleConditionTech',
     'ManagementZoneRuleConditionTechValue',
+    'ManagementZoneV2Rules',
+    'ManagementZoneV2RulesRule',
+    'ManagementZoneV2RulesRuleAttributeRule',
+    'ManagementZoneV2RulesRuleAttributeRuleAttributeConditions',
+    'ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition',
+    'ManagementZoneV2RulesRuleDimensionRule',
+    'ManagementZoneV2RulesRuleDimensionRuleDimensionConditions',
+    'ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition',
+    'MetricEventsEventTemplate',
+    'MetricEventsEventTemplateMetadata',
+    'MetricEventsModelProperties',
+    'MetricEventsQueryDefinition',
+    'MetricEventsQueryDefinitionDimensionFilter',
+    'MetricEventsQueryDefinitionDimensionFilterFilter',
+    'MetricEventsQueryDefinitionEntityFilter',
+    'MetricEventsQueryDefinitionEntityFilterCondition',
+    'MetricEventsQueryDefinitionEntityFilterConditionCondition',
+    'MetricMetadataDimensions',
+    'MetricMetadataDimensionsDimension',
+    'MetricMetadataMetricProperties',
+    'MobileAppAnomaliesErrorRateIncrease',
+    'MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto',
+    'MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed',
+    'MobileAppAnomaliesSlowUserActions',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsAuto',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsFixed',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed',
+    'MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest',
+    'MobileAppAnomaliesUnexpectedHighLoad',
+    'MobileAppAnomaliesUnexpectedLowLoad',
+    'MobileAppCrashRateCrashRateIncrease',
+    'MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto',
+    'MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed',
+    'MobileAppEnablementRum',
+    'MobileAppEnablementSessionReplay',
+    'MobileAppRequestErrorsErrorRules',
+    'MobileAppRequestErrorsErrorRulesErrorRule',
     'MobileApplicationApdex',
     'MobileApplicationProperties',
     'MobileApplicationPropertiesApiValue',
     'MobileApplicationPropertiesRequestAttribute',
+    'NetworkTrafficExcludeIp',
+    'NetworkTrafficExcludeIpIpAddressForm',
+    'NetworkTrafficExcludeNic',
+    'NetworkTrafficExcludeNicNicForm',
     'NotificationAnsibleTower',
     'NotificationConfig',
     'NotificationEmail',
-    'NotificationHipchat',
     'NotificationJira',
     'NotificationOpsGenie',
     'NotificationPagerDuty',
@@ -609,6 +915,41 @@ __all__ = [
     'NotificationWebHookHeader',
     'NotificationXmatters',
     'NotificationXmattersHeader',
+    'OneagentUpdatesMaintenanceWindows',
+    'OneagentUpdatesMaintenanceWindowsMaintenanceWindow',
+    'OpentelemetryMetricsAdditionalAttributes',
+    'OpentelemetryMetricsAdditionalAttributesAdditionalAttribute',
+    'OpentelemetryMetricsToDropAttributes',
+    'OpentelemetryMetricsToDropAttributesToDropAttribute',
+    'OsServicesDetectionConditionsLinux',
+    'OsServicesDetectionConditionsLinuxLinuxDetectionCondition',
+    'OsServicesDetectionConditionsWindows',
+    'OsServicesDetectionConditionsWindowsDetectionConditionsWindow',
+    'OsServicesMetadata',
+    'OsServicesMetadataItem',
+    'OwnershipConfigOwnershipIdentifiers',
+    'OwnershipConfigOwnershipIdentifiersOwnershipIdentifier',
+    'OwnershipTeamsAdditionalInformation',
+    'OwnershipTeamsAdditionalInformationAdditionalInformation',
+    'OwnershipTeamsContactDetails',
+    'OwnershipTeamsContactDetailsContactDetail',
+    'OwnershipTeamsContactDetailsContactDetailJira',
+    'OwnershipTeamsLinks',
+    'OwnershipTeamsLinksLink',
+    'OwnershipTeamsResponsibilities',
+    'OwnershipTeamsSupplementaryIdentifiers',
+    'OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier',
+    'PgAnomaliesAvailability',
+    'ProcessAvailabilityMetadata',
+    'ProcessAvailabilityMetadataItem',
+    'ProcessAvailabilityRules',
+    'ProcessAvailabilityRulesRule',
+    'ProcessGroupDetectionGroupExtraction',
+    'ProcessGroupDetectionGroupExtractionDelimiter',
+    'ProcessGroupDetectionInstanceExtraction',
+    'ProcessGroupDetectionInstanceExtractionDelimiter',
+    'ProcessGroupDetectionProcessDetection',
+    'ProcessMonitoringRuleCondition',
     'ProcessgroupNamingCondition',
     'ProcessgroupNamingConditionCondition',
     'ProcessgroupNamingConditionConditionApplicationType',
@@ -737,6 +1078,10 @@ __all__ = [
     'RequestNamingPlaceholdersPlaceholderSource',
     'RequestNamingPlaceholdersPlaceholderSourceServiceTag',
     'RequestNamingPlaceholdersPlaceholderSourceServiceTagTagKey',
+    'ResourceAttributesKeys',
+    'ResourceAttributesKeysRule',
+    'RumProviderBreakdownDomainNamePatternList',
+    'RumProviderBreakdownDomainNamePatternListDomainNamePattern',
     'ServiceAnomaliesFailureRates',
     'ServiceAnomaliesFailureRatesAuto',
     'ServiceAnomaliesFailureRatesThresholds',
@@ -746,6 +1091,106 @@ __all__ = [
     'ServiceAnomaliesResponseTimes',
     'ServiceAnomaliesResponseTimesAuto',
     'ServiceAnomaliesResponseTimesThresholds',
+    'ServiceAnomaliesV2FailureRate',
+    'ServiceAnomaliesV2FailureRateAutoDetection',
+    'ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection',
+    'ServiceAnomaliesV2FailureRateFixedDetection',
+    'ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection',
+    'ServiceAnomaliesV2LoadDrops',
+    'ServiceAnomaliesV2LoadSpikes',
+    'ServiceAnomaliesV2ResponseTime',
+    'ServiceAnomaliesV2ResponseTimeAutoDetection',
+    'ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection',
+    'ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll',
+    'ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest',
+    'ServiceAnomaliesV2ResponseTimeFixedDetection',
+    'ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection',
+    'ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll',
+    'ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest',
+    'ServiceExternalWebRequestConditions',
+    'ServiceExternalWebRequestConditionsCondition',
+    'ServiceExternalWebRequestIdContributors',
+    'ServiceExternalWebRequestIdContributorsApplicationId',
+    'ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor',
+    'ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations',
+    'ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation',
+    'ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride',
+    'ServiceExternalWebRequestIdContributorsContextRoot',
+    'ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor',
+    'ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations',
+    'ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation',
+    'ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride',
+    'ServiceExternalWebRequestIdContributorsPublicDomainName',
+    'ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor',
+    'ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformations',
+    'ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformation',
+    'ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverride',
+    'ServiceExternalWebServiceConditions',
+    'ServiceExternalWebServiceConditionsCondition',
+    'ServiceExternalWebServiceIdContributors',
+    'ServiceExternalWebServiceIdContributorsUrlPath',
+    'ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor',
+    'ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations',
+    'ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation',
+    'ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride',
+    'ServiceFailureExceptionRules',
+    'ServiceFailureExceptionRulesCustomErrorRules',
+    'ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule',
+    'ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition',
+    'ServiceFailureExceptionRulesCustomHandledExceptions',
+    'ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException',
+    'ServiceFailureExceptionRulesIgnoredExceptions',
+    'ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledException',
+    'ServiceFailureExceptionRulesSuccessForcingExceptions',
+    'ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledException',
+    'ServiceFullWebRequestConditions',
+    'ServiceFullWebRequestConditionsCondition',
+    'ServiceFullWebRequestIdContributors',
+    'ServiceFullWebRequestIdContributorsApplicationId',
+    'ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor',
+    'ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformations',
+    'ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation',
+    'ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride',
+    'ServiceFullWebRequestIdContributorsContextRoot',
+    'ServiceFullWebRequestIdContributorsContextRootServiceIdContributor',
+    'ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformations',
+    'ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation',
+    'ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverride',
+    'ServiceFullWebRequestIdContributorsServerName',
+    'ServiceFullWebRequestIdContributorsServerNameServiceIdContributor',
+    'ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformations',
+    'ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformation',
+    'ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverride',
+    'ServiceFullWebServiceConditions',
+    'ServiceFullWebServiceConditionsCondition',
+    'ServiceFullWebServiceIdContributors',
+    'ServiceFullWebServiceIdContributorsApplicationId',
+    'ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor',
+    'ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformations',
+    'ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformation',
+    'ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverride',
+    'ServiceFullWebServiceIdContributorsContextRoot',
+    'ServiceFullWebServiceIdContributorsContextRootServiceIdContributor',
+    'ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformations',
+    'ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformation',
+    'ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverride',
+    'ServiceFullWebServiceIdContributorsServerName',
+    'ServiceFullWebServiceIdContributorsServerNameServiceIdContributor',
+    'ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformations',
+    'ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformation',
+    'ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverride',
+    'ServiceFullWebServiceIdContributorsWebServiceName',
+    'ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor',
+    'ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformations',
+    'ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation',
+    'ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride',
+    'ServiceFullWebServiceIdContributorsWebServiceNamespace',
+    'ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor',
+    'ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations',
+    'ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation',
+    'ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride',
+    'ServiceHttpFailureBrokenLinks',
+    'ServiceHttpFailureHttpResponseCodes',
     'ServiceNamingCondition',
     'ServiceNamingConditionCondition',
     'ServiceNamingConditionConditionApplicationType',
@@ -824,14 +1269,84 @@ __all__ = [
     'ServiceNamingConditionConditionTagValue',
     'ServiceNamingConditionConditionTech',
     'ServiceNamingConditionConditionTechValue',
+    'SessionReplayWebPrivacyMaskingPresets',
+    'SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules',
+    'SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule',
+    'SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules',
+    'SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule',
+    'SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules',
+    'SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule',
+    'SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules',
+    'SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule',
+    'SloV2ErrorBudgetBurnRate',
     'SpanCaptureRuleMatches',
     'SpanCaptureRuleMatchesMatch',
     'SpanContextPropagationMatches',
     'SpanContextPropagationMatchesMatch',
     'SpanEntryPointMatches',
     'SpanEntryPointMatchesMatch',
+    'UpdateWindowsDailyRecurrence',
+    'UpdateWindowsDailyRecurrenceRecurrenceRange',
+    'UpdateWindowsDailyRecurrenceUpdateTime',
+    'UpdateWindowsMonthlyRecurrence',
+    'UpdateWindowsMonthlyRecurrenceRecurrenceRange',
+    'UpdateWindowsMonthlyRecurrenceUpdateTime',
+    'UpdateWindowsOnceRecurrence',
+    'UpdateWindowsOnceRecurrenceRecurrenceRange',
+    'UpdateWindowsWeeklyRecurrence',
+    'UpdateWindowsWeeklyRecurrenceRecurrenceRange',
+    'UpdateWindowsWeeklyRecurrenceSelectedWeekDays',
+    'UpdateWindowsWeeklyRecurrenceUpdateTime',
+    'UserActionMetricsFilters',
+    'UserActionMetricsFiltersFilter',
+    'UserActionMetricsValue',
     'UserGroupPermissions',
     'UserGroupPermissionsGrant',
+    'UserSessionMetricsFilters',
+    'UserSessionMetricsFiltersFilter',
+    'UserSessionMetricsValue',
+    'VmwareAnomaliesDroppedPacketsDetection',
+    'VmwareAnomaliesDroppedPacketsDetectionCustomThresholds',
+    'VmwareAnomaliesEsxiHighCpuDetection',
+    'VmwareAnomaliesEsxiHighCpuDetectionCustomThresholds',
+    'VmwareAnomaliesEsxiHighMemoryDetection',
+    'VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholds',
+    'VmwareAnomaliesGuestCpuLimitDetection',
+    'VmwareAnomaliesGuestCpuLimitDetectionCustomThresholds',
+    'VmwareAnomaliesLowDatastoreSpaceDetection',
+    'VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholds',
+    'VmwareAnomaliesOverloadedStorageDetection',
+    'VmwareAnomaliesOverloadedStorageDetectionCustomThresholds',
+    'VmwareAnomaliesSlowPhysicalStorageDetection',
+    'VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds',
+    'VmwareAnomaliesUndersizedStorageDetection',
+    'VmwareAnomaliesUndersizedStorageDetectionCustomThresholds',
+    'WebAppAnomaliesErrorRate',
+    'WebAppAnomaliesErrorRateErrorRateAuto',
+    'WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection',
+    'WebAppAnomaliesErrorRateErrorRateFixed',
+    'WebAppAnomaliesResponseTime',
+    'WebAppAnomaliesResponseTimeResponseTimeAuto',
+    'WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection',
+    'WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll',
+    'WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest',
+    'WebAppAnomaliesResponseTimeResponseTimeFixed',
+    'WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection',
+    'WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll',
+    'WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest',
+    'WebAppAnomaliesTrafficDrops',
+    'WebAppAnomaliesTrafficDropsTrafficDrops',
+    'WebAppAnomaliesTrafficSpikes',
+    'WebAppAnomaliesTrafficSpikesTrafficSpikes',
+    'WebAppCustomErrorsErrorRules',
+    'WebAppCustomErrorsErrorRulesErrorRule',
+    'WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings',
+    'WebAppEnablementRum',
+    'WebAppEnablementSessionReplay',
+    'WebAppRequestErrorsErrorRules',
+    'WebAppRequestErrorsErrorRulesErrorRule',
+    'WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings',
+    'WebAppRequestErrorsErrorRulesErrorRuleFilterSettings',
     'WebApplicationConversionGoals',
     'WebApplicationConversionGoalsGoal',
     'WebApplicationConversionGoalsGoalDestination',
@@ -890,8 +1405,13 @@ __all__ = [
     'WebhookNotificationHeadersHeader',
     'XmattersNotificationHeaders',
     'XmattersNotificationHeadersHeader',
+    'GetAlertingProfilesValueResult',
+    'GetEntitiesEntitiesResult',
+    'GetEntitiesEntitiesEntityResult',
+    'GetEntitiesEntitiesEntityTagResult',
+    'GetEntitiesEntitiesEntityTagTagResult',
+    'GetManagementZonesValueResult',
     'GetSyntheticLocationsLocationsResult',
-    'GetSyntheticLocationsLocationsLocationResult',
 ]
 
 @pulumi.output_type
@@ -938,9 +1458,12 @@ class AlertingFiltersFilter(dict):
 class AlertingFiltersFilterCustom(dict):
     def __init__(__self__, *,
                  description: Optional['outputs.AlertingFiltersFilterCustomDescription'] = None,
+                 metadata: Optional['outputs.AlertingFiltersFilterCustomMetadata'] = None,
                  title: Optional['outputs.AlertingFiltersFilterCustomTitle'] = None):
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
         if title is not None:
             pulumi.set(__self__, "title", title)
 
@@ -948,6 +1471,11 @@ class AlertingFiltersFilterCustom(dict):
     @pulumi.getter
     def description(self) -> Optional['outputs.AlertingFiltersFilterCustomDescription']:
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> Optional['outputs.AlertingFiltersFilterCustomMetadata']:
+        return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter
@@ -1013,6 +1541,49 @@ class AlertingFiltersFilterCustomDescription(dict):
     @pulumi.getter
     def negate(self) -> Optional[bool]:
         return pulumi.get(self, "negate")
+
+
+@pulumi.output_type
+class AlertingFiltersFilterCustomMetadata(dict):
+    def __init__(__self__, *,
+                 items: 'outputs.AlertingFiltersFilterCustomMetadataItems'):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> 'outputs.AlertingFiltersFilterCustomMetadataItems':
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class AlertingFiltersFilterCustomMetadataItems(dict):
+    def __init__(__self__, *,
+                 filters: Sequence['outputs.AlertingFiltersFilterCustomMetadataItemsFilter']):
+        pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Sequence['outputs.AlertingFiltersFilterCustomMetadataItemsFilter']:
+        return pulumi.get(self, "filters")
+
+
+@pulumi.output_type
+class AlertingFiltersFilterCustomMetadataItemsFilter(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 value: str):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -1702,6 +2273,44 @@ class AlertingRulesRule(dict):
 
 
 @pulumi.output_type
+class ApiDetectionConditions(dict):
+    def __init__(__self__, *,
+                 conditions: Sequence['outputs.ApiDetectionConditionsCondition']):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Sequence['outputs.ApiDetectionConditionsCondition']:
+        return pulumi.get(self, "conditions")
+
+
+@pulumi.output_type
+class ApiDetectionConditionsCondition(dict):
+    def __init__(__self__, *,
+                 base: str,
+                 matcher: str,
+                 pattern: str):
+        pulumi.set(__self__, "base", base)
+        pulumi.set(__self__, "matcher", matcher)
+        pulumi.set(__self__, "pattern", pattern)
+
+    @property
+    @pulumi.getter
+    def base(self) -> str:
+        return pulumi.get(self, "base")
+
+    @property
+    @pulumi.getter
+    def matcher(self) -> str:
+        return pulumi.get(self, "matcher")
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> str:
+        return pulumi.get(self, "pattern")
+
+
+@pulumi.output_type
 class ApplicationAnomaliesFailureRate(dict):
     def __init__(__self__, *,
                  auto: Optional['outputs.ApplicationAnomaliesFailureRateAuto'] = None,
@@ -2041,7 +2650,7 @@ class ApplicationDataPrivacySessionReplayDataPrivacy(dict):
                  opt_in: Optional[bool] = None,
                  url_exclusion_rules: Optional[Sequence[str]] = None):
         """
-        :param 'ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsArgs' content_masking_settings: Content masking settings for Session Replay.
+        :param 'ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsArgs' content_masking_settings: (Field has overlap with `SessionReplayWebPrivacy`) Content masking settings for Session Replay.
         """
         pulumi.set(__self__, "content_masking_settings", content_masking_settings)
         if opt_in is not None:
@@ -2053,7 +2662,7 @@ class ApplicationDataPrivacySessionReplayDataPrivacy(dict):
     @pulumi.getter(name="contentMaskingSettings")
     def content_masking_settings(self) -> 'outputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettings':
         """
-        Content masking settings for Session Replay.
+        (Field has overlap with `SessionReplayWebPrivacy`) Content masking settings for Session Replay.
         """
         return pulumi.get(self, "content_masking_settings")
 
@@ -2586,56 +3195,6 @@ class AutotagEntitySelectorBasedRule(dict):
     @pulumi.getter(name="valueFormat")
     def value_format(self) -> Optional[str]:
         return pulumi.get(self, "value_format")
-
-
-@pulumi.output_type
-class AutotagMetadata(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "clusterVersion":
-            suggest = "cluster_version"
-        elif key == "configurationVersions":
-            suggest = "configuration_versions"
-        elif key == "currentConfigurationVersions":
-            suggest = "current_configuration_versions"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in AutotagMetadata. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        AutotagMetadata.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        AutotagMetadata.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 cluster_version: Optional[str] = None,
-                 configuration_versions: Optional[Sequence[int]] = None,
-                 current_configuration_versions: Optional[Sequence[str]] = None):
-        if cluster_version is not None:
-            pulumi.set(__self__, "cluster_version", cluster_version)
-        if configuration_versions is not None:
-            pulumi.set(__self__, "configuration_versions", configuration_versions)
-        if current_configuration_versions is not None:
-            pulumi.set(__self__, "current_configuration_versions", current_configuration_versions)
-
-    @property
-    @pulumi.getter(name="clusterVersion")
-    def cluster_version(self) -> Optional[str]:
-        return pulumi.get(self, "cluster_version")
-
-    @property
-    @pulumi.getter(name="configurationVersions")
-    def configuration_versions(self) -> Optional[Sequence[int]]:
-        return pulumi.get(self, "configuration_versions")
-
-    @property
-    @pulumi.getter(name="currentConfigurationVersions")
-    def current_configuration_versions(self) -> Optional[Sequence[str]]:
-        return pulumi.get(self, "current_configuration_versions")
 
 
 @pulumi.output_type
@@ -6466,6 +7025,1050 @@ class AutotagRuleConditionTechValue(dict):
 
 
 @pulumi.output_type
+class AutotagV2Rules(dict):
+    def __init__(__self__, *,
+                 rules: Sequence['outputs.AutotagV2RulesRule']):
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.AutotagV2RulesRule']:
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class AutotagV2RulesRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "valueNormalization":
+            suggest = "value_normalization"
+        elif key == "attributeRule":
+            suggest = "attribute_rule"
+        elif key == "entitySelector":
+            suggest = "entity_selector"
+        elif key == "valueFormat":
+            suggest = "value_format"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutotagV2RulesRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutotagV2RulesRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutotagV2RulesRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 type: str,
+                 value_normalization: str,
+                 attribute_rule: Optional['outputs.AutotagV2RulesRuleAttributeRule'] = None,
+                 entity_selector: Optional[str] = None,
+                 value_format: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value_normalization", value_normalization)
+        if attribute_rule is not None:
+            pulumi.set(__self__, "attribute_rule", attribute_rule)
+        if entity_selector is not None:
+            pulumi.set(__self__, "entity_selector", entity_selector)
+        if value_format is not None:
+            pulumi.set(__self__, "value_format", value_format)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="valueNormalization")
+    def value_normalization(self) -> str:
+        return pulumi.get(self, "value_normalization")
+
+    @property
+    @pulumi.getter(name="attributeRule")
+    def attribute_rule(self) -> Optional['outputs.AutotagV2RulesRuleAttributeRule']:
+        return pulumi.get(self, "attribute_rule")
+
+    @property
+    @pulumi.getter(name="entitySelector")
+    def entity_selector(self) -> Optional[str]:
+        return pulumi.get(self, "entity_selector")
+
+    @property
+    @pulumi.getter(name="valueFormat")
+    def value_format(self) -> Optional[str]:
+        return pulumi.get(self, "value_format")
+
+
+@pulumi.output_type
+class AutotagV2RulesRuleAttributeRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "entityType":
+            suggest = "entity_type"
+        elif key == "azureToPgpropagation":
+            suggest = "azure_to_pgpropagation"
+        elif key == "azureToServicePropagation":
+            suggest = "azure_to_service_propagation"
+        elif key == "hostToPgpropagation":
+            suggest = "host_to_pgpropagation"
+        elif key == "pgToHostPropagation":
+            suggest = "pg_to_host_propagation"
+        elif key == "pgToServicePropagation":
+            suggest = "pg_to_service_propagation"
+        elif key == "serviceToHostPropagation":
+            suggest = "service_to_host_propagation"
+        elif key == "serviceToPgpropagation":
+            suggest = "service_to_pgpropagation"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutotagV2RulesRuleAttributeRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutotagV2RulesRuleAttributeRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutotagV2RulesRuleAttributeRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 conditions: 'outputs.AutotagV2RulesRuleAttributeRuleConditions',
+                 entity_type: str,
+                 azure_to_pgpropagation: Optional[bool] = None,
+                 azure_to_service_propagation: Optional[bool] = None,
+                 host_to_pgpropagation: Optional[bool] = None,
+                 pg_to_host_propagation: Optional[bool] = None,
+                 pg_to_service_propagation: Optional[bool] = None,
+                 service_to_host_propagation: Optional[bool] = None,
+                 service_to_pgpropagation: Optional[bool] = None):
+        pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "entity_type", entity_type)
+        if azure_to_pgpropagation is not None:
+            pulumi.set(__self__, "azure_to_pgpropagation", azure_to_pgpropagation)
+        if azure_to_service_propagation is not None:
+            pulumi.set(__self__, "azure_to_service_propagation", azure_to_service_propagation)
+        if host_to_pgpropagation is not None:
+            pulumi.set(__self__, "host_to_pgpropagation", host_to_pgpropagation)
+        if pg_to_host_propagation is not None:
+            pulumi.set(__self__, "pg_to_host_propagation", pg_to_host_propagation)
+        if pg_to_service_propagation is not None:
+            pulumi.set(__self__, "pg_to_service_propagation", pg_to_service_propagation)
+        if service_to_host_propagation is not None:
+            pulumi.set(__self__, "service_to_host_propagation", service_to_host_propagation)
+        if service_to_pgpropagation is not None:
+            pulumi.set(__self__, "service_to_pgpropagation", service_to_pgpropagation)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> 'outputs.AutotagV2RulesRuleAttributeRuleConditions':
+        return pulumi.get(self, "conditions")
+
+    @property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> str:
+        return pulumi.get(self, "entity_type")
+
+    @property
+    @pulumi.getter(name="azureToPgpropagation")
+    def azure_to_pgpropagation(self) -> Optional[bool]:
+        return pulumi.get(self, "azure_to_pgpropagation")
+
+    @property
+    @pulumi.getter(name="azureToServicePropagation")
+    def azure_to_service_propagation(self) -> Optional[bool]:
+        return pulumi.get(self, "azure_to_service_propagation")
+
+    @property
+    @pulumi.getter(name="hostToPgpropagation")
+    def host_to_pgpropagation(self) -> Optional[bool]:
+        return pulumi.get(self, "host_to_pgpropagation")
+
+    @property
+    @pulumi.getter(name="pgToHostPropagation")
+    def pg_to_host_propagation(self) -> Optional[bool]:
+        return pulumi.get(self, "pg_to_host_propagation")
+
+    @property
+    @pulumi.getter(name="pgToServicePropagation")
+    def pg_to_service_propagation(self) -> Optional[bool]:
+        return pulumi.get(self, "pg_to_service_propagation")
+
+    @property
+    @pulumi.getter(name="serviceToHostPropagation")
+    def service_to_host_propagation(self) -> Optional[bool]:
+        return pulumi.get(self, "service_to_host_propagation")
+
+    @property
+    @pulumi.getter(name="serviceToPgpropagation")
+    def service_to_pgpropagation(self) -> Optional[bool]:
+        return pulumi.get(self, "service_to_pgpropagation")
+
+
+@pulumi.output_type
+class AutotagV2RulesRuleAttributeRuleConditions(dict):
+    def __init__(__self__, *,
+                 conditions: Sequence['outputs.AutotagV2RulesRuleAttributeRuleConditionsCondition']):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Sequence['outputs.AutotagV2RulesRuleAttributeRuleConditionsCondition']:
+        return pulumi.get(self, "conditions")
+
+
+@pulumi.output_type
+class AutotagV2RulesRuleAttributeRuleConditionsCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "caseSensitive":
+            suggest = "case_sensitive"
+        elif key == "dynamicKey":
+            suggest = "dynamic_key"
+        elif key == "dynamicKeySource":
+            suggest = "dynamic_key_source"
+        elif key == "entityId":
+            suggest = "entity_id"
+        elif key == "enumValue":
+            suggest = "enum_value"
+        elif key == "integerValue":
+            suggest = "integer_value"
+        elif key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutotagV2RulesRuleAttributeRuleConditionsCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutotagV2RulesRuleAttributeRuleConditionsCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutotagV2RulesRuleAttributeRuleConditionsCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: str,
+                 operator: str,
+                 case_sensitive: Optional[bool] = None,
+                 dynamic_key: Optional[str] = None,
+                 dynamic_key_source: Optional[str] = None,
+                 entity_id: Optional[str] = None,
+                 enum_value: Optional[str] = None,
+                 integer_value: Optional[int] = None,
+                 string_value: Optional[str] = None,
+                 tag: Optional[str] = None):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "operator", operator)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if dynamic_key is not None:
+            pulumi.set(__self__, "dynamic_key", dynamic_key)
+        if dynamic_key_source is not None:
+            pulumi.set(__self__, "dynamic_key_source", dynamic_key_source)
+        if entity_id is not None:
+            pulumi.set(__self__, "entity_id", entity_id)
+        if enum_value is not None:
+            pulumi.set(__self__, "enum_value", enum_value)
+        if integer_value is not None:
+            pulumi.set(__self__, "integer_value", integer_value)
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+        if tag is not None:
+            pulumi.set(__self__, "tag", tag)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> str:
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter(name="dynamicKey")
+    def dynamic_key(self) -> Optional[str]:
+        return pulumi.get(self, "dynamic_key")
+
+    @property
+    @pulumi.getter(name="dynamicKeySource")
+    def dynamic_key_source(self) -> Optional[str]:
+        return pulumi.get(self, "dynamic_key_source")
+
+    @property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> Optional[str]:
+        return pulumi.get(self, "entity_id")
+
+    @property
+    @pulumi.getter(name="enumValue")
+    def enum_value(self) -> Optional[str]:
+        return pulumi.get(self, "enum_value")
+
+    @property
+    @pulumi.getter(name="integerValue")
+    def integer_value(self) -> Optional[int]:
+        return pulumi.get(self, "integer_value")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        return pulumi.get(self, "string_value")
+
+    @property
+    @pulumi.getter
+    def tag(self) -> Optional[str]:
+        return pulumi.get(self, "tag")
+
+
+@pulumi.output_type
+class AwsAnomaliesEc2CandidateHighCpuDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesEc2CandidateHighCpuDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesEc2CandidateHighCpuDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesEc2CandidateHighCpuDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholdsArgs' custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholds']:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cpuUsage":
+            suggest = "cpu_usage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cpu_usage: float):
+        pulumi.set(__self__, "cpu_usage", cpu_usage)
+
+    @property
+    @pulumi.getter(name="cpuUsage")
+    def cpu_usage(self) -> float:
+        return pulumi.get(self, "cpu_usage")
+
+
+@pulumi.output_type
+class AwsAnomaliesElbHighConnectionErrorsDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesElbHighConnectionErrorsDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesElbHighConnectionErrorsDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesElbHighConnectionErrorsDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholdsArgs' custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholds']:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionErrorsPerMinute":
+            suggest = "connection_errors_per_minute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_errors_per_minute: int):
+        pulumi.set(__self__, "connection_errors_per_minute", connection_errors_per_minute)
+
+    @property
+    @pulumi.getter(name="connectionErrorsPerMinute")
+    def connection_errors_per_minute(self) -> int:
+        return pulumi.get(self, "connection_errors_per_minute")
+
+
+@pulumi.output_type
+class AwsAnomaliesLambdaHighErrorRateDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesLambdaHighErrorRateDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesLambdaHighErrorRateDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesLambdaHighErrorRateDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholdsArgs' custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholds']:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "failedInvocationsRate":
+            suggest = "failed_invocations_rate"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 failed_invocations_rate: int):
+        pulumi.set(__self__, "failed_invocations_rate", failed_invocations_rate)
+
+    @property
+    @pulumi.getter(name="failedInvocationsRate")
+    def failed_invocations_rate(self) -> int:
+        return pulumi.get(self, "failed_invocations_rate")
+
+
+@pulumi.output_type
+class AwsAnomaliesRdsHighCpuDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesRdsHighCpuDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesRdsHighCpuDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesRdsHighCpuDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.AwsAnomaliesRdsHighCpuDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'AwsAnomaliesRdsHighCpuDetectionCustomThresholdsArgs' custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.AwsAnomaliesRdsHighCpuDetectionCustomThresholds']:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class AwsAnomaliesRdsHighCpuDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cpuUsage":
+            suggest = "cpu_usage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesRdsHighCpuDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesRdsHighCpuDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesRdsHighCpuDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cpu_usage: float):
+        pulumi.set(__self__, "cpu_usage", cpu_usage)
+
+    @property
+    @pulumi.getter(name="cpuUsage")
+    def cpu_usage(self) -> float:
+        return pulumi.get(self, "cpu_usage")
+
+
+@pulumi.output_type
+class AwsAnomaliesRdsHighMemoryDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesRdsHighMemoryDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesRdsHighMemoryDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesRdsHighMemoryDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.AwsAnomaliesRdsHighMemoryDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'AwsAnomaliesRdsHighMemoryDetectionCustomThresholdsArgs' custom_thresholds: Alert if **both** conditions is met in 3 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.AwsAnomaliesRdsHighMemoryDetectionCustomThresholds']:
+        """
+        Alert if **both** conditions is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class AwsAnomaliesRdsHighMemoryDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "freeMemory":
+            suggest = "free_memory"
+        elif key == "swapUsage":
+            suggest = "swap_usage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesRdsHighMemoryDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesRdsHighMemoryDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesRdsHighMemoryDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 free_memory: float,
+                 swap_usage: float):
+        pulumi.set(__self__, "free_memory", free_memory)
+        pulumi.set(__self__, "swap_usage", swap_usage)
+
+    @property
+    @pulumi.getter(name="freeMemory")
+    def free_memory(self) -> float:
+        return pulumi.get(self, "free_memory")
+
+    @property
+    @pulumi.getter(name="swapUsage")
+    def swap_usage(self) -> float:
+        return pulumi.get(self, "swap_usage")
+
+
+@pulumi.output_type
+class AwsAnomaliesRdsHighWriteReadLatencyDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesRdsHighWriteReadLatencyDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesRdsHighWriteReadLatencyDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesRdsHighWriteReadLatencyDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholdsArgs' custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholds']:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "readWriteLatency":
+            suggest = "read_write_latency"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 read_write_latency: int):
+        pulumi.set(__self__, "read_write_latency", read_write_latency)
+
+    @property
+    @pulumi.getter(name="readWriteLatency")
+    def read_write_latency(self) -> int:
+        return pulumi.get(self, "read_write_latency")
+
+
+@pulumi.output_type
+class AwsAnomaliesRdsLowStorageDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesRdsLowStorageDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesRdsLowStorageDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesRdsLowStorageDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.AwsAnomaliesRdsLowStorageDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'AwsAnomaliesRdsLowStorageDetectionCustomThresholdsArgs' custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.AwsAnomaliesRdsLowStorageDetectionCustomThresholds']:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class AwsAnomaliesRdsLowStorageDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "freeStoragePercentage":
+            suggest = "free_storage_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesRdsLowStorageDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesRdsLowStorageDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesRdsLowStorageDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 free_storage_percentage: int):
+        pulumi.set(__self__, "free_storage_percentage", free_storage_percentage)
+
+    @property
+    @pulumi.getter(name="freeStoragePercentage")
+    def free_storage_percentage(self) -> int:
+        return pulumi.get(self, "free_storage_percentage")
+
+
+@pulumi.output_type
+class AwsAnomaliesRdsRestartsSequenceDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesRdsRestartsSequenceDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesRdsRestartsSequenceDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesRdsRestartsSequenceDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholdsArgs' custom_thresholds: Alert if the condition is met in 2 out of 20 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds']:
+        """
+        Alert if the condition is met in 2 out of 20 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "restartsPerMinute":
+            suggest = "restarts_per_minute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 restarts_per_minute: int):
+        pulumi.set(__self__, "restarts_per_minute", restarts_per_minute)
+
+    @property
+    @pulumi.getter(name="restartsPerMinute")
+    def restarts_per_minute(self) -> int:
+        return pulumi.get(self, "restarts_per_minute")
+
+
+@pulumi.output_type
 class AwsCredentialsAuthenticationData(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -6502,7 +8105,7 @@ class AwsCredentialsAuthenticationData(dict):
         """
         :param str access_key: the access key
         :param str account_id: the ID of the Amazon account
-        :param str external_id: the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
+        :param str external_id: (Read only) the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
         :param str iam_role: the IAM role to be used by Dynatrace to get monitoring data
         :param str secret_key: the secret access key
         :param str unknowns: Any attributes that aren't yet supported by this provider
@@ -6540,7 +8143,7 @@ class AwsCredentialsAuthenticationData(dict):
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[str]:
         """
-        the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
+        (Read only) the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
         """
         return pulumi.get(self, "external_id")
 
@@ -7043,6 +8646,8 @@ class BrowserMonitorAnomalyDetectionOutageHandling(dict):
         suggest = None
         if key == "globalOutage":
             suggest = "global_outage"
+        elif key == "globalOutagePolicies":
+            suggest = "global_outage_policies"
         elif key == "localOutage":
             suggest = "local_outage"
         elif key == "localOutagePolicies":
@@ -7063,11 +8668,14 @@ class BrowserMonitorAnomalyDetectionOutageHandling(dict):
 
     def __init__(__self__, *,
                  global_outage: Optional[bool] = None,
+                 global_outage_policies: Optional[Sequence['outputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy']] = None,
                  local_outage: Optional[bool] = None,
                  local_outage_policies: Optional[Sequence['outputs.BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy']] = None,
                  retry_on_error: Optional[bool] = None):
         if global_outage is not None:
             pulumi.set(__self__, "global_outage", global_outage)
+        if global_outage_policies is not None:
+            pulumi.set(__self__, "global_outage_policies", global_outage_policies)
         if local_outage is not None:
             pulumi.set(__self__, "local_outage", local_outage)
         if local_outage_policies is not None:
@@ -7079,6 +8687,11 @@ class BrowserMonitorAnomalyDetectionOutageHandling(dict):
     @pulumi.getter(name="globalOutage")
     def global_outage(self) -> Optional[bool]:
         return pulumi.get(self, "global_outage")
+
+    @property
+    @pulumi.getter(name="globalOutagePolicies")
+    def global_outage_policies(self) -> Optional[Sequence['outputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy']]:
+        return pulumi.get(self, "global_outage_policies")
 
     @property
     @pulumi.getter(name="localOutage")
@@ -7094,6 +8707,35 @@ class BrowserMonitorAnomalyDetectionOutageHandling(dict):
     @pulumi.getter(name="retryOnError")
     def retry_on_error(self) -> Optional[bool]:
         return pulumi.get(self, "retry_on_error")
+
+
+@pulumi.output_type
+class BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "consecutiveRuns":
+            suggest = "consecutive_runs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 consecutive_runs: int):
+        pulumi.set(__self__, "consecutive_runs", consecutive_runs)
+
+    @property
+    @pulumi.getter(name="consecutiveRuns")
+    def consecutive_runs(self) -> int:
+        return pulumi.get(self, "consecutive_runs")
 
 
 @pulumi.output_type
@@ -7180,6 +8822,37 @@ class BrowserMonitorKeyPerformanceMetrics(dict):
         Defines the key performance metric for XHR actions. Supported values are `VISUALLY_COMPLETE`, `USER_ACTION_DURATION`, `TIME_TO_FIRST_BYTE` and `RESPONSE_END`.
         """
         return pulumi.get(self, "xhr_action_kpm")
+
+
+@pulumi.output_type
+class BrowserMonitorPerformanceThresholds(dict):
+    def __init__(__self__, *,
+                 thresholds: Sequence['outputs.BrowserMonitorPerformanceThresholdsThreshold']):
+        pulumi.set(__self__, "thresholds", thresholds)
+
+    @property
+    @pulumi.getter
+    def thresholds(self) -> Sequence['outputs.BrowserMonitorPerformanceThresholdsThreshold']:
+        return pulumi.get(self, "thresholds")
+
+
+@pulumi.output_type
+class BrowserMonitorPerformanceThresholdsThreshold(dict):
+    def __init__(__self__, *,
+                 event: str,
+                 threshold: float):
+        pulumi.set(__self__, "event", event)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter
+    def event(self) -> str:
+        return pulumi.get(self, "event")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> float:
+        return pulumi.get(self, "threshold")
 
 
 @pulumi.output_type
@@ -7470,7 +9143,7 @@ class BrowserMonitorScriptConfigurationDevice(dict):
                  mobile: Optional[bool] = None,
                  name: Optional[str] = None,
                  orientation: Optional[str] = None,
-                 scale_factor: Optional[int] = None,
+                 scale_factor: Optional[float] = None,
                  touch_enabled: Optional[bool] = None,
                  width: Optional[int] = None):
         if height is not None:
@@ -7510,7 +9183,7 @@ class BrowserMonitorScriptConfigurationDevice(dict):
 
     @property
     @pulumi.getter(name="scaleFactor")
-    def scale_factor(self) -> Optional[int]:
+    def scale_factor(self) -> Optional[float]:
         return pulumi.get(self, "scale_factor")
 
     @property
@@ -10228,6 +11901,485 @@ class BrowserMonitorTagTag(dict):
 
 
 @pulumi.output_type
+class BusinessEventsOneagentEvent(dict):
+    def __init__(__self__, *,
+                 category: 'outputs.BusinessEventsOneagentEventCategory',
+                 provider: 'outputs.BusinessEventsOneagentEventProvider',
+                 type: 'outputs.BusinessEventsOneagentEventType',
+                 data: Optional['outputs.BusinessEventsOneagentEventData'] = None):
+        """
+        :param 'BusinessEventsOneagentEventCategoryArgs' category: Event category
+        :param 'BusinessEventsOneagentEventProviderArgs' provider: Event provider
+        :param 'BusinessEventsOneagentEventTypeArgs' type: Event type
+        :param 'BusinessEventsOneagentEventDataArgs' data: Additional attributes for the business event.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "provider", provider)
+        pulumi.set(__self__, "type", type)
+        if data is not None:
+            pulumi.set(__self__, "data", data)
+
+    @property
+    @pulumi.getter
+    def category(self) -> 'outputs.BusinessEventsOneagentEventCategory':
+        """
+        Event category
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter
+    def provider(self) -> 'outputs.BusinessEventsOneagentEventProvider':
+        """
+        Event provider
+        """
+        return pulumi.get(self, "provider")
+
+    @property
+    @pulumi.getter
+    def type(self) -> 'outputs.BusinessEventsOneagentEventType':
+        """
+        Event type
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def data(self) -> Optional['outputs.BusinessEventsOneagentEventData']:
+        """
+        Additional attributes for the business event.
+        """
+        return pulumi.get(self, "data")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentEventCategory(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsOneagentEventCategory. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsOneagentEventCategory.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsOneagentEventCategory.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source_type: str,
+                 path: Optional[str] = None,
+                 source: Optional[str] = None):
+        pulumi.set(__self__, "source_type", source_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        return pulumi.get(self, "source_type")
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[str]:
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[str]:
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentEventData(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventDataFieldComplexes":
+            suggest = "event_data_field_complexes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsOneagentEventData. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsOneagentEventData.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsOneagentEventData.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 event_data_field_complexes: Sequence['outputs.BusinessEventsOneagentEventDataEventDataFieldComplex']):
+        pulumi.set(__self__, "event_data_field_complexes", event_data_field_complexes)
+
+    @property
+    @pulumi.getter(name="eventDataFieldComplexes")
+    def event_data_field_complexes(self) -> Sequence['outputs.BusinessEventsOneagentEventDataEventDataFieldComplex']:
+        return pulumi.get(self, "event_data_field_complexes")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentEventDataEventDataFieldComplex(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 source: 'outputs.BusinessEventsOneagentEventDataEventDataFieldComplexSource'):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def source(self) -> 'outputs.BusinessEventsOneagentEventDataEventDataFieldComplexSource':
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentEventDataEventDataFieldComplexSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsOneagentEventDataEventDataFieldComplexSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsOneagentEventDataEventDataFieldComplexSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsOneagentEventDataEventDataFieldComplexSource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source_type: str,
+                 path: Optional[str] = None,
+                 source: Optional[str] = None):
+        pulumi.set(__self__, "source_type", source_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        return pulumi.get(self, "source_type")
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[str]:
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[str]:
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentEventProvider(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsOneagentEventProvider. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsOneagentEventProvider.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsOneagentEventProvider.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source_type: str,
+                 path: Optional[str] = None,
+                 source: Optional[str] = None):
+        pulumi.set(__self__, "source_type", source_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        return pulumi.get(self, "source_type")
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[str]:
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[str]:
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentEventType(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsOneagentEventType. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsOneagentEventType.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsOneagentEventType.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source_type: str,
+                 path: Optional[str] = None,
+                 source: Optional[str] = None):
+        pulumi.set(__self__, "source_type", source_type)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        return pulumi.get(self, "source_type")
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[str]:
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def source(self) -> Optional[str]:
+        return pulumi.get(self, "source")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentTriggers(dict):
+    def __init__(__self__, *,
+                 triggers: Sequence['outputs.BusinessEventsOneagentTriggersTrigger']):
+        pulumi.set(__self__, "triggers", triggers)
+
+    @property
+    @pulumi.getter
+    def triggers(self) -> Sequence['outputs.BusinessEventsOneagentTriggersTrigger']:
+        return pulumi.get(self, "triggers")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentTriggersTrigger(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "caseSensitive":
+            suggest = "case_sensitive"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsOneagentTriggersTrigger. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsOneagentTriggersTrigger.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsOneagentTriggersTrigger.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source: 'outputs.BusinessEventsOneagentTriggersTriggerSource',
+                 type: str,
+                 case_sensitive: Optional[bool] = None,
+                 value: Optional[str] = None):
+        pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "type", type)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def source(self) -> 'outputs.BusinessEventsOneagentTriggersTriggerSource':
+        return pulumi.get(self, "source")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class BusinessEventsOneagentTriggersTriggerSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dataSource":
+            suggest = "data_source"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsOneagentTriggersTriggerSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsOneagentTriggersTriggerSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsOneagentTriggersTriggerSource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 data_source: str,
+                 path: Optional[str] = None):
+        pulumi.set(__self__, "data_source", data_source)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+
+    @property
+    @pulumi.getter(name="dataSource")
+    def data_source(self) -> str:
+        return pulumi.get(self, "data_source")
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[str]:
+        return pulumi.get(self, "path")
+
+
+@pulumi.output_type
+class BusinessEventsProcessingRuleTesting(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sampleEvent":
+            suggest = "sample_event"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsProcessingRuleTesting. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsProcessingRuleTesting.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsProcessingRuleTesting.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 sample_event: str):
+        pulumi.set(__self__, "sample_event", sample_event)
+
+    @property
+    @pulumi.getter(name="sampleEvent")
+    def sample_event(self) -> str:
+        return pulumi.get(self, "sample_event")
+
+
+@pulumi.output_type
+class BusinessEventsProcessingTransformationFields(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "transformationFields":
+            suggest = "transformation_fields"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsProcessingTransformationFields. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsProcessingTransformationFields.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsProcessingTransformationFields.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 transformation_fields: Sequence['outputs.BusinessEventsProcessingTransformationFieldsTransformationField']):
+        pulumi.set(__self__, "transformation_fields", transformation_fields)
+
+    @property
+    @pulumi.getter(name="transformationFields")
+    def transformation_fields(self) -> Sequence['outputs.BusinessEventsProcessingTransformationFieldsTransformationField']:
+        return pulumi.get(self, "transformation_fields")
+
+
+@pulumi.output_type
+class BusinessEventsProcessingTransformationFieldsTransformationField(dict):
+    def __init__(__self__, *,
+                 array: bool,
+                 name: str,
+                 optional: bool,
+                 readonly: bool,
+                 type: str):
+        pulumi.set(__self__, "array", array)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "optional", optional)
+        pulumi.set(__self__, "readonly", readonly)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def array(self) -> bool:
+        return pulumi.get(self, "array")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def optional(self) -> bool:
+        return pulumi.get(self, "optional")
+
+    @property
+    @pulumi.getter
+    def readonly(self) -> bool:
+        return pulumi.get(self, "readonly")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class CalculatedServiceMetricCondition(dict):
     def __init__(__self__, *,
                  conditions: Optional[Sequence['outputs.CalculatedServiceMetricConditionCondition']] = None):
@@ -10244,9 +12396,12 @@ class CalculatedServiceMetricCondition(dict):
 class CalculatedServiceMetricConditionCondition(dict):
     def __init__(__self__, *,
                  attribute: str,
-                 comparison: 'outputs.CalculatedServiceMetricConditionConditionComparison'):
+                 comparison: 'outputs.CalculatedServiceMetricConditionConditionComparison',
+                 unknowns: Optional[str] = None):
         pulumi.set(__self__, "attribute", attribute)
         pulumi.set(__self__, "comparison", comparison)
+        if unknowns is not None:
+            pulumi.set(__self__, "unknowns", unknowns)
 
     @property
     @pulumi.getter
@@ -10257,6 +12412,11 @@ class CalculatedServiceMetricConditionCondition(dict):
     @pulumi.getter
     def comparison(self) -> 'outputs.CalculatedServiceMetricConditionConditionComparison':
         return pulumi.get(self, "comparison")
+
+    @property
+    @pulumi.getter
+    def unknowns(self) -> Optional[str]:
+        return pulumi.get(self, "unknowns")
 
 
 @pulumi.output_type
@@ -10450,18 +12610,22 @@ class CalculatedServiceMetricConditionConditionComparison(dict):
 @pulumi.output_type
 class CalculatedServiceMetricConditionConditionComparisonBoolean(dict):
     def __init__(__self__, *,
+                 value: bool,
                  operator: Optional[str] = None,
                  unknowns: Optional[str] = None,
-                 value: Optional[bool] = None,
                  values: Optional[Sequence[bool]] = None):
+        pulumi.set(__self__, "value", value)
         if operator is not None:
             pulumi.set(__self__, "operator", operator)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
-        if value is not None:
-            pulumi.set(__self__, "value", value)
         if values is not None:
             pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def value(self) -> bool:
+        return pulumi.get(self, "value")
 
     @property
     @pulumi.getter
@@ -10472,11 +12636,6 @@ class CalculatedServiceMetricConditionConditionComparisonBoolean(dict):
     @pulumi.getter
     def unknowns(self) -> Optional[str]:
         return pulumi.get(self, "unknowns")
-
-    @property
-    @pulumi.getter
-    def value(self) -> Optional[bool]:
-        return pulumi.get(self, "value")
 
     @property
     @pulumi.getter
@@ -11893,6 +14052,432 @@ class CalculatedServiceMetricMetricDefinition(dict):
 
 
 @pulumi.output_type
+class CloudappWorkloaddetectionCloudFoundry(dict):
+    def __init__(__self__, *,
+                 enabled: bool):
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+
+@pulumi.output_type
+class CloudappWorkloaddetectionDocker(dict):
+    def __init__(__self__, *,
+                 enabled: bool):
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+
+@pulumi.output_type
+class CloudappWorkloaddetectionKubernetes(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 filters: Optional['outputs.CloudappWorkloaddetectionKubernetesFilters'] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if filters is not None:
+            pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Optional['outputs.CloudappWorkloaddetectionKubernetesFilters']:
+        return pulumi.get(self, "filters")
+
+
+@pulumi.output_type
+class CloudappWorkloaddetectionKubernetesFilters(dict):
+    def __init__(__self__, *,
+                 filters: Sequence['outputs.CloudappWorkloaddetectionKubernetesFiltersFilter']):
+        pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Sequence['outputs.CloudappWorkloaddetectionKubernetesFiltersFilter']:
+        return pulumi.get(self, "filters")
+
+
+@pulumi.output_type
+class CloudappWorkloaddetectionKubernetesFiltersFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "inclusionToggles":
+            suggest = "inclusion_toggles"
+        elif key == "matchFilter":
+            suggest = "match_filter"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudappWorkloaddetectionKubernetesFiltersFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudappWorkloaddetectionKubernetesFiltersFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudappWorkloaddetectionKubernetesFiltersFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 inclusion_toggles: 'outputs.CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles',
+                 match_filter: 'outputs.CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter'):
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "inclusion_toggles", inclusion_toggles)
+        pulumi.set(__self__, "match_filter", match_filter)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="inclusionToggles")
+    def inclusion_toggles(self) -> 'outputs.CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles':
+        return pulumi.get(self, "inclusion_toggles")
+
+    @property
+    @pulumi.getter(name="matchFilter")
+    def match_filter(self) -> 'outputs.CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter':
+        return pulumi.get(self, "match_filter")
+
+
+@pulumi.output_type
+class CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "incBasepod":
+            suggest = "inc_basepod"
+        elif key == "incContainer":
+            suggest = "inc_container"
+        elif key == "incNamespace":
+            suggest = "inc_namespace"
+        elif key == "incProduct":
+            suggest = "inc_product"
+        elif key == "incStage":
+            suggest = "inc_stage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 inc_basepod: bool,
+                 inc_container: bool,
+                 inc_namespace: bool,
+                 inc_product: bool,
+                 inc_stage: bool):
+        pulumi.set(__self__, "inc_basepod", inc_basepod)
+        pulumi.set(__self__, "inc_container", inc_container)
+        pulumi.set(__self__, "inc_namespace", inc_namespace)
+        pulumi.set(__self__, "inc_product", inc_product)
+        pulumi.set(__self__, "inc_stage", inc_stage)
+
+    @property
+    @pulumi.getter(name="incBasepod")
+    def inc_basepod(self) -> bool:
+        return pulumi.get(self, "inc_basepod")
+
+    @property
+    @pulumi.getter(name="incContainer")
+    def inc_container(self) -> bool:
+        return pulumi.get(self, "inc_container")
+
+    @property
+    @pulumi.getter(name="incNamespace")
+    def inc_namespace(self) -> bool:
+        return pulumi.get(self, "inc_namespace")
+
+    @property
+    @pulumi.getter(name="incProduct")
+    def inc_product(self) -> bool:
+        return pulumi.get(self, "inc_product")
+
+    @property
+    @pulumi.getter(name="incStage")
+    def inc_stage(self) -> bool:
+        return pulumi.get(self, "inc_stage")
+
+
+@pulumi.output_type
+class CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "matchOperator":
+            suggest = "match_operator"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 match_operator: str,
+                 namespace: Optional[str] = None):
+        pulumi.set(__self__, "match_operator", match_operator)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+
+    @property
+    @pulumi.getter(name="matchOperator")
+    def match_operator(self) -> str:
+        return pulumi.get(self, "match_operator")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[str]:
+        return pulumi.get(self, "namespace")
+
+
+@pulumi.output_type
+class CredentialsCredentialUsageSummary(dict):
+    def __init__(__self__, *,
+                 count: int,
+                 type: str):
+        """
+        :param int count: The number of uses
+        :param str type: Type of usage, `HTTP_MONITOR` or `BROWSER_MONITOR`
+        """
+        pulumi.set(__self__, "count", count)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def count(self) -> int:
+        """
+        The number of uses
+        """
+        return pulumi.get(self, "count")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of usage, `HTTP_MONITOR` or `BROWSER_MONITOR`
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class CredentialsExternal(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "clientSecret":
+            suggest = "client_secret"
+        elif key == "credentialsUsedForExternalSynchronizations":
+            suggest = "credentials_used_for_external_synchronizations"
+        elif key == "passwordSecretName":
+            suggest = "password_secret_name"
+        elif key == "pathToCredentials":
+            suggest = "path_to_credentials"
+        elif key == "tokenSecretName":
+            suggest = "token_secret_name"
+        elif key == "usernameSecretName":
+            suggest = "username_secret_name"
+        elif key == "vaultNamespace":
+            suggest = "vault_namespace"
+        elif key == "vaultUrl":
+            suggest = "vault_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CredentialsExternal. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CredentialsExternal.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CredentialsExternal.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 certificate: Optional[str] = None,
+                 client_secret: Optional[str] = None,
+                 clientid: Optional[str] = None,
+                 credentials_used_for_external_synchronizations: Optional[Sequence[str]] = None,
+                 password_secret_name: Optional[str] = None,
+                 path_to_credentials: Optional[str] = None,
+                 roleid: Optional[str] = None,
+                 secretid: Optional[str] = None,
+                 tenantid: Optional[str] = None,
+                 token_secret_name: Optional[str] = None,
+                 username_secret_name: Optional[str] = None,
+                 vault_namespace: Optional[str] = None,
+                 vault_url: Optional[str] = None):
+        """
+        :param str certificate: Required for Hashicorp Certificate. The ID of Credentials within the Certificate Vault holding the certificate
+        :param str client_secret: Required for Azure Client Secret. No further documentation available
+        :param str clientid: Required for Azure Client Secret. No further documentation available
+        :param Sequence[str] credentials_used_for_external_synchronizations: No documentation available
+        :param str password_secret_name: No documentation available
+        :param str path_to_credentials: Required for Hashicorp App Role or Hashicorp Certificate. No further documentation available
+        :param str roleid: Required for Hashicorp App Role. No further documentation available
+        :param str secretid: Required for Hashicorp App Role. The ID of Credentials within the Certificate Vault holding the secret id
+        :param str tenantid: Required for Azure Client Secret. No further documentation available
+        :param str token_secret_name: No documentation available
+        :param str username_secret_name: No documentation available
+        :param str vault_namespace: Required for Hashicorp App Role. No further documentation available
+        :param str vault_url: No documentation available
+        """
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
+        if clientid is not None:
+            pulumi.set(__self__, "clientid", clientid)
+        if credentials_used_for_external_synchronizations is not None:
+            pulumi.set(__self__, "credentials_used_for_external_synchronizations", credentials_used_for_external_synchronizations)
+        if password_secret_name is not None:
+            pulumi.set(__self__, "password_secret_name", password_secret_name)
+        if path_to_credentials is not None:
+            pulumi.set(__self__, "path_to_credentials", path_to_credentials)
+        if roleid is not None:
+            pulumi.set(__self__, "roleid", roleid)
+        if secretid is not None:
+            pulumi.set(__self__, "secretid", secretid)
+        if tenantid is not None:
+            pulumi.set(__self__, "tenantid", tenantid)
+        if token_secret_name is not None:
+            pulumi.set(__self__, "token_secret_name", token_secret_name)
+        if username_secret_name is not None:
+            pulumi.set(__self__, "username_secret_name", username_secret_name)
+        if vault_namespace is not None:
+            pulumi.set(__self__, "vault_namespace", vault_namespace)
+        if vault_url is not None:
+            pulumi.set(__self__, "vault_url", vault_url)
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional[str]:
+        """
+        Required for Hashicorp Certificate. The ID of Credentials within the Certificate Vault holding the certificate
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> Optional[str]:
+        """
+        Required for Azure Client Secret. No further documentation available
+        """
+        return pulumi.get(self, "client_secret")
+
+    @property
+    @pulumi.getter
+    def clientid(self) -> Optional[str]:
+        """
+        Required for Azure Client Secret. No further documentation available
+        """
+        return pulumi.get(self, "clientid")
+
+    @property
+    @pulumi.getter(name="credentialsUsedForExternalSynchronizations")
+    def credentials_used_for_external_synchronizations(self) -> Optional[Sequence[str]]:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "credentials_used_for_external_synchronizations")
+
+    @property
+    @pulumi.getter(name="passwordSecretName")
+    def password_secret_name(self) -> Optional[str]:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "password_secret_name")
+
+    @property
+    @pulumi.getter(name="pathToCredentials")
+    def path_to_credentials(self) -> Optional[str]:
+        """
+        Required for Hashicorp App Role or Hashicorp Certificate. No further documentation available
+        """
+        return pulumi.get(self, "path_to_credentials")
+
+    @property
+    @pulumi.getter
+    def roleid(self) -> Optional[str]:
+        """
+        Required for Hashicorp App Role. No further documentation available
+        """
+        return pulumi.get(self, "roleid")
+
+    @property
+    @pulumi.getter
+    def secretid(self) -> Optional[str]:
+        """
+        Required for Hashicorp App Role. The ID of Credentials within the Certificate Vault holding the secret id
+        """
+        return pulumi.get(self, "secretid")
+
+    @property
+    @pulumi.getter
+    def tenantid(self) -> Optional[str]:
+        """
+        Required for Azure Client Secret. No further documentation available
+        """
+        return pulumi.get(self, "tenantid")
+
+    @property
+    @pulumi.getter(name="tokenSecretName")
+    def token_secret_name(self) -> Optional[str]:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "token_secret_name")
+
+    @property
+    @pulumi.getter(name="usernameSecretName")
+    def username_secret_name(self) -> Optional[str]:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "username_secret_name")
+
+    @property
+    @pulumi.getter(name="vaultNamespace")
+    def vault_namespace(self) -> Optional[str]:
+        """
+        Required for Hashicorp App Role. No further documentation available
+        """
+        return pulumi.get(self, "vault_namespace")
+
+    @property
+    @pulumi.getter(name="vaultUrl")
+    def vault_url(self) -> Optional[str]:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "vault_url")
+
+
+@pulumi.output_type
 class CustomAnomaliesDimension(dict):
     def __init__(__self__, *,
                  dimensions: Optional[Sequence['outputs.CustomAnomaliesDimensionDimension']] = None,
@@ -11939,14 +14524,21 @@ class CustomAnomaliesDimension(dict):
 class CustomAnomaliesDimensionDimension(dict):
     def __init__(__self__, *,
                  type: str,
+                 index: Optional[int] = None,
                  key: Optional[str] = None,
+                 name: Optional[str] = None,
                  unknowns: Optional[str] = None):
         """
+        :param str name: The name of the metric event displayed in the UI
         :param str unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         pulumi.set(__self__, "type", type)
+        if index is not None:
+            pulumi.set(__self__, "index", index)
         if key is not None:
             pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
 
@@ -11957,8 +14549,21 @@ class CustomAnomaliesDimensionDimension(dict):
 
     @property
     @pulumi.getter
+    def index(self) -> Optional[int]:
+        return pulumi.get(self, "index")
+
+    @property
+    @pulumi.getter
     def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        The name of the metric event displayed in the UI
+        """
+        return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
@@ -12026,14 +14631,21 @@ class CustomAnomaliesDimensionEntityFilter(dict):
 class CustomAnomaliesDimensionString(dict):
     def __init__(__self__, *,
                  filter: 'outputs.CustomAnomaliesDimensionStringFilter',
+                 index: Optional[int] = None,
                  key: Optional[str] = None,
+                 name: Optional[str] = None,
                  unknowns: Optional[str] = None):
         """
+        :param str name: The name of the metric event displayed in the UI
         :param str unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         pulumi.set(__self__, "filter", filter)
+        if index is not None:
+            pulumi.set(__self__, "index", index)
         if key is not None:
             pulumi.set(__self__, "key", key)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
 
@@ -12044,8 +14656,21 @@ class CustomAnomaliesDimensionString(dict):
 
     @property
     @pulumi.getter
+    def index(self) -> Optional[int]:
+        return pulumi.get(self, "index")
+
+    @property
+    @pulumi.getter
     def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        The name of the metric event displayed in the UI
+        """
+        return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
@@ -12873,6 +15498,821 @@ class CustomAnomaliesStrategyStatic(dict):
 
 
 @pulumi.output_type
+class CustomAppAnomaliesErrorRateIncrease(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "detectionMode":
+            suggest = "detection_mode"
+        elif key == "errorRateIncreaseAuto":
+            suggest = "error_rate_increase_auto"
+        elif key == "errorRateIncreaseFixed":
+            suggest = "error_rate_increase_fixed"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppAnomaliesErrorRateIncrease. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppAnomaliesErrorRateIncrease.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppAnomaliesErrorRateIncrease.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 detection_mode: Optional[str] = None,
+                 error_rate_increase_auto: Optional['outputs.CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto'] = None,
+                 error_rate_increase_fixed: Optional['outputs.CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param str detection_mode: Possible Values: `Auto`, `Fixed`
+        :param 'CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs' error_rate_increase_auto: Alert if the percentage of user actions affected by reported errors exceeds **both** the absolute threshold and the relative threshold
+        :param 'CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs' error_rate_increase_fixed: Alert if the custom reported error rate threshold is exceeded during any 5-minute period
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if error_rate_increase_auto is not None:
+            pulumi.set(__self__, "error_rate_increase_auto", error_rate_increase_auto)
+        if error_rate_increase_fixed is not None:
+            pulumi.set(__self__, "error_rate_increase_fixed", error_rate_increase_fixed)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @property
+    @pulumi.getter(name="errorRateIncreaseAuto")
+    def error_rate_increase_auto(self) -> Optional['outputs.CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto']:
+        """
+        Alert if the percentage of user actions affected by reported errors exceeds **both** the absolute threshold and the relative threshold
+        """
+        return pulumi.get(self, "error_rate_increase_auto")
+
+    @property
+    @pulumi.getter(name="errorRateIncreaseFixed")
+    def error_rate_increase_fixed(self) -> Optional['outputs.CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed']:
+        """
+        Alert if the custom reported error rate threshold is exceeded during any 5-minute period
+        """
+        return pulumi.get(self, "error_rate_increase_fixed")
+
+
+@pulumi.output_type
+class CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "thresholdAbsolute":
+            suggest = "threshold_absolute"
+        elif key == "thresholdRelative":
+            suggest = "threshold_relative"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 threshold_absolute: float,
+                 threshold_relative: float):
+        pulumi.set(__self__, "threshold_absolute", threshold_absolute)
+        pulumi.set(__self__, "threshold_relative", threshold_relative)
+
+    @property
+    @pulumi.getter(name="thresholdAbsolute")
+    def threshold_absolute(self) -> float:
+        return pulumi.get(self, "threshold_absolute")
+
+    @property
+    @pulumi.getter(name="thresholdRelative")
+    def threshold_relative(self) -> float:
+        return pulumi.get(self, "threshold_relative")
+
+
+@pulumi.output_type
+class CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "thresholdAbsolute":
+            suggest = "threshold_absolute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 sensitivity: str,
+                 threshold_absolute: float):
+        pulumi.set(__self__, "sensitivity", sensitivity)
+        pulumi.set(__self__, "threshold_absolute", threshold_absolute)
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> str:
+        return pulumi.get(self, "sensitivity")
+
+    @property
+    @pulumi.getter(name="thresholdAbsolute")
+    def threshold_absolute(self) -> float:
+        return pulumi.get(self, "threshold_absolute")
+
+
+@pulumi.output_type
+class CustomAppAnomaliesSlowUserActions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "detectionMode":
+            suggest = "detection_mode"
+        elif key == "slowUserActionsAuto":
+            suggest = "slow_user_actions_auto"
+        elif key == "slowUserActionsFixed":
+            suggest = "slow_user_actions_fixed"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppAnomaliesSlowUserActions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppAnomaliesSlowUserActions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppAnomaliesSlowUserActions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 detection_mode: Optional[str] = None,
+                 slow_user_actions_auto: Optional['outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAuto'] = None,
+                 slow_user_actions_fixed: Optional['outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixed'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param str detection_mode: Possible Values: `Auto`, `Fixed`
+        :param 'CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoArgs' slow_user_actions_auto: no documentation available
+        :param 'CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs' slow_user_actions_fixed: no documentation available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if slow_user_actions_auto is not None:
+            pulumi.set(__self__, "slow_user_actions_auto", slow_user_actions_auto)
+        if slow_user_actions_fixed is not None:
+            pulumi.set(__self__, "slow_user_actions_fixed", slow_user_actions_fixed)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @property
+    @pulumi.getter(name="slowUserActionsAuto")
+    def slow_user_actions_auto(self) -> Optional['outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAuto']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "slow_user_actions_auto")
+
+    @property
+    @pulumi.getter(name="slowUserActionsFixed")
+    def slow_user_actions_fixed(self) -> Optional['outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixed']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "slow_user_actions_fixed")
+
+
+@pulumi.output_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsAuto(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationAvoidOveralerting":
+            suggest = "duration_avoid_overalerting"
+        elif key == "durationThresholdAll":
+            suggest = "duration_threshold_all"
+        elif key == "durationThresholdSlowest":
+            suggest = "duration_threshold_slowest"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppAnomaliesSlowUserActionsSlowUserActionsAuto. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsAuto.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsAuto.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration_avoid_overalerting: 'outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting',
+                 duration_threshold_all: 'outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll',
+                 duration_threshold_slowest: 'outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest'):
+        pulumi.set(__self__, "duration_avoid_overalerting", duration_avoid_overalerting)
+        pulumi.set(__self__, "duration_threshold_all", duration_threshold_all)
+        pulumi.set(__self__, "duration_threshold_slowest", duration_threshold_slowest)
+
+    @property
+    @pulumi.getter(name="durationAvoidOveralerting")
+    def duration_avoid_overalerting(self) -> 'outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting':
+        return pulumi.get(self, "duration_avoid_overalerting")
+
+    @property
+    @pulumi.getter(name="durationThresholdAll")
+    def duration_threshold_all(self) -> 'outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll':
+        return pulumi.get(self, "duration_threshold_all")
+
+    @property
+    @pulumi.getter(name="durationThresholdSlowest")
+    def duration_threshold_slowest(self) -> 'outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest':
+        return pulumi.get(self, "duration_threshold_slowest")
+
+
+@pulumi.output_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "minActionRate":
+            suggest = "min_action_rate"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 min_action_rate: int):
+        pulumi.set(__self__, "min_action_rate", min_action_rate)
+
+    @property
+    @pulumi.getter(name="minActionRate")
+    def min_action_rate(self) -> int:
+        return pulumi.get(self, "min_action_rate")
+
+
+@pulumi.output_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationThreshold":
+            suggest = "duration_threshold"
+        elif key == "slowdownPercentage":
+            suggest = "slowdown_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration_threshold: float,
+                 slowdown_percentage: float):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+        pulumi.set(__self__, "slowdown_percentage", slowdown_percentage)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> float:
+        return pulumi.get(self, "duration_threshold")
+
+    @property
+    @pulumi.getter(name="slowdownPercentage")
+    def slowdown_percentage(self) -> float:
+        return pulumi.get(self, "slowdown_percentage")
+
+
+@pulumi.output_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationThreshold":
+            suggest = "duration_threshold"
+        elif key == "slowdownPercentage":
+            suggest = "slowdown_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration_threshold: float,
+                 slowdown_percentage: float):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+        pulumi.set(__self__, "slowdown_percentage", slowdown_percentage)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> float:
+        return pulumi.get(self, "duration_threshold")
+
+    @property
+    @pulumi.getter(name="slowdownPercentage")
+    def slowdown_percentage(self) -> float:
+        return pulumi.get(self, "slowdown_percentage")
+
+
+@pulumi.output_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsFixed(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationAvoidOveralerting":
+            suggest = "duration_avoid_overalerting"
+        elif key == "durationThresholdAllFixed":
+            suggest = "duration_threshold_all_fixed"
+        elif key == "durationThresholdSlowest":
+            suggest = "duration_threshold_slowest"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppAnomaliesSlowUserActionsSlowUserActionsFixed. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsFixed.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsFixed.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration_avoid_overalerting: 'outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting',
+                 duration_threshold_all_fixed: 'outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed',
+                 duration_threshold_slowest: 'outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest',
+                 sensitivity: str):
+        pulumi.set(__self__, "duration_avoid_overalerting", duration_avoid_overalerting)
+        pulumi.set(__self__, "duration_threshold_all_fixed", duration_threshold_all_fixed)
+        pulumi.set(__self__, "duration_threshold_slowest", duration_threshold_slowest)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+
+    @property
+    @pulumi.getter(name="durationAvoidOveralerting")
+    def duration_avoid_overalerting(self) -> 'outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting':
+        return pulumi.get(self, "duration_avoid_overalerting")
+
+    @property
+    @pulumi.getter(name="durationThresholdAllFixed")
+    def duration_threshold_all_fixed(self) -> 'outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed':
+        return pulumi.get(self, "duration_threshold_all_fixed")
+
+    @property
+    @pulumi.getter(name="durationThresholdSlowest")
+    def duration_threshold_slowest(self) -> 'outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest':
+        return pulumi.get(self, "duration_threshold_slowest")
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> str:
+        return pulumi.get(self, "sensitivity")
+
+
+@pulumi.output_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "minActionRate":
+            suggest = "min_action_rate"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 min_action_rate: int):
+        pulumi.set(__self__, "min_action_rate", min_action_rate)
+
+    @property
+    @pulumi.getter(name="minActionRate")
+    def min_action_rate(self) -> int:
+        return pulumi.get(self, "min_action_rate")
+
+
+@pulumi.output_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationThreshold":
+            suggest = "duration_threshold"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration_threshold: float):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> float:
+        return pulumi.get(self, "duration_threshold")
+
+
+@pulumi.output_type
+class CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationThreshold":
+            suggest = "duration_threshold"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration_threshold: float):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> float:
+        return pulumi.get(self, "duration_threshold")
+
+
+@pulumi.output_type
+class CustomAppAnomaliesUnexpectedHighLoad(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "thresholdPercentage":
+            suggest = "threshold_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppAnomaliesUnexpectedHighLoad. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppAnomaliesUnexpectedHighLoad.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppAnomaliesUnexpectedHighLoad.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 threshold_percentage: Optional[float] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param float threshold_percentage: Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic spikes within your application.
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if threshold_percentage is not None:
+            pulumi.set(__self__, "threshold_percentage", threshold_percentage)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="thresholdPercentage")
+    def threshold_percentage(self) -> Optional[float]:
+        """
+        Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic spikes within your application.
+        """
+        return pulumi.get(self, "threshold_percentage")
+
+
+@pulumi.output_type
+class CustomAppAnomaliesUnexpectedLowLoad(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "thresholdPercentage":
+            suggest = "threshold_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppAnomaliesUnexpectedLowLoad. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppAnomaliesUnexpectedLowLoad.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppAnomaliesUnexpectedLowLoad.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 threshold_percentage: Optional[float] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param float threshold_percentage: Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic drops within your application.
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if threshold_percentage is not None:
+            pulumi.set(__self__, "threshold_percentage", threshold_percentage)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="thresholdPercentage")
+    def threshold_percentage(self) -> Optional[float]:
+        """
+        Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic drops within your application.
+        """
+        return pulumi.get(self, "threshold_percentage")
+
+
+@pulumi.output_type
+class CustomAppCrashRateCrashRateIncrease(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "crashRateIncreaseAuto":
+            suggest = "crash_rate_increase_auto"
+        elif key == "crashRateIncreaseFixed":
+            suggest = "crash_rate_increase_fixed"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppCrashRateCrashRateIncrease. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppCrashRateCrashRateIncrease.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppCrashRateCrashRateIncrease.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 crash_rate_increase_auto: Optional['outputs.CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto'] = None,
+                 crash_rate_increase_fixed: Optional['outputs.CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoArgs' crash_rate_increase_auto: Alert crash rate increases when auto-detected baseline is exceeded by a certain number of users
+        :param 'CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs' crash_rate_increase_fixed: Alert crash rate increases when the defined threshold is exceeded by a certain number of users
+        :param str detection_mode: Possible Values: `Auto`, `Fixed`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if crash_rate_increase_auto is not None:
+            pulumi.set(__self__, "crash_rate_increase_auto", crash_rate_increase_auto)
+        if crash_rate_increase_fixed is not None:
+            pulumi.set(__self__, "crash_rate_increase_fixed", crash_rate_increase_fixed)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="crashRateIncreaseAuto")
+    def crash_rate_increase_auto(self) -> Optional['outputs.CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto']:
+        """
+        Alert crash rate increases when auto-detected baseline is exceeded by a certain number of users
+        """
+        return pulumi.get(self, "crash_rate_increase_auto")
+
+    @property
+    @pulumi.getter(name="crashRateIncreaseFixed")
+    def crash_rate_increase_fixed(self) -> Optional['outputs.CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed']:
+        """
+        Alert crash rate increases when the defined threshold is exceeded by a certain number of users
+        """
+        return pulumi.get(self, "crash_rate_increase_fixed")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "baselineViolationPercentage":
+            suggest = "baseline_violation_percentage"
+        elif key == "concurrentUsers":
+            suggest = "concurrent_users"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 baseline_violation_percentage: float,
+                 concurrent_users: float,
+                 sensitivity: str):
+        pulumi.set(__self__, "baseline_violation_percentage", baseline_violation_percentage)
+        pulumi.set(__self__, "concurrent_users", concurrent_users)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+
+    @property
+    @pulumi.getter(name="baselineViolationPercentage")
+    def baseline_violation_percentage(self) -> float:
+        return pulumi.get(self, "baseline_violation_percentage")
+
+    @property
+    @pulumi.getter(name="concurrentUsers")
+    def concurrent_users(self) -> float:
+        return pulumi.get(self, "concurrent_users")
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> str:
+        return pulumi.get(self, "sensitivity")
+
+
+@pulumi.output_type
+class CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "absoluteCrashRate":
+            suggest = "absolute_crash_rate"
+        elif key == "concurrentUsers":
+            suggest = "concurrent_users"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 absolute_crash_rate: float,
+                 concurrent_users: int):
+        pulumi.set(__self__, "absolute_crash_rate", absolute_crash_rate)
+        pulumi.set(__self__, "concurrent_users", concurrent_users)
+
+    @property
+    @pulumi.getter(name="absoluteCrashRate")
+    def absolute_crash_rate(self) -> float:
+        return pulumi.get(self, "absolute_crash_rate")
+
+    @property
+    @pulumi.getter(name="concurrentUsers")
+    def concurrent_users(self) -> int:
+        return pulumi.get(self, "concurrent_users")
+
+
+@pulumi.output_type
+class CustomAppEnablementRum(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "costAndTrafficControl":
+            suggest = "cost_and_traffic_control"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomAppEnablementRum. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomAppEnablementRum.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomAppEnablementRum.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cost_and_traffic_control: int,
+                 enabled: bool):
+        """
+        :param int cost_and_traffic_control: (Field has overlap with `MobileApplication`) Percentage of user sessions captured and analyzed. By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application’s performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session.
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        """
+        pulumi.set(__self__, "cost_and_traffic_control", cost_and_traffic_control)
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter(name="costAndTrafficControl")
+    def cost_and_traffic_control(self) -> int:
+        """
+        (Field has overlap with `MobileApplication`) Percentage of user sessions captured and analyzed. By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application’s performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session.
+        """
+        return pulumi.get(self, "cost_and_traffic_control")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+
+@pulumi.output_type
 class CustomServiceRule(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -12897,7 +16337,6 @@ class CustomServiceRule(dict):
                  annotations: Optional[Sequence[str]] = None,
                  class_: Optional['outputs.CustomServiceRuleClass'] = None,
                  file: Optional['outputs.CustomServiceRuleFile'] = None,
-                 id: Optional[str] = None,
                  unknowns: Optional[str] = None):
         """
         :param bool enabled: Rule enabled/disabled
@@ -12905,7 +16344,6 @@ class CustomServiceRule(dict):
         :param Sequence[str] annotations: Additional annotations filter of the rule. Only classes where all listed annotations are available in the class itself or any of its superclasses are instrumented. Not applicable to PHP
         :param 'CustomServiceRuleClassArgs' class_: The fully qualified class or interface to instrument (or a substring if matching to a string). Required for Java and .NET custom services. Not applicable to PHP
         :param 'CustomServiceRuleFileArgs' file: The PHP file containing the class or methods to instrument. Required for PHP custom service. Not applicable to Java and .NET
-        :param str id: The ID of the detection rule
         :param str unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         pulumi.set(__self__, "enabled", enabled)
@@ -12916,8 +16354,6 @@ class CustomServiceRule(dict):
             pulumi.set(__self__, "class_", class_)
         if file is not None:
             pulumi.set(__self__, "file", file)
-        if id is not None:
-            pulumi.set(__self__, "id", id)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
 
@@ -12960,14 +16396,6 @@ class CustomServiceRule(dict):
         The PHP file containing the class or methods to instrument. Required for PHP custom service. Not applicable to Java and .NET
         """
         return pulumi.get(self, "file")
-
-    @property
-    @pulumi.getter
-    def id(self) -> Optional[str]:
-        """
-        The ID of the detection rule
-        """
-        return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
@@ -13105,6 +16533,52 @@ class CustomServiceRuleMethod(dict):
 
 
 @pulumi.output_type
+class CustomTagsTags(dict):
+    def __init__(__self__, *,
+                 filters: Optional[Sequence['outputs.CustomTagsTagsFilter']] = None):
+        """
+        :param Sequence['CustomTagsTagsFilterArgs'] filters: A Tag Filter
+        """
+        if filters is not None:
+            pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Optional[Sequence['outputs.CustomTagsTagsFilter']]:
+        """
+        A Tag Filter
+        """
+        return pulumi.get(self, "filters")
+
+
+@pulumi.output_type
+class CustomTagsTagsFilter(dict):
+    def __init__(__self__, *,
+                 context: str,
+                 key: str,
+                 value: Optional[str] = None):
+        pulumi.set(__self__, "context", context)
+        pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def context(self) -> str:
+        return pulumi.get(self, "context")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class DashboardDashboardMetadata(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -13115,6 +16589,8 @@ class DashboardDashboardMetadata(dict):
             suggest = "dynamic_filters"
         elif key == "sharingDetails":
             suggest = "sharing_details"
+        elif key == "tilesNameSize":
+            suggest = "tiles_name_size"
         elif key == "validFilterKeys":
             suggest = "valid_filter_keys"
 
@@ -13139,6 +16615,7 @@ class DashboardDashboardMetadata(dict):
                  shared: Optional[bool] = None,
                  sharing_details: Optional['outputs.DashboardDashboardMetadataSharingDetails'] = None,
                  tags: Optional[Sequence[str]] = None,
+                 tiles_name_size: Optional[str] = None,
                  unknowns: Optional[str] = None,
                  valid_filter_keys: Optional[Sequence[str]] = None):
         """
@@ -13151,6 +16628,7 @@ class DashboardDashboardMetadata(dict):
         :param bool shared: the dashboard is shared (`true`) or private (`false`)
         :param 'DashboardDashboardMetadataSharingDetailsArgs' sharing_details: represents sharing configuration of a dashboard
         :param Sequence[str] tags: a set of tags assigned to the dashboard
+        :param str tiles_name_size: No documentation available
         :param str unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         :param Sequence[str] valid_filter_keys: a set of all possible global dashboard filters that can be applied to dashboard
         """
@@ -13170,6 +16648,8 @@ class DashboardDashboardMetadata(dict):
             pulumi.set(__self__, "sharing_details", sharing_details)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
+        if tiles_name_size is not None:
+            pulumi.set(__self__, "tiles_name_size", tiles_name_size)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
         if valid_filter_keys is not None:
@@ -13248,6 +16728,14 @@ class DashboardDashboardMetadata(dict):
         return pulumi.get(self, "tags")
 
     @property
+    @pulumi.getter(name="tilesNameSize")
+    def tiles_name_size(self) -> Optional[str]:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "tiles_name_size")
+
+    @property
     @pulumi.getter
     def unknowns(self) -> Optional[str]:
         """
@@ -13269,7 +16757,9 @@ class DashboardDashboardMetadataDynamicFilters(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "tagSuggestionTypes":
+        if key == "genericTagFilters":
+            suggest = "generic_tag_filters"
+        elif key == "tagSuggestionTypes":
             suggest = "tag_suggestion_types"
 
         if suggest:
@@ -13285,12 +16775,15 @@ class DashboardDashboardMetadataDynamicFilters(dict):
 
     def __init__(__self__, *,
                  filters: Sequence[str],
+                 generic_tag_filters: Optional['outputs.DashboardDashboardMetadataDynamicFiltersGenericTagFilters'] = None,
                  tag_suggestion_types: Optional[Sequence[str]] = None,
                  unknowns: Optional[str] = None):
         """
         :param str unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         pulumi.set(__self__, "filters", filters)
+        if generic_tag_filters is not None:
+            pulumi.set(__self__, "generic_tag_filters", generic_tag_filters)
         if tag_suggestion_types is not None:
             pulumi.set(__self__, "tag_suggestion_types", tag_suggestion_types)
         if unknowns is not None:
@@ -13300,6 +16793,11 @@ class DashboardDashboardMetadataDynamicFilters(dict):
     @pulumi.getter
     def filters(self) -> Sequence[str]:
         return pulumi.get(self, "filters")
+
+    @property
+    @pulumi.getter(name="genericTagFilters")
+    def generic_tag_filters(self) -> Optional['outputs.DashboardDashboardMetadataDynamicFiltersGenericTagFilters']:
+        return pulumi.get(self, "generic_tag_filters")
 
     @property
     @pulumi.getter(name="tagSuggestionTypes")
@@ -13313,6 +16811,75 @@ class DashboardDashboardMetadataDynamicFilters(dict):
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
+
+
+@pulumi.output_type
+class DashboardDashboardMetadataDynamicFiltersGenericTagFilters(dict):
+    def __init__(__self__, *,
+                 filters: Sequence['outputs.DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilter']):
+        pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Sequence['outputs.DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilter']:
+        return pulumi.get(self, "filters")
+
+
+@pulumi.output_type
+class DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "entityTypes":
+            suggest = "entity_types"
+        elif key == "suggestionsFromEntityType":
+            suggest = "suggestions_from_entity_type"
+        elif key == "tagKey":
+            suggest = "tag_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 entity_types: Sequence[str],
+                 name: Optional[str] = None,
+                 suggestions_from_entity_type: Optional[str] = None,
+                 tag_key: Optional[str] = None):
+        pulumi.set(__self__, "entity_types", entity_types)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if suggestions_from_entity_type is not None:
+            pulumi.set(__self__, "suggestions_from_entity_type", suggestions_from_entity_type)
+        if tag_key is not None:
+            pulumi.set(__self__, "tag_key", tag_key)
+
+    @property
+    @pulumi.getter(name="entityTypes")
+    def entity_types(self) -> Sequence[str]:
+        return pulumi.get(self, "entity_types")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="suggestionsFromEntityType")
+    def suggestions_from_entity_type(self) -> Optional[str]:
+        return pulumi.get(self, "suggestions_from_entity_type")
+
+    @property
+    @pulumi.getter(name="tagKey")
+    def tag_key(self) -> Optional[str]:
+        return pulumi.get(self, "tag_key")
 
 
 @pulumi.output_type
@@ -13601,11 +17168,14 @@ class DashboardSharingPublic(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 management_zones: Sequence[str]):
+                 management_zones: Sequence[str],
+                 urls: Optional[Mapping[str, str]] = None):
         """
         :param Sequence[str] management_zones: A list of management zones that can display data on the publicly shared dashboard.
         """
         pulumi.set(__self__, "management_zones", management_zones)
+        if urls is not None:
+            pulumi.set(__self__, "urls", urls)
 
     @property
     @pulumi.getter(name="managementZones")
@@ -13614,6 +17184,11 @@ class DashboardSharingPublic(dict):
         A list of management zones that can display data on the publicly shared dashboard.
         """
         return pulumi.get(self, "management_zones")
+
+    @property
+    @pulumi.getter
+    def urls(self) -> Optional[Mapping[str, str]]:
+        return pulumi.get(self, "urls")
 
 
 @pulumi.output_type
@@ -13625,6 +17200,8 @@ class DashboardTile(dict):
             suggest = "tile_type"
         elif key == "assignedEntities":
             suggest = "assigned_entities"
+        elif key == "autoRefreshDisabled":
+            suggest = "auto_refresh_disabled"
         elif key == "chartVisible":
             suggest = "chart_visible"
         elif key == "customName":
@@ -13655,6 +17232,7 @@ class DashboardTile(dict):
                  name: str,
                  tile_type: str,
                  assigned_entities: Optional[Sequence[str]] = None,
+                 auto_refresh_disabled: Optional[bool] = None,
                  bounds: Optional['outputs.DashboardTileBounds'] = None,
                  chart_visible: Optional[bool] = None,
                  configured: Optional[bool] = None,
@@ -13676,6 +17254,7 @@ class DashboardTile(dict):
         :param str name: the name of the tile
         :param str tile_type: the type of the tile. Must be either `APPLICATION_WORLDMAP`, `RESOURCES`, `THIRD_PARTY_MOST_ACTIVE`, `UEM_CONVERSIONS_PER_GOAL`, `PROCESS_GROUPS_ONE` or `HOST` .
         :param Sequence[str] assigned_entities: The list of Dynatrace entities, assigned to the tile
+        :param bool auto_refresh_disabled: Auto Refresh is disabled (`true`)
         :param 'DashboardTileBoundsArgs' bounds: the position and size of a tile
         :param bool configured: The tile is configured and ready to use (`true`) or just placed on the dashboard (`false`)
         :param str custom_name: The name of the tile, set by user
@@ -13697,6 +17276,8 @@ class DashboardTile(dict):
         pulumi.set(__self__, "tile_type", tile_type)
         if assigned_entities is not None:
             pulumi.set(__self__, "assigned_entities", assigned_entities)
+        if auto_refresh_disabled is not None:
+            pulumi.set(__self__, "auto_refresh_disabled", auto_refresh_disabled)
         if bounds is not None:
             pulumi.set(__self__, "bounds", bounds)
         if chart_visible is not None:
@@ -13755,6 +17336,14 @@ class DashboardTile(dict):
         The list of Dynatrace entities, assigned to the tile
         """
         return pulumi.get(self, "assigned_entities")
+
+    @property
+    @pulumi.getter(name="autoRefreshDisabled")
+    def auto_refresh_disabled(self) -> Optional[bool]:
+        """
+        Auto Refresh is disabled (`true`)
+        """
+        return pulumi.get(self, "auto_refresh_disabled")
 
     @property
     @pulumi.getter
@@ -14580,6 +18169,351 @@ class DashboardTileVisualizationConfig(dict):
 
 
 @pulumi.output_type
+class DashboardsAllowlistAllowlist(dict):
+    def __init__(__self__, *,
+                 urlpatterns: Sequence['outputs.DashboardsAllowlistAllowlistUrlpattern']):
+        pulumi.set(__self__, "urlpatterns", urlpatterns)
+
+    @property
+    @pulumi.getter
+    def urlpatterns(self) -> Sequence['outputs.DashboardsAllowlistAllowlistUrlpattern']:
+        return pulumi.get(self, "urlpatterns")
+
+
+@pulumi.output_type
+class DashboardsAllowlistAllowlistUrlpattern(dict):
+    def __init__(__self__, *,
+                 rule: str,
+                 template: str):
+        pulumi.set(__self__, "rule", rule)
+        pulumi.set(__self__, "template", template)
+
+    @property
+    @pulumi.getter
+    def rule(self) -> str:
+        return pulumi.get(self, "rule")
+
+    @property
+    @pulumi.getter
+    def template(self) -> str:
+        return pulumi.get(self, "template")
+
+
+@pulumi.output_type
+class DashboardsGeneralDefaultDashboardList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "defaultDashboards":
+            suggest = "default_dashboards"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DashboardsGeneralDefaultDashboardList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DashboardsGeneralDefaultDashboardList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DashboardsGeneralDefaultDashboardList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 default_dashboards: Sequence['outputs.DashboardsGeneralDefaultDashboardListDefaultDashboard']):
+        pulumi.set(__self__, "default_dashboards", default_dashboards)
+
+    @property
+    @pulumi.getter(name="defaultDashboards")
+    def default_dashboards(self) -> Sequence['outputs.DashboardsGeneralDefaultDashboardListDefaultDashboard']:
+        return pulumi.get(self, "default_dashboards")
+
+
+@pulumi.output_type
+class DashboardsGeneralDefaultDashboardListDefaultDashboard(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "userGroup":
+            suggest = "user_group"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DashboardsGeneralDefaultDashboardListDefaultDashboard. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DashboardsGeneralDefaultDashboardListDefaultDashboard.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DashboardsGeneralDefaultDashboardListDefaultDashboard.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dashboard: str,
+                 user_group: str):
+        pulumi.set(__self__, "dashboard", dashboard)
+        pulumi.set(__self__, "user_group", user_group)
+
+    @property
+    @pulumi.getter
+    def dashboard(self) -> str:
+        return pulumi.get(self, "dashboard")
+
+    @property
+    @pulumi.getter(name="userGroup")
+    def user_group(self) -> str:
+        return pulumi.get(self, "user_group")
+
+
+@pulumi.output_type
+class DashboardsPresetsDashboardPresetsList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dashboardPresets":
+            suggest = "dashboard_presets"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DashboardsPresetsDashboardPresetsList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DashboardsPresetsDashboardPresetsList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DashboardsPresetsDashboardPresetsList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dashboard_presets: Sequence['outputs.DashboardsPresetsDashboardPresetsListDashboardPreset']):
+        pulumi.set(__self__, "dashboard_presets", dashboard_presets)
+
+    @property
+    @pulumi.getter(name="dashboardPresets")
+    def dashboard_presets(self) -> Sequence['outputs.DashboardsPresetsDashboardPresetsListDashboardPreset']:
+        return pulumi.get(self, "dashboard_presets")
+
+
+@pulumi.output_type
+class DashboardsPresetsDashboardPresetsListDashboardPreset(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dashboardPreset":
+            suggest = "dashboard_preset"
+        elif key == "userGroup":
+            suggest = "user_group"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DashboardsPresetsDashboardPresetsListDashboardPreset. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DashboardsPresetsDashboardPresetsListDashboardPreset.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DashboardsPresetsDashboardPresetsListDashboardPreset.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dashboard_preset: str,
+                 user_group: str):
+        pulumi.set(__self__, "dashboard_preset", dashboard_preset)
+        pulumi.set(__self__, "user_group", user_group)
+
+    @property
+    @pulumi.getter(name="dashboardPreset")
+    def dashboard_preset(self) -> str:
+        return pulumi.get(self, "dashboard_preset")
+
+    @property
+    @pulumi.getter(name="userGroup")
+    def user_group(self) -> str:
+        return pulumi.get(self, "user_group")
+
+
+@pulumi.output_type
+class DataPrivacyDataCollection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "optInModeEnabled":
+            suggest = "opt_in_mode_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DataPrivacyDataCollection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DataPrivacyDataCollection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DataPrivacyDataCollection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 opt_in_mode_enabled: bool):
+        """
+        :param bool opt_in_mode_enabled: With [Data-collection and opt-in mode](https://dt-url.net/7l3p0p3h) enabled, Real User Monitoring data isn't captured until dtrum.enable() is called for specific user sessions.
+        """
+        pulumi.set(__self__, "opt_in_mode_enabled", opt_in_mode_enabled)
+
+    @property
+    @pulumi.getter(name="optInModeEnabled")
+    def opt_in_mode_enabled(self) -> bool:
+        """
+        With [Data-collection and opt-in mode](https://dt-url.net/7l3p0p3h) enabled, Real User Monitoring data isn't captured until dtrum.enable() is called for specific user sessions.
+        """
+        return pulumi.get(self, "opt_in_mode_enabled")
+
+
+@pulumi.output_type
+class DataPrivacyDoNotTrack(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "complyWithDoNotTrack":
+            suggest = "comply_with_do_not_track"
+        elif key == "doNotTrack":
+            suggest = "do_not_track"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DataPrivacyDoNotTrack. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DataPrivacyDoNotTrack.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DataPrivacyDoNotTrack.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 comply_with_do_not_track: bool,
+                 do_not_track: Optional[str] = None):
+        """
+        :param bool comply_with_do_not_track: Comply with "Do Not Track" browser settings
+        :param str do_not_track: Possible Values: `Anonymous`, `Disable_rum`
+        """
+        pulumi.set(__self__, "comply_with_do_not_track", comply_with_do_not_track)
+        if do_not_track is not None:
+            pulumi.set(__self__, "do_not_track", do_not_track)
+
+    @property
+    @pulumi.getter(name="complyWithDoNotTrack")
+    def comply_with_do_not_track(self) -> bool:
+        """
+        Comply with "Do Not Track" browser settings
+        """
+        return pulumi.get(self, "comply_with_do_not_track")
+
+    @property
+    @pulumi.getter(name="doNotTrack")
+    def do_not_track(self) -> Optional[str]:
+        """
+        Possible Values: `Anonymous`, `Disable_rum`
+        """
+        return pulumi.get(self, "do_not_track")
+
+
+@pulumi.output_type
+class DataPrivacyMasking(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ipAddressMaskingEnabled":
+            suggest = "ip_address_masking_enabled"
+        elif key == "personalDataUriMaskingEnabled":
+            suggest = "personal_data_uri_masking_enabled"
+        elif key == "userActionMaskingEnabled":
+            suggest = "user_action_masking_enabled"
+        elif key == "ipAddressMasking":
+            suggest = "ip_address_masking"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DataPrivacyMasking. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DataPrivacyMasking.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DataPrivacyMasking.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ip_address_masking_enabled: bool,
+                 personal_data_uri_masking_enabled: bool,
+                 user_action_masking_enabled: bool,
+                 ip_address_masking: Optional[str] = None):
+        """
+        :param bool ip_address_masking_enabled: Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
+        """
+        pulumi.set(__self__, "ip_address_masking_enabled", ip_address_masking_enabled)
+        pulumi.set(__self__, "personal_data_uri_masking_enabled", personal_data_uri_masking_enabled)
+        pulumi.set(__self__, "user_action_masking_enabled", user_action_masking_enabled)
+        if ip_address_masking is not None:
+            pulumi.set(__self__, "ip_address_masking", ip_address_masking)
+
+    @property
+    @pulumi.getter(name="ipAddressMaskingEnabled")
+    def ip_address_masking_enabled(self) -> bool:
+        """
+        Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
+        """
+        return pulumi.get(self, "ip_address_masking_enabled")
+
+    @property
+    @pulumi.getter(name="personalDataUriMaskingEnabled")
+    def personal_data_uri_masking_enabled(self) -> bool:
+        return pulumi.get(self, "personal_data_uri_masking_enabled")
+
+    @property
+    @pulumi.getter(name="userActionMaskingEnabled")
+    def user_action_masking_enabled(self) -> bool:
+        return pulumi.get(self, "user_action_masking_enabled")
+
+    @property
+    @pulumi.getter(name="ipAddressMasking")
+    def ip_address_masking(self) -> Optional[str]:
+        return pulumi.get(self, "ip_address_masking")
+
+
+@pulumi.output_type
+class DataPrivacyUserTracking(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "persistentCookieEnabled":
+            suggest = "persistent_cookie_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DataPrivacyUserTracking. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DataPrivacyUserTracking.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DataPrivacyUserTracking.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 persistent_cookie_enabled: bool):
+        """
+        :param bool persistent_cookie_enabled: When enabled, Dynatrace places a [persistent cookie](https://dt-url.net/313o0p4n) on all end-user devices to identify returning users.
+        """
+        pulumi.set(__self__, "persistent_cookie_enabled", persistent_cookie_enabled)
+
+    @property
+    @pulumi.getter(name="persistentCookieEnabled")
+    def persistent_cookie_enabled(self) -> bool:
+        """
+        When enabled, Dynatrace places a [persistent cookie](https://dt-url.net/313o0p4n) on all end-user devices to identify returning users.
+        """
+        return pulumi.get(self, "persistent_cookie_enabled")
+
+
+@pulumi.output_type
 class DatabaseAnomaliesDbConnectFailures(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -14964,6 +18898,1137 @@ class DatabaseAnomaliesResponseTimeThresholds(dict):
 
 
 @pulumi.output_type
+class DatabaseAnomaliesV2DatabaseConnections(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "maxFailedConnects":
+            suggest = "max_failed_connects"
+        elif key == "timePeriod":
+            suggest = "time_period"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2DatabaseConnections. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2DatabaseConnections.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2DatabaseConnections.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 max_failed_connects: Optional[int] = None,
+                 time_period: Optional[int] = None):
+        """
+        :param bool enabled: Detect failed database connects
+        :param int max_failed_connects: Threshold
+        :param int time_period: Time span
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if max_failed_connects is not None:
+            pulumi.set(__self__, "max_failed_connects", max_failed_connects)
+        if time_period is not None:
+            pulumi.set(__self__, "time_period", time_period)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Detect failed database connects
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="maxFailedConnects")
+    def max_failed_connects(self) -> Optional[int]:
+        """
+        Threshold
+        """
+        return pulumi.get(self, "max_failed_connects")
+
+    @property
+    @pulumi.getter(name="timePeriod")
+    def time_period(self) -> Optional[int]:
+        """
+        Time span
+        """
+        return pulumi.get(self, "time_period")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2FailureRate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autoDetection":
+            suggest = "auto_detection"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+        elif key == "fixedDetection":
+            suggest = "fixed_detection"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2FailureRate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2FailureRate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2FailureRate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 auto_detection: Optional['outputs.DatabaseAnomaliesV2FailureRateAutoDetection'] = None,
+                 detection_mode: Optional[str] = None,
+                 fixed_detection: Optional['outputs.DatabaseAnomaliesV2FailureRateFixedDetection'] = None):
+        """
+        :param bool enabled: Detect increases in failure rate
+        :param 'DatabaseAnomaliesV2FailureRateAutoDetectionArgs' auto_detection: Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+        :param str detection_mode: Detection mode for increases in failure rate
+        :param 'DatabaseAnomaliesV2FailureRateFixedDetectionArgs' fixed_detection: Alert if a given failure rate is exceeded during any 5-minute-period
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if auto_detection is not None:
+            pulumi.set(__self__, "auto_detection", auto_detection)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if fixed_detection is not None:
+            pulumi.set(__self__, "fixed_detection", fixed_detection)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Detect increases in failure rate
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="autoDetection")
+    def auto_detection(self) -> Optional['outputs.DatabaseAnomaliesV2FailureRateAutoDetection']:
+        """
+        Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+        """
+        return pulumi.get(self, "auto_detection")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Detection mode for increases in failure rate
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @property
+    @pulumi.getter(name="fixedDetection")
+    def fixed_detection(self) -> Optional['outputs.DatabaseAnomaliesV2FailureRateFixedDetection']:
+        """
+        Alert if a given failure rate is exceeded during any 5-minute-period
+        """
+        return pulumi.get(self, "fixed_detection")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2FailureRateAutoDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "absoluteIncrease":
+            suggest = "absolute_increase"
+        elif key == "overAlertingProtection":
+            suggest = "over_alerting_protection"
+        elif key == "relativeIncrease":
+            suggest = "relative_increase"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2FailureRateAutoDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2FailureRateAutoDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2FailureRateAutoDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 absolute_increase: float,
+                 over_alerting_protection: 'outputs.DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection',
+                 relative_increase: float):
+        pulumi.set(__self__, "absolute_increase", absolute_increase)
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "relative_increase", relative_increase)
+
+    @property
+    @pulumi.getter(name="absoluteIncrease")
+    def absolute_increase(self) -> float:
+        return pulumi.get(self, "absolute_increase")
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> 'outputs.DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection':
+        return pulumi.get(self, "over_alerting_protection")
+
+    @property
+    @pulumi.getter(name="relativeIncrease")
+    def relative_increase(self) -> float:
+        return pulumi.get(self, "relative_increase")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+        elif key == "requestsPerMinute":
+            suggest = "requests_per_minute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 minutes_abnormal_state: int,
+                 requests_per_minute: float):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> int:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> float:
+        return pulumi.get(self, "requests_per_minute")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2FailureRateFixedDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overAlertingProtection":
+            suggest = "over_alerting_protection"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2FailureRateFixedDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2FailureRateFixedDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2FailureRateFixedDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 over_alerting_protection: 'outputs.DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection',
+                 sensitivity: str,
+                 threshold: float):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> 'outputs.DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection':
+        return pulumi.get(self, "over_alerting_protection")
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> str:
+        return pulumi.get(self, "sensitivity")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> float:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+        elif key == "requestsPerMinute":
+            suggest = "requests_per_minute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 minutes_abnormal_state: int,
+                 requests_per_minute: float):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> int:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> float:
+        return pulumi.get(self, "requests_per_minute")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2LoadDrops(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "loadDropPercent":
+            suggest = "load_drop_percent"
+        elif key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2LoadDrops. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2LoadDrops.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2LoadDrops.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 load_drop_percent: Optional[float] = None,
+                 minutes_abnormal_state: Optional[int] = None):
+        """
+        :param bool enabled: Detect service load drops
+        :param float load_drop_percent: Threshold
+        :param int minutes_abnormal_state: Time span
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if load_drop_percent is not None:
+            pulumi.set(__self__, "load_drop_percent", load_drop_percent)
+        if minutes_abnormal_state is not None:
+            pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Detect service load drops
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="loadDropPercent")
+    def load_drop_percent(self) -> Optional[float]:
+        """
+        Threshold
+        """
+        return pulumi.get(self, "load_drop_percent")
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> Optional[int]:
+        """
+        Time span
+        """
+        return pulumi.get(self, "minutes_abnormal_state")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2LoadSpikes(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "loadSpikePercent":
+            suggest = "load_spike_percent"
+        elif key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2LoadSpikes. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2LoadSpikes.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2LoadSpikes.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 load_spike_percent: Optional[float] = None,
+                 minutes_abnormal_state: Optional[int] = None):
+        """
+        :param bool enabled: Detect service load spikes
+        :param float load_spike_percent: Threshold
+        :param int minutes_abnormal_state: Time span
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if load_spike_percent is not None:
+            pulumi.set(__self__, "load_spike_percent", load_spike_percent)
+        if minutes_abnormal_state is not None:
+            pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Detect service load spikes
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="loadSpikePercent")
+    def load_spike_percent(self) -> Optional[float]:
+        """
+        Threshold
+        """
+        return pulumi.get(self, "load_spike_percent")
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> Optional[int]:
+        """
+        Time span
+        """
+        return pulumi.get(self, "minutes_abnormal_state")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2ResponseTime(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autoDetection":
+            suggest = "auto_detection"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+        elif key == "fixedDetection":
+            suggest = "fixed_detection"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2ResponseTime. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2ResponseTime.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2ResponseTime.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 auto_detection: Optional['outputs.DatabaseAnomaliesV2ResponseTimeAutoDetection'] = None,
+                 detection_mode: Optional[str] = None,
+                 fixed_detection: Optional['outputs.DatabaseAnomaliesV2ResponseTimeFixedDetection'] = None):
+        """
+        :param bool enabled: Detect response time degradations
+        :param 'DatabaseAnomaliesV2ResponseTimeAutoDetectionArgs' auto_detection: no documentation available
+        :param str detection_mode: Detection mode for response time degradations
+        :param 'DatabaseAnomaliesV2ResponseTimeFixedDetectionArgs' fixed_detection: no documentation available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if auto_detection is not None:
+            pulumi.set(__self__, "auto_detection", auto_detection)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if fixed_detection is not None:
+            pulumi.set(__self__, "fixed_detection", fixed_detection)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Detect response time degradations
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="autoDetection")
+    def auto_detection(self) -> Optional['outputs.DatabaseAnomaliesV2ResponseTimeAutoDetection']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "auto_detection")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Detection mode for response time degradations
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @property
+    @pulumi.getter(name="fixedDetection")
+    def fixed_detection(self) -> Optional['outputs.DatabaseAnomaliesV2ResponseTimeFixedDetection']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "fixed_detection")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2ResponseTimeAutoDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overAlertingProtection":
+            suggest = "over_alerting_protection"
+        elif key == "responseTimeAll":
+            suggest = "response_time_all"
+        elif key == "responseTimeSlowest":
+            suggest = "response_time_slowest"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2ResponseTimeAutoDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2ResponseTimeAutoDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2ResponseTimeAutoDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 over_alerting_protection: 'outputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection',
+                 response_time_all: 'outputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll',
+                 response_time_slowest: 'outputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest'):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "response_time_all", response_time_all)
+        pulumi.set(__self__, "response_time_slowest", response_time_slowest)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> 'outputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection':
+        return pulumi.get(self, "over_alerting_protection")
+
+    @property
+    @pulumi.getter(name="responseTimeAll")
+    def response_time_all(self) -> 'outputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll':
+        return pulumi.get(self, "response_time_all")
+
+    @property
+    @pulumi.getter(name="responseTimeSlowest")
+    def response_time_slowest(self) -> 'outputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest':
+        return pulumi.get(self, "response_time_slowest")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+        elif key == "requestsPerMinute":
+            suggest = "requests_per_minute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 minutes_abnormal_state: int,
+                 requests_per_minute: float):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> int:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> float:
+        return pulumi.get(self, "requests_per_minute")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "degradationMilliseconds":
+            suggest = "degradation_milliseconds"
+        elif key == "degradationPercent":
+            suggest = "degradation_percent"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 degradation_milliseconds: float,
+                 degradation_percent: float):
+        pulumi.set(__self__, "degradation_milliseconds", degradation_milliseconds)
+        pulumi.set(__self__, "degradation_percent", degradation_percent)
+
+    @property
+    @pulumi.getter(name="degradationMilliseconds")
+    def degradation_milliseconds(self) -> float:
+        return pulumi.get(self, "degradation_milliseconds")
+
+    @property
+    @pulumi.getter(name="degradationPercent")
+    def degradation_percent(self) -> float:
+        return pulumi.get(self, "degradation_percent")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "slowestDegradationMilliseconds":
+            suggest = "slowest_degradation_milliseconds"
+        elif key == "slowestDegradationPercent":
+            suggest = "slowest_degradation_percent"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 slowest_degradation_milliseconds: float,
+                 slowest_degradation_percent: float):
+        pulumi.set(__self__, "slowest_degradation_milliseconds", slowest_degradation_milliseconds)
+        pulumi.set(__self__, "slowest_degradation_percent", slowest_degradation_percent)
+
+    @property
+    @pulumi.getter(name="slowestDegradationMilliseconds")
+    def slowest_degradation_milliseconds(self) -> float:
+        return pulumi.get(self, "slowest_degradation_milliseconds")
+
+    @property
+    @pulumi.getter(name="slowestDegradationPercent")
+    def slowest_degradation_percent(self) -> float:
+        return pulumi.get(self, "slowest_degradation_percent")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2ResponseTimeFixedDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overAlertingProtection":
+            suggest = "over_alerting_protection"
+        elif key == "responseTimeAll":
+            suggest = "response_time_all"
+        elif key == "responseTimeSlowest":
+            suggest = "response_time_slowest"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2ResponseTimeFixedDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2ResponseTimeFixedDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2ResponseTimeFixedDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 over_alerting_protection: 'outputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection',
+                 response_time_all: 'outputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll',
+                 response_time_slowest: 'outputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest',
+                 sensitivity: str):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "response_time_all", response_time_all)
+        pulumi.set(__self__, "response_time_slowest", response_time_slowest)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> 'outputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection':
+        return pulumi.get(self, "over_alerting_protection")
+
+    @property
+    @pulumi.getter(name="responseTimeAll")
+    def response_time_all(self) -> 'outputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll':
+        return pulumi.get(self, "response_time_all")
+
+    @property
+    @pulumi.getter(name="responseTimeSlowest")
+    def response_time_slowest(self) -> 'outputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest':
+        return pulumi.get(self, "response_time_slowest")
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> str:
+        return pulumi.get(self, "sensitivity")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+        elif key == "requestsPerMinute":
+            suggest = "requests_per_minute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 minutes_abnormal_state: int,
+                 requests_per_minute: float):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> int:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> float:
+        return pulumi.get(self, "requests_per_minute")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "degradationMilliseconds":
+            suggest = "degradation_milliseconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 degradation_milliseconds: float):
+        pulumi.set(__self__, "degradation_milliseconds", degradation_milliseconds)
+
+    @property
+    @pulumi.getter(name="degradationMilliseconds")
+    def degradation_milliseconds(self) -> float:
+        return pulumi.get(self, "degradation_milliseconds")
+
+
+@pulumi.output_type
+class DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "slowestDegradationMilliseconds":
+            suggest = "slowest_degradation_milliseconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 slowest_degradation_milliseconds: float):
+        pulumi.set(__self__, "slowest_degradation_milliseconds", slowest_degradation_milliseconds)
+
+    @property
+    @pulumi.getter(name="slowestDegradationMilliseconds")
+    def slowest_degradation_milliseconds(self) -> float:
+        return pulumi.get(self, "slowest_degradation_milliseconds")
+
+
+@pulumi.output_type
+class DduPoolEvents(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 type: Optional[str] = None,
+                 value: Optional[int] = None):
+        """
+        :param bool enabled: Is the limit configuration enabled
+        :param str type: Type of the limit applied: MONTHLY or ANNUAL
+        :param int value: Value of the DDU limit applied for provided timerange
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Is the limit configuration enabled
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        Type of the limit applied: MONTHLY or ANNUAL
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[int]:
+        """
+        Value of the DDU limit applied for provided timerange
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DduPoolLogMonitoring(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 type: Optional[str] = None,
+                 value: Optional[int] = None):
+        """
+        :param bool enabled: Is the limit configuration enabled
+        :param str type: Type of the limit applied: MONTHLY or ANNUAL
+        :param int value: Value of the DDU limit applied for provided timerange
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Is the limit configuration enabled
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        Type of the limit applied: MONTHLY or ANNUAL
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[int]:
+        """
+        Value of the DDU limit applied for provided timerange
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DduPoolMetrics(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 type: Optional[str] = None,
+                 value: Optional[int] = None):
+        """
+        :param bool enabled: Is the limit configuration enabled
+        :param str type: Type of the limit applied: MONTHLY or ANNUAL
+        :param int value: Value of the DDU limit applied for provided timerange
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Is the limit configuration enabled
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        Type of the limit applied: MONTHLY or ANNUAL
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[int]:
+        """
+        Value of the DDU limit applied for provided timerange
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DduPoolServerless(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 type: Optional[str] = None,
+                 value: Optional[int] = None):
+        """
+        :param bool enabled: Is the limit configuration enabled
+        :param str type: Type of the limit applied: MONTHLY or ANNUAL
+        :param int value: Value of the DDU limit applied for provided timerange
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Is the limit configuration enabled
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        Type of the limit applied: MONTHLY or ANNUAL
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[int]:
+        """
+        Value of the DDU limit applied for provided timerange
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DduPoolTraces(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 type: Optional[str] = None,
+                 value: Optional[int] = None):
+        """
+        :param bool enabled: Is the limit configuration enabled
+        :param str type: Type of the limit applied: MONTHLY or ANNUAL
+        :param int value: Value of the DDU limit applied for provided timerange
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Is the limit configuration enabled
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        Type of the limit applied: MONTHLY or ANNUAL
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[int]:
+        """
+        Value of the DDU limit applied for provided timerange
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DeclarativeGroupingDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "processDefinitions":
+            suggest = "process_definitions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeclarativeGroupingDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeclarativeGroupingDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeclarativeGroupingDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 process_definitions: Sequence['outputs.DeclarativeGroupingDetectionProcessDefinition']):
+        pulumi.set(__self__, "process_definitions", process_definitions)
+
+    @property
+    @pulumi.getter(name="processDefinitions")
+    def process_definitions(self) -> Sequence['outputs.DeclarativeGroupingDetectionProcessDefinition']:
+        return pulumi.get(self, "process_definitions")
+
+
+@pulumi.output_type
+class DeclarativeGroupingDetectionProcessDefinition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "processGroupName":
+            suggest = "process_group_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeclarativeGroupingDetectionProcessDefinition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeclarativeGroupingDetectionProcessDefinition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeclarativeGroupingDetectionProcessDefinition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 id: str,
+                 process_group_name: str,
+                 report: str,
+                 rules: Optional['outputs.DeclarativeGroupingDetectionProcessDefinitionRules'] = None):
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "process_group_name", process_group_name)
+        pulumi.set(__self__, "report", report)
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="processGroupName")
+    def process_group_name(self) -> str:
+        return pulumi.get(self, "process_group_name")
+
+    @property
+    @pulumi.getter
+    def report(self) -> str:
+        return pulumi.get(self, "report")
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Optional['outputs.DeclarativeGroupingDetectionProcessDefinitionRules']:
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class DeclarativeGroupingDetectionProcessDefinitionRules(dict):
+    def __init__(__self__, *,
+                 rules: Sequence['outputs.DeclarativeGroupingDetectionProcessDefinitionRulesRule']):
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.DeclarativeGroupingDetectionProcessDefinitionRulesRule']:
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class DeclarativeGroupingDetectionProcessDefinitionRulesRule(dict):
+    def __init__(__self__, *,
+                 condition: str,
+                 property: str):
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "property", property)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> str:
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter
+    def property(self) -> str:
+        return pulumi.get(self, "property")
+
+
+@pulumi.output_type
 class DiskAnomaliesDiskName(dict):
     def __init__(__self__, *,
                  operator: str,
@@ -15036,6 +20101,681 @@ class DiskAnomaliesTagsFilter(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DiskAnomaliesV2Disk(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "diskLowInodesDetection":
+            suggest = "disk_low_inodes_detection"
+        elif key == "diskLowSpaceDetection":
+            suggest = "disk_low_space_detection"
+        elif key == "diskSlowWritesAndReadsDetection":
+            suggest = "disk_slow_writes_and_reads_detection"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskAnomaliesV2Disk. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskAnomaliesV2Disk.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskAnomaliesV2Disk.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 disk_low_inodes_detection: 'outputs.DiskAnomaliesV2DiskDiskLowInodesDetection',
+                 disk_low_space_detection: 'outputs.DiskAnomaliesV2DiskDiskLowSpaceDetection',
+                 disk_slow_writes_and_reads_detection: 'outputs.DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetection'):
+        """
+        :param 'DiskAnomaliesV2DiskDiskLowInodesDetectionArgs' disk_low_inodes_detection: no documentation available
+        :param 'DiskAnomaliesV2DiskDiskLowSpaceDetectionArgs' disk_low_space_detection: no documentation available
+        :param 'DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionArgs' disk_slow_writes_and_reads_detection: no documentation available
+        """
+        pulumi.set(__self__, "disk_low_inodes_detection", disk_low_inodes_detection)
+        pulumi.set(__self__, "disk_low_space_detection", disk_low_space_detection)
+        pulumi.set(__self__, "disk_slow_writes_and_reads_detection", disk_slow_writes_and_reads_detection)
+
+    @property
+    @pulumi.getter(name="diskLowInodesDetection")
+    def disk_low_inodes_detection(self) -> 'outputs.DiskAnomaliesV2DiskDiskLowInodesDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "disk_low_inodes_detection")
+
+    @property
+    @pulumi.getter(name="diskLowSpaceDetection")
+    def disk_low_space_detection(self) -> 'outputs.DiskAnomaliesV2DiskDiskLowSpaceDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "disk_low_space_detection")
+
+    @property
+    @pulumi.getter(name="diskSlowWritesAndReadsDetection")
+    def disk_slow_writes_and_reads_detection(self) -> 'outputs.DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "disk_slow_writes_and_reads_detection")
+
+
+@pulumi.output_type
+class DiskAnomaliesV2DiskDiskLowInodesDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskAnomaliesV2DiskDiskLowInodesDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskAnomaliesV2DiskDiskLowInodesDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskAnomaliesV2DiskDiskLowInodesDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds']:
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "freeInodesPercentage":
+            suggest = "free_inodes_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 free_inodes_percentage: int):
+        pulumi.set(__self__, "free_inodes_percentage", free_inodes_percentage)
+
+    @property
+    @pulumi.getter(name="freeInodesPercentage")
+    def free_inodes_percentage(self) -> int:
+        return pulumi.get(self, "free_inodes_percentage")
+
+
+@pulumi.output_type
+class DiskAnomaliesV2DiskDiskLowSpaceDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskAnomaliesV2DiskDiskLowSpaceDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskAnomaliesV2DiskDiskLowSpaceDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskAnomaliesV2DiskDiskLowSpaceDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds']:
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "freeSpacePercentage":
+            suggest = "free_space_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 free_space_percentage: int):
+        pulumi.set(__self__, "free_space_percentage", free_space_percentage)
+
+    @property
+    @pulumi.getter(name="freeSpacePercentage")
+    def free_space_percentage(self) -> int:
+        return pulumi.get(self, "free_space_percentage")
+
+
+@pulumi.output_type
+class DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds']:
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "writeAndReadTime":
+            suggest = "write_and_read_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 write_and_read_time: int):
+        pulumi.set(__self__, "write_and_read_time", write_and_read_time)
+
+    @property
+    @pulumi.getter(name="writeAndReadTime")
+    def write_and_read_time(self) -> int:
+        return pulumi.get(self, "write_and_read_time")
+
+
+@pulumi.output_type
+class DiskAnomalyRulesDiskNameFilter(dict):
+    def __init__(__self__, *,
+                 operator: str,
+                 value: Optional[str] = None):
+        """
+        :param str operator: Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS`, `STARTS_WITH`
+        :param str value: Matching text
+        """
+        pulumi.set(__self__, "operator", operator)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> str:
+        """
+        Possible Values: `CONTAINS`, `DOES_NOT_CONTAIN`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS`, `STARTS_WITH`
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        Matching text
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DiskAnomalyRulesSampleLimit(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskAnomalyRulesSampleLimit. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskAnomalyRulesSampleLimit.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskAnomalyRulesSampleLimit.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 samples: int,
+                 violating_samples: int):
+        """
+        :param int samples: .. within the last
+        :param int violating_samples: Minimum number of violating samples
+        """
+        pulumi.set(__self__, "samples", samples)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter
+    def samples(self) -> int:
+        """
+        .. within the last
+        """
+        return pulumi.get(self, "samples")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        """
+        Minimum number of violating samples
+        """
+        return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class DiskOptionsExclusions(dict):
+    def __init__(__self__, *,
+                 exclusions: Sequence['outputs.DiskOptionsExclusionsExclusion']):
+        pulumi.set(__self__, "exclusions", exclusions)
+
+    @property
+    @pulumi.getter
+    def exclusions(self) -> Sequence['outputs.DiskOptionsExclusionsExclusion']:
+        return pulumi.get(self, "exclusions")
+
+
+@pulumi.output_type
+class DiskOptionsExclusionsExclusion(dict):
+    def __init__(__self__, *,
+                 os: str,
+                 filesystem: Optional[str] = None,
+                 mountpoint: Optional[str] = None):
+        pulumi.set(__self__, "os", os)
+        if filesystem is not None:
+            pulumi.set(__self__, "filesystem", filesystem)
+        if mountpoint is not None:
+            pulumi.set(__self__, "mountpoint", mountpoint)
+
+    @property
+    @pulumi.getter
+    def os(self) -> str:
+        return pulumi.get(self, "os")
+
+    @property
+    @pulumi.getter
+    def filesystem(self) -> Optional[str]:
+        return pulumi.get(self, "filesystem")
+
+    @property
+    @pulumi.getter
+    def mountpoint(self) -> Optional[str]:
+        return pulumi.get(self, "mountpoint")
+
+
+@pulumi.output_type
+class DiskSpecificAnomaliesV2DiskLowInodesDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskSpecificAnomaliesV2DiskLowInodesDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskSpecificAnomaliesV2DiskLowInodesDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskSpecificAnomaliesV2DiskLowInodesDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: Detect low inodes number available
+        :param 'DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholdsArgs' custom_thresholds: no documentation available
+        :param str detection_mode: Detection mode for low inodes number available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Detect low inodes number available
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholds']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Detection mode for low inodes number available
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "freeInodesPercentage":
+            suggest = "free_inodes_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 free_inodes_percentage: int):
+        pulumi.set(__self__, "free_inodes_percentage", free_inodes_percentage)
+
+    @property
+    @pulumi.getter(name="freeInodesPercentage")
+    def free_inodes_percentage(self) -> int:
+        return pulumi.get(self, "free_inodes_percentage")
+
+
+@pulumi.output_type
+class DiskSpecificAnomaliesV2DiskLowSpaceDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskSpecificAnomaliesV2DiskLowSpaceDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskSpecificAnomaliesV2DiskLowSpaceDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskSpecificAnomaliesV2DiskLowSpaceDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: Detect low disk space
+        :param 'DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholdsArgs' custom_thresholds: no documentation available
+        :param str detection_mode: Detection mode for low disk space
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Detect low disk space
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholds']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Detection mode for low disk space
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "freeSpacePercentage":
+            suggest = "free_space_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 free_space_percentage: int):
+        pulumi.set(__self__, "free_space_percentage", free_space_percentage)
+
+    @property
+    @pulumi.getter(name="freeSpacePercentage")
+    def free_space_percentage(self) -> int:
+        return pulumi.get(self, "free_space_percentage")
+
+
+@pulumi.output_type
+class DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: Detect slow-running disks
+        :param 'DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholdsArgs' custom_thresholds: no documentation available
+        :param str detection_mode: Detection mode for slow running disks
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Detect slow-running disks
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholds']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Detection mode for slow running disks
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "writeAndReadTime":
+            suggest = "write_and_read_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 write_and_read_time: int):
+        pulumi.set(__self__, "write_and_read_time", write_and_read_time)
+
+    @property
+    @pulumi.getter(name="writeAndReadTime")
+    def write_and_read_time(self) -> int:
+        return pulumi.get(self, "write_and_read_time")
 
 
 @pulumi.output_type
@@ -15386,23 +21126,19 @@ class EnvironmentStorageRetention(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 logs: int,
                  rum: int,
                  service_code_level: int,
                  service_request_level: int,
                  session_replay: int,
-                 synthetic: int):
-        pulumi.set(__self__, "logs", logs)
+                 synthetic: int,
+                 logs: Optional[int] = None):
         pulumi.set(__self__, "rum", rum)
         pulumi.set(__self__, "service_code_level", service_code_level)
         pulumi.set(__self__, "service_request_level", service_request_level)
         pulumi.set(__self__, "session_replay", session_replay)
         pulumi.set(__self__, "synthetic", synthetic)
-
-    @property
-    @pulumi.getter
-    def logs(self) -> int:
-        return pulumi.get(self, "logs")
+        if logs is not None:
+            pulumi.set(__self__, "logs", logs)
 
     @property
     @pulumi.getter
@@ -15428,6 +21164,1112 @@ class EnvironmentStorageRetention(dict):
     @pulumi.getter
     def synthetic(self) -> int:
         return pulumi.get(self, "synthetic")
+
+    @property
+    @pulumi.getter
+    def logs(self) -> Optional[int]:
+        return pulumi.get(self, "logs")
+
+
+@pulumi.output_type
+class FailureDetectionParametersBrokenLinks(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "http404NotFoundFailures":
+            suggest = "http404_not_found_failures"
+        elif key == "brokenLinkDomains":
+            suggest = "broken_link_domains"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FailureDetectionParametersBrokenLinks. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FailureDetectionParametersBrokenLinks.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FailureDetectionParametersBrokenLinks.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 http404_not_found_failures: bool,
+                 broken_link_domains: Optional[Sequence[str]] = None):
+        """
+        :param bool http404_not_found_failures: Consider 404 HTTP response codes as failures
+        :param Sequence[str] broken_link_domains: If your application relies on other hosts at other domains, add the associated domain names here. Once configured, Dynatrace will consider 404s thrown by hosts at these domains to be service failures related to your application.
+        """
+        pulumi.set(__self__, "http404_not_found_failures", http404_not_found_failures)
+        if broken_link_domains is not None:
+            pulumi.set(__self__, "broken_link_domains", broken_link_domains)
+
+    @property
+    @pulumi.getter(name="http404NotFoundFailures")
+    def http404_not_found_failures(self) -> bool:
+        """
+        Consider 404 HTTP response codes as failures
+        """
+        return pulumi.get(self, "http404_not_found_failures")
+
+    @property
+    @pulumi.getter(name="brokenLinkDomains")
+    def broken_link_domains(self) -> Optional[Sequence[str]]:
+        """
+        If your application relies on other hosts at other domains, add the associated domain names here. Once configured, Dynatrace will consider 404s thrown by hosts at these domains to be service failures related to your application.
+        """
+        return pulumi.get(self, "broken_link_domains")
+
+
+@pulumi.output_type
+class FailureDetectionParametersExceptionRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ignoreAllExceptions":
+            suggest = "ignore_all_exceptions"
+        elif key == "ignoreSpanFailureDetection":
+            suggest = "ignore_span_failure_detection"
+        elif key == "customErrorRules":
+            suggest = "custom_error_rules"
+        elif key == "customHandledExceptions":
+            suggest = "custom_handled_exceptions"
+        elif key == "ignoredExceptions":
+            suggest = "ignored_exceptions"
+        elif key == "successForcingExceptions":
+            suggest = "success_forcing_exceptions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FailureDetectionParametersExceptionRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FailureDetectionParametersExceptionRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FailureDetectionParametersExceptionRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ignore_all_exceptions: bool,
+                 ignore_span_failure_detection: bool,
+                 custom_error_rules: Optional['outputs.FailureDetectionParametersExceptionRulesCustomErrorRules'] = None,
+                 custom_handled_exceptions: Optional['outputs.FailureDetectionParametersExceptionRulesCustomHandledExceptions'] = None,
+                 ignored_exceptions: Optional['outputs.FailureDetectionParametersExceptionRulesIgnoredExceptions'] = None,
+                 success_forcing_exceptions: Optional['outputs.FailureDetectionParametersExceptionRulesSuccessForcingExceptions'] = None):
+        """
+        :param bool ignore_all_exceptions: Ignore all exceptions
+        :param bool ignore_span_failure_detection: Ignore span failure detection
+        :param 'FailureDetectionParametersExceptionRulesCustomErrorRulesArgs' custom_error_rules: Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+        :param 'FailureDetectionParametersExceptionRulesCustomHandledExceptionsArgs' custom_handled_exceptions: There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+        :param 'FailureDetectionParametersExceptionRulesIgnoredExceptionsArgs' ignored_exceptions: Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+        :param 'FailureDetectionParametersExceptionRulesSuccessForcingExceptionsArgs' success_forcing_exceptions: Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+        """
+        pulumi.set(__self__, "ignore_all_exceptions", ignore_all_exceptions)
+        pulumi.set(__self__, "ignore_span_failure_detection", ignore_span_failure_detection)
+        if custom_error_rules is not None:
+            pulumi.set(__self__, "custom_error_rules", custom_error_rules)
+        if custom_handled_exceptions is not None:
+            pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+        if ignored_exceptions is not None:
+            pulumi.set(__self__, "ignored_exceptions", ignored_exceptions)
+        if success_forcing_exceptions is not None:
+            pulumi.set(__self__, "success_forcing_exceptions", success_forcing_exceptions)
+
+    @property
+    @pulumi.getter(name="ignoreAllExceptions")
+    def ignore_all_exceptions(self) -> bool:
+        """
+        Ignore all exceptions
+        """
+        return pulumi.get(self, "ignore_all_exceptions")
+
+    @property
+    @pulumi.getter(name="ignoreSpanFailureDetection")
+    def ignore_span_failure_detection(self) -> bool:
+        """
+        Ignore span failure detection
+        """
+        return pulumi.get(self, "ignore_span_failure_detection")
+
+    @property
+    @pulumi.getter(name="customErrorRules")
+    def custom_error_rules(self) -> Optional['outputs.FailureDetectionParametersExceptionRulesCustomErrorRules']:
+        """
+        Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+        """
+        return pulumi.get(self, "custom_error_rules")
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> Optional['outputs.FailureDetectionParametersExceptionRulesCustomHandledExceptions']:
+        """
+        There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+        """
+        return pulumi.get(self, "custom_handled_exceptions")
+
+    @property
+    @pulumi.getter(name="ignoredExceptions")
+    def ignored_exceptions(self) -> Optional['outputs.FailureDetectionParametersExceptionRulesIgnoredExceptions']:
+        """
+        Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+        """
+        return pulumi.get(self, "ignored_exceptions")
+
+    @property
+    @pulumi.getter(name="successForcingExceptions")
+    def success_forcing_exceptions(self) -> Optional['outputs.FailureDetectionParametersExceptionRulesSuccessForcingExceptions']:
+        """
+        Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+        """
+        return pulumi.get(self, "success_forcing_exceptions")
+
+
+@pulumi.output_type
+class FailureDetectionParametersExceptionRulesCustomErrorRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customErrorRules":
+            suggest = "custom_error_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FailureDetectionParametersExceptionRulesCustomErrorRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FailureDetectionParametersExceptionRulesCustomErrorRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FailureDetectionParametersExceptionRulesCustomErrorRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_error_rules: Sequence['outputs.FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule']):
+        pulumi.set(__self__, "custom_error_rules", custom_error_rules)
+
+    @property
+    @pulumi.getter(name="customErrorRules")
+    def custom_error_rules(self) -> Sequence['outputs.FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule']:
+        return pulumi.get(self, "custom_error_rules")
+
+
+@pulumi.output_type
+class FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "requestAttribute":
+            suggest = "request_attribute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition: 'outputs.FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition',
+                 request_attribute: str):
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "request_attribute", request_attribute)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition':
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="requestAttribute")
+    def request_attribute(self) -> str:
+        return pulumi.get(self, "request_attribute")
+
+
+@pulumi.output_type
+class FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compareOperationType":
+            suggest = "compare_operation_type"
+        elif key == "caseSensitive":
+            suggest = "case_sensitive"
+        elif key == "doubleValue":
+            suggest = "double_value"
+        elif key == "intValue":
+            suggest = "int_value"
+        elif key == "textValue":
+            suggest = "text_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compare_operation_type: str,
+                 case_sensitive: Optional[bool] = None,
+                 double_value: Optional[float] = None,
+                 int_value: Optional[int] = None,
+                 text_value: Optional[str] = None):
+        pulumi.set(__self__, "compare_operation_type", compare_operation_type)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if double_value is not None:
+            pulumi.set(__self__, "double_value", double_value)
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if text_value is not None:
+            pulumi.set(__self__, "text_value", text_value)
+
+    @property
+    @pulumi.getter(name="compareOperationType")
+    def compare_operation_type(self) -> str:
+        return pulumi.get(self, "compare_operation_type")
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter(name="doubleValue")
+    def double_value(self) -> Optional[float]:
+        return pulumi.get(self, "double_value")
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[int]:
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="textValue")
+    def text_value(self) -> Optional[str]:
+        return pulumi.get(self, "text_value")
+
+
+@pulumi.output_type
+class FailureDetectionParametersExceptionRulesCustomHandledExceptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customHandledExceptions":
+            suggest = "custom_handled_exceptions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FailureDetectionParametersExceptionRulesCustomHandledExceptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FailureDetectionParametersExceptionRulesCustomHandledExceptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FailureDetectionParametersExceptionRulesCustomHandledExceptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_handled_exceptions: Sequence['outputs.FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledException']):
+        pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> Sequence['outputs.FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledException']:
+        return pulumi.get(self, "custom_handled_exceptions")
+
+
+@pulumi.output_type
+class FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledException(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "classPattern":
+            suggest = "class_pattern"
+        elif key == "messagePattern":
+            suggest = "message_pattern"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledException. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledException.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledException.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 class_pattern: Optional[str] = None,
+                 message_pattern: Optional[str] = None):
+        if class_pattern is not None:
+            pulumi.set(__self__, "class_pattern", class_pattern)
+        if message_pattern is not None:
+            pulumi.set(__self__, "message_pattern", message_pattern)
+
+    @property
+    @pulumi.getter(name="classPattern")
+    def class_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "class_pattern")
+
+    @property
+    @pulumi.getter(name="messagePattern")
+    def message_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "message_pattern")
+
+
+@pulumi.output_type
+class FailureDetectionParametersExceptionRulesIgnoredExceptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customHandledExceptions":
+            suggest = "custom_handled_exceptions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FailureDetectionParametersExceptionRulesIgnoredExceptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FailureDetectionParametersExceptionRulesIgnoredExceptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FailureDetectionParametersExceptionRulesIgnoredExceptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_handled_exceptions: Sequence['outputs.FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledException']):
+        pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> Sequence['outputs.FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledException']:
+        return pulumi.get(self, "custom_handled_exceptions")
+
+
+@pulumi.output_type
+class FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledException(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "classPattern":
+            suggest = "class_pattern"
+        elif key == "messagePattern":
+            suggest = "message_pattern"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledException. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledException.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledException.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 class_pattern: Optional[str] = None,
+                 message_pattern: Optional[str] = None):
+        if class_pattern is not None:
+            pulumi.set(__self__, "class_pattern", class_pattern)
+        if message_pattern is not None:
+            pulumi.set(__self__, "message_pattern", message_pattern)
+
+    @property
+    @pulumi.getter(name="classPattern")
+    def class_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "class_pattern")
+
+    @property
+    @pulumi.getter(name="messagePattern")
+    def message_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "message_pattern")
+
+
+@pulumi.output_type
+class FailureDetectionParametersExceptionRulesSuccessForcingExceptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customHandledExceptions":
+            suggest = "custom_handled_exceptions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FailureDetectionParametersExceptionRulesSuccessForcingExceptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FailureDetectionParametersExceptionRulesSuccessForcingExceptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FailureDetectionParametersExceptionRulesSuccessForcingExceptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_handled_exceptions: Sequence['outputs.FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledException']):
+        pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> Sequence['outputs.FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledException']:
+        return pulumi.get(self, "custom_handled_exceptions")
+
+
+@pulumi.output_type
+class FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledException(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "classPattern":
+            suggest = "class_pattern"
+        elif key == "messagePattern":
+            suggest = "message_pattern"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledException. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledException.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledException.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 class_pattern: Optional[str] = None,
+                 message_pattern: Optional[str] = None):
+        if class_pattern is not None:
+            pulumi.set(__self__, "class_pattern", class_pattern)
+        if message_pattern is not None:
+            pulumi.set(__self__, "message_pattern", message_pattern)
+
+    @property
+    @pulumi.getter(name="classPattern")
+    def class_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "class_pattern")
+
+    @property
+    @pulumi.getter(name="messagePattern")
+    def message_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "message_pattern")
+
+
+@pulumi.output_type
+class FailureDetectionParametersHttpResponseCodes(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "clientSideErrors":
+            suggest = "client_side_errors"
+        elif key == "failOnMissingResponseCodeClientSide":
+            suggest = "fail_on_missing_response_code_client_side"
+        elif key == "failOnMissingResponseCodeServerSide":
+            suggest = "fail_on_missing_response_code_server_side"
+        elif key == "serverSideErrors":
+            suggest = "server_side_errors"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FailureDetectionParametersHttpResponseCodes. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FailureDetectionParametersHttpResponseCodes.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FailureDetectionParametersHttpResponseCodes.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 client_side_errors: str,
+                 fail_on_missing_response_code_client_side: bool,
+                 fail_on_missing_response_code_server_side: bool,
+                 server_side_errors: str):
+        """
+        :param str client_side_errors: HTTP response codes which indicate client side errors
+        :param bool fail_on_missing_response_code_client_side: Treat missing HTTP response code as client side error
+        :param bool fail_on_missing_response_code_server_side: Treat missing HTTP response code as server side errors
+        :param str server_side_errors: HTTP response codes which indicate an error on the server side
+        """
+        pulumi.set(__self__, "client_side_errors", client_side_errors)
+        pulumi.set(__self__, "fail_on_missing_response_code_client_side", fail_on_missing_response_code_client_side)
+        pulumi.set(__self__, "fail_on_missing_response_code_server_side", fail_on_missing_response_code_server_side)
+        pulumi.set(__self__, "server_side_errors", server_side_errors)
+
+    @property
+    @pulumi.getter(name="clientSideErrors")
+    def client_side_errors(self) -> str:
+        """
+        HTTP response codes which indicate client side errors
+        """
+        return pulumi.get(self, "client_side_errors")
+
+    @property
+    @pulumi.getter(name="failOnMissingResponseCodeClientSide")
+    def fail_on_missing_response_code_client_side(self) -> bool:
+        """
+        Treat missing HTTP response code as client side error
+        """
+        return pulumi.get(self, "fail_on_missing_response_code_client_side")
+
+    @property
+    @pulumi.getter(name="failOnMissingResponseCodeServerSide")
+    def fail_on_missing_response_code_server_side(self) -> bool:
+        """
+        Treat missing HTTP response code as server side errors
+        """
+        return pulumi.get(self, "fail_on_missing_response_code_server_side")
+
+    @property
+    @pulumi.getter(name="serverSideErrors")
+    def server_side_errors(self) -> str:
+        """
+        HTTP response codes which indicate an error on the server side
+        """
+        return pulumi.get(self, "server_side_errors")
+
+
+@pulumi.output_type
+class FailureDetectionRulesConditions(dict):
+    def __init__(__self__, *,
+                 conditions: Sequence['outputs.FailureDetectionRulesConditionsCondition']):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Sequence['outputs.FailureDetectionRulesConditionsCondition']:
+        return pulumi.get(self, "conditions")
+
+
+@pulumi.output_type
+class FailureDetectionRulesConditionsCondition(dict):
+    def __init__(__self__, *,
+                 attribute: str,
+                 predicate: 'outputs.FailureDetectionRulesConditionsConditionPredicate'):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "predicate", predicate)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> str:
+        return pulumi.get(self, "attribute")
+
+    @property
+    @pulumi.getter
+    def predicate(self) -> 'outputs.FailureDetectionRulesConditionsConditionPredicate':
+        return pulumi.get(self, "predicate")
+
+
+@pulumi.output_type
+class FailureDetectionRulesConditionsConditionPredicate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "predicateType":
+            suggest = "predicate_type"
+        elif key == "caseSensitive":
+            suggest = "case_sensitive"
+        elif key == "managementZones":
+            suggest = "management_zones"
+        elif key == "serviceTypes":
+            suggest = "service_types"
+        elif key == "tagKeys":
+            suggest = "tag_keys"
+        elif key == "textValues":
+            suggest = "text_values"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FailureDetectionRulesConditionsConditionPredicate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FailureDetectionRulesConditionsConditionPredicate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FailureDetectionRulesConditionsConditionPredicate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 predicate_type: str,
+                 case_sensitive: Optional[bool] = None,
+                 management_zones: Optional[Sequence[str]] = None,
+                 service_types: Optional[Sequence[str]] = None,
+                 tag_keys: Optional[Sequence[str]] = None,
+                 tags: Optional[Sequence[str]] = None,
+                 text_values: Optional[Sequence[str]] = None):
+        pulumi.set(__self__, "predicate_type", predicate_type)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if management_zones is not None:
+            pulumi.set(__self__, "management_zones", management_zones)
+        if service_types is not None:
+            pulumi.set(__self__, "service_types", service_types)
+        if tag_keys is not None:
+            pulumi.set(__self__, "tag_keys", tag_keys)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if text_values is not None:
+            pulumi.set(__self__, "text_values", text_values)
+
+    @property
+    @pulumi.getter(name="predicateType")
+    def predicate_type(self) -> str:
+        return pulumi.get(self, "predicate_type")
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter(name="managementZones")
+    def management_zones(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "management_zones")
+
+    @property
+    @pulumi.getter(name="serviceTypes")
+    def service_types(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "service_types")
+
+    @property
+    @pulumi.getter(name="tagKeys")
+    def tag_keys(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "tag_keys")
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "tags")
+
+    @property
+    @pulumi.getter(name="textValues")
+    def text_values(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "text_values")
+
+
+@pulumi.output_type
+class GenericRelationshipsSources(dict):
+    def __init__(__self__, *,
+                 sources: Sequence['outputs.GenericRelationshipsSourcesSource']):
+        pulumi.set(__self__, "sources", sources)
+
+    @property
+    @pulumi.getter
+    def sources(self) -> Sequence['outputs.GenericRelationshipsSourcesSource']:
+        return pulumi.get(self, "sources")
+
+
+@pulumi.output_type
+class GenericRelationshipsSourcesSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+        elif key == "mappingRules":
+            suggest = "mapping_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GenericRelationshipsSourcesSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GenericRelationshipsSourcesSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GenericRelationshipsSourcesSource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source_type: str,
+                 condition: Optional[str] = None,
+                 mapping_rules: Optional['outputs.GenericRelationshipsSourcesSourceMappingRules'] = None):
+        pulumi.set(__self__, "source_type", source_type)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if mapping_rules is not None:
+            pulumi.set(__self__, "mapping_rules", mapping_rules)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        return pulumi.get(self, "source_type")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[str]:
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="mappingRules")
+    def mapping_rules(self) -> Optional['outputs.GenericRelationshipsSourcesSourceMappingRules']:
+        return pulumi.get(self, "mapping_rules")
+
+
+@pulumi.output_type
+class GenericRelationshipsSourcesSourceMappingRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "mappingRules":
+            suggest = "mapping_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GenericRelationshipsSourcesSourceMappingRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GenericRelationshipsSourcesSourceMappingRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GenericRelationshipsSourcesSourceMappingRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 mapping_rules: Sequence['outputs.GenericRelationshipsSourcesSourceMappingRulesMappingRule']):
+        pulumi.set(__self__, "mapping_rules", mapping_rules)
+
+    @property
+    @pulumi.getter(name="mappingRules")
+    def mapping_rules(self) -> Sequence['outputs.GenericRelationshipsSourcesSourceMappingRulesMappingRule']:
+        return pulumi.get(self, "mapping_rules")
+
+
+@pulumi.output_type
+class GenericRelationshipsSourcesSourceMappingRulesMappingRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "destinationProperty":
+            suggest = "destination_property"
+        elif key == "destinationTransformation":
+            suggest = "destination_transformation"
+        elif key == "sourceProperty":
+            suggest = "source_property"
+        elif key == "sourceTransformation":
+            suggest = "source_transformation"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GenericRelationshipsSourcesSourceMappingRulesMappingRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GenericRelationshipsSourcesSourceMappingRulesMappingRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GenericRelationshipsSourcesSourceMappingRulesMappingRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 destination_property: str,
+                 destination_transformation: str,
+                 source_property: str,
+                 source_transformation: str):
+        pulumi.set(__self__, "destination_property", destination_property)
+        pulumi.set(__self__, "destination_transformation", destination_transformation)
+        pulumi.set(__self__, "source_property", source_property)
+        pulumi.set(__self__, "source_transformation", source_transformation)
+
+    @property
+    @pulumi.getter(name="destinationProperty")
+    def destination_property(self) -> str:
+        return pulumi.get(self, "destination_property")
+
+    @property
+    @pulumi.getter(name="destinationTransformation")
+    def destination_transformation(self) -> str:
+        return pulumi.get(self, "destination_transformation")
+
+    @property
+    @pulumi.getter(name="sourceProperty")
+    def source_property(self) -> str:
+        return pulumi.get(self, "source_property")
+
+    @property
+    @pulumi.getter(name="sourceTransformation")
+    def source_transformation(self) -> str:
+        return pulumi.get(self, "source_transformation")
+
+
+@pulumi.output_type
+class GenericTypesRules(dict):
+    def __init__(__self__, *,
+                 rules: Sequence['outputs.GenericTypesRulesRule']):
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.GenericTypesRulesRule']:
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class GenericTypesRulesRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "idPattern":
+            suggest = "id_pattern"
+        elif key == "iconPattern":
+            suggest = "icon_pattern"
+        elif key == "instanceNamePattern":
+            suggest = "instance_name_pattern"
+        elif key == "requiredDimensions":
+            suggest = "required_dimensions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GenericTypesRulesRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GenericTypesRulesRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GenericTypesRulesRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 id_pattern: str,
+                 sources: 'outputs.GenericTypesRulesRuleSources',
+                 attributes: Optional['outputs.GenericTypesRulesRuleAttributes'] = None,
+                 icon_pattern: Optional[str] = None,
+                 instance_name_pattern: Optional[str] = None,
+                 required_dimensions: Optional['outputs.GenericTypesRulesRuleRequiredDimensions'] = None,
+                 role: Optional[str] = None):
+        pulumi.set(__self__, "id_pattern", id_pattern)
+        pulumi.set(__self__, "sources", sources)
+        if attributes is not None:
+            pulumi.set(__self__, "attributes", attributes)
+        if icon_pattern is not None:
+            pulumi.set(__self__, "icon_pattern", icon_pattern)
+        if instance_name_pattern is not None:
+            pulumi.set(__self__, "instance_name_pattern", instance_name_pattern)
+        if required_dimensions is not None:
+            pulumi.set(__self__, "required_dimensions", required_dimensions)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+
+    @property
+    @pulumi.getter(name="idPattern")
+    def id_pattern(self) -> str:
+        return pulumi.get(self, "id_pattern")
+
+    @property
+    @pulumi.getter
+    def sources(self) -> 'outputs.GenericTypesRulesRuleSources':
+        return pulumi.get(self, "sources")
+
+    @property
+    @pulumi.getter
+    def attributes(self) -> Optional['outputs.GenericTypesRulesRuleAttributes']:
+        return pulumi.get(self, "attributes")
+
+    @property
+    @pulumi.getter(name="iconPattern")
+    def icon_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "icon_pattern")
+
+    @property
+    @pulumi.getter(name="instanceNamePattern")
+    def instance_name_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "instance_name_pattern")
+
+    @property
+    @pulumi.getter(name="requiredDimensions")
+    def required_dimensions(self) -> Optional['outputs.GenericTypesRulesRuleRequiredDimensions']:
+        return pulumi.get(self, "required_dimensions")
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[str]:
+        return pulumi.get(self, "role")
+
+
+@pulumi.output_type
+class GenericTypesRulesRuleAttributes(dict):
+    def __init__(__self__, *,
+                 attributes: Sequence['outputs.GenericTypesRulesRuleAttributesAttribute']):
+        pulumi.set(__self__, "attributes", attributes)
+
+    @property
+    @pulumi.getter
+    def attributes(self) -> Sequence['outputs.GenericTypesRulesRuleAttributesAttribute']:
+        return pulumi.get(self, "attributes")
+
+
+@pulumi.output_type
+class GenericTypesRulesRuleAttributesAttribute(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GenericTypesRulesRuleAttributesAttribute. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GenericTypesRulesRuleAttributesAttribute.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GenericTypesRulesRuleAttributesAttribute.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: str,
+                 pattern: str,
+                 display_name: Optional[str] = None):
+        """
+        :param str display_name: The human readable type name for this entity type.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "pattern", pattern)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> str:
+        return pulumi.get(self, "pattern")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        The human readable type name for this entity type.
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class GenericTypesRulesRuleRequiredDimensions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "requiredDimensions":
+            suggest = "required_dimensions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GenericTypesRulesRuleRequiredDimensions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GenericTypesRulesRuleRequiredDimensions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GenericTypesRulesRuleRequiredDimensions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 required_dimensions: Sequence['outputs.GenericTypesRulesRuleRequiredDimensionsRequiredDimension']):
+        pulumi.set(__self__, "required_dimensions", required_dimensions)
+
+    @property
+    @pulumi.getter(name="requiredDimensions")
+    def required_dimensions(self) -> Sequence['outputs.GenericTypesRulesRuleRequiredDimensionsRequiredDimension']:
+        return pulumi.get(self, "required_dimensions")
+
+
+@pulumi.output_type
+class GenericTypesRulesRuleRequiredDimensionsRequiredDimension(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "valuePattern":
+            suggest = "value_pattern"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GenericTypesRulesRuleRequiredDimensionsRequiredDimension. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GenericTypesRulesRuleRequiredDimensionsRequiredDimension.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GenericTypesRulesRuleRequiredDimensionsRequiredDimension.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: str,
+                 value_pattern: Optional[str] = None):
+        pulumi.set(__self__, "key", key)
+        if value_pattern is not None:
+            pulumi.set(__self__, "value_pattern", value_pattern)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="valuePattern")
+    def value_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "value_pattern")
+
+
+@pulumi.output_type
+class GenericTypesRulesRuleSources(dict):
+    def __init__(__self__, *,
+                 sources: Sequence['outputs.GenericTypesRulesRuleSourcesSource']):
+        pulumi.set(__self__, "sources", sources)
+
+    @property
+    @pulumi.getter
+    def sources(self) -> Sequence['outputs.GenericTypesRulesRuleSourcesSource']:
+        return pulumi.get(self, "sources")
+
+
+@pulumi.output_type
+class GenericTypesRulesRuleSourcesSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GenericTypesRulesRuleSourcesSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GenericTypesRulesRuleSourcesSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GenericTypesRulesRuleSourcesSource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source_type: str,
+                 condition: Optional[str] = None):
+        pulumi.set(__self__, "source_type", source_type)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        return pulumi.get(self, "source_type")
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[str]:
+        return pulumi.get(self, "condition")
 
 
 @pulumi.output_type
@@ -16357,6 +23199,1866 @@ class HostAnomaliesNetworkUtilizationThresholds(dict):
     @pulumi.getter
     def utilization(self) -> int:
         return pulumi.get(self, "utilization")
+
+
+@pulumi.output_type
+class HostAnomaliesV2Host(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionLostDetection":
+            suggest = "connection_lost_detection"
+        elif key == "highCpuSaturationDetection":
+            suggest = "high_cpu_saturation_detection"
+        elif key == "highGcActivityDetection":
+            suggest = "high_gc_activity_detection"
+        elif key == "highMemoryDetection":
+            suggest = "high_memory_detection"
+        elif key == "highSystemLoadDetection":
+            suggest = "high_system_load_detection"
+        elif key == "outOfMemoryDetection":
+            suggest = "out_of_memory_detection"
+        elif key == "outOfThreadsDetection":
+            suggest = "out_of_threads_detection"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2Host. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2Host.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2Host.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_lost_detection: 'outputs.HostAnomaliesV2HostConnectionLostDetection',
+                 high_cpu_saturation_detection: 'outputs.HostAnomaliesV2HostHighCpuSaturationDetection',
+                 high_gc_activity_detection: 'outputs.HostAnomaliesV2HostHighGcActivityDetection',
+                 high_memory_detection: 'outputs.HostAnomaliesV2HostHighMemoryDetection',
+                 high_system_load_detection: 'outputs.HostAnomaliesV2HostHighSystemLoadDetection',
+                 out_of_memory_detection: 'outputs.HostAnomaliesV2HostOutOfMemoryDetection',
+                 out_of_threads_detection: 'outputs.HostAnomaliesV2HostOutOfThreadsDetection'):
+        """
+        :param 'HostAnomaliesV2HostConnectionLostDetectionArgs' connection_lost_detection: no documentation available
+        :param 'HostAnomaliesV2HostHighCpuSaturationDetectionArgs' high_cpu_saturation_detection: no documentation available
+        :param 'HostAnomaliesV2HostHighGcActivityDetectionArgs' high_gc_activity_detection: no documentation available
+        :param 'HostAnomaliesV2HostHighMemoryDetectionArgs' high_memory_detection: no documentation available
+        :param 'HostAnomaliesV2HostHighSystemLoadDetectionArgs' high_system_load_detection: no documentation available
+        :param 'HostAnomaliesV2HostOutOfMemoryDetectionArgs' out_of_memory_detection: no documentation available
+        :param 'HostAnomaliesV2HostOutOfThreadsDetectionArgs' out_of_threads_detection: no documentation available
+        """
+        pulumi.set(__self__, "connection_lost_detection", connection_lost_detection)
+        pulumi.set(__self__, "high_cpu_saturation_detection", high_cpu_saturation_detection)
+        pulumi.set(__self__, "high_gc_activity_detection", high_gc_activity_detection)
+        pulumi.set(__self__, "high_memory_detection", high_memory_detection)
+        pulumi.set(__self__, "high_system_load_detection", high_system_load_detection)
+        pulumi.set(__self__, "out_of_memory_detection", out_of_memory_detection)
+        pulumi.set(__self__, "out_of_threads_detection", out_of_threads_detection)
+
+    @property
+    @pulumi.getter(name="connectionLostDetection")
+    def connection_lost_detection(self) -> 'outputs.HostAnomaliesV2HostConnectionLostDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "connection_lost_detection")
+
+    @property
+    @pulumi.getter(name="highCpuSaturationDetection")
+    def high_cpu_saturation_detection(self) -> 'outputs.HostAnomaliesV2HostHighCpuSaturationDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "high_cpu_saturation_detection")
+
+    @property
+    @pulumi.getter(name="highGcActivityDetection")
+    def high_gc_activity_detection(self) -> 'outputs.HostAnomaliesV2HostHighGcActivityDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "high_gc_activity_detection")
+
+    @property
+    @pulumi.getter(name="highMemoryDetection")
+    def high_memory_detection(self) -> 'outputs.HostAnomaliesV2HostHighMemoryDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "high_memory_detection")
+
+    @property
+    @pulumi.getter(name="highSystemLoadDetection")
+    def high_system_load_detection(self) -> 'outputs.HostAnomaliesV2HostHighSystemLoadDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "high_system_load_detection")
+
+    @property
+    @pulumi.getter(name="outOfMemoryDetection")
+    def out_of_memory_detection(self) -> 'outputs.HostAnomaliesV2HostOutOfMemoryDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "out_of_memory_detection")
+
+    @property
+    @pulumi.getter(name="outOfThreadsDetection")
+    def out_of_threads_detection(self) -> 'outputs.HostAnomaliesV2HostOutOfThreadsDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "out_of_threads_detection")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostConnectionLostDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "onGracefulShutdowns":
+            suggest = "on_graceful_shutdowns"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostConnectionLostDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostConnectionLostDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostConnectionLostDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 on_graceful_shutdowns: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if on_graceful_shutdowns is not None:
+            pulumi.set(__self__, "on_graceful_shutdowns", on_graceful_shutdowns)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="onGracefulShutdowns")
+    def on_graceful_shutdowns(self) -> Optional[str]:
+        return pulumi.get(self, "on_graceful_shutdowns")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostHighCpuSaturationDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostHighCpuSaturationDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostHighCpuSaturationDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostHighCpuSaturationDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds']:
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cpuSaturation":
+            suggest = "cpu_saturation"
+        elif key == "eventThresholds":
+            suggest = "event_thresholds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cpu_saturation: int,
+                 event_thresholds: 'outputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds'):
+        pulumi.set(__self__, "cpu_saturation", cpu_saturation)
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+
+    @property
+    @pulumi.getter(name="cpuSaturation")
+    def cpu_saturation(self) -> int:
+        return pulumi.get(self, "cpu_saturation")
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> 'outputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds':
+        return pulumi.get(self, "event_thresholds")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dealertingEvaluationWindow":
+            suggest = "dealerting_evaluation_window"
+        elif key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "violatingEvaluationWindow":
+            suggest = "violating_evaluation_window"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: int,
+                 dealerting_samples: int,
+                 violating_evaluation_window: int,
+                 violating_samples: int):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> int:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> int:
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> int:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostHighGcActivityDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostHighGcActivityDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostHighGcActivityDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostHighGcActivityDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds']:
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventThresholds":
+            suggest = "event_thresholds"
+        elif key == "gcSuspensionPercentage":
+            suggest = "gc_suspension_percentage"
+        elif key == "gcTimePercentage":
+            suggest = "gc_time_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 event_thresholds: 'outputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds',
+                 gc_suspension_percentage: int,
+                 gc_time_percentage: int):
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "gc_suspension_percentage", gc_suspension_percentage)
+        pulumi.set(__self__, "gc_time_percentage", gc_time_percentage)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> 'outputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds':
+        return pulumi.get(self, "event_thresholds")
+
+    @property
+    @pulumi.getter(name="gcSuspensionPercentage")
+    def gc_suspension_percentage(self) -> int:
+        return pulumi.get(self, "gc_suspension_percentage")
+
+    @property
+    @pulumi.getter(name="gcTimePercentage")
+    def gc_time_percentage(self) -> int:
+        return pulumi.get(self, "gc_time_percentage")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dealertingEvaluationWindow":
+            suggest = "dealerting_evaluation_window"
+        elif key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "violatingEvaluationWindow":
+            suggest = "violating_evaluation_window"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: int,
+                 dealerting_samples: int,
+                 violating_evaluation_window: int,
+                 violating_samples: int):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> int:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> int:
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> int:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostHighMemoryDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostHighMemoryDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostHighMemoryDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostHighMemoryDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholds']:
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostHighMemoryDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventThresholds":
+            suggest = "event_thresholds"
+        elif key == "pageFaultsPerSecondNonWindows":
+            suggest = "page_faults_per_second_non_windows"
+        elif key == "pageFaultsPerSecondWindows":
+            suggest = "page_faults_per_second_windows"
+        elif key == "usedMemoryPercentageNonWindows":
+            suggest = "used_memory_percentage_non_windows"
+        elif key == "usedMemoryPercentageWindows":
+            suggest = "used_memory_percentage_windows"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostHighMemoryDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostHighMemoryDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostHighMemoryDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 event_thresholds: 'outputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds',
+                 page_faults_per_second_non_windows: int,
+                 page_faults_per_second_windows: int,
+                 used_memory_percentage_non_windows: int,
+                 used_memory_percentage_windows: int):
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "page_faults_per_second_non_windows", page_faults_per_second_non_windows)
+        pulumi.set(__self__, "page_faults_per_second_windows", page_faults_per_second_windows)
+        pulumi.set(__self__, "used_memory_percentage_non_windows", used_memory_percentage_non_windows)
+        pulumi.set(__self__, "used_memory_percentage_windows", used_memory_percentage_windows)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> 'outputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds':
+        return pulumi.get(self, "event_thresholds")
+
+    @property
+    @pulumi.getter(name="pageFaultsPerSecondNonWindows")
+    def page_faults_per_second_non_windows(self) -> int:
+        return pulumi.get(self, "page_faults_per_second_non_windows")
+
+    @property
+    @pulumi.getter(name="pageFaultsPerSecondWindows")
+    def page_faults_per_second_windows(self) -> int:
+        return pulumi.get(self, "page_faults_per_second_windows")
+
+    @property
+    @pulumi.getter(name="usedMemoryPercentageNonWindows")
+    def used_memory_percentage_non_windows(self) -> int:
+        return pulumi.get(self, "used_memory_percentage_non_windows")
+
+    @property
+    @pulumi.getter(name="usedMemoryPercentageWindows")
+    def used_memory_percentage_windows(self) -> int:
+        return pulumi.get(self, "used_memory_percentage_windows")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dealertingEvaluationWindow":
+            suggest = "dealerting_evaluation_window"
+        elif key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "violatingEvaluationWindow":
+            suggest = "violating_evaluation_window"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: int,
+                 dealerting_samples: int,
+                 violating_evaluation_window: int,
+                 violating_samples: int):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> int:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> int:
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> int:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostHighSystemLoadDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostHighSystemLoadDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostHighSystemLoadDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostHighSystemLoadDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds']:
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventThresholds":
+            suggest = "event_thresholds"
+        elif key == "systemLoad":
+            suggest = "system_load"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 event_thresholds: 'outputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds',
+                 system_load: float):
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "system_load", system_load)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> 'outputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds':
+        return pulumi.get(self, "event_thresholds")
+
+    @property
+    @pulumi.getter(name="systemLoad")
+    def system_load(self) -> float:
+        return pulumi.get(self, "system_load")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dealertingEvaluationWindow":
+            suggest = "dealerting_evaluation_window"
+        elif key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "violatingEvaluationWindow":
+            suggest = "violating_evaluation_window"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: int,
+                 dealerting_samples: int,
+                 violating_evaluation_window: int,
+                 violating_samples: int):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> int:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> int:
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> int:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostOutOfMemoryDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostOutOfMemoryDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostOutOfMemoryDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostOutOfMemoryDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds']:
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventThresholds":
+            suggest = "event_thresholds"
+        elif key == "outOfMemoryExceptionsNumber":
+            suggest = "out_of_memory_exceptions_number"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 event_thresholds: 'outputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds',
+                 out_of_memory_exceptions_number: int):
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "out_of_memory_exceptions_number", out_of_memory_exceptions_number)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> 'outputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds':
+        return pulumi.get(self, "event_thresholds")
+
+    @property
+    @pulumi.getter(name="outOfMemoryExceptionsNumber")
+    def out_of_memory_exceptions_number(self) -> int:
+        return pulumi.get(self, "out_of_memory_exceptions_number")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dealertingEvaluationWindow":
+            suggest = "dealerting_evaluation_window"
+        elif key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "violatingEvaluationWindow":
+            suggest = "violating_evaluation_window"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: int,
+                 dealerting_samples: int,
+                 violating_evaluation_window: int,
+                 violating_samples: int):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> int:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> int:
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> int:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostOutOfThreadsDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostOutOfThreadsDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostOutOfThreadsDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostOutOfThreadsDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds']:
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventThresholds":
+            suggest = "event_thresholds"
+        elif key == "outOfThreadsExceptionsNumber":
+            suggest = "out_of_threads_exceptions_number"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 event_thresholds: 'outputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds',
+                 out_of_threads_exceptions_number: int):
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "out_of_threads_exceptions_number", out_of_threads_exceptions_number)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> 'outputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds':
+        return pulumi.get(self, "event_thresholds")
+
+    @property
+    @pulumi.getter(name="outOfThreadsExceptionsNumber")
+    def out_of_threads_exceptions_number(self) -> int:
+        return pulumi.get(self, "out_of_threads_exceptions_number")
+
+
+@pulumi.output_type
+class HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dealertingEvaluationWindow":
+            suggest = "dealerting_evaluation_window"
+        elif key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "violatingEvaluationWindow":
+            suggest = "violating_evaluation_window"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: int,
+                 dealerting_samples: int,
+                 violating_evaluation_window: int,
+                 violating_samples: int):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> int:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> int:
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> int:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class HostAnomaliesV2Network(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "highNetworkDetection":
+            suggest = "high_network_detection"
+        elif key == "networkDroppedPacketsDetection":
+            suggest = "network_dropped_packets_detection"
+        elif key == "networkErrorsDetection":
+            suggest = "network_errors_detection"
+        elif key == "networkHighRetransmissionDetection":
+            suggest = "network_high_retransmission_detection"
+        elif key == "networkTcpProblemsDetection":
+            suggest = "network_tcp_problems_detection"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2Network. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2Network.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2Network.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 high_network_detection: 'outputs.HostAnomaliesV2NetworkHighNetworkDetection',
+                 network_dropped_packets_detection: 'outputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetection',
+                 network_errors_detection: 'outputs.HostAnomaliesV2NetworkNetworkErrorsDetection',
+                 network_high_retransmission_detection: 'outputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetection',
+                 network_tcp_problems_detection: 'outputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetection'):
+        """
+        :param 'HostAnomaliesV2NetworkHighNetworkDetectionArgs' high_network_detection: no documentation available
+        :param 'HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionArgs' network_dropped_packets_detection: no documentation available
+        :param 'HostAnomaliesV2NetworkNetworkErrorsDetectionArgs' network_errors_detection: no documentation available
+        :param 'HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionArgs' network_high_retransmission_detection: no documentation available
+        :param 'HostAnomaliesV2NetworkNetworkTcpProblemsDetectionArgs' network_tcp_problems_detection: no documentation available
+        """
+        pulumi.set(__self__, "high_network_detection", high_network_detection)
+        pulumi.set(__self__, "network_dropped_packets_detection", network_dropped_packets_detection)
+        pulumi.set(__self__, "network_errors_detection", network_errors_detection)
+        pulumi.set(__self__, "network_high_retransmission_detection", network_high_retransmission_detection)
+        pulumi.set(__self__, "network_tcp_problems_detection", network_tcp_problems_detection)
+
+    @property
+    @pulumi.getter(name="highNetworkDetection")
+    def high_network_detection(self) -> 'outputs.HostAnomaliesV2NetworkHighNetworkDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "high_network_detection")
+
+    @property
+    @pulumi.getter(name="networkDroppedPacketsDetection")
+    def network_dropped_packets_detection(self) -> 'outputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "network_dropped_packets_detection")
+
+    @property
+    @pulumi.getter(name="networkErrorsDetection")
+    def network_errors_detection(self) -> 'outputs.HostAnomaliesV2NetworkNetworkErrorsDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "network_errors_detection")
+
+    @property
+    @pulumi.getter(name="networkHighRetransmissionDetection")
+    def network_high_retransmission_detection(self) -> 'outputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "network_high_retransmission_detection")
+
+    @property
+    @pulumi.getter(name="networkTcpProblemsDetection")
+    def network_tcp_problems_detection(self) -> 'outputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetection':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "network_tcp_problems_detection")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkHighNetworkDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkHighNetworkDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkHighNetworkDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkHighNetworkDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds']:
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "errorsPercentage":
+            suggest = "errors_percentage"
+        elif key == "eventThresholds":
+            suggest = "event_thresholds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 errors_percentage: int,
+                 event_thresholds: 'outputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds'):
+        pulumi.set(__self__, "errors_percentage", errors_percentage)
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+
+    @property
+    @pulumi.getter(name="errorsPercentage")
+    def errors_percentage(self) -> int:
+        return pulumi.get(self, "errors_percentage")
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> 'outputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds':
+        return pulumi.get(self, "event_thresholds")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dealertingEvaluationWindow":
+            suggest = "dealerting_evaluation_window"
+        elif key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "violatingEvaluationWindow":
+            suggest = "violating_evaluation_window"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: int,
+                 dealerting_samples: int,
+                 violating_evaluation_window: int,
+                 violating_samples: int):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> int:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> int:
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> int:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkNetworkDroppedPacketsDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkNetworkDroppedPacketsDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkNetworkDroppedPacketsDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkNetworkDroppedPacketsDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds']:
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "droppedPacketsPercentage":
+            suggest = "dropped_packets_percentage"
+        elif key == "eventThresholds":
+            suggest = "event_thresholds"
+        elif key == "totalPacketsRate":
+            suggest = "total_packets_rate"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dropped_packets_percentage: int,
+                 event_thresholds: 'outputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds',
+                 total_packets_rate: int):
+        pulumi.set(__self__, "dropped_packets_percentage", dropped_packets_percentage)
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "total_packets_rate", total_packets_rate)
+
+    @property
+    @pulumi.getter(name="droppedPacketsPercentage")
+    def dropped_packets_percentage(self) -> int:
+        return pulumi.get(self, "dropped_packets_percentage")
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> 'outputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds':
+        return pulumi.get(self, "event_thresholds")
+
+    @property
+    @pulumi.getter(name="totalPacketsRate")
+    def total_packets_rate(self) -> int:
+        return pulumi.get(self, "total_packets_rate")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dealertingEvaluationWindow":
+            suggest = "dealerting_evaluation_window"
+        elif key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "violatingEvaluationWindow":
+            suggest = "violating_evaluation_window"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: int,
+                 dealerting_samples: int,
+                 violating_evaluation_window: int,
+                 violating_samples: int):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> int:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> int:
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> int:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkNetworkErrorsDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkNetworkErrorsDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkNetworkErrorsDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkNetworkErrorsDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds']:
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "errorsPercentage":
+            suggest = "errors_percentage"
+        elif key == "eventThresholds":
+            suggest = "event_thresholds"
+        elif key == "totalPacketsRate":
+            suggest = "total_packets_rate"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 errors_percentage: int,
+                 event_thresholds: 'outputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds',
+                 total_packets_rate: int):
+        pulumi.set(__self__, "errors_percentage", errors_percentage)
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "total_packets_rate", total_packets_rate)
+
+    @property
+    @pulumi.getter(name="errorsPercentage")
+    def errors_percentage(self) -> int:
+        return pulumi.get(self, "errors_percentage")
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> 'outputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds':
+        return pulumi.get(self, "event_thresholds")
+
+    @property
+    @pulumi.getter(name="totalPacketsRate")
+    def total_packets_rate(self) -> int:
+        return pulumi.get(self, "total_packets_rate")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dealertingEvaluationWindow":
+            suggest = "dealerting_evaluation_window"
+        elif key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "violatingEvaluationWindow":
+            suggest = "violating_evaluation_window"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: int,
+                 dealerting_samples: int,
+                 violating_evaluation_window: int,
+                 violating_samples: int):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> int:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> int:
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> int:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkNetworkHighRetransmissionDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkNetworkHighRetransmissionDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkNetworkHighRetransmissionDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkNetworkHighRetransmissionDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds']:
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventThresholds":
+            suggest = "event_thresholds"
+        elif key == "retransmissionRatePercentage":
+            suggest = "retransmission_rate_percentage"
+        elif key == "retransmittedPacketsNumberPerMinute":
+            suggest = "retransmitted_packets_number_per_minute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 event_thresholds: 'outputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds',
+                 retransmission_rate_percentage: int,
+                 retransmitted_packets_number_per_minute: int):
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "retransmission_rate_percentage", retransmission_rate_percentage)
+        pulumi.set(__self__, "retransmitted_packets_number_per_minute", retransmitted_packets_number_per_minute)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> 'outputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds':
+        return pulumi.get(self, "event_thresholds")
+
+    @property
+    @pulumi.getter(name="retransmissionRatePercentage")
+    def retransmission_rate_percentage(self) -> int:
+        return pulumi.get(self, "retransmission_rate_percentage")
+
+    @property
+    @pulumi.getter(name="retransmittedPacketsNumberPerMinute")
+    def retransmitted_packets_number_per_minute(self) -> int:
+        return pulumi.get(self, "retransmitted_packets_number_per_minute")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dealertingEvaluationWindow":
+            suggest = "dealerting_evaluation_window"
+        elif key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "violatingEvaluationWindow":
+            suggest = "violating_evaluation_window"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: int,
+                 dealerting_samples: int,
+                 violating_evaluation_window: int,
+                 violating_samples: int):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> int:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> int:
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> int:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkNetworkTcpProblemsDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkNetworkTcpProblemsDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkNetworkTcpProblemsDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkNetworkTcpProblemsDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds']:
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventThresholds":
+            suggest = "event_thresholds"
+        elif key == "failedConnectionsNumberPerMinute":
+            suggest = "failed_connections_number_per_minute"
+        elif key == "newConnectionFailuresPercentage":
+            suggest = "new_connection_failures_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 event_thresholds: 'outputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds',
+                 failed_connections_number_per_minute: int,
+                 new_connection_failures_percentage: int):
+        pulumi.set(__self__, "event_thresholds", event_thresholds)
+        pulumi.set(__self__, "failed_connections_number_per_minute", failed_connections_number_per_minute)
+        pulumi.set(__self__, "new_connection_failures_percentage", new_connection_failures_percentage)
+
+    @property
+    @pulumi.getter(name="eventThresholds")
+    def event_thresholds(self) -> 'outputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds':
+        return pulumi.get(self, "event_thresholds")
+
+    @property
+    @pulumi.getter(name="failedConnectionsNumberPerMinute")
+    def failed_connections_number_per_minute(self) -> int:
+        return pulumi.get(self, "failed_connections_number_per_minute")
+
+    @property
+    @pulumi.getter(name="newConnectionFailuresPercentage")
+    def new_connection_failures_percentage(self) -> int:
+        return pulumi.get(self, "new_connection_failures_percentage")
+
+
+@pulumi.output_type
+class HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dealertingEvaluationWindow":
+            suggest = "dealerting_evaluation_window"
+        elif key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "violatingEvaluationWindow":
+            suggest = "violating_evaluation_window"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: int,
+                 dealerting_samples: int,
+                 violating_evaluation_window: int,
+                 violating_samples: int):
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> int:
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> int:
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> int:
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        return pulumi.get(self, "violating_samples")
 
 
 @pulumi.output_type
@@ -20267,6 +28969,8 @@ class HttpMonitorAnomalyDetectionOutageHandling(dict):
         suggest = None
         if key == "globalOutage":
             suggest = "global_outage"
+        elif key == "globalOutagePolicies":
+            suggest = "global_outage_policies"
         elif key == "localOutage":
             suggest = "local_outage"
         elif key == "localOutagePolicies":
@@ -20287,11 +28991,14 @@ class HttpMonitorAnomalyDetectionOutageHandling(dict):
 
     def __init__(__self__, *,
                  global_outage: Optional[bool] = None,
+                 global_outage_policies: Optional[Sequence['outputs.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy']] = None,
                  local_outage: Optional[bool] = None,
                  local_outage_policies: Optional[Sequence['outputs.HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy']] = None,
                  retry_on_error: Optional[bool] = None):
         if global_outage is not None:
             pulumi.set(__self__, "global_outage", global_outage)
+        if global_outage_policies is not None:
+            pulumi.set(__self__, "global_outage_policies", global_outage_policies)
         if local_outage is not None:
             pulumi.set(__self__, "local_outage", local_outage)
         if local_outage_policies is not None:
@@ -20303,6 +29010,11 @@ class HttpMonitorAnomalyDetectionOutageHandling(dict):
     @pulumi.getter(name="globalOutage")
     def global_outage(self) -> Optional[bool]:
         return pulumi.get(self, "global_outage")
+
+    @property
+    @pulumi.getter(name="globalOutagePolicies")
+    def global_outage_policies(self) -> Optional[Sequence['outputs.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy']]:
+        return pulumi.get(self, "global_outage_policies")
 
     @property
     @pulumi.getter(name="localOutage")
@@ -20318,6 +29030,35 @@ class HttpMonitorAnomalyDetectionOutageHandling(dict):
     @pulumi.getter(name="retryOnError")
     def retry_on_error(self) -> Optional[bool]:
         return pulumi.get(self, "retry_on_error")
+
+
+@pulumi.output_type
+class HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "consecutiveRuns":
+            suggest = "consecutive_runs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 consecutive_runs: int):
+        pulumi.set(__self__, "consecutive_runs", consecutive_runs)
+
+    @property
+    @pulumi.getter(name="consecutiveRuns")
+    def consecutive_runs(self) -> int:
+        return pulumi.get(self, "consecutive_runs")
 
 
 @pulumi.output_type
@@ -20359,6 +29100,83 @@ class HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy(dict):
 
 
 @pulumi.output_type
+class HttpMonitorCookiesCookies(dict):
+    def __init__(__self__, *,
+                 cookies: Sequence['outputs.HttpMonitorCookiesCookiesCookie']):
+        pulumi.set(__self__, "cookies", cookies)
+
+    @property
+    @pulumi.getter
+    def cookies(self) -> Sequence['outputs.HttpMonitorCookiesCookiesCookie']:
+        return pulumi.get(self, "cookies")
+
+
+@pulumi.output_type
+class HttpMonitorCookiesCookiesCookie(dict):
+    def __init__(__self__, *,
+                 domain: str,
+                 name: str,
+                 value: str,
+                 path: Optional[str] = None):
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> str:
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter
+    def path(self) -> Optional[str]:
+        return pulumi.get(self, "path")
+
+
+@pulumi.output_type
+class HttpMonitorPerformanceThresholds(dict):
+    def __init__(__self__, *,
+                 thresholds: Sequence['outputs.HttpMonitorPerformanceThresholdsThreshold']):
+        pulumi.set(__self__, "thresholds", thresholds)
+
+    @property
+    @pulumi.getter
+    def thresholds(self) -> Sequence['outputs.HttpMonitorPerformanceThresholdsThreshold']:
+        return pulumi.get(self, "thresholds")
+
+
+@pulumi.output_type
+class HttpMonitorPerformanceThresholdsThreshold(dict):
+    def __init__(__self__, *,
+                 event: str,
+                 threshold: float):
+        pulumi.set(__self__, "event", event)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter
+    def event(self) -> str:
+        return pulumi.get(self, "event")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> float:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
 class HttpMonitorScript(dict):
     def __init__(__self__, *,
                  requests: Sequence['outputs.HttpMonitorScriptRequest']):
@@ -20385,6 +29203,8 @@ class HttpMonitorScriptRequest(dict):
             suggest = "post_processing"
         elif key == "preProcessing":
             suggest = "pre_processing"
+        elif key == "requestTimeout":
+            suggest = "request_timeout"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in HttpMonitorScriptRequest. Access the value via the '{suggest}' property getter instead.")
@@ -20406,6 +29226,7 @@ class HttpMonitorScriptRequest(dict):
                  description: Optional[str] = None,
                  post_processing: Optional[str] = None,
                  pre_processing: Optional[str] = None,
+                 request_timeout: Optional[int] = None,
                  validation: Optional['outputs.HttpMonitorScriptRequestValidation'] = None):
         pulumi.set(__self__, "method", method)
         pulumi.set(__self__, "url", url)
@@ -20421,6 +29242,8 @@ class HttpMonitorScriptRequest(dict):
             pulumi.set(__self__, "post_processing", post_processing)
         if pre_processing is not None:
             pulumi.set(__self__, "pre_processing", pre_processing)
+        if request_timeout is not None:
+            pulumi.set(__self__, "request_timeout", request_timeout)
         if validation is not None:
             pulumi.set(__self__, "validation", validation)
 
@@ -20463,6 +29286,11 @@ class HttpMonitorScriptRequest(dict):
     @pulumi.getter(name="preProcessing")
     def pre_processing(self) -> Optional[str]:
         return pulumi.get(self, "pre_processing")
+
+    @property
+    @pulumi.getter(name="requestTimeout")
+    def request_timeout(self) -> Optional[int]:
+        return pulumi.get(self, "request_timeout")
 
     @property
     @pulumi.getter
@@ -20531,8 +29359,12 @@ class HttpMonitorScriptRequestConfiguration(dict):
         suggest = None
         if key == "acceptAnyCertificate":
             suggest = "accept_any_certificate"
+        elif key == "clientCertificate":
+            suggest = "client_certificate"
         elif key == "followRedirects":
             suggest = "follow_redirects"
+        elif key == "sensitiveData":
+            suggest = "sensitive_data"
         elif key == "userAgent":
             suggest = "user_agent"
 
@@ -20549,15 +29381,21 @@ class HttpMonitorScriptRequestConfiguration(dict):
 
     def __init__(__self__, *,
                  accept_any_certificate: Optional[bool] = None,
+                 client_certificate: Optional[str] = None,
                  follow_redirects: Optional[bool] = None,
                  headers: Optional['outputs.HttpMonitorScriptRequestConfigurationHeaders'] = None,
+                 sensitive_data: Optional[bool] = None,
                  user_agent: Optional[str] = None):
         if accept_any_certificate is not None:
             pulumi.set(__self__, "accept_any_certificate", accept_any_certificate)
+        if client_certificate is not None:
+            pulumi.set(__self__, "client_certificate", client_certificate)
         if follow_redirects is not None:
             pulumi.set(__self__, "follow_redirects", follow_redirects)
         if headers is not None:
             pulumi.set(__self__, "headers", headers)
+        if sensitive_data is not None:
+            pulumi.set(__self__, "sensitive_data", sensitive_data)
         if user_agent is not None:
             pulumi.set(__self__, "user_agent", user_agent)
 
@@ -20565,6 +29403,11 @@ class HttpMonitorScriptRequestConfiguration(dict):
     @pulumi.getter(name="acceptAnyCertificate")
     def accept_any_certificate(self) -> Optional[bool]:
         return pulumi.get(self, "accept_any_certificate")
+
+    @property
+    @pulumi.getter(name="clientCertificate")
+    def client_certificate(self) -> Optional[str]:
+        return pulumi.get(self, "client_certificate")
 
     @property
     @pulumi.getter(name="followRedirects")
@@ -20575,6 +29418,11 @@ class HttpMonitorScriptRequestConfiguration(dict):
     @pulumi.getter
     def headers(self) -> Optional['outputs.HttpMonitorScriptRequestConfigurationHeaders']:
         return pulumi.get(self, "headers")
+
+    @property
+    @pulumi.getter(name="sensitiveData")
+    def sensitive_data(self) -> Optional[bool]:
+        return pulumi.get(self, "sensitive_data")
 
     @property
     @pulumi.getter(name="userAgent")
@@ -20724,6 +29572,50 @@ class HttpMonitorTagTag(dict):
 
 
 @pulumi.output_type
+class IamGroupPermissions(dict):
+    def __init__(__self__, *,
+                 permissions: Sequence['outputs.IamGroupPermissionsPermission']):
+        """
+        :param Sequence['IamGroupPermissionsPermissionArgs'] permissions: A Permission
+        """
+        pulumi.set(__self__, "permissions", permissions)
+
+    @property
+    @pulumi.getter
+    def permissions(self) -> Sequence['outputs.IamGroupPermissionsPermission']:
+        """
+        A Permission
+        """
+        return pulumi.get(self, "permissions")
+
+
+@pulumi.output_type
+class IamGroupPermissionsPermission(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 scope: str,
+                 type: str):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "scope", scope)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def scope(self) -> str:
+        return pulumi.get(self, "scope")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class ImsBridgesQueueManager(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -20803,6 +29695,367 @@ class ImsBridgesQueueManagerQueueManager(dict):
 
 
 @pulumi.output_type
+class K8sClusterAnomaliesCpuRequestsSaturation(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sClusterAnomaliesCpuRequestsSaturationConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sClusterAnomaliesCpuRequestsSaturationConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sClusterAnomaliesCpuRequestsSaturationConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sClusterAnomaliesCpuRequestsSaturationConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sClusterAnomaliesCpuRequestsSaturationConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sClusterAnomaliesCpuRequestsSaturationConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sClusterAnomaliesCpuRequestsSaturationConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sClusterAnomaliesMemoryRequestsSaturation(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sClusterAnomaliesMemoryRequestsSaturationConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sClusterAnomaliesMemoryRequestsSaturationConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sClusterAnomaliesMemoryRequestsSaturationConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sClusterAnomaliesMemoryRequestsSaturationConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sClusterAnomaliesMemoryRequestsSaturationConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sClusterAnomaliesMemoryRequestsSaturationConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sClusterAnomaliesMemoryRequestsSaturationConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sClusterAnomaliesMonitoringIssues(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sClusterAnomaliesMonitoringIssuesConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sClusterAnomaliesMonitoringIssuesConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sClusterAnomaliesMonitoringIssuesConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sClusterAnomaliesMonitoringIssuesConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sClusterAnomaliesMonitoringIssuesConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sClusterAnomaliesMonitoringIssuesConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sClusterAnomaliesMonitoringIssuesConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+
+@pulumi.output_type
+class K8sClusterAnomaliesPodsSaturation(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sClusterAnomaliesPodsSaturationConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sClusterAnomaliesPodsSaturationConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sClusterAnomaliesPodsSaturationConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sClusterAnomaliesPodsSaturationConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sClusterAnomaliesPodsSaturationConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sClusterAnomaliesPodsSaturationConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sClusterAnomaliesPodsSaturationConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sClusterAnomaliesReadinessIssues(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sClusterAnomaliesReadinessIssuesConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sClusterAnomaliesReadinessIssuesConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sClusterAnomaliesReadinessIssuesConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sClusterAnomaliesReadinessIssuesConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sClusterAnomaliesReadinessIssuesConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sClusterAnomaliesReadinessIssuesConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sClusterAnomaliesReadinessIssuesConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+
+@pulumi.output_type
 class K8sCredentialsEventsFieldSelector(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -20869,6 +30122,1989 @@ class K8sCredentialsEventsFieldSelector(dict):
         Any attributes that aren't yet supported by this provider
         """
         return pulumi.get(self, "unknowns")
+
+
+@pulumi.output_type
+class K8sNamespaceAnomaliesCpuLimitsQuotaSaturation(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sNamespaceAnomaliesCpuRequestsQuotaSaturation(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sNamespaceAnomaliesMemoryLimitsQuotaSaturation(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sNamespaceAnomaliesMemoryRequestsQuotaSaturation(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sNamespaceAnomaliesPodsQuotaSaturation(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sNamespaceAnomaliesPodsQuotaSaturationConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sNamespaceAnomaliesPodsQuotaSaturationConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sNamespaceAnomaliesPodsQuotaSaturationConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sNamespaceAnomaliesPodsQuotaSaturationConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sNamespaceAnomaliesPodsQuotaSaturationConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sNamespaceAnomaliesPodsQuotaSaturationConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sNamespaceAnomaliesPodsQuotaSaturationConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sNodeAnomaliesCpuRequestsSaturation(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sNodeAnomaliesCpuRequestsSaturationConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sNodeAnomaliesCpuRequestsSaturationConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sNodeAnomaliesCpuRequestsSaturationConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sNodeAnomaliesCpuRequestsSaturationConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sNodeAnomaliesCpuRequestsSaturationConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sNodeAnomaliesCpuRequestsSaturationConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sNodeAnomaliesCpuRequestsSaturationConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sNodeAnomaliesMemoryRequestsSaturation(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sNodeAnomaliesMemoryRequestsSaturationConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sNodeAnomaliesMemoryRequestsSaturationConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sNodeAnomaliesMemoryRequestsSaturationConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sNodeAnomaliesMemoryRequestsSaturationConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sNodeAnomaliesMemoryRequestsSaturationConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sNodeAnomaliesMemoryRequestsSaturationConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sNodeAnomaliesMemoryRequestsSaturationConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sNodeAnomaliesNodeProblematicCondition(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sNodeAnomaliesNodeProblematicConditionConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sNodeAnomaliesNodeProblematicConditionConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sNodeAnomaliesNodeProblematicConditionConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sNodeAnomaliesNodeProblematicConditionConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sNodeAnomaliesNodeProblematicConditionConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sNodeAnomaliesNodeProblematicConditionConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sNodeAnomaliesNodeProblematicConditionConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+
+@pulumi.output_type
+class K8sNodeAnomaliesPodsSaturation(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sNodeAnomaliesPodsSaturationConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sNodeAnomaliesPodsSaturationConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sNodeAnomaliesPodsSaturationConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sNodeAnomaliesPodsSaturationConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sNodeAnomaliesPodsSaturationConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sNodeAnomaliesPodsSaturationConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sNodeAnomaliesPodsSaturationConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sNodeAnomaliesReadinessIssues(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sNodeAnomaliesReadinessIssuesConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sNodeAnomaliesReadinessIssuesConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sNodeAnomaliesReadinessIssuesConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sNodeAnomaliesReadinessIssuesConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sNodeAnomaliesReadinessIssuesConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sNodeAnomaliesReadinessIssuesConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sNodeAnomaliesReadinessIssuesConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+
+@pulumi.output_type
+class K8sPvcAnomaliesLowDiskSpaceCritical(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sPvcAnomaliesLowDiskSpaceCriticalConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sPvcAnomaliesLowDiskSpaceCriticalConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sPvcAnomaliesLowDiskSpaceCriticalConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sPvcAnomaliesLowDiskSpaceCriticalConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sPvcAnomaliesLowDiskSpaceCriticalConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sPvcAnomaliesLowDiskSpaceCriticalConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sPvcAnomaliesLowDiskSpaceCriticalConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sPvcAnomaliesLowDiskSpaceCriticalPercentage(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesContainerRestarts(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sWorkloadAnomaliesContainerRestartsConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sWorkloadAnomaliesContainerRestartsConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sWorkloadAnomaliesContainerRestartsConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesContainerRestartsConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sWorkloadAnomaliesContainerRestartsConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sWorkloadAnomaliesContainerRestartsConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sWorkloadAnomaliesContainerRestartsConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesDeploymentStuck(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sWorkloadAnomaliesDeploymentStuckConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sWorkloadAnomaliesDeploymentStuckConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sWorkloadAnomaliesDeploymentStuckConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesDeploymentStuckConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sWorkloadAnomaliesDeploymentStuckConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sWorkloadAnomaliesDeploymentStuckConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sWorkloadAnomaliesDeploymentStuckConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesHighCpuThrottling(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sWorkloadAnomaliesHighCpuThrottlingConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sWorkloadAnomaliesHighCpuThrottlingConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sWorkloadAnomaliesHighCpuThrottlingConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesHighCpuThrottlingConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sWorkloadAnomaliesHighCpuThrottlingConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sWorkloadAnomaliesHighCpuThrottlingConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sWorkloadAnomaliesHighCpuThrottlingConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesHighCpuUsage(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sWorkloadAnomaliesHighCpuUsageConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sWorkloadAnomaliesHighCpuUsageConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sWorkloadAnomaliesHighCpuUsageConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesHighCpuUsageConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sWorkloadAnomaliesHighCpuUsageConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sWorkloadAnomaliesHighCpuUsageConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sWorkloadAnomaliesHighCpuUsageConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesHighMemoryUsage(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sWorkloadAnomaliesHighMemoryUsageConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sWorkloadAnomaliesHighMemoryUsageConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sWorkloadAnomaliesHighMemoryUsageConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesHighMemoryUsageConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sWorkloadAnomaliesHighMemoryUsageConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sWorkloadAnomaliesHighMemoryUsageConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sWorkloadAnomaliesHighMemoryUsageConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesNotAllPodsReady(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sWorkloadAnomaliesNotAllPodsReadyConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sWorkloadAnomaliesNotAllPodsReadyConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sWorkloadAnomaliesNotAllPodsReadyConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesNotAllPodsReadyConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sWorkloadAnomaliesNotAllPodsReadyConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sWorkloadAnomaliesNotAllPodsReadyConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sWorkloadAnomaliesNotAllPodsReadyConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesPendingPods(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sWorkloadAnomaliesPendingPodsConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sWorkloadAnomaliesPendingPodsConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sWorkloadAnomaliesPendingPodsConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesPendingPodsConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sWorkloadAnomaliesPendingPodsConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sWorkloadAnomaliesPendingPodsConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sWorkloadAnomaliesPendingPodsConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int,
+                 threshold: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> int:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesPodStuckInTerminating(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sWorkloadAnomaliesPodStuckInTerminatingConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sWorkloadAnomaliesPodStuckInTerminatingConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sWorkloadAnomaliesPodStuckInTerminatingConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesPodStuckInTerminatingConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sWorkloadAnomaliesPodStuckInTerminatingConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sWorkloadAnomaliesPodStuckInTerminatingConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sWorkloadAnomaliesPodStuckInTerminatingConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesWorkloadWithoutReadyPods(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 configuration: Optional['outputs.K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfigurationArgs' configuration: Alert if
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration']:
+        """
+        Alert if
+        """
+        return pulumi.get(self, "configuration")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "observationPeriodInMinutes":
+            suggest = "observation_period_in_minutes"
+        elif key == "samplePeriodInMinutes":
+            suggest = "sample_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 observation_period_in_minutes: int,
+                 sample_period_in_minutes: int):
+        pulumi.set(__self__, "observation_period_in_minutes", observation_period_in_minutes)
+        pulumi.set(__self__, "sample_period_in_minutes", sample_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="observationPeriodInMinutes")
+    def observation_period_in_minutes(self) -> int:
+        return pulumi.get(self, "observation_period_in_minutes")
+
+    @property
+    @pulumi.getter(name="samplePeriodInMinutes")
+    def sample_period_in_minutes(self) -> int:
+        return pulumi.get(self, "sample_period_in_minutes")
+
+
+@pulumi.output_type
+class KubernetesEventPatterns(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventPatterns":
+            suggest = "event_patterns"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in KubernetesEventPatterns. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        KubernetesEventPatterns.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        KubernetesEventPatterns.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 event_patterns: Sequence['outputs.KubernetesEventPatternsEventPattern']):
+        pulumi.set(__self__, "event_patterns", event_patterns)
+
+    @property
+    @pulumi.getter(name="eventPatterns")
+    def event_patterns(self) -> Sequence['outputs.KubernetesEventPatternsEventPattern']:
+        return pulumi.get(self, "event_patterns")
+
+
+@pulumi.output_type
+class KubernetesEventPatternsEventPattern(dict):
+    def __init__(__self__, *,
+                 active: bool,
+                 label: str,
+                 pattern: str):
+        pulumi.set(__self__, "active", active)
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "pattern", pattern)
+
+    @property
+    @pulumi.getter
+    def active(self) -> bool:
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def label(self) -> str:
+        return pulumi.get(self, "label")
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> str:
+        return pulumi.get(self, "pattern")
+
+
+@pulumi.output_type
+class LogCustomSourceContext(dict):
+    def __init__(__self__, *,
+                 contexts: Sequence['outputs.LogCustomSourceContextContext']):
+        """
+        :param Sequence['LogCustomSourceContextContextArgs'] contexts: Define Custom Log Source only within context if provided
+        """
+        pulumi.set(__self__, "contexts", contexts)
+
+    @property
+    @pulumi.getter
+    def contexts(self) -> Sequence['outputs.LogCustomSourceContextContext']:
+        """
+        Define Custom Log Source only within context if provided
+        """
+        return pulumi.get(self, "contexts")
+
+
+@pulumi.output_type
+class LogCustomSourceContextContext(dict):
+    def __init__(__self__, *,
+                 attribute: str,
+                 values: Sequence[str]):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> str:
+        return pulumi.get(self, "attribute")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class LogCustomSourceCustomLogSource(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 values: Sequence[str]):
+        """
+        :param str type: Possible Values: `LOG_PATH_PATTERN`, `WINDOWS_EVENT_LOG`
+        :param Sequence[str] values: It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Possible Values: `LOG_PATH_PATTERN`, `WINDOWS_EVENT_LOG`
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        """
+        It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class LogEventsEventTemplate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventType":
+            suggest = "event_type"
+        elif key == "davisMerge":
+            suggest = "davis_merge"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LogEventsEventTemplate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LogEventsEventTemplate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LogEventsEventTemplate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: str,
+                 event_type: str,
+                 title: str,
+                 davis_merge: Optional[bool] = None,
+                 metadata: Optional['outputs.LogEventsEventTemplateMetadata'] = None):
+        """
+        :param str description: The description of the event to trigger.
+        :param str event_type: Possible Values: `AVAILABILITY`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `ERROR`, `INFO`, `MARKED_FOR_TERMINATION`, `RESOURCE`, `SLOWDOWN`
+        :param str title: The title of the event to trigger.
+        :param bool davis_merge: Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created.
+        :param 'LogEventsEventTemplateMetadataArgs' metadata: Set of additional key-value properties to be attached to the triggered event.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "event_type", event_type)
+        pulumi.set(__self__, "title", title)
+        if davis_merge is not None:
+            pulumi.set(__self__, "davis_merge", davis_merge)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the event to trigger.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="eventType")
+    def event_type(self) -> str:
+        """
+        Possible Values: `AVAILABILITY`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `ERROR`, `INFO`, `MARKED_FOR_TERMINATION`, `RESOURCE`, `SLOWDOWN`
+        """
+        return pulumi.get(self, "event_type")
+
+    @property
+    @pulumi.getter
+    def title(self) -> str:
+        """
+        The title of the event to trigger.
+        """
+        return pulumi.get(self, "title")
+
+    @property
+    @pulumi.getter(name="davisMerge")
+    def davis_merge(self) -> Optional[bool]:
+        """
+        Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created.
+        """
+        return pulumi.get(self, "davis_merge")
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> Optional['outputs.LogEventsEventTemplateMetadata']:
+        """
+        Set of additional key-value properties to be attached to the triggered event.
+        """
+        return pulumi.get(self, "metadata")
+
+
+@pulumi.output_type
+class LogEventsEventTemplateMetadata(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.LogEventsEventTemplateMetadataItem']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.LogEventsEventTemplateMetadataItem']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class LogEventsEventTemplateMetadataItem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metadataKey":
+            suggest = "metadata_key"
+        elif key == "metadataValue":
+            suggest = "metadata_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LogEventsEventTemplateMetadataItem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LogEventsEventTemplateMetadataItem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LogEventsEventTemplateMetadataItem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 metadata_key: str,
+                 metadata_value: str):
+        pulumi.set(__self__, "metadata_key", metadata_key)
+        pulumi.set(__self__, "metadata_value", metadata_value)
+
+    @property
+    @pulumi.getter(name="metadataKey")
+    def metadata_key(self) -> str:
+        return pulumi.get(self, "metadata_key")
+
+    @property
+    @pulumi.getter(name="metadataValue")
+    def metadata_value(self) -> str:
+        return pulumi.get(self, "metadata_value")
+
+
+@pulumi.output_type
+class LogProcessingProcessorDefinition(dict):
+    def __init__(__self__, *,
+                 rule: str):
+        pulumi.set(__self__, "rule", rule)
+
+    @property
+    @pulumi.getter
+    def rule(self) -> str:
+        return pulumi.get(self, "rule")
+
+
+@pulumi.output_type
+class LogProcessingRuleTesting(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sampleLog":
+            suggest = "sample_log"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LogProcessingRuleTesting. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LogProcessingRuleTesting.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LogProcessingRuleTesting.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 sample_log: str):
+        pulumi.set(__self__, "sample_log", sample_log)
+
+    @property
+    @pulumi.getter(name="sampleLog")
+    def sample_log(self) -> str:
+        return pulumi.get(self, "sample_log")
+
+
+@pulumi.output_type
+class LogSensitiveDataMaskingMasking(dict):
+    def __init__(__self__, *,
+                 expression: str,
+                 type: str,
+                 replacement: Optional[str] = None):
+        """
+        :param str expression: Maximum one capture group is allowed. If none was given, the whole expression will be treated as a capture group.
+        :param str type: Possible Values: `SHA1`, `STRING`
+        :param str replacement: The string to replace the masked expression with. Irrelevant if `type` is `SHA1`.
+        """
+        pulumi.set(__self__, "expression", expression)
+        pulumi.set(__self__, "type", type)
+        if replacement is not None:
+            pulumi.set(__self__, "replacement", replacement)
+
+    @property
+    @pulumi.getter
+    def expression(self) -> str:
+        """
+        Maximum one capture group is allowed. If none was given, the whole expression will be treated as a capture group.
+        """
+        return pulumi.get(self, "expression")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Possible Values: `SHA1`, `STRING`
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def replacement(self) -> Optional[str]:
+        """
+        The string to replace the masked expression with. Irrelevant if `type` is `SHA1`.
+        """
+        return pulumi.get(self, "replacement")
+
+
+@pulumi.output_type
+class LogSensitiveDataMaskingMatchers(dict):
+    def __init__(__self__, *,
+                 matchers: Sequence['outputs.LogSensitiveDataMaskingMatchersMatcher']):
+        pulumi.set(__self__, "matchers", matchers)
+
+    @property
+    @pulumi.getter
+    def matchers(self) -> Sequence['outputs.LogSensitiveDataMaskingMatchersMatcher']:
+        return pulumi.get(self, "matchers")
+
+
+@pulumi.output_type
+class LogSensitiveDataMaskingMatchersMatcher(dict):
+    def __init__(__self__, *,
+                 attribute: str,
+                 operator: str,
+                 values: Sequence[str]):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> str:
+        return pulumi.get(self, "attribute")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> str:
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class LogStorageMatchers(dict):
+    def __init__(__self__, *,
+                 matchers: Sequence['outputs.LogStorageMatchersMatcher']):
+        pulumi.set(__self__, "matchers", matchers)
+
+    @property
+    @pulumi.getter
+    def matchers(self) -> Sequence['outputs.LogStorageMatchersMatcher']:
+        return pulumi.get(self, "matchers")
+
+
+@pulumi.output_type
+class LogStorageMatchersMatcher(dict):
+    def __init__(__self__, *,
+                 attribute: str,
+                 operator: str,
+                 values: Sequence[str]):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> str:
+        return pulumi.get(self, "attribute")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> str:
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class LogTimestampMatchers(dict):
+    def __init__(__self__, *,
+                 matchers: Sequence['outputs.LogTimestampMatchersMatcher']):
+        pulumi.set(__self__, "matchers", matchers)
+
+    @property
+    @pulumi.getter
+    def matchers(self) -> Sequence['outputs.LogTimestampMatchersMatcher']:
+        return pulumi.get(self, "matchers")
+
+
+@pulumi.output_type
+class LogTimestampMatchersMatcher(dict):
+    def __init__(__self__, *,
+                 attribute: str,
+                 operator: str,
+                 values: Sequence[str]):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> str:
+        return pulumi.get(self, "attribute")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> str:
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
 
 
 @pulumi.output_type
@@ -21555,70 +32791,6 @@ class MaintenanceScheduleWeeklyRecurrenceTimeWindow(dict):
 
 
 @pulumi.output_type
-class MaintenanceWindowMetadata(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "clusterVersion":
-            suggest = "cluster_version"
-        elif key == "configurationVersions":
-            suggest = "configuration_versions"
-        elif key == "currentConfigurationVersions":
-            suggest = "current_configuration_versions"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in MaintenanceWindowMetadata. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        MaintenanceWindowMetadata.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        MaintenanceWindowMetadata.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 cluster_version: Optional[str] = None,
-                 configuration_versions: Optional[Sequence[int]] = None,
-                 current_configuration_versions: Optional[Sequence[str]] = None):
-        """
-        :param str cluster_version: Dynatrace server version
-        :param Sequence[int] configuration_versions: A Sorted list of the version numbers of the configuration
-        :param Sequence[str] current_configuration_versions: A Sorted list of the version numbers of the configuration
-        """
-        if cluster_version is not None:
-            pulumi.set(__self__, "cluster_version", cluster_version)
-        if configuration_versions is not None:
-            pulumi.set(__self__, "configuration_versions", configuration_versions)
-        if current_configuration_versions is not None:
-            pulumi.set(__self__, "current_configuration_versions", current_configuration_versions)
-
-    @property
-    @pulumi.getter(name="clusterVersion")
-    def cluster_version(self) -> Optional[str]:
-        """
-        Dynatrace server version
-        """
-        return pulumi.get(self, "cluster_version")
-
-    @property
-    @pulumi.getter(name="configurationVersions")
-    def configuration_versions(self) -> Optional[Sequence[int]]:
-        """
-        A Sorted list of the version numbers of the configuration
-        """
-        return pulumi.get(self, "configuration_versions")
-
-    @property
-    @pulumi.getter(name="currentConfigurationVersions")
-    def current_configuration_versions(self) -> Optional[Sequence[str]]:
-        """
-        A Sorted list of the version numbers of the configuration
-        """
-        return pulumi.get(self, "current_configuration_versions")
-
-
-@pulumi.output_type
 class MaintenanceWindowSchedule(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -22064,56 +33236,6 @@ class ManagementZoneEntitySelectorBasedRule(dict):
     @pulumi.getter
     def unknowns(self) -> Optional[str]:
         return pulumi.get(self, "unknowns")
-
-
-@pulumi.output_type
-class ManagementZoneMetadata(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "clusterVersion":
-            suggest = "cluster_version"
-        elif key == "configurationVersions":
-            suggest = "configuration_versions"
-        elif key == "currentConfigurationVersions":
-            suggest = "current_configuration_versions"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in ManagementZoneMetadata. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        ManagementZoneMetadata.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        ManagementZoneMetadata.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 cluster_version: Optional[str] = None,
-                 configuration_versions: Optional[Sequence[int]] = None,
-                 current_configuration_versions: Optional[Sequence[str]] = None):
-        if cluster_version is not None:
-            pulumi.set(__self__, "cluster_version", cluster_version)
-        if configuration_versions is not None:
-            pulumi.set(__self__, "configuration_versions", configuration_versions)
-        if current_configuration_versions is not None:
-            pulumi.set(__self__, "current_configuration_versions", current_configuration_versions)
-
-    @property
-    @pulumi.getter(name="clusterVersion")
-    def cluster_version(self) -> Optional[str]:
-        return pulumi.get(self, "cluster_version")
-
-    @property
-    @pulumi.getter(name="configurationVersions")
-    def configuration_versions(self) -> Optional[Sequence[int]]:
-        return pulumi.get(self, "configuration_versions")
-
-    @property
-    @pulumi.getter(name="currentConfigurationVersions")
-    def current_configuration_versions(self) -> Optional[Sequence[str]]:
-        return pulumi.get(self, "current_configuration_versions")
 
 
 @pulumi.output_type
@@ -25926,6 +37048,1984 @@ class ManagementZoneRuleConditionTechValue(dict):
 
 
 @pulumi.output_type
+class ManagementZoneV2Rules(dict):
+    def __init__(__self__, *,
+                 rules: Optional[Sequence['outputs.ManagementZoneV2RulesRule']] = None):
+        """
+        :param Sequence['ManagementZoneV2RulesRuleArgs'] rules: A management zone rule
+        """
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Optional[Sequence['outputs.ManagementZoneV2RulesRule']]:
+        """
+        A management zone rule
+        """
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class ManagementZoneV2RulesRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attributeRule":
+            suggest = "attribute_rule"
+        elif key == "dimensionRule":
+            suggest = "dimension_rule"
+        elif key == "entitySelector":
+            suggest = "entity_selector"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagementZoneV2RulesRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagementZoneV2RulesRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagementZoneV2RulesRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 type: str,
+                 attribute_rule: Optional['outputs.ManagementZoneV2RulesRuleAttributeRule'] = None,
+                 dimension_rule: Optional['outputs.ManagementZoneV2RulesRuleDimensionRule'] = None,
+                 entity_selector: Optional[str] = None):
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "type", type)
+        if attribute_rule is not None:
+            pulumi.set(__self__, "attribute_rule", attribute_rule)
+        if dimension_rule is not None:
+            pulumi.set(__self__, "dimension_rule", dimension_rule)
+        if entity_selector is not None:
+            pulumi.set(__self__, "entity_selector", entity_selector)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="attributeRule")
+    def attribute_rule(self) -> Optional['outputs.ManagementZoneV2RulesRuleAttributeRule']:
+        return pulumi.get(self, "attribute_rule")
+
+    @property
+    @pulumi.getter(name="dimensionRule")
+    def dimension_rule(self) -> Optional['outputs.ManagementZoneV2RulesRuleDimensionRule']:
+        return pulumi.get(self, "dimension_rule")
+
+    @property
+    @pulumi.getter(name="entitySelector")
+    def entity_selector(self) -> Optional[str]:
+        return pulumi.get(self, "entity_selector")
+
+
+@pulumi.output_type
+class ManagementZoneV2RulesRuleAttributeRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attributeConditions":
+            suggest = "attribute_conditions"
+        elif key == "entityType":
+            suggest = "entity_type"
+        elif key == "azureToPgpropagation":
+            suggest = "azure_to_pgpropagation"
+        elif key == "azureToServicePropagation":
+            suggest = "azure_to_service_propagation"
+        elif key == "customDeviceGroupToCustomDevicePropagation":
+            suggest = "custom_device_group_to_custom_device_propagation"
+        elif key == "hostToPgpropagation":
+            suggest = "host_to_pgpropagation"
+        elif key == "pgToHostPropagation":
+            suggest = "pg_to_host_propagation"
+        elif key == "pgToServicePropagation":
+            suggest = "pg_to_service_propagation"
+        elif key == "serviceToHostPropagation":
+            suggest = "service_to_host_propagation"
+        elif key == "serviceToPgpropagation":
+            suggest = "service_to_pgpropagation"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagementZoneV2RulesRuleAttributeRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagementZoneV2RulesRuleAttributeRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagementZoneV2RulesRuleAttributeRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attribute_conditions: 'outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditions',
+                 entity_type: str,
+                 azure_to_pgpropagation: Optional[bool] = None,
+                 azure_to_service_propagation: Optional[bool] = None,
+                 custom_device_group_to_custom_device_propagation: Optional[bool] = None,
+                 host_to_pgpropagation: Optional[bool] = None,
+                 pg_to_host_propagation: Optional[bool] = None,
+                 pg_to_service_propagation: Optional[bool] = None,
+                 service_to_host_propagation: Optional[bool] = None,
+                 service_to_pgpropagation: Optional[bool] = None):
+        pulumi.set(__self__, "attribute_conditions", attribute_conditions)
+        pulumi.set(__self__, "entity_type", entity_type)
+        if azure_to_pgpropagation is not None:
+            pulumi.set(__self__, "azure_to_pgpropagation", azure_to_pgpropagation)
+        if azure_to_service_propagation is not None:
+            pulumi.set(__self__, "azure_to_service_propagation", azure_to_service_propagation)
+        if custom_device_group_to_custom_device_propagation is not None:
+            pulumi.set(__self__, "custom_device_group_to_custom_device_propagation", custom_device_group_to_custom_device_propagation)
+        if host_to_pgpropagation is not None:
+            pulumi.set(__self__, "host_to_pgpropagation", host_to_pgpropagation)
+        if pg_to_host_propagation is not None:
+            pulumi.set(__self__, "pg_to_host_propagation", pg_to_host_propagation)
+        if pg_to_service_propagation is not None:
+            pulumi.set(__self__, "pg_to_service_propagation", pg_to_service_propagation)
+        if service_to_host_propagation is not None:
+            pulumi.set(__self__, "service_to_host_propagation", service_to_host_propagation)
+        if service_to_pgpropagation is not None:
+            pulumi.set(__self__, "service_to_pgpropagation", service_to_pgpropagation)
+
+    @property
+    @pulumi.getter(name="attributeConditions")
+    def attribute_conditions(self) -> 'outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditions':
+        return pulumi.get(self, "attribute_conditions")
+
+    @property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> str:
+        return pulumi.get(self, "entity_type")
+
+    @property
+    @pulumi.getter(name="azureToPgpropagation")
+    def azure_to_pgpropagation(self) -> Optional[bool]:
+        return pulumi.get(self, "azure_to_pgpropagation")
+
+    @property
+    @pulumi.getter(name="azureToServicePropagation")
+    def azure_to_service_propagation(self) -> Optional[bool]:
+        return pulumi.get(self, "azure_to_service_propagation")
+
+    @property
+    @pulumi.getter(name="customDeviceGroupToCustomDevicePropagation")
+    def custom_device_group_to_custom_device_propagation(self) -> Optional[bool]:
+        return pulumi.get(self, "custom_device_group_to_custom_device_propagation")
+
+    @property
+    @pulumi.getter(name="hostToPgpropagation")
+    def host_to_pgpropagation(self) -> Optional[bool]:
+        return pulumi.get(self, "host_to_pgpropagation")
+
+    @property
+    @pulumi.getter(name="pgToHostPropagation")
+    def pg_to_host_propagation(self) -> Optional[bool]:
+        return pulumi.get(self, "pg_to_host_propagation")
+
+    @property
+    @pulumi.getter(name="pgToServicePropagation")
+    def pg_to_service_propagation(self) -> Optional[bool]:
+        return pulumi.get(self, "pg_to_service_propagation")
+
+    @property
+    @pulumi.getter(name="serviceToHostPropagation")
+    def service_to_host_propagation(self) -> Optional[bool]:
+        return pulumi.get(self, "service_to_host_propagation")
+
+    @property
+    @pulumi.getter(name="serviceToPgpropagation")
+    def service_to_pgpropagation(self) -> Optional[bool]:
+        return pulumi.get(self, "service_to_pgpropagation")
+
+
+@pulumi.output_type
+class ManagementZoneV2RulesRuleAttributeRuleAttributeConditions(dict):
+    def __init__(__self__, *,
+                 conditions: Optional[Sequence['outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition']] = None):
+        if conditions is not None:
+            pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Optional[Sequence['outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition']]:
+        return pulumi.get(self, "conditions")
+
+
+@pulumi.output_type
+class ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "caseSensitive":
+            suggest = "case_sensitive"
+        elif key == "dynamicKey":
+            suggest = "dynamic_key"
+        elif key == "dynamicKeySource":
+            suggest = "dynamic_key_source"
+        elif key == "entityId":
+            suggest = "entity_id"
+        elif key == "enumValue":
+            suggest = "enum_value"
+        elif key == "integerValue":
+            suggest = "integer_value"
+        elif key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: str,
+                 operator: str,
+                 case_sensitive: Optional[bool] = None,
+                 dynamic_key: Optional[str] = None,
+                 dynamic_key_source: Optional[str] = None,
+                 entity_id: Optional[str] = None,
+                 enum_value: Optional[str] = None,
+                 integer_value: Optional[int] = None,
+                 string_value: Optional[str] = None,
+                 tag: Optional[str] = None):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "operator", operator)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if dynamic_key is not None:
+            pulumi.set(__self__, "dynamic_key", dynamic_key)
+        if dynamic_key_source is not None:
+            pulumi.set(__self__, "dynamic_key_source", dynamic_key_source)
+        if entity_id is not None:
+            pulumi.set(__self__, "entity_id", entity_id)
+        if enum_value is not None:
+            pulumi.set(__self__, "enum_value", enum_value)
+        if integer_value is not None:
+            pulumi.set(__self__, "integer_value", integer_value)
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+        if tag is not None:
+            pulumi.set(__self__, "tag", tag)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> str:
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter(name="dynamicKey")
+    def dynamic_key(self) -> Optional[str]:
+        return pulumi.get(self, "dynamic_key")
+
+    @property
+    @pulumi.getter(name="dynamicKeySource")
+    def dynamic_key_source(self) -> Optional[str]:
+        return pulumi.get(self, "dynamic_key_source")
+
+    @property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> Optional[str]:
+        return pulumi.get(self, "entity_id")
+
+    @property
+    @pulumi.getter(name="enumValue")
+    def enum_value(self) -> Optional[str]:
+        return pulumi.get(self, "enum_value")
+
+    @property
+    @pulumi.getter(name="integerValue")
+    def integer_value(self) -> Optional[int]:
+        return pulumi.get(self, "integer_value")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        return pulumi.get(self, "string_value")
+
+    @property
+    @pulumi.getter
+    def tag(self) -> Optional[str]:
+        return pulumi.get(self, "tag")
+
+
+@pulumi.output_type
+class ManagementZoneV2RulesRuleDimensionRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "appliesTo":
+            suggest = "applies_to"
+        elif key == "dimensionConditions":
+            suggest = "dimension_conditions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagementZoneV2RulesRuleDimensionRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagementZoneV2RulesRuleDimensionRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagementZoneV2RulesRuleDimensionRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 applies_to: str,
+                 dimension_conditions: Optional['outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditions'] = None):
+        pulumi.set(__self__, "applies_to", applies_to)
+        if dimension_conditions is not None:
+            pulumi.set(__self__, "dimension_conditions", dimension_conditions)
+
+    @property
+    @pulumi.getter(name="appliesTo")
+    def applies_to(self) -> str:
+        return pulumi.get(self, "applies_to")
+
+    @property
+    @pulumi.getter(name="dimensionConditions")
+    def dimension_conditions(self) -> Optional['outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditions']:
+        return pulumi.get(self, "dimension_conditions")
+
+
+@pulumi.output_type
+class ManagementZoneV2RulesRuleDimensionRuleDimensionConditions(dict):
+    def __init__(__self__, *,
+                 conditions: Optional[Sequence['outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition']] = None):
+        if conditions is not None:
+            pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Optional[Sequence['outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition']]:
+        return pulumi.get(self, "conditions")
+
+
+@pulumi.output_type
+class ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "conditionType":
+            suggest = "condition_type"
+        elif key == "ruleMatcher":
+            suggest = "rule_matcher"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition_type: str,
+                 rule_matcher: str,
+                 value: str,
+                 key: Optional[str] = None):
+        pulumi.set(__self__, "condition_type", condition_type)
+        pulumi.set(__self__, "rule_matcher", rule_matcher)
+        pulumi.set(__self__, "value", value)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter(name="conditionType")
+    def condition_type(self) -> str:
+        return pulumi.get(self, "condition_type")
+
+    @property
+    @pulumi.getter(name="ruleMatcher")
+    def rule_matcher(self) -> str:
+        return pulumi.get(self, "rule_matcher")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class MetricEventsEventTemplate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventType":
+            suggest = "event_type"
+        elif key == "davisMerge":
+            suggest = "davis_merge"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MetricEventsEventTemplate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MetricEventsEventTemplate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MetricEventsEventTemplate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: str,
+                 event_type: str,
+                 title: str,
+                 davis_merge: Optional[bool] = None,
+                 metadatas: Optional[Sequence['outputs.MetricEventsEventTemplateMetadata']] = None):
+        """
+        :param str description: The description of the event to trigger.
+        :param str event_type: The event type to trigger.
+        :param str title: The title of the event to trigger.
+        :param bool davis_merge: Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created.
+        :param Sequence['MetricEventsEventTemplateMetadataArgs'] metadatas: Set of additional key-value properties to be attached to the triggered event.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "event_type", event_type)
+        pulumi.set(__self__, "title", title)
+        if davis_merge is not None:
+            pulumi.set(__self__, "davis_merge", davis_merge)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the event to trigger.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="eventType")
+    def event_type(self) -> str:
+        """
+        The event type to trigger.
+        """
+        return pulumi.get(self, "event_type")
+
+    @property
+    @pulumi.getter
+    def title(self) -> str:
+        """
+        The title of the event to trigger.
+        """
+        return pulumi.get(self, "title")
+
+    @property
+    @pulumi.getter(name="davisMerge")
+    def davis_merge(self) -> Optional[bool]:
+        """
+        Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created.
+        """
+        return pulumi.get(self, "davis_merge")
+
+    @property
+    @pulumi.getter
+    def metadatas(self) -> Optional[Sequence['outputs.MetricEventsEventTemplateMetadata']]:
+        """
+        Set of additional key-value properties to be attached to the triggered event.
+        """
+        return pulumi.get(self, "metadatas")
+
+
+@pulumi.output_type
+class MetricEventsEventTemplateMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metadataKey":
+            suggest = "metadata_key"
+        elif key == "metadataValue":
+            suggest = "metadata_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MetricEventsEventTemplateMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MetricEventsEventTemplateMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MetricEventsEventTemplateMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 metadata_key: str,
+                 metadata_value: str):
+        pulumi.set(__self__, "metadata_key", metadata_key)
+        pulumi.set(__self__, "metadata_value", metadata_value)
+
+    @property
+    @pulumi.getter(name="metadataKey")
+    def metadata_key(self) -> str:
+        return pulumi.get(self, "metadata_key")
+
+    @property
+    @pulumi.getter(name="metadataValue")
+    def metadata_value(self) -> str:
+        return pulumi.get(self, "metadata_value")
+
+
+@pulumi.output_type
+class MetricEventsModelProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "alertCondition":
+            suggest = "alert_condition"
+        elif key == "alertOnNoData":
+            suggest = "alert_on_no_data"
+        elif key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+        elif key == "signalFluctuation":
+            suggest = "signal_fluctuation"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MetricEventsModelProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MetricEventsModelProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MetricEventsModelProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 alert_condition: str,
+                 alert_on_no_data: bool,
+                 dealerting_samples: int,
+                 samples: int,
+                 type: str,
+                 violating_samples: int,
+                 signal_fluctuation: Optional[float] = None,
+                 threshold: Optional[float] = None,
+                 tolerance: Optional[float] = None):
+        """
+        :param str alert_condition: The alert condition of the model properties
+        :param bool alert_on_no_data: The ability to set an alert on missing data in a metric. When enabled, missing data samples will contribute as violating samples defined in advanced model properties. We recommend to not alert on missing data for sparse timeseries as this leads to alert spam.
+        :param int dealerting_samples: The number of one-minute samples within the evaluation window that must go back to normal to close the event.
+        :param int samples: The number of one-minute samples that form the sliding evaluation window.
+        :param str type: Metric-key-based query definitions only support static thresholds.
+        :param int violating_samples: The number of one-minute samples within the evaluation window that must violate to trigger an event.
+        :param float signal_fluctuation: Controls how many times the signal fluctuation is added to the baseline to produce the actual threshold for alerting
+        :param float threshold: Raise an event if this value is violated
+        :param float tolerance: Controls the width of the confidence band and larger values lead to a less sensitive model
+        """
+        pulumi.set(__self__, "alert_condition", alert_condition)
+        pulumi.set(__self__, "alert_on_no_data", alert_on_no_data)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "samples", samples)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+        if signal_fluctuation is not None:
+            pulumi.set(__self__, "signal_fluctuation", signal_fluctuation)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
+        if tolerance is not None:
+            pulumi.set(__self__, "tolerance", tolerance)
+
+    @property
+    @pulumi.getter(name="alertCondition")
+    def alert_condition(self) -> str:
+        """
+        The alert condition of the model properties
+        """
+        return pulumi.get(self, "alert_condition")
+
+    @property
+    @pulumi.getter(name="alertOnNoData")
+    def alert_on_no_data(self) -> bool:
+        """
+        The ability to set an alert on missing data in a metric. When enabled, missing data samples will contribute as violating samples defined in advanced model properties. We recommend to not alert on missing data for sparse timeseries as this leads to alert spam.
+        """
+        return pulumi.get(self, "alert_on_no_data")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> int:
+        """
+        The number of one-minute samples within the evaluation window that must go back to normal to close the event.
+        """
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter
+    def samples(self) -> int:
+        """
+        The number of one-minute samples that form the sliding evaluation window.
+        """
+        return pulumi.get(self, "samples")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Metric-key-based query definitions only support static thresholds.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        """
+        The number of one-minute samples within the evaluation window that must violate to trigger an event.
+        """
+        return pulumi.get(self, "violating_samples")
+
+    @property
+    @pulumi.getter(name="signalFluctuation")
+    def signal_fluctuation(self) -> Optional[float]:
+        """
+        Controls how many times the signal fluctuation is added to the baseline to produce the actual threshold for alerting
+        """
+        return pulumi.get(self, "signal_fluctuation")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> Optional[float]:
+        """
+        Raise an event if this value is violated
+        """
+        return pulumi.get(self, "threshold")
+
+    @property
+    @pulumi.getter
+    def tolerance(self) -> Optional[float]:
+        """
+        Controls the width of the confidence band and larger values lead to a less sensitive model
+        """
+        return pulumi.get(self, "tolerance")
+
+
+@pulumi.output_type
+class MetricEventsQueryDefinition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metricKey":
+            suggest = "metric_key"
+        elif key == "dimensionFilter":
+            suggest = "dimension_filter"
+        elif key == "entityFilter":
+            suggest = "entity_filter"
+        elif key == "metricSelector":
+            suggest = "metric_selector"
+        elif key == "queryOffset":
+            suggest = "query_offset"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MetricEventsQueryDefinition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MetricEventsQueryDefinition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MetricEventsQueryDefinition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 metric_key: str,
+                 type: str,
+                 aggregation: Optional[str] = None,
+                 dimension_filter: Optional['outputs.MetricEventsQueryDefinitionDimensionFilter'] = None,
+                 entity_filter: Optional['outputs.MetricEventsQueryDefinitionEntityFilter'] = None,
+                 metric_selector: Optional[str] = None,
+                 query_offset: Optional[int] = None):
+        """
+        :param str metric_key: The metric key of the query definition
+        :param str type: The type of query definition
+        :param str aggregation: The aggregation of the query definition
+        :param 'MetricEventsQueryDefinitionDimensionFilterArgs' dimension_filter: The dimension filters of the query definition
+        :param 'MetricEventsQueryDefinitionEntityFilterArgs' entity_filter: Use rule-based filters to define the scope this event monitors.
+        :param str metric_selector: To learn more, visit [Metric Selector](https://dt-url.net/metselad)
+        :param int query_offset: Minute offset of sliding evaluation window for metrics with latency
+        """
+        pulumi.set(__self__, "metric_key", metric_key)
+        pulumi.set(__self__, "type", type)
+        if aggregation is not None:
+            pulumi.set(__self__, "aggregation", aggregation)
+        if dimension_filter is not None:
+            pulumi.set(__self__, "dimension_filter", dimension_filter)
+        if entity_filter is not None:
+            pulumi.set(__self__, "entity_filter", entity_filter)
+        if metric_selector is not None:
+            pulumi.set(__self__, "metric_selector", metric_selector)
+        if query_offset is not None:
+            pulumi.set(__self__, "query_offset", query_offset)
+
+    @property
+    @pulumi.getter(name="metricKey")
+    def metric_key(self) -> str:
+        """
+        The metric key of the query definition
+        """
+        return pulumi.get(self, "metric_key")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of query definition
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def aggregation(self) -> Optional[str]:
+        """
+        The aggregation of the query definition
+        """
+        return pulumi.get(self, "aggregation")
+
+    @property
+    @pulumi.getter(name="dimensionFilter")
+    def dimension_filter(self) -> Optional['outputs.MetricEventsQueryDefinitionDimensionFilter']:
+        """
+        The dimension filters of the query definition
+        """
+        return pulumi.get(self, "dimension_filter")
+
+    @property
+    @pulumi.getter(name="entityFilter")
+    def entity_filter(self) -> Optional['outputs.MetricEventsQueryDefinitionEntityFilter']:
+        """
+        Use rule-based filters to define the scope this event monitors.
+        """
+        return pulumi.get(self, "entity_filter")
+
+    @property
+    @pulumi.getter(name="metricSelector")
+    def metric_selector(self) -> Optional[str]:
+        """
+        To learn more, visit [Metric Selector](https://dt-url.net/metselad)
+        """
+        return pulumi.get(self, "metric_selector")
+
+    @property
+    @pulumi.getter(name="queryOffset")
+    def query_offset(self) -> Optional[int]:
+        """
+        Minute offset of sliding evaluation window for metrics with latency
+        """
+        return pulumi.get(self, "query_offset")
+
+
+@pulumi.output_type
+class MetricEventsQueryDefinitionDimensionFilter(dict):
+    def __init__(__self__, *,
+                 filters: Optional[Sequence['outputs.MetricEventsQueryDefinitionDimensionFilterFilter']] = None):
+        if filters is not None:
+            pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Optional[Sequence['outputs.MetricEventsQueryDefinitionDimensionFilterFilter']]:
+        return pulumi.get(self, "filters")
+
+
+@pulumi.output_type
+class MetricEventsQueryDefinitionDimensionFilterFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dimensionKey":
+            suggest = "dimension_key"
+        elif key == "dimensionValue":
+            suggest = "dimension_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MetricEventsQueryDefinitionDimensionFilterFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MetricEventsQueryDefinitionDimensionFilterFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MetricEventsQueryDefinitionDimensionFilterFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dimension_key: str,
+                 dimension_value: str):
+        pulumi.set(__self__, "dimension_key", dimension_key)
+        pulumi.set(__self__, "dimension_value", dimension_value)
+
+    @property
+    @pulumi.getter(name="dimensionKey")
+    def dimension_key(self) -> str:
+        return pulumi.get(self, "dimension_key")
+
+    @property
+    @pulumi.getter(name="dimensionValue")
+    def dimension_value(self) -> str:
+        return pulumi.get(self, "dimension_value")
+
+
+@pulumi.output_type
+class MetricEventsQueryDefinitionEntityFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dimensionKey":
+            suggest = "dimension_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MetricEventsQueryDefinitionEntityFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MetricEventsQueryDefinitionEntityFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MetricEventsQueryDefinitionEntityFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 conditions: Optional[Sequence['outputs.MetricEventsQueryDefinitionEntityFilterCondition']] = None,
+                 dimension_key: Optional[str] = None):
+        if conditions is not None:
+            pulumi.set(__self__, "conditions", conditions)
+        if dimension_key is not None:
+            pulumi.set(__self__, "dimension_key", dimension_key)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Optional[Sequence['outputs.MetricEventsQueryDefinitionEntityFilterCondition']]:
+        return pulumi.get(self, "conditions")
+
+    @property
+    @pulumi.getter(name="dimensionKey")
+    def dimension_key(self) -> Optional[str]:
+        return pulumi.get(self, "dimension_key")
+
+
+@pulumi.output_type
+class MetricEventsQueryDefinitionEntityFilterCondition(dict):
+    def __init__(__self__, *,
+                 conditions: Optional[Sequence['outputs.MetricEventsQueryDefinitionEntityFilterConditionCondition']] = None):
+        if conditions is not None:
+            pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Optional[Sequence['outputs.MetricEventsQueryDefinitionEntityFilterConditionCondition']]:
+        return pulumi.get(self, "conditions")
+
+
+@pulumi.output_type
+class MetricEventsQueryDefinitionEntityFilterConditionCondition(dict):
+    def __init__(__self__, *,
+                 operator: str,
+                 type: str,
+                 value: str):
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def operator(self) -> str:
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class MetricMetadataDimensions(dict):
+    def __init__(__self__, *,
+                 dimensions: Sequence['outputs.MetricMetadataDimensionsDimension']):
+        pulumi.set(__self__, "dimensions", dimensions)
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Sequence['outputs.MetricMetadataDimensionsDimension']:
+        return pulumi.get(self, "dimensions")
+
+
+@pulumi.output_type
+class MetricMetadataDimensionsDimension(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MetricMetadataDimensionsDimension. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MetricMetadataDimensionsDimension.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MetricMetadataDimensionsDimension.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: str,
+                 display_name: Optional[str] = None):
+        """
+        :param str display_name: Display name
+        """
+        pulumi.set(__self__, "key", key)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        Display name
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class MetricMetadataMetricProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "valueType":
+            suggest = "value_type"
+        elif key == "impactRelevant":
+            suggest = "impact_relevant"
+        elif key == "maxValue":
+            suggest = "max_value"
+        elif key == "minValue":
+            suggest = "min_value"
+        elif key == "rootCauseRelevant":
+            suggest = "root_cause_relevant"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MetricMetadataMetricProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MetricMetadataMetricProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MetricMetadataMetricProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 value_type: str,
+                 impact_relevant: Optional[bool] = None,
+                 latency: Optional[int] = None,
+                 max_value: Optional[float] = None,
+                 min_value: Optional[float] = None,
+                 root_cause_relevant: Optional[bool] = None):
+        """
+        :param str value_type: Possible Values: `Error`, `Score`, `Unknown`
+        :param bool impact_relevant: Whether (true or false) the metric is relevant to a problem's impact.
+        """
+        pulumi.set(__self__, "value_type", value_type)
+        if impact_relevant is not None:
+            pulumi.set(__self__, "impact_relevant", impact_relevant)
+        if latency is not None:
+            pulumi.set(__self__, "latency", latency)
+        if max_value is not None:
+            pulumi.set(__self__, "max_value", max_value)
+        if min_value is not None:
+            pulumi.set(__self__, "min_value", min_value)
+        if root_cause_relevant is not None:
+            pulumi.set(__self__, "root_cause_relevant", root_cause_relevant)
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> str:
+        """
+        Possible Values: `Error`, `Score`, `Unknown`
+        """
+        return pulumi.get(self, "value_type")
+
+    @property
+    @pulumi.getter(name="impactRelevant")
+    def impact_relevant(self) -> Optional[bool]:
+        """
+        Whether (true or false) the metric is relevant to a problem's impact.
+        """
+        return pulumi.get(self, "impact_relevant")
+
+    @property
+    @pulumi.getter
+    def latency(self) -> Optional[int]:
+        return pulumi.get(self, "latency")
+
+    @property
+    @pulumi.getter(name="maxValue")
+    def max_value(self) -> Optional[float]:
+        return pulumi.get(self, "max_value")
+
+    @property
+    @pulumi.getter(name="minValue")
+    def min_value(self) -> Optional[float]:
+        return pulumi.get(self, "min_value")
+
+    @property
+    @pulumi.getter(name="rootCauseRelevant")
+    def root_cause_relevant(self) -> Optional[bool]:
+        return pulumi.get(self, "root_cause_relevant")
+
+
+@pulumi.output_type
+class MobileAppAnomaliesErrorRateIncrease(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "detectionMode":
+            suggest = "detection_mode"
+        elif key == "errorRateIncreaseAuto":
+            suggest = "error_rate_increase_auto"
+        elif key == "errorRateIncreaseFixed":
+            suggest = "error_rate_increase_fixed"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppAnomaliesErrorRateIncrease. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppAnomaliesErrorRateIncrease.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppAnomaliesErrorRateIncrease.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 detection_mode: Optional[str] = None,
+                 error_rate_increase_auto: Optional['outputs.MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto'] = None,
+                 error_rate_increase_fixed: Optional['outputs.MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param str detection_mode: Possible Values: `Auto`, `Fixed`
+        :param 'MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs' error_rate_increase_auto: Alert if the percentage of user actions affected by reported errors exceeds **both** the absolute threshold and the relative threshold
+        :param 'MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixedArgs' error_rate_increase_fixed: Alert if the custom reported error rate threshold is exceeded during any 5-minute period
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if error_rate_increase_auto is not None:
+            pulumi.set(__self__, "error_rate_increase_auto", error_rate_increase_auto)
+        if error_rate_increase_fixed is not None:
+            pulumi.set(__self__, "error_rate_increase_fixed", error_rate_increase_fixed)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @property
+    @pulumi.getter(name="errorRateIncreaseAuto")
+    def error_rate_increase_auto(self) -> Optional['outputs.MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto']:
+        """
+        Alert if the percentage of user actions affected by reported errors exceeds **both** the absolute threshold and the relative threshold
+        """
+        return pulumi.get(self, "error_rate_increase_auto")
+
+    @property
+    @pulumi.getter(name="errorRateIncreaseFixed")
+    def error_rate_increase_fixed(self) -> Optional['outputs.MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed']:
+        """
+        Alert if the custom reported error rate threshold is exceeded during any 5-minute period
+        """
+        return pulumi.get(self, "error_rate_increase_fixed")
+
+
+@pulumi.output_type
+class MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "thresholdAbsolute":
+            suggest = "threshold_absolute"
+        elif key == "thresholdRelative":
+            suggest = "threshold_relative"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 threshold_absolute: float,
+                 threshold_relative: float):
+        pulumi.set(__self__, "threshold_absolute", threshold_absolute)
+        pulumi.set(__self__, "threshold_relative", threshold_relative)
+
+    @property
+    @pulumi.getter(name="thresholdAbsolute")
+    def threshold_absolute(self) -> float:
+        return pulumi.get(self, "threshold_absolute")
+
+    @property
+    @pulumi.getter(name="thresholdRelative")
+    def threshold_relative(self) -> float:
+        return pulumi.get(self, "threshold_relative")
+
+
+@pulumi.output_type
+class MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "thresholdAbsolute":
+            suggest = "threshold_absolute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 sensitivity: str,
+                 threshold_absolute: float):
+        pulumi.set(__self__, "sensitivity", sensitivity)
+        pulumi.set(__self__, "threshold_absolute", threshold_absolute)
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> str:
+        return pulumi.get(self, "sensitivity")
+
+    @property
+    @pulumi.getter(name="thresholdAbsolute")
+    def threshold_absolute(self) -> float:
+        return pulumi.get(self, "threshold_absolute")
+
+
+@pulumi.output_type
+class MobileAppAnomaliesSlowUserActions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "detectionMode":
+            suggest = "detection_mode"
+        elif key == "slowUserActionsAuto":
+            suggest = "slow_user_actions_auto"
+        elif key == "slowUserActionsFixed":
+            suggest = "slow_user_actions_fixed"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppAnomaliesSlowUserActions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppAnomaliesSlowUserActions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppAnomaliesSlowUserActions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 detection_mode: Optional[str] = None,
+                 slow_user_actions_auto: Optional['outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAuto'] = None,
+                 slow_user_actions_fixed: Optional['outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixed'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param str detection_mode: Possible Values: `Auto`, `Fixed`
+        :param 'MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoArgs' slow_user_actions_auto: no documentation available
+        :param 'MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedArgs' slow_user_actions_fixed: no documentation available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if slow_user_actions_auto is not None:
+            pulumi.set(__self__, "slow_user_actions_auto", slow_user_actions_auto)
+        if slow_user_actions_fixed is not None:
+            pulumi.set(__self__, "slow_user_actions_fixed", slow_user_actions_fixed)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @property
+    @pulumi.getter(name="slowUserActionsAuto")
+    def slow_user_actions_auto(self) -> Optional['outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAuto']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "slow_user_actions_auto")
+
+    @property
+    @pulumi.getter(name="slowUserActionsFixed")
+    def slow_user_actions_fixed(self) -> Optional['outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixed']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "slow_user_actions_fixed")
+
+
+@pulumi.output_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsAuto(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationAvoidOveralerting":
+            suggest = "duration_avoid_overalerting"
+        elif key == "durationThresholdAll":
+            suggest = "duration_threshold_all"
+        elif key == "durationThresholdSlowest":
+            suggest = "duration_threshold_slowest"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppAnomaliesSlowUserActionsSlowUserActionsAuto. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsAuto.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsAuto.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration_avoid_overalerting: 'outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting',
+                 duration_threshold_all: 'outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll',
+                 duration_threshold_slowest: 'outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest'):
+        pulumi.set(__self__, "duration_avoid_overalerting", duration_avoid_overalerting)
+        pulumi.set(__self__, "duration_threshold_all", duration_threshold_all)
+        pulumi.set(__self__, "duration_threshold_slowest", duration_threshold_slowest)
+
+    @property
+    @pulumi.getter(name="durationAvoidOveralerting")
+    def duration_avoid_overalerting(self) -> 'outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting':
+        return pulumi.get(self, "duration_avoid_overalerting")
+
+    @property
+    @pulumi.getter(name="durationThresholdAll")
+    def duration_threshold_all(self) -> 'outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll':
+        return pulumi.get(self, "duration_threshold_all")
+
+    @property
+    @pulumi.getter(name="durationThresholdSlowest")
+    def duration_threshold_slowest(self) -> 'outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest':
+        return pulumi.get(self, "duration_threshold_slowest")
+
+
+@pulumi.output_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "minActionRate":
+            suggest = "min_action_rate"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 min_action_rate: int):
+        pulumi.set(__self__, "min_action_rate", min_action_rate)
+
+    @property
+    @pulumi.getter(name="minActionRate")
+    def min_action_rate(self) -> int:
+        return pulumi.get(self, "min_action_rate")
+
+
+@pulumi.output_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationThreshold":
+            suggest = "duration_threshold"
+        elif key == "slowdownPercentage":
+            suggest = "slowdown_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration_threshold: float,
+                 slowdown_percentage: float):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+        pulumi.set(__self__, "slowdown_percentage", slowdown_percentage)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> float:
+        return pulumi.get(self, "duration_threshold")
+
+    @property
+    @pulumi.getter(name="slowdownPercentage")
+    def slowdown_percentage(self) -> float:
+        return pulumi.get(self, "slowdown_percentage")
+
+
+@pulumi.output_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationThreshold":
+            suggest = "duration_threshold"
+        elif key == "slowdownPercentage":
+            suggest = "slowdown_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration_threshold: float,
+                 slowdown_percentage: float):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+        pulumi.set(__self__, "slowdown_percentage", slowdown_percentage)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> float:
+        return pulumi.get(self, "duration_threshold")
+
+    @property
+    @pulumi.getter(name="slowdownPercentage")
+    def slowdown_percentage(self) -> float:
+        return pulumi.get(self, "slowdown_percentage")
+
+
+@pulumi.output_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsFixed(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationAvoidOveralerting":
+            suggest = "duration_avoid_overalerting"
+        elif key == "durationThresholdAllFixed":
+            suggest = "duration_threshold_all_fixed"
+        elif key == "durationThresholdSlowest":
+            suggest = "duration_threshold_slowest"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppAnomaliesSlowUserActionsSlowUserActionsFixed. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsFixed.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsFixed.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration_avoid_overalerting: 'outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting',
+                 duration_threshold_all_fixed: 'outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed',
+                 duration_threshold_slowest: 'outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest',
+                 sensitivity: str):
+        pulumi.set(__self__, "duration_avoid_overalerting", duration_avoid_overalerting)
+        pulumi.set(__self__, "duration_threshold_all_fixed", duration_threshold_all_fixed)
+        pulumi.set(__self__, "duration_threshold_slowest", duration_threshold_slowest)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+
+    @property
+    @pulumi.getter(name="durationAvoidOveralerting")
+    def duration_avoid_overalerting(self) -> 'outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting':
+        return pulumi.get(self, "duration_avoid_overalerting")
+
+    @property
+    @pulumi.getter(name="durationThresholdAllFixed")
+    def duration_threshold_all_fixed(self) -> 'outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed':
+        return pulumi.get(self, "duration_threshold_all_fixed")
+
+    @property
+    @pulumi.getter(name="durationThresholdSlowest")
+    def duration_threshold_slowest(self) -> 'outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest':
+        return pulumi.get(self, "duration_threshold_slowest")
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> str:
+        return pulumi.get(self, "sensitivity")
+
+
+@pulumi.output_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "minActionRate":
+            suggest = "min_action_rate"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 min_action_rate: int):
+        pulumi.set(__self__, "min_action_rate", min_action_rate)
+
+    @property
+    @pulumi.getter(name="minActionRate")
+    def min_action_rate(self) -> int:
+        return pulumi.get(self, "min_action_rate")
+
+
+@pulumi.output_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationThreshold":
+            suggest = "duration_threshold"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration_threshold: float):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> float:
+        return pulumi.get(self, "duration_threshold")
+
+
+@pulumi.output_type
+class MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "durationThreshold":
+            suggest = "duration_threshold"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration_threshold: float):
+        pulumi.set(__self__, "duration_threshold", duration_threshold)
+
+    @property
+    @pulumi.getter(name="durationThreshold")
+    def duration_threshold(self) -> float:
+        return pulumi.get(self, "duration_threshold")
+
+
+@pulumi.output_type
+class MobileAppAnomaliesUnexpectedHighLoad(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "thresholdPercentage":
+            suggest = "threshold_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppAnomaliesUnexpectedHighLoad. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppAnomaliesUnexpectedHighLoad.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppAnomaliesUnexpectedHighLoad.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 threshold_percentage: Optional[float] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param float threshold_percentage: Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic spikes within your application.
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if threshold_percentage is not None:
+            pulumi.set(__self__, "threshold_percentage", threshold_percentage)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="thresholdPercentage")
+    def threshold_percentage(self) -> Optional[float]:
+        """
+        Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic spikes within your application.
+        """
+        return pulumi.get(self, "threshold_percentage")
+
+
+@pulumi.output_type
+class MobileAppAnomaliesUnexpectedLowLoad(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "thresholdPercentage":
+            suggest = "threshold_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppAnomaliesUnexpectedLowLoad. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppAnomaliesUnexpectedLowLoad.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppAnomaliesUnexpectedLowLoad.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 threshold_percentage: Optional[float] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param float threshold_percentage: Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic drops within your application.
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if threshold_percentage is not None:
+            pulumi.set(__self__, "threshold_percentage", threshold_percentage)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="thresholdPercentage")
+    def threshold_percentage(self) -> Optional[float]:
+        """
+        Dynatrace learns your typical application traffic over an observation period of one week. Depending on this expected value Dynatrace detects abnormal traffic drops within your application.
+        """
+        return pulumi.get(self, "threshold_percentage")
+
+
+@pulumi.output_type
+class MobileAppCrashRateCrashRateIncrease(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "crashRateIncreaseAuto":
+            suggest = "crash_rate_increase_auto"
+        elif key == "crashRateIncreaseFixed":
+            suggest = "crash_rate_increase_fixed"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppCrashRateCrashRateIncrease. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppCrashRateCrashRateIncrease.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppCrashRateCrashRateIncrease.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 crash_rate_increase_auto: Optional['outputs.MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto'] = None,
+                 crash_rate_increase_fixed: Optional['outputs.MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoArgs' crash_rate_increase_auto: Alert crash rate increases when auto-detected baseline is exceeded by a certain number of users
+        :param 'MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedArgs' crash_rate_increase_fixed: Alert crash rate increases when the defined threshold is exceeded by a certain number of users
+        :param str detection_mode: Possible Values: `Auto`, `Fixed`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if crash_rate_increase_auto is not None:
+            pulumi.set(__self__, "crash_rate_increase_auto", crash_rate_increase_auto)
+        if crash_rate_increase_fixed is not None:
+            pulumi.set(__self__, "crash_rate_increase_fixed", crash_rate_increase_fixed)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="crashRateIncreaseAuto")
+    def crash_rate_increase_auto(self) -> Optional['outputs.MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto']:
+        """
+        Alert crash rate increases when auto-detected baseline is exceeded by a certain number of users
+        """
+        return pulumi.get(self, "crash_rate_increase_auto")
+
+    @property
+    @pulumi.getter(name="crashRateIncreaseFixed")
+    def crash_rate_increase_fixed(self) -> Optional['outputs.MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed']:
+        """
+        Alert crash rate increases when the defined threshold is exceeded by a certain number of users
+        """
+        return pulumi.get(self, "crash_rate_increase_fixed")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "baselineViolationPercentage":
+            suggest = "baseline_violation_percentage"
+        elif key == "concurrentUsers":
+            suggest = "concurrent_users"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 baseline_violation_percentage: float,
+                 concurrent_users: float,
+                 sensitivity: str):
+        pulumi.set(__self__, "baseline_violation_percentage", baseline_violation_percentage)
+        pulumi.set(__self__, "concurrent_users", concurrent_users)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+
+    @property
+    @pulumi.getter(name="baselineViolationPercentage")
+    def baseline_violation_percentage(self) -> float:
+        return pulumi.get(self, "baseline_violation_percentage")
+
+    @property
+    @pulumi.getter(name="concurrentUsers")
+    def concurrent_users(self) -> float:
+        return pulumi.get(self, "concurrent_users")
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> str:
+        return pulumi.get(self, "sensitivity")
+
+
+@pulumi.output_type
+class MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "absoluteCrashRate":
+            suggest = "absolute_crash_rate"
+        elif key == "concurrentUsers":
+            suggest = "concurrent_users"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 absolute_crash_rate: float,
+                 concurrent_users: int):
+        pulumi.set(__self__, "absolute_crash_rate", absolute_crash_rate)
+        pulumi.set(__self__, "concurrent_users", concurrent_users)
+
+    @property
+    @pulumi.getter(name="absoluteCrashRate")
+    def absolute_crash_rate(self) -> float:
+        return pulumi.get(self, "absolute_crash_rate")
+
+    @property
+    @pulumi.getter(name="concurrentUsers")
+    def concurrent_users(self) -> int:
+        return pulumi.get(self, "concurrent_users")
+
+
+@pulumi.output_type
+class MobileAppEnablementRum(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "costAndTrafficControl":
+            suggest = "cost_and_traffic_control"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppEnablementRum. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppEnablementRum.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppEnablementRum.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cost_and_traffic_control: int,
+                 enabled: bool):
+        """
+        :param int cost_and_traffic_control: Percentage of user sessions captured and analyzed. By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application’s performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session.
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        """
+        pulumi.set(__self__, "cost_and_traffic_control", cost_and_traffic_control)
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter(name="costAndTrafficControl")
+    def cost_and_traffic_control(self) -> int:
+        """
+        Percentage of user sessions captured and analyzed. By default, Dynatrace captures all user actions and user sessions for analysis. This approach ensures complete insight into your application’s performance and customer experience. You can optionally reduce the granularity of user-action and user-session analysis by capturing a lower percentage of user sessions. While this approach can reduce monitoring costs, it also results in lower visibility into how your customers are using your applications. For example, a setting of 10% results in Dynatrace analyzing only every tenth user session.
+        """
+        return pulumi.get(self, "cost_and_traffic_control")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+
+@pulumi.output_type
+class MobileAppEnablementSessionReplay(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "onCrash":
+            suggest = "on_crash"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppEnablementSessionReplay. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppEnablementSessionReplay.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppEnablementSessionReplay.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 on_crash: bool):
+        """
+        :param bool on_crash: Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay](https://dt-url.net/t23s0ppi).
+        """
+        pulumi.set(__self__, "on_crash", on_crash)
+
+    @property
+    @pulumi.getter(name="onCrash")
+    def on_crash(self) -> bool:
+        """
+        Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay](https://dt-url.net/t23s0ppi).
+        """
+        return pulumi.get(self, "on_crash")
+
+
+@pulumi.output_type
+class MobileAppRequestErrorsErrorRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "errorRules":
+            suggest = "error_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppRequestErrorsErrorRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppRequestErrorsErrorRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppRequestErrorsErrorRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 error_rules: Sequence['outputs.MobileAppRequestErrorsErrorRulesErrorRule']):
+        pulumi.set(__self__, "error_rules", error_rules)
+
+    @property
+    @pulumi.getter(name="errorRules")
+    def error_rules(self) -> Sequence['outputs.MobileAppRequestErrorsErrorRulesErrorRule']:
+        return pulumi.get(self, "error_rules")
+
+
+@pulumi.output_type
+class MobileAppRequestErrorsErrorRulesErrorRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "errorCodes":
+            suggest = "error_codes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppRequestErrorsErrorRulesErrorRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppRequestErrorsErrorRulesErrorRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppRequestErrorsErrorRulesErrorRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 error_codes: str):
+        pulumi.set(__self__, "error_codes", error_codes)
+
+    @property
+    @pulumi.getter(name="errorCodes")
+    def error_codes(self) -> str:
+        return pulumi.get(self, "error_codes")
+
+
+@pulumi.output_type
 class MobileApplicationApdex(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -26216,6 +39316,112 @@ class MobileApplicationPropertiesRequestAttribute(dict):
     @pulumi.getter(name="storeAsUserActionProperty")
     def store_as_user_action_property(self) -> Optional[bool]:
         return pulumi.get(self, "store_as_user_action_property")
+
+
+@pulumi.output_type
+class NetworkTrafficExcludeIp(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ipAddressForms":
+            suggest = "ip_address_forms"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkTrafficExcludeIp. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkTrafficExcludeIp.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkTrafficExcludeIp.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ip_address_forms: Sequence['outputs.NetworkTrafficExcludeIpIpAddressForm']):
+        pulumi.set(__self__, "ip_address_forms", ip_address_forms)
+
+    @property
+    @pulumi.getter(name="ipAddressForms")
+    def ip_address_forms(self) -> Sequence['outputs.NetworkTrafficExcludeIpIpAddressForm']:
+        return pulumi.get(self, "ip_address_forms")
+
+
+@pulumi.output_type
+class NetworkTrafficExcludeIpIpAddressForm(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ipAddress":
+            suggest = "ip_address"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkTrafficExcludeIpIpAddressForm. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkTrafficExcludeIpIpAddressForm.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkTrafficExcludeIpIpAddressForm.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ip_address: str):
+        pulumi.set(__self__, "ip_address", ip_address)
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> str:
+        return pulumi.get(self, "ip_address")
+
+
+@pulumi.output_type
+class NetworkTrafficExcludeNic(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "nicForms":
+            suggest = "nic_forms"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkTrafficExcludeNic. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkTrafficExcludeNic.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkTrafficExcludeNic.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 nic_forms: Sequence['outputs.NetworkTrafficExcludeNicNicForm']):
+        pulumi.set(__self__, "nic_forms", nic_forms)
+
+    @property
+    @pulumi.getter(name="nicForms")
+    def nic_forms(self) -> Sequence['outputs.NetworkTrafficExcludeNicNicForm']:
+        return pulumi.get(self, "nic_forms")
+
+
+@pulumi.output_type
+class NetworkTrafficExcludeNicNicForm(dict):
+    def __init__(__self__, *,
+                 interface: str,
+                 os: str):
+        pulumi.set(__self__, "interface", interface)
+        pulumi.set(__self__, "os", os)
+
+    @property
+    @pulumi.getter
+    def interface(self) -> str:
+        return pulumi.get(self, "interface")
+
+    @property
+    @pulumi.getter
+    def os(self) -> str:
+        return pulumi.get(self, "os")
 
 
 @pulumi.output_type
@@ -26571,98 +39777,6 @@ class NotificationEmail(dict):
         allows for configuring properties that are not explicitly supported by the current version of this provider
         """
         return pulumi.get(self, "unknowns")
-
-
-@pulumi.output_type
-class NotificationHipchat(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "alertingProfile":
-            suggest = "alerting_profile"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in NotificationHipchat. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        NotificationHipchat.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        NotificationHipchat.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 active: bool,
-                 alerting_profile: str,
-                 message: str,
-                 name: str,
-                 unknowns: Optional[str] = None,
-                 url: Optional[str] = None):
-        """
-        :param bool active: The configuration is enabled (`true`) or disabled (`false`)
-        :param str alerting_profile: The ID of the associated alerting profile
-        :param str message: The content of the notification message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
-        :param str name: The name of the notification configuration
-        :param str unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
-        :param str url: The URL of the HipChat WebHook.  This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
-        """
-        pulumi.set(__self__, "active", active)
-        pulumi.set(__self__, "alerting_profile", alerting_profile)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "name", name)
-        if unknowns is not None:
-            pulumi.set(__self__, "unknowns", unknowns)
-        if url is not None:
-            pulumi.set(__self__, "url", url)
-
-    @property
-    @pulumi.getter
-    def active(self) -> bool:
-        """
-        The configuration is enabled (`true`) or disabled (`false`)
-        """
-        return pulumi.get(self, "active")
-
-    @property
-    @pulumi.getter(name="alertingProfile")
-    def alerting_profile(self) -> str:
-        """
-        The ID of the associated alerting profile
-        """
-        return pulumi.get(self, "alerting_profile")
-
-    @property
-    @pulumi.getter
-    def message(self) -> str:
-        """
-        The content of the notification message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
-        """
-        return pulumi.get(self, "message")
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the notification configuration
-        """
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter
-    def unknowns(self) -> Optional[str]:
-        """
-        allows for configuring properties that are not explicitly supported by the current version of this provider
-        """
-        return pulumi.get(self, "unknowns")
-
-    @property
-    @pulumi.getter
-    def url(self) -> Optional[str]:
-        """
-        The URL of the HipChat WebHook.  This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
-        """
-        return pulumi.get(self, "url")
 
 
 @pulumi.output_type
@@ -27833,6 +40947,1247 @@ class NotificationXmattersHeader(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class OneagentUpdatesMaintenanceWindows(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "maintenanceWindows":
+            suggest = "maintenance_windows"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OneagentUpdatesMaintenanceWindows. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OneagentUpdatesMaintenanceWindows.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OneagentUpdatesMaintenanceWindows.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 maintenance_windows: Sequence['outputs.OneagentUpdatesMaintenanceWindowsMaintenanceWindow']):
+        pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+
+    @property
+    @pulumi.getter(name="maintenanceWindows")
+    def maintenance_windows(self) -> Sequence['outputs.OneagentUpdatesMaintenanceWindowsMaintenanceWindow']:
+        return pulumi.get(self, "maintenance_windows")
+
+
+@pulumi.output_type
+class OneagentUpdatesMaintenanceWindowsMaintenanceWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "maintenanceWindow":
+            suggest = "maintenance_window"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OneagentUpdatesMaintenanceWindowsMaintenanceWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OneagentUpdatesMaintenanceWindowsMaintenanceWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OneagentUpdatesMaintenanceWindowsMaintenanceWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 maintenance_window: str):
+        pulumi.set(__self__, "maintenance_window", maintenance_window)
+
+    @property
+    @pulumi.getter(name="maintenanceWindow")
+    def maintenance_window(self) -> str:
+        return pulumi.get(self, "maintenance_window")
+
+
+@pulumi.output_type
+class OpentelemetryMetricsAdditionalAttributes(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "additionalAttributes":
+            suggest = "additional_attributes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OpentelemetryMetricsAdditionalAttributes. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OpentelemetryMetricsAdditionalAttributes.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OpentelemetryMetricsAdditionalAttributes.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 additional_attributes: Sequence['outputs.OpentelemetryMetricsAdditionalAttributesAdditionalAttribute']):
+        pulumi.set(__self__, "additional_attributes", additional_attributes)
+
+    @property
+    @pulumi.getter(name="additionalAttributes")
+    def additional_attributes(self) -> Sequence['outputs.OpentelemetryMetricsAdditionalAttributesAdditionalAttribute']:
+        return pulumi.get(self, "additional_attributes")
+
+
+@pulumi.output_type
+class OpentelemetryMetricsAdditionalAttributesAdditionalAttribute(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attributeKey":
+            suggest = "attribute_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OpentelemetryMetricsAdditionalAttributesAdditionalAttribute. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OpentelemetryMetricsAdditionalAttributesAdditionalAttribute.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OpentelemetryMetricsAdditionalAttributesAdditionalAttribute.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attribute_key: str,
+                 enabled: bool):
+        pulumi.set(__self__, "attribute_key", attribute_key)
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter(name="attributeKey")
+    def attribute_key(self) -> str:
+        return pulumi.get(self, "attribute_key")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+
+@pulumi.output_type
+class OpentelemetryMetricsToDropAttributes(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "toDropAttributes":
+            suggest = "to_drop_attributes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OpentelemetryMetricsToDropAttributes. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OpentelemetryMetricsToDropAttributes.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OpentelemetryMetricsToDropAttributes.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 to_drop_attributes: Sequence['outputs.OpentelemetryMetricsToDropAttributesToDropAttribute']):
+        pulumi.set(__self__, "to_drop_attributes", to_drop_attributes)
+
+    @property
+    @pulumi.getter(name="toDropAttributes")
+    def to_drop_attributes(self) -> Sequence['outputs.OpentelemetryMetricsToDropAttributesToDropAttribute']:
+        return pulumi.get(self, "to_drop_attributes")
+
+
+@pulumi.output_type
+class OpentelemetryMetricsToDropAttributesToDropAttribute(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attributeKey":
+            suggest = "attribute_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OpentelemetryMetricsToDropAttributesToDropAttribute. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OpentelemetryMetricsToDropAttributesToDropAttribute.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OpentelemetryMetricsToDropAttributesToDropAttribute.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attribute_key: str,
+                 enabled: bool):
+        pulumi.set(__self__, "attribute_key", attribute_key)
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter(name="attributeKey")
+    def attribute_key(self) -> str:
+        return pulumi.get(self, "attribute_key")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+
+@pulumi.output_type
+class OsServicesDetectionConditionsLinux(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "linuxDetectionConditions":
+            suggest = "linux_detection_conditions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OsServicesDetectionConditionsLinux. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OsServicesDetectionConditionsLinux.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OsServicesDetectionConditionsLinux.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 linux_detection_conditions: Sequence['outputs.OsServicesDetectionConditionsLinuxLinuxDetectionCondition']):
+        pulumi.set(__self__, "linux_detection_conditions", linux_detection_conditions)
+
+    @property
+    @pulumi.getter(name="linuxDetectionConditions")
+    def linux_detection_conditions(self) -> Sequence['outputs.OsServicesDetectionConditionsLinuxLinuxDetectionCondition']:
+        return pulumi.get(self, "linux_detection_conditions")
+
+
+@pulumi.output_type
+class OsServicesDetectionConditionsLinuxLinuxDetectionCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "startupCondition":
+            suggest = "startup_condition"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OsServicesDetectionConditionsLinuxLinuxDetectionCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OsServicesDetectionConditionsLinuxLinuxDetectionCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OsServicesDetectionConditionsLinuxLinuxDetectionCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 property: str,
+                 condition: Optional[str] = None,
+                 startup_condition: Optional[str] = None):
+        pulumi.set(__self__, "property", property)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if startup_condition is not None:
+            pulumi.set(__self__, "startup_condition", startup_condition)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[str]:
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="startupCondition")
+    def startup_condition(self) -> Optional[str]:
+        return pulumi.get(self, "startup_condition")
+
+    @property
+    @pulumi.getter
+    def property(self) -> str:
+        return pulumi.get(self, "property")
+
+
+@pulumi.output_type
+class OsServicesDetectionConditionsWindows(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "detectionConditionsWindows":
+            suggest = "detection_conditions_windows"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OsServicesDetectionConditionsWindows. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OsServicesDetectionConditionsWindows.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OsServicesDetectionConditionsWindows.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 detection_conditions_windows: Sequence['outputs.OsServicesDetectionConditionsWindowsDetectionConditionsWindow']):
+        pulumi.set(__self__, "detection_conditions_windows", detection_conditions_windows)
+
+    @property
+    @pulumi.getter(name="detectionConditionsWindows")
+    def detection_conditions_windows(self) -> Sequence['outputs.OsServicesDetectionConditionsWindowsDetectionConditionsWindow']:
+        return pulumi.get(self, "detection_conditions_windows")
+
+
+@pulumi.output_type
+class OsServicesDetectionConditionsWindowsDetectionConditionsWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "startupCondition":
+            suggest = "startup_condition"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OsServicesDetectionConditionsWindowsDetectionConditionsWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OsServicesDetectionConditionsWindowsDetectionConditionsWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OsServicesDetectionConditionsWindowsDetectionConditionsWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 property: str,
+                 condition: Optional[str] = None,
+                 startup_condition: Optional[str] = None):
+        pulumi.set(__self__, "property", property)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if startup_condition is not None:
+            pulumi.set(__self__, "startup_condition", startup_condition)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> Optional[str]:
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="startupCondition")
+    def startup_condition(self) -> Optional[str]:
+        return pulumi.get(self, "startup_condition")
+
+    @property
+    @pulumi.getter
+    def property(self) -> str:
+        return pulumi.get(self, "property")
+
+
+@pulumi.output_type
+class OsServicesMetadata(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.OsServicesMetadataItem']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.OsServicesMetadataItem']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class OsServicesMetadataItem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metadataKey":
+            suggest = "metadata_key"
+        elif key == "metadataValue":
+            suggest = "metadata_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OsServicesMetadataItem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OsServicesMetadataItem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OsServicesMetadataItem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 metadata_key: str,
+                 metadata_value: str):
+        pulumi.set(__self__, "metadata_key", metadata_key)
+        pulumi.set(__self__, "metadata_value", metadata_value)
+
+    @property
+    @pulumi.getter(name="metadataKey")
+    def metadata_key(self) -> str:
+        return pulumi.get(self, "metadata_key")
+
+    @property
+    @pulumi.getter(name="metadataValue")
+    def metadata_value(self) -> str:
+        return pulumi.get(self, "metadata_value")
+
+
+@pulumi.output_type
+class OwnershipConfigOwnershipIdentifiers(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ownershipIdentifiers":
+            suggest = "ownership_identifiers"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OwnershipConfigOwnershipIdentifiers. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OwnershipConfigOwnershipIdentifiers.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OwnershipConfigOwnershipIdentifiers.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ownership_identifiers: Sequence['outputs.OwnershipConfigOwnershipIdentifiersOwnershipIdentifier']):
+        pulumi.set(__self__, "ownership_identifiers", ownership_identifiers)
+
+    @property
+    @pulumi.getter(name="ownershipIdentifiers")
+    def ownership_identifiers(self) -> Sequence['outputs.OwnershipConfigOwnershipIdentifiersOwnershipIdentifier']:
+        return pulumi.get(self, "ownership_identifiers")
+
+
+@pulumi.output_type
+class OwnershipConfigOwnershipIdentifiersOwnershipIdentifier(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 key: str):
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "key", key)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        return pulumi.get(self, "key")
+
+
+@pulumi.output_type
+class OwnershipTeamsAdditionalInformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "additionalInformations":
+            suggest = "additional_informations"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OwnershipTeamsAdditionalInformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OwnershipTeamsAdditionalInformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OwnershipTeamsAdditionalInformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 additional_informations: Sequence['outputs.OwnershipTeamsAdditionalInformationAdditionalInformation']):
+        """
+        :param Sequence['OwnershipTeamsAdditionalInformationAdditionalInformationArgs'] additional_informations: Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
+        """
+        pulumi.set(__self__, "additional_informations", additional_informations)
+
+    @property
+    @pulumi.getter(name="additionalInformations")
+    def additional_informations(self) -> Sequence['outputs.OwnershipTeamsAdditionalInformationAdditionalInformation']:
+        """
+        Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
+        """
+        return pulumi.get(self, "additional_informations")
+
+
+@pulumi.output_type
+class OwnershipTeamsAdditionalInformationAdditionalInformation(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 value: str,
+                 url: Optional[str] = None):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[str]:
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class OwnershipTeamsContactDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contactDetails":
+            suggest = "contact_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OwnershipTeamsContactDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OwnershipTeamsContactDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OwnershipTeamsContactDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contact_details: Sequence['outputs.OwnershipTeamsContactDetailsContactDetail']):
+        pulumi.set(__self__, "contact_details", contact_details)
+
+    @property
+    @pulumi.getter(name="contactDetails")
+    def contact_details(self) -> Sequence['outputs.OwnershipTeamsContactDetailsContactDetail']:
+        return pulumi.get(self, "contact_details")
+
+
+@pulumi.output_type
+class OwnershipTeamsContactDetailsContactDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "integrationType":
+            suggest = "integration_type"
+        elif key == "msTeams":
+            suggest = "ms_teams"
+        elif key == "slackChannel":
+            suggest = "slack_channel"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OwnershipTeamsContactDetailsContactDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OwnershipTeamsContactDetailsContactDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OwnershipTeamsContactDetailsContactDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 integration_type: str,
+                 email: Optional[str] = None,
+                 jira: Optional['outputs.OwnershipTeamsContactDetailsContactDetailJira'] = None,
+                 ms_teams: Optional[str] = None,
+                 slack_channel: Optional[str] = None,
+                 url: Optional[str] = None):
+        pulumi.set(__self__, "integration_type", integration_type)
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if jira is not None:
+            pulumi.set(__self__, "jira", jira)
+        if ms_teams is not None:
+            pulumi.set(__self__, "ms_teams", ms_teams)
+        if slack_channel is not None:
+            pulumi.set(__self__, "slack_channel", slack_channel)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter(name="integrationType")
+    def integration_type(self) -> str:
+        return pulumi.get(self, "integration_type")
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[str]:
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def jira(self) -> Optional['outputs.OwnershipTeamsContactDetailsContactDetailJira']:
+        return pulumi.get(self, "jira")
+
+    @property
+    @pulumi.getter(name="msTeams")
+    def ms_teams(self) -> Optional[str]:
+        return pulumi.get(self, "ms_teams")
+
+    @property
+    @pulumi.getter(name="slackChannel")
+    def slack_channel(self) -> Optional[str]:
+        return pulumi.get(self, "slack_channel")
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[str]:
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class OwnershipTeamsContactDetailsContactDetailJira(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "defaultAssignee":
+            suggest = "default_assignee"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OwnershipTeamsContactDetailsContactDetailJira. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OwnershipTeamsContactDetailsContactDetailJira.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OwnershipTeamsContactDetailsContactDetailJira.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 default_assignee: str,
+                 project: str):
+        pulumi.set(__self__, "default_assignee", default_assignee)
+        pulumi.set(__self__, "project", project)
+
+    @property
+    @pulumi.getter(name="defaultAssignee")
+    def default_assignee(self) -> str:
+        return pulumi.get(self, "default_assignee")
+
+    @property
+    @pulumi.getter
+    def project(self) -> str:
+        return pulumi.get(self, "project")
+
+
+@pulumi.output_type
+class OwnershipTeamsLinks(dict):
+    def __init__(__self__, *,
+                 links: Sequence['outputs.OwnershipTeamsLinksLink']):
+        pulumi.set(__self__, "links", links)
+
+    @property
+    @pulumi.getter
+    def links(self) -> Sequence['outputs.OwnershipTeamsLinksLink']:
+        return pulumi.get(self, "links")
+
+
+@pulumi.output_type
+class OwnershipTeamsLinksLink(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "linkType":
+            suggest = "link_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OwnershipTeamsLinksLink. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OwnershipTeamsLinksLink.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OwnershipTeamsLinksLink.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 link_type: str,
+                 url: str):
+        pulumi.set(__self__, "link_type", link_type)
+        pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter(name="linkType")
+    def link_type(self) -> str:
+        return pulumi.get(self, "link_type")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class OwnershipTeamsResponsibilities(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "lineOfBusiness":
+            suggest = "line_of_business"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OwnershipTeamsResponsibilities. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OwnershipTeamsResponsibilities.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OwnershipTeamsResponsibilities.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 development: bool,
+                 infrastructure: bool,
+                 line_of_business: bool,
+                 operations: bool,
+                 security: bool):
+        """
+        :param bool development: Responsible for developing and maintaining high quality software. Development teams are responsible for making code changes to address performance regressions, errors, or security vulnerabilities.
+        :param bool infrastructure: Responsible for the administration, management, and support of the IT infrastructure including physical servers, virtualization, and cloud. Teams with infrastructure responsibility are responsible for addressing hardware issues, resource limits, and operating system vulnerabilities.
+        :param bool line_of_business: Responsible for ensuring that applications in development align with business needs and meet the usability requirements of users, stakeholders, customers, and external partners. Teams with line of business responsibility are responsible for understanding the customer experience and how it affects business goals.
+        :param bool operations: Responsible for deploying and managing software, with a focus on high availability and performance. Teams with operations responsibilities needs to understand the impact, priority, and team responsible for addressing problems detected by Dynatrace.
+        :param bool security: Responsible for the security posture of the organization. Teams with security responsibility must understand the impact, priority, and team responsible for addressing security vulnerabilities.
+        """
+        pulumi.set(__self__, "development", development)
+        pulumi.set(__self__, "infrastructure", infrastructure)
+        pulumi.set(__self__, "line_of_business", line_of_business)
+        pulumi.set(__self__, "operations", operations)
+        pulumi.set(__self__, "security", security)
+
+    @property
+    @pulumi.getter
+    def development(self) -> bool:
+        """
+        Responsible for developing and maintaining high quality software. Development teams are responsible for making code changes to address performance regressions, errors, or security vulnerabilities.
+        """
+        return pulumi.get(self, "development")
+
+    @property
+    @pulumi.getter
+    def infrastructure(self) -> bool:
+        """
+        Responsible for the administration, management, and support of the IT infrastructure including physical servers, virtualization, and cloud. Teams with infrastructure responsibility are responsible for addressing hardware issues, resource limits, and operating system vulnerabilities.
+        """
+        return pulumi.get(self, "infrastructure")
+
+    @property
+    @pulumi.getter(name="lineOfBusiness")
+    def line_of_business(self) -> bool:
+        """
+        Responsible for ensuring that applications in development align with business needs and meet the usability requirements of users, stakeholders, customers, and external partners. Teams with line of business responsibility are responsible for understanding the customer experience and how it affects business goals.
+        """
+        return pulumi.get(self, "line_of_business")
+
+    @property
+    @pulumi.getter
+    def operations(self) -> bool:
+        """
+        Responsible for deploying and managing software, with a focus on high availability and performance. Teams with operations responsibilities needs to understand the impact, priority, and team responsible for addressing problems detected by Dynatrace.
+        """
+        return pulumi.get(self, "operations")
+
+    @property
+    @pulumi.getter
+    def security(self) -> bool:
+        """
+        Responsible for the security posture of the organization. Teams with security responsibility must understand the impact, priority, and team responsible for addressing security vulnerabilities.
+        """
+        return pulumi.get(self, "security")
+
+
+@pulumi.output_type
+class OwnershipTeamsSupplementaryIdentifiers(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "supplementaryIdentifiers":
+            suggest = "supplementary_identifiers"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OwnershipTeamsSupplementaryIdentifiers. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OwnershipTeamsSupplementaryIdentifiers.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OwnershipTeamsSupplementaryIdentifiers.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 supplementary_identifiers: Sequence['outputs.OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier']):
+        pulumi.set(__self__, "supplementary_identifiers", supplementary_identifiers)
+
+    @property
+    @pulumi.getter(name="supplementaryIdentifiers")
+    def supplementary_identifiers(self) -> Sequence['outputs.OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier']:
+        return pulumi.get(self, "supplementary_identifiers")
+
+
+@pulumi.output_type
+class OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "supplementaryIdentifier":
+            suggest = "supplementary_identifier"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 supplementary_identifier: str):
+        pulumi.set(__self__, "supplementary_identifier", supplementary_identifier)
+
+    @property
+    @pulumi.getter(name="supplementaryIdentifier")
+    def supplementary_identifier(self) -> str:
+        return pulumi.get(self, "supplementary_identifier")
+
+
+@pulumi.output_type
+class PgAnomaliesAvailability(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "minimumThreshold":
+            suggest = "minimum_threshold"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PgAnomaliesAvailability. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PgAnomaliesAvailability.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PgAnomaliesAvailability.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 method: str,
+                 minimum_threshold: Optional[int] = None):
+        """
+        :param str method: How to monitor the availability of the process group:  * `PROCESS_IMPACT`: Alert if any process of the group becomes unavailable.  * `MINIMUM_THRESHOLD`: Alert if the number of active processes in the group falls below the specified threshold.  * `OFF`: Availability monitoring is disabled.
+        :param int minimum_threshold: Alert if the number of active processes in the group is lower than this value.
+        """
+        pulumi.set(__self__, "method", method)
+        if minimum_threshold is not None:
+            pulumi.set(__self__, "minimum_threshold", minimum_threshold)
+
+    @property
+    @pulumi.getter
+    def method(self) -> str:
+        """
+        How to monitor the availability of the process group:  * `PROCESS_IMPACT`: Alert if any process of the group becomes unavailable.  * `MINIMUM_THRESHOLD`: Alert if the number of active processes in the group falls below the specified threshold.  * `OFF`: Availability monitoring is disabled.
+        """
+        return pulumi.get(self, "method")
+
+    @property
+    @pulumi.getter(name="minimumThreshold")
+    def minimum_threshold(self) -> Optional[int]:
+        """
+        Alert if the number of active processes in the group is lower than this value.
+        """
+        return pulumi.get(self, "minimum_threshold")
+
+
+@pulumi.output_type
+class ProcessAvailabilityMetadata(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.ProcessAvailabilityMetadataItem']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.ProcessAvailabilityMetadataItem']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class ProcessAvailabilityMetadataItem(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 value: str):
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ProcessAvailabilityRules(dict):
+    def __init__(__self__, *,
+                 rules: Sequence['outputs.ProcessAvailabilityRulesRule']):
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.ProcessAvailabilityRulesRule']:
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class ProcessAvailabilityRulesRule(dict):
+    def __init__(__self__, *,
+                 condition: str,
+                 property: str):
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "property", property)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> str:
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter
+    def property(self) -> str:
+        return pulumi.get(self, "property")
+
+
+@pulumi.output_type
+class ProcessGroupDetectionGroupExtraction(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "standaloneRule":
+            suggest = "standalone_rule"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProcessGroupDetectionGroupExtraction. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProcessGroupDetectionGroupExtraction.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProcessGroupDetectionGroupExtraction.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 delimiter: 'outputs.ProcessGroupDetectionGroupExtractionDelimiter',
+                 property: str,
+                 standalone_rule: Optional[bool] = None):
+        """
+        :param 'ProcessGroupDetectionGroupExtractionDelimiterArgs' delimiter: Optionally delimit this property between *From* and *To*.
+        :param str property: Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+        :param bool standalone_rule: If this option is selected, the default Dynatrace behavior is disabled for these detected processes. Only this rule is used to separate the process group.
+        """
+        pulumi.set(__self__, "delimiter", delimiter)
+        pulumi.set(__self__, "property", property)
+        if standalone_rule is not None:
+            pulumi.set(__self__, "standalone_rule", standalone_rule)
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> 'outputs.ProcessGroupDetectionGroupExtractionDelimiter':
+        """
+        Optionally delimit this property between *From* and *To*.
+        """
+        return pulumi.get(self, "delimiter")
+
+    @property
+    @pulumi.getter(name="standaloneRule")
+    def standalone_rule(self) -> Optional[bool]:
+        """
+        If this option is selected, the default Dynatrace behavior is disabled for these detected processes. Only this rule is used to separate the process group.
+        """
+        return pulumi.get(self, "standalone_rule")
+
+    @property
+    @pulumi.getter
+    def property(self) -> str:
+        """
+        Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+        """
+        return pulumi.get(self, "property")
+
+
+@pulumi.output_type
+class ProcessGroupDetectionGroupExtractionDelimiter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "removeIds":
+            suggest = "remove_ids"
+        elif key == "from":
+            suggest = "from_"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProcessGroupDetectionGroupExtractionDelimiter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProcessGroupDetectionGroupExtractionDelimiter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProcessGroupDetectionGroupExtractionDelimiter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 remove_ids: bool,
+                 from_: Optional[str] = None,
+                 to: Optional[str] = None):
+        pulumi.set(__self__, "remove_ids", remove_ids)
+        if from_ is not None:
+            pulumi.set(__self__, "from_", from_)
+        if to is not None:
+            pulumi.set(__self__, "to", to)
+
+    @property
+    @pulumi.getter(name="removeIds")
+    def remove_ids(self) -> bool:
+        return pulumi.get(self, "remove_ids")
+
+    @property
+    @pulumi.getter(name="from")
+    def from_(self) -> Optional[str]:
+        return pulumi.get(self, "from_")
+
+    @property
+    @pulumi.getter
+    def to(self) -> Optional[str]:
+        return pulumi.get(self, "to")
+
+
+@pulumi.output_type
+class ProcessGroupDetectionInstanceExtraction(dict):
+    def __init__(__self__, *,
+                 delimiter: Optional['outputs.ProcessGroupDetectionInstanceExtractionDelimiter'] = None,
+                 property: Optional[str] = None):
+        """
+        :param 'ProcessGroupDetectionInstanceExtractionDelimiterArgs' delimiter: Optionally delimit this property between *From* and *To*.
+        :param str property: Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+        """
+        if delimiter is not None:
+            pulumi.set(__self__, "delimiter", delimiter)
+        if property is not None:
+            pulumi.set(__self__, "property", property)
+
+    @property
+    @pulumi.getter
+    def delimiter(self) -> Optional['outputs.ProcessGroupDetectionInstanceExtractionDelimiter']:
+        """
+        Optionally delimit this property between *From* and *To*.
+        """
+        return pulumi.get(self, "delimiter")
+
+    @property
+    @pulumi.getter
+    def property(self) -> Optional[str]:
+        """
+        Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+        """
+        return pulumi.get(self, "property")
+
+
+@pulumi.output_type
+class ProcessGroupDetectionInstanceExtractionDelimiter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "removeIds":
+            suggest = "remove_ids"
+        elif key == "from":
+            suggest = "from_"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProcessGroupDetectionInstanceExtractionDelimiter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProcessGroupDetectionInstanceExtractionDelimiter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProcessGroupDetectionInstanceExtractionDelimiter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 remove_ids: bool,
+                 from_: Optional[str] = None,
+                 to: Optional[str] = None):
+        pulumi.set(__self__, "remove_ids", remove_ids)
+        if from_ is not None:
+            pulumi.set(__self__, "from_", from_)
+        if to is not None:
+            pulumi.set(__self__, "to", to)
+
+    @property
+    @pulumi.getter(name="removeIds")
+    def remove_ids(self) -> bool:
+        return pulumi.get(self, "remove_ids")
+
+    @property
+    @pulumi.getter(name="from")
+    def from_(self) -> Optional[str]:
+        return pulumi.get(self, "from_")
+
+    @property
+    @pulumi.getter
+    def to(self) -> Optional[str]:
+        return pulumi.get(self, "to")
+
+
+@pulumi.output_type
+class ProcessGroupDetectionProcessDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "containedString":
+            suggest = "contained_string"
+        elif key == "restrictToProcessType":
+            suggest = "restrict_to_process_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProcessGroupDetectionProcessDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProcessGroupDetectionProcessDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProcessGroupDetectionProcessDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contained_string: str,
+                 property: str,
+                 restrict_to_process_type: Optional[str] = None):
+        """
+        :param str contained_string: The substring to be contained in the value `property` refers to. Case Sensitive
+        :param str property: Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+        :param str restrict_to_process_type: Restrict this rule to specific process types. Note: Not all types can be detected at startup. Possible values: `PROCESS_TYPE_APACHE_HTTPD`, `PROCESS_TYPE_GLASSFISH`, `PROCESS_TYPE_GO`, `PROCESS_TYPE_IIS_APP_POOL`, `PROCESS_TYPE_JBOSS`, `PROCESS_TYPE_JAVA`, `PROCESS_TYPE_NGINX`, `PROCESS_TYPE_NODE_JS`, `PROCESS_TYPE_PHP`, `PROCESS_TYPE_TOMCAT`, `PROCESS_TYPE_WEBLOGIC`, `PROCESS_TYPE_WEBSPHERE`
+        """
+        pulumi.set(__self__, "contained_string", contained_string)
+        pulumi.set(__self__, "property", property)
+        if restrict_to_process_type is not None:
+            pulumi.set(__self__, "restrict_to_process_type", restrict_to_process_type)
+
+    @property
+    @pulumi.getter(name="containedString")
+    def contained_string(self) -> str:
+        """
+        The substring to be contained in the value `property` refers to. Case Sensitive
+        """
+        return pulumi.get(self, "contained_string")
+
+    @property
+    @pulumi.getter(name="restrictToProcessType")
+    def restrict_to_process_type(self) -> Optional[str]:
+        """
+        Restrict this rule to specific process types. Note: Not all types can be detected at startup. Possible values: `PROCESS_TYPE_APACHE_HTTPD`, `PROCESS_TYPE_GLASSFISH`, `PROCESS_TYPE_GO`, `PROCESS_TYPE_IIS_APP_POOL`, `PROCESS_TYPE_JBOSS`, `PROCESS_TYPE_JAVA`, `PROCESS_TYPE_NGINX`, `PROCESS_TYPE_NODE_JS`, `PROCESS_TYPE_PHP`, `PROCESS_TYPE_TOMCAT`, `PROCESS_TYPE_WEBLOGIC`, `PROCESS_TYPE_WEBSPHERE`
+        """
+        return pulumi.get(self, "restrict_to_process_type")
+
+    @property
+    @pulumi.getter
+    def property(self) -> str:
+        """
+        Possible values: `DOTNET_COMMAND`, `DOTNET_COMMAND_PATH`, `ASP_NET_CORE_APPLICATION_PATH`, `AWS_ECR_ACCOUNT_ID`, `AWS_ECR_REGION`, `AWS_ECS_CLUSTER`, `AWS_ECS_CONTAINERNAME`, `AWS_ECS_FAMILY`, `AWS_ECS_REVISION`, `AWS_LAMBDA_FUNCTION_NAME`, `AWS_REGION`, `APACHE_SPARK_MASTER_IP_ADDRESS`, `APACHE_CONFIG_PATH`, `CATALINA_BASE`, `CATALINA_HOME`, `CLOUD_FOUNDRY_APP_NAME`, `CLOUD_FOUNDRY_APPLICATION_ID`, `CLOUD_FOUNDRY_INSTANCE_INDEX`, `CLOUD_FOUNDRY_SPACE_NAME`, `CLOUD_FOUNDRY_SPACE_ID`, `COLDFUSION_JVM_CONFIG_FILE`, `SERVICE_NAME`, `COMMAND_LINE_ARGS`, `CONTAINER_ID`, `CONTAINER_IMAGE_VERSION`, `CONTAINER_NAME`, `DECLARATIVE_ID`, `CONTAINER_IMAGE_NAME`, `RUXIT_CLUSTER_ID`, `RUXIT_NODE_ID`, `EXE_NAME`, `EXE_PATH`, `ELASTIC_SEARCH_CLUSTER_NAME`, `ELASTIC_SEARCH_NODE_NAME`, `EQUINOX_CONFIG_PATH`, `GLASSFISH_DOMAIN_NAME`, `GLASSFISH_INSTANCE_NAME`, `PG_ID_CALC_INPUT_KEY_LINKAGE`, `GAE_INSTANCE`, `GAE_SERVICE`, `GOOGLE_CLOUD_PROJECT`, `HYBRIS_BIN_DIR`, `HYBRIS_CONFIG_DIR`, `HYBRIS_DATA_DIR`, `IBM_CICS_REGION`, `IBM_CICS_IMS_APPLID`, `IBM_CICS_IMS_JOBNAME`, `IBM_CTG_NAME`, `IBM_IMS_CONNECT`, `IBM_IMS_CONTROL`, `IBM_IMS_MPR`, `IBM_IMS_SOAP_GW_NAME`, `IIB_BROKER_NAME`, `IIB_EXECUTION_GROUP_NAME`, `IIS_APP_POOL`, `IIS_ROLE_NAME`, `JBOSS_HOME`, `JBOSS_MODE`, `JBOSS_SERVER_NAME`, `JAVA_JAR_FILE`, `JAVA_JAR_PATH`, `JAVA_MAIN_CLASS`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`, `MSSQL_INSTANCE_NAME`, `NODEJS_APP_NAME`, `NODEJS_APP_BASE_DIR`, `NODEJS_SCRIPT_NAME`, `ORACLE_SID`, `PHP_CLI_SCRIPT_PATH`, `PHP_CLI_WORKING_DIR`, `SOFTWAREAG_INSTALL_ROOT`, `SOFTWAREAG_PRODUCTPROPNAME`, `SPRINGBOOT_APP_NAME`, `SPRINGBOOT_PROFILE_NAME`, `SPRINGBOOT_STARTUP_CLASS`, `TIBCO_BUSINESSWORKS_CE_APP_NAME`, `TIBCO_BUSINESSWORKS_CE_VERSION`, `TIBCO_BUSINESSWORKS_APP_NODE_NAME`, `TIBCO_BUSINESSWORKS_APP_SPACE_NAME`, `TIBCO_BUSINESSWORKS_DOMAIN_NAME`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE`, `TIPCO_BUSINESSWORKS_PROPERTY_FILE_PATH`, `TIBCO_BUSINESSWORKS_HOME`, `VARNISH_INSTANCE_NAME`, `WEBLOGIC_NAME`, `WEBLOGIC_CLUSTER_NAME`, `WEBLOGIC_DOMAIN_NAME`, `WEBLOGIC_HOME`, `WEBSPHERE_LIBERTY_SERVER_NAME`, `WEBSPHERE_CELL_NAME`, `WEBSPHERE_CLUSTER_NAME`, `WEBSPHERE_NODE_NAME`, `WEBSPHERE_SERVER_NAME`
+        """
+        return pulumi.get(self, "property")
+
+
+@pulumi.output_type
+class ProcessMonitoringRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "envVar":
+            suggest = "env_var"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProcessMonitoringRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProcessMonitoringRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProcessMonitoringRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 item: str,
+                 operator: str,
+                 env_var: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str item: Condition target
+        :param str operator: Condition operator
+        :param str env_var: supported only with OneAgent 1.167+
+        :param str value: Condition value
+        """
+        pulumi.set(__self__, "item", item)
+        pulumi.set(__self__, "operator", operator)
+        if env_var is not None:
+            pulumi.set(__self__, "env_var", env_var)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def item(self) -> str:
+        """
+        Condition target
+        """
+        return pulumi.get(self, "item")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> str:
+        """
+        Condition operator
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter(name="envVar")
+    def env_var(self) -> Optional[str]:
+        """
+        supported only with OneAgent 1.167+
+        """
+        return pulumi.get(self, "env_var")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        Condition value
+        """
         return pulumi.get(self, "value")
 
 
@@ -32616,9 +46971,12 @@ class RequestNamingConditions(dict):
 class RequestNamingConditionsCondition(dict):
     def __init__(__self__, *,
                  attribute: str,
-                 comparison: 'outputs.RequestNamingConditionsConditionComparison'):
+                 comparison: 'outputs.RequestNamingConditionsConditionComparison',
+                 unknowns: Optional[str] = None):
         pulumi.set(__self__, "attribute", attribute)
         pulumi.set(__self__, "comparison", comparison)
+        if unknowns is not None:
+            pulumi.set(__self__, "unknowns", unknowns)
 
     @property
     @pulumi.getter
@@ -32629,6 +46987,11 @@ class RequestNamingConditionsCondition(dict):
     @pulumi.getter
     def comparison(self) -> 'outputs.RequestNamingConditionsConditionComparison':
         return pulumi.get(self, "comparison")
+
+    @property
+    @pulumi.getter
+    def unknowns(self) -> Optional[str]:
+        return pulumi.get(self, "unknowns")
 
 
 @pulumi.output_type
@@ -32822,18 +47185,22 @@ class RequestNamingConditionsConditionComparison(dict):
 @pulumi.output_type
 class RequestNamingConditionsConditionComparisonBoolean(dict):
     def __init__(__self__, *,
+                 value: bool,
                  operator: Optional[str] = None,
                  unknowns: Optional[str] = None,
-                 value: Optional[bool] = None,
                  values: Optional[Sequence[bool]] = None):
+        pulumi.set(__self__, "value", value)
         if operator is not None:
             pulumi.set(__self__, "operator", operator)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
-        if value is not None:
-            pulumi.set(__self__, "value", value)
         if values is not None:
             pulumi.set(__self__, "values", values)
+
+    @property
+    @pulumi.getter
+    def value(self) -> bool:
+        return pulumi.get(self, "value")
 
     @property
     @pulumi.getter
@@ -32844,11 +47211,6 @@ class RequestNamingConditionsConditionComparisonBoolean(dict):
     @pulumi.getter
     def unknowns(self) -> Optional[str]:
         return pulumi.get(self, "unknowns")
-
-    @property
-    @pulumi.getter
-    def value(self) -> Optional[bool]:
-        return pulumi.get(self, "value")
 
     @property
     @pulumi.getter
@@ -34151,6 +48513,103 @@ class RequestNamingPlaceholdersPlaceholderSourceServiceTagTagKey(dict):
 
 
 @pulumi.output_type
+class ResourceAttributesKeys(dict):
+    def __init__(__self__, *,
+                 rules: Optional[Sequence['outputs.ResourceAttributesKeysRule']] = None):
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Optional[Sequence['outputs.ResourceAttributesKeysRule']]:
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class ResourceAttributesKeysRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attributeKey":
+            suggest = "attribute_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ResourceAttributesKeysRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ResourceAttributesKeysRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ResourceAttributesKeysRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attribute_key: str,
+                 enabled: bool,
+                 masking: str):
+        pulumi.set(__self__, "attribute_key", attribute_key)
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "masking", masking)
+
+    @property
+    @pulumi.getter(name="attributeKey")
+    def attribute_key(self) -> str:
+        return pulumi.get(self, "attribute_key")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def masking(self) -> str:
+        return pulumi.get(self, "masking")
+
+
+@pulumi.output_type
+class RumProviderBreakdownDomainNamePatternList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "domainNamePatterns":
+            suggest = "domain_name_patterns"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RumProviderBreakdownDomainNamePatternList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RumProviderBreakdownDomainNamePatternList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RumProviderBreakdownDomainNamePatternList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 domain_name_patterns: Sequence['outputs.RumProviderBreakdownDomainNamePatternListDomainNamePattern']):
+        pulumi.set(__self__, "domain_name_patterns", domain_name_patterns)
+
+    @property
+    @pulumi.getter(name="domainNamePatterns")
+    def domain_name_patterns(self) -> Sequence['outputs.RumProviderBreakdownDomainNamePatternListDomainNamePattern']:
+        return pulumi.get(self, "domain_name_patterns")
+
+
+@pulumi.output_type
+class RumProviderBreakdownDomainNamePatternListDomainNamePattern(dict):
+    def __init__(__self__, *,
+                 pattern: str):
+        pulumi.set(__self__, "pattern", pattern)
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> str:
+        return pulumi.get(self, "pattern")
+
+
+@pulumi.output_type
 class ServiceAnomaliesFailureRates(dict):
     def __init__(__self__, *,
                  auto: Optional['outputs.ServiceAnomaliesFailureRatesAuto'] = None,
@@ -34492,6 +48951,4722 @@ class ServiceAnomaliesResponseTimesThresholds(dict):
     @pulumi.getter
     def unknowns(self) -> Optional[str]:
         return pulumi.get(self, "unknowns")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2FailureRate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autoDetection":
+            suggest = "auto_detection"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+        elif key == "fixedDetection":
+            suggest = "fixed_detection"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2FailureRate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2FailureRate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2FailureRate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 auto_detection: Optional['outputs.ServiceAnomaliesV2FailureRateAutoDetection'] = None,
+                 detection_mode: Optional[str] = None,
+                 fixed_detection: Optional['outputs.ServiceAnomaliesV2FailureRateFixedDetection'] = None):
+        """
+        :param bool enabled: Detect increases in failure rate
+        :param 'ServiceAnomaliesV2FailureRateAutoDetectionArgs' auto_detection: . Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+        :param str detection_mode: Detection mode for increases in failure rate
+        :param 'ServiceAnomaliesV2FailureRateFixedDetectionArgs' fixed_detection: . Alert if a given failure rate is exceeded during any 5-minute-period
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if auto_detection is not None:
+            pulumi.set(__self__, "auto_detection", auto_detection)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if fixed_detection is not None:
+            pulumi.set(__self__, "fixed_detection", fixed_detection)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Detect increases in failure rate
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="autoDetection")
+    def auto_detection(self) -> Optional['outputs.ServiceAnomaliesV2FailureRateAutoDetection']:
+        """
+        . Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+        """
+        return pulumi.get(self, "auto_detection")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Detection mode for increases in failure rate
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @property
+    @pulumi.getter(name="fixedDetection")
+    def fixed_detection(self) -> Optional['outputs.ServiceAnomaliesV2FailureRateFixedDetection']:
+        """
+        . Alert if a given failure rate is exceeded during any 5-minute-period
+        """
+        return pulumi.get(self, "fixed_detection")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2FailureRateAutoDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "absoluteIncrease":
+            suggest = "absolute_increase"
+        elif key == "overAlertingProtection":
+            suggest = "over_alerting_protection"
+        elif key == "relativeIncrease":
+            suggest = "relative_increase"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2FailureRateAutoDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2FailureRateAutoDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2FailureRateAutoDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 absolute_increase: float,
+                 over_alerting_protection: 'outputs.ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection',
+                 relative_increase: float):
+        pulumi.set(__self__, "absolute_increase", absolute_increase)
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "relative_increase", relative_increase)
+
+    @property
+    @pulumi.getter(name="absoluteIncrease")
+    def absolute_increase(self) -> float:
+        return pulumi.get(self, "absolute_increase")
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> 'outputs.ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection':
+        return pulumi.get(self, "over_alerting_protection")
+
+    @property
+    @pulumi.getter(name="relativeIncrease")
+    def relative_increase(self) -> float:
+        return pulumi.get(self, "relative_increase")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+        elif key == "requestsPerMinute":
+            suggest = "requests_per_minute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 minutes_abnormal_state: int,
+                 requests_per_minute: float):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> int:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> float:
+        return pulumi.get(self, "requests_per_minute")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2FailureRateFixedDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overAlertingProtection":
+            suggest = "over_alerting_protection"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2FailureRateFixedDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2FailureRateFixedDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2FailureRateFixedDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 over_alerting_protection: 'outputs.ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection',
+                 sensitivity: str,
+                 threshold: float):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> 'outputs.ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection':
+        return pulumi.get(self, "over_alerting_protection")
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> str:
+        return pulumi.get(self, "sensitivity")
+
+    @property
+    @pulumi.getter
+    def threshold(self) -> float:
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+        elif key == "requestsPerMinute":
+            suggest = "requests_per_minute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 minutes_abnormal_state: int,
+                 requests_per_minute: float):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> int:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> float:
+        return pulumi.get(self, "requests_per_minute")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2LoadDrops(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "loadDropPercent":
+            suggest = "load_drop_percent"
+        elif key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2LoadDrops. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2LoadDrops.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2LoadDrops.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 load_drop_percent: Optional[float] = None,
+                 minutes_abnormal_state: Optional[int] = None):
+        """
+        :param bool enabled: Detect service load drops
+        :param float load_drop_percent: Threshold
+        :param int minutes_abnormal_state: Time span
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if load_drop_percent is not None:
+            pulumi.set(__self__, "load_drop_percent", load_drop_percent)
+        if minutes_abnormal_state is not None:
+            pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Detect service load drops
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="loadDropPercent")
+    def load_drop_percent(self) -> Optional[float]:
+        """
+        Threshold
+        """
+        return pulumi.get(self, "load_drop_percent")
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> Optional[int]:
+        """
+        Time span
+        """
+        return pulumi.get(self, "minutes_abnormal_state")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2LoadSpikes(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "loadSpikePercent":
+            suggest = "load_spike_percent"
+        elif key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2LoadSpikes. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2LoadSpikes.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2LoadSpikes.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 load_spike_percent: Optional[float] = None,
+                 minutes_abnormal_state: Optional[int] = None):
+        """
+        :param bool enabled: Detect service load spikes
+        :param float load_spike_percent: Threshold
+        :param int minutes_abnormal_state: Time span
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if load_spike_percent is not None:
+            pulumi.set(__self__, "load_spike_percent", load_spike_percent)
+        if minutes_abnormal_state is not None:
+            pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Detect service load spikes
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="loadSpikePercent")
+    def load_spike_percent(self) -> Optional[float]:
+        """
+        Threshold
+        """
+        return pulumi.get(self, "load_spike_percent")
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> Optional[int]:
+        """
+        Time span
+        """
+        return pulumi.get(self, "minutes_abnormal_state")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2ResponseTime(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autoDetection":
+            suggest = "auto_detection"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+        elif key == "fixedDetection":
+            suggest = "fixed_detection"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2ResponseTime. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2ResponseTime.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2ResponseTime.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 auto_detection: Optional['outputs.ServiceAnomaliesV2ResponseTimeAutoDetection'] = None,
+                 detection_mode: Optional[str] = None,
+                 fixed_detection: Optional['outputs.ServiceAnomaliesV2ResponseTimeFixedDetection'] = None):
+        """
+        :param bool enabled: Detect response time degradations
+        :param 'ServiceAnomaliesV2ResponseTimeAutoDetectionArgs' auto_detection: No documentation available
+        :param str detection_mode: Detection mode for response time degradations
+        :param 'ServiceAnomaliesV2ResponseTimeFixedDetectionArgs' fixed_detection: No documentation available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if auto_detection is not None:
+            pulumi.set(__self__, "auto_detection", auto_detection)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if fixed_detection is not None:
+            pulumi.set(__self__, "fixed_detection", fixed_detection)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        Detect response time degradations
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="autoDetection")
+    def auto_detection(self) -> Optional['outputs.ServiceAnomaliesV2ResponseTimeAutoDetection']:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "auto_detection")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Detection mode for response time degradations
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @property
+    @pulumi.getter(name="fixedDetection")
+    def fixed_detection(self) -> Optional['outputs.ServiceAnomaliesV2ResponseTimeFixedDetection']:
+        """
+        No documentation available
+        """
+        return pulumi.get(self, "fixed_detection")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2ResponseTimeAutoDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overAlertingProtection":
+            suggest = "over_alerting_protection"
+        elif key == "responseTimeAll":
+            suggest = "response_time_all"
+        elif key == "responseTimeSlowest":
+            suggest = "response_time_slowest"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2ResponseTimeAutoDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2ResponseTimeAutoDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2ResponseTimeAutoDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 over_alerting_protection: 'outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection',
+                 response_time_all: 'outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll',
+                 response_time_slowest: 'outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest'):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "response_time_all", response_time_all)
+        pulumi.set(__self__, "response_time_slowest", response_time_slowest)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> 'outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection':
+        return pulumi.get(self, "over_alerting_protection")
+
+    @property
+    @pulumi.getter(name="responseTimeAll")
+    def response_time_all(self) -> 'outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll':
+        return pulumi.get(self, "response_time_all")
+
+    @property
+    @pulumi.getter(name="responseTimeSlowest")
+    def response_time_slowest(self) -> 'outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest':
+        return pulumi.get(self, "response_time_slowest")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+        elif key == "requestsPerMinute":
+            suggest = "requests_per_minute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 minutes_abnormal_state: int,
+                 requests_per_minute: float):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> int:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> float:
+        return pulumi.get(self, "requests_per_minute")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "degradationMilliseconds":
+            suggest = "degradation_milliseconds"
+        elif key == "degradationPercent":
+            suggest = "degradation_percent"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 degradation_milliseconds: float,
+                 degradation_percent: float):
+        pulumi.set(__self__, "degradation_milliseconds", degradation_milliseconds)
+        pulumi.set(__self__, "degradation_percent", degradation_percent)
+
+    @property
+    @pulumi.getter(name="degradationMilliseconds")
+    def degradation_milliseconds(self) -> float:
+        return pulumi.get(self, "degradation_milliseconds")
+
+    @property
+    @pulumi.getter(name="degradationPercent")
+    def degradation_percent(self) -> float:
+        return pulumi.get(self, "degradation_percent")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "slowestDegradationMilliseconds":
+            suggest = "slowest_degradation_milliseconds"
+        elif key == "slowestDegradationPercent":
+            suggest = "slowest_degradation_percent"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 slowest_degradation_milliseconds: float,
+                 slowest_degradation_percent: float):
+        pulumi.set(__self__, "slowest_degradation_milliseconds", slowest_degradation_milliseconds)
+        pulumi.set(__self__, "slowest_degradation_percent", slowest_degradation_percent)
+
+    @property
+    @pulumi.getter(name="slowestDegradationMilliseconds")
+    def slowest_degradation_milliseconds(self) -> float:
+        return pulumi.get(self, "slowest_degradation_milliseconds")
+
+    @property
+    @pulumi.getter(name="slowestDegradationPercent")
+    def slowest_degradation_percent(self) -> float:
+        return pulumi.get(self, "slowest_degradation_percent")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2ResponseTimeFixedDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overAlertingProtection":
+            suggest = "over_alerting_protection"
+        elif key == "responseTimeAll":
+            suggest = "response_time_all"
+        elif key == "responseTimeSlowest":
+            suggest = "response_time_slowest"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2ResponseTimeFixedDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2ResponseTimeFixedDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2ResponseTimeFixedDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 over_alerting_protection: 'outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection',
+                 response_time_all: 'outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll',
+                 response_time_slowest: 'outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest',
+                 sensitivity: str):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "response_time_all", response_time_all)
+        pulumi.set(__self__, "response_time_slowest", response_time_slowest)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> 'outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection':
+        return pulumi.get(self, "over_alerting_protection")
+
+    @property
+    @pulumi.getter(name="responseTimeAll")
+    def response_time_all(self) -> 'outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll':
+        return pulumi.get(self, "response_time_all")
+
+    @property
+    @pulumi.getter(name="responseTimeSlowest")
+    def response_time_slowest(self) -> 'outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest':
+        return pulumi.get(self, "response_time_slowest")
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> str:
+        return pulumi.get(self, "sensitivity")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+        elif key == "requestsPerMinute":
+            suggest = "requests_per_minute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 minutes_abnormal_state: int,
+                 requests_per_minute: float):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "requests_per_minute", requests_per_minute)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> int:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @property
+    @pulumi.getter(name="requestsPerMinute")
+    def requests_per_minute(self) -> float:
+        return pulumi.get(self, "requests_per_minute")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "degradationMilliseconds":
+            suggest = "degradation_milliseconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 degradation_milliseconds: float):
+        pulumi.set(__self__, "degradation_milliseconds", degradation_milliseconds)
+
+    @property
+    @pulumi.getter(name="degradationMilliseconds")
+    def degradation_milliseconds(self) -> float:
+        return pulumi.get(self, "degradation_milliseconds")
+
+
+@pulumi.output_type
+class ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "slowestDegradationMilliseconds":
+            suggest = "slowest_degradation_milliseconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 slowest_degradation_milliseconds: float):
+        pulumi.set(__self__, "slowest_degradation_milliseconds", slowest_degradation_milliseconds)
+
+    @property
+    @pulumi.getter(name="slowestDegradationMilliseconds")
+    def slowest_degradation_milliseconds(self) -> float:
+        return pulumi.get(self, "slowest_degradation_milliseconds")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestConditions(dict):
+    def __init__(__self__, *,
+                 conditions: Sequence['outputs.ServiceExternalWebRequestConditionsCondition']):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Sequence['outputs.ServiceExternalWebRequestConditionsCondition']:
+        return pulumi.get(self, "conditions")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestConditionsCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compareOperationType":
+            suggest = "compare_operation_type"
+        elif key == "ignoreCase":
+            suggest = "ignore_case"
+        elif key == "intValue":
+            suggest = "int_value"
+        elif key == "intValues":
+            suggest = "int_values"
+        elif key == "ipRangeFrom":
+            suggest = "ip_range_from"
+        elif key == "ipRangeTo":
+            suggest = "ip_range_to"
+        elif key == "tagValues":
+            suggest = "tag_values"
+        elif key == "textValues":
+            suggest = "text_values"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebRequestConditionsCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebRequestConditionsCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebRequestConditionsCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attribute: str,
+                 compare_operation_type: str,
+                 frameworks: Optional[Sequence[str]] = None,
+                 ignore_case: Optional[bool] = None,
+                 int_value: Optional[int] = None,
+                 int_values: Optional[Sequence[int]] = None,
+                 ip_range_from: Optional[str] = None,
+                 ip_range_to: Optional[str] = None,
+                 tag_values: Optional[Sequence[str]] = None,
+                 text_values: Optional[Sequence[str]] = None):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "compare_operation_type", compare_operation_type)
+        if frameworks is not None:
+            pulumi.set(__self__, "frameworks", frameworks)
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if int_values is not None:
+            pulumi.set(__self__, "int_values", int_values)
+        if ip_range_from is not None:
+            pulumi.set(__self__, "ip_range_from", ip_range_from)
+        if ip_range_to is not None:
+            pulumi.set(__self__, "ip_range_to", ip_range_to)
+        if tag_values is not None:
+            pulumi.set(__self__, "tag_values", tag_values)
+        if text_values is not None:
+            pulumi.set(__self__, "text_values", text_values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> str:
+        return pulumi.get(self, "attribute")
+
+    @property
+    @pulumi.getter(name="compareOperationType")
+    def compare_operation_type(self) -> str:
+        return pulumi.get(self, "compare_operation_type")
+
+    @property
+    @pulumi.getter
+    def frameworks(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "frameworks")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[bool]:
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[int]:
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="intValues")
+    def int_values(self) -> Optional[Sequence[int]]:
+        return pulumi.get(self, "int_values")
+
+    @property
+    @pulumi.getter(name="ipRangeFrom")
+    def ip_range_from(self) -> Optional[str]:
+        return pulumi.get(self, "ip_range_from")
+
+    @property
+    @pulumi.getter(name="ipRangeTo")
+    def ip_range_to(self) -> Optional[str]:
+        return pulumi.get(self, "ip_range_to")
+
+    @property
+    @pulumi.getter(name="tagValues")
+    def tag_values(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "tag_values")
+
+    @property
+    @pulumi.getter(name="textValues")
+    def text_values(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "text_values")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributors(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applicationId":
+            suggest = "application_id"
+        elif key == "contextRoot":
+            suggest = "context_root"
+        elif key == "portForServiceId":
+            suggest = "port_for_service_id"
+        elif key == "publicDomainName":
+            suggest = "public_domain_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebRequestIdContributors. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebRequestIdContributors.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebRequestIdContributors.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 application_id: 'outputs.ServiceExternalWebRequestIdContributorsApplicationId',
+                 context_root: 'outputs.ServiceExternalWebRequestIdContributorsContextRoot',
+                 port_for_service_id: bool,
+                 public_domain_name: 'outputs.ServiceExternalWebRequestIdContributorsPublicDomainName'):
+        """
+        :param 'ServiceExternalWebRequestIdContributorsApplicationIdArgs' application_id: Application identifier
+        :param 'ServiceExternalWebRequestIdContributorsContextRootArgs' context_root: URL context root
+        :param bool port_for_service_id: Let the Port contribute to the Service Id
+        :param 'ServiceExternalWebRequestIdContributorsPublicDomainNameArgs' public_domain_name: Public domain name
+        """
+        pulumi.set(__self__, "application_id", application_id)
+        pulumi.set(__self__, "context_root", context_root)
+        pulumi.set(__self__, "port_for_service_id", port_for_service_id)
+        pulumi.set(__self__, "public_domain_name", public_domain_name)
+
+    @property
+    @pulumi.getter(name="applicationId")
+    def application_id(self) -> 'outputs.ServiceExternalWebRequestIdContributorsApplicationId':
+        """
+        Application identifier
+        """
+        return pulumi.get(self, "application_id")
+
+    @property
+    @pulumi.getter(name="contextRoot")
+    def context_root(self) -> 'outputs.ServiceExternalWebRequestIdContributorsContextRoot':
+        """
+        URL context root
+        """
+        return pulumi.get(self, "context_root")
+
+    @property
+    @pulumi.getter(name="portForServiceId")
+    def port_for_service_id(self) -> bool:
+        """
+        Let the Port contribute to the Service Id
+        """
+        return pulumi.get(self, "port_for_service_id")
+
+    @property
+    @pulumi.getter(name="publicDomainName")
+    def public_domain_name(self) -> 'outputs.ServiceExternalWebRequestIdContributorsPublicDomainName':
+        """
+        Public domain name
+        """
+        return pulumi.get(self, "public_domain_name")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsApplicationId(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableIdContributor":
+            suggest = "enable_id_contributor"
+        elif key == "serviceIdContributor":
+            suggest = "service_id_contributor"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebRequestIdContributorsApplicationId. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebRequestIdContributorsApplicationId.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebRequestIdContributorsApplicationId.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_id_contributor: bool,
+                 service_id_contributor: Optional['outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor'] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> bool:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional['outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor']:
+        return pulumi.get(self, "service_id_contributor")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contributionType":
+            suggest = "contribution_type"
+        elif key == "valueOverride":
+            suggest = "value_override"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contribution_type: str,
+                 transformations: Optional['outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations'] = None,
+                 value_override: Optional['outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride'] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> str:
+        return pulumi.get(self, "contribution_type")
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional['outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations']:
+        return pulumi.get(self, "transformations")
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional['outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride']:
+        return pulumi.get(self, "value_override")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations(dict):
+    def __init__(__self__, *,
+                 transformations: Sequence['outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation']):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Sequence['outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation']:
+        return pulumi.get(self, "transformations")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "transformationType":
+            suggest = "transformation_type"
+        elif key == "includeHexNumbers":
+            suggest = "include_hex_numbers"
+        elif key == "minDigitCount":
+            suggest = "min_digit_count"
+        elif key == "replacementValue":
+            suggest = "replacement_value"
+        elif key == "segmentCount":
+            suggest = "segment_count"
+        elif key == "selectIndex":
+            suggest = "select_index"
+        elif key == "splitDelimiter":
+            suggest = "split_delimiter"
+        elif key == "takeFromEnd":
+            suggest = "take_from_end"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 transformation_type: str,
+                 include_hex_numbers: Optional[bool] = None,
+                 min_digit_count: Optional[int] = None,
+                 prefix: Optional[str] = None,
+                 replacement_value: Optional[str] = None,
+                 segment_count: Optional[int] = None,
+                 select_index: Optional[int] = None,
+                 split_delimiter: Optional[str] = None,
+                 suffix: Optional[str] = None,
+                 take_from_end: Optional[bool] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> str:
+        return pulumi.get(self, "transformation_type")
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[bool]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[int]:
+        return pulumi.get(self, "min_digit_count")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[str]:
+        return pulumi.get(self, "replacement_value")
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[int]:
+        return pulumi.get(self, "segment_count")
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[int]:
+        return pulumi.get(self, "select_index")
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[str]:
+        return pulumi.get(self, "split_delimiter")
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[str]:
+        return pulumi.get(self, "suffix")
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[bool]:
+        return pulumi.get(self, "take_from_end")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride(dict):
+    def __init__(__self__, *,
+                 value: str):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsContextRoot(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableIdContributor":
+            suggest = "enable_id_contributor"
+        elif key == "serviceIdContributor":
+            suggest = "service_id_contributor"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebRequestIdContributorsContextRoot. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebRequestIdContributorsContextRoot.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebRequestIdContributorsContextRoot.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_id_contributor: bool,
+                 service_id_contributor: Optional['outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor'] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> bool:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional['outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor']:
+        return pulumi.get(self, "service_id_contributor")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contributionType":
+            suggest = "contribution_type"
+        elif key == "segmentCount":
+            suggest = "segment_count"
+        elif key == "valueOverride":
+            suggest = "value_override"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contribution_type: str,
+                 segment_count: Optional[int] = None,
+                 transformations: Optional['outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations'] = None,
+                 value_override: Optional['outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride'] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> str:
+        return pulumi.get(self, "contribution_type")
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[int]:
+        return pulumi.get(self, "segment_count")
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional['outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations']:
+        return pulumi.get(self, "transformations")
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional['outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride']:
+        return pulumi.get(self, "value_override")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations(dict):
+    def __init__(__self__, *,
+                 transformations: Sequence['outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation']):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Sequence['outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation']:
+        return pulumi.get(self, "transformations")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "transformationType":
+            suggest = "transformation_type"
+        elif key == "includeHexNumbers":
+            suggest = "include_hex_numbers"
+        elif key == "minDigitCount":
+            suggest = "min_digit_count"
+        elif key == "replacementValue":
+            suggest = "replacement_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 transformation_type: str,
+                 include_hex_numbers: Optional[bool] = None,
+                 min_digit_count: Optional[int] = None,
+                 prefix: Optional[str] = None,
+                 replacement_value: Optional[str] = None,
+                 suffix: Optional[str] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> str:
+        return pulumi.get(self, "transformation_type")
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[bool]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[int]:
+        return pulumi.get(self, "min_digit_count")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[str]:
+        return pulumi.get(self, "replacement_value")
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[str]:
+        return pulumi.get(self, "suffix")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride(dict):
+    def __init__(__self__, *,
+                 value: str):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsPublicDomainName(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableIdContributor":
+            suggest = "enable_id_contributor"
+        elif key == "serviceIdContributor":
+            suggest = "service_id_contributor"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebRequestIdContributorsPublicDomainName. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebRequestIdContributorsPublicDomainName.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebRequestIdContributorsPublicDomainName.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_id_contributor: bool,
+                 service_id_contributor: Optional['outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor'] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> bool:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional['outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor']:
+        return pulumi.get(self, "service_id_contributor")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contributionType":
+            suggest = "contribution_type"
+        elif key == "copyFromHostName":
+            suggest = "copy_from_host_name"
+        elif key == "valueOverride":
+            suggest = "value_override"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contribution_type: str,
+                 copy_from_host_name: Optional[bool] = None,
+                 transformations: Optional['outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformations'] = None,
+                 value_override: Optional['outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverride'] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if copy_from_host_name is not None:
+            pulumi.set(__self__, "copy_from_host_name", copy_from_host_name)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> str:
+        return pulumi.get(self, "contribution_type")
+
+    @property
+    @pulumi.getter(name="copyFromHostName")
+    def copy_from_host_name(self) -> Optional[bool]:
+        return pulumi.get(self, "copy_from_host_name")
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional['outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformations']:
+        return pulumi.get(self, "transformations")
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional['outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverride']:
+        return pulumi.get(self, "value_override")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformations(dict):
+    def __init__(__self__, *,
+                 transformations: Sequence['outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformation']):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Sequence['outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformation']:
+        return pulumi.get(self, "transformations")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "transformationType":
+            suggest = "transformation_type"
+        elif key == "includeHexNumbers":
+            suggest = "include_hex_numbers"
+        elif key == "minDigitCount":
+            suggest = "min_digit_count"
+        elif key == "replacementValue":
+            suggest = "replacement_value"
+        elif key == "segmentCount":
+            suggest = "segment_count"
+        elif key == "selectIndex":
+            suggest = "select_index"
+        elif key == "splitDelimiter":
+            suggest = "split_delimiter"
+        elif key == "takeFromEnd":
+            suggest = "take_from_end"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 transformation_type: str,
+                 include_hex_numbers: Optional[bool] = None,
+                 min_digit_count: Optional[int] = None,
+                 prefix: Optional[str] = None,
+                 replacement_value: Optional[str] = None,
+                 segment_count: Optional[int] = None,
+                 select_index: Optional[int] = None,
+                 split_delimiter: Optional[str] = None,
+                 suffix: Optional[str] = None,
+                 take_from_end: Optional[bool] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> str:
+        return pulumi.get(self, "transformation_type")
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[bool]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[int]:
+        return pulumi.get(self, "min_digit_count")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[str]:
+        return pulumi.get(self, "replacement_value")
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[int]:
+        return pulumi.get(self, "segment_count")
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[int]:
+        return pulumi.get(self, "select_index")
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[str]:
+        return pulumi.get(self, "split_delimiter")
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[str]:
+        return pulumi.get(self, "suffix")
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[bool]:
+        return pulumi.get(self, "take_from_end")
+
+
+@pulumi.output_type
+class ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverride(dict):
+    def __init__(__self__, *,
+                 value: str):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ServiceExternalWebServiceConditions(dict):
+    def __init__(__self__, *,
+                 conditions: Sequence['outputs.ServiceExternalWebServiceConditionsCondition']):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Sequence['outputs.ServiceExternalWebServiceConditionsCondition']:
+        return pulumi.get(self, "conditions")
+
+
+@pulumi.output_type
+class ServiceExternalWebServiceConditionsCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compareOperationType":
+            suggest = "compare_operation_type"
+        elif key == "ignoreCase":
+            suggest = "ignore_case"
+        elif key == "intValue":
+            suggest = "int_value"
+        elif key == "intValues":
+            suggest = "int_values"
+        elif key == "ipRangeFrom":
+            suggest = "ip_range_from"
+        elif key == "ipRangeTo":
+            suggest = "ip_range_to"
+        elif key == "tagValues":
+            suggest = "tag_values"
+        elif key == "textValues":
+            suggest = "text_values"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebServiceConditionsCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebServiceConditionsCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebServiceConditionsCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attribute: str,
+                 compare_operation_type: str,
+                 frameworks: Optional[Sequence[str]] = None,
+                 ignore_case: Optional[bool] = None,
+                 int_value: Optional[int] = None,
+                 int_values: Optional[Sequence[int]] = None,
+                 ip_range_from: Optional[str] = None,
+                 ip_range_to: Optional[str] = None,
+                 tag_values: Optional[Sequence[str]] = None,
+                 text_values: Optional[Sequence[str]] = None):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "compare_operation_type", compare_operation_type)
+        if frameworks is not None:
+            pulumi.set(__self__, "frameworks", frameworks)
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if int_values is not None:
+            pulumi.set(__self__, "int_values", int_values)
+        if ip_range_from is not None:
+            pulumi.set(__self__, "ip_range_from", ip_range_from)
+        if ip_range_to is not None:
+            pulumi.set(__self__, "ip_range_to", ip_range_to)
+        if tag_values is not None:
+            pulumi.set(__self__, "tag_values", tag_values)
+        if text_values is not None:
+            pulumi.set(__self__, "text_values", text_values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> str:
+        return pulumi.get(self, "attribute")
+
+    @property
+    @pulumi.getter(name="compareOperationType")
+    def compare_operation_type(self) -> str:
+        return pulumi.get(self, "compare_operation_type")
+
+    @property
+    @pulumi.getter
+    def frameworks(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "frameworks")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[bool]:
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[int]:
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="intValues")
+    def int_values(self) -> Optional[Sequence[int]]:
+        return pulumi.get(self, "int_values")
+
+    @property
+    @pulumi.getter(name="ipRangeFrom")
+    def ip_range_from(self) -> Optional[str]:
+        return pulumi.get(self, "ip_range_from")
+
+    @property
+    @pulumi.getter(name="ipRangeTo")
+    def ip_range_to(self) -> Optional[str]:
+        return pulumi.get(self, "ip_range_to")
+
+    @property
+    @pulumi.getter(name="tagValues")
+    def tag_values(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "tag_values")
+
+    @property
+    @pulumi.getter(name="textValues")
+    def text_values(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "text_values")
+
+
+@pulumi.output_type
+class ServiceExternalWebServiceIdContributors(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "detectAsWebRequestService":
+            suggest = "detect_as_web_request_service"
+        elif key == "portForServiceId":
+            suggest = "port_for_service_id"
+        elif key == "urlPath":
+            suggest = "url_path"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebServiceIdContributors. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebServiceIdContributors.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebServiceIdContributors.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 detect_as_web_request_service: bool,
+                 port_for_service_id: Optional[bool] = None,
+                 url_path: Optional['outputs.ServiceExternalWebServiceIdContributorsUrlPath'] = None):
+        """
+        :param bool detect_as_web_request_service: Detect the matching requests as web request services instead of web services.
+        """
+        pulumi.set(__self__, "detect_as_web_request_service", detect_as_web_request_service)
+        if port_for_service_id is not None:
+            pulumi.set(__self__, "port_for_service_id", port_for_service_id)
+        if url_path is not None:
+            pulumi.set(__self__, "url_path", url_path)
+
+    @property
+    @pulumi.getter(name="detectAsWebRequestService")
+    def detect_as_web_request_service(self) -> bool:
+        """
+        Detect the matching requests as web request services instead of web services.
+        """
+        return pulumi.get(self, "detect_as_web_request_service")
+
+    @property
+    @pulumi.getter(name="portForServiceId")
+    def port_for_service_id(self) -> Optional[bool]:
+        return pulumi.get(self, "port_for_service_id")
+
+    @property
+    @pulumi.getter(name="urlPath")
+    def url_path(self) -> Optional['outputs.ServiceExternalWebServiceIdContributorsUrlPath']:
+        return pulumi.get(self, "url_path")
+
+
+@pulumi.output_type
+class ServiceExternalWebServiceIdContributorsUrlPath(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableIdContributor":
+            suggest = "enable_id_contributor"
+        elif key == "serviceIdContributor":
+            suggest = "service_id_contributor"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebServiceIdContributorsUrlPath. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebServiceIdContributorsUrlPath.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebServiceIdContributorsUrlPath.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_id_contributor: bool,
+                 service_id_contributor: Optional['outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor'] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> bool:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional['outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor']:
+        return pulumi.get(self, "service_id_contributor")
+
+
+@pulumi.output_type
+class ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contributionType":
+            suggest = "contribution_type"
+        elif key == "valueOverride":
+            suggest = "value_override"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contribution_type: str,
+                 transformations: Optional['outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations'] = None,
+                 value_override: Optional['outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride'] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> str:
+        return pulumi.get(self, "contribution_type")
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional['outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations']:
+        return pulumi.get(self, "transformations")
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional['outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride']:
+        return pulumi.get(self, "value_override")
+
+
+@pulumi.output_type
+class ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations(dict):
+    def __init__(__self__, *,
+                 transformations: Sequence['outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation']):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Sequence['outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation']:
+        return pulumi.get(self, "transformations")
+
+
+@pulumi.output_type
+class ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "transformationType":
+            suggest = "transformation_type"
+        elif key == "includeHexNumbers":
+            suggest = "include_hex_numbers"
+        elif key == "minDigitCount":
+            suggest = "min_digit_count"
+        elif key == "replacementValue":
+            suggest = "replacement_value"
+        elif key == "segmentCount":
+            suggest = "segment_count"
+        elif key == "selectIndex":
+            suggest = "select_index"
+        elif key == "splitDelimiter":
+            suggest = "split_delimiter"
+        elif key == "takeFromEnd":
+            suggest = "take_from_end"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 transformation_type: str,
+                 include_hex_numbers: Optional[bool] = None,
+                 min_digit_count: Optional[int] = None,
+                 prefix: Optional[str] = None,
+                 replacement_value: Optional[str] = None,
+                 segment_count: Optional[int] = None,
+                 select_index: Optional[int] = None,
+                 split_delimiter: Optional[str] = None,
+                 suffix: Optional[str] = None,
+                 take_from_end: Optional[bool] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> str:
+        return pulumi.get(self, "transformation_type")
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[bool]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[int]:
+        return pulumi.get(self, "min_digit_count")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[str]:
+        return pulumi.get(self, "replacement_value")
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[int]:
+        return pulumi.get(self, "segment_count")
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[int]:
+        return pulumi.get(self, "select_index")
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[str]:
+        return pulumi.get(self, "split_delimiter")
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[str]:
+        return pulumi.get(self, "suffix")
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[bool]:
+        return pulumi.get(self, "take_from_end")
+
+
+@pulumi.output_type
+class ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride(dict):
+    def __init__(__self__, *,
+                 value: str):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ServiceFailureExceptionRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ignoreAllExceptions":
+            suggest = "ignore_all_exceptions"
+        elif key == "ignoreSpanFailureDetection":
+            suggest = "ignore_span_failure_detection"
+        elif key == "customErrorRules":
+            suggest = "custom_error_rules"
+        elif key == "customHandledExceptions":
+            suggest = "custom_handled_exceptions"
+        elif key == "ignoredExceptions":
+            suggest = "ignored_exceptions"
+        elif key == "successForcingExceptions":
+            suggest = "success_forcing_exceptions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFailureExceptionRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFailureExceptionRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFailureExceptionRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ignore_all_exceptions: bool,
+                 ignore_span_failure_detection: bool,
+                 custom_error_rules: Optional['outputs.ServiceFailureExceptionRulesCustomErrorRules'] = None,
+                 custom_handled_exceptions: Optional['outputs.ServiceFailureExceptionRulesCustomHandledExceptions'] = None,
+                 ignored_exceptions: Optional['outputs.ServiceFailureExceptionRulesIgnoredExceptions'] = None,
+                 success_forcing_exceptions: Optional['outputs.ServiceFailureExceptionRulesSuccessForcingExceptions'] = None):
+        """
+        :param bool ignore_all_exceptions: Ignore all exceptions
+        :param bool ignore_span_failure_detection: Ignore span failure detection
+        :param 'ServiceFailureExceptionRulesCustomErrorRulesArgs' custom_error_rules: Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+        :param 'ServiceFailureExceptionRulesCustomHandledExceptionsArgs' custom_handled_exceptions: There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+        :param 'ServiceFailureExceptionRulesIgnoredExceptionsArgs' ignored_exceptions: Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+        :param 'ServiceFailureExceptionRulesSuccessForcingExceptionsArgs' success_forcing_exceptions: Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+        """
+        pulumi.set(__self__, "ignore_all_exceptions", ignore_all_exceptions)
+        pulumi.set(__self__, "ignore_span_failure_detection", ignore_span_failure_detection)
+        if custom_error_rules is not None:
+            pulumi.set(__self__, "custom_error_rules", custom_error_rules)
+        if custom_handled_exceptions is not None:
+            pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+        if ignored_exceptions is not None:
+            pulumi.set(__self__, "ignored_exceptions", ignored_exceptions)
+        if success_forcing_exceptions is not None:
+            pulumi.set(__self__, "success_forcing_exceptions", success_forcing_exceptions)
+
+    @property
+    @pulumi.getter(name="ignoreAllExceptions")
+    def ignore_all_exceptions(self) -> bool:
+        """
+        Ignore all exceptions
+        """
+        return pulumi.get(self, "ignore_all_exceptions")
+
+    @property
+    @pulumi.getter(name="ignoreSpanFailureDetection")
+    def ignore_span_failure_detection(self) -> bool:
+        """
+        Ignore span failure detection
+        """
+        return pulumi.get(self, "ignore_span_failure_detection")
+
+    @property
+    @pulumi.getter(name="customErrorRules")
+    def custom_error_rules(self) -> Optional['outputs.ServiceFailureExceptionRulesCustomErrorRules']:
+        """
+        Some custom error situations are only detectable via a return value or other means. To support such cases, [define a request attribute](https://dt-url.net/ys5k0p4y) that captures the required data. Then define a custom error rule that determines if the request has failed based on the value of the request attribute.
+        """
+        return pulumi.get(self, "custom_error_rules")
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> Optional['outputs.ServiceFailureExceptionRulesCustomHandledExceptions']:
+        """
+        There may be situations where your application code handles exceptions gracefully in a manner that these failures aren't detected by Dynatrace. Use this setting to define specific gracefully-handled exceptions that should be treated as service failures.
+        """
+        return pulumi.get(self, "custom_handled_exceptions")
+
+    @property
+    @pulumi.getter(name="ignoredExceptions")
+    def ignored_exceptions(self) -> Optional['outputs.ServiceFailureExceptionRulesIgnoredExceptions']:
+        """
+        Some exceptions that are thrown by legacy or 3rd-party code indicate a specific response, not an error. Use this setting to instruct Dynatrace to treat such exceptions as non-failed requests.. If an exception matching any of the defined patterns occurs in a request, it will not be considered as a failure. Other exceptions occurring at the same request might still mark the request as failed.
+        """
+        return pulumi.get(self, "ignored_exceptions")
+
+    @property
+    @pulumi.getter(name="successForcingExceptions")
+    def success_forcing_exceptions(self) -> Optional['outputs.ServiceFailureExceptionRulesSuccessForcingExceptions']:
+        """
+        Define exceptions which indicate that a service call should not be considered as failed. E.g. an exception indicating that the client aborted the operation.. If an exception matching any of the defined patterns occurs on the entry node of the service, it will be considered successful. Compared to ignored exceptions, the request will be considered successful even if other exceptions occur in the same request.
+        """
+        return pulumi.get(self, "success_forcing_exceptions")
+
+
+@pulumi.output_type
+class ServiceFailureExceptionRulesCustomErrorRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customErrorRules":
+            suggest = "custom_error_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFailureExceptionRulesCustomErrorRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFailureExceptionRulesCustomErrorRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFailureExceptionRulesCustomErrorRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_error_rules: Sequence['outputs.ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule']):
+        pulumi.set(__self__, "custom_error_rules", custom_error_rules)
+
+    @property
+    @pulumi.getter(name="customErrorRules")
+    def custom_error_rules(self) -> Sequence['outputs.ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule']:
+        return pulumi.get(self, "custom_error_rules")
+
+
+@pulumi.output_type
+class ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "requestAttribute":
+            suggest = "request_attribute"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition: 'outputs.ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition',
+                 request_attribute: str):
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "request_attribute", request_attribute)
+
+    @property
+    @pulumi.getter
+    def condition(self) -> 'outputs.ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition':
+        return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="requestAttribute")
+    def request_attribute(self) -> str:
+        return pulumi.get(self, "request_attribute")
+
+
+@pulumi.output_type
+class ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compareOperationType":
+            suggest = "compare_operation_type"
+        elif key == "caseSensitive":
+            suggest = "case_sensitive"
+        elif key == "doubleValue":
+            suggest = "double_value"
+        elif key == "intValue":
+            suggest = "int_value"
+        elif key == "textValue":
+            suggest = "text_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compare_operation_type: str,
+                 case_sensitive: Optional[bool] = None,
+                 double_value: Optional[float] = None,
+                 int_value: Optional[int] = None,
+                 text_value: Optional[str] = None):
+        pulumi.set(__self__, "compare_operation_type", compare_operation_type)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if double_value is not None:
+            pulumi.set(__self__, "double_value", double_value)
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if text_value is not None:
+            pulumi.set(__self__, "text_value", text_value)
+
+    @property
+    @pulumi.getter(name="compareOperationType")
+    def compare_operation_type(self) -> str:
+        return pulumi.get(self, "compare_operation_type")
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter(name="doubleValue")
+    def double_value(self) -> Optional[float]:
+        return pulumi.get(self, "double_value")
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[int]:
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="textValue")
+    def text_value(self) -> Optional[str]:
+        return pulumi.get(self, "text_value")
+
+
+@pulumi.output_type
+class ServiceFailureExceptionRulesCustomHandledExceptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customHandledExceptions":
+            suggest = "custom_handled_exceptions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFailureExceptionRulesCustomHandledExceptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFailureExceptionRulesCustomHandledExceptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFailureExceptionRulesCustomHandledExceptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_handled_exceptions: Sequence['outputs.ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException']):
+        pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> Sequence['outputs.ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException']:
+        return pulumi.get(self, "custom_handled_exceptions")
+
+
+@pulumi.output_type
+class ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "classPattern":
+            suggest = "class_pattern"
+        elif key == "messagePattern":
+            suggest = "message_pattern"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 class_pattern: Optional[str] = None,
+                 message_pattern: Optional[str] = None):
+        if class_pattern is not None:
+            pulumi.set(__self__, "class_pattern", class_pattern)
+        if message_pattern is not None:
+            pulumi.set(__self__, "message_pattern", message_pattern)
+
+    @property
+    @pulumi.getter(name="classPattern")
+    def class_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "class_pattern")
+
+    @property
+    @pulumi.getter(name="messagePattern")
+    def message_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "message_pattern")
+
+
+@pulumi.output_type
+class ServiceFailureExceptionRulesIgnoredExceptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customHandledExceptions":
+            suggest = "custom_handled_exceptions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFailureExceptionRulesIgnoredExceptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFailureExceptionRulesIgnoredExceptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFailureExceptionRulesIgnoredExceptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_handled_exceptions: Sequence['outputs.ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledException']):
+        pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> Sequence['outputs.ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledException']:
+        return pulumi.get(self, "custom_handled_exceptions")
+
+
+@pulumi.output_type
+class ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledException(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "classPattern":
+            suggest = "class_pattern"
+        elif key == "messagePattern":
+            suggest = "message_pattern"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledException. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledException.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledException.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 class_pattern: Optional[str] = None,
+                 message_pattern: Optional[str] = None):
+        if class_pattern is not None:
+            pulumi.set(__self__, "class_pattern", class_pattern)
+        if message_pattern is not None:
+            pulumi.set(__self__, "message_pattern", message_pattern)
+
+    @property
+    @pulumi.getter(name="classPattern")
+    def class_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "class_pattern")
+
+    @property
+    @pulumi.getter(name="messagePattern")
+    def message_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "message_pattern")
+
+
+@pulumi.output_type
+class ServiceFailureExceptionRulesSuccessForcingExceptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customHandledExceptions":
+            suggest = "custom_handled_exceptions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFailureExceptionRulesSuccessForcingExceptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFailureExceptionRulesSuccessForcingExceptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFailureExceptionRulesSuccessForcingExceptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_handled_exceptions: Sequence['outputs.ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledException']):
+        pulumi.set(__self__, "custom_handled_exceptions", custom_handled_exceptions)
+
+    @property
+    @pulumi.getter(name="customHandledExceptions")
+    def custom_handled_exceptions(self) -> Sequence['outputs.ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledException']:
+        return pulumi.get(self, "custom_handled_exceptions")
+
+
+@pulumi.output_type
+class ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledException(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "classPattern":
+            suggest = "class_pattern"
+        elif key == "messagePattern":
+            suggest = "message_pattern"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledException. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledException.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledException.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 class_pattern: Optional[str] = None,
+                 message_pattern: Optional[str] = None):
+        if class_pattern is not None:
+            pulumi.set(__self__, "class_pattern", class_pattern)
+        if message_pattern is not None:
+            pulumi.set(__self__, "message_pattern", message_pattern)
+
+    @property
+    @pulumi.getter(name="classPattern")
+    def class_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "class_pattern")
+
+    @property
+    @pulumi.getter(name="messagePattern")
+    def message_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "message_pattern")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestConditions(dict):
+    def __init__(__self__, *,
+                 conditions: Sequence['outputs.ServiceFullWebRequestConditionsCondition']):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Sequence['outputs.ServiceFullWebRequestConditionsCondition']:
+        return pulumi.get(self, "conditions")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestConditionsCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compareOperationType":
+            suggest = "compare_operation_type"
+        elif key == "ignoreCase":
+            suggest = "ignore_case"
+        elif key == "intValue":
+            suggest = "int_value"
+        elif key == "intValues":
+            suggest = "int_values"
+        elif key == "ipRangeFrom":
+            suggest = "ip_range_from"
+        elif key == "ipRangeTo":
+            suggest = "ip_range_to"
+        elif key == "tagValues":
+            suggest = "tag_values"
+        elif key == "textValues":
+            suggest = "text_values"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebRequestConditionsCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebRequestConditionsCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebRequestConditionsCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attribute: str,
+                 compare_operation_type: str,
+                 frameworks: Optional[Sequence[str]] = None,
+                 ignore_case: Optional[bool] = None,
+                 int_value: Optional[int] = None,
+                 int_values: Optional[Sequence[int]] = None,
+                 ip_range_from: Optional[str] = None,
+                 ip_range_to: Optional[str] = None,
+                 tag_values: Optional[Sequence[str]] = None,
+                 text_values: Optional[Sequence[str]] = None):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "compare_operation_type", compare_operation_type)
+        if frameworks is not None:
+            pulumi.set(__self__, "frameworks", frameworks)
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if int_values is not None:
+            pulumi.set(__self__, "int_values", int_values)
+        if ip_range_from is not None:
+            pulumi.set(__self__, "ip_range_from", ip_range_from)
+        if ip_range_to is not None:
+            pulumi.set(__self__, "ip_range_to", ip_range_to)
+        if tag_values is not None:
+            pulumi.set(__self__, "tag_values", tag_values)
+        if text_values is not None:
+            pulumi.set(__self__, "text_values", text_values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> str:
+        return pulumi.get(self, "attribute")
+
+    @property
+    @pulumi.getter(name="compareOperationType")
+    def compare_operation_type(self) -> str:
+        return pulumi.get(self, "compare_operation_type")
+
+    @property
+    @pulumi.getter
+    def frameworks(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "frameworks")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[bool]:
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[int]:
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="intValues")
+    def int_values(self) -> Optional[Sequence[int]]:
+        return pulumi.get(self, "int_values")
+
+    @property
+    @pulumi.getter(name="ipRangeFrom")
+    def ip_range_from(self) -> Optional[str]:
+        return pulumi.get(self, "ip_range_from")
+
+    @property
+    @pulumi.getter(name="ipRangeTo")
+    def ip_range_to(self) -> Optional[str]:
+        return pulumi.get(self, "ip_range_to")
+
+    @property
+    @pulumi.getter(name="tagValues")
+    def tag_values(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "tag_values")
+
+    @property
+    @pulumi.getter(name="textValues")
+    def text_values(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "text_values")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributors(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applicationId":
+            suggest = "application_id"
+        elif key == "contextRoot":
+            suggest = "context_root"
+        elif key == "serverName":
+            suggest = "server_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebRequestIdContributors. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebRequestIdContributors.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebRequestIdContributors.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 application_id: 'outputs.ServiceFullWebRequestIdContributorsApplicationId',
+                 context_root: 'outputs.ServiceFullWebRequestIdContributorsContextRoot',
+                 server_name: 'outputs.ServiceFullWebRequestIdContributorsServerName'):
+        """
+        :param 'ServiceFullWebRequestIdContributorsApplicationIdArgs' application_id: Application identifier
+        :param 'ServiceFullWebRequestIdContributorsContextRootArgs' context_root: The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceFullWebRequestIdContributorsServerNameArgs' server_name: Server Name
+        """
+        pulumi.set(__self__, "application_id", application_id)
+        pulumi.set(__self__, "context_root", context_root)
+        pulumi.set(__self__, "server_name", server_name)
+
+    @property
+    @pulumi.getter(name="applicationId")
+    def application_id(self) -> 'outputs.ServiceFullWebRequestIdContributorsApplicationId':
+        """
+        Application identifier
+        """
+        return pulumi.get(self, "application_id")
+
+    @property
+    @pulumi.getter(name="contextRoot")
+    def context_root(self) -> 'outputs.ServiceFullWebRequestIdContributorsContextRoot':
+        """
+        The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+        """
+        return pulumi.get(self, "context_root")
+
+    @property
+    @pulumi.getter(name="serverName")
+    def server_name(self) -> 'outputs.ServiceFullWebRequestIdContributorsServerName':
+        """
+        Server Name
+        """
+        return pulumi.get(self, "server_name")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsApplicationId(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableIdContributor":
+            suggest = "enable_id_contributor"
+        elif key == "serviceIdContributor":
+            suggest = "service_id_contributor"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebRequestIdContributorsApplicationId. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebRequestIdContributorsApplicationId.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebRequestIdContributorsApplicationId.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_id_contributor: bool,
+                 service_id_contributor: Optional['outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor'] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> bool:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional['outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor']:
+        return pulumi.get(self, "service_id_contributor")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contributionType":
+            suggest = "contribution_type"
+        elif key == "valueOverride":
+            suggest = "value_override"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contribution_type: str,
+                 transformations: Optional['outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformations'] = None,
+                 value_override: Optional['outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride'] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> str:
+        return pulumi.get(self, "contribution_type")
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional['outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformations']:
+        return pulumi.get(self, "transformations")
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional['outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride']:
+        return pulumi.get(self, "value_override")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformations(dict):
+    def __init__(__self__, *,
+                 transformations: Sequence['outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation']):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Sequence['outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation']:
+        return pulumi.get(self, "transformations")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "transformationType":
+            suggest = "transformation_type"
+        elif key == "includeHexNumbers":
+            suggest = "include_hex_numbers"
+        elif key == "minDigitCount":
+            suggest = "min_digit_count"
+        elif key == "replacementValue":
+            suggest = "replacement_value"
+        elif key == "segmentCount":
+            suggest = "segment_count"
+        elif key == "selectIndex":
+            suggest = "select_index"
+        elif key == "splitDelimiter":
+            suggest = "split_delimiter"
+        elif key == "takeFromEnd":
+            suggest = "take_from_end"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 transformation_type: str,
+                 include_hex_numbers: Optional[bool] = None,
+                 min_digit_count: Optional[int] = None,
+                 prefix: Optional[str] = None,
+                 replacement_value: Optional[str] = None,
+                 segment_count: Optional[int] = None,
+                 select_index: Optional[int] = None,
+                 split_delimiter: Optional[str] = None,
+                 suffix: Optional[str] = None,
+                 take_from_end: Optional[bool] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> str:
+        return pulumi.get(self, "transformation_type")
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[bool]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[int]:
+        return pulumi.get(self, "min_digit_count")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[str]:
+        return pulumi.get(self, "replacement_value")
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[int]:
+        return pulumi.get(self, "segment_count")
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[int]:
+        return pulumi.get(self, "select_index")
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[str]:
+        return pulumi.get(self, "split_delimiter")
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[str]:
+        return pulumi.get(self, "suffix")
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[bool]:
+        return pulumi.get(self, "take_from_end")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride(dict):
+    def __init__(__self__, *,
+                 value: str):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsContextRoot(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableIdContributor":
+            suggest = "enable_id_contributor"
+        elif key == "serviceIdContributor":
+            suggest = "service_id_contributor"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebRequestIdContributorsContextRoot. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebRequestIdContributorsContextRoot.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebRequestIdContributorsContextRoot.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_id_contributor: bool,
+                 service_id_contributor: Optional['outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributor'] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> bool:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional['outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributor']:
+        return pulumi.get(self, "service_id_contributor")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsContextRootServiceIdContributor(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contributionType":
+            suggest = "contribution_type"
+        elif key == "segmentCount":
+            suggest = "segment_count"
+        elif key == "valueOverride":
+            suggest = "value_override"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebRequestIdContributorsContextRootServiceIdContributor. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebRequestIdContributorsContextRootServiceIdContributor.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebRequestIdContributorsContextRootServiceIdContributor.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contribution_type: str,
+                 segment_count: Optional[int] = None,
+                 transformations: Optional['outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformations'] = None,
+                 value_override: Optional['outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverride'] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> str:
+        return pulumi.get(self, "contribution_type")
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[int]:
+        return pulumi.get(self, "segment_count")
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional['outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformations']:
+        return pulumi.get(self, "transformations")
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional['outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverride']:
+        return pulumi.get(self, "value_override")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformations(dict):
+    def __init__(__self__, *,
+                 transformations: Sequence['outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation']):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Sequence['outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation']:
+        return pulumi.get(self, "transformations")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "transformationType":
+            suggest = "transformation_type"
+        elif key == "includeHexNumbers":
+            suggest = "include_hex_numbers"
+        elif key == "minDigitCount":
+            suggest = "min_digit_count"
+        elif key == "replacementValue":
+            suggest = "replacement_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 transformation_type: str,
+                 include_hex_numbers: Optional[bool] = None,
+                 min_digit_count: Optional[int] = None,
+                 prefix: Optional[str] = None,
+                 replacement_value: Optional[str] = None,
+                 suffix: Optional[str] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> str:
+        return pulumi.get(self, "transformation_type")
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[bool]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[int]:
+        return pulumi.get(self, "min_digit_count")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[str]:
+        return pulumi.get(self, "replacement_value")
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[str]:
+        return pulumi.get(self, "suffix")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverride(dict):
+    def __init__(__self__, *,
+                 value: str):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsServerName(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableIdContributor":
+            suggest = "enable_id_contributor"
+        elif key == "serviceIdContributor":
+            suggest = "service_id_contributor"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebRequestIdContributorsServerName. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebRequestIdContributorsServerName.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebRequestIdContributorsServerName.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_id_contributor: bool,
+                 service_id_contributor: Optional['outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributor'] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> bool:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional['outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributor']:
+        return pulumi.get(self, "service_id_contributor")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsServerNameServiceIdContributor(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contributionType":
+            suggest = "contribution_type"
+        elif key == "valueOverride":
+            suggest = "value_override"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebRequestIdContributorsServerNameServiceIdContributor. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebRequestIdContributorsServerNameServiceIdContributor.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebRequestIdContributorsServerNameServiceIdContributor.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contribution_type: str,
+                 transformations: Optional['outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformations'] = None,
+                 value_override: Optional['outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverride'] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> str:
+        return pulumi.get(self, "contribution_type")
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional['outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformations']:
+        return pulumi.get(self, "transformations")
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional['outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverride']:
+        return pulumi.get(self, "value_override")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformations(dict):
+    def __init__(__self__, *,
+                 transformations: Sequence['outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformation']):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Sequence['outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformation']:
+        return pulumi.get(self, "transformations")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "transformationType":
+            suggest = "transformation_type"
+        elif key == "includeHexNumbers":
+            suggest = "include_hex_numbers"
+        elif key == "minDigitCount":
+            suggest = "min_digit_count"
+        elif key == "replacementValue":
+            suggest = "replacement_value"
+        elif key == "segmentCount":
+            suggest = "segment_count"
+        elif key == "selectIndex":
+            suggest = "select_index"
+        elif key == "splitDelimiter":
+            suggest = "split_delimiter"
+        elif key == "takeFromEnd":
+            suggest = "take_from_end"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 transformation_type: str,
+                 include_hex_numbers: Optional[bool] = None,
+                 min_digit_count: Optional[int] = None,
+                 prefix: Optional[str] = None,
+                 replacement_value: Optional[str] = None,
+                 segment_count: Optional[int] = None,
+                 select_index: Optional[int] = None,
+                 split_delimiter: Optional[str] = None,
+                 suffix: Optional[str] = None,
+                 take_from_end: Optional[bool] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> str:
+        return pulumi.get(self, "transformation_type")
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[bool]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[int]:
+        return pulumi.get(self, "min_digit_count")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[str]:
+        return pulumi.get(self, "replacement_value")
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[int]:
+        return pulumi.get(self, "segment_count")
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[int]:
+        return pulumi.get(self, "select_index")
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[str]:
+        return pulumi.get(self, "split_delimiter")
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[str]:
+        return pulumi.get(self, "suffix")
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[bool]:
+        return pulumi.get(self, "take_from_end")
+
+
+@pulumi.output_type
+class ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverride(dict):
+    def __init__(__self__, *,
+                 value: str):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceConditions(dict):
+    def __init__(__self__, *,
+                 conditions: Sequence['outputs.ServiceFullWebServiceConditionsCondition']):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Sequence['outputs.ServiceFullWebServiceConditionsCondition']:
+        return pulumi.get(self, "conditions")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceConditionsCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compareOperationType":
+            suggest = "compare_operation_type"
+        elif key == "ignoreCase":
+            suggest = "ignore_case"
+        elif key == "intValue":
+            suggest = "int_value"
+        elif key == "intValues":
+            suggest = "int_values"
+        elif key == "ipRangeFrom":
+            suggest = "ip_range_from"
+        elif key == "ipRangeTo":
+            suggest = "ip_range_to"
+        elif key == "tagValues":
+            suggest = "tag_values"
+        elif key == "textValues":
+            suggest = "text_values"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceConditionsCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceConditionsCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceConditionsCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attribute: str,
+                 compare_operation_type: str,
+                 frameworks: Optional[Sequence[str]] = None,
+                 ignore_case: Optional[bool] = None,
+                 int_value: Optional[int] = None,
+                 int_values: Optional[Sequence[int]] = None,
+                 ip_range_from: Optional[str] = None,
+                 ip_range_to: Optional[str] = None,
+                 tag_values: Optional[Sequence[str]] = None,
+                 text_values: Optional[Sequence[str]] = None):
+        pulumi.set(__self__, "attribute", attribute)
+        pulumi.set(__self__, "compare_operation_type", compare_operation_type)
+        if frameworks is not None:
+            pulumi.set(__self__, "frameworks", frameworks)
+        if ignore_case is not None:
+            pulumi.set(__self__, "ignore_case", ignore_case)
+        if int_value is not None:
+            pulumi.set(__self__, "int_value", int_value)
+        if int_values is not None:
+            pulumi.set(__self__, "int_values", int_values)
+        if ip_range_from is not None:
+            pulumi.set(__self__, "ip_range_from", ip_range_from)
+        if ip_range_to is not None:
+            pulumi.set(__self__, "ip_range_to", ip_range_to)
+        if tag_values is not None:
+            pulumi.set(__self__, "tag_values", tag_values)
+        if text_values is not None:
+            pulumi.set(__self__, "text_values", text_values)
+
+    @property
+    @pulumi.getter
+    def attribute(self) -> str:
+        return pulumi.get(self, "attribute")
+
+    @property
+    @pulumi.getter(name="compareOperationType")
+    def compare_operation_type(self) -> str:
+        return pulumi.get(self, "compare_operation_type")
+
+    @property
+    @pulumi.getter
+    def frameworks(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "frameworks")
+
+    @property
+    @pulumi.getter(name="ignoreCase")
+    def ignore_case(self) -> Optional[bool]:
+        return pulumi.get(self, "ignore_case")
+
+    @property
+    @pulumi.getter(name="intValue")
+    def int_value(self) -> Optional[int]:
+        return pulumi.get(self, "int_value")
+
+    @property
+    @pulumi.getter(name="intValues")
+    def int_values(self) -> Optional[Sequence[int]]:
+        return pulumi.get(self, "int_values")
+
+    @property
+    @pulumi.getter(name="ipRangeFrom")
+    def ip_range_from(self) -> Optional[str]:
+        return pulumi.get(self, "ip_range_from")
+
+    @property
+    @pulumi.getter(name="ipRangeTo")
+    def ip_range_to(self) -> Optional[str]:
+        return pulumi.get(self, "ip_range_to")
+
+    @property
+    @pulumi.getter(name="tagValues")
+    def tag_values(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "tag_values")
+
+    @property
+    @pulumi.getter(name="textValues")
+    def text_values(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "text_values")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributors(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "detectAsWebRequestService":
+            suggest = "detect_as_web_request_service"
+        elif key == "applicationId":
+            suggest = "application_id"
+        elif key == "contextRoot":
+            suggest = "context_root"
+        elif key == "serverName":
+            suggest = "server_name"
+        elif key == "webServiceName":
+            suggest = "web_service_name"
+        elif key == "webServiceNamespace":
+            suggest = "web_service_namespace"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributors. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributors.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributors.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 detect_as_web_request_service: bool,
+                 application_id: Optional['outputs.ServiceFullWebServiceIdContributorsApplicationId'] = None,
+                 context_root: Optional['outputs.ServiceFullWebServiceIdContributorsContextRoot'] = None,
+                 server_name: Optional['outputs.ServiceFullWebServiceIdContributorsServerName'] = None,
+                 web_service_name: Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceName'] = None,
+                 web_service_namespace: Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNamespace'] = None):
+        """
+        :param bool detect_as_web_request_service: Detect the matching requests as full web services (false) or web request services (true).
+        """
+        pulumi.set(__self__, "detect_as_web_request_service", detect_as_web_request_service)
+        if application_id is not None:
+            pulumi.set(__self__, "application_id", application_id)
+        if context_root is not None:
+            pulumi.set(__self__, "context_root", context_root)
+        if server_name is not None:
+            pulumi.set(__self__, "server_name", server_name)
+        if web_service_name is not None:
+            pulumi.set(__self__, "web_service_name", web_service_name)
+        if web_service_namespace is not None:
+            pulumi.set(__self__, "web_service_namespace", web_service_namespace)
+
+    @property
+    @pulumi.getter(name="detectAsWebRequestService")
+    def detect_as_web_request_service(self) -> bool:
+        """
+        Detect the matching requests as full web services (false) or web request services (true).
+        """
+        return pulumi.get(self, "detect_as_web_request_service")
+
+    @property
+    @pulumi.getter(name="applicationId")
+    def application_id(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsApplicationId']:
+        return pulumi.get(self, "application_id")
+
+    @property
+    @pulumi.getter(name="contextRoot")
+    def context_root(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsContextRoot']:
+        return pulumi.get(self, "context_root")
+
+    @property
+    @pulumi.getter(name="serverName")
+    def server_name(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsServerName']:
+        return pulumi.get(self, "server_name")
+
+    @property
+    @pulumi.getter(name="webServiceName")
+    def web_service_name(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceName']:
+        return pulumi.get(self, "web_service_name")
+
+    @property
+    @pulumi.getter(name="webServiceNamespace")
+    def web_service_namespace(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNamespace']:
+        return pulumi.get(self, "web_service_namespace")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsApplicationId(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableIdContributor":
+            suggest = "enable_id_contributor"
+        elif key == "serviceIdContributor":
+            suggest = "service_id_contributor"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsApplicationId. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsApplicationId.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsApplicationId.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_id_contributor: bool,
+                 service_id_contributor: Optional['outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor'] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> bool:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor']:
+        return pulumi.get(self, "service_id_contributor")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contributionType":
+            suggest = "contribution_type"
+        elif key == "valueOverride":
+            suggest = "value_override"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contribution_type: str,
+                 transformations: Optional['outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformations'] = None,
+                 value_override: Optional['outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverride'] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> str:
+        return pulumi.get(self, "contribution_type")
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformations']:
+        return pulumi.get(self, "transformations")
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverride']:
+        return pulumi.get(self, "value_override")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformations(dict):
+    def __init__(__self__, *,
+                 transformations: Sequence['outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformation']):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Sequence['outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformation']:
+        return pulumi.get(self, "transformations")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "transformationType":
+            suggest = "transformation_type"
+        elif key == "includeHexNumbers":
+            suggest = "include_hex_numbers"
+        elif key == "minDigitCount":
+            suggest = "min_digit_count"
+        elif key == "replacementValue":
+            suggest = "replacement_value"
+        elif key == "segmentCount":
+            suggest = "segment_count"
+        elif key == "selectIndex":
+            suggest = "select_index"
+        elif key == "splitDelimiter":
+            suggest = "split_delimiter"
+        elif key == "takeFromEnd":
+            suggest = "take_from_end"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 transformation_type: str,
+                 include_hex_numbers: Optional[bool] = None,
+                 min_digit_count: Optional[int] = None,
+                 prefix: Optional[str] = None,
+                 replacement_value: Optional[str] = None,
+                 segment_count: Optional[int] = None,
+                 select_index: Optional[int] = None,
+                 split_delimiter: Optional[str] = None,
+                 suffix: Optional[str] = None,
+                 take_from_end: Optional[bool] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> str:
+        return pulumi.get(self, "transformation_type")
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[bool]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[int]:
+        return pulumi.get(self, "min_digit_count")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[str]:
+        return pulumi.get(self, "replacement_value")
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[int]:
+        return pulumi.get(self, "segment_count")
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[int]:
+        return pulumi.get(self, "select_index")
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[str]:
+        return pulumi.get(self, "split_delimiter")
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[str]:
+        return pulumi.get(self, "suffix")
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[bool]:
+        return pulumi.get(self, "take_from_end")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverride(dict):
+    def __init__(__self__, *,
+                 value: str):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsContextRoot(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableIdContributor":
+            suggest = "enable_id_contributor"
+        elif key == "serviceIdContributor":
+            suggest = "service_id_contributor"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsContextRoot. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsContextRoot.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsContextRoot.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_id_contributor: bool,
+                 service_id_contributor: Optional['outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributor'] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> bool:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributor']:
+        return pulumi.get(self, "service_id_contributor")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsContextRootServiceIdContributor(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contributionType":
+            suggest = "contribution_type"
+        elif key == "segmentCount":
+            suggest = "segment_count"
+        elif key == "valueOverride":
+            suggest = "value_override"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsContextRootServiceIdContributor. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsContextRootServiceIdContributor.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsContextRootServiceIdContributor.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contribution_type: str,
+                 segment_count: Optional[int] = None,
+                 transformations: Optional['outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformations'] = None,
+                 value_override: Optional['outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverride'] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> str:
+        return pulumi.get(self, "contribution_type")
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[int]:
+        return pulumi.get(self, "segment_count")
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformations']:
+        return pulumi.get(self, "transformations")
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverride']:
+        return pulumi.get(self, "value_override")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformations(dict):
+    def __init__(__self__, *,
+                 transformations: Sequence['outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformation']):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Sequence['outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformation']:
+        return pulumi.get(self, "transformations")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "transformationType":
+            suggest = "transformation_type"
+        elif key == "includeHexNumbers":
+            suggest = "include_hex_numbers"
+        elif key == "minDigitCount":
+            suggest = "min_digit_count"
+        elif key == "replacementValue":
+            suggest = "replacement_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 transformation_type: str,
+                 include_hex_numbers: Optional[bool] = None,
+                 min_digit_count: Optional[int] = None,
+                 prefix: Optional[str] = None,
+                 replacement_value: Optional[str] = None,
+                 suffix: Optional[str] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> str:
+        return pulumi.get(self, "transformation_type")
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[bool]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[int]:
+        return pulumi.get(self, "min_digit_count")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[str]:
+        return pulumi.get(self, "replacement_value")
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[str]:
+        return pulumi.get(self, "suffix")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverride(dict):
+    def __init__(__self__, *,
+                 value: str):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsServerName(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableIdContributor":
+            suggest = "enable_id_contributor"
+        elif key == "serviceIdContributor":
+            suggest = "service_id_contributor"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsServerName. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsServerName.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsServerName.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_id_contributor: bool,
+                 service_id_contributor: Optional['outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributor'] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> bool:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributor']:
+        return pulumi.get(self, "service_id_contributor")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsServerNameServiceIdContributor(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contributionType":
+            suggest = "contribution_type"
+        elif key == "valueOverride":
+            suggest = "value_override"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsServerNameServiceIdContributor. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsServerNameServiceIdContributor.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsServerNameServiceIdContributor.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contribution_type: str,
+                 transformations: Optional['outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformations'] = None,
+                 value_override: Optional['outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverride'] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> str:
+        return pulumi.get(self, "contribution_type")
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformations']:
+        return pulumi.get(self, "transformations")
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverride']:
+        return pulumi.get(self, "value_override")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformations(dict):
+    def __init__(__self__, *,
+                 transformations: Sequence['outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformation']):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Sequence['outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformation']:
+        return pulumi.get(self, "transformations")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "transformationType":
+            suggest = "transformation_type"
+        elif key == "includeHexNumbers":
+            suggest = "include_hex_numbers"
+        elif key == "minDigitCount":
+            suggest = "min_digit_count"
+        elif key == "replacementValue":
+            suggest = "replacement_value"
+        elif key == "segmentCount":
+            suggest = "segment_count"
+        elif key == "selectIndex":
+            suggest = "select_index"
+        elif key == "splitDelimiter":
+            suggest = "split_delimiter"
+        elif key == "takeFromEnd":
+            suggest = "take_from_end"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 transformation_type: str,
+                 include_hex_numbers: Optional[bool] = None,
+                 min_digit_count: Optional[int] = None,
+                 prefix: Optional[str] = None,
+                 replacement_value: Optional[str] = None,
+                 segment_count: Optional[int] = None,
+                 select_index: Optional[int] = None,
+                 split_delimiter: Optional[str] = None,
+                 suffix: Optional[str] = None,
+                 take_from_end: Optional[bool] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> str:
+        return pulumi.get(self, "transformation_type")
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[bool]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[int]:
+        return pulumi.get(self, "min_digit_count")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[str]:
+        return pulumi.get(self, "replacement_value")
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[int]:
+        return pulumi.get(self, "segment_count")
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[int]:
+        return pulumi.get(self, "select_index")
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[str]:
+        return pulumi.get(self, "split_delimiter")
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[str]:
+        return pulumi.get(self, "suffix")
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[bool]:
+        return pulumi.get(self, "take_from_end")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverride(dict):
+    def __init__(__self__, *,
+                 value: str):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsWebServiceName(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableIdContributor":
+            suggest = "enable_id_contributor"
+        elif key == "serviceIdContributor":
+            suggest = "service_id_contributor"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsWebServiceName. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsWebServiceName.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsWebServiceName.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_id_contributor: bool,
+                 service_id_contributor: Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor'] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> bool:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor']:
+        return pulumi.get(self, "service_id_contributor")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contributionType":
+            suggest = "contribution_type"
+        elif key == "valueOverride":
+            suggest = "value_override"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contribution_type: str,
+                 transformations: Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformations'] = None,
+                 value_override: Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride'] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> str:
+        return pulumi.get(self, "contribution_type")
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformations']:
+        return pulumi.get(self, "transformations")
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride']:
+        return pulumi.get(self, "value_override")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformations(dict):
+    def __init__(__self__, *,
+                 transformations: Sequence['outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation']):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Sequence['outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation']:
+        return pulumi.get(self, "transformations")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "transformationType":
+            suggest = "transformation_type"
+        elif key == "includeHexNumbers":
+            suggest = "include_hex_numbers"
+        elif key == "minDigitCount":
+            suggest = "min_digit_count"
+        elif key == "replacementValue":
+            suggest = "replacement_value"
+        elif key == "segmentCount":
+            suggest = "segment_count"
+        elif key == "selectIndex":
+            suggest = "select_index"
+        elif key == "splitDelimiter":
+            suggest = "split_delimiter"
+        elif key == "takeFromEnd":
+            suggest = "take_from_end"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 transformation_type: str,
+                 include_hex_numbers: Optional[bool] = None,
+                 min_digit_count: Optional[int] = None,
+                 prefix: Optional[str] = None,
+                 replacement_value: Optional[str] = None,
+                 segment_count: Optional[int] = None,
+                 select_index: Optional[int] = None,
+                 split_delimiter: Optional[str] = None,
+                 suffix: Optional[str] = None,
+                 take_from_end: Optional[bool] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> str:
+        return pulumi.get(self, "transformation_type")
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[bool]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[int]:
+        return pulumi.get(self, "min_digit_count")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[str]:
+        return pulumi.get(self, "replacement_value")
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[int]:
+        return pulumi.get(self, "segment_count")
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[int]:
+        return pulumi.get(self, "select_index")
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[str]:
+        return pulumi.get(self, "split_delimiter")
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[str]:
+        return pulumi.get(self, "suffix")
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[bool]:
+        return pulumi.get(self, "take_from_end")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride(dict):
+    def __init__(__self__, *,
+                 value: str):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsWebServiceNamespace(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableIdContributor":
+            suggest = "enable_id_contributor"
+        elif key == "serviceIdContributor":
+            suggest = "service_id_contributor"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsWebServiceNamespace. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsWebServiceNamespace.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsWebServiceNamespace.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_id_contributor: bool,
+                 service_id_contributor: Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor'] = None):
+        pulumi.set(__self__, "enable_id_contributor", enable_id_contributor)
+        if service_id_contributor is not None:
+            pulumi.set(__self__, "service_id_contributor", service_id_contributor)
+
+    @property
+    @pulumi.getter(name="enableIdContributor")
+    def enable_id_contributor(self) -> bool:
+        return pulumi.get(self, "enable_id_contributor")
+
+    @property
+    @pulumi.getter(name="serviceIdContributor")
+    def service_id_contributor(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor']:
+        return pulumi.get(self, "service_id_contributor")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contributionType":
+            suggest = "contribution_type"
+        elif key == "valueOverride":
+            suggest = "value_override"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 contribution_type: str,
+                 transformations: Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations'] = None,
+                 value_override: Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride'] = None):
+        pulumi.set(__self__, "contribution_type", contribution_type)
+        if transformations is not None:
+            pulumi.set(__self__, "transformations", transformations)
+        if value_override is not None:
+            pulumi.set(__self__, "value_override", value_override)
+
+    @property
+    @pulumi.getter(name="contributionType")
+    def contribution_type(self) -> str:
+        return pulumi.get(self, "contribution_type")
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations']:
+        return pulumi.get(self, "transformations")
+
+    @property
+    @pulumi.getter(name="valueOverride")
+    def value_override(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride']:
+        return pulumi.get(self, "value_override")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations(dict):
+    def __init__(__self__, *,
+                 transformations: Sequence['outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation']):
+        pulumi.set(__self__, "transformations", transformations)
+
+    @property
+    @pulumi.getter
+    def transformations(self) -> Sequence['outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation']:
+        return pulumi.get(self, "transformations")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "transformationType":
+            suggest = "transformation_type"
+        elif key == "includeHexNumbers":
+            suggest = "include_hex_numbers"
+        elif key == "minDigitCount":
+            suggest = "min_digit_count"
+        elif key == "replacementValue":
+            suggest = "replacement_value"
+        elif key == "segmentCount":
+            suggest = "segment_count"
+        elif key == "selectIndex":
+            suggest = "select_index"
+        elif key == "splitDelimiter":
+            suggest = "split_delimiter"
+        elif key == "takeFromEnd":
+            suggest = "take_from_end"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 transformation_type: str,
+                 include_hex_numbers: Optional[bool] = None,
+                 min_digit_count: Optional[int] = None,
+                 prefix: Optional[str] = None,
+                 replacement_value: Optional[str] = None,
+                 segment_count: Optional[int] = None,
+                 select_index: Optional[int] = None,
+                 split_delimiter: Optional[str] = None,
+                 suffix: Optional[str] = None,
+                 take_from_end: Optional[bool] = None):
+        pulumi.set(__self__, "transformation_type", transformation_type)
+        if include_hex_numbers is not None:
+            pulumi.set(__self__, "include_hex_numbers", include_hex_numbers)
+        if min_digit_count is not None:
+            pulumi.set(__self__, "min_digit_count", min_digit_count)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if replacement_value is not None:
+            pulumi.set(__self__, "replacement_value", replacement_value)
+        if segment_count is not None:
+            pulumi.set(__self__, "segment_count", segment_count)
+        if select_index is not None:
+            pulumi.set(__self__, "select_index", select_index)
+        if split_delimiter is not None:
+            pulumi.set(__self__, "split_delimiter", split_delimiter)
+        if suffix is not None:
+            pulumi.set(__self__, "suffix", suffix)
+        if take_from_end is not None:
+            pulumi.set(__self__, "take_from_end", take_from_end)
+
+    @property
+    @pulumi.getter(name="transformationType")
+    def transformation_type(self) -> str:
+        return pulumi.get(self, "transformation_type")
+
+    @property
+    @pulumi.getter(name="includeHexNumbers")
+    def include_hex_numbers(self) -> Optional[bool]:
+        return pulumi.get(self, "include_hex_numbers")
+
+    @property
+    @pulumi.getter(name="minDigitCount")
+    def min_digit_count(self) -> Optional[int]:
+        return pulumi.get(self, "min_digit_count")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[str]:
+        return pulumi.get(self, "prefix")
+
+    @property
+    @pulumi.getter(name="replacementValue")
+    def replacement_value(self) -> Optional[str]:
+        return pulumi.get(self, "replacement_value")
+
+    @property
+    @pulumi.getter(name="segmentCount")
+    def segment_count(self) -> Optional[int]:
+        return pulumi.get(self, "segment_count")
+
+    @property
+    @pulumi.getter(name="selectIndex")
+    def select_index(self) -> Optional[int]:
+        return pulumi.get(self, "select_index")
+
+    @property
+    @pulumi.getter(name="splitDelimiter")
+    def split_delimiter(self) -> Optional[str]:
+        return pulumi.get(self, "split_delimiter")
+
+    @property
+    @pulumi.getter
+    def suffix(self) -> Optional[str]:
+        return pulumi.get(self, "suffix")
+
+    @property
+    @pulumi.getter(name="takeFromEnd")
+    def take_from_end(self) -> Optional[bool]:
+        return pulumi.get(self, "take_from_end")
+
+
+@pulumi.output_type
+class ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride(dict):
+    def __init__(__self__, *,
+                 value: str):
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ServiceHttpFailureBrokenLinks(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "http404NotFoundFailures":
+            suggest = "http404_not_found_failures"
+        elif key == "brokenLinkDomains":
+            suggest = "broken_link_domains"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceHttpFailureBrokenLinks. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceHttpFailureBrokenLinks.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceHttpFailureBrokenLinks.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 http404_not_found_failures: bool,
+                 broken_link_domains: Optional[Sequence[str]] = None):
+        """
+        :param bool http404_not_found_failures: Consider 404 HTTP response codes as failures
+        :param Sequence[str] broken_link_domains: If your application relies on other hosts at other domains, add the associated domain names here. Once configured, Dynatrace will consider 404s thrown by hosts at these domains to be service failures related to your application.
+        """
+        pulumi.set(__self__, "http404_not_found_failures", http404_not_found_failures)
+        if broken_link_domains is not None:
+            pulumi.set(__self__, "broken_link_domains", broken_link_domains)
+
+    @property
+    @pulumi.getter(name="http404NotFoundFailures")
+    def http404_not_found_failures(self) -> bool:
+        """
+        Consider 404 HTTP response codes as failures
+        """
+        return pulumi.get(self, "http404_not_found_failures")
+
+    @property
+    @pulumi.getter(name="brokenLinkDomains")
+    def broken_link_domains(self) -> Optional[Sequence[str]]:
+        """
+        If your application relies on other hosts at other domains, add the associated domain names here. Once configured, Dynatrace will consider 404s thrown by hosts at these domains to be service failures related to your application.
+        """
+        return pulumi.get(self, "broken_link_domains")
+
+
+@pulumi.output_type
+class ServiceHttpFailureHttpResponseCodes(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "clientSideErrors":
+            suggest = "client_side_errors"
+        elif key == "failOnMissingResponseCodeClientSide":
+            suggest = "fail_on_missing_response_code_client_side"
+        elif key == "failOnMissingResponseCodeServerSide":
+            suggest = "fail_on_missing_response_code_server_side"
+        elif key == "serverSideErrors":
+            suggest = "server_side_errors"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ServiceHttpFailureHttpResponseCodes. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ServiceHttpFailureHttpResponseCodes.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ServiceHttpFailureHttpResponseCodes.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 client_side_errors: str,
+                 fail_on_missing_response_code_client_side: bool,
+                 fail_on_missing_response_code_server_side: bool,
+                 server_side_errors: str):
+        """
+        :param str client_side_errors: HTTP response codes which indicate client side errors
+        :param bool fail_on_missing_response_code_client_side: Treat missing HTTP response code as client side error
+        :param bool fail_on_missing_response_code_server_side: Treat missing HTTP response code as server side errors
+        :param str server_side_errors: HTTP response codes which indicate an error on the server side
+        """
+        pulumi.set(__self__, "client_side_errors", client_side_errors)
+        pulumi.set(__self__, "fail_on_missing_response_code_client_side", fail_on_missing_response_code_client_side)
+        pulumi.set(__self__, "fail_on_missing_response_code_server_side", fail_on_missing_response_code_server_side)
+        pulumi.set(__self__, "server_side_errors", server_side_errors)
+
+    @property
+    @pulumi.getter(name="clientSideErrors")
+    def client_side_errors(self) -> str:
+        """
+        HTTP response codes which indicate client side errors
+        """
+        return pulumi.get(self, "client_side_errors")
+
+    @property
+    @pulumi.getter(name="failOnMissingResponseCodeClientSide")
+    def fail_on_missing_response_code_client_side(self) -> bool:
+        """
+        Treat missing HTTP response code as client side error
+        """
+        return pulumi.get(self, "fail_on_missing_response_code_client_side")
+
+    @property
+    @pulumi.getter(name="failOnMissingResponseCodeServerSide")
+    def fail_on_missing_response_code_server_side(self) -> bool:
+        """
+        Treat missing HTTP response code as server side errors
+        """
+        return pulumi.get(self, "fail_on_missing_response_code_server_side")
+
+    @property
+    @pulumi.getter(name="serverSideErrors")
+    def server_side_errors(self) -> str:
+        """
+        HTTP response codes which indicate an error on the server side
+        """
+        return pulumi.get(self, "server_side_errors")
 
 
 @pulumi.output_type
@@ -38256,6 +57431,483 @@ class ServiceNamingConditionConditionTechValue(dict):
 
 
 @pulumi.output_type
+class SessionReplayWebPrivacyMaskingPresets(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "playbackMaskingPreset":
+            suggest = "playback_masking_preset"
+        elif key == "recordingMaskingPreset":
+            suggest = "recording_masking_preset"
+        elif key == "playbackMaskingAllowListRules":
+            suggest = "playback_masking_allow_list_rules"
+        elif key == "playbackMaskingBlockListRules":
+            suggest = "playback_masking_block_list_rules"
+        elif key == "recordingMaskingAllowListRules":
+            suggest = "recording_masking_allow_list_rules"
+        elif key == "recordingMaskingBlockListRules":
+            suggest = "recording_masking_block_list_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SessionReplayWebPrivacyMaskingPresets. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SessionReplayWebPrivacyMaskingPresets.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SessionReplayWebPrivacyMaskingPresets.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 playback_masking_preset: str,
+                 recording_masking_preset: str,
+                 playback_masking_allow_list_rules: Optional['outputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules'] = None,
+                 playback_masking_block_list_rules: Optional['outputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules'] = None,
+                 recording_masking_allow_list_rules: Optional['outputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules'] = None,
+                 recording_masking_block_list_rules: Optional['outputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules'] = None):
+        """
+        :param str playback_masking_preset: (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_ALL`, `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`
+        :param str recording_masking_preset: (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`, `MASK_ALL`
+        :param 'SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesArgs' playback_masking_allow_list_rules: (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        :param 'SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesArgs' playback_masking_block_list_rules: (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        :param 'SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesArgs' recording_masking_allow_list_rules: (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        :param 'SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesArgs' recording_masking_block_list_rules: (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        """
+        pulumi.set(__self__, "playback_masking_preset", playback_masking_preset)
+        pulumi.set(__self__, "recording_masking_preset", recording_masking_preset)
+        if playback_masking_allow_list_rules is not None:
+            pulumi.set(__self__, "playback_masking_allow_list_rules", playback_masking_allow_list_rules)
+        if playback_masking_block_list_rules is not None:
+            pulumi.set(__self__, "playback_masking_block_list_rules", playback_masking_block_list_rules)
+        if recording_masking_allow_list_rules is not None:
+            pulumi.set(__self__, "recording_masking_allow_list_rules", recording_masking_allow_list_rules)
+        if recording_masking_block_list_rules is not None:
+            pulumi.set(__self__, "recording_masking_block_list_rules", recording_masking_block_list_rules)
+
+    @property
+    @pulumi.getter(name="playbackMaskingPreset")
+    def playback_masking_preset(self) -> str:
+        """
+        (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_ALL`, `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`
+        """
+        return pulumi.get(self, "playback_masking_preset")
+
+    @property
+    @pulumi.getter(name="recordingMaskingPreset")
+    def recording_masking_preset(self) -> str:
+        """
+        (Field has overlap with `ApplicationDataPrivacy`) Possible Values: `MASK_USER_INPUT`, `ALLOW_LIST`, `BLOCK_LIST`, `MASK_ALL`
+        """
+        return pulumi.get(self, "recording_masking_preset")
+
+    @property
+    @pulumi.getter(name="playbackMaskingAllowListRules")
+    def playback_masking_allow_list_rules(self) -> Optional['outputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules']:
+        """
+        (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        """
+        return pulumi.get(self, "playback_masking_allow_list_rules")
+
+    @property
+    @pulumi.getter(name="playbackMaskingBlockListRules")
+    def playback_masking_block_list_rules(self) -> Optional['outputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules']:
+        """
+        (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        """
+        return pulumi.get(self, "playback_masking_block_list_rules")
+
+    @property
+    @pulumi.getter(name="recordingMaskingAllowListRules")
+    def recording_masking_allow_list_rules(self) -> Optional['outputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules']:
+        """
+        (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        """
+        return pulumi.get(self, "recording_masking_allow_list_rules")
+
+    @property
+    @pulumi.getter(name="recordingMaskingBlockListRules")
+    def recording_masking_block_list_rules(self) -> Optional['outputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules']:
+        """
+        (Field has overlap with `ApplicationDataPrivacy`) The elements are defined by the CSS selector or attribute name.
+        """
+        return pulumi.get(self, "recording_masking_block_list_rules")
+
+
+@pulumi.output_type
+class SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowListRules":
+            suggest = "allow_list_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allow_list_rules: Sequence['outputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule']):
+        pulumi.set(__self__, "allow_list_rules", allow_list_rules)
+
+    @property
+    @pulumi.getter(name="allowListRules")
+    def allow_list_rules(self) -> Sequence['outputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule']:
+        return pulumi.get(self, "allow_list_rules")
+
+
+@pulumi.output_type
+class SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attributeExpression":
+            suggest = "attribute_expression"
+        elif key == "cssExpression":
+            suggest = "css_expression"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 target: str,
+                 attribute_expression: Optional[str] = None,
+                 css_expression: Optional[str] = None):
+        pulumi.set(__self__, "target", target)
+        if attribute_expression is not None:
+            pulumi.set(__self__, "attribute_expression", attribute_expression)
+        if css_expression is not None:
+            pulumi.set(__self__, "css_expression", css_expression)
+
+    @property
+    @pulumi.getter
+    def target(self) -> str:
+        return pulumi.get(self, "target")
+
+    @property
+    @pulumi.getter(name="attributeExpression")
+    def attribute_expression(self) -> Optional[str]:
+        return pulumi.get(self, "attribute_expression")
+
+    @property
+    @pulumi.getter(name="cssExpression")
+    def css_expression(self) -> Optional[str]:
+        return pulumi.get(self, "css_expression")
+
+
+@pulumi.output_type
+class SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockListRules":
+            suggest = "block_list_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 block_list_rules: Sequence['outputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule']):
+        pulumi.set(__self__, "block_list_rules", block_list_rules)
+
+    @property
+    @pulumi.getter(name="blockListRules")
+    def block_list_rules(self) -> Sequence['outputs.SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule']:
+        return pulumi.get(self, "block_list_rules")
+
+
+@pulumi.output_type
+class SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attributeExpression":
+            suggest = "attribute_expression"
+        elif key == "cssExpression":
+            suggest = "css_expression"
+        elif key == "hideUserInteraction":
+            suggest = "hide_user_interaction"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 target: str,
+                 attribute_expression: Optional[str] = None,
+                 css_expression: Optional[str] = None,
+                 hide_user_interaction: Optional[bool] = None):
+        pulumi.set(__self__, "target", target)
+        if attribute_expression is not None:
+            pulumi.set(__self__, "attribute_expression", attribute_expression)
+        if css_expression is not None:
+            pulumi.set(__self__, "css_expression", css_expression)
+        if hide_user_interaction is not None:
+            pulumi.set(__self__, "hide_user_interaction", hide_user_interaction)
+
+    @property
+    @pulumi.getter
+    def target(self) -> str:
+        return pulumi.get(self, "target")
+
+    @property
+    @pulumi.getter(name="attributeExpression")
+    def attribute_expression(self) -> Optional[str]:
+        return pulumi.get(self, "attribute_expression")
+
+    @property
+    @pulumi.getter(name="cssExpression")
+    def css_expression(self) -> Optional[str]:
+        return pulumi.get(self, "css_expression")
+
+    @property
+    @pulumi.getter(name="hideUserInteraction")
+    def hide_user_interaction(self) -> Optional[bool]:
+        return pulumi.get(self, "hide_user_interaction")
+
+
+@pulumi.output_type
+class SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowListRules":
+            suggest = "allow_list_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allow_list_rules: Sequence['outputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule']):
+        pulumi.set(__self__, "allow_list_rules", allow_list_rules)
+
+    @property
+    @pulumi.getter(name="allowListRules")
+    def allow_list_rules(self) -> Sequence['outputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule']:
+        return pulumi.get(self, "allow_list_rules")
+
+
+@pulumi.output_type
+class SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attributeExpression":
+            suggest = "attribute_expression"
+        elif key == "cssExpression":
+            suggest = "css_expression"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 target: str,
+                 attribute_expression: Optional[str] = None,
+                 css_expression: Optional[str] = None):
+        pulumi.set(__self__, "target", target)
+        if attribute_expression is not None:
+            pulumi.set(__self__, "attribute_expression", attribute_expression)
+        if css_expression is not None:
+            pulumi.set(__self__, "css_expression", css_expression)
+
+    @property
+    @pulumi.getter
+    def target(self) -> str:
+        return pulumi.get(self, "target")
+
+    @property
+    @pulumi.getter(name="attributeExpression")
+    def attribute_expression(self) -> Optional[str]:
+        return pulumi.get(self, "attribute_expression")
+
+    @property
+    @pulumi.getter(name="cssExpression")
+    def css_expression(self) -> Optional[str]:
+        return pulumi.get(self, "css_expression")
+
+
+@pulumi.output_type
+class SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockListRules":
+            suggest = "block_list_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 block_list_rules: Sequence['outputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule']):
+        pulumi.set(__self__, "block_list_rules", block_list_rules)
+
+    @property
+    @pulumi.getter(name="blockListRules")
+    def block_list_rules(self) -> Sequence['outputs.SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule']:
+        return pulumi.get(self, "block_list_rules")
+
+
+@pulumi.output_type
+class SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attributeExpression":
+            suggest = "attribute_expression"
+        elif key == "cssExpression":
+            suggest = "css_expression"
+        elif key == "hideUserInteraction":
+            suggest = "hide_user_interaction"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 target: str,
+                 attribute_expression: Optional[str] = None,
+                 css_expression: Optional[str] = None,
+                 hide_user_interaction: Optional[bool] = None):
+        pulumi.set(__self__, "target", target)
+        if attribute_expression is not None:
+            pulumi.set(__self__, "attribute_expression", attribute_expression)
+        if css_expression is not None:
+            pulumi.set(__self__, "css_expression", css_expression)
+        if hide_user_interaction is not None:
+            pulumi.set(__self__, "hide_user_interaction", hide_user_interaction)
+
+    @property
+    @pulumi.getter
+    def target(self) -> str:
+        return pulumi.get(self, "target")
+
+    @property
+    @pulumi.getter(name="attributeExpression")
+    def attribute_expression(self) -> Optional[str]:
+        return pulumi.get(self, "attribute_expression")
+
+    @property
+    @pulumi.getter(name="cssExpression")
+    def css_expression(self) -> Optional[str]:
+        return pulumi.get(self, "css_expression")
+
+    @property
+    @pulumi.getter(name="hideUserInteraction")
+    def hide_user_interaction(self) -> Optional[bool]:
+        return pulumi.get(self, "hide_user_interaction")
+
+
+@pulumi.output_type
+class SloV2ErrorBudgetBurnRate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "burnRateVisualizationEnabled":
+            suggest = "burn_rate_visualization_enabled"
+        elif key == "fastBurnThreshold":
+            suggest = "fast_burn_threshold"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SloV2ErrorBudgetBurnRate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SloV2ErrorBudgetBurnRate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SloV2ErrorBudgetBurnRate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 burn_rate_visualization_enabled: bool,
+                 fast_burn_threshold: Optional[float] = None):
+        """
+        :param bool burn_rate_visualization_enabled: Burn rate visualization enabled
+        :param float fast_burn_threshold: The threshold defines when a burn rate is marked as fast-burning (high-emergency). Burn rates lower than this threshold (and greater than 1) are highlighted as slow-burn (low-emergency).
+        """
+        pulumi.set(__self__, "burn_rate_visualization_enabled", burn_rate_visualization_enabled)
+        if fast_burn_threshold is not None:
+            pulumi.set(__self__, "fast_burn_threshold", fast_burn_threshold)
+
+    @property
+    @pulumi.getter(name="burnRateVisualizationEnabled")
+    def burn_rate_visualization_enabled(self) -> bool:
+        """
+        Burn rate visualization enabled
+        """
+        return pulumi.get(self, "burn_rate_visualization_enabled")
+
+    @property
+    @pulumi.getter(name="fastBurnThreshold")
+    def fast_burn_threshold(self) -> Optional[float]:
+        """
+        The threshold defines when a burn rate is marked as fast-burning (high-emergency). Burn rates lower than this threshold (and greater than 1) are highlighted as slow-burn (low-emergency).
+        """
+        return pulumi.get(self, "fast_burn_threshold")
+
+
+@pulumi.output_type
 class SpanCaptureRuleMatches(dict):
     def __init__(__self__, *,
                  matches: Sequence['outputs.SpanCaptureRuleMatchesMatch']):
@@ -38490,6 +58142,572 @@ class SpanEntryPointMatchesMatch(dict):
 
 
 @pulumi.output_type
+class UpdateWindowsDailyRecurrence(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "recurrenceRange":
+            suggest = "recurrence_range"
+        elif key == "updateTime":
+            suggest = "update_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UpdateWindowsDailyRecurrence. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UpdateWindowsDailyRecurrence.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UpdateWindowsDailyRecurrence.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 every: int,
+                 recurrence_range: 'outputs.UpdateWindowsDailyRecurrenceRecurrenceRange',
+                 update_time: 'outputs.UpdateWindowsDailyRecurrenceUpdateTime'):
+        pulumi.set(__self__, "every", every)
+        pulumi.set(__self__, "recurrence_range", recurrence_range)
+        pulumi.set(__self__, "update_time", update_time)
+
+    @property
+    @pulumi.getter
+    def every(self) -> int:
+        return pulumi.get(self, "every")
+
+    @property
+    @pulumi.getter(name="recurrenceRange")
+    def recurrence_range(self) -> 'outputs.UpdateWindowsDailyRecurrenceRecurrenceRange':
+        return pulumi.get(self, "recurrence_range")
+
+    @property
+    @pulumi.getter(name="updateTime")
+    def update_time(self) -> 'outputs.UpdateWindowsDailyRecurrenceUpdateTime':
+        return pulumi.get(self, "update_time")
+
+
+@pulumi.output_type
+class UpdateWindowsDailyRecurrenceRecurrenceRange(dict):
+    def __init__(__self__, *,
+                 end: str,
+                 start: str):
+        pulumi.set(__self__, "end", end)
+        pulumi.set(__self__, "start", start)
+
+    @property
+    @pulumi.getter
+    def end(self) -> str:
+        return pulumi.get(self, "end")
+
+    @property
+    @pulumi.getter
+    def start(self) -> str:
+        return pulumi.get(self, "start")
+
+
+@pulumi.output_type
+class UpdateWindowsDailyRecurrenceUpdateTime(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "startTime":
+            suggest = "start_time"
+        elif key == "timeZone":
+            suggest = "time_zone"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UpdateWindowsDailyRecurrenceUpdateTime. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UpdateWindowsDailyRecurrenceUpdateTime.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UpdateWindowsDailyRecurrenceUpdateTime.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration: int,
+                 start_time: str,
+                 time_zone: str):
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> int:
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> str:
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        return pulumi.get(self, "time_zone")
+
+
+@pulumi.output_type
+class UpdateWindowsMonthlyRecurrence(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "recurrenceRange":
+            suggest = "recurrence_range"
+        elif key == "selectedMonthDay":
+            suggest = "selected_month_day"
+        elif key == "updateTime":
+            suggest = "update_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UpdateWindowsMonthlyRecurrence. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UpdateWindowsMonthlyRecurrence.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UpdateWindowsMonthlyRecurrence.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 every: int,
+                 recurrence_range: 'outputs.UpdateWindowsMonthlyRecurrenceRecurrenceRange',
+                 selected_month_day: int,
+                 update_time: 'outputs.UpdateWindowsMonthlyRecurrenceUpdateTime'):
+        pulumi.set(__self__, "every", every)
+        pulumi.set(__self__, "recurrence_range", recurrence_range)
+        pulumi.set(__self__, "selected_month_day", selected_month_day)
+        pulumi.set(__self__, "update_time", update_time)
+
+    @property
+    @pulumi.getter
+    def every(self) -> int:
+        return pulumi.get(self, "every")
+
+    @property
+    @pulumi.getter(name="recurrenceRange")
+    def recurrence_range(self) -> 'outputs.UpdateWindowsMonthlyRecurrenceRecurrenceRange':
+        return pulumi.get(self, "recurrence_range")
+
+    @property
+    @pulumi.getter(name="selectedMonthDay")
+    def selected_month_day(self) -> int:
+        return pulumi.get(self, "selected_month_day")
+
+    @property
+    @pulumi.getter(name="updateTime")
+    def update_time(self) -> 'outputs.UpdateWindowsMonthlyRecurrenceUpdateTime':
+        return pulumi.get(self, "update_time")
+
+
+@pulumi.output_type
+class UpdateWindowsMonthlyRecurrenceRecurrenceRange(dict):
+    def __init__(__self__, *,
+                 end: str,
+                 start: str):
+        pulumi.set(__self__, "end", end)
+        pulumi.set(__self__, "start", start)
+
+    @property
+    @pulumi.getter
+    def end(self) -> str:
+        return pulumi.get(self, "end")
+
+    @property
+    @pulumi.getter
+    def start(self) -> str:
+        return pulumi.get(self, "start")
+
+
+@pulumi.output_type
+class UpdateWindowsMonthlyRecurrenceUpdateTime(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "startTime":
+            suggest = "start_time"
+        elif key == "timeZone":
+            suggest = "time_zone"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UpdateWindowsMonthlyRecurrenceUpdateTime. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UpdateWindowsMonthlyRecurrenceUpdateTime.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UpdateWindowsMonthlyRecurrenceUpdateTime.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration: int,
+                 start_time: str,
+                 time_zone: str):
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> int:
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> str:
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        return pulumi.get(self, "time_zone")
+
+
+@pulumi.output_type
+class UpdateWindowsOnceRecurrence(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "recurrenceRange":
+            suggest = "recurrence_range"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UpdateWindowsOnceRecurrence. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UpdateWindowsOnceRecurrence.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UpdateWindowsOnceRecurrence.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 recurrence_range: 'outputs.UpdateWindowsOnceRecurrenceRecurrenceRange'):
+        pulumi.set(__self__, "recurrence_range", recurrence_range)
+
+    @property
+    @pulumi.getter(name="recurrenceRange")
+    def recurrence_range(self) -> 'outputs.UpdateWindowsOnceRecurrenceRecurrenceRange':
+        return pulumi.get(self, "recurrence_range")
+
+
+@pulumi.output_type
+class UpdateWindowsOnceRecurrenceRecurrenceRange(dict):
+    def __init__(__self__, *,
+                 end: str,
+                 start: str):
+        pulumi.set(__self__, "end", end)
+        pulumi.set(__self__, "start", start)
+
+    @property
+    @pulumi.getter
+    def end(self) -> str:
+        return pulumi.get(self, "end")
+
+    @property
+    @pulumi.getter
+    def start(self) -> str:
+        return pulumi.get(self, "start")
+
+
+@pulumi.output_type
+class UpdateWindowsWeeklyRecurrence(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "recurrenceRange":
+            suggest = "recurrence_range"
+        elif key == "selectedWeekDays":
+            suggest = "selected_week_days"
+        elif key == "updateTime":
+            suggest = "update_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UpdateWindowsWeeklyRecurrence. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UpdateWindowsWeeklyRecurrence.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UpdateWindowsWeeklyRecurrence.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 every: int,
+                 recurrence_range: 'outputs.UpdateWindowsWeeklyRecurrenceRecurrenceRange',
+                 selected_week_days: 'outputs.UpdateWindowsWeeklyRecurrenceSelectedWeekDays',
+                 update_time: 'outputs.UpdateWindowsWeeklyRecurrenceUpdateTime'):
+        pulumi.set(__self__, "every", every)
+        pulumi.set(__self__, "recurrence_range", recurrence_range)
+        pulumi.set(__self__, "selected_week_days", selected_week_days)
+        pulumi.set(__self__, "update_time", update_time)
+
+    @property
+    @pulumi.getter
+    def every(self) -> int:
+        return pulumi.get(self, "every")
+
+    @property
+    @pulumi.getter(name="recurrenceRange")
+    def recurrence_range(self) -> 'outputs.UpdateWindowsWeeklyRecurrenceRecurrenceRange':
+        return pulumi.get(self, "recurrence_range")
+
+    @property
+    @pulumi.getter(name="selectedWeekDays")
+    def selected_week_days(self) -> 'outputs.UpdateWindowsWeeklyRecurrenceSelectedWeekDays':
+        return pulumi.get(self, "selected_week_days")
+
+    @property
+    @pulumi.getter(name="updateTime")
+    def update_time(self) -> 'outputs.UpdateWindowsWeeklyRecurrenceUpdateTime':
+        return pulumi.get(self, "update_time")
+
+
+@pulumi.output_type
+class UpdateWindowsWeeklyRecurrenceRecurrenceRange(dict):
+    def __init__(__self__, *,
+                 end: str,
+                 start: str):
+        pulumi.set(__self__, "end", end)
+        pulumi.set(__self__, "start", start)
+
+    @property
+    @pulumi.getter
+    def end(self) -> str:
+        return pulumi.get(self, "end")
+
+    @property
+    @pulumi.getter
+    def start(self) -> str:
+        return pulumi.get(self, "start")
+
+
+@pulumi.output_type
+class UpdateWindowsWeeklyRecurrenceSelectedWeekDays(dict):
+    def __init__(__self__, *,
+                 friday: bool,
+                 monday: bool,
+                 saturday: bool,
+                 sunday: bool,
+                 thursday: bool,
+                 tuesday: bool,
+                 wednesday: bool):
+        pulumi.set(__self__, "friday", friday)
+        pulumi.set(__self__, "monday", monday)
+        pulumi.set(__self__, "saturday", saturday)
+        pulumi.set(__self__, "sunday", sunday)
+        pulumi.set(__self__, "thursday", thursday)
+        pulumi.set(__self__, "tuesday", tuesday)
+        pulumi.set(__self__, "wednesday", wednesday)
+
+    @property
+    @pulumi.getter
+    def friday(self) -> bool:
+        return pulumi.get(self, "friday")
+
+    @property
+    @pulumi.getter
+    def monday(self) -> bool:
+        return pulumi.get(self, "monday")
+
+    @property
+    @pulumi.getter
+    def saturday(self) -> bool:
+        return pulumi.get(self, "saturday")
+
+    @property
+    @pulumi.getter
+    def sunday(self) -> bool:
+        return pulumi.get(self, "sunday")
+
+    @property
+    @pulumi.getter
+    def thursday(self) -> bool:
+        return pulumi.get(self, "thursday")
+
+    @property
+    @pulumi.getter
+    def tuesday(self) -> bool:
+        return pulumi.get(self, "tuesday")
+
+    @property
+    @pulumi.getter
+    def wednesday(self) -> bool:
+        return pulumi.get(self, "wednesday")
+
+
+@pulumi.output_type
+class UpdateWindowsWeeklyRecurrenceUpdateTime(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "startTime":
+            suggest = "start_time"
+        elif key == "timeZone":
+            suggest = "time_zone"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UpdateWindowsWeeklyRecurrenceUpdateTime. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UpdateWindowsWeeklyRecurrenceUpdateTime.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UpdateWindowsWeeklyRecurrenceUpdateTime.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration: int,
+                 start_time: str,
+                 time_zone: str):
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "start_time", start_time)
+        pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> int:
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> str:
+        return pulumi.get(self, "start_time")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        return pulumi.get(self, "time_zone")
+
+
+@pulumi.output_type
+class UserActionMetricsFilters(dict):
+    def __init__(__self__, *,
+                 filters: Sequence['outputs.UserActionMetricsFiltersFilter']):
+        pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Sequence['outputs.UserActionMetricsFiltersFilter']:
+        return pulumi.get(self, "filters")
+
+
+@pulumi.output_type
+class UserActionMetricsFiltersFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fieldName":
+            suggest = "field_name"
+        elif key == "valueIns":
+            suggest = "value_ins"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UserActionMetricsFiltersFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UserActionMetricsFiltersFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UserActionMetricsFiltersFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 field_name: str,
+                 operator: str,
+                 value: Optional[str] = None,
+                 value_ins: Optional[Sequence[str]] = None):
+        """
+        :param str value: Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
+        """
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "operator", operator)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if value_ins is not None:
+            pulumi.set(__self__, "value_ins", value_ins)
+
+    @property
+    @pulumi.getter(name="fieldName")
+    def field_name(self) -> str:
+        return pulumi.get(self, "field_name")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> str:
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="valueIns")
+    def value_ins(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "value_ins")
+
+
+@pulumi.output_type
+class UserActionMetricsValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fieldName":
+            suggest = "field_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UserActionMetricsValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UserActionMetricsValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UserActionMetricsValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 field_name: Optional[str] = None):
+        """
+        :param str type: Possible Values: `COUNTER`, `FIELD`
+        :param str field_name: Field name
+        """
+        pulumi.set(__self__, "type", type)
+        if field_name is not None:
+            pulumi.set(__self__, "field_name", field_name)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Possible Values: `COUNTER`, `FIELD`
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="fieldName")
+    def field_name(self) -> Optional[str]:
+        """
+        Field name
+        """
+        return pulumi.get(self, "field_name")
+
+
+@pulumi.output_type
 class UserGroupPermissions(dict):
     def __init__(__self__, *,
                  grants: Sequence['outputs.UserGroupPermissionsGrant']):
@@ -38525,6 +58743,2069 @@ class UserGroupPermissionsGrant(dict):
     @pulumi.getter
     def environments(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "environments")
+
+
+@pulumi.output_type
+class UserSessionMetricsFilters(dict):
+    def __init__(__self__, *,
+                 filters: Sequence['outputs.UserSessionMetricsFiltersFilter']):
+        pulumi.set(__self__, "filters", filters)
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Sequence['outputs.UserSessionMetricsFiltersFilter']:
+        return pulumi.get(self, "filters")
+
+
+@pulumi.output_type
+class UserSessionMetricsFiltersFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fieldName":
+            suggest = "field_name"
+        elif key == "valueIns":
+            suggest = "value_ins"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UserSessionMetricsFiltersFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UserSessionMetricsFiltersFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UserSessionMetricsFiltersFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 field_name: str,
+                 operator: str,
+                 value: Optional[str] = None,
+                 value_ins: Optional[Sequence[str]] = None):
+        """
+        :param str value: Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
+        """
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "operator", operator)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if value_ins is not None:
+            pulumi.set(__self__, "value_ins", value_ins)
+
+    @property
+    @pulumi.getter(name="fieldName")
+    def field_name(self) -> str:
+        return pulumi.get(self, "field_name")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> str:
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="valueIns")
+    def value_ins(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "value_ins")
+
+
+@pulumi.output_type
+class UserSessionMetricsValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fieldName":
+            suggest = "field_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UserSessionMetricsValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UserSessionMetricsValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UserSessionMetricsValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 field_name: Optional[str] = None):
+        """
+        :param str type: Possible Values: `COUNTER`, `FIELD`
+        :param str field_name: Field name
+        """
+        pulumi.set(__self__, "type", type)
+        if field_name is not None:
+            pulumi.set(__self__, "field_name", field_name)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Possible Values: `COUNTER`, `FIELD`
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="fieldName")
+    def field_name(self) -> Optional[str]:
+        """
+        Field name
+        """
+        return pulumi.get(self, "field_name")
+
+
+@pulumi.output_type
+class VmwareAnomaliesDroppedPacketsDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesDroppedPacketsDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesDroppedPacketsDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesDroppedPacketsDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.VmwareAnomaliesDroppedPacketsDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'VmwareAnomaliesDroppedPacketsDetectionCustomThresholdsArgs' custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.VmwareAnomaliesDroppedPacketsDetectionCustomThresholds']:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class VmwareAnomaliesDroppedPacketsDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "droppedPacketsPerSecond":
+            suggest = "dropped_packets_per_second"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesDroppedPacketsDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesDroppedPacketsDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesDroppedPacketsDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dropped_packets_per_second: int):
+        pulumi.set(__self__, "dropped_packets_per_second", dropped_packets_per_second)
+
+    @property
+    @pulumi.getter(name="droppedPacketsPerSecond")
+    def dropped_packets_per_second(self) -> int:
+        return pulumi.get(self, "dropped_packets_per_second")
+
+
+@pulumi.output_type
+class VmwareAnomaliesEsxiHighCpuDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesEsxiHighCpuDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesEsxiHighCpuDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesEsxiHighCpuDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.VmwareAnomaliesEsxiHighCpuDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'VmwareAnomaliesEsxiHighCpuDetectionCustomThresholdsArgs' custom_thresholds: Alert if **all three** conditions are met in 3 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.VmwareAnomaliesEsxiHighCpuDetectionCustomThresholds']:
+        """
+        Alert if **all three** conditions are met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class VmwareAnomaliesEsxiHighCpuDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cpuPeakPercentage":
+            suggest = "cpu_peak_percentage"
+        elif key == "cpuUsagePercentage":
+            suggest = "cpu_usage_percentage"
+        elif key == "vmCpuReadyPercentage":
+            suggest = "vm_cpu_ready_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesEsxiHighCpuDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesEsxiHighCpuDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesEsxiHighCpuDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cpu_peak_percentage: int,
+                 cpu_usage_percentage: int,
+                 vm_cpu_ready_percentage: int):
+        pulumi.set(__self__, "cpu_peak_percentage", cpu_peak_percentage)
+        pulumi.set(__self__, "cpu_usage_percentage", cpu_usage_percentage)
+        pulumi.set(__self__, "vm_cpu_ready_percentage", vm_cpu_ready_percentage)
+
+    @property
+    @pulumi.getter(name="cpuPeakPercentage")
+    def cpu_peak_percentage(self) -> int:
+        return pulumi.get(self, "cpu_peak_percentage")
+
+    @property
+    @pulumi.getter(name="cpuUsagePercentage")
+    def cpu_usage_percentage(self) -> int:
+        return pulumi.get(self, "cpu_usage_percentage")
+
+    @property
+    @pulumi.getter(name="vmCpuReadyPercentage")
+    def vm_cpu_ready_percentage(self) -> int:
+        return pulumi.get(self, "vm_cpu_ready_percentage")
+
+
+@pulumi.output_type
+class VmwareAnomaliesEsxiHighMemoryDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesEsxiHighMemoryDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesEsxiHighMemoryDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesEsxiHighMemoryDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholdsArgs' custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholds']:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compressionDecompressionRate":
+            suggest = "compression_decompression_rate"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compression_decompression_rate: float):
+        pulumi.set(__self__, "compression_decompression_rate", compression_decompression_rate)
+
+    @property
+    @pulumi.getter(name="compressionDecompressionRate")
+    def compression_decompression_rate(self) -> float:
+        return pulumi.get(self, "compression_decompression_rate")
+
+
+@pulumi.output_type
+class VmwareAnomaliesGuestCpuLimitDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesGuestCpuLimitDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesGuestCpuLimitDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesGuestCpuLimitDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.VmwareAnomaliesGuestCpuLimitDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'VmwareAnomaliesGuestCpuLimitDetectionCustomThresholdsArgs' custom_thresholds: Alert if **all three** conditions are met in 3 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.VmwareAnomaliesGuestCpuLimitDetectionCustomThresholds']:
+        """
+        Alert if **all three** conditions are met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class VmwareAnomaliesGuestCpuLimitDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hostCpuUsagePercentage":
+            suggest = "host_cpu_usage_percentage"
+        elif key == "vmCpuReadyPercentage":
+            suggest = "vm_cpu_ready_percentage"
+        elif key == "vmCpuUsagePercentage":
+            suggest = "vm_cpu_usage_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesGuestCpuLimitDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesGuestCpuLimitDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesGuestCpuLimitDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 host_cpu_usage_percentage: int,
+                 vm_cpu_ready_percentage: int,
+                 vm_cpu_usage_percentage: int):
+        pulumi.set(__self__, "host_cpu_usage_percentage", host_cpu_usage_percentage)
+        pulumi.set(__self__, "vm_cpu_ready_percentage", vm_cpu_ready_percentage)
+        pulumi.set(__self__, "vm_cpu_usage_percentage", vm_cpu_usage_percentage)
+
+    @property
+    @pulumi.getter(name="hostCpuUsagePercentage")
+    def host_cpu_usage_percentage(self) -> int:
+        return pulumi.get(self, "host_cpu_usage_percentage")
+
+    @property
+    @pulumi.getter(name="vmCpuReadyPercentage")
+    def vm_cpu_ready_percentage(self) -> int:
+        return pulumi.get(self, "vm_cpu_ready_percentage")
+
+    @property
+    @pulumi.getter(name="vmCpuUsagePercentage")
+    def vm_cpu_usage_percentage(self) -> int:
+        return pulumi.get(self, "vm_cpu_usage_percentage")
+
+
+@pulumi.output_type
+class VmwareAnomaliesLowDatastoreSpaceDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesLowDatastoreSpaceDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesLowDatastoreSpaceDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesLowDatastoreSpaceDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholdsArgs' custom_thresholds: Alert if the condition is met in 1 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholds']:
+        """
+        Alert if the condition is met in 1 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "freeSpacePercentage":
+            suggest = "free_space_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 free_space_percentage: int):
+        pulumi.set(__self__, "free_space_percentage", free_space_percentage)
+
+    @property
+    @pulumi.getter(name="freeSpacePercentage")
+    def free_space_percentage(self) -> int:
+        return pulumi.get(self, "free_space_percentage")
+
+
+@pulumi.output_type
+class VmwareAnomaliesOverloadedStorageDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesOverloadedStorageDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesOverloadedStorageDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesOverloadedStorageDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.VmwareAnomaliesOverloadedStorageDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'VmwareAnomaliesOverloadedStorageDetectionCustomThresholdsArgs' custom_thresholds: Alert if the condition is met in 3 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.VmwareAnomaliesOverloadedStorageDetectionCustomThresholds']:
+        """
+        Alert if the condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class VmwareAnomaliesOverloadedStorageDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "commandAbortsNumber":
+            suggest = "command_aborts_number"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesOverloadedStorageDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesOverloadedStorageDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesOverloadedStorageDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 command_aborts_number: int):
+        pulumi.set(__self__, "command_aborts_number", command_aborts_number)
+
+    @property
+    @pulumi.getter(name="commandAbortsNumber")
+    def command_aborts_number(self) -> int:
+        return pulumi.get(self, "command_aborts_number")
+
+
+@pulumi.output_type
+class VmwareAnomaliesSlowPhysicalStorageDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesSlowPhysicalStorageDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesSlowPhysicalStorageDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesSlowPhysicalStorageDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholdsArgs' custom_thresholds: Alert if **any** condition is met in 4 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds']:
+        """
+        Alert if **any** condition is met in 4 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "avgReadWriteLatency":
+            suggest = "avg_read_write_latency"
+        elif key == "peakReadWriteLatency":
+            suggest = "peak_read_write_latency"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 avg_read_write_latency: int,
+                 peak_read_write_latency: int):
+        pulumi.set(__self__, "avg_read_write_latency", avg_read_write_latency)
+        pulumi.set(__self__, "peak_read_write_latency", peak_read_write_latency)
+
+    @property
+    @pulumi.getter(name="avgReadWriteLatency")
+    def avg_read_write_latency(self) -> int:
+        return pulumi.get(self, "avg_read_write_latency")
+
+    @property
+    @pulumi.getter(name="peakReadWriteLatency")
+    def peak_read_write_latency(self) -> int:
+        return pulumi.get(self, "peak_read_write_latency")
+
+
+@pulumi.output_type
+class VmwareAnomaliesUndersizedStorageDetection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customThresholds":
+            suggest = "custom_thresholds"
+        elif key == "detectionMode":
+            suggest = "detection_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesUndersizedStorageDetection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesUndersizedStorageDetection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesUndersizedStorageDetection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 custom_thresholds: Optional['outputs.VmwareAnomaliesUndersizedStorageDetectionCustomThresholds'] = None,
+                 detection_mode: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'VmwareAnomaliesUndersizedStorageDetectionCustomThresholdsArgs' custom_thresholds: Alert if **any** condition is met in 3 out of 5 samples
+        :param str detection_mode: Possible Values: `Auto`, `Custom`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if custom_thresholds is not None:
+            pulumi.set(__self__, "custom_thresholds", custom_thresholds)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="customThresholds")
+    def custom_thresholds(self) -> Optional['outputs.VmwareAnomaliesUndersizedStorageDetectionCustomThresholds']:
+        """
+        Alert if **any** condition is met in 3 out of 5 samples
+        """
+        return pulumi.get(self, "custom_thresholds")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Custom`
+        """
+        return pulumi.get(self, "detection_mode")
+
+
+@pulumi.output_type
+class VmwareAnomaliesUndersizedStorageDetectionCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "averageQueueCommandLatency":
+            suggest = "average_queue_command_latency"
+        elif key == "peakQueueCommandLatency":
+            suggest = "peak_queue_command_latency"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VmwareAnomaliesUndersizedStorageDetectionCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VmwareAnomaliesUndersizedStorageDetectionCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VmwareAnomaliesUndersizedStorageDetectionCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 average_queue_command_latency: int,
+                 peak_queue_command_latency: int):
+        pulumi.set(__self__, "average_queue_command_latency", average_queue_command_latency)
+        pulumi.set(__self__, "peak_queue_command_latency", peak_queue_command_latency)
+
+    @property
+    @pulumi.getter(name="averageQueueCommandLatency")
+    def average_queue_command_latency(self) -> int:
+        return pulumi.get(self, "average_queue_command_latency")
+
+    @property
+    @pulumi.getter(name="peakQueueCommandLatency")
+    def peak_queue_command_latency(self) -> int:
+        return pulumi.get(self, "peak_queue_command_latency")
+
+
+@pulumi.output_type
+class WebAppAnomaliesErrorRate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "errorRateAuto":
+            suggest = "error_rate_auto"
+        elif key == "errorRateDetectionMode":
+            suggest = "error_rate_detection_mode"
+        elif key == "errorRateFixed":
+            suggest = "error_rate_fixed"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesErrorRate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesErrorRate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesErrorRate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 error_rate_auto: Optional['outputs.WebAppAnomaliesErrorRateErrorRateAuto'] = None,
+                 error_rate_detection_mode: Optional[str] = None,
+                 error_rate_fixed: Optional['outputs.WebAppAnomaliesErrorRateErrorRateFixed'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'WebAppAnomaliesErrorRateErrorRateAutoArgs' error_rate_auto: Alert if the percentage of failing user actions increases by **both** the absolute and relative thresholds:
+        :param str error_rate_detection_mode: Possible Values: `Auto`, `Fixed`
+        :param 'WebAppAnomaliesErrorRateErrorRateFixedArgs' error_rate_fixed: no documentation available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if error_rate_auto is not None:
+            pulumi.set(__self__, "error_rate_auto", error_rate_auto)
+        if error_rate_detection_mode is not None:
+            pulumi.set(__self__, "error_rate_detection_mode", error_rate_detection_mode)
+        if error_rate_fixed is not None:
+            pulumi.set(__self__, "error_rate_fixed", error_rate_fixed)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="errorRateAuto")
+    def error_rate_auto(self) -> Optional['outputs.WebAppAnomaliesErrorRateErrorRateAuto']:
+        """
+        Alert if the percentage of failing user actions increases by **both** the absolute and relative thresholds:
+        """
+        return pulumi.get(self, "error_rate_auto")
+
+    @property
+    @pulumi.getter(name="errorRateDetectionMode")
+    def error_rate_detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "error_rate_detection_mode")
+
+    @property
+    @pulumi.getter(name="errorRateFixed")
+    def error_rate_fixed(self) -> Optional['outputs.WebAppAnomaliesErrorRateErrorRateFixed']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "error_rate_fixed")
+
+
+@pulumi.output_type
+class WebAppAnomaliesErrorRateErrorRateAuto(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "absoluteIncrease":
+            suggest = "absolute_increase"
+        elif key == "overAlertingProtection":
+            suggest = "over_alerting_protection"
+        elif key == "relativeIncrease":
+            suggest = "relative_increase"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesErrorRateErrorRateAuto. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesErrorRateErrorRateAuto.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesErrorRateErrorRateAuto.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 absolute_increase: float,
+                 over_alerting_protection: 'outputs.WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection',
+                 relative_increase: float):
+        pulumi.set(__self__, "absolute_increase", absolute_increase)
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "relative_increase", relative_increase)
+
+    @property
+    @pulumi.getter(name="absoluteIncrease")
+    def absolute_increase(self) -> float:
+        return pulumi.get(self, "absolute_increase")
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> 'outputs.WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection':
+        return pulumi.get(self, "over_alerting_protection")
+
+    @property
+    @pulumi.getter(name="relativeIncrease")
+    def relative_increase(self) -> float:
+        return pulumi.get(self, "relative_increase")
+
+
+@pulumi.output_type
+class WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "actionsPerMinute":
+            suggest = "actions_per_minute"
+        elif key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 actions_per_minute: float,
+                 minutes_abnormal_state: float):
+        pulumi.set(__self__, "actions_per_minute", actions_per_minute)
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter(name="actionsPerMinute")
+    def actions_per_minute(self) -> float:
+        return pulumi.get(self, "actions_per_minute")
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> float:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+
+@pulumi.output_type
+class WebAppAnomaliesErrorRateErrorRateFixed(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "errorRateReqPerMin":
+            suggest = "error_rate_req_per_min"
+        elif key == "errorRateSensitivity":
+            suggest = "error_rate_sensitivity"
+        elif key == "maxFailureRateIncrease":
+            suggest = "max_failure_rate_increase"
+        elif key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesErrorRateErrorRateFixed. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesErrorRateErrorRateFixed.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesErrorRateErrorRateFixed.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 error_rate_req_per_min: float,
+                 error_rate_sensitivity: str,
+                 max_failure_rate_increase: float,
+                 minutes_abnormal_state: float):
+        pulumi.set(__self__, "error_rate_req_per_min", error_rate_req_per_min)
+        pulumi.set(__self__, "error_rate_sensitivity", error_rate_sensitivity)
+        pulumi.set(__self__, "max_failure_rate_increase", max_failure_rate_increase)
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter(name="errorRateReqPerMin")
+    def error_rate_req_per_min(self) -> float:
+        return pulumi.get(self, "error_rate_req_per_min")
+
+    @property
+    @pulumi.getter(name="errorRateSensitivity")
+    def error_rate_sensitivity(self) -> str:
+        return pulumi.get(self, "error_rate_sensitivity")
+
+    @property
+    @pulumi.getter(name="maxFailureRateIncrease")
+    def max_failure_rate_increase(self) -> float:
+        return pulumi.get(self, "max_failure_rate_increase")
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> float:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+
+@pulumi.output_type
+class WebAppAnomaliesResponseTime(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "detectionMode":
+            suggest = "detection_mode"
+        elif key == "responseTimeAuto":
+            suggest = "response_time_auto"
+        elif key == "responseTimeFixed":
+            suggest = "response_time_fixed"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesResponseTime. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesResponseTime.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesResponseTime.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 detection_mode: Optional[str] = None,
+                 response_time_auto: Optional['outputs.WebAppAnomaliesResponseTimeResponseTimeAuto'] = None,
+                 response_time_fixed: Optional['outputs.WebAppAnomaliesResponseTimeResponseTimeFixed'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param str detection_mode: Possible Values: `Auto`, `Fixed`
+        :param 'WebAppAnomaliesResponseTimeResponseTimeAutoArgs' response_time_auto: no documentation available
+        :param 'WebAppAnomaliesResponseTimeResponseTimeFixedArgs' response_time_fixed: no documentation available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if detection_mode is not None:
+            pulumi.set(__self__, "detection_mode", detection_mode)
+        if response_time_auto is not None:
+            pulumi.set(__self__, "response_time_auto", response_time_auto)
+        if response_time_fixed is not None:
+            pulumi.set(__self__, "response_time_fixed", response_time_fixed)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="detectionMode")
+    def detection_mode(self) -> Optional[str]:
+        """
+        Possible Values: `Auto`, `Fixed`
+        """
+        return pulumi.get(self, "detection_mode")
+
+    @property
+    @pulumi.getter(name="responseTimeAuto")
+    def response_time_auto(self) -> Optional['outputs.WebAppAnomaliesResponseTimeResponseTimeAuto']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "response_time_auto")
+
+    @property
+    @pulumi.getter(name="responseTimeFixed")
+    def response_time_fixed(self) -> Optional['outputs.WebAppAnomaliesResponseTimeResponseTimeFixed']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "response_time_fixed")
+
+
+@pulumi.output_type
+class WebAppAnomaliesResponseTimeResponseTimeAuto(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overAlertingProtection":
+            suggest = "over_alerting_protection"
+        elif key == "responseTimeAll":
+            suggest = "response_time_all"
+        elif key == "responseTimeSlowest":
+            suggest = "response_time_slowest"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesResponseTimeResponseTimeAuto. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeAuto.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeAuto.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 over_alerting_protection: 'outputs.WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection',
+                 response_time_all: 'outputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll',
+                 response_time_slowest: 'outputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest'):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "response_time_all", response_time_all)
+        pulumi.set(__self__, "response_time_slowest", response_time_slowest)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> 'outputs.WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection':
+        return pulumi.get(self, "over_alerting_protection")
+
+    @property
+    @pulumi.getter(name="responseTimeAll")
+    def response_time_all(self) -> 'outputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll':
+        return pulumi.get(self, "response_time_all")
+
+    @property
+    @pulumi.getter(name="responseTimeSlowest")
+    def response_time_slowest(self) -> 'outputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest':
+        return pulumi.get(self, "response_time_slowest")
+
+
+@pulumi.output_type
+class WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "actionsPerMinute":
+            suggest = "actions_per_minute"
+        elif key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 actions_per_minute: float,
+                 minutes_abnormal_state: float):
+        pulumi.set(__self__, "actions_per_minute", actions_per_minute)
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter(name="actionsPerMinute")
+    def actions_per_minute(self) -> float:
+        return pulumi.get(self, "actions_per_minute")
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> float:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+
+@pulumi.output_type
+class WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "degradationMilliseconds":
+            suggest = "degradation_milliseconds"
+        elif key == "degradationPercent":
+            suggest = "degradation_percent"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 degradation_milliseconds: float,
+                 degradation_percent: float):
+        pulumi.set(__self__, "degradation_milliseconds", degradation_milliseconds)
+        pulumi.set(__self__, "degradation_percent", degradation_percent)
+
+    @property
+    @pulumi.getter(name="degradationMilliseconds")
+    def degradation_milliseconds(self) -> float:
+        return pulumi.get(self, "degradation_milliseconds")
+
+    @property
+    @pulumi.getter(name="degradationPercent")
+    def degradation_percent(self) -> float:
+        return pulumi.get(self, "degradation_percent")
+
+
+@pulumi.output_type
+class WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "slowestDegradationMilliseconds":
+            suggest = "slowest_degradation_milliseconds"
+        elif key == "slowestDegradationPercent":
+            suggest = "slowest_degradation_percent"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 slowest_degradation_milliseconds: float,
+                 slowest_degradation_percent: float):
+        pulumi.set(__self__, "slowest_degradation_milliseconds", slowest_degradation_milliseconds)
+        pulumi.set(__self__, "slowest_degradation_percent", slowest_degradation_percent)
+
+    @property
+    @pulumi.getter(name="slowestDegradationMilliseconds")
+    def slowest_degradation_milliseconds(self) -> float:
+        return pulumi.get(self, "slowest_degradation_milliseconds")
+
+    @property
+    @pulumi.getter(name="slowestDegradationPercent")
+    def slowest_degradation_percent(self) -> float:
+        return pulumi.get(self, "slowest_degradation_percent")
+
+
+@pulumi.output_type
+class WebAppAnomaliesResponseTimeResponseTimeFixed(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overAlertingProtection":
+            suggest = "over_alerting_protection"
+        elif key == "responseTimeAll":
+            suggest = "response_time_all"
+        elif key == "responseTimeSlowest":
+            suggest = "response_time_slowest"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesResponseTimeResponseTimeFixed. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeFixed.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeFixed.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 over_alerting_protection: 'outputs.WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection',
+                 response_time_all: 'outputs.WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll',
+                 response_time_slowest: 'outputs.WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest',
+                 sensitivity: str):
+        pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
+        pulumi.set(__self__, "response_time_all", response_time_all)
+        pulumi.set(__self__, "response_time_slowest", response_time_slowest)
+        pulumi.set(__self__, "sensitivity", sensitivity)
+
+    @property
+    @pulumi.getter(name="overAlertingProtection")
+    def over_alerting_protection(self) -> 'outputs.WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection':
+        return pulumi.get(self, "over_alerting_protection")
+
+    @property
+    @pulumi.getter(name="responseTimeAll")
+    def response_time_all(self) -> 'outputs.WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll':
+        return pulumi.get(self, "response_time_all")
+
+    @property
+    @pulumi.getter(name="responseTimeSlowest")
+    def response_time_slowest(self) -> 'outputs.WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest':
+        return pulumi.get(self, "response_time_slowest")
+
+    @property
+    @pulumi.getter
+    def sensitivity(self) -> str:
+        return pulumi.get(self, "sensitivity")
+
+
+@pulumi.output_type
+class WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "actionsPerMinute":
+            suggest = "actions_per_minute"
+        elif key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 actions_per_minute: float,
+                 minutes_abnormal_state: float):
+        pulumi.set(__self__, "actions_per_minute", actions_per_minute)
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+
+    @property
+    @pulumi.getter(name="actionsPerMinute")
+    def actions_per_minute(self) -> float:
+        return pulumi.get(self, "actions_per_minute")
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> float:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+
+@pulumi.output_type
+class WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "degradationMilliseconds":
+            suggest = "degradation_milliseconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 degradation_milliseconds: float):
+        pulumi.set(__self__, "degradation_milliseconds", degradation_milliseconds)
+
+    @property
+    @pulumi.getter(name="degradationMilliseconds")
+    def degradation_milliseconds(self) -> float:
+        return pulumi.get(self, "degradation_milliseconds")
+
+
+@pulumi.output_type
+class WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "slowestDegradationMilliseconds":
+            suggest = "slowest_degradation_milliseconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 slowest_degradation_milliseconds: float):
+        pulumi.set(__self__, "slowest_degradation_milliseconds", slowest_degradation_milliseconds)
+
+    @property
+    @pulumi.getter(name="slowestDegradationMilliseconds")
+    def slowest_degradation_milliseconds(self) -> float:
+        return pulumi.get(self, "slowest_degradation_milliseconds")
+
+
+@pulumi.output_type
+class WebAppAnomaliesTrafficDrops(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "trafficDrops":
+            suggest = "traffic_drops"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesTrafficDrops. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesTrafficDrops.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesTrafficDrops.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 traffic_drops: Optional['outputs.WebAppAnomaliesTrafficDropsTrafficDrops'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'WebAppAnomaliesTrafficDropsTrafficDropsArgs' traffic_drops: Dynatrace learns your typical application traffic over an observation period of one week.
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if traffic_drops is not None:
+            pulumi.set(__self__, "traffic_drops", traffic_drops)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="trafficDrops")
+    def traffic_drops(self) -> Optional['outputs.WebAppAnomaliesTrafficDropsTrafficDrops']:
+        """
+        Dynatrace learns your typical application traffic over an observation period of one week.
+        """
+        return pulumi.get(self, "traffic_drops")
+
+
+@pulumi.output_type
+class WebAppAnomaliesTrafficDropsTrafficDrops(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "abnormalStateAbnormalState":
+            suggest = "abnormal_state_abnormal_state"
+        elif key == "trafficDropPercentage":
+            suggest = "traffic_drop_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesTrafficDropsTrafficDrops. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesTrafficDropsTrafficDrops.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesTrafficDropsTrafficDrops.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 abnormal_state_abnormal_state: float,
+                 traffic_drop_percentage: float):
+        pulumi.set(__self__, "abnormal_state_abnormal_state", abnormal_state_abnormal_state)
+        pulumi.set(__self__, "traffic_drop_percentage", traffic_drop_percentage)
+
+    @property
+    @pulumi.getter(name="abnormalStateAbnormalState")
+    def abnormal_state_abnormal_state(self) -> float:
+        return pulumi.get(self, "abnormal_state_abnormal_state")
+
+    @property
+    @pulumi.getter(name="trafficDropPercentage")
+    def traffic_drop_percentage(self) -> float:
+        return pulumi.get(self, "traffic_drop_percentage")
+
+
+@pulumi.output_type
+class WebAppAnomaliesTrafficSpikes(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "trafficSpikes":
+            suggest = "traffic_spikes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesTrafficSpikes. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesTrafficSpikes.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesTrafficSpikes.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 traffic_spikes: Optional['outputs.WebAppAnomaliesTrafficSpikesTrafficSpikes'] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'WebAppAnomaliesTrafficSpikesTrafficSpikesArgs' traffic_spikes: Dynatrace learns your typical application traffic over an observation period of one week.
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        if traffic_spikes is not None:
+            pulumi.set(__self__, "traffic_spikes", traffic_spikes)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="trafficSpikes")
+    def traffic_spikes(self) -> Optional['outputs.WebAppAnomaliesTrafficSpikesTrafficSpikes']:
+        """
+        Dynatrace learns your typical application traffic over an observation period of one week.
+        """
+        return pulumi.get(self, "traffic_spikes")
+
+
+@pulumi.output_type
+class WebAppAnomaliesTrafficSpikesTrafficSpikes(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "minutesAbnormalState":
+            suggest = "minutes_abnormal_state"
+        elif key == "trafficSpikePercentage":
+            suggest = "traffic_spike_percentage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppAnomaliesTrafficSpikesTrafficSpikes. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppAnomaliesTrafficSpikesTrafficSpikes.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppAnomaliesTrafficSpikesTrafficSpikes.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 minutes_abnormal_state: float,
+                 traffic_spike_percentage: float):
+        pulumi.set(__self__, "minutes_abnormal_state", minutes_abnormal_state)
+        pulumi.set(__self__, "traffic_spike_percentage", traffic_spike_percentage)
+
+    @property
+    @pulumi.getter(name="minutesAbnormalState")
+    def minutes_abnormal_state(self) -> float:
+        return pulumi.get(self, "minutes_abnormal_state")
+
+    @property
+    @pulumi.getter(name="trafficSpikePercentage")
+    def traffic_spike_percentage(self) -> float:
+        return pulumi.get(self, "traffic_spike_percentage")
+
+
+@pulumi.output_type
+class WebAppCustomErrorsErrorRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "errorRules":
+            suggest = "error_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppCustomErrorsErrorRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppCustomErrorsErrorRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppCustomErrorsErrorRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 error_rules: Sequence['outputs.WebAppCustomErrorsErrorRulesErrorRule']):
+        pulumi.set(__self__, "error_rules", error_rules)
+
+    @property
+    @pulumi.getter(name="errorRules")
+    def error_rules(self) -> Sequence['outputs.WebAppCustomErrorsErrorRulesErrorRule']:
+        return pulumi.get(self, "error_rules")
+
+
+@pulumi.output_type
+class WebAppCustomErrorsErrorRulesErrorRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "captureSettings":
+            suggest = "capture_settings"
+        elif key == "keyMatcher":
+            suggest = "key_matcher"
+        elif key == "valueMatcher":
+            suggest = "value_matcher"
+        elif key == "keyPattern":
+            suggest = "key_pattern"
+        elif key == "valuePattern":
+            suggest = "value_pattern"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppCustomErrorsErrorRulesErrorRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppCustomErrorsErrorRulesErrorRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppCustomErrorsErrorRulesErrorRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 capture_settings: 'outputs.WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings',
+                 key_matcher: str,
+                 value_matcher: str,
+                 key_pattern: Optional[str] = None,
+                 value_pattern: Optional[str] = None):
+        pulumi.set(__self__, "capture_settings", capture_settings)
+        pulumi.set(__self__, "key_matcher", key_matcher)
+        pulumi.set(__self__, "value_matcher", value_matcher)
+        if key_pattern is not None:
+            pulumi.set(__self__, "key_pattern", key_pattern)
+        if value_pattern is not None:
+            pulumi.set(__self__, "value_pattern", value_pattern)
+
+    @property
+    @pulumi.getter(name="captureSettings")
+    def capture_settings(self) -> 'outputs.WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings':
+        return pulumi.get(self, "capture_settings")
+
+    @property
+    @pulumi.getter(name="keyMatcher")
+    def key_matcher(self) -> str:
+        return pulumi.get(self, "key_matcher")
+
+    @property
+    @pulumi.getter(name="valueMatcher")
+    def value_matcher(self) -> str:
+        return pulumi.get(self, "value_matcher")
+
+    @property
+    @pulumi.getter(name="keyPattern")
+    def key_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "key_pattern")
+
+    @property
+    @pulumi.getter(name="valuePattern")
+    def value_pattern(self) -> Optional[str]:
+        return pulumi.get(self, "value_pattern")
+
+
+@pulumi.output_type
+class WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "considerForAi":
+            suggest = "consider_for_ai"
+        elif key == "impactApdex":
+            suggest = "impact_apdex"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 capture: bool,
+                 consider_for_ai: Optional[bool] = None,
+                 impact_apdex: Optional[bool] = None):
+        pulumi.set(__self__, "capture", capture)
+        if consider_for_ai is not None:
+            pulumi.set(__self__, "consider_for_ai", consider_for_ai)
+        if impact_apdex is not None:
+            pulumi.set(__self__, "impact_apdex", impact_apdex)
+
+    @property
+    @pulumi.getter
+    def capture(self) -> bool:
+        return pulumi.get(self, "capture")
+
+    @property
+    @pulumi.getter(name="considerForAi")
+    def consider_for_ai(self) -> Optional[bool]:
+        return pulumi.get(self, "consider_for_ai")
+
+    @property
+    @pulumi.getter(name="impactApdex")
+    def impact_apdex(self) -> Optional[bool]:
+        return pulumi.get(self, "impact_apdex")
+
+
+@pulumi.output_type
+class WebAppEnablementRum(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "costAndTrafficControl":
+            suggest = "cost_and_traffic_control"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppEnablementRum. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppEnablementRum.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppEnablementRum.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cost_and_traffic_control: int,
+                 enabled: bool):
+        """
+        :param int cost_and_traffic_control: (Field has overlap with `WebApplication`) Percentage of user sessions captured and analyzed
+        :param bool enabled: (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+        """
+        pulumi.set(__self__, "cost_and_traffic_control", cost_and_traffic_control)
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter(name="costAndTrafficControl")
+    def cost_and_traffic_control(self) -> int:
+        """
+        (Field has overlap with `WebApplication`) Percentage of user sessions captured and analyzed
+        """
+        return pulumi.get(self, "cost_and_traffic_control")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+
+@pulumi.output_type
+class WebAppEnablementSessionReplay(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "costAndTrafficControl":
+            suggest = "cost_and_traffic_control"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppEnablementSessionReplay. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppEnablementSessionReplay.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppEnablementSessionReplay.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cost_and_traffic_control: int,
+                 enabled: bool):
+        """
+        :param int cost_and_traffic_control: (Field has overlap with `WebApplication`) [Percentage of user sessions recorded with Session Replay](https://dt-url.net/sr-cost-traffic-control). For example, if you have 50% for RUM and 50% for Session Replay, it results in 25% of sessions recorded with Session Replay.
+        :param bool enabled: (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+        """
+        pulumi.set(__self__, "cost_and_traffic_control", cost_and_traffic_control)
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter(name="costAndTrafficControl")
+    def cost_and_traffic_control(self) -> int:
+        """
+        (Field has overlap with `WebApplication`) [Percentage of user sessions recorded with Session Replay](https://dt-url.net/sr-cost-traffic-control). For example, if you have 50% for RUM and 50% for Session Replay, it results in 25% of sessions recorded with Session Replay.
+        """
+        return pulumi.get(self, "cost_and_traffic_control")
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        (Field has overlap with `WebApplication`) This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+
+@pulumi.output_type
+class WebAppRequestErrorsErrorRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "errorRules":
+            suggest = "error_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppRequestErrorsErrorRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppRequestErrorsErrorRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppRequestErrorsErrorRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 error_rules: Sequence['outputs.WebAppRequestErrorsErrorRulesErrorRule']):
+        pulumi.set(__self__, "error_rules", error_rules)
+
+    @property
+    @pulumi.getter(name="errorRules")
+    def error_rules(self) -> Sequence['outputs.WebAppRequestErrorsErrorRulesErrorRule']:
+        return pulumi.get(self, "error_rules")
+
+
+@pulumi.output_type
+class WebAppRequestErrorsErrorRulesErrorRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "captureSettings":
+            suggest = "capture_settings"
+        elif key == "considerCspViolations":
+            suggest = "consider_csp_violations"
+        elif key == "considerFailedImages":
+            suggest = "consider_failed_images"
+        elif key == "filterSettings":
+            suggest = "filter_settings"
+        elif key == "errorCodes":
+            suggest = "error_codes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppRequestErrorsErrorRulesErrorRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppRequestErrorsErrorRulesErrorRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppRequestErrorsErrorRulesErrorRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 capture_settings: 'outputs.WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings',
+                 consider_csp_violations: bool,
+                 consider_failed_images: bool,
+                 filter_settings: 'outputs.WebAppRequestErrorsErrorRulesErrorRuleFilterSettings',
+                 error_codes: Optional[str] = None):
+        pulumi.set(__self__, "capture_settings", capture_settings)
+        pulumi.set(__self__, "consider_csp_violations", consider_csp_violations)
+        pulumi.set(__self__, "consider_failed_images", consider_failed_images)
+        pulumi.set(__self__, "filter_settings", filter_settings)
+        if error_codes is not None:
+            pulumi.set(__self__, "error_codes", error_codes)
+
+    @property
+    @pulumi.getter(name="captureSettings")
+    def capture_settings(self) -> 'outputs.WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings':
+        return pulumi.get(self, "capture_settings")
+
+    @property
+    @pulumi.getter(name="considerCspViolations")
+    def consider_csp_violations(self) -> bool:
+        return pulumi.get(self, "consider_csp_violations")
+
+    @property
+    @pulumi.getter(name="considerFailedImages")
+    def consider_failed_images(self) -> bool:
+        return pulumi.get(self, "consider_failed_images")
+
+    @property
+    @pulumi.getter(name="filterSettings")
+    def filter_settings(self) -> 'outputs.WebAppRequestErrorsErrorRulesErrorRuleFilterSettings':
+        return pulumi.get(self, "filter_settings")
+
+    @property
+    @pulumi.getter(name="errorCodes")
+    def error_codes(self) -> Optional[str]:
+        return pulumi.get(self, "error_codes")
+
+
+@pulumi.output_type
+class WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "considerForAi":
+            suggest = "consider_for_ai"
+        elif key == "impactApdex":
+            suggest = "impact_apdex"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 capture: bool,
+                 consider_for_ai: Optional[bool] = None,
+                 impact_apdex: Optional[bool] = None):
+        pulumi.set(__self__, "capture", capture)
+        if consider_for_ai is not None:
+            pulumi.set(__self__, "consider_for_ai", consider_for_ai)
+        if impact_apdex is not None:
+            pulumi.set(__self__, "impact_apdex", impact_apdex)
+
+    @property
+    @pulumi.getter
+    def capture(self) -> bool:
+        return pulumi.get(self, "capture")
+
+    @property
+    @pulumi.getter(name="considerForAi")
+    def consider_for_ai(self) -> Optional[bool]:
+        return pulumi.get(self, "consider_for_ai")
+
+    @property
+    @pulumi.getter(name="impactApdex")
+    def impact_apdex(self) -> Optional[bool]:
+        return pulumi.get(self, "impact_apdex")
+
+
+@pulumi.output_type
+class WebAppRequestErrorsErrorRulesErrorRuleFilterSettings(dict):
+    def __init__(__self__, *,
+                 filter: Optional[str] = None,
+                 url: Optional[str] = None):
+        if filter is not None:
+            pulumi.set(__self__, "filter", filter)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @property
+    @pulumi.getter
+    def filter(self) -> Optional[str]:
+        return pulumi.get(self, "filter")
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[str]:
+        return pulumi.get(self, "url")
 
 
 @pulumi.output_type
@@ -40371,10 +62652,10 @@ class WebApplicationSessionReplayConfig(dict):
                  enable_css_resource_capturing: Optional[bool] = None,
                  enabled: Optional[bool] = None):
         """
-        :param int cost_control_percentage: Session replay sampling rating in percent
-        :param Sequence[str] css_resource_capturing_exclusion_rules: A list of URLs to be excluded from CSS resource capturing
-        :param bool enable_css_resource_capturing: Capture (`true`) or don't capture (`false`) CSS resources from the session
-        :param bool enabled: SessionReplay Enabled/Disabled
+        :param int cost_control_percentage: (Field has overlap with `WebAppEnablement`) Session replay sampling rating in percent
+        :param Sequence[str] css_resource_capturing_exclusion_rules: (Field has overlap with `SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
+        :param bool enable_css_resource_capturing: (Field has overlap with `SessionReplayResourceCapture`) Capture (`true`) or don't capture (`false`) CSS resources from the session
+        :param bool enabled: (Field has overlap with `WebAppEnablement`) SessionReplay Enabled/Disabled
         """
         pulumi.set(__self__, "cost_control_percentage", cost_control_percentage)
         if css_resource_capturing_exclusion_rules is not None:
@@ -40388,7 +62669,7 @@ class WebApplicationSessionReplayConfig(dict):
     @pulumi.getter(name="costControlPercentage")
     def cost_control_percentage(self) -> int:
         """
-        Session replay sampling rating in percent
+        (Field has overlap with `WebAppEnablement`) Session replay sampling rating in percent
         """
         return pulumi.get(self, "cost_control_percentage")
 
@@ -40396,7 +62677,7 @@ class WebApplicationSessionReplayConfig(dict):
     @pulumi.getter(name="cssResourceCapturingExclusionRules")
     def css_resource_capturing_exclusion_rules(self) -> Optional[Sequence[str]]:
         """
-        A list of URLs to be excluded from CSS resource capturing
+        (Field has overlap with `SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
         """
         return pulumi.get(self, "css_resource_capturing_exclusion_rules")
 
@@ -40404,7 +62685,7 @@ class WebApplicationSessionReplayConfig(dict):
     @pulumi.getter(name="enableCssResourceCapturing")
     def enable_css_resource_capturing(self) -> Optional[bool]:
         """
-        Capture (`true`) or don't capture (`false`) CSS resources from the session
+        (Field has overlap with `SessionReplayResourceCapture`) Capture (`true`) or don't capture (`false`) CSS resources from the session
         """
         return pulumi.get(self, "enable_css_resource_capturing")
 
@@ -40412,7 +62693,7 @@ class WebApplicationSessionReplayConfig(dict):
     @pulumi.getter
     def enabled(self) -> Optional[bool]:
         """
-        SessionReplay Enabled/Disabled
+        (Field has overlap with `WebAppEnablement`) SessionReplay Enabled/Disabled
         """
         return pulumi.get(self, "enabled")
 
@@ -41247,6 +63528,8 @@ class WebApplicationUserTagsTag(dict):
             suggest = "metadata_id"
         elif key == "serverSideRequestAttribute":
             suggest = "server_side_request_attribute"
+        elif key == "uniqueId":
+            suggest = "unique_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in WebApplicationUserTagsTag. Access the value via the '{suggest}' property getter instead.")
@@ -41260,36 +63543,40 @@ class WebApplicationUserTagsTag(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 id: int,
                  cleanup_rule: Optional[str] = None,
+                 id: Optional[int] = None,
                  ignore_case: Optional[bool] = None,
                  metadata_id: Optional[int] = None,
-                 server_side_request_attribute: Optional[str] = None):
+                 server_side_request_attribute: Optional[str] = None,
+                 unique_id: Optional[int] = None):
         """
         :param int id: The ID of this resource.
         """
-        pulumi.set(__self__, "id", id)
         if cleanup_rule is not None:
             pulumi.set(__self__, "cleanup_rule", cleanup_rule)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
         if ignore_case is not None:
             pulumi.set(__self__, "ignore_case", ignore_case)
         if metadata_id is not None:
             pulumi.set(__self__, "metadata_id", metadata_id)
         if server_side_request_attribute is not None:
             pulumi.set(__self__, "server_side_request_attribute", server_side_request_attribute)
-
-    @property
-    @pulumi.getter
-    def id(self) -> int:
-        """
-        The ID of this resource.
-        """
-        return pulumi.get(self, "id")
+        if unique_id is not None:
+            pulumi.set(__self__, "unique_id", unique_id)
 
     @property
     @pulumi.getter(name="cleanupRule")
     def cleanup_rule(self) -> Optional[str]:
         return pulumi.get(self, "cleanup_rule")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[int]:
+        """
+        The ID of this resource.
+        """
+        return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ignoreCase")
@@ -41305,6 +63592,11 @@ class WebApplicationUserTagsTag(dict):
     @pulumi.getter(name="serverSideRequestAttribute")
     def server_side_request_attribute(self) -> Optional[str]:
         return pulumi.get(self, "server_side_request_attribute")
+
+    @property
+    @pulumi.getter(name="uniqueId")
+    def unique_id(self) -> Optional[int]:
+        return pulumi.get(self, "unique_id")
 
 
 @pulumi.output_type
@@ -41649,43 +63941,213 @@ class XmattersNotificationHeadersHeader(dict):
 
 
 @pulumi.output_type
-class GetSyntheticLocationsLocationsResult(dict):
+class GetAlertingProfilesValueResult(dict):
     def __init__(__self__, *,
-                 locations: Optional[Sequence['outputs.GetSyntheticLocationsLocationsLocationResult']] = None):
+                 id: str,
+                 legacy_id: str,
+                 management_zone_id: str,
+                 management_zone_legacy_id: str,
+                 name: str):
         """
-        :param Sequence['GetSyntheticLocationsLocationsLocationArgs'] locations: The name of the location
+        :param str id: The ID of this resource.
         """
-        if locations is not None:
-            pulumi.set(__self__, "locations", locations)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "legacy_id", legacy_id)
+        pulumi.set(__self__, "management_zone_id", management_zone_id)
+        pulumi.set(__self__, "management_zone_legacy_id", management_zone_legacy_id)
+        pulumi.set(__self__, "name", name)
 
     @property
     @pulumi.getter
-    def locations(self) -> Optional[Sequence['outputs.GetSyntheticLocationsLocationsLocationResult']]:
+    def id(self) -> str:
         """
-        The name of the location
+        The ID of this resource.
         """
-        return pulumi.get(self, "locations")
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> str:
+        return pulumi.get(self, "legacy_id")
+
+    @property
+    @pulumi.getter(name="managementZoneId")
+    def management_zone_id(self) -> str:
+        return pulumi.get(self, "management_zone_id")
+
+    @property
+    @pulumi.getter(name="managementZoneLegacyId")
+    def management_zone_legacy_id(self) -> str:
+        return pulumi.get(self, "management_zone_legacy_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
 
 
 @pulumi.output_type
-class GetSyntheticLocationsLocationsLocationResult(dict):
+class GetEntitiesEntitiesResult(dict):
+    def __init__(__self__, *,
+                 entities: Optional[Sequence['outputs.GetEntitiesEntitiesEntityResult']] = None):
+        """
+        :param Sequence['GetEntitiesEntitiesEntityArgs'] entities: A list of monitored entities.
+        """
+        if entities is not None:
+            pulumi.set(__self__, "entities", entities)
+
+    @property
+    @pulumi.getter
+    def entities(self) -> Optional[Sequence['outputs.GetEntitiesEntitiesEntityResult']]:
+        """
+        A list of monitored entities.
+        """
+        return pulumi.get(self, "entities")
+
+
+@pulumi.output_type
+class GetEntitiesEntitiesEntityResult(dict):
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 entity_id: Optional[str] = None,
+                 tags: Optional[Sequence['outputs.GetEntitiesEntitiesEntityTagResult']] = None,
+                 type: Optional[str] = None):
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if entity_id is not None:
+            pulumi.set(__self__, "entity_id", entity_id)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> Optional[str]:
+        return pulumi.get(self, "entity_id")
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[Sequence['outputs.GetEntitiesEntitiesEntityTagResult']]:
+        return pulumi.get(self, "tags")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetEntitiesEntitiesEntityTagResult(dict):
+    def __init__(__self__, *,
+                 tags: Optional[Sequence['outputs.GetEntitiesEntitiesEntityTagTagResult']] = None):
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Optional[Sequence['outputs.GetEntitiesEntitiesEntityTagTagResult']]:
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class GetEntitiesEntitiesEntityTagTagResult(dict):
+    def __init__(__self__, *,
+                 context: str,
+                 key: str,
+                 string_representation: Optional[str] = None,
+                 value: Optional[str] = None):
+        pulumi.set(__self__, "context", context)
+        pulumi.set(__self__, "key", key)
+        if string_representation is not None:
+            pulumi.set(__self__, "string_representation", string_representation)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def context(self) -> str:
+        return pulumi.get(self, "context")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="stringRepresentation")
+    def string_representation(self) -> Optional[str]:
+        return pulumi.get(self, "string_representation")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetManagementZonesValueResult(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 id: str,
+                 legacy_id: str,
+                 name: str):
+        """
+        :param str id: The ID of this resource.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "legacy_id", legacy_id)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The ID of this resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> str:
+        return pulumi.get(self, "legacy_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetSyntheticLocationsLocationsResult(dict):
     def __init__(__self__, *,
                  cloud_platform: str,
                  ips: Sequence[str],
                  stage: str,
                  status: str,
-                 id: Optional[str] = None,
+                 entity_id: Optional[str] = None,
                  name: Optional[str] = None,
                  type: Optional[str] = None):
         """
-        :param str id: The ID of this resource.
+        :param str cloud_platform: The cloud provider where the location is hosted.
         """
         pulumi.set(__self__, "cloud_platform", cloud_platform)
         pulumi.set(__self__, "ips", ips)
         pulumi.set(__self__, "stage", stage)
         pulumi.set(__self__, "status", status)
-        if id is not None:
-            pulumi.set(__self__, "id", id)
+        if entity_id is not None:
+            pulumi.set(__self__, "entity_id", entity_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if type is not None:
@@ -41694,6 +64156,9 @@ class GetSyntheticLocationsLocationsLocationResult(dict):
     @property
     @pulumi.getter(name="cloudPlatform")
     def cloud_platform(self) -> str:
+        """
+        The cloud provider where the location is hosted.
+        """
         return pulumi.get(self, "cloud_platform")
 
     @property
@@ -41712,12 +64177,9 @@ class GetSyntheticLocationsLocationsLocationResult(dict):
         return pulumi.get(self, "status")
 
     @property
-    @pulumi.getter
-    def id(self) -> Optional[str]:
-        """
-        The ID of this resource.
-        """
-        return pulumi.get(self, "id")
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> Optional[str]:
+        return pulumi.get(self, "entity_id")
 
     @property
     @pulumi.getter

@@ -62,6 +62,21 @@ public final class PagerDutyNotificationArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    @Import(name="legacyId")
+    private @Nullable Output<String> legacyId;
+
+    /**
+     * @return The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    public Optional<Output<String>> legacyId() {
+        return Optional.ofNullable(this.legacyId);
+    }
+
+    /**
      * The name of the notification configuration
      * 
      */
@@ -112,6 +127,7 @@ public final class PagerDutyNotificationArgs extends com.pulumi.resources.Resour
         this.account = $.account;
         this.active = $.active;
         this.apiKey = $.apiKey;
+        this.legacyId = $.legacyId;
         this.name = $.name;
         this.profile = $.profile;
         this.service = $.service;
@@ -196,6 +212,27 @@ public final class PagerDutyNotificationArgs extends com.pulumi.resources.Resour
          */
         public Builder apiKey(String apiKey) {
             return apiKey(Output.of(apiKey));
+        }
+
+        /**
+         * @param legacyId The ID of these settings when referred to from resources requiring the REST API V1 keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(@Nullable Output<String> legacyId) {
+            $.legacyId = legacyId;
+            return this;
+        }
+
+        /**
+         * @param legacyId The ID of these settings when referred to from resources requiring the REST API V1 keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(String legacyId) {
+            return legacyId(Output.of(legacyId));
         }
 
         /**

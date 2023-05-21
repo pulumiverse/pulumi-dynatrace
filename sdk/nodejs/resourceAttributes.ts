@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class ResourceAttributes extends pulumi.CustomResource {
@@ -33,13 +35,9 @@ export class ResourceAttributes extends pulumi.CustomResource {
     }
 
     /**
-     * configured attributes that currently shouldn't be taken into consideration
+     * Attribute key allow-list
      */
-    public readonly disableds!: pulumi.Output<string[] | undefined>;
-    /**
-     * attributes that should get captured
-     */
-    public readonly enableds!: pulumi.Output<string[] | undefined>;
+    public readonly keys!: pulumi.Output<outputs.ResourceAttributesKeys | undefined>;
 
     /**
      * Create a ResourceAttributes resource with the given unique name, arguments, and options.
@@ -54,12 +52,10 @@ export class ResourceAttributes extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ResourceAttributesState | undefined;
-            resourceInputs["disableds"] = state ? state.disableds : undefined;
-            resourceInputs["enableds"] = state ? state.enableds : undefined;
+            resourceInputs["keys"] = state ? state.keys : undefined;
         } else {
             const args = argsOrState as ResourceAttributesArgs | undefined;
-            resourceInputs["disableds"] = args ? args.disableds : undefined;
-            resourceInputs["enableds"] = args ? args.enableds : undefined;
+            resourceInputs["keys"] = args ? args.keys : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ResourceAttributes.__pulumiType, name, resourceInputs, opts);
@@ -71,13 +67,9 @@ export class ResourceAttributes extends pulumi.CustomResource {
  */
 export interface ResourceAttributesState {
     /**
-     * configured attributes that currently shouldn't be taken into consideration
+     * Attribute key allow-list
      */
-    disableds?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * attributes that should get captured
-     */
-    enableds?: pulumi.Input<pulumi.Input<string>[]>;
+    keys?: pulumi.Input<inputs.ResourceAttributesKeys>;
 }
 
 /**
@@ -85,11 +77,7 @@ export interface ResourceAttributesState {
  */
 export interface ResourceAttributesArgs {
     /**
-     * configured attributes that currently shouldn't be taken into consideration
+     * Attribute key allow-list
      */
-    disableds?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * attributes that should get captured
-     */
-    enableds?: pulumi.Input<pulumi.Input<string>[]>;
+    keys?: pulumi.Input<inputs.ResourceAttributesKeys>;
 }

@@ -78,6 +78,21 @@ public final class EmailNotificationState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    @Import(name="legacyId")
+    private @Nullable Output<String> legacyId;
+
+    /**
+     * @return The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    public Optional<Output<String>> legacyId() {
+        return Optional.ofNullable(this.legacyId);
+    }
+
+    /**
      * The name of the notification configuration
      * 
      */
@@ -159,6 +174,7 @@ public final class EmailNotificationState extends com.pulumi.resources.ResourceA
         this.bccs = $.bccs;
         this.body = $.body;
         this.ccs = $.ccs;
+        this.legacyId = $.legacyId;
         this.name = $.name;
         this.notifyClosedProblems = $.notifyClosedProblems;
         this.profile = $.profile;
@@ -286,6 +302,27 @@ public final class EmailNotificationState extends com.pulumi.resources.ResourceA
          */
         public Builder ccs(String... ccs) {
             return ccs(List.of(ccs));
+        }
+
+        /**
+         * @param legacyId The ID of these settings when referred to from resources requiring the REST API V1 keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(@Nullable Output<String> legacyId) {
+            $.legacyId = legacyId;
+            return this;
+        }
+
+        /**
+         * @param legacyId The ID of these settings when referred to from resources requiring the REST API V1 keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(String legacyId) {
+            return legacyId(Output.of(legacyId));
         }
 
         /**

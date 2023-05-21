@@ -47,6 +47,11 @@ export class AwsCredentials extends pulumi.CustomResource {
      */
     public readonly partitionType!: pulumi.Output<string>;
     /**
+     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+     * manage them via WebUI without interference by Terraform.
+     */
+    public readonly supportingServicesManagedInDynatrace!: pulumi.Output<boolean | undefined>;
+    /**
      * supporting services to be monitored
      */
     public readonly supportingServicesToMonitors!: pulumi.Output<outputs.AwsCredentialsSupportingServicesToMonitor[] | undefined>;
@@ -79,6 +84,7 @@ export class AwsCredentials extends pulumi.CustomResource {
             resourceInputs["authenticationData"] = state ? state.authenticationData : undefined;
             resourceInputs["label"] = state ? state.label : undefined;
             resourceInputs["partitionType"] = state ? state.partitionType : undefined;
+            resourceInputs["supportingServicesManagedInDynatrace"] = state ? state.supportingServicesManagedInDynatrace : undefined;
             resourceInputs["supportingServicesToMonitors"] = state ? state.supportingServicesToMonitors : undefined;
             resourceInputs["taggedOnly"] = state ? state.taggedOnly : undefined;
             resourceInputs["tagsToMonitors"] = state ? state.tagsToMonitors : undefined;
@@ -97,6 +103,7 @@ export class AwsCredentials extends pulumi.CustomResource {
             resourceInputs["authenticationData"] = args ? args.authenticationData : undefined;
             resourceInputs["label"] = args ? args.label : undefined;
             resourceInputs["partitionType"] = args ? args.partitionType : undefined;
+            resourceInputs["supportingServicesManagedInDynatrace"] = args ? args.supportingServicesManagedInDynatrace : undefined;
             resourceInputs["supportingServicesToMonitors"] = args ? args.supportingServicesToMonitors : undefined;
             resourceInputs["taggedOnly"] = args ? args.taggedOnly : undefined;
             resourceInputs["tagsToMonitors"] = args ? args.tagsToMonitors : undefined;
@@ -123,6 +130,11 @@ export interface AwsCredentialsState {
      * The type of the AWS partition
      */
     partitionType?: pulumi.Input<string>;
+    /**
+     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+     * manage them via WebUI without interference by Terraform.
+     */
+    supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
     /**
      * supporting services to be monitored
      */
@@ -157,6 +169,11 @@ export interface AwsCredentialsArgs {
      * The type of the AWS partition
      */
     partitionType: pulumi.Input<string>;
+    /**
+     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+     * manage them via WebUI without interference by Terraform.
+     */
+    supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
     /**
      * supporting services to be monitored
      */

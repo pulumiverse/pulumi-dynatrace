@@ -39,6 +39,10 @@ export class K8sCredentials extends pulumi.CustomResource {
      */
     public readonly active!: pulumi.Output<boolean | undefined>;
     /**
+     * Active Gate group to filter active gates for this credentials.
+     */
+    public readonly activeGateGroup!: pulumi.Output<string | undefined>;
+    /**
      * The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
      */
     public readonly authToken!: pulumi.Output<string | undefined>;
@@ -101,6 +105,7 @@ export class K8sCredentials extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as K8sCredentialsState | undefined;
             resourceInputs["active"] = state ? state.active : undefined;
+            resourceInputs["activeGateGroup"] = state ? state.activeGateGroup : undefined;
             resourceInputs["authToken"] = state ? state.authToken : undefined;
             resourceInputs["certificateCheckEnabled"] = state ? state.certificateCheckEnabled : undefined;
             resourceInputs["davisEventsIntegrationEnabled"] = state ? state.davisEventsIntegrationEnabled : undefined;
@@ -119,7 +124,8 @@ export class K8sCredentials extends pulumi.CustomResource {
                 throw new Error("Missing required property 'label'");
             }
             resourceInputs["active"] = args ? args.active : undefined;
-            resourceInputs["authToken"] = args ? args.authToken : undefined;
+            resourceInputs["activeGateGroup"] = args ? args.activeGateGroup : undefined;
+            resourceInputs["authToken"] = args?.authToken ? pulumi.secret(args.authToken) : undefined;
             resourceInputs["certificateCheckEnabled"] = args ? args.certificateCheckEnabled : undefined;
             resourceInputs["davisEventsIntegrationEnabled"] = args ? args.davisEventsIntegrationEnabled : undefined;
             resourceInputs["endpointUrl"] = args ? args.endpointUrl : undefined;
@@ -133,6 +139,8 @@ export class K8sCredentials extends pulumi.CustomResource {
             resourceInputs["workloadIntegrationEnabled"] = args ? args.workloadIntegrationEnabled : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["authToken"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(K8sCredentials.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -145,6 +153,10 @@ export interface K8sCredentialsState {
      * Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
      */
     active?: pulumi.Input<boolean>;
+    /**
+     * Active Gate group to filter active gates for this credentials.
+     */
+    activeGateGroup?: pulumi.Input<string>;
     /**
      * The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
      */
@@ -203,6 +215,10 @@ export interface K8sCredentialsArgs {
      * Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
      */
     active?: pulumi.Input<boolean>;
+    /**
+     * Active Gate group to filter active gates for this credentials.
+     */
+    activeGateGroup?: pulumi.Input<string>;
     /**
      * The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
      */

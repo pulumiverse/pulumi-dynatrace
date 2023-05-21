@@ -19,6 +19,19 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         [Output("key")]
         public Output<string> Key { get; private set; } = null!;
 
+        /// <summary>
+        /// granular control over the visibility of attribute values
+        /// </summary>
+        [Output("masking")]
+        public Output<string> Masking { get; private set; } = null!;
+
+        /// <summary>
+        /// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
+        /// are defined by default on every Dynatrace environment.
+        /// </summary>
+        [Output("persistent")]
+        public Output<bool> Persistent { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a SpanAttributed resource with the given unique name, arguments, and options.
@@ -72,6 +85,19 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
+        /// <summary>
+        /// granular control over the visibility of attribute values
+        /// </summary>
+        [Input("masking", required: true)]
+        public Input<string> Masking { get; set; } = null!;
+
+        /// <summary>
+        /// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
+        /// are defined by default on every Dynatrace environment.
+        /// </summary>
+        [Input("persistent")]
+        public Input<bool>? Persistent { get; set; }
+
         public SpanAttributedArgs()
         {
         }
@@ -85,6 +111,19 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
+
+        /// <summary>
+        /// granular control over the visibility of attribute values
+        /// </summary>
+        [Input("masking")]
+        public Input<string>? Masking { get; set; }
+
+        /// <summary>
+        /// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
+        /// are defined by default on every Dynatrace environment.
+        /// </summary>
+        [Input("persistent")]
+        public Input<bool>? Persistent { get; set; }
 
         public SpanAttributedState()
         {

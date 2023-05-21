@@ -39,3 +39,27 @@ Object.defineProperty(exports, "dtEnvUrl", {
     enumerable: true,
 });
 
+export declare const iamAccountId: string | undefined;
+Object.defineProperty(exports, "iamAccountId", {
+    get() {
+        return __config.get("iamAccountId");
+    },
+    enumerable: true,
+});
+
+export declare const iamClientId: string | undefined;
+Object.defineProperty(exports, "iamClientId", {
+    get() {
+        return __config.get("iamClientId");
+    },
+    enumerable: true,
+});
+
+export declare const iamClientSecret: string | undefined;
+Object.defineProperty(exports, "iamClientSecret", {
+    get() {
+        return __config.get("iamClientSecret");
+    },
+    enumerable: true,
+});
+

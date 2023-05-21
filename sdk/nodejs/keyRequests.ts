@@ -37,7 +37,7 @@ export class KeyRequests extends pulumi.CustomResource {
      */
     public readonly names!: pulumi.Output<string[] | undefined>;
     /**
-     * Whether to create an entry point or not
+     * ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
      */
     public readonly service!: pulumi.Output<string>;
 
@@ -78,7 +78,7 @@ export interface KeyRequestsState {
      */
     names?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Whether to create an entry point or not
+     * ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
      */
     service?: pulumi.Input<string>;
 }
@@ -92,7 +92,7 @@ export interface KeyRequestsArgs {
      */
     names?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Whether to create an entry point or not
+     * ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
      */
     service: pulumi.Input<string>;
 }

@@ -31,7 +31,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			test, err := dynatrace.GetService(ctx, &GetServiceArgs{
+//			test, err := dynatrace.GetService(ctx, &dynatrace.GetServiceArgs{
 //				Name: "Example",
 //				Tags: []string{
 //					"TerraformKeyTest",
@@ -42,7 +42,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewKeyRequests(ctx, "#name#", &dynatrace.KeyRequestsArgs{
-//				Service: pulumi.String(test.Id),
+//				Service: *pulumi.String(test.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -64,7 +64,8 @@ func GetService(ctx *pulumi.Context, args *GetServiceArgs, opts ...pulumi.Invoke
 
 // A collection of arguments for invoking getService.
 type GetServiceArgs struct {
-	Name string `pulumi:"name"`
+	Name     string  `pulumi:"name"`
+	Operator *string `pulumi:"operator"`
 	// Required tags of the service to find
 	Tags []string `pulumi:"tags"`
 }
@@ -72,8 +73,9 @@ type GetServiceArgs struct {
 // A collection of values returned by getService.
 type GetServiceResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Name string `pulumi:"name"`
+	Id       string  `pulumi:"id"`
+	Name     string  `pulumi:"name"`
+	Operator *string `pulumi:"operator"`
 	// Required tags of the service to find
 	Tags []string `pulumi:"tags"`
 }
@@ -93,7 +95,8 @@ func GetServiceOutput(ctx *pulumi.Context, args GetServiceOutputArgs, opts ...pu
 
 // A collection of arguments for invoking getService.
 type GetServiceOutputArgs struct {
-	Name pulumi.StringInput `pulumi:"name"`
+	Name     pulumi.StringInput    `pulumi:"name"`
+	Operator pulumi.StringPtrInput `pulumi:"operator"`
 	// Required tags of the service to find
 	Tags pulumi.StringArrayInput `pulumi:"tags"`
 }
@@ -124,6 +127,10 @@ func (o GetServiceResultOutput) Id() pulumi.StringOutput {
 
 func (o GetServiceResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceResult) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetServiceResultOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceResult) *string { return v.Operator }).(pulumi.StringPtrOutput)
 }
 
 // Required tags of the service to find

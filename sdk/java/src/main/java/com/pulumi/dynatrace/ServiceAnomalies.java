@@ -23,7 +23,7 @@ public class ServiceAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration of failure rate increase detection. Detecting failure rate increases will be disabled if this block is omitted.
      * 
      */
-    @Export(name="failureRates", type=ServiceAnomaliesFailureRates.class, parameters={})
+    @Export(name="failureRates", refs={ServiceAnomaliesFailureRates.class}, tree="[0]")
     private Output</* @Nullable */ ServiceAnomaliesFailureRates> failureRates;
 
     /**
@@ -37,7 +37,7 @@ public class ServiceAnomalies extends com.pulumi.resources.CustomResource {
      * The configuration of load spikes detection. Detecting load spikes will be disabled if this block is omitted.
      * 
      */
-    @Export(name="load", type=ServiceAnomaliesLoad.class, parameters={})
+    @Export(name="load", refs={ServiceAnomaliesLoad.class}, tree="[0]")
     private Output</* @Nullable */ ServiceAnomaliesLoad> load;
 
     /**
@@ -51,7 +51,7 @@ public class ServiceAnomalies extends com.pulumi.resources.CustomResource {
      * The configuration of load drops detection. Detecting load drops will be disabled if this block is omitted.
      * 
      */
-    @Export(name="loadDrops", type=ServiceAnomaliesLoadDrops.class, parameters={})
+    @Export(name="loadDrops", refs={ServiceAnomaliesLoadDrops.class}, tree="[0]")
     private Output</* @Nullable */ ServiceAnomaliesLoadDrops> loadDrops;
 
     /**
@@ -65,7 +65,7 @@ public class ServiceAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration of response time degradation detection. Detecting response time degradation will be disabled if this block is omitted.
      * 
      */
-    @Export(name="responseTimes", type=ServiceAnomaliesResponseTimes.class, parameters={})
+    @Export(name="responseTimes", refs={ServiceAnomaliesResponseTimes.class}, tree="[0]")
     private Output</* @Nullable */ ServiceAnomaliesResponseTimes> responseTimes;
 
     /**

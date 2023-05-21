@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_default, err := dynatrace.LookupAlertingProfile(ctx, &GetAlertingProfileArgs{
+//			_default, err := dynatrace.LookupAlertingProfile(ctx, &dynatrace.LookupAlertingProfileArgs{
 //				Name: "Default",
 //			}, nil)
 //			if err != nil {
@@ -35,7 +35,7 @@ import (
 //			}
 //			_, err = dynatrace.NewWebhookNotification(ctx, "myWebhookNotification", &dynatrace.WebhookNotificationArgs{
 //				Active:               pulumi.Bool(false),
-//				Profile:              pulumi.String(_default.Id),
+//				Profile:              *pulumi.String(_default.Id),
 //				Url:                  pulumi.String("https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e"),
 //				Insecure:             pulumi.Bool(true),
 //				NotifyEventMerges:    pulumi.Bool(true),
@@ -68,8 +68,9 @@ type LookupAlertingProfileArgs struct {
 // A collection of values returned by getAlertingProfile.
 type LookupAlertingProfileResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Name string `pulumi:"name"`
+	Id       string `pulumi:"id"`
+	LegacyId string `pulumi:"legacyId"`
+	Name     string `pulumi:"name"`
 }
 
 func LookupAlertingProfileOutput(ctx *pulumi.Context, args LookupAlertingProfileOutputArgs, opts ...pulumi.InvokeOption) LookupAlertingProfileResultOutput {
@@ -112,6 +113,10 @@ func (o LookupAlertingProfileResultOutput) ToLookupAlertingProfileResultOutputWi
 // The provider-assigned unique ID for this managed resource.
 func (o LookupAlertingProfileResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAlertingProfileResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupAlertingProfileResultOutput) LegacyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAlertingProfileResult) string { return v.LegacyId }).(pulumi.StringOutput)
 }
 
 func (o LookupAlertingProfileResultOutput) Name() pulumi.StringOutput {

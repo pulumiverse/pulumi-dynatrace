@@ -46,14 +46,14 @@ public final class WebApplicationState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Analize *X*% of user sessions
+     * (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
      * 
      */
     @Import(name="costControlUserSessionPercentage")
     private @Nullable Output<Integer> costControlUserSessionPercentage;
 
     /**
-     * @return Analize *X*% of user sessions
+     * @return (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
      * 
      */
     public Optional<Output<Integer>> costControlUserSessionPercentage() {
@@ -166,14 +166,14 @@ public final class WebApplicationState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Real user monitoring enabled/disabled
+     * (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
      * 
      */
     @Import(name="realUserMonitoringEnabled")
     private @Nullable Output<Boolean> realUserMonitoringEnabled;
 
     /**
-     * @return Real user monitoring enabled/disabled
+     * @return (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
      * 
      */
     public Optional<Output<Boolean>> realUserMonitoringEnabled() {
@@ -379,7 +379,7 @@ public final class WebApplicationState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param costControlUserSessionPercentage Analize *X*% of user sessions
+         * @param costControlUserSessionPercentage (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
          * 
          * @return builder
          * 
@@ -390,7 +390,7 @@ public final class WebApplicationState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param costControlUserSessionPercentage Analize *X*% of user sessions
+         * @param costControlUserSessionPercentage (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
          * 
          * @return builder
          * 
@@ -557,7 +557,7 @@ public final class WebApplicationState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param realUserMonitoringEnabled Real user monitoring enabled/disabled
+         * @param realUserMonitoringEnabled (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
          * 
          * @return builder
          * 
@@ -568,7 +568,7 @@ public final class WebApplicationState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param realUserMonitoringEnabled Real user monitoring enabled/disabled
+         * @param realUserMonitoringEnabled (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
          * 
          * @return builder
          * 

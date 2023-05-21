@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -16,7 +16,7 @@ type KeyRequests struct {
 
 	// The names of the key requests
 	Names pulumi.StringArrayOutput `pulumi:"names"`
-	// Whether to create an entry point or not
+	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
 	Service pulumi.StringOutput `pulumi:"service"`
 }
 
@@ -55,14 +55,14 @@ func GetKeyRequests(ctx *pulumi.Context,
 type keyRequestsState struct {
 	// The names of the key requests
 	Names []string `pulumi:"names"`
-	// Whether to create an entry point or not
+	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
 	Service *string `pulumi:"service"`
 }
 
 type KeyRequestsState struct {
 	// The names of the key requests
 	Names pulumi.StringArrayInput
-	// Whether to create an entry point or not
+	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
 	Service pulumi.StringPtrInput
 }
 
@@ -73,7 +73,7 @@ func (KeyRequestsState) ElementType() reflect.Type {
 type keyRequestsArgs struct {
 	// The names of the key requests
 	Names []string `pulumi:"names"`
-	// Whether to create an entry point or not
+	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
 	Service string `pulumi:"service"`
 }
 
@@ -81,7 +81,7 @@ type keyRequestsArgs struct {
 type KeyRequestsArgs struct {
 	// The names of the key requests
 	Names pulumi.StringArrayInput
-	// Whether to create an entry point or not
+	// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
 	Service pulumi.StringInput
 }
 
@@ -177,7 +177,7 @@ func (o KeyRequestsOutput) Names() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *KeyRequests) pulumi.StringArrayOutput { return v.Names }).(pulumi.StringArrayOutput)
 }
 
-// Whether to create an entry point or not
+// ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
 func (o KeyRequestsOutput) Service() pulumi.StringOutput {
 	return o.ApplyT(func(v *KeyRequests) pulumi.StringOutput { return v.Service }).(pulumi.StringOutput)
 }

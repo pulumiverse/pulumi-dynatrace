@@ -24,6 +24,13 @@ public final class HttpMonitorScriptRequestConfigurationArgs extends com.pulumi.
         return Optional.ofNullable(this.acceptAnyCertificate);
     }
 
+    @Import(name="clientCertificate")
+    private @Nullable Output<String> clientCertificate;
+
+    public Optional<Output<String>> clientCertificate() {
+        return Optional.ofNullable(this.clientCertificate);
+    }
+
     @Import(name="followRedirects")
     private @Nullable Output<Boolean> followRedirects;
 
@@ -38,6 +45,13 @@ public final class HttpMonitorScriptRequestConfigurationArgs extends com.pulumi.
         return Optional.ofNullable(this.headers);
     }
 
+    @Import(name="sensitiveData")
+    private @Nullable Output<Boolean> sensitiveData;
+
+    public Optional<Output<Boolean>> sensitiveData() {
+        return Optional.ofNullable(this.sensitiveData);
+    }
+
     @Import(name="userAgent")
     private @Nullable Output<String> userAgent;
 
@@ -49,8 +63,10 @@ public final class HttpMonitorScriptRequestConfigurationArgs extends com.pulumi.
 
     private HttpMonitorScriptRequestConfigurationArgs(HttpMonitorScriptRequestConfigurationArgs $) {
         this.acceptAnyCertificate = $.acceptAnyCertificate;
+        this.clientCertificate = $.clientCertificate;
         this.followRedirects = $.followRedirects;
         this.headers = $.headers;
+        this.sensitiveData = $.sensitiveData;
         this.userAgent = $.userAgent;
     }
 
@@ -81,6 +97,15 @@ public final class HttpMonitorScriptRequestConfigurationArgs extends com.pulumi.
             return acceptAnyCertificate(Output.of(acceptAnyCertificate));
         }
 
+        public Builder clientCertificate(@Nullable Output<String> clientCertificate) {
+            $.clientCertificate = clientCertificate;
+            return this;
+        }
+
+        public Builder clientCertificate(String clientCertificate) {
+            return clientCertificate(Output.of(clientCertificate));
+        }
+
         public Builder followRedirects(@Nullable Output<Boolean> followRedirects) {
             $.followRedirects = followRedirects;
             return this;
@@ -97,6 +122,15 @@ public final class HttpMonitorScriptRequestConfigurationArgs extends com.pulumi.
 
         public Builder headers(HttpMonitorScriptRequestConfigurationHeadersArgs headers) {
             return headers(Output.of(headers));
+        }
+
+        public Builder sensitiveData(@Nullable Output<Boolean> sensitiveData) {
+            $.sensitiveData = sensitiveData;
+            return this;
+        }
+
+        public Builder sensitiveData(Boolean sensitiveData) {
+            return sensitiveData(Output.of(sensitiveData));
         }
 
         public Builder userAgent(@Nullable Output<String> userAgent) {

@@ -17,3 +17,9 @@ dtClusterUrl: Optional[str]
 
 dtEnvUrl: Optional[str]
 
+iamAccountId: Optional[str]
+
+iamClientId: Optional[str]
+
+iamClientSecret: Optional[str]
+

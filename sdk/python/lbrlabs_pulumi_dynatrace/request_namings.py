@@ -14,23 +14,24 @@ __all__ = ['RequestNamingsArgs', 'RequestNamings']
 @pulumi.input_type
 class RequestNamingsArgs:
     def __init__(__self__, *,
-                 ids: pulumi.Input[Sequence[pulumi.Input[str]]]):
+                 ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a RequestNamings resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ids: The IDs of the request namings in the order they should be taken into consideration
         """
-        pulumi.set(__self__, "ids", ids)
+        if ids is not None:
+            pulumi.set(__self__, "ids", ids)
 
     @property
     @pulumi.getter
-    def ids(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
+    def ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         The IDs of the request namings in the order they should be taken into consideration
         """
         return pulumi.get(self, "ids")
 
     @ids.setter
-    def ids(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
+    def ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "ids", value)
 
 
@@ -80,7 +81,7 @@ class RequestNamings(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: RequestNamingsArgs,
+                 args: Optional[RequestNamingsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Dynatrace Documentation
@@ -114,8 +115,6 @@ class RequestNamings(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = RequestNamingsArgs.__new__(RequestNamingsArgs)
 
-            if ids is None and not opts.urn:
-                raise TypeError("Missing required property 'ids'")
             __props__.__dict__["ids"] = ids
         super(RequestNamings, __self__).__init__(
             'dynatrace:index/requestNamings:RequestNamings',
@@ -146,7 +145,7 @@ class RequestNamings(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def ids(self) -> pulumi.Output[Sequence[str]]:
+    def ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         The IDs of the request namings in the order they should be taken into consideration
         """

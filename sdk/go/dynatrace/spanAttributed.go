@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -16,6 +16,11 @@ type SpanAttributed struct {
 
 	// the key of the attribute to capture
 	Key pulumi.StringOutput `pulumi:"key"`
+	// granular control over the visibility of attribute values
+	Masking pulumi.StringOutput `pulumi:"masking"`
+	// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
+	// are defined by default on every Dynatrace environment.
+	Persistent pulumi.BoolOutput `pulumi:"persistent"`
 }
 
 // NewSpanAttributed registers a new resource with the given unique name, arguments, and options.
@@ -27,6 +32,9 @@ func NewSpanAttributed(ctx *pulumi.Context,
 
 	if args.Key == nil {
 		return nil, errors.New("invalid value for required argument 'Key'")
+	}
+	if args.Masking == nil {
+		return nil, errors.New("invalid value for required argument 'Masking'")
 	}
 	opts = pkgResourceDefaultOpts(opts)
 	var resource SpanAttributed
@@ -53,11 +61,21 @@ func GetSpanAttributed(ctx *pulumi.Context,
 type spanAttributedState struct {
 	// the key of the attribute to capture
 	Key *string `pulumi:"key"`
+	// granular control over the visibility of attribute values
+	Masking *string `pulumi:"masking"`
+	// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
+	// are defined by default on every Dynatrace environment.
+	Persistent *bool `pulumi:"persistent"`
 }
 
 type SpanAttributedState struct {
 	// the key of the attribute to capture
 	Key pulumi.StringPtrInput
+	// granular control over the visibility of attribute values
+	Masking pulumi.StringPtrInput
+	// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
+	// are defined by default on every Dynatrace environment.
+	Persistent pulumi.BoolPtrInput
 }
 
 func (SpanAttributedState) ElementType() reflect.Type {
@@ -67,12 +85,22 @@ func (SpanAttributedState) ElementType() reflect.Type {
 type spanAttributedArgs struct {
 	// the key of the attribute to capture
 	Key string `pulumi:"key"`
+	// granular control over the visibility of attribute values
+	Masking string `pulumi:"masking"`
+	// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
+	// are defined by default on every Dynatrace environment.
+	Persistent *bool `pulumi:"persistent"`
 }
 
 // The set of arguments for constructing a SpanAttributed resource.
 type SpanAttributedArgs struct {
 	// the key of the attribute to capture
 	Key pulumi.StringInput
+	// granular control over the visibility of attribute values
+	Masking pulumi.StringInput
+	// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
+	// are defined by default on every Dynatrace environment.
+	Persistent pulumi.BoolPtrInput
 }
 
 func (SpanAttributedArgs) ElementType() reflect.Type {
@@ -165,6 +193,17 @@ func (o SpanAttributedOutput) ToSpanAttributedOutputWithContext(ctx context.Cont
 // the key of the attribute to capture
 func (o SpanAttributedOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *SpanAttributed) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
+}
+
+// granular control over the visibility of attribute values
+func (o SpanAttributedOutput) Masking() pulumi.StringOutput {
+	return o.ApplyT(func(v *SpanAttributed) pulumi.StringOutput { return v.Masking }).(pulumi.StringOutput)
+}
+
+// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
+// are defined by default on every Dynatrace environment.
+func (o SpanAttributedOutput) Persistent() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SpanAttributed) pulumi.BoolOutput { return v.Persistent }).(pulumi.BoolOutput)
 }
 
 type SpanAttributedArrayOutput struct{ *pulumi.OutputState }

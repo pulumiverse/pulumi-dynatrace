@@ -19,7 +19,6 @@ class ManagementZoneArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]]] = None,
                  entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]] = None,
-                 metadata: Optional[pulumi.Input['ManagementZoneMetadataArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None):
@@ -28,7 +27,6 @@ class ManagementZoneArgs:
         :param pulumi.Input[str] description: The description of the management zone
         :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]] dimensional_rules: A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
-        :param pulumi.Input['ManagementZoneMetadataArgs'] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[str] name: The name of the management zone
         :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -39,11 +37,6 @@ class ManagementZoneArgs:
             pulumi.set(__self__, "dimensional_rules", dimensional_rules)
         if entity_selector_based_rules is not None:
             pulumi.set(__self__, "entity_selector_based_rules", entity_selector_based_rules)
-        if metadata is not None:
-            warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
-            pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-        if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if rules is not None:
@@ -86,18 +79,6 @@ class ManagementZoneArgs:
     @entity_selector_based_rules.setter
     def entity_selector_based_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]]):
         pulumi.set(self, "entity_selector_based_rules", value)
-
-    @property
-    @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['ManagementZoneMetadataArgs']]:
-        """
-        `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        """
-        return pulumi.get(self, "metadata")
-
-    @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['ManagementZoneMetadataArgs']]):
-        pulumi.set(self, "metadata", value)
 
     @property
     @pulumi.getter
@@ -142,7 +123,6 @@ class _ManagementZoneState:
                  description: Optional[pulumi.Input[str]] = None,
                  dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]]] = None,
                  entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]] = None,
-                 metadata: Optional[pulumi.Input['ManagementZoneMetadataArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None):
@@ -151,7 +131,6 @@ class _ManagementZoneState:
         :param pulumi.Input[str] description: The description of the management zone
         :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneDimensionalRuleArgs']]] dimensional_rules: A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
-        :param pulumi.Input['ManagementZoneMetadataArgs'] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[str] name: The name of the management zone
         :param pulumi.Input[Sequence[pulumi.Input['ManagementZoneRuleArgs']]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -162,11 +141,6 @@ class _ManagementZoneState:
             pulumi.set(__self__, "dimensional_rules", dimensional_rules)
         if entity_selector_based_rules is not None:
             pulumi.set(__self__, "entity_selector_based_rules", entity_selector_based_rules)
-        if metadata is not None:
-            warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
-            pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-        if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if rules is not None:
@@ -209,18 +183,6 @@ class _ManagementZoneState:
     @entity_selector_based_rules.setter
     def entity_selector_based_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementZoneEntitySelectorBasedRuleArgs']]]]):
         pulumi.set(self, "entity_selector_based_rules", value)
-
-    @property
-    @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['ManagementZoneMetadataArgs']]:
-        """
-        `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        """
-        return pulumi.get(self, "metadata")
-
-    @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['ManagementZoneMetadataArgs']]):
-        pulumi.set(self, "metadata", value)
 
     @property
     @pulumi.getter
@@ -267,7 +229,6 @@ class ManagementZone(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneDimensionalRuleArgs']]]]] = None,
                  entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneEntitySelectorBasedRuleArgs']]]]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['ManagementZoneMetadataArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneRuleArgs']]]]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
@@ -279,7 +240,6 @@ class ManagementZone(pulumi.CustomResource):
         :param pulumi.Input[str] description: The description of the management zone
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneDimensionalRuleArgs']]]] dimensional_rules: A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneEntitySelectorBasedRuleArgs']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
-        :param pulumi.Input[pulumi.InputType['ManagementZoneMetadataArgs']] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[str] name: The name of the management zone
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneRuleArgs']]]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -310,7 +270,6 @@ class ManagementZone(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneDimensionalRuleArgs']]]]] = None,
                  entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneEntitySelectorBasedRuleArgs']]]]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['ManagementZoneMetadataArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneRuleArgs']]]]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
@@ -326,10 +285,6 @@ class ManagementZone(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["dimensional_rules"] = dimensional_rules
             __props__.__dict__["entity_selector_based_rules"] = entity_selector_based_rules
-            if metadata is not None and not opts.urn:
-                warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
-                pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-            __props__.__dict__["metadata"] = metadata
             __props__.__dict__["name"] = name
             __props__.__dict__["rules"] = rules
             __props__.__dict__["unknowns"] = unknowns
@@ -346,7 +301,6 @@ class ManagementZone(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             dimensional_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneDimensionalRuleArgs']]]]] = None,
             entity_selector_based_rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneEntitySelectorBasedRuleArgs']]]]] = None,
-            metadata: Optional[pulumi.Input[pulumi.InputType['ManagementZoneMetadataArgs']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             rules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneRuleArgs']]]]] = None,
             unknowns: Optional[pulumi.Input[str]] = None) -> 'ManagementZone':
@@ -360,7 +314,6 @@ class ManagementZone(pulumi.CustomResource):
         :param pulumi.Input[str] description: The description of the management zone
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneDimensionalRuleArgs']]]] dimensional_rules: A list of dimensional data rules for management zone usage. If several rules are specified, the `or` logic applies
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneEntitySelectorBasedRuleArgs']]]] entity_selector_based_rules: A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
-        :param pulumi.Input[pulumi.InputType['ManagementZoneMetadataArgs']] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[str] name: The name of the management zone
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagementZoneRuleArgs']]]] rules: A list of rules for management zone usage. Each rule is evaluated independently of all other rules
         :param pulumi.Input[str] unknowns: allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -372,7 +325,6 @@ class ManagementZone(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["dimensional_rules"] = dimensional_rules
         __props__.__dict__["entity_selector_based_rules"] = entity_selector_based_rules
-        __props__.__dict__["metadata"] = metadata
         __props__.__dict__["name"] = name
         __props__.__dict__["rules"] = rules
         __props__.__dict__["unknowns"] = unknowns
@@ -401,14 +353,6 @@ class ManagementZone(pulumi.CustomResource):
         A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
         """
         return pulumi.get(self, "entity_selector_based_rules")
-
-    @property
-    @pulumi.getter
-    def metadata(self) -> pulumi.Output[Optional['outputs.ManagementZoneMetadata']]:
-        """
-        `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        """
-        return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter

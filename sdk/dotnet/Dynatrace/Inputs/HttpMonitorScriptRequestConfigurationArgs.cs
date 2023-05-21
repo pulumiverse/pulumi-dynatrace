@@ -16,11 +16,26 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         [Input("acceptAnyCertificate")]
         public Input<bool>? AcceptAnyCertificate { get; set; }
 
+        [Input("clientCertificate")]
+        private Input<string>? _clientCertificate;
+        public Input<string>? ClientCertificate
+        {
+            get => _clientCertificate;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clientCertificate = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
         [Input("followRedirects")]
         public Input<bool>? FollowRedirects { get; set; }
 
         [Input("headers")]
         public Input<Inputs.HttpMonitorScriptRequestConfigurationHeadersArgs>? Headers { get; set; }
+
+        [Input("sensitiveData")]
+        public Input<bool>? SensitiveData { get; set; }
 
         [Input("userAgent")]
         public Input<string>? UserAgent { get; set; }

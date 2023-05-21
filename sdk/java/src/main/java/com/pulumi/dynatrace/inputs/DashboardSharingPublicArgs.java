@@ -7,7 +7,10 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class DashboardSharingPublicArgs extends com.pulumi.resources.ResourceArgs {
@@ -29,10 +32,18 @@ public final class DashboardSharingPublicArgs extends com.pulumi.resources.Resou
         return this.managementZones;
     }
 
+    @Import(name="urls")
+    private @Nullable Output<Map<String,String>> urls;
+
+    public Optional<Output<Map<String,String>>> urls() {
+        return Optional.ofNullable(this.urls);
+    }
+
     private DashboardSharingPublicArgs() {}
 
     private DashboardSharingPublicArgs(DashboardSharingPublicArgs $) {
         this.managementZones = $.managementZones;
+        this.urls = $.urls;
     }
 
     public static Builder builder() {
@@ -82,6 +93,15 @@ public final class DashboardSharingPublicArgs extends com.pulumi.resources.Resou
          */
         public Builder managementZones(String... managementZones) {
             return managementZones(List.of(managementZones));
+        }
+
+        public Builder urls(@Nullable Output<Map<String,String>> urls) {
+            $.urls = urls;
+            return this;
+        }
+
+        public Builder urls(Map<String,String> urls) {
+            return urls(Output.of(urls));
         }
 
         public DashboardSharingPublicArgs build() {

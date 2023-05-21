@@ -22,7 +22,7 @@ public final class AwsCredentialsAuthenticationData {
      */
     private @Nullable String accountId;
     /**
-     * @return the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
+     * @return (Read only) the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
      * 
      */
     private @Nullable String externalId;
@@ -58,7 +58,7 @@ public final class AwsCredentialsAuthenticationData {
         return Optional.ofNullable(this.accountId);
     }
     /**
-     * @return the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
+     * @return (Read only) the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
      * 
      */
     public Optional<String> externalId() {

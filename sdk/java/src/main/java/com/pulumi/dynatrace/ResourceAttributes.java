@@ -10,40 +10,25 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.dynatrace.ResourceAttributesArgs;
 import com.pulumi.dynatrace.Utilities;
 import com.pulumi.dynatrace.inputs.ResourceAttributesState;
-import java.lang.String;
-import java.util.List;
+import com.pulumi.dynatrace.outputs.ResourceAttributesKeys;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
 @ResourceType(type="dynatrace:index/resourceAttributes:ResourceAttributes")
 public class ResourceAttributes extends com.pulumi.resources.CustomResource {
     /**
-     * configured attributes that currently shouldn&#39;t be taken into consideration
+     * Attribute key allow-list
      * 
      */
-    @Export(name="disableds", type=List.class, parameters={String.class})
-    private Output</* @Nullable */ List<String>> disableds;
+    @Export(name="keys", refs={ResourceAttributesKeys.class}, tree="[0]")
+    private Output</* @Nullable */ ResourceAttributesKeys> keys;
 
     /**
-     * @return configured attributes that currently shouldn&#39;t be taken into consideration
+     * @return Attribute key allow-list
      * 
      */
-    public Output<Optional<List<String>>> disableds() {
-        return Codegen.optional(this.disableds);
-    }
-    /**
-     * attributes that should get captured
-     * 
-     */
-    @Export(name="enableds", type=List.class, parameters={String.class})
-    private Output</* @Nullable */ List<String>> enableds;
-
-    /**
-     * @return attributes that should get captured
-     * 
-     */
-    public Output<Optional<List<String>>> enableds() {
-        return Codegen.optional(this.enableds);
+    public Output<Optional<ResourceAttributesKeys>> keys() {
+        return Codegen.optional(this.keys);
     }
 
     /**

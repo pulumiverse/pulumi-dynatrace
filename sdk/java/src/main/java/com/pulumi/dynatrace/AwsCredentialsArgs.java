@@ -66,6 +66,23 @@ public final class AwsCredentialsArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+     * manage them via WebUI without interference by Terraform.
+     * 
+     */
+    @Import(name="supportingServicesManagedInDynatrace")
+    private @Nullable Output<Boolean> supportingServicesManagedInDynatrace;
+
+    /**
+     * @return If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+     * manage them via WebUI without interference by Terraform.
+     * 
+     */
+    public Optional<Output<Boolean>> supportingServicesManagedInDynatrace() {
+        return Optional.ofNullable(this.supportingServicesManagedInDynatrace);
+    }
+
+    /**
      * supporting services to be monitored
      * 
      */
@@ -131,6 +148,7 @@ public final class AwsCredentialsArgs extends com.pulumi.resources.ResourceArgs 
         this.authenticationData = $.authenticationData;
         this.label = $.label;
         this.partitionType = $.partitionType;
+        this.supportingServicesManagedInDynatrace = $.supportingServicesManagedInDynatrace;
         this.supportingServicesToMonitors = $.supportingServicesToMonitors;
         this.taggedOnly = $.taggedOnly;
         this.tagsToMonitors = $.tagsToMonitors;
@@ -216,6 +234,29 @@ public final class AwsCredentialsArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder partitionType(String partitionType) {
             return partitionType(Output.of(partitionType));
+        }
+
+        /**
+         * @param supportingServicesManagedInDynatrace If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+         * manage them via WebUI without interference by Terraform.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder supportingServicesManagedInDynatrace(@Nullable Output<Boolean> supportingServicesManagedInDynatrace) {
+            $.supportingServicesManagedInDynatrace = supportingServicesManagedInDynatrace;
+            return this;
+        }
+
+        /**
+         * @param supportingServicesManagedInDynatrace If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+         * manage them via WebUI without interference by Terraform.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder supportingServicesManagedInDynatrace(Boolean supportingServicesManagedInDynatrace) {
+            return supportingServicesManagedInDynatrace(Output.of(supportingServicesManagedInDynatrace));
         }
 
         /**

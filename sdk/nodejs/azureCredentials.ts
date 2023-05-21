@@ -51,7 +51,7 @@ export class AzureCredentials extends pulumi.CustomResource {
      */
     public readonly directoryId!: pulumi.Output<string | undefined>;
     /**
-     * The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+     * The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
      */
     public readonly key!: pulumi.Output<string | undefined>;
     /**
@@ -74,6 +74,11 @@ export class AzureCredentials extends pulumi.CustomResource {
      * A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
      */
     public readonly supportingServices!: pulumi.Output<outputs.AzureCredentialsSupportingService[] | undefined>;
+    /**
+     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+     * manage them via WebUI without interference by Terraform.
+     */
+    public readonly supportingServicesManagedInDynatrace!: pulumi.Output<boolean | undefined>;
     /**
      * Any attributes that aren't yet supported by this provider
      */
@@ -102,6 +107,7 @@ export class AzureCredentials extends pulumi.CustomResource {
             resourceInputs["monitorOnlyTagPairs"] = state ? state.monitorOnlyTagPairs : undefined;
             resourceInputs["monitorOnlyTaggedEntities"] = state ? state.monitorOnlyTaggedEntities : undefined;
             resourceInputs["supportingServices"] = state ? state.supportingServices : undefined;
+            resourceInputs["supportingServicesManagedInDynatrace"] = state ? state.supportingServicesManagedInDynatrace : undefined;
             resourceInputs["unknowns"] = state ? state.unknowns : undefined;
         } else {
             const args = argsOrState as AzureCredentialsArgs | undefined;
@@ -115,15 +121,18 @@ export class AzureCredentials extends pulumi.CustomResource {
             resourceInputs["appId"] = args ? args.appId : undefined;
             resourceInputs["autoTagging"] = args ? args.autoTagging : undefined;
             resourceInputs["directoryId"] = args ? args.directoryId : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
+            resourceInputs["key"] = args?.key ? pulumi.secret(args.key) : undefined;
             resourceInputs["label"] = args ? args.label : undefined;
             resourceInputs["monitorOnlyExcludingTagPairs"] = args ? args.monitorOnlyExcludingTagPairs : undefined;
             resourceInputs["monitorOnlyTagPairs"] = args ? args.monitorOnlyTagPairs : undefined;
             resourceInputs["monitorOnlyTaggedEntities"] = args ? args.monitorOnlyTaggedEntities : undefined;
             resourceInputs["supportingServices"] = args ? args.supportingServices : undefined;
+            resourceInputs["supportingServicesManagedInDynatrace"] = args ? args.supportingServicesManagedInDynatrace : undefined;
             resourceInputs["unknowns"] = args ? args.unknowns : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["key"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(AzureCredentials.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -149,7 +158,7 @@ export interface AzureCredentialsState {
      */
     directoryId?: pulumi.Input<string>;
     /**
-     * The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+     * The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
      */
     key?: pulumi.Input<string>;
     /**
@@ -172,6 +181,11 @@ export interface AzureCredentialsState {
      * A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
      */
     supportingServices?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsSupportingService>[]>;
+    /**
+     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+     * manage them via WebUI without interference by Terraform.
+     */
+    supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
     /**
      * Any attributes that aren't yet supported by this provider
      */
@@ -199,7 +213,7 @@ export interface AzureCredentialsArgs {
      */
     directoryId?: pulumi.Input<string>;
     /**
-     * The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+     * The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
      */
     key?: pulumi.Input<string>;
     /**
@@ -222,6 +236,11 @@ export interface AzureCredentialsArgs {
      * A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
      */
     supportingServices?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsSupportingService>[]>;
+    /**
+     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+     * manage them via WebUI without interference by Terraform.
+     */
+    supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
     /**
      * Any attributes that aren't yet supported by this provider
      */

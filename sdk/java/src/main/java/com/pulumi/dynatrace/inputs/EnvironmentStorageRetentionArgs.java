@@ -7,17 +7,19 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class EnvironmentStorageRetentionArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final EnvironmentStorageRetentionArgs Empty = new EnvironmentStorageRetentionArgs();
 
-    @Import(name="logs", required=true)
-    private Output<Integer> logs;
+    @Import(name="logs")
+    private @Nullable Output<Integer> logs;
 
-    public Output<Integer> logs() {
-        return this.logs;
+    public Optional<Output<Integer>> logs() {
+        return Optional.ofNullable(this.logs);
     }
 
     @Import(name="rum", required=true)
@@ -84,7 +86,7 @@ public final class EnvironmentStorageRetentionArgs extends com.pulumi.resources.
             $ = new EnvironmentStorageRetentionArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder logs(Output<Integer> logs) {
+        public Builder logs(@Nullable Output<Integer> logs) {
             $.logs = logs;
             return this;
         }
@@ -139,7 +141,6 @@ public final class EnvironmentStorageRetentionArgs extends com.pulumi.resources.
         }
 
         public EnvironmentStorageRetentionArgs build() {
-            $.logs = Objects.requireNonNull($.logs, "expected parameter 'logs' to be non-null");
             $.rum = Objects.requireNonNull($.rum, "expected parameter 'rum' to be non-null");
             $.serviceCodeLevel = Objects.requireNonNull($.serviceCodeLevel, "expected parameter 'serviceCodeLevel' to be non-null");
             $.serviceRequestLevel = Objects.requireNonNull($.serviceRequestLevel, "expected parameter 'serviceRequestLevel' to be non-null");

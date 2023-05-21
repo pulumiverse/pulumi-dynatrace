@@ -35,19 +35,22 @@ export class ApplicationErrorRules extends pulumi.CustomResource {
     }
 
     /**
-     * An ordered list of HTTP errors.
+     * (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
      */
     public readonly customErrors!: pulumi.Output<outputs.ApplicationErrorRulesCustomErrors | undefined>;
     /**
-     * An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+     * (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+     * to bottom; the first matching rule applies
      */
     public readonly httpErrors!: pulumi.Output<outputs.ApplicationErrorRulesHttpErrors | undefined>;
     /**
-     * Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+     * (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+     * **customErrorRules** in Apdex calculation
      */
     public readonly ignoreCustomErrorsApdex!: pulumi.Output<boolean | undefined>;
     /**
-     * Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+     * (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+     * **httpErrorRules** in Apdex calculation
      */
     public readonly ignoreHttpErrorsApdex!: pulumi.Output<boolean | undefined>;
     /**
@@ -97,19 +100,22 @@ export class ApplicationErrorRules extends pulumi.CustomResource {
  */
 export interface ApplicationErrorRulesState {
     /**
-     * An ordered list of HTTP errors.
+     * (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
      */
     customErrors?: pulumi.Input<inputs.ApplicationErrorRulesCustomErrors>;
     /**
-     * An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+     * (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+     * to bottom; the first matching rule applies
      */
     httpErrors?: pulumi.Input<inputs.ApplicationErrorRulesHttpErrors>;
     /**
-     * Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+     * (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+     * **customErrorRules** in Apdex calculation
      */
     ignoreCustomErrorsApdex?: pulumi.Input<boolean>;
     /**
-     * Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+     * (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+     * **httpErrorRules** in Apdex calculation
      */
     ignoreHttpErrorsApdex?: pulumi.Input<boolean>;
     /**
@@ -127,19 +133,22 @@ export interface ApplicationErrorRulesState {
  */
 export interface ApplicationErrorRulesArgs {
     /**
-     * An ordered list of HTTP errors.
+     * (Field has overlap with `dynatrace.WebAppCustomErrors`) An ordered list of HTTP errors.
      */
     customErrors?: pulumi.Input<inputs.ApplicationErrorRulesCustomErrors>;
     /**
-     * An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+     * (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+     * to bottom; the first matching rule applies
      */
     httpErrors?: pulumi.Input<inputs.ApplicationErrorRulesHttpErrors>;
     /**
-     * Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+     * (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+     * **customErrorRules** in Apdex calculation
      */
     ignoreCustomErrorsApdex?: pulumi.Input<boolean>;
     /**
-     * Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+     * (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+     * **httpErrorRules** in Apdex calculation
      */
     ignoreHttpErrorsApdex?: pulumi.Input<boolean>;
     /**

@@ -19,6 +19,7 @@ class VictorOpsNotificationArgs:
                  profile: pulumi.Input[str],
                  routing_key: pulumi.Input[str],
                  api_key: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a VictorOpsNotification resource.
@@ -27,6 +28,7 @@ class VictorOpsNotificationArgs:
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
         :param pulumi.Input[str] routing_key: The routing key, defining the group to be notified
         :param pulumi.Input[str] api_key: The API key for the target VictorOps account
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         """
         pulumi.set(__self__, "active", active)
@@ -35,6 +37,8 @@ class VictorOpsNotificationArgs:
         pulumi.set(__self__, "routing_key", routing_key)
         if api_key is not None:
             pulumi.set(__self__, "api_key", api_key)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -99,6 +103,18 @@ class VictorOpsNotificationArgs:
         pulumi.set(self, "api_key", value)
 
     @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -116,6 +132,7 @@ class _VictorOpsNotificationState:
     def __init__(__self__, *,
                  active: Optional[pulumi.Input[bool]] = None,
                  api_key: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  message: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -124,6 +141,7 @@ class _VictorOpsNotificationState:
         Input properties used for looking up and filtering VictorOpsNotification resources.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] api_key: The API key for the target VictorOps account
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] message: The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
@@ -133,6 +151,8 @@ class _VictorOpsNotificationState:
             pulumi.set(__self__, "active", active)
         if api_key is not None:
             pulumi.set(__self__, "api_key", api_key)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if message is not None:
             pulumi.set(__self__, "message", message)
         if name is not None:
@@ -165,6 +185,18 @@ class _VictorOpsNotificationState:
     @api_key.setter
     def api_key(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "api_key", value)
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
 
     @property
     @pulumi.getter
@@ -222,6 +254,7 @@ class VictorOpsNotification(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: Optional[pulumi.Input[bool]] = None,
                  api_key: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  message: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -233,6 +266,7 @@ class VictorOpsNotification(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] api_key: The API key for the target VictorOps account
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] message: The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
@@ -263,6 +297,7 @@ class VictorOpsNotification(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: Optional[pulumi.Input[bool]] = None,
                  api_key: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  message: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -280,6 +315,7 @@ class VictorOpsNotification(pulumi.CustomResource):
                 raise TypeError("Missing required property 'active'")
             __props__.__dict__["active"] = active
             __props__.__dict__["api_key"] = None if api_key is None else pulumi.Output.secret(api_key)
+            __props__.__dict__["legacy_id"] = legacy_id
             if message is None and not opts.urn:
                 raise TypeError("Missing required property 'message'")
             __props__.__dict__["message"] = message
@@ -304,6 +340,7 @@ class VictorOpsNotification(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             active: Optional[pulumi.Input[bool]] = None,
             api_key: Optional[pulumi.Input[str]] = None,
+            legacy_id: Optional[pulumi.Input[str]] = None,
             message: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             profile: Optional[pulumi.Input[str]] = None,
@@ -317,6 +354,7 @@ class VictorOpsNotification(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] api_key: The API key for the target VictorOps account
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] message: The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
@@ -328,6 +366,7 @@ class VictorOpsNotification(pulumi.CustomResource):
 
         __props__.__dict__["active"] = active
         __props__.__dict__["api_key"] = api_key
+        __props__.__dict__["legacy_id"] = legacy_id
         __props__.__dict__["message"] = message
         __props__.__dict__["name"] = name
         __props__.__dict__["profile"] = profile
@@ -349,6 +388,14 @@ class VictorOpsNotification(pulumi.CustomResource):
         The API key for the target VictorOps account
         """
         return pulumi.get(self, "api_key")
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> pulumi.Output[str]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
 
     @property
     @pulumi.getter

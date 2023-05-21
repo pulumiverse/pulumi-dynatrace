@@ -15,6 +15,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
     public sealed class HttpMonitorAnomalyDetectionOutageHandling
     {
         public readonly bool? GlobalOutage;
+        public readonly ImmutableArray<Outputs.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy> GlobalOutagePolicies;
         public readonly bool? LocalOutage;
         public readonly ImmutableArray<Outputs.HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy> LocalOutagePolicies;
         public readonly bool? RetryOnError;
@@ -23,6 +24,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         private HttpMonitorAnomalyDetectionOutageHandling(
             bool? globalOutage,
 
+            ImmutableArray<Outputs.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy> globalOutagePolicies,
+
             bool? localOutage,
 
             ImmutableArray<Outputs.HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy> localOutagePolicies,
@@ -30,6 +33,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
             bool? retryOnError)
         {
             GlobalOutage = globalOutage;
+            GlobalOutagePolicies = globalOutagePolicies;
             LocalOutage = localOutage;
             LocalOutagePolicies = localOutagePolicies;
             RetryOnError = retryOnError;

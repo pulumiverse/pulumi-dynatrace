@@ -34,8 +34,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         [Input("cloudPlatform")]
         public string? CloudPlatform { get; set; }
 
-        [Input("id")]
-        public string? Id { get; set; }
+        [Input("entityId")]
+        public string? EntityId { get; set; }
 
         [Input("ips")]
         private List<string>? _ips;
@@ -71,8 +71,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         [Input("cloudPlatform")]
         public Input<string>? CloudPlatform { get; set; }
 
-        [Input("id")]
-        public Input<string>? Id { get; set; }
+        [Input("entityId")]
+        public Input<string>? EntityId { get; set; }
 
         [Input("ips")]
         private InputList<string>? _ips;
@@ -108,7 +108,11 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// The cloud provider where the location is hosted.
         /// </summary>
         public readonly string CloudPlatform;
-        public readonly string? Id;
+        public readonly string? EntityId;
+        /// <summary>
+        /// The provider-assigned unique ID for this managed resource.
+        /// </summary>
+        public readonly string Id;
         public readonly ImmutableArray<string> Ips;
         public readonly string? Name;
         public readonly string Stage;
@@ -119,7 +123,9 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         private GetSyntheticLocationResult(
             string cloudPlatform,
 
-            string? id,
+            string? entityId,
+
+            string id,
 
             ImmutableArray<string> ips,
 
@@ -132,6 +138,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             string? type)
         {
             CloudPlatform = cloudPlatform;
+            EntityId = entityId;
             Id = id;
             Ips = ips;
             Name = name;

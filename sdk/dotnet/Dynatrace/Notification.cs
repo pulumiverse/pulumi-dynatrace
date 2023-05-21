@@ -32,12 +32,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<Outputs.NotificationEmail?> Email { get; private set; } = null!;
 
         /// <summary>
-        /// Configuration for HipChat Notification
-        /// </summary>
-        [Output("hipchat")]
-        public Output<Outputs.NotificationHipchat?> Hipchat { get; private set; } = null!;
-
-        /// <summary>
         /// Configuration for Jira Notification
         /// </summary>
         [Output("jira")]
@@ -157,12 +151,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<Inputs.NotificationEmailArgs>? Email { get; set; }
 
         /// <summary>
-        /// Configuration for HipChat Notification
-        /// </summary>
-        [Input("hipchat")]
-        public Input<Inputs.NotificationHipchatArgs>? Hipchat { get; set; }
-
-        /// <summary>
         /// Configuration for Jira Notification
         /// </summary>
         [Input("jira")]
@@ -241,12 +229,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         [Input("email")]
         public Input<Inputs.NotificationEmailGetArgs>? Email { get; set; }
-
-        /// <summary>
-        /// Configuration for HipChat Notification
-        /// </summary>
-        [Input("hipchat")]
-        public Input<Inputs.NotificationHipchatGetArgs>? Hipchat { get; set; }
 
         /// <summary>
         /// Configuration for Jira Notification

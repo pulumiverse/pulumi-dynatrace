@@ -18,7 +18,7 @@ class KeyRequestsArgs:
                  names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a KeyRequests resource.
-        :param pulumi.Input[str] service: Whether to create an entry point or not
+        :param pulumi.Input[str] service: ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
         :param pulumi.Input[Sequence[pulumi.Input[str]]] names: The names of the key requests
         """
         pulumi.set(__self__, "service", service)
@@ -29,7 +29,7 @@ class KeyRequestsArgs:
     @pulumi.getter
     def service(self) -> pulumi.Input[str]:
         """
-        Whether to create an entry point or not
+        ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
         """
         return pulumi.get(self, "service")
 
@@ -58,7 +58,7 @@ class _KeyRequestsState:
         """
         Input properties used for looking up and filtering KeyRequests resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] names: The names of the key requests
-        :param pulumi.Input[str] service: Whether to create an entry point or not
+        :param pulumi.Input[str] service: ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
         """
         if names is not None:
             pulumi.set(__self__, "names", names)
@@ -81,7 +81,7 @@ class _KeyRequestsState:
     @pulumi.getter
     def service(self) -> Optional[pulumi.Input[str]]:
         """
-        Whether to create an entry point or not
+        ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
         """
         return pulumi.get(self, "service")
 
@@ -103,7 +103,7 @@ class KeyRequests(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] names: The names of the key requests
-        :param pulumi.Input[str] service: Whether to create an entry point or not
+        :param pulumi.Input[str] service: ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
         """
         ...
     @overload
@@ -163,7 +163,7 @@ class KeyRequests(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] names: The names of the key requests
-        :param pulumi.Input[str] service: Whether to create an entry point or not
+        :param pulumi.Input[str] service: ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -185,7 +185,7 @@ class KeyRequests(pulumi.CustomResource):
     @pulumi.getter
     def service(self) -> pulumi.Output[str]:
         """
-        Whether to create an entry point or not
+        ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
         """
         return pulumi.get(self, "service")
 
