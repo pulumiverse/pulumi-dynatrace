@@ -46,7 +46,7 @@ jobs:
         node-version: ${{matrix.nodeversion}}
         registry-url: https://registry.npmjs.org
     - name: Setup DotNet
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{matrix.dotnetversion}}
     - name: Setup Python
@@ -88,7 +88,7 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - 6.0.408
         goversion:
         - 1.19.x
         javaversion:
@@ -161,7 +161,7 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - 6.0.408
         goversion:
         - 1.19.x
         nodeversion:
@@ -200,7 +200,7 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - 6.0.408
         goversion:
         - 1.19.x
         nodeversion:
@@ -238,7 +238,7 @@ jobs:
         node-version: ${{matrix.nodeversion}}
         registry-url: https://registry.npmjs.org
     - name: Setup DotNet
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{matrix.dotnetversion}}
     - name: Setup Python
@@ -281,7 +281,7 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - 6.0.408
         javaversion:
         - "11"
         goversion:
@@ -366,7 +366,7 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-        - 3.1.301
+        - 6.0.408
         goversion:
         - 1.19.x
         javaversion:
