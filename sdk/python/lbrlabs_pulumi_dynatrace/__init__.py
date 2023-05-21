@@ -34,7 +34,7 @@ from .business_events_processing import *
 from .calculated_service_metric import *
 from .cloud_foundry import *
 from .cloudapp_workloaddetection import *
-from .cloudfoundary_credentials import *
+from .cloudfoundry_credentials import *
 from .connectivity_alerts import *
 from .container_builtin_rule import *
 from .container_rule import *
@@ -227,7 +227,7 @@ from .synthetic_availability import *
 from .synthetic_location import *
 from .token_settings import *
 from .transaction_start_filters import *
-from .trrello_notification import *
+from .trello_notification import *
 from .update_windows import *
 from .usability_analytics import *
 from .user import *
@@ -497,10 +497,10 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
-  "mod": "index/cloudfoundaryCredentials",
+  "mod": "index/cloudfoundryCredentials",
   "fqn": "lbrlabs_pulumi_dynatrace",
   "classes": {
-   "dynatrace:index/cloudfoundaryCredentials:CloudfoundaryCredentials": "CloudfoundaryCredentials"
+   "dynatrace:index/cloudfoundryCredentials:CloudfoundryCredentials": "CloudfoundryCredentials"
   }
  },
  {
@@ -1849,10 +1849,10 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
-  "mod": "index/trrelloNotification",
+  "mod": "index/trelloNotification",
   "fqn": "lbrlabs_pulumi_dynatrace",
   "classes": {
-   "dynatrace:index/trrelloNotification:TrrelloNotification": "TrrelloNotification"
+   "dynatrace:index/trelloNotification:TrelloNotification": "TrelloNotification"
   }
  },
  {

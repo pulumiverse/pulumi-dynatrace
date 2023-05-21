@@ -10,8 +10,8 @@ using Pulumi;
 
 namespace Lbrlabs.PulumiPackage.Dynatrace
 {
-    [DynatraceResourceType("dynatrace:index/trrelloNotification:TrrelloNotification")]
-    public partial class TrrelloNotification : global::Pulumi.CustomResource
+    [DynatraceResourceType("dynatrace:index/trelloNotification:TrelloNotification")]
+    public partial class TrelloNotification : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The configuration is enabled (`true`) or disabled (`false`)
@@ -81,19 +81,19 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
 
 
         /// <summary>
-        /// Create a TrrelloNotification resource with the given unique name, arguments, and options.
+        /// Create a TrelloNotification resource with the given unique name, arguments, and options.
         /// </summary>
         ///
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public TrrelloNotification(string name, TrrelloNotificationArgs args, CustomResourceOptions? options = null)
-            : base("dynatrace:index/trrelloNotification:TrrelloNotification", name, args ?? new TrrelloNotificationArgs(), MakeResourceOptions(options, ""))
+        public TrelloNotification(string name, TrelloNotificationArgs args, CustomResourceOptions? options = null)
+            : base("dynatrace:index/trelloNotification:TrelloNotification", name, args ?? new TrelloNotificationArgs(), MakeResourceOptions(options, ""))
         {
         }
 
-        private TrrelloNotification(string name, Input<string> id, TrrelloNotificationState? state = null, CustomResourceOptions? options = null)
-            : base("dynatrace:index/trrelloNotification:TrrelloNotification", name, state, MakeResourceOptions(options, id))
+        private TrelloNotification(string name, Input<string> id, TrelloNotificationState? state = null, CustomResourceOptions? options = null)
+            : base("dynatrace:index/trelloNotification:TrelloNotification", name, state, MakeResourceOptions(options, id))
         {
         }
 
@@ -110,7 +110,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             return merged;
         }
         /// <summary>
-        /// Get an existing TrrelloNotification resource's state with the given name, ID, and optional extra
+        /// Get an existing TrelloNotification resource's state with the given name, ID, and optional extra
         /// properties used to qualify the lookup.
         /// </summary>
         ///
@@ -118,13 +118,13 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// <param name="id">The unique provider ID of the resource to lookup.</param>
         /// <param name="state">Any extra arguments used during the lookup.</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public static TrrelloNotification Get(string name, Input<string> id, TrrelloNotificationState? state = null, CustomResourceOptions? options = null)
+        public static TrelloNotification Get(string name, Input<string> id, TrelloNotificationState? state = null, CustomResourceOptions? options = null)
         {
-            return new TrrelloNotification(name, id, state, options);
+            return new TrelloNotification(name, id, state, options);
         }
     }
 
-    public sealed class TrrelloNotificationArgs : global::Pulumi.ResourceArgs
+    public sealed class TrelloNotificationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The configuration is enabled (`true`) or disabled (`false`)
@@ -192,13 +192,13 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         [Input("text", required: true)]
         public Input<string> Text { get; set; } = null!;
 
-        public TrrelloNotificationArgs()
+        public TrelloNotificationArgs()
         {
         }
-        public static new TrrelloNotificationArgs Empty => new TrrelloNotificationArgs();
+        public static new TrelloNotificationArgs Empty => new TrelloNotificationArgs();
     }
 
-    public sealed class TrrelloNotificationState : global::Pulumi.ResourceArgs
+    public sealed class TrelloNotificationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The configuration is enabled (`true`) or disabled (`false`)
@@ -266,9 +266,9 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         [Input("text")]
         public Input<string>? Text { get; set; }
 
-        public TrrelloNotificationState()
+        public TrelloNotificationState()
         {
         }
-        public static new TrrelloNotificationState Empty => new TrrelloNotificationState();
+        public static new TrelloNotificationState Empty => new TrelloNotificationState();
     }
 }

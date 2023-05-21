@@ -12,9 +12,9 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 
-public final class TrrelloNotificationState extends com.pulumi.resources.ResourceArgs {
+public final class TrelloNotificationState extends com.pulumi.resources.ResourceArgs {
 
-    public static final TrrelloNotificationState Empty = new TrrelloNotificationState();
+    public static final TrelloNotificationState Empty = new TrelloNotificationState();
 
     /**
      * The configuration is enabled (`true`) or disabled (`false`)
@@ -181,9 +181,9 @@ public final class TrrelloNotificationState extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.text);
     }
 
-    private TrrelloNotificationState() {}
+    private TrelloNotificationState() {}
 
-    private TrrelloNotificationState(TrrelloNotificationState $) {
+    private TrelloNotificationState(TrelloNotificationState $) {
         this.active = $.active;
         this.applicationKey = $.applicationKey;
         this.authorizationToken = $.authorizationToken;
@@ -200,19 +200,19 @@ public final class TrrelloNotificationState extends com.pulumi.resources.Resourc
     public static Builder builder() {
         return new Builder();
     }
-    public static Builder builder(TrrelloNotificationState defaults) {
+    public static Builder builder(TrelloNotificationState defaults) {
         return new Builder(defaults);
     }
 
     public static final class Builder {
-        private TrrelloNotificationState $;
+        private TrelloNotificationState $;
 
         public Builder() {
-            $ = new TrrelloNotificationState();
+            $ = new TrelloNotificationState();
         }
 
-        public Builder(TrrelloNotificationState defaults) {
-            $ = new TrrelloNotificationState(Objects.requireNonNull(defaults));
+        public Builder(TrelloNotificationState defaults) {
+            $ = new TrelloNotificationState(Objects.requireNonNull(defaults));
         }
 
         /**
@@ -446,7 +446,7 @@ public final class TrrelloNotificationState extends com.pulumi.resources.Resourc
             return text(Output.of(text));
         }
 
-        public TrrelloNotificationState build() {
+        public TrelloNotificationState build() {
             return $;
         }
     }

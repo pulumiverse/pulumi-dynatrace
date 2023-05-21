@@ -78,8 +78,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CloudFoundry{}
 	case "dynatrace:index/cloudappWorkloaddetection:CloudappWorkloaddetection":
 		r = &CloudappWorkloaddetection{}
-	case "dynatrace:index/cloudfoundaryCredentials:CloudfoundaryCredentials":
-		r = &CloudfoundaryCredentials{}
+	case "dynatrace:index/cloudfoundryCredentials:CloudfoundryCredentials":
+		r = &CloudfoundryCredentials{}
 	case "dynatrace:index/connectivityAlerts:ConnectivityAlerts":
 		r = &ConnectivityAlerts{}
 	case "dynatrace:index/containerBuiltinRule:ContainerBuiltinRule":
@@ -416,8 +416,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &TokenSettings{}
 	case "dynatrace:index/transactionStartFilters:TransactionStartFilters":
 		r = &TransactionStartFilters{}
-	case "dynatrace:index/trrelloNotification:TrrelloNotification":
-		r = &TrrelloNotification{}
+	case "dynatrace:index/trelloNotification:TrelloNotification":
+		r = &TrelloNotification{}
 	case "dynatrace:index/updateWindows:UpdateWindows":
 		r = &UpdateWindows{}
 	case "dynatrace:index/usabilityAnalytics:UsabilityAnalytics":
@@ -637,7 +637,7 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
-		"index/cloudfoundaryCredentials",
+		"index/cloudfoundryCredentials",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1482,7 +1482,7 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
-		"index/trrelloNotification",
+		"index/trelloNotification",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

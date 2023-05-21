@@ -12,9 +12,9 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 
-public final class CloudfoundaryCredentialsArgs extends com.pulumi.resources.ResourceArgs {
+public final class CloudfoundryCredentialsArgs extends com.pulumi.resources.ResourceArgs {
 
-    public static final CloudfoundaryCredentialsArgs Empty = new CloudfoundaryCredentialsArgs();
+    public static final CloudfoundryCredentialsArgs Empty = new CloudfoundryCredentialsArgs();
 
     /**
      * The monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
@@ -121,9 +121,9 @@ public final class CloudfoundaryCredentialsArgs extends com.pulumi.resources.Res
         return this.username;
     }
 
-    private CloudfoundaryCredentialsArgs() {}
+    private CloudfoundryCredentialsArgs() {}
 
-    private CloudfoundaryCredentialsArgs(CloudfoundaryCredentialsArgs $) {
+    private CloudfoundryCredentialsArgs(CloudfoundryCredentialsArgs $) {
         this.active = $.active;
         this.apiUrl = $.apiUrl;
         this.loginUrl = $.loginUrl;
@@ -136,19 +136,19 @@ public final class CloudfoundaryCredentialsArgs extends com.pulumi.resources.Res
     public static Builder builder() {
         return new Builder();
     }
-    public static Builder builder(CloudfoundaryCredentialsArgs defaults) {
+    public static Builder builder(CloudfoundryCredentialsArgs defaults) {
         return new Builder(defaults);
     }
 
     public static final class Builder {
-        private CloudfoundaryCredentialsArgs $;
+        private CloudfoundryCredentialsArgs $;
 
         public Builder() {
-            $ = new CloudfoundaryCredentialsArgs();
+            $ = new CloudfoundryCredentialsArgs();
         }
 
-        public Builder(CloudfoundaryCredentialsArgs defaults) {
-            $ = new CloudfoundaryCredentialsArgs(Objects.requireNonNull(defaults));
+        public Builder(CloudfoundryCredentialsArgs defaults) {
+            $ = new CloudfoundryCredentialsArgs(Objects.requireNonNull(defaults));
         }
 
         /**
@@ -298,7 +298,7 @@ public final class CloudfoundaryCredentialsArgs extends com.pulumi.resources.Res
             return username(Output.of(username));
         }
 
-        public CloudfoundaryCredentialsArgs build() {
+        public CloudfoundryCredentialsArgs build() {
             $.apiUrl = Objects.requireNonNull($.apiUrl, "expected parameter 'apiUrl' to be non-null");
             $.loginUrl = Objects.requireNonNull($.loginUrl, "expected parameter 'loginUrl' to be non-null");
             $.username = Objects.requireNonNull($.username, "expected parameter 'username' to be non-null");

@@ -12,9 +12,9 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 
-public final class TrrelloNotificationArgs extends com.pulumi.resources.ResourceArgs {
+public final class TrelloNotificationArgs extends com.pulumi.resources.ResourceArgs {
 
-    public static final TrrelloNotificationArgs Empty = new TrrelloNotificationArgs();
+    public static final TrelloNotificationArgs Empty = new TrelloNotificationArgs();
 
     /**
      * The configuration is enabled (`true`) or disabled (`false`)
@@ -181,9 +181,9 @@ public final class TrrelloNotificationArgs extends com.pulumi.resources.Resource
         return this.text;
     }
 
-    private TrrelloNotificationArgs() {}
+    private TrelloNotificationArgs() {}
 
-    private TrrelloNotificationArgs(TrrelloNotificationArgs $) {
+    private TrelloNotificationArgs(TrelloNotificationArgs $) {
         this.active = $.active;
         this.applicationKey = $.applicationKey;
         this.authorizationToken = $.authorizationToken;
@@ -200,19 +200,19 @@ public final class TrrelloNotificationArgs extends com.pulumi.resources.Resource
     public static Builder builder() {
         return new Builder();
     }
-    public static Builder builder(TrrelloNotificationArgs defaults) {
+    public static Builder builder(TrelloNotificationArgs defaults) {
         return new Builder(defaults);
     }
 
     public static final class Builder {
-        private TrrelloNotificationArgs $;
+        private TrelloNotificationArgs $;
 
         public Builder() {
-            $ = new TrrelloNotificationArgs();
+            $ = new TrelloNotificationArgs();
         }
 
-        public Builder(TrrelloNotificationArgs defaults) {
-            $ = new TrrelloNotificationArgs(Objects.requireNonNull(defaults));
+        public Builder(TrelloNotificationArgs defaults) {
+            $ = new TrelloNotificationArgs(Objects.requireNonNull(defaults));
         }
 
         /**
@@ -446,7 +446,7 @@ public final class TrrelloNotificationArgs extends com.pulumi.resources.Resource
             return text(Output.of(text));
         }
 
-        public TrrelloNotificationArgs build() {
+        public TrelloNotificationArgs build() {
             $.active = Objects.requireNonNull($.active, "expected parameter 'active' to be non-null");
             $.applicationKey = Objects.requireNonNull($.applicationKey, "expected parameter 'applicationKey' to be non-null");
             $.boardId = Objects.requireNonNull($.boardId, "expected parameter 'boardId' to be non-null");

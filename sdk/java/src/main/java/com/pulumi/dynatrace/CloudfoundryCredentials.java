@@ -7,17 +7,17 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
-import com.pulumi.dynatrace.CloudfoundaryCredentialsArgs;
+import com.pulumi.dynatrace.CloudfoundryCredentialsArgs;
 import com.pulumi.dynatrace.Utilities;
-import com.pulumi.dynatrace.inputs.CloudfoundaryCredentialsState;
+import com.pulumi.dynatrace.inputs.CloudfoundryCredentialsState;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-@ResourceType(type="dynatrace:index/cloudfoundaryCredentials:CloudfoundaryCredentials")
-public class CloudfoundaryCredentials extends com.pulumi.resources.CustomResource {
+@ResourceType(type="dynatrace:index/cloudfoundryCredentials:CloudfoundryCredentials")
+public class CloudfoundryCredentials extends com.pulumi.resources.CustomResource {
     /**
      * The monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
      * 
@@ -121,15 +121,15 @@ public class CloudfoundaryCredentials extends com.pulumi.resources.CustomResourc
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public CloudfoundaryCredentials(String name) {
-        this(name, CloudfoundaryCredentialsArgs.Empty);
+    public CloudfoundryCredentials(String name) {
+        this(name, CloudfoundryCredentialsArgs.Empty);
     }
     /**
      *
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public CloudfoundaryCredentials(String name, CloudfoundaryCredentialsArgs args) {
+    public CloudfoundryCredentials(String name, CloudfoundryCredentialsArgs args) {
         this(name, args, null);
     }
     /**
@@ -138,12 +138,12 @@ public class CloudfoundaryCredentials extends com.pulumi.resources.CustomResourc
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public CloudfoundaryCredentials(String name, CloudfoundaryCredentialsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("dynatrace:index/cloudfoundaryCredentials:CloudfoundaryCredentials", name, args == null ? CloudfoundaryCredentialsArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public CloudfoundryCredentials(String name, CloudfoundryCredentialsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("dynatrace:index/cloudfoundryCredentials:CloudfoundryCredentials", name, args == null ? CloudfoundryCredentialsArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
     }
 
-    private CloudfoundaryCredentials(String name, Output<String> id, @Nullable CloudfoundaryCredentialsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("dynatrace:index/cloudfoundaryCredentials:CloudfoundaryCredentials", name, state, makeResourceOptions(options, id));
+    private CloudfoundryCredentials(String name, Output<String> id, @Nullable CloudfoundryCredentialsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("dynatrace:index/cloudfoundryCredentials:CloudfoundryCredentials", name, state, makeResourceOptions(options, id));
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
@@ -165,7 +165,7 @@ public class CloudfoundaryCredentials extends com.pulumi.resources.CustomResourc
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static CloudfoundaryCredentials get(String name, Output<String> id, @Nullable CloudfoundaryCredentialsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        return new CloudfoundaryCredentials(name, id, state, options);
+    public static CloudfoundryCredentials get(String name, Output<String> id, @Nullable CloudfoundryCredentialsState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        return new CloudfoundryCredentials(name, id, state, options);
     }
 }

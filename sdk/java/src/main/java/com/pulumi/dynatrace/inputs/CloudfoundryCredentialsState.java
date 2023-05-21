@@ -12,9 +12,9 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 
-public final class CloudfoundaryCredentialsState extends com.pulumi.resources.ResourceArgs {
+public final class CloudfoundryCredentialsState extends com.pulumi.resources.ResourceArgs {
 
-    public static final CloudfoundaryCredentialsState Empty = new CloudfoundaryCredentialsState();
+    public static final CloudfoundryCredentialsState Empty = new CloudfoundryCredentialsState();
 
     /**
      * The monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
@@ -121,9 +121,9 @@ public final class CloudfoundaryCredentialsState extends com.pulumi.resources.Re
         return Optional.ofNullable(this.username);
     }
 
-    private CloudfoundaryCredentialsState() {}
+    private CloudfoundryCredentialsState() {}
 
-    private CloudfoundaryCredentialsState(CloudfoundaryCredentialsState $) {
+    private CloudfoundryCredentialsState(CloudfoundryCredentialsState $) {
         this.active = $.active;
         this.apiUrl = $.apiUrl;
         this.loginUrl = $.loginUrl;
@@ -136,19 +136,19 @@ public final class CloudfoundaryCredentialsState extends com.pulumi.resources.Re
     public static Builder builder() {
         return new Builder();
     }
-    public static Builder builder(CloudfoundaryCredentialsState defaults) {
+    public static Builder builder(CloudfoundryCredentialsState defaults) {
         return new Builder(defaults);
     }
 
     public static final class Builder {
-        private CloudfoundaryCredentialsState $;
+        private CloudfoundryCredentialsState $;
 
         public Builder() {
-            $ = new CloudfoundaryCredentialsState();
+            $ = new CloudfoundryCredentialsState();
         }
 
-        public Builder(CloudfoundaryCredentialsState defaults) {
-            $ = new CloudfoundaryCredentialsState(Objects.requireNonNull(defaults));
+        public Builder(CloudfoundryCredentialsState defaults) {
+            $ = new CloudfoundryCredentialsState(Objects.requireNonNull(defaults));
         }
 
         /**
@@ -298,7 +298,7 @@ public final class CloudfoundaryCredentialsState extends com.pulumi.resources.Re
             return username(Output.of(username));
         }
 
-        public CloudfoundaryCredentialsState build() {
+        public CloudfoundryCredentialsState build() {
             return $;
         }
     }

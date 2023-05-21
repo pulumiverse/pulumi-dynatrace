@@ -10,8 +10,8 @@ using Pulumi;
 
 namespace Lbrlabs.PulumiPackage.Dynatrace
 {
-    [DynatraceResourceType("dynatrace:index/cloudfoundaryCredentials:CloudfoundaryCredentials")]
-    public partial class CloudfoundaryCredentials : global::Pulumi.CustomResource
+    [DynatraceResourceType("dynatrace:index/cloudfoundryCredentials:CloudfoundryCredentials")]
+    public partial class CloudfoundryCredentials : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
@@ -57,19 +57,19 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
 
 
         /// <summary>
-        /// Create a CloudfoundaryCredentials resource with the given unique name, arguments, and options.
+        /// Create a CloudfoundryCredentials resource with the given unique name, arguments, and options.
         /// </summary>
         ///
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public CloudfoundaryCredentials(string name, CloudfoundaryCredentialsArgs args, CustomResourceOptions? options = null)
-            : base("dynatrace:index/cloudfoundaryCredentials:CloudfoundaryCredentials", name, args ?? new CloudfoundaryCredentialsArgs(), MakeResourceOptions(options, ""))
+        public CloudfoundryCredentials(string name, CloudfoundryCredentialsArgs args, CustomResourceOptions? options = null)
+            : base("dynatrace:index/cloudfoundryCredentials:CloudfoundryCredentials", name, args ?? new CloudfoundryCredentialsArgs(), MakeResourceOptions(options, ""))
         {
         }
 
-        private CloudfoundaryCredentials(string name, Input<string> id, CloudfoundaryCredentialsState? state = null, CustomResourceOptions? options = null)
-            : base("dynatrace:index/cloudfoundaryCredentials:CloudfoundaryCredentials", name, state, MakeResourceOptions(options, id))
+        private CloudfoundryCredentials(string name, Input<string> id, CloudfoundryCredentialsState? state = null, CustomResourceOptions? options = null)
+            : base("dynatrace:index/cloudfoundryCredentials:CloudfoundryCredentials", name, state, MakeResourceOptions(options, id))
         {
         }
 
@@ -90,7 +90,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             return merged;
         }
         /// <summary>
-        /// Get an existing CloudfoundaryCredentials resource's state with the given name, ID, and optional extra
+        /// Get an existing CloudfoundryCredentials resource's state with the given name, ID, and optional extra
         /// properties used to qualify the lookup.
         /// </summary>
         ///
@@ -98,13 +98,13 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// <param name="id">The unique provider ID of the resource to lookup.</param>
         /// <param name="state">Any extra arguments used during the lookup.</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public static CloudfoundaryCredentials Get(string name, Input<string> id, CloudfoundaryCredentialsState? state = null, CustomResourceOptions? options = null)
+        public static CloudfoundryCredentials Get(string name, Input<string> id, CloudfoundryCredentialsState? state = null, CustomResourceOptions? options = null)
         {
-            return new CloudfoundaryCredentials(name, id, state, options);
+            return new CloudfoundryCredentials(name, id, state, options);
         }
     }
 
-    public sealed class CloudfoundaryCredentialsArgs : global::Pulumi.ResourceArgs
+    public sealed class CloudfoundryCredentialsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
@@ -158,13 +158,13 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         [Input("username", required: true)]
         public Input<string> Username { get; set; } = null!;
 
-        public CloudfoundaryCredentialsArgs()
+        public CloudfoundryCredentialsArgs()
         {
         }
-        public static new CloudfoundaryCredentialsArgs Empty => new CloudfoundaryCredentialsArgs();
+        public static new CloudfoundryCredentialsArgs Empty => new CloudfoundryCredentialsArgs();
     }
 
-    public sealed class CloudfoundaryCredentialsState : global::Pulumi.ResourceArgs
+    public sealed class CloudfoundryCredentialsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
@@ -218,9 +218,9 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         [Input("username")]
         public Input<string>? Username { get; set; }
 
-        public CloudfoundaryCredentialsState()
+        public CloudfoundryCredentialsState()
         {
         }
-        public static new CloudfoundaryCredentialsState Empty => new CloudfoundaryCredentialsState();
+        public static new CloudfoundryCredentialsState Empty => new CloudfoundryCredentialsState();
     }
 }

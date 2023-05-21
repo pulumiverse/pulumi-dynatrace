@@ -4,9 +4,9 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-export class TrrelloNotification extends pulumi.CustomResource {
+export class TrelloNotification extends pulumi.CustomResource {
     /**
-     * Get an existing TrrelloNotification resource's state with the given name, ID, and optional extra
+     * Get an existing TrelloNotification resource's state with the given name, ID, and optional extra
      * properties used to qualify the lookup.
      *
      * @param name The _unique_ name of the resulting resource.
@@ -14,22 +14,22 @@ export class TrrelloNotification extends pulumi.CustomResource {
      * @param state Any extra arguments used during the lookup.
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
-    public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: TrrelloNotificationState, opts?: pulumi.CustomResourceOptions): TrrelloNotification {
-        return new TrrelloNotification(name, <any>state, { ...opts, id: id });
+    public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: TrelloNotificationState, opts?: pulumi.CustomResourceOptions): TrelloNotification {
+        return new TrelloNotification(name, <any>state, { ...opts, id: id });
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'dynatrace:index/trrelloNotification:TrrelloNotification';
+    public static readonly __pulumiType = 'dynatrace:index/trelloNotification:TrelloNotification';
 
     /**
-     * Returns true if the given object is an instance of TrrelloNotification.  This is designed to work even
+     * Returns true if the given object is an instance of TrelloNotification.  This is designed to work even
      * when multiple copies of the Pulumi SDK have been loaded into the same process.
      */
-    public static isInstance(obj: any): obj is TrrelloNotification {
+    public static isInstance(obj: any): obj is TrelloNotification {
         if (obj === undefined || obj === null) {
             return false;
         }
-        return obj['__pulumiType'] === TrrelloNotification.__pulumiType;
+        return obj['__pulumiType'] === TrelloNotification.__pulumiType;
     }
 
     /**
@@ -78,18 +78,18 @@ export class TrrelloNotification extends pulumi.CustomResource {
     public readonly text!: pulumi.Output<string>;
 
     /**
-     * Create a TrrelloNotification resource with the given unique name, arguments, and options.
+     * Create a TrelloNotification resource with the given unique name, arguments, and options.
      *
      * @param name The _unique_ name of the resource.
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: TrrelloNotificationArgs, opts?: pulumi.CustomResourceOptions)
-    constructor(name: string, argsOrState?: TrrelloNotificationArgs | TrrelloNotificationState, opts?: pulumi.CustomResourceOptions) {
+    constructor(name: string, args: TrelloNotificationArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, argsOrState?: TrelloNotificationArgs | TrelloNotificationState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
-            const state = argsOrState as TrrelloNotificationState | undefined;
+            const state = argsOrState as TrelloNotificationState | undefined;
             resourceInputs["active"] = state ? state.active : undefined;
             resourceInputs["applicationKey"] = state ? state.applicationKey : undefined;
             resourceInputs["authorizationToken"] = state ? state.authorizationToken : undefined;
@@ -102,7 +102,7 @@ export class TrrelloNotification extends pulumi.CustomResource {
             resourceInputs["resolvedListId"] = state ? state.resolvedListId : undefined;
             resourceInputs["text"] = state ? state.text : undefined;
         } else {
-            const args = argsOrState as TrrelloNotificationArgs | undefined;
+            const args = argsOrState as TrelloNotificationArgs | undefined;
             if ((!args || args.active === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'active'");
             }
@@ -140,14 +140,14 @@ export class TrrelloNotification extends pulumi.CustomResource {
             resourceInputs["text"] = args ? args.text : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        super(TrrelloNotification.__pulumiType, name, resourceInputs, opts);
+        super(TrelloNotification.__pulumiType, name, resourceInputs, opts);
     }
 }
 
 /**
- * Input properties used for looking up and filtering TrrelloNotification resources.
+ * Input properties used for looking up and filtering TrelloNotification resources.
  */
-export interface TrrelloNotificationState {
+export interface TrelloNotificationState {
     /**
      * The configuration is enabled (`true`) or disabled (`false`)
      */
@@ -195,9 +195,9 @@ export interface TrrelloNotificationState {
 }
 
 /**
- * The set of arguments for constructing a TrrelloNotification resource.
+ * The set of arguments for constructing a TrelloNotification resource.
  */
-export interface TrrelloNotificationArgs {
+export interface TrelloNotificationArgs {
     /**
      * The configuration is enabled (`true`) or disabled (`false`)
      */

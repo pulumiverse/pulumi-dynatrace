@@ -32374,7 +32374,7 @@
                 "type": "object"
             }
         },
-        "dynatrace:index/cloudfoundaryCredentials:CloudfoundaryCredentials": {
+        "dynatrace:index/cloudfoundryCredentials:CloudfoundryCredentials": {
             "properties": {
                 "active": {
                     "type": "boolean",
@@ -32449,7 +32449,7 @@
                 "username"
             ],
             "stateInputs": {
-                "description": "Input properties used for looking up and filtering CloudfoundaryCredentials resources.\n",
+                "description": "Input properties used for looking up and filtering CloudfoundryCredentials resources.\n",
                 "properties": {
                     "active": {
                         "type": "boolean",
@@ -46623,7 +46623,7 @@
                 "type": "object"
             }
         },
-        "dynatrace:index/trrelloNotification:TrrelloNotification": {
+        "dynatrace:index/trelloNotification:TrelloNotification": {
             "properties": {
                 "active": {
                     "type": "boolean",
@@ -46739,7 +46739,7 @@
                 "text"
             ],
             "stateInputs": {
-                "description": "Input properties used for looking up and filtering TrrelloNotification resources.\n",
+                "description": "Input properties used for looking up and filtering TrelloNotification resources.\n",
                 "properties": {
                     "active": {
                         "type": "boolean",

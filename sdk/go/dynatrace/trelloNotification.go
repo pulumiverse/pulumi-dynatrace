@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-type TrrelloNotification struct {
+type TrelloNotification struct {
 	pulumi.CustomResourceState
 
 	// The configuration is enabled (`true`) or disabled (`false`)
@@ -38,9 +38,9 @@ type TrrelloNotification struct {
 	Text pulumi.StringOutput `pulumi:"text"`
 }
 
-// NewTrrelloNotification registers a new resource with the given unique name, arguments, and options.
-func NewTrrelloNotification(ctx *pulumi.Context,
-	name string, args *TrrelloNotificationArgs, opts ...pulumi.ResourceOption) (*TrrelloNotification, error) {
+// NewTrelloNotification registers a new resource with the given unique name, arguments, and options.
+func NewTrelloNotification(ctx *pulumi.Context,
+	name string, args *TrelloNotificationArgs, opts ...pulumi.ResourceOption) (*TrelloNotification, error) {
 	if args == nil {
 		return nil, errors.New("missing one or more required arguments")
 	}
@@ -70,28 +70,28 @@ func NewTrrelloNotification(ctx *pulumi.Context,
 		return nil, errors.New("invalid value for required argument 'Text'")
 	}
 	opts = pkgResourceDefaultOpts(opts)
-	var resource TrrelloNotification
-	err := ctx.RegisterResource("dynatrace:index/trrelloNotification:TrrelloNotification", name, args, &resource, opts...)
+	var resource TrelloNotification
+	err := ctx.RegisterResource("dynatrace:index/trelloNotification:TrelloNotification", name, args, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return &resource, nil
 }
 
-// GetTrrelloNotification gets an existing TrrelloNotification resource's state with the given name, ID, and optional
+// GetTrelloNotification gets an existing TrelloNotification resource's state with the given name, ID, and optional
 // state properties that are used to uniquely qualify the lookup (nil if not required).
-func GetTrrelloNotification(ctx *pulumi.Context,
-	name string, id pulumi.IDInput, state *TrrelloNotificationState, opts ...pulumi.ResourceOption) (*TrrelloNotification, error) {
-	var resource TrrelloNotification
-	err := ctx.ReadResource("dynatrace:index/trrelloNotification:TrrelloNotification", name, id, state, &resource, opts...)
+func GetTrelloNotification(ctx *pulumi.Context,
+	name string, id pulumi.IDInput, state *TrelloNotificationState, opts ...pulumi.ResourceOption) (*TrelloNotification, error) {
+	var resource TrelloNotification
+	err := ctx.ReadResource("dynatrace:index/trelloNotification:TrelloNotification", name, id, state, &resource, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return &resource, nil
 }
 
-// Input properties used for looking up and filtering TrrelloNotification resources.
-type trrelloNotificationState struct {
+// Input properties used for looking up and filtering TrelloNotification resources.
+type trelloNotificationState struct {
 	// The configuration is enabled (`true`) or disabled (`false`)
 	Active *bool `pulumi:"active"`
 	// The application key for the Trello account
@@ -116,7 +116,7 @@ type trrelloNotificationState struct {
 	Text *string `pulumi:"text"`
 }
 
-type TrrelloNotificationState struct {
+type TrelloNotificationState struct {
 	// The configuration is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolPtrInput
 	// The application key for the Trello account
@@ -141,11 +141,11 @@ type TrrelloNotificationState struct {
 	Text pulumi.StringPtrInput
 }
 
-func (TrrelloNotificationState) ElementType() reflect.Type {
-	return reflect.TypeOf((*trrelloNotificationState)(nil)).Elem()
+func (TrelloNotificationState) ElementType() reflect.Type {
+	return reflect.TypeOf((*trelloNotificationState)(nil)).Elem()
 }
 
-type trrelloNotificationArgs struct {
+type trelloNotificationArgs struct {
 	// The configuration is enabled (`true`) or disabled (`false`)
 	Active bool `pulumi:"active"`
 	// The application key for the Trello account
@@ -170,8 +170,8 @@ type trrelloNotificationArgs struct {
 	Text string `pulumi:"text"`
 }
 
-// The set of arguments for constructing a TrrelloNotification resource.
-type TrrelloNotificationArgs struct {
+// The set of arguments for constructing a TrelloNotification resource.
+type TrelloNotificationArgs struct {
 	// The configuration is enabled (`true`) or disabled (`false`)
 	Active pulumi.BoolInput
 	// The application key for the Trello account
@@ -196,193 +196,193 @@ type TrrelloNotificationArgs struct {
 	Text pulumi.StringInput
 }
 
-func (TrrelloNotificationArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*trrelloNotificationArgs)(nil)).Elem()
+func (TrelloNotificationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*trelloNotificationArgs)(nil)).Elem()
 }
 
-type TrrelloNotificationInput interface {
+type TrelloNotificationInput interface {
 	pulumi.Input
 
-	ToTrrelloNotificationOutput() TrrelloNotificationOutput
-	ToTrrelloNotificationOutputWithContext(ctx context.Context) TrrelloNotificationOutput
+	ToTrelloNotificationOutput() TrelloNotificationOutput
+	ToTrelloNotificationOutputWithContext(ctx context.Context) TrelloNotificationOutput
 }
 
-func (*TrrelloNotification) ElementType() reflect.Type {
-	return reflect.TypeOf((**TrrelloNotification)(nil)).Elem()
+func (*TrelloNotification) ElementType() reflect.Type {
+	return reflect.TypeOf((**TrelloNotification)(nil)).Elem()
 }
 
-func (i *TrrelloNotification) ToTrrelloNotificationOutput() TrrelloNotificationOutput {
-	return i.ToTrrelloNotificationOutputWithContext(context.Background())
+func (i *TrelloNotification) ToTrelloNotificationOutput() TrelloNotificationOutput {
+	return i.ToTrelloNotificationOutputWithContext(context.Background())
 }
 
-func (i *TrrelloNotification) ToTrrelloNotificationOutputWithContext(ctx context.Context) TrrelloNotificationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(TrrelloNotificationOutput)
+func (i *TrelloNotification) ToTrelloNotificationOutputWithContext(ctx context.Context) TrelloNotificationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TrelloNotificationOutput)
 }
 
-// TrrelloNotificationArrayInput is an input type that accepts TrrelloNotificationArray and TrrelloNotificationArrayOutput values.
-// You can construct a concrete instance of `TrrelloNotificationArrayInput` via:
+// TrelloNotificationArrayInput is an input type that accepts TrelloNotificationArray and TrelloNotificationArrayOutput values.
+// You can construct a concrete instance of `TrelloNotificationArrayInput` via:
 //
-//	TrrelloNotificationArray{ TrrelloNotificationArgs{...} }
-type TrrelloNotificationArrayInput interface {
+//	TrelloNotificationArray{ TrelloNotificationArgs{...} }
+type TrelloNotificationArrayInput interface {
 	pulumi.Input
 
-	ToTrrelloNotificationArrayOutput() TrrelloNotificationArrayOutput
-	ToTrrelloNotificationArrayOutputWithContext(context.Context) TrrelloNotificationArrayOutput
+	ToTrelloNotificationArrayOutput() TrelloNotificationArrayOutput
+	ToTrelloNotificationArrayOutputWithContext(context.Context) TrelloNotificationArrayOutput
 }
 
-type TrrelloNotificationArray []TrrelloNotificationInput
+type TrelloNotificationArray []TrelloNotificationInput
 
-func (TrrelloNotificationArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*TrrelloNotification)(nil)).Elem()
+func (TrelloNotificationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]*TrelloNotification)(nil)).Elem()
 }
 
-func (i TrrelloNotificationArray) ToTrrelloNotificationArrayOutput() TrrelloNotificationArrayOutput {
-	return i.ToTrrelloNotificationArrayOutputWithContext(context.Background())
+func (i TrelloNotificationArray) ToTrelloNotificationArrayOutput() TrelloNotificationArrayOutput {
+	return i.ToTrelloNotificationArrayOutputWithContext(context.Background())
 }
 
-func (i TrrelloNotificationArray) ToTrrelloNotificationArrayOutputWithContext(ctx context.Context) TrrelloNotificationArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(TrrelloNotificationArrayOutput)
+func (i TrelloNotificationArray) ToTrelloNotificationArrayOutputWithContext(ctx context.Context) TrelloNotificationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TrelloNotificationArrayOutput)
 }
 
-// TrrelloNotificationMapInput is an input type that accepts TrrelloNotificationMap and TrrelloNotificationMapOutput values.
-// You can construct a concrete instance of `TrrelloNotificationMapInput` via:
+// TrelloNotificationMapInput is an input type that accepts TrelloNotificationMap and TrelloNotificationMapOutput values.
+// You can construct a concrete instance of `TrelloNotificationMapInput` via:
 //
-//	TrrelloNotificationMap{ "key": TrrelloNotificationArgs{...} }
-type TrrelloNotificationMapInput interface {
+//	TrelloNotificationMap{ "key": TrelloNotificationArgs{...} }
+type TrelloNotificationMapInput interface {
 	pulumi.Input
 
-	ToTrrelloNotificationMapOutput() TrrelloNotificationMapOutput
-	ToTrrelloNotificationMapOutputWithContext(context.Context) TrrelloNotificationMapOutput
+	ToTrelloNotificationMapOutput() TrelloNotificationMapOutput
+	ToTrelloNotificationMapOutputWithContext(context.Context) TrelloNotificationMapOutput
 }
 
-type TrrelloNotificationMap map[string]TrrelloNotificationInput
+type TrelloNotificationMap map[string]TrelloNotificationInput
 
-func (TrrelloNotificationMap) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*TrrelloNotification)(nil)).Elem()
+func (TrelloNotificationMap) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]*TrelloNotification)(nil)).Elem()
 }
 
-func (i TrrelloNotificationMap) ToTrrelloNotificationMapOutput() TrrelloNotificationMapOutput {
-	return i.ToTrrelloNotificationMapOutputWithContext(context.Background())
+func (i TrelloNotificationMap) ToTrelloNotificationMapOutput() TrelloNotificationMapOutput {
+	return i.ToTrelloNotificationMapOutputWithContext(context.Background())
 }
 
-func (i TrrelloNotificationMap) ToTrrelloNotificationMapOutputWithContext(ctx context.Context) TrrelloNotificationMapOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(TrrelloNotificationMapOutput)
+func (i TrelloNotificationMap) ToTrelloNotificationMapOutputWithContext(ctx context.Context) TrelloNotificationMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TrelloNotificationMapOutput)
 }
 
-type TrrelloNotificationOutput struct{ *pulumi.OutputState }
+type TrelloNotificationOutput struct{ *pulumi.OutputState }
 
-func (TrrelloNotificationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**TrrelloNotification)(nil)).Elem()
+func (TrelloNotificationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TrelloNotification)(nil)).Elem()
 }
 
-func (o TrrelloNotificationOutput) ToTrrelloNotificationOutput() TrrelloNotificationOutput {
+func (o TrelloNotificationOutput) ToTrelloNotificationOutput() TrelloNotificationOutput {
 	return o
 }
 
-func (o TrrelloNotificationOutput) ToTrrelloNotificationOutputWithContext(ctx context.Context) TrrelloNotificationOutput {
+func (o TrelloNotificationOutput) ToTrelloNotificationOutputWithContext(ctx context.Context) TrelloNotificationOutput {
 	return o
 }
 
 // The configuration is enabled (`true`) or disabled (`false`)
-func (o TrrelloNotificationOutput) Active() pulumi.BoolOutput {
-	return o.ApplyT(func(v *TrrelloNotification) pulumi.BoolOutput { return v.Active }).(pulumi.BoolOutput)
+func (o TrelloNotificationOutput) Active() pulumi.BoolOutput {
+	return o.ApplyT(func(v *TrelloNotification) pulumi.BoolOutput { return v.Active }).(pulumi.BoolOutput)
 }
 
 // The application key for the Trello account
-func (o TrrelloNotificationOutput) ApplicationKey() pulumi.StringOutput {
-	return o.ApplyT(func(v *TrrelloNotification) pulumi.StringOutput { return v.ApplicationKey }).(pulumi.StringOutput)
+func (o TrelloNotificationOutput) ApplicationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.ApplicationKey }).(pulumi.StringOutput)
 }
 
 // The application token for the Trello account
-func (o TrrelloNotificationOutput) AuthorizationToken() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *TrrelloNotification) pulumi.StringPtrOutput { return v.AuthorizationToken }).(pulumi.StringPtrOutput)
+func (o TrelloNotificationOutput) AuthorizationToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TrelloNotification) pulumi.StringPtrOutput { return v.AuthorizationToken }).(pulumi.StringPtrOutput)
 }
 
 // The Trello board to which the card should be assigned
-func (o TrrelloNotificationOutput) BoardId() pulumi.StringOutput {
-	return o.ApplyT(func(v *TrrelloNotification) pulumi.StringOutput { return v.BoardId }).(pulumi.StringOutput)
+func (o TrelloNotificationOutput) BoardId() pulumi.StringOutput {
+	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.BoardId }).(pulumi.StringOutput)
 }
 
 // The description of the Trello card.   You can use same placeholders as in card text
-func (o TrrelloNotificationOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *TrrelloNotification) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o TrelloNotificationOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
 // The ID of these settings when referred to from resources requiring the REST API V1 keys
-func (o TrrelloNotificationOutput) LegacyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *TrrelloNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
+func (o TrelloNotificationOutput) LegacyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
 // The Trello list to which the card should be assigned
-func (o TrrelloNotificationOutput) ListId() pulumi.StringOutput {
-	return o.ApplyT(func(v *TrrelloNotification) pulumi.StringOutput { return v.ListId }).(pulumi.StringOutput)
+func (o TrelloNotificationOutput) ListId() pulumi.StringOutput {
+	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.ListId }).(pulumi.StringOutput)
 }
 
 // The name of the notification configuration
-func (o TrrelloNotificationOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v *TrrelloNotification) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+func (o TrelloNotificationOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
 // The ID of the associated alerting profile
-func (o TrrelloNotificationOutput) Profile() pulumi.StringOutput {
-	return o.ApplyT(func(v *TrrelloNotification) pulumi.StringOutput { return v.Profile }).(pulumi.StringOutput)
+func (o TrelloNotificationOutput) Profile() pulumi.StringOutput {
+	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.Profile }).(pulumi.StringOutput)
 }
 
 // The Trello list to which the card of the resolved problem should be assigned
-func (o TrrelloNotificationOutput) ResolvedListId() pulumi.StringOutput {
-	return o.ApplyT(func(v *TrrelloNotification) pulumi.StringOutput { return v.ResolvedListId }).(pulumi.StringOutput)
+func (o TrelloNotificationOutput) ResolvedListId() pulumi.StringOutput {
+	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.ResolvedListId }).(pulumi.StringOutput)
 }
 
 // The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
-func (o TrrelloNotificationOutput) Text() pulumi.StringOutput {
-	return o.ApplyT(func(v *TrrelloNotification) pulumi.StringOutput { return v.Text }).(pulumi.StringOutput)
+func (o TrelloNotificationOutput) Text() pulumi.StringOutput {
+	return o.ApplyT(func(v *TrelloNotification) pulumi.StringOutput { return v.Text }).(pulumi.StringOutput)
 }
 
-type TrrelloNotificationArrayOutput struct{ *pulumi.OutputState }
+type TrelloNotificationArrayOutput struct{ *pulumi.OutputState }
 
-func (TrrelloNotificationArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]*TrrelloNotification)(nil)).Elem()
+func (TrelloNotificationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]*TrelloNotification)(nil)).Elem()
 }
 
-func (o TrrelloNotificationArrayOutput) ToTrrelloNotificationArrayOutput() TrrelloNotificationArrayOutput {
+func (o TrelloNotificationArrayOutput) ToTrelloNotificationArrayOutput() TrelloNotificationArrayOutput {
 	return o
 }
 
-func (o TrrelloNotificationArrayOutput) ToTrrelloNotificationArrayOutputWithContext(ctx context.Context) TrrelloNotificationArrayOutput {
+func (o TrelloNotificationArrayOutput) ToTrelloNotificationArrayOutputWithContext(ctx context.Context) TrelloNotificationArrayOutput {
 	return o
 }
 
-func (o TrrelloNotificationArrayOutput) Index(i pulumi.IntInput) TrrelloNotificationOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *TrrelloNotification {
-		return vs[0].([]*TrrelloNotification)[vs[1].(int)]
-	}).(TrrelloNotificationOutput)
+func (o TrelloNotificationArrayOutput) Index(i pulumi.IntInput) TrelloNotificationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *TrelloNotification {
+		return vs[0].([]*TrelloNotification)[vs[1].(int)]
+	}).(TrelloNotificationOutput)
 }
 
-type TrrelloNotificationMapOutput struct{ *pulumi.OutputState }
+type TrelloNotificationMapOutput struct{ *pulumi.OutputState }
 
-func (TrrelloNotificationMapOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*map[string]*TrrelloNotification)(nil)).Elem()
+func (TrelloNotificationMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*map[string]*TrelloNotification)(nil)).Elem()
 }
 
-func (o TrrelloNotificationMapOutput) ToTrrelloNotificationMapOutput() TrrelloNotificationMapOutput {
+func (o TrelloNotificationMapOutput) ToTrelloNotificationMapOutput() TrelloNotificationMapOutput {
 	return o
 }
 
-func (o TrrelloNotificationMapOutput) ToTrrelloNotificationMapOutputWithContext(ctx context.Context) TrrelloNotificationMapOutput {
+func (o TrelloNotificationMapOutput) ToTrelloNotificationMapOutputWithContext(ctx context.Context) TrelloNotificationMapOutput {
 	return o
 }
 
-func (o TrrelloNotificationMapOutput) MapIndex(k pulumi.StringInput) TrrelloNotificationOutput {
-	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *TrrelloNotification {
-		return vs[0].(map[string]*TrrelloNotification)[vs[1].(string)]
-	}).(TrrelloNotificationOutput)
+func (o TrelloNotificationMapOutput) MapIndex(k pulumi.StringInput) TrelloNotificationOutput {
+	return pulumi.All(o, k).ApplyT(func(vs []interface{}) *TrelloNotification {
+		return vs[0].(map[string]*TrelloNotification)[vs[1].(string)]
+	}).(TrelloNotificationOutput)
 }
 
 func init() {
-	pulumi.RegisterInputType(reflect.TypeOf((*TrrelloNotificationInput)(nil)).Elem(), &TrrelloNotification{})
-	pulumi.RegisterInputType(reflect.TypeOf((*TrrelloNotificationArrayInput)(nil)).Elem(), TrrelloNotificationArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*TrrelloNotificationMapInput)(nil)).Elem(), TrrelloNotificationMap{})
-	pulumi.RegisterOutputType(TrrelloNotificationOutput{})
-	pulumi.RegisterOutputType(TrrelloNotificationArrayOutput{})
-	pulumi.RegisterOutputType(TrrelloNotificationMapOutput{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TrelloNotificationInput)(nil)).Elem(), &TrelloNotification{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TrelloNotificationArrayInput)(nil)).Elem(), TrelloNotificationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TrelloNotificationMapInput)(nil)).Elem(), TrelloNotificationMap{})
+	pulumi.RegisterOutputType(TrelloNotificationOutput{})
+	pulumi.RegisterOutputType(TrelloNotificationArrayOutput{})
+	pulumi.RegisterOutputType(TrelloNotificationMapOutput{})
 }

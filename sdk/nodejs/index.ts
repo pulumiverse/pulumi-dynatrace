@@ -150,10 +150,10 @@ export type CloudappWorkloaddetection = import("./cloudappWorkloaddetection").Cl
 export const CloudappWorkloaddetection: typeof import("./cloudappWorkloaddetection").CloudappWorkloaddetection = null as any;
 utilities.lazyLoad(exports, ["CloudappWorkloaddetection"], () => require("./cloudappWorkloaddetection"));
 
-export { CloudfoundaryCredentialsArgs, CloudfoundaryCredentialsState } from "./cloudfoundaryCredentials";
-export type CloudfoundaryCredentials = import("./cloudfoundaryCredentials").CloudfoundaryCredentials;
-export const CloudfoundaryCredentials: typeof import("./cloudfoundaryCredentials").CloudfoundaryCredentials = null as any;
-utilities.lazyLoad(exports, ["CloudfoundaryCredentials"], () => require("./cloudfoundaryCredentials"));
+export { CloudfoundryCredentialsArgs, CloudfoundryCredentialsState } from "./cloudfoundryCredentials";
+export type CloudfoundryCredentials = import("./cloudfoundryCredentials").CloudfoundryCredentials;
+export const CloudfoundryCredentials: typeof import("./cloudfoundryCredentials").CloudfoundryCredentials = null as any;
+utilities.lazyLoad(exports, ["CloudfoundryCredentials"], () => require("./cloudfoundryCredentials"));
 
 export { ConnectivityAlertsArgs, ConnectivityAlertsState } from "./connectivityAlerts";
 export type ConnectivityAlerts = import("./connectivityAlerts").ConnectivityAlerts;
@@ -1113,10 +1113,10 @@ export type TransactionStartFilters = import("./transactionStartFilters").Transa
 export const TransactionStartFilters: typeof import("./transactionStartFilters").TransactionStartFilters = null as any;
 utilities.lazyLoad(exports, ["TransactionStartFilters"], () => require("./transactionStartFilters"));
 
-export { TrrelloNotificationArgs, TrrelloNotificationState } from "./trrelloNotification";
-export type TrrelloNotification = import("./trrelloNotification").TrrelloNotification;
-export const TrrelloNotification: typeof import("./trrelloNotification").TrrelloNotification = null as any;
-utilities.lazyLoad(exports, ["TrrelloNotification"], () => require("./trrelloNotification"));
+export { TrelloNotificationArgs, TrelloNotificationState } from "./trelloNotification";
+export type TrelloNotification = import("./trelloNotification").TrelloNotification;
+export const TrelloNotification: typeof import("./trelloNotification").TrelloNotification = null as any;
+utilities.lazyLoad(exports, ["TrelloNotification"], () => require("./trelloNotification"));
 
 export { UpdateWindowsArgs, UpdateWindowsState } from "./updateWindows";
 export type UpdateWindows = import("./updateWindows").UpdateWindows;
@@ -1300,8 +1300,8 @@ const _module = {
                 return new CloudFoundry(name, <any>undefined, { urn })
             case "dynatrace:index/cloudappWorkloaddetection:CloudappWorkloaddetection":
                 return new CloudappWorkloaddetection(name, <any>undefined, { urn })
-            case "dynatrace:index/cloudfoundaryCredentials:CloudfoundaryCredentials":
-                return new CloudfoundaryCredentials(name, <any>undefined, { urn })
+            case "dynatrace:index/cloudfoundryCredentials:CloudfoundryCredentials":
+                return new CloudfoundryCredentials(name, <any>undefined, { urn })
             case "dynatrace:index/connectivityAlerts:ConnectivityAlerts":
                 return new ConnectivityAlerts(name, <any>undefined, { urn })
             case "dynatrace:index/containerBuiltinRule:ContainerBuiltinRule":
@@ -1638,8 +1638,8 @@ const _module = {
                 return new TokenSettings(name, <any>undefined, { urn })
             case "dynatrace:index/transactionStartFilters:TransactionStartFilters":
                 return new TransactionStartFilters(name, <any>undefined, { urn })
-            case "dynatrace:index/trrelloNotification:TrrelloNotification":
-                return new TrrelloNotification(name, <any>undefined, { urn })
+            case "dynatrace:index/trelloNotification:TrelloNotification":
+                return new TrelloNotification(name, <any>undefined, { urn })
             case "dynatrace:index/updateWindows:UpdateWindows":
                 return new UpdateWindows(name, <any>undefined, { urn })
             case "dynatrace:index/usabilityAnalytics:UsabilityAnalytics":
@@ -1718,7 +1718,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsProcessi
 pulumi.runtime.registerResourceModule("dynatrace", "index/calculatedServiceMetric", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/cloudFoundry", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/cloudappWorkloaddetection", _module)
-pulumi.runtime.registerResourceModule("dynatrace", "index/cloudfoundaryCredentials", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/cloudfoundryCredentials", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/connectivityAlerts", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/containerBuiltinRule", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/containerRule", _module)
@@ -1887,7 +1887,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/syntheticAvailability"
 pulumi.runtime.registerResourceModule("dynatrace", "index/syntheticLocation", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/tokenSettings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/transactionStartFilters", _module)
-pulumi.runtime.registerResourceModule("dynatrace", "index/trrelloNotification", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/trelloNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/updateWindows", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/usabilityAnalytics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/user", _module)

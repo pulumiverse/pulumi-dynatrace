@@ -7,16 +7,16 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
-import com.pulumi.dynatrace.TrrelloNotificationArgs;
+import com.pulumi.dynatrace.TrelloNotificationArgs;
 import com.pulumi.dynatrace.Utilities;
-import com.pulumi.dynatrace.inputs.TrrelloNotificationState;
+import com.pulumi.dynatrace.inputs.TrelloNotificationState;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
-@ResourceType(type="dynatrace:index/trrelloNotification:TrrelloNotification")
-public class TrrelloNotification extends com.pulumi.resources.CustomResource {
+@ResourceType(type="dynatrace:index/trelloNotification:TrelloNotification")
+public class TrelloNotification extends com.pulumi.resources.CustomResource {
     /**
      * The configuration is enabled (`true`) or disabled (`false`)
      * 
@@ -176,15 +176,15 @@ public class TrrelloNotification extends com.pulumi.resources.CustomResource {
      *
      * @param name The _unique_ name of the resulting resource.
      */
-    public TrrelloNotification(String name) {
-        this(name, TrrelloNotificationArgs.Empty);
+    public TrelloNotification(String name) {
+        this(name, TrelloNotificationArgs.Empty);
     }
     /**
      *
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public TrrelloNotification(String name, TrrelloNotificationArgs args) {
+    public TrelloNotification(String name, TrelloNotificationArgs args) {
         this(name, args, null);
     }
     /**
@@ -193,12 +193,12 @@ public class TrrelloNotification extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public TrrelloNotification(String name, TrrelloNotificationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("dynatrace:index/trrelloNotification:TrrelloNotification", name, args == null ? TrrelloNotificationArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
+    public TrelloNotification(String name, TrelloNotificationArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("dynatrace:index/trelloNotification:TrelloNotification", name, args == null ? TrelloNotificationArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
     }
 
-    private TrrelloNotification(String name, Output<String> id, @Nullable TrrelloNotificationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        super("dynatrace:index/trrelloNotification:TrrelloNotification", name, state, makeResourceOptions(options, id));
+    private TrelloNotification(String name, Output<String> id, @Nullable TrelloNotificationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        super("dynatrace:index/trelloNotification:TrelloNotification", name, state, makeResourceOptions(options, id));
     }
 
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
@@ -217,7 +217,7 @@ public class TrrelloNotification extends com.pulumi.resources.CustomResource {
      * @param state
      * @param options Optional settings to control the behavior of the CustomResource.
      */
-    public static TrrelloNotification get(String name, Output<String> id, @Nullable TrrelloNotificationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
-        return new TrrelloNotification(name, id, state, options);
+    public static TrelloNotification get(String name, Output<String> id, @Nullable TrelloNotificationState state, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+        return new TrelloNotification(name, id, state, options);
     }
 }
