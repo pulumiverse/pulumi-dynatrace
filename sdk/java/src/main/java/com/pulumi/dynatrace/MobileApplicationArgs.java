@@ -51,6 +51,21 @@ public final class MobileApplicationArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+     * 
+     */
+    @Import(name="applicationType")
+    private @Nullable Output<String> applicationType;
+
+    /**
+     * @return The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+     * 
+     */
+    public Optional<Output<String>> applicationType() {
+        return Optional.ofNullable(this.applicationType);
+    }
+
+    /**
      * The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
      * 
      */
@@ -80,6 +95,21 @@ public final class MobileApplicationArgs extends com.pulumi.resources.ResourceAr
      */
     public Optional<Output<String>> beaconEndpointUrl() {
         return Optional.ofNullable(this.beaconEndpointUrl);
+    }
+
+    /**
+     * Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+     * 
+     */
+    @Import(name="iconType")
+    private @Nullable Output<String> iconType;
+
+    /**
+     * @return Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+     * 
+     */
+    public Optional<Output<String>> iconType() {
+        return Optional.ofNullable(this.iconType);
     }
 
     /**
@@ -143,14 +173,14 @@ public final class MobileApplicationArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The session replay is enabled (`true`) or disabled (`false`).
+     * (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
      * 
      */
     @Import(name="sessionReplay")
     private @Nullable Output<Boolean> sessionReplay;
 
     /**
-     * @return The session replay is enabled (`true`) or disabled (`false`).
+     * @return (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
      * 
      */
     public Optional<Output<Boolean>> sessionReplay() {
@@ -175,14 +205,16 @@ public final class MobileApplicationArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The percentage of user sessions to be analyzed
+     * (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+     * apps) The percentage of user sessions to be analyzed
      * 
      */
     @Import(name="userSessionPercentage")
     private @Nullable Output<Integer> userSessionPercentage;
 
     /**
-     * @return The percentage of user sessions to be analyzed
+     * @return (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+     * apps) The percentage of user sessions to be analyzed
      * 
      */
     public Optional<Output<Integer>> userSessionPercentage() {
@@ -194,8 +226,10 @@ public final class MobileApplicationArgs extends com.pulumi.resources.ResourceAr
     private MobileApplicationArgs(MobileApplicationArgs $) {
         this.apdex = $.apdex;
         this.applicationId = $.applicationId;
+        this.applicationType = $.applicationType;
         this.beaconEndpointType = $.beaconEndpointType;
         this.beaconEndpointUrl = $.beaconEndpointUrl;
+        this.iconType = $.iconType;
         this.keyUserActions = $.keyUserActions;
         this.name = $.name;
         this.optInMode = $.optInMode;
@@ -266,6 +300,27 @@ public final class MobileApplicationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
+         * @param applicationType The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationType(@Nullable Output<String> applicationType) {
+            $.applicationType = applicationType;
+            return this;
+        }
+
+        /**
+         * @param applicationType The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applicationType(String applicationType) {
+            return applicationType(Output.of(applicationType));
+        }
+
+        /**
          * @param beaconEndpointType The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
          * 
          * @return builder
@@ -307,6 +362,27 @@ public final class MobileApplicationArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder beaconEndpointUrl(String beaconEndpointUrl) {
             return beaconEndpointUrl(Output.of(beaconEndpointUrl));
+        }
+
+        /**
+         * @param iconType Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder iconType(@Nullable Output<String> iconType) {
+            $.iconType = iconType;
+            return this;
+        }
+
+        /**
+         * @param iconType Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder iconType(String iconType) {
+            return iconType(Output.of(iconType));
         }
 
         /**
@@ -404,7 +480,7 @@ public final class MobileApplicationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param sessionReplay The session replay is enabled (`true`) or disabled (`false`).
+         * @param sessionReplay (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
          * 
          * @return builder
          * 
@@ -415,7 +491,7 @@ public final class MobileApplicationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param sessionReplay The session replay is enabled (`true`) or disabled (`false`).
+         * @param sessionReplay (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
          * 
          * @return builder
          * 
@@ -448,7 +524,8 @@ public final class MobileApplicationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param userSessionPercentage The percentage of user sessions to be analyzed
+         * @param userSessionPercentage (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+         * apps) The percentage of user sessions to be analyzed
          * 
          * @return builder
          * 
@@ -459,7 +536,8 @@ public final class MobileApplicationArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param userSessionPercentage The percentage of user sessions to be analyzed
+         * @param userSessionPercentage (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+         * apps) The percentage of user sessions to be analyzed
          * 
          * @return builder
          * 

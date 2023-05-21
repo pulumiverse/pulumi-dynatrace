@@ -43,12 +43,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         [Input("file")]
         public Input<Inputs.CustomServiceRuleFileArgs>? File { get; set; }
 
-        /// <summary>
-        /// The ID of the detection rule
-        /// </summary>
-        [Input("id")]
-        public Input<string>? Id { get; set; }
-
         [Input("methods", required: true)]
         private InputList<Inputs.CustomServiceRuleMethodArgs>? _methods;
 

@@ -7,8 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class NetworkZonesArgs extends com.pulumi.resources.ResourceArgs {
@@ -19,15 +17,15 @@ public final class NetworkZonesArgs extends com.pulumi.resources.ResourceArgs {
      * Network Zones are enabled (`true`) or disabled (`false`)
      * 
      */
-    @Import(name="enabled")
-    private @Nullable Output<Boolean> enabled;
+    @Import(name="enabled", required=true)
+    private Output<Boolean> enabled;
 
     /**
      * @return Network Zones are enabled (`true`) or disabled (`false`)
      * 
      */
-    public Optional<Output<Boolean>> enabled() {
-        return Optional.ofNullable(this.enabled);
+    public Output<Boolean> enabled() {
+        return this.enabled;
     }
 
     private NetworkZonesArgs() {}
@@ -60,7 +58,7 @@ public final class NetworkZonesArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder enabled(@Nullable Output<Boolean> enabled) {
+        public Builder enabled(Output<Boolean> enabled) {
             $.enabled = enabled;
             return this;
         }
@@ -76,6 +74,7 @@ public final class NetworkZonesArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public NetworkZonesArgs build() {
+            $.enabled = Objects.requireNonNull($.enabled, "expected parameter 'enabled' to be non-null");
             return $;
         }
     }

@@ -29,7 +29,7 @@ public class User extends com.pulumi.resources.CustomResource {
      * User&#39;s email address
      * 
      */
-    @Export(name="email", type=String.class, parameters={})
+    @Export(name="email", refs={String.class}, tree="[0]")
     private Output<String> email;
 
     /**
@@ -43,7 +43,7 @@ public class User extends com.pulumi.resources.CustomResource {
      * User&#39;s first name
      * 
      */
-    @Export(name="firstName", type=String.class, parameters={})
+    @Export(name="firstName", refs={String.class}, tree="[0]")
     private Output<String> firstName;
 
     /**
@@ -57,7 +57,7 @@ public class User extends com.pulumi.resources.CustomResource {
      * List of user&#39;s user group IDs
      * 
      */
-    @Export(name="groups", type=List.class, parameters={String.class})
+    @Export(name="groups", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> groups;
 
     /**
@@ -71,7 +71,7 @@ public class User extends com.pulumi.resources.CustomResource {
      * User&#39;s last name
      * 
      */
-    @Export(name="lastName", type=String.class, parameters={})
+    @Export(name="lastName", refs={String.class}, tree="[0]")
     private Output<String> lastName;
 
     /**
@@ -85,7 +85,7 @@ public class User extends com.pulumi.resources.CustomResource {
      * The User Name
      * 
      */
-    @Export(name="userName", type=String.class, parameters={})
+    @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**

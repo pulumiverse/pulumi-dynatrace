@@ -14,7 +14,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class EnvironmentStorageRetention
     {
-        public readonly int Logs;
+        public readonly int? Logs;
         public readonly int Rum;
         public readonly int ServiceCodeLevel;
         public readonly int ServiceRequestLevel;
@@ -23,7 +23,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
 
         [OutputConstructor]
         private EnvironmentStorageRetention(
-            int logs,
+            int? logs,
 
             int rum,
 

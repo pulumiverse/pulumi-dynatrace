@@ -6,7 +6,6 @@ package com.pulumi.dynatrace.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.dynatrace.inputs.AutotagEntitySelectorBasedRuleArgs;
-import com.pulumi.dynatrace.inputs.AutotagMetadataArgs;
 import com.pulumi.dynatrace.inputs.AutotagRuleArgs;
 import java.lang.String;
 import java.util.List;
@@ -18,6 +17,21 @@ import javax.annotation.Nullable;
 public final class AutotagState extends com.pulumi.resources.ResourceArgs {
 
     public static final AutotagState Empty = new AutotagState();
+
+    /**
+     * The description of the auto-tag.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return The description of the auto-tag.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
 
     /**
      * A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
@@ -32,29 +46,6 @@ public final class AutotagState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<AutotagEntitySelectorBasedRuleArgs>>> entitySelectorBasedRules() {
         return Optional.ofNullable(this.entitySelectorBasedRules);
-    }
-
-    /**
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     * @deprecated
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     */
-    @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-    @Import(name="metadata")
-    private @Nullable Output<AutotagMetadataArgs> metadata;
-
-    /**
-     * @return `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     * @deprecated
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     */
-    @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-    public Optional<Output<AutotagMetadataArgs>> metadata() {
-        return Optional.ofNullable(this.metadata);
     }
 
     /**
@@ -109,8 +100,8 @@ public final class AutotagState extends com.pulumi.resources.ResourceArgs {
     private AutotagState() {}
 
     private AutotagState(AutotagState $) {
+        this.description = $.description;
         this.entitySelectorBasedRules = $.entitySelectorBasedRules;
-        this.metadata = $.metadata;
         this.name = $.name;
         this.rules = $.rules;
         this.unknowns = $.unknowns;
@@ -132,6 +123,27 @@ public final class AutotagState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(AutotagState defaults) {
             $ = new AutotagState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param description The description of the auto-tag.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description The description of the auto-tag.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
         }
 
         /**
@@ -163,35 +175,6 @@ public final class AutotagState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder entitySelectorBasedRules(AutotagEntitySelectorBasedRuleArgs... entitySelectorBasedRules) {
             return entitySelectorBasedRules(List.of(entitySelectorBasedRules));
-        }
-
-        /**
-         * @param metadata `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-         * 
-         */
-        @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-        public Builder metadata(@Nullable Output<AutotagMetadataArgs> metadata) {
-            $.metadata = metadata;
-            return this;
-        }
-
-        /**
-         * @param metadata `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-         * 
-         */
-        @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-        public Builder metadata(AutotagMetadataArgs metadata) {
-            return metadata(Output.of(metadata));
         }
 
         /**

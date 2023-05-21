@@ -23,29 +23,47 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="pulumi:providers:dynatrace")
 public class Provider extends com.pulumi.resources.ProviderResource {
-    @Export(name="dtApiToken", type=String.class, parameters={})
+    @Export(name="dtApiToken", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> dtApiToken;
 
     public Output<Optional<String>> dtApiToken() {
         return Codegen.optional(this.dtApiToken);
     }
-    @Export(name="dtClusterApiToken", type=String.class, parameters={})
+    @Export(name="dtClusterApiToken", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> dtClusterApiToken;
 
     public Output<Optional<String>> dtClusterApiToken() {
         return Codegen.optional(this.dtClusterApiToken);
     }
-    @Export(name="dtClusterUrl", type=String.class, parameters={})
+    @Export(name="dtClusterUrl", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> dtClusterUrl;
 
     public Output<Optional<String>> dtClusterUrl() {
         return Codegen.optional(this.dtClusterUrl);
     }
-    @Export(name="dtEnvUrl", type=String.class, parameters={})
+    @Export(name="dtEnvUrl", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> dtEnvUrl;
 
     public Output<Optional<String>> dtEnvUrl() {
         return Codegen.optional(this.dtEnvUrl);
+    }
+    @Export(name="iamAccountId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> iamAccountId;
+
+    public Output<Optional<String>> iamAccountId() {
+        return Codegen.optional(this.iamAccountId);
+    }
+    @Export(name="iamClientId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> iamClientId;
+
+    public Output<Optional<String>> iamClientId() {
+        return Codegen.optional(this.iamClientId);
+    }
+    @Export(name="iamClientSecret", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> iamClientSecret;
+
+    public Output<Optional<String>> iamClientSecret() {
+        return Codegen.optional(this.iamClientSecret);
     }
 
     /**
@@ -79,7 +97,10 @@ public class Provider extends com.pulumi.resources.ProviderResource {
             .additionalSecretOutputs(List.of(
                 "dtApiToken",
                 "dtClusterApiToken",
-                "dtClusterUrl"
+                "dtClusterUrl",
+                "iamAccountId",
+                "iamClientId",
+                "iamClientSecret"
             ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);

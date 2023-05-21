@@ -23,7 +23,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly string? AccountId;
         /// <summary>
-        /// the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
+        /// (Read only) the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
         /// </summary>
         public readonly string? ExternalId;
         /// <summary>

@@ -14,16 +14,10 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public partial class ResourceAttributes : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// configured attributes that currently shouldn't be taken into consideration
+        /// Attribute key allow-list
         /// </summary>
-        [Output("disableds")]
-        public Output<ImmutableArray<string>> Disableds { get; private set; } = null!;
-
-        /// <summary>
-        /// attributes that should get captured
-        /// </summary>
-        [Output("enableds")]
-        public Output<ImmutableArray<string>> Enableds { get; private set; } = null!;
+        [Output("keys")]
+        public Output<Outputs.ResourceAttributesKeys?> Keys { get; private set; } = null!;
 
 
         /// <summary>
@@ -72,29 +66,11 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
 
     public sealed class ResourceAttributesArgs : global::Pulumi.ResourceArgs
     {
-        [Input("disableds")]
-        private InputList<string>? _disableds;
-
         /// <summary>
-        /// configured attributes that currently shouldn't be taken into consideration
+        /// Attribute key allow-list
         /// </summary>
-        public InputList<string> Disableds
-        {
-            get => _disableds ?? (_disableds = new InputList<string>());
-            set => _disableds = value;
-        }
-
-        [Input("enableds")]
-        private InputList<string>? _enableds;
-
-        /// <summary>
-        /// attributes that should get captured
-        /// </summary>
-        public InputList<string> Enableds
-        {
-            get => _enableds ?? (_enableds = new InputList<string>());
-            set => _enableds = value;
-        }
+        [Input("keys")]
+        public Input<Inputs.ResourceAttributesKeysArgs>? Keys { get; set; }
 
         public ResourceAttributesArgs()
         {
@@ -104,29 +80,11 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
 
     public sealed class ResourceAttributesState : global::Pulumi.ResourceArgs
     {
-        [Input("disableds")]
-        private InputList<string>? _disableds;
-
         /// <summary>
-        /// configured attributes that currently shouldn't be taken into consideration
+        /// Attribute key allow-list
         /// </summary>
-        public InputList<string> Disableds
-        {
-            get => _disableds ?? (_disableds = new InputList<string>());
-            set => _disableds = value;
-        }
-
-        [Input("enableds")]
-        private InputList<string>? _enableds;
-
-        /// <summary>
-        /// attributes that should get captured
-        /// </summary>
-        public InputList<string> Enableds
-        {
-            get => _enableds ?? (_enableds = new InputList<string>());
-            set => _enableds = value;
-        }
+        [Input("keys")]
+        public Input<Inputs.ResourceAttributesKeysGetArgs>? Keys { get; set; }
 
         public ResourceAttributesState()
         {

@@ -5,7 +5,6 @@ package com.pulumi.dynatrace.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.dynatrace.inputs.MaintenanceWindowMetadataArgs;
 import com.pulumi.dynatrace.inputs.MaintenanceWindowScheduleArgs;
 import com.pulumi.dynatrace.inputs.MaintenanceWindowScopeArgs;
 import java.lang.Boolean;
@@ -47,29 +46,6 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
      */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
-    }
-
-    /**
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     * @deprecated
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     */
-    @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-    @Import(name="metadata")
-    private @Nullable Output<MaintenanceWindowMetadataArgs> metadata;
-
-    /**
-     * @return `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     * @deprecated
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     */
-    @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-    public Optional<Output<MaintenanceWindowMetadataArgs>> metadata() {
-        return Optional.ofNullable(this.metadata);
     }
 
     /**
@@ -182,7 +158,6 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
     private MaintenanceWindowState(MaintenanceWindowState $) {
         this.description = $.description;
         this.enabled = $.enabled;
-        this.metadata = $.metadata;
         this.name = $.name;
         this.schedule = $.schedule;
         this.scope = $.scope;
@@ -250,35 +225,6 @@ public final class MaintenanceWindowState extends com.pulumi.resources.ResourceA
          */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
-        }
-
-        /**
-         * @param metadata `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-         * 
-         */
-        @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-        public Builder metadata(@Nullable Output<MaintenanceWindowMetadataArgs> metadata) {
-            $.metadata = metadata;
-            return this;
-        }
-
-        /**
-         * @param metadata `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-         * 
-         */
-        @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-        public Builder metadata(MaintenanceWindowMetadataArgs metadata) {
-            return metadata(Output.of(metadata));
         }
 
         /**

@@ -19,7 +19,7 @@ public class FrequentIssues extends com.pulumi.resources.CustomResource {
      * Detect frequent issues within applications, enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="detectApps", type=Boolean.class, parameters={})
+    @Export(name="detectApps", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> detectApps;
 
     /**
@@ -33,7 +33,7 @@ public class FrequentIssues extends com.pulumi.resources.CustomResource {
      * Detect frequent issues within infrastructure, enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="detectInfra", type=Boolean.class, parameters={})
+    @Export(name="detectInfra", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> detectInfra;
 
     /**
@@ -47,7 +47,7 @@ public class FrequentIssues extends com.pulumi.resources.CustomResource {
      * Detect frequent issues within transactions and services, enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="detectTxn", type=Boolean.class, parameters={})
+    @Export(name="detectTxn", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> detectTxn;
 
     /**

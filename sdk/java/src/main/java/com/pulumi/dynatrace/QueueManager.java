@@ -24,7 +24,7 @@ public class QueueManager extends com.pulumi.resources.CustomResource {
      * The alias queues in the queue manager
      * 
      */
-    @Export(name="aliasQueues", type=List.class, parameters={QueueManagerAliasQueue.class})
+    @Export(name="aliasQueues", refs={List.class,QueueManagerAliasQueue.class}, tree="[0,1]")
     private Output</* @Nullable */ List<QueueManagerAliasQueue>> aliasQueues;
 
     /**
@@ -38,7 +38,7 @@ public class QueueManager extends com.pulumi.resources.CustomResource {
      * The alias queues in the queue manager
      * 
      */
-    @Export(name="clusterQueues", type=List.class, parameters={QueueManagerClusterQueue.class})
+    @Export(name="clusterQueues", refs={List.class,QueueManagerClusterQueue.class}, tree="[0,1]")
     private Output</* @Nullable */ List<QueueManagerClusterQueue>> clusterQueues;
 
     /**
@@ -52,7 +52,7 @@ public class QueueManager extends com.pulumi.resources.CustomResource {
      * Name of the cluster(s) this queue manager is part of
      * 
      */
-    @Export(name="clusters", type=List.class, parameters={String.class})
+    @Export(name="clusters", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> clusters;
 
     /**
@@ -66,7 +66,7 @@ public class QueueManager extends com.pulumi.resources.CustomResource {
      * The name of the queue manager
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -80,7 +80,7 @@ public class QueueManager extends com.pulumi.resources.CustomResource {
      * The alias queues in the queue manager
      * 
      */
-    @Export(name="remoteQueues", type=List.class, parameters={QueueManagerRemoteQueue.class})
+    @Export(name="remoteQueues", refs={List.class,QueueManagerRemoteQueue.class}, tree="[0,1]")
     private Output</* @Nullable */ List<QueueManagerRemoteQueue>> remoteQueues;
 
     /**

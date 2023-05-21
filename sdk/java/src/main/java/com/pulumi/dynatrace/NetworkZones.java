@@ -11,7 +11,6 @@ import com.pulumi.dynatrace.NetworkZonesArgs;
 import com.pulumi.dynatrace.Utilities;
 import com.pulumi.dynatrace.inputs.NetworkZonesState;
 import java.lang.Boolean;
-import java.util.Optional;
 import javax.annotation.Nullable;
 
 @ResourceType(type="dynatrace:index/networkZones:NetworkZones")
@@ -20,15 +19,15 @@ public class NetworkZones extends com.pulumi.resources.CustomResource {
      * Network Zones are enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="enabled", type=Boolean.class, parameters={})
-    private Output</* @Nullable */ Boolean> enabled;
+    @Export(name="enabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> enabled;
 
     /**
      * @return Network Zones are enabled (`true`) or disabled (`false`)
      * 
      */
-    public Output<Optional<Boolean>> enabled() {
-        return Codegen.optional(this.enabled);
+    public Output<Boolean> enabled() {
+        return this.enabled;
     }
 
     /**
@@ -43,7 +42,7 @@ public class NetworkZones extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public NetworkZones(String name, @Nullable NetworkZonesArgs args) {
+    public NetworkZones(String name, NetworkZonesArgs args) {
         this(name, args, null);
     }
     /**
@@ -52,7 +51,7 @@ public class NetworkZones extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public NetworkZones(String name, @Nullable NetworkZonesArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public NetworkZones(String name, NetworkZonesArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("dynatrace:index/networkZones:NetworkZones", name, args == null ? NetworkZonesArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
     }
 

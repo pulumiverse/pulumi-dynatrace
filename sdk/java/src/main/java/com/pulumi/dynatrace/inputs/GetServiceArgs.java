@@ -23,6 +23,13 @@ public final class GetServiceArgs extends com.pulumi.resources.InvokeArgs {
         return this.name;
     }
 
+    @Import(name="operator")
+    private @Nullable Output<String> operator;
+
+    public Optional<Output<String>> operator() {
+        return Optional.ofNullable(this.operator);
+    }
+
     /**
      * Required tags of the service to find
      * 
@@ -42,6 +49,7 @@ public final class GetServiceArgs extends com.pulumi.resources.InvokeArgs {
 
     private GetServiceArgs(GetServiceArgs $) {
         this.name = $.name;
+        this.operator = $.operator;
         this.tags = $.tags;
     }
 
@@ -70,6 +78,15 @@ public final class GetServiceArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        public Builder operator(@Nullable Output<String> operator) {
+            $.operator = operator;
+            return this;
+        }
+
+        public Builder operator(String operator) {
+            return operator(Output.of(operator));
         }
 
         /**

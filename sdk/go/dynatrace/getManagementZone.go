@@ -28,20 +28,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			test, err := dynatrace.LookupManagementZone(ctx, &GetManagementZoneArgs{
+//			test, err := dynatrace.LookupManagementZone(ctx, &dynatrace.LookupManagementZoneArgs{
 //				Name: "Example",
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
 //			_, err = dynatrace.NewCalculatedServiceMetric(ctx, "#name#", &dynatrace.CalculatedServiceMetricArgs{
-//				Conditions: CalculatedServiceMetricConditionArray{
-//					&CalculatedServiceMetricConditionArgs{
-//						Conditions: CalculatedServiceMetricConditionConditionArray{
-//							&CalculatedServiceMetricConditionConditionArgs{
+//				Conditions: dynatrace.CalculatedServiceMetricConditionArray{
+//					&dynatrace.CalculatedServiceMetricConditionArgs{
+//						Conditions: dynatrace.CalculatedServiceMetricConditionConditionArray{
+//							&dynatrace.CalculatedServiceMetricConditionConditionArgs{
 //								Attribute: pulumi.String("HTTP_REQUEST_METHOD"),
-//								Comparison: &CalculatedServiceMetricConditionConditionComparisonArgs{
-//									HttpMethod: &CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs{
+//								Comparison: &dynatrace.CalculatedServiceMetricConditionConditionComparisonArgs{
+//									HttpMethod: &dynatrace.CalculatedServiceMetricConditionConditionComparisonHttpMethodArgs{
 //										Operator: pulumi.String("EQUALS_ANY_OF"),
 //										Values: pulumi.StringArray{
 //											pulumi.String("POST"),
@@ -56,9 +56,9 @@ import (
 //				},
 //				Enabled: pulumi.Bool(true),
 //				ManagementZones: pulumi.StringArray{
-//					pulumi.String(test.Id),
+//					*pulumi.String(test.Id),
 //				},
-//				MetricDefinition: &CalculatedServiceMetricMetricDefinitionArgs{
+//				MetricDefinition: &dynatrace.CalculatedServiceMetricMetricDefinitionArgs{
 //					Metric:           pulumi.String("REQUEST_ATTRIBUTE"),
 //					RequestAttribute: pulumi.String("foo"),
 //				},
@@ -91,8 +91,10 @@ type LookupManagementZoneArgs struct {
 // A collection of values returned by getManagementZone.
 type LookupManagementZoneResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Name string `pulumi:"name"`
+	Id           string `pulumi:"id"`
+	LegacyId     string `pulumi:"legacyId"`
+	Name         string `pulumi:"name"`
+	Settings20Id string `pulumi:"settings20Id"`
 }
 
 func LookupManagementZoneOutput(ctx *pulumi.Context, args LookupManagementZoneOutputArgs, opts ...pulumi.InvokeOption) LookupManagementZoneResultOutput {
@@ -137,8 +139,16 @@ func (o LookupManagementZoneResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementZoneResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o LookupManagementZoneResultOutput) LegacyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagementZoneResult) string { return v.LegacyId }).(pulumi.StringOutput)
+}
+
 func (o LookupManagementZoneResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementZoneResult) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o LookupManagementZoneResultOutput) Settings20Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagementZoneResult) string { return v.Settings20Id }).(pulumi.StringOutput)
 }
 
 func init() {

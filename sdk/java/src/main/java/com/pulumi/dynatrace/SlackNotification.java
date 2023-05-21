@@ -21,7 +21,7 @@ public class SlackNotification extends com.pulumi.resources.CustomResource {
      * The configuration is enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="active", type=Boolean.class, parameters={})
+    @Export(name="active", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> active;
 
     /**
@@ -35,7 +35,7 @@ public class SlackNotification extends com.pulumi.resources.CustomResource {
      * The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
      * 
      */
-    @Export(name="channel", type=String.class, parameters={})
+    @Export(name="channel", refs={String.class}, tree="[0]")
     private Output<String> channel;
 
     /**
@@ -46,10 +46,24 @@ public class SlackNotification extends com.pulumi.resources.CustomResource {
         return this.channel;
     }
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    @Export(name="legacyId", refs={String.class}, tree="[0]")
+    private Output<String> legacyId;
+
+    /**
+     * @return The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    public Output<String> legacyId() {
+        return this.legacyId;
+    }
+    /**
      * The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      * 
      */
-    @Export(name="message", type=String.class, parameters={})
+    @Export(name="message", refs={String.class}, tree="[0]")
     private Output<String> message;
 
     /**
@@ -63,7 +77,7 @@ public class SlackNotification extends com.pulumi.resources.CustomResource {
      * The name of the notification configuration
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -77,7 +91,7 @@ public class SlackNotification extends com.pulumi.resources.CustomResource {
      * The ID of the associated alerting profile
      * 
      */
-    @Export(name="profile", type=String.class, parameters={})
+    @Export(name="profile", refs={String.class}, tree="[0]")
     private Output<String> profile;
 
     /**
@@ -91,7 +105,7 @@ public class SlackNotification extends com.pulumi.resources.CustomResource {
      * The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
      * 
      */
-    @Export(name="url", type=String.class, parameters={})
+    @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**

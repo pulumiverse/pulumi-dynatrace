@@ -4,26 +4,51 @@
 package com.pulumi.dynatrace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.dynatrace.outputs.GetSyntheticLocationsLocationsLocation;
+import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSyntheticLocationsLocations {
     /**
-     * @return The name of the location
+     * @return The cloud provider where the location is hosted.
      * 
      */
-    private @Nullable List<GetSyntheticLocationsLocationsLocation> locations;
+    private String cloudPlatform;
+    private @Nullable String entityId;
+    private List<String> ips;
+    private @Nullable String name;
+    private String stage;
+    private String status;
+    private @Nullable String type;
 
     private GetSyntheticLocationsLocations() {}
     /**
-     * @return The name of the location
+     * @return The cloud provider where the location is hosted.
      * 
      */
-    public List<GetSyntheticLocationsLocationsLocation> locations() {
-        return this.locations == null ? List.of() : this.locations;
+    public String cloudPlatform() {
+        return this.cloudPlatform;
+    }
+    public Optional<String> entityId() {
+        return Optional.ofNullable(this.entityId);
+    }
+    public List<String> ips() {
+        return this.ips;
+    }
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
+    }
+    public String stage() {
+        return this.stage;
+    }
+    public String status() {
+        return this.status;
+    }
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -35,24 +60,72 @@ public final class GetSyntheticLocationsLocations {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable List<GetSyntheticLocationsLocationsLocation> locations;
+        private String cloudPlatform;
+        private @Nullable String entityId;
+        private List<String> ips;
+        private @Nullable String name;
+        private String stage;
+        private String status;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetSyntheticLocationsLocations defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.locations = defaults.locations;
+    	      this.cloudPlatform = defaults.cloudPlatform;
+    	      this.entityId = defaults.entityId;
+    	      this.ips = defaults.ips;
+    	      this.name = defaults.name;
+    	      this.stage = defaults.stage;
+    	      this.status = defaults.status;
+    	      this.type = defaults.type;
         }
 
         @CustomType.Setter
-        public Builder locations(@Nullable List<GetSyntheticLocationsLocationsLocation> locations) {
-            this.locations = locations;
+        public Builder cloudPlatform(String cloudPlatform) {
+            this.cloudPlatform = Objects.requireNonNull(cloudPlatform);
             return this;
         }
-        public Builder locations(GetSyntheticLocationsLocationsLocation... locations) {
-            return locations(List.of(locations));
+        @CustomType.Setter
+        public Builder entityId(@Nullable String entityId) {
+            this.entityId = entityId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ips(List<String> ips) {
+            this.ips = Objects.requireNonNull(ips);
+            return this;
+        }
+        public Builder ips(String... ips) {
+            return ips(List.of(ips));
+        }
+        @CustomType.Setter
+        public Builder name(@Nullable String name) {
+            this.name = name;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder stage(String stage) {
+            this.stage = Objects.requireNonNull(stage);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder status(String status) {
+            this.status = Objects.requireNonNull(status);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder type(@Nullable String type) {
+            this.type = type;
+            return this;
         }
         public GetSyntheticLocationsLocations build() {
             final var o = new GetSyntheticLocationsLocations();
-            o.locations = locations;
+            o.cloudPlatform = cloudPlatform;
+            o.entityId = entityId;
+            o.ips = ips;
+            o.name = name;
+            o.stage = stage;
+            o.status = status;
+            o.type = type;
             return o;
         }
     }

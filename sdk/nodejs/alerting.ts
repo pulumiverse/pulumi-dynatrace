@@ -39,6 +39,10 @@ export class Alerting extends pulumi.CustomResource {
      */
     public readonly filters!: pulumi.Output<outputs.AlertingFilters | undefined>;
     /**
+     * The ID of this setting when referred to by the Config REST API V1
+     */
+    public readonly legacyId!: pulumi.Output<string>;
+    /**
      * The ID of the management zone to which the alerting profile applies
      */
     public readonly managementZone!: pulumi.Output<string | undefined>;
@@ -65,12 +69,14 @@ export class Alerting extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as AlertingState | undefined;
             resourceInputs["filters"] = state ? state.filters : undefined;
+            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
             resourceInputs["managementZone"] = state ? state.managementZone : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["rules"] = state ? state.rules : undefined;
         } else {
             const args = argsOrState as AlertingArgs | undefined;
             resourceInputs["filters"] = args ? args.filters : undefined;
+            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
             resourceInputs["managementZone"] = args ? args.managementZone : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["rules"] = args ? args.rules : undefined;
@@ -88,6 +94,10 @@ export interface AlertingState {
      * The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
      */
     filters?: pulumi.Input<inputs.AlertingFilters>;
+    /**
+     * The ID of this setting when referred to by the Config REST API V1
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The ID of the management zone to which the alerting profile applies
      */
@@ -110,6 +120,10 @@ export interface AlertingArgs {
      * The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
      */
     filters?: pulumi.Input<inputs.AlertingFilters>;
+    /**
+     * The ID of this setting when referred to by the Config REST API V1
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The ID of the management zone to which the alerting profile applies
      */

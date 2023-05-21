@@ -31,7 +31,7 @@ public class DashboardSharing extends com.pulumi.resources.CustomResource {
      * The Dynatrace entity ID of the dashboard
      * 
      */
-    @Export(name="dashboardId", type=String.class, parameters={})
+    @Export(name="dashboardId", refs={String.class}, tree="[0]")
     private Output<String> dashboardId;
 
     /**
@@ -45,7 +45,7 @@ public class DashboardSharing extends com.pulumi.resources.CustomResource {
      * The dashboard is shared (`true`) or private (`false`)
      * 
      */
-    @Export(name="enabled", type=Boolean.class, parameters={})
+    @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enabled;
 
     /**
@@ -59,7 +59,7 @@ public class DashboardSharing extends com.pulumi.resources.CustomResource {
      * Access permissions of the dashboard
      * 
      */
-    @Export(name="permissions", type=DashboardSharingPermissions.class, parameters={})
+    @Export(name="permissions", refs={DashboardSharingPermissions.class}, tree="[0]")
     private Output</* @Nullable */ DashboardSharingPermissions> permissions;
 
     /**
@@ -73,7 +73,7 @@ public class DashboardSharing extends com.pulumi.resources.CustomResource {
      * If `true` the dashboard will be marked as preset
      * 
      */
-    @Export(name="preset", type=Boolean.class, parameters={})
+    @Export(name="preset", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> preset;
 
     /**
@@ -87,7 +87,7 @@ public class DashboardSharing extends com.pulumi.resources.CustomResource {
      * Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
      * 
      */
-    @Export(name="public", type=DashboardSharingPublic.class, parameters={})
+    @Export(name="public", refs={DashboardSharingPublic.class}, tree="[0]")
     private Output</* @Nullable */ DashboardSharingPublic> public_;
 
     /**

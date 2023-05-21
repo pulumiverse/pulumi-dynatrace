@@ -19,6 +19,9 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         [Input("comparison", required: true)]
         public Input<Inputs.RequestNamingConditionsConditionComparisonGetArgs> Comparison { get; set; } = null!;
 
+        [Input("unknowns")]
+        public Input<string>? Unknowns { get; set; }
+
         public RequestNamingConditionsConditionGetArgs()
         {
         }

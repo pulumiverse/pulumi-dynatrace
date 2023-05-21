@@ -21,7 +21,7 @@ public class ApplicationDetectionRule extends com.pulumi.resources.CustomResourc
      * The Dynatrace entity ID of the application, for example APPLICATION-4A3B43
      * 
      */
-    @Export(name="applicationIdentifier", type=String.class, parameters={})
+    @Export(name="applicationIdentifier", refs={String.class}, tree="[0]")
     private Output<String> applicationIdentifier;
 
     /**
@@ -35,7 +35,7 @@ public class ApplicationDetectionRule extends com.pulumi.resources.CustomResourc
      * The condition of an application detection rule
      * 
      */
-    @Export(name="filterConfig", type=ApplicationDetectionRuleFilterConfig.class, parameters={})
+    @Export(name="filterConfig", refs={ApplicationDetectionRuleFilterConfig.class}, tree="[0]")
     private Output<ApplicationDetectionRuleFilterConfig> filterConfig;
 
     /**
@@ -49,7 +49,7 @@ public class ApplicationDetectionRule extends com.pulumi.resources.CustomResourc
      * The unique name of the Application detection rule
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -63,7 +63,7 @@ public class ApplicationDetectionRule extends com.pulumi.resources.CustomResourc
      * The order of the rule in the rules list
      * 
      */
-    @Export(name="order", type=String.class, parameters={})
+    @Export(name="order", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> order;
 
     /**

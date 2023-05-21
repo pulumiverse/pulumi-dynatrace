@@ -23,7 +23,7 @@ public class ServiceNaming extends com.pulumi.resources.CustomResource {
      * A list of matching conditions of the rule. The rule applies only if **all** conditions are fulfilled
      * 
      */
-    @Export(name="conditions", type=List.class, parameters={ServiceNamingCondition.class})
+    @Export(name="conditions", refs={List.class,ServiceNamingCondition.class}, tree="[0,1]")
     private Output</* @Nullable */ List<ServiceNamingCondition>> conditions;
 
     /**
@@ -37,7 +37,7 @@ public class ServiceNaming extends com.pulumi.resources.CustomResource {
      * The rule is enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="enabled", type=Boolean.class, parameters={})
+    @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enabled;
 
     /**
@@ -115,7 +115,7 @@ public class ServiceNaming extends com.pulumi.resources.CustomResource {
      *   `{VmwareVm:Name}
      * 
      */
-    @Export(name="format", type=String.class, parameters={})
+    @Export(name="format", refs={String.class}, tree="[0]")
     private Output<String> format;
 
     /**
@@ -193,7 +193,7 @@ public class ServiceNaming extends com.pulumi.resources.CustomResource {
      * The name of the rule
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -207,7 +207,7 @@ public class ServiceNaming extends com.pulumi.resources.CustomResource {
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**

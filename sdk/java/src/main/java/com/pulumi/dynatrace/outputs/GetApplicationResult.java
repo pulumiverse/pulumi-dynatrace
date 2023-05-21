@@ -5,9 +5,7 @@ package com.pulumi.dynatrace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
-import java.util.List;
 import java.util.Objects;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class GetApplicationResult {
@@ -17,11 +15,6 @@ public final class GetApplicationResult {
      */
     private String id;
     private String name;
-    /**
-     * @return Required tags of the application to find
-     * 
-     */
-    private @Nullable List<String> tags;
 
     private GetApplicationResult() {}
     /**
@@ -33,13 +26,6 @@ public final class GetApplicationResult {
     }
     public String name() {
         return this.name;
-    }
-    /**
-     * @return Required tags of the application to find
-     * 
-     */
-    public List<String> tags() {
-        return this.tags == null ? List.of() : this.tags;
     }
 
     public static Builder builder() {
@@ -53,13 +39,11 @@ public final class GetApplicationResult {
     public static final class Builder {
         private String id;
         private String name;
-        private @Nullable List<String> tags;
         public Builder() {}
         public Builder(GetApplicationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.name = defaults.name;
-    	      this.tags = defaults.tags;
         }
 
         @CustomType.Setter
@@ -72,19 +56,10 @@ public final class GetApplicationResult {
             this.name = Objects.requireNonNull(name);
             return this;
         }
-        @CustomType.Setter
-        public Builder tags(@Nullable List<String> tags) {
-            this.tags = tags;
-            return this;
-        }
-        public Builder tags(String... tags) {
-            return tags(List.of(tags));
-        }
         public GetApplicationResult build() {
             final var o = new GetApplicationResult();
             o.id = id;
             o.name = name;
-            o.tags = tags;
             return o;
         }
     }

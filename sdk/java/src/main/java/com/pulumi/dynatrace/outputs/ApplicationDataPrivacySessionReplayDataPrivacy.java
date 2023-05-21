@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ApplicationDataPrivacySessionReplayDataPrivacy {
     /**
-     * @return Content masking settings for Session Replay.
+     * @return (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Content masking settings for Session Replay.
      * 
      */
     private ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettings contentMaskingSettings;
@@ -24,7 +24,7 @@ public final class ApplicationDataPrivacySessionReplayDataPrivacy {
 
     private ApplicationDataPrivacySessionReplayDataPrivacy() {}
     /**
-     * @return Content masking settings for Session Replay.
+     * @return (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Content masking settings for Session Replay.
      * 
      */
     public ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettings contentMaskingSettings() {

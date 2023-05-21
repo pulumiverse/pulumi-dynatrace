@@ -5,6 +5,7 @@ package com.pulumi.dynatrace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -17,7 +18,7 @@ public final class BrowserMonitorScriptConfigurationDevice {
     private @Nullable Boolean mobile;
     private @Nullable String name;
     private @Nullable String orientation;
-    private @Nullable Integer scaleFactor;
+    private @Nullable Double scaleFactor;
     private @Nullable Boolean touchEnabled;
     private @Nullable Integer width;
 
@@ -34,7 +35,7 @@ public final class BrowserMonitorScriptConfigurationDevice {
     public Optional<String> orientation() {
         return Optional.ofNullable(this.orientation);
     }
-    public Optional<Integer> scaleFactor() {
+    public Optional<Double> scaleFactor() {
         return Optional.ofNullable(this.scaleFactor);
     }
     public Optional<Boolean> touchEnabled() {
@@ -57,7 +58,7 @@ public final class BrowserMonitorScriptConfigurationDevice {
         private @Nullable Boolean mobile;
         private @Nullable String name;
         private @Nullable String orientation;
-        private @Nullable Integer scaleFactor;
+        private @Nullable Double scaleFactor;
         private @Nullable Boolean touchEnabled;
         private @Nullable Integer width;
         public Builder() {}
@@ -93,7 +94,7 @@ public final class BrowserMonitorScriptConfigurationDevice {
             return this;
         }
         @CustomType.Setter
-        public Builder scaleFactor(@Nullable Integer scaleFactor) {
+        public Builder scaleFactor(@Nullable Double scaleFactor) {
             this.scaleFactor = scaleFactor;
             return this;
         }

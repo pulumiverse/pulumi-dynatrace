@@ -22,7 +22,7 @@ public class Alerting extends com.pulumi.resources.CustomResource {
      * The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
      * 
      */
-    @Export(name="filters", type=AlertingFilters.class, parameters={})
+    @Export(name="filters", refs={AlertingFilters.class}, tree="[0]")
     private Output</* @Nullable */ AlertingFilters> filters;
 
     /**
@@ -33,10 +33,24 @@ public class Alerting extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.filters);
     }
     /**
+     * The ID of this setting when referred to by the Config REST API V1
+     * 
+     */
+    @Export(name="legacyId", refs={String.class}, tree="[0]")
+    private Output<String> legacyId;
+
+    /**
+     * @return The ID of this setting when referred to by the Config REST API V1
+     * 
+     */
+    public Output<String> legacyId() {
+        return this.legacyId;
+    }
+    /**
      * The ID of the management zone to which the alerting profile applies
      * 
      */
-    @Export(name="managementZone", type=String.class, parameters={})
+    @Export(name="managementZone", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> managementZone;
 
     /**
@@ -50,7 +64,7 @@ public class Alerting extends com.pulumi.resources.CustomResource {
      * The name of the alerting profile, displayed in the UI
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -64,7 +78,7 @@ public class Alerting extends com.pulumi.resources.CustomResource {
      * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      * 
      */
-    @Export(name="rules", type=AlertingRules.class, parameters={})
+    @Export(name="rules", refs={AlertingRules.class}, tree="[0]")
     private Output</* @Nullable */ AlertingRules> rules;
 
     /**

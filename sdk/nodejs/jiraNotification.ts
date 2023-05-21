@@ -49,6 +49,10 @@ export class JiraNotification extends pulumi.CustomResource {
      */
     public readonly issueType!: pulumi.Output<string>;
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    public readonly legacyId!: pulumi.Output<string>;
+    /**
      * The name of the notification configuration
      */
     public readonly name!: pulumi.Output<string>;
@@ -90,6 +94,7 @@ export class JiraNotification extends pulumi.CustomResource {
             resourceInputs["apiToken"] = state ? state.apiToken : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["issueType"] = state ? state.issueType : undefined;
+            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["profile"] = state ? state.profile : undefined;
             resourceInputs["projectKey"] = state ? state.projectKey : undefined;
@@ -126,6 +131,7 @@ export class JiraNotification extends pulumi.CustomResource {
             resourceInputs["apiToken"] = args?.apiToken ? pulumi.secret(args.apiToken) : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["issueType"] = args ? args.issueType : undefined;
+            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["profile"] = args ? args.profile : undefined;
             resourceInputs["projectKey"] = args ? args.projectKey : undefined;
@@ -160,6 +166,10 @@ export interface JiraNotificationState {
      * The type of the Jira issue to be created by this notification
      */
     issueType?: pulumi.Input<string>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The name of the notification configuration
      */
@@ -206,6 +216,10 @@ export interface JiraNotificationArgs {
      * The type of the Jira issue to be created by this notification
      */
     issueType: pulumi.Input<string>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The name of the notification configuration
      */

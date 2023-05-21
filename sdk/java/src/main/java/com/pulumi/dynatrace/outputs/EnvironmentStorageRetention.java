@@ -6,10 +6,12 @@ package com.pulumi.dynatrace.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class EnvironmentStorageRetention {
-    private Integer logs;
+    private @Nullable Integer logs;
     private Integer rum;
     private Integer serviceCodeLevel;
     private Integer serviceRequestLevel;
@@ -17,8 +19,8 @@ public final class EnvironmentStorageRetention {
     private Integer synthetic;
 
     private EnvironmentStorageRetention() {}
-    public Integer logs() {
-        return this.logs;
+    public Optional<Integer> logs() {
+        return Optional.ofNullable(this.logs);
     }
     public Integer rum() {
         return this.rum;
@@ -45,7 +47,7 @@ public final class EnvironmentStorageRetention {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer logs;
+        private @Nullable Integer logs;
         private Integer rum;
         private Integer serviceCodeLevel;
         private Integer serviceRequestLevel;
@@ -63,8 +65,8 @@ public final class EnvironmentStorageRetention {
         }
 
         @CustomType.Setter
-        public Builder logs(Integer logs) {
-            this.logs = Objects.requireNonNull(logs);
+        public Builder logs(@Nullable Integer logs) {
+            this.logs = logs;
             return this;
         }
         @CustomType.Setter

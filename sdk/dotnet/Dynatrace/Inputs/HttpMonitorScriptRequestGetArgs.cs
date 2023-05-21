@@ -34,6 +34,9 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         [Input("preProcessing")]
         public Input<string>? PreProcessing { get; set; }
 
+        [Input("requestTimeout")]
+        public Input<int>? RequestTimeout { get; set; }
+
         [Input("url", required: true)]
         public Input<string> Url { get; set; } = null!;
 

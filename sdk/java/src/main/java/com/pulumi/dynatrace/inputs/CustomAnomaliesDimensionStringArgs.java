@@ -6,6 +6,7 @@ package com.pulumi.dynatrace.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.dynatrace.inputs.CustomAnomaliesDimensionStringFilterArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -23,11 +24,33 @@ public final class CustomAnomaliesDimensionStringArgs extends com.pulumi.resourc
         return this.filter;
     }
 
+    @Import(name="index")
+    private @Nullable Output<Integer> index;
+
+    public Optional<Output<Integer>> index() {
+        return Optional.ofNullable(this.index);
+    }
+
     @Import(name="key")
     private @Nullable Output<String> key;
 
     public Optional<Output<String>> key() {
         return Optional.ofNullable(this.key);
+    }
+
+    /**
+     * The name of the metric event displayed in the UI
+     * 
+     */
+    @Import(name="name")
+    private @Nullable Output<String> name;
+
+    /**
+     * @return The name of the metric event displayed in the UI
+     * 
+     */
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     /**
@@ -49,7 +72,9 @@ public final class CustomAnomaliesDimensionStringArgs extends com.pulumi.resourc
 
     private CustomAnomaliesDimensionStringArgs(CustomAnomaliesDimensionStringArgs $) {
         this.filter = $.filter;
+        this.index = $.index;
         this.key = $.key;
+        this.name = $.name;
         this.unknowns = $.unknowns;
     }
 
@@ -80,6 +105,15 @@ public final class CustomAnomaliesDimensionStringArgs extends com.pulumi.resourc
             return filter(Output.of(filter));
         }
 
+        public Builder index(@Nullable Output<Integer> index) {
+            $.index = index;
+            return this;
+        }
+
+        public Builder index(Integer index) {
+            return index(Output.of(index));
+        }
+
         public Builder key(@Nullable Output<String> key) {
             $.key = key;
             return this;
@@ -87,6 +121,27 @@ public final class CustomAnomaliesDimensionStringArgs extends com.pulumi.resourc
 
         public Builder key(String key) {
             return key(Output.of(key));
+        }
+
+        /**
+         * @param name The name of the metric event displayed in the UI
+         * 
+         * @return builder
+         * 
+         */
+        public Builder name(@Nullable Output<String> name) {
+            $.name = name;
+            return this;
+        }
+
+        /**
+         * @param name The name of the metric event displayed in the UI
+         * 
+         * @return builder
+         * 
+         */
+        public Builder name(String name) {
+            return name(Output.of(name));
         }
 
         /**

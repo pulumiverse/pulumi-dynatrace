@@ -24,6 +24,11 @@ public final class DashboardTile {
      */
     private @Nullable List<String> assignedEntities;
     /**
+     * @return Auto Refresh is disabled (`true`)
+     * 
+     */
+    private @Nullable Boolean autoRefreshDisabled;
+    /**
      * @return the position and size of a tile
      * 
      */
@@ -122,6 +127,13 @@ public final class DashboardTile {
      */
     public List<String> assignedEntities() {
         return this.assignedEntities == null ? List.of() : this.assignedEntities;
+    }
+    /**
+     * @return Auto Refresh is disabled (`true`)
+     * 
+     */
+    public Optional<Boolean> autoRefreshDisabled() {
+        return Optional.ofNullable(this.autoRefreshDisabled);
     }
     /**
      * @return the position and size of a tile
@@ -263,6 +275,7 @@ public final class DashboardTile {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> assignedEntities;
+        private @Nullable Boolean autoRefreshDisabled;
         private @Nullable DashboardTileBounds bounds;
         private @Nullable Boolean chartVisible;
         private @Nullable Boolean configured;
@@ -286,6 +299,7 @@ public final class DashboardTile {
         public Builder(DashboardTile defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assignedEntities = defaults.assignedEntities;
+    	      this.autoRefreshDisabled = defaults.autoRefreshDisabled;
     	      this.bounds = defaults.bounds;
     	      this.chartVisible = defaults.chartVisible;
     	      this.configured = defaults.configured;
@@ -314,6 +328,11 @@ public final class DashboardTile {
         }
         public Builder assignedEntities(String... assignedEntities) {
             return assignedEntities(List.of(assignedEntities));
+        }
+        @CustomType.Setter
+        public Builder autoRefreshDisabled(@Nullable Boolean autoRefreshDisabled) {
+            this.autoRefreshDisabled = autoRefreshDisabled;
+            return this;
         }
         @CustomType.Setter
         public Builder bounds(@Nullable DashboardTileBounds bounds) {
@@ -413,6 +432,7 @@ public final class DashboardTile {
         public DashboardTile build() {
             final var o = new DashboardTile();
             o.assignedEntities = assignedEntities;
+            o.autoRefreshDisabled = autoRefreshDisabled;
             o.bounds = bounds;
             o.chartVisible = chartVisible;
             o.configured = configured;

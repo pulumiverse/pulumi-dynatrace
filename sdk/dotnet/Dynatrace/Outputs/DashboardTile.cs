@@ -19,6 +19,10 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly ImmutableArray<string> AssignedEntities;
         /// <summary>
+        /// Auto Refresh is disabled (`true`)
+        /// </summary>
+        public readonly bool? AutoRefreshDisabled;
+        /// <summary>
         /// the position and size of a tile
         /// </summary>
         public readonly Outputs.DashboardTileBounds? Bounds;
@@ -96,6 +100,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         private DashboardTile(
             ImmutableArray<string> assignedEntities,
 
+            bool? autoRefreshDisabled,
+
             Outputs.DashboardTileBounds? bounds,
 
             bool? chartVisible,
@@ -135,6 +141,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
             Outputs.DashboardTileVisualizationConfig? visualizationConfig)
         {
             AssignedEntities = assignedEntities;
+            AutoRefreshDisabled = autoRefreshDisabled;
             Bounds = bounds;
             ChartVisible = chartVisible;
             Configured = configured;

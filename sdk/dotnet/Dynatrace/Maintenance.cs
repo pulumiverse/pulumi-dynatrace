@@ -32,6 +32,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<Outputs.MaintenanceGeneralProperties> GeneralProperties { get; private set; } = null!;
 
         /// <summary>
+        /// The ID of this setting when referred to by the Config REST API V1
+        /// </summary>
+        [Output("legacyId")]
+        public Output<string> LegacyId { get; private set; } = null!;
+
+        /// <summary>
         /// The schedule of the maintenance window
         /// </summary>
         [Output("schedule")]
@@ -109,6 +115,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<Inputs.MaintenanceGeneralPropertiesArgs> GeneralProperties { get; set; } = null!;
 
         /// <summary>
+        /// The ID of this setting when referred to by the Config REST API V1
+        /// </summary>
+        [Input("legacyId")]
+        public Input<string>? LegacyId { get; set; }
+
+        /// <summary>
         /// The schedule of the maintenance window
         /// </summary>
         [Input("schedule", required: true)]
@@ -145,6 +157,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         [Input("generalProperties")]
         public Input<Inputs.MaintenanceGeneralPropertiesGetArgs>? GeneralProperties { get; set; }
+
+        /// <summary>
+        /// The ID of this setting when referred to by the Config REST API V1
+        /// </summary>
+        [Input("legacyId")]
+        public Input<string>? LegacyId { get; set; }
 
         /// <summary>
         /// The schedule of the maintenance window

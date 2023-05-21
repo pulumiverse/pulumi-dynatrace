@@ -20,6 +20,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<bool?> Active { get; private set; } = null!;
 
         /// <summary>
+        /// Active Gate group to filter active gates for this credentials.
+        /// </summary>
+        [Output("activeGateGroup")]
+        public Output<string?> ActiveGateGroup { get; private set; } = null!;
+
+        /// <summary>
         /// The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Output("authToken")]
@@ -115,6 +121,10 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             {
                 Version = Utilities.Version,
                 PluginDownloadURL = "github://api.github.com/lbrlabs",
+                AdditionalSecretOutputs =
+                {
+                    "authToken",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -145,10 +155,26 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<bool>? Active { get; set; }
 
         /// <summary>
+        /// Active Gate group to filter active gates for this credentials.
+        /// </summary>
+        [Input("activeGateGroup")]
+        public Input<string>? ActiveGateGroup { get; set; }
+
+        [Input("authToken")]
+        private Input<string>? _authToken;
+
+        /// <summary>
         /// The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
-        [Input("authToken")]
-        public Input<string>? AuthToken { get; set; }
+        public Input<string>? AuthToken
+        {
+            get => _authToken;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _authToken = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
@@ -237,10 +263,26 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<bool>? Active { get; set; }
 
         /// <summary>
+        /// Active Gate group to filter active gates for this credentials.
+        /// </summary>
+        [Input("activeGateGroup")]
+        public Input<string>? ActiveGateGroup { get; set; }
+
+        [Input("authToken")]
+        private Input<string>? _authToken;
+
+        /// <summary>
         /// The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
-        [Input("authToken")]
-        public Input<string>? AuthToken { get; set; }
+        public Input<string>? AuthToken
+        {
+            get => _authToken;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _authToken = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.

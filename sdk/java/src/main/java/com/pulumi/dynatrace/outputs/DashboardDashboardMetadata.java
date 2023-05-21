@@ -49,18 +49,31 @@ public final class DashboardDashboardMetadata {
     /**
      * @return the dashboard is shared (`true`) or private (`false`)
      * 
+     * @deprecated
+     * Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+     * 
      */
+    @Deprecated /* Please use the resource `dynatrace_dashboard_sharing` to configure share settings */
     private @Nullable Boolean shared;
     /**
      * @return represents sharing configuration of a dashboard
      * 
+     * @deprecated
+     * Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+     * 
      */
+    @Deprecated /* Please use the resource `dynatrace_dashboard_sharing` to configure share settings */
     private @Nullable DashboardDashboardMetadataSharingDetails sharingDetails;
     /**
      * @return a set of tags assigned to the dashboard
      * 
      */
     private @Nullable List<String> tags;
+    /**
+     * @return No documentation available
+     * 
+     */
+    private @Nullable String tilesNameSize;
     /**
      * @return allows for configuring properties that are not explicitly supported by the current version of this provider
      * 
@@ -118,14 +131,22 @@ public final class DashboardDashboardMetadata {
     /**
      * @return the dashboard is shared (`true`) or private (`false`)
      * 
+     * @deprecated
+     * Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+     * 
      */
+    @Deprecated /* Please use the resource `dynatrace_dashboard_sharing` to configure share settings */
     public Optional<Boolean> shared() {
         return Optional.ofNullable(this.shared);
     }
     /**
      * @return represents sharing configuration of a dashboard
      * 
+     * @deprecated
+     * Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+     * 
      */
+    @Deprecated /* Please use the resource `dynatrace_dashboard_sharing` to configure share settings */
     public Optional<DashboardDashboardMetadataSharingDetails> sharingDetails() {
         return Optional.ofNullable(this.sharingDetails);
     }
@@ -135,6 +156,13 @@ public final class DashboardDashboardMetadata {
      */
     public List<String> tags() {
         return this.tags == null ? List.of() : this.tags;
+    }
+    /**
+     * @return No documentation available
+     * 
+     */
+    public Optional<String> tilesNameSize() {
+        return Optional.ofNullable(this.tilesNameSize);
     }
     /**
      * @return allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -169,6 +197,7 @@ public final class DashboardDashboardMetadata {
         private @Nullable Boolean shared;
         private @Nullable DashboardDashboardMetadataSharingDetails sharingDetails;
         private @Nullable List<String> tags;
+        private @Nullable String tilesNameSize;
         private @Nullable String unknowns;
         private @Nullable List<String> validFilterKeys;
         public Builder() {}
@@ -183,6 +212,7 @@ public final class DashboardDashboardMetadata {
     	      this.shared = defaults.shared;
     	      this.sharingDetails = defaults.sharingDetails;
     	      this.tags = defaults.tags;
+    	      this.tilesNameSize = defaults.tilesNameSize;
     	      this.unknowns = defaults.unknowns;
     	      this.validFilterKeys = defaults.validFilterKeys;
         }
@@ -236,6 +266,11 @@ public final class DashboardDashboardMetadata {
             return tags(List.of(tags));
         }
         @CustomType.Setter
+        public Builder tilesNameSize(@Nullable String tilesNameSize) {
+            this.tilesNameSize = tilesNameSize;
+            return this;
+        }
+        @CustomType.Setter
         public Builder unknowns(@Nullable String unknowns) {
             this.unknowns = unknowns;
             return this;
@@ -259,6 +294,7 @@ public final class DashboardDashboardMetadata {
             o.shared = shared;
             o.sharingDetails = sharingDetails;
             o.tags = tags;
+            o.tilesNameSize = tilesNameSize;
             o.unknowns = unknowns;
             o.validFilterKeys = validFilterKeys;
             return o;

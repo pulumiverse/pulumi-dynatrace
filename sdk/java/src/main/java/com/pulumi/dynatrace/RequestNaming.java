@@ -25,7 +25,7 @@ public class RequestNaming extends com.pulumi.resources.CustomResource {
      * **all** the specified conditions for the rule to trigger
      * 
      */
-    @Export(name="conditions", type=RequestNamingConditions.class, parameters={})
+    @Export(name="conditions", refs={RequestNamingConditions.class}, tree="[0]")
     private Output<RequestNamingConditions> conditions;
 
     /**
@@ -40,7 +40,7 @@ public class RequestNaming extends com.pulumi.resources.CustomResource {
      * The rule is enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="enabled", type=Boolean.class, parameters={})
+    @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enabled;
 
     /**
@@ -54,7 +54,7 @@ public class RequestNaming extends com.pulumi.resources.CustomResource {
      * Specifies the management zones for which this rule should be applied
      * 
      */
-    @Export(name="managementZones", type=List.class, parameters={String.class})
+    @Export(name="managementZones", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> managementZones;
 
     /**
@@ -68,7 +68,7 @@ public class RequestNaming extends com.pulumi.resources.CustomResource {
      * The name to be assigned to matching requests
      * 
      */
-    @Export(name="namingPattern", type=String.class, parameters={})
+    @Export(name="namingPattern", refs={String.class}, tree="[0]")
     private Output<String> namingPattern;
 
     /**
@@ -83,7 +83,7 @@ public class RequestNaming extends com.pulumi.resources.CustomResource {
      * other request attribute and use it in the request naming pattern.
      * 
      */
-    @Export(name="placeholders", type=RequestNamingPlaceholders.class, parameters={})
+    @Export(name="placeholders", refs={RequestNamingPlaceholders.class}, tree="[0]")
     private Output</* @Nullable */ RequestNamingPlaceholders> placeholders;
 
     /**
@@ -98,7 +98,7 @@ public class RequestNaming extends com.pulumi.resources.CustomResource {
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**

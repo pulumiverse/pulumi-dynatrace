@@ -6,7 +6,9 @@ package com.pulumi.dynatrace.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class DashboardSharingPublic {
@@ -15,6 +17,7 @@ public final class DashboardSharingPublic {
      * 
      */
     private List<String> managementZones;
+    private @Nullable Map<String,String> urls;
 
     private DashboardSharingPublic() {}
     /**
@@ -23,6 +26,9 @@ public final class DashboardSharingPublic {
      */
     public List<String> managementZones() {
         return this.managementZones;
+    }
+    public Map<String,String> urls() {
+        return this.urls == null ? Map.of() : this.urls;
     }
 
     public static Builder builder() {
@@ -35,10 +41,12 @@ public final class DashboardSharingPublic {
     @CustomType.Builder
     public static final class Builder {
         private List<String> managementZones;
+        private @Nullable Map<String,String> urls;
         public Builder() {}
         public Builder(DashboardSharingPublic defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.managementZones = defaults.managementZones;
+    	      this.urls = defaults.urls;
         }
 
         @CustomType.Setter
@@ -49,9 +57,15 @@ public final class DashboardSharingPublic {
         public Builder managementZones(String... managementZones) {
             return managementZones(List.of(managementZones));
         }
+        @CustomType.Setter
+        public Builder urls(@Nullable Map<String,String> urls) {
+            this.urls = urls;
+            return this;
+        }
         public DashboardSharingPublic build() {
             final var o = new DashboardSharingPublic();
             o.managementZones = managementZones;
+            o.urls = urls;
             return o;
         }
     }

@@ -45,6 +45,10 @@ export class PagerDutyNotification extends pulumi.CustomResource {
      */
     public readonly apiKey!: pulumi.Output<string | undefined>;
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    public readonly legacyId!: pulumi.Output<string>;
+    /**
      * The name of the notification configuration
      */
     public readonly name!: pulumi.Output<string>;
@@ -73,6 +77,7 @@ export class PagerDutyNotification extends pulumi.CustomResource {
             resourceInputs["account"] = state ? state.account : undefined;
             resourceInputs["active"] = state ? state.active : undefined;
             resourceInputs["apiKey"] = state ? state.apiKey : undefined;
+            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["profile"] = state ? state.profile : undefined;
             resourceInputs["service"] = state ? state.service : undefined;
@@ -93,6 +98,7 @@ export class PagerDutyNotification extends pulumi.CustomResource {
             resourceInputs["account"] = args ? args.account : undefined;
             resourceInputs["active"] = args ? args.active : undefined;
             resourceInputs["apiKey"] = args?.apiKey ? pulumi.secret(args.apiKey) : undefined;
+            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["profile"] = args ? args.profile : undefined;
             resourceInputs["service"] = args ? args.service : undefined;
@@ -120,6 +126,10 @@ export interface PagerDutyNotificationState {
      * The API key to access PagerDuty
      */
     apiKey?: pulumi.Input<string>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The name of the notification configuration
      */
@@ -150,6 +160,10 @@ export interface PagerDutyNotificationArgs {
      * The API key to access PagerDuty
      */
     apiKey?: pulumi.Input<string>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The name of the notification configuration
      */

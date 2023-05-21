@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -17,6 +18,7 @@ public final class GetServiceResult {
      */
     private String id;
     private String name;
+    private @Nullable String operator;
     /**
      * @return Required tags of the service to find
      * 
@@ -33,6 +35,9 @@ public final class GetServiceResult {
     }
     public String name() {
         return this.name;
+    }
+    public Optional<String> operator() {
+        return Optional.ofNullable(this.operator);
     }
     /**
      * @return Required tags of the service to find
@@ -53,12 +58,14 @@ public final class GetServiceResult {
     public static final class Builder {
         private String id;
         private String name;
+        private @Nullable String operator;
         private @Nullable List<String> tags;
         public Builder() {}
         public Builder(GetServiceResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.name = defaults.name;
+    	      this.operator = defaults.operator;
     	      this.tags = defaults.tags;
         }
 
@@ -73,6 +80,11 @@ public final class GetServiceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder operator(@Nullable String operator) {
+            this.operator = operator;
+            return this;
+        }
+        @CustomType.Setter
         public Builder tags(@Nullable List<String> tags) {
             this.tags = tags;
             return this;
@@ -84,6 +96,7 @@ public final class GetServiceResult {
             final var o = new GetServiceResult();
             o.id = id;
             o.name = name;
+            o.operator = operator;
             o.tags = tags;
             return o;
         }

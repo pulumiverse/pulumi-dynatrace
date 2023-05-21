@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -16,7 +16,7 @@ type WebApplication struct {
 
 	// A list of conversion goals of the application
 	ConversionGoals WebApplicationConversionGoalsPtrOutput `pulumi:"conversionGoals"`
-	// Analize *X*% of user sessions
+	// (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
 	CostControlUserSessionPercentage pulumi.IntOutput `pulumi:"costControlUserSessionPercentage"`
 	// Defines the Custom Action Apdex settings of an application
 	CustomActionApdexSettings WebApplicationCustomActionApdexSettingsOutput `pulumi:"customActionApdexSettings"`
@@ -32,7 +32,7 @@ type WebApplication struct {
 	MonitoringSettings WebApplicationMonitoringSettingsOutput `pulumi:"monitoringSettings"`
 	// The name of the web application, displayed in the UI
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Real user monitoring enabled/disabled
+	// (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
 	RealUserMonitoringEnabled pulumi.BoolPtrOutput `pulumi:"realUserMonitoringEnabled"`
 	// Settings regarding Session Replay
 	SessionReplayConfig WebApplicationSessionReplayConfigPtrOutput `pulumi:"sessionReplayConfig"`
@@ -113,7 +113,7 @@ func GetWebApplication(ctx *pulumi.Context,
 type webApplicationState struct {
 	// A list of conversion goals of the application
 	ConversionGoals *WebApplicationConversionGoals `pulumi:"conversionGoals"`
-	// Analize *X*% of user sessions
+	// (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
 	CostControlUserSessionPercentage *int `pulumi:"costControlUserSessionPercentage"`
 	// Defines the Custom Action Apdex settings of an application
 	CustomActionApdexSettings *WebApplicationCustomActionApdexSettings `pulumi:"customActionApdexSettings"`
@@ -129,7 +129,7 @@ type webApplicationState struct {
 	MonitoringSettings *WebApplicationMonitoringSettings `pulumi:"monitoringSettings"`
 	// The name of the web application, displayed in the UI
 	Name *string `pulumi:"name"`
-	// Real user monitoring enabled/disabled
+	// (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
 	RealUserMonitoringEnabled *bool `pulumi:"realUserMonitoringEnabled"`
 	// Settings regarding Session Replay
 	SessionReplayConfig *WebApplicationSessionReplayConfig `pulumi:"sessionReplayConfig"`
@@ -154,7 +154,7 @@ type webApplicationState struct {
 type WebApplicationState struct {
 	// A list of conversion goals of the application
 	ConversionGoals WebApplicationConversionGoalsPtrInput
-	// Analize *X*% of user sessions
+	// (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
 	CostControlUserSessionPercentage pulumi.IntPtrInput
 	// Defines the Custom Action Apdex settings of an application
 	CustomActionApdexSettings WebApplicationCustomActionApdexSettingsPtrInput
@@ -170,7 +170,7 @@ type WebApplicationState struct {
 	MonitoringSettings WebApplicationMonitoringSettingsPtrInput
 	// The name of the web application, displayed in the UI
 	Name pulumi.StringPtrInput
-	// Real user monitoring enabled/disabled
+	// (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
 	RealUserMonitoringEnabled pulumi.BoolPtrInput
 	// Settings regarding Session Replay
 	SessionReplayConfig WebApplicationSessionReplayConfigPtrInput
@@ -199,7 +199,7 @@ func (WebApplicationState) ElementType() reflect.Type {
 type webApplicationArgs struct {
 	// A list of conversion goals of the application
 	ConversionGoals *WebApplicationConversionGoals `pulumi:"conversionGoals"`
-	// Analize *X*% of user sessions
+	// (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
 	CostControlUserSessionPercentage int `pulumi:"costControlUserSessionPercentage"`
 	// Defines the Custom Action Apdex settings of an application
 	CustomActionApdexSettings WebApplicationCustomActionApdexSettings `pulumi:"customActionApdexSettings"`
@@ -215,7 +215,7 @@ type webApplicationArgs struct {
 	MonitoringSettings WebApplicationMonitoringSettings `pulumi:"monitoringSettings"`
 	// The name of the web application, displayed in the UI
 	Name *string `pulumi:"name"`
-	// Real user monitoring enabled/disabled
+	// (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
 	RealUserMonitoringEnabled *bool `pulumi:"realUserMonitoringEnabled"`
 	// Settings regarding Session Replay
 	SessionReplayConfig *WebApplicationSessionReplayConfig `pulumi:"sessionReplayConfig"`
@@ -241,7 +241,7 @@ type webApplicationArgs struct {
 type WebApplicationArgs struct {
 	// A list of conversion goals of the application
 	ConversionGoals WebApplicationConversionGoalsPtrInput
-	// Analize *X*% of user sessions
+	// (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
 	CostControlUserSessionPercentage pulumi.IntInput
 	// Defines the Custom Action Apdex settings of an application
 	CustomActionApdexSettings WebApplicationCustomActionApdexSettingsInput
@@ -257,7 +257,7 @@ type WebApplicationArgs struct {
 	MonitoringSettings WebApplicationMonitoringSettingsInput
 	// The name of the web application, displayed in the UI
 	Name pulumi.StringPtrInput
-	// Real user monitoring enabled/disabled
+	// (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
 	RealUserMonitoringEnabled pulumi.BoolPtrInput
 	// Settings regarding Session Replay
 	SessionReplayConfig WebApplicationSessionReplayConfigPtrInput
@@ -371,7 +371,7 @@ func (o WebApplicationOutput) ConversionGoals() WebApplicationConversionGoalsPtr
 	return o.ApplyT(func(v *WebApplication) WebApplicationConversionGoalsPtrOutput { return v.ConversionGoals }).(WebApplicationConversionGoalsPtrOutput)
 }
 
-// Analize *X*% of user sessions
+// (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
 func (o WebApplicationOutput) CostControlUserSessionPercentage() pulumi.IntOutput {
 	return o.ApplyT(func(v *WebApplication) pulumi.IntOutput { return v.CostControlUserSessionPercentage }).(pulumi.IntOutput)
 }
@@ -415,7 +415,7 @@ func (o WebApplicationOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebApplication) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// Real user monitoring enabled/disabled
+// (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
 func (o WebApplicationOutput) RealUserMonitoringEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *WebApplication) pulumi.BoolPtrOutput { return v.RealUserMonitoringEnabled }).(pulumi.BoolPtrOutput)
 }

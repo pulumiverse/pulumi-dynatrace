@@ -14,25 +14,25 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public partial class ApplicationDataPrivacy : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
+        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
         /// </summary>
         [Output("dataCaptureOptIn")]
         public Output<bool?> DataCaptureOptIn { get; private set; } = null!;
 
         /// <summary>
-        /// How to handle the "Do Not Track" header:
+        /// (Field has overlap with `dynatrace.DataPrivacy`) How to handle the "Do Not Track" header:
         /// </summary>
         [Output("doNotTrackBehaviour")]
         public Output<string> DoNotTrackBehaviour { get; private set; } = null!;
 
         /// <summary>
-        /// Set to `true` to set persistent cookie in order to recognize returning devices
+        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
         /// </summary>
         [Output("persistentCookieForUserTracking")]
         public Output<bool?> PersistentCookieForUserTracking { get; private set; } = null!;
 
         /// <summary>
-        /// Data privacy settings for Session Replay
+        /// (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Data privacy settings for Session Replay
         /// </summary>
         [Output("sessionReplayDataPrivacy")]
         public Output<Outputs.ApplicationDataPrivacySessionReplayDataPrivacy> SessionReplayDataPrivacy { get; private set; } = null!;
@@ -91,25 +91,25 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public sealed class ApplicationDataPrivacyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
+        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
         /// </summary>
         [Input("dataCaptureOptIn")]
         public Input<bool>? DataCaptureOptIn { get; set; }
 
         /// <summary>
-        /// How to handle the "Do Not Track" header:
+        /// (Field has overlap with `dynatrace.DataPrivacy`) How to handle the "Do Not Track" header:
         /// </summary>
         [Input("doNotTrackBehaviour", required: true)]
         public Input<string> DoNotTrackBehaviour { get; set; } = null!;
 
         /// <summary>
-        /// Set to `true` to set persistent cookie in order to recognize returning devices
+        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
         /// </summary>
         [Input("persistentCookieForUserTracking")]
         public Input<bool>? PersistentCookieForUserTracking { get; set; }
 
         /// <summary>
-        /// Data privacy settings for Session Replay
+        /// (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Data privacy settings for Session Replay
         /// </summary>
         [Input("sessionReplayDataPrivacy", required: true)]
         public Input<Inputs.ApplicationDataPrivacySessionReplayDataPrivacyArgs> SessionReplayDataPrivacy { get; set; } = null!;
@@ -129,25 +129,25 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public sealed class ApplicationDataPrivacyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
+        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
         /// </summary>
         [Input("dataCaptureOptIn")]
         public Input<bool>? DataCaptureOptIn { get; set; }
 
         /// <summary>
-        /// How to handle the "Do Not Track" header:
+        /// (Field has overlap with `dynatrace.DataPrivacy`) How to handle the "Do Not Track" header:
         /// </summary>
         [Input("doNotTrackBehaviour")]
         public Input<string>? DoNotTrackBehaviour { get; set; }
 
         /// <summary>
-        /// Set to `true` to set persistent cookie in order to recognize returning devices
+        /// (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
         /// </summary>
         [Input("persistentCookieForUserTracking")]
         public Input<bool>? PersistentCookieForUserTracking { get; set; }
 
         /// <summary>
-        /// Data privacy settings for Session Replay
+        /// (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Data privacy settings for Session Replay
         /// </summary>
         [Input("sessionReplayDataPrivacy")]
         public Input<Inputs.ApplicationDataPrivacySessionReplayDataPrivacyGetArgs>? SessionReplayDataPrivacy { get; set; }

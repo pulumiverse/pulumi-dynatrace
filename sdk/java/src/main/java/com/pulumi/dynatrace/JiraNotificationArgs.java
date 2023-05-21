@@ -77,6 +77,21 @@ public final class JiraNotificationArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    @Import(name="legacyId")
+    private @Nullable Output<String> legacyId;
+
+    /**
+     * @return The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    public Optional<Output<String>> legacyId() {
+        return Optional.ofNullable(this.legacyId);
+    }
+
+    /**
      * The name of the notification configuration
      * 
      */
@@ -173,6 +188,7 @@ public final class JiraNotificationArgs extends com.pulumi.resources.ResourceArg
         this.apiToken = $.apiToken;
         this.description = $.description;
         this.issueType = $.issueType;
+        this.legacyId = $.legacyId;
         this.name = $.name;
         this.profile = $.profile;
         this.projectKey = $.projectKey;
@@ -281,6 +297,27 @@ public final class JiraNotificationArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder issueType(String issueType) {
             return issueType(Output.of(issueType));
+        }
+
+        /**
+         * @param legacyId The ID of these settings when referred to from resources requiring the REST API V1 keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(@Nullable Output<String> legacyId) {
+            $.legacyId = legacyId;
+            return this;
+        }
+
+        /**
+         * @param legacyId The ID of these settings when referred to from resources requiring the REST API V1 keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(String legacyId) {
+            return legacyId(Output.of(legacyId));
         }
 
         /**

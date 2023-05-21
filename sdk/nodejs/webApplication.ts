@@ -39,7 +39,7 @@ export class WebApplication extends pulumi.CustomResource {
      */
     public readonly conversionGoals!: pulumi.Output<outputs.WebApplicationConversionGoals | undefined>;
     /**
-     * Analize *X*% of user sessions
+     * (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
      */
     public readonly costControlUserSessionPercentage!: pulumi.Output<number>;
     /**
@@ -71,7 +71,7 @@ export class WebApplication extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * Real user monitoring enabled/disabled
+     * (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
      */
     public readonly realUserMonitoringEnabled!: pulumi.Output<boolean | undefined>;
     /**
@@ -206,7 +206,7 @@ export interface WebApplicationState {
      */
     conversionGoals?: pulumi.Input<inputs.WebApplicationConversionGoals>;
     /**
-     * Analize *X*% of user sessions
+     * (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
      */
     costControlUserSessionPercentage?: pulumi.Input<number>;
     /**
@@ -238,7 +238,7 @@ export interface WebApplicationState {
      */
     name?: pulumi.Input<string>;
     /**
-     * Real user monitoring enabled/disabled
+     * (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
      */
     realUserMonitoringEnabled?: pulumi.Input<boolean>;
     /**
@@ -288,7 +288,7 @@ export interface WebApplicationArgs {
      */
     conversionGoals?: pulumi.Input<inputs.WebApplicationConversionGoals>;
     /**
-     * Analize *X*% of user sessions
+     * (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
      */
     costControlUserSessionPercentage: pulumi.Input<number>;
     /**
@@ -320,7 +320,7 @@ export interface WebApplicationArgs {
      */
     name?: pulumi.Input<string>;
     /**
-     * Real user monitoring enabled/disabled
+     * (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
      */
     realUserMonitoringEnabled?: pulumi.Input<boolean>;
     /**

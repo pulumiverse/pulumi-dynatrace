@@ -4,7 +4,9 @@
 package com.pulumi.dynatrace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.dynatrace.outputs.GetAlertingProfilesValue;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Nullable;
@@ -17,6 +19,7 @@ public final class GetAlertingProfilesResult {
      */
     private String id;
     private @Nullable Map<String,String> profiles;
+    private List<GetAlertingProfilesValue> values;
 
     private GetAlertingProfilesResult() {}
     /**
@@ -28,6 +31,9 @@ public final class GetAlertingProfilesResult {
     }
     public Map<String,String> profiles() {
         return this.profiles == null ? Map.of() : this.profiles;
+    }
+    public List<GetAlertingProfilesValue> values() {
+        return this.values;
     }
 
     public static Builder builder() {
@@ -41,11 +47,13 @@ public final class GetAlertingProfilesResult {
     public static final class Builder {
         private String id;
         private @Nullable Map<String,String> profiles;
+        private List<GetAlertingProfilesValue> values;
         public Builder() {}
         public Builder(GetAlertingProfilesResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.profiles = defaults.profiles;
+    	      this.values = defaults.values;
         }
 
         @CustomType.Setter
@@ -58,10 +66,19 @@ public final class GetAlertingProfilesResult {
             this.profiles = profiles;
             return this;
         }
+        @CustomType.Setter
+        public Builder values(List<GetAlertingProfilesValue> values) {
+            this.values = Objects.requireNonNull(values);
+            return this;
+        }
+        public Builder values(GetAlertingProfilesValue... values) {
+            return values(List.of(values));
+        }
         public GetAlertingProfilesResult build() {
             final var o = new GetAlertingProfilesResult();
             o.id = id;
             o.profiles = profiles;
+            o.values = values;
             return o;
         }
     }

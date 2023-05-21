@@ -14,7 +14,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
     public sealed class ApplicationDataPrivacySessionReplayDataPrivacyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Content masking settings for Session Replay.
+        /// (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Content masking settings for Session Replay.
         /// </summary>
         [Input("contentMaskingSettings", required: true)]
         public Input<Inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsArgs> ContentMaskingSettings { get; set; } = null!;

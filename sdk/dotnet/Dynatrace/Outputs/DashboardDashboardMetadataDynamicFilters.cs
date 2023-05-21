@@ -15,6 +15,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
     public sealed class DashboardDashboardMetadataDynamicFilters
     {
         public readonly ImmutableArray<string> Filters;
+        public readonly Outputs.DashboardDashboardMetadataDynamicFiltersGenericTagFilters? GenericTagFilters;
         public readonly ImmutableArray<string> TagSuggestionTypes;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -25,11 +26,14 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         private DashboardDashboardMetadataDynamicFilters(
             ImmutableArray<string> filters,
 
+            Outputs.DashboardDashboardMetadataDynamicFiltersGenericTagFilters? genericTagFilters,
+
             ImmutableArray<string> tagSuggestionTypes,
 
             string? unknowns)
         {
             Filters = filters;
+            GenericTagFilters = genericTagFilters;
             TagSuggestionTypes = tagSuggestionTypes;
             Unknowns = unknowns;
         }

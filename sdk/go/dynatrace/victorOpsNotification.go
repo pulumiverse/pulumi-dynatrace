@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -18,6 +18,8 @@ type VictorOpsNotification struct {
 	Active pulumi.BoolOutput `pulumi:"active"`
 	// The API key for the target VictorOps account
 	ApiKey pulumi.StringPtrOutput `pulumi:"apiKey"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
 	// The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
 	Message pulumi.StringOutput `pulumi:"message"`
 	// The name of the notification configuration
@@ -48,7 +50,7 @@ func NewVictorOpsNotification(ctx *pulumi.Context,
 		return nil, errors.New("invalid value for required argument 'RoutingKey'")
 	}
 	if args.ApiKey != nil {
-		args.ApiKey = pulumi.ToSecret(args.ApiKey).(pulumi.StringPtrOutput)
+		args.ApiKey = pulumi.ToSecret(args.ApiKey).(pulumi.StringPtrInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"apiKey",
@@ -81,6 +83,8 @@ type victorOpsNotificationState struct {
 	Active *bool `pulumi:"active"`
 	// The API key for the target VictorOps account
 	ApiKey *string `pulumi:"apiKey"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
 	Message *string `pulumi:"message"`
 	// The name of the notification configuration
@@ -96,6 +100,8 @@ type VictorOpsNotificationState struct {
 	Active pulumi.BoolPtrInput
 	// The API key for the target VictorOps account
 	ApiKey pulumi.StringPtrInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
 	Message pulumi.StringPtrInput
 	// The name of the notification configuration
@@ -115,6 +121,8 @@ type victorOpsNotificationArgs struct {
 	Active bool `pulumi:"active"`
 	// The API key for the target VictorOps account
 	ApiKey *string `pulumi:"apiKey"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
 	Message string `pulumi:"message"`
 	// The name of the notification configuration
@@ -131,6 +139,8 @@ type VictorOpsNotificationArgs struct {
 	Active pulumi.BoolInput
 	// The API key for the target VictorOps account
 	ApiKey pulumi.StringPtrInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`
 	Message pulumi.StringInput
 	// The name of the notification configuration
@@ -236,6 +246,11 @@ func (o VictorOpsNotificationOutput) Active() pulumi.BoolOutput {
 // The API key for the target VictorOps account
 func (o VictorOpsNotificationOutput) ApiKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VictorOpsNotification) pulumi.StringPtrOutput { return v.ApiKey }).(pulumi.StringPtrOutput)
+}
+
+// The ID of these settings when referred to from resources requiring the REST API V1 keys
+func (o VictorOpsNotificationOutput) LegacyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *VictorOpsNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
 // The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`

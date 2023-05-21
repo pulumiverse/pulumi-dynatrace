@@ -26,7 +26,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         public Input<string>? AccountId { get; set; }
 
         /// <summary>
-        /// the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
+        /// (Read only) the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
         /// </summary>
         [Input("externalId")]
         public Input<string>? ExternalId { get; set; }
@@ -37,11 +37,21 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         [Input("iamRole")]
         public Input<string>? IamRole { get; set; }
 
+        [Input("secretKey")]
+        private Input<string>? _secretKey;
+
         /// <summary>
         /// the secret access key
         /// </summary>
-        [Input("secretKey")]
-        public Input<string>? SecretKey { get; set; }
+        public Input<string>? SecretKey
+        {
+            get => _secretKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _secretKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Any attributes that aren't yet supported by this provider

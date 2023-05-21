@@ -20,7 +20,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<Outputs.WebApplicationConversionGoals?> ConversionGoals { get; private set; } = null!;
 
         /// <summary>
-        /// Analize *X*% of user sessions
+        /// (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
         /// </summary>
         [Output("costControlUserSessionPercentage")]
         public Output<int> CostControlUserSessionPercentage { get; private set; } = null!;
@@ -68,7 +68,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Real user monitoring enabled/disabled
+        /// (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
         /// </summary>
         [Output("realUserMonitoringEnabled")]
         public Output<bool?> RealUserMonitoringEnabled { get; private set; } = null!;
@@ -181,7 +181,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<Inputs.WebApplicationConversionGoalsArgs>? ConversionGoals { get; set; }
 
         /// <summary>
-        /// Analize *X*% of user sessions
+        /// (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
         /// </summary>
         [Input("costControlUserSessionPercentage", required: true)]
         public Input<int> CostControlUserSessionPercentage { get; set; } = null!;
@@ -235,7 +235,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Real user monitoring enabled/disabled
+        /// (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
         /// </summary>
         [Input("realUserMonitoringEnabled")]
         public Input<bool>? RealUserMonitoringEnabled { get; set; }
@@ -309,7 +309,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<Inputs.WebApplicationConversionGoalsGetArgs>? ConversionGoals { get; set; }
 
         /// <summary>
-        /// Analize *X*% of user sessions
+        /// (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
         /// </summary>
         [Input("costControlUserSessionPercentage")]
         public Input<int>? CostControlUserSessionPercentage { get; set; }
@@ -363,7 +363,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Real user monitoring enabled/disabled
+        /// (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
         /// </summary>
         [Input("realUserMonitoringEnabled")]
         public Input<bool>? RealUserMonitoringEnabled { get; set; }

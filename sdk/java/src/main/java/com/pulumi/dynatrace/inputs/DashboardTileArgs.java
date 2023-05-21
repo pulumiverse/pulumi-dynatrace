@@ -38,6 +38,21 @@ public final class DashboardTileArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Auto Refresh is disabled (`true`)
+     * 
+     */
+    @Import(name="autoRefreshDisabled")
+    private @Nullable Output<Boolean> autoRefreshDisabled;
+
+    /**
+     * @return Auto Refresh is disabled (`true`)
+     * 
+     */
+    public Optional<Output<Boolean>> autoRefreshDisabled() {
+        return Optional.ofNullable(this.autoRefreshDisabled);
+    }
+
+    /**
      * the position and size of a tile
      * 
      */
@@ -318,6 +333,7 @@ public final class DashboardTileArgs extends com.pulumi.resources.ResourceArgs {
 
     private DashboardTileArgs(DashboardTileArgs $) {
         this.assignedEntities = $.assignedEntities;
+        this.autoRefreshDisabled = $.autoRefreshDisabled;
         this.bounds = $.bounds;
         this.chartVisible = $.chartVisible;
         this.configured = $.configured;
@@ -386,6 +402,27 @@ public final class DashboardTileArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder assignedEntities(String... assignedEntities) {
             return assignedEntities(List.of(assignedEntities));
+        }
+
+        /**
+         * @param autoRefreshDisabled Auto Refresh is disabled (`true`)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoRefreshDisabled(@Nullable Output<Boolean> autoRefreshDisabled) {
+            $.autoRefreshDisabled = autoRefreshDisabled;
+            return this;
+        }
+
+        /**
+         * @param autoRefreshDisabled Auto Refresh is disabled (`true`)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoRefreshDisabled(Boolean autoRefreshDisabled) {
+            return autoRefreshDisabled(Output.of(autoRefreshDisabled));
         }
 
         /**

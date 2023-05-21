@@ -32,6 +32,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<bool?> Insecure { get; private set; } = null!;
 
         /// <summary>
+        /// The ID of these settings when referred to from resources requiring the REST API V1 keys
+        /// </summary>
+        [Output("legacyId")]
+        public Output<string> LegacyId { get; private set; } = null!;
+
+        /// <summary>
         /// The name of the notification configuration
         /// </summary>
         [Output("name")]
@@ -133,6 +139,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<bool>? Insecure { get; set; }
 
         /// <summary>
+        /// The ID of these settings when referred to from resources requiring the REST API V1 keys
+        /// </summary>
+        [Input("legacyId")]
+        public Input<string>? LegacyId { get; set; }
+
+        /// <summary>
         /// The name of the notification configuration
         /// </summary>
         [Input("name")]
@@ -193,6 +205,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         [Input("insecure")]
         public Input<bool>? Insecure { get; set; }
+
+        /// <summary>
+        /// The ID of these settings when referred to from resources requiring the REST API V1 keys
+        /// </summary>
+        [Input("legacyId")]
+        public Input<string>? LegacyId { get; set; }
 
         /// <summary>
         /// The name of the notification configuration

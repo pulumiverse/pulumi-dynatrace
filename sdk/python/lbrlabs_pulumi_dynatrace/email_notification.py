@@ -21,6 +21,7 @@ class EmailNotificationArgs:
                  active: Optional[pulumi.Input[bool]] = None,
                  bccs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ccs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  notify_closed_problems: Optional[pulumi.Input[bool]] = None):
         """
@@ -32,6 +33,7 @@ class EmailNotificationArgs:
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[Sequence[pulumi.Input[str]]] bccs: The list of the email BCC-recipients
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ccs: The list of the email CC-recipients
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
         """
@@ -45,6 +47,8 @@ class EmailNotificationArgs:
             pulumi.set(__self__, "bccs", bccs)
         if ccs is not None:
             pulumi.set(__self__, "ccs", ccs)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if notify_closed_problems is not None:
@@ -135,6 +139,18 @@ class EmailNotificationArgs:
         pulumi.set(self, "ccs", value)
 
     @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -166,6 +182,7 @@ class _EmailNotificationState:
                  bccs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  body: Optional[pulumi.Input[str]] = None,
                  ccs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  notify_closed_problems: Optional[pulumi.Input[bool]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -177,6 +194,7 @@ class _EmailNotificationState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] bccs: The list of the email BCC-recipients
         :param pulumi.Input[str] body: The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ccs: The list of the email CC-recipients
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
@@ -191,6 +209,8 @@ class _EmailNotificationState:
             pulumi.set(__self__, "body", body)
         if ccs is not None:
             pulumi.set(__self__, "ccs", ccs)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if notify_closed_problems is not None:
@@ -249,6 +269,18 @@ class _EmailNotificationState:
     @ccs.setter
     def ccs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "ccs", value)
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
 
     @property
     @pulumi.getter
@@ -320,6 +352,7 @@ class EmailNotification(pulumi.CustomResource):
                  bccs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  body: Optional[pulumi.Input[str]] = None,
                  ccs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  notify_closed_problems: Optional[pulumi.Input[bool]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -334,6 +367,7 @@ class EmailNotification(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] bccs: The list of the email BCC-recipients
         :param pulumi.Input[str] body: The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ccs: The list of the email CC-recipients
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
@@ -367,6 +401,7 @@ class EmailNotification(pulumi.CustomResource):
                  bccs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  body: Optional[pulumi.Input[str]] = None,
                  ccs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  notify_closed_problems: Optional[pulumi.Input[bool]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -387,6 +422,7 @@ class EmailNotification(pulumi.CustomResource):
                 raise TypeError("Missing required property 'body'")
             __props__.__dict__["body"] = body
             __props__.__dict__["ccs"] = ccs
+            __props__.__dict__["legacy_id"] = legacy_id
             __props__.__dict__["name"] = name
             __props__.__dict__["notify_closed_problems"] = notify_closed_problems
             if profile is None and not opts.urn:
@@ -412,6 +448,7 @@ class EmailNotification(pulumi.CustomResource):
             bccs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             body: Optional[pulumi.Input[str]] = None,
             ccs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            legacy_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             notify_closed_problems: Optional[pulumi.Input[bool]] = None,
             profile: Optional[pulumi.Input[str]] = None,
@@ -428,6 +465,7 @@ class EmailNotification(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] bccs: The list of the email BCC-recipients
         :param pulumi.Input[str] body: The template of the email notification.  You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ccs: The list of the email CC-recipients
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
@@ -442,6 +480,7 @@ class EmailNotification(pulumi.CustomResource):
         __props__.__dict__["bccs"] = bccs
         __props__.__dict__["body"] = body
         __props__.__dict__["ccs"] = ccs
+        __props__.__dict__["legacy_id"] = legacy_id
         __props__.__dict__["name"] = name
         __props__.__dict__["notify_closed_problems"] = notify_closed_problems
         __props__.__dict__["profile"] = profile
@@ -480,6 +519,14 @@ class EmailNotification(pulumi.CustomResource):
         The list of the email CC-recipients
         """
         return pulumi.get(self, "ccs")
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> pulumi.Output[str]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
 
     @property
     @pulumi.getter

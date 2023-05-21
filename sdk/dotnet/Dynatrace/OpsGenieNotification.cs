@@ -32,6 +32,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<string> Domain { get; private set; } = null!;
 
         /// <summary>
+        /// The ID of these settings when referred to from resources requiring the REST API V1 keys
+        /// </summary>
+        [Output("legacyId")]
+        public Output<string> LegacyId { get; private set; } = null!;
+
+        /// <summary>
         /// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
         /// </summary>
         [Output("message")]
@@ -129,6 +135,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<string> Domain { get; set; } = null!;
 
         /// <summary>
+        /// The ID of these settings when referred to from resources requiring the REST API V1 keys
+        /// </summary>
+        [Input("legacyId")]
+        public Input<string>? LegacyId { get; set; }
+
+        /// <summary>
         /// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
         /// </summary>
         [Input("message", required: true)]
@@ -181,6 +193,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
+
+        /// <summary>
+        /// The ID of these settings when referred to from resources requiring the REST API V1 keys
+        /// </summary>
+        [Input("legacyId")]
+        public Input<string>? LegacyId { get; set; }
 
         /// <summary>
         /// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem

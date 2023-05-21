@@ -22,7 +22,7 @@ public class OpsGenieNotification extends com.pulumi.resources.CustomResource {
      * The configuration is enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="active", type=Boolean.class, parameters={})
+    @Export(name="active", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> active;
 
     /**
@@ -36,7 +36,7 @@ public class OpsGenieNotification extends com.pulumi.resources.CustomResource {
      * The API key to access OpsGenie
      * 
      */
-    @Export(name="apiKey", type=String.class, parameters={})
+    @Export(name="apiKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> apiKey;
 
     /**
@@ -50,7 +50,7 @@ public class OpsGenieNotification extends com.pulumi.resources.CustomResource {
      * The region domain of the OpsGenie
      * 
      */
-    @Export(name="domain", type=String.class, parameters={})
+    @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
@@ -61,10 +61,24 @@ public class OpsGenieNotification extends com.pulumi.resources.CustomResource {
         return this.domain;
     }
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    @Export(name="legacyId", refs={String.class}, tree="[0]")
+    private Output<String> legacyId;
+
+    /**
+     * @return The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    public Output<String> legacyId() {
+        return this.legacyId;
+    }
+    /**
      * The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
      * 
      */
-    @Export(name="message", type=String.class, parameters={})
+    @Export(name="message", refs={String.class}, tree="[0]")
     private Output<String> message;
 
     /**
@@ -78,7 +92,7 @@ public class OpsGenieNotification extends com.pulumi.resources.CustomResource {
      * The name of the notification configuration
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -92,7 +106,7 @@ public class OpsGenieNotification extends com.pulumi.resources.CustomResource {
      * The ID of the associated alerting profile
      * 
      */
-    @Export(name="profile", type=String.class, parameters={})
+    @Export(name="profile", refs={String.class}, tree="[0]")
     private Output<String> profile;
 
     /**

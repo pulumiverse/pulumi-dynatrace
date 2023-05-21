@@ -77,6 +77,21 @@ public final class ServiceNowNotificationArgs extends com.pulumi.resources.Resou
     }
 
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    @Import(name="legacyId")
+    private @Nullable Output<String> legacyId;
+
+    /**
+     * @return The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    public Optional<Output<String>> legacyId() {
+        return Optional.ofNullable(this.legacyId);
+    }
+
+    /**
      * The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      * 
      */
@@ -173,6 +188,7 @@ public final class ServiceNowNotificationArgs extends com.pulumi.resources.Resou
         this.events = $.events;
         this.incidents = $.incidents;
         this.instance = $.instance;
+        this.legacyId = $.legacyId;
         this.message = $.message;
         this.name = $.name;
         this.password = $.password;
@@ -281,6 +297,27 @@ public final class ServiceNowNotificationArgs extends com.pulumi.resources.Resou
          */
         public Builder instance(String instance) {
             return instance(Output.of(instance));
+        }
+
+        /**
+         * @param legacyId The ID of these settings when referred to from resources requiring the REST API V1 keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(@Nullable Output<String> legacyId) {
+            $.legacyId = legacyId;
+            return this;
+        }
+
+        /**
+         * @param legacyId The ID of these settings when referred to from resources requiring the REST API V1 keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(String legacyId) {
+            return legacyId(Output.of(legacyId));
         }
 
         /**

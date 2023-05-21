@@ -7,6 +7,7 @@ import (
 	"context"
 	"reflect"
 
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -14,16 +15,19 @@ type NetworkZones struct {
 	pulumi.CustomResourceState
 
 	// Network Zones are enabled (`true`) or disabled (`false`)
-	Enabled pulumi.BoolPtrOutput `pulumi:"enabled"`
+	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 }
 
 // NewNetworkZones registers a new resource with the given unique name, arguments, and options.
 func NewNetworkZones(ctx *pulumi.Context,
 	name string, args *NetworkZonesArgs, opts ...pulumi.ResourceOption) (*NetworkZones, error) {
 	if args == nil {
-		args = &NetworkZonesArgs{}
+		return nil, errors.New("missing one or more required arguments")
 	}
 
+	if args.Enabled == nil {
+		return nil, errors.New("invalid value for required argument 'Enabled'")
+	}
 	opts = pkgResourceDefaultOpts(opts)
 	var resource NetworkZones
 	err := ctx.RegisterResource("dynatrace:index/networkZones:NetworkZones", name, args, &resource, opts...)
@@ -62,13 +66,13 @@ func (NetworkZonesState) ElementType() reflect.Type {
 
 type networkZonesArgs struct {
 	// Network Zones are enabled (`true`) or disabled (`false`)
-	Enabled *bool `pulumi:"enabled"`
+	Enabled bool `pulumi:"enabled"`
 }
 
 // The set of arguments for constructing a NetworkZones resource.
 type NetworkZonesArgs struct {
 	// Network Zones are enabled (`true`) or disabled (`false`)
-	Enabled pulumi.BoolPtrInput
+	Enabled pulumi.BoolInput
 }
 
 func (NetworkZonesArgs) ElementType() reflect.Type {
@@ -159,8 +163,8 @@ func (o NetworkZonesOutput) ToNetworkZonesOutputWithContext(ctx context.Context)
 }
 
 // Network Zones are enabled (`true`) or disabled (`false`)
-func (o NetworkZonesOutput) Enabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *NetworkZones) pulumi.BoolPtrOutput { return v.Enabled }).(pulumi.BoolPtrOutput)
+func (o NetworkZonesOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *NetworkZones) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
 type NetworkZonesArrayOutput struct{ *pulumi.OutputState }

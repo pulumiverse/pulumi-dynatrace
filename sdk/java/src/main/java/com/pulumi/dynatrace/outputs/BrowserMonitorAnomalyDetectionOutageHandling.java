@@ -4,6 +4,7 @@
 package com.pulumi.dynatrace.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.dynatrace.outputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy;
 import com.pulumi.dynatrace.outputs.BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy;
 import java.lang.Boolean;
 import java.util.List;
@@ -14,6 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BrowserMonitorAnomalyDetectionOutageHandling {
     private @Nullable Boolean globalOutage;
+    private @Nullable List<BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy> globalOutagePolicies;
     private @Nullable Boolean localOutage;
     private @Nullable List<BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy> localOutagePolicies;
     private @Nullable Boolean retryOnError;
@@ -21,6 +23,9 @@ public final class BrowserMonitorAnomalyDetectionOutageHandling {
     private BrowserMonitorAnomalyDetectionOutageHandling() {}
     public Optional<Boolean> globalOutage() {
         return Optional.ofNullable(this.globalOutage);
+    }
+    public List<BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy> globalOutagePolicies() {
+        return this.globalOutagePolicies == null ? List.of() : this.globalOutagePolicies;
     }
     public Optional<Boolean> localOutage() {
         return Optional.ofNullable(this.localOutage);
@@ -42,6 +47,7 @@ public final class BrowserMonitorAnomalyDetectionOutageHandling {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean globalOutage;
+        private @Nullable List<BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy> globalOutagePolicies;
         private @Nullable Boolean localOutage;
         private @Nullable List<BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy> localOutagePolicies;
         private @Nullable Boolean retryOnError;
@@ -49,6 +55,7 @@ public final class BrowserMonitorAnomalyDetectionOutageHandling {
         public Builder(BrowserMonitorAnomalyDetectionOutageHandling defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.globalOutage = defaults.globalOutage;
+    	      this.globalOutagePolicies = defaults.globalOutagePolicies;
     	      this.localOutage = defaults.localOutage;
     	      this.localOutagePolicies = defaults.localOutagePolicies;
     	      this.retryOnError = defaults.retryOnError;
@@ -58,6 +65,14 @@ public final class BrowserMonitorAnomalyDetectionOutageHandling {
         public Builder globalOutage(@Nullable Boolean globalOutage) {
             this.globalOutage = globalOutage;
             return this;
+        }
+        @CustomType.Setter
+        public Builder globalOutagePolicies(@Nullable List<BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy> globalOutagePolicies) {
+            this.globalOutagePolicies = globalOutagePolicies;
+            return this;
+        }
+        public Builder globalOutagePolicies(BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy... globalOutagePolicies) {
+            return globalOutagePolicies(List.of(globalOutagePolicies));
         }
         @CustomType.Setter
         public Builder localOutage(@Nullable Boolean localOutage) {
@@ -80,6 +95,7 @@ public final class BrowserMonitorAnomalyDetectionOutageHandling {
         public BrowserMonitorAnomalyDetectionOutageHandling build() {
             final var o = new BrowserMonitorAnomalyDetectionOutageHandling();
             o.globalOutage = globalOutage;
+            o.globalOutagePolicies = globalOutagePolicies;
             o.localOutage = localOutage;
             o.localOutagePolicies = localOutagePolicies;
             o.retryOnError = retryOnError;

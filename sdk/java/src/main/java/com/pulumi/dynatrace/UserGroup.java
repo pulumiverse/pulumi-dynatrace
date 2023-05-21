@@ -31,7 +31,7 @@ public class UserGroup extends com.pulumi.resources.CustomResource {
      * If `true`, then the group has the access account rights
      * 
      */
-    @Export(name="accessAccount", type=Boolean.class, parameters={})
+    @Export(name="accessAccount", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> accessAccount;
 
     /**
@@ -45,7 +45,7 @@ public class UserGroup extends com.pulumi.resources.CustomResource {
      * If `true`, then the group has the cluster administrator rights
      * 
      */
-    @Export(name="clusterAdmin", type=Boolean.class, parameters={})
+    @Export(name="clusterAdmin", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> clusterAdmin;
 
     /**
@@ -59,7 +59,7 @@ public class UserGroup extends com.pulumi.resources.CustomResource {
      * LDAP group names
      * 
      */
-    @Export(name="ldapGroups", type=List.class, parameters={String.class})
+    @Export(name="ldapGroups", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> ldapGroups;
 
     /**
@@ -73,7 +73,7 @@ public class UserGroup extends com.pulumi.resources.CustomResource {
      * If `true`, then the group has the manage account rights
      * 
      */
-    @Export(name="manageAccount", type=Boolean.class, parameters={})
+    @Export(name="manageAccount", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> manageAccount;
 
     /**
@@ -87,7 +87,7 @@ public class UserGroup extends com.pulumi.resources.CustomResource {
      * The name of the user group
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -101,7 +101,7 @@ public class UserGroup extends com.pulumi.resources.CustomResource {
      * Permissions for environments
      * 
      */
-    @Export(name="permissions", type=UserGroupPermissions.class, parameters={})
+    @Export(name="permissions", refs={UserGroupPermissions.class}, tree="[0]")
     private Output</* @Nullable */ UserGroupPermissions> permissions;
 
     /**
@@ -115,7 +115,7 @@ public class UserGroup extends com.pulumi.resources.CustomResource {
      * SSO group names. If defined it&#39;s used to map SSO group name to Dynatrace group name, otherwise mapping is done by group name
      * 
      */
-    @Export(name="ssoGroups", type=List.class, parameters={String.class})
+    @Export(name="ssoGroups", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> ssoGroups;
 
     /**

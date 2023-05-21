@@ -14,18 +14,38 @@ import com.pulumi.dynatrace.inputs.GetAlertingProfilesArgs;
 import com.pulumi.dynatrace.inputs.GetAlertingProfilesPlainArgs;
 import com.pulumi.dynatrace.inputs.GetApplicationArgs;
 import com.pulumi.dynatrace.inputs.GetApplicationPlainArgs;
+import com.pulumi.dynatrace.inputs.GetCalculatedServiceMetricArgs;
+import com.pulumi.dynatrace.inputs.GetCalculatedServiceMetricPlainArgs;
 import com.pulumi.dynatrace.inputs.GetCredentialsArgs;
 import com.pulumi.dynatrace.inputs.GetCredentialsPlainArgs;
+import com.pulumi.dynatrace.inputs.GetDashboardArgs;
+import com.pulumi.dynatrace.inputs.GetDashboardPlainArgs;
+import com.pulumi.dynatrace.inputs.GetEntitiesArgs;
+import com.pulumi.dynatrace.inputs.GetEntitiesPlainArgs;
+import com.pulumi.dynatrace.inputs.GetEntityArgs;
+import com.pulumi.dynatrace.inputs.GetEntityPlainArgs;
 import com.pulumi.dynatrace.inputs.GetHostArgs;
 import com.pulumi.dynatrace.inputs.GetHostPlainArgs;
+import com.pulumi.dynatrace.inputs.GetIamGroupArgs;
+import com.pulumi.dynatrace.inputs.GetIamGroupPlainArgs;
+import com.pulumi.dynatrace.inputs.GetIamUserArgs;
+import com.pulumi.dynatrace.inputs.GetIamUserPlainArgs;
 import com.pulumi.dynatrace.inputs.GetManagementZoneArgs;
 import com.pulumi.dynatrace.inputs.GetManagementZonePlainArgs;
+import com.pulumi.dynatrace.inputs.GetMobileApplicationArgs;
+import com.pulumi.dynatrace.inputs.GetMobileApplicationPlainArgs;
 import com.pulumi.dynatrace.inputs.GetProcessArgs;
 import com.pulumi.dynatrace.inputs.GetProcessGroupArgs;
 import com.pulumi.dynatrace.inputs.GetProcessGroupPlainArgs;
 import com.pulumi.dynatrace.inputs.GetProcessPlainArgs;
+import com.pulumi.dynatrace.inputs.GetRequestAttributeArgs;
+import com.pulumi.dynatrace.inputs.GetRequestAttributePlainArgs;
+import com.pulumi.dynatrace.inputs.GetRequestNamingArgs;
+import com.pulumi.dynatrace.inputs.GetRequestNamingPlainArgs;
 import com.pulumi.dynatrace.inputs.GetServiceArgs;
 import com.pulumi.dynatrace.inputs.GetServicePlainArgs;
+import com.pulumi.dynatrace.inputs.GetSloArgs;
+import com.pulumi.dynatrace.inputs.GetSloPlainArgs;
 import com.pulumi.dynatrace.inputs.GetSyntheticLocationArgs;
 import com.pulumi.dynatrace.inputs.GetSyntheticLocationPlainArgs;
 import com.pulumi.dynatrace.inputs.GetSyntheticLocationsArgs;
@@ -34,12 +54,23 @@ import com.pulumi.dynatrace.outputs.GetAlertingProfileResult;
 import com.pulumi.dynatrace.outputs.GetAlertingProfilesResult;
 import com.pulumi.dynatrace.outputs.GetApplicationResult;
 import com.pulumi.dynatrace.outputs.GetAwsIamExternalResult;
+import com.pulumi.dynatrace.outputs.GetCalculatedServiceMetricResult;
 import com.pulumi.dynatrace.outputs.GetCredentialsResult;
+import com.pulumi.dynatrace.outputs.GetDashboardResult;
+import com.pulumi.dynatrace.outputs.GetEntitiesResult;
+import com.pulumi.dynatrace.outputs.GetEntityResult;
 import com.pulumi.dynatrace.outputs.GetHostResult;
+import com.pulumi.dynatrace.outputs.GetIamGroupResult;
+import com.pulumi.dynatrace.outputs.GetIamUserResult;
 import com.pulumi.dynatrace.outputs.GetManagementZoneResult;
+import com.pulumi.dynatrace.outputs.GetManagementZonesResult;
+import com.pulumi.dynatrace.outputs.GetMobileApplicationResult;
 import com.pulumi.dynatrace.outputs.GetProcessGroupResult;
 import com.pulumi.dynatrace.outputs.GetProcessResult;
+import com.pulumi.dynatrace.outputs.GetRequestAttributeResult;
+import com.pulumi.dynatrace.outputs.GetRequestNamingResult;
 import com.pulumi.dynatrace.outputs.GetServiceResult;
+import com.pulumi.dynatrace.outputs.GetSloResult;
 import com.pulumi.dynatrace.outputs.GetSyntheticLocationResult;
 import com.pulumi.dynatrace.outputs.GetSyntheticLocationsResult;
 import com.pulumi.resources.InvokeArgs;
@@ -295,6 +326,7 @@ public final class DynatraceFunctions {
      * - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -350,6 +382,7 @@ public final class DynatraceFunctions {
      * - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -405,6 +438,7 @@ public final class DynatraceFunctions {
      * - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -460,6 +494,7 @@ public final class DynatraceFunctions {
      * - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -550,8 +585,20 @@ public final class DynatraceFunctions {
     public static CompletableFuture<GetAwsIamExternalResult> getAwsIamExternalPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getAwsIamExternal:getAwsIamExternal", TypeShape.of(GetAwsIamExternalResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetCalculatedServiceMetricResult> getCalculatedServiceMetric(GetCalculatedServiceMetricArgs args) {
+        return getCalculatedServiceMetric(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetCalculatedServiceMetricResult> getCalculatedServiceMetricPlain(GetCalculatedServiceMetricPlainArgs args) {
+        return getCalculatedServiceMetricPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetCalculatedServiceMetricResult> getCalculatedServiceMetric(GetCalculatedServiceMetricArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("dynatrace:index/getCalculatedServiceMetric:getCalculatedServiceMetric", TypeShape.of(GetCalculatedServiceMetricResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetCalculatedServiceMetricResult> getCalculatedServiceMetricPlain(GetCalculatedServiceMetricPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("dynatrace:index/getCalculatedServiceMetric:getCalculatedServiceMetric", TypeShape.of(GetCalculatedServiceMetricResult.class), args, Utilities.withVersion(options));
+    }
     /**
-     * The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+     * The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
      * 
      * ## Example Usage
      * ```java
@@ -630,7 +677,7 @@ public final class DynatraceFunctions {
         return getCredentials(GetCredentialsArgs.Empty, InvokeOptions.Empty);
     }
     /**
-     * The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+     * The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
      * 
      * ## Example Usage
      * ```java
@@ -709,7 +756,7 @@ public final class DynatraceFunctions {
         return getCredentialsPlain(GetCredentialsPlainArgs.Empty, InvokeOptions.Empty);
     }
     /**
-     * The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+     * The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
      * 
      * ## Example Usage
      * ```java
@@ -788,7 +835,7 @@ public final class DynatraceFunctions {
         return getCredentials(args, InvokeOptions.Empty);
     }
     /**
-     * The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+     * The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
      * 
      * ## Example Usage
      * ```java
@@ -867,7 +914,7 @@ public final class DynatraceFunctions {
         return getCredentialsPlain(args, InvokeOptions.Empty);
     }
     /**
-     * The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+     * The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
      * 
      * ## Example Usage
      * ```java
@@ -946,7 +993,7 @@ public final class DynatraceFunctions {
         return Deployment.getInstance().invoke("dynatrace:index/getCredentials:getCredentials", TypeShape.of(GetCredentialsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+     * The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
      * 
      * ## Example Usage
      * ```java
@@ -1023,6 +1070,518 @@ public final class DynatraceFunctions {
      */
     public static CompletableFuture<GetCredentialsResult> getCredentialsPlain(GetCredentialsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getCredentials:getCredentials", TypeShape.of(GetCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * The `dynatrace.Dashboard` data source allows the dashboard ID to be retrieved by its name and owner.
+     * 
+     * - `name` (String) - The name of the dashboard
+     * - `owner` (String) - The owner of the dashboard
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetDashboardArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getDashboard(GetDashboardArgs.builder()
+     *             .name(&#34;Terraform&#34;)
+     *             .owner(&#34;Hashicorp&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getDashboardResult -&gt; getDashboardResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDashboardResult> getDashboard(GetDashboardArgs args) {
+        return getDashboard(args, InvokeOptions.Empty);
+    }
+    /**
+     * The `dynatrace.Dashboard` data source allows the dashboard ID to be retrieved by its name and owner.
+     * 
+     * - `name` (String) - The name of the dashboard
+     * - `owner` (String) - The owner of the dashboard
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetDashboardArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getDashboard(GetDashboardArgs.builder()
+     *             .name(&#34;Terraform&#34;)
+     *             .owner(&#34;Hashicorp&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getDashboardResult -&gt; getDashboardResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDashboardResult> getDashboardPlain(GetDashboardPlainArgs args) {
+        return getDashboardPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * The `dynatrace.Dashboard` data source allows the dashboard ID to be retrieved by its name and owner.
+     * 
+     * - `name` (String) - The name of the dashboard
+     * - `owner` (String) - The owner of the dashboard
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetDashboardArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getDashboard(GetDashboardArgs.builder()
+     *             .name(&#34;Terraform&#34;)
+     *             .owner(&#34;Hashicorp&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getDashboardResult -&gt; getDashboardResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDashboardResult> getDashboard(GetDashboardArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("dynatrace:index/getDashboard:getDashboard", TypeShape.of(GetDashboardResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * The `dynatrace.Dashboard` data source allows the dashboard ID to be retrieved by its name and owner.
+     * 
+     * - `name` (String) - The name of the dashboard
+     * - `owner` (String) - The owner of the dashboard
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetDashboardArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getDashboard(GetDashboardArgs.builder()
+     *             .name(&#34;Terraform&#34;)
+     *             .owner(&#34;Hashicorp&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getDashboardResult -&gt; getDashboardResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDashboardResult> getDashboardPlain(GetDashboardPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("dynatrace:index/getDashboard:getDashboard", TypeShape.of(GetDashboardResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * The entities data source allows all entities to be retrieved by its type.
+     * 
+     * - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getEntities(GetEntitiesArgs.builder()
+     *             .type(&#34;SERVICE&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;serviceList&#34;, test.applyValue(getEntitiesResult -&gt; getEntitiesResult.entities()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetEntitiesResult> getEntities(GetEntitiesArgs args) {
+        return getEntities(args, InvokeOptions.Empty);
+    }
+    /**
+     * The entities data source allows all entities to be retrieved by its type.
+     * 
+     * - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getEntities(GetEntitiesArgs.builder()
+     *             .type(&#34;SERVICE&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;serviceList&#34;, test.applyValue(getEntitiesResult -&gt; getEntitiesResult.entities()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetEntitiesResult> getEntitiesPlain(GetEntitiesPlainArgs args) {
+        return getEntitiesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * The entities data source allows all entities to be retrieved by its type.
+     * 
+     * - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getEntities(GetEntitiesArgs.builder()
+     *             .type(&#34;SERVICE&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;serviceList&#34;, test.applyValue(getEntitiesResult -&gt; getEntitiesResult.entities()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetEntitiesResult> getEntities(GetEntitiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("dynatrace:index/getEntities:getEntities", TypeShape.of(GetEntitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * The entities data source allows all entities to be retrieved by its type.
+     * 
+     * - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetEntitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getEntities(GetEntitiesArgs.builder()
+     *             .type(&#34;SERVICE&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;serviceList&#34;, test.applyValue(getEntitiesResult -&gt; getEntitiesResult.entities()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetEntitiesResult> getEntitiesPlain(GetEntitiesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("dynatrace:index/getEntities:getEntities", TypeShape.of(GetEntitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * The entity data source allows the entity ID to be retrieved by its name and type.
+     * 
+     * - `name` (String) Display name of the entity
+     * - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getEntity(GetEntityArgs.builder()
+     *             .type(&#34;SERVICE&#34;)
+     *             .name(&#34;BookingService&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, test.applyValue(getEntityResult -&gt; getEntityResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetEntityResult> getEntity(GetEntityArgs args) {
+        return getEntity(args, InvokeOptions.Empty);
+    }
+    /**
+     * The entity data source allows the entity ID to be retrieved by its name and type.
+     * 
+     * - `name` (String) Display name of the entity
+     * - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getEntity(GetEntityArgs.builder()
+     *             .type(&#34;SERVICE&#34;)
+     *             .name(&#34;BookingService&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, test.applyValue(getEntityResult -&gt; getEntityResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetEntityResult> getEntityPlain(GetEntityPlainArgs args) {
+        return getEntityPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * The entity data source allows the entity ID to be retrieved by its name and type.
+     * 
+     * - `name` (String) Display name of the entity
+     * - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getEntity(GetEntityArgs.builder()
+     *             .type(&#34;SERVICE&#34;)
+     *             .name(&#34;BookingService&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, test.applyValue(getEntityResult -&gt; getEntityResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetEntityResult> getEntity(GetEntityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("dynatrace:index/getEntity:getEntity", TypeShape.of(GetEntityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * The entity data source allows the entity ID to be retrieved by its name and type.
+     * 
+     * - `name` (String) Display name of the entity
+     * - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetEntityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = DynatraceFunctions.getEntity(GetEntityArgs.builder()
+     *             .type(&#34;SERVICE&#34;)
+     *             .name(&#34;BookingService&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, test.applyValue(getEntityResult -&gt; getEntityResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetEntityResult> getEntityPlain(GetEntityPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("dynatrace:index/getEntity:getEntity", TypeShape.of(GetEntityResult.class), args, Utilities.withVersion(options));
     }
     /**
      * The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
@@ -1243,6 +1802,170 @@ public final class DynatraceFunctions {
      */
     public static CompletableFuture<GetHostResult> getHostPlain(GetHostPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getHost:getHost", TypeShape.of(GetHostResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetIamGroupResult> getIamGroup(GetIamGroupArgs args) {
+        return getIamGroup(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetIamGroupResult> getIamGroupPlain(GetIamGroupPlainArgs args) {
+        return getIamGroupPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetIamGroupResult> getIamGroup(GetIamGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("dynatrace:index/getIamGroup:getIamGroup", TypeShape.of(GetIamGroupResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetIamGroupResult> getIamGroupPlain(GetIamGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("dynatrace:index/getIamGroup:getIamGroup", TypeShape.of(GetIamGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source allows you to specify the email address of the user and produces an ordered list of group IDs this user is a member of
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetIamUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var userA = DynatraceFunctions.getIamUser(GetIamUserArgs.builder()
+     *             .email(&#34;me@home.com&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;groups&#34;, userA.applyValue(getIamUserResult -&gt; getIamUserResult.groups()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetIamUserResult> getIamUser(GetIamUserArgs args) {
+        return getIamUser(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source allows you to specify the email address of the user and produces an ordered list of group IDs this user is a member of
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetIamUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var userA = DynatraceFunctions.getIamUser(GetIamUserArgs.builder()
+     *             .email(&#34;me@home.com&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;groups&#34;, userA.applyValue(getIamUserResult -&gt; getIamUserResult.groups()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetIamUserResult> getIamUserPlain(GetIamUserPlainArgs args) {
+        return getIamUserPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source allows you to specify the email address of the user and produces an ordered list of group IDs this user is a member of
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetIamUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var userA = DynatraceFunctions.getIamUser(GetIamUserArgs.builder()
+     *             .email(&#34;me@home.com&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;groups&#34;, userA.applyValue(getIamUserResult -&gt; getIamUserResult.groups()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetIamUserResult> getIamUser(GetIamUserArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("dynatrace:index/getIamUser:getIamUser", TypeShape.of(GetIamUserResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source allows you to specify the email address of the user and produces an ordered list of group IDs this user is a member of
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetIamUserArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var userA = DynatraceFunctions.getIamUser(GetIamUserArgs.builder()
+     *             .email(&#34;me@home.com&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;groups&#34;, userA.applyValue(getIamUserResult -&gt; getIamUserResult.groups()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetIamUserResult> getIamUserPlain(GetIamUserPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("dynatrace:index/getIamUser:getIamUser", TypeShape.of(GetIamUserResult.class), args, Utilities.withVersion(options));
     }
     /**
      * The management zone data source allows the management zone ID to be retrieved by its name.
@@ -1515,6 +2238,184 @@ public final class DynatraceFunctions {
      */
     public static CompletableFuture<GetManagementZoneResult> getManagementZonePlain(GetManagementZonePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getManagementZone:getManagementZone", TypeShape.of(GetManagementZoneResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetManagementZonesResult> getManagementZones() {
+        return getManagementZones(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetManagementZonesResult> getManagementZonesPlain() {
+        return getManagementZonesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetManagementZonesResult> getManagementZones(InvokeArgs args) {
+        return getManagementZones(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetManagementZonesResult> getManagementZonesPlain(InvokeArgs args) {
+        return getManagementZonesPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetManagementZonesResult> getManagementZones(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("dynatrace:index/getManagementZones:getManagementZones", TypeShape.of(GetManagementZonesResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetManagementZonesResult> getManagementZonesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("dynatrace:index/getManagementZones:getManagementZones", TypeShape.of(GetManagementZonesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * The `dynatrace.MobileApplication` data source allows the mobile application ID to be retrieved by its name.
+     * 
+     * - `name` (String) - The name of the dashboard
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetMobileApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getMobileApplication(GetMobileApplicationArgs.builder()
+     *             .name(&#34;Terraform&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getMobileApplicationResult -&gt; getMobileApplicationResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMobileApplicationResult> getMobileApplication(GetMobileApplicationArgs args) {
+        return getMobileApplication(args, InvokeOptions.Empty);
+    }
+    /**
+     * The `dynatrace.MobileApplication` data source allows the mobile application ID to be retrieved by its name.
+     * 
+     * - `name` (String) - The name of the dashboard
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetMobileApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getMobileApplication(GetMobileApplicationArgs.builder()
+     *             .name(&#34;Terraform&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getMobileApplicationResult -&gt; getMobileApplicationResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMobileApplicationResult> getMobileApplicationPlain(GetMobileApplicationPlainArgs args) {
+        return getMobileApplicationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * The `dynatrace.MobileApplication` data source allows the mobile application ID to be retrieved by its name.
+     * 
+     * - `name` (String) - The name of the dashboard
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetMobileApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getMobileApplication(GetMobileApplicationArgs.builder()
+     *             .name(&#34;Terraform&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getMobileApplicationResult -&gt; getMobileApplicationResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetMobileApplicationResult> getMobileApplication(GetMobileApplicationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("dynatrace:index/getMobileApplication:getMobileApplication", TypeShape.of(GetMobileApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * The `dynatrace.MobileApplication` data source allows the mobile application ID to be retrieved by its name.
+     * 
+     * - `name` (String) - The name of the dashboard
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetMobileApplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getMobileApplication(GetMobileApplicationArgs.builder()
+     *             .name(&#34;Terraform&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getMobileApplicationResult -&gt; getMobileApplicationResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetMobileApplicationResult> getMobileApplicationPlain(GetMobileApplicationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("dynatrace:index/getMobileApplication:getMobileApplication", TypeShape.of(GetMobileApplicationResult.class), args, Utilities.withVersion(options));
     }
     /**
      * The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
@@ -1956,6 +2857,186 @@ public final class DynatraceFunctions {
     public static CompletableFuture<GetProcessGroupResult> getProcessGroupPlain(GetProcessGroupPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getProcessGroup:getProcessGroup", TypeShape.of(GetProcessGroupResult.class), args, Utilities.withVersion(options));
     }
+    public static Output<GetRequestAttributeResult> getRequestAttribute(GetRequestAttributeArgs args) {
+        return getRequestAttribute(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetRequestAttributeResult> getRequestAttributePlain(GetRequestAttributePlainArgs args) {
+        return getRequestAttributePlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetRequestAttributeResult> getRequestAttribute(GetRequestAttributeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("dynatrace:index/getRequestAttribute:getRequestAttribute", TypeShape.of(GetRequestAttributeResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetRequestAttributeResult> getRequestAttributePlain(GetRequestAttributePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("dynatrace:index/getRequestAttribute:getRequestAttribute", TypeShape.of(GetRequestAttributeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * The `dynatrace.RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
+     * 
+     * - `name` (String) - The name to be assigned to matching requests.
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetRequestNamingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getRequestNaming(GetRequestNamingArgs.builder()
+     *             .name(&#34;Terraform Example&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getRequestNamingResult -&gt; getRequestNamingResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRequestNamingResult> getRequestNaming(GetRequestNamingArgs args) {
+        return getRequestNaming(args, InvokeOptions.Empty);
+    }
+    /**
+     * The `dynatrace.RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
+     * 
+     * - `name` (String) - The name to be assigned to matching requests.
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetRequestNamingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getRequestNaming(GetRequestNamingArgs.builder()
+     *             .name(&#34;Terraform Example&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getRequestNamingResult -&gt; getRequestNamingResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRequestNamingResult> getRequestNamingPlain(GetRequestNamingPlainArgs args) {
+        return getRequestNamingPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * The `dynatrace.RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
+     * 
+     * - `name` (String) - The name to be assigned to matching requests.
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetRequestNamingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getRequestNaming(GetRequestNamingArgs.builder()
+     *             .name(&#34;Terraform Example&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getRequestNamingResult -&gt; getRequestNamingResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRequestNamingResult> getRequestNaming(GetRequestNamingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("dynatrace:index/getRequestNaming:getRequestNaming", TypeShape.of(GetRequestNamingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * The `dynatrace.RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
+     * 
+     * - `name` (String) - The name to be assigned to matching requests.
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetRequestNamingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getRequestNaming(GetRequestNamingArgs.builder()
+     *             .name(&#34;Terraform Example&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getRequestNamingResult -&gt; getRequestNamingResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRequestNamingResult> getRequestNamingPlain(GetRequestNamingPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("dynatrace:index/getRequestNaming:getRequestNaming", TypeShape.of(GetRequestNamingResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
      * 
@@ -2161,9 +3242,178 @@ public final class DynatraceFunctions {
         return Deployment.getInstance().invokeAsync("dynatrace:index/getService:getService", TypeShape.of(GetServiceResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * The `dynatrace.Slo` data source allows the SLO ID to be retrieved by its name.
+     * 
+     * - `name` (String) - The name of the SLO
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetSloArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getSlo(GetSloArgs.builder()
+     *             .name(&#34;Terraform&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getSloResult -&gt; getSloResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSloResult> getSlo(GetSloArgs args) {
+        return getSlo(args, InvokeOptions.Empty);
+    }
+    /**
+     * The `dynatrace.Slo` data source allows the SLO ID to be retrieved by its name.
+     * 
+     * - `name` (String) - The name of the SLO
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetSloArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getSlo(GetSloArgs.builder()
+     *             .name(&#34;Terraform&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getSloResult -&gt; getSloResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSloResult> getSloPlain(GetSloPlainArgs args) {
+        return getSloPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * The `dynatrace.Slo` data source allows the SLO ID to be retrieved by its name.
+     * 
+     * - `name` (String) - The name of the SLO
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetSloArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getSlo(GetSloArgs.builder()
+     *             .name(&#34;Terraform&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getSloResult -&gt; getSloResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSloResult> getSlo(GetSloArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("dynatrace:index/getSlo:getSlo", TypeShape.of(GetSloResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * The `dynatrace.Slo` data source allows the SLO ID to be retrieved by its name.
+     * 
+     * - `name` (String) - The name of the SLO
+     * 
+     * If multiple services match the given criteria, the first result will be retrieved.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.dynatrace.DynatraceFunctions;
+     * import com.pulumi.dynatrace.inputs.GetSloArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var example = DynatraceFunctions.getSlo(GetSloArgs.builder()
+     *             .name(&#34;Terraform&#34;)
+     *             .build());
+     * 
+     *         ctx.export(&#34;id&#34;, example.applyValue(getSloResult -&gt; getSloResult.id()));
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSloResult> getSloPlain(GetSloPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("dynatrace:index/getSlo:getSlo", TypeShape.of(GetSloResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -2237,6 +3487,7 @@ public final class DynatraceFunctions {
      * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -2310,6 +3561,7 @@ public final class DynatraceFunctions {
      * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -2383,6 +3635,7 @@ public final class DynatraceFunctions {
      * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -2456,6 +3709,7 @@ public final class DynatraceFunctions {
      * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -2529,6 +3783,7 @@ public final class DynatraceFunctions {
      * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 

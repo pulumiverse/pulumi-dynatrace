@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.dynatrace.inputs.RequestNamingConditionsConditionComparisonArgs;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class RequestNamingConditionsConditionArgs extends com.pulumi.resources.ResourceArgs {
@@ -28,11 +30,19 @@ public final class RequestNamingConditionsConditionArgs extends com.pulumi.resou
         return this.comparison;
     }
 
+    @Import(name="unknowns")
+    private @Nullable Output<String> unknowns;
+
+    public Optional<Output<String>> unknowns() {
+        return Optional.ofNullable(this.unknowns);
+    }
+
     private RequestNamingConditionsConditionArgs() {}
 
     private RequestNamingConditionsConditionArgs(RequestNamingConditionsConditionArgs $) {
         this.attribute = $.attribute;
         this.comparison = $.comparison;
+        this.unknowns = $.unknowns;
     }
 
     public static Builder builder() {
@@ -69,6 +79,15 @@ public final class RequestNamingConditionsConditionArgs extends com.pulumi.resou
 
         public Builder comparison(RequestNamingConditionsConditionComparisonArgs comparison) {
             return comparison(Output.of(comparison));
+        }
+
+        public Builder unknowns(@Nullable Output<String> unknowns) {
+            $.unknowns = unknowns;
+            return this;
+        }
+
+        public Builder unknowns(String unknowns) {
+            return unknowns(Output.of(unknowns));
         }
 
         public RequestNamingConditionsConditionArgs build() {

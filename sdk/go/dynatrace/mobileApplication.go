@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -18,11 +18,15 @@ type MobileApplication struct {
 	Apdex MobileApplicationApdexOutput `pulumi:"apdex"`
 	// The UUID of the application.
 	ApplicationId pulumi.StringPtrOutput `pulumi:"applicationId"`
+	// The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+	ApplicationType pulumi.StringPtrOutput `pulumi:"applicationType"`
 	// The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
 	BeaconEndpointType pulumi.StringOutput `pulumi:"beaconEndpointType"`
 	// The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
 	// `INSTRUMENTED_WEB_SERVER`
 	BeaconEndpointUrl pulumi.StringPtrOutput `pulumi:"beaconEndpointUrl"`
+	// Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+	IconType pulumi.StringPtrOutput `pulumi:"iconType"`
 	// User Action names to be flagged as Key User Actions
 	KeyUserActions pulumi.StringArrayOutput `pulumi:"keyUserActions"`
 	// The name of the application
@@ -31,12 +35,13 @@ type MobileApplication struct {
 	OptInMode pulumi.BoolPtrOutput `pulumi:"optInMode"`
 	// User Action and Session Properties
 	Properties MobileApplicationPropertiesPtrOutput `pulumi:"properties"`
-	// The session replay is enabled (`true`) or disabled (`false`).
+	// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
 	SessionReplay pulumi.BoolPtrOutput `pulumi:"sessionReplay"`
 	// The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
 	// and **optInModeEnabled** values set to `true`.
 	SessionReplayOnCrash pulumi.BoolPtrOutput `pulumi:"sessionReplayOnCrash"`
-	// The percentage of user sessions to be analyzed
+	// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+	// apps) The percentage of user sessions to be analyzed
 	UserSessionPercentage pulumi.IntPtrOutput `pulumi:"userSessionPercentage"`
 }
 
@@ -80,11 +85,15 @@ type mobileApplicationState struct {
 	Apdex *MobileApplicationApdex `pulumi:"apdex"`
 	// The UUID of the application.
 	ApplicationId *string `pulumi:"applicationId"`
+	// The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+	ApplicationType *string `pulumi:"applicationType"`
 	// The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
 	BeaconEndpointType *string `pulumi:"beaconEndpointType"`
 	// The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
 	// `INSTRUMENTED_WEB_SERVER`
 	BeaconEndpointUrl *string `pulumi:"beaconEndpointUrl"`
+	// Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+	IconType *string `pulumi:"iconType"`
 	// User Action names to be flagged as Key User Actions
 	KeyUserActions []string `pulumi:"keyUserActions"`
 	// The name of the application
@@ -93,12 +102,13 @@ type mobileApplicationState struct {
 	OptInMode *bool `pulumi:"optInMode"`
 	// User Action and Session Properties
 	Properties *MobileApplicationProperties `pulumi:"properties"`
-	// The session replay is enabled (`true`) or disabled (`false`).
+	// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
 	SessionReplay *bool `pulumi:"sessionReplay"`
 	// The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
 	// and **optInModeEnabled** values set to `true`.
 	SessionReplayOnCrash *bool `pulumi:"sessionReplayOnCrash"`
-	// The percentage of user sessions to be analyzed
+	// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+	// apps) The percentage of user sessions to be analyzed
 	UserSessionPercentage *int `pulumi:"userSessionPercentage"`
 }
 
@@ -107,11 +117,15 @@ type MobileApplicationState struct {
 	Apdex MobileApplicationApdexPtrInput
 	// The UUID of the application.
 	ApplicationId pulumi.StringPtrInput
+	// The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+	ApplicationType pulumi.StringPtrInput
 	// The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
 	BeaconEndpointType pulumi.StringPtrInput
 	// The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
 	// `INSTRUMENTED_WEB_SERVER`
 	BeaconEndpointUrl pulumi.StringPtrInput
+	// Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+	IconType pulumi.StringPtrInput
 	// User Action names to be flagged as Key User Actions
 	KeyUserActions pulumi.StringArrayInput
 	// The name of the application
@@ -120,12 +134,13 @@ type MobileApplicationState struct {
 	OptInMode pulumi.BoolPtrInput
 	// User Action and Session Properties
 	Properties MobileApplicationPropertiesPtrInput
-	// The session replay is enabled (`true`) or disabled (`false`).
+	// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
 	SessionReplay pulumi.BoolPtrInput
 	// The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
 	// and **optInModeEnabled** values set to `true`.
 	SessionReplayOnCrash pulumi.BoolPtrInput
-	// The percentage of user sessions to be analyzed
+	// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+	// apps) The percentage of user sessions to be analyzed
 	UserSessionPercentage pulumi.IntPtrInput
 }
 
@@ -138,11 +153,15 @@ type mobileApplicationArgs struct {
 	Apdex MobileApplicationApdex `pulumi:"apdex"`
 	// The UUID of the application.
 	ApplicationId *string `pulumi:"applicationId"`
+	// The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+	ApplicationType *string `pulumi:"applicationType"`
 	// The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
 	BeaconEndpointType string `pulumi:"beaconEndpointType"`
 	// The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
 	// `INSTRUMENTED_WEB_SERVER`
 	BeaconEndpointUrl *string `pulumi:"beaconEndpointUrl"`
+	// Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+	IconType *string `pulumi:"iconType"`
 	// User Action names to be flagged as Key User Actions
 	KeyUserActions []string `pulumi:"keyUserActions"`
 	// The name of the application
@@ -151,12 +170,13 @@ type mobileApplicationArgs struct {
 	OptInMode *bool `pulumi:"optInMode"`
 	// User Action and Session Properties
 	Properties *MobileApplicationProperties `pulumi:"properties"`
-	// The session replay is enabled (`true`) or disabled (`false`).
+	// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
 	SessionReplay *bool `pulumi:"sessionReplay"`
 	// The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
 	// and **optInModeEnabled** values set to `true`.
 	SessionReplayOnCrash *bool `pulumi:"sessionReplayOnCrash"`
-	// The percentage of user sessions to be analyzed
+	// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+	// apps) The percentage of user sessions to be analyzed
 	UserSessionPercentage *int `pulumi:"userSessionPercentage"`
 }
 
@@ -166,11 +186,15 @@ type MobileApplicationArgs struct {
 	Apdex MobileApplicationApdexInput
 	// The UUID of the application.
 	ApplicationId pulumi.StringPtrInput
+	// The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+	ApplicationType pulumi.StringPtrInput
 	// The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
 	BeaconEndpointType pulumi.StringInput
 	// The URL of the beacon endpoint. Only applicable when the **beacon_endpoint_type** is set to `ENVIRONMENT_ACTIVE_GATE` or
 	// `INSTRUMENTED_WEB_SERVER`
 	BeaconEndpointUrl pulumi.StringPtrInput
+	// Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+	IconType pulumi.StringPtrInput
 	// User Action names to be flagged as Key User Actions
 	KeyUserActions pulumi.StringArrayInput
 	// The name of the application
@@ -179,12 +203,13 @@ type MobileApplicationArgs struct {
 	OptInMode pulumi.BoolPtrInput
 	// User Action and Session Properties
 	Properties MobileApplicationPropertiesPtrInput
-	// The session replay is enabled (`true`) or disabled (`false`).
+	// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
 	SessionReplay pulumi.BoolPtrInput
 	// The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
 	// and **optInModeEnabled** values set to `true`.
 	SessionReplayOnCrash pulumi.BoolPtrInput
-	// The percentage of user sessions to be analyzed
+	// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+	// apps) The percentage of user sessions to be analyzed
 	UserSessionPercentage pulumi.IntPtrInput
 }
 
@@ -285,6 +310,11 @@ func (o MobileApplicationOutput) ApplicationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MobileApplication) pulumi.StringPtrOutput { return v.ApplicationId }).(pulumi.StringPtrOutput)
 }
 
+// The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+func (o MobileApplicationOutput) ApplicationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MobileApplication) pulumi.StringPtrOutput { return v.ApplicationType }).(pulumi.StringPtrOutput)
+}
+
 // The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
 func (o MobileApplicationOutput) BeaconEndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v *MobileApplication) pulumi.StringOutput { return v.BeaconEndpointType }).(pulumi.StringOutput)
@@ -294,6 +324,11 @@ func (o MobileApplicationOutput) BeaconEndpointType() pulumi.StringOutput {
 // `INSTRUMENTED_WEB_SERVER`
 func (o MobileApplicationOutput) BeaconEndpointUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MobileApplication) pulumi.StringPtrOutput { return v.BeaconEndpointUrl }).(pulumi.StringPtrOutput)
+}
+
+// Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+func (o MobileApplicationOutput) IconType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MobileApplication) pulumi.StringPtrOutput { return v.IconType }).(pulumi.StringPtrOutput)
 }
 
 // User Action names to be flagged as Key User Actions
@@ -316,7 +351,7 @@ func (o MobileApplicationOutput) Properties() MobileApplicationPropertiesPtrOutp
 	return o.ApplyT(func(v *MobileApplication) MobileApplicationPropertiesPtrOutput { return v.Properties }).(MobileApplicationPropertiesPtrOutput)
 }
 
-// The session replay is enabled (`true`) or disabled (`false`).
+// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
 func (o MobileApplicationOutput) SessionReplay() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *MobileApplication) pulumi.BoolPtrOutput { return v.SessionReplay }).(pulumi.BoolPtrOutput)
 }
@@ -327,7 +362,8 @@ func (o MobileApplicationOutput) SessionReplayOnCrash() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *MobileApplication) pulumi.BoolPtrOutput { return v.SessionReplayOnCrash }).(pulumi.BoolPtrOutput)
 }
 
-// The percentage of user sessions to be analyzed
+// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+// apps) The percentage of user sessions to be analyzed
 func (o MobileApplicationOutput) UserSessionPercentage() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *MobileApplication) pulumi.IntPtrOutput { return v.UserSessionPercentage }).(pulumi.IntPtrOutput)
 }

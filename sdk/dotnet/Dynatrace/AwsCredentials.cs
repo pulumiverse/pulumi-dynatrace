@@ -32,6 +32,13 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<string> PartitionType { get; private set; } = null!;
 
         /// <summary>
+        /// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+        /// manage them via WebUI without interference by Terraform.
+        /// </summary>
+        [Output("supportingServicesManagedInDynatrace")]
+        public Output<bool?> SupportingServicesManagedInDynatrace { get; private set; } = null!;
+
+        /// <summary>
         /// supporting services to be monitored
         /// </summary>
         [Output("supportingServicesToMonitors")]
@@ -120,6 +127,13 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         [Input("partitionType", required: true)]
         public Input<string> PartitionType { get; set; } = null!;
 
+        /// <summary>
+        /// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+        /// manage them via WebUI without interference by Terraform.
+        /// </summary>
+        [Input("supportingServicesManagedInDynatrace")]
+        public Input<bool>? SupportingServicesManagedInDynatrace { get; set; }
+
         [Input("supportingServicesToMonitors")]
         private InputList<Inputs.AwsCredentialsSupportingServicesToMonitorArgs>? _supportingServicesToMonitors;
 
@@ -181,6 +195,13 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         [Input("partitionType")]
         public Input<string>? PartitionType { get; set; }
+
+        /// <summary>
+        /// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+        /// manage them via WebUI without interference by Terraform.
+        /// </summary>
+        [Input("supportingServicesManagedInDynatrace")]
+        public Input<bool>? SupportingServicesManagedInDynatrace { get; set; }
 
         [Input("supportingServicesToMonitors")]
         private InputList<Inputs.AwsCredentialsSupportingServicesToMonitorGetArgs>? _supportingServicesToMonitors;

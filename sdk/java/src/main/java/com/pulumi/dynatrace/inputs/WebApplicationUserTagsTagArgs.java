@@ -28,15 +28,15 @@ public final class WebApplicationUserTagsTagArgs extends com.pulumi.resources.Re
      * The ID of this resource.
      * 
      */
-    @Import(name="id", required=true)
-    private Output<Integer> id;
+    @Import(name="id")
+    private @Nullable Output<Integer> id;
 
     /**
      * @return The ID of this resource.
      * 
      */
-    public Output<Integer> id() {
-        return this.id;
+    public Optional<Output<Integer>> id() {
+        return Optional.ofNullable(this.id);
     }
 
     @Import(name="ignoreCase")
@@ -60,6 +60,13 @@ public final class WebApplicationUserTagsTagArgs extends com.pulumi.resources.Re
         return Optional.ofNullable(this.serverSideRequestAttribute);
     }
 
+    @Import(name="uniqueId")
+    private @Nullable Output<Integer> uniqueId;
+
+    public Optional<Output<Integer>> uniqueId() {
+        return Optional.ofNullable(this.uniqueId);
+    }
+
     private WebApplicationUserTagsTagArgs() {}
 
     private WebApplicationUserTagsTagArgs(WebApplicationUserTagsTagArgs $) {
@@ -68,6 +75,7 @@ public final class WebApplicationUserTagsTagArgs extends com.pulumi.resources.Re
         this.ignoreCase = $.ignoreCase;
         this.metadataId = $.metadataId;
         this.serverSideRequestAttribute = $.serverSideRequestAttribute;
+        this.uniqueId = $.uniqueId;
     }
 
     public static Builder builder() {
@@ -103,7 +111,7 @@ public final class WebApplicationUserTagsTagArgs extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder id(Output<Integer> id) {
+        public Builder id(@Nullable Output<Integer> id) {
             $.id = id;
             return this;
         }
@@ -145,8 +153,16 @@ public final class WebApplicationUserTagsTagArgs extends com.pulumi.resources.Re
             return serverSideRequestAttribute(Output.of(serverSideRequestAttribute));
         }
 
+        public Builder uniqueId(@Nullable Output<Integer> uniqueId) {
+            $.uniqueId = uniqueId;
+            return this;
+        }
+
+        public Builder uniqueId(Integer uniqueId) {
+            return uniqueId(Output.of(uniqueId));
+        }
+
         public WebApplicationUserTagsTagArgs build() {
-            $.id = Objects.requireNonNull($.id, "expected parameter 'id' to be non-null");
             return $;
         }
     }

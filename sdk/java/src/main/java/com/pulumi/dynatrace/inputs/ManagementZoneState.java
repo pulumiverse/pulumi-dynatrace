@@ -7,7 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.dynatrace.inputs.ManagementZoneDimensionalRuleArgs;
 import com.pulumi.dynatrace.inputs.ManagementZoneEntitySelectorBasedRuleArgs;
-import com.pulumi.dynatrace.inputs.ManagementZoneMetadataArgs;
 import com.pulumi.dynatrace.inputs.ManagementZoneRuleArgs;
 import java.lang.String;
 import java.util.List;
@@ -66,29 +65,6 @@ public final class ManagementZoneState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     * @deprecated
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     */
-    @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-    @Import(name="metadata")
-    private @Nullable Output<ManagementZoneMetadataArgs> metadata;
-
-    /**
-     * @return `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     * @deprecated
-     * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-     * 
-     */
-    @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-    public Optional<Output<ManagementZoneMetadataArgs>> metadata() {
-        return Optional.ofNullable(this.metadata);
-    }
-
-    /**
      * The name of the management zone
      * 
      */
@@ -139,7 +115,6 @@ public final class ManagementZoneState extends com.pulumi.resources.ResourceArgs
         this.description = $.description;
         this.dimensionalRules = $.dimensionalRules;
         this.entitySelectorBasedRules = $.entitySelectorBasedRules;
-        this.metadata = $.metadata;
         this.name = $.name;
         this.rules = $.rules;
         this.unknowns = $.unknowns;
@@ -244,35 +219,6 @@ public final class ManagementZoneState extends com.pulumi.resources.ResourceArgs
          */
         public Builder entitySelectorBasedRules(ManagementZoneEntitySelectorBasedRuleArgs... entitySelectorBasedRules) {
             return entitySelectorBasedRules(List.of(entitySelectorBasedRules));
-        }
-
-        /**
-         * @param metadata `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-         * 
-         */
-        @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-        public Builder metadata(@Nullable Output<ManagementZoneMetadataArgs> metadata) {
-            $.metadata = metadata;
-            return this;
-        }
-
-        /**
-         * @param metadata `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-         * 
-         * @return builder
-         * 
-         * @deprecated
-         * `metadata` exists for backwards compatibility but shouldn&#39;t get specified anymore
-         * 
-         */
-        @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-        public Builder metadata(ManagementZoneMetadataArgs metadata) {
-            return metadata(Output.of(metadata));
         }
 
         /**

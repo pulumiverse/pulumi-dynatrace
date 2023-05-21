@@ -47,6 +47,10 @@ export class XmattersNotification extends pulumi.CustomResource {
      */
     public readonly insecure!: pulumi.Output<boolean | undefined>;
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    public readonly legacyId!: pulumi.Output<string>;
+    /**
      * The name of the notification configuration
      */
     public readonly name!: pulumi.Output<string>;
@@ -79,6 +83,7 @@ export class XmattersNotification extends pulumi.CustomResource {
             resourceInputs["active"] = state ? state.active : undefined;
             resourceInputs["headers"] = state ? state.headers : undefined;
             resourceInputs["insecure"] = state ? state.insecure : undefined;
+            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["payload"] = state ? state.payload : undefined;
             resourceInputs["profile"] = state ? state.profile : undefined;
@@ -100,6 +105,7 @@ export class XmattersNotification extends pulumi.CustomResource {
             resourceInputs["active"] = args ? args.active : undefined;
             resourceInputs["headers"] = args ? args.headers : undefined;
             resourceInputs["insecure"] = args ? args.insecure : undefined;
+            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["payload"] = args ? args.payload : undefined;
             resourceInputs["profile"] = args ? args.profile : undefined;
@@ -126,6 +132,10 @@ export interface XmattersNotificationState {
      * Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
      */
     insecure?: pulumi.Input<boolean>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The name of the notification configuration
      */
@@ -160,6 +170,10 @@ export interface XmattersNotificationArgs {
      * Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
      */
     insecure?: pulumi.Input<boolean>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The name of the notification configuration
      */

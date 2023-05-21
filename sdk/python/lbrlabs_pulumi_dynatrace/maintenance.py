@@ -19,13 +19,15 @@ class MaintenanceArgs:
                  general_properties: pulumi.Input['MaintenanceGeneralPropertiesArgs'],
                  schedule: pulumi.Input['MaintenanceScheduleArgs'],
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterArgs']]]] = None):
+                 filters: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterArgs']]]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Maintenance resource.
         :param pulumi.Input['MaintenanceGeneralPropertiesArgs'] general_properties: The general properties of the maintenance window
         :param pulumi.Input['MaintenanceScheduleArgs'] schedule: The schedule of the maintenance window
         :param pulumi.Input[bool] enabled: The maintenance window is enabled or disabled
         :param pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterArgs']]] filters: The filters of the maintenance window
+        :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         """
         pulumi.set(__self__, "general_properties", general_properties)
         pulumi.set(__self__, "schedule", schedule)
@@ -33,6 +35,8 @@ class MaintenanceArgs:
             pulumi.set(__self__, "enabled", enabled)
         if filters is not None:
             pulumi.set(__self__, "filters", filters)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
 
     @property
     @pulumi.getter(name="generalProperties")
@@ -82,6 +86,18 @@ class MaintenanceArgs:
     def filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterArgs']]]]):
         pulumi.set(self, "filters", value)
 
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of this setting when referred to by the Config REST API V1
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
+
 
 @pulumi.input_type
 class _MaintenanceState:
@@ -89,12 +105,14 @@ class _MaintenanceState:
                  enabled: Optional[pulumi.Input[bool]] = None,
                  filters: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterArgs']]]] = None,
                  general_properties: Optional[pulumi.Input['MaintenanceGeneralPropertiesArgs']] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  schedule: Optional[pulumi.Input['MaintenanceScheduleArgs']] = None):
         """
         Input properties used for looking up and filtering Maintenance resources.
         :param pulumi.Input[bool] enabled: The maintenance window is enabled or disabled
         :param pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterArgs']]] filters: The filters of the maintenance window
         :param pulumi.Input['MaintenanceGeneralPropertiesArgs'] general_properties: The general properties of the maintenance window
+        :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input['MaintenanceScheduleArgs'] schedule: The schedule of the maintenance window
         """
         if enabled is not None:
@@ -103,6 +121,8 @@ class _MaintenanceState:
             pulumi.set(__self__, "filters", filters)
         if general_properties is not None:
             pulumi.set(__self__, "general_properties", general_properties)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if schedule is not None:
             pulumi.set(__self__, "schedule", schedule)
 
@@ -143,6 +163,18 @@ class _MaintenanceState:
         pulumi.set(self, "general_properties", value)
 
     @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of this setting when referred to by the Config REST API V1
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
+
+    @property
     @pulumi.getter
     def schedule(self) -> Optional[pulumi.Input['MaintenanceScheduleArgs']]:
         """
@@ -163,6 +195,7 @@ class Maintenance(pulumi.CustomResource):
                  enabled: Optional[pulumi.Input[bool]] = None,
                  filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaintenanceFilterArgs']]]]] = None,
                  general_properties: Optional[pulumi.Input[pulumi.InputType['MaintenanceGeneralPropertiesArgs']]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  schedule: Optional[pulumi.Input[pulumi.InputType['MaintenanceScheduleArgs']]] = None,
                  __props__=None):
         """
@@ -172,6 +205,7 @@ class Maintenance(pulumi.CustomResource):
         :param pulumi.Input[bool] enabled: The maintenance window is enabled or disabled
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaintenanceFilterArgs']]]] filters: The filters of the maintenance window
         :param pulumi.Input[pulumi.InputType['MaintenanceGeneralPropertiesArgs']] general_properties: The general properties of the maintenance window
+        :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input[pulumi.InputType['MaintenanceScheduleArgs']] schedule: The schedule of the maintenance window
         """
         ...
@@ -200,6 +234,7 @@ class Maintenance(pulumi.CustomResource):
                  enabled: Optional[pulumi.Input[bool]] = None,
                  filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaintenanceFilterArgs']]]]] = None,
                  general_properties: Optional[pulumi.Input[pulumi.InputType['MaintenanceGeneralPropertiesArgs']]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  schedule: Optional[pulumi.Input[pulumi.InputType['MaintenanceScheduleArgs']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -215,6 +250,7 @@ class Maintenance(pulumi.CustomResource):
             if general_properties is None and not opts.urn:
                 raise TypeError("Missing required property 'general_properties'")
             __props__.__dict__["general_properties"] = general_properties
+            __props__.__dict__["legacy_id"] = legacy_id
             if schedule is None and not opts.urn:
                 raise TypeError("Missing required property 'schedule'")
             __props__.__dict__["schedule"] = schedule
@@ -231,6 +267,7 @@ class Maintenance(pulumi.CustomResource):
             enabled: Optional[pulumi.Input[bool]] = None,
             filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaintenanceFilterArgs']]]]] = None,
             general_properties: Optional[pulumi.Input[pulumi.InputType['MaintenanceGeneralPropertiesArgs']]] = None,
+            legacy_id: Optional[pulumi.Input[str]] = None,
             schedule: Optional[pulumi.Input[pulumi.InputType['MaintenanceScheduleArgs']]] = None) -> 'Maintenance':
         """
         Get an existing Maintenance resource's state with the given name, id, and optional extra
@@ -242,6 +279,7 @@ class Maintenance(pulumi.CustomResource):
         :param pulumi.Input[bool] enabled: The maintenance window is enabled or disabled
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaintenanceFilterArgs']]]] filters: The filters of the maintenance window
         :param pulumi.Input[pulumi.InputType['MaintenanceGeneralPropertiesArgs']] general_properties: The general properties of the maintenance window
+        :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input[pulumi.InputType['MaintenanceScheduleArgs']] schedule: The schedule of the maintenance window
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -251,6 +289,7 @@ class Maintenance(pulumi.CustomResource):
         __props__.__dict__["enabled"] = enabled
         __props__.__dict__["filters"] = filters
         __props__.__dict__["general_properties"] = general_properties
+        __props__.__dict__["legacy_id"] = legacy_id
         __props__.__dict__["schedule"] = schedule
         return Maintenance(resource_name, opts=opts, __props__=__props__)
 
@@ -277,6 +316,14 @@ class Maintenance(pulumi.CustomResource):
         The general properties of the maintenance window
         """
         return pulumi.get(self, "general_properties")
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> pulumi.Output[str]:
+        """
+        The ID of this setting when referred to by the Config REST API V1
+        """
+        return pulumi.get(self, "legacy_id")
 
     @property
     @pulumi.getter

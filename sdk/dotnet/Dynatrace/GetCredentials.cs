@@ -13,7 +13,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     public static class GetCredentials
     {
         /// <summary>
-        /// The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+        /// The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -21,6 +21,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
         /// using Dynatrace = Pulumi.Dynatrace;
@@ -107,7 +108,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCredentialsResult>("dynatrace:index/getCredentials:getCredentials", args ?? new GetCredentialsArgs(), options.WithDefaults());
 
         /// <summary>
-        /// The `dynatrace.getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+        /// The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -115,6 +116,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
         /// using Dynatrace = Pulumi.Dynatrace;

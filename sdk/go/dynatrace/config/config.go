@@ -36,3 +36,12 @@ func GetDtEnvUrl(ctx *pulumi.Context) string {
 	}
 	return getEnvOrDefault("", nil, "DYNATRACE_ENV_URL", "DT_ENV_URL").(string)
 }
+func GetIamAccountId(ctx *pulumi.Context) string {
+	return config.Get(ctx, "dynatrace:iamAccountId")
+}
+func GetIamClientId(ctx *pulumi.Context) string {
+	return config.Get(ctx, "dynatrace:iamClientId")
+}
+func GetIamClientSecret(ctx *pulumi.Context) string {
+	return config.Get(ctx, "dynatrace:iamClientSecret")
+}

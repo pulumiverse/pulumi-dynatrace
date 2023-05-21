@@ -37,7 +37,7 @@ class WebApplicationArgs:
                  user_tags: Optional[pulumi.Input['WebApplicationUserTagsArgs']] = None):
         """
         The set of arguments for constructing a WebApplication resource.
-        :param pulumi.Input[int] cost_control_user_session_percentage: Analize *X*% of user sessions
+        :param pulumi.Input[int] cost_control_user_session_percentage: (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
         :param pulumi.Input['WebApplicationCustomActionApdexSettingsArgs'] custom_action_apdex_settings: Defines the Custom Action Apdex settings of an application
         :param pulumi.Input['WebApplicationLoadActionApdexSettingsArgs'] load_action_apdex_settings: Defines the Load Action Apdex settings of an application
         :param pulumi.Input[str] load_action_key_performance_metric: The key performance metric of load actions. Possible values are `ACTION_DURATION`, `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX` and `VISUALLY_COMPLETE`
@@ -50,7 +50,7 @@ class WebApplicationArgs:
         :param pulumi.Input[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]] key_user_actions: User Action names to be flagged as Key User Actions
         :param pulumi.Input['WebApplicationMetaDataCaptureSettingsArgs'] meta_data_capture_settings: Java script agent meta data capture settings
         :param pulumi.Input[str] name: The name of the web application, displayed in the UI
-        :param pulumi.Input[bool] real_user_monitoring_enabled: Real user monitoring enabled/disabled
+        :param pulumi.Input[bool] real_user_monitoring_enabled: (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
         :param pulumi.Input['WebApplicationSessionReplayConfigArgs'] session_replay_config: Settings regarding Session Replay
         :param pulumi.Input[str] url_injection_pattern: URL injection pattern for manual web application
         :param pulumi.Input['WebApplicationUserActionAndSessionPropertiesArgs'] user_action_and_session_properties: User action and session properties settings
@@ -91,7 +91,7 @@ class WebApplicationArgs:
     @pulumi.getter(name="costControlUserSessionPercentage")
     def cost_control_user_session_percentage(self) -> pulumi.Input[int]:
         """
-        Analize *X*% of user sessions
+        (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
         """
         return pulumi.get(self, "cost_control_user_session_percentage")
 
@@ -247,7 +247,7 @@ class WebApplicationArgs:
     @pulumi.getter(name="realUserMonitoringEnabled")
     def real_user_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Real user monitoring enabled/disabled
+        (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
         """
         return pulumi.get(self, "real_user_monitoring_enabled")
 
@@ -341,7 +341,7 @@ class _WebApplicationState:
         """
         Input properties used for looking up and filtering WebApplication resources.
         :param pulumi.Input['WebApplicationConversionGoalsArgs'] conversion_goals: A list of conversion goals of the application
-        :param pulumi.Input[int] cost_control_user_session_percentage: Analize *X*% of user sessions
+        :param pulumi.Input[int] cost_control_user_session_percentage: (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
         :param pulumi.Input['WebApplicationCustomActionApdexSettingsArgs'] custom_action_apdex_settings: Defines the Custom Action Apdex settings of an application
         :param pulumi.Input[Sequence[pulumi.Input['WebApplicationKeyUserActionArgs']]] key_user_actions: User Action names to be flagged as Key User Actions
         :param pulumi.Input['WebApplicationLoadActionApdexSettingsArgs'] load_action_apdex_settings: Defines the Load Action Apdex settings of an application
@@ -349,7 +349,7 @@ class _WebApplicationState:
         :param pulumi.Input['WebApplicationMetaDataCaptureSettingsArgs'] meta_data_capture_settings: Java script agent meta data capture settings
         :param pulumi.Input['WebApplicationMonitoringSettingsArgs'] monitoring_settings: Real user monitoring settings
         :param pulumi.Input[str] name: The name of the web application, displayed in the UI
-        :param pulumi.Input[bool] real_user_monitoring_enabled: Real user monitoring enabled/disabled
+        :param pulumi.Input[bool] real_user_monitoring_enabled: (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
         :param pulumi.Input['WebApplicationSessionReplayConfigArgs'] session_replay_config: Settings regarding Session Replay
         :param pulumi.Input[str] type: The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
         :param pulumi.Input[str] url_injection_pattern: URL injection pattern for manual web application
@@ -415,7 +415,7 @@ class _WebApplicationState:
     @pulumi.getter(name="costControlUserSessionPercentage")
     def cost_control_user_session_percentage(self) -> Optional[pulumi.Input[int]]:
         """
-        Analize *X*% of user sessions
+        (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
         """
         return pulumi.get(self, "cost_control_user_session_percentage")
 
@@ -511,7 +511,7 @@ class _WebApplicationState:
     @pulumi.getter(name="realUserMonitoringEnabled")
     def real_user_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Real user monitoring enabled/disabled
+        (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
         """
         return pulumi.get(self, "real_user_monitoring_enabled")
 
@@ -658,7 +658,7 @@ class WebApplication(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['WebApplicationConversionGoalsArgs']] conversion_goals: A list of conversion goals of the application
-        :param pulumi.Input[int] cost_control_user_session_percentage: Analize *X*% of user sessions
+        :param pulumi.Input[int] cost_control_user_session_percentage: (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
         :param pulumi.Input[pulumi.InputType['WebApplicationCustomActionApdexSettingsArgs']] custom_action_apdex_settings: Defines the Custom Action Apdex settings of an application
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WebApplicationKeyUserActionArgs']]]] key_user_actions: User Action names to be flagged as Key User Actions
         :param pulumi.Input[pulumi.InputType['WebApplicationLoadActionApdexSettingsArgs']] load_action_apdex_settings: Defines the Load Action Apdex settings of an application
@@ -666,7 +666,7 @@ class WebApplication(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['WebApplicationMetaDataCaptureSettingsArgs']] meta_data_capture_settings: Java script agent meta data capture settings
         :param pulumi.Input[pulumi.InputType['WebApplicationMonitoringSettingsArgs']] monitoring_settings: Real user monitoring settings
         :param pulumi.Input[str] name: The name of the web application, displayed in the UI
-        :param pulumi.Input[bool] real_user_monitoring_enabled: Real user monitoring enabled/disabled
+        :param pulumi.Input[bool] real_user_monitoring_enabled: (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
         :param pulumi.Input[pulumi.InputType['WebApplicationSessionReplayConfigArgs']] session_replay_config: Settings regarding Session Replay
         :param pulumi.Input[str] type: The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
         :param pulumi.Input[str] url_injection_pattern: URL injection pattern for manual web application
@@ -802,7 +802,7 @@ class WebApplication(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['WebApplicationConversionGoalsArgs']] conversion_goals: A list of conversion goals of the application
-        :param pulumi.Input[int] cost_control_user_session_percentage: Analize *X*% of user sessions
+        :param pulumi.Input[int] cost_control_user_session_percentage: (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
         :param pulumi.Input[pulumi.InputType['WebApplicationCustomActionApdexSettingsArgs']] custom_action_apdex_settings: Defines the Custom Action Apdex settings of an application
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WebApplicationKeyUserActionArgs']]]] key_user_actions: User Action names to be flagged as Key User Actions
         :param pulumi.Input[pulumi.InputType['WebApplicationLoadActionApdexSettingsArgs']] load_action_apdex_settings: Defines the Load Action Apdex settings of an application
@@ -810,7 +810,7 @@ class WebApplication(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['WebApplicationMetaDataCaptureSettingsArgs']] meta_data_capture_settings: Java script agent meta data capture settings
         :param pulumi.Input[pulumi.InputType['WebApplicationMonitoringSettingsArgs']] monitoring_settings: Real user monitoring settings
         :param pulumi.Input[str] name: The name of the web application, displayed in the UI
-        :param pulumi.Input[bool] real_user_monitoring_enabled: Real user monitoring enabled/disabled
+        :param pulumi.Input[bool] real_user_monitoring_enabled: (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
         :param pulumi.Input[pulumi.InputType['WebApplicationSessionReplayConfigArgs']] session_replay_config: Settings regarding Session Replay
         :param pulumi.Input[str] type: The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
         :param pulumi.Input[str] url_injection_pattern: URL injection pattern for manual web application
@@ -858,7 +858,7 @@ class WebApplication(pulumi.CustomResource):
     @pulumi.getter(name="costControlUserSessionPercentage")
     def cost_control_user_session_percentage(self) -> pulumi.Output[int]:
         """
-        Analize *X*% of user sessions
+        (Field has overlap with `WebAppEnablement`) Analize *X*% of user sessions
         """
         return pulumi.get(self, "cost_control_user_session_percentage")
 
@@ -922,7 +922,7 @@ class WebApplication(pulumi.CustomResource):
     @pulumi.getter(name="realUserMonitoringEnabled")
     def real_user_monitoring_enabled(self) -> pulumi.Output[Optional[bool]]:
         """
-        Real user monitoring enabled/disabled
+        (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
         """
         return pulumi.get(self, "real_user_monitoring_enabled")
 

@@ -21,6 +21,9 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
             set => _filters = value;
         }
 
+        [Input("genericTagFilters")]
+        public Input<Inputs.DashboardDashboardMetadataDynamicFiltersGenericTagFiltersGetArgs>? GenericTagFilters { get; set; }
+
         [Input("tagSuggestionTypes")]
         private InputList<string>? _tagSuggestionTypes;
         public InputList<string> TagSuggestionTypes

@@ -14,6 +14,7 @@ import com.pulumi.dynatrace.outputs.MaintenanceFilter;
 import com.pulumi.dynatrace.outputs.MaintenanceGeneralProperties;
 import com.pulumi.dynatrace.outputs.MaintenanceSchedule;
 import java.lang.Boolean;
+import java.lang.String;
 import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -24,7 +25,7 @@ public class Maintenance extends com.pulumi.resources.CustomResource {
      * The maintenance window is enabled or disabled
      * 
      */
-    @Export(name="enabled", type=Boolean.class, parameters={})
+    @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enabled;
 
     /**
@@ -38,7 +39,7 @@ public class Maintenance extends com.pulumi.resources.CustomResource {
      * The filters of the maintenance window
      * 
      */
-    @Export(name="filters", type=List.class, parameters={MaintenanceFilter.class})
+    @Export(name="filters", refs={List.class,MaintenanceFilter.class}, tree="[0,1]")
     private Output</* @Nullable */ List<MaintenanceFilter>> filters;
 
     /**
@@ -52,7 +53,7 @@ public class Maintenance extends com.pulumi.resources.CustomResource {
      * The general properties of the maintenance window
      * 
      */
-    @Export(name="generalProperties", type=MaintenanceGeneralProperties.class, parameters={})
+    @Export(name="generalProperties", refs={MaintenanceGeneralProperties.class}, tree="[0]")
     private Output<MaintenanceGeneralProperties> generalProperties;
 
     /**
@@ -63,10 +64,24 @@ public class Maintenance extends com.pulumi.resources.CustomResource {
         return this.generalProperties;
     }
     /**
+     * The ID of this setting when referred to by the Config REST API V1
+     * 
+     */
+    @Export(name="legacyId", refs={String.class}, tree="[0]")
+    private Output<String> legacyId;
+
+    /**
+     * @return The ID of this setting when referred to by the Config REST API V1
+     * 
+     */
+    public Output<String> legacyId() {
+        return this.legacyId;
+    }
+    /**
      * The schedule of the maintenance window
      * 
      */
-    @Export(name="schedule", type=MaintenanceSchedule.class, parameters={})
+    @Export(name="schedule", refs={MaintenanceSchedule.class}, tree="[0]")
     private Output<MaintenanceSchedule> schedule;
 
     /**

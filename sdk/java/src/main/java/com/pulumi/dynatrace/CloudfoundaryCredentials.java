@@ -22,7 +22,7 @@ public class CloudfoundaryCredentials extends com.pulumi.resources.CustomResourc
      * The monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
      * 
      */
-    @Export(name="active", type=Boolean.class, parameters={})
+    @Export(name="active", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> active;
 
     /**
@@ -36,7 +36,7 @@ public class CloudfoundaryCredentials extends com.pulumi.resources.CustomResourc
      * The URL of the Cloud Foundry foundation credentials.  The URL must be valid according to RFC 2396.  Leading or trailing whitespaces are not allowed.
      * 
      */
-    @Export(name="apiUrl", type=String.class, parameters={})
+    @Export(name="apiUrl", refs={String.class}, tree="[0]")
     private Output<String> apiUrl;
 
     /**
@@ -50,7 +50,7 @@ public class CloudfoundaryCredentials extends com.pulumi.resources.CustomResourc
      * The login URL of the Cloud Foundry foundation credentials. The URL must be valid according to RFC 2396.  Leading or trailing whitespaces are not allowed.
      * 
      */
-    @Export(name="loginUrl", type=String.class, parameters={})
+    @Export(name="loginUrl", refs={String.class}, tree="[0]")
     private Output<String> loginUrl;
 
     /**
@@ -64,7 +64,7 @@ public class CloudfoundaryCredentials extends com.pulumi.resources.CustomResourc
      * The name of the Cloud Foundry foundation credentials.  Allowed characters are letters, numbers, whitespaces, and the following characters: `.+-_`. Leading or trailing whitespace is not allowed.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -78,7 +78,7 @@ public class CloudfoundaryCredentials extends com.pulumi.resources.CustomResourc
      * The password of the Cloud Foundry foundation credentials.
      * 
      */
-    @Export(name="password", type=String.class, parameters={})
+    @Export(name="password", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> password;
 
     /**
@@ -92,7 +92,7 @@ public class CloudfoundaryCredentials extends com.pulumi.resources.CustomResourc
      * Any attributes that aren&#39;t yet supported by this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**
@@ -106,7 +106,7 @@ public class CloudfoundaryCredentials extends com.pulumi.resources.CustomResourc
      * The username of the Cloud Foundry foundation credentials.  Leading and trailing whitespaces are not allowed.
      * 
      */
-    @Export(name="username", type=String.class, parameters={})
+    @Export(name="username", refs={String.class}, tree="[0]")
     private Output<String> username;
 
     /**

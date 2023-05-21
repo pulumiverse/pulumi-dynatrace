@@ -6,6 +6,7 @@ package com.pulumi.dynatrace.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.dynatrace.inputs.AlertingFiltersFilterCustomDescriptionArgs;
+import com.pulumi.dynatrace.inputs.AlertingFiltersFilterCustomMetadataArgs;
 import com.pulumi.dynatrace.inputs.AlertingFiltersFilterCustomTitleArgs;
 import java.util.Objects;
 import java.util.Optional;
@@ -23,6 +24,13 @@ public final class AlertingFiltersFilterCustomArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.description);
     }
 
+    @Import(name="metadata")
+    private @Nullable Output<AlertingFiltersFilterCustomMetadataArgs> metadata;
+
+    public Optional<Output<AlertingFiltersFilterCustomMetadataArgs>> metadata() {
+        return Optional.ofNullable(this.metadata);
+    }
+
     @Import(name="title")
     private @Nullable Output<AlertingFiltersFilterCustomTitleArgs> title;
 
@@ -34,6 +42,7 @@ public final class AlertingFiltersFilterCustomArgs extends com.pulumi.resources.
 
     private AlertingFiltersFilterCustomArgs(AlertingFiltersFilterCustomArgs $) {
         this.description = $.description;
+        this.metadata = $.metadata;
         this.title = $.title;
     }
 
@@ -62,6 +71,15 @@ public final class AlertingFiltersFilterCustomArgs extends com.pulumi.resources.
 
         public Builder description(AlertingFiltersFilterCustomDescriptionArgs description) {
             return description(Output.of(description));
+        }
+
+        public Builder metadata(@Nullable Output<AlertingFiltersFilterCustomMetadataArgs> metadata) {
+            $.metadata = metadata;
+            return this;
+        }
+
+        public Builder metadata(AlertingFiltersFilterCustomMetadataArgs metadata) {
+            return metadata(Output.of(metadata));
         }
 
         public Builder title(@Nullable Output<AlertingFiltersFilterCustomTitleArgs> title) {

@@ -22,7 +22,7 @@ public class PagerDutyNotification extends com.pulumi.resources.CustomResource {
      * The name of the PagerDuty account
      * 
      */
-    @Export(name="account", type=String.class, parameters={})
+    @Export(name="account", refs={String.class}, tree="[0]")
     private Output<String> account;
 
     /**
@@ -36,7 +36,7 @@ public class PagerDutyNotification extends com.pulumi.resources.CustomResource {
      * The configuration is enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="active", type=Boolean.class, parameters={})
+    @Export(name="active", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> active;
 
     /**
@@ -50,7 +50,7 @@ public class PagerDutyNotification extends com.pulumi.resources.CustomResource {
      * The API key to access PagerDuty
      * 
      */
-    @Export(name="apiKey", type=String.class, parameters={})
+    @Export(name="apiKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> apiKey;
 
     /**
@@ -61,10 +61,24 @@ public class PagerDutyNotification extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.apiKey);
     }
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    @Export(name="legacyId", refs={String.class}, tree="[0]")
+    private Output<String> legacyId;
+
+    /**
+     * @return The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    public Output<String> legacyId() {
+        return this.legacyId;
+    }
+    /**
      * The name of the notification configuration
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -78,7 +92,7 @@ public class PagerDutyNotification extends com.pulumi.resources.CustomResource {
      * The ID of the associated alerting profile
      * 
      */
-    @Export(name="profile", type=String.class, parameters={})
+    @Export(name="profile", refs={String.class}, tree="[0]")
     private Output<String> profile;
 
     /**
@@ -92,7 +106,7 @@ public class PagerDutyNotification extends com.pulumi.resources.CustomResource {
      * The name of the PagerDuty Service
      * 
      */
-    @Export(name="service", type=String.class, parameters={})
+    @Export(name="service", refs={String.class}, tree="[0]")
     private Output<String> service;
 
     /**

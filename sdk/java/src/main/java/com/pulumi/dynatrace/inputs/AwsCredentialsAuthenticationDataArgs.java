@@ -46,14 +46,14 @@ public final class AwsCredentialsAuthenticationDataArgs extends com.pulumi.resou
     }
 
     /**
-     * the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
+     * (Read only) the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
      * 
      */
     @Import(name="externalId")
     private @Nullable Output<String> externalId;
 
     /**
-     * @return the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
+     * @return (Read only) the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
      * 
      */
     public Optional<Output<String>> externalId() {
@@ -177,7 +177,7 @@ public final class AwsCredentialsAuthenticationDataArgs extends com.pulumi.resou
         }
 
         /**
-         * @param externalId the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
+         * @param externalId (Read only) the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class AwsCredentialsAuthenticationDataArgs extends com.pulumi.resou
         }
 
         /**
-         * @param externalId the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
+         * @param externalId (Read only) the external ID token for setting an IAM role. You can obtain it with the `GET /aws/iamExternalId` request
          * 
          * @return builder
          * 

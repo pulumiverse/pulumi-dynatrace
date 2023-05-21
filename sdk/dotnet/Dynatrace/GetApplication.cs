@@ -17,44 +17,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// 
         /// - `name` queries for all applications with the specified name
         /// - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
-        /// using Dynatrace = Pulumi.Dynatrace;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Dynatrace.GetApplication.Invoke(new()
-        ///     {
-        ///         Name = "Example",
-        ///         Tags = new[]
-        ///         {
-        ///             "TerraformKeyTest",
-        ///             "TerraformKeyValueTest=TestValue",
-        ///         },
-        ///     });
-        /// 
-        ///     var _name_ = new Dynatrace.ApplicationDetectionRule("#name#", new()
-        ///     {
-        ///         ApplicationIdentifier = test.Apply(getApplicationResult =&gt; getApplicationResult.Id),
-        ///         FilterConfig = new Dynatrace.Inputs.ApplicationDetectionRuleFilterConfigArgs
-        ///         {
-        ///             ApplicationMatchTarget = "DOMAIN",
-        ///             ApplicationMatchType = "MATCHES",
-        ///             Pattern = "www.google.com",
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetApplicationResult> InvokeAsync(GetApplicationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetApplicationResult>("dynatrace:index/getApplication:getApplication", args ?? new GetApplicationArgs(), options.WithDefaults());
@@ -64,44 +26,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// 
         /// - `name` queries for all applications with the specified name
         /// - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
-        /// using Dynatrace = Pulumi.Dynatrace;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Dynatrace.GetApplication.Invoke(new()
-        ///     {
-        ///         Name = "Example",
-        ///         Tags = new[]
-        ///         {
-        ///             "TerraformKeyTest",
-        ///             "TerraformKeyValueTest=TestValue",
-        ///         },
-        ///     });
-        /// 
-        ///     var _name_ = new Dynatrace.ApplicationDetectionRule("#name#", new()
-        ///     {
-        ///         ApplicationIdentifier = test.Apply(getApplicationResult =&gt; getApplicationResult.Id),
-        ///         FilterConfig = new Dynatrace.Inputs.ApplicationDetectionRuleFilterConfigArgs
-        ///         {
-        ///             ApplicationMatchTarget = "DOMAIN",
-        ///             ApplicationMatchType = "MATCHES",
-        ///             Pattern = "www.google.com",
-        ///         },
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetApplicationResult> Invoke(GetApplicationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetApplicationResult>("dynatrace:index/getApplication:getApplication", args ?? new GetApplicationInvokeArgs(), options.WithDefaults());
@@ -113,18 +37,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 
-        [Input("tags")]
-        private List<string>? _tags;
-
-        /// <summary>
-        /// Required tags of the application to find
-        /// </summary>
-        public List<string> Tags
-        {
-            get => _tags ?? (_tags = new List<string>());
-            set => _tags = value;
-        }
-
         public GetApplicationArgs()
         {
         }
@@ -135,18 +47,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     {
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
-
-        [Input("tags")]
-        private InputList<string>? _tags;
-
-        /// <summary>
-        /// Required tags of the application to find
-        /// </summary>
-        public InputList<string> Tags
-        {
-            get => _tags ?? (_tags = new InputList<string>());
-            set => _tags = value;
-        }
 
         public GetApplicationInvokeArgs()
         {
@@ -163,22 +63,15 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         public readonly string Id;
         public readonly string Name;
-        /// <summary>
-        /// Required tags of the application to find
-        /// </summary>
-        public readonly ImmutableArray<string> Tags;
 
         [OutputConstructor]
         private GetApplicationResult(
             string id,
 
-            string name,
-
-            ImmutableArray<string> tags)
+            string name)
         {
             Id = id;
             Name = name;
-            Tags = tags;
         }
     }
 }

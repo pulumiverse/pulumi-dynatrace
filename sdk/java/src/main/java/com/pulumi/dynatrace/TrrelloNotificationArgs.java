@@ -92,6 +92,21 @@ public final class TrrelloNotificationArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    @Import(name="legacyId")
+    private @Nullable Output<String> legacyId;
+
+    /**
+     * @return The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    public Optional<Output<String>> legacyId() {
+        return Optional.ofNullable(this.legacyId);
+    }
+
+    /**
      * The Trello list to which the card should be assigned
      * 
      */
@@ -174,6 +189,7 @@ public final class TrrelloNotificationArgs extends com.pulumi.resources.Resource
         this.authorizationToken = $.authorizationToken;
         this.boardId = $.boardId;
         this.description = $.description;
+        this.legacyId = $.legacyId;
         this.listId = $.listId;
         this.name = $.name;
         this.profile = $.profile;
@@ -302,6 +318,27 @@ public final class TrrelloNotificationArgs extends com.pulumi.resources.Resource
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        /**
+         * @param legacyId The ID of these settings when referred to from resources requiring the REST API V1 keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(@Nullable Output<String> legacyId) {
+            $.legacyId = legacyId;
+            return this;
+        }
+
+        /**
+         * @param legacyId The ID of these settings when referred to from resources requiring the REST API V1 keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(String legacyId) {
+            return legacyId(Output.of(legacyId));
         }
 
         /**

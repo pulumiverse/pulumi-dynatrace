@@ -44,6 +44,27 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.dtEnvUrl);
     }
 
+    @Import(name="iamAccountId")
+    private @Nullable Output<String> iamAccountId;
+
+    public Optional<Output<String>> iamAccountId() {
+        return Optional.ofNullable(this.iamAccountId);
+    }
+
+    @Import(name="iamClientId")
+    private @Nullable Output<String> iamClientId;
+
+    public Optional<Output<String>> iamClientId() {
+        return Optional.ofNullable(this.iamClientId);
+    }
+
+    @Import(name="iamClientSecret")
+    private @Nullable Output<String> iamClientSecret;
+
+    public Optional<Output<String>> iamClientSecret() {
+        return Optional.ofNullable(this.iamClientSecret);
+    }
+
     private ProviderArgs() {}
 
     private ProviderArgs(ProviderArgs $) {
@@ -51,6 +72,9 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         this.dtClusterApiToken = $.dtClusterApiToken;
         this.dtClusterUrl = $.dtClusterUrl;
         this.dtEnvUrl = $.dtEnvUrl;
+        this.iamAccountId = $.iamAccountId;
+        this.iamClientId = $.iamClientId;
+        this.iamClientSecret = $.iamClientSecret;
     }
 
     public static Builder builder() {
@@ -105,6 +129,33 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder dtEnvUrl(String dtEnvUrl) {
             return dtEnvUrl(Output.of(dtEnvUrl));
+        }
+
+        public Builder iamAccountId(@Nullable Output<String> iamAccountId) {
+            $.iamAccountId = iamAccountId;
+            return this;
+        }
+
+        public Builder iamAccountId(String iamAccountId) {
+            return iamAccountId(Output.of(iamAccountId));
+        }
+
+        public Builder iamClientId(@Nullable Output<String> iamClientId) {
+            $.iamClientId = iamClientId;
+            return this;
+        }
+
+        public Builder iamClientId(String iamClientId) {
+            return iamClientId(Output.of(iamClientId));
+        }
+
+        public Builder iamClientSecret(@Nullable Output<String> iamClientSecret) {
+            $.iamClientSecret = iamClientSecret;
+            return this;
+        }
+
+        public Builder iamClientSecret(String iamClientSecret) {
+            return iamClientSecret(Output.of(iamClientSecret));
         }
 
         public ProviderArgs build() {

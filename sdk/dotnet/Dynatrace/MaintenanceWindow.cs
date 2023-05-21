@@ -26,12 +26,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<bool?> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        /// </summary>
-        [Output("metadata")]
-        public Output<Outputs.MaintenanceWindowMetadata?> Metadata { get; private set; } = null!;
-
-        /// <summary>
         /// The name of the maintenance window, displayed in the UI
         /// </summary>
         [Output("name")]
@@ -133,12 +127,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        /// </summary>
-        [Input("metadata")]
-        public Input<Inputs.MaintenanceWindowMetadataArgs>? Metadata { get; set; }
-
-        /// <summary>
         /// The name of the maintenance window, displayed in the UI
         /// </summary>
         [Input("name")]
@@ -199,12 +187,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
-
-        /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        /// </summary>
-        [Input("metadata")]
-        public Input<Inputs.MaintenanceWindowMetadataGetArgs>? Metadata { get; set; }
 
         /// <summary>
         /// The name of the maintenance window, displayed in the UI

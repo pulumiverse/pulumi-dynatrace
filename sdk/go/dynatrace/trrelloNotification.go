@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -24,6 +24,8 @@ type TrrelloNotification struct {
 	BoardId pulumi.StringOutput `pulumi:"boardId"`
 	// The description of the Trello card.   You can use same placeholders as in card text
 	Description pulumi.StringOutput `pulumi:"description"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
 	// The Trello list to which the card should be assigned
 	ListId pulumi.StringOutput `pulumi:"listId"`
 	// The name of the notification configuration
@@ -100,6 +102,8 @@ type trrelloNotificationState struct {
 	BoardId *string `pulumi:"boardId"`
 	// The description of the Trello card.   You can use same placeholders as in card text
 	Description *string `pulumi:"description"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The Trello list to which the card should be assigned
 	ListId *string `pulumi:"listId"`
 	// The name of the notification configuration
@@ -123,6 +127,8 @@ type TrrelloNotificationState struct {
 	BoardId pulumi.StringPtrInput
 	// The description of the Trello card.   You can use same placeholders as in card text
 	Description pulumi.StringPtrInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The Trello list to which the card should be assigned
 	ListId pulumi.StringPtrInput
 	// The name of the notification configuration
@@ -150,6 +156,8 @@ type trrelloNotificationArgs struct {
 	BoardId string `pulumi:"boardId"`
 	// The description of the Trello card.   You can use same placeholders as in card text
 	Description string `pulumi:"description"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The Trello list to which the card should be assigned
 	ListId string `pulumi:"listId"`
 	// The name of the notification configuration
@@ -174,6 +182,8 @@ type TrrelloNotificationArgs struct {
 	BoardId pulumi.StringInput
 	// The description of the Trello card.   You can use same placeholders as in card text
 	Description pulumi.StringInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The Trello list to which the card should be assigned
 	ListId pulumi.StringInput
 	// The name of the notification configuration
@@ -296,6 +306,11 @@ func (o TrrelloNotificationOutput) BoardId() pulumi.StringOutput {
 // The description of the Trello card.   You can use same placeholders as in card text
 func (o TrrelloNotificationOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *TrrelloNotification) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// The ID of these settings when referred to from resources requiring the REST API V1 keys
+func (o TrrelloNotificationOutput) LegacyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *TrrelloNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
 // The Trello list to which the card should be assigned

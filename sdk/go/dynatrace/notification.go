@@ -19,8 +19,6 @@ type Notification struct {
 	Config NotificationConfigPtrOutput `pulumi:"config"`
 	// Configuration for Email Notification
 	Email NotificationEmailPtrOutput `pulumi:"email"`
-	// Configuration for HipChat Notification
-	Hipchat NotificationHipchatPtrOutput `pulumi:"hipchat"`
 	// Configuration for Jira Notification
 	Jira NotificationJiraPtrOutput `pulumi:"jira"`
 	// Configuration for OpsGenie Notification
@@ -77,8 +75,6 @@ type notificationState struct {
 	Config *NotificationConfig `pulumi:"config"`
 	// Configuration for Email Notification
 	Email *NotificationEmail `pulumi:"email"`
-	// Configuration for HipChat Notification
-	Hipchat *NotificationHipchat `pulumi:"hipchat"`
 	// Configuration for Jira Notification
 	Jira *NotificationJira `pulumi:"jira"`
 	// Configuration for OpsGenie Notification
@@ -106,8 +102,6 @@ type NotificationState struct {
 	Config NotificationConfigPtrInput
 	// Configuration for Email Notification
 	Email NotificationEmailPtrInput
-	// Configuration for HipChat Notification
-	Hipchat NotificationHipchatPtrInput
 	// Configuration for Jira Notification
 	Jira NotificationJiraPtrInput
 	// Configuration for OpsGenie Notification
@@ -139,8 +133,6 @@ type notificationArgs struct {
 	Config *NotificationConfig `pulumi:"config"`
 	// Configuration for Email Notification
 	Email *NotificationEmail `pulumi:"email"`
-	// Configuration for HipChat Notification
-	Hipchat *NotificationHipchat `pulumi:"hipchat"`
 	// Configuration for Jira Notification
 	Jira *NotificationJira `pulumi:"jira"`
 	// Configuration for OpsGenie Notification
@@ -169,8 +161,6 @@ type NotificationArgs struct {
 	Config NotificationConfigPtrInput
 	// Configuration for Email Notification
 	Email NotificationEmailPtrInput
-	// Configuration for HipChat Notification
-	Hipchat NotificationHipchatPtrInput
 	// Configuration for Jira Notification
 	Jira NotificationJiraPtrInput
 	// Configuration for OpsGenie Notification
@@ -291,11 +281,6 @@ func (o NotificationOutput) Config() NotificationConfigPtrOutput {
 // Configuration for Email Notification
 func (o NotificationOutput) Email() NotificationEmailPtrOutput {
 	return o.ApplyT(func(v *Notification) NotificationEmailPtrOutput { return v.Email }).(NotificationEmailPtrOutput)
-}
-
-// Configuration for HipChat Notification
-func (o NotificationOutput) Hipchat() NotificationHipchatPtrOutput {
-	return o.ApplyT(func(v *Notification) NotificationHipchatPtrOutput { return v.Hipchat }).(NotificationHipchatPtrOutput)
 }
 
 // Configuration for Jira Notification

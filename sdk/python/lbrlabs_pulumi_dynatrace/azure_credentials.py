@@ -26,6 +26,7 @@ class AzureCredentialsArgs:
                  monitor_only_excluding_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]] = None,
                  monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]] = None,
                  supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]] = None,
+                 supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AzureCredentials resource.
@@ -34,11 +35,13 @@ class AzureCredentialsArgs:
         :param pulumi.Input[str] app_id: The Application ID (also referred to as Client ID)  The combination of Application ID and Directory ID must be unique
         :param pulumi.Input[bool] auto_tagging: The automatic capture of Azure tags is on (`true`) or off (`false`)
         :param pulumi.Input[str] directory_id: The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
-        :param pulumi.Input[str] key: The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+        :param pulumi.Input[str] key: The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[str] label: The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]] monitor_only_excluding_tag_pairs: A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]] monitor_only_tag_pairs: A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
+        :param pulumi.Input[bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+               manage them via WebUI without interference by Terraform.
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
         """
         pulumi.set(__self__, "active", active)
@@ -59,6 +62,8 @@ class AzureCredentialsArgs:
             pulumi.set(__self__, "monitor_only_tag_pairs", monitor_only_tag_pairs)
         if supporting_services is not None:
             pulumi.set(__self__, "supporting_services", supporting_services)
+        if supporting_services_managed_in_dynatrace is not None:
+            pulumi.set(__self__, "supporting_services_managed_in_dynatrace", supporting_services_managed_in_dynatrace)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
 
@@ -126,7 +131,7 @@ class AzureCredentialsArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+        The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "key")
 
@@ -183,6 +188,19 @@ class AzureCredentialsArgs:
         pulumi.set(self, "supporting_services", value)
 
     @property
+    @pulumi.getter(name="supportingServicesManagedInDynatrace")
+    def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+        manage them via WebUI without interference by Terraform.
+        """
+        return pulumi.get(self, "supporting_services_managed_in_dynatrace")
+
+    @supporting_services_managed_in_dynatrace.setter
+    def supporting_services_managed_in_dynatrace(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "supporting_services_managed_in_dynatrace", value)
+
+    @property
     @pulumi.getter
     def unknowns(self) -> Optional[pulumi.Input[str]]:
         """
@@ -208,6 +226,7 @@ class _AzureCredentialsState:
                  monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]]] = None,
                  monitor_only_tagged_entities: Optional[pulumi.Input[bool]] = None,
                  supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]]] = None,
+                 supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AzureCredentials resources.
@@ -215,12 +234,14 @@ class _AzureCredentialsState:
         :param pulumi.Input[str] app_id: The Application ID (also referred to as Client ID)  The combination of Application ID and Directory ID must be unique
         :param pulumi.Input[bool] auto_tagging: The automatic capture of Azure tags is on (`true`) or off (`false`)
         :param pulumi.Input[str] directory_id: The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
-        :param pulumi.Input[str] key: The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+        :param pulumi.Input[str] key: The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[str] label: The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]] monitor_only_excluding_tag_pairs: A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]] monitor_only_tag_pairs: A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
         :param pulumi.Input[bool] monitor_only_tagged_entities: Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
+        :param pulumi.Input[bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+               manage them via WebUI without interference by Terraform.
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
         """
         if active is not None:
@@ -243,6 +264,8 @@ class _AzureCredentialsState:
             pulumi.set(__self__, "monitor_only_tagged_entities", monitor_only_tagged_entities)
         if supporting_services is not None:
             pulumi.set(__self__, "supporting_services", supporting_services)
+        if supporting_services_managed_in_dynatrace is not None:
+            pulumi.set(__self__, "supporting_services_managed_in_dynatrace", supporting_services_managed_in_dynatrace)
         if unknowns is not None:
             pulumi.set(__self__, "unknowns", unknowns)
 
@@ -298,7 +321,7 @@ class _AzureCredentialsState:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+        The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "key")
 
@@ -367,6 +390,19 @@ class _AzureCredentialsState:
         pulumi.set(self, "supporting_services", value)
 
     @property
+    @pulumi.getter(name="supportingServicesManagedInDynatrace")
+    def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+        manage them via WebUI without interference by Terraform.
+        """
+        return pulumi.get(self, "supporting_services_managed_in_dynatrace")
+
+    @supporting_services_managed_in_dynatrace.setter
+    def supporting_services_managed_in_dynatrace(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "supporting_services_managed_in_dynatrace", value)
+
+    @property
     @pulumi.getter
     def unknowns(self) -> Optional[pulumi.Input[str]]:
         """
@@ -394,6 +430,7 @@ class AzureCredentials(pulumi.CustomResource):
                  monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyTagPairArgs']]]]] = None,
                  monitor_only_tagged_entities: Optional[pulumi.Input[bool]] = None,
                  supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsSupportingServiceArgs']]]]] = None,
+                 supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -404,12 +441,14 @@ class AzureCredentials(pulumi.CustomResource):
         :param pulumi.Input[str] app_id: The Application ID (also referred to as Client ID)  The combination of Application ID and Directory ID must be unique
         :param pulumi.Input[bool] auto_tagging: The automatic capture of Azure tags is on (`true`) or off (`false`)
         :param pulumi.Input[str] directory_id: The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
-        :param pulumi.Input[str] key: The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+        :param pulumi.Input[str] key: The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[str] label: The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]] monitor_only_excluding_tag_pairs: A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyTagPairArgs']]]] monitor_only_tag_pairs: A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
         :param pulumi.Input[bool] monitor_only_tagged_entities: Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsSupportingServiceArgs']]]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
+        :param pulumi.Input[bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+               manage them via WebUI without interference by Terraform.
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
         """
         ...
@@ -445,6 +484,7 @@ class AzureCredentials(pulumi.CustomResource):
                  monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyTagPairArgs']]]]] = None,
                  monitor_only_tagged_entities: Optional[pulumi.Input[bool]] = None,
                  supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsSupportingServiceArgs']]]]] = None,
+                 supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
                  unknowns: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -461,7 +501,7 @@ class AzureCredentials(pulumi.CustomResource):
             __props__.__dict__["app_id"] = app_id
             __props__.__dict__["auto_tagging"] = auto_tagging
             __props__.__dict__["directory_id"] = directory_id
-            __props__.__dict__["key"] = key
+            __props__.__dict__["key"] = None if key is None else pulumi.Output.secret(key)
             __props__.__dict__["label"] = label
             __props__.__dict__["monitor_only_excluding_tag_pairs"] = monitor_only_excluding_tag_pairs
             __props__.__dict__["monitor_only_tag_pairs"] = monitor_only_tag_pairs
@@ -469,7 +509,10 @@ class AzureCredentials(pulumi.CustomResource):
                 raise TypeError("Missing required property 'monitor_only_tagged_entities'")
             __props__.__dict__["monitor_only_tagged_entities"] = monitor_only_tagged_entities
             __props__.__dict__["supporting_services"] = supporting_services
+            __props__.__dict__["supporting_services_managed_in_dynatrace"] = supporting_services_managed_in_dynatrace
             __props__.__dict__["unknowns"] = unknowns
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["key"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(AzureCredentials, __self__).__init__(
             'dynatrace:index/azureCredentials:AzureCredentials',
             resource_name,
@@ -490,6 +533,7 @@ class AzureCredentials(pulumi.CustomResource):
             monitor_only_tag_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyTagPairArgs']]]]] = None,
             monitor_only_tagged_entities: Optional[pulumi.Input[bool]] = None,
             supporting_services: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsSupportingServiceArgs']]]]] = None,
+            supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
             unknowns: Optional[pulumi.Input[str]] = None) -> 'AzureCredentials':
         """
         Get an existing AzureCredentials resource's state with the given name, id, and optional extra
@@ -502,12 +546,14 @@ class AzureCredentials(pulumi.CustomResource):
         :param pulumi.Input[str] app_id: The Application ID (also referred to as Client ID)  The combination of Application ID and Directory ID must be unique
         :param pulumi.Input[bool] auto_tagging: The automatic capture of Azure tags is on (`true`) or off (`false`)
         :param pulumi.Input[str] directory_id: The Directory ID (also referred to as Tenant ID)  The combination of Application ID and Directory ID must be unique
-        :param pulumi.Input[str] key: The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+        :param pulumi.Input[str] key: The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         :param pulumi.Input[str] label: The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]]] monitor_only_excluding_tag_pairs: A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyTagPairArgs']]]] monitor_only_tag_pairs: A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
         :param pulumi.Input[bool] monitor_only_tagged_entities: Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsSupportingServiceArgs']]]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
+        :param pulumi.Input[bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+               manage them via WebUI without interference by Terraform.
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -524,6 +570,7 @@ class AzureCredentials(pulumi.CustomResource):
         __props__.__dict__["monitor_only_tag_pairs"] = monitor_only_tag_pairs
         __props__.__dict__["monitor_only_tagged_entities"] = monitor_only_tagged_entities
         __props__.__dict__["supporting_services"] = supporting_services
+        __props__.__dict__["supporting_services_managed_in_dynatrace"] = supporting_services_managed_in_dynatrace
         __props__.__dict__["unknowns"] = unknowns
         return AzureCredentials(resource_name, opts=opts, __props__=__props__)
 
@@ -563,7 +610,7 @@ class AzureCredentials(pulumi.CustomResource):
     @pulumi.getter
     def key(self) -> pulumi.Output[Optional[str]]:
         """
-        The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+        The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         """
         return pulumi.get(self, "key")
 
@@ -606,6 +653,15 @@ class AzureCredentials(pulumi.CustomResource):
         A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
         """
         return pulumi.get(self, "supporting_services")
+
+    @property
+    @pulumi.getter(name="supportingServicesManagedInDynatrace")
+    def supporting_services_managed_in_dynatrace(self) -> pulumi.Output[Optional[bool]]:
+        """
+        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+        manage them via WebUI without interference by Terraform.
+        """
+        return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @property
     @pulumi.getter

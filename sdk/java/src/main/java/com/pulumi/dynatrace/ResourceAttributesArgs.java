@@ -5,8 +5,7 @@ package com.pulumi.dynatrace;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.String;
-import java.util.List;
+import com.pulumi.dynatrace.inputs.ResourceAttributesKeysArgs;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -17,40 +16,24 @@ public final class ResourceAttributesArgs extends com.pulumi.resources.ResourceA
     public static final ResourceAttributesArgs Empty = new ResourceAttributesArgs();
 
     /**
-     * configured attributes that currently shouldn&#39;t be taken into consideration
+     * Attribute key allow-list
      * 
      */
-    @Import(name="disableds")
-    private @Nullable Output<List<String>> disableds;
+    @Import(name="keys")
+    private @Nullable Output<ResourceAttributesKeysArgs> keys;
 
     /**
-     * @return configured attributes that currently shouldn&#39;t be taken into consideration
+     * @return Attribute key allow-list
      * 
      */
-    public Optional<Output<List<String>>> disableds() {
-        return Optional.ofNullable(this.disableds);
-    }
-
-    /**
-     * attributes that should get captured
-     * 
-     */
-    @Import(name="enableds")
-    private @Nullable Output<List<String>> enableds;
-
-    /**
-     * @return attributes that should get captured
-     * 
-     */
-    public Optional<Output<List<String>>> enableds() {
-        return Optional.ofNullable(this.enableds);
+    public Optional<Output<ResourceAttributesKeysArgs>> keys() {
+        return Optional.ofNullable(this.keys);
     }
 
     private ResourceAttributesArgs() {}
 
     private ResourceAttributesArgs(ResourceAttributesArgs $) {
-        this.disableds = $.disableds;
-        this.enableds = $.enableds;
+        this.keys = $.keys;
     }
 
     public static Builder builder() {
@@ -72,65 +55,24 @@ public final class ResourceAttributesArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param disableds configured attributes that currently shouldn&#39;t be taken into consideration
+         * @param keys Attribute key allow-list
          * 
          * @return builder
          * 
          */
-        public Builder disableds(@Nullable Output<List<String>> disableds) {
-            $.disableds = disableds;
+        public Builder keys(@Nullable Output<ResourceAttributesKeysArgs> keys) {
+            $.keys = keys;
             return this;
         }
 
         /**
-         * @param disableds configured attributes that currently shouldn&#39;t be taken into consideration
+         * @param keys Attribute key allow-list
          * 
          * @return builder
          * 
          */
-        public Builder disableds(List<String> disableds) {
-            return disableds(Output.of(disableds));
-        }
-
-        /**
-         * @param disableds configured attributes that currently shouldn&#39;t be taken into consideration
-         * 
-         * @return builder
-         * 
-         */
-        public Builder disableds(String... disableds) {
-            return disableds(List.of(disableds));
-        }
-
-        /**
-         * @param enableds attributes that should get captured
-         * 
-         * @return builder
-         * 
-         */
-        public Builder enableds(@Nullable Output<List<String>> enableds) {
-            $.enableds = enableds;
-            return this;
-        }
-
-        /**
-         * @param enableds attributes that should get captured
-         * 
-         * @return builder
-         * 
-         */
-        public Builder enableds(List<String> enableds) {
-            return enableds(Output.of(enableds));
-        }
-
-        /**
-         * @param enableds attributes that should get captured
-         * 
-         * @return builder
-         * 
-         */
-        public Builder enableds(String... enableds) {
-            return enableds(List.of(enableds));
+        public Builder keys(ResourceAttributesKeysArgs keys) {
+            return keys(Output.of(keys));
         }
 
         public ResourceAttributesArgs build() {

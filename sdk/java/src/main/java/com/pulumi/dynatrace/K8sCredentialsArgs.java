@@ -34,6 +34,21 @@ public final class K8sCredentialsArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * Active Gate group to filter active gates for this credentials.
+     * 
+     */
+    @Import(name="activeGateGroup")
+    private @Nullable Output<String> activeGateGroup;
+
+    /**
+     * @return Active Gate group to filter active gates for this credentials.
+     * 
+     */
+    public Optional<Output<String>> activeGateGroup() {
+        return Optional.ofNullable(this.activeGateGroup);
+    }
+
+    /**
      * The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
      * 
      */
@@ -217,6 +232,7 @@ public final class K8sCredentialsArgs extends com.pulumi.resources.ResourceArgs 
 
     private K8sCredentialsArgs(K8sCredentialsArgs $) {
         this.active = $.active;
+        this.activeGateGroup = $.activeGateGroup;
         this.authToken = $.authToken;
         this.certificateCheckEnabled = $.certificateCheckEnabled;
         this.davisEventsIntegrationEnabled = $.davisEventsIntegrationEnabled;
@@ -268,6 +284,27 @@ public final class K8sCredentialsArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder active(Boolean active) {
             return active(Output.of(active));
+        }
+
+        /**
+         * @param activeGateGroup Active Gate group to filter active gates for this credentials.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder activeGateGroup(@Nullable Output<String> activeGateGroup) {
+            $.activeGateGroup = activeGateGroup;
+            return this;
+        }
+
+        /**
+         * @param activeGateGroup Active Gate group to filter active gates for this credentials.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder activeGateGroup(String activeGateGroup) {
+            return activeGateGroup(Output.of(activeGateGroup));
         }
 
         /**

@@ -25,6 +25,14 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
             set => _managementZones = value;
         }
 
+        [Input("urls")]
+        private InputMap<string>? _urls;
+        public InputMap<string> Urls
+        {
+            get => _urls ?? (_urls = new InputMap<string>());
+            set => _urls = value;
+        }
+
         public DashboardSharingPublicGetArgs()
         {
         }

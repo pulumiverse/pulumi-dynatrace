@@ -23,6 +23,7 @@ class TrrelloNotificationArgs:
                  resolved_list_id: pulumi.Input[str],
                  text: pulumi.Input[str],
                  authorization_token: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a TrrelloNotification resource.
@@ -35,6 +36,7 @@ class TrrelloNotificationArgs:
         :param pulumi.Input[str] resolved_list_id: The Trello list to which the card of the resolved problem should be assigned
         :param pulumi.Input[str] text: The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[str] authorization_token: The application token for the Trello account
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         """
         pulumi.set(__self__, "active", active)
@@ -47,6 +49,8 @@ class TrrelloNotificationArgs:
         pulumi.set(__self__, "text", text)
         if authorization_token is not None:
             pulumi.set(__self__, "authorization_token", authorization_token)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -159,6 +163,18 @@ class TrrelloNotificationArgs:
         pulumi.set(self, "authorization_token", value)
 
     @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -179,6 +195,7 @@ class _TrrelloNotificationState:
                  authorization_token: Optional[pulumi.Input[str]] = None,
                  board_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  list_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -191,6 +208,7 @@ class _TrrelloNotificationState:
         :param pulumi.Input[str] authorization_token: The application token for the Trello account
         :param pulumi.Input[str] board_id: The Trello board to which the card should be assigned
         :param pulumi.Input[str] description: The description of the Trello card.   You can use same placeholders as in card text
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] list_id: The Trello list to which the card should be assigned
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
@@ -207,6 +225,8 @@ class _TrrelloNotificationState:
             pulumi.set(__self__, "board_id", board_id)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if list_id is not None:
             pulumi.set(__self__, "list_id", list_id)
         if name is not None:
@@ -279,6 +299,18 @@ class _TrrelloNotificationState:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
+
+    @property
     @pulumi.getter(name="listId")
     def list_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -349,6 +381,7 @@ class TrrelloNotification(pulumi.CustomResource):
                  authorization_token: Optional[pulumi.Input[str]] = None,
                  board_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  list_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -364,6 +397,7 @@ class TrrelloNotification(pulumi.CustomResource):
         :param pulumi.Input[str] authorization_token: The application token for the Trello account
         :param pulumi.Input[str] board_id: The Trello board to which the card should be assigned
         :param pulumi.Input[str] description: The description of the Trello card.   You can use same placeholders as in card text
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] list_id: The Trello list to which the card should be assigned
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
@@ -398,6 +432,7 @@ class TrrelloNotification(pulumi.CustomResource):
                  authorization_token: Optional[pulumi.Input[str]] = None,
                  board_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  list_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -425,6 +460,7 @@ class TrrelloNotification(pulumi.CustomResource):
             if description is None and not opts.urn:
                 raise TypeError("Missing required property 'description'")
             __props__.__dict__["description"] = description
+            __props__.__dict__["legacy_id"] = legacy_id
             if list_id is None and not opts.urn:
                 raise TypeError("Missing required property 'list_id'")
             __props__.__dict__["list_id"] = list_id
@@ -453,6 +489,7 @@ class TrrelloNotification(pulumi.CustomResource):
             authorization_token: Optional[pulumi.Input[str]] = None,
             board_id: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
+            legacy_id: Optional[pulumi.Input[str]] = None,
             list_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             profile: Optional[pulumi.Input[str]] = None,
@@ -470,6 +507,7 @@ class TrrelloNotification(pulumi.CustomResource):
         :param pulumi.Input[str] authorization_token: The application token for the Trello account
         :param pulumi.Input[str] board_id: The Trello board to which the card should be assigned
         :param pulumi.Input[str] description: The description of the Trello card.   You can use same placeholders as in card text
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] list_id: The Trello list to which the card should be assigned
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
@@ -485,6 +523,7 @@ class TrrelloNotification(pulumi.CustomResource):
         __props__.__dict__["authorization_token"] = authorization_token
         __props__.__dict__["board_id"] = board_id
         __props__.__dict__["description"] = description
+        __props__.__dict__["legacy_id"] = legacy_id
         __props__.__dict__["list_id"] = list_id
         __props__.__dict__["name"] = name
         __props__.__dict__["profile"] = profile
@@ -531,6 +570,14 @@ class TrrelloNotification(pulumi.CustomResource):
         The description of the Trello card.   You can use same placeholders as in card text
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> pulumi.Output[str]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
 
     @property
     @pulumi.getter(name="listId")

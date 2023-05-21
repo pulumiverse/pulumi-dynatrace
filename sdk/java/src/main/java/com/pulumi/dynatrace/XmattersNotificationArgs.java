@@ -63,6 +63,21 @@ public final class XmattersNotificationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    @Import(name="legacyId")
+    private @Nullable Output<String> legacyId;
+
+    /**
+     * @return The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    public Optional<Output<String>> legacyId() {
+        return Optional.ofNullable(this.legacyId);
+    }
+
+    /**
      * The name of the notification configuration
      * 
      */
@@ -128,6 +143,7 @@ public final class XmattersNotificationArgs extends com.pulumi.resources.Resourc
         this.active = $.active;
         this.headers = $.headers;
         this.insecure = $.insecure;
+        this.legacyId = $.legacyId;
         this.name = $.name;
         this.payload = $.payload;
         this.profile = $.profile;
@@ -213,6 +229,27 @@ public final class XmattersNotificationArgs extends com.pulumi.resources.Resourc
          */
         public Builder insecure(Boolean insecure) {
             return insecure(Output.of(insecure));
+        }
+
+        /**
+         * @param legacyId The ID of these settings when referred to from resources requiring the REST API V1 keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(@Nullable Output<String> legacyId) {
+            $.legacyId = legacyId;
+            return this;
+        }
+
+        /**
+         * @param legacyId The ID of these settings when referred to from resources requiring the REST API V1 keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(String legacyId) {
+            return legacyId(Output.of(legacyId));
         }
 
         /**

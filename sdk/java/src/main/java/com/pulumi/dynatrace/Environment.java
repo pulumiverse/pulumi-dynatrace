@@ -32,7 +32,7 @@ public class Environment extends com.pulumi.resources.CustomResource {
      * The display name of the environment
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -46,7 +46,7 @@ public class Environment extends com.pulumi.resources.CustomResource {
      * Environment level consumption and quotas information
      * 
      */
-    @Export(name="quotas", type=EnvironmentQuotas.class, parameters={})
+    @Export(name="quotas", refs={EnvironmentQuotas.class}, tree="[0]")
     private Output</* @Nullable */ EnvironmentQuotas> quotas;
 
     /**
@@ -60,7 +60,7 @@ public class Environment extends com.pulumi.resources.CustomResource {
      * Indicates whether the environment is enabled or disabled. Possible values are `ENABLED` and `DISABLED`. The default value is ENABLED
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -74,7 +74,7 @@ public class Environment extends com.pulumi.resources.CustomResource {
      * Environment level storage usage and limit information
      * 
      */
-    @Export(name="storage", type=EnvironmentStorage.class, parameters={})
+    @Export(name="storage", refs={EnvironmentStorage.class}, tree="[0]")
     private Output<EnvironmentStorage> storage;
 
     /**
@@ -88,7 +88,7 @@ public class Environment extends com.pulumi.resources.CustomResource {
      * A set of tags that are assigned to this environment. Every tag can have a maximum length of 100 characters
      * 
      */
-    @Export(name="tags", type=List.class, parameters={String.class})
+    @Export(name="tags", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> tags;
 
     /**
@@ -102,7 +102,7 @@ public class Environment extends com.pulumi.resources.CustomResource {
      * Specifies whether the environment is a trial environment or a non-trial environment. Creating a trial environment is only possible if your license allows that. The default value is false (non-trial)
      * 
      */
-    @Export(name="trial", type=Boolean.class, parameters={})
+    @Export(name="trial", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> trial;
 
     /**

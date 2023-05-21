@@ -15,19 +15,19 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
     public sealed class WebApplicationSessionReplayConfig
     {
         /// <summary>
-        /// Session replay sampling rating in percent
+        /// (Field has overlap with `dynatrace.WebAppEnablement`) Session replay sampling rating in percent
         /// </summary>
         public readonly int CostControlPercentage;
         /// <summary>
-        /// A list of URLs to be excluded from CSS resource capturing
+        /// (Field has overlap with `dynatrace.SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
         /// </summary>
         public readonly ImmutableArray<string> CssResourceCapturingExclusionRules;
         /// <summary>
-        /// Capture (`true`) or don't capture (`false`) CSS resources from the session
+        /// (Field has overlap with `dynatrace.SessionReplayResourceCapture`) Capture (`true`) or don't capture (`false`) CSS resources from the session
         /// </summary>
         public readonly bool? EnableCssResourceCapturing;
         /// <summary>
-        /// SessionReplay Enabled/Disabled
+        /// (Field has overlap with `dynatrace.WebAppEnablement`) SessionReplay Enabled/Disabled
         /// </summary>
         public readonly bool? Enabled;
 

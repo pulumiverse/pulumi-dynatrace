@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -20,6 +20,8 @@ type Maintenance struct {
 	Filters MaintenanceFilterArrayOutput `pulumi:"filters"`
 	// The general properties of the maintenance window
 	GeneralProperties MaintenanceGeneralPropertiesOutput `pulumi:"generalProperties"`
+	// The ID of this setting when referred to by the Config REST API V1
+	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
 	// The schedule of the maintenance window
 	Schedule MaintenanceScheduleOutput `pulumi:"schedule"`
 }
@@ -66,6 +68,8 @@ type maintenanceState struct {
 	Filters []MaintenanceFilter `pulumi:"filters"`
 	// The general properties of the maintenance window
 	GeneralProperties *MaintenanceGeneralProperties `pulumi:"generalProperties"`
+	// The ID of this setting when referred to by the Config REST API V1
+	LegacyId *string `pulumi:"legacyId"`
 	// The schedule of the maintenance window
 	Schedule *MaintenanceSchedule `pulumi:"schedule"`
 }
@@ -77,6 +81,8 @@ type MaintenanceState struct {
 	Filters MaintenanceFilterArrayInput
 	// The general properties of the maintenance window
 	GeneralProperties MaintenanceGeneralPropertiesPtrInput
+	// The ID of this setting when referred to by the Config REST API V1
+	LegacyId pulumi.StringPtrInput
 	// The schedule of the maintenance window
 	Schedule MaintenanceSchedulePtrInput
 }
@@ -92,6 +98,8 @@ type maintenanceArgs struct {
 	Filters []MaintenanceFilter `pulumi:"filters"`
 	// The general properties of the maintenance window
 	GeneralProperties MaintenanceGeneralProperties `pulumi:"generalProperties"`
+	// The ID of this setting when referred to by the Config REST API V1
+	LegacyId *string `pulumi:"legacyId"`
 	// The schedule of the maintenance window
 	Schedule MaintenanceSchedule `pulumi:"schedule"`
 }
@@ -104,6 +112,8 @@ type MaintenanceArgs struct {
 	Filters MaintenanceFilterArrayInput
 	// The general properties of the maintenance window
 	GeneralProperties MaintenanceGeneralPropertiesInput
+	// The ID of this setting when referred to by the Config REST API V1
+	LegacyId pulumi.StringPtrInput
 	// The schedule of the maintenance window
 	Schedule MaintenanceScheduleInput
 }
@@ -208,6 +218,11 @@ func (o MaintenanceOutput) Filters() MaintenanceFilterArrayOutput {
 // The general properties of the maintenance window
 func (o MaintenanceOutput) GeneralProperties() MaintenanceGeneralPropertiesOutput {
 	return o.ApplyT(func(v *Maintenance) MaintenanceGeneralPropertiesOutput { return v.GeneralProperties }).(MaintenanceGeneralPropertiesOutput)
+}
+
+// The ID of this setting when referred to by the Config REST API V1
+func (o MaintenanceOutput) LegacyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Maintenance) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
 // The schedule of the maintenance window

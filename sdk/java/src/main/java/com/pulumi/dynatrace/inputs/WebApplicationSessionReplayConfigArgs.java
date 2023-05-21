@@ -19,14 +19,14 @@ public final class WebApplicationSessionReplayConfigArgs extends com.pulumi.reso
     public static final WebApplicationSessionReplayConfigArgs Empty = new WebApplicationSessionReplayConfigArgs();
 
     /**
-     * Session replay sampling rating in percent
+     * (Field has overlap with `dynatrace.WebAppEnablement`) Session replay sampling rating in percent
      * 
      */
     @Import(name="costControlPercentage", required=true)
     private Output<Integer> costControlPercentage;
 
     /**
-     * @return Session replay sampling rating in percent
+     * @return (Field has overlap with `dynatrace.WebAppEnablement`) Session replay sampling rating in percent
      * 
      */
     public Output<Integer> costControlPercentage() {
@@ -34,14 +34,14 @@ public final class WebApplicationSessionReplayConfigArgs extends com.pulumi.reso
     }
 
     /**
-     * A list of URLs to be excluded from CSS resource capturing
+     * (Field has overlap with `dynatrace.SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
      * 
      */
     @Import(name="cssResourceCapturingExclusionRules")
     private @Nullable Output<List<String>> cssResourceCapturingExclusionRules;
 
     /**
-     * @return A list of URLs to be excluded from CSS resource capturing
+     * @return (Field has overlap with `dynatrace.SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
      * 
      */
     public Optional<Output<List<String>>> cssResourceCapturingExclusionRules() {
@@ -49,14 +49,14 @@ public final class WebApplicationSessionReplayConfigArgs extends com.pulumi.reso
     }
 
     /**
-     * Capture (`true`) or don&#39;t capture (`false`) CSS resources from the session
+     * (Field has overlap with `dynatrace.SessionReplayResourceCapture`) Capture (`true`) or don&#39;t capture (`false`) CSS resources from the session
      * 
      */
     @Import(name="enableCssResourceCapturing")
     private @Nullable Output<Boolean> enableCssResourceCapturing;
 
     /**
-     * @return Capture (`true`) or don&#39;t capture (`false`) CSS resources from the session
+     * @return (Field has overlap with `dynatrace.SessionReplayResourceCapture`) Capture (`true`) or don&#39;t capture (`false`) CSS resources from the session
      * 
      */
     public Optional<Output<Boolean>> enableCssResourceCapturing() {
@@ -64,14 +64,14 @@ public final class WebApplicationSessionReplayConfigArgs extends com.pulumi.reso
     }
 
     /**
-     * SessionReplay Enabled/Disabled
+     * (Field has overlap with `dynatrace.WebAppEnablement`) SessionReplay Enabled/Disabled
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return SessionReplay Enabled/Disabled
+     * @return (Field has overlap with `dynatrace.WebAppEnablement`) SessionReplay Enabled/Disabled
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -106,7 +106,7 @@ public final class WebApplicationSessionReplayConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param costControlPercentage Session replay sampling rating in percent
+         * @param costControlPercentage (Field has overlap with `dynatrace.WebAppEnablement`) Session replay sampling rating in percent
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class WebApplicationSessionReplayConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param costControlPercentage Session replay sampling rating in percent
+         * @param costControlPercentage (Field has overlap with `dynatrace.WebAppEnablement`) Session replay sampling rating in percent
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class WebApplicationSessionReplayConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param cssResourceCapturingExclusionRules A list of URLs to be excluded from CSS resource capturing
+         * @param cssResourceCapturingExclusionRules (Field has overlap with `dynatrace.SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class WebApplicationSessionReplayConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param cssResourceCapturingExclusionRules A list of URLs to be excluded from CSS resource capturing
+         * @param cssResourceCapturingExclusionRules (Field has overlap with `dynatrace.SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class WebApplicationSessionReplayConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param cssResourceCapturingExclusionRules A list of URLs to be excluded from CSS resource capturing
+         * @param cssResourceCapturingExclusionRules (Field has overlap with `dynatrace.SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class WebApplicationSessionReplayConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param enableCssResourceCapturing Capture (`true`) or don&#39;t capture (`false`) CSS resources from the session
+         * @param enableCssResourceCapturing (Field has overlap with `dynatrace.SessionReplayResourceCapture`) Capture (`true`) or don&#39;t capture (`false`) CSS resources from the session
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class WebApplicationSessionReplayConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param enableCssResourceCapturing Capture (`true`) or don&#39;t capture (`false`) CSS resources from the session
+         * @param enableCssResourceCapturing (Field has overlap with `dynatrace.SessionReplayResourceCapture`) Capture (`true`) or don&#39;t capture (`false`) CSS resources from the session
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class WebApplicationSessionReplayConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param enabled SessionReplay Enabled/Disabled
+         * @param enabled (Field has overlap with `dynatrace.WebAppEnablement`) SessionReplay Enabled/Disabled
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class WebApplicationSessionReplayConfigArgs extends com.pulumi.reso
         }
 
         /**
-         * @param enabled SessionReplay Enabled/Disabled
+         * @param enabled (Field has overlap with `dynatrace.WebAppEnablement`) SessionReplay Enabled/Disabled
          * 
          * @return builder
          * 

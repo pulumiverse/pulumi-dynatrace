@@ -31,6 +31,15 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         [Output("dtEnvUrl")]
         public Output<string?> DtEnvUrl { get; private set; } = null!;
 
+        [Output("iamAccountId")]
+        public Output<string?> IamAccountId { get; private set; } = null!;
+
+        [Output("iamClientId")]
+        public Output<string?> IamClientId { get; private set; } = null!;
+
+        [Output("iamClientSecret")]
+        public Output<string?> IamClientSecret { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a Provider resource with the given unique name, arguments, and options.
@@ -55,6 +64,9 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
                     "dtApiToken",
                     "dtClusterApiToken",
                     "dtClusterUrl",
+                    "iamAccountId",
+                    "iamClientId",
+                    "iamClientSecret",
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -104,6 +116,42 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
 
         [Input("dtEnvUrl")]
         public Input<string>? DtEnvUrl { get; set; }
+
+        [Input("iamAccountId")]
+        private Input<string>? _iamAccountId;
+        public Input<string>? IamAccountId
+        {
+            get => _iamAccountId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _iamAccountId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("iamClientId")]
+        private Input<string>? _iamClientId;
+        public Input<string>? IamClientId
+        {
+            get => _iamClientId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _iamClientId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("iamClientSecret")]
+        private Input<string>? _iamClientSecret;
+        public Input<string>? IamClientSecret
+        {
+            get => _iamClientSecret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _iamClientSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public ProviderArgs()
         {

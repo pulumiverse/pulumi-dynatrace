@@ -14,7 +14,9 @@ public final class GetManagementZoneResult {
      * 
      */
     private String id;
+    private String legacyId;
     private String name;
+    private String settings20Id;
 
     private GetManagementZoneResult() {}
     /**
@@ -24,8 +26,14 @@ public final class GetManagementZoneResult {
     public String id() {
         return this.id;
     }
+    public String legacyId() {
+        return this.legacyId;
+    }
     public String name() {
         return this.name;
+    }
+    public String settings20Id() {
+        return this.settings20Id;
     }
 
     public static Builder builder() {
@@ -38,12 +46,16 @@ public final class GetManagementZoneResult {
     @CustomType.Builder
     public static final class Builder {
         private String id;
+        private String legacyId;
         private String name;
+        private String settings20Id;
         public Builder() {}
         public Builder(GetManagementZoneResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
+    	      this.legacyId = defaults.legacyId;
     	      this.name = defaults.name;
+    	      this.settings20Id = defaults.settings20Id;
         }
 
         @CustomType.Setter
@@ -52,14 +64,26 @@ public final class GetManagementZoneResult {
             return this;
         }
         @CustomType.Setter
+        public Builder legacyId(String legacyId) {
+            this.legacyId = Objects.requireNonNull(legacyId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder settings20Id(String settings20Id) {
+            this.settings20Id = Objects.requireNonNull(settings20Id);
             return this;
         }
         public GetManagementZoneResult build() {
             final var o = new GetManagementZoneResult();
             o.id = id;
+            o.legacyId = legacyId;
             o.name = name;
+            o.settings20Id = settings20Id;
             return o;
         }
     }

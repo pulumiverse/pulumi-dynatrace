@@ -25,7 +25,7 @@ public class CustomAnomalies extends com.pulumi.resources.CustomResource {
      * How the metric data points are aggregated for the evaluation. The timeseries must support this aggregation
      * 
      */
-    @Export(name="aggregationType", type=String.class, parameters={})
+    @Export(name="aggregationType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> aggregationType;
 
     /**
@@ -39,7 +39,7 @@ public class CustomAnomalies extends com.pulumi.resources.CustomResource {
      * The description of the metric event
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -53,7 +53,7 @@ public class CustomAnomalies extends com.pulumi.resources.CustomResource {
      * Defines the dimensions of the metric to alert on. The filters are combined by conjunction
      * 
      */
-    @Export(name="dimensions", type=List.class, parameters={CustomAnomaliesDimension.class})
+    @Export(name="dimensions", refs={List.class,CustomAnomaliesDimension.class}, tree="[0,1]")
     private Output</* @Nullable */ List<CustomAnomaliesDimension>> dimensions;
 
     /**
@@ -71,7 +71,7 @@ public class CustomAnomalies extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* This property is not meant to be configured from the outside. It will get removed completely in future versions */
-    @Export(name="disabledReason", type=String.class, parameters={})
+    @Export(name="disabledReason", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> disabledReason;
 
     /**
@@ -85,7 +85,7 @@ public class CustomAnomalies extends com.pulumi.resources.CustomResource {
      * The metric event is enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="enabled", type=Boolean.class, parameters={})
+    @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enabled;
 
     /**
@@ -99,7 +99,7 @@ public class CustomAnomalies extends com.pulumi.resources.CustomResource {
      * The ID of the metric evaluated by the metric event
      * 
      */
-    @Export(name="metricId", type=String.class, parameters={})
+    @Export(name="metricId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> metricId;
 
     /**
@@ -113,7 +113,7 @@ public class CustomAnomalies extends com.pulumi.resources.CustomResource {
      * The metric selector that should be executed
      * 
      */
-    @Export(name="metricSelector", type=String.class, parameters={})
+    @Export(name="metricSelector", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> metricSelector;
 
     /**
@@ -127,7 +127,7 @@ public class CustomAnomalies extends com.pulumi.resources.CustomResource {
      * The name of the metric event displayed in the UI
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -141,7 +141,7 @@ public class CustomAnomalies extends com.pulumi.resources.CustomResource {
      * Defines which dimension key should be used for the **alertingScope**
      * 
      */
-    @Export(name="primaryDimensionKey", type=String.class, parameters={})
+    @Export(name="primaryDimensionKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> primaryDimensionKey;
 
     /**
@@ -155,7 +155,7 @@ public class CustomAnomalies extends com.pulumi.resources.CustomResource {
      * Defines the scope of the metric event. Only one filter is allowed per filter type, except for tags, where up to 3 are allowed. The filters are combined by conjunction
      * 
      */
-    @Export(name="scopes", type=List.class, parameters={CustomAnomaliesScope.class})
+    @Export(name="scopes", refs={List.class,CustomAnomaliesScope.class}, tree="[0,1]")
     private Output</* @Nullable */ List<CustomAnomaliesScope>> scopes;
 
     /**
@@ -169,7 +169,7 @@ public class CustomAnomalies extends com.pulumi.resources.CustomResource {
      * The type of the event to trigger on the threshold violation.  The `CUSTOM_ALERT` type is not correlated with other alerts. The `INFO` type does not open a problem
      * 
      */
-    @Export(name="severity", type=String.class, parameters={})
+    @Export(name="severity", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> severity;
 
     /**
@@ -183,7 +183,7 @@ public class CustomAnomalies extends com.pulumi.resources.CustomResource {
      * A monitoring strategy for a metric event config. This is the base version of the monitoring strategy, depending on the type,  the actual JSON may contain additional fields
      * 
      */
-    @Export(name="strategy", type=CustomAnomaliesStrategy.class, parameters={})
+    @Export(name="strategy", refs={CustomAnomaliesStrategy.class}, tree="[0]")
     private Output<CustomAnomaliesStrategy> strategy;
 
     /**
@@ -197,7 +197,7 @@ public class CustomAnomalies extends com.pulumi.resources.CustomResource {
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**
@@ -215,7 +215,7 @@ public class CustomAnomalies extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* This property is not meant to be configured from the outside. It will get removed completely in future versions */
-    @Export(name="warningReason", type=String.class, parameters={})
+    @Export(name="warningReason", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> warningReason;
 
     /**

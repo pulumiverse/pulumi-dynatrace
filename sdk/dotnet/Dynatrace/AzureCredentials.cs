@@ -38,7 +38,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<string?> DirectoryId { get; private set; } = null!;
 
         /// <summary>
-        /// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+        /// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
         /// </summary>
         [Output("key")]
         public Output<string?> Key { get; private set; } = null!;
@@ -74,6 +74,13 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<ImmutableArray<Outputs.AzureCredentialsSupportingService>> SupportingServices { get; private set; } = null!;
 
         /// <summary>
+        /// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+        /// manage them via WebUI without interference by Terraform.
+        /// </summary>
+        [Output("supportingServicesManagedInDynatrace")]
+        public Output<bool?> SupportingServicesManagedInDynatrace { get; private set; } = null!;
+
+        /// <summary>
         /// Any attributes that aren't yet supported by this provider
         /// </summary>
         [Output("unknowns")]
@@ -103,6 +110,10 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             {
                 Version = Utilities.Version,
                 PluginDownloadURL = "github://api.github.com/lbrlabs",
+                AdditionalSecretOutputs =
+                {
+                    "key",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -150,11 +161,21 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         [Input("directoryId")]
         public Input<string>? DirectoryId { get; set; }
 
-        /// <summary>
-        /// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
-        /// </summary>
         [Input("key")]
-        public Input<string>? Key { get; set; }
+        private Input<string>? _key;
+
+        /// <summary>
+        /// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+        /// </summary>
+        public Input<string>? Key
+        {
+            get => _key;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _key = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
@@ -205,6 +226,13 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         }
 
         /// <summary>
+        /// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+        /// manage them via WebUI without interference by Terraform.
+        /// </summary>
+        [Input("supportingServicesManagedInDynatrace")]
+        public Input<bool>? SupportingServicesManagedInDynatrace { get; set; }
+
+        /// <summary>
         /// Any attributes that aren't yet supported by this provider
         /// </summary>
         [Input("unknowns")]
@@ -242,11 +270,21 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         [Input("directoryId")]
         public Input<string>? DirectoryId { get; set; }
 
-        /// <summary>
-        /// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`.   Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
-        /// </summary>
         [Input("key")]
-        public Input<string>? Key { get; set; }
+        private Input<string>? _key;
+
+        /// <summary>
+        /// The secret key associated with the Application ID.  For security reasons, GET requests return this field as `null`. Submit your key on creation or update of the configuration. If the field is omitted during an update, the old value remains unaffected.
+        /// </summary>
+        public Input<string>? Key
+        {
+            get => _key;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _key = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The unique name of the Azure credentials configuration.  Allowed characters are letters, numbers, and spaces. Also the special characters `.+-_` are allowed
@@ -295,6 +333,13 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             get => _supportingServices ?? (_supportingServices = new InputList<Inputs.AzureCredentialsSupportingServiceGetArgs>());
             set => _supportingServices = value;
         }
+
+        /// <summary>
+        /// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+        /// manage them via WebUI without interference by Terraform.
+        /// </summary>
+        [Input("supportingServicesManagedInDynatrace")]
+        public Input<bool>? SupportingServicesManagedInDynatrace { get; set; }
 
         /// <summary>
         /// Any attributes that aren't yet supported by this provider

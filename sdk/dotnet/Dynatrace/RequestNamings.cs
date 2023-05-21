@@ -34,7 +34,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public RequestNamings(string name, RequestNamingsArgs args, CustomResourceOptions? options = null)
+        public RequestNamings(string name, RequestNamingsArgs? args = null, CustomResourceOptions? options = null)
             : base("dynatrace:index/requestNamings:RequestNamings", name, args ?? new RequestNamingsArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -73,7 +73,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
 
     public sealed class RequestNamingsArgs : global::Pulumi.ResourceArgs
     {
-        [Input("ids", required: true)]
+        [Input("ids")]
         private InputList<string>? _ids;
 
         /// <summary>

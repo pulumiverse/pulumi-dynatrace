@@ -9,40 +9,12 @@ import * as utilities from "./utilities";
  *
  * - `name` queries for all applications with the specified name
  * - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
- * import * as dynatrace from "@pulumi/dynatrace";
- *
- * const test = dynatrace.getApplication({
- *     name: "Example",
- *     tags: [
- *         "TerraformKeyTest",
- *         "TerraformKeyValueTest=TestValue",
- *     ],
- * });
- * const _name_ = new dynatrace.ApplicationDetectionRule("#name#", {
- *     applicationIdentifier: test.then(test => test.id),
- *     filterConfig: {
- *         applicationMatchTarget: "DOMAIN",
- *         applicationMatchType: "MATCHES",
- *         pattern: "www.google.com",
- *     },
- * });
- * ```
  */
 export function getApplication(args: GetApplicationArgs, opts?: pulumi.InvokeOptions): Promise<GetApplicationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getApplication:getApplication", {
         "name": args.name,
-        "tags": args.tags,
     }, opts);
 }
 
@@ -51,10 +23,6 @@ export function getApplication(args: GetApplicationArgs, opts?: pulumi.InvokeOpt
  */
 export interface GetApplicationArgs {
     name: string;
-    /**
-     * Required tags of the application to find
-     */
-    tags?: string[];
 }
 
 /**
@@ -66,14 +34,15 @@ export interface GetApplicationResult {
      */
     readonly id: string;
     readonly name: string;
-    /**
-     * Required tags of the application to find
-     */
-    readonly tags?: string[];
 }
-
+/**
+ * The application data source allows the application ID to be retrieved by its name and optionally tags / tag-value pairs.
+ *
+ * - `name` queries for all applications with the specified name
+ * - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
+ */
 export function getApplicationOutput(args: GetApplicationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApplicationResult> {
-    return pulumi.output(args).apply(a => getApplication(a, opts))
+    return pulumi.output(args).apply((a: any) => getApplication(a, opts))
 }
 
 /**
@@ -81,8 +50,4 @@ export function getApplicationOutput(args: GetApplicationOutputArgs, opts?: pulu
  */
 export interface GetApplicationOutputArgs {
     name: pulumi.Input<string>;
-    /**
-     * Required tags of the application to find
-     */
-    tags?: pulumi.Input<pulumi.Input<string>[]>;
 }

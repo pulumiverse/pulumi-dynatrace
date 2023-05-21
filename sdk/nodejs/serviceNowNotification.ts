@@ -49,6 +49,10 @@ export class ServiceNowNotification extends pulumi.CustomResource {
      */
     public readonly instance!: pulumi.Output<string | undefined>;
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    public readonly legacyId!: pulumi.Output<string>;
+    /**
      * The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      */
     public readonly message!: pulumi.Output<string>;
@@ -90,6 +94,7 @@ export class ServiceNowNotification extends pulumi.CustomResource {
             resourceInputs["events"] = state ? state.events : undefined;
             resourceInputs["incidents"] = state ? state.incidents : undefined;
             resourceInputs["instance"] = state ? state.instance : undefined;
+            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
             resourceInputs["message"] = state ? state.message : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["password"] = state ? state.password : undefined;
@@ -117,6 +122,7 @@ export class ServiceNowNotification extends pulumi.CustomResource {
             resourceInputs["events"] = args ? args.events : undefined;
             resourceInputs["incidents"] = args ? args.incidents : undefined;
             resourceInputs["instance"] = args ? args.instance : undefined;
+            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
             resourceInputs["message"] = args ? args.message : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
@@ -151,6 +157,10 @@ export interface ServiceNowNotificationState {
      * The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
      */
     instance?: pulumi.Input<string>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      */
@@ -197,6 +207,10 @@ export interface ServiceNowNotificationArgs {
      * The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
      */
     instance?: pulumi.Input<string>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      */

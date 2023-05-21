@@ -32,12 +32,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<ImmutableArray<Outputs.ManagementZoneEntitySelectorBasedRule>> EntitySelectorBasedRules { get; private set; } = null!;
 
         /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        /// </summary>
-        [Output("metadata")]
-        public Output<Outputs.ManagementZoneMetadata?> Metadata { get; private set; } = null!;
-
-        /// <summary>
         /// The name of the management zone
         /// </summary>
         [Output("name")]
@@ -133,12 +127,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         }
 
         /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        /// </summary>
-        [Input("metadata")]
-        public Input<Inputs.ManagementZoneMetadataArgs>? Metadata { get; set; }
-
-        /// <summary>
         /// The name of the management zone
         /// </summary>
         [Input("name")]
@@ -199,12 +187,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             get => _entitySelectorBasedRules ?? (_entitySelectorBasedRules = new InputList<Inputs.ManagementZoneEntitySelectorBasedRuleGetArgs>());
             set => _entitySelectorBasedRules = value;
         }
-
-        /// <summary>
-        /// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        /// </summary>
-        [Input("metadata")]
-        public Input<Inputs.ManagementZoneMetadataGetArgs>? Metadata { get; set; }
 
         /// <summary>
         /// The name of the management zone

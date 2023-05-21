@@ -20,7 +20,6 @@ class MaintenanceWindowArgs:
                  type: pulumi.Input[str],
                  description: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 metadata: Optional[pulumi.Input['MaintenanceWindowMetadataArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  schedule: Optional[pulumi.Input['MaintenanceWindowScheduleArgs']] = None,
                  scope: Optional[pulumi.Input['MaintenanceWindowScopeArgs']] = None,
@@ -32,7 +31,6 @@ class MaintenanceWindowArgs:
         :param pulumi.Input[str] type: The type of the maintenance: planned or unplanned
         :param pulumi.Input[str] description: A short description of the maintenance purpose
         :param pulumi.Input[bool] enabled: The Maintenance Window is enabled or disabled
-        :param pulumi.Input['MaintenanceWindowMetadataArgs'] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[str] name: The name of the maintenance window, displayed in the UI
         :param pulumi.Input['MaintenanceWindowScheduleArgs'] schedule: The schedule of the maintenance window
         :param pulumi.Input['MaintenanceWindowScopeArgs'] scope: the tiles this Dashboard consist of
@@ -45,11 +43,6 @@ class MaintenanceWindowArgs:
             pulumi.set(__self__, "description", description)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
-        if metadata is not None:
-            warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
-            pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-        if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if schedule is not None:
@@ -108,18 +101,6 @@ class MaintenanceWindowArgs:
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
-
-    @property
-    @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['MaintenanceWindowMetadataArgs']]:
-        """
-        `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        """
-        return pulumi.get(self, "metadata")
-
-    @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['MaintenanceWindowMetadataArgs']]):
-        pulumi.set(self, "metadata", value)
 
     @property
     @pulumi.getter
@@ -187,7 +168,6 @@ class _MaintenanceWindowState:
     def __init__(__self__, *,
                  description: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 metadata: Optional[pulumi.Input['MaintenanceWindowMetadataArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  schedule: Optional[pulumi.Input['MaintenanceWindowScheduleArgs']] = None,
                  scope: Optional[pulumi.Input['MaintenanceWindowScopeArgs']] = None,
@@ -199,7 +179,6 @@ class _MaintenanceWindowState:
         Input properties used for looking up and filtering MaintenanceWindow resources.
         :param pulumi.Input[str] description: A short description of the maintenance purpose
         :param pulumi.Input[bool] enabled: The Maintenance Window is enabled or disabled
-        :param pulumi.Input['MaintenanceWindowMetadataArgs'] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[str] name: The name of the maintenance window, displayed in the UI
         :param pulumi.Input['MaintenanceWindowScheduleArgs'] schedule: The schedule of the maintenance window
         :param pulumi.Input['MaintenanceWindowScopeArgs'] scope: the tiles this Dashboard consist of
@@ -212,11 +191,6 @@ class _MaintenanceWindowState:
             pulumi.set(__self__, "description", description)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
-        if metadata is not None:
-            warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
-            pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-        if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if schedule is not None:
@@ -255,18 +229,6 @@ class _MaintenanceWindowState:
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
-
-    @property
-    @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['MaintenanceWindowMetadataArgs']]:
-        """
-        `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        """
-        return pulumi.get(self, "metadata")
-
-    @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['MaintenanceWindowMetadataArgs']]):
-        pulumi.set(self, "metadata", value)
 
     @property
     @pulumi.getter
@@ -360,7 +322,6 @@ class MaintenanceWindow(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowMetadataArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  schedule: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowScheduleArgs']]] = None,
                  scope: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowScopeArgs']]] = None,
@@ -375,7 +336,6 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: A short description of the maintenance purpose
         :param pulumi.Input[bool] enabled: The Maintenance Window is enabled or disabled
-        :param pulumi.Input[pulumi.InputType['MaintenanceWindowMetadataArgs']] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[str] name: The name of the maintenance window, displayed in the UI
         :param pulumi.Input[pulumi.InputType['MaintenanceWindowScheduleArgs']] schedule: The schedule of the maintenance window
         :param pulumi.Input[pulumi.InputType['MaintenanceWindowScopeArgs']] scope: the tiles this Dashboard consist of
@@ -409,7 +369,6 @@ class MaintenanceWindow(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 metadata: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowMetadataArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  schedule: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowScheduleArgs']]] = None,
                  scope: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowScopeArgs']]] = None,
@@ -428,10 +387,6 @@ class MaintenanceWindow(pulumi.CustomResource):
 
             __props__.__dict__["description"] = description
             __props__.__dict__["enabled"] = enabled
-            if metadata is not None and not opts.urn:
-                warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
-                pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
-            __props__.__dict__["metadata"] = metadata
             __props__.__dict__["name"] = name
             __props__.__dict__["schedule"] = schedule
             __props__.__dict__["scope"] = scope
@@ -455,7 +410,6 @@ class MaintenanceWindow(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             description: Optional[pulumi.Input[str]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
-            metadata: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowMetadataArgs']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             schedule: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowScheduleArgs']]] = None,
             scope: Optional[pulumi.Input[pulumi.InputType['MaintenanceWindowScopeArgs']]] = None,
@@ -472,7 +426,6 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: A short description of the maintenance purpose
         :param pulumi.Input[bool] enabled: The Maintenance Window is enabled or disabled
-        :param pulumi.Input[pulumi.InputType['MaintenanceWindowMetadataArgs']] metadata: `metadata` exists for backwards compatibility but shouldn't get specified anymore
         :param pulumi.Input[str] name: The name of the maintenance window, displayed in the UI
         :param pulumi.Input[pulumi.InputType['MaintenanceWindowScheduleArgs']] schedule: The schedule of the maintenance window
         :param pulumi.Input[pulumi.InputType['MaintenanceWindowScopeArgs']] scope: the tiles this Dashboard consist of
@@ -487,7 +440,6 @@ class MaintenanceWindow(pulumi.CustomResource):
 
         __props__.__dict__["description"] = description
         __props__.__dict__["enabled"] = enabled
-        __props__.__dict__["metadata"] = metadata
         __props__.__dict__["name"] = name
         __props__.__dict__["schedule"] = schedule
         __props__.__dict__["scope"] = scope
@@ -512,14 +464,6 @@ class MaintenanceWindow(pulumi.CustomResource):
         The Maintenance Window is enabled or disabled
         """
         return pulumi.get(self, "enabled")
-
-    @property
-    @pulumi.getter
-    def metadata(self) -> pulumi.Output[Optional['outputs.MaintenanceWindowMetadata']]:
-        """
-        `metadata` exists for backwards compatibility but shouldn't get specified anymore
-        """
-        return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter

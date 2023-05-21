@@ -6,63 +6,14 @@ import * as utilities from "./utilities";
 
 /**
  * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumi/dynatrace";
- *
- * const test = pulumi.output(dynatrace.getSyntheticLocation({
- *     cloudPlatform: "AMAZON_EC2",
- *     name: "Sydney",
- *     type: "PUBLIC",
- * }));
- * const _name_ = new dynatrace.HttpMonitor("#name#", {
- *     anomalyDetections: [{
- *         loadingTimeThresholds: [{
- *             enabled: true,
- *         }],
- *         outageHandlings: [{
- *             globalOutage: true,
- *             localOutage: false,
- *             retryOnError: false,
- *         }],
- *     }],
- *     enabled: true,
- *     frequency: 60,
- *     locations: [test.id!],
- *     script: {
- *         requests: [{
- *             configuration: {
- *                 acceptAnyCertificate: true,
- *                 followRedirects: true,
- *             },
- *             description: "google.com",
- *             method: "GET",
- *             url: "https://www.google.com",
- *             validation: {
- *                 rules: [{
- *                     passIfFound: false,
- *                     type: "httpStatusesList",
- *                     value: ">=400",
- *                 }],
- *             },
- *         }],
- *     },
- * });
- * ```
  */
 export function getSyntheticLocation(args?: GetSyntheticLocationArgs, opts?: pulumi.InvokeOptions): Promise<GetSyntheticLocationResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getSyntheticLocation:getSyntheticLocation", {
         "cloudPlatform": args.cloudPlatform,
-        "id": args.id,
+        "entityId": args.entityId,
         "ips": args.ips,
         "name": args.name,
         "stage": args.stage,
@@ -79,7 +30,7 @@ export interface GetSyntheticLocationArgs {
      * The cloud provider where the location is hosted.
      */
     cloudPlatform?: string;
-    id?: string;
+    entityId?: string;
     ips?: string[];
     name?: string;
     stage?: string;
@@ -95,16 +46,22 @@ export interface GetSyntheticLocationResult {
      * The cloud provider where the location is hosted.
      */
     readonly cloudPlatform: string;
-    readonly id?: string;
+    readonly entityId?: string;
+    /**
+     * The provider-assigned unique ID for this managed resource.
+     */
+    readonly id: string;
     readonly ips: string[];
     readonly name?: string;
     readonly stage: string;
     readonly status: string;
     readonly type?: string;
 }
-
+/**
+ * The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
+ */
 export function getSyntheticLocationOutput(args?: GetSyntheticLocationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSyntheticLocationResult> {
-    return pulumi.output(args).apply(a => getSyntheticLocation(a, opts))
+    return pulumi.output(args).apply((a: any) => getSyntheticLocation(a, opts))
 }
 
 /**
@@ -115,7 +72,7 @@ export interface GetSyntheticLocationOutputArgs {
      * The cloud provider where the location is hosted.
      */
     cloudPlatform?: pulumi.Input<string>;
-    id?: pulumi.Input<string>;
+    entityId?: pulumi.Input<string>;
     ips?: pulumi.Input<pulumi.Input<string>[]>;
     name?: pulumi.Input<string>;
     stage?: pulumi.Input<string>;

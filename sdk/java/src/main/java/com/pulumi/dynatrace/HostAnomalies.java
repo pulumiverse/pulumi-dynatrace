@@ -26,7 +26,7 @@ public class HostAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration of lost connection detection
      * 
      */
-    @Export(name="connections", type=HostAnomaliesConnections.class, parameters={})
+    @Export(name="connections", refs={HostAnomaliesConnections.class}, tree="[0]")
     private Output</* @Nullable */ HostAnomaliesConnections> connections;
 
     /**
@@ -40,7 +40,7 @@ public class HostAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration of high CPU saturation detection
      * 
      */
-    @Export(name="cpu", type=HostAnomaliesCpu.class, parameters={})
+    @Export(name="cpu", refs={HostAnomaliesCpu.class}, tree="[0]")
     private Output</* @Nullable */ HostAnomaliesCpu> cpu;
 
     /**
@@ -54,7 +54,7 @@ public class HostAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration of disk related anomalies
      * 
      */
-    @Export(name="disks", type=HostAnomaliesDisks.class, parameters={})
+    @Export(name="disks", refs={HostAnomaliesDisks.class}, tree="[0]")
     private Output</* @Nullable */ HostAnomaliesDisks> disks;
 
     /**
@@ -68,7 +68,7 @@ public class HostAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration of high Garbage Collector activity detection
      * 
      */
-    @Export(name="gc", type=HostAnomaliesGc.class, parameters={})
+    @Export(name="gc", refs={HostAnomaliesGc.class}, tree="[0]")
     private Output</* @Nullable */ HostAnomaliesGc> gc;
 
     /**
@@ -82,7 +82,7 @@ public class HostAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration of Java related anomalies
      * 
      */
-    @Export(name="java", type=HostAnomaliesJava.class, parameters={})
+    @Export(name="java", refs={HostAnomaliesJava.class}, tree="[0]")
     private Output</* @Nullable */ HostAnomaliesJava> java;
 
     /**
@@ -96,7 +96,7 @@ public class HostAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration of high memory usage detection
      * 
      */
-    @Export(name="memory", type=HostAnomaliesMemory.class, parameters={})
+    @Export(name="memory", refs={HostAnomaliesMemory.class}, tree="[0]")
     private Output</* @Nullable */ HostAnomaliesMemory> memory;
 
     /**
@@ -110,7 +110,7 @@ public class HostAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration of network related anomalies
      * 
      */
-    @Export(name="network", type=HostAnomaliesNetwork.class, parameters={})
+    @Export(name="network", refs={HostAnomaliesNetwork.class}, tree="[0]")
     private Output</* @Nullable */ HostAnomaliesNetwork> network;
 
     /**

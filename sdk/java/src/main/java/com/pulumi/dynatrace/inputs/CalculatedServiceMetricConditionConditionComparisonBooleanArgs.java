@@ -31,11 +31,11 @@ public final class CalculatedServiceMetricConditionConditionComparisonBooleanArg
         return Optional.ofNullable(this.unknowns);
     }
 
-    @Import(name="value")
-    private @Nullable Output<Boolean> value;
+    @Import(name="value", required=true)
+    private Output<Boolean> value;
 
-    public Optional<Output<Boolean>> value() {
-        return Optional.ofNullable(this.value);
+    public Output<Boolean> value() {
+        return this.value;
     }
 
     @Import(name="values")
@@ -90,7 +90,7 @@ public final class CalculatedServiceMetricConditionConditionComparisonBooleanArg
             return unknowns(Output.of(unknowns));
         }
 
-        public Builder value(@Nullable Output<Boolean> value) {
+        public Builder value(Output<Boolean> value) {
             $.value = value;
             return this;
         }
@@ -113,6 +113,7 @@ public final class CalculatedServiceMetricConditionConditionComparisonBooleanArg
         }
 
         public CalculatedServiceMetricConditionConditionComparisonBooleanArgs build() {
+            $.value = Objects.requireNonNull($.value, "expected parameter 'value' to be non-null");
             return $;
         }
     }

@@ -15,6 +15,8 @@ type Alerting struct {
 
 	// The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
 	Filters AlertingFiltersPtrOutput `pulumi:"filters"`
+	// The ID of this setting when referred to by the Config REST API V1
+	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
 	// The ID of the management zone to which the alerting profile applies
 	ManagementZone pulumi.StringPtrOutput `pulumi:"managementZone"`
 	// The name of the alerting profile, displayed in the UI
@@ -55,6 +57,8 @@ func GetAlerting(ctx *pulumi.Context,
 type alertingState struct {
 	// The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
 	Filters *AlertingFilters `pulumi:"filters"`
+	// The ID of this setting when referred to by the Config REST API V1
+	LegacyId *string `pulumi:"legacyId"`
 	// The ID of the management zone to which the alerting profile applies
 	ManagementZone *string `pulumi:"managementZone"`
 	// The name of the alerting profile, displayed in the UI
@@ -66,6 +70,8 @@ type alertingState struct {
 type AlertingState struct {
 	// The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
 	Filters AlertingFiltersPtrInput
+	// The ID of this setting when referred to by the Config REST API V1
+	LegacyId pulumi.StringPtrInput
 	// The ID of the management zone to which the alerting profile applies
 	ManagementZone pulumi.StringPtrInput
 	// The name of the alerting profile, displayed in the UI
@@ -81,6 +87,8 @@ func (AlertingState) ElementType() reflect.Type {
 type alertingArgs struct {
 	// The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
 	Filters *AlertingFilters `pulumi:"filters"`
+	// The ID of this setting when referred to by the Config REST API V1
+	LegacyId *string `pulumi:"legacyId"`
 	// The ID of the management zone to which the alerting profile applies
 	ManagementZone *string `pulumi:"managementZone"`
 	// The name of the alerting profile, displayed in the UI
@@ -93,6 +101,8 @@ type alertingArgs struct {
 type AlertingArgs struct {
 	// The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
 	Filters AlertingFiltersPtrInput
+	// The ID of this setting when referred to by the Config REST API V1
+	LegacyId pulumi.StringPtrInput
 	// The ID of the management zone to which the alerting profile applies
 	ManagementZone pulumi.StringPtrInput
 	// The name of the alerting profile, displayed in the UI
@@ -191,6 +201,11 @@ func (o AlertingOutput) ToAlertingOutputWithContext(ctx context.Context) Alertin
 // The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
 func (o AlertingOutput) Filters() AlertingFiltersPtrOutput {
 	return o.ApplyT(func(v *Alerting) AlertingFiltersPtrOutput { return v.Filters }).(AlertingFiltersPtrOutput)
+}
+
+// The ID of this setting when referred to by the Config REST API V1
+func (o AlertingOutput) LegacyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Alerting) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
 // The ID of the management zone to which the alerting profile applies

@@ -49,6 +49,10 @@ export class AnsibleTowerNotification extends pulumi.CustomResource {
      */
     public readonly jobTemplateUrl!: pulumi.Output<string>;
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    public readonly legacyId!: pulumi.Output<string>;
+    /**
      * The display name within the Dynatrace WebUI.
      */
     public readonly name!: pulumi.Output<string>;
@@ -82,6 +86,7 @@ export class AnsibleTowerNotification extends pulumi.CustomResource {
             resourceInputs["customMessage"] = state ? state.customMessage : undefined;
             resourceInputs["insecure"] = state ? state.insecure : undefined;
             resourceInputs["jobTemplateUrl"] = state ? state.jobTemplateUrl : undefined;
+            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["password"] = state ? state.password : undefined;
             resourceInputs["profile"] = state ? state.profile : undefined;
@@ -104,6 +109,7 @@ export class AnsibleTowerNotification extends pulumi.CustomResource {
             resourceInputs["customMessage"] = args ? args.customMessage : undefined;
             resourceInputs["insecure"] = args ? args.insecure : undefined;
             resourceInputs["jobTemplateUrl"] = args ? args.jobTemplateUrl : undefined;
+            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["profile"] = args ? args.profile : undefined;
@@ -136,6 +142,10 @@ export interface AnsibleTowerNotificationState {
      * The URL of the target Ansible Tower job template
      */
     jobTemplateUrl?: pulumi.Input<string>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The display name within the Dynatrace WebUI.
      */
@@ -174,6 +184,10 @@ export interface AnsibleTowerNotificationArgs {
      * The URL of the target Ansible Tower job template
      */
     jobTemplateUrl: pulumi.Input<string>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The display name within the Dynatrace WebUI.
      */

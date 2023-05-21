@@ -21,6 +21,9 @@ type Provider struct {
 	DtClusterApiToken pulumi.StringPtrOutput `pulumi:"dtClusterApiToken"`
 	DtClusterUrl      pulumi.StringPtrOutput `pulumi:"dtClusterUrl"`
 	DtEnvUrl          pulumi.StringPtrOutput `pulumi:"dtEnvUrl"`
+	IamAccountId      pulumi.StringPtrOutput `pulumi:"iamAccountId"`
+	IamClientId       pulumi.StringPtrOutput `pulumi:"iamClientId"`
+	IamClientSecret   pulumi.StringPtrOutput `pulumi:"iamClientSecret"`
 }
 
 // NewProvider registers a new resource with the given unique name, arguments, and options.
@@ -30,31 +33,43 @@ func NewProvider(ctx *pulumi.Context,
 		args = &ProviderArgs{}
 	}
 
-	if isZero(args.DtApiToken) {
+	if args.DtApiToken == nil {
 		args.DtApiToken = pulumi.StringPtr(getEnvOrDefault("", nil, "DYNATRACE_API_TOKEN", "DT_API_TOKEN").(string))
 	}
-	if isZero(args.DtClusterApiToken) {
+	if args.DtClusterApiToken == nil {
 		args.DtClusterApiToken = pulumi.StringPtr(getEnvOrDefault("", nil, "DYNATRACE_CLUSTER_API_TOKEN", "DT_CLUSTER_API_TOKEN").(string))
 	}
-	if isZero(args.DtClusterUrl) {
+	if args.DtClusterUrl == nil {
 		args.DtClusterUrl = pulumi.StringPtr(getEnvOrDefault("", nil, "DYNATRACE_CLUSTER_URL", "DT_CLUSTER_URL").(string))
 	}
-	if isZero(args.DtEnvUrl) {
+	if args.DtEnvUrl == nil {
 		args.DtEnvUrl = pulumi.StringPtr(getEnvOrDefault("", nil, "DYNATRACE_ENV_URL", "DT_ENV_URL").(string))
 	}
 	if args.DtApiToken != nil {
-		args.DtApiToken = pulumi.ToSecret(args.DtApiToken).(pulumi.StringPtrOutput)
+		args.DtApiToken = pulumi.ToSecret(args.DtApiToken).(pulumi.StringPtrInput)
 	}
 	if args.DtClusterApiToken != nil {
-		args.DtClusterApiToken = pulumi.ToSecret(args.DtClusterApiToken).(pulumi.StringPtrOutput)
+		args.DtClusterApiToken = pulumi.ToSecret(args.DtClusterApiToken).(pulumi.StringPtrInput)
 	}
 	if args.DtClusterUrl != nil {
-		args.DtClusterUrl = pulumi.ToSecret(args.DtClusterUrl).(pulumi.StringPtrOutput)
+		args.DtClusterUrl = pulumi.ToSecret(args.DtClusterUrl).(pulumi.StringPtrInput)
+	}
+	if args.IamAccountId != nil {
+		args.IamAccountId = pulumi.ToSecret(args.IamAccountId).(pulumi.StringPtrInput)
+	}
+	if args.IamClientId != nil {
+		args.IamClientId = pulumi.ToSecret(args.IamClientId).(pulumi.StringPtrInput)
+	}
+	if args.IamClientSecret != nil {
+		args.IamClientSecret = pulumi.ToSecret(args.IamClientSecret).(pulumi.StringPtrInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"dtApiToken",
 		"dtClusterApiToken",
 		"dtClusterUrl",
+		"iamAccountId",
+		"iamClientId",
+		"iamClientSecret",
 	})
 	opts = append(opts, secrets)
 	opts = pkgResourceDefaultOpts(opts)
@@ -71,6 +86,9 @@ type providerArgs struct {
 	DtClusterApiToken *string `pulumi:"dtClusterApiToken"`
 	DtClusterUrl      *string `pulumi:"dtClusterUrl"`
 	DtEnvUrl          *string `pulumi:"dtEnvUrl"`
+	IamAccountId      *string `pulumi:"iamAccountId"`
+	IamClientId       *string `pulumi:"iamClientId"`
+	IamClientSecret   *string `pulumi:"iamClientSecret"`
 }
 
 // The set of arguments for constructing a Provider resource.
@@ -79,6 +97,9 @@ type ProviderArgs struct {
 	DtClusterApiToken pulumi.StringPtrInput
 	DtClusterUrl      pulumi.StringPtrInput
 	DtEnvUrl          pulumi.StringPtrInput
+	IamAccountId      pulumi.StringPtrInput
+	IamClientId       pulumi.StringPtrInput
+	IamClientSecret   pulumi.StringPtrInput
 }
 
 func (ProviderArgs) ElementType() reflect.Type {
@@ -132,6 +153,18 @@ func (o ProviderOutput) DtClusterUrl() pulumi.StringPtrOutput {
 
 func (o ProviderOutput) DtEnvUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.DtEnvUrl }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderOutput) IamAccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.IamAccountId }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderOutput) IamClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.IamClientId }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderOutput) IamClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.IamClientSecret }).(pulumi.StringPtrOutput)
 }
 
 func init() {

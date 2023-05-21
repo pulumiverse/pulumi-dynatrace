@@ -4,7 +4,7 @@
 package com.pulumi.dynatrace.inputs;
 
 import com.pulumi.core.annotations.Import;
-import com.pulumi.dynatrace.inputs.GetSyntheticLocationsLocationsLocation;
+import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,24 +16,72 @@ public final class GetSyntheticLocationsLocations extends com.pulumi.resources.I
     public static final GetSyntheticLocationsLocations Empty = new GetSyntheticLocationsLocations();
 
     /**
-     * The name of the location
+     * The cloud provider where the location is hosted.
      * 
      */
-    @Import(name="locations")
-    private @Nullable List<GetSyntheticLocationsLocationsLocation> locations;
+    @Import(name="cloudPlatform", required=true)
+    private String cloudPlatform;
 
     /**
-     * @return The name of the location
+     * @return The cloud provider where the location is hosted.
      * 
      */
-    public Optional<List<GetSyntheticLocationsLocationsLocation>> locations() {
-        return Optional.ofNullable(this.locations);
+    public String cloudPlatform() {
+        return this.cloudPlatform;
+    }
+
+    @Import(name="entityId")
+    private @Nullable String entityId;
+
+    public Optional<String> entityId() {
+        return Optional.ofNullable(this.entityId);
+    }
+
+    @Import(name="ips", required=true)
+    private List<String> ips;
+
+    public List<String> ips() {
+        return this.ips;
+    }
+
+    @Import(name="name")
+    private @Nullable String name;
+
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
+    }
+
+    @Import(name="stage", required=true)
+    private String stage;
+
+    public String stage() {
+        return this.stage;
+    }
+
+    @Import(name="status", required=true)
+    private String status;
+
+    public String status() {
+        return this.status;
+    }
+
+    @Import(name="type")
+    private @Nullable String type;
+
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     private GetSyntheticLocationsLocations() {}
 
     private GetSyntheticLocationsLocations(GetSyntheticLocationsLocations $) {
-        this.locations = $.locations;
+        this.cloudPlatform = $.cloudPlatform;
+        this.entityId = $.entityId;
+        this.ips = $.ips;
+        this.name = $.name;
+        this.stage = $.stage;
+        this.status = $.status;
+        this.type = $.type;
     }
 
     public static Builder builder() {
@@ -55,27 +103,55 @@ public final class GetSyntheticLocationsLocations extends com.pulumi.resources.I
         }
 
         /**
-         * @param locations The name of the location
+         * @param cloudPlatform The cloud provider where the location is hosted.
          * 
          * @return builder
          * 
          */
-        public Builder locations(@Nullable List<GetSyntheticLocationsLocationsLocation> locations) {
-            $.locations = locations;
+        public Builder cloudPlatform(String cloudPlatform) {
+            $.cloudPlatform = cloudPlatform;
             return this;
         }
 
-        /**
-         * @param locations The name of the location
-         * 
-         * @return builder
-         * 
-         */
-        public Builder locations(GetSyntheticLocationsLocationsLocation... locations) {
-            return locations(List.of(locations));
+        public Builder entityId(@Nullable String entityId) {
+            $.entityId = entityId;
+            return this;
+        }
+
+        public Builder ips(List<String> ips) {
+            $.ips = ips;
+            return this;
+        }
+
+        public Builder ips(String... ips) {
+            return ips(List.of(ips));
+        }
+
+        public Builder name(@Nullable String name) {
+            $.name = name;
+            return this;
+        }
+
+        public Builder stage(String stage) {
+            $.stage = stage;
+            return this;
+        }
+
+        public Builder status(String status) {
+            $.status = status;
+            return this;
+        }
+
+        public Builder type(@Nullable String type) {
+            $.type = type;
+            return this;
         }
 
         public GetSyntheticLocationsLocations build() {
+            $.cloudPlatform = Objects.requireNonNull($.cloudPlatform, "expected parameter 'cloudPlatform' to be non-null");
+            $.ips = Objects.requireNonNull($.ips, "expected parameter 'ips' to be non-null");
+            $.stage = Objects.requireNonNull($.stage, "expected parameter 'stage' to be non-null");
+            $.status = Objects.requireNonNull($.status, "expected parameter 'status' to be non-null");
             return $;
         }
     }

@@ -25,7 +25,7 @@ public class AwsCredentials extends com.pulumi.resources.CustomResource {
      * credentials for the AWS authentication
      * 
      */
-    @Export(name="authenticationData", type=AwsCredentialsAuthenticationData.class, parameters={})
+    @Export(name="authenticationData", refs={AwsCredentialsAuthenticationData.class}, tree="[0]")
     private Output<AwsCredentialsAuthenticationData> authenticationData;
 
     /**
@@ -39,7 +39,7 @@ public class AwsCredentials extends com.pulumi.resources.CustomResource {
      * The name of the credentials
      * 
      */
-    @Export(name="label", type=String.class, parameters={})
+    @Export(name="label", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> label;
 
     /**
@@ -53,7 +53,7 @@ public class AwsCredentials extends com.pulumi.resources.CustomResource {
      * The type of the AWS partition
      * 
      */
-    @Export(name="partitionType", type=String.class, parameters={})
+    @Export(name="partitionType", refs={String.class}, tree="[0]")
     private Output<String> partitionType;
 
     /**
@@ -64,10 +64,26 @@ public class AwsCredentials extends com.pulumi.resources.CustomResource {
         return this.partitionType;
     }
     /**
+     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+     * manage them via WebUI without interference by Terraform.
+     * 
+     */
+    @Export(name="supportingServicesManagedInDynatrace", refs={Boolean.class}, tree="[0]")
+    private Output</* @Nullable */ Boolean> supportingServicesManagedInDynatrace;
+
+    /**
+     * @return If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+     * manage them via WebUI without interference by Terraform.
+     * 
+     */
+    public Output<Optional<Boolean>> supportingServicesManagedInDynatrace() {
+        return Codegen.optional(this.supportingServicesManagedInDynatrace);
+    }
+    /**
      * supporting services to be monitored
      * 
      */
-    @Export(name="supportingServicesToMonitors", type=List.class, parameters={AwsCredentialsSupportingServicesToMonitor.class})
+    @Export(name="supportingServicesToMonitors", refs={List.class,AwsCredentialsSupportingServicesToMonitor.class}, tree="[0,1]")
     private Output</* @Nullable */ List<AwsCredentialsSupportingServicesToMonitor>> supportingServicesToMonitors;
 
     /**
@@ -81,7 +97,7 @@ public class AwsCredentials extends com.pulumi.resources.CustomResource {
      * Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
      * 
      */
-    @Export(name="taggedOnly", type=Boolean.class, parameters={})
+    @Export(name="taggedOnly", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> taggedOnly;
 
     /**
@@ -95,7 +111,7 @@ public class AwsCredentials extends com.pulumi.resources.CustomResource {
      * AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
      * 
      */
-    @Export(name="tagsToMonitors", type=List.class, parameters={AwsCredentialsTagsToMonitor.class})
+    @Export(name="tagsToMonitors", refs={List.class,AwsCredentialsTagsToMonitor.class}, tree="[0,1]")
     private Output</* @Nullable */ List<AwsCredentialsTagsToMonitor>> tagsToMonitors;
 
     /**
@@ -109,7 +125,7 @@ public class AwsCredentials extends com.pulumi.resources.CustomResource {
      * Any attributes that aren&#39;t yet supported by this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**

@@ -17,7 +17,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// Network Zones are enabled (`true`) or disabled (`false`)
         /// </summary>
         [Output("enabled")]
-        public Output<bool?> Enabled { get; private set; } = null!;
+        public Output<bool> Enabled { get; private set; } = null!;
 
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public NetworkZones(string name, NetworkZonesArgs? args = null, CustomResourceOptions? options = null)
+        public NetworkZones(string name, NetworkZonesArgs args, CustomResourceOptions? options = null)
             : base("dynatrace:index/networkZones:NetworkZones", name, args ?? new NetworkZonesArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -69,8 +69,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// <summary>
         /// Network Zones are enabled (`true`) or disabled (`false`)
         /// </summary>
-        [Input("enabled")]
-        public Input<bool>? Enabled { get; set; }
+        [Input("enabled", required: true)]
+        public Input<bool> Enabled { get; set; } = null!;
 
         public NetworkZonesArgs()
         {

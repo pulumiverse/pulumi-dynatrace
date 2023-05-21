@@ -21,6 +21,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         public readonly string Method;
         public readonly string? PostProcessing;
         public readonly string? PreProcessing;
+        public readonly int? RequestTimeout;
         public readonly string Url;
         public readonly Outputs.HttpMonitorScriptRequestValidation? Validation;
 
@@ -40,6 +41,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
 
             string? preProcessing,
 
+            int? requestTimeout,
+
             string url,
 
             Outputs.HttpMonitorScriptRequestValidation? validation)
@@ -51,6 +54,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
             Method = method;
             PostProcessing = postProcessing;
             PreProcessing = preProcessing;
+            RequestTimeout = requestTimeout;
             Url = url;
             Validation = validation;
         }

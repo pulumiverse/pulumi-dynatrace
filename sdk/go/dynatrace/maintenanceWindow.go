@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -18,10 +18,6 @@ type MaintenanceWindow struct {
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// The Maintenance Window is enabled or disabled
 	Enabled pulumi.BoolPtrOutput `pulumi:"enabled"`
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata MaintenanceWindowMetadataPtrOutput `pulumi:"metadata"`
 	// The name of the maintenance window, displayed in the UI
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The schedule of the maintenance window
@@ -78,10 +74,6 @@ type maintenanceWindowState struct {
 	Description *string `pulumi:"description"`
 	// The Maintenance Window is enabled or disabled
 	Enabled *bool `pulumi:"enabled"`
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata *MaintenanceWindowMetadata `pulumi:"metadata"`
 	// The name of the maintenance window, displayed in the UI
 	Name *string `pulumi:"name"`
 	// The schedule of the maintenance window
@@ -103,10 +95,6 @@ type MaintenanceWindowState struct {
 	Description pulumi.StringPtrInput
 	// The Maintenance Window is enabled or disabled
 	Enabled pulumi.BoolPtrInput
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata MaintenanceWindowMetadataPtrInput
 	// The name of the maintenance window, displayed in the UI
 	Name pulumi.StringPtrInput
 	// The schedule of the maintenance window
@@ -132,10 +120,6 @@ type maintenanceWindowArgs struct {
 	Description *string `pulumi:"description"`
 	// The Maintenance Window is enabled or disabled
 	Enabled *bool `pulumi:"enabled"`
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata *MaintenanceWindowMetadata `pulumi:"metadata"`
 	// The name of the maintenance window, displayed in the UI
 	Name *string `pulumi:"name"`
 	// The schedule of the maintenance window
@@ -158,10 +142,6 @@ type MaintenanceWindowArgs struct {
 	Description pulumi.StringPtrInput
 	// The Maintenance Window is enabled or disabled
 	Enabled pulumi.BoolPtrInput
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata MaintenanceWindowMetadataPtrInput
 	// The name of the maintenance window, displayed in the UI
 	Name pulumi.StringPtrInput
 	// The schedule of the maintenance window
@@ -273,13 +253,6 @@ func (o MaintenanceWindowOutput) Description() pulumi.StringPtrOutput {
 // The Maintenance Window is enabled or disabled
 func (o MaintenanceWindowOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *MaintenanceWindow) pulumi.BoolPtrOutput { return v.Enabled }).(pulumi.BoolPtrOutput)
-}
-
-// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-//
-// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-func (o MaintenanceWindowOutput) Metadata() MaintenanceWindowMetadataPtrOutput {
-	return o.ApplyT(func(v *MaintenanceWindow) MaintenanceWindowMetadataPtrOutput { return v.Metadata }).(MaintenanceWindowMetadataPtrOutput)
 }
 
 // The name of the maintenance window, displayed in the UI

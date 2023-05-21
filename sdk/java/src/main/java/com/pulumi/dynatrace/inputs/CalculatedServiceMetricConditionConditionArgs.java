@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.dynatrace.inputs.CalculatedServiceMetricConditionConditionComparisonArgs;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class CalculatedServiceMetricConditionConditionArgs extends com.pulumi.resources.ResourceArgs {
@@ -28,11 +30,19 @@ public final class CalculatedServiceMetricConditionConditionArgs extends com.pul
         return this.comparison;
     }
 
+    @Import(name="unknowns")
+    private @Nullable Output<String> unknowns;
+
+    public Optional<Output<String>> unknowns() {
+        return Optional.ofNullable(this.unknowns);
+    }
+
     private CalculatedServiceMetricConditionConditionArgs() {}
 
     private CalculatedServiceMetricConditionConditionArgs(CalculatedServiceMetricConditionConditionArgs $) {
         this.attribute = $.attribute;
         this.comparison = $.comparison;
+        this.unknowns = $.unknowns;
     }
 
     public static Builder builder() {
@@ -69,6 +79,15 @@ public final class CalculatedServiceMetricConditionConditionArgs extends com.pul
 
         public Builder comparison(CalculatedServiceMetricConditionConditionComparisonArgs comparison) {
             return comparison(Output.of(comparison));
+        }
+
+        public Builder unknowns(@Nullable Output<String> unknowns) {
+            $.unknowns = unknowns;
+            return this;
+        }
+
+        public Builder unknowns(String unknowns) {
+            return unknowns(Output.of(unknowns));
         }
 
         public CalculatedServiceMetricConditionConditionArgs build() {

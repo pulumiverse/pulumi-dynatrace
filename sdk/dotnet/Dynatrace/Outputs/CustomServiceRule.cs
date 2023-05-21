@@ -31,10 +31,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.CustomServiceRuleFile? File;
         /// <summary>
-        /// The ID of the detection rule
-        /// </summary>
-        public readonly string? Id;
-        /// <summary>
         /// methods to instrument
         /// </summary>
         public readonly ImmutableArray<Outputs.CustomServiceRuleMethod> Methods;
@@ -53,8 +49,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
 
             Outputs.CustomServiceRuleFile? file,
 
-            string? id,
-
             ImmutableArray<Outputs.CustomServiceRuleMethod> methods,
 
             string? unknowns)
@@ -63,7 +57,6 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
             Class = @class;
             Enabled = enabled;
             File = file;
-            Id = id;
             Methods = methods;
             Unknowns = unknowns;
         }

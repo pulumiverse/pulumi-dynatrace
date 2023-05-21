@@ -23,7 +23,7 @@ public class K8sCredentials extends com.pulumi.resources.CustomResource {
      * Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
      * 
      */
-    @Export(name="active", type=Boolean.class, parameters={})
+    @Export(name="active", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> active;
 
     /**
@@ -34,10 +34,24 @@ public class K8sCredentials extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.active);
     }
     /**
+     * Active Gate group to filter active gates for this credentials.
+     * 
+     */
+    @Export(name="activeGateGroup", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> activeGateGroup;
+
+    /**
+     * @return Active Gate group to filter active gates for this credentials.
+     * 
+     */
+    public Output<Optional<String>> activeGateGroup() {
+        return Codegen.optional(this.activeGateGroup);
+    }
+    /**
      * The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
      * 
      */
-    @Export(name="authToken", type=String.class, parameters={})
+    @Export(name="authToken", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authToken;
 
     /**
@@ -51,7 +65,7 @@ public class K8sCredentials extends com.pulumi.resources.CustomResource {
      * The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
      * 
      */
-    @Export(name="certificateCheckEnabled", type=Boolean.class, parameters={})
+    @Export(name="certificateCheckEnabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> certificateCheckEnabled;
 
     /**
@@ -65,7 +79,7 @@ public class K8sCredentials extends com.pulumi.resources.CustomResource {
      * Inclusion of all Davis relevant events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected
      * 
      */
-    @Export(name="davisEventsIntegrationEnabled", type=Boolean.class, parameters={})
+    @Export(name="davisEventsIntegrationEnabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> davisEventsIntegrationEnabled;
 
     /**
@@ -79,7 +93,7 @@ public class K8sCredentials extends com.pulumi.resources.CustomResource {
      * The URL of the Kubernetes API server.  It must be unique within a Dynatrace environment.  The URL must valid according to RFC 2396. Leading or trailing whitespaces are not allowed.
      * 
      */
-    @Export(name="endpointUrl", type=String.class, parameters={})
+    @Export(name="endpointUrl", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> endpointUrl;
 
     /**
@@ -93,7 +107,7 @@ public class K8sCredentials extends com.pulumi.resources.CustomResource {
      * Event analysis and alerting is (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
      * 
      */
-    @Export(name="eventAnalysisAndAlertingEnabled", type=Boolean.class, parameters={})
+    @Export(name="eventAnalysisAndAlertingEnabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> eventAnalysisAndAlertingEnabled;
 
     /**
@@ -107,7 +121,7 @@ public class K8sCredentials extends com.pulumi.resources.CustomResource {
      * Kubernetes event filters based on field-selectors. If set to `null` on creation, no events field selectors are subscribed. If set to `null` on update, no change of stored events field selectors is applied. Set an empty list to clear all events field selectors.
      * 
      */
-    @Export(name="eventsFieldSelectors", type=List.class, parameters={K8sCredentialsEventsFieldSelector.class})
+    @Export(name="eventsFieldSelectors", refs={List.class,K8sCredentialsEventsFieldSelector.class}, tree="[0,1]")
     private Output</* @Nullable */ List<K8sCredentialsEventsFieldSelector>> eventsFieldSelectors;
 
     /**
@@ -121,7 +135,7 @@ public class K8sCredentials extends com.pulumi.resources.CustomResource {
      * Monitoring of events is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. Event monitoring depends on the active state of this configuration to be true.  If not set on creation, the `false` value is used.  If the field is omitted during an update, the old value remains unaffected.
      * 
      */
-    @Export(name="eventsIntegrationEnabled", type=Boolean.class, parameters={})
+    @Export(name="eventsIntegrationEnabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> eventsIntegrationEnabled;
 
     /**
@@ -135,7 +149,7 @@ public class K8sCredentials extends com.pulumi.resources.CustomResource {
      * Verify hostname in certificate against Kubernetes API URL
      * 
      */
-    @Export(name="hostnameVerification", type=Boolean.class, parameters={})
+    @Export(name="hostnameVerification", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> hostnameVerification;
 
     /**
@@ -149,7 +163,7 @@ public class K8sCredentials extends com.pulumi.resources.CustomResource {
      * The name of the Kubernetes credentials configuration.  Allowed characters are letters, numbers, whitespaces, and the following characters: `.+-_`. Leading or trailing whitespace is not allowed.
      * 
      */
-    @Export(name="label", type=String.class, parameters={})
+    @Export(name="label", refs={String.class}, tree="[0]")
     private Output<String> label;
 
     /**
@@ -163,7 +177,7 @@ public class K8sCredentials extends com.pulumi.resources.CustomResource {
      * Prometheus exporters integration is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.If the field is omitted during an update, the old value remains unaffected
      * 
      */
-    @Export(name="prometheusExporters", type=Boolean.class, parameters={})
+    @Export(name="prometheusExporters", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> prometheusExporters;
 
     /**
@@ -177,7 +191,7 @@ public class K8sCredentials extends com.pulumi.resources.CustomResource {
      * Any attributes that aren&#39;t yet supported by this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**
@@ -191,7 +205,7 @@ public class K8sCredentials extends com.pulumi.resources.CustomResource {
      * Workload and cloud application processing is enabled (`true`) or disabled (`false`) for the Kubernetes cluster. If the field is omitted during an update, the old value remains unaffected.
      * 
      */
-    @Export(name="workloadIntegrationEnabled", type=Boolean.class, parameters={})
+    @Export(name="workloadIntegrationEnabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> workloadIntegrationEnabled;
 
     /**
@@ -234,6 +248,9 @@ public class K8sCredentials extends com.pulumi.resources.CustomResource {
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "authToken"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

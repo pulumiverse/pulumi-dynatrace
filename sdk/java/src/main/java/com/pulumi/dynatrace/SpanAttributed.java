@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.dynatrace.SpanAttributedArgs;
 import com.pulumi.dynatrace.Utilities;
 import com.pulumi.dynatrace.inputs.SpanAttributedState;
+import java.lang.Boolean;
 import java.lang.String;
 import javax.annotation.Nullable;
 
@@ -19,7 +20,7 @@ public class SpanAttributed extends com.pulumi.resources.CustomResource {
      * the key of the attribute to capture
      * 
      */
-    @Export(name="key", type=String.class, parameters={})
+    @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
@@ -28,6 +29,36 @@ public class SpanAttributed extends com.pulumi.resources.CustomResource {
      */
     public Output<String> key() {
         return this.key;
+    }
+    /**
+     * granular control over the visibility of attribute values
+     * 
+     */
+    @Export(name="masking", refs={String.class}, tree="[0]")
+    private Output<String> masking;
+
+    /**
+     * @return granular control over the visibility of attribute values
+     * 
+     */
+    public Output<String> masking() {
+        return this.masking;
+    }
+    /**
+     * Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
+     * are defined by default on every Dynatrace environment.
+     * 
+     */
+    @Export(name="persistent", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> persistent;
+
+    /**
+     * @return Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
+     * are defined by default on every Dynatrace environment.
+     * 
+     */
+    public Output<Boolean> persistent() {
+        return this.persistent;
     }
 
     /**

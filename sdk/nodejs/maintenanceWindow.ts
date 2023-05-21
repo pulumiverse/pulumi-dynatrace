@@ -43,12 +43,6 @@ export class MaintenanceWindow extends pulumi.CustomResource {
      */
     public readonly enabled!: pulumi.Output<boolean | undefined>;
     /**
-     * `metadata` exists for backwards compatibility but shouldn't get specified anymore
-     *
-     * @deprecated `metadata` exists for backwards compatibility but shouldn't get specified anymore
-     */
-    public readonly metadata!: pulumi.Output<outputs.MaintenanceWindowMetadata | undefined>;
-    /**
      * The name of the maintenance window, displayed in the UI
      */
     public readonly name!: pulumi.Output<string>;
@@ -92,7 +86,6 @@ export class MaintenanceWindow extends pulumi.CustomResource {
             const state = argsOrState as MaintenanceWindowState | undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["schedule"] = state ? state.schedule : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
@@ -110,7 +103,6 @@ export class MaintenanceWindow extends pulumi.CustomResource {
             }
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["enabled"] = args ? args.enabled : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["schedule"] = args ? args.schedule : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
@@ -136,12 +128,6 @@ export interface MaintenanceWindowState {
      * The Maintenance Window is enabled or disabled
      */
     enabled?: pulumi.Input<boolean>;
-    /**
-     * `metadata` exists for backwards compatibility but shouldn't get specified anymore
-     *
-     * @deprecated `metadata` exists for backwards compatibility but shouldn't get specified anymore
-     */
-    metadata?: pulumi.Input<inputs.MaintenanceWindowMetadata>;
     /**
      * The name of the maintenance window, displayed in the UI
      */
@@ -184,12 +170,6 @@ export interface MaintenanceWindowArgs {
      * The Maintenance Window is enabled or disabled
      */
     enabled?: pulumi.Input<boolean>;
-    /**
-     * `metadata` exists for backwards compatibility but shouldn't get specified anymore
-     *
-     * @deprecated `metadata` exists for backwards compatibility but shouldn't get specified anymore
-     */
-    metadata?: pulumi.Input<inputs.MaintenanceWindowMetadata>;
     /**
      * The name of the maintenance window, displayed in the UI
      */

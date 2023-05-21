@@ -35,15 +35,13 @@ export class Autotag extends pulumi.CustomResource {
     }
 
     /**
+     * The description of the auto-tag.
+     */
+    public readonly description!: pulumi.Output<string | undefined>;
+    /**
      * A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
      */
     public readonly entitySelectorBasedRules!: pulumi.Output<outputs.AutotagEntitySelectorBasedRule[] | undefined>;
-    /**
-     * `metadata` exists for backwards compatibility but shouldn't get specified anymore
-     *
-     * @deprecated `metadata` exists for backwards compatibility but shouldn't get specified anymore
-     */
-    public readonly metadata!: pulumi.Output<outputs.AutotagMetadata | undefined>;
     /**
      * The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
      * In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
@@ -72,15 +70,15 @@ export class Autotag extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AutotagState | undefined;
+            resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["entitySelectorBasedRules"] = state ? state.entitySelectorBasedRules : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["rules"] = state ? state.rules : undefined;
             resourceInputs["unknowns"] = state ? state.unknowns : undefined;
         } else {
             const args = argsOrState as AutotagArgs | undefined;
+            resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["entitySelectorBasedRules"] = args ? args.entitySelectorBasedRules : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["rules"] = args ? args.rules : undefined;
             resourceInputs["unknowns"] = args ? args.unknowns : undefined;
@@ -95,15 +93,13 @@ export class Autotag extends pulumi.CustomResource {
  */
 export interface AutotagState {
     /**
+     * The description of the auto-tag.
+     */
+    description?: pulumi.Input<string>;
+    /**
      * A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
      */
     entitySelectorBasedRules?: pulumi.Input<pulumi.Input<inputs.AutotagEntitySelectorBasedRule>[]>;
-    /**
-     * `metadata` exists for backwards compatibility but shouldn't get specified anymore
-     *
-     * @deprecated `metadata` exists for backwards compatibility but shouldn't get specified anymore
-     */
-    metadata?: pulumi.Input<inputs.AutotagMetadata>;
     /**
      * The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
      * In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
@@ -125,15 +121,13 @@ export interface AutotagState {
  */
 export interface AutotagArgs {
     /**
+     * The description of the auto-tag.
+     */
+    description?: pulumi.Input<string>;
+    /**
      * A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
      */
     entitySelectorBasedRules?: pulumi.Input<pulumi.Input<inputs.AutotagEntitySelectorBasedRule>[]>;
-    /**
-     * `metadata` exists for backwards compatibility but shouldn't get specified anymore
-     *
-     * @deprecated `metadata` exists for backwards compatibility but shouldn't get specified anymore
-     */
-    metadata?: pulumi.Input<inputs.AutotagMetadata>;
     /**
      * The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
      * In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to

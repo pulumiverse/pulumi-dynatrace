@@ -18,11 +18,16 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         /// A list of management zones that can display data on the publicly shared dashboard.
         /// </summary>
         public readonly ImmutableArray<string> ManagementZones;
+        public readonly ImmutableDictionary<string, string>? Urls;
 
         [OutputConstructor]
-        private DashboardSharingPublic(ImmutableArray<string> managementZones)
+        private DashboardSharingPublic(
+            ImmutableArray<string> managementZones,
+
+            ImmutableDictionary<string, string>? urls)
         {
             ManagementZones = managementZones;
+            Urls = urls;
         }
     }
 }

@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
 
 __all__ = [
     'GetAlertingProfilesResult',
@@ -21,13 +22,16 @@ class GetAlertingProfilesResult:
     """
     A collection of values returned by getAlertingProfiles.
     """
-    def __init__(__self__, id=None, profiles=None):
+    def __init__(__self__, id=None, profiles=None, values=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
         if profiles and not isinstance(profiles, dict):
             raise TypeError("Expected argument 'profiles' to be a dict")
         pulumi.set(__self__, "profiles", profiles)
+        if values and not isinstance(values, list):
+            raise TypeError("Expected argument 'values' to be a list")
+        pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter
@@ -42,6 +46,11 @@ class GetAlertingProfilesResult:
     def profiles(self) -> Optional[Mapping[str, str]]:
         return pulumi.get(self, "profiles")
 
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence['outputs.GetAlertingProfilesValueResult']:
+        return pulumi.get(self, "values")
+
 
 class AwaitableGetAlertingProfilesResult(GetAlertingProfilesResult):
     # pylint: disable=using-constant-test
@@ -50,7 +59,8 @@ class AwaitableGetAlertingProfilesResult(GetAlertingProfilesResult):
             yield self
         return GetAlertingProfilesResult(
             id=self.id,
-            profiles=self.profiles)
+            profiles=self.profiles,
+            values=self.values)
 
 
 def get_alerting_profiles(profiles: Optional[Mapping[str, str]] = None,
@@ -65,7 +75,8 @@ def get_alerting_profiles(profiles: Optional[Mapping[str, str]] = None,
 
     return AwaitableGetAlertingProfilesResult(
         id=__ret__.id,
-        profiles=__ret__.profiles)
+        profiles=__ret__.profiles,
+        values=__ret__.values)
 
 
 @_utilities.lift_output_func(get_alerting_profiles)

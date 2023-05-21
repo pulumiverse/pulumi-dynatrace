@@ -53,6 +53,10 @@ export class TrrelloNotification extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    public readonly legacyId!: pulumi.Output<string>;
+    /**
      * The Trello list to which the card should be assigned
      */
     public readonly listId!: pulumi.Output<string>;
@@ -91,6 +95,7 @@ export class TrrelloNotification extends pulumi.CustomResource {
             resourceInputs["authorizationToken"] = state ? state.authorizationToken : undefined;
             resourceInputs["boardId"] = state ? state.boardId : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
             resourceInputs["listId"] = state ? state.listId : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["profile"] = state ? state.profile : undefined;
@@ -127,6 +132,7 @@ export class TrrelloNotification extends pulumi.CustomResource {
             resourceInputs["authorizationToken"] = args ? args.authorizationToken : undefined;
             resourceInputs["boardId"] = args ? args.boardId : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
             resourceInputs["listId"] = args ? args.listId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["profile"] = args ? args.profile : undefined;
@@ -162,6 +168,10 @@ export interface TrrelloNotificationState {
      * The description of the Trello card.   You can use same placeholders as in card text
      */
     description?: pulumi.Input<string>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The Trello list to which the card should be assigned
      */
@@ -208,6 +218,10 @@ export interface TrrelloNotificationArgs {
      * The description of the Trello card.   You can use same placeholders as in card text
      */
     description: pulumi.Input<string>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The Trello list to which the card should be assigned
      */

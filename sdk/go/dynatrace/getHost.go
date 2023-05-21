@@ -33,7 +33,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			test, err := dynatrace.GetHost(ctx, &GetHostArgs{
+//			test, err := dynatrace.GetHost(ctx, &dynatrace.GetHostArgs{
 //				Name: "Example",
 //				Tags: []string{
 //					"TerraformKeyTest",
@@ -44,8 +44,8 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewManagementZone(ctx, "#name#", &dynatrace.ManagementZoneArgs{
-//				EntitySelectorBasedRules: ManagementZoneEntitySelectorBasedRuleArray{
-//					&ManagementZoneEntitySelectorBasedRuleArgs{
+//				EntitySelectorBasedRules: dynatrace.ManagementZoneEntitySelectorBasedRuleArray{
+//					&dynatrace.ManagementZoneEntitySelectorBasedRuleArgs{
 //						Enabled:  pulumi.Bool(true),
 //						Selector: pulumi.String(fmt.Sprintf("type(\"host\"),entityId(\"%v\")", test.Id)),
 //					},

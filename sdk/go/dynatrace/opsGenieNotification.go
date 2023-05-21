@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -20,6 +20,8 @@ type OpsGenieNotification struct {
 	ApiKey pulumi.StringPtrOutput `pulumi:"apiKey"`
 	// The region domain of the OpsGenie
 	Domain pulumi.StringOutput `pulumi:"domain"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
 	// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
 	Message pulumi.StringOutput `pulumi:"message"`
 	// The name of the notification configuration
@@ -48,7 +50,7 @@ func NewOpsGenieNotification(ctx *pulumi.Context,
 		return nil, errors.New("invalid value for required argument 'Profile'")
 	}
 	if args.ApiKey != nil {
-		args.ApiKey = pulumi.ToSecret(args.ApiKey).(pulumi.StringPtrOutput)
+		args.ApiKey = pulumi.ToSecret(args.ApiKey).(pulumi.StringPtrInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"apiKey",
@@ -83,6 +85,8 @@ type opsGenieNotificationState struct {
 	ApiKey *string `pulumi:"apiKey"`
 	// The region domain of the OpsGenie
 	Domain *string `pulumi:"domain"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
 	Message *string `pulumi:"message"`
 	// The name of the notification configuration
@@ -98,6 +102,8 @@ type OpsGenieNotificationState struct {
 	ApiKey pulumi.StringPtrInput
 	// The region domain of the OpsGenie
 	Domain pulumi.StringPtrInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
 	Message pulumi.StringPtrInput
 	// The name of the notification configuration
@@ -117,6 +123,8 @@ type opsGenieNotificationArgs struct {
 	ApiKey *string `pulumi:"apiKey"`
 	// The region domain of the OpsGenie
 	Domain string `pulumi:"domain"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
 	Message string `pulumi:"message"`
 	// The name of the notification configuration
@@ -133,6 +141,8 @@ type OpsGenieNotificationArgs struct {
 	ApiKey pulumi.StringPtrInput
 	// The region domain of the OpsGenie
 	Domain pulumi.StringInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
 	Message pulumi.StringInput
 	// The name of the notification configuration
@@ -241,6 +251,11 @@ func (o OpsGenieNotificationOutput) ApiKey() pulumi.StringPtrOutput {
 // The region domain of the OpsGenie
 func (o OpsGenieNotificationOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *OpsGenieNotification) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
+}
+
+// The ID of these settings when referred to from resources requiring the REST API V1 keys
+func (o OpsGenieNotificationOutput) LegacyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *OpsGenieNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
 // The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem

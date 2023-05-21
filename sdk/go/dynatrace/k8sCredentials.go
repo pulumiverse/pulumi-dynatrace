@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -16,6 +16,8 @@ type K8sCredentials struct {
 
 	// Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
 	Active pulumi.BoolPtrOutput `pulumi:"active"`
+	// Active Gate group to filter active gates for this credentials.
+	ActiveGateGroup pulumi.StringPtrOutput `pulumi:"activeGateGroup"`
 	// The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
 	AuthToken pulumi.StringPtrOutput `pulumi:"authToken"`
 	// The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
@@ -52,6 +54,13 @@ func NewK8sCredentials(ctx *pulumi.Context,
 	if args.Label == nil {
 		return nil, errors.New("invalid value for required argument 'Label'")
 	}
+	if args.AuthToken != nil {
+		args.AuthToken = pulumi.ToSecret(args.AuthToken).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"authToken",
+	})
+	opts = append(opts, secrets)
 	opts = pkgResourceDefaultOpts(opts)
 	var resource K8sCredentials
 	err := ctx.RegisterResource("dynatrace:index/k8sCredentials:K8sCredentials", name, args, &resource, opts...)
@@ -77,6 +86,8 @@ func GetK8sCredentials(ctx *pulumi.Context,
 type k8sCredentialsState struct {
 	// Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
 	Active *bool `pulumi:"active"`
+	// Active Gate group to filter active gates for this credentials.
+	ActiveGateGroup *string `pulumi:"activeGateGroup"`
 	// The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
 	AuthToken *string `pulumi:"authToken"`
 	// The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
@@ -106,6 +117,8 @@ type k8sCredentialsState struct {
 type K8sCredentialsState struct {
 	// Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
 	Active pulumi.BoolPtrInput
+	// Active Gate group to filter active gates for this credentials.
+	ActiveGateGroup pulumi.StringPtrInput
 	// The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
 	AuthToken pulumi.StringPtrInput
 	// The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
@@ -139,6 +152,8 @@ func (K8sCredentialsState) ElementType() reflect.Type {
 type k8sCredentialsArgs struct {
 	// Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
 	Active *bool `pulumi:"active"`
+	// Active Gate group to filter active gates for this credentials.
+	ActiveGateGroup *string `pulumi:"activeGateGroup"`
 	// The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
 	AuthToken *string `pulumi:"authToken"`
 	// The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
@@ -169,6 +184,8 @@ type k8sCredentialsArgs struct {
 type K8sCredentialsArgs struct {
 	// Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
 	Active pulumi.BoolPtrInput
+	// Active Gate group to filter active gates for this credentials.
+	ActiveGateGroup pulumi.StringPtrInput
 	// The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.
 	AuthToken pulumi.StringPtrInput
 	// The check of SSL certificates is enabled (`true`) or disabled (`false`) for the Kubernetes cluster.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
@@ -285,6 +302,11 @@ func (o K8sCredentialsOutput) ToK8sCredentialsOutputWithContext(ctx context.Cont
 // Monitoring is enabled (`true`) or disabled (`false`) for given credentials configuration.  If not set on creation, the `true` value is used.  If the field is omitted during an update, the old value remains unaffected.
 func (o K8sCredentialsOutput) Active() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *K8sCredentials) pulumi.BoolPtrOutput { return v.Active }).(pulumi.BoolPtrOutput)
+}
+
+// Active Gate group to filter active gates for this credentials.
+func (o K8sCredentialsOutput) ActiveGateGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *K8sCredentials) pulumi.StringPtrOutput { return v.ActiveGateGroup }).(pulumi.StringPtrOutput)
 }
 
 // The service account bearer token for the Kubernetes API server.  Submit your token on creation or update of the configuration. For security reasons, GET requests return this field as `null`.  If the field is omitted during an update, the old value remains unaffected.

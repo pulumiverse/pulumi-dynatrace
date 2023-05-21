@@ -21,10 +21,13 @@ class GetAlertingProfileResult:
     """
     A collection of values returned by getAlertingProfile.
     """
-    def __init__(__self__, id=None, name=None):
+    def __init__(__self__, id=None, legacy_id=None, name=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if legacy_id and not isinstance(legacy_id, str):
+            raise TypeError("Expected argument 'legacy_id' to be a str")
+        pulumi.set(__self__, "legacy_id", legacy_id)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -36,6 +39,11 @@ class GetAlertingProfileResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> str:
+        return pulumi.get(self, "legacy_id")
 
     @property
     @pulumi.getter
@@ -50,6 +58,7 @@ class AwaitableGetAlertingProfileResult(GetAlertingProfileResult):
             yield self
         return GetAlertingProfileResult(
             id=self.id,
+            legacy_id=self.legacy_id,
             name=self.name)
 
 
@@ -84,6 +93,7 @@ def get_alerting_profile(name: Optional[str] = None,
 
     return AwaitableGetAlertingProfileResult(
         id=__ret__.id,
+        legacy_id=__ret__.legacy_id,
         name=__ret__.name)
 
 

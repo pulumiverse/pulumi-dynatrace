@@ -21,7 +21,7 @@ public class TrrelloNotification extends com.pulumi.resources.CustomResource {
      * The configuration is enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="active", type=Boolean.class, parameters={})
+    @Export(name="active", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> active;
 
     /**
@@ -35,7 +35,7 @@ public class TrrelloNotification extends com.pulumi.resources.CustomResource {
      * The application key for the Trello account
      * 
      */
-    @Export(name="applicationKey", type=String.class, parameters={})
+    @Export(name="applicationKey", refs={String.class}, tree="[0]")
     private Output<String> applicationKey;
 
     /**
@@ -49,7 +49,7 @@ public class TrrelloNotification extends com.pulumi.resources.CustomResource {
      * The application token for the Trello account
      * 
      */
-    @Export(name="authorizationToken", type=String.class, parameters={})
+    @Export(name="authorizationToken", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authorizationToken;
 
     /**
@@ -63,7 +63,7 @@ public class TrrelloNotification extends com.pulumi.resources.CustomResource {
      * The Trello board to which the card should be assigned
      * 
      */
-    @Export(name="boardId", type=String.class, parameters={})
+    @Export(name="boardId", refs={String.class}, tree="[0]")
     private Output<String> boardId;
 
     /**
@@ -77,7 +77,7 @@ public class TrrelloNotification extends com.pulumi.resources.CustomResource {
      * The description of the Trello card.   You can use same placeholders as in card text
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -88,10 +88,24 @@ public class TrrelloNotification extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    @Export(name="legacyId", refs={String.class}, tree="[0]")
+    private Output<String> legacyId;
+
+    /**
+     * @return The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    public Output<String> legacyId() {
+        return this.legacyId;
+    }
+    /**
      * The Trello list to which the card should be assigned
      * 
      */
-    @Export(name="listId", type=String.class, parameters={})
+    @Export(name="listId", refs={String.class}, tree="[0]")
     private Output<String> listId;
 
     /**
@@ -105,7 +119,7 @@ public class TrrelloNotification extends com.pulumi.resources.CustomResource {
      * The name of the notification configuration
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -119,7 +133,7 @@ public class TrrelloNotification extends com.pulumi.resources.CustomResource {
      * The ID of the associated alerting profile
      * 
      */
-    @Export(name="profile", type=String.class, parameters={})
+    @Export(name="profile", refs={String.class}, tree="[0]")
     private Output<String> profile;
 
     /**
@@ -133,7 +147,7 @@ public class TrrelloNotification extends com.pulumi.resources.CustomResource {
      * The Trello list to which the card of the resolved problem should be assigned
      * 
      */
-    @Export(name="resolvedListId", type=String.class, parameters={})
+    @Export(name="resolvedListId", refs={String.class}, tree="[0]")
     private Output<String> resolvedListId;
 
     /**
@@ -147,7 +161,7 @@ public class TrrelloNotification extends com.pulumi.resources.CustomResource {
      * The text of the generated Trello card.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      * 
      */
-    @Export(name="text", type=String.class, parameters={})
+    @Export(name="text", refs={String.class}, tree="[0]")
     private Output<String> text;
 
     /**

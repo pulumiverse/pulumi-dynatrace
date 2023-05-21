@@ -77,6 +77,21 @@ public final class AnsibleTowerNotificationArgs extends com.pulumi.resources.Res
     }
 
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    @Import(name="legacyId")
+    private @Nullable Output<String> legacyId;
+
+    /**
+     * @return The ID of these settings when referred to from resources requiring the REST API V1 keys
+     * 
+     */
+    public Optional<Output<String>> legacyId() {
+        return Optional.ofNullable(this.legacyId);
+    }
+
+    /**
      * The display name within the Dynatrace WebUI.
      * 
      */
@@ -143,6 +158,7 @@ public final class AnsibleTowerNotificationArgs extends com.pulumi.resources.Res
         this.customMessage = $.customMessage;
         this.insecure = $.insecure;
         this.jobTemplateUrl = $.jobTemplateUrl;
+        this.legacyId = $.legacyId;
         this.name = $.name;
         this.password = $.password;
         this.profile = $.profile;
@@ -249,6 +265,27 @@ public final class AnsibleTowerNotificationArgs extends com.pulumi.resources.Res
          */
         public Builder jobTemplateUrl(String jobTemplateUrl) {
             return jobTemplateUrl(Output.of(jobTemplateUrl));
+        }
+
+        /**
+         * @param legacyId The ID of these settings when referred to from resources requiring the REST API V1 keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(@Nullable Output<String> legacyId) {
+            $.legacyId = legacyId;
+            return this;
+        }
+
+        /**
+         * @param legacyId The ID of these settings when referred to from resources requiring the REST API V1 keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(String legacyId) {
+            return legacyId(Output.of(legacyId));
         }
 
         /**

@@ -22,7 +22,7 @@ public class ImsBridges extends com.pulumi.resources.CustomResource {
      * The name of the IMS bridge
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -36,7 +36,7 @@ public class ImsBridges extends com.pulumi.resources.CustomResource {
      * Queue manager(s) that belong to the IMS bridge
      * 
      */
-    @Export(name="queueManagers", type=List.class, parameters={ImsBridgesQueueManager.class})
+    @Export(name="queueManagers", refs={List.class,ImsBridgesQueueManager.class}, tree="[0,1]")
     private Output</* @Nullable */ List<ImsBridgesQueueManager>> queueManagers;
 
     /**

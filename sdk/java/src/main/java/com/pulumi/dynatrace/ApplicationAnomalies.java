@@ -22,7 +22,7 @@ public class ApplicationAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration of failure rate increase detection
      * 
      */
-    @Export(name="failureRate", type=ApplicationAnomaliesFailureRate.class, parameters={})
+    @Export(name="failureRate", refs={ApplicationAnomaliesFailureRate.class}, tree="[0]")
     private Output</* @Nullable */ ApplicationAnomaliesFailureRate> failureRate;
 
     /**
@@ -36,7 +36,7 @@ public class ApplicationAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration of response time degradation detection
      * 
      */
-    @Export(name="responseTime", type=ApplicationAnomaliesResponseTime.class, parameters={})
+    @Export(name="responseTime", refs={ApplicationAnomaliesResponseTime.class}, tree="[0]")
     private Output</* @Nullable */ ApplicationAnomaliesResponseTime> responseTime;
 
     /**
@@ -50,7 +50,7 @@ public class ApplicationAnomalies extends com.pulumi.resources.CustomResource {
      * Configuration for anomalies regarding traffic
      * 
      */
-    @Export(name="traffic", type=ApplicationAnomaliesTraffic.class, parameters={})
+    @Export(name="traffic", refs={ApplicationAnomaliesTraffic.class}, tree="[0]")
     private Output</* @Nullable */ ApplicationAnomaliesTraffic> traffic;
 
     /**

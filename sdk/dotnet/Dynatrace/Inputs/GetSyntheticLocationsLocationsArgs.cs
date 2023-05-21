@@ -13,17 +13,34 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
 
     public sealed class GetSyntheticLocationsLocationsInputArgs : global::Pulumi.ResourceArgs
     {
-        [Input("locations")]
-        private InputList<Inputs.GetSyntheticLocationsLocationsLocationInputArgs>? _locations;
-
         /// <summary>
-        /// The name of the location
+        /// The cloud provider where the location is hosted.
         /// </summary>
-        public InputList<Inputs.GetSyntheticLocationsLocationsLocationInputArgs> Locations
+        [Input("cloudPlatform", required: true)]
+        public Input<string> CloudPlatform { get; set; } = null!;
+
+        [Input("entityId")]
+        public Input<string>? EntityId { get; set; }
+
+        [Input("ips", required: true)]
+        private InputList<string>? _ips;
+        public InputList<string> Ips
         {
-            get => _locations ?? (_locations = new InputList<Inputs.GetSyntheticLocationsLocationsLocationInputArgs>());
-            set => _locations = value;
+            get => _ips ?? (_ips = new InputList<string>());
+            set => _ips = value;
         }
+
+        [Input("name")]
+        public Input<string>? Name { get; set; }
+
+        [Input("stage", required: true)]
+        public Input<string> Stage { get; set; } = null!;
+
+        [Input("status", required: true)]
+        public Input<string> Status { get; set; } = null!;
+
+        [Input("type")]
+        public Input<string>? Type { get; set; }
 
         public GetSyntheticLocationsLocationsInputArgs()
         {

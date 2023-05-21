@@ -18,14 +18,14 @@ public final class ApplicationDataPrivacyState extends com.pulumi.resources.Reso
     public static final ApplicationDataPrivacyState Empty = new ApplicationDataPrivacyState();
 
     /**
-     * Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
+     * (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
      * 
      */
     @Import(name="dataCaptureOptIn")
     private @Nullable Output<Boolean> dataCaptureOptIn;
 
     /**
-     * @return Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
+     * @return (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
      * 
      */
     public Optional<Output<Boolean>> dataCaptureOptIn() {
@@ -33,14 +33,14 @@ public final class ApplicationDataPrivacyState extends com.pulumi.resources.Reso
     }
 
     /**
-     * How to handle the &#34;Do Not Track&#34; header:
+     * (Field has overlap with `dynatrace.DataPrivacy`) How to handle the &#34;Do Not Track&#34; header:
      * 
      */
     @Import(name="doNotTrackBehaviour")
     private @Nullable Output<String> doNotTrackBehaviour;
 
     /**
-     * @return How to handle the &#34;Do Not Track&#34; header:
+     * @return (Field has overlap with `dynatrace.DataPrivacy`) How to handle the &#34;Do Not Track&#34; header:
      * 
      */
     public Optional<Output<String>> doNotTrackBehaviour() {
@@ -48,14 +48,14 @@ public final class ApplicationDataPrivacyState extends com.pulumi.resources.Reso
     }
 
     /**
-     * Set to `true` to set persistent cookie in order to recognize returning devices
+     * (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
      * 
      */
     @Import(name="persistentCookieForUserTracking")
     private @Nullable Output<Boolean> persistentCookieForUserTracking;
 
     /**
-     * @return Set to `true` to set persistent cookie in order to recognize returning devices
+     * @return (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
      * 
      */
     public Optional<Output<Boolean>> persistentCookieForUserTracking() {
@@ -63,14 +63,14 @@ public final class ApplicationDataPrivacyState extends com.pulumi.resources.Reso
     }
 
     /**
-     * Data privacy settings for Session Replay
+     * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Data privacy settings for Session Replay
      * 
      */
     @Import(name="sessionReplayDataPrivacy")
     private @Nullable Output<ApplicationDataPrivacySessionReplayDataPrivacyArgs> sessionReplayDataPrivacy;
 
     /**
-     * @return Data privacy settings for Session Replay
+     * @return (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Data privacy settings for Session Replay
      * 
      */
     public Optional<Output<ApplicationDataPrivacySessionReplayDataPrivacyArgs>> sessionReplayDataPrivacy() {
@@ -121,7 +121,7 @@ public final class ApplicationDataPrivacyState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param dataCaptureOptIn Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
+         * @param dataCaptureOptIn (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class ApplicationDataPrivacyState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param dataCaptureOptIn Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
+         * @param dataCaptureOptIn (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to disable data capture and cookies until JavaScriptAPI `dtrum.enable()` is called
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class ApplicationDataPrivacyState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param doNotTrackBehaviour How to handle the &#34;Do Not Track&#34; header:
+         * @param doNotTrackBehaviour (Field has overlap with `dynatrace.DataPrivacy`) How to handle the &#34;Do Not Track&#34; header:
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class ApplicationDataPrivacyState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param doNotTrackBehaviour How to handle the &#34;Do Not Track&#34; header:
+         * @param doNotTrackBehaviour (Field has overlap with `dynatrace.DataPrivacy`) How to handle the &#34;Do Not Track&#34; header:
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class ApplicationDataPrivacyState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param persistentCookieForUserTracking Set to `true` to set persistent cookie in order to recognize returning devices
+         * @param persistentCookieForUserTracking (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class ApplicationDataPrivacyState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param persistentCookieForUserTracking Set to `true` to set persistent cookie in order to recognize returning devices
+         * @param persistentCookieForUserTracking (Field has overlap with `dynatrace.DataPrivacy`) Set to `true` to set persistent cookie in order to recognize returning devices
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class ApplicationDataPrivacyState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param sessionReplayDataPrivacy Data privacy settings for Session Replay
+         * @param sessionReplayDataPrivacy (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Data privacy settings for Session Replay
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class ApplicationDataPrivacyState extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param sessionReplayDataPrivacy Data privacy settings for Session Replay
+         * @param sessionReplayDataPrivacy (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Data privacy settings for Session Replay
          * 
          * @return builder
          * 

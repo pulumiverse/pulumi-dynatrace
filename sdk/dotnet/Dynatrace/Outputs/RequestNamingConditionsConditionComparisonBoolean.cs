@@ -16,7 +16,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
     {
         public readonly string? Operator;
         public readonly string? Unknowns;
-        public readonly bool? Value;
+        public readonly bool Value;
         public readonly ImmutableArray<bool> Values;
 
         [OutputConstructor]
@@ -25,7 +25,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
 
             string? unknowns,
 
-            bool? value,
+            bool value,
 
             ImmutableArray<bool> values)
         {

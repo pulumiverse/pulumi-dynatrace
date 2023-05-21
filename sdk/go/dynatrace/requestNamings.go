@@ -7,7 +7,6 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -27,12 +26,9 @@ type RequestNamings struct {
 func NewRequestNamings(ctx *pulumi.Context,
 	name string, args *RequestNamingsArgs, opts ...pulumi.ResourceOption) (*RequestNamings, error) {
 	if args == nil {
-		return nil, errors.New("missing one or more required arguments")
+		args = &RequestNamingsArgs{}
 	}
 
-	if args.Ids == nil {
-		return nil, errors.New("invalid value for required argument 'Ids'")
-	}
 	opts = pkgResourceDefaultOpts(opts)
 	var resource RequestNamings
 	err := ctx.RegisterResource("dynatrace:index/requestNamings:RequestNamings", name, args, &resource, opts...)

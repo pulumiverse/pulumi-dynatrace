@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -20,6 +20,9 @@ type AwsCredentials struct {
 	Label pulumi.StringPtrOutput `pulumi:"label"`
 	// The type of the AWS partition
 	PartitionType pulumi.StringOutput `pulumi:"partitionType"`
+	// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+	// manage them via WebUI without interference by Terraform.
+	SupportingServicesManagedInDynatrace pulumi.BoolPtrOutput `pulumi:"supportingServicesManagedInDynatrace"`
 	// supporting services to be monitored
 	SupportingServicesToMonitors AwsCredentialsSupportingServicesToMonitorArrayOutput `pulumi:"supportingServicesToMonitors"`
 	// Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
@@ -75,6 +78,9 @@ type awsCredentialsState struct {
 	Label *string `pulumi:"label"`
 	// The type of the AWS partition
 	PartitionType *string `pulumi:"partitionType"`
+	// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+	// manage them via WebUI without interference by Terraform.
+	SupportingServicesManagedInDynatrace *bool `pulumi:"supportingServicesManagedInDynatrace"`
 	// supporting services to be monitored
 	SupportingServicesToMonitors []AwsCredentialsSupportingServicesToMonitor `pulumi:"supportingServicesToMonitors"`
 	// Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
@@ -92,6 +98,9 @@ type AwsCredentialsState struct {
 	Label pulumi.StringPtrInput
 	// The type of the AWS partition
 	PartitionType pulumi.StringPtrInput
+	// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+	// manage them via WebUI without interference by Terraform.
+	SupportingServicesManagedInDynatrace pulumi.BoolPtrInput
 	// supporting services to be monitored
 	SupportingServicesToMonitors AwsCredentialsSupportingServicesToMonitorArrayInput
 	// Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
@@ -113,6 +122,9 @@ type awsCredentialsArgs struct {
 	Label *string `pulumi:"label"`
 	// The type of the AWS partition
 	PartitionType string `pulumi:"partitionType"`
+	// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+	// manage them via WebUI without interference by Terraform.
+	SupportingServicesManagedInDynatrace *bool `pulumi:"supportingServicesManagedInDynatrace"`
 	// supporting services to be monitored
 	SupportingServicesToMonitors []AwsCredentialsSupportingServicesToMonitor `pulumi:"supportingServicesToMonitors"`
 	// Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
@@ -131,6 +143,9 @@ type AwsCredentialsArgs struct {
 	Label pulumi.StringPtrInput
 	// The type of the AWS partition
 	PartitionType pulumi.StringInput
+	// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+	// manage them via WebUI without interference by Terraform.
+	SupportingServicesManagedInDynatrace pulumi.BoolPtrInput
 	// supporting services to be monitored
 	SupportingServicesToMonitors AwsCredentialsSupportingServicesToMonitorArrayInput
 	// Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
@@ -241,6 +256,12 @@ func (o AwsCredentialsOutput) Label() pulumi.StringPtrOutput {
 // The type of the AWS partition
 func (o AwsCredentialsOutput) PartitionType() pulumi.StringOutput {
 	return o.ApplyT(func(v *AwsCredentials) pulumi.StringOutput { return v.PartitionType }).(pulumi.StringOutput)
+}
+
+// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
+// manage them via WebUI without interference by Terraform.
+func (o AwsCredentialsOutput) SupportingServicesManagedInDynatrace() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AwsCredentials) pulumi.BoolPtrOutput { return v.SupportingServicesManagedInDynatrace }).(pulumi.BoolPtrOutput)
 }
 
 // supporting services to be monitored

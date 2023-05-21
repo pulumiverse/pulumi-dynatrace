@@ -5,6 +5,7 @@ package com.pulumi.dynatrace.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.dynatrace.inputs.DashboardDashboardMetadataDynamicFiltersGenericTagFiltersArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -21,6 +22,13 @@ public final class DashboardDashboardMetadataDynamicFiltersArgs extends com.pulu
 
     public Output<List<String>> filters() {
         return this.filters;
+    }
+
+    @Import(name="genericTagFilters")
+    private @Nullable Output<DashboardDashboardMetadataDynamicFiltersGenericTagFiltersArgs> genericTagFilters;
+
+    public Optional<Output<DashboardDashboardMetadataDynamicFiltersGenericTagFiltersArgs>> genericTagFilters() {
+        return Optional.ofNullable(this.genericTagFilters);
     }
 
     @Import(name="tagSuggestionTypes")
@@ -49,6 +57,7 @@ public final class DashboardDashboardMetadataDynamicFiltersArgs extends com.pulu
 
     private DashboardDashboardMetadataDynamicFiltersArgs(DashboardDashboardMetadataDynamicFiltersArgs $) {
         this.filters = $.filters;
+        this.genericTagFilters = $.genericTagFilters;
         this.tagSuggestionTypes = $.tagSuggestionTypes;
         this.unknowns = $.unknowns;
     }
@@ -82,6 +91,15 @@ public final class DashboardDashboardMetadataDynamicFiltersArgs extends com.pulu
 
         public Builder filters(String... filters) {
             return filters(List.of(filters));
+        }
+
+        public Builder genericTagFilters(@Nullable Output<DashboardDashboardMetadataDynamicFiltersGenericTagFiltersArgs> genericTagFilters) {
+            $.genericTagFilters = genericTagFilters;
+            return this;
+        }
+
+        public Builder genericTagFilters(DashboardDashboardMetadataDynamicFiltersGenericTagFiltersArgs genericTagFilters) {
+            return genericTagFilters(Output.of(genericTagFilters));
         }
 
         public Builder tagSuggestionTypes(@Nullable Output<List<String>> tagSuggestionTypes) {

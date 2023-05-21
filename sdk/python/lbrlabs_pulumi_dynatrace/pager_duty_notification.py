@@ -19,6 +19,7 @@ class PagerDutyNotificationArgs:
                  profile: pulumi.Input[str],
                  service: pulumi.Input[str],
                  api_key: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a PagerDutyNotification resource.
@@ -27,6 +28,7 @@ class PagerDutyNotificationArgs:
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
         :param pulumi.Input[str] service: The name of the PagerDuty Service
         :param pulumi.Input[str] api_key: The API key to access PagerDuty
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         """
         pulumi.set(__self__, "account", account)
@@ -35,6 +37,8 @@ class PagerDutyNotificationArgs:
         pulumi.set(__self__, "service", service)
         if api_key is not None:
             pulumi.set(__self__, "api_key", api_key)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -99,6 +103,18 @@ class PagerDutyNotificationArgs:
         pulumi.set(self, "api_key", value)
 
     @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -117,6 +133,7 @@ class _PagerDutyNotificationState:
                  account: Optional[pulumi.Input[str]] = None,
                  active: Optional[pulumi.Input[bool]] = None,
                  api_key: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None):
@@ -125,6 +142,7 @@ class _PagerDutyNotificationState:
         :param pulumi.Input[str] account: The name of the PagerDuty account
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] api_key: The API key to access PagerDuty
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
         :param pulumi.Input[str] service: The name of the PagerDuty Service
@@ -135,6 +153,8 @@ class _PagerDutyNotificationState:
             pulumi.set(__self__, "active", active)
         if api_key is not None:
             pulumi.set(__self__, "api_key", api_key)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if profile is not None:
@@ -177,6 +197,18 @@ class _PagerDutyNotificationState:
     @api_key.setter
     def api_key(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "api_key", value)
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
 
     @property
     @pulumi.getter
@@ -223,6 +255,7 @@ class PagerDutyNotification(pulumi.CustomResource):
                  account: Optional[pulumi.Input[str]] = None,
                  active: Optional[pulumi.Input[bool]] = None,
                  api_key: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None,
@@ -234,6 +267,7 @@ class PagerDutyNotification(pulumi.CustomResource):
         :param pulumi.Input[str] account: The name of the PagerDuty account
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] api_key: The API key to access PagerDuty
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
         :param pulumi.Input[str] service: The name of the PagerDuty Service
@@ -264,6 +298,7 @@ class PagerDutyNotification(pulumi.CustomResource):
                  account: Optional[pulumi.Input[str]] = None,
                  active: Optional[pulumi.Input[bool]] = None,
                  api_key: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
                  service: Optional[pulumi.Input[str]] = None,
@@ -283,6 +318,7 @@ class PagerDutyNotification(pulumi.CustomResource):
                 raise TypeError("Missing required property 'active'")
             __props__.__dict__["active"] = active
             __props__.__dict__["api_key"] = None if api_key is None else pulumi.Output.secret(api_key)
+            __props__.__dict__["legacy_id"] = legacy_id
             __props__.__dict__["name"] = name
             if profile is None and not opts.urn:
                 raise TypeError("Missing required property 'profile'")
@@ -305,6 +341,7 @@ class PagerDutyNotification(pulumi.CustomResource):
             account: Optional[pulumi.Input[str]] = None,
             active: Optional[pulumi.Input[bool]] = None,
             api_key: Optional[pulumi.Input[str]] = None,
+            legacy_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             profile: Optional[pulumi.Input[str]] = None,
             service: Optional[pulumi.Input[str]] = None) -> 'PagerDutyNotification':
@@ -318,6 +355,7 @@ class PagerDutyNotification(pulumi.CustomResource):
         :param pulumi.Input[str] account: The name of the PagerDuty account
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] api_key: The API key to access PagerDuty
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
         :param pulumi.Input[str] service: The name of the PagerDuty Service
@@ -329,6 +367,7 @@ class PagerDutyNotification(pulumi.CustomResource):
         __props__.__dict__["account"] = account
         __props__.__dict__["active"] = active
         __props__.__dict__["api_key"] = api_key
+        __props__.__dict__["legacy_id"] = legacy_id
         __props__.__dict__["name"] = name
         __props__.__dict__["profile"] = profile
         __props__.__dict__["service"] = service
@@ -357,6 +396,14 @@ class PagerDutyNotification(pulumi.CustomResource):
         The API key to access PagerDuty
         """
         return pulumi.get(self, "api_key")
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> pulumi.Output[str]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
 
     @property
     @pulumi.getter

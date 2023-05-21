@@ -24,7 +24,7 @@ public class AlertingProfile extends com.pulumi.resources.CustomResource {
      * The name of the alerting profile, displayed in the UI
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -38,7 +38,7 @@ public class AlertingProfile extends com.pulumi.resources.CustomResource {
      * The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
      * 
      */
-    @Export(name="eventTypeFilters", type=List.class, parameters={AlertingProfileEventTypeFilter.class})
+    @Export(name="eventTypeFilters", refs={List.class,AlertingProfileEventTypeFilter.class}, tree="[0,1]")
     private Output</* @Nullable */ List<AlertingProfileEventTypeFilter>> eventTypeFilters;
 
     /**
@@ -56,7 +56,7 @@ public class AlertingProfile extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-    @Export(name="metadata", type=AlertingProfileMetadata.class, parameters={})
+    @Export(name="metadata", refs={AlertingProfileMetadata.class}, tree="[0]")
     private Output</* @Nullable */ AlertingProfileMetadata> metadata;
 
     /**
@@ -70,7 +70,7 @@ public class AlertingProfile extends com.pulumi.resources.CustomResource {
      * The ID of the management zone to which the alerting profile applies
      * 
      */
-    @Export(name="mzId", type=String.class, parameters={})
+    @Export(name="mzId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> mzId;
 
     /**
@@ -84,7 +84,7 @@ public class AlertingProfile extends com.pulumi.resources.CustomResource {
      * A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
      * 
      */
-    @Export(name="rules", type=List.class, parameters={AlertingProfileRule.class})
+    @Export(name="rules", refs={List.class,AlertingProfileRule.class}, tree="[0,1]")
     private Output</* @Nullable */ List<AlertingProfileRule>> rules;
 
     /**
@@ -98,7 +98,7 @@ public class AlertingProfile extends com.pulumi.resources.CustomResource {
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**

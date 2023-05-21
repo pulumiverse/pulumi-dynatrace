@@ -15,7 +15,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
     public sealed class ApplicationDataPrivacySessionReplayDataPrivacy
     {
         /// <summary>
-        /// Content masking settings for Session Replay.
+        /// (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Content masking settings for Session Replay.
         /// </summary>
         public readonly Outputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettings ContentMaskingSettings;
         public readonly bool? OptIn;

@@ -13,8 +13,17 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CustomAnomaliesDimensionDimensionGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("index")]
+        public Input<int>? Index { get; set; }
+
         [Input("key")]
         public Input<string>? Key { get; set; }
+
+        /// <summary>
+        /// The name of the metric event displayed in the UI
+        /// </summary>
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

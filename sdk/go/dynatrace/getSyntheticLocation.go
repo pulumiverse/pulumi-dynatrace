@@ -11,9 +11,9 @@ import (
 )
 
 // The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
-func GetSyntheticLocation(ctx *pulumi.Context, args *GetSyntheticLocationArgs, opts ...pulumi.InvokeOption) (*GetSyntheticLocationResult, error) {
+func LookupSyntheticLocation(ctx *pulumi.Context, args *LookupSyntheticLocationArgs, opts ...pulumi.InvokeOption) (*LookupSyntheticLocationResult, error) {
 	opts = pkgInvokeDefaultOpts(opts)
-	var rv GetSyntheticLocationResult
+	var rv LookupSyntheticLocationResult
 	err := ctx.Invoke("dynatrace:index/getSyntheticLocation:getSyntheticLocation", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -22,10 +22,10 @@ func GetSyntheticLocation(ctx *pulumi.Context, args *GetSyntheticLocationArgs, o
 }
 
 // A collection of arguments for invoking getSyntheticLocation.
-type GetSyntheticLocationArgs struct {
+type LookupSyntheticLocationArgs struct {
 	// The cloud provider where the location is hosted.
 	CloudPlatform *string  `pulumi:"cloudPlatform"`
-	Id            *string  `pulumi:"id"`
+	EntityId      *string  `pulumi:"entityId"`
 	Ips           []string `pulumi:"ips"`
 	Name          *string  `pulumi:"name"`
 	Stage         *string  `pulumi:"stage"`
@@ -34,35 +34,37 @@ type GetSyntheticLocationArgs struct {
 }
 
 // A collection of values returned by getSyntheticLocation.
-type GetSyntheticLocationResult struct {
+type LookupSyntheticLocationResult struct {
 	// The cloud provider where the location is hosted.
-	CloudPlatform string   `pulumi:"cloudPlatform"`
-	Id            *string  `pulumi:"id"`
-	Ips           []string `pulumi:"ips"`
-	Name          *string  `pulumi:"name"`
-	Stage         string   `pulumi:"stage"`
-	Status        string   `pulumi:"status"`
-	Type          *string  `pulumi:"type"`
+	CloudPlatform string  `pulumi:"cloudPlatform"`
+	EntityId      *string `pulumi:"entityId"`
+	// The provider-assigned unique ID for this managed resource.
+	Id     string   `pulumi:"id"`
+	Ips    []string `pulumi:"ips"`
+	Name   *string  `pulumi:"name"`
+	Stage  string   `pulumi:"stage"`
+	Status string   `pulumi:"status"`
+	Type   *string  `pulumi:"type"`
 }
 
-func GetSyntheticLocationOutput(ctx *pulumi.Context, args GetSyntheticLocationOutputArgs, opts ...pulumi.InvokeOption) GetSyntheticLocationResultOutput {
+func LookupSyntheticLocationOutput(ctx *pulumi.Context, args LookupSyntheticLocationOutputArgs, opts ...pulumi.InvokeOption) LookupSyntheticLocationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetSyntheticLocationResult, error) {
-			args := v.(GetSyntheticLocationArgs)
-			r, err := GetSyntheticLocation(ctx, &args, opts...)
-			var s GetSyntheticLocationResult
+		ApplyT(func(v interface{}) (LookupSyntheticLocationResult, error) {
+			args := v.(LookupSyntheticLocationArgs)
+			r, err := LookupSyntheticLocation(ctx, &args, opts...)
+			var s LookupSyntheticLocationResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetSyntheticLocationResultOutput)
+		}).(LookupSyntheticLocationResultOutput)
 }
 
 // A collection of arguments for invoking getSyntheticLocation.
-type GetSyntheticLocationOutputArgs struct {
+type LookupSyntheticLocationOutputArgs struct {
 	// The cloud provider where the location is hosted.
 	CloudPlatform pulumi.StringPtrInput   `pulumi:"cloudPlatform"`
-	Id            pulumi.StringPtrInput   `pulumi:"id"`
+	EntityId      pulumi.StringPtrInput   `pulumi:"entityId"`
 	Ips           pulumi.StringArrayInput `pulumi:"ips"`
 	Name          pulumi.StringPtrInput   `pulumi:"name"`
 	Stage         pulumi.StringPtrInput   `pulumi:"stage"`
@@ -70,54 +72,59 @@ type GetSyntheticLocationOutputArgs struct {
 	Type          pulumi.StringPtrInput   `pulumi:"type"`
 }
 
-func (GetSyntheticLocationOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetSyntheticLocationArgs)(nil)).Elem()
+func (LookupSyntheticLocationOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupSyntheticLocationArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getSyntheticLocation.
-type GetSyntheticLocationResultOutput struct{ *pulumi.OutputState }
+type LookupSyntheticLocationResultOutput struct{ *pulumi.OutputState }
 
-func (GetSyntheticLocationResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetSyntheticLocationResult)(nil)).Elem()
+func (LookupSyntheticLocationResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupSyntheticLocationResult)(nil)).Elem()
 }
 
-func (o GetSyntheticLocationResultOutput) ToGetSyntheticLocationResultOutput() GetSyntheticLocationResultOutput {
+func (o LookupSyntheticLocationResultOutput) ToLookupSyntheticLocationResultOutput() LookupSyntheticLocationResultOutput {
 	return o
 }
 
-func (o GetSyntheticLocationResultOutput) ToGetSyntheticLocationResultOutputWithContext(ctx context.Context) GetSyntheticLocationResultOutput {
+func (o LookupSyntheticLocationResultOutput) ToLookupSyntheticLocationResultOutputWithContext(ctx context.Context) LookupSyntheticLocationResultOutput {
 	return o
 }
 
 // The cloud provider where the location is hosted.
-func (o GetSyntheticLocationResultOutput) CloudPlatform() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSyntheticLocationResult) string { return v.CloudPlatform }).(pulumi.StringOutput)
+func (o LookupSyntheticLocationResultOutput) CloudPlatform() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSyntheticLocationResult) string { return v.CloudPlatform }).(pulumi.StringOutput)
 }
 
-func (o GetSyntheticLocationResultOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetSyntheticLocationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
+func (o LookupSyntheticLocationResultOutput) EntityId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSyntheticLocationResult) *string { return v.EntityId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSyntheticLocationResultOutput) Ips() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetSyntheticLocationResult) []string { return v.Ips }).(pulumi.StringArrayOutput)
+// The provider-assigned unique ID for this managed resource.
+func (o LookupSyntheticLocationResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSyntheticLocationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o GetSyntheticLocationResultOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetSyntheticLocationResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+func (o LookupSyntheticLocationResultOutput) Ips() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupSyntheticLocationResult) []string { return v.Ips }).(pulumi.StringArrayOutput)
 }
 
-func (o GetSyntheticLocationResultOutput) Stage() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSyntheticLocationResult) string { return v.Stage }).(pulumi.StringOutput)
+func (o LookupSyntheticLocationResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSyntheticLocationResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-func (o GetSyntheticLocationResultOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSyntheticLocationResult) string { return v.Status }).(pulumi.StringOutput)
+func (o LookupSyntheticLocationResultOutput) Stage() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSyntheticLocationResult) string { return v.Stage }).(pulumi.StringOutput)
 }
 
-func (o GetSyntheticLocationResultOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetSyntheticLocationResult) *string { return v.Type }).(pulumi.StringPtrOutput)
+func (o LookupSyntheticLocationResultOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSyntheticLocationResult) string { return v.Status }).(pulumi.StringOutput)
+}
+
+func (o LookupSyntheticLocationResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSyntheticLocationResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetSyntheticLocationResultOutput{})
+	pulumi.RegisterOutputType(LookupSyntheticLocationResultOutput{})
 }

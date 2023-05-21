@@ -21,7 +21,7 @@ public class KeyRequests extends com.pulumi.resources.CustomResource {
      * The names of the key requests
      * 
      */
-    @Export(name="names", type=List.class, parameters={String.class})
+    @Export(name="names", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> names;
 
     /**
@@ -32,14 +32,14 @@ public class KeyRequests extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.names);
     }
     /**
-     * Whether to create an entry point or not
+     * ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
      * 
      */
-    @Export(name="service", type=String.class, parameters={})
+    @Export(name="service", refs={String.class}, tree="[0]")
     private Output<String> service;
 
     /**
-     * @return Whether to create an entry point or not
+     * @return ID of Dynatrace Service, eg. SERVICE-123ABC45678EFGH
      * 
      */
     public Output<String> service() {

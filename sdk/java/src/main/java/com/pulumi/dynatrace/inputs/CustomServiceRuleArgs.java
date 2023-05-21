@@ -81,21 +81,6 @@ public final class CustomServiceRuleArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The ID of the detection rule
-     * 
-     */
-    @Import(name="id")
-    private @Nullable Output<String> id;
-
-    /**
-     * @return The ID of the detection rule
-     * 
-     */
-    public Optional<Output<String>> id() {
-        return Optional.ofNullable(this.id);
-    }
-
-    /**
      * methods to instrument
      * 
      */
@@ -132,7 +117,6 @@ public final class CustomServiceRuleArgs extends com.pulumi.resources.ResourceAr
         this.class_ = $.class_;
         this.enabled = $.enabled;
         this.file = $.file;
-        this.id = $.id;
         this.methods = $.methods;
         this.unknowns = $.unknowns;
     }
@@ -247,27 +231,6 @@ public final class CustomServiceRuleArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder file(CustomServiceRuleFileArgs file) {
             return file(Output.of(file));
-        }
-
-        /**
-         * @param id The ID of the detection rule
-         * 
-         * @return builder
-         * 
-         */
-        public Builder id(@Nullable Output<String> id) {
-            $.id = id;
-            return this;
-        }
-
-        /**
-         * @param id The ID of the detection rule
-         * 
-         * @return builder
-         * 
-         */
-        public Builder id(String id) {
-            return id(Output.of(id));
         }
 
         /**

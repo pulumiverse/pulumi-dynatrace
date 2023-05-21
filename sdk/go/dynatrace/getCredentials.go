@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// The `getCredentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
+// The `Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
 //
 // ## Example Usage
 //
@@ -26,7 +26,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			creds, err := dynatrace.GetCredentials(ctx, &GetCredentialsArgs{
+//			creds, err := dynatrace.LookupCredentials(ctx, &dynatrace.LookupCredentialsArgs{
 //				Name: pulumi.StringRef("Office365 Access Token"),
 //			}, nil)
 //			if err != nil {
@@ -38,15 +38,15 @@ import (
 //				Locations: pulumi.StringArray{
 //					pulumi.String("SYNTHETIC_LOCATION-781752216580B1BC"),
 //				},
-//				AnomalyDetections: HttpMonitorAnomalyDetectionArray{
-//					&HttpMonitorAnomalyDetectionArgs{
-//						LoadingTimeThresholds: HttpMonitorAnomalyDetectionLoadingTimeThresholdArray{
-//							&HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs{
+//				AnomalyDetections: dynatrace.HttpMonitorAnomalyDetectionArray{
+//					&dynatrace.HttpMonitorAnomalyDetectionArgs{
+//						LoadingTimeThresholds: dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArray{
+//							&dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs{
 //								Enabled: pulumi.Bool(true),
 //							},
 //						},
-//						OutageHandlings: HttpMonitorAnomalyDetectionOutageHandlingArray{
-//							&HttpMonitorAnomalyDetectionOutageHandlingArgs{
+//						OutageHandlings: dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArray{
+//							&dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArgs{
 //								GlobalOutage: pulumi.Bool(true),
 //								LocalOutage:  pulumi.Bool(false),
 //								RetryOnError: pulumi.Bool(false),
@@ -54,23 +54,23 @@ import (
 //						},
 //					},
 //				},
-//				Script: &HttpMonitorScriptArgs{
-//					Requests: HttpMonitorScriptRequestArray{
-//						&HttpMonitorScriptRequestArgs{
+//				Script: &dynatrace.HttpMonitorScriptArgs{
+//					Requests: dynatrace.HttpMonitorScriptRequestArray{
+//						&dynatrace.HttpMonitorScriptRequestArgs{
 //							Description: pulumi.String("google.com"),
 //							Method:      pulumi.String("GET"),
 //							Url:         pulumi.String("https://www.google.com"),
-//							Authentication: &HttpMonitorScriptRequestAuthenticationArgs{
+//							Authentication: &dynatrace.HttpMonitorScriptRequestAuthenticationArgs{
 //								Type:        pulumi.String("BASIC_AUTHENTICATION"),
-//								Credentials: pulumi.String(creds.Id),
+//								Credentials: *pulumi.String(creds.Id),
 //							},
-//							Configuration: &HttpMonitorScriptRequestConfigurationArgs{
+//							Configuration: &dynatrace.HttpMonitorScriptRequestConfigurationArgs{
 //								AcceptAnyCertificate: pulumi.Bool(true),
 //								FollowRedirects:      pulumi.Bool(true),
 //							},
-//							Validation: &HttpMonitorScriptRequestValidationArgs{
-//								Rules: HttpMonitorScriptRequestValidationRuleArray{
-//									&HttpMonitorScriptRequestValidationRuleArgs{
+//							Validation: &dynatrace.HttpMonitorScriptRequestValidationArgs{
+//								Rules: dynatrace.HttpMonitorScriptRequestValidationRuleArray{
+//									&dynatrace.HttpMonitorScriptRequestValidationRuleArgs{
 //										Type:        pulumi.String("httpStatusesList"),
 //										PassIfFound: pulumi.Bool(false),
 //										Value:       pulumi.String(">=400"),
@@ -89,9 +89,9 @@ import (
 //	}
 //
 // ```
-func GetCredentials(ctx *pulumi.Context, args *GetCredentialsArgs, opts ...pulumi.InvokeOption) (*GetCredentialsResult, error) {
+func LookupCredentials(ctx *pulumi.Context, args *LookupCredentialsArgs, opts ...pulumi.InvokeOption) (*LookupCredentialsResult, error) {
 	opts = pkgInvokeDefaultOpts(opts)
-	var rv GetCredentialsResult
+	var rv LookupCredentialsResult
 	err := ctx.Invoke("dynatrace:index/getCredentials:getCredentials", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -100,7 +100,7 @@ func GetCredentials(ctx *pulumi.Context, args *GetCredentialsArgs, opts ...pulum
 }
 
 // A collection of arguments for invoking getCredentials.
-type GetCredentialsArgs struct {
+type LookupCredentialsArgs struct {
 	// The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match
 	Name *string `pulumi:"name"`
 	// The scope of the credential. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`. If not specified all scopes will match.
@@ -110,7 +110,7 @@ type GetCredentialsArgs struct {
 }
 
 // A collection of values returned by getCredentials.
-type GetCredentialsResult struct {
+type LookupCredentialsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match
@@ -121,21 +121,21 @@ type GetCredentialsResult struct {
 	Type *string `pulumi:"type"`
 }
 
-func GetCredentialsOutput(ctx *pulumi.Context, args GetCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetCredentialsResultOutput {
+func LookupCredentialsOutput(ctx *pulumi.Context, args LookupCredentialsOutputArgs, opts ...pulumi.InvokeOption) LookupCredentialsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetCredentialsResult, error) {
-			args := v.(GetCredentialsArgs)
-			r, err := GetCredentials(ctx, &args, opts...)
-			var s GetCredentialsResult
+		ApplyT(func(v interface{}) (LookupCredentialsResult, error) {
+			args := v.(LookupCredentialsArgs)
+			r, err := LookupCredentials(ctx, &args, opts...)
+			var s LookupCredentialsResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetCredentialsResultOutput)
+		}).(LookupCredentialsResultOutput)
 }
 
 // A collection of arguments for invoking getCredentials.
-type GetCredentialsOutputArgs struct {
+type LookupCredentialsOutputArgs struct {
 	// The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The scope of the credential. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`. If not specified all scopes will match.
@@ -144,45 +144,45 @@ type GetCredentialsOutputArgs struct {
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
-func (GetCredentialsOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCredentialsArgs)(nil)).Elem()
+func (LookupCredentialsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupCredentialsArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getCredentials.
-type GetCredentialsResultOutput struct{ *pulumi.OutputState }
+type LookupCredentialsResultOutput struct{ *pulumi.OutputState }
 
-func (GetCredentialsResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCredentialsResult)(nil)).Elem()
+func (LookupCredentialsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupCredentialsResult)(nil)).Elem()
 }
 
-func (o GetCredentialsResultOutput) ToGetCredentialsResultOutput() GetCredentialsResultOutput {
+func (o LookupCredentialsResultOutput) ToLookupCredentialsResultOutput() LookupCredentialsResultOutput {
 	return o
 }
 
-func (o GetCredentialsResultOutput) ToGetCredentialsResultOutputWithContext(ctx context.Context) GetCredentialsResultOutput {
+func (o LookupCredentialsResultOutput) ToLookupCredentialsResultOutputWithContext(ctx context.Context) LookupCredentialsResultOutput {
 	return o
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCredentialsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCredentialsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupCredentialsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCredentialsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // The name of the credential as shown within the Dynatrace WebUI. If not specified all names will match
-func (o GetCredentialsResultOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetCredentialsResult) *string { return v.Name }).(pulumi.StringPtrOutput)
+func (o LookupCredentialsResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCredentialsResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The scope of the credential. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`. If not specified all scopes will match.
-func (o GetCredentialsResultOutput) Scope() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetCredentialsResult) *string { return v.Scope }).(pulumi.StringPtrOutput)
+func (o LookupCredentialsResultOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCredentialsResult) *string { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 // The type of the credential. Possible values are `CERTIFICATE`, `PUBLIC_CERTIFICATE`, `TOKEN`, `USERNAME_PASSWORD` and `UNKNOWN`. If not specified all credential types will match
-func (o GetCredentialsResultOutput) Type() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetCredentialsResult) *string { return v.Type }).(pulumi.StringPtrOutput)
+func (o LookupCredentialsResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupCredentialsResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetCredentialsResultOutput{})
+	pulumi.RegisterOutputType(LookupCredentialsResultOutput{})
 }

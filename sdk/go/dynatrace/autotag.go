@@ -13,12 +13,10 @@ import (
 type Autotag struct {
 	pulumi.CustomResourceState
 
+	// The description of the auto-tag.
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules AutotagEntitySelectorBasedRuleArrayOutput `pulumi:"entitySelectorBasedRules"`
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata AutotagMetadataPtrOutput `pulumi:"metadata"`
 	// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
 	// In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
 	// `Infrastructure:Windows` and `Infrastructure:Linux`.
@@ -59,12 +57,10 @@ func GetAutotag(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Autotag resources.
 type autotagState struct {
+	// The description of the auto-tag.
+	Description *string `pulumi:"description"`
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules []AutotagEntitySelectorBasedRule `pulumi:"entitySelectorBasedRules"`
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata *AutotagMetadata `pulumi:"metadata"`
 	// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
 	// In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
 	// `Infrastructure:Windows` and `Infrastructure:Linux`.
@@ -76,12 +72,10 @@ type autotagState struct {
 }
 
 type AutotagState struct {
+	// The description of the auto-tag.
+	Description pulumi.StringPtrInput
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules AutotagEntitySelectorBasedRuleArrayInput
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata AutotagMetadataPtrInput
 	// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
 	// In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
 	// `Infrastructure:Windows` and `Infrastructure:Linux`.
@@ -97,12 +91,10 @@ func (AutotagState) ElementType() reflect.Type {
 }
 
 type autotagArgs struct {
+	// The description of the auto-tag.
+	Description *string `pulumi:"description"`
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules []AutotagEntitySelectorBasedRule `pulumi:"entitySelectorBasedRules"`
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata *AutotagMetadata `pulumi:"metadata"`
 	// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
 	// In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
 	// `Infrastructure:Windows` and `Infrastructure:Linux`.
@@ -115,12 +107,10 @@ type autotagArgs struct {
 
 // The set of arguments for constructing a Autotag resource.
 type AutotagArgs struct {
+	// The description of the auto-tag.
+	Description pulumi.StringPtrInput
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules AutotagEntitySelectorBasedRuleArrayInput
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata AutotagMetadataPtrInput
 	// The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.
 	// In that case the tag is used in the `name:valueFormat` format. For example you can extend the `Infrastructure` tag to
 	// `Infrastructure:Windows` and `Infrastructure:Linux`.
@@ -218,16 +208,14 @@ func (o AutotagOutput) ToAutotagOutputWithContext(ctx context.Context) AutotagOu
 	return o
 }
 
+// The description of the auto-tag.
+func (o AutotagOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Autotag) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+}
+
 // A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 func (o AutotagOutput) EntitySelectorBasedRules() AutotagEntitySelectorBasedRuleArrayOutput {
 	return o.ApplyT(func(v *Autotag) AutotagEntitySelectorBasedRuleArrayOutput { return v.EntitySelectorBasedRules }).(AutotagEntitySelectorBasedRuleArrayOutput)
-}
-
-// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-//
-// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-func (o AutotagOutput) Metadata() AutotagMetadataPtrOutput {
-	return o.ApplyT(func(v *Autotag) AutotagMetadataPtrOutput { return v.Metadata }).(AutotagMetadataPtrOutput)
 }
 
 // The name of the auto-tag, which is applied to entities. Additionally you can specify a **valueFormat** in the tag rule.

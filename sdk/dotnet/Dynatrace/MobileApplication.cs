@@ -26,6 +26,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<string?> ApplicationId { get; private set; } = null!;
 
         /// <summary>
+        /// The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+        /// </summary>
+        [Output("applicationType")]
+        public Output<string?> ApplicationType { get; private set; } = null!;
+
+        /// <summary>
         /// The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
         /// </summary>
         [Output("beaconEndpointType")]
@@ -37,6 +43,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         [Output("beaconEndpointUrl")]
         public Output<string?> BeaconEndpointUrl { get; private set; } = null!;
+
+        /// <summary>
+        /// Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+        /// </summary>
+        [Output("iconType")]
+        public Output<string?> IconType { get; private set; } = null!;
 
         /// <summary>
         /// User Action names to be flagged as Key User Actions
@@ -63,7 +75,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<Outputs.MobileApplicationProperties?> Properties { get; private set; } = null!;
 
         /// <summary>
-        /// The session replay is enabled (`true`) or disabled (`false`).
+        /// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
         /// </summary>
         [Output("sessionReplay")]
         public Output<bool?> SessionReplay { get; private set; } = null!;
@@ -76,7 +88,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<bool?> SessionReplayOnCrash { get; private set; } = null!;
 
         /// <summary>
-        /// The percentage of user sessions to be analyzed
+        /// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+        /// apps) The percentage of user sessions to be analyzed
         /// </summary>
         [Output("userSessionPercentage")]
         public Output<int?> UserSessionPercentage { get; private set; } = null!;
@@ -141,6 +154,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
+        /// The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+        /// </summary>
+        [Input("applicationType")]
+        public Input<string>? ApplicationType { get; set; }
+
+        /// <summary>
         /// The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
         /// </summary>
         [Input("beaconEndpointType", required: true)]
@@ -152,6 +171,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         [Input("beaconEndpointUrl")]
         public Input<string>? BeaconEndpointUrl { get; set; }
+
+        /// <summary>
+        /// Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+        /// </summary>
+        [Input("iconType")]
+        public Input<string>? IconType { get; set; }
 
         [Input("keyUserActions")]
         private InputList<string>? _keyUserActions;
@@ -184,7 +209,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<Inputs.MobileApplicationPropertiesArgs>? Properties { get; set; }
 
         /// <summary>
-        /// The session replay is enabled (`true`) or disabled (`false`).
+        /// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
         /// </summary>
         [Input("sessionReplay")]
         public Input<bool>? SessionReplay { get; set; }
@@ -197,7 +222,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<bool>? SessionReplayOnCrash { get; set; }
 
         /// <summary>
-        /// The percentage of user sessions to be analyzed
+        /// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+        /// apps) The percentage of user sessions to be analyzed
         /// </summary>
         [Input("userSessionPercentage")]
         public Input<int>? UserSessionPercentage { get; set; }
@@ -223,6 +249,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
+        /// The type of the application. Either `CUSTOM_APPLICATION` or `MOBILE_APPLICATION`.
+        /// </summary>
+        [Input("applicationType")]
+        public Input<string>? ApplicationType { get; set; }
+
+        /// <summary>
         /// The type of the beacon endpoint. Possible values are `CLUSTER_ACTIVE_GATE`, `ENVIRONMENT_ACTIVE_GATE` and `INSTRUMENTED_WEB_SERVER`.
         /// </summary>
         [Input("beaconEndpointType")]
@@ -234,6 +266,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         [Input("beaconEndpointUrl")]
         public Input<string>? BeaconEndpointUrl { get; set; }
+
+        /// <summary>
+        /// Custom application icon. Mobile apps always use the mobile device icon, so this icon can only be set for custom apps.
+        /// </summary>
+        [Input("iconType")]
+        public Input<string>? IconType { get; set; }
 
         [Input("keyUserActions")]
         private InputList<string>? _keyUserActions;
@@ -266,7 +304,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<Inputs.MobileApplicationPropertiesGetArgs>? Properties { get; set; }
 
         /// <summary>
-        /// The session replay is enabled (`true`) or disabled (`false`).
+        /// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
         /// </summary>
         [Input("sessionReplay")]
         public Input<bool>? SessionReplay { get; set; }
@@ -279,7 +317,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<bool>? SessionReplayOnCrash { get; set; }
 
         /// <summary>
-        /// The percentage of user sessions to be analyzed
+        /// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
+        /// apps) The percentage of user sessions to be analyzed
         /// </summary>
         [Input("userSessionPercentage")]
         public Input<int>? UserSessionPercentage { get; set; }

@@ -35,7 +35,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * A list of conversion goals of the application
      * 
      */
-    @Export(name="conversionGoals", type=WebApplicationConversionGoals.class, parameters={})
+    @Export(name="conversionGoals", refs={WebApplicationConversionGoals.class}, tree="[0]")
     private Output</* @Nullable */ WebApplicationConversionGoals> conversionGoals;
 
     /**
@@ -46,14 +46,14 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.conversionGoals);
     }
     /**
-     * Analize *X*% of user sessions
+     * (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
      * 
      */
-    @Export(name="costControlUserSessionPercentage", type=Integer.class, parameters={})
+    @Export(name="costControlUserSessionPercentage", refs={Integer.class}, tree="[0]")
     private Output<Integer> costControlUserSessionPercentage;
 
     /**
-     * @return Analize *X*% of user sessions
+     * @return (Field has overlap with `dynatrace.WebAppEnablement`) Analize *X*% of user sessions
      * 
      */
     public Output<Integer> costControlUserSessionPercentage() {
@@ -63,7 +63,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * Defines the Custom Action Apdex settings of an application
      * 
      */
-    @Export(name="customActionApdexSettings", type=WebApplicationCustomActionApdexSettings.class, parameters={})
+    @Export(name="customActionApdexSettings", refs={WebApplicationCustomActionApdexSettings.class}, tree="[0]")
     private Output<WebApplicationCustomActionApdexSettings> customActionApdexSettings;
 
     /**
@@ -77,7 +77,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * User Action names to be flagged as Key User Actions
      * 
      */
-    @Export(name="keyUserActions", type=List.class, parameters={WebApplicationKeyUserAction.class})
+    @Export(name="keyUserActions", refs={List.class,WebApplicationKeyUserAction.class}, tree="[0,1]")
     private Output</* @Nullable */ List<WebApplicationKeyUserAction>> keyUserActions;
 
     /**
@@ -91,7 +91,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * Defines the Load Action Apdex settings of an application
      * 
      */
-    @Export(name="loadActionApdexSettings", type=WebApplicationLoadActionApdexSettings.class, parameters={})
+    @Export(name="loadActionApdexSettings", refs={WebApplicationLoadActionApdexSettings.class}, tree="[0]")
     private Output<WebApplicationLoadActionApdexSettings> loadActionApdexSettings;
 
     /**
@@ -105,7 +105,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * The key performance metric of load actions. Possible values are `ACTION_DURATION`, `CUMULATIVE_LAYOUT_SHIFT`, `DOM_INTERACTIVE`, `FIRST_INPUT_DELAY`, `LARGEST_CONTENTFUL_PAINT`, `LOAD_EVENT_END`, `LOAD_EVENT_START`, `RESPONSE_END`, `RESPONSE_START`, `SPEED_INDEX` and `VISUALLY_COMPLETE`
      * 
      */
-    @Export(name="loadActionKeyPerformanceMetric", type=String.class, parameters={})
+    @Export(name="loadActionKeyPerformanceMetric", refs={String.class}, tree="[0]")
     private Output<String> loadActionKeyPerformanceMetric;
 
     /**
@@ -119,7 +119,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * Java script agent meta data capture settings
      * 
      */
-    @Export(name="metaDataCaptureSettings", type=WebApplicationMetaDataCaptureSettings.class, parameters={})
+    @Export(name="metaDataCaptureSettings", refs={WebApplicationMetaDataCaptureSettings.class}, tree="[0]")
     private Output</* @Nullable */ WebApplicationMetaDataCaptureSettings> metaDataCaptureSettings;
 
     /**
@@ -133,7 +133,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * Real user monitoring settings
      * 
      */
-    @Export(name="monitoringSettings", type=WebApplicationMonitoringSettings.class, parameters={})
+    @Export(name="monitoringSettings", refs={WebApplicationMonitoringSettings.class}, tree="[0]")
     private Output<WebApplicationMonitoringSettings> monitoringSettings;
 
     /**
@@ -147,7 +147,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * The name of the web application, displayed in the UI
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -158,14 +158,14 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
         return this.name;
     }
     /**
-     * Real user monitoring enabled/disabled
+     * (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
      * 
      */
-    @Export(name="realUserMonitoringEnabled", type=Boolean.class, parameters={})
+    @Export(name="realUserMonitoringEnabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> realUserMonitoringEnabled;
 
     /**
-     * @return Real user monitoring enabled/disabled
+     * @return (Field has overlap with `dynatrace.WebAppEnablement`) Real user monitoring enabled/disabled
      * 
      */
     public Output<Optional<Boolean>> realUserMonitoringEnabled() {
@@ -175,7 +175,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * Settings regarding Session Replay
      * 
      */
-    @Export(name="sessionReplayConfig", type=WebApplicationSessionReplayConfig.class, parameters={})
+    @Export(name="sessionReplayConfig", refs={WebApplicationSessionReplayConfig.class}, tree="[0]")
     private Output</* @Nullable */ WebApplicationSessionReplayConfig> sessionReplayConfig;
 
     /**
@@ -189,7 +189,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
      * 
      */
-    @Export(name="type", type=String.class, parameters={})
+    @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
@@ -203,7 +203,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * URL injection pattern for manual web application
      * 
      */
-    @Export(name="urlInjectionPattern", type=String.class, parameters={})
+    @Export(name="urlInjectionPattern", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> urlInjectionPattern;
 
     /**
@@ -217,7 +217,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * User action and session properties settings
      * 
      */
-    @Export(name="userActionAndSessionProperties", type=WebApplicationUserActionAndSessionProperties.class, parameters={})
+    @Export(name="userActionAndSessionProperties", refs={WebApplicationUserActionAndSessionProperties.class}, tree="[0]")
     private Output</* @Nullable */ WebApplicationUserActionAndSessionProperties> userActionAndSessionProperties;
 
     /**
@@ -231,7 +231,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * The settings of user action naming
      * 
      */
-    @Export(name="userActionNamingSettings", type=WebApplicationUserActionNamingSettings.class, parameters={})
+    @Export(name="userActionNamingSettings", refs={WebApplicationUserActionNamingSettings.class}, tree="[0]")
     private Output</* @Nullable */ WebApplicationUserActionNamingSettings> userActionNamingSettings;
 
     /**
@@ -245,7 +245,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * User tags settings
      * 
      */
-    @Export(name="userTags", type=WebApplicationUserTags.class, parameters={})
+    @Export(name="userTags", refs={WebApplicationUserTags.class}, tree="[0]")
     private Output</* @Nullable */ WebApplicationUserTags> userTags;
 
     /**
@@ -259,7 +259,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * These settings influence the monitoring data you receive for 3rd party, CDN, and 1st party resources
      * 
      */
-    @Export(name="waterfallSettings", type=WebApplicationWaterfallSettings.class, parameters={})
+    @Export(name="waterfallSettings", refs={WebApplicationWaterfallSettings.class}, tree="[0]")
     private Output<WebApplicationWaterfallSettings> waterfallSettings;
 
     /**
@@ -273,7 +273,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * Defines the XHR Action Apdex settings of an application
      * 
      */
-    @Export(name="xhrActionApdexSettings", type=WebApplicationXhrActionApdexSettings.class, parameters={})
+    @Export(name="xhrActionApdexSettings", refs={WebApplicationXhrActionApdexSettings.class}, tree="[0]")
     private Output<WebApplicationXhrActionApdexSettings> xhrActionApdexSettings;
 
     /**
@@ -287,7 +287,7 @@ public class WebApplication extends com.pulumi.resources.CustomResource {
      * The key performance metric of XHR actions. Possible values are `ACTION_DURATION`, `RESPONSE_END`, `RESPONSE_START` and `VISUALLY_COMPLETE`.
      * 
      */
-    @Export(name="xhrActionKeyPerformanceMetric", type=String.class, parameters={})
+    @Export(name="xhrActionKeyPerformanceMetric", refs={String.class}, tree="[0]")
     private Output<String> xhrActionKeyPerformanceMetric;
 
     /**

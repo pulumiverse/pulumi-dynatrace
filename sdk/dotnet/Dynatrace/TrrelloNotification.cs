@@ -44,6 +44,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
+        /// The ID of these settings when referred to from resources requiring the REST API V1 keys
+        /// </summary>
+        [Output("legacyId")]
+        public Output<string> LegacyId { get; private set; } = null!;
+
+        /// <summary>
         /// The Trello list to which the card should be assigned
         /// </summary>
         [Output("listId")]
@@ -151,6 +157,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         public Input<string> Description { get; set; } = null!;
 
         /// <summary>
+        /// The ID of these settings when referred to from resources requiring the REST API V1 keys
+        /// </summary>
+        [Input("legacyId")]
+        public Input<string>? LegacyId { get; set; }
+
+        /// <summary>
         /// The Trello list to which the card should be assigned
         /// </summary>
         [Input("listId", required: true)]
@@ -217,6 +229,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// The ID of these settings when referred to from resources requiring the REST API V1 keys
+        /// </summary>
+        [Input("legacyId")]
+        public Input<string>? LegacyId { get; set; }
 
         /// <summary>
         /// The Trello list to which the card should be assigned

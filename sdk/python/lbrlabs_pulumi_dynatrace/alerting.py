@@ -17,18 +17,22 @@ __all__ = ['AlertingArgs', 'Alerting']
 class AlertingArgs:
     def __init__(__self__, *,
                  filters: Optional[pulumi.Input['AlertingFiltersArgs']] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  management_zone: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input['AlertingRulesArgs']] = None):
         """
         The set of arguments for constructing a Alerting resource.
         :param pulumi.Input['AlertingFiltersArgs'] filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
+        :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input[str] management_zone: The ID of the management zone to which the alerting profile applies
         :param pulumi.Input[str] name: The name of the alerting profile, displayed in the UI
         :param pulumi.Input['AlertingRulesArgs'] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
         if filters is not None:
             pulumi.set(__self__, "filters", filters)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if management_zone is not None:
             pulumi.set(__self__, "management_zone", management_zone)
         if name is not None:
@@ -47,6 +51,18 @@ class AlertingArgs:
     @filters.setter
     def filters(self, value: Optional[pulumi.Input['AlertingFiltersArgs']]):
         pulumi.set(self, "filters", value)
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of this setting when referred to by the Config REST API V1
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
 
     @property
     @pulumi.getter(name="managementZone")
@@ -89,18 +105,22 @@ class AlertingArgs:
 class _AlertingState:
     def __init__(__self__, *,
                  filters: Optional[pulumi.Input['AlertingFiltersArgs']] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  management_zone: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input['AlertingRulesArgs']] = None):
         """
         Input properties used for looking up and filtering Alerting resources.
         :param pulumi.Input['AlertingFiltersArgs'] filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
+        :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input[str] management_zone: The ID of the management zone to which the alerting profile applies
         :param pulumi.Input[str] name: The name of the alerting profile, displayed in the UI
         :param pulumi.Input['AlertingRulesArgs'] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
         if filters is not None:
             pulumi.set(__self__, "filters", filters)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if management_zone is not None:
             pulumi.set(__self__, "management_zone", management_zone)
         if name is not None:
@@ -119,6 +139,18 @@ class _AlertingState:
     @filters.setter
     def filters(self, value: Optional[pulumi.Input['AlertingFiltersArgs']]):
         pulumi.set(self, "filters", value)
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of this setting when referred to by the Config REST API V1
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
 
     @property
     @pulumi.getter(name="managementZone")
@@ -163,6 +195,7 @@ class Alerting(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  filters: Optional[pulumi.Input[pulumi.InputType['AlertingFiltersArgs']]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  management_zone: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[pulumi.InputType['AlertingRulesArgs']]] = None,
@@ -172,6 +205,7 @@ class Alerting(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['AlertingFiltersArgs']] filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
+        :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input[str] management_zone: The ID of the management zone to which the alerting profile applies
         :param pulumi.Input[str] name: The name of the alerting profile, displayed in the UI
         :param pulumi.Input[pulumi.InputType['AlertingRulesArgs']] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
@@ -200,6 +234,7 @@ class Alerting(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  filters: Optional[pulumi.Input[pulumi.InputType['AlertingFiltersArgs']]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  management_zone: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[pulumi.InputType['AlertingRulesArgs']]] = None,
@@ -213,6 +248,7 @@ class Alerting(pulumi.CustomResource):
             __props__ = AlertingArgs.__new__(AlertingArgs)
 
             __props__.__dict__["filters"] = filters
+            __props__.__dict__["legacy_id"] = legacy_id
             __props__.__dict__["management_zone"] = management_zone
             __props__.__dict__["name"] = name
             __props__.__dict__["rules"] = rules
@@ -227,6 +263,7 @@ class Alerting(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             filters: Optional[pulumi.Input[pulumi.InputType['AlertingFiltersArgs']]] = None,
+            legacy_id: Optional[pulumi.Input[str]] = None,
             management_zone: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             rules: Optional[pulumi.Input[pulumi.InputType['AlertingRulesArgs']]] = None) -> 'Alerting':
@@ -238,6 +275,7 @@ class Alerting(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['AlertingFiltersArgs']] filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
+        :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input[str] management_zone: The ID of the management zone to which the alerting profile applies
         :param pulumi.Input[str] name: The name of the alerting profile, displayed in the UI
         :param pulumi.Input[pulumi.InputType['AlertingRulesArgs']] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
@@ -247,6 +285,7 @@ class Alerting(pulumi.CustomResource):
         __props__ = _AlertingState.__new__(_AlertingState)
 
         __props__.__dict__["filters"] = filters
+        __props__.__dict__["legacy_id"] = legacy_id
         __props__.__dict__["management_zone"] = management_zone
         __props__.__dict__["name"] = name
         __props__.__dict__["rules"] = rules
@@ -259,6 +298,14 @@ class Alerting(pulumi.CustomResource):
         The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
         """
         return pulumi.get(self, "filters")
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> pulumi.Output[str]:
+        """
+        The ID of this setting when referred to by the Config REST API V1
+        """
+        return pulumi.get(self, "legacy_id")
 
     @property
     @pulumi.getter(name="managementZone")

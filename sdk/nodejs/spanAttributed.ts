@@ -36,6 +36,15 @@ export class SpanAttributed extends pulumi.CustomResource {
      * the key of the attribute to capture
      */
     public readonly key!: pulumi.Output<string>;
+    /**
+     * granular control over the visibility of attribute values
+     */
+    public readonly masking!: pulumi.Output<string>;
+    /**
+     * Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
+     * are defined by default on every Dynatrace environment.
+     */
+    public readonly persistent!: pulumi.Output<boolean>;
 
     /**
      * Create a SpanAttributed resource with the given unique name, arguments, and options.
@@ -51,12 +60,19 @@ export class SpanAttributed extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as SpanAttributedState | undefined;
             resourceInputs["key"] = state ? state.key : undefined;
+            resourceInputs["masking"] = state ? state.masking : undefined;
+            resourceInputs["persistent"] = state ? state.persistent : undefined;
         } else {
             const args = argsOrState as SpanAttributedArgs | undefined;
             if ((!args || args.key === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'key'");
             }
+            if ((!args || args.masking === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'masking'");
+            }
             resourceInputs["key"] = args ? args.key : undefined;
+            resourceInputs["masking"] = args ? args.masking : undefined;
+            resourceInputs["persistent"] = args ? args.persistent : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SpanAttributed.__pulumiType, name, resourceInputs, opts);
@@ -71,6 +87,15 @@ export interface SpanAttributedState {
      * the key of the attribute to capture
      */
     key?: pulumi.Input<string>;
+    /**
+     * granular control over the visibility of attribute values
+     */
+    masking?: pulumi.Input<string>;
+    /**
+     * Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
+     * are defined by default on every Dynatrace environment.
+     */
+    persistent?: pulumi.Input<boolean>;
 }
 
 /**
@@ -81,4 +106,13 @@ export interface SpanAttributedArgs {
      * the key of the attribute to capture
      */
     key: pulumi.Input<string>;
+    /**
+     * granular control over the visibility of attribute values
+     */
+    masking: pulumi.Input<string>;
+    /**
+     * Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
+     * are defined by default on every Dynatrace environment.
+     */
+    persistent?: pulumi.Input<boolean>;
 }

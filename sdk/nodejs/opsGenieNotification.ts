@@ -45,6 +45,10 @@ export class OpsGenieNotification extends pulumi.CustomResource {
      */
     public readonly domain!: pulumi.Output<string>;
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    public readonly legacyId!: pulumi.Output<string>;
+    /**
      * The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
      */
     public readonly message!: pulumi.Output<string>;
@@ -73,6 +77,7 @@ export class OpsGenieNotification extends pulumi.CustomResource {
             resourceInputs["active"] = state ? state.active : undefined;
             resourceInputs["apiKey"] = state ? state.apiKey : undefined;
             resourceInputs["domain"] = state ? state.domain : undefined;
+            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
             resourceInputs["message"] = state ? state.message : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["profile"] = state ? state.profile : undefined;
@@ -93,6 +98,7 @@ export class OpsGenieNotification extends pulumi.CustomResource {
             resourceInputs["active"] = args ? args.active : undefined;
             resourceInputs["apiKey"] = args?.apiKey ? pulumi.secret(args.apiKey) : undefined;
             resourceInputs["domain"] = args ? args.domain : undefined;
+            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
             resourceInputs["message"] = args ? args.message : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["profile"] = args ? args.profile : undefined;
@@ -120,6 +126,10 @@ export interface OpsGenieNotificationState {
      * The region domain of the OpsGenie
      */
     domain?: pulumi.Input<string>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
      */
@@ -150,6 +160,10 @@ export interface OpsGenieNotificationArgs {
      * The region domain of the OpsGenie
      */
     domain: pulumi.Input<string>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The content of the message.  You can use the following placeholders:  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem
      */

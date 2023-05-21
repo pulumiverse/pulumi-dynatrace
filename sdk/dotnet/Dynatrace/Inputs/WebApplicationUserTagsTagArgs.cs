@@ -19,8 +19,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         /// <summary>
         /// The ID of this resource.
         /// </summary>
-        [Input("id", required: true)]
-        public Input<int> Id { get; set; } = null!;
+        [Input("id")]
+        public Input<int>? Id { get; set; }
 
         [Input("ignoreCase")]
         public Input<bool>? IgnoreCase { get; set; }
@@ -30,6 +30,9 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
 
         [Input("serverSideRequestAttribute")]
         public Input<string>? ServerSideRequestAttribute { get; set; }
+
+        [Input("uniqueId")]
+        public Input<int>? UniqueId { get; set; }
 
         public WebApplicationUserTagsTagArgs()
         {

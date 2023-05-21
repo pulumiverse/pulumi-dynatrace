@@ -19,6 +19,7 @@ class SlackNotificationArgs:
                  message: pulumi.Input[str],
                  profile: pulumi.Input[str],
                  url: pulumi.Input[str],
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a SlackNotification resource.
@@ -27,6 +28,7 @@ class SlackNotificationArgs:
         :param pulumi.Input[str] message: The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
         :param pulumi.Input[str] url: The URL of the Slack WebHook. This is confidential information, therefore GET requests return this field with the `null` value, and it is optional for PUT requests
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         """
         pulumi.set(__self__, "active", active)
@@ -34,6 +36,8 @@ class SlackNotificationArgs:
         pulumi.set(__self__, "message", message)
         pulumi.set(__self__, "profile", profile)
         pulumi.set(__self__, "url", url)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -98,6 +102,18 @@ class SlackNotificationArgs:
         pulumi.set(self, "url", value)
 
     @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -115,6 +131,7 @@ class _SlackNotificationState:
     def __init__(__self__, *,
                  active: Optional[pulumi.Input[bool]] = None,
                  channel: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  message: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -123,6 +140,7 @@ class _SlackNotificationState:
         Input properties used for looking up and filtering SlackNotification resources.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] channel: The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] message: The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
@@ -132,6 +150,8 @@ class _SlackNotificationState:
             pulumi.set(__self__, "active", active)
         if channel is not None:
             pulumi.set(__self__, "channel", channel)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if message is not None:
             pulumi.set(__self__, "message", message)
         if name is not None:
@@ -164,6 +184,18 @@ class _SlackNotificationState:
     @channel.setter
     def channel(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "channel", value)
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
 
     @property
     @pulumi.getter
@@ -221,6 +253,7 @@ class SlackNotification(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: Optional[pulumi.Input[bool]] = None,
                  channel: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  message: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -232,6 +265,7 @@ class SlackNotification(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] channel: The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] message: The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
@@ -262,6 +296,7 @@ class SlackNotification(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: Optional[pulumi.Input[bool]] = None,
                  channel: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  message: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -281,6 +316,7 @@ class SlackNotification(pulumi.CustomResource):
             if channel is None and not opts.urn:
                 raise TypeError("Missing required property 'channel'")
             __props__.__dict__["channel"] = channel
+            __props__.__dict__["legacy_id"] = legacy_id
             if message is None and not opts.urn:
                 raise TypeError("Missing required property 'message'")
             __props__.__dict__["message"] = message
@@ -305,6 +341,7 @@ class SlackNotification(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             active: Optional[pulumi.Input[bool]] = None,
             channel: Optional[pulumi.Input[str]] = None,
+            legacy_id: Optional[pulumi.Input[str]] = None,
             message: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             profile: Optional[pulumi.Input[str]] = None,
@@ -318,6 +355,7 @@ class SlackNotification(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] channel: The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] message: The content of the message.  You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
@@ -329,6 +367,7 @@ class SlackNotification(pulumi.CustomResource):
 
         __props__.__dict__["active"] = active
         __props__.__dict__["channel"] = channel
+        __props__.__dict__["legacy_id"] = legacy_id
         __props__.__dict__["message"] = message
         __props__.__dict__["name"] = name
         __props__.__dict__["profile"] = profile
@@ -350,6 +389,14 @@ class SlackNotification(pulumi.CustomResource):
         The channel (for example, `#general`) or the user (for example, `@john.smith`) to send the message to
         """
         return pulumi.get(self, "channel")
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> pulumi.Output[str]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
 
     @property
     @pulumi.getter

@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,6 +22,8 @@ type AnsibleTowerNotification struct {
 	Insecure pulumi.BoolPtrOutput `pulumi:"insecure"`
 	// The URL of the target Ansible Tower job template
 	JobTemplateUrl pulumi.StringOutput `pulumi:"jobTemplateUrl"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
 	// The display name within the Dynatrace WebUI.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The password for the Ansible Tower account
@@ -52,7 +54,7 @@ func NewAnsibleTowerNotification(ctx *pulumi.Context,
 		return nil, errors.New("invalid value for required argument 'Username'")
 	}
 	if args.Password != nil {
-		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringPtrOutput)
+		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringPtrInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"password",
@@ -89,6 +91,8 @@ type ansibleTowerNotificationState struct {
 	Insecure *bool `pulumi:"insecure"`
 	// The URL of the target Ansible Tower job template
 	JobTemplateUrl *string `pulumi:"jobTemplateUrl"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The display name within the Dynatrace WebUI.
 	Name *string `pulumi:"name"`
 	// The password for the Ansible Tower account
@@ -108,6 +112,8 @@ type AnsibleTowerNotificationState struct {
 	Insecure pulumi.BoolPtrInput
 	// The URL of the target Ansible Tower job template
 	JobTemplateUrl pulumi.StringPtrInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The display name within the Dynatrace WebUI.
 	Name pulumi.StringPtrInput
 	// The password for the Ansible Tower account
@@ -131,6 +137,8 @@ type ansibleTowerNotificationArgs struct {
 	Insecure *bool `pulumi:"insecure"`
 	// The URL of the target Ansible Tower job template
 	JobTemplateUrl string `pulumi:"jobTemplateUrl"`
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId *string `pulumi:"legacyId"`
 	// The display name within the Dynatrace WebUI.
 	Name *string `pulumi:"name"`
 	// The password for the Ansible Tower account
@@ -151,6 +159,8 @@ type AnsibleTowerNotificationArgs struct {
 	Insecure pulumi.BoolPtrInput
 	// The URL of the target Ansible Tower job template
 	JobTemplateUrl pulumi.StringInput
+	// The ID of these settings when referred to from resources requiring the REST API V1 keys
+	LegacyId pulumi.StringPtrInput
 	// The display name within the Dynatrace WebUI.
 	Name pulumi.StringPtrInput
 	// The password for the Ansible Tower account
@@ -266,6 +276,11 @@ func (o AnsibleTowerNotificationOutput) Insecure() pulumi.BoolPtrOutput {
 // The URL of the target Ansible Tower job template
 func (o AnsibleTowerNotificationOutput) JobTemplateUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnsibleTowerNotification) pulumi.StringOutput { return v.JobTemplateUrl }).(pulumi.StringOutput)
+}
+
+// The ID of these settings when referred to from resources requiring the REST API V1 keys
+func (o AnsibleTowerNotificationOutput) LegacyId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AnsibleTowerNotification) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
 // The display name within the Dynatrace WebUI.

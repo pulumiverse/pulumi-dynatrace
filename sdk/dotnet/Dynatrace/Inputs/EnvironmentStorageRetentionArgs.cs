@@ -13,8 +13,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
 
     public sealed class EnvironmentStorageRetentionArgs : global::Pulumi.ResourceArgs
     {
-        [Input("logs", required: true)]
-        public Input<int> Logs { get; set; } = null!;
+        [Input("logs")]
+        public Input<int>? Logs { get; set; }
 
         [Input("rum", required: true)]
         public Input<int> Rum { get; set; } = null!;

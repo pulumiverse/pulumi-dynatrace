@@ -18,7 +18,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         public readonly bool? Mobile;
         public readonly string? Name;
         public readonly string? Orientation;
-        public readonly int? ScaleFactor;
+        public readonly double? ScaleFactor;
         public readonly bool? TouchEnabled;
         public readonly int? Width;
 
@@ -32,7 +32,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
 
             string? orientation,
 
-            int? scaleFactor,
+            double? scaleFactor,
 
             bool? touchEnabled,
 

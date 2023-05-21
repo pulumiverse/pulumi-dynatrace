@@ -5,6 +5,7 @@ package com.pulumi.dynatrace.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs;
 import com.pulumi.dynatrace.inputs.HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicyArgs;
 import java.lang.Boolean;
 import java.util.List;
@@ -22,6 +23,13 @@ public final class HttpMonitorAnomalyDetectionOutageHandlingArgs extends com.pul
 
     public Optional<Output<Boolean>> globalOutage() {
         return Optional.ofNullable(this.globalOutage);
+    }
+
+    @Import(name="globalOutagePolicies")
+    private @Nullable Output<List<HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs>> globalOutagePolicies;
+
+    public Optional<Output<List<HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs>>> globalOutagePolicies() {
+        return Optional.ofNullable(this.globalOutagePolicies);
     }
 
     @Import(name="localOutage")
@@ -49,6 +57,7 @@ public final class HttpMonitorAnomalyDetectionOutageHandlingArgs extends com.pul
 
     private HttpMonitorAnomalyDetectionOutageHandlingArgs(HttpMonitorAnomalyDetectionOutageHandlingArgs $) {
         this.globalOutage = $.globalOutage;
+        this.globalOutagePolicies = $.globalOutagePolicies;
         this.localOutage = $.localOutage;
         this.localOutagePolicies = $.localOutagePolicies;
         this.retryOnError = $.retryOnError;
@@ -79,6 +88,19 @@ public final class HttpMonitorAnomalyDetectionOutageHandlingArgs extends com.pul
 
         public Builder globalOutage(Boolean globalOutage) {
             return globalOutage(Output.of(globalOutage));
+        }
+
+        public Builder globalOutagePolicies(@Nullable Output<List<HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs>> globalOutagePolicies) {
+            $.globalOutagePolicies = globalOutagePolicies;
+            return this;
+        }
+
+        public Builder globalOutagePolicies(List<HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs> globalOutagePolicies) {
+            return globalOutagePolicies(Output.of(globalOutagePolicies));
+        }
+
+        public Builder globalOutagePolicies(HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs... globalOutagePolicies) {
+            return globalOutagePolicies(List.of(globalOutagePolicies));
         }
 
         public Builder localOutage(@Nullable Output<Boolean> localOutage) {

@@ -14,47 +14,6 @@ import (
 //
 // - `name` queries for all applications with the specified name
 // - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-dynatrace/sdk/go/dynatrace"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			test, err := dynatrace.GetApplication(ctx, &GetApplicationArgs{
-//				Name: "Example",
-//				Tags: []string{
-//					"TerraformKeyTest",
-//					"TerraformKeyValueTest=TestValue",
-//				},
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			_, err = dynatrace.NewApplicationDetectionRule(ctx, "#name#", &dynatrace.ApplicationDetectionRuleArgs{
-//				ApplicationIdentifier: pulumi.String(test.Id),
-//				FilterConfig: &ApplicationDetectionRuleFilterConfigArgs{
-//					ApplicationMatchTarget: pulumi.String("DOMAIN"),
-//					ApplicationMatchType:   pulumi.String("MATCHES"),
-//					Pattern:                pulumi.String("www.google.com"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func GetApplication(ctx *pulumi.Context, args *GetApplicationArgs, opts ...pulumi.InvokeOption) (*GetApplicationResult, error) {
 	opts = pkgInvokeDefaultOpts(opts)
 	var rv GetApplicationResult
@@ -68,8 +27,6 @@ func GetApplication(ctx *pulumi.Context, args *GetApplicationArgs, opts ...pulum
 // A collection of arguments for invoking getApplication.
 type GetApplicationArgs struct {
 	Name string `pulumi:"name"`
-	// Required tags of the application to find
-	Tags []string `pulumi:"tags"`
 }
 
 // A collection of values returned by getApplication.
@@ -77,8 +34,6 @@ type GetApplicationResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id   string `pulumi:"id"`
 	Name string `pulumi:"name"`
-	// Required tags of the application to find
-	Tags []string `pulumi:"tags"`
 }
 
 func GetApplicationOutput(ctx *pulumi.Context, args GetApplicationOutputArgs, opts ...pulumi.InvokeOption) GetApplicationResultOutput {
@@ -97,8 +52,6 @@ func GetApplicationOutput(ctx *pulumi.Context, args GetApplicationOutputArgs, op
 // A collection of arguments for invoking getApplication.
 type GetApplicationOutputArgs struct {
 	Name pulumi.StringInput `pulumi:"name"`
-	// Required tags of the application to find
-	Tags pulumi.StringArrayInput `pulumi:"tags"`
 }
 
 func (GetApplicationOutputArgs) ElementType() reflect.Type {
@@ -127,11 +80,6 @@ func (o GetApplicationResultOutput) Id() pulumi.StringOutput {
 
 func (o GetApplicationResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplicationResult) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// Required tags of the application to find
-func (o GetApplicationResultOutput) Tags() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetApplicationResult) []string { return v.Tags }).(pulumi.StringArrayOutput)
 }
 
 func init() {

@@ -25,7 +25,7 @@ public class CalculatedServiceMetric extends com.pulumi.resources.CustomResource
      * The set of conditions for the metric usage. **All** the specified conditions must be fulfilled to use the metric
      * 
      */
-    @Export(name="conditions", type=List.class, parameters={CalculatedServiceMetricCondition.class})
+    @Export(name="conditions", refs={List.class,CalculatedServiceMetricCondition.class}, tree="[0,1]")
     private Output</* @Nullable */ List<CalculatedServiceMetricCondition>> conditions;
 
     /**
@@ -39,7 +39,7 @@ public class CalculatedServiceMetric extends com.pulumi.resources.CustomResource
      * The displayed description of the metric
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     /**
@@ -53,7 +53,7 @@ public class CalculatedServiceMetric extends com.pulumi.resources.CustomResource
      * Parameters of a definition of a calculated service metric
      * 
      */
-    @Export(name="dimensionDefinition", type=CalculatedServiceMetricDimensionDefinition.class, parameters={})
+    @Export(name="dimensionDefinition", refs={CalculatedServiceMetricDimensionDefinition.class}, tree="[0]")
     private Output</* @Nullable */ CalculatedServiceMetricDimensionDefinition> dimensionDefinition;
 
     /**
@@ -67,7 +67,7 @@ public class CalculatedServiceMetric extends com.pulumi.resources.CustomResource
      * The metric is enabled (`true`) or disabled (`false`)
      * 
      */
-    @Export(name="enabled", type=Boolean.class, parameters={})
+    @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> enabled;
 
     /**
@@ -81,7 +81,7 @@ public class CalculatedServiceMetric extends com.pulumi.resources.CustomResource
      * Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
      * 
      */
-    @Export(name="entityId", type=String.class, parameters={})
+    @Export(name="entityId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> entityId;
 
     /**
@@ -95,7 +95,7 @@ public class CalculatedServiceMetric extends com.pulumi.resources.CustomResource
      * Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
      * 
      */
-    @Export(name="managementZones", type=List.class, parameters={String.class})
+    @Export(name="managementZones", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> managementZones;
 
     /**
@@ -109,7 +109,7 @@ public class CalculatedServiceMetric extends com.pulumi.resources.CustomResource
      * The definition of a calculated service metric
      * 
      */
-    @Export(name="metricDefinition", type=CalculatedServiceMetricMetricDefinition.class, parameters={})
+    @Export(name="metricDefinition", refs={CalculatedServiceMetricMetricDefinition.class}, tree="[0]")
     private Output</* @Nullable */ CalculatedServiceMetricMetricDefinition> metricDefinition;
 
     /**
@@ -123,7 +123,7 @@ public class CalculatedServiceMetric extends com.pulumi.resources.CustomResource
      * The key of the calculated service metric
      * 
      */
-    @Export(name="metricKey", type=String.class, parameters={})
+    @Export(name="metricKey", refs={String.class}, tree="[0]")
     private Output<String> metricKey;
 
     /**
@@ -137,7 +137,7 @@ public class CalculatedServiceMetric extends com.pulumi.resources.CustomResource
      * The displayed name of the metric
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -158,7 +158,7 @@ public class CalculatedServiceMetric extends com.pulumi.resources.CustomResource
      * `PIXEL`, `PROMILLE`, `RATIO`, `SECOND`, `STATE`, `UNSPECIFIED`, `WEEK` and `YEAR`
      * 
      */
-    @Export(name="unit", type=String.class, parameters={})
+    @Export(name="unit", refs={String.class}, tree="[0]")
     private Output<String> unit;
 
     /**
@@ -179,7 +179,7 @@ public class CalculatedServiceMetric extends com.pulumi.resources.CustomResource
      * The display name of the metric&#39;s unit. Only applicable when the **unit** parameter is set to `UNSPECIFIED`
      * 
      */
-    @Export(name="unitDisplayName", type=String.class, parameters={})
+    @Export(name="unitDisplayName", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unitDisplayName;
 
     /**
@@ -193,7 +193,7 @@ public class CalculatedServiceMetric extends com.pulumi.resources.CustomResource
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**

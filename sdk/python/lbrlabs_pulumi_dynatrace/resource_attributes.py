@@ -8,87 +8,57 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['ResourceAttributesArgs', 'ResourceAttributes']
 
 @pulumi.input_type
 class ResourceAttributesArgs:
     def __init__(__self__, *,
-                 disableds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 enableds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 keys: Optional[pulumi.Input['ResourceAttributesKeysArgs']] = None):
         """
         The set of arguments for constructing a ResourceAttributes resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] disableds: configured attributes that currently shouldn't be taken into consideration
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] enableds: attributes that should get captured
+        :param pulumi.Input['ResourceAttributesKeysArgs'] keys: Attribute key allow-list
         """
-        if disableds is not None:
-            pulumi.set(__self__, "disableds", disableds)
-        if enableds is not None:
-            pulumi.set(__self__, "enableds", enableds)
+        if keys is not None:
+            pulumi.set(__self__, "keys", keys)
 
     @property
     @pulumi.getter
-    def disableds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+    def keys(self) -> Optional[pulumi.Input['ResourceAttributesKeysArgs']]:
         """
-        configured attributes that currently shouldn't be taken into consideration
+        Attribute key allow-list
         """
-        return pulumi.get(self, "disableds")
+        return pulumi.get(self, "keys")
 
-    @disableds.setter
-    def disableds(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
-        pulumi.set(self, "disableds", value)
-
-    @property
-    @pulumi.getter
-    def enableds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        attributes that should get captured
-        """
-        return pulumi.get(self, "enableds")
-
-    @enableds.setter
-    def enableds(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
-        pulumi.set(self, "enableds", value)
+    @keys.setter
+    def keys(self, value: Optional[pulumi.Input['ResourceAttributesKeysArgs']]):
+        pulumi.set(self, "keys", value)
 
 
 @pulumi.input_type
 class _ResourceAttributesState:
     def __init__(__self__, *,
-                 disableds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 enableds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 keys: Optional[pulumi.Input['ResourceAttributesKeysArgs']] = None):
         """
         Input properties used for looking up and filtering ResourceAttributes resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] disableds: configured attributes that currently shouldn't be taken into consideration
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] enableds: attributes that should get captured
+        :param pulumi.Input['ResourceAttributesKeysArgs'] keys: Attribute key allow-list
         """
-        if disableds is not None:
-            pulumi.set(__self__, "disableds", disableds)
-        if enableds is not None:
-            pulumi.set(__self__, "enableds", enableds)
+        if keys is not None:
+            pulumi.set(__self__, "keys", keys)
 
     @property
     @pulumi.getter
-    def disableds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+    def keys(self) -> Optional[pulumi.Input['ResourceAttributesKeysArgs']]:
         """
-        configured attributes that currently shouldn't be taken into consideration
+        Attribute key allow-list
         """
-        return pulumi.get(self, "disableds")
+        return pulumi.get(self, "keys")
 
-    @disableds.setter
-    def disableds(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
-        pulumi.set(self, "disableds", value)
-
-    @property
-    @pulumi.getter
-    def enableds(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        attributes that should get captured
-        """
-        return pulumi.get(self, "enableds")
-
-    @enableds.setter
-    def enableds(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
-        pulumi.set(self, "enableds", value)
+    @keys.setter
+    def keys(self, value: Optional[pulumi.Input['ResourceAttributesKeysArgs']]):
+        pulumi.set(self, "keys", value)
 
 
 class ResourceAttributes(pulumi.CustomResource):
@@ -96,15 +66,13 @@ class ResourceAttributes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disableds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 enableds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 keys: Optional[pulumi.Input[pulumi.InputType['ResourceAttributesKeysArgs']]] = None,
                  __props__=None):
         """
         Create a ResourceAttributes resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] disableds: configured attributes that currently shouldn't be taken into consideration
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] enableds: attributes that should get captured
+        :param pulumi.Input[pulumi.InputType['ResourceAttributesKeysArgs']] keys: Attribute key allow-list
         """
         ...
     @overload
@@ -129,8 +97,7 @@ class ResourceAttributes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 disableds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 enableds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 keys: Optional[pulumi.Input[pulumi.InputType['ResourceAttributesKeysArgs']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -140,8 +107,7 @@ class ResourceAttributes(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ResourceAttributesArgs.__new__(ResourceAttributesArgs)
 
-            __props__.__dict__["disableds"] = disableds
-            __props__.__dict__["enableds"] = enableds
+            __props__.__dict__["keys"] = keys
         super(ResourceAttributes, __self__).__init__(
             'dynatrace:index/resourceAttributes:ResourceAttributes',
             resource_name,
@@ -152,8 +118,7 @@ class ResourceAttributes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            disableds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            enableds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'ResourceAttributes':
+            keys: Optional[pulumi.Input[pulumi.InputType['ResourceAttributesKeysArgs']]] = None) -> 'ResourceAttributes':
         """
         Get an existing ResourceAttributes resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -161,30 +126,20 @@ class ResourceAttributes(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] disableds: configured attributes that currently shouldn't be taken into consideration
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] enableds: attributes that should get captured
+        :param pulumi.Input[pulumi.InputType['ResourceAttributesKeysArgs']] keys: Attribute key allow-list
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _ResourceAttributesState.__new__(_ResourceAttributesState)
 
-        __props__.__dict__["disableds"] = disableds
-        __props__.__dict__["enableds"] = enableds
+        __props__.__dict__["keys"] = keys
         return ResourceAttributes(resource_name, opts=opts, __props__=__props__)
 
     @property
     @pulumi.getter
-    def disableds(self) -> pulumi.Output[Optional[Sequence[str]]]:
+    def keys(self) -> pulumi.Output[Optional['outputs.ResourceAttributesKeys']]:
         """
-        configured attributes that currently shouldn't be taken into consideration
+        Attribute key allow-list
         """
-        return pulumi.get(self, "disableds")
-
-    @property
-    @pulumi.getter
-    def enableds(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        attributes that should get captured
-        """
-        return pulumi.get(self, "enableds")
+        return pulumi.get(self, "keys")
 

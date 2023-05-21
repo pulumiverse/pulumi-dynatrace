@@ -24,7 +24,7 @@ public class Dashboard extends com.pulumi.resources.CustomResource {
      * contains parameters of a dashboard
      * 
      */
-    @Export(name="dashboardMetadata", type=DashboardDashboardMetadata.class, parameters={})
+    @Export(name="dashboardMetadata", refs={DashboardDashboardMetadata.class}, tree="[0]")
     private Output</* @Nullable */ DashboardDashboardMetadata> dashboardMetadata;
 
     /**
@@ -42,7 +42,7 @@ public class Dashboard extends com.pulumi.resources.CustomResource {
      * 
      */
     @Deprecated /* `metadata` exists for backwards compatibility but shouldn't get specified anymore */
-    @Export(name="metadata", type=DashboardMetadata.class, parameters={})
+    @Export(name="metadata", refs={DashboardMetadata.class}, tree="[0]")
     private Output</* @Nullable */ DashboardMetadata> metadata;
 
     /**
@@ -56,7 +56,7 @@ public class Dashboard extends com.pulumi.resources.CustomResource {
      * the tiles this Dashboard consist of
      * 
      */
-    @Export(name="tiles", type=List.class, parameters={DashboardTile.class})
+    @Export(name="tiles", refs={List.class,DashboardTile.class}, tree="[0,1]")
     private Output</* @Nullable */ List<DashboardTile>> tiles;
 
     /**
@@ -70,7 +70,7 @@ public class Dashboard extends com.pulumi.resources.CustomResource {
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      * 
      */
-    @Export(name="unknowns", type=String.class, parameters={})
+    @Export(name="unknowns", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> unknowns;
 
     /**

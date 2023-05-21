@@ -13,13 +13,16 @@ import (
 type ApplicationErrorRules struct {
 	pulumi.CustomResourceState
 
-	// An ordered list of HTTP errors.
+	// (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
 	CustomErrors ApplicationErrorRulesCustomErrorsPtrOutput `pulumi:"customErrors"`
-	// An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+	// (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+	// to bottom; the first matching rule applies
 	HttpErrors ApplicationErrorRulesHttpErrorsPtrOutput `pulumi:"httpErrors"`
-	// Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+	// (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+	// **customErrorRules** in Apdex calculation
 	IgnoreCustomErrorsApdex pulumi.BoolPtrOutput `pulumi:"ignoreCustomErrorsApdex"`
-	// Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+	// (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+	// **httpErrorRules** in Apdex calculation
 	IgnoreHttpErrorsApdex pulumi.BoolPtrOutput `pulumi:"ignoreHttpErrorsApdex"`
 	// Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
 	IgnoreJsErrorsApdex pulumi.BoolPtrOutput `pulumi:"ignoreJsErrorsApdex"`
@@ -57,13 +60,16 @@ func GetApplicationErrorRules(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ApplicationErrorRules resources.
 type applicationErrorRulesState struct {
-	// An ordered list of HTTP errors.
+	// (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
 	CustomErrors *ApplicationErrorRulesCustomErrors `pulumi:"customErrors"`
-	// An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+	// (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+	// to bottom; the first matching rule applies
 	HttpErrors *ApplicationErrorRulesHttpErrors `pulumi:"httpErrors"`
-	// Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+	// (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+	// **customErrorRules** in Apdex calculation
 	IgnoreCustomErrorsApdex *bool `pulumi:"ignoreCustomErrorsApdex"`
-	// Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+	// (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+	// **httpErrorRules** in Apdex calculation
 	IgnoreHttpErrorsApdex *bool `pulumi:"ignoreHttpErrorsApdex"`
 	// Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
 	IgnoreJsErrorsApdex *bool `pulumi:"ignoreJsErrorsApdex"`
@@ -72,13 +78,16 @@ type applicationErrorRulesState struct {
 }
 
 type ApplicationErrorRulesState struct {
-	// An ordered list of HTTP errors.
+	// (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
 	CustomErrors ApplicationErrorRulesCustomErrorsPtrInput
-	// An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+	// (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+	// to bottom; the first matching rule applies
 	HttpErrors ApplicationErrorRulesHttpErrorsPtrInput
-	// Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+	// (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+	// **customErrorRules** in Apdex calculation
 	IgnoreCustomErrorsApdex pulumi.BoolPtrInput
-	// Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+	// (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+	// **httpErrorRules** in Apdex calculation
 	IgnoreHttpErrorsApdex pulumi.BoolPtrInput
 	// Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
 	IgnoreJsErrorsApdex pulumi.BoolPtrInput
@@ -91,13 +100,16 @@ func (ApplicationErrorRulesState) ElementType() reflect.Type {
 }
 
 type applicationErrorRulesArgs struct {
-	// An ordered list of HTTP errors.
+	// (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
 	CustomErrors *ApplicationErrorRulesCustomErrors `pulumi:"customErrors"`
-	// An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+	// (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+	// to bottom; the first matching rule applies
 	HttpErrors *ApplicationErrorRulesHttpErrors `pulumi:"httpErrors"`
-	// Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+	// (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+	// **customErrorRules** in Apdex calculation
 	IgnoreCustomErrorsApdex *bool `pulumi:"ignoreCustomErrorsApdex"`
-	// Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+	// (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+	// **httpErrorRules** in Apdex calculation
 	IgnoreHttpErrorsApdex *bool `pulumi:"ignoreHttpErrorsApdex"`
 	// Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
 	IgnoreJsErrorsApdex *bool `pulumi:"ignoreJsErrorsApdex"`
@@ -107,13 +119,16 @@ type applicationErrorRulesArgs struct {
 
 // The set of arguments for constructing a ApplicationErrorRules resource.
 type ApplicationErrorRulesArgs struct {
-	// An ordered list of HTTP errors.
+	// (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
 	CustomErrors ApplicationErrorRulesCustomErrorsPtrInput
-	// An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+	// (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+	// to bottom; the first matching rule applies
 	HttpErrors ApplicationErrorRulesHttpErrorsPtrInput
-	// Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+	// (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+	// **customErrorRules** in Apdex calculation
 	IgnoreCustomErrorsApdex pulumi.BoolPtrInput
-	// Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+	// (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+	// **httpErrorRules** in Apdex calculation
 	IgnoreHttpErrorsApdex pulumi.BoolPtrInput
 	// Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
 	IgnoreJsErrorsApdex pulumi.BoolPtrInput
@@ -208,22 +223,25 @@ func (o ApplicationErrorRulesOutput) ToApplicationErrorRulesOutputWithContext(ct
 	return o
 }
 
-// An ordered list of HTTP errors.
+// (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
 func (o ApplicationErrorRulesOutput) CustomErrors() ApplicationErrorRulesCustomErrorsPtrOutput {
 	return o.ApplyT(func(v *ApplicationErrorRules) ApplicationErrorRulesCustomErrorsPtrOutput { return v.CustomErrors }).(ApplicationErrorRulesCustomErrorsPtrOutput)
 }
 
-// An ordered list of HTTP errors. Rules are evaluated from top to bottom; the first matching rule applies
+// (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
+// to bottom; the first matching rule applies
 func (o ApplicationErrorRulesOutput) HttpErrors() ApplicationErrorRulesHttpErrorsPtrOutput {
 	return o.ApplyT(func(v *ApplicationErrorRules) ApplicationErrorRulesHttpErrorsPtrOutput { return v.HttpErrors }).(ApplicationErrorRulesHttpErrorsPtrOutput)
 }
 
-// Exclude (`true`) or include (`false`) custom errors listed in **customErrorRules** in Apdex calculation
+// (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+// **customErrorRules** in Apdex calculation
 func (o ApplicationErrorRulesOutput) IgnoreCustomErrorsApdex() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ApplicationErrorRules) pulumi.BoolPtrOutput { return v.IgnoreCustomErrorsApdex }).(pulumi.BoolPtrOutput)
 }
 
-// Exclude (`true`) or include (`false`) HTTP errors listed in **httpErrorRules** in Apdex calculation
+// (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+// **httpErrorRules** in Apdex calculation
 func (o ApplicationErrorRulesOutput) IgnoreHttpErrorsApdex() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ApplicationErrorRules) pulumi.BoolPtrOutput { return v.IgnoreHttpErrorsApdex }).(pulumi.BoolPtrOutput)
 }

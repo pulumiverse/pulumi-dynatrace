@@ -49,6 +49,10 @@ export class EmailNotification extends pulumi.CustomResource {
      */
     public readonly ccs!: pulumi.Output<string[] | undefined>;
     /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    public readonly legacyId!: pulumi.Output<string>;
+    /**
      * The name of the notification configuration
      */
     public readonly name!: pulumi.Output<string>;
@@ -86,6 +90,7 @@ export class EmailNotification extends pulumi.CustomResource {
             resourceInputs["bccs"] = state ? state.bccs : undefined;
             resourceInputs["body"] = state ? state.body : undefined;
             resourceInputs["ccs"] = state ? state.ccs : undefined;
+            resourceInputs["legacyId"] = state ? state.legacyId : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["notifyClosedProblems"] = state ? state.notifyClosedProblems : undefined;
             resourceInputs["profile"] = state ? state.profile : undefined;
@@ -109,6 +114,7 @@ export class EmailNotification extends pulumi.CustomResource {
             resourceInputs["bccs"] = args ? args.bccs : undefined;
             resourceInputs["body"] = args ? args.body : undefined;
             resourceInputs["ccs"] = args ? args.ccs : undefined;
+            resourceInputs["legacyId"] = args ? args.legacyId : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["notifyClosedProblems"] = args ? args.notifyClosedProblems : undefined;
             resourceInputs["profile"] = args ? args.profile : undefined;
@@ -140,6 +146,10 @@ export interface EmailNotificationState {
      * The list of the email CC-recipients
      */
     ccs?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The name of the notification configuration
      */
@@ -182,6 +192,10 @@ export interface EmailNotificationArgs {
      * The list of the email CC-recipients
      */
     ccs?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The ID of these settings when referred to from resources requiring the REST API V1 keys
+     */
+    legacyId?: pulumi.Input<string>;
     /**
      * The name of the notification configuration
      */

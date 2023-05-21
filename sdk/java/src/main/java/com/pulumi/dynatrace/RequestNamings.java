@@ -12,6 +12,7 @@ import com.pulumi.dynatrace.Utilities;
 import com.pulumi.dynatrace.inputs.RequestNamingsState;
 import java.lang.String;
 import java.util.List;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -28,15 +29,15 @@ public class RequestNamings extends com.pulumi.resources.CustomResource {
      * The IDs of the request namings in the order they should be taken into consideration
      * 
      */
-    @Export(name="ids", type=List.class, parameters={String.class})
-    private Output<List<String>> ids;
+    @Export(name="ids", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> ids;
 
     /**
      * @return The IDs of the request namings in the order they should be taken into consideration
      * 
      */
-    public Output<List<String>> ids() {
-        return this.ids;
+    public Output<Optional<List<String>>> ids() {
+        return Codegen.optional(this.ids);
     }
 
     /**
@@ -51,7 +52,7 @@ public class RequestNamings extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public RequestNamings(String name, RequestNamingsArgs args) {
+    public RequestNamings(String name, @Nullable RequestNamingsArgs args) {
         this(name, args, null);
     }
     /**
@@ -60,7 +61,7 @@ public class RequestNamings extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public RequestNamings(String name, RequestNamingsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public RequestNamings(String name, @Nullable RequestNamingsArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("dynatrace:index/requestNamings:RequestNamings", name, args == null ? RequestNamingsArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
     }
 

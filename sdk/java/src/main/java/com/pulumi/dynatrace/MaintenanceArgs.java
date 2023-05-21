@@ -9,6 +9,7 @@ import com.pulumi.dynatrace.inputs.MaintenanceFilterArgs;
 import com.pulumi.dynatrace.inputs.MaintenanceGeneralPropertiesArgs;
 import com.pulumi.dynatrace.inputs.MaintenanceScheduleArgs;
 import java.lang.Boolean;
+import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -65,6 +66,21 @@ public final class MaintenanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The ID of this setting when referred to by the Config REST API V1
+     * 
+     */
+    @Import(name="legacyId")
+    private @Nullable Output<String> legacyId;
+
+    /**
+     * @return The ID of this setting when referred to by the Config REST API V1
+     * 
+     */
+    public Optional<Output<String>> legacyId() {
+        return Optional.ofNullable(this.legacyId);
+    }
+
+    /**
      * The schedule of the maintenance window
      * 
      */
@@ -85,6 +101,7 @@ public final class MaintenanceArgs extends com.pulumi.resources.ResourceArgs {
         this.enabled = $.enabled;
         this.filters = $.filters;
         this.generalProperties = $.generalProperties;
+        this.legacyId = $.legacyId;
         this.schedule = $.schedule;
     }
 
@@ -177,6 +194,27 @@ public final class MaintenanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder generalProperties(MaintenanceGeneralPropertiesArgs generalProperties) {
             return generalProperties(Output.of(generalProperties));
+        }
+
+        /**
+         * @param legacyId The ID of this setting when referred to by the Config REST API V1
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(@Nullable Output<String> legacyId) {
+            $.legacyId = legacyId;
+            return this;
+        }
+
+        /**
+         * @param legacyId The ID of this setting when referred to by the Config REST API V1
+         * 
+         * @return builder
+         * 
+         */
+        public Builder legacyId(String legacyId) {
+            return legacyId(Output.of(legacyId));
         }
 
         /**

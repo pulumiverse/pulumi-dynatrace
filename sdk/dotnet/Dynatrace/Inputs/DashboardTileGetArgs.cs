@@ -26,6 +26,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
         }
 
         /// <summary>
+        /// Auto Refresh is disabled (`true`)
+        /// </summary>
+        [Input("autoRefreshDisabled")]
+        public Input<bool>? AutoRefreshDisabled { get; set; }
+
+        /// <summary>
         /// the position and size of a tile
         /// </summary>
         [Input("bounds")]

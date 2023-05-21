@@ -19,10 +19,6 @@ type ManagementZone struct {
 	DimensionalRules ManagementZoneDimensionalRuleArrayOutput `pulumi:"dimensionalRules"`
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules ManagementZoneEntitySelectorBasedRuleArrayOutput `pulumi:"entitySelectorBasedRules"`
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata ManagementZoneMetadataPtrOutput `pulumi:"metadata"`
 	// The name of the management zone
 	Name pulumi.StringOutput `pulumi:"name"`
 	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
@@ -67,10 +63,6 @@ type managementZoneState struct {
 	DimensionalRules []ManagementZoneDimensionalRule `pulumi:"dimensionalRules"`
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules []ManagementZoneEntitySelectorBasedRule `pulumi:"entitySelectorBasedRules"`
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata *ManagementZoneMetadata `pulumi:"metadata"`
 	// The name of the management zone
 	Name *string `pulumi:"name"`
 	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
@@ -86,10 +78,6 @@ type ManagementZoneState struct {
 	DimensionalRules ManagementZoneDimensionalRuleArrayInput
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules ManagementZoneEntitySelectorBasedRuleArrayInput
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata ManagementZoneMetadataPtrInput
 	// The name of the management zone
 	Name pulumi.StringPtrInput
 	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
@@ -109,10 +97,6 @@ type managementZoneArgs struct {
 	DimensionalRules []ManagementZoneDimensionalRule `pulumi:"dimensionalRules"`
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules []ManagementZoneEntitySelectorBasedRule `pulumi:"entitySelectorBasedRules"`
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata *ManagementZoneMetadata `pulumi:"metadata"`
 	// The name of the management zone
 	Name *string `pulumi:"name"`
 	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
@@ -129,10 +113,6 @@ type ManagementZoneArgs struct {
 	DimensionalRules ManagementZoneDimensionalRuleArrayInput
 	// A list of entity-selector based rules for management zone usage. If several rules are specified, the `or` logic applies
 	EntitySelectorBasedRules ManagementZoneEntitySelectorBasedRuleArrayInput
-	// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	//
-	// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-	Metadata ManagementZoneMetadataPtrInput
 	// The name of the management zone
 	Name pulumi.StringPtrInput
 	// A list of rules for management zone usage. Each rule is evaluated independently of all other rules
@@ -243,13 +223,6 @@ func (o ManagementZoneOutput) EntitySelectorBasedRules() ManagementZoneEntitySel
 	return o.ApplyT(func(v *ManagementZone) ManagementZoneEntitySelectorBasedRuleArrayOutput {
 		return v.EntitySelectorBasedRules
 	}).(ManagementZoneEntitySelectorBasedRuleArrayOutput)
-}
-
-// `metadata` exists for backwards compatibility but shouldn't get specified anymore
-//
-// Deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore
-func (o ManagementZoneOutput) Metadata() ManagementZoneMetadataPtrOutput {
-	return o.ApplyT(func(v *ManagementZone) ManagementZoneMetadataPtrOutput { return v.Metadata }).(ManagementZoneMetadataPtrOutput)
 }
 
 // The name of the management zone

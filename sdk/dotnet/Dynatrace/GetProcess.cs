@@ -26,6 +26,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
         /// using Dynatrace = Pulumi.Dynatrace;
@@ -76,6 +77,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
         /// using Dynatrace = Pulumi.Dynatrace;

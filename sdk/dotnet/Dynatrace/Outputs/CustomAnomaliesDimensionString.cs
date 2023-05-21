@@ -15,7 +15,12 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
     public sealed class CustomAnomaliesDimensionString
     {
         public readonly Outputs.CustomAnomaliesDimensionStringFilter Filter;
+        public readonly int? Index;
         public readonly string? Key;
+        /// <summary>
+        /// The name of the metric event displayed in the UI
+        /// </summary>
+        public readonly string? Name;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider
         /// </summary>
@@ -25,12 +30,18 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         private CustomAnomaliesDimensionString(
             Outputs.CustomAnomaliesDimensionStringFilter filter,
 
+            int? index,
+
             string? key,
+
+            string? name,
 
             string? unknowns)
         {
             Filter = filter;
+            Index = index;
             Key = key;
+            Name = name;
             Unknowns = unknowns;
         }
     }

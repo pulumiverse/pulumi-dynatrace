@@ -22,4 +22,13 @@ public final class Config {
     public Optional<String> dtEnvUrl() {
         return Codegen.stringProp("dtEnvUrl").config(config).env("DYNATRACE_ENV_URL", "DT_ENV_URL").get();
     }
+    public Optional<String> iamAccountId() {
+        return Codegen.stringProp("iamAccountId").config(config).get();
+    }
+    public Optional<String> iamClientId() {
+        return Codegen.stringProp("iamClientId").config(config).get();
+    }
+    public Optional<String> iamClientSecret() {
+        return Codegen.stringProp("iamClientSecret").config(config).get();
+    }
 }

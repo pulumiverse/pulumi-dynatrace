@@ -21,6 +21,7 @@ class ServiceNowNotificationArgs:
                  username: pulumi.Input[str],
                  events: Optional[pulumi.Input[bool]] = None,
                  instance: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  url: Optional[pulumi.Input[str]] = None):
@@ -33,6 +34,7 @@ class ServiceNowNotificationArgs:
         :param pulumi.Input[str] username: The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
         :param pulumi.Input[bool] events: Send events into ServiceNow ITOM
         :param pulumi.Input[str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] password: The password to the ServiceNow account
         :param pulumi.Input[str] url: The URL of the on-premise ServiceNow installation. This field is mutually exclusive with the **instance** field. You can only use one of them
@@ -46,6 +48,8 @@ class ServiceNowNotificationArgs:
             pulumi.set(__self__, "events", events)
         if instance is not None:
             pulumi.set(__self__, "instance", instance)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if password is not None:
@@ -138,6 +142,18 @@ class ServiceNowNotificationArgs:
         pulumi.set(self, "instance", value)
 
     @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -181,6 +197,7 @@ class _ServiceNowNotificationState:
                  events: Optional[pulumi.Input[bool]] = None,
                  incidents: Optional[pulumi.Input[bool]] = None,
                  instance: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  message: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
@@ -193,6 +210,7 @@ class _ServiceNowNotificationState:
         :param pulumi.Input[bool] events: Send events into ServiceNow ITOM
         :param pulumi.Input[bool] incidents: Send incidents into ServiceNow ITSM
         :param pulumi.Input[str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] message: The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] password: The password to the ServiceNow account
@@ -208,6 +226,8 @@ class _ServiceNowNotificationState:
             pulumi.set(__self__, "incidents", incidents)
         if instance is not None:
             pulumi.set(__self__, "instance", instance)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if message is not None:
             pulumi.set(__self__, "message", message)
         if name is not None:
@@ -268,6 +288,18 @@ class _ServiceNowNotificationState:
     @instance.setter
     def instance(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "instance", value)
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
 
     @property
     @pulumi.getter
@@ -351,6 +383,7 @@ class ServiceNowNotification(pulumi.CustomResource):
                  events: Optional[pulumi.Input[bool]] = None,
                  incidents: Optional[pulumi.Input[bool]] = None,
                  instance: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  message: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
@@ -366,6 +399,7 @@ class ServiceNowNotification(pulumi.CustomResource):
         :param pulumi.Input[bool] events: Send events into ServiceNow ITOM
         :param pulumi.Input[bool] incidents: Send incidents into ServiceNow ITSM
         :param pulumi.Input[str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] message: The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] password: The password to the ServiceNow account
@@ -400,6 +434,7 @@ class ServiceNowNotification(pulumi.CustomResource):
                  events: Optional[pulumi.Input[bool]] = None,
                  incidents: Optional[pulumi.Input[bool]] = None,
                  instance: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  message: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
@@ -423,6 +458,7 @@ class ServiceNowNotification(pulumi.CustomResource):
                 raise TypeError("Missing required property 'incidents'")
             __props__.__dict__["incidents"] = incidents
             __props__.__dict__["instance"] = instance
+            __props__.__dict__["legacy_id"] = legacy_id
             if message is None and not opts.urn:
                 raise TypeError("Missing required property 'message'")
             __props__.__dict__["message"] = message
@@ -451,6 +487,7 @@ class ServiceNowNotification(pulumi.CustomResource):
             events: Optional[pulumi.Input[bool]] = None,
             incidents: Optional[pulumi.Input[bool]] = None,
             instance: Optional[pulumi.Input[str]] = None,
+            legacy_id: Optional[pulumi.Input[str]] = None,
             message: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             password: Optional[pulumi.Input[str]] = None,
@@ -468,6 +505,7 @@ class ServiceNowNotification(pulumi.CustomResource):
         :param pulumi.Input[bool] events: Send events into ServiceNow ITOM
         :param pulumi.Input[bool] incidents: Send incidents into ServiceNow ITSM
         :param pulumi.Input[str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] message: The content of the ServiceNow description. You can use the following placeholders:  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[str] password: The password to the ServiceNow account
@@ -483,6 +521,7 @@ class ServiceNowNotification(pulumi.CustomResource):
         __props__.__dict__["events"] = events
         __props__.__dict__["incidents"] = incidents
         __props__.__dict__["instance"] = instance
+        __props__.__dict__["legacy_id"] = legacy_id
         __props__.__dict__["message"] = message
         __props__.__dict__["name"] = name
         __props__.__dict__["password"] = password
@@ -522,6 +561,14 @@ class ServiceNowNotification(pulumi.CustomResource):
         The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
         """
         return pulumi.get(self, "instance")
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> pulumi.Output[str]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
 
     @property
     @pulumi.getter

@@ -14,19 +14,27 @@ import javax.annotation.Nullable;
 @CustomType
 public final class HttpMonitorScriptRequestConfiguration {
     private @Nullable Boolean acceptAnyCertificate;
+    private @Nullable String clientCertificate;
     private @Nullable Boolean followRedirects;
     private @Nullable HttpMonitorScriptRequestConfigurationHeaders headers;
+    private @Nullable Boolean sensitiveData;
     private @Nullable String userAgent;
 
     private HttpMonitorScriptRequestConfiguration() {}
     public Optional<Boolean> acceptAnyCertificate() {
         return Optional.ofNullable(this.acceptAnyCertificate);
     }
+    public Optional<String> clientCertificate() {
+        return Optional.ofNullable(this.clientCertificate);
+    }
     public Optional<Boolean> followRedirects() {
         return Optional.ofNullable(this.followRedirects);
     }
     public Optional<HttpMonitorScriptRequestConfigurationHeaders> headers() {
         return Optional.ofNullable(this.headers);
+    }
+    public Optional<Boolean> sensitiveData() {
+        return Optional.ofNullable(this.sensitiveData);
     }
     public Optional<String> userAgent() {
         return Optional.ofNullable(this.userAgent);
@@ -42,21 +50,30 @@ public final class HttpMonitorScriptRequestConfiguration {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean acceptAnyCertificate;
+        private @Nullable String clientCertificate;
         private @Nullable Boolean followRedirects;
         private @Nullable HttpMonitorScriptRequestConfigurationHeaders headers;
+        private @Nullable Boolean sensitiveData;
         private @Nullable String userAgent;
         public Builder() {}
         public Builder(HttpMonitorScriptRequestConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.acceptAnyCertificate = defaults.acceptAnyCertificate;
+    	      this.clientCertificate = defaults.clientCertificate;
     	      this.followRedirects = defaults.followRedirects;
     	      this.headers = defaults.headers;
+    	      this.sensitiveData = defaults.sensitiveData;
     	      this.userAgent = defaults.userAgent;
         }
 
         @CustomType.Setter
         public Builder acceptAnyCertificate(@Nullable Boolean acceptAnyCertificate) {
             this.acceptAnyCertificate = acceptAnyCertificate;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clientCertificate(@Nullable String clientCertificate) {
+            this.clientCertificate = clientCertificate;
             return this;
         }
         @CustomType.Setter
@@ -70,6 +87,11 @@ public final class HttpMonitorScriptRequestConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder sensitiveData(@Nullable Boolean sensitiveData) {
+            this.sensitiveData = sensitiveData;
+            return this;
+        }
+        @CustomType.Setter
         public Builder userAgent(@Nullable String userAgent) {
             this.userAgent = userAgent;
             return this;
@@ -77,8 +99,10 @@ public final class HttpMonitorScriptRequestConfiguration {
         public HttpMonitorScriptRequestConfiguration build() {
             final var o = new HttpMonitorScriptRequestConfiguration();
             o.acceptAnyCertificate = acceptAnyCertificate;
+            o.clientCertificate = clientCertificate;
             o.followRedirects = followRedirects;
             o.headers = headers;
+            o.sensitiveData = sensitiveData;
             o.userAgent = userAgent;
             return o;
         }

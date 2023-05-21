@@ -15,50 +15,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WebApplicationSessionReplayConfig {
     /**
-     * @return Session replay sampling rating in percent
+     * @return (Field has overlap with `dynatrace.WebAppEnablement`) Session replay sampling rating in percent
      * 
      */
     private Integer costControlPercentage;
     /**
-     * @return A list of URLs to be excluded from CSS resource capturing
+     * @return (Field has overlap with `dynatrace.SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
      * 
      */
     private @Nullable List<String> cssResourceCapturingExclusionRules;
     /**
-     * @return Capture (`true`) or don&#39;t capture (`false`) CSS resources from the session
+     * @return (Field has overlap with `dynatrace.SessionReplayResourceCapture`) Capture (`true`) or don&#39;t capture (`false`) CSS resources from the session
      * 
      */
     private @Nullable Boolean enableCssResourceCapturing;
     /**
-     * @return SessionReplay Enabled/Disabled
+     * @return (Field has overlap with `dynatrace.WebAppEnablement`) SessionReplay Enabled/Disabled
      * 
      */
     private @Nullable Boolean enabled;
 
     private WebApplicationSessionReplayConfig() {}
     /**
-     * @return Session replay sampling rating in percent
+     * @return (Field has overlap with `dynatrace.WebAppEnablement`) Session replay sampling rating in percent
      * 
      */
     public Integer costControlPercentage() {
         return this.costControlPercentage;
     }
     /**
-     * @return A list of URLs to be excluded from CSS resource capturing
+     * @return (Field has overlap with `dynatrace.SessionReplayResourceCapture`) A list of URLs to be excluded from CSS resource capturing
      * 
      */
     public List<String> cssResourceCapturingExclusionRules() {
         return this.cssResourceCapturingExclusionRules == null ? List.of() : this.cssResourceCapturingExclusionRules;
     }
     /**
-     * @return Capture (`true`) or don&#39;t capture (`false`) CSS resources from the session
+     * @return (Field has overlap with `dynatrace.SessionReplayResourceCapture`) Capture (`true`) or don&#39;t capture (`false`) CSS resources from the session
      * 
      */
     public Optional<Boolean> enableCssResourceCapturing() {
         return Optional.ofNullable(this.enableCssResourceCapturing);
     }
     /**
-     * @return SessionReplay Enabled/Disabled
+     * @return (Field has overlap with `dynatrace.WebAppEnablement`) SessionReplay Enabled/Disabled
      * 
      */
     public Optional<Boolean> enabled() {

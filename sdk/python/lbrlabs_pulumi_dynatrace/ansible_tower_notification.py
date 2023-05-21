@@ -20,6 +20,7 @@ class AnsibleTowerNotificationArgs:
                  username: pulumi.Input[str],
                  active: Optional[pulumi.Input[bool]] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None):
         """
@@ -30,6 +31,7 @@ class AnsibleTowerNotificationArgs:
         :param pulumi.Input[str] username: The username of the Ansible Tower account
         :param pulumi.Input[bool] active: The notification is active (`true`) or inactive (`false`). Default is `false`.
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The display name within the Dynatrace WebUI.
         :param pulumi.Input[str] password: The password for the Ansible Tower account
         """
@@ -41,6 +43,8 @@ class AnsibleTowerNotificationArgs:
             pulumi.set(__self__, "active", active)
         if insecure is not None:
             pulumi.set(__self__, "insecure", insecure)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if password is not None:
@@ -119,6 +123,18 @@ class AnsibleTowerNotificationArgs:
         pulumi.set(self, "insecure", value)
 
     @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -150,6 +166,7 @@ class _AnsibleTowerNotificationState:
                  custom_message: Optional[pulumi.Input[str]] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
                  job_template_url: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -160,6 +177,7 @@ class _AnsibleTowerNotificationState:
         :param pulumi.Input[str] custom_message: The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
         :param pulumi.Input[str] job_template_url: The URL of the target Ansible Tower job template
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The display name within the Dynatrace WebUI.
         :param pulumi.Input[str] password: The password for the Ansible Tower account
         :param pulumi.Input[str] profile: The ID of the associated alerting profile.
@@ -173,6 +191,8 @@ class _AnsibleTowerNotificationState:
             pulumi.set(__self__, "insecure", insecure)
         if job_template_url is not None:
             pulumi.set(__self__, "job_template_url", job_template_url)
+        if legacy_id is not None:
+            pulumi.set(__self__, "legacy_id", legacy_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if password is not None:
@@ -229,6 +249,18 @@ class _AnsibleTowerNotificationState:
     @job_template_url.setter
     def job_template_url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "job_template_url", value)
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
+
+    @legacy_id.setter
+    def legacy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "legacy_id", value)
 
     @property
     @pulumi.getter
@@ -288,6 +320,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
                  custom_message: Optional[pulumi.Input[str]] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
                  job_template_url: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -301,6 +334,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
         :param pulumi.Input[str] custom_message: The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
         :param pulumi.Input[str] job_template_url: The URL of the target Ansible Tower job template
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The display name within the Dynatrace WebUI.
         :param pulumi.Input[str] password: The password for the Ansible Tower account
         :param pulumi.Input[str] profile: The ID of the associated alerting profile.
@@ -333,6 +367,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
                  custom_message: Optional[pulumi.Input[str]] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
                  job_template_url: Optional[pulumi.Input[str]] = None,
+                 legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
@@ -354,6 +389,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
             if job_template_url is None and not opts.urn:
                 raise TypeError("Missing required property 'job_template_url'")
             __props__.__dict__["job_template_url"] = job_template_url
+            __props__.__dict__["legacy_id"] = legacy_id
             __props__.__dict__["name"] = name
             __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
             if profile is None and not opts.urn:
@@ -378,6 +414,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
             custom_message: Optional[pulumi.Input[str]] = None,
             insecure: Optional[pulumi.Input[bool]] = None,
             job_template_url: Optional[pulumi.Input[str]] = None,
+            legacy_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             password: Optional[pulumi.Input[str]] = None,
             profile: Optional[pulumi.Input[str]] = None,
@@ -393,6 +430,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
         :param pulumi.Input[str] custom_message: The custom message of the notification. This message will be displayed in the extra variables **Message** field of your job template. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates. Default is `false`.
         :param pulumi.Input[str] job_template_url: The URL of the target Ansible Tower job template
+        :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The display name within the Dynatrace WebUI.
         :param pulumi.Input[str] password: The password for the Ansible Tower account
         :param pulumi.Input[str] profile: The ID of the associated alerting profile.
@@ -406,6 +444,7 @@ class AnsibleTowerNotification(pulumi.CustomResource):
         __props__.__dict__["custom_message"] = custom_message
         __props__.__dict__["insecure"] = insecure
         __props__.__dict__["job_template_url"] = job_template_url
+        __props__.__dict__["legacy_id"] = legacy_id
         __props__.__dict__["name"] = name
         __props__.__dict__["password"] = password
         __props__.__dict__["profile"] = profile
@@ -443,6 +482,14 @@ class AnsibleTowerNotification(pulumi.CustomResource):
         The URL of the target Ansible Tower job template
         """
         return pulumi.get(self, "job_template_url")
+
+    @property
+    @pulumi.getter(name="legacyId")
+    def legacy_id(self) -> pulumi.Output[str]:
+        """
+        The ID of these settings when referred to from resources requiring the REST API V1 keys
+        """
+        return pulumi.get(self, "legacy_id")
 
     @property
     @pulumi.getter

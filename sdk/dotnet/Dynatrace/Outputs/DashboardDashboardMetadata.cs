@@ -51,6 +51,10 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Tags;
         /// <summary>
+        /// No documentation available
+        /// </summary>
+        public readonly string? TilesNameSize;
+        /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider
         /// </summary>
         public readonly string? Unknowns;
@@ -79,6 +83,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
 
             ImmutableArray<string> tags,
 
+            string? tilesNameSize,
+
             string? unknowns,
 
             ImmutableArray<string> validFilterKeys)
@@ -92,6 +98,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
             Shared = shared;
             SharingDetails = sharingDetails;
             Tags = tags;
+            TilesNameSize = tilesNameSize;
             Unknowns = unknowns;
             ValidFilterKeys = validFilterKeys;
         }

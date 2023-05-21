@@ -15,6 +15,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
     public sealed class BrowserMonitorAnomalyDetectionOutageHandling
     {
         public readonly bool? GlobalOutage;
+        public readonly ImmutableArray<Outputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy> GlobalOutagePolicies;
         public readonly bool? LocalOutage;
         public readonly ImmutableArray<Outputs.BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy> LocalOutagePolicies;
         public readonly bool? RetryOnError;
@@ -23,6 +24,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
         private BrowserMonitorAnomalyDetectionOutageHandling(
             bool? globalOutage,
 
+            ImmutableArray<Outputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy> globalOutagePolicies,
+
             bool? localOutage,
 
             ImmutableArray<Outputs.BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy> localOutagePolicies,
@@ -30,6 +33,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace.Outputs
             bool? retryOnError)
         {
             GlobalOutage = globalOutage;
+            GlobalOutagePolicies = globalOutagePolicies;
             LocalOutage = localOutage;
             LocalOutagePolicies = localOutagePolicies;
             RetryOnError = retryOnError;
