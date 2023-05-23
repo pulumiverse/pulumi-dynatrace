@@ -98,7 +98,7 @@ func Provider() tfbridge.ProviderInfo {
 		Name:              "dynatrace",
 		DisplayName:       "Dynatrace",
 		Publisher:         "Lbrlabs",
-		LogoURL:           "https://raw.githubusercontent.com/lbrlabs/pulumi-dynatrace/master/assets/logo.svg",
+		LogoURL:           "https://raw.githubusercontent.com/lbrlabs/pulumi-dynatrace/master/assets/logo.png",
 		PluginDownloadURL: "github://api.github.com/lbrlabs",
 		Description:       "A Pulumi package for creating and managing Dynatrace cloud resources.",
 		Keywords:          []string{"pulumi", "dynatrace", "category/infrastructure", "lbrlabs"},
