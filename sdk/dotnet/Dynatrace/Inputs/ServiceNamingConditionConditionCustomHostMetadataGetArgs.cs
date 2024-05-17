@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Pulumi.Serialization;
 using Pulumi;
 
-namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
+namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 {
 
     public sealed class ServiceNamingConditionConditionCustomHostMetadataGetArgs : global::Pulumi.ResourceArgs

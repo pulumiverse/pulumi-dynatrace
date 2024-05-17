@@ -17,7 +17,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
  *
  * const _name_ = new dynatrace.DduPool("#name#", {
  *     events: {

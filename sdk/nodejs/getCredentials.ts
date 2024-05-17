@@ -11,8 +11,8 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
  * import * as dynatrace from "@pulumi/dynatrace";
+ * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
  *
  * const creds = dynatrace.getCredentials({
  *     name: "Office365 Access Token",
@@ -113,8 +113,8 @@ export interface GetCredentialsResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
  * import * as dynatrace from "@pulumi/dynatrace";
+ * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
  *
  * const creds = dynatrace.getCredentials({
  *     name: "Office365 Access Token",

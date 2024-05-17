@@ -15,9 +15,9 @@
 package main
 
 import (
-	dynatrace "github.com/lbrlabs/pulumi-dynatrace/provider"
-	"github.com/lbrlabs/pulumi-dynatrace/provider/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfgen"
+	dynatrace "github.com/pulumiverse/pulumi-dynatrace/provider"
+	"github.com/pulumiverse/pulumi-dynatrace/provider/pkg/version"
 )
 
 func main() {

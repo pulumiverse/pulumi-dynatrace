@@ -16,8 +16,8 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
  * import * as dynatrace from "@pulumi/dynatrace";
+ * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
  *
  * const test = dynatrace.getProcess({
  *     name: "Example",
@@ -78,8 +78,8 @@ export interface GetProcessResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
  * import * as dynatrace from "@pulumi/dynatrace";
+ * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
  *
  * const test = dynatrace.getProcess({
  *     name: "Example",

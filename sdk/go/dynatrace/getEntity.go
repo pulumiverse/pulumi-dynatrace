@@ -24,8 +24,8 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-dynatrace/sdk/go/dynatrace"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
 //
 // )
 //

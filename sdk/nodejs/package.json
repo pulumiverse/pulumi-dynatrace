@@ -1,15 +1,15 @@
 {
-    "name": "@lbrlabs/pulumi-dynatrace",
+    "name": "@pulumiverse/pulumi-dynatrace",
     "version": "${VERSION}",
     "description": "A Pulumi package for creating and managing Dynatrace cloud resources.",
     "keywords": [
         "pulumi",
         "dynatrace",
         "category/infrastructure",
-        "lbrlabs"
+        "pulumiverse"
     ],
     "homepage": "https://www.pulumi.com",
-    "repository": "https://github.com/lbrlabs/pulumi-dynatrace",
+    "repository": "https://github.com/pulumiverse/pulumi-dynatrace",
     "license": "Apache-2.0",
     "scripts": {
         "build": "tsc",
@@ -26,6 +26,6 @@
     "pulumi": {
         "resource": true,
         "name": "dynatrace",
-        "server": "github://api.github.com/lbrlabs"
+        "server": "github://api.github.com/pulumiverse"
     }
 }

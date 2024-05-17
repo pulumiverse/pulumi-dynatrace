@@ -1,4 +1,4 @@
-module github.com/lbrlabs/pulumi-dynatrace/provider
+module github.com/pulumiverse/pulumi-dynatrace/provider
 
 go 1.20
 
