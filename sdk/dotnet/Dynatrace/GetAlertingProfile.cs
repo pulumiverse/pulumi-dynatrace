@@ -16,9 +16,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// The Alerting Profile queries for an Alerting Profile that has a specified name. In case multiple Alerting Profiles share the same name the first one found will be used.
         /// The ID of this Data Resource aligns with the IDs used by the Dynatrace Settings 2.0 API.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -47,8 +45,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetAlertingProfileResult> InvokeAsync(GetAlertingProfileArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAlertingProfileResult>("dynatrace:index/getAlertingProfile:getAlertingProfile", args ?? new GetAlertingProfileArgs(), options.WithDefaults());
@@ -57,9 +53,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// The Alerting Profile queries for an Alerting Profile that has a specified name. In case multiple Alerting Profiles share the same name the first one found will be used.
         /// The ID of this Data Resource aligns with the IDs used by the Dynatrace Settings 2.0 API.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -88,8 +82,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetAlertingProfileResult> Invoke(GetAlertingProfileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlertingProfileResult>("dynatrace:index/getAlertingProfile:getAlertingProfile", args ?? new GetAlertingProfileInvokeArgs(), options.WithDefaults());
