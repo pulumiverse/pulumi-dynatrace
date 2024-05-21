@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("locators", required: true)]
         private InputList<Inputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocatorLocatorGetArgs>? _locators;
+
+        /// <summary>
+        /// A locator dentifyies the desired element
+        /// </summary>
         public InputList<Inputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocatorLocatorGetArgs> Locators
         {
             get => _locators ?? (_locators = new InputList<Inputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocatorLocatorGetArgs>());

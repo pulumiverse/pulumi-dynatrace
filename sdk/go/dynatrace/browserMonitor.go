@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type BrowserMonitor struct {
@@ -45,7 +46,7 @@ func NewBrowserMonitor(ctx *pulumi.Context,
 	if args.Frequency == nil {
 		return nil, errors.New("invalid value for required argument 'Frequency'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BrowserMonitor
 	err := ctx.RegisterResource("dynatrace:index/browserMonitor:BrowserMonitor", name, args, &resource, opts...)
 	if err != nil {

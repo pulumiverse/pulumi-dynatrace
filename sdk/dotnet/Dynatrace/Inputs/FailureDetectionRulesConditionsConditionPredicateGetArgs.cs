@@ -13,22 +13,36 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class FailureDetectionRulesConditionsConditionPredicateGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Case sensitive
+        /// </summary>
         [Input("caseSensitive")]
         public Input<bool>? CaseSensitive { get; set; }
 
         [Input("managementZones")]
         private InputList<string>? _managementZones;
+
+        /// <summary>
+        /// Management zones
+        /// </summary>
         public InputList<string> ManagementZones
         {
             get => _managementZones ?? (_managementZones = new InputList<string>());
             set => _managementZones = value;
         }
 
+        /// <summary>
+        /// Predicate type
+        /// </summary>
         [Input("predicateType", required: true)]
         public Input<string> PredicateType { get; set; } = null!;
 
         [Input("serviceTypes")]
         private InputList<string>? _serviceTypes;
+
+        /// <summary>
+        /// Service types
+        /// </summary>
         public InputList<string> ServiceTypes
         {
             get => _serviceTypes ?? (_serviceTypes = new InputList<string>());
@@ -37,6 +51,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("tagKeys")]
         private InputList<string>? _tagKeys;
+
+        /// <summary>
+        /// Tag keys
+        /// </summary>
         public InputList<string> TagKeys
         {
             get => _tagKeys ?? (_tagKeys = new InputList<string>());
@@ -45,6 +63,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("tags")]
         private InputList<string>? _tags;
+
+        /// <summary>
+        /// Tags (exact match)
+        /// </summary>
         public InputList<string> Tags
         {
             get => _tags ?? (_tags = new InputList<string>());
@@ -53,6 +75,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("textValues")]
         private InputList<string>? _textValues;
+
+        /// <summary>
+        /// Names
+        /// </summary>
         public InputList<string> TextValues
         {
             get => _textValues ?? (_textValues = new InputList<string>());

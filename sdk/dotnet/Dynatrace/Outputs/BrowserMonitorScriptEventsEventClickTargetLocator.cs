@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEventsEventClickTargetLocator
     {
+        /// <summary>
+        /// A locator dentifyies the desired element
+        /// </summary>
         public readonly ImmutableArray<Outputs.BrowserMonitorScriptEventsEventClickTargetLocatorLocator> Locators;
 
         [OutputConstructor]

@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if the retransmission rate is higher than the specified threshold **and** the number of retransmitted packets is higher than the defined threshold for the defined amount of samples
+        /// </summary>
         [Input("customThresholds")]
         public Input<Inputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsGetArgs>? CustomThresholds { get; set; }
 
+        /// <summary>
+        /// Detection mode for high retransmission rate
+        /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }
 
+        /// <summary>
+        /// Detect high retransmission rate
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 

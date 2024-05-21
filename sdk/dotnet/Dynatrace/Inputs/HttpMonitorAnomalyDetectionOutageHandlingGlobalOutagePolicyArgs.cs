@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The number of consecutive fails to trigger an alert
+        /// </summary>
         [Input("consecutiveRuns", required: true)]
         public Input<int> ConsecutiveRuns { get; set; } = null!;
 

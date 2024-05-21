@@ -15,12 +15,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("conditions")]
         private InputList<Inputs.MetricEventsQueryDefinitionEntityFilterConditionGetArgs>? _conditions;
+
+        /// <summary>
+        /// Conditions of entity type to filter
+        /// </summary>
         public InputList<Inputs.MetricEventsQueryDefinitionEntityFilterConditionGetArgs> Conditions
         {
             get => _conditions ?? (_conditions = new InputList<Inputs.MetricEventsQueryDefinitionEntityFilterConditionGetArgs>());
             set => _conditions = value;
         }
 
+        /// <summary>
+        /// Dimension key of entity type to filter
+        /// </summary>
         [Input("dimensionKey")]
         public Input<string>? DimensionKey { get; set; }
 

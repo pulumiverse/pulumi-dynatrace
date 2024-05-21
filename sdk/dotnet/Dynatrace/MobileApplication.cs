@@ -75,7 +75,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<Outputs.MobileApplicationProperties?> Properties { get; private set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+        /// (Field has overlap with `dynatrace.MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
         /// </summary>
         [Output("sessionReplay")]
         public Output<bool?> SessionReplay { get; private set; } = null!;
@@ -88,8 +88,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<bool?> SessionReplayOnCrash { get; private set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-        /// apps) The percentage of user sessions to be analyzed
+        /// (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps)
+        /// The percentage of user sessions to be analyzed
         /// </summary>
         [Output("userSessionPercentage")]
         public Output<int?> UserSessionPercentage { get; private set; } = null!;
@@ -209,7 +209,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<Inputs.MobileApplicationPropertiesArgs>? Properties { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+        /// (Field has overlap with `dynatrace.MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
         /// </summary>
         [Input("sessionReplay")]
         public Input<bool>? SessionReplay { get; set; }
@@ -222,8 +222,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? SessionReplayOnCrash { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-        /// apps) The percentage of user sessions to be analyzed
+        /// (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps)
+        /// The percentage of user sessions to be analyzed
         /// </summary>
         [Input("userSessionPercentage")]
         public Input<int>? UserSessionPercentage { get; set; }
@@ -304,7 +304,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<Inputs.MobileApplicationPropertiesGetArgs>? Properties { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+        /// (Field has overlap with `dynatrace.MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
         /// </summary>
         [Input("sessionReplay")]
         public Input<bool>? SessionReplay { get; set; }
@@ -317,8 +317,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? SessionReplayOnCrash { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-        /// apps) The percentage of user sessions to be analyzed
+        /// (Field has overlap with `dynatrace.MobileAppEnablement` for mobile and `dynatrace.CustomAppEnablement` for custom apps)
+        /// The percentage of user sessions to be analyzed
         /// </summary>
         [Input("userSessionPercentage")]
         public Input<int>? UserSessionPercentage { get; set; }

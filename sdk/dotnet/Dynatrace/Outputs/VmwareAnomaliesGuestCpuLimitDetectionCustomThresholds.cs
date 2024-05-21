@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class VmwareAnomaliesGuestCpuLimitDetectionCustomThresholds
     {
+        /// <summary>
+        /// Hypervisor CPU usage is higher than
+        /// </summary>
         public readonly int HostCpuUsagePercentage;
+        /// <summary>
+        /// VM CPU ready is higher than
+        /// </summary>
         public readonly int VmCpuReadyPercentage;
+        /// <summary>
+        /// VM CPU usage (VM CPU Usage Mhz / VM CPU limit in Mhz) is higher than
+        /// </summary>
         public readonly int VmCpuUsagePercentage;
 
         [OutputConstructor]

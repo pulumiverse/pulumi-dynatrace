@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesDisksSpeedThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if disk read/write time is higher than *X* milliseconds in 3 out of 5 samples
+        /// </summary>
         [Input("writeAndReadTime", required: true)]
         public Input<int> WriteAndReadTime { get; set; } = null!;
 

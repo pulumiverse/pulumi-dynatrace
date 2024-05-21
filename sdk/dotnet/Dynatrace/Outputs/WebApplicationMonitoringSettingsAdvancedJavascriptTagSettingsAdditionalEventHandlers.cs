@@ -14,12 +14,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers
     {
+        /// <summary>
+        /// Blur event handler enabled/disabled
+        /// </summary>
         public readonly bool? Blur;
+        /// <summary>
+        /// Change event handler enabled/disabled
+        /// </summary>
         public readonly bool? Change;
+        /// <summary>
+        /// Click event handler enabled/disabled
+        /// </summary>
         public readonly bool? Click;
+        /// <summary>
+        /// Max. number of DOM nodes to instrument. Valid values range from 0 to 100000.
+        /// </summary>
         public readonly int MaxDomNodes;
+        /// <summary>
+        /// Mouseup event handler enabled/disabled
+        /// </summary>
         public readonly bool? Mouseup;
+        /// <summary>
+        /// toString method enabled/disabled
+        /// </summary>
         public readonly bool? ToStringMethod;
+        /// <summary>
+        /// Use mouseup event for clicks enabled/disabled
+        /// </summary>
         public readonly bool? UseMouseUpEventForClicks;
 
         [OutputConstructor]

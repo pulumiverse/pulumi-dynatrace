@@ -13,9 +13,16 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class GenericTypesRulesRuleSourcesSourceArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Specify a filter that needs to match in order for the extraction to happen.. Three different filters are supported: `$eq(value)` will ensure that the source matches exactly 'value', `$prefix(value)` will ensure that the source begins with exactly 'value', '$exists()' will ensure that any source with matching dimension filter exists.
+        /// If your value contains the characters '(', ')' or '~', you need to escape them by adding a '~' in front of them.
+        /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }
 
+        /// <summary>
+        /// Possible Values: `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+        /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;
 

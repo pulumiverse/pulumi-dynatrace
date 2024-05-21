@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2NetworkNetworkTcpProblemsDetection
     {
+        /// <summary>
+        /// Alert if the percentage of new connection failures is higher than the specified threshold **and** the number of failed connections is higher than the defined threshold for the defined amount of samples
+        /// </summary>
         public readonly Outputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds? CustomThresholds;
+        /// <summary>
+        /// Detection mode for TCP connectivity problems
+        /// </summary>
         public readonly string? DetectionMode;
+        /// <summary>
+        /// Detect TCP connectivity problems for process
+        /// </summary>
         public readonly bool Enabled;
 
         [OutputConstructor]

@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class GenericTypesRulesRuleRequiredDimensionsRequiredDimensionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A dimension key which needs to exist in the ingest data to match this filter.
+        /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
+        /// <summary>
+        /// A dimension value pattern which needs to exist in the ingest data to match this filter.
+        /// </summary>
         [Input("valuePattern")]
         public Input<string>? ValuePattern { get; set; }
 

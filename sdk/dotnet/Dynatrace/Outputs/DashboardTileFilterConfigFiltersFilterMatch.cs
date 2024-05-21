@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DashboardTileFilterConfigFiltersFilterMatch
     {
+        /// <summary>
+        /// The entity type (e.g. HOST, SERVICE, ...)
+        /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// the tiles this Dashboard consist of
+        /// </summary>
         public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]

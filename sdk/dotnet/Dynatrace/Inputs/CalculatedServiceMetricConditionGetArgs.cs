@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("conditions")]
         private InputList<Inputs.CalculatedServiceMetricConditionConditionGetArgs>? _conditions;
+
+        /// <summary>
+        /// A conditions for the metric usage
+        /// </summary>
         public InputList<Inputs.CalculatedServiceMetricConditionConditionGetArgs> Conditions
         {
             get => _conditions ?? (_conditions = new InputList<Inputs.CalculatedServiceMetricConditionConditionGetArgs>());

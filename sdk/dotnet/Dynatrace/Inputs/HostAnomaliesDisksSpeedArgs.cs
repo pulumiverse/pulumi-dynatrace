@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesDisksSpeedArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The detection is enabled (`true`) or disabled (`false`)
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
+        /// <summary>
+        /// Custom thresholds for slow running disks. If not set, the automatic mode is used
+        /// </summary>
         [Input("thresholds")]
         public Input<Inputs.HostAnomaliesDisksSpeedThresholdsArgs>? Thresholds { get; set; }
 

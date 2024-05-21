@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ConnectivityAlerts struct {
@@ -33,7 +34,7 @@ func NewConnectivityAlerts(ctx *pulumi.Context,
 	if args.ProcessGroupId == nil {
 		return nil, errors.New("invalid value for required argument 'ProcessGroupId'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ConnectivityAlerts
 	err := ctx.RegisterResource("dynatrace:index/connectivityAlerts:ConnectivityAlerts", name, args, &resource, opts...)
 	if err != nil {

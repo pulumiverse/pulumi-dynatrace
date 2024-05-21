@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds
     {
+        /// <summary>
+        /// Alert if sent/received traffic utilization is higher than this threshold for the defined amount of samples
+        /// </summary>
         public readonly int ErrorsPercentage;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds EventThresholds;
 
         [OutputConstructor]

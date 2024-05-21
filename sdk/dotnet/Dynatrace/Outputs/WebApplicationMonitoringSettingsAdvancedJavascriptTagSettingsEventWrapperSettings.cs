@@ -14,11 +14,29 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings
     {
+        /// <summary>
+        /// Blur enabled/disabled
+        /// </summary>
         public readonly bool? Blur;
+        /// <summary>
+        /// Change enabled/disabled
+        /// </summary>
         public readonly bool? Change;
+        /// <summary>
+        /// Click enabled/disabled
+        /// </summary>
         public readonly bool? Click;
+        /// <summary>
+        /// MouseUp enabled/disabled
+        /// </summary>
         public readonly bool? Mouseup;
+        /// <summary>
+        /// TouchEnd enabled/disabled
+        /// </summary>
         public readonly bool? TouchEnd;
+        /// <summary>
+        /// TouchStart enabled/disabled
+        /// </summary>
         public readonly bool? TouchStart;
 
         [OutputConstructor]

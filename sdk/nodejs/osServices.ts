@@ -83,7 +83,7 @@ export class OsServices extends pulumi.CustomResource {
      * – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
      * that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
      * paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-     * `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+     * `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
      */
     public readonly statusConditionWindows!: pulumi.Output<string | undefined>;
     /**
@@ -203,7 +203,7 @@ export interface OsServicesState {
      * – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
      * that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
      * paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-     * `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+     * `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
      */
     statusConditionWindows?: pulumi.Input<string>;
     /**
@@ -265,7 +265,7 @@ export interface OsServicesArgs {
      * – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
      * that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
      * paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-     * `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+     * `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
      */
     statusConditionWindows?: pulumi.Input<string>;
     /**

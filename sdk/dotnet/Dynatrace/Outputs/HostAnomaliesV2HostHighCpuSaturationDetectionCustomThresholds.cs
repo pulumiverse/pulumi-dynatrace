@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds
     {
+        /// <summary>
+        /// Alert if the CPU usage is higher than this threshold for the defined amount of samples
+        /// </summary>
         public readonly int CpuSaturation;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds EventThresholds;
 
         [OutputConstructor]

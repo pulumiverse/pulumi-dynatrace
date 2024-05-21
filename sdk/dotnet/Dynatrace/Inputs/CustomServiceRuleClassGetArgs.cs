@@ -13,11 +13,14 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CustomServiceRuleClassGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Matcher applying to the class name (ENDS*WITH, EQUALS or STARTS*WITH). STARTS_WITH can only be used if there is at least one annotation defined. Default value is EQUALS
+        /// </summary>
         [Input("match")]
         public Input<string>? Match { get; set; }
 
         /// <summary>
-        /// The name of the custom service, displayed in the UI
+        /// The full name of the class / the name to match the class name with
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

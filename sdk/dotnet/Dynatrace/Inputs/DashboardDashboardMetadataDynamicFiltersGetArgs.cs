@@ -15,17 +15,30 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("filters", required: true)]
         private InputList<string>? _filters;
+
+        /// <summary>
+        /// A set of all possible global dashboard filters that can be applied to a dashboard
+        /// </summary>
         public InputList<string> Filters
         {
             get => _filters ?? (_filters = new InputList<string>());
             set => _filters = value;
         }
 
+        /// <summary>
+        /// A set of generic tag filters that can be applied to a dashboard
+        /// </summary>
         [Input("genericTagFilters")]
         public Input<Inputs.DashboardDashboardMetadataDynamicFiltersGenericTagFiltersGetArgs>? GenericTagFilters { get; set; }
 
         [Input("tagSuggestionTypes")]
         private InputList<string>? _tagSuggestionTypes;
+
+        /// <summary>
+        /// A set of entities applied for tag filter suggestions. You can fetch the list of possible values with the [GET all entity types](https://dt-url.net/dw03s7h)request. 
+        /// 
+        /// Only applicable if the **filters** set includes `TAG_KEY:&lt;tagname&gt;`
+        /// </summary>
         public InputList<string> TagSuggestionTypes
         {
             get => _tagSuggestionTypes ?? (_tagSuggestionTypes = new InputList<string>());

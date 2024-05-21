@@ -13,17 +13,20 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationConversionGoalsGoalArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Configuration of a destination-based conversion goal
+        /// </summary>
         [Input("destination")]
         public Input<Inputs.WebApplicationConversionGoalsGoalDestinationArgs>? Destination { get; set; }
 
         /// <summary>
-        /// The ID of this resource.
+        /// The ID of conversion goal.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// The name of the web application, displayed in the UI
+        /// The name of the conversion goal. Valid length within 1 and 50 characters.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -34,12 +37,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("type")]
         public Input<string>? Type { get; set; }
 
+        /// <summary>
+        /// Configuration of a destination-based conversion goal
+        /// </summary>
         [Input("userAction")]
         public Input<Inputs.WebApplicationConversionGoalsGoalUserActionArgs>? UserAction { get; set; }
 
+        /// <summary>
+        /// Configuration of a destination-based conversion goal
+        /// </summary>
         [Input("visitDuration")]
         public Input<Inputs.WebApplicationConversionGoalsGoalVisitDurationArgs>? VisitDuration { get; set; }
 
+        /// <summary>
+        /// Configuration of a destination-based conversion goal
+        /// </summary>
         [Input("visitNumAction")]
         public Input<Inputs.WebApplicationConversionGoalsGoalVisitNumActionArgs>? VisitNumAction { get; set; }
 

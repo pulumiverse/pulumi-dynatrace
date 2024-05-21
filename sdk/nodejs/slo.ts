@@ -63,7 +63,7 @@ export class Slo extends pulumi.CustomResource {
     /**
      * The metric for the count of successes (the numerator in rate calculation)
      *
-     * @deprecated `numerator` and `denominator` have been replaced by `metric_expression`
+     * @deprecated `numerator` and `denominator` have been replaced by `metricExpression`
      */
     public readonly numerator!: pulumi.Output<string | undefined>;
     /**
@@ -175,7 +175,7 @@ export interface SloState {
     /**
      * The metric for the count of successes (the numerator in rate calculation)
      *
-     * @deprecated `numerator` and `denominator` have been replaced by `metric_expression`
+     * @deprecated `numerator` and `denominator` have been replaced by `metricExpression`
      */
     numerator?: pulumi.Input<string>;
     /**
@@ -231,7 +231,7 @@ export interface SloArgs {
     /**
      * The metric for the count of successes (the numerator in rate calculation)
      *
-     * @deprecated `numerator` and `denominator` have been replaced by `metric_expression`
+     * @deprecated `numerator` and `denominator` have been replaced by `metricExpression`
      */
     numerator?: pulumi.Input<string>;
     /**

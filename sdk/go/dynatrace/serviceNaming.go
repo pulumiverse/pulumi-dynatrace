@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ServiceNaming struct {
@@ -103,7 +104,7 @@ func NewServiceNaming(ctx *pulumi.Context,
 	if args.Format == nil {
 		return nil, errors.New("invalid value for required argument 'Format'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ServiceNaming
 	err := ctx.RegisterResource("dynatrace:index/serviceNaming:ServiceNaming", name, args, &resource, opts...)
 	if err != nil {

@@ -14,12 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class RequestAttributeDataSourceCicsSdkMethodNodeCondition
     {
+        /// <summary>
+        /// Negate the comparison
+        /// </summary>
         public readonly bool? Negate;
+        /// <summary>
+        /// Operator comparing the extracted value to the comparison value
+        /// </summary>
         public readonly string Operator;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider
         /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// The value to compare to
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class K8sWorkloadAnomaliesNotAllPodsReadyConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// within the last
+        /// </summary>
         [Input("observationPeriodInMinutes", required: true)]
         public Input<int> ObservationPeriodInMinutes { get; set; } = null!;
 
+        /// <summary>
+        /// some workload pods are not ready for at least
+        /// </summary>
         [Input("samplePeriodInMinutes", required: true)]
         public Input<int> SamplePeriodInMinutes { get; set; } = null!;
 

@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type HostMonitoring struct {
@@ -43,7 +44,7 @@ func NewHostMonitoring(ctx *pulumi.Context,
 	if args.HostId == nil {
 		return nil, errors.New("invalid value for required argument 'HostId'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource HostMonitoring
 	err := ctx.RegisterResource("dynatrace:index/hostMonitoring:HostMonitoring", name, args, &resource, opts...)
 	if err != nil {

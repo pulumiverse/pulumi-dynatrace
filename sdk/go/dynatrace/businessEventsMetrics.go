@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type BusinessEventsMetrics struct {
@@ -47,7 +48,7 @@ func NewBusinessEventsMetrics(ctx *pulumi.Context,
 	if args.Measure == nil {
 		return nil, errors.New("invalid value for required argument 'Measure'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BusinessEventsMetrics
 	err := ctx.RegisterResource("dynatrace:index/businessEventsMetrics:BusinessEventsMetrics", name, args, &resource, opts...)
 	if err != nil {

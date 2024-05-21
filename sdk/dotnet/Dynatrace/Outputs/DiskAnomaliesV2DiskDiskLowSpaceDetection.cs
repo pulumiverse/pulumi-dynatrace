@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DiskAnomaliesV2DiskDiskLowSpaceDetection
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds? CustomThresholds;
+        /// <summary>
+        /// Detection mode for low disk space
+        /// </summary>
         public readonly string? DetectionMode;
+        /// <summary>
+        /// Detect low disk space
+        /// </summary>
         public readonly bool Enabled;
 
         [OutputConstructor]

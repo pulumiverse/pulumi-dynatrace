@@ -14,70 +14,265 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ManagementZoneRuleCondition
     {
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionApplicationTypeComparison> ApplicationTypeComparisons;
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionApplicationType> ApplicationTypes;
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionAzureComputeModeComparison> AzureComputeModeComparisons;
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionAzureComputeMode> AzureComputeModes;
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionAzureSkuComparision> AzureSkuComparisions;
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionAzureSkus> AzureSkus;
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionBaseComparisonBasic> BaseComparisonBasics;
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionBaseConditionKey> BaseConditionKeys;
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionBitnessComparision> BitnessComparisions;
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionBitness> Bitnesses;
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionCloudTypeComparison> CloudTypeComparisons;
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionCloudType> CloudTypes;
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionComparison> Comparisons;
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionCustomApplicationTypeComparison> CustomApplicationTypeComparisons;
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionCustomApplicationType> CustomApplicationTypes;
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionCustomHostMetadataConditionKey> CustomHostMetadataConditionKeys;
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionCustomHostMetadata> CustomHostMetadatas;
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionCustomProcessMetadataConditionKey> CustomProcessMetadataConditionKeys;
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionCustomProcessMetadata> CustomProcessMetadatas;
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionDatabaseTopology> DatabaseTopologies;
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionDatabaseTopologyComparison> DatabaseTopologyComparisons;
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionDcrumDecoderComparison> DcrumDecoderComparisons;
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionDcrumDecoder> DcrumDecoders;
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionEntity> Entities;
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionEntityIdComparison> EntityIdComparisons;
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionHostTech> HostTeches;
+        /// <summary>
+        /// `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionHypervisorTypeComparision> HypervisorTypeComparisions;
+        /// <summary>
+        /// Comparison for `HYPERVISOR_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionHypervisor> Hypervisors;
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionIndexedNameComparison> IndexedNameComparisons;
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionIndexedName> IndexedNames;
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionIndexedStringComparison> IndexedStringComparisons;
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionIndexedString> IndexedStrings;
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionIndexedTagComparison> IndexedTagComparisons;
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionIndexedTag> IndexedTags;
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionIntegerComparison> IntegerComparisons;
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionInteger> Integers;
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionIpaddressComparison> IpaddressComparisons;
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionIpaddress> Ipaddresses;
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionKey> Keys;
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionMobilePlatformComparison> MobilePlatformComparisons;
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionMobilePlatform> MobilePlatforms;
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionOsArch> OsArches;
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionOsType> OsTypes;
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionOsarchitectureComparison> OsarchitectureComparisons;
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionOstypeComparison> OstypeComparisons;
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionPaasTypeComparison> PaasTypeComparisons;
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionPaasType> PaasTypes;
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionProcessMetadataConditionKey> ProcessMetadataConditionKeys;
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionProcessMetadata> ProcessMetadatas;
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionServiceTopology> ServiceTopologies;
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionServiceTopologyComparison> ServiceTopologyComparisons;
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionServiceTypeComparison> ServiceTypeComparisons;
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionServiceType> ServiceTypes;
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionSimpleHostTechComparison> SimpleHostTechComparisons;
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionSimpleTechComparison> SimpleTechComparisons;
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionStringComparison> StringComparisons;
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionStringConditionKey> StringConditionKeys;
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionStringKey> StringKeys;
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionString> Strings;
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionSyntheticEngineTypeComparison> SyntheticEngineTypeComparisons;
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionSyntheticEngine> SyntheticEngines;
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionTagComparison> TagComparisons;
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionTag> Tags;
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneRuleConditionTech> Teches;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         public readonly string? Unknowns;
 
         [OutputConstructor]

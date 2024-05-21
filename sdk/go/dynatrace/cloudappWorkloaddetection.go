@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type CloudappWorkloaddetection struct {
@@ -45,7 +46,7 @@ func NewCloudappWorkloaddetection(ctx *pulumi.Context,
 	if args.Kubernetes == nil {
 		return nil, errors.New("invalid value for required argument 'Kubernetes'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CloudappWorkloaddetection
 	err := ctx.RegisterResource("dynatrace:index/cloudappWorkloaddetection:CloudappWorkloaddetection", name, args, &resource, opts...)
 	if err != nil {

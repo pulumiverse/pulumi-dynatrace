@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecording
     {
+        /// <summary>
+        /// The type of the masking:
+        /// </summary>
         public readonly string Preset;
+        /// <summary>
+        /// A list of masking rules
+        /// </summary>
         public readonly Outputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecordingRules? Rules;
 
         [OutputConstructor]

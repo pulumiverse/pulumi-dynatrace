@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DashboardDashboardMetadataFilter
     {
+        /// <summary>
+        /// the management zone this dashboard applies to
+        /// </summary>
         public readonly ImmutableArray<Outputs.DashboardDashboardMetadataFilterManagementZone> ManagementZones;
+        /// <summary>
+        /// the default timeframe of the dashboard
+        /// </summary>
         public readonly string? Timeframe;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider

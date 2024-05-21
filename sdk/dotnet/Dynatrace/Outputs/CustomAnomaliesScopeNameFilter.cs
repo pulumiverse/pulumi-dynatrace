@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CustomAnomaliesScopeNameFilter
     {
+        /// <summary>
+        /// The operator to match on
+        /// </summary>
         public readonly string Operator;
+        /// <summary>
+        /// The value to match on
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

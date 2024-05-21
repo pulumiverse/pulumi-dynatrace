@@ -13,27 +13,39 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationMetaDataCaptureSettingsCaptureGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The name of the meta data to capture
+        /// </summary>
         [Input("capturingName", required: true)]
         public Input<string> CapturingName { get; set; } = null!;
 
         /// <summary>
-        /// The name of the web application, displayed in the UI
+        /// Name for displaying the captured values in Dynatrace
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// `true` if this metadata should be captured regardless of the privacy settings, `false` otherwise
+        /// </summary>
         [Input("publicMetadata")]
         public Input<bool>? PublicMetadata { get; set; }
 
         /// <summary>
-        /// The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
+        /// The type of the meta data to capture. Possible values are `COOKIE`, `CSS_SELECTOR`, `JAVA_SCRIPT_FUNCTION`, `JAVA_SCRIPT_VARIABLE`, `META_TAG` and `QUERY_STRING`.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
+        /// <summary>
+        /// The unique ID of the meta data to capture
+        /// </summary>
         [Input("uniqueId")]
         public Input<int>? UniqueId { get; set; }
 
+        /// <summary>
+        /// `true` if the last captured value should be used for this metadata. By default the first value will be used.
+        /// </summary>
         [Input("useLastValue")]
         public Input<bool>? UseLastValue { get; set; }
 

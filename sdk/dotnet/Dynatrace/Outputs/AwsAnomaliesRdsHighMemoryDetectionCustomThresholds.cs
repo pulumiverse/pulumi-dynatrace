@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AwsAnomaliesRdsHighMemoryDetectionCustomThresholds
     {
+        /// <summary>
+        /// Freeable memory is lower than
+        /// </summary>
         public readonly double FreeMemory;
+        /// <summary>
+        /// Swap usage is higher than
+        /// </summary>
         public readonly double SwapUsage;
 
         [OutputConstructor]

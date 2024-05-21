@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholds
     {
+        /// <summary>
+        /// Failed invocations rate is higher than
+        /// </summary>
         public readonly int FailedInvocationsRate;
 
         [OutputConstructor]

@@ -14,9 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HttpMonitorTagTag
     {
+        /// <summary>
+        /// The origin of the tag. Supported values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_CLOUD` and `KUBERNETES`.
+        /// </summary>
         public readonly string Context;
+        /// <summary>
+        /// The key of the tag.
+        /// 
+        /// Custom tags have the tag value here.
+        /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// The source of the tag. Supported values are `USER`, `RULE_BASED` and `AUTO`.
+        /// </summary>
         public readonly string? Source;
+        /// <summary>
+        /// The value of the tag.
+        /// 
+        /// Not applicable to custom tags.
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

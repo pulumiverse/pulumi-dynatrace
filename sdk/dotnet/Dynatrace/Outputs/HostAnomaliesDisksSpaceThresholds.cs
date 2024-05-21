@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesDisksSpaceThresholds
     {
+        /// <summary>
+        /// Alert if free disk space is lower than *X*% in 3 out of 5 samples
+        /// </summary>
         public readonly int Percentage;
 
         [OutputConstructor]

@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DashboardTileFilterConfigFilters
     {
+        /// <summary>
+        /// the tiles this Dashboard consist of
+        /// </summary>
         public readonly ImmutableArray<Outputs.DashboardTileFilterConfigFiltersFilter> Filters;
 
         [OutputConstructor]

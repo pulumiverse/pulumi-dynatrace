@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AlertingRulesRule
     {
+        /// <summary>
+        /// Send a notification if a problem remains open longer than *X* minutes
+        /// </summary>
         public readonly int DelayInMinutes;
+        /// <summary>
+        /// The filtering mode:  * `INCLUDE_ANY`: The rule applies to monitored entities that have at least one of the specified tags. You can specify up to 100 tags.  * `INCLUDE_ALL`: The rule applies to monitored entities that have **all** of the specified tags. You can specify up to 10 tags.  * `NONE`: The rule applies to all monitored entities
+        /// </summary>
         public readonly string IncludeMode;
+        /// <summary>
+        /// The severity level to trigger the alert. Possible values are `AVAILABILITY`,	`CUSTOM_ALERT`,	`ERRORS`,`MONITORING_UNAVAILABLE`,`PERFORMANCE` and `RESOURCE_CONTENTION`.
+        /// </summary>
         public readonly string SeverityLevel;
+        /// <summary>
+        /// A set of tags you want to filter by. You can also specify a tag value alongside the tag name using the syntax `name:value`.
+        /// </summary>
         public readonly ImmutableArray<string> Tags;
 
         [OutputConstructor]

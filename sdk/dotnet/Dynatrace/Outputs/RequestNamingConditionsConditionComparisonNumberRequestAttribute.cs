@@ -14,12 +14,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class RequestNamingConditionsConditionComparisonNumberRequestAttribute
     {
+        /// <summary>
+        /// If `true`, the request attribute is matched on child service calls. Default is `false`
+        /// </summary>
         public readonly bool? MatchOnChildCalls;
+        /// <summary>
+        /// Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `LOWER_THAN` and `LOWER_THAN_OR_EQUAL`
+        /// </summary>
         public readonly string? Operator;
+        /// <summary>
+        /// No documentation available for this attribute
+        /// </summary>
         public readonly string RequestAttribute;
+        /// <summary>
+        /// Defines valid sources of request attributes for conditions or placeholders
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonNumberRequestAttributeSource? Source;
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// The value to compare to
+        /// </summary>
         public readonly double? Value;
+        /// <summary>
+        /// The values to compare to
+        /// </summary>
         public readonly ImmutableArray<double> Values;
 
         [OutputConstructor]

@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("eventThresholds", required: true)]
         public Input<Inputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholdsGetArgs> EventThresholds { get; set; } = null!;
 
+        /// <summary>
+        /// Retransmission rate threshold
+        /// </summary>
         [Input("retransmissionRatePercentage", required: true)]
         public Input<int> RetransmissionRatePercentage { get; set; } = null!;
 
+        /// <summary>
+        /// Number of retransmitted packets threshold
+        /// </summary>
         [Input("retransmittedPacketsNumberPerMinute", required: true)]
         public Input<int> RetransmittedPacketsNumberPerMinute { get; set; } = null!;
 

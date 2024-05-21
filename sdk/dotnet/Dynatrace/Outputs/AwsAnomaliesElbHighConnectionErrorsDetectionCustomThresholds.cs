@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholds
     {
+        /// <summary>
+        /// Number of backend connection errors is higher than
+        /// </summary>
         public readonly int ConnectionErrorsPerMinute;
 
         [OutputConstructor]

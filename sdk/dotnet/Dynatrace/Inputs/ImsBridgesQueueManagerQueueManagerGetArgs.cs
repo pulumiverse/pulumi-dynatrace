@@ -14,13 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class ImsBridgesQueueManagerQueueManagerGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the IMS bridge
+        /// The name of the queue manager
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         [Input("queueManagerQueues")]
         private InputList<string>? _queueManagerQueues;
+
+        /// <summary>
+        /// Queue(s) that belong to the queue manager
+        /// </summary>
         public InputList<string> QueueManagerQueues
         {
             get => _queueManagerQueues ?? (_queueManagerQueues = new InputList<string>());

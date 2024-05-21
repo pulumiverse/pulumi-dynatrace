@@ -14,20 +14,32 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class DatabaseAnomaliesResponseTimeThresholdsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Configuration for anomalies regarding load drops and spikes
+        /// Minimal service load to detect response time degradation. Response time degradation of services with smaller load won't trigger alerts. Possible values are `FIFTEEN_REQUESTS_PER_MINUTE`, `FIVE_REQUESTS_PER_MINUTE`, `ONE_REQUEST_PER_MINUTE` and `TEN_REQUESTS_PER_MINUTE`
         /// </summary>
         [Input("load", required: true)]
         public Input<string> Load { get; set; } = null!;
 
+        /// <summary>
+        /// Response time during any 5-minute period to trigger an alert, in milliseconds
+        /// </summary>
         [Input("milliseconds", required: true)]
         public Input<int> Milliseconds { get; set; } = null!;
 
+        /// <summary>
+        /// Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers an alert
+        /// </summary>
         [Input("sensitivity", required: true)]
         public Input<string> Sensitivity { get; set; } = null!;
 
+        /// <summary>
+        /// Response time of the 10% slowest during any 5-minute period to trigger an alert, in milliseconds
+        /// </summary>
         [Input("slowestMilliseconds", required: true)]
         public Input<int> SlowestMilliseconds { get; set; } = null!;
 
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 

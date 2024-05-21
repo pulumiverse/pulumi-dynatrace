@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type CalculatedServiceMetric struct {
@@ -22,9 +23,9 @@ type CalculatedServiceMetric struct {
 	DimensionDefinition CalculatedServiceMetricDimensionDefinitionPtrOutput `pulumi:"dimensionDefinition"`
 	// The metric is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrOutput `pulumi:"enabled"`
-	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
 	EntityId pulumi.StringPtrOutput `pulumi:"entityId"`
-	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
+	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
 	ManagementZones pulumi.StringArrayOutput `pulumi:"managementZones"`
 	// The definition of a calculated service metric
 	MetricDefinition CalculatedServiceMetricMetricDefinitionPtrOutput `pulumi:"metricDefinition"`
@@ -60,7 +61,7 @@ func NewCalculatedServiceMetric(ctx *pulumi.Context,
 	if args.Unit == nil {
 		return nil, errors.New("invalid value for required argument 'Unit'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CalculatedServiceMetric
 	err := ctx.RegisterResource("dynatrace:index/calculatedServiceMetric:CalculatedServiceMetric", name, args, &resource, opts...)
 	if err != nil {
@@ -91,9 +92,9 @@ type calculatedServiceMetricState struct {
 	DimensionDefinition *CalculatedServiceMetricDimensionDefinition `pulumi:"dimensionDefinition"`
 	// The metric is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
 	EntityId *string `pulumi:"entityId"`
-	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
+	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
 	ManagementZones []string `pulumi:"managementZones"`
 	// The definition of a calculated service metric
 	MetricDefinition *CalculatedServiceMetricMetricDefinition `pulumi:"metricDefinition"`
@@ -125,9 +126,9 @@ type CalculatedServiceMetricState struct {
 	DimensionDefinition CalculatedServiceMetricDimensionDefinitionPtrInput
 	// The metric is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
 	EntityId pulumi.StringPtrInput
-	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
+	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
 	ManagementZones pulumi.StringArrayInput
 	// The definition of a calculated service metric
 	MetricDefinition CalculatedServiceMetricMetricDefinitionPtrInput
@@ -163,9 +164,9 @@ type calculatedServiceMetricArgs struct {
 	DimensionDefinition *CalculatedServiceMetricDimensionDefinition `pulumi:"dimensionDefinition"`
 	// The metric is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
 	EntityId *string `pulumi:"entityId"`
-	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
+	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
 	ManagementZones []string `pulumi:"managementZones"`
 	// The definition of a calculated service metric
 	MetricDefinition *CalculatedServiceMetricMetricDefinition `pulumi:"metricDefinition"`
@@ -198,9 +199,9 @@ type CalculatedServiceMetricArgs struct {
 	DimensionDefinition CalculatedServiceMetricDimensionDefinitionPtrInput
 	// The metric is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
 	EntityId pulumi.StringPtrInput
-	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
+	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
 	ManagementZones pulumi.StringArrayInput
 	// The definition of a calculated service metric
 	MetricDefinition CalculatedServiceMetricMetricDefinitionPtrInput
@@ -332,12 +333,12 @@ func (o CalculatedServiceMetricOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CalculatedServiceMetric) pulumi.BoolPtrOutput { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+// Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
 func (o CalculatedServiceMetricOutput) EntityId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CalculatedServiceMetric) pulumi.StringPtrOutput { return v.EntityId }).(pulumi.StringPtrOutput)
 }
 
-// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
+// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
 func (o CalculatedServiceMetricOutput) ManagementZones() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *CalculatedServiceMetric) pulumi.StringArrayOutput { return v.ManagementZones }).(pulumi.StringArrayOutput)
 }

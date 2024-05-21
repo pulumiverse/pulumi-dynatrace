@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class K8sNodeAnomaliesReadinessIssuesConfiguration
     {
+        /// <summary>
+        /// within the last
+        /// </summary>
         public readonly int ObservationPeriodInMinutes;
+        /// <summary>
+        /// node is not ready for at least
+        /// </summary>
         public readonly int SamplePeriodInMinutes;
 
         [OutputConstructor]

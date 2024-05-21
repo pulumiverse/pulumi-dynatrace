@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("eventThresholds", required: true)]
         public Input<Inputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholdsArgs> EventThresholds { get; set; } = null!;
 
+        /// <summary>
+        /// Number of failed connections threshold
+        /// </summary>
         [Input("failedConnectionsNumberPerMinute", required: true)]
         public Input<int> FailedConnectionsNumberPerMinute { get; set; } = null!;
 
+        /// <summary>
+        /// New connection failure threshold
+        /// </summary>
         [Input("newConnectionFailuresPercentage", required: true)]
         public Input<int> NewConnectionFailuresPercentage { get; set; } = null!;
 

@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class RequestNamingConditionsConditionComparisonTagGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `TAG_KEY_EQUALS` and `TAG_KEY_EQUALS_ANY_OF`
+        /// </summary>
         [Input("operator")]
         public Input<string>? Operator { get; set; }
 
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 
+        /// <summary>
+        /// The values to compare to
+        /// </summary>
         [Input("value")]
         public Input<Inputs.RequestNamingConditionsConditionComparisonTagValueGetArgs>? Value { get; set; }
 
+        /// <summary>
+        /// The values to compare to
+        /// </summary>
         [Input("values")]
         public Input<Inputs.RequestNamingConditionsConditionComparisonTagValuesGetArgs>? Values { get; set; }
 

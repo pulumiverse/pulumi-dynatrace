@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type K8sWorkloadAnomalies struct {
@@ -70,7 +71,7 @@ func NewK8sWorkloadAnomalies(ctx *pulumi.Context,
 	if args.WorkloadWithoutReadyPods == nil {
 		return nil, errors.New("invalid value for required argument 'WorkloadWithoutReadyPods'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource K8sWorkloadAnomalies
 	err := ctx.RegisterResource("dynatrace:index/k8sWorkloadAnomalies:K8sWorkloadAnomalies", name, args, &resource, opts...)
 	if err != nil {

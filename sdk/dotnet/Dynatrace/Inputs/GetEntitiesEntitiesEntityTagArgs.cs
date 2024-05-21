@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("tags")]
         private InputList<Inputs.GetEntitiesEntitiesEntityTagTagInputArgs>? _tags;
+
+        /// <summary>
+        /// A tag assigned to the entity
+        /// </summary>
         public InputList<Inputs.GetEntitiesEntitiesEntityTagTagInputArgs> Tags
         {
             get => _tags ?? (_tags = new InputList<Inputs.GetEntitiesEntitiesEntityTagTagInputArgs>());

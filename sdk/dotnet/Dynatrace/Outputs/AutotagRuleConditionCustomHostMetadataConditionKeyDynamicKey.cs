@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AutotagRuleConditionCustomHostMetadataConditionKeyDynamicKey
     {
+        /// <summary>
+        /// The actual key of the custom metadata
+        /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+        /// </summary>
         public readonly string Source;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+        /// </summary>
         public readonly string? Unknowns;
 
         [OutputConstructor]

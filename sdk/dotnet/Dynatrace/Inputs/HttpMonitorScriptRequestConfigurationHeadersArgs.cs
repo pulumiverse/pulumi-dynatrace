@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("headers", required: true)]
         private InputList<Inputs.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs>? _headers;
+
+        /// <summary>
+        /// contains an HTTP header of the request
+        /// </summary>
         public InputList<Inputs.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs> Headers
         {
             get => _headers ?? (_headers = new InputList<Inputs.HttpMonitorScriptRequestConfigurationHeadersHeaderArgs>());

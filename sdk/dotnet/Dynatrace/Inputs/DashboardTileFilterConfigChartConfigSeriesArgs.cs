@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DashboardTileFilterConfigChartConfigSeriesArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The charted aggregation of the metric
+        /// </summary>
         [Input("aggregation", required: true)]
         public Input<string> Aggregation { get; set; } = null!;
 
@@ -21,27 +24,49 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("dimensions")]
         private InputList<Inputs.DashboardTileFilterConfigChartConfigSeriesDimensionArgs>? _dimensions;
+
+        /// <summary>
+        /// Configuration of the charted metric splitting
+        /// </summary>
         public InputList<Inputs.DashboardTileFilterConfigChartConfigSeriesDimensionArgs> Dimensions
         {
             get => _dimensions ?? (_dimensions = new InputList<Inputs.DashboardTileFilterConfigChartConfigSeriesDimensionArgs>());
             set => _dimensions = value;
         }
 
+        /// <summary>
+        /// The visualization of the timeseries chart
+        /// </summary>
         [Input("entityType", required: true)]
         public Input<string> EntityType { get; set; } = null!;
 
+        /// <summary>
+        /// The name of the charted metric
+        /// </summary>
         [Input("metric", required: true)]
         public Input<string> Metric { get; set; } = null!;
 
+        /// <summary>
+        /// The charted percentile. Only applicable if the **aggregation** is set to `PERCENTILE`
+        /// </summary>
         [Input("percentile")]
         public Input<int>? Percentile { get; set; }
 
+        /// <summary>
+        /// Sort ascending (`true`) or descending (`false`)
+        /// </summary>
         [Input("sortAscending")]
         public Input<bool>? SortAscending { get; set; }
 
+        /// <summary>
+        /// Sort the column (`true`) or (`false`)
+        /// </summary>
         [Input("sortColumn")]
         public Input<bool>? SortColumn { get; set; }
 
+        /// <summary>
+        /// The visualization of the timeseries chart. Possible values are `AREA`, `BAR` and `LINE`.
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 

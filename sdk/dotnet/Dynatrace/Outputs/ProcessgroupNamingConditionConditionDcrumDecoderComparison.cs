@@ -14,10 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ProcessgroupNamingConditionConditionDcrumDecoderComparison
     {
+        /// <summary>
+        /// Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+        /// </summary>
         public readonly bool? Negate;
+        /// <summary>
+        /// Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+        /// </summary>
         public readonly string Operator;
+        /// <summary>
+        /// if specified, needs to be DCRUM_DECODER_TYPE
+        /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+        /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

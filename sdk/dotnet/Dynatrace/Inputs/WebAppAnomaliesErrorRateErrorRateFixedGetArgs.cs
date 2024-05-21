@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebAppAnomaliesErrorRateErrorRateFixedGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// To avoid over-alerting for low traffic applications
+        /// </summary>
         [Input("errorRateReqPerMin", required: true)]
         public Input<double> ErrorRateReqPerMin { get; set; } = null!;
 
+        /// <summary>
+        /// Possible Values: `Low`, `Medium`, `High`
+        /// </summary>
         [Input("errorRateSensitivity", required: true)]
         public Input<string> ErrorRateSensitivity { get; set; } = null!;
 
+        /// <summary>
+        /// Alert if this custom error rate threshold is exceeded during any 5-minute-period
+        /// </summary>
         [Input("maxFailureRateIncrease", required: true)]
         public Input<double> MaxFailureRateIncrease { get; set; } = null!;
 
+        /// <summary>
+        /// Amount of minutes the observed traffic has to stay in abnormal state before alert
+        /// </summary>
         [Input("minutesAbnormalState", required: true)]
         public Input<double> MinutesAbnormalState { get; set; } = null!;
 

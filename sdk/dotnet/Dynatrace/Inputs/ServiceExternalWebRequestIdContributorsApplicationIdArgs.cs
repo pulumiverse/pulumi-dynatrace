@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ServiceExternalWebRequestIdContributorsApplicationIdArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Transform this value before letting it contribute to the Service Id
+        /// </summary>
         [Input("enableIdContributor", required: true)]
         public Input<bool> EnableIdContributor { get; set; } = null!;
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("serviceIdContributor")]
         public Input<Inputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorArgs>? ServiceIdContributor { get; set; }
 

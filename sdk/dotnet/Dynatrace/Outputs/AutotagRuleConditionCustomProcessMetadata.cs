@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AutotagRuleConditionCustomProcessMetadata
     {
+        /// <summary>
+        /// The attribute to be used for comparision
+        /// </summary>
         public readonly string Attribute;
+        /// <summary>
+        /// The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+        /// </summary>
         public readonly Outputs.AutotagRuleConditionCustomProcessMetadataDynamicKey DynamicKey;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+        /// </summary>
         public readonly string? Unknowns;
 
         [OutputConstructor]

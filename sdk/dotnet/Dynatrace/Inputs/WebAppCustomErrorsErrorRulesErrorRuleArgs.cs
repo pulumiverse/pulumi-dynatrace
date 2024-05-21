@@ -13,18 +13,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebAppCustomErrorsErrorRulesErrorRuleArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Capture settings
+        /// </summary>
         [Input("captureSettings", required: true)]
         public Input<Inputs.WebAppCustomErrorsErrorRulesErrorRuleCaptureSettingsArgs> CaptureSettings { get; set; } = null!;
 
+        /// <summary>
+        /// Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+        /// </summary>
         [Input("keyMatcher", required: true)]
         public Input<string> KeyMatcher { get; set; } = null!;
 
+        /// <summary>
+        /// A case-insensitive key pattern
+        /// </summary>
         [Input("keyPattern")]
         public Input<string>? KeyPattern { get; set; }
 
+        /// <summary>
+        /// Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+        /// </summary>
         [Input("valueMatcher", required: true)]
         public Input<string> ValueMatcher { get; set; } = null!;
 
+        /// <summary>
+        /// A case-insensitive value pattern
+        /// </summary>
         [Input("valuePattern")]
         public Input<string>? ValuePattern { get; set; }
 

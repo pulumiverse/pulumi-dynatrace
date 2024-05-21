@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DatabaseAnomaliesV2FailureRateFixedDetectionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Avoid over-alerting
+        /// </summary>
         [Input("overAlertingProtection", required: true)]
         public Input<Inputs.DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtectionArgs> OverAlertingProtection { get; set; } = null!;
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("sensitivity", required: true)]
         public Input<string> Sensitivity { get; set; } = null!;
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("threshold", required: true)]
         public Input<double> Threshold { get; set; } = null!;
 

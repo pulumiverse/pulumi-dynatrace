@@ -14,7 +14,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class CustomAnomaliesScopeManagementZoneArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of this resource.
+        /// The management zone id to match on
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

@@ -38,8 +38,6 @@ class CredentialsArgs:
         :param pulumi.Input[str] format: The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
         :param pulumi.Input[str] name: The name of the credentials set
         :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
-        :param pulumi.Input[str] password: The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-               you want to set an empty password, use the value `--empty--`.
         :param pulumi.Input[bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
         :param pulumi.Input[str] token: Token in the string format. Specifying a token implies `Token Authentication`.
         :param pulumi.Input[str] username: The username of the credentials set.
@@ -101,6 +99,9 @@ class CredentialsArgs:
         """
         The list contains summary data related to the use of credentials
         """
+        warnings.warn("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""", DeprecationWarning)
+        pulumi.log.warn("""credential_usage_summaries is deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
+
         return pulumi.get(self, "credential_usage_summaries")
 
     @credential_usage_summaries.setter
@@ -170,10 +171,6 @@ class CredentialsArgs:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-        you want to set an empty password, use the value `--empty--`.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -241,8 +238,6 @@ class _CredentialsState:
         :param pulumi.Input[str] format: The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
         :param pulumi.Input[str] name: The name of the credentials set
         :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
-        :param pulumi.Input[str] password: The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-               you want to set an empty password, use the value `--empty--`.
         :param pulumi.Input[bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
         :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
         :param pulumi.Input[str] token: Token in the string format. Specifying a token implies `Token Authentication`.
@@ -294,6 +289,9 @@ class _CredentialsState:
         """
         The list contains summary data related to the use of credentials
         """
+        warnings.warn("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""", DeprecationWarning)
+        pulumi.log.warn("""credential_usage_summaries is deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
+
         return pulumi.get(self, "credential_usage_summaries")
 
     @credential_usage_summaries.setter
@@ -363,10 +361,6 @@ class _CredentialsState:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
-        """
-        The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-        you want to set an empty password, use the value `--empty--`.
-        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -451,8 +445,6 @@ class Credentials(pulumi.CustomResource):
         :param pulumi.Input[str] format: The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
         :param pulumi.Input[str] name: The name of the credentials set
         :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
-        :param pulumi.Input[str] password: The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-               you want to set an empty password, use the value `--empty--`.
         :param pulumi.Input[bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
         :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
         :param pulumi.Input[str] token: Token in the string format. Specifying a token implies `Token Authentication`.
@@ -503,9 +495,6 @@ class Credentials(pulumi.CustomResource):
             __props__ = CredentialsArgs.__new__(CredentialsArgs)
 
             __props__.__dict__["certificate"] = certificate
-            if credential_usage_summaries is not None and not opts.urn:
-                warnings.warn("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""", DeprecationWarning)
-                pulumi.log.warn("""credential_usage_summaries is deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
             __props__.__dict__["credential_usage_summaries"] = credential_usage_summaries
             __props__.__dict__["description"] = description
             __props__.__dict__["external"] = external
@@ -557,8 +546,6 @@ class Credentials(pulumi.CustomResource):
         :param pulumi.Input[str] format: The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
         :param pulumi.Input[str] name: The name of the credentials set
         :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
-        :param pulumi.Input[str] password: The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-               you want to set an empty password, use the value `--empty--`.
         :param pulumi.Input[bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
         :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
         :param pulumi.Input[str] token: Token in the string format. Specifying a token implies `Token Authentication`.
@@ -596,6 +583,9 @@ class Credentials(pulumi.CustomResource):
         """
         The list contains summary data related to the use of credentials
         """
+        warnings.warn("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""", DeprecationWarning)
+        pulumi.log.warn("""credential_usage_summaries is deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
+
         return pulumi.get(self, "credential_usage_summaries")
 
     @property
@@ -641,10 +631,6 @@ class Credentials(pulumi.CustomResource):
     @property
     @pulumi.getter
     def password(self) -> pulumi.Output[Optional[str]]:
-        """
-        The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-        you want to set an empty password, use the value `--empty--`.
-        """
         return pulumi.get(self, "password")
 
     @property

@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier
     {
+        /// <summary>
+        /// Supplementary Identifier
+        /// </summary>
         public readonly string SupplementaryIdentifier;
 
         [OutputConstructor]

@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto
     {
+        /// <summary>
+        /// Absolute threshold
+        /// </summary>
         public readonly double ThresholdAbsolute;
+        /// <summary>
+        /// Relative threshold
+        /// </summary>
         public readonly double ThresholdRelative;
 
         [OutputConstructor]

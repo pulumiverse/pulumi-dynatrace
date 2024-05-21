@@ -17,11 +17,14 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<bool>? EntityDimension { get; set; }
 
         /// <summary>
-        /// The ID of this resource.
+        /// The ID of the dimension by which the metric is split
         /// </summary>
         [Input("id", required: true)]
         public Input<string> Id { get; set; } = null!;
 
+        /// <summary>
+        /// The name of the dimension by which the metric is split
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
@@ -33,6 +36,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("values")]
         private InputList<string>? _values;
+
+        /// <summary>
+        /// The splitting value
+        /// </summary>
         public InputList<string> Values
         {
             get => _values ?? (_values = new InputList<string>());

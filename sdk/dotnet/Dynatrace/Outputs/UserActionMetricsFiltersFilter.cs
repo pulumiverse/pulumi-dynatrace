@@ -14,12 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class UserActionMetricsFiltersFilter
     {
+        /// <summary>
+        /// Field name
+        /// </summary>
         public readonly string FieldName;
+        /// <summary>
+        /// Possible Values: `EQUALS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL_TO`, `IN`, `IS_NOT_NULL`, `IS_NULL`, `LESS_THAN`, `LESS_THAN_OR_EQUAL_TO`, `LIKE`, `NOT_EQUAL`, `NOT_LIKE`, `STARTS_WITH`
+        /// </summary>
         public readonly string Operator;
         /// <summary>
-        /// Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
+        /// no documentation available
         /// </summary>
         public readonly string? Value;
+        /// <summary>
+        /// Values
+        /// </summary>
         public readonly ImmutableArray<string> ValueIns;
 
         [OutputConstructor]

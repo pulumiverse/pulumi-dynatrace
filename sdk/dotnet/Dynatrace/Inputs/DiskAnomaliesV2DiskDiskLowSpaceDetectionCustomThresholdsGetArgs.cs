@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if free disk space is lower than this percentage in 3 out of 5 samples
+        /// </summary>
         [Input("freeSpacePercentage", required: true)]
         public Input<int> FreeSpacePercentage { get; set; } = null!;
 

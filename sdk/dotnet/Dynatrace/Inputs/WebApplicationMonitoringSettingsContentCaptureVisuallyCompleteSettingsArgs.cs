@@ -13,18 +13,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettingsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A RegularExpression used to exclude images and iframes from being detected by the VC module
+        /// </summary>
         [Input("excludeUrlRegex")]
         public Input<string>? ExcludeUrlRegex { get; set; }
 
+        /// <summary>
+        /// Query selector for mutation nodes to ignore in VC and SI calculation
+        /// </summary>
         [Input("ignoredMutationsList")]
         public Input<string>? IgnoredMutationsList { get; set; }
 
+        /// <summary>
+        /// The time in ms the VC module waits for no mutations happening on the page after the load action. Defaults to 1000. Valid values range from 0 to 30000.
+        /// </summary>
         [Input("inactivityTimeout")]
         public Input<int>? InactivityTimeout { get; set; }
 
+        /// <summary>
+        /// Determines the time in ms VC waits after an action closes to start calculation. Defaults to 50. Valid values range from 0 to 5000.
+        /// </summary>
         [Input("mutationTimeout")]
         public Input<int>? MutationTimeout { get; set; }
 
+        /// <summary>
+        /// Minimum visible area in pixels of elements to be counted towards VC and SI. Defaults to 50. Valid values range from 0 to 10000.
+        /// </summary>
         [Input("threshold")]
         public Input<int>? Threshold { get; set; }
 

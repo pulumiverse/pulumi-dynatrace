@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ApplicationDetectionRuleV2 struct {
@@ -38,7 +39,7 @@ func NewApplicationDetectionRuleV2(ctx *pulumi.Context,
 	if args.Pattern == nil {
 		return nil, errors.New("invalid value for required argument 'Pattern'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ApplicationDetectionRuleV2
 	err := ctx.RegisterResource("dynatrace:index/applicationDetectionRuleV2:ApplicationDetectionRuleV2", name, args, &resource, opts...)
 	if err != nil {

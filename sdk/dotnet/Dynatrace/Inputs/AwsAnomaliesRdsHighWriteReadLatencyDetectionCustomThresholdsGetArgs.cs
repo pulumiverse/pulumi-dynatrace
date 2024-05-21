@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Read/write latency is higher than
+        /// </summary>
         [Input("readWriteLatency", required: true)]
         public Input<int> ReadWriteLatency { get; set; } = null!;
 

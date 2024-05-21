@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class UpdateWindowsOnceRecurrence
     {
+        /// <summary>
+        /// Update time
+        /// </summary>
         public readonly Outputs.UpdateWindowsOnceRecurrenceRecurrenceRange RecurrenceRange;
 
         [OutputConstructor]

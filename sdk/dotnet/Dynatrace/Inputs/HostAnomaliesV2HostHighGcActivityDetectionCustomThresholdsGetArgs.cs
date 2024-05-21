@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("eventThresholds", required: true)]
         public Input<Inputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholdsGetArgs> EventThresholds { get; set; } = null!;
 
+        /// <summary>
+        /// Alert if the GC suspension is higher than this threshold
+        /// </summary>
         [Input("gcSuspensionPercentage", required: true)]
         public Input<int> GcSuspensionPercentage { get; set; } = null!;
 
+        /// <summary>
+        /// Alert if GC time is higher than this threshold
+        /// </summary>
         [Input("gcTimePercentage", required: true)]
         public Input<int> GcTimePercentage { get; set; } = null!;
 

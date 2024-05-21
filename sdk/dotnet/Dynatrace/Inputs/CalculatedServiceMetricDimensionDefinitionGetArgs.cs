@@ -13,24 +13,45 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CalculatedServiceMetricDimensionDefinitionGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The dimension value pattern. You can define custom placeholders in the `placeholders` field and use them here
+        /// </summary>
         [Input("dimension", required: true)]
         public Input<string> Dimension { get; set; } = null!;
 
+        /// <summary>
+        /// The name of the dimension
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// The list of custom placeholders to be used in a dimension value pattern
+        /// </summary>
         [Input("placeholders")]
         public Input<Inputs.CalculatedServiceMetricDimensionDefinitionPlaceholdersGetArgs>? Placeholders { get; set; }
 
+        /// <summary>
+        /// The number of top values to be calculated
+        /// </summary>
         [Input("topX", required: true)]
         public Input<int> TopX { get; set; } = null!;
 
+        /// <summary>
+        /// The aggregation of the dimension. Possible values are `AVERAGE`, `COUNT`, `MAX`, `MIN`, `OF_INTEREST_RATIO`, `OTHER_RATIO`, `SINGLE_VALUE` and `SUM`
+        /// </summary>
         [Input("topXAggregation", required: true)]
         public Input<string> TopXAggregation { get; set; } = null!;
 
+        /// <summary>
+        /// How to calculate the **topX** values. Possible values are `ASCENDING` and `DESCENDING`
+        /// </summary>
         [Input("topXDirection", required: true)]
         public Input<string> TopXDirection { get; set; } = null!;
 
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 

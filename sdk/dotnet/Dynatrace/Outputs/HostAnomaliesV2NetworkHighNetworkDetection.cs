@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2NetworkHighNetworkDetection
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds? CustomThresholds;
+        /// <summary>
+        /// Detection mode for high network utilization
+        /// </summary>
         public readonly string? DetectionMode;
+        /// <summary>
+        /// Detect high network utilization
+        /// </summary>
         public readonly bool Enabled;
 
         [OutputConstructor]

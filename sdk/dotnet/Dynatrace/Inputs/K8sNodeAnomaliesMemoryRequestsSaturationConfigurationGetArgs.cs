@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class K8sNodeAnomaliesMemoryRequestsSaturationConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// within the last
+        /// </summary>
         [Input("observationPeriodInMinutes", required: true)]
         public Input<int> ObservationPeriodInMinutes { get; set; } = null!;
 
+        /// <summary>
+        /// of node memory capacity for at least
+        /// </summary>
         [Input("samplePeriodInMinutes", required: true)]
         public Input<int> SamplePeriodInMinutes { get; set; } = null!;
 
+        /// <summary>
+        /// amount of requested memory is higher than
+        /// </summary>
         [Input("threshold", required: true)]
         public Input<int> Threshold { get; set; } = null!;
 

@@ -14,13 +14,16 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationKeyUserActionAction
     {
+        /// <summary>
+        /// The domain where the action is performed.
+        /// </summary>
         public readonly string? Domain;
         /// <summary>
-        /// The name of the web application, displayed in the UI
+        /// The name of the action
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
+        /// The type of the action. Possible values are `Custom`, `Load` and `Xhr`.
         /// </summary>
         public readonly string Type;
 

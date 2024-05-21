@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // ## Dynatrace Documentation
@@ -87,7 +88,7 @@ func NewDduPool(ctx *pulumi.Context,
 		args = &DduPoolArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DduPool
 	err := ctx.RegisterResource("dynatrace:index/dduPool:DduPool", name, args, &resource, opts...)
 	if err != nil {

@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class VmwareAnomaliesOverloadedStorageDetectionCustomThresholds
     {
+        /// <summary>
+        /// Number of command aborts is higher than
+        /// </summary>
         public readonly int CommandAbortsNumber;
 
         [OutputConstructor]

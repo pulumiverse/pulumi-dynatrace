@@ -14,12 +14,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class FailureDetectionRulesConditionsConditionPredicate
     {
+        /// <summary>
+        /// Case sensitive
+        /// </summary>
         public readonly bool? CaseSensitive;
+        /// <summary>
+        /// Management zones
+        /// </summary>
         public readonly ImmutableArray<string> ManagementZones;
+        /// <summary>
+        /// Predicate type
+        /// </summary>
         public readonly string PredicateType;
+        /// <summary>
+        /// Service types
+        /// </summary>
         public readonly ImmutableArray<string> ServiceTypes;
+        /// <summary>
+        /// Tag keys
+        /// </summary>
         public readonly ImmutableArray<string> TagKeys;
+        /// <summary>
+        /// Tags (exact match)
+        /// </summary>
         public readonly ImmutableArray<string> Tags;
+        /// <summary>
+        /// Names
+        /// </summary>
         public readonly ImmutableArray<string> TextValues;
 
         [OutputConstructor]

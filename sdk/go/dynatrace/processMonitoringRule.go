@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ProcessMonitoringRule struct {
@@ -40,7 +41,7 @@ func NewProcessMonitoringRule(ctx *pulumi.Context,
 	if args.Mode == nil {
 		return nil, errors.New("invalid value for required argument 'Mode'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ProcessMonitoringRule
 	err := ctx.RegisterResource("dynatrace:index/processMonitoringRule:ProcessMonitoringRule", name, args, &resource, opts...)
 	if err != nil {

@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2HostConnectionLostDetection
     {
+        /// <summary>
+        /// Detect host or monitoring connection lost problems
+        /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// Graceful host shutdowns
+        /// </summary>
         public readonly string? OnGracefulShutdowns;
 
         [OutputConstructor]

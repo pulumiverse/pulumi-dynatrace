@@ -104,9 +104,9 @@ def get_process(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getProcess:getProcess', __args__, opts=opts, typ=GetProcessResult).value
 
     return AwaitableGetProcessResult(
-        id=__ret__.id,
-        name=__ret__.name,
-        tags=__ret__.tags)
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        tags=pulumi.get(__ret__, 'tags'))
 
 
 @_utilities.lift_output_func(get_process)

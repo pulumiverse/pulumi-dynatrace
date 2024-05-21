@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class EnvironmentStorageLimits
     {
+        /// <summary>
+        /// Log monitoring storage usage and limit information on environment level in bytes. Not editable when Log monitoring is not allowed by license or not configured on cluster level. 0 for unlimited.
+        /// </summary>
         public readonly int? Logs;
+        /// <summary>
+        /// Session replay storage usage and limit information on environment level in bytes. 0 for unlimited.
+        /// </summary>
         public readonly int? SessionReplay;
+        /// <summary>
+        /// Session replay storage usage and limit information on environment level in bytes. 0 for unlimited.
+        /// </summary>
         public readonly int? SymbolFiles;
+        /// <summary>
+        /// Transaction storage usage and limit information on environment level in bytes. 0 for unlimited.
+        /// </summary>
         public readonly int? Transactions;
 
         [OutputConstructor]

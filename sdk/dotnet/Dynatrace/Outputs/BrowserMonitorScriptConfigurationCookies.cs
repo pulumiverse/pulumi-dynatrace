@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptConfigurationCookies
     {
+        /// <summary>
+        /// A request cookie
+        /// </summary>
         public readonly ImmutableArray<Outputs.BrowserMonitorScriptConfigurationCookiesCookie> Cookies;
 
         [OutputConstructor]

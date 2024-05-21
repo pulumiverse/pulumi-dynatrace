@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ActivegateToken struct {
@@ -33,7 +34,7 @@ func NewActivegateToken(ctx *pulumi.Context,
 	if args.ExpiringTokenNotificationsEnabled == nil {
 		return nil, errors.New("invalid value for required argument 'ExpiringTokenNotificationsEnabled'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ActivegateToken
 	err := ctx.RegisterResource("dynatrace:index/activegateToken:ActivegateToken", name, args, &resource, opts...)
 	if err != nil {

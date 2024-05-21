@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebAppAnomaliesResponseTimeResponseTimeAutoGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Avoid over-alerting
+        /// </summary>
         [Input("overAlertingProtection", required: true)]
         public Input<Inputs.WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtectionGetArgs> OverAlertingProtection { get; set; } = null!;
 
+        /// <summary>
+        /// Alert if the median response time of all user actions degrades beyond **both** the absolute and relative thresholds:
+        /// </summary>
         [Input("responseTimeAll", required: true)]
         public Input<Inputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllGetArgs> ResponseTimeAll { get; set; } = null!;
 
+        /// <summary>
+        /// Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+        /// </summary>
         [Input("responseTimeSlowest", required: true)]
         public Input<Inputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowestGetArgs> ResponseTimeSlowest { get; set; } = null!;
 

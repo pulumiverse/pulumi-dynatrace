@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HttpMonitorAnomalyDetectionLoadingTimeThreshold
     {
+        /// <summary>
+        /// Performance threshold is enabled (`true`) or disabled (`false`)
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// The list of performance threshold rules
+        /// </summary>
         public readonly ImmutableArray<Outputs.HttpMonitorAnomalyDetectionLoadingTimeThresholdThreshold> Thresholds;
 
         [OutputConstructor]

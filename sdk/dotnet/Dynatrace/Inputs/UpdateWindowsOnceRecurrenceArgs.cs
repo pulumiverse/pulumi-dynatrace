@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class UpdateWindowsOnceRecurrenceArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Update time
+        /// </summary>
         [Input("recurrenceRange", required: true)]
         public Input<Inputs.UpdateWindowsOnceRecurrenceRecurrenceRangeArgs> RecurrenceRange { get; set; } = null!;
 

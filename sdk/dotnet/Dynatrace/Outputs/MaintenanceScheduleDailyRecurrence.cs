@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MaintenanceScheduleDailyRecurrence
     {
+        /// <summary>
+        /// The recurrence date range of the maintenance window
+        /// </summary>
         public readonly Outputs.MaintenanceScheduleDailyRecurrenceRecurrenceRange RecurrenceRange;
+        /// <summary>
+        /// The time window of the maintenance window
+        /// </summary>
         public readonly Outputs.MaintenanceScheduleDailyRecurrenceTimeWindow TimeWindow;
 
         [OutputConstructor]

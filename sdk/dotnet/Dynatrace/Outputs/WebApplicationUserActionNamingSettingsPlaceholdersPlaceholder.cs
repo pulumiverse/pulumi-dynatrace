@@ -14,14 +14,29 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder
     {
+        /// <summary>
+        /// The input for the place holder. Possible values are `ELEMENT_IDENTIFIER`, `INPUT_TYPE`, `METADATA`, `PAGE_TITLE`, `PAGE_URL`, `SOURCE_URL`, `TOP_XHR_URL` and `XHR_URL`
+        /// </summary>
         public readonly string Input;
+        /// <summary>
+        /// The ID of the metadata
+        /// </summary>
         public readonly int? MetadataId;
         /// <summary>
-        /// The name of the web application, displayed in the UI
+        /// Placeholder name. Valid length needs to be between 1 and 50 characters
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The part to process. Possible values are `ALL`, `ANCHOR` and `PATH`
+        /// </summary>
         public readonly string ProcessingPart;
+        /// <summary>
+        /// The processing step settings
+        /// </summary>
         public readonly Outputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps? ProcessingSteps;
+        /// <summary>
+        /// Use the element identifier that was selected by Dynatrace
+        /// </summary>
         public readonly bool? UseGuessedElementIdentifier;
 
         [OutputConstructor]

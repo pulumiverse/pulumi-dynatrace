@@ -13,27 +13,51 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Additional events to be captured globally as user input.
+        /// </summary>
         [Input("additionalEventCapturedAsUserInput")]
         public Input<string>? AdditionalEventCapturedAsUserInput { get; set; }
 
+        /// <summary>
+        /// Click enabled/disabled
+        /// </summary>
         [Input("click")]
         public Input<bool>? Click { get; set; }
 
+        /// <summary>
+        /// DoubleClick enabled/disabled
+        /// </summary>
         [Input("doubleclick")]
         public Input<bool>? Doubleclick { get; set; }
 
+        /// <summary>
+        /// KeyDown enabled/disabled
+        /// </summary>
         [Input("keydown")]
         public Input<bool>? Keydown { get; set; }
 
+        /// <summary>
+        /// KeyUp enabled/disabled
+        /// </summary>
         [Input("keyup")]
         public Input<bool>? Keyup { get; set; }
 
+        /// <summary>
+        /// MouseDown enabled/disabled
+        /// </summary>
         [Input("mousedown")]
         public Input<bool>? Mousedown { get; set; }
 
+        /// <summary>
+        /// MouseUp enabled/disabled
+        /// </summary>
         [Input("mouseup")]
         public Input<bool>? Mouseup { get; set; }
 
+        /// <summary>
+        /// Scroll enabled/disabled
+        /// </summary>
         [Input("scroll")]
         public Input<bool>? Scroll { get; set; }
 

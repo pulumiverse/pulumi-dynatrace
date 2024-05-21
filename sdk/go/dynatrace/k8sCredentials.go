@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type K8sCredentials struct {
@@ -61,7 +62,7 @@ func NewK8sCredentials(ctx *pulumi.Context,
 		"authToken",
 	})
 	opts = append(opts, secrets)
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource K8sCredentials
 	err := ctx.RegisterResource("dynatrace:index/k8sCredentials:K8sCredentials", name, args, &resource, opts...)
 	if err != nil {

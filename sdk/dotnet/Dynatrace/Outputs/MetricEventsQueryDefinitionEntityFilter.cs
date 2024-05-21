@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MetricEventsQueryDefinitionEntityFilter
     {
+        /// <summary>
+        /// Conditions of entity type to filter
+        /// </summary>
         public readonly ImmutableArray<Outputs.MetricEventsQueryDefinitionEntityFilterCondition> Conditions;
+        /// <summary>
+        /// Dimension key of entity type to filter
+        /// </summary>
         public readonly string? DimensionKey;
 
         [OutputConstructor]

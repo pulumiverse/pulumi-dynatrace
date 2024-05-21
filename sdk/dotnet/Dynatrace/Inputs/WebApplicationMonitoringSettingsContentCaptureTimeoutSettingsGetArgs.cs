@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationMonitoringSettingsContentCaptureTimeoutSettingsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Defines how deep temporary actions may cascade. 0 disables temporary actions completely. Recommended value if enabled is 3
+        /// </summary>
         [Input("temporaryActionLimit", required: true)]
         public Input<int> TemporaryActionLimit { get; set; } = null!;
 
+        /// <summary>
+        /// The total timeout of all cascaded timeouts that should still be able to create a temporary action
+        /// </summary>
         [Input("temporaryActionTotalTimeout", required: true)]
         public Input<int> TemporaryActionTotalTimeout { get; set; } = null!;
 
+        /// <summary>
+        /// Timed action support enabled/disabled.
+        /// </summary>
         [Input("timedActionSupport")]
         public Input<bool>? TimedActionSupport { get; set; }
 

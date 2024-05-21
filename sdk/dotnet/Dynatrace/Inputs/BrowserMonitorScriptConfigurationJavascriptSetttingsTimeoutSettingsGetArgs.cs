@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BrowserMonitorScriptConfigurationJavascriptSetttingsTimeoutSettingsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Track up to n cascading setTimeout calls
+        /// </summary>
         [Input("actionLimit", required: true)]
         public Input<int> ActionLimit { get; set; } = null!;
 
+        /// <summary>
+        /// Limit cascading timeouts cumulatively to n ms
+        /// </summary>
         [Input("totalTimeout", required: true)]
         public Input<int> TotalTimeout { get; set; } = null!;
 

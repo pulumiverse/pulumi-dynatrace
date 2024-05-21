@@ -64,8 +64,8 @@ def get_iam_group(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getIamGroup:getIamGroup', __args__, opts=opts, typ=GetIamGroupResult).value
 
     return AwaitableGetIamGroupResult(
-        id=__ret__.id,
-        name=__ret__.name)
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_iam_group)

@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DashboardTileFilter
     {
+        /// <summary>
+        /// the management zone this tile applies to
+        /// </summary>
         public readonly ImmutableArray<Outputs.DashboardTileFilterManagementZone> ManagementZones;
+        /// <summary>
+        /// the default timeframe of the tile
+        /// </summary>
         public readonly string? Timeframe;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider

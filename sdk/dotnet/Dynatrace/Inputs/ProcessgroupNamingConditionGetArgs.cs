@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("conditions")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionGetArgs>? _conditions;
+
+        /// <summary>
+        /// A conditions for the metric usage
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionGetArgs> Conditions
         {
             get => _conditions ?? (_conditions = new InputList<Inputs.ProcessgroupNamingConditionConditionGetArgs>());

@@ -14,8 +14,18 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class GenericRelationshipsSourcesSource
     {
+        /// <summary>
+        /// Specify a filter that needs to match in order for the extraction to happen.. Two different filters are supported: `$eq(value)` will ensure that the source matches exactly 'value', while `$prefix(value)` will ensure that the source begins with exactly 'value'.
+        /// If your value contains the characters '(', ')' or '~', you need to escape them by adding a '~' in front of them.
+        /// </summary>
         public readonly string? Condition;
+        /// <summary>
+        /// Specify all properties which should be compared. If all mapping rules match a relationship between entities will be created.
+        /// </summary>
         public readonly Outputs.GenericRelationshipsSourcesSourceMappingRules? MappingRules;
+        /// <summary>
+        /// Possible Values: `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+        /// </summary>
         public readonly string SourceType;
 
         [OutputConstructor]

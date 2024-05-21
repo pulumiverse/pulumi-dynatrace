@@ -13,24 +13,45 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlersArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Blur event handler enabled/disabled
+        /// </summary>
         [Input("blur")]
         public Input<bool>? Blur { get; set; }
 
+        /// <summary>
+        /// Change event handler enabled/disabled
+        /// </summary>
         [Input("change")]
         public Input<bool>? Change { get; set; }
 
+        /// <summary>
+        /// Click event handler enabled/disabled
+        /// </summary>
         [Input("click")]
         public Input<bool>? Click { get; set; }
 
+        /// <summary>
+        /// Max. number of DOM nodes to instrument. Valid values range from 0 to 100000.
+        /// </summary>
         [Input("maxDomNodes", required: true)]
         public Input<int> MaxDomNodes { get; set; } = null!;
 
+        /// <summary>
+        /// Mouseup event handler enabled/disabled
+        /// </summary>
         [Input("mouseup")]
         public Input<bool>? Mouseup { get; set; }
 
+        /// <summary>
+        /// toString method enabled/disabled
+        /// </summary>
         [Input("toStringMethod")]
         public Input<bool>? ToStringMethod { get; set; }
 
+        /// <summary>
+        /// Use mouseup event for clicks enabled/disabled
+        /// </summary>
         [Input("useMouseUpEventForClicks")]
         public Input<bool>? UseMouseUpEventForClicks { get; set; }
 

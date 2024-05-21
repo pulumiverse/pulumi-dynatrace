@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type CustomAppAnomalies struct {
@@ -45,7 +46,7 @@ func NewCustomAppAnomalies(ctx *pulumi.Context,
 	if args.UnexpectedLowLoad == nil {
 		return nil, errors.New("invalid value for required argument 'UnexpectedLowLoad'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CustomAppAnomalies
 	err := ctx.RegisterResource("dynatrace:index/customAppAnomalies:CustomAppAnomalies", name, args, &resource, opts...)
 	if err != nil {

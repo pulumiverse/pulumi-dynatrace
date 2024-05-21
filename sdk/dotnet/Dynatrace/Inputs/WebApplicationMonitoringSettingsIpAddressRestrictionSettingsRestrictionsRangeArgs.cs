@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The IP address to be mapped.
+        /// </summary>
         [Input("address", required: true)]
         public Input<string> Address { get; set; } = null!;
 
+        /// <summary>
+        /// The **to** address of the IP address range.
+        /// </summary>
         [Input("addressTo")]
         public Input<string>? AddressTo { get; set; }
 
+        /// <summary>
+        /// The subnet mask of the IP address range. Valid values range from 0 to 128.
+        /// </summary>
         [Input("subnetMask")]
         public Input<int>? SubnetMask { get; set; }
 

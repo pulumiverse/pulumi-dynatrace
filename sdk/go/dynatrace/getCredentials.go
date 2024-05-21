@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The `Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
@@ -62,7 +63,7 @@ import (
 //							Url:         pulumi.String("https://www.google.com"),
 //							Authentication: &dynatrace.HttpMonitorScriptRequestAuthenticationArgs{
 //								Type:        pulumi.String("BASIC_AUTHENTICATION"),
-//								Credentials: *pulumi.String(creds.Id),
+//								Credentials: pulumi.String(creds.Id),
 //							},
 //							Configuration: &dynatrace.HttpMonitorScriptRequestConfigurationArgs{
 //								AcceptAnyCertificate: pulumi.Bool(true),
@@ -90,7 +91,7 @@ import (
 //
 // ```
 func LookupCredentials(ctx *pulumi.Context, args *LookupCredentialsArgs, opts ...pulumi.InvokeOption) (*LookupCredentialsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCredentialsResult
 	err := ctx.Invoke("dynatrace:index/getCredentials:getCredentials", args, &rv, opts...)
 	if err != nil {

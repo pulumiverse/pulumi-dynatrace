@@ -8,11 +8,12 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The alerting profiles data source allows retrieval of all alerting profiles.
 func GetAlertingProfiles(ctx *pulumi.Context, args *GetAlertingProfilesArgs, opts ...pulumi.InvokeOption) (*GetAlertingProfilesResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAlertingProfilesResult
 	err := ctx.Invoke("dynatrace:index/getAlertingProfiles:getAlertingProfiles", args, &rv, opts...)
 	if err != nil {

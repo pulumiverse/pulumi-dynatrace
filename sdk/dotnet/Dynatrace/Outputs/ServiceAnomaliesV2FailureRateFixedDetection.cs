@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ServiceAnomaliesV2FailureRateFixedDetection
     {
+        /// <summary>
+        /// Avoid over-alerting
+        /// </summary>
         public readonly Outputs.ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection OverAlertingProtection;
+        /// <summary>
+        /// Sensitivity
+        /// </summary>
         public readonly string Sensitivity;
+        /// <summary>
+        /// Threshold
+        /// </summary>
         public readonly double Threshold;
 
         [OutputConstructor]

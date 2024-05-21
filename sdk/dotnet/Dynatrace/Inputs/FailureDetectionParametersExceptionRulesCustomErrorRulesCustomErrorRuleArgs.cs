@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Request attribute condition
+        /// </summary>
         [Input("condition", required: true)]
         public Input<Inputs.FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleConditionArgs> Condition { get; set; } = null!;
 
+        /// <summary>
+        /// Request attribute
+        /// </summary>
         [Input("requestAttribute", required: true)]
         public Input<string> RequestAttribute { get; set; } = null!;
 

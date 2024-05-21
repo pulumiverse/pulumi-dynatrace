@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebAppRequestErrorsErrorRulesErrorRuleFilterSettings
     {
+        /// <summary>
+        /// Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+        /// </summary>
         public readonly string? Filter;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly string? Url;
 
         [OutputConstructor]

@@ -6,35 +6,54 @@ package config
 import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
+
+var _ = internal.GetEnvOrDefault
 
 func GetDtApiToken(ctx *pulumi.Context) string {
 	v, err := config.Try(ctx, "dynatrace:dtApiToken")
 	if err == nil {
 		return v
 	}
-	return getEnvOrDefault("", nil, "DYNATRACE_API_TOKEN", "DT_API_TOKEN").(string)
+	var value string
+	if d := internal.GetEnvOrDefault(nil, nil, "DYNATRACE_API_TOKEN", "DT_API_TOKEN"); d != nil {
+		value = d.(string)
+	}
+	return value
 }
 func GetDtClusterApiToken(ctx *pulumi.Context) string {
 	v, err := config.Try(ctx, "dynatrace:dtClusterApiToken")
 	if err == nil {
 		return v
 	}
-	return getEnvOrDefault("", nil, "DYNATRACE_CLUSTER_API_TOKEN", "DT_CLUSTER_API_TOKEN").(string)
+	var value string
+	if d := internal.GetEnvOrDefault(nil, nil, "DYNATRACE_CLUSTER_API_TOKEN", "DT_CLUSTER_API_TOKEN"); d != nil {
+		value = d.(string)
+	}
+	return value
 }
 func GetDtClusterUrl(ctx *pulumi.Context) string {
 	v, err := config.Try(ctx, "dynatrace:dtClusterUrl")
 	if err == nil {
 		return v
 	}
-	return getEnvOrDefault("", nil, "DYNATRACE_CLUSTER_URL", "DT_CLUSTER_URL").(string)
+	var value string
+	if d := internal.GetEnvOrDefault(nil, nil, "DYNATRACE_CLUSTER_URL", "DT_CLUSTER_URL"); d != nil {
+		value = d.(string)
+	}
+	return value
 }
 func GetDtEnvUrl(ctx *pulumi.Context) string {
 	v, err := config.Try(ctx, "dynatrace:dtEnvUrl")
 	if err == nil {
 		return v
 	}
-	return getEnvOrDefault("", nil, "DYNATRACE_ENV_URL", "DT_ENV_URL").(string)
+	var value string
+	if d := internal.GetEnvOrDefault(nil, nil, "DYNATRACE_ENV_URL", "DT_ENV_URL"); d != nil {
+		value = d.(string)
+	}
+	return value
 }
 func GetIamAccountId(ctx *pulumi.Context) string {
 	return config.Get(ctx, "dynatrace:iamAccountId")

@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HttpMonitorPerformanceThresholdsThreshold
     {
+        /// <summary>
+        /// Request
+        /// </summary>
         public readonly string Event;
+        /// <summary>
+        /// Threshold (in seconds)
+        /// </summary>
         public readonly double Threshold;
 
         [OutputConstructor]

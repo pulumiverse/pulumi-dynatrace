@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesDisksSpeedThresholds
     {
+        /// <summary>
+        /// Alert if disk read/write time is higher than *X* milliseconds in 3 out of 5 samples
+        /// </summary>
         public readonly int WriteAndReadTime;
 
         [OutputConstructor]

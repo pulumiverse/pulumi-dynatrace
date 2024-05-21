@@ -78,8 +78,8 @@ def get_request_naming(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getRequestNaming:getRequestNaming', __args__, opts=opts, typ=GetRequestNamingResult).value
 
     return AwaitableGetRequestNamingResult(
-        id=__ret__.id,
-        name=__ret__.name)
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_request_naming)

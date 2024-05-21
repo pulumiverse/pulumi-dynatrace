@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class VmwareAnomaliesGuestCpuLimitDetectionCustomThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Hypervisor CPU usage is higher than
+        /// </summary>
         [Input("hostCpuUsagePercentage", required: true)]
         public Input<int> HostCpuUsagePercentage { get; set; } = null!;
 
+        /// <summary>
+        /// VM CPU ready is higher than
+        /// </summary>
         [Input("vmCpuReadyPercentage", required: true)]
         public Input<int> VmCpuReadyPercentage { get; set; } = null!;
 
+        /// <summary>
+        /// VM CPU usage (VM CPU Usage Mhz / VM CPU limit in Mhz) is higher than
+        /// </summary>
         [Input("vmCpuUsagePercentage", required: true)]
         public Input<int> VmCpuUsagePercentage { get; set; } = null!;
 

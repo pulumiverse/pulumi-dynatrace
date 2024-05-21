@@ -16,14 +16,20 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     {
         public readonly bool? EntityDimension;
         /// <summary>
-        /// The ID of this resource.
+        /// The ID of the dimension by which the metric is split
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The name of the dimension by which the metric is split
+        /// </summary>
         public readonly string? Name;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider
         /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// The splitting value
+        /// </summary>
         public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]

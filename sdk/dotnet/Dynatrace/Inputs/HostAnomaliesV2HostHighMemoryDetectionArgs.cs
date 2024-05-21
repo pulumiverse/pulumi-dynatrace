@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesV2HostHighMemoryDetectionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if **both** the memory usage and the memory page fault rate thresholds are exceeded on Windows or on Unix systems
+        /// </summary>
         [Input("customThresholds")]
         public Input<Inputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsArgs>? CustomThresholds { get; set; }
 
+        /// <summary>
+        /// Detection mode for high memory usage
+        /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }
 
+        /// <summary>
+        /// Detect high memory usage on host
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 

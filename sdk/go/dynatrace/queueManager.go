@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type QueueManager struct {
@@ -32,7 +33,7 @@ func NewQueueManager(ctx *pulumi.Context,
 		args = &QueueManagerArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource QueueManager
 	err := ctx.RegisterResource("dynatrace:index/queueManager:QueueManager", name, args, &resource, opts...)
 	if err != nil {

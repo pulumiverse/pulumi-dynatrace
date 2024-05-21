@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type DashboardsAllowlist struct {
@@ -24,7 +25,7 @@ func NewDashboardsAllowlist(ctx *pulumi.Context,
 		args = &DashboardsAllowlistArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DashboardsAllowlist
 	err := ctx.RegisterResource("dynatrace:index/dashboardsAllowlist:DashboardsAllowlist", name, args, &resource, opts...)
 	if err != nil {

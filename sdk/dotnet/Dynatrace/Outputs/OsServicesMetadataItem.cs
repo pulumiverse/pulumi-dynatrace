@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class OsServicesMetadataItem
     {
+        /// <summary>
+        /// Type 'dt.' for key hints.
+        /// </summary>
         public readonly string MetadataKey;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly string MetadataValue;
 
         [OutputConstructor]

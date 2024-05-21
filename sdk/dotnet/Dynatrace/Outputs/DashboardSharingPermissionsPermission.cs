@@ -15,10 +15,16 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class DashboardSharingPermissionsPermission
     {
         /// <summary>
-        /// The ID of this resource.
+        /// The ID of the user or group to whom the permission is granted.
         /// </summary>
         public readonly string? Id;
+        /// <summary>
+        /// The level of the permission:
+        /// </summary>
         public readonly string Level;
+        /// <summary>
+        /// The type of the permission:
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

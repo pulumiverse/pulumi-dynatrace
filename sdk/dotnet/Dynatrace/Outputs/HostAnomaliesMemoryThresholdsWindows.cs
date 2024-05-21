@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesMemoryThresholdsWindows
     {
+        /// <summary>
+        /// Memory page fault rate is higher than *X* faults per second
+        /// </summary>
         public readonly int PageFaults;
+        /// <summary>
+        /// Memory usage is higher than *X*%
+        /// </summary>
         public readonly int Usage;
 
         [OutputConstructor]

@@ -14,7 +14,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class CustomAnomaliesScopeEntityArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of this resource.
+        /// The monitored entities id to match on
         /// </summary>
         [Input("id", required: true)]
         public Input<string> Id { get; set; } = null!;

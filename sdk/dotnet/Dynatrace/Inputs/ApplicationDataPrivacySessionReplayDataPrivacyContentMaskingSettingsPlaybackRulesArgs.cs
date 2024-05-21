@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("rules", required: true)]
         private InputList<Inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlaybackRulesRuleArgs>? _rules;
+
+        /// <summary>
+        /// The masking rule defining how data is hidden
+        /// </summary>
         public InputList<Inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlaybackRulesRuleArgs> Rules
         {
             get => _rules ?? (_rules = new InputList<Inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlaybackRulesRuleArgs>());

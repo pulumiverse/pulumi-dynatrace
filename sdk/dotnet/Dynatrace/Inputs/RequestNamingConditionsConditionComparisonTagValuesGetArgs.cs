@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("values")]
         private InputList<Inputs.RequestNamingConditionsConditionComparisonTagValuesValueGetArgs>? _values;
+
+        /// <summary>
+        /// The values to compare to
+        /// </summary>
         public InputList<Inputs.RequestNamingConditionsConditionComparisonTagValuesValueGetArgs> Values
         {
             get => _values ?? (_values = new InputList<Inputs.RequestNamingConditionsConditionComparisonTagValuesValueGetArgs>());

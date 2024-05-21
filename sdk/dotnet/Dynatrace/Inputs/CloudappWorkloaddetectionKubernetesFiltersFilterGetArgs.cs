@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CloudappWorkloaddetectionKubernetesFiltersFilterGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// This setting is enabled (`true`) or disabled (`false`)
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
+        /// <summary>
+        /// ID calculation based on
+        /// </summary>
         [Input("inclusionToggles", required: true)]
         public Input<Inputs.CloudappWorkloaddetectionKubernetesFiltersFilterInclusionTogglesGetArgs> InclusionToggles { get; set; } = null!;
 
+        /// <summary>
+        /// When namespace
+        /// </summary>
         [Input("matchFilter", required: true)]
         public Input<Inputs.CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilterGetArgs> MatchFilter { get; set; } = null!;
 

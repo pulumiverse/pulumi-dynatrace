@@ -14,12 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CustomAnomaliesDimensionDimension
     {
+        /// <summary>
+        /// No documentation available
+        /// </summary>
         public readonly int? Index;
+        /// <summary>
+        /// The dimensions key on the metric
+        /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// The name of the metric event displayed in the UI
+        /// No documentation available
         /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// Defines the actual set of fields depending on the value
+        /// </summary>
         public readonly string Type;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider

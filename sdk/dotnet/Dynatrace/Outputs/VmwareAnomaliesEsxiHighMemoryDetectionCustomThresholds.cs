@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholds
     {
+        /// <summary>
+        /// ESXi host swap IN/OUT or compression/decompression rate is higher than
+        /// </summary>
         public readonly double CompressionDecompressionRate;
 
         [OutputConstructor]

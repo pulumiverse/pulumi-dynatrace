@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DatabaseAnomaliesV2FailureRateAutoDetection
     {
+        /// <summary>
+        /// Absolute threshold
+        /// </summary>
         public readonly double AbsoluteIncrease;
+        /// <summary>
+        /// Avoid over-alerting
+        /// </summary>
         public readonly Outputs.DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection OverAlertingProtection;
+        /// <summary>
+        /// Relative threshold
+        /// </summary>
         public readonly double RelativeIncrease;
 
         [OutputConstructor]

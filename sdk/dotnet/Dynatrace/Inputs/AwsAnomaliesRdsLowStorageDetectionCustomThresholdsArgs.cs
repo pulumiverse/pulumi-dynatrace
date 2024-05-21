@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AwsAnomaliesRdsLowStorageDetectionCustomThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Free storage space divided by allocated storage is lower than
+        /// </summary>
         [Input("freeStoragePercentage", required: true)]
         public Input<int> FreeStoragePercentage { get; set; } = null!;
 

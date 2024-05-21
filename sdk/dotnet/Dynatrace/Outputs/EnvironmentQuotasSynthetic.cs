@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class EnvironmentQuotasSynthetic
     {
+        /// <summary>
+        /// Annual environment quota. Not set if unlimited
+        /// </summary>
         public readonly int? Annual;
+        /// <summary>
+        /// Monthly environment quota. Not set if unlimited
+        /// </summary>
         public readonly int? Monthly;
 
         [OutputConstructor]

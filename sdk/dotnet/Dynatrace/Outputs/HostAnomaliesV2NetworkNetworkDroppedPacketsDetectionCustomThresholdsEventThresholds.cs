@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds
     {
+        /// <summary>
+        /// The number of **10-second samples** that form the sliding evaluation window for dealerting.
+        /// </summary>
         public readonly int DealertingEvaluationWindow;
+        /// <summary>
+        /// The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+        /// </summary>
         public readonly int DealertingSamples;
+        /// <summary>
+        /// The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+        /// </summary>
         public readonly int ViolatingEvaluationWindow;
+        /// <summary>
+        /// The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+        /// </summary>
         public readonly int ViolatingSamples;
 
         [OutputConstructor]

@@ -14,13 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class XmattersNotificationHeadersHeaderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the notification configuration
+        /// The name of the HTTP header
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         [Input("secretValue")]
         private Input<string>? _secretValue;
+
+        /// <summary>
+        /// The value of the HTTP header as a sensitive property. May contain an empty value. `secret_value` and `value` are mutually exclusive. Only one of those two is allowed to be specified.
+        /// </summary>
         public Input<string>? SecretValue
         {
             get => _secretValue;
@@ -31,6 +35,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
             }
         }
 
+        /// <summary>
+        /// The value of the HTTP header. May contain an empty value. `secret_value` and `value` are mutually exclusive. Only one of those two is allowed to be specified.
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

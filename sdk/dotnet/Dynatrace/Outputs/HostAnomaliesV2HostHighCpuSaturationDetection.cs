@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2HostHighCpuSaturationDetection
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds? CustomThresholds;
+        /// <summary>
+        /// Detection mode for CPU saturation
+        /// </summary>
         public readonly string? DetectionMode;
+        /// <summary>
+        /// Detect CPU saturation on host
+        /// </summary>
         public readonly bool Enabled;
 
         [OutputConstructor]

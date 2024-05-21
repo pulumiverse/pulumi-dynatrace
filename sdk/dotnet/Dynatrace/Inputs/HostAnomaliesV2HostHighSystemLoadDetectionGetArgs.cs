@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesV2HostHighSystemLoadDetectionGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("customThresholds")]
         public Input<Inputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsGetArgs>? CustomThresholds { get; set; }
 
+        /// <summary>
+        /// Possible Values: `Auto`, `Custom`
+        /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }
 
+        /// <summary>
+        /// This setting is enabled (`true`) or disabled (`false`)
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 

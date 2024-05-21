@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AlertingProfileRuleTagFilter
     {
+        /// <summary>
+        /// The filtering mode:  * `INCLUDE_ANY`: The rule applies to monitored entities that have at least one of the specified tags. You can specify up to 100 tags.  * `INCLUDE_ALL`: The rule applies to monitored entities that have **all** of the specified tags. You can specify up to 10 tags.  * `NONE`: The rule applies to all monitored entities
+        /// </summary>
         public readonly string IncludeMode;
+        /// <summary>
+        /// A list of required tags
+        /// </summary>
         public readonly ImmutableArray<Outputs.AlertingProfileRuleTagFilterTagFilter> TagFilters;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider

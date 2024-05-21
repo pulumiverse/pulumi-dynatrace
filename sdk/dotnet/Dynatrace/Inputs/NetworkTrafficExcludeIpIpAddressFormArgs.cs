@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class NetworkTrafficExcludeIpIpAddressFormArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// IP address
+        /// </summary>
         [Input("ipAddress", required: true)]
         public Input<string> IpAddress { get; set; } = null!;
 

@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ProcessgroupNamingConditionConditionCustomHostMetadataGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The attribute to be used for comparision
+        /// </summary>
         [Input("attribute", required: true)]
         public Input<string> Attribute { get; set; } = null!;
 
+        /// <summary>
+        /// The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+        /// </summary>
         [Input("dynamicKey", required: true)]
         public Input<Inputs.ProcessgroupNamingConditionConditionCustomHostMetadataDynamicKeyGetArgs> DynamicKey { get; set; } = null!;
 
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 

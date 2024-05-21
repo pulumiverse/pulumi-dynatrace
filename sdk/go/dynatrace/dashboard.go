@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type Dashboard struct {
@@ -32,7 +33,7 @@ func NewDashboard(ctx *pulumi.Context,
 		args = &DashboardArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Dashboard
 	err := ctx.RegisterResource("dynatrace:index/dashboard:Dashboard", name, args, &resource, opts...)
 	if err != nil {

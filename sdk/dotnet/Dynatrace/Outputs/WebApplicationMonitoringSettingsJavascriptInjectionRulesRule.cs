@@ -14,11 +14,29 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsJavascriptInjectionRulesRule
     {
+        /// <summary>
+        /// `fetch()` request capture enabled/disabled
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// The HTML pattern of the java script injection
+        /// </summary>
         public readonly string? HtmlPattern;
+        /// <summary>
+        /// The url rule of the java script injection. Possible values are `AFTER_SPECIFIC_HTML`, `AUTOMATIC_INJECTION`, `BEFORE_SPECIFIC_HTML` and `DO_NOT_INJECT`.
+        /// </summary>
         public readonly string Rule;
+        /// <summary>
+        /// The target against which the rule of the java script injection should be matched. Possible values are `PAGE_QUERY` and `URL`.
+        /// </summary>
         public readonly string? Target;
+        /// <summary>
+        /// The url operator of the java script injection. Possible values are `ALL_PAGES`, `CONTAINS`, `ENDS_WITH`, `EQUALS` and `STARTS_WITH`.
+        /// </summary>
         public readonly string UrlOperator;
+        /// <summary>
+        /// The url pattern of the java script injection
+        /// </summary>
         public readonly string? UrlPattern;
 
         [OutputConstructor]

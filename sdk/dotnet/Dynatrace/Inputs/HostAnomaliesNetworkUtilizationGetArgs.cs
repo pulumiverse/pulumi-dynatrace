@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesNetworkUtilizationGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The detection is enabled (`true`) or disabled (`false`)
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
+        /// <summary>
+        /// Custom thresholds for high network utilization. If not set, automatic mode is used
+        /// </summary>
         [Input("thresholds")]
         public Input<Inputs.HostAnomaliesNetworkUtilizationThresholdsGetArgs>? Thresholds { get; set; }
 

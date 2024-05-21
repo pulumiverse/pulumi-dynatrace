@@ -64,8 +64,8 @@ def get_calculated_service_metric(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getCalculatedServiceMetric:getCalculatedServiceMetric', __args__, opts=opts, typ=GetCalculatedServiceMetricResult).value
 
     return AwaitableGetCalculatedServiceMetricResult(
-        id=__ret__.id,
-        name=__ret__.name)
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_calculated_service_metric)

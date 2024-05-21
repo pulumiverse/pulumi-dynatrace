@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptConfigurationHeadersHeader
     {
+        /// <summary>
+        /// The key of the header
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The value of the header
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class FailureDetectionRulesConditionsCondition
     {
+        /// <summary>
+        /// Possible Values: `PG_NAME`, `PG_TAG`, `SERVICE_MANAGEMENT_ZONE`, `SERVICE_NAME`, `SERVICE_TAG`, `SERVICE_TYPE`
+        /// </summary>
         public readonly string Attribute;
+        /// <summary>
+        /// Condition to check the attribute against
+        /// </summary>
         public readonly Outputs.FailureDetectionRulesConditionsConditionPredicate Predicate;
 
         [OutputConstructor]

@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type UserExperienceScore struct {
@@ -43,7 +44,7 @@ func NewUserExperienceScore(ctx *pulumi.Context,
 	if args.MinSatisfiedUserActionsThreshold == nil {
 		return nil, errors.New("invalid value for required argument 'MinSatisfiedUserActionsThreshold'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource UserExperienceScore
 	err := ctx.RegisterResource("dynatrace:index/userExperienceScore:UserExperienceScore", name, args, &resource, opts...)
 	if err != nil {

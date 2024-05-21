@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange
     {
+        /// <summary>
+        /// The IP address to be mapped.
+        /// </summary>
         public readonly string Address;
+        /// <summary>
+        /// The **to** address of the IP address range.
+        /// </summary>
         public readonly string? AddressTo;
+        /// <summary>
+        /// The subnet mask of the IP address range. Valid values range from 0 to 128.
+        /// </summary>
         public readonly int? SubnetMask;
 
         [OutputConstructor]

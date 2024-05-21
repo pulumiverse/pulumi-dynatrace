@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type RumHostHeaders struct {
@@ -28,7 +29,7 @@ func NewRumHostHeaders(ctx *pulumi.Context,
 	if args.HeaderName == nil {
 		return nil, errors.New("invalid value for required argument 'HeaderName'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource RumHostHeaders
 	err := ctx.RegisterResource("dynatrace:index/rumHostHeaders:RumHostHeaders", name, args, &resource, opts...)
 	if err != nil {

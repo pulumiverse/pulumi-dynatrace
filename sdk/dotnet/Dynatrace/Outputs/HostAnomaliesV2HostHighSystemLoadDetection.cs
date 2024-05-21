@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2HostHighSystemLoadDetection
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds? CustomThresholds;
+        /// <summary>
+        /// Possible Values: `Auto`, `Custom`
+        /// </summary>
         public readonly string? DetectionMode;
+        /// <summary>
+        /// This setting is enabled (`true`) or disabled (`false`)
+        /// </summary>
         public readonly bool Enabled;
 
         [OutputConstructor]

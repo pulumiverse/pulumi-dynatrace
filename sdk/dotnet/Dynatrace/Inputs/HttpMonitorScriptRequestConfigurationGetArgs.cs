@@ -13,11 +13,18 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HttpMonitorScriptRequestConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// If set to `false`, then the monitor fails with invalid SSL certificates.
+        /// </summary>
         [Input("acceptAnyCertificate")]
         public Input<bool>? AcceptAnyCertificate { get; set; }
 
         [Input("clientCertificate")]
         private Input<string>? _clientCertificate;
+
+        /// <summary>
+        /// The client certificate, if applicable - eg. CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX
+        /// </summary>
         public Input<string>? ClientCertificate
         {
             get => _clientCertificate;
@@ -28,15 +35,29 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
             }
         }
 
+        /// <summary>
+        /// If set to `false`, redirects are reported as successful requests with response code 3xx.
+        /// 
+        /// If not set, the `false` option is used.
+        /// </summary>
         [Input("followRedirects")]
         public Input<bool>? FollowRedirects { get; set; }
 
+        /// <summary>
+        /// The setup of the monitor
+        /// </summary>
         [Input("headers")]
         public Input<Inputs.HttpMonitorScriptRequestConfigurationHeadersGetArgs>? Headers { get; set; }
 
+        /// <summary>
+        /// Option not to store and display request and response bodies and header values in execution details, `true` or `false`. If not set, `false`.
+        /// </summary>
         [Input("sensitiveData")]
         public Input<bool>? SensitiveData { get; set; }
 
+        /// <summary>
+        /// The User agent of the request
+        /// </summary>
         [Input("userAgent")]
         public Input<string>? UserAgent { get; set; }
 

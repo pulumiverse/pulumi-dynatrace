@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ApiToken struct {
@@ -52,7 +53,7 @@ func NewApiToken(ctx *pulumi.Context,
 		"token",
 	})
 	opts = append(opts, secrets)
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ApiToken
 	err := ctx.RegisterResource("dynatrace:index/apiToken:ApiToken", name, args, &resource, opts...)
 	if err != nil {

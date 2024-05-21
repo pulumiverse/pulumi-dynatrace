@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class GenericRelationshipsSourcesSourceMappingRulesMappingRuleArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The case-sensitive name of a property of the destination type.
+        /// </summary>
         [Input("destinationProperty", required: true)]
         public Input<string> DestinationProperty { get; set; } = null!;
 
+        /// <summary>
+        /// Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        /// </summary>
         [Input("destinationTransformation", required: true)]
         public Input<string> DestinationTransformation { get; set; } = null!;
 
+        /// <summary>
+        /// The case-sensitive name of a property of the source type.
+        /// </summary>
         [Input("sourceProperty", required: true)]
         public Input<string> SourceProperty { get; set; } = null!;
 
+        /// <summary>
+        /// Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        /// </summary>
         [Input("sourceTransformation", required: true)]
         public Input<string> SourceTransformation { get; set; } = null!;
 

@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MaintenanceScheduleOnceRecurrence
     {
+        /// <summary>
+        /// The end time of the maintenance window validity period in YYYY-MM-DDThh:mm:ss format (for example, `2022-01-01T08:00:00`)
+        /// </summary>
         public readonly string EndTime;
+        /// <summary>
+        /// The start time of the maintenance window validity period in YYYY-MM-DDThh:mm:ss format (for example, `2022-01-01T08:00:00`)
+        /// </summary>
         public readonly string StartTime;
+        /// <summary>
+        /// The time zone of the start and end time. Default time zone is UTC. You can use either UTC offset `UTC+01:00` format or the IANA Time Zone Database format (for example, `Europe/Vienna`)
+        /// </summary>
         public readonly string TimeZone;
 
         [OutputConstructor]

@@ -13,9 +13,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CredentialsExternalGetArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Required for Hashicorp Certificate. The ID of Credentials within the Certificate Vault holding the certificate
-        /// </summary>
         [Input("certificate")]
         public Input<string>? Certificate { get; set; }
 
@@ -49,21 +46,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("passwordSecretName")]
         public Input<string>? PasswordSecretName { get; set; }
 
-        /// <summary>
-        /// Required for Hashicorp App Role or Hashicorp Certificate. No further documentation available
-        /// </summary>
         [Input("pathToCredentials")]
         public Input<string>? PathToCredentials { get; set; }
 
-        /// <summary>
-        /// Required for Hashicorp App Role. No further documentation available
-        /// </summary>
         [Input("roleid")]
         public Input<string>? Roleid { get; set; }
 
-        /// <summary>
-        /// Required for Hashicorp App Role. The ID of Credentials within the Certificate Vault holding the secret id
-        /// </summary>
         [Input("secretid")]
         public Input<string>? Secretid { get; set; }
 
@@ -85,9 +73,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("usernameSecretName")]
         public Input<string>? UsernameSecretName { get; set; }
 
-        /// <summary>
-        /// Required for Hashicorp App Role. No further documentation available
-        /// </summary>
         [Input("vaultNamespace")]
         public Input<string>? VaultNamespace { get; set; }
 

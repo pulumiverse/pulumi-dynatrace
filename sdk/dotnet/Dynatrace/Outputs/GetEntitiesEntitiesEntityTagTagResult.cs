@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class GetEntitiesEntitiesEntityTagTagResult
     {
+        /// <summary>
+        /// The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+        /// </summary>
         public readonly string Context;
+        /// <summary>
+        /// The key of the tag. Custom tags have the tag value here
+        /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// The string representation of the tag
+        /// </summary>
         public readonly string? StringRepresentation;
+        /// <summary>
+        /// The value of the tag. Not applicable to custom tags
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

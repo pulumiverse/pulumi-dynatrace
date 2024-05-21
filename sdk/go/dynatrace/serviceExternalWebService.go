@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ServiceExternalWebService struct {
@@ -41,7 +42,7 @@ func NewServiceExternalWebService(ctx *pulumi.Context,
 	if args.IdContributors == nil {
 		return nil, errors.New("invalid value for required argument 'IdContributors'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ServiceExternalWebService
 	err := ctx.RegisterResource("dynatrace:index/serviceExternalWebService:ServiceExternalWebService", name, args, &resource, opts...)
 	if err != nil {

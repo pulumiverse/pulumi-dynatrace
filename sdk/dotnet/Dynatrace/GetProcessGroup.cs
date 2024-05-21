@@ -20,9 +20,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// If multiple process groups match the given criteria, the first result will be retrieved.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -57,8 +55,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetProcessGroupResult> InvokeAsync(GetProcessGroupArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProcessGroupResult>("dynatrace:index/getProcessGroup:getProcessGroup", args ?? new GetProcessGroupArgs(), options.WithDefaults());
@@ -71,9 +67,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// If multiple process groups match the given criteria, the first result will be retrieved.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -108,8 +102,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetProcessGroupResult> Invoke(GetProcessGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProcessGroupResult>("dynatrace:index/getProcessGroup:getProcessGroup", args ?? new GetProcessGroupInvokeArgs(), options.WithDefaults());

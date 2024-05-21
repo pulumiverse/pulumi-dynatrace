@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Configuration of the Session Replay masking during Playback
+        /// </summary>
         [Input("playback", required: true)]
         public Input<Inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlaybackArgs> Playback { get; set; } = null!;
 
+        /// <summary>
+        /// (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Configuration of the Session Replay masking during Recording
+        /// </summary>
         [Input("recording", required: true)]
         public Input<Inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecordingArgs> Recording { get; set; } = null!;
 

@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptConfigurationJavascriptSetttingsTimeoutSettings
     {
+        /// <summary>
+        /// Track up to n cascading setTimeout calls
+        /// </summary>
         public readonly int ActionLimit;
+        /// <summary>
+        /// Limit cascading timeouts cumulatively to n ms
+        /// </summary>
         public readonly int TotalTimeout;
 
         [OutputConstructor]

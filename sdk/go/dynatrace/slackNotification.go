@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type SlackNotification struct {
@@ -59,7 +60,7 @@ func NewSlackNotification(ctx *pulumi.Context,
 		"url",
 	})
 	opts = append(opts, secrets)
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource SlackNotification
 	err := ctx.RegisterResource("dynatrace:index/slackNotification:SlackNotification", name, args, &resource, opts...)
 	if err != nil {

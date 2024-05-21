@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class KubernetesEventPatternsEventPattern
     {
+        /// <summary>
+        /// Activate
+        /// </summary>
         public readonly bool Active;
+        /// <summary>
+        /// Field selector name
+        /// </summary>
         public readonly string Label;
+        /// <summary>
+        /// The set of allowed characters for this field has been extended with ActiveGate version 1.259. For more details, see the [documentation](https://dt-url.net/7h23wuk#set-up-event-field-selectors).
+        /// </summary>
         public readonly string Pattern;
 
         [OutputConstructor]

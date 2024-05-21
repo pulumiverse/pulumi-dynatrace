@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DatabaseAnomaliesLoadDropsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if the service stays in abnormal state for at least *X* minutes
+        /// </summary>
         [Input("minutes")]
         public Input<int>? Minutes { get; set; }
 
+        /// <summary>
+        /// Alert if the observed load is more than *X* % of the expected value
+        /// </summary>
         [Input("percent")]
         public Input<int>? Percent { get; set; }
 

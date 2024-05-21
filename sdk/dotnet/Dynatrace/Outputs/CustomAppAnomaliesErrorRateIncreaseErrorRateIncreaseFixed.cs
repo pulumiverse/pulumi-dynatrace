@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed
     {
+        /// <summary>
+        /// Possible Values: `Low`, `Medium`, `High`
+        /// </summary>
         public readonly string Sensitivity;
+        /// <summary>
+        /// Absolute threshold
+        /// </summary>
         public readonly double ThresholdAbsolute;
 
         [OutputConstructor]

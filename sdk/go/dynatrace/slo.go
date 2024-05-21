@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type Slo struct {
@@ -30,7 +31,7 @@ type Slo struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The metric for the count of successes (the numerator in rate calculation)
 	//
-	// Deprecated: `numerator` and `denominator` have been replaced by `metric_expression`
+	// Deprecated: `numerator` and `denominator` have been replaced by `metricExpression`
 	Numerator pulumi.StringPtrOutput `pulumi:"numerator"`
 	// The percentage-based metric for the calculation of the SLO
 	Rate pulumi.StringPtrOutput `pulumi:"rate"`
@@ -61,7 +62,7 @@ func NewSlo(ctx *pulumi.Context,
 	if args.Warning == nil {
 		return nil, errors.New("invalid value for required argument 'Warning'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Slo
 	err := ctx.RegisterResource("dynatrace:index/slo:Slo", name, args, &resource, opts...)
 	if err != nil {
@@ -100,7 +101,7 @@ type sloState struct {
 	Name *string `pulumi:"name"`
 	// The metric for the count of successes (the numerator in rate calculation)
 	//
-	// Deprecated: `numerator` and `denominator` have been replaced by `metric_expression`
+	// Deprecated: `numerator` and `denominator` have been replaced by `metricExpression`
 	Numerator *string `pulumi:"numerator"`
 	// The percentage-based metric for the calculation of the SLO
 	Rate *string `pulumi:"rate"`
@@ -129,7 +130,7 @@ type SloState struct {
 	Name pulumi.StringPtrInput
 	// The metric for the count of successes (the numerator in rate calculation)
 	//
-	// Deprecated: `numerator` and `denominator` have been replaced by `metric_expression`
+	// Deprecated: `numerator` and `denominator` have been replaced by `metricExpression`
 	Numerator pulumi.StringPtrInput
 	// The percentage-based metric for the calculation of the SLO
 	Rate pulumi.StringPtrInput
@@ -162,7 +163,7 @@ type sloArgs struct {
 	Name *string `pulumi:"name"`
 	// The metric for the count of successes (the numerator in rate calculation)
 	//
-	// Deprecated: `numerator` and `denominator` have been replaced by `metric_expression`
+	// Deprecated: `numerator` and `denominator` have been replaced by `metricExpression`
 	Numerator *string `pulumi:"numerator"`
 	// The percentage-based metric for the calculation of the SLO
 	Rate *string `pulumi:"rate"`
@@ -192,7 +193,7 @@ type SloArgs struct {
 	Name pulumi.StringPtrInput
 	// The metric for the count of successes (the numerator in rate calculation)
 	//
-	// Deprecated: `numerator` and `denominator` have been replaced by `metric_expression`
+	// Deprecated: `numerator` and `denominator` have been replaced by `metricExpression`
 	Numerator pulumi.StringPtrInput
 	// The percentage-based metric for the calculation of the SLO
 	Rate pulumi.StringPtrInput
@@ -328,7 +329,7 @@ func (o SloOutput) Name() pulumi.StringOutput {
 
 // The metric for the count of successes (the numerator in rate calculation)
 //
-// Deprecated: `numerator` and `denominator` have been replaced by `metric_expression`
+// Deprecated: `numerator` and `denominator` have been replaced by `metricExpression`
 func (o SloOutput) Numerator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Slo) pulumi.StringPtrOutput { return v.Numerator }).(pulumi.StringPtrOutput)
 }

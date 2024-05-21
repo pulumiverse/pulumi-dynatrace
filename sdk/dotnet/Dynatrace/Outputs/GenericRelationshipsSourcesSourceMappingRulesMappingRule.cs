@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class GenericRelationshipsSourcesSourceMappingRulesMappingRule
     {
+        /// <summary>
+        /// The case-sensitive name of a property of the destination type.
+        /// </summary>
         public readonly string DestinationProperty;
+        /// <summary>
+        /// Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        /// </summary>
         public readonly string DestinationTransformation;
+        /// <summary>
+        /// The case-sensitive name of a property of the source type.
+        /// </summary>
         public readonly string SourceProperty;
+        /// <summary>
+        /// Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        /// </summary>
         public readonly string SourceTransformation;
 
         [OutputConstructor]

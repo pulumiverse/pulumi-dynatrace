@@ -15,18 +15,31 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("clusterVisibilities")]
         private InputList<string>? _clusterVisibilities;
+
+        /// <summary>
+        /// Name of the cluster(s) this local definition of the remote queue should be visible in
+        /// </summary>
         public InputList<string> ClusterVisibilities
         {
             get => _clusterVisibilities ?? (_clusterVisibilities = new InputList<string>());
             set => _clusterVisibilities = value;
         }
 
+        /// <summary>
+        /// The name of the local queue
+        /// </summary>
         [Input("localQueueName", required: true)]
         public Input<string> LocalQueueName { get; set; } = null!;
 
+        /// <summary>
+        /// The name of the remote queue manager
+        /// </summary>
         [Input("remoteQueueManager", required: true)]
         public Input<string> RemoteQueueManager { get; set; } = null!;
 
+        /// <summary>
+        /// The name of the remote queue
+        /// </summary>
         [Input("remoteQueueName", required: true)]
         public Input<string> RemoteQueueName { get; set; } = null!;
 

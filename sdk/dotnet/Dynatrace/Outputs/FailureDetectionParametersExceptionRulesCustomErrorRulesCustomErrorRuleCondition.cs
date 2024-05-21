@@ -14,10 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition
     {
+        /// <summary>
+        /// Case sensitive
+        /// </summary>
         public readonly bool? CaseSensitive;
+        /// <summary>
+        /// Apply this comparison
+        /// </summary>
         public readonly string CompareOperationType;
+        /// <summary>
+        /// Value
+        /// </summary>
         public readonly double? DoubleValue;
+        /// <summary>
+        /// Value
+        /// </summary>
         public readonly int? IntValue;
+        /// <summary>
+        /// Value
+        /// </summary>
         public readonly string? TextValue;
 
         [OutputConstructor]

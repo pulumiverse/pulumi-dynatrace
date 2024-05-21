@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type WebAppJavascriptVersion struct {
@@ -24,7 +25,7 @@ func NewWebAppJavascriptVersion(ctx *pulumi.Context,
 		args = &WebAppJavascriptVersionArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource WebAppJavascriptVersion
 	err := ctx.RegisterResource("dynatrace:index/webAppJavascriptVersion:WebAppJavascriptVersion", name, args, &resource, opts...)
 	if err != nil {

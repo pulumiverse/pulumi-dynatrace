@@ -23,3 +23,9 @@ export interface GetAwsIamExternalResult {
      */
     readonly id: string;
 }
+/**
+ * The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
+ */
+export function getAwsIamExternalOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetAwsIamExternalResult> {
+    return pulumi.output(getAwsIamExternal(opts))
+}

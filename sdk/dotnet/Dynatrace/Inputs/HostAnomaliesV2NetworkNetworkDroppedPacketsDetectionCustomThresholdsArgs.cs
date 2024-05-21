@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Receive/transmit dropped packet percentage threshold
+        /// </summary>
         [Input("droppedPacketsPercentage", required: true)]
         public Input<int> DroppedPacketsPercentage { get; set; } = null!;
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("eventThresholds", required: true)]
         public Input<Inputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholdsArgs> EventThresholds { get; set; } = null!;
 
+        /// <summary>
+        /// Total packets rate threshold
+        /// </summary>
         [Input("totalPacketsRate", required: true)]
         public Input<int> TotalPacketsRate { get; set; } = null!;
 

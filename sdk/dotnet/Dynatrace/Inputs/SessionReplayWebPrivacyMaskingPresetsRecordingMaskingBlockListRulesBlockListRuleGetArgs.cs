@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRuleGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+        /// </summary>
         [Input("attributeExpression")]
         public Input<string>? AttributeExpression { get; set; }
 
+        /// <summary>
+        /// Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+        /// </summary>
         [Input("cssExpression")]
         public Input<string>? CssExpression { get; set; }
 
+        /// <summary>
+        /// Hide user interactions with these elements, including clicks that expand elements, highlighting that results from hovering a cursor over an option, and selection of specific form options.
+        /// </summary>
         [Input("hideUserInteraction")]
         public Input<bool>? HideUserInteraction { get; set; }
 
+        /// <summary>
+        /// Possible Values: `ELEMENT`, `ATTRIBUTE`
+        /// </summary>
         [Input("target", required: true)]
         public Input<string> Target { get; set; } = null!;
 

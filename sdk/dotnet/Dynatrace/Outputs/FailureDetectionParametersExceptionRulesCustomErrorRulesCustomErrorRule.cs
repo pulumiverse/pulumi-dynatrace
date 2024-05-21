@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule
     {
+        /// <summary>
+        /// Request attribute condition
+        /// </summary>
         public readonly Outputs.FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition Condition;
+        /// <summary>
+        /// Request attribute
+        /// </summary>
         public readonly string RequestAttribute;
 
         [OutputConstructor]

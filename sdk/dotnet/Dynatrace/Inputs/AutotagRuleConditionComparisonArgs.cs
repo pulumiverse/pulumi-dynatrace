@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AutotagRuleConditionComparisonArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+        /// </summary>
         [Input("negate")]
         public Input<bool>? Negate { get; set; }
 
+        /// <summary>
+        /// The type of comparison
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 

@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsCondition
     {
+        /// <summary>
+        /// Must be a defined placeholder wrapped in curly braces
+        /// </summary>
         public readonly string Operand1;
+        /// <summary>
+        /// Must be null if operator is `IS_EMPTY`, a regex if operator is `MATCHES_REGULAR_ERPRESSION`. In all other cases the value can be a freetext or a placeholder wrapped in curly braces
+        /// </summary>
         public readonly string? Operand2;
+        /// <summary>
+        /// The operator of the condition. Possible values are `CONTAINS`, `ENDS_WITH`, `EQUALS`, `IS_EMPTY`, `IS_NOT_EMPTY`, `MATCHES_REGULAR_EXPRESSION`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_MATCHES_REGULAR_EXPRESSION`, `NOT_STARTS_WITH` and `STARTS_WITH`.
+        /// </summary>
         public readonly string Operator;
 
         [OutputConstructor]

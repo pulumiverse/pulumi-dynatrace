@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CustomAnomaliesScopeTag
     {
+        /// <summary>
+        /// A filter for a string value based on the given operator
+        /// </summary>
         public readonly Outputs.CustomAnomaliesScopeTagFilter Filter;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider

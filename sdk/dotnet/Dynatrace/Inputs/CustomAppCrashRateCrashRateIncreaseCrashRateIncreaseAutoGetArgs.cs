@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAutoGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Dynatrace learns the typical crash rate for all app versions and will create an alert if the baseline is violated by more than a specified threshold. Analysis happens based on a sliding window of 10 minutes.
+        /// </summary>
         [Input("baselineViolationPercentage", required: true)]
         public Input<double> BaselineViolationPercentage { get; set; } = null!;
 
+        /// <summary>
+        /// Amount of users
+        /// </summary>
         [Input("concurrentUsers", required: true)]
         public Input<double> ConcurrentUsers { get; set; } = null!;
 
+        /// <summary>
+        /// Possible Values: `Low`, `Medium`, `High`
+        /// </summary>
         [Input("sensitivity", required: true)]
         public Input<string> Sensitivity { get; set; } = null!;
 

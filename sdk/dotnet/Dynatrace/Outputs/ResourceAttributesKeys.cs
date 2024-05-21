@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ResourceAttributesKeys
     {
+        /// <summary>
+        /// Attribute key allow-list
+        /// </summary>
         public readonly ImmutableArray<Outputs.ResourceAttributesKeysRule> Rules;
 
         [OutputConstructor]

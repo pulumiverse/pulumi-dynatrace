@@ -58,11 +58,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// The source of the attribute to capture. Works in conjunction with **parameterName** or **methods** and **technology**
         /// </summary>
         public readonly string Source;
+        /// <summary>
+        /// The technology of the method to capture if the **source** value is `METHOD_PARAM`. 
+        /// 
+        ///  Not applicable in other cases
+        /// </summary>
         public readonly string? Technology;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider
         /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// Process values as specified
+        /// </summary>
         public readonly Outputs.RequestAttributeDataSourceValueProcessing? ValueProcessing;
 
         [OutputConstructor]

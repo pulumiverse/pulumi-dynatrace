@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("placeholders")]
         private InputList<Inputs.CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderArgs>? _placeholders;
+
+        /// <summary>
+        /// A custom placeholder to be used in a dimension value pattern
+        /// </summary>
         public InputList<Inputs.CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderArgs> Placeholders
         {
             get => _placeholders ?? (_placeholders = new InputList<Inputs.CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderArgs>());

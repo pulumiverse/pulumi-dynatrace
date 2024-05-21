@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BusinessEventsOneagentTriggersTriggerSourceGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Possible Values: `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+        /// </summary>
         [Input("dataSource", required: true)]
         public Input<string> DataSource { get; set; } = null!;
 
+        /// <summary>
+        /// [See our documentation](https://dt-url.net/ei034bx)
+        /// </summary>
         [Input("path")]
         public Input<string>? Path { get; set; }
 

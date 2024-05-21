@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type RemoteEnvironments struct {
@@ -47,7 +48,7 @@ func NewRemoteEnvironments(ctx *pulumi.Context,
 		"token",
 	})
 	opts = append(opts, secrets)
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource RemoteEnvironments
 	err := ctx.RegisterResource("dynatrace:index/remoteEnvironments:RemoteEnvironments", name, args, &resource, opts...)
 	if err != nil {

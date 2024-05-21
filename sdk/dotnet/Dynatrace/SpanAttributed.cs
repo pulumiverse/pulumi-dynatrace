@@ -25,10 +25,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Output("masking")]
         public Output<string> Masking { get; private set; } = null!;
 
-        /// <summary>
-        /// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
-        /// are defined by default on every Dynatrace environment.
-        /// </summary>
         [Output("persistent")]
         public Output<bool> Persistent { get; private set; } = null!;
 
@@ -91,10 +87,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Input("masking", required: true)]
         public Input<string> Masking { get; set; } = null!;
 
-        /// <summary>
-        /// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
-        /// are defined by default on every Dynatrace environment.
-        /// </summary>
         [Input("persistent")]
         public Input<bool>? Persistent { get; set; }
 
@@ -118,10 +110,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Input("masking")]
         public Input<string>? Masking { get; set; }
 
-        /// <summary>
-        /// Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
-        /// are defined by default on every Dynatrace environment.
-        /// </summary>
         [Input("persistent")]
         public Input<bool>? Persistent { get; set; }
 

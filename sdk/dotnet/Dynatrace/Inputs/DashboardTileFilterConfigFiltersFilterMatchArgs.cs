@@ -13,11 +13,18 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DashboardTileFilterConfigFiltersFilterMatchArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The entity type (e.g. HOST, SERVICE, ...)
+        /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
         [Input("values")]
         private InputList<string>? _values;
+
+        /// <summary>
+        /// the tiles this Dashboard consist of
+        /// </summary>
         public InputList<string> Values
         {
             get => _values ?? (_values = new InputList<string>());

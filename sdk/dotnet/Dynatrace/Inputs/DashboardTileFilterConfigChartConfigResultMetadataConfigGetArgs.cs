@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DashboardTileFilterConfigChartConfigResultMetadataConfigGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The color of the metric in the chart, hex format
+        /// </summary>
         [Input("customColor")]
         public Input<string>? CustomColor { get; set; }
 
+        /// <summary>
+        /// A generated key by the Dynatrace Server
+        /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
+        /// <summary>
+        /// The timestamp of the last metadata modification, in UTC milliseconds
+        /// </summary>
         [Input("lastModified")]
         public Input<int>? LastModified { get; set; }
 

@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class K8sWorkloadAnomaliesPendingPodsConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// within the last
+        /// </summary>
         [Input("observationPeriodInMinutes", required: true)]
         public Input<int> ObservationPeriodInMinutes { get; set; } = null!;
 
+        /// <summary>
+        /// stuck in pending state for at least
+        /// </summary>
         [Input("samplePeriodInMinutes", required: true)]
         public Input<int> SamplePeriodInMinutes { get; set; } = null!;
 
+        /// <summary>
+        /// there is at least
+        /// </summary>
         [Input("threshold", required: true)]
         public Input<int> Threshold { get; set; } = null!;
 

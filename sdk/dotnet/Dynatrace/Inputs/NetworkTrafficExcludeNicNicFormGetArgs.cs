@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class NetworkTrafficExcludeNicNicFormGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Network interface
+        /// </summary>
         [Input("interface", required: true)]
         public Input<string> Interface { get; set; } = null!;
 
+        /// <summary>
+        /// Possible Values: `OS_TYPE_AIX`, `OS_TYPE_DARWIN`, `OS_TYPE_HPUX`, `OS_TYPE_LINUX`, `OS_TYPE_SOLARIS`, `OS_TYPE_UNKNOWN`, `OS_TYPE_WINDOWS`, `OS_TYPE_ZOS`
+        /// </summary>
         [Input("os", required: true)]
         public Input<string> Os { get; set; } = null!;
 

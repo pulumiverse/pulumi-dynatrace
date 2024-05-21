@@ -15,7 +15,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class CustomAnomaliesScopeEntity
     {
         /// <summary>
-        /// The ID of this resource.
+        /// The monitored entities id to match on
         /// </summary>
         public readonly string Id;
         /// <summary>

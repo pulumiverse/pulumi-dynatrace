@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEventsEventSelectSelectionsOption
     {
+        /// <summary>
+        /// The index of the option to be selected
+        /// </summary>
         public readonly int Index;
+        /// <summary>
+        /// The value of the option to be selected
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

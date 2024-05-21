@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class UpdateWindowsMonthlyRecurrenceUpdateTime
     {
+        /// <summary>
+        /// Duration (minutes)
+        /// </summary>
         public readonly int Duration;
+        /// <summary>
+        /// Start time (24-hour clock)
+        /// </summary>
         public readonly string StartTime;
+        /// <summary>
+        /// Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+        /// </summary>
         public readonly string TimeZone;
 
         [OutputConstructor]

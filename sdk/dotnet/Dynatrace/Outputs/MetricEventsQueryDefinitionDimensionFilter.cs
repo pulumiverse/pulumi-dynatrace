@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MetricEventsQueryDefinitionDimensionFilter
     {
+        /// <summary>
+        /// Dimension filter definitions
+        /// </summary>
         public readonly ImmutableArray<Outputs.MetricEventsQueryDefinitionDimensionFilterFilter> Filters;
 
         [OutputConstructor]

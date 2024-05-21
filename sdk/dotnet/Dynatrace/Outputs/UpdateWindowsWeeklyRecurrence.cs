@@ -14,9 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class UpdateWindowsWeeklyRecurrence
     {
+        /// <summary>
+        /// Every **X** weeks:
+        /// * `1` = every week,
+        /// * `2` = every two weeks,
+        /// * `3` = every three weeks,
+        /// * etc.
+        /// </summary>
         public readonly int Every;
+        /// <summary>
+        /// Recurrence range
+        /// </summary>
         public readonly Outputs.UpdateWindowsWeeklyRecurrenceRecurrenceRange RecurrenceRange;
+        /// <summary>
+        /// Day of the week
+        /// </summary>
         public readonly Outputs.UpdateWindowsWeeklyRecurrenceSelectedWeekDays SelectedWeekDays;
+        /// <summary>
+        /// Update time
+        /// </summary>
         public readonly Outputs.UpdateWindowsWeeklyRecurrenceUpdateTime UpdateTime;
 
         [OutputConstructor]

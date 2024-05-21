@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebAppAnomaliesErrorRateErrorRateFixed
     {
+        /// <summary>
+        /// To avoid over-alerting for low traffic applications
+        /// </summary>
         public readonly double ErrorRateReqPerMin;
+        /// <summary>
+        /// Possible Values: `Low`, `Medium`, `High`
+        /// </summary>
         public readonly string ErrorRateSensitivity;
+        /// <summary>
+        /// Alert if this custom error rate threshold is exceeded during any 5-minute-period
+        /// </summary>
         public readonly double MaxFailureRateIncrease;
+        /// <summary>
+        /// Amount of minutes the observed traffic has to stay in abnormal state before alert
+        /// </summary>
         public readonly double MinutesAbnormalState;
 
         [OutputConstructor]

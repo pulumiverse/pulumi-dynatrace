@@ -14,13 +14,37 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsJavascriptFrameworkSupport
     {
+        /// <summary>
+        /// ActiveXObject support enabled/disabled
+        /// </summary>
         public readonly bool? ActiveXObject;
+        /// <summary>
+        /// AngularJS and Angular support enabled/disabled
+        /// </summary>
         public readonly bool? Angular;
+        /// <summary>
+        /// Dojo support enabled/disabled
+        /// </summary>
         public readonly bool? Dojo;
+        /// <summary>
+        /// ExtJS, Sencha Touch support enabled/disabled
+        /// </summary>
         public readonly bool? Extjs;
+        /// <summary>
+        /// ICEfaces support enabled/disabled
+        /// </summary>
         public readonly bool? Icefaces;
+        /// <summary>
+        /// jQuery, Backbone.js support enabled/disabled
+        /// </summary>
         public readonly bool? Jquery;
+        /// <summary>
+        /// MooTools support enabled/disabled
+        /// </summary>
         public readonly bool? MooTools;
+        /// <summary>
+        /// Prototype support enabled/disabled
+        /// </summary>
         public readonly bool? Prototype;
 
         [OutputConstructor]

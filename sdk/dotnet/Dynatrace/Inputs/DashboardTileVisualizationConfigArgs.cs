@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DashboardTileVisualizationConfigArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The axis bucketing when enabled groups similar series in the same virtual axis
+        /// </summary>
         [Input("hasAxisBucketing")]
         public Input<bool>? HasAxisBucketing { get; set; }
 

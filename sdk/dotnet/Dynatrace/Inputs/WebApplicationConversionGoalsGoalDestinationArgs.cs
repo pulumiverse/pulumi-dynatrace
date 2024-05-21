@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationConversionGoalsGoalDestinationArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The match is case-sensitive (`true`) or (`false`)
+        /// </summary>
         [Input("caseSensitive")]
         public Input<bool>? CaseSensitive { get; set; }
 
+        /// <summary>
+        /// The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
+        /// </summary>
         [Input("matchType")]
         public Input<string>? MatchType { get; set; }
 
+        /// <summary>
+        /// The path to be reached to hit the conversion goal
+        /// </summary>
         [Input("urlOrPath", required: true)]
         public Input<string> UrlOrPath { get; set; } = null!;
 

@@ -14,11 +14,20 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CustomAnomaliesDimensionString
     {
+        /// <summary>
+        /// A filter for a string value based on the given operator
+        /// </summary>
         public readonly Outputs.CustomAnomaliesDimensionStringFilter Filter;
+        /// <summary>
+        /// No documentation available
+        /// </summary>
         public readonly int? Index;
+        /// <summary>
+        /// The dimensions key on the metric
+        /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// The name of the metric event displayed in the UI
+        /// No documentation available
         /// </summary>
         public readonly string? Name;
         /// <summary>

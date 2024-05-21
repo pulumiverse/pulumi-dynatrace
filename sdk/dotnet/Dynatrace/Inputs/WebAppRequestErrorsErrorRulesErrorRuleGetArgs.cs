@@ -13,18 +13,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebAppRequestErrorsErrorRulesErrorRuleGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Capture settings
+        /// </summary>
         [Input("captureSettings", required: true)]
         public Input<Inputs.WebAppRequestErrorsErrorRulesErrorRuleCaptureSettingsGetArgs> CaptureSettings { get; set; } = null!;
 
+        /// <summary>
+        /// Match by errors that have CSP violations
+        /// </summary>
         [Input("considerCspViolations", required: true)]
         public Input<bool> ConsiderCspViolations { get; set; } = null!;
 
+        /// <summary>
+        /// Match by errors that have failed image requests
+        /// </summary>
         [Input("considerFailedImages", required: true)]
         public Input<bool> ConsiderFailedImages { get; set; } = null!;
 
+        /// <summary>
+        /// Match by error code
+        /// </summary>
         [Input("errorCodes")]
         public Input<string>? ErrorCodes { get; set; }
 
+        /// <summary>
+        /// Filter settings
+        /// </summary>
         [Input("filterSettings", required: true)]
         public Input<Inputs.WebAppRequestErrorsErrorRulesErrorRuleFilterSettingsGetArgs> FilterSettings { get; set; } = null!;
 

@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifierArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Supplementary Identifier
+        /// </summary>
         [Input("supplementaryIdentifier", required: true)]
         public Input<string> SupplementaryIdentifier { get; set; } = null!;
 

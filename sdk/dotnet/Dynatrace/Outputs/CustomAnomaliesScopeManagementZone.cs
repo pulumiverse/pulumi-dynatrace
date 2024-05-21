@@ -15,7 +15,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class CustomAnomaliesScopeManagementZone
     {
         /// <summary>
-        /// The ID of this resource.
+        /// The management zone id to match on
         /// </summary>
         public readonly string? Id;
         /// <summary>

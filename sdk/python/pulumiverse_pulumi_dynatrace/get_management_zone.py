@@ -118,10 +118,10 @@ def get_management_zone(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getManagementZone:getManagementZone', __args__, opts=opts, typ=GetManagementZoneResult).value
 
     return AwaitableGetManagementZoneResult(
-        id=__ret__.id,
-        legacy_id=__ret__.legacy_id,
-        name=__ret__.name,
-        settings20_id=__ret__.settings20_id)
+        id=pulumi.get(__ret__, 'id'),
+        legacy_id=pulumi.get(__ret__, 'legacy_id'),
+        name=pulumi.get(__ret__, 'name'),
+        settings20_id=pulumi.get(__ret__, 'settings20_id'))
 
 
 @_utilities.lift_output_func(get_management_zone)

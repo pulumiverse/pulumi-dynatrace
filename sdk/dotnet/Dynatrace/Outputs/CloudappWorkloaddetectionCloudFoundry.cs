@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CloudappWorkloaddetectionCloudFoundry
     {
+        /// <summary>
+        /// This setting is enabled (`true`) or disabled (`false`)
+        /// </summary>
         public readonly bool Enabled;
 
         [OutputConstructor]

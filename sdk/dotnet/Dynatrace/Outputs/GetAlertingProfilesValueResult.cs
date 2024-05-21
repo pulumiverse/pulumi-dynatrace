@@ -15,12 +15,24 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class GetAlertingProfilesValueResult
     {
         /// <summary>
-        /// The ID of this resource.
+        /// The ID of the Alerting Profile when referred to as a Settings 2.0 resource (e.g. from within `dynatrace.SlackNotification`)
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The ID of the Alerting Profile when referred to as a Configuration API resource (e.g. from within `dynatrace.Notification`)
+        /// </summary>
         public readonly string LegacyId;
+        /// <summary>
+        /// The ID of the management zone to which the alerting profile applies (Settings 2.0)
+        /// </summary>
         public readonly string ManagementZoneId;
+        /// <summary>
+        /// The ID of the management zone to which the alerting profile applies (Configuration API)
+        /// </summary>
         public readonly string ManagementZoneLegacyId;
+        /// <summary>
+        /// The name of the Alerting Profile
+        /// </summary>
         public readonly string Name;
 
         [OutputConstructor]

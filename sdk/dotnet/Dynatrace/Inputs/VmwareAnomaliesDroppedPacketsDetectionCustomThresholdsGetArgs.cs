@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class VmwareAnomaliesDroppedPacketsDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Receive/transmit dropped packets rate on NIC is higher than
+        /// </summary>
         [Input("droppedPacketsPerSecond", required: true)]
         public Input<int> DroppedPacketsPerSecond { get; set; } = null!;
 

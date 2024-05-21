@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // ## Dynatrace Documentation
@@ -29,7 +30,7 @@ func NewRequestNamings(ctx *pulumi.Context,
 		args = &RequestNamingsArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource RequestNamings
 	err := ctx.RegisterResource("dynatrace:index/requestNamings:RequestNamings", name, args, &resource, opts...)
 	if err != nil {

@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule
     {
+        /// <summary>
+        /// Defines the conditions when the naming rule should apply
+        /// </summary>
         public readonly Outputs.WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions? Conditions;
+        /// <summary>
+        /// Naming pattern. Use Curly brackets `{}` to select placeholders
+        /// </summary>
         public readonly string Template;
+        /// <summary>
+        /// If set to `true` the conditions will be connected by logical OR instead of logical AND
+        /// </summary>
         public readonly bool? UseOrConditions;
 
         [OutputConstructor]

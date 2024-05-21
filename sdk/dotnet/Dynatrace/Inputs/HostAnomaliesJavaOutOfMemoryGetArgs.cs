@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesJavaOutOfMemoryGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The detection is enabled (`true`) or disabled (`false`)
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
+        /// <summary>
+        /// Custom thresholds for Java out of memory. If not set, automatic mode is used
+        /// </summary>
         [Input("thresholds")]
         public Input<Inputs.HostAnomaliesJavaOutOfMemoryThresholdsGetArgs>? Thresholds { get; set; }
 

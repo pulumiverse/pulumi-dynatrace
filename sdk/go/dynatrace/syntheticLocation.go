@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type SyntheticLocation struct {
@@ -61,7 +62,7 @@ func NewSyntheticLocation(ctx *pulumi.Context,
 	if args.Longitude == nil {
 		return nil, errors.New("invalid value for required argument 'Longitude'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource SyntheticLocation
 	err := ctx.RegisterResource("dynatrace:index/syntheticLocation:SyntheticLocation", name, args, &resource, opts...)
 	if err != nil {

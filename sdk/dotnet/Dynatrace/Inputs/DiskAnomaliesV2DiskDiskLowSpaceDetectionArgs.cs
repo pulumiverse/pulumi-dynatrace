@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DiskAnomaliesV2DiskDiskLowSpaceDetectionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("customThresholds")]
         public Input<Inputs.DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholdsArgs>? CustomThresholds { get; set; }
 
+        /// <summary>
+        /// Detection mode for low disk space
+        /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }
 
+        /// <summary>
+        /// Detect low disk space
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 

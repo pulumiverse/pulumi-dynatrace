@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AlertingFiltersFilterCustom
     {
+        /// <summary>
+        /// Configuration of a matching filter
+        /// </summary>
         public readonly Outputs.AlertingFiltersFilterCustomDescription? Description;
+        /// <summary>
+        /// Configuration of a matching filter
+        /// </summary>
         public readonly Outputs.AlertingFiltersFilterCustomMetadata? Metadata;
+        /// <summary>
+        /// Configuration of a matching filter
+        /// </summary>
         public readonly Outputs.AlertingFiltersFilterCustomTitle? Title;
 
         [OutputConstructor]

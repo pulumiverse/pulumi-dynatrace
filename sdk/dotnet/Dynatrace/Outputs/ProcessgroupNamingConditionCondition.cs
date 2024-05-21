@@ -14,70 +14,265 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ProcessgroupNamingConditionCondition
     {
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionApplicationTypeComparison> ApplicationTypeComparisons;
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionApplicationType> ApplicationTypes;
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionAzureComputeModeComparison> AzureComputeModeComparisons;
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionAzureComputeMode> AzureComputeModes;
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionAzureSkuComparision> AzureSkuComparisions;
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionAzureSkus> AzureSkus;
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionBaseComparisonBasic> BaseComparisonBasics;
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionBaseConditionKey> BaseConditionKeys;
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionBitnessComparision> BitnessComparisions;
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionBitness> Bitnesses;
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionCloudTypeComparison> CloudTypeComparisons;
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionCloudType> CloudTypes;
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionComparison> Comparisons;
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionCustomApplicationTypeComparison> CustomApplicationTypeComparisons;
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionCustomApplicationType> CustomApplicationTypes;
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionCustomHostMetadataConditionKey> CustomHostMetadataConditionKeys;
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionCustomHostMetadata> CustomHostMetadatas;
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionCustomProcessMetadataConditionKey> CustomProcessMetadataConditionKeys;
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionCustomProcessMetadata> CustomProcessMetadatas;
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionDatabaseTopology> DatabaseTopologies;
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionDatabaseTopologyComparison> DatabaseTopologyComparisons;
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionDcrumDecoderComparison> DcrumDecoderComparisons;
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionDcrumDecoder> DcrumDecoders;
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionEntity> Entities;
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionEntityIdComparison> EntityIdComparisons;
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionHostTech> HostTeches;
+        /// <summary>
+        /// `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionHypervisorTypeComparision> HypervisorTypeComparisions;
+        /// <summary>
+        /// Comparison for `HYPERVISOR_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionHypervisor> Hypervisors;
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionIndexedNameComparison> IndexedNameComparisons;
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionIndexedName> IndexedNames;
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionIndexedStringComparison> IndexedStringComparisons;
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionIndexedString> IndexedStrings;
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionIndexedTagComparison> IndexedTagComparisons;
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionIndexedTag> IndexedTags;
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionIntegerComparison> IntegerComparisons;
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionInteger> Integers;
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionIpaddressComparison> IpaddressComparisons;
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionIpaddress> Ipaddresses;
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionKey> Keys;
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionMobilePlatformComparison> MobilePlatformComparisons;
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionMobilePlatform> MobilePlatforms;
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionOsArch> OsArches;
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionOsType> OsTypes;
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionOsarchitectureComparison> OsarchitectureComparisons;
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionOstypeComparison> OstypeComparisons;
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionPaasTypeComparison> PaasTypeComparisons;
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionPaasType> PaasTypes;
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionProcessMetadataConditionKey> ProcessMetadataConditionKeys;
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionProcessMetadata> ProcessMetadatas;
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionServiceTopology> ServiceTopologies;
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionServiceTopologyComparison> ServiceTopologyComparisons;
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionServiceTypeComparison> ServiceTypeComparisons;
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionServiceType> ServiceTypes;
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionSimpleHostTechComparison> SimpleHostTechComparisons;
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionSimpleTechComparison> SimpleTechComparisons;
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionStringComparison> StringComparisons;
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionStringConditionKey> StringConditionKeys;
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionStringKey> StringKeys;
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionString> Strings;
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionSyntheticEngineTypeComparison> SyntheticEngineTypeComparisons;
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionSyntheticEngine> SyntheticEngines;
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionTagComparison> TagComparisons;
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionTag> Tags;
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ProcessgroupNamingConditionConditionTech> Teches;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         public readonly string? Unknowns;
 
         [OutputConstructor]

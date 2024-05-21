@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("rules")]
         private InputList<Inputs.ResourceAttributesKeysRuleArgs>? _rules;
+
+        /// <summary>
+        /// Attribute key allow-list
+        /// </summary>
         public InputList<Inputs.ResourceAttributesKeysRuleArgs> Rules
         {
             get => _rules ?? (_rules = new InputList<Inputs.ResourceAttributesKeysRuleArgs>());

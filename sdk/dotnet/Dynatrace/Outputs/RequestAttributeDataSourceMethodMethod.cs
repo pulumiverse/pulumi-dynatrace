@@ -14,17 +14,41 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class RequestAttributeDataSourceMethodMethod
     {
+        /// <summary>
+        /// Configuration of a method to be captured
+        /// </summary>
         public readonly ImmutableArray<string> ArgumentTypes;
+        /// <summary>
+        /// The class name where the method to capture resides.   Either this or the **fileName** must be set
+        /// </summary>
         public readonly string? ClassName;
+        /// <summary>
+        /// The file name where the method to capture resides.   Either this or **className** must be set
+        /// </summary>
         public readonly string? FileName;
+        /// <summary>
+        /// The operator of the comparison. If not set, `EQUALS` is used
+        /// </summary>
         public readonly string? FileNameMatcher;
+        /// <summary>
+        /// The name of the method to capture
+        /// </summary>
         public readonly string MethodName;
+        /// <summary>
+        /// The modifiers of the method to capture
+        /// </summary>
         public readonly ImmutableArray<string> Modifiers;
+        /// <summary>
+        /// The return type
+        /// </summary>
         public readonly string ReturnType;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider
         /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// The visibility of the method to capture
+        /// </summary>
         public readonly string Visibility;
 
         [OutputConstructor]

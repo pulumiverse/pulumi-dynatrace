@@ -8,10 +8,11 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 func LookupCalculatedServiceMetric(ctx *pulumi.Context, args *LookupCalculatedServiceMetricArgs, opts ...pulumi.InvokeOption) (*LookupCalculatedServiceMetricResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCalculatedServiceMetricResult
 	err := ctx.Invoke("dynatrace:index/getCalculatedServiceMetric:getCalculatedServiceMetric", args, &rv, opts...)
 	if err != nil {

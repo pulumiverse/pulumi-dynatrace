@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type Credentials struct {
@@ -18,7 +19,7 @@ type Credentials struct {
 	Certificate pulumi.StringPtrOutput `pulumi:"certificate"`
 	// The list contains summary data related to the use of credentials
 	//
-	// Deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
+	// Deprecated: `credentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
 	CredentialUsageSummaries CredentialsCredentialUsageSummaryArrayOutput `pulumi:"credentialUsageSummaries"`
 	// A short description of the credentials set
 	Description pulumi.StringPtrOutput `pulumi:"description"`
@@ -29,10 +30,8 @@ type Credentials struct {
 	// The name of the credentials set
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The credentials set is available to every user (`false`) or to owner only (`true`)
-	OwnerAccessOnly pulumi.BoolPtrOutput `pulumi:"ownerAccessOnly"`
-	// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-	// you want to set an empty password, use the value `--empty--`.
-	Password pulumi.StringPtrOutput `pulumi:"password"`
+	OwnerAccessOnly pulumi.BoolPtrOutput   `pulumi:"ownerAccessOnly"`
+	Password        pulumi.StringPtrOutput `pulumi:"password"`
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public pulumi.BoolPtrOutput `pulumi:"public"`
 	// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
@@ -68,7 +67,7 @@ func NewCredentials(ctx *pulumi.Context,
 		"username",
 	})
 	opts = append(opts, secrets)
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Credentials
 	err := ctx.RegisterResource("dynatrace:index/credentials:Credentials", name, args, &resource, opts...)
 	if err != nil {
@@ -95,7 +94,7 @@ type credentialsState struct {
 	Certificate *string `pulumi:"certificate"`
 	// The list contains summary data related to the use of credentials
 	//
-	// Deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
+	// Deprecated: `credentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
 	CredentialUsageSummaries []CredentialsCredentialUsageSummary `pulumi:"credentialUsageSummaries"`
 	// A short description of the credentials set
 	Description *string `pulumi:"description"`
@@ -106,10 +105,8 @@ type credentialsState struct {
 	// The name of the credentials set
 	Name *string `pulumi:"name"`
 	// The credentials set is available to every user (`false`) or to owner only (`true`)
-	OwnerAccessOnly *bool `pulumi:"ownerAccessOnly"`
-	// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-	// you want to set an empty password, use the value `--empty--`.
-	Password *string `pulumi:"password"`
+	OwnerAccessOnly *bool   `pulumi:"ownerAccessOnly"`
+	Password        *string `pulumi:"password"`
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public *bool `pulumi:"public"`
 	// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
@@ -125,7 +122,7 @@ type CredentialsState struct {
 	Certificate pulumi.StringPtrInput
 	// The list contains summary data related to the use of credentials
 	//
-	// Deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
+	// Deprecated: `credentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
 	CredentialUsageSummaries CredentialsCredentialUsageSummaryArrayInput
 	// A short description of the credentials set
 	Description pulumi.StringPtrInput
@@ -137,9 +134,7 @@ type CredentialsState struct {
 	Name pulumi.StringPtrInput
 	// The credentials set is available to every user (`false`) or to owner only (`true`)
 	OwnerAccessOnly pulumi.BoolPtrInput
-	// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-	// you want to set an empty password, use the value `--empty--`.
-	Password pulumi.StringPtrInput
+	Password        pulumi.StringPtrInput
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public pulumi.BoolPtrInput
 	// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
@@ -159,7 +154,7 @@ type credentialsArgs struct {
 	Certificate *string `pulumi:"certificate"`
 	// The list contains summary data related to the use of credentials
 	//
-	// Deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
+	// Deprecated: `credentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
 	CredentialUsageSummaries []CredentialsCredentialUsageSummary `pulumi:"credentialUsageSummaries"`
 	// A short description of the credentials set
 	Description *string `pulumi:"description"`
@@ -170,10 +165,8 @@ type credentialsArgs struct {
 	// The name of the credentials set
 	Name *string `pulumi:"name"`
 	// The credentials set is available to every user (`false`) or to owner only (`true`)
-	OwnerAccessOnly *bool `pulumi:"ownerAccessOnly"`
-	// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-	// you want to set an empty password, use the value `--empty--`.
-	Password *string `pulumi:"password"`
+	OwnerAccessOnly *bool   `pulumi:"ownerAccessOnly"`
+	Password        *string `pulumi:"password"`
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public *bool `pulumi:"public"`
 	// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
@@ -190,7 +183,7 @@ type CredentialsArgs struct {
 	Certificate pulumi.StringPtrInput
 	// The list contains summary data related to the use of credentials
 	//
-	// Deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
+	// Deprecated: `credentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
 	CredentialUsageSummaries CredentialsCredentialUsageSummaryArrayInput
 	// A short description of the credentials set
 	Description pulumi.StringPtrInput
@@ -202,9 +195,7 @@ type CredentialsArgs struct {
 	Name pulumi.StringPtrInput
 	// The credentials set is available to every user (`false`) or to owner only (`true`)
 	OwnerAccessOnly pulumi.BoolPtrInput
-	// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-	// you want to set an empty password, use the value `--empty--`.
-	Password pulumi.StringPtrInput
+	Password        pulumi.StringPtrInput
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public pulumi.BoolPtrInput
 	// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
@@ -309,7 +300,7 @@ func (o CredentialsOutput) Certificate() pulumi.StringPtrOutput {
 
 // The list contains summary data related to the use of credentials
 //
-// Deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
+// Deprecated: `credentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
 func (o CredentialsOutput) CredentialUsageSummaries() CredentialsCredentialUsageSummaryArrayOutput {
 	return o.ApplyT(func(v *Credentials) CredentialsCredentialUsageSummaryArrayOutput { return v.CredentialUsageSummaries }).(CredentialsCredentialUsageSummaryArrayOutput)
 }
@@ -339,8 +330,6 @@ func (o CredentialsOutput) OwnerAccessOnly() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Credentials) pulumi.BoolPtrOutput { return v.OwnerAccessOnly }).(pulumi.BoolPtrOutput)
 }
 
-// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-// you want to set an empty password, use the value `--empty--`.
 func (o CredentialsOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Credentials) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
 }

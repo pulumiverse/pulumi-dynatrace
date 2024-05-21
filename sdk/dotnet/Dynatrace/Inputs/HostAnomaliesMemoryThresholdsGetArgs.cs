@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesMemoryThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Custom thresholds for Linux
+        /// </summary>
         [Input("linux", required: true)]
         public Input<Inputs.HostAnomaliesMemoryThresholdsLinuxGetArgs> Linux { get; set; } = null!;
 
+        /// <summary>
+        /// Custom thresholds for Windows
+        /// </summary>
         [Input("windows", required: true)]
         public Input<Inputs.HostAnomaliesMemoryThresholdsWindowsGetArgs> Windows { get; set; } = null!;
 

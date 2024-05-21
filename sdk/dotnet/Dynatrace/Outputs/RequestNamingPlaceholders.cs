@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class RequestNamingPlaceholders
     {
+        /// <summary>
+        /// A custom placeholder to be used in a dimension value pattern
+        /// </summary>
         public readonly ImmutableArray<Outputs.RequestNamingPlaceholdersPlaceholder> Placeholders;
 
         [OutputConstructor]

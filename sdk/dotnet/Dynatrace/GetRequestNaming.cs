@@ -19,9 +19,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -42,8 +40,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         ///     };
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetRequestNamingResult> InvokeAsync(GetRequestNamingArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRequestNamingResult>("dynatrace:index/getRequestNaming:getRequestNaming", args ?? new GetRequestNamingArgs(), options.WithDefaults());
@@ -55,9 +51,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -78,8 +72,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         ///     };
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetRequestNamingResult> Invoke(GetRequestNamingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRequestNamingResult>("dynatrace:index/getRequestNaming:getRequestNaming", args ?? new GetRequestNamingInvokeArgs(), options.WithDefaults());

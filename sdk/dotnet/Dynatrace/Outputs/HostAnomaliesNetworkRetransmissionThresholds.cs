@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesNetworkRetransmissionThresholds
     {
+        /// <summary>
+        /// Retransmission rate is higher than *X*% in 3 out of 5 samples
+        /// </summary>
         public readonly int RetransmissionRate;
+        /// <summary>
+        /// Number of retransmitted packets is higher than *X* packets per minute in 3 out of 5 samples
+        /// </summary>
         public readonly int RetransmittedPackets;
 
         [OutputConstructor]

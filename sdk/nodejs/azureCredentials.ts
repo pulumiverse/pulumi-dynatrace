@@ -74,10 +74,6 @@ export class AzureCredentials extends pulumi.CustomResource {
      * A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
      */
     public readonly supportingServices!: pulumi.Output<outputs.AzureCredentialsSupportingService[] | undefined>;
-    /**
-     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-     * manage them via WebUI without interference by Terraform.
-     */
     public readonly supportingServicesManagedInDynatrace!: pulumi.Output<boolean | undefined>;
     /**
      * Any attributes that aren't yet supported by this provider
@@ -181,10 +177,6 @@ export interface AzureCredentialsState {
      * A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
      */
     supportingServices?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsSupportingService>[]>;
-    /**
-     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-     * manage them via WebUI without interference by Terraform.
-     */
     supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
     /**
      * Any attributes that aren't yet supported by this provider
@@ -236,10 +228,6 @@ export interface AzureCredentialsArgs {
      * A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
      */
     supportingServices?: pulumi.Input<pulumi.Input<inputs.AzureCredentialsSupportingService>[]>;
-    /**
-     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-     * manage them via WebUI without interference by Terraform.
-     */
     supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
     /**
      * Any attributes that aren't yet supported by this provider

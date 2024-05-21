@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAllArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if the response time degrades beyond this many ms within an observation period of 5 minutes
+        /// </summary>
         [Input("degradationMilliseconds", required: true)]
         public Input<double> DegradationMilliseconds { get; set; } = null!;
 

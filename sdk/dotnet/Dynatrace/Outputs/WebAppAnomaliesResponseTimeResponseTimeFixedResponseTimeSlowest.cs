@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest
     {
+        /// <summary>
+        /// Alert if the key performance metric of the slowest 10% degrades beyond this many ms within an observation period of 5 minutes
+        /// </summary>
         public readonly double SlowestDegradationMilliseconds;
 
         [OutputConstructor]

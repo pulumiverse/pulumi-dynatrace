@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesNetworkRetransmissionThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Retransmission rate is higher than *X*% in 3 out of 5 samples
+        /// </summary>
         [Input("retransmissionRate", required: true)]
         public Input<int> RetransmissionRate { get; set; } = null!;
 
+        /// <summary>
+        /// Number of retransmitted packets is higher than *X* packets per minute in 3 out of 5 samples
+        /// </summary>
         [Input("retransmittedPackets", required: true)]
         public Input<int> RetransmittedPackets { get; set; } = null!;
 

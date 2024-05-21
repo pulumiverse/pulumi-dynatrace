@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilter
     {
+        /// <summary>
+        /// Entity types affected by tag
+        /// </summary>
         public readonly ImmutableArray<string> EntityTypes;
+        /// <summary>
+        /// The display name used to identify this generic filter
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// The entity type for which the suggestions should be provided.
+        /// </summary>
         public readonly string? SuggestionsFromEntityType;
+        /// <summary>
+        /// The tag key for this filter
+        /// </summary>
         public readonly string? TagKey;
 
         [OutputConstructor]

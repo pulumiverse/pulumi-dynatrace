@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("rules", required: true)]
         private InputList<Inputs.WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArgs>? _rules;
+
+        /// <summary>
+        /// Java script injection rule
+        /// </summary>
         public InputList<Inputs.WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArgs> Rules
         {
             get => _rules ?? (_rules = new InputList<Inputs.WebApplicationMonitoringSettingsJavascriptInjectionRulesRuleArgs>());

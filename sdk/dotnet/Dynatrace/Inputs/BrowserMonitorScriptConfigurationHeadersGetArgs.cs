@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("headers", required: true)]
         private InputList<Inputs.BrowserMonitorScriptConfigurationHeadersHeaderGetArgs>? _headers;
+
+        /// <summary>
+        /// contains an HTTP header of the request
+        /// </summary>
         public InputList<Inputs.BrowserMonitorScriptConfigurationHeadersHeaderGetArgs> Headers
         {
             get => _headers ?? (_headers = new InputList<Inputs.BrowserMonitorScriptConfigurationHeadersHeaderGetArgs>());
@@ -23,6 +27,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("restrictions")]
         private InputList<string>? _restrictions;
+
+        /// <summary>
+        /// Restrict applying headers to a set of URLs
+        /// </summary>
         public InputList<string> Restrictions
         {
             get => _restrictions ?? (_restrictions = new InputList<string>());

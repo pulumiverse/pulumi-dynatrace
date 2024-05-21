@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds EventThresholds;
+        /// <summary>
+        /// Retransmission rate threshold
+        /// </summary>
         public readonly int RetransmissionRatePercentage;
+        /// <summary>
+        /// Number of retransmitted packets threshold
+        /// </summary>
         public readonly int RetransmittedPacketsNumberPerMinute;
 
         [OutputConstructor]

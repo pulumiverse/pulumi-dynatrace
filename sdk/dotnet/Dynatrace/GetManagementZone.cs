@@ -17,9 +17,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// - `name` queries for all management zones with the specified name
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -79,8 +77,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagementZoneResult> InvokeAsync(GetManagementZoneArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementZoneResult>("dynatrace:index/getManagementZone:getManagementZone", args ?? new GetManagementZoneArgs(), options.WithDefaults());
@@ -90,9 +86,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// - `name` queries for all management zones with the specified name
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -152,8 +146,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagementZoneResult> Invoke(GetManagementZoneInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementZoneResult>("dynatrace:index/getManagementZone:getManagementZone", args ?? new GetManagementZoneInvokeArgs(), options.WithDefaults());

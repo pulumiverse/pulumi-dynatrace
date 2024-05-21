@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll
     {
+        /// <summary>
+        /// Alert if the response time degrades beyond this many ms within an observation period of 5 minutes
+        /// </summary>
         public readonly double DegradationMilliseconds;
 
         [OutputConstructor]

@@ -14,21 +14,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationConversionGoalsGoal
     {
+        /// <summary>
+        /// Configuration of a destination-based conversion goal
+        /// </summary>
         public readonly Outputs.WebApplicationConversionGoalsGoalDestination? Destination;
         /// <summary>
-        /// The ID of this resource.
+        /// The ID of conversion goal.
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// The name of the web application, displayed in the UI
+        /// The name of the conversion goal. Valid length within 1 and 50 characters.
         /// </summary>
         public readonly string Name;
         /// <summary>
         /// The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
         /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// Configuration of a destination-based conversion goal
+        /// </summary>
         public readonly Outputs.WebApplicationConversionGoalsGoalUserAction? UserAction;
+        /// <summary>
+        /// Configuration of a destination-based conversion goal
+        /// </summary>
         public readonly Outputs.WebApplicationConversionGoalsGoalVisitDuration? VisitDuration;
+        /// <summary>
+        /// Configuration of a destination-based conversion goal
+        /// </summary>
         public readonly Outputs.WebApplicationConversionGoalsGoalVisitNumAction? VisitNumAction;
 
         [OutputConstructor]

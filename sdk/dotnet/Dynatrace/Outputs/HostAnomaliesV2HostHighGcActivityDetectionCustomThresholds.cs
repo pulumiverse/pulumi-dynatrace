@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds EventThresholds;
+        /// <summary>
+        /// Alert if the GC suspension is higher than this threshold
+        /// </summary>
         public readonly int GcSuspensionPercentage;
+        /// <summary>
+        /// Alert if GC time is higher than this threshold
+        /// </summary>
         public readonly int GcTimePercentage;
 
         [OutputConstructor]

@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type HttpMonitor struct {
@@ -43,7 +44,7 @@ func NewHttpMonitor(ctx *pulumi.Context,
 	if args.Frequency == nil {
 		return nil, errors.New("invalid value for required argument 'Frequency'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource HttpMonitor
 	err := ctx.RegisterResource("dynatrace:index/httpMonitor:HttpMonitor", name, args, &resource, opts...)
 	if err != nil {

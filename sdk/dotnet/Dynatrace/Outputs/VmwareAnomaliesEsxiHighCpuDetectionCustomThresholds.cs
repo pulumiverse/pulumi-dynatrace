@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class VmwareAnomaliesEsxiHighCpuDetectionCustomThresholds
     {
+        /// <summary>
+        /// At least one peak occurred when Hypervisor CPU usage was higher than
+        /// </summary>
         public readonly int CpuPeakPercentage;
+        /// <summary>
+        /// CPU usage is higher than
+        /// </summary>
         public readonly int CpuUsagePercentage;
+        /// <summary>
+        /// VM CPU ready is higher than
+        /// </summary>
         public readonly int VmCpuReadyPercentage;
 
         [OutputConstructor]

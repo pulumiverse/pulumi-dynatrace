@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class MaintenanceWindowScheduleRecurrenceGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The day of the month for monthly maintenance.  The value of `31` is treated as the last day of the month for months that don't have a 31st day. The value of `30` is also treated as the last day of the month for February
+        /// </summary>
         [Input("dayOfMonth")]
         public Input<int>? DayOfMonth { get; set; }
 
+        /// <summary>
+        /// The day of the week for weekly maintenance.  The format is the full name of the day in upper case, for example `THURSDAY`
+        /// </summary>
         [Input("dayOfWeek")]
         public Input<string>? DayOfWeek { get; set; }
 
+        /// <summary>
+        /// The duration of the maintenance window in minutes
+        /// </summary>
         [Input("durationMinutes", required: true)]
         public Input<int> DurationMinutes { get; set; } = null!;
 
+        /// <summary>
+        /// The start time of the maintenance window in HH:mm format
+        /// </summary>
         [Input("startTime", required: true)]
         public Input<string> StartTime { get; set; } = null!;
 

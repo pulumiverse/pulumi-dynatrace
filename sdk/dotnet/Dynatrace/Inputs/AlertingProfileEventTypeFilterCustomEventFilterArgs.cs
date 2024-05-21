@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("customDescriptionFilters")]
         private InputList<Inputs.AlertingProfileEventTypeFilterCustomEventFilterCustomDescriptionFilterArgs>? _customDescriptionFilters;
+
+        /// <summary>
+        /// Configuration of a matching filter
+        /// </summary>
         public InputList<Inputs.AlertingProfileEventTypeFilterCustomEventFilterCustomDescriptionFilterArgs> CustomDescriptionFilters
         {
             get => _customDescriptionFilters ?? (_customDescriptionFilters = new InputList<Inputs.AlertingProfileEventTypeFilterCustomEventFilterCustomDescriptionFilterArgs>());
@@ -23,6 +27,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customTitleFilters")]
         private InputList<Inputs.AlertingProfileEventTypeFilterCustomEventFilterCustomTitleFilterArgs>? _customTitleFilters;
+
+        /// <summary>
+        /// Configuration of a matching filter
+        /// </summary>
         public InputList<Inputs.AlertingProfileEventTypeFilterCustomEventFilterCustomTitleFilterArgs> CustomTitleFilters
         {
             get => _customTitleFilters ?? (_customTitleFilters = new InputList<Inputs.AlertingProfileEventTypeFilterCustomEventFilterCustomTitleFilterArgs>());

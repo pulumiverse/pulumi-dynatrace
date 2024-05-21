@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class RequestAttributeDataSourceValueProcessingExtractSubstring
     {
+        /// <summary>
+        /// The delimiter string
+        /// </summary>
         public readonly string Delimiter;
+        /// <summary>
+        /// The end-delimiter string.   Required if the **position** value is `BETWEEN`. Otherwise not allowed
+        /// </summary>
         public readonly string? EndDelimiter;
+        /// <summary>
+        /// The position of the extracted string relative to delimiters
+        /// </summary>
         public readonly string Position;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider

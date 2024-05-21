@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ServiceFullWebServiceIdContributorsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Application identifier
+        /// </summary>
         [Input("applicationId")]
         public Input<Inputs.ServiceFullWebServiceIdContributorsApplicationIdArgs>? ApplicationId { get; set; }
 
+        /// <summary>
+        /// The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+        /// </summary>
         [Input("contextRoot")]
         public Input<Inputs.ServiceFullWebServiceIdContributorsContextRootArgs>? ContextRoot { get; set; }
 
@@ -25,12 +31,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("detectAsWebRequestService", required: true)]
         public Input<bool> DetectAsWebRequestService { get; set; } = null!;
 
+        /// <summary>
+        /// Server name
+        /// </summary>
         [Input("serverName")]
         public Input<Inputs.ServiceFullWebServiceIdContributorsServerNameArgs>? ServerName { get; set; }
 
+        /// <summary>
+        /// Web service name
+        /// </summary>
         [Input("webServiceName")]
         public Input<Inputs.ServiceFullWebServiceIdContributorsWebServiceNameArgs>? WebServiceName { get; set; }
 
+        /// <summary>
+        /// Web service namespace
+        /// </summary>
         [Input("webServiceNamespace")]
         public Input<Inputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs>? WebServiceNamespace { get; set; }
 

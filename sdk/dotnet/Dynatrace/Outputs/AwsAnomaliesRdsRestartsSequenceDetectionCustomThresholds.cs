@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds
     {
+        /// <summary>
+        /// Number of restarts per minute is equal or higher than
+        /// </summary>
         public readonly int RestartsPerMinute;
 
         [OutputConstructor]

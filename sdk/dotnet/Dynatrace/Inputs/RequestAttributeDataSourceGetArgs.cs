@@ -85,6 +85,11 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("source", required: true)]
         public Input<string> Source { get; set; } = null!;
 
+        /// <summary>
+        /// The technology of the method to capture if the **source** value is `METHOD_PARAM`. 
+        /// 
+        ///  Not applicable in other cases
+        /// </summary>
         [Input("technology")]
         public Input<string>? Technology { get; set; }
 
@@ -94,6 +99,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 
+        /// <summary>
+        /// Process values as specified
+        /// </summary>
         [Input("valueProcessing")]
         public Input<Inputs.RequestAttributeDataSourceValueProcessingGetArgs>? ValueProcessing { get; set; }
 

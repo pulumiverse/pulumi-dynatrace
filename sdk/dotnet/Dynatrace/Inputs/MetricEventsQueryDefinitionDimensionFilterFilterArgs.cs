@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class MetricEventsQueryDefinitionDimensionFilterFilterArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The key of the dimension filter
+        /// </summary>
         [Input("dimensionKey", required: true)]
         public Input<string> DimensionKey { get; set; } = null!;
 
+        /// <summary>
+        /// The value of the dimension filter
+        /// </summary>
         [Input("dimensionValue", required: true)]
         public Input<string> DimensionValue { get; set; } = null!;
 

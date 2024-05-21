@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ServiceFullWebServiceIdContributorsContextRootServiceIdContributorArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
+        /// </summary>
         [Input("contributionType", required: true)]
         public Input<string> ContributionType { get; set; } = null!;
 
+        /// <summary>
+        /// The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
+        /// </summary>
         [Input("segmentCount")]
         public Input<int>? SegmentCount { get; set; }
 
+        /// <summary>
+        /// Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        /// </summary>
         [Input("transformations")]
         public Input<Inputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsArgs>? Transformations { get; set; }
 
+        /// <summary>
+        /// The value to be used instead of the detected value.
+        /// </summary>
         [Input("valueOverride")]
         public Input<Inputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverrideArgs>? ValueOverride { get; set; }
 

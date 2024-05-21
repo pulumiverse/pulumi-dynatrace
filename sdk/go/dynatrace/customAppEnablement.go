@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type CustomAppEnablement struct {
@@ -30,7 +31,7 @@ func NewCustomAppEnablement(ctx *pulumi.Context,
 	if args.Rum == nil {
 		return nil, errors.New("invalid value for required argument 'Rum'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CustomAppEnablement
 	err := ctx.RegisterResource("dynatrace:index/customAppEnablement:CustomAppEnablement", name, args, &resource, opts...)
 	if err != nil {

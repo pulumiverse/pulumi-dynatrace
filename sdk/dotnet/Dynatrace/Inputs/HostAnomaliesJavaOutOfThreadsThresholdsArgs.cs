@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesJavaOutOfThreadsThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if the number of Java out of threads exceptions is *X* per minute or higher
+        /// </summary>
         [Input("exceptionCount", required: true)]
         public Input<int> ExceptionCount { get; set; } = null!;
 

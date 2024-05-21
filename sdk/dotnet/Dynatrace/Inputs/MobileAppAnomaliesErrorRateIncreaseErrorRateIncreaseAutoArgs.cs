@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAutoArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Absolute threshold
+        /// </summary>
         [Input("thresholdAbsolute", required: true)]
         public Input<double> ThresholdAbsolute { get; set; } = null!;
 
+        /// <summary>
+        /// Relative threshold
+        /// </summary>
         [Input("thresholdRelative", required: true)]
         public Input<double> ThresholdRelative { get; set; } = null!;
 

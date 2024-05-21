@@ -15,10 +15,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("contexts", required: true)]
         private InputList<Inputs.LogCustomSourceContextContextGetArgs>? _contexts;
-
-        /// <summary>
-        /// Define Custom Log Source only within context if provided
-        /// </summary>
         public InputList<Inputs.LogCustomSourceContextContextGetArgs> Contexts
         {
             get => _contexts ?? (_contexts = new InputList<Inputs.LogCustomSourceContextContextGetArgs>());

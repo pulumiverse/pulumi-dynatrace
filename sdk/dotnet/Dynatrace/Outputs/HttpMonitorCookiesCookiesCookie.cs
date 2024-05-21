@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HttpMonitorCookiesCookiesCookie
     {
+        /// <summary>
+        /// Enclose placeholder values in brackets, for example {email}
+        /// </summary>
         public readonly string Domain;
+        /// <summary>
+        /// Enclose placeholder values in brackets, for example {email}
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// Enclose placeholder values in brackets, for example {email}
+        /// </summary>
         public readonly string? Path;
+        /// <summary>
+        /// Enclose placeholder values in brackets, for example {email}
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

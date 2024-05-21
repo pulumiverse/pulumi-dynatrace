@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if sent/received traffic utilization is higher than this threshold for the defined amount of samples
+        /// </summary>
         [Input("errorsPercentage", required: true)]
         public Input<int> ErrorsPercentage { get; set; } = null!;
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("eventThresholds", required: true)]
         public Input<Inputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholdsArgs> EventThresholds { get; set; } = null!;
 

@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class OsServicesMetadataItemGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Type 'dt.' for key hints.
+        /// </summary>
         [Input("metadataKey", required: true)]
         public Input<string> MetadataKey { get; set; } = null!;
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("metadataValue", required: true)]
         public Input<string> MetadataValue { get; set; } = null!;
 

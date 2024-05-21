@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("conditions")]
         private InputList<Inputs.MetricEventsQueryDefinitionEntityFilterConditionConditionArgs>? _conditions;
+
+        /// <summary>
+        /// Entity filter conditions
+        /// </summary>
         public InputList<Inputs.MetricEventsQueryDefinitionEntityFilterConditionConditionArgs> Conditions
         {
             get => _conditions ?? (_conditions = new InputList<Inputs.MetricEventsQueryDefinitionEntityFilterConditionConditionArgs>());

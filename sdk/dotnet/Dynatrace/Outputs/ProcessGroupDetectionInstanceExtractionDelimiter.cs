@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ProcessGroupDetectionInstanceExtractionDelimiter
     {
+        /// <summary>
+        /// Delimit from
+        /// </summary>
         public readonly string? From;
+        /// <summary>
+        /// (e.g. versions, hex, dates, and build numbers)
+        /// </summary>
         public readonly bool RemoveIds;
+        /// <summary>
+        /// Delimit to
+        /// </summary>
         public readonly string? To;
 
         [OutputConstructor]

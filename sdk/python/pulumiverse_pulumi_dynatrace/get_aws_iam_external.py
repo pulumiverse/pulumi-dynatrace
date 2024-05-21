@@ -13,6 +13,7 @@ __all__ = [
     'GetAwsIamExternalResult',
     'AwaitableGetAwsIamExternalResult',
     'get_aws_iam_external',
+    'get_aws_iam_external_output',
 ]
 
 @pulumi.output_type
@@ -52,4 +53,12 @@ def get_aws_iam_external(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitab
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getAwsIamExternal:getAwsIamExternal', __args__, opts=opts, typ=GetAwsIamExternalResult).value
 
     return AwaitableGetAwsIamExternalResult(
-        id=__ret__.id)
+        id=pulumi.get(__ret__, 'id'))
+
+
+@_utilities.lift_output_func(get_aws_iam_external)
+def get_aws_iam_external_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAwsIamExternalResult]:
+    """
+    The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
+    """
+    ...

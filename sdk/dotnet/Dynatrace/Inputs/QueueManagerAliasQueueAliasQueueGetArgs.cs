@@ -13,14 +13,24 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class QueueManagerAliasQueueAliasQueueGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The name of the alias queue
+        /// </summary>
         [Input("aliasQueueName", required: true)]
         public Input<string> AliasQueueName { get; set; } = null!;
 
+        /// <summary>
+        /// The name of the base queue
+        /// </summary>
         [Input("baseQueueName", required: true)]
         public Input<string> BaseQueueName { get; set; } = null!;
 
         [Input("clusterVisibilities")]
         private InputList<string>? _clusterVisibilities;
+
+        /// <summary>
+        /// Name of the cluster(s) this alias should be visible in
+        /// </summary>
         public InputList<string> ClusterVisibilities
         {
             get => _clusterVisibilities ?? (_clusterVisibilities = new InputList<string>());

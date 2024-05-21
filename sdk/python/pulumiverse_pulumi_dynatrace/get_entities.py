@@ -89,9 +89,9 @@ def get_entities(entities: Optional[pulumi.InputType['GetEntitiesEntitiesArgs']]
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getEntities:getEntities', __args__, opts=opts, typ=GetEntitiesResult).value
 
     return AwaitableGetEntitiesResult(
-        entities=__ret__.entities,
-        id=__ret__.id,
-        type=__ret__.type)
+        entities=pulumi.get(__ret__, 'entities'),
+        id=pulumi.get(__ret__, 'id'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_entities)

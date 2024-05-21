@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class OwnershipTeamsLinksLink
     {
+        /// <summary>
+        /// Possible Values: `DASHBOARD`, `DOCUMENTATION`, `HEALTH_APP`, `REPOSITORY`, `RUNBOOK`, `URL`, `WIKI`
+        /// </summary>
         public readonly string LinkType;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly string Url;
 
         [OutputConstructor]

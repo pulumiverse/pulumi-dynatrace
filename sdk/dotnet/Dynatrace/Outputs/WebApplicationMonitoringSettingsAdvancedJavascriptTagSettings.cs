@@ -14,14 +14,41 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings
     {
+        /// <summary>
+        /// Additional event handlers and wrappers
+        /// </summary>
         public readonly Outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers? AdditionalEventHandlers;
+        /// <summary>
+        /// In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
+        /// </summary>
         public readonly Outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings? EventWrapperSettings;
+        /// <summary>
+        /// Global event capture settings
+        /// </summary>
         public readonly Outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings? GlobalEventCaptureSettings;
+        /// <summary>
+        /// Instrumentation of unsupported Ajax frameworks enabled/disabled
+        /// </summary>
         public readonly bool? InstrumentUnsupportedAjaxFrameworks;
+        /// <summary>
+        /// Maximum character length for action names. Valid values range from 5 to 10000.
+        /// </summary>
         public readonly int MaxActionNameLength;
+        /// <summary>
+        /// Maximum number of errors to be captured per page. Valid values range from 0 to 50.
+        /// </summary>
         public readonly int MaxErrorsToCapture;
+        /// <summary>
+        /// Additional special characters that are to be escaped using non-alphanumeric characters in HTML escape format. Maximum length 30 character. Allowed characters are `^`, `\`, `&lt;` and `&gt;`.
+        /// </summary>
         public readonly string? SpecialCharactersToEscape;
+        /// <summary>
+        /// Send the beacon signal as a synchronous XMLHttpRequest using Firefox enabled/disabled
+        /// </summary>
         public readonly bool? SyncBeaconFirefox;
+        /// <summary>
+        /// Send the beacon signal as a synchronous XMLHttpRequest using Internet Explorer enabled/disabled
+        /// </summary>
         public readonly bool? SyncBeaconInternetExplorer;
 
         [OutputConstructor]

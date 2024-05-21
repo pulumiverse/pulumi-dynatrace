@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DashboardTileFilterConfigChartConfigResultMetadata
     {
+        /// <summary>
+        /// Additional metadata for charted metric
+        /// </summary>
         public readonly ImmutableArray<Outputs.DashboardTileFilterConfigChartConfigResultMetadataConfig> Configs;
 
         [OutputConstructor]

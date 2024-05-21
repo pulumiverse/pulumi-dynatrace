@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class GetEntitiesEntitiesEntityTagTagArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+        /// </summary>
         [Input("context", required: true)]
         public string Context { get; set; } = null!;
 
+        /// <summary>
+        /// The key of the tag. Custom tags have the tag value here
+        /// </summary>
         [Input("key", required: true)]
         public string Key { get; set; } = null!;
 
+        /// <summary>
+        /// The string representation of the tag
+        /// </summary>
         [Input("stringRepresentation")]
         public string? StringRepresentation { get; set; }
 
+        /// <summary>
+        /// The value of the tag. Not applicable to custom tags
+        /// </summary>
         [Input("value")]
         public string? Value { get; set; }
 

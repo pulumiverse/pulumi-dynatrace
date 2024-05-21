@@ -14,10 +14,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorAnomalyDetectionOutageHandling
     {
+        /// <summary>
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable at all configured locations
+        /// </summary>
         public readonly bool? GlobalOutage;
+        /// <summary>
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Global outage handling configuration.
+        /// </summary>
         public readonly ImmutableArray<Outputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy> GlobalOutagePolicies;
+        /// <summary>
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location
+        /// </summary>
         public readonly bool? LocalOutage;
+        /// <summary>
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Local outage handling configuration. 
+        /// 
+        ///  Alert if **affectedLocations** of locations are unable to access the web application **consecutiveRuns** times consecutively
+        /// </summary>
         public readonly ImmutableArray<Outputs.BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy> LocalOutagePolicies;
+        /// <summary>
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Schedule retry if browser monitor execution results in a fail. For HTTP monitors this property is ignored
+        /// </summary>
         public readonly bool? RetryOnError;
 
         [OutputConstructor]

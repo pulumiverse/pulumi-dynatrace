@@ -14,10 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsContentCapture
     {
+        /// <summary>
+        /// JavaScript errors monitoring enabled/disabled
+        /// </summary>
         public readonly bool? JavascriptErrors;
+        /// <summary>
+        /// Settings for resource timings capture
+        /// </summary>
         public readonly Outputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings? ResourceTimingSettings;
+        /// <summary>
+        /// Settings for timed action capture
+        /// </summary>
         public readonly Outputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings? TimeoutSettings;
+        /// <summary>
+        /// Visually complete and Speed index support enabled/disabled
+        /// </summary>
         public readonly bool? VisuallyCompleteAndSpeedIndex;
+        /// <summary>
+        /// Settings for VisuallyComplete
+        /// </summary>
         public readonly Outputs.WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings? VisuallyCompleteSettings;
 
         [OutputConstructor]

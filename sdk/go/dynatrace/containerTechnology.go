@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ContainerTechnology struct {
@@ -60,7 +61,7 @@ func NewContainerTechnology(ctx *pulumi.Context,
 	if args.Winc == nil {
 		return nil, errors.New("invalid value for required argument 'Winc'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ContainerTechnology
 	err := ctx.RegisterResource("dynatrace:index/containerTechnology:ContainerTechnology", name, args, &resource, opts...)
 	if err != nil {

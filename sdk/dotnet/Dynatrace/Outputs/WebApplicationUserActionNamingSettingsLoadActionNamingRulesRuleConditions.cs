@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions
     {
+        /// <summary>
+        /// Defines the conditions when the naming rule should apply
+        /// </summary>
         public readonly ImmutableArray<Outputs.WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition> Conditions;
 
         [OutputConstructor]

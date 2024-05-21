@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecordingRules
     {
+        /// <summary>
+        /// The masking rule defining how data is hidden
+        /// </summary>
         public readonly ImmutableArray<Outputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecordingRulesRule> Rules;
 
         [OutputConstructor]

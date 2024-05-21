@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The management zone data source allows the management zone ID to be retrieved by its name.
@@ -56,7 +57,7 @@ import (
 //				},
 //				Enabled: pulumi.Bool(true),
 //				ManagementZones: pulumi.StringArray{
-//					*pulumi.String(test.Id),
+//					pulumi.String(test.Id),
 //				},
 //				MetricDefinition: &dynatrace.CalculatedServiceMetricMetricDefinitionArgs{
 //					Metric:           pulumi.String("REQUEST_ATTRIBUTE"),
@@ -74,7 +75,7 @@ import (
 //
 // ```
 func LookupManagementZone(ctx *pulumi.Context, args *LookupManagementZoneArgs, opts ...pulumi.InvokeOption) (*LookupManagementZoneResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupManagementZoneResult
 	err := ctx.Invoke("dynatrace:index/getManagementZone:getManagementZone", args, &rv, opts...)
 	if err != nil {

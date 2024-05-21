@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // ## Dynatrace Documentation
@@ -89,7 +90,7 @@ func NewIamGroup(ctx *pulumi.Context,
 		args = &IamGroupArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource IamGroup
 	err := ctx.RegisterResource("dynatrace:index/iamGroup:IamGroup", name, args, &resource, opts...)
 	if err != nil {

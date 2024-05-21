@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Defines the conditions when the naming rule should apply
+        /// </summary>
         [Input("conditions")]
         public Input<Inputs.WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs>? Conditions { get; set; }
 
+        /// <summary>
+        /// Naming pattern. Use Curly brackets `{}` to select placeholders
+        /// </summary>
         [Input("template", required: true)]
         public Input<string> Template { get; set; } = null!;
 
+        /// <summary>
+        /// If set to `true` the conditions will be connected by logical OR instead of logical AND
+        /// </summary>
         [Input("useOrConditions")]
         public Input<bool>? UseOrConditions { get; set; }
 

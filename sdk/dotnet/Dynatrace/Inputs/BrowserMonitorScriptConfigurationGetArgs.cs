@@ -13,41 +13,77 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BrowserMonitorScriptConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The emulated device of the monitor—holds either the parameters of the custom device or the name and orientation of the preconfigured device.
+        /// </summary>
         [Input("bandwidth")]
         public Input<Inputs.BrowserMonitorScriptConfigurationBandwidthGetArgs>? Bandwidth { get; set; }
 
         [Input("blocks")]
         private InputList<string>? _blocks;
+
+        /// <summary>
+        /// Block these URLs
+        /// </summary>
         public InputList<string> Blocks
         {
             get => _blocks ?? (_blocks = new InputList<string>());
             set => _blocks = value;
         }
 
+        /// <summary>
+        /// Bypass Content Security Policy of monitored pages
+        /// </summary>
         [Input("bypassCsp")]
         public Input<bool>? BypassCsp { get; set; }
 
+        /// <summary>
+        /// These cookies are added before execution of the first step
+        /// </summary>
         [Input("cookies")]
         public Input<Inputs.BrowserMonitorScriptConfigurationCookiesGetArgs>? Cookies { get; set; }
 
+        /// <summary>
+        /// The emulated device of the monitor—holds either the parameters of the custom device or the name and orientation of the preconfigured device.
+        /// 
+        /// If not set, then the Desktop preconfigured device is used
+        /// </summary>
         [Input("device")]
         public Input<Inputs.BrowserMonitorScriptConfigurationDeviceGetArgs>? Device { get; set; }
 
+        /// <summary>
+        /// No documentation available
+        /// </summary>
         [Input("disableWebSecurity")]
         public Input<bool>? DisableWebSecurity { get; set; }
 
+        /// <summary>
+        /// The list of HTTP headers to be sent with requests of the monitor
+        /// </summary>
         [Input("headers")]
         public Input<Inputs.BrowserMonitorScriptConfigurationHeadersGetArgs>? Headers { get; set; }
 
+        /// <summary>
+        /// Ignore specific status codes
+        /// </summary>
         [Input("ignoredErrorCodes")]
         public Input<Inputs.BrowserMonitorScriptConfigurationIgnoredErrorCodesGetArgs>? IgnoredErrorCodes { get; set; }
 
+        /// <summary>
+        /// Custom JavaScript Agent settings
+        /// </summary>
         [Input("javascriptSetttings")]
         public Input<Inputs.BrowserMonitorScriptConfigurationJavascriptSetttingsGetArgs>? JavascriptSetttings { get; set; }
 
+        /// <summary>
+        /// Capture performance metrics for pages loaded in frames
+        /// </summary>
         [Input("monitorFrames")]
         public Input<bool>? MonitorFrames { get; set; }
 
+        /// <summary>
+        /// The user agent of the request
+        /// </summary>
         [Input("userAgent")]
         public Input<string>? UserAgent { get; set; }
 

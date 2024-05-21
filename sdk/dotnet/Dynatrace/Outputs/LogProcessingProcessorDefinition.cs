@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class LogProcessingProcessorDefinition
     {
+        /// <summary>
+        /// Processor definition
+        /// </summary>
         public readonly string Rule;
 
         [OutputConstructor]

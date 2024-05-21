@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MaintenanceWindowScheduleRecurrence
     {
+        /// <summary>
+        /// The day of the month for monthly maintenance.  The value of `31` is treated as the last day of the month for months that don't have a 31st day. The value of `30` is also treated as the last day of the month for February
+        /// </summary>
         public readonly int? DayOfMonth;
+        /// <summary>
+        /// The day of the week for weekly maintenance.  The format is the full name of the day in upper case, for example `THURSDAY`
+        /// </summary>
         public readonly string? DayOfWeek;
+        /// <summary>
+        /// The duration of the maintenance window in minutes
+        /// </summary>
         public readonly int DurationMinutes;
+        /// <summary>
+        /// The start time of the maintenance window in HH:mm format
+        /// </summary>
         public readonly string StartTime;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider

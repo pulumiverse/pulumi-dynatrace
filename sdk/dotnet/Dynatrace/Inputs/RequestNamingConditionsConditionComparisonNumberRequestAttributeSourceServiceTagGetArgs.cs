@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class RequestNamingConditionsConditionComparisonNumberRequestAttributeSourceServiceTagGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The origin of the tag, such as AWS or Cloud Foundry. For custom tags use the `CONTEXTLESS` value. The context is set for tags that are automatically imported by OneAgent (for example, from the AWS console or environment variables). It’s useful for determining the origin of tags when not manually defined, and it also helps to prevent clashes with other existing tags. If the tag is not automatically imported, `CONTEXTLESS` set. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_COMPUTE_ENGINE` and `KUBERNETES`
+        /// </summary>
         [Input("context")]
         public Input<string>? Context { get; set; }
 
+        /// <summary>
+        /// The key of the tag. For custom tags, put the tag value here. The key allows categorization of multiple tags. It is possible that there are multiple values for a single key which will all be represented as standalone tags. Therefore, the key does not have the semantic of a map key but is more like a key of a key-value tuple. In some cases, for example custom tags, the key represents the actual tag value and the value field is not set – those are called valueless tags
+        /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
+        /// <summary>
+        /// has no documentation
+        /// </summary>
         [Input("tagKey")]
         public Input<Inputs.RequestNamingConditionsConditionComparisonNumberRequestAttributeSourceServiceTagTagKeyGetArgs>? TagKey { get; set; }
 
+        /// <summary>
+        /// The value of the tag. Not applicable to custom tags. If a tag does have a separate key and value (in the textual representation they are split by the colon ‘:’), this field is set with the actual value. Key-value pairs can occur for automatically imported tags and tags set by rules if extractors are used
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

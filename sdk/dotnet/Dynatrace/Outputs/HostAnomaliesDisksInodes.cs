@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesDisksInodes
     {
+        /// <summary>
+        /// The detection is enabled (`true`) or disabled (`false`)
+        /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// Custom thresholds for low disk inodes number. If not set, automatic mode is used
+        /// </summary>
         public readonly Outputs.HostAnomaliesDisksInodesThresholds? Thresholds;
 
         [OutputConstructor]

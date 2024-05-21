@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type MonitoredTechnologiesIis struct {
@@ -30,7 +31,7 @@ func NewMonitoredTechnologiesIis(ctx *pulumi.Context,
 	if args.Enabled == nil {
 		return nil, errors.New("invalid value for required argument 'Enabled'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MonitoredTechnologiesIis
 	err := ctx.RegisterResource("dynatrace:index/monitoredTechnologiesIis:MonitoredTechnologiesIis", name, args, &resource, opts...)
 	if err != nil {

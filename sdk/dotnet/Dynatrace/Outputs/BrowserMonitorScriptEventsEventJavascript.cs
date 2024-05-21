@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEventsEventJavascript
     {
+        /// <summary>
+        /// The JavaScript code to be executed in this event
+        /// </summary>
         public readonly string Code;
+        /// <summary>
+        /// The tab on which the page should open
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventJavascriptTarget? Target;
+        /// <summary>
+        /// The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventJavascriptWait? Wait;
 
         [OutputConstructor]

@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AlertingFiltersFilterCustomMetadataItemsFilter
     {
+        /// <summary>
+        /// Type 'dt.' for key hints.
+        /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// Value
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

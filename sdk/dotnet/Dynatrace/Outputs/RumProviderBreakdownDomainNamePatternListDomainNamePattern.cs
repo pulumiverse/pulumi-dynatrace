@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class RumProviderBreakdownDomainNamePatternListDomainNamePattern
     {
+        /// <summary>
+        /// Please type at least part of this content provider's URL. Asterisks (*) can be used as wildcard characters.
+        /// </summary>
         public readonly string Pattern;
 
         [OutputConstructor]

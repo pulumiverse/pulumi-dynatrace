@@ -82,9 +82,9 @@ def get_synthetic_locations(id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getSyntheticLocations:getSyntheticLocations', __args__, opts=opts, typ=GetSyntheticLocationsResult).value
 
     return AwaitableGetSyntheticLocationsResult(
-        id=__ret__.id,
-        locations=__ret__.locations,
-        name=__ret__.name)
+        id=pulumi.get(__ret__, 'id'),
+        locations=pulumi.get(__ret__, 'locations'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_synthetic_locations)

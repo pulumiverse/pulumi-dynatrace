@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptConfigurationJavascriptSetttings
     {
+        /// <summary>
+        /// Additional Javascript Agent Properties
+        /// </summary>
         public readonly string? CustomProperties;
+        /// <summary>
+        /// Custom JavaScript Agent settings
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptConfigurationJavascriptSetttingsTimeoutSettings? TimeoutSettings;
+        /// <summary>
+        /// Parameters for Visually complete and Speed index calculation
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptConfigurationJavascriptSetttingsVisuallyCompleteOptions? VisuallyCompleteOptions;
 
         [OutputConstructor]

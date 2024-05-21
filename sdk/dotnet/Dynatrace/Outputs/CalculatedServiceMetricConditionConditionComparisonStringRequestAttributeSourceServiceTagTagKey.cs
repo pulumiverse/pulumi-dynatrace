@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CalculatedServiceMetricConditionConditionComparisonStringRequestAttributeSourceServiceTagTagKey
     {
+        /// <summary>
+        /// has no documentation
+        /// </summary>
         public readonly string? Context;
+        /// <summary>
+        /// has no documentation
+        /// </summary>
         public readonly string? Key;
 
         [OutputConstructor]

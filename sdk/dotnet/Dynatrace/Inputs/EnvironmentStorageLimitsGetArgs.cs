@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class EnvironmentStorageLimitsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Log monitoring storage usage and limit information on environment level in bytes. Not editable when Log monitoring is not allowed by license or not configured on cluster level. 0 for unlimited.
+        /// </summary>
         [Input("logs")]
         public Input<int>? Logs { get; set; }
 
+        /// <summary>
+        /// Session replay storage usage and limit information on environment level in bytes. 0 for unlimited.
+        /// </summary>
         [Input("sessionReplay")]
         public Input<int>? SessionReplay { get; set; }
 
+        /// <summary>
+        /// Session replay storage usage and limit information on environment level in bytes. 0 for unlimited.
+        /// </summary>
         [Input("symbolFiles")]
         public Input<int>? SymbolFiles { get; set; }
 
+        /// <summary>
+        /// Transaction storage usage and limit information on environment level in bytes. 0 for unlimited.
+        /// </summary>
         [Input("transactions")]
         public Input<int>? Transactions { get; set; }
 

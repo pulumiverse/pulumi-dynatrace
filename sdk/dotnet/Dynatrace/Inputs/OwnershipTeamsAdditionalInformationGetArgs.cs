@@ -15,10 +15,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("additionalInformations", required: true)]
         private InputList<Inputs.OwnershipTeamsAdditionalInformationAdditionalInformationGetArgs>? _additionalInformations;
-
-        /// <summary>
-        /// Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
-        /// </summary>
         public InputList<Inputs.OwnershipTeamsAdditionalInformationAdditionalInformationGetArgs> AdditionalInformations
         {
             get => _additionalInformations ?? (_additionalInformations = new InputList<Inputs.OwnershipTeamsAdditionalInformationAdditionalInformationGetArgs>());

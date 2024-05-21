@@ -19,15 +19,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("impactRelevant")]
         public Input<bool>? ImpactRelevant { get; set; }
 
+        /// <summary>
+        /// The latency of the metric, in minutes. 
+        /// 
+        ///  The latency is the expected reporting delay (for example, caused by constraints of cloud vendors or other third-party data sources) between the observation of a metric data point and its availability in Dynatrace. 
+        /// 
+        /// The allowed value range is from 1 to 60 minutes.
+        /// </summary>
         [Input("latency")]
         public Input<int>? Latency { get; set; }
 
+        /// <summary>
+        /// The maximum allowed value of the metric.
+        /// </summary>
         [Input("maxValue")]
         public Input<double>? MaxValue { get; set; }
 
+        /// <summary>
+        /// The minimum allowed value of the metric.
+        /// </summary>
         [Input("minValue")]
         public Input<double>? MinValue { get; set; }
 
+        /// <summary>
+        /// Whether (true or false) the metric is related to a root cause of a problem.
+        /// 
+        /// A root-cause relevant metric represents a strong indicator for a faulty component.
+        /// </summary>
         [Input("rootCauseRelevant")]
         public Input<bool>? RootCauseRelevant { get; set; }
 

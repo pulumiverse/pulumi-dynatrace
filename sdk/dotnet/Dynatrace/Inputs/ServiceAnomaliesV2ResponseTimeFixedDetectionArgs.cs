@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ServiceAnomaliesV2ResponseTimeFixedDetectionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Avoid over-alerting
+        /// </summary>
         [Input("overAlertingProtection", required: true)]
         public Input<Inputs.ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtectionArgs> OverAlertingProtection { get; set; } = null!;
 
+        /// <summary>
+        /// All requests. Alert if the average response time of all requests degrades beyond this threshold:
+        /// </summary>
         [Input("responseTimeAll", required: true)]
         public Input<Inputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAllArgs> ResponseTimeAll { get; set; } = null!;
 
+        /// <summary>
+        /// Slowest 10%. Alert if the average response time of the slowest 10% of requests degrades beyond this threshold:
+        /// </summary>
         [Input("responseTimeSlowest", required: true)]
         public Input<Inputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs> ResponseTimeSlowest { get; set; } = null!;
 
+        /// <summary>
+        /// Sensitivity
+        /// </summary>
         [Input("sensitivity", required: true)]
         public Input<string> Sensitivity { get; set; } = null!;
 

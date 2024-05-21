@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type K8sPvcAnomalies struct {
@@ -35,7 +36,7 @@ func NewK8sPvcAnomalies(ctx *pulumi.Context,
 	if args.LowDiskSpaceCriticalPercentage == nil {
 		return nil, errors.New("invalid value for required argument 'LowDiskSpaceCriticalPercentage'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource K8sPvcAnomalies
 	err := ctx.RegisterResource("dynatrace:index/k8sPvcAnomalies:K8sPvcAnomalies", name, args, &resource, opts...)
 	if err != nil {

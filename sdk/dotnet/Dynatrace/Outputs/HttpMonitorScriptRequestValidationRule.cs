@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HttpMonitorScriptRequestValidationRule
     {
+        /// <summary>
+        /// The validation condition. `true` means validation succeeds if the specified content/element is found. `false` means validation fails if the specified content/element is found. Always specify `false` for `certificateExpiryDateConstraint` to fail the monitor if SSL certificate expiry is within the specified number of days
+        /// </summary>
         public readonly bool? PassIfFound;
+        /// <summary>
+        /// The type of the rule. Possible values are `patternConstraint`, `regexConstraint`, `httpStatusesList` and `certificateExpiryDateConstraint`
+        /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// The content to look for
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

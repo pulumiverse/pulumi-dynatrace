@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type HttpMonitorOutage struct {
@@ -41,7 +42,7 @@ func NewHttpMonitorOutage(ctx *pulumi.Context,
 	if args.LocalOutages == nil {
 		return nil, errors.New("invalid value for required argument 'LocalOutages'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource HttpMonitorOutage
 	err := ctx.RegisterResource("dynatrace:index/httpMonitorOutage:HttpMonitorOutage", name, args, &resource, opts...)
 	if err != nil {

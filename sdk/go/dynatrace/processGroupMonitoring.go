@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ProcessGroupMonitoring struct {
@@ -33,7 +34,7 @@ func NewProcessGroupMonitoring(ctx *pulumi.Context,
 	if args.ProcessGroupId == nil {
 		return nil, errors.New("invalid value for required argument 'ProcessGroupId'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ProcessGroupMonitoring
 	err := ctx.RegisterResource("dynatrace:index/processGroupMonitoring:ProcessGroupMonitoring", name, args, &resource, opts...)
 	if err != nil {

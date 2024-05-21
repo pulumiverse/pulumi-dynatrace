@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class RequestNamingPlaceholdersPlaceholderSourceGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Use only request attributes from services that belong to this management zone.. Use either this or `serviceTag`
+        /// </summary>
         [Input("managementZone")]
         public Input<string>? ManagementZone { get; set; }
 
+        /// <summary>
+        /// Use only request attributes from services that have this tag. Use either this or `managementZone`
+        /// </summary>
         [Input("serviceTag")]
         public Input<Inputs.RequestNamingPlaceholdersPlaceholderSourceServiceTagGetArgs>? ServiceTag { get; set; }
 
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 

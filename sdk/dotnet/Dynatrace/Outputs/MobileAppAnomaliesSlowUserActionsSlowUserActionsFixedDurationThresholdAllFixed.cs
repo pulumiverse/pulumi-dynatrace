@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed
     {
+        /// <summary>
+        /// Absolute threshold
+        /// </summary>
         public readonly double DurationThreshold;
 
         [OutputConstructor]

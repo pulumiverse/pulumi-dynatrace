@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class RequestAttributeDataSourceScope
     {
+        /// <summary>
+        /// Only applies to this host group
+        /// </summary>
         public readonly string? HostGroup;
+        /// <summary>
+        /// Only applies to this process group. Note that this can't be transferred between different clusters or environments
+        /// </summary>
         public readonly string? ProcessGroup;
+        /// <summary>
+        /// Only applies to this service technology
+        /// </summary>
         public readonly string? ServiceTechnology;
+        /// <summary>
+        /// Only apply to process groups matching this tag
+        /// </summary>
         public readonly string? TagOfProcessGroup;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider

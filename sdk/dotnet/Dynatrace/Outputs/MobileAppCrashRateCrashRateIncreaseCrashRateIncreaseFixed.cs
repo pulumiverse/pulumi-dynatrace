@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed
     {
+        /// <summary>
+        /// Absolute threshold
+        /// </summary>
         public readonly double AbsoluteCrashRate;
+        /// <summary>
+        /// Amount of users
+        /// </summary>
         public readonly int ConcurrentUsers;
 
         [OutputConstructor]

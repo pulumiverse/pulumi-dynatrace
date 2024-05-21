@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEvents
     {
+        /// <summary>
+        /// An event
+        /// </summary>
         public readonly ImmutableArray<Outputs.BrowserMonitorScriptEventsEvent> Events;
 
         [OutputConstructor]

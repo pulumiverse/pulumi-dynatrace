@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class OpentelemetryMetricsToDropAttributesToDropAttribute
     {
+        /// <summary>
+        /// Attribute key
+        /// </summary>
         public readonly string AttributeKey;
+        /// <summary>
+        /// This setting is enabled (`true`) or disabled (`false`)
+        /// </summary>
         public readonly bool Enabled;
 
         [OutputConstructor]

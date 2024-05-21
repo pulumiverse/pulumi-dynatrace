@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// CPU usage is higher than
+        /// </summary>
         [Input("cpuUsage", required: true)]
         public Input<double> CpuUsage { get; set; } = null!;
 

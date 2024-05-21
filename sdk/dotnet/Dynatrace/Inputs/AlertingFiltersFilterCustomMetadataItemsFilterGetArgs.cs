@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AlertingFiltersFilterCustomMetadataItemsFilterGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Type 'dt.' for key hints.
+        /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
+        /// <summary>
+        /// Value
+        /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
 

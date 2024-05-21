@@ -13,11 +13,14 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CustomServiceRuleFileArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Matcher applying to the file name (ENDS*WITH, EQUALS or STARTS*WITH). Default value is ENDS_WITH (if applicable)
+        /// </summary>
         [Input("match")]
         public Input<string>? Match { get; set; }
 
         /// <summary>
-        /// The name of the custom service, displayed in the UI
+        /// The full name of the file / the name to match the file name with
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

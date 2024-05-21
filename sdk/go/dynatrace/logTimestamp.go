@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type LogTimestamp struct {
@@ -47,7 +48,7 @@ func NewLogTimestamp(ctx *pulumi.Context,
 	if args.Timezone == nil {
 		return nil, errors.New("invalid value for required argument 'Timezone'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LogTimestamp
 	err := ctx.RegisterResource("dynatrace:index/logTimestamp:LogTimestamp", name, args, &resource, opts...)
 	if err != nil {

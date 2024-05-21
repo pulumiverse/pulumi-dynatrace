@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule
     {
+        /// <summary>
+        /// Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+        /// </summary>
         public readonly string? AttributeExpression;
+        /// <summary>
+        /// Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+        /// </summary>
         public readonly string? CssExpression;
+        /// <summary>
+        /// Possible Values: `ATTRIBUTE`, `ELEMENT`
+        /// </summary>
         public readonly string Target;
 
         [OutputConstructor]

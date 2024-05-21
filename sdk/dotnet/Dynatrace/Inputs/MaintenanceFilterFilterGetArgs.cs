@@ -13,22 +13,36 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class MaintenanceFilterFilterGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A specific entity that should match this maintenance window
+        /// </summary>
         [Input("entityId")]
         public Input<string>? EntityId { get; set; }
 
         [Input("entityTags")]
         private InputList<string>? _entityTags;
+
+        /// <summary>
+        /// The tags you want to use for matching in the format key or key:value
+        /// </summary>
         public InputList<string> EntityTags
         {
             get => _entityTags ?? (_entityTags = new InputList<string>());
             set => _entityTags = value;
         }
 
+        /// <summary>
+        /// Type of entities this maintenance window should match
+        /// </summary>
         [Input("entityType")]
         public Input<string>? EntityType { get; set; }
 
         [Input("managementZones")]
         private InputList<string>? _managementZones;
+
+        /// <summary>
+        /// The IDs of management zones to which the matched entities must belong
+        /// </summary>
         public InputList<string> ManagementZones
         {
             get => _managementZones ?? (_managementZones = new InputList<string>());

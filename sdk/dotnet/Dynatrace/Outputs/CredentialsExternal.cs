@@ -14,9 +14,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CredentialsExternal
     {
-        /// <summary>
-        /// Required for Hashicorp Certificate. The ID of Credentials within the Certificate Vault holding the certificate
-        /// </summary>
         public readonly string? Certificate;
         /// <summary>
         /// Required for Azure Client Secret. No further documentation available
@@ -34,17 +31,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// No documentation available
         /// </summary>
         public readonly string? PasswordSecretName;
-        /// <summary>
-        /// Required for Hashicorp App Role or Hashicorp Certificate. No further documentation available
-        /// </summary>
         public readonly string? PathToCredentials;
-        /// <summary>
-        /// Required for Hashicorp App Role. No further documentation available
-        /// </summary>
         public readonly string? Roleid;
-        /// <summary>
-        /// Required for Hashicorp App Role. The ID of Credentials within the Certificate Vault holding the secret id
-        /// </summary>
         public readonly string? Secretid;
         /// <summary>
         /// Required for Azure Client Secret. No further documentation available
@@ -58,9 +46,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// No documentation available
         /// </summary>
         public readonly string? UsernameSecretName;
-        /// <summary>
-        /// Required for Hashicorp App Role. No further documentation available
-        /// </summary>
         public readonly string? VaultNamespace;
         /// <summary>
         /// No documentation available

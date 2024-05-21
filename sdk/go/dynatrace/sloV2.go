@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type SloV2 struct {
@@ -74,7 +75,7 @@ func NewSloV2(ctx *pulumi.Context,
 	if args.TargetWarning == nil {
 		return nil, errors.New("invalid value for required argument 'TargetWarning'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource SloV2
 	err := ctx.RegisterResource("dynatrace:index/sloV2:SloV2", name, args, &resource, opts...)
 	if err != nil {

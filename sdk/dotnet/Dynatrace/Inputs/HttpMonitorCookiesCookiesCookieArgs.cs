@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HttpMonitorCookiesCookiesCookieArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Enclose placeholder values in brackets, for example {email}
+        /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
 
+        /// <summary>
+        /// Enclose placeholder values in brackets, for example {email}
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// Enclose placeholder values in brackets, for example {email}
+        /// </summary>
         [Input("path")]
         public Input<string>? Path { get; set; }
 
+        /// <summary>
+        /// Enclose placeholder values in brackets, for example {email}
+        /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
 

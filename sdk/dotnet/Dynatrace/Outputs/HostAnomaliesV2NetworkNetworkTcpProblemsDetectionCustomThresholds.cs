@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds EventThresholds;
+        /// <summary>
+        /// Number of failed connections threshold
+        /// </summary>
         public readonly int FailedConnectionsNumberPerMinute;
+        /// <summary>
+        /// New connection failure threshold
+        /// </summary>
         public readonly int NewConnectionFailuresPercentage;
 
         [OutputConstructor]

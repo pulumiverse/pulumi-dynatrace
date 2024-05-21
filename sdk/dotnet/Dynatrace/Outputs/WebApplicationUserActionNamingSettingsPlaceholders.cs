@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationUserActionNamingSettingsPlaceholders
     {
+        /// <summary>
+        /// User action placeholders
+        /// </summary>
         public readonly ImmutableArray<Outputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder> Placeholders;
 
         [OutputConstructor]

@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DashboardTileBoundsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// the height of the tile, in pixels
+        /// </summary>
         [Input("height", required: true)]
         public Input<int> Height { get; set; } = null!;
 
+        /// <summary>
+        /// the horizontal distance from the top left corner of the dashboard to the top left corner of the tile, in pixels
+        /// </summary>
         [Input("left", required: true)]
         public Input<int> Left { get; set; } = null!;
 
+        /// <summary>
+        /// the vertical distance from the top left corner of the dashboard to the top left corner of the tile, in pixels
+        /// </summary>
         [Input("top", required: true)]
         public Input<int> Top { get; set; } = null!;
 
@@ -28,6 +37,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 
+        /// <summary>
+        /// the width of the tile, in pixels
+        /// </summary>
         [Input("width", required: true)]
         public Input<int> Width { get; set; } = null!;
 

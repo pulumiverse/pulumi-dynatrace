@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class FailureDetectionRulesConditionsConditionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Possible Values: `PG_NAME`, `PG_TAG`, `SERVICE_MANAGEMENT_ZONE`, `SERVICE_NAME`, `SERVICE_TAG`, `SERVICE_TYPE`
+        /// </summary>
         [Input("attribute", required: true)]
         public Input<string> Attribute { get; set; } = null!;
 
+        /// <summary>
+        /// Condition to check the attribute against
+        /// </summary>
         [Input("predicate", required: true)]
         public Input<Inputs.FailureDetectionRulesConditionsConditionPredicateArgs> Predicate { get; set; } = null!;
 

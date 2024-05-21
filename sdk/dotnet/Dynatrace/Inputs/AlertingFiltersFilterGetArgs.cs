@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AlertingFiltersFilterGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Configuration of a custom event filter. Filters custom events by title or description. If both specified, the AND logic applies
+        /// </summary>
         [Input("custom")]
         public Input<Inputs.AlertingFiltersFilterCustomGetArgs>? Custom { get; set; }
 
+        /// <summary>
+        /// Configuration of a custom event filter. Filters custom events by title or description. If both specified, the AND logic applies
+        /// </summary>
         [Input("predefined")]
         public Input<Inputs.AlertingFiltersFilterPredefinedGetArgs>? Predefined { get; set; }
 

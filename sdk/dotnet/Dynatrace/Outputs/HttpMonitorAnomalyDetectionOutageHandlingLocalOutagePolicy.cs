@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy
     {
+        /// <summary>
+        /// The number of affected locations to trigger an alert
+        /// </summary>
         public readonly int AffectedLocations;
+        /// <summary>
+        /// The number of consecutive fails to trigger an alert
+        /// </summary>
         public readonly int ConsecutiveRuns;
 
         [OutputConstructor]

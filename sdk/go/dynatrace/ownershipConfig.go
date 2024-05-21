@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type OwnershipConfig struct {
@@ -28,7 +29,7 @@ func NewOwnershipConfig(ctx *pulumi.Context,
 	if args.OwnershipIdentifiers == nil {
 		return nil, errors.New("invalid value for required argument 'OwnershipIdentifiers'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OwnershipConfig
 	err := ctx.RegisterResource("dynatrace:index/ownershipConfig:OwnershipConfig", name, args, &resource, opts...)
 	if err != nil {

@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtectionGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Only alert if the abnormal state remains for at least
+        /// </summary>
         [Input("minutesAbnormalState", required: true)]
         public Input<int> MinutesAbnormalState { get; set; } = null!;
 
+        /// <summary>
+        /// Only alert if there are at least
+        /// </summary>
         [Input("requestsPerMinute", required: true)]
         public Input<double> RequestsPerMinute { get; set; } = null!;
 

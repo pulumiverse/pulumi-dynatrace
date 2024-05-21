@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("filters")]
         private InputList<Inputs.MetricEventsQueryDefinitionDimensionFilterFilterGetArgs>? _filters;
+
+        /// <summary>
+        /// Dimension filter definitions
+        /// </summary>
         public InputList<Inputs.MetricEventsQueryDefinitionDimensionFilterFilterGetArgs> Filters
         {
             get => _filters ?? (_filters = new InputList<Inputs.MetricEventsQueryDefinitionDimensionFilterFilterGetArgs>());

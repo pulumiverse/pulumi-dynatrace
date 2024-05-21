@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DatabaseAnomaliesV2FailureRateFixedDetection
     {
+        /// <summary>
+        /// Avoid over-alerting
+        /// </summary>
         public readonly Outputs.DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection OverAlertingProtection;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly string Sensitivity;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly double Threshold;
 
         [OutputConstructor]

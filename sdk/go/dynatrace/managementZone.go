@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ManagementZone struct {
@@ -34,7 +35,7 @@ func NewManagementZone(ctx *pulumi.Context,
 		args = &ManagementZoneArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ManagementZone
 	err := ctx.RegisterResource("dynatrace:index/managementZone:ManagementZone", name, args, &resource, opts...)
 	if err != nil {

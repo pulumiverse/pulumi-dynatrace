@@ -83,9 +83,9 @@ def get_iam_user(email: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getIamUser:getIamUser', __args__, opts=opts, typ=GetIamUserResult).value
 
     return AwaitableGetIamUserResult(
-        email=__ret__.email,
-        groups=__ret__.groups,
-        id=__ret__.id)
+        email=pulumi.get(__ret__, 'email'),
+        groups=pulumi.get(__ret__, 'groups'),
+        id=pulumi.get(__ret__, 'id'))
 
 
 @_utilities.lift_output_func(get_iam_user)

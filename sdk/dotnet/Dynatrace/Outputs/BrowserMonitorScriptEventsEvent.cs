@@ -14,13 +14,37 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEventsEvent
     {
+        /// <summary>
+        /// Properties specified for a click event
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventClick? Click;
+        /// <summary>
+        /// Properties specified for a cookie event
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventCookie? Cookie;
+        /// <summary>
+        /// A short description of the event to appear in the UI
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// Properties specified for a javascript event
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventJavascript? Javascript;
+        /// <summary>
+        /// Properties specified for a key strokes event
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventKeystrokes? Keystrokes;
+        /// <summary>
+        /// Properties specified for a navigation event
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventNavigate? Navigate;
+        /// <summary>
+        /// Properties specified for a key strokes event.
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventSelect? Select;
+        /// <summary>
+        /// Properties specified for a tap event
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventTap? Tap;
 
         [OutputConstructor]

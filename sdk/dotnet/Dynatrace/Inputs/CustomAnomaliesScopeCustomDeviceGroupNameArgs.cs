@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CustomAnomaliesScopeCustomDeviceGroupNameArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A filter for a string value based on the given operator
+        /// </summary>
         [Input("filter", required: true)]
         public Input<Inputs.CustomAnomaliesScopeCustomDeviceGroupNameFilterArgs> Filter { get; set; } = null!;
 

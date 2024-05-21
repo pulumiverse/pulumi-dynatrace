@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DatabaseAnomaliesLoadSpikes
     {
+        /// <summary>
+        /// Alert if the service stays in abnormal state for at least *X* minutes
+        /// </summary>
         public readonly int? Minutes;
+        /// <summary>
+        /// Alert if the observed load is more than *X* % of the expected value
+        /// </summary>
         public readonly int? Percent;
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         public readonly string? Unknowns;
 
         [OutputConstructor]

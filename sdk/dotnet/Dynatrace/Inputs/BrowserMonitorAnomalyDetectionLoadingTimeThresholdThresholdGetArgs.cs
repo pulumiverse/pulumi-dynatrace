@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("thresholds", required: true)]
         private InputList<Inputs.BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThresholdGetArgs>? _thresholds;
+
+        /// <summary>
+        /// The list of performance threshold rules
+        /// </summary>
         public InputList<Inputs.BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThresholdGetArgs> Thresholds
         {
             get => _thresholds ?? (_thresholds = new InputList<Inputs.BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThresholdGetArgs>());

@@ -18,7 +18,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// Detect the matching requests as web request services instead of web services.
         /// </summary>
         public readonly bool DetectAsWebRequestService;
+        /// <summary>
+        /// Let the Port contribute to the Service Id
+        /// </summary>
         public readonly bool? PortForServiceId;
+        /// <summary>
+        /// URL path
+        /// </summary>
         public readonly Outputs.ServiceExternalWebServiceIdContributorsUrlPath? UrlPath;
 
         [OutputConstructor]

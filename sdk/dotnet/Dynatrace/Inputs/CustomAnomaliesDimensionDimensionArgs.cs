@@ -13,18 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CustomAnomaliesDimensionDimensionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// No documentation available
+        /// </summary>
         [Input("index")]
         public Input<int>? Index { get; set; }
 
+        /// <summary>
+        /// The dimensions key on the metric
+        /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// The name of the metric event displayed in the UI
+        /// No documentation available
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// Defines the actual set of fields depending on the value
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 

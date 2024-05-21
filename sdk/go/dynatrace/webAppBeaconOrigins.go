@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type WebAppBeaconOrigins struct {
@@ -33,7 +34,7 @@ func NewWebAppBeaconOrigins(ctx *pulumi.Context,
 	if args.Pattern == nil {
 		return nil, errors.New("invalid value for required argument 'Pattern'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource WebAppBeaconOrigins
 	err := ctx.RegisterResource("dynatrace:index/webAppBeaconOrigins:WebAppBeaconOrigins", name, args, &resource, opts...)
 	if err != nil {

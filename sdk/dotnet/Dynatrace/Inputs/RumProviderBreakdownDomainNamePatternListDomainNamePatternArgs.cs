@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class RumProviderBreakdownDomainNamePatternListDomainNamePatternArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Please type at least part of this content provider's URL. Asterisks (*) can be used as wildcard characters.
+        /// </summary>
         [Input("pattern", required: true)]
         public Input<string> Pattern { get; set; } = null!;
 

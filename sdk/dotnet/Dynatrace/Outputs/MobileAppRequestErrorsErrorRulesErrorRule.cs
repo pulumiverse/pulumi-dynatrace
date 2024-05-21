@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MobileAppRequestErrorsErrorRulesErrorRule
     {
+        /// <summary>
+        /// Exclude response codes
+        /// </summary>
         public readonly string ErrorCodes;
 
         [OutputConstructor]

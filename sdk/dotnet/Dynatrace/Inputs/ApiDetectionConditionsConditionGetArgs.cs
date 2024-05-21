@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ApiDetectionConditionsConditionGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Possible Values: `FILE_NAME`, `FQCN`, `PACKAGE`
+        /// </summary>
         [Input("base", required: true)]
         public Input<string> Base { get; set; } = null!;
 
+        /// <summary>
+        /// Possible Values: `BEGINS_WITH`, `CONTAINS`
+        /// </summary>
         [Input("matcher", required: true)]
         public Input<string> Matcher { get; set; } = null!;
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("pattern", required: true)]
         public Input<string> Pattern { get; set; } = null!;
 

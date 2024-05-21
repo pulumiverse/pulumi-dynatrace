@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebAppAnomaliesTrafficSpikesTrafficSpikesGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Minutes an application has to stay in abnormal state before alert
+        /// </summary>
         [Input("minutesAbnormalState", required: true)]
         public Input<double> MinutesAbnormalState { get; set; } = null!;
 
+        /// <summary>
+        /// Alert if the observed traffic is more than this percentage of the expected value
+        /// </summary>
         [Input("trafficSpikePercentage", required: true)]
         public Input<double> TrafficSpikePercentage { get; set; } = null!;
 

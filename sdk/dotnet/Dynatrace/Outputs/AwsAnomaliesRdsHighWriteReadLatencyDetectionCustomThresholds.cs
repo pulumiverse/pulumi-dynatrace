@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholds
     {
+        /// <summary>
+        /// Read/write latency is higher than
+        /// </summary>
         public readonly int ReadWriteLatency;
 
         [OutputConstructor]

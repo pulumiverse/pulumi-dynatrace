@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type PgAlerting struct {
@@ -38,7 +39,7 @@ func NewPgAlerting(ctx *pulumi.Context,
 	if args.ProcessGroup == nil {
 		return nil, errors.New("invalid value for required argument 'ProcessGroup'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource PgAlerting
 	err := ctx.RegisterResource("dynatrace:index/pgAlerting:PgAlerting", name, args, &resource, opts...)
 	if err != nil {

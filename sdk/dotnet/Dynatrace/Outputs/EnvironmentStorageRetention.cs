@@ -14,11 +14,29 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class EnvironmentStorageRetention
     {
+        /// <summary>
+        /// Log monitoring retention settings on environment level in days. Not editable when Log monitoring is not allowed by license or not configured on cluster level. Can be set to any value from 5 to 90 days
+        /// </summary>
         public readonly int? Logs;
+        /// <summary>
+        /// Real user monitoring retention settings on environment level in days. Can be set to any value from 1 to 35 days
+        /// </summary>
         public readonly int Rum;
+        /// <summary>
+        /// Service code level retention settings on environment level in days. Service code level retention time can't be greater than service request level retention time and both can't exceed one year
+        /// </summary>
         public readonly int ServiceCodeLevel;
+        /// <summary>
+        /// Service request level retention settings on environment level in days. Service code level retention time can't be greater than service request level retention time and both can't exceed one year
+        /// </summary>
         public readonly int ServiceRequestLevel;
+        /// <summary>
+        /// Session replay retention settings on environment level in days. Can be set to any value from 1 to 35 days
+        /// </summary>
         public readonly int SessionReplay;
+        /// <summary>
+        /// Synthetic monitoring retention settings on environment level in days. Can be set to any value from 1 to 35 days
+        /// </summary>
         public readonly int Synthetic;
 
         [OutputConstructor]

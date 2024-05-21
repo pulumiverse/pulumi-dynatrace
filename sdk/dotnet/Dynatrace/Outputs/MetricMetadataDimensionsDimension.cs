@@ -18,6 +18,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// Display name
         /// </summary>
         public readonly string? DisplayName;
+        /// <summary>
+        /// Dimension key
+        /// </summary>
         public readonly string Key;
 
         [OutputConstructor]

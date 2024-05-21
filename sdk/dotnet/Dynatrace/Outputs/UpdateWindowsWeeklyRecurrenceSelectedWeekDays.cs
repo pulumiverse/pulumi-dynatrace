@@ -14,12 +14,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class UpdateWindowsWeeklyRecurrenceSelectedWeekDays
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly bool Friday;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly bool Monday;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly bool Saturday;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly bool Sunday;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly bool Thursday;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly bool Tuesday;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly bool Wednesday;
 
         [OutputConstructor]

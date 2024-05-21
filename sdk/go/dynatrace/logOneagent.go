@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type LogOneagent struct {
@@ -100,7 +101,7 @@ func NewLogOneagent(ctx *pulumi.Context,
 	if args.UtcasDefaultContainerTimezone == nil {
 		return nil, errors.New("invalid value for required argument 'UtcasDefaultContainerTimezone'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LogOneagent
 	err := ctx.RegisterResource("dynatrace:index/logOneagent:LogOneagent", name, args, &resource, opts...)
 	if err != nil {

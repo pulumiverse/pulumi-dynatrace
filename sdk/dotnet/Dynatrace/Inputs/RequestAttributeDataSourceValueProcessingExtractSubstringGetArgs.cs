@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class RequestAttributeDataSourceValueProcessingExtractSubstringGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The delimiter string
+        /// </summary>
         [Input("delimiter", required: true)]
         public Input<string> Delimiter { get; set; } = null!;
 
+        /// <summary>
+        /// The end-delimiter string.   Required if the **position** value is `BETWEEN`. Otherwise not allowed
+        /// </summary>
         [Input("endDelimiter")]
         public Input<string>? EndDelimiter { get; set; }
 
+        /// <summary>
+        /// The position of the extracted string relative to delimiters
+        /// </summary>
         [Input("position", required: true)]
         public Input<string> Position { get; set; } = null!;
 

@@ -14,10 +14,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AutotagEntitySelectorBasedRule
     {
+        /// <summary>
+        /// The rule is enabled (`true`) or disabled (`false`)
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// Changes applied to the value after applying the value format. Possible values are `LEAVE_TEXT_AS_IS`, `TO_LOWER_CASE` and `TO_UPPER_CASE`. Default is `LEAVE_TEXT_AS_IS`
+        /// </summary>
         public readonly string? Normalization;
+        /// <summary>
+        /// The entity selector string, by which the entities are selected
+        /// </summary>
         public readonly string? Selector;
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// The value of the entity-selector-based auto-tag. If specified, the tag is used in the `name:valueFormat` format. 
+        /// 
+        /// For example, you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`
+        /// </summary>
         public readonly string? ValueFormat;
 
         [OutputConstructor]

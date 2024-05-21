@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The `Slo` data source allows the SLO ID to be retrieved by its name.
@@ -43,7 +44,7 @@ import (
 //
 // ```
 func LookupSlo(ctx *pulumi.Context, args *LookupSloArgs, opts ...pulumi.InvokeOption) (*LookupSloResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSloResult
 	err := ctx.Invoke("dynatrace:index/getSlo:getSlo", args, &rv, opts...)
 	if err != nil {

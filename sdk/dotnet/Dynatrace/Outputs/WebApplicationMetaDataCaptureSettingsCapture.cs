@@ -14,17 +14,29 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMetaDataCaptureSettingsCapture
     {
+        /// <summary>
+        /// The name of the meta data to capture
+        /// </summary>
         public readonly string CapturingName;
         /// <summary>
-        /// The name of the web application, displayed in the UI
+        /// Name for displaying the captured values in Dynatrace
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// `true` if this metadata should be captured regardless of the privacy settings, `false` otherwise
+        /// </summary>
         public readonly bool? PublicMetadata;
         /// <summary>
-        /// The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
+        /// The type of the meta data to capture. Possible values are `COOKIE`, `CSS_SELECTOR`, `JAVA_SCRIPT_FUNCTION`, `JAVA_SCRIPT_VARIABLE`, `META_TAG` and `QUERY_STRING`.
         /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// The unique ID of the meta data to capture
+        /// </summary>
         public readonly int? UniqueId;
+        /// <summary>
+        /// `true` if the last captured value should be used for this metadata. By default the first value will be used.
+        /// </summary>
         public readonly bool? UseLastValue;
 
         [OutputConstructor]

@@ -14,10 +14,30 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ManagementZoneDimensionalRuleCondition
     {
+        /// <summary>
+        /// The reference value for comparison. For conditions of the `DIMENSION` type, specify the key here
+        /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// How to compare. Possible values are 
+        ///    - `BEGINS_WITH`
+        ///    - `EQUALS`
+        /// </summary>
         public readonly string Match;
+        /// <summary>
+        /// The type of the condition. Possible values are 
+        ///    - `DIMENSION`
+        ///    - `LOG_FILE_NAME`
+        ///    - `METRIC_KEY`
+        /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// The value of the dimension. Only applicable when type is set to `DIMENSION`
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

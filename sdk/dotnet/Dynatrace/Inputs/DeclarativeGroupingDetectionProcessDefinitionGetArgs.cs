@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DeclarativeGroupingDetectionProcessDefinitionGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Process group identifier
+        /// </summary>
         [Input("id", required: true)]
         public Input<string> Id { get; set; } = null!;
 
+        /// <summary>
+        /// This identifier is used by Dynatrace to recognize this process group.
+        /// </summary>
         [Input("processGroupName", required: true)]
         public Input<string> ProcessGroupName { get; set; } = null!;
 
+        /// <summary>
+        /// Possible Values: `never`, `always`, `highResourceUsage`
+        /// </summary>
         [Input("report", required: true)]
         public Input<string> Report { get; set; } = null!;
 
+        /// <summary>
+        /// Define process detection rules by selecting a process property and a condition. Each process group can have multiple detection rules associated with it.
+        /// </summary>
         [Input("rules")]
         public Input<Inputs.DeclarativeGroupingDetectionProcessDefinitionRulesGetArgs>? Rules { get; set; }
 

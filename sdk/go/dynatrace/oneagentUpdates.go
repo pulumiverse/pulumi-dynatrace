@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type OneagentUpdates struct {
@@ -36,7 +37,7 @@ func NewOneagentUpdates(ctx *pulumi.Context,
 	if args.UpdateMode == nil {
 		return nil, errors.New("invalid value for required argument 'UpdateMode'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OneagentUpdates
 	err := ctx.RegisterResource("dynatrace:index/oneagentUpdates:OneagentUpdates", name, args, &resource, opts...)
 	if err != nil {

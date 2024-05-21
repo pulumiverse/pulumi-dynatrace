@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type Alerting struct {
@@ -32,7 +33,7 @@ func NewAlerting(ctx *pulumi.Context,
 		args = &AlertingArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Alerting
 	err := ctx.RegisterResource("dynatrace:index/alerting:Alerting", name, args, &resource, opts...)
 	if err != nil {

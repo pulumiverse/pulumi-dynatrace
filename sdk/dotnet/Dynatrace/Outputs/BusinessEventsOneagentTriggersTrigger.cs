@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BusinessEventsOneagentTriggersTrigger
     {
+        /// <summary>
+        /// Case sensitive
+        /// </summary>
         public readonly bool? CaseSensitive;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.BusinessEventsOneagentTriggersTriggerSource Source;
+        /// <summary>
+        /// Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `N_CONTAINS`, `N_ENDS_WITH`, `N_EQUALS`, `N_EXISTS`, `N_STARTS_WITH`, `STARTS_WITH`
+        /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

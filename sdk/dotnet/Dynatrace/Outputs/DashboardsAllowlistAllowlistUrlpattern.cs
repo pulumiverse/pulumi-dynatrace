@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DashboardsAllowlistAllowlistUrlpattern
     {
+        /// <summary>
+        /// Possible Values: `Equals`, `StartsWith`
+        /// </summary>
         public readonly string Rule;
+        /// <summary>
+        /// Pattern
+        /// </summary>
         public readonly string Template;
 
         [OutputConstructor]

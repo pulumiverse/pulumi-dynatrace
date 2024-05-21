@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BrowserMonitorScriptConfigurationJavascriptSetttingsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Additional Javascript Agent Properties
+        /// </summary>
         [Input("customProperties")]
         public Input<string>? CustomProperties { get; set; }
 
+        /// <summary>
+        /// Custom JavaScript Agent settings
+        /// </summary>
         [Input("timeoutSettings")]
         public Input<Inputs.BrowserMonitorScriptConfigurationJavascriptSetttingsTimeoutSettingsArgs>? TimeoutSettings { get; set; }
 
+        /// <summary>
+        /// Parameters for Visually complete and Speed index calculation
+        /// </summary>
         [Input("visuallyCompleteOptions")]
         public Input<Inputs.BrowserMonitorScriptConfigurationJavascriptSetttingsVisuallyCompleteOptionsArgs>? VisuallyCompleteOptions { get; set; }
 

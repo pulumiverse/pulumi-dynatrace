@@ -13,12 +13,34 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class OsServicesDetectionConditionsLinuxLinuxDetectionConditionGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }
 
+        /// <summary>
+        /// Possible Values: `ServiceName`, `StartupType`
+        /// </summary>
         [Input("property", required: true)]
         public Input<string> Property { get; set; } = null!;
 
+        /// <summary>
+        /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// 
+        /// - `$eq(enabled)` – Matches services with startup type equal to enabled.
+        /// 
+        /// Available logic operations:
+        /// - `$not($eq(enabled))` – Matches services with startup type different from enabled.
+        /// - `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
+        /// 
+        /// Use one of the following values as a parameter for this condition:
+        /// 
+        /// - `enabled`
+        /// - `enabled-runtime`
+        /// - `static`
+        /// - `disabled`
+        /// </summary>
         [Input("startupCondition")]
         public Input<string>? StartupCondition { get; set; }
 

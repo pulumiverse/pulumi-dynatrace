@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesMemoryThresholdsLinuxGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Memory page fault rate is higher than *X* faults per second
+        /// </summary>
         [Input("pageFaults", required: true)]
         public Input<int> PageFaults { get; set; } = null!;
 
+        /// <summary>
+        /// Memory usage is higher than *X*%
+        /// </summary>
         [Input("usage", required: true)]
         public Input<int> Usage { get; set; } = null!;
 

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ImsBridges struct {
@@ -26,7 +27,7 @@ func NewImsBridges(ctx *pulumi.Context,
 		args = &ImsBridgesArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ImsBridges
 	err := ctx.RegisterResource("dynatrace:index/imsBridges:ImsBridges", name, args, &resource, opts...)
 	if err != nil {

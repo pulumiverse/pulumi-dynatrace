@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class MaintenanceScheduleDailyRecurrenceGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The recurrence date range of the maintenance window
+        /// </summary>
         [Input("recurrenceRange", required: true)]
         public Input<Inputs.MaintenanceScheduleDailyRecurrenceRecurrenceRangeGetArgs> RecurrenceRange { get; set; } = null!;
 
+        /// <summary>
+        /// The time window of the maintenance window
+        /// </summary>
         [Input("timeWindow", required: true)]
         public Input<Inputs.MaintenanceScheduleDailyRecurrenceTimeWindowGetArgs> TimeWindow { get; set; } = null!;
 

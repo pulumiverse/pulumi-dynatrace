@@ -14,10 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BusinessEventsProcessingTransformationFieldsTransformationField
     {
+        /// <summary>
+        /// Is Array
+        /// </summary>
         public readonly bool Array;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly bool Optional;
+        /// <summary>
+        /// Read-only
+        /// </summary>
         public readonly bool Readonly;
+        /// <summary>
+        /// Possible Values: `BOOLEAN`, `DOUBLE`, `DURATION`, `INT`, `IPADDR`, `LONG`, `STRING`, `TIMESTAMP`
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

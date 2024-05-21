@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type MetricQuery struct {
@@ -33,7 +34,7 @@ func NewMetricQuery(ctx *pulumi.Context,
 	if args.MetricSelector == nil {
 		return nil, errors.New("invalid value for required argument 'MetricSelector'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MetricQuery
 	err := ctx.RegisterResource("dynatrace:index/metricQuery:MetricQuery", name, args, &resource, opts...)
 	if err != nil {

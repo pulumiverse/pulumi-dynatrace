@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BrowserMonitorScriptEventsEventCookieArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Every cookie must be unique within the list. However, you can use the same cookie again in other event
+        /// </summary>
         [Input("cookies", required: true)]
         public Input<Inputs.BrowserMonitorScriptEventsEventCookieCookiesArgs> Cookies { get; set; } = null!;
 

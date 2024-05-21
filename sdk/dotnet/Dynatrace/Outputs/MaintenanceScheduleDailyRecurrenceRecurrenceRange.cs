@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MaintenanceScheduleDailyRecurrenceRecurrenceRange
     {
+        /// <summary>
+        /// The end date of the recurrence range in YYYY-MM-DD format
+        /// </summary>
         public readonly string EndDate;
+        /// <summary>
+        /// The start date of the recurrence range in YYYY-MM-DD format
+        /// </summary>
         public readonly string StartDate;
 
         [OutputConstructor]

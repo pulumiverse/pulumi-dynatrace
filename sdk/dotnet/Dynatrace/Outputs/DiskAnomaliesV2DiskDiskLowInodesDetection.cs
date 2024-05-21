@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DiskAnomaliesV2DiskDiskLowInodesDetection
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds? CustomThresholds;
+        /// <summary>
+        /// Detection mode for low inodes number available
+        /// </summary>
         public readonly string? DetectionMode;
+        /// <summary>
+        /// Detect low inodes number available
+        /// </summary>
         public readonly bool Enabled;
 
         [OutputConstructor]

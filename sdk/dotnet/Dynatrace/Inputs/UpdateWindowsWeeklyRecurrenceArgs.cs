@@ -13,15 +13,31 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class UpdateWindowsWeeklyRecurrenceArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Every **X** weeks:
+        /// * `1` = every week,
+        /// * `2` = every two weeks,
+        /// * `3` = every three weeks,
+        /// * etc.
+        /// </summary>
         [Input("every", required: true)]
         public Input<int> Every { get; set; } = null!;
 
+        /// <summary>
+        /// Recurrence range
+        /// </summary>
         [Input("recurrenceRange", required: true)]
         public Input<Inputs.UpdateWindowsWeeklyRecurrenceRecurrenceRangeArgs> RecurrenceRange { get; set; } = null!;
 
+        /// <summary>
+        /// Day of the week
+        /// </summary>
         [Input("selectedWeekDays", required: true)]
         public Input<Inputs.UpdateWindowsWeeklyRecurrenceSelectedWeekDaysArgs> SelectedWeekDays { get; set; } = null!;
 
+        /// <summary>
+        /// Update time
+        /// </summary>
         [Input("updateTime", required: true)]
         public Input<Inputs.UpdateWindowsWeeklyRecurrenceUpdateTimeArgs> UpdateTime { get; set; } = null!;
 

@@ -14,12 +14,34 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEventsEventKeystrokes
     {
+        /// <summary>
+        /// Credentials for this event
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventKeystrokesCredential? Credential;
+        /// <summary>
+        /// Indicates whether the `textValue` is encrypted (`true`) or not (`false`). Must not be specified if `credentials` from the vault are being used
+        /// </summary>
         public readonly bool? Masked;
+        /// <summary>
+        /// Defines whether to blur the text field when it loses focus.
+        /// Set to `true` to trigger the blur the `textValue`
+        /// </summary>
         public readonly bool? SimulateBlurEvent;
+        /// <summary>
+        /// The tab on which the page should open
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventKeystrokesTarget? Target;
+        /// <summary>
+        /// The text to enter. Must not be specified if `credentials` from the vault are being used
+        /// </summary>
         public readonly string? Text;
+        /// <summary>
+        /// The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventKeystrokesValidate? Validate;
+        /// <summary>
+        /// The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventKeystrokesWait? Wait;
 
         [OutputConstructor]

@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("arguments")]
         private InputList<string>? _arguments;
+
+        /// <summary>
+        /// Fully qualified types of argument the method expects
+        /// </summary>
         public InputList<string> Arguments
         {
             get => _arguments ?? (_arguments = new InputList<string>());
@@ -22,13 +26,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// The ID of this resource.
+        /// The ID of the method rule
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         [Input("modifiers")]
         private InputList<string>? _modifiers;
+
+        /// <summary>
+        /// The modifiers of the method rule. Possible values are `ABSTRACT`, `EXTERN`, `FINAL`, `NATIVE` and `STATIC`
+        /// </summary>
         public InputList<string> Modifiers
         {
             get => _modifiers ?? (_modifiers = new InputList<string>());
@@ -36,11 +44,14 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// The name of the custom service, displayed in the UI
+        /// The method to instrument
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// Fully qualified type the method returns
+        /// </summary>
         [Input("returns")]
         public Input<string>? Returns { get; set; }
 
@@ -50,6 +61,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 
+        /// <summary>
+        /// The visibility of the method rule. Possible values are `INTERNAL`, `PACKAGE_PROTECTED`, `PRIVATE`, `PROTECTED` and `PUBLIC`
+        /// </summary>
         [Input("visibility")]
         public Input<string>? Visibility { get; set; }
 

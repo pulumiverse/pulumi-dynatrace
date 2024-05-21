@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if the percentage of available inodes is lower than this threshold in 3 out of 5 samples
+        /// </summary>
         [Input("freeInodesPercentage", required: true)]
         public Input<int> FreeInodesPercentage { get; set; } = null!;
 

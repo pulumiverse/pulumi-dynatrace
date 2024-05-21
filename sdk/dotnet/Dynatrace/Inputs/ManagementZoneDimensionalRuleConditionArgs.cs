@@ -13,18 +13,38 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ManagementZoneDimensionalRuleConditionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The reference value for comparison. For conditions of the `DIMENSION` type, specify the key here
+        /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
+        /// <summary>
+        /// How to compare. Possible values are 
+        ///    - `BEGINS_WITH`
+        ///    - `EQUALS`
+        /// </summary>
         [Input("match", required: true)]
         public Input<string> Match { get; set; } = null!;
 
+        /// <summary>
+        /// The type of the condition. Possible values are 
+        ///    - `DIMENSION`
+        ///    - `LOG_FILE_NAME`
+        ///    - `METRIC_KEY`
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 
+        /// <summary>
+        /// The value of the dimension. Only applicable when type is set to `DIMENSION`
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

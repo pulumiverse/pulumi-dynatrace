@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class MaintenanceScheduleMonthlyRecurrenceGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The day of the month for monthly maintenance.  The value of `31` is treated as the last day of the month for months that don't have a 31st day. The value of `30` is also treated as the last day of the month for February
+        /// </summary>
         [Input("dayOfMonth", required: true)]
         public Input<int> DayOfMonth { get; set; } = null!;
 
+        /// <summary>
+        /// The recurrence date range of the maintenance window
+        /// </summary>
         [Input("recurrenceRange", required: true)]
         public Input<Inputs.MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeGetArgs> RecurrenceRange { get; set; } = null!;
 
+        /// <summary>
+        /// The time window of the maintenance window
+        /// </summary>
         [Input("timeWindow", required: true)]
         public Input<Inputs.MaintenanceScheduleMonthlyRecurrenceTimeWindowGetArgs> TimeWindow { get; set; } = null!;
 

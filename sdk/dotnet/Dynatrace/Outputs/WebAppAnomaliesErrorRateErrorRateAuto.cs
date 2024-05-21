@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebAppAnomaliesErrorRateErrorRateAuto
     {
+        /// <summary>
+        /// Absolute threshold
+        /// </summary>
         public readonly double AbsoluteIncrease;
+        /// <summary>
+        /// Avoid over-alerting
+        /// </summary>
         public readonly Outputs.WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection OverAlertingProtection;
+        /// <summary>
+        /// Relative threshold
+        /// </summary>
         public readonly double RelativeIncrease;
 
         [OutputConstructor]

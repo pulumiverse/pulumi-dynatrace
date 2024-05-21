@@ -13,21 +13,39 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class OwnershipTeamsContactDetailsContactDetailGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }
 
+        /// <summary>
+        /// Possible Values: `EMAIL`, `JIRA`, `MS_TEAMS`, `SLACK`
+        /// </summary>
         [Input("integrationType", required: true)]
         public Input<string> IntegrationType { get; set; } = null!;
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("jira")]
         public Input<Inputs.OwnershipTeamsContactDetailsContactDetailJiraGetArgs>? Jira { get; set; }
 
+        /// <summary>
+        /// Team
+        /// </summary>
         [Input("msTeams")]
         public Input<string>? MsTeams { get; set; }
 
+        /// <summary>
+        /// Channel
+        /// </summary>
         [Input("slackChannel")]
         public Input<string>? SlackChannel { get; set; }
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
 

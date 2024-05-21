@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEventsEventSelect
     {
+        /// <summary>
+        /// The options to be selected
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventSelectSelections Selections;
+        /// <summary>
+        /// The tab on which the page should open
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventSelectTarget? Target;
+        /// <summary>
+        /// The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventSelectValidate? Validate;
+        /// <summary>
+        /// The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventSelectWait? Wait;
 
         [OutputConstructor]

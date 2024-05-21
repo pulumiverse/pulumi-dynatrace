@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAllGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Absolute threshold
+        /// </summary>
         [Input("degradationMilliseconds", required: true)]
         public Input<double> DegradationMilliseconds { get; set; } = null!;
 
+        /// <summary>
+        /// Relative threshold
+        /// </summary>
         [Input("degradationPercent", required: true)]
         public Input<double> DegradationPercent { get; set; } = null!;
 

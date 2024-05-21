@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly int MinActionRate;
 
         [OutputConstructor]

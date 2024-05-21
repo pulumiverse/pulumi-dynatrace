@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition
     {
+        /// <summary>
+        /// Possible Values: `DIMENSION`, `LOG_FILE_NAME`, `METRIC_KEY`
+        /// </summary>
         public readonly string ConditionType;
+        /// <summary>
+        /// Key
+        /// </summary>
         public readonly string? Key;
+        /// <summary>
+        /// Possible Values: `BEGINS_WITH`, `EQUALS`
+        /// </summary>
         public readonly string RuleMatcher;
+        /// <summary>
+        /// Value
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

@@ -14,9 +14,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CustomServiceRuleFile
     {
+        /// <summary>
+        /// Matcher applying to the file name (ENDS*WITH, EQUALS or STARTS*WITH). Default value is ENDS_WITH (if applicable)
+        /// </summary>
         public readonly string? Match;
         /// <summary>
-        /// The name of the custom service, displayed in the UI
+        /// The full name of the file / the name to match the file name with
         /// </summary>
         public readonly string Name;
 

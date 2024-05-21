@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MaintenanceFilterFilter
     {
+        /// <summary>
+        /// A specific entity that should match this maintenance window
+        /// </summary>
         public readonly string? EntityId;
+        /// <summary>
+        /// The tags you want to use for matching in the format key or key:value
+        /// </summary>
         public readonly ImmutableArray<string> EntityTags;
+        /// <summary>
+        /// Type of entities this maintenance window should match
+        /// </summary>
         public readonly string? EntityType;
+        /// <summary>
+        /// The IDs of management zones to which the matched entities must belong
+        /// </summary>
         public readonly ImmutableArray<string> ManagementZones;
 
         [OutputConstructor]

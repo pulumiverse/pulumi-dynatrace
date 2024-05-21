@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // ## Dynatrace Documentation
@@ -92,7 +93,7 @@ func NewIamPermission(ctx *pulumi.Context,
 	if args.Group == nil {
 		return nil, errors.New("invalid value for required argument 'Group'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource IamPermission
 	err := ctx.RegisterResource("dynatrace:index/iamPermission:IamPermission", name, args, &resource, opts...)
 	if err != nil {

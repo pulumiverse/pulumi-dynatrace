@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The application data source allows the application ID to be retrieved by its name and optionally tags / tag-value pairs.
@@ -15,7 +16,7 @@ import (
 // - `name` queries for all applications with the specified name
 // - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
 func GetApplication(ctx *pulumi.Context, args *GetApplicationArgs, opts ...pulumi.InvokeOption) (*GetApplicationResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetApplicationResult
 	err := ctx.Invoke("dynatrace:index/getApplication:getApplication", args, &rv, opts...)
 	if err != nil {

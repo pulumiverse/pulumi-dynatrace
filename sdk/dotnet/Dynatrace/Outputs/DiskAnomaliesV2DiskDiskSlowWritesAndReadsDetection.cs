@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetection
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds? CustomThresholds;
+        /// <summary>
+        /// Detection mode for slow running disks
+        /// </summary>
         public readonly string? DetectionMode;
+        /// <summary>
+        /// Detect slow-running disks
+        /// </summary>
         public readonly bool Enabled;
 
         [OutputConstructor]
