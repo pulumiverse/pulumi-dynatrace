@@ -19,9 +19,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly string? Condition;
         /// <summary>
+        /// Custom metadata
+        /// </summary>
+        public readonly Outputs.OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition? HostMetadataCondition;
+        /// <summary>
         /// Possible Values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
         /// </summary>
-        public readonly string Property;
+        public readonly string? Property;
+        /// <summary>
+        /// Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+        /// </summary>
+        public readonly string? RuleType;
         /// <summary>
         /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
         /// 
@@ -47,12 +55,18 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         private OsServicesDetectionConditionsWindowsDetectionConditionsWindow(
             string? condition,
 
-            string property,
+            Outputs.OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition? hostMetadataCondition,
+
+            string? property,
+
+            string? ruleType,
 
             string? startupCondition)
         {
             Condition = condition;
+            HostMetadataCondition = hostMetadataCondition;
             Property = property;
+            RuleType = ruleType;
             StartupCondition = startupCondition;
         }
     }

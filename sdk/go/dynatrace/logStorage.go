@@ -17,6 +17,8 @@ type LogStorage struct {
 
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// no documentation available
 	Matchers LogStorageMatchersPtrOutput `pulumi:"matchers"`
 	// Name
@@ -65,6 +67,8 @@ func GetLogStorage(ctx *pulumi.Context,
 type logStorageState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// no documentation available
 	Matchers *LogStorageMatchers `pulumi:"matchers"`
 	// Name
@@ -78,6 +82,8 @@ type logStorageState struct {
 type LogStorageState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// no documentation available
 	Matchers LogStorageMatchersPtrInput
 	// Name
@@ -95,6 +101,8 @@ func (LogStorageState) ElementType() reflect.Type {
 type logStorageArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// no documentation available
 	Matchers *LogStorageMatchers `pulumi:"matchers"`
 	// Name
@@ -109,6 +117,8 @@ type logStorageArgs struct {
 type LogStorageArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// no documentation available
 	Matchers LogStorageMatchersPtrInput
 	// Name
@@ -209,6 +219,11 @@ func (o LogStorageOutput) ToLogStorageOutputWithContext(ctx context.Context) Log
 // This setting is enabled (`true`) or disabled (`false`)
 func (o LogStorageOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogStorage) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o LogStorageOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *LogStorage) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // no documentation available

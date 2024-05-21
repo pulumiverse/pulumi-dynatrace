@@ -14,13 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public partial class SpanAttributed : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// the key of the attribute to capture
+        /// Key of the span attribute to store
         /// </summary>
         [Output("key")]
         public Output<string> Key { get; private set; } = null!;
 
         /// <summary>
-        /// granular control over the visibility of attribute values
+        /// Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         /// </summary>
         [Output("masking")]
         public Output<string> Masking { get; private set; } = null!;
@@ -76,13 +76,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class SpanAttributedArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// the key of the attribute to capture
+        /// Key of the span attribute to store
         /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// granular control over the visibility of attribute values
+        /// Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         /// </summary>
         [Input("masking", required: true)]
         public Input<string> Masking { get; set; } = null!;
@@ -99,13 +99,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class SpanAttributedState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// the key of the attribute to capture
+        /// Key of the span attribute to store
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// granular control over the visibility of attribute values
+        /// Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         /// </summary>
         [Input("masking")]
         public Input<string>? Masking { get; set; }

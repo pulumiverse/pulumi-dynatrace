@@ -15,7 +15,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class MaintenanceScheduleWeeklyRecurrence
     {
         /// <summary>
-        /// The day of the week for weekly maintenance.  The format is the full name of the day in upper case, for example `THURSDAY`
+        /// The day of the week for weekly maintenance, possible values: `FRIDAY`, `MONDAY`, `SATURDAY`, `SUNDAY`, `THURSDAY`, `TUESDAY`, `WEDNESDAY`
         /// </summary>
         public readonly string DayOfWeek;
         /// <summary>

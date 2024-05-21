@@ -19,11 +19,11 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection OverAlertingProtection;
         /// <summary>
-        /// Sensitivity
+        /// Possible Values: `High`, `Low`, `Medium`
         /// </summary>
         public readonly string Sensitivity;
         /// <summary>
-        /// Threshold
+        /// no documentation available
         /// </summary>
         public readonly double Threshold;
 

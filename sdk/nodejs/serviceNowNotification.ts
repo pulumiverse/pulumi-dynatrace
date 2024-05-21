@@ -41,6 +41,10 @@ export class ServiceNowNotification extends pulumi.CustomResource {
      */
     public readonly events!: pulumi.Output<boolean | undefined>;
     /**
+     * Use text format for problem details instead of HTML.
+     */
+    public readonly formatProblemDetailsAsText!: pulumi.Output<boolean | undefined>;
+    /**
      * Send incidents into ServiceNow ITSM
      */
     public readonly incidents!: pulumi.Output<boolean>;
@@ -92,6 +96,7 @@ export class ServiceNowNotification extends pulumi.CustomResource {
             const state = argsOrState as ServiceNowNotificationState | undefined;
             resourceInputs["active"] = state ? state.active : undefined;
             resourceInputs["events"] = state ? state.events : undefined;
+            resourceInputs["formatProblemDetailsAsText"] = state ? state.formatProblemDetailsAsText : undefined;
             resourceInputs["incidents"] = state ? state.incidents : undefined;
             resourceInputs["instance"] = state ? state.instance : undefined;
             resourceInputs["legacyId"] = state ? state.legacyId : undefined;
@@ -120,6 +125,7 @@ export class ServiceNowNotification extends pulumi.CustomResource {
             }
             resourceInputs["active"] = args ? args.active : undefined;
             resourceInputs["events"] = args ? args.events : undefined;
+            resourceInputs["formatProblemDetailsAsText"] = args ? args.formatProblemDetailsAsText : undefined;
             resourceInputs["incidents"] = args ? args.incidents : undefined;
             resourceInputs["instance"] = args ? args.instance : undefined;
             resourceInputs["legacyId"] = args ? args.legacyId : undefined;
@@ -149,6 +155,10 @@ export interface ServiceNowNotificationState {
      * Send events into ServiceNow ITOM
      */
     events?: pulumi.Input<boolean>;
+    /**
+     * Use text format for problem details instead of HTML.
+     */
+    formatProblemDetailsAsText?: pulumi.Input<boolean>;
     /**
      * Send incidents into ServiceNow ITSM
      */
@@ -199,6 +209,10 @@ export interface ServiceNowNotificationArgs {
      * Send events into ServiceNow ITOM
      */
     events?: pulumi.Input<boolean>;
+    /**
+     * Use text format for problem details instead of HTML.
+     */
+    formatProblemDetailsAsText?: pulumi.Input<boolean>;
     /**
      * Send incidents into ServiceNow ITSM
      */

@@ -37,6 +37,14 @@ export class ApplicationDetectionRuleV2 extends pulumi.CustomResource {
      */
     public readonly applicationId!: pulumi.Output<string>;
     /**
+     * (v1.274) Add a description for your rule
+     */
+    public readonly description!: pulumi.Output<string | undefined>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
      */
     public readonly matcher!: pulumi.Output<string>;
@@ -59,6 +67,8 @@ export class ApplicationDetectionRuleV2 extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ApplicationDetectionRuleV2State | undefined;
             resourceInputs["applicationId"] = state ? state.applicationId : undefined;
+            resourceInputs["description"] = state ? state.description : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["matcher"] = state ? state.matcher : undefined;
             resourceInputs["pattern"] = state ? state.pattern : undefined;
         } else {
@@ -73,6 +83,8 @@ export class ApplicationDetectionRuleV2 extends pulumi.CustomResource {
                 throw new Error("Missing required property 'pattern'");
             }
             resourceInputs["applicationId"] = args ? args.applicationId : undefined;
+            resourceInputs["description"] = args ? args.description : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["matcher"] = args ? args.matcher : undefined;
             resourceInputs["pattern"] = args ? args.pattern : undefined;
         }
@@ -89,6 +101,14 @@ export interface ApplicationDetectionRuleV2State {
      * Select an existing application or create a new one.
      */
     applicationId?: pulumi.Input<string>;
+    /**
+     * (v1.274) Add a description for your rule
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
      */
@@ -107,6 +127,14 @@ export interface ApplicationDetectionRuleV2Args {
      * Select an existing application or create a new one.
      */
     applicationId: pulumi.Input<string>;
+    /**
+     * (v1.274) Add a description for your rule
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
      */

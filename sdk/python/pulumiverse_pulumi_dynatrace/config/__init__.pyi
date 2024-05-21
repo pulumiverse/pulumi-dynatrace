@@ -9,6 +9,30 @@ import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
+accountId: Optional[str]
+
+automationClientId: Optional[str]
+
+automationClientSecret: Optional[str]
+
+automationEnvUrl: Optional[str]
+"""
+The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+`https://#####.apps.dynatrace.com`
+"""
+
+automationTokenUrl: Optional[str]
+"""
+The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+`dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+`https://#####.apps.dynatrace.com`
+"""
+
+clientId: Optional[str]
+
+clientSecret: Optional[str]
+
 dtApiToken: Optional[str]
 
 dtClusterApiToken: Optional[str]

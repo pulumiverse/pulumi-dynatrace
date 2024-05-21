@@ -23,6 +23,7 @@ class CalculatedServiceMetricArgs:
                  dimension_definition: Optional[pulumi.Input['CalculatedServiceMetricDimensionDefinitionArgs']] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  entity_id: Optional[pulumi.Input[str]] = None,
+                 ignore_muted_requests: Optional[pulumi.Input[bool]] = None,
                  management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  metric_definition: Optional[pulumi.Input['CalculatedServiceMetricMetricDefinitionArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -44,6 +45,7 @@ class CalculatedServiceMetricArgs:
         :param pulumi.Input['CalculatedServiceMetricDimensionDefinitionArgs'] dimension_definition: Parameters of a definition of a calculated service metric
         :param pulumi.Input[bool] enabled: The metric is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] entity_id: Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+        :param pulumi.Input[bool] ignore_muted_requests: Metric should (true) or not (false) ignore muted requests.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] management_zones: Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
         :param pulumi.Input['CalculatedServiceMetricMetricDefinitionArgs'] metric_definition: The definition of a calculated service metric
         :param pulumi.Input[str] name: The displayed name of the metric
@@ -62,6 +64,8 @@ class CalculatedServiceMetricArgs:
             pulumi.set(__self__, "enabled", enabled)
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
+        if ignore_muted_requests is not None:
+            pulumi.set(__self__, "ignore_muted_requests", ignore_muted_requests)
         if management_zones is not None:
             pulumi.set(__self__, "management_zones", management_zones)
         if metric_definition is not None:
@@ -165,6 +169,18 @@ class CalculatedServiceMetricArgs:
         pulumi.set(self, "entity_id", value)
 
     @property
+    @pulumi.getter(name="ignoreMutedRequests")
+    def ignore_muted_requests(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Metric should (true) or not (false) ignore muted requests.
+        """
+        return pulumi.get(self, "ignore_muted_requests")
+
+    @ignore_muted_requests.setter
+    def ignore_muted_requests(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "ignore_muted_requests", value)
+
+    @property
     @pulumi.getter(name="managementZones")
     def management_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -233,6 +249,7 @@ class _CalculatedServiceMetricState:
                  dimension_definition: Optional[pulumi.Input['CalculatedServiceMetricDimensionDefinitionArgs']] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  entity_id: Optional[pulumi.Input[str]] = None,
+                 ignore_muted_requests: Optional[pulumi.Input[bool]] = None,
                  management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  metric_definition: Optional[pulumi.Input['CalculatedServiceMetricMetricDefinitionArgs']] = None,
                  metric_key: Optional[pulumi.Input[str]] = None,
@@ -247,6 +264,7 @@ class _CalculatedServiceMetricState:
         :param pulumi.Input['CalculatedServiceMetricDimensionDefinitionArgs'] dimension_definition: Parameters of a definition of a calculated service metric
         :param pulumi.Input[bool] enabled: The metric is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] entity_id: Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+        :param pulumi.Input[bool] ignore_muted_requests: Metric should (true) or not (false) ignore muted requests.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] management_zones: Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
         :param pulumi.Input['CalculatedServiceMetricMetricDefinitionArgs'] metric_definition: The definition of a calculated service metric
         :param pulumi.Input[str] metric_key: The key of the calculated service metric
@@ -272,6 +290,8 @@ class _CalculatedServiceMetricState:
             pulumi.set(__self__, "enabled", enabled)
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
+        if ignore_muted_requests is not None:
+            pulumi.set(__self__, "ignore_muted_requests", ignore_muted_requests)
         if management_zones is not None:
             pulumi.set(__self__, "management_zones", management_zones)
         if metric_definition is not None:
@@ -346,6 +366,18 @@ class _CalculatedServiceMetricState:
     @entity_id.setter
     def entity_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "entity_id", value)
+
+    @property
+    @pulumi.getter(name="ignoreMutedRequests")
+    def ignore_muted_requests(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Metric should (true) or not (false) ignore muted requests.
+        """
+        return pulumi.get(self, "ignore_muted_requests")
+
+    @ignore_muted_requests.setter
+    def ignore_muted_requests(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "ignore_muted_requests", value)
 
     @property
     @pulumi.getter(name="managementZones")
@@ -449,6 +481,7 @@ class CalculatedServiceMetric(pulumi.CustomResource):
                  dimension_definition: Optional[pulumi.Input[pulumi.InputType['CalculatedServiceMetricDimensionDefinitionArgs']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  entity_id: Optional[pulumi.Input[str]] = None,
+                 ignore_muted_requests: Optional[pulumi.Input[bool]] = None,
                  management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  metric_definition: Optional[pulumi.Input[pulumi.InputType['CalculatedServiceMetricMetricDefinitionArgs']]] = None,
                  metric_key: Optional[pulumi.Input[str]] = None,
@@ -466,6 +499,7 @@ class CalculatedServiceMetric(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['CalculatedServiceMetricDimensionDefinitionArgs']] dimension_definition: Parameters of a definition of a calculated service metric
         :param pulumi.Input[bool] enabled: The metric is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] entity_id: Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+        :param pulumi.Input[bool] ignore_muted_requests: Metric should (true) or not (false) ignore muted requests.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] management_zones: Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
         :param pulumi.Input[pulumi.InputType['CalculatedServiceMetricMetricDefinitionArgs']] metric_definition: The definition of a calculated service metric
         :param pulumi.Input[str] metric_key: The key of the calculated service metric
@@ -509,6 +543,7 @@ class CalculatedServiceMetric(pulumi.CustomResource):
                  dimension_definition: Optional[pulumi.Input[pulumi.InputType['CalculatedServiceMetricDimensionDefinitionArgs']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  entity_id: Optional[pulumi.Input[str]] = None,
+                 ignore_muted_requests: Optional[pulumi.Input[bool]] = None,
                  management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  metric_definition: Optional[pulumi.Input[pulumi.InputType['CalculatedServiceMetricMetricDefinitionArgs']]] = None,
                  metric_key: Optional[pulumi.Input[str]] = None,
@@ -530,6 +565,7 @@ class CalculatedServiceMetric(pulumi.CustomResource):
             __props__.__dict__["dimension_definition"] = dimension_definition
             __props__.__dict__["enabled"] = enabled
             __props__.__dict__["entity_id"] = entity_id
+            __props__.__dict__["ignore_muted_requests"] = ignore_muted_requests
             __props__.__dict__["management_zones"] = management_zones
             __props__.__dict__["metric_definition"] = metric_definition
             if metric_key is None and not opts.urn:
@@ -556,6 +592,7 @@ class CalculatedServiceMetric(pulumi.CustomResource):
             dimension_definition: Optional[pulumi.Input[pulumi.InputType['CalculatedServiceMetricDimensionDefinitionArgs']]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             entity_id: Optional[pulumi.Input[str]] = None,
+            ignore_muted_requests: Optional[pulumi.Input[bool]] = None,
             management_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             metric_definition: Optional[pulumi.Input[pulumi.InputType['CalculatedServiceMetricMetricDefinitionArgs']]] = None,
             metric_key: Optional[pulumi.Input[str]] = None,
@@ -575,6 +612,7 @@ class CalculatedServiceMetric(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['CalculatedServiceMetricDimensionDefinitionArgs']] dimension_definition: Parameters of a definition of a calculated service metric
         :param pulumi.Input[bool] enabled: The metric is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] entity_id: Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+        :param pulumi.Input[bool] ignore_muted_requests: Metric should (true) or not (false) ignore muted requests.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] management_zones: Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
         :param pulumi.Input[pulumi.InputType['CalculatedServiceMetricMetricDefinitionArgs']] metric_definition: The definition of a calculated service metric
         :param pulumi.Input[str] metric_key: The key of the calculated service metric
@@ -599,6 +637,7 @@ class CalculatedServiceMetric(pulumi.CustomResource):
         __props__.__dict__["dimension_definition"] = dimension_definition
         __props__.__dict__["enabled"] = enabled
         __props__.__dict__["entity_id"] = entity_id
+        __props__.__dict__["ignore_muted_requests"] = ignore_muted_requests
         __props__.__dict__["management_zones"] = management_zones
         __props__.__dict__["metric_definition"] = metric_definition
         __props__.__dict__["metric_key"] = metric_key
@@ -647,6 +686,14 @@ class CalculatedServiceMetric(pulumi.CustomResource):
         Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
         """
         return pulumi.get(self, "entity_id")
+
+    @property
+    @pulumi.getter(name="ignoreMutedRequests")
+    def ignore_muted_requests(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Metric should (true) or not (false) ignore muted requests.
+        """
+        return pulumi.get(self, "ignore_muted_requests")
 
     @property
     @pulumi.getter(name="managementZones")

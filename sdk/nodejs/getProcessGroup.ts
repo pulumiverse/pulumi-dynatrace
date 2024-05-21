@@ -5,6 +5,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
+ * !> The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `PROCESS_GROUP` instead.
+ *
  * The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
  *
  * - `name` queries for all process groups with the specified name
@@ -67,6 +69,8 @@ export interface GetProcessGroupResult {
     readonly tags?: string[];
 }
 /**
+ * !> The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `PROCESS_GROUP` instead.
+ *
  * The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
  *
  * - `name` queries for all process groups with the specified name

@@ -20,6 +20,7 @@ class GenericTypesArgs:
                  display_name: pulumi.Input[str],
                  enabled: pulumi.Input[bool],
                  rules: pulumi.Input['GenericTypesRulesArgs'],
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a GenericTypes resource.
@@ -27,12 +28,15 @@ class GenericTypesArgs:
         :param pulumi.Input[str] display_name: The human readable type name for this entity type.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['GenericTypesRulesArgs'] rules: Specify a list of rules which are evaluated in order. When **any** rule matches, the entity defined according to that rule will be extracted. Subsequent rules will not be evaluated.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: The entity type name. This type name must be unique and must not be changed after creation.
         """
         pulumi.set(__self__, "created_by", created_by)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "rules", rules)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -85,6 +89,18 @@ class GenericTypesArgs:
         pulumi.set(self, "rules", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -103,6 +119,7 @@ class _GenericTypesState:
                  created_by: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input['GenericTypesRulesArgs']] = None):
         """
@@ -110,6 +127,7 @@ class _GenericTypesState:
         :param pulumi.Input[str] created_by: The user or extension that created this type.
         :param pulumi.Input[str] display_name: The human readable type name for this entity type.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: The entity type name. This type name must be unique and must not be changed after creation.
         :param pulumi.Input['GenericTypesRulesArgs'] rules: Specify a list of rules which are evaluated in order. When **any** rule matches, the entity defined according to that rule will be extracted. Subsequent rules will not be evaluated.
         """
@@ -119,6 +137,8 @@ class _GenericTypesState:
             pulumi.set(__self__, "display_name", display_name)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if rules is not None:
@@ -161,6 +181,18 @@ class _GenericTypesState:
         pulumi.set(self, "enabled", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -193,6 +225,7 @@ class GenericTypes(pulumi.CustomResource):
                  created_by: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[pulumi.InputType['GenericTypesRulesArgs']]] = None,
                  __props__=None):
@@ -203,6 +236,7 @@ class GenericTypes(pulumi.CustomResource):
         :param pulumi.Input[str] created_by: The user or extension that created this type.
         :param pulumi.Input[str] display_name: The human readable type name for this entity type.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: The entity type name. This type name must be unique and must not be changed after creation.
         :param pulumi.Input[pulumi.InputType['GenericTypesRulesArgs']] rules: Specify a list of rules which are evaluated in order. When **any** rule matches, the entity defined according to that rule will be extracted. Subsequent rules will not be evaluated.
         """
@@ -232,6 +266,7 @@ class GenericTypes(pulumi.CustomResource):
                  created_by: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  rules: Optional[pulumi.Input[pulumi.InputType['GenericTypesRulesArgs']]] = None,
                  __props__=None):
@@ -252,6 +287,7 @@ class GenericTypes(pulumi.CustomResource):
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
+            __props__.__dict__["insert_after"] = insert_after
             __props__.__dict__["name"] = name
             if rules is None and not opts.urn:
                 raise TypeError("Missing required property 'rules'")
@@ -269,6 +305,7 @@ class GenericTypes(pulumi.CustomResource):
             created_by: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             rules: Optional[pulumi.Input[pulumi.InputType['GenericTypesRulesArgs']]] = None) -> 'GenericTypes':
         """
@@ -281,6 +318,7 @@ class GenericTypes(pulumi.CustomResource):
         :param pulumi.Input[str] created_by: The user or extension that created this type.
         :param pulumi.Input[str] display_name: The human readable type name for this entity type.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: The entity type name. This type name must be unique and must not be changed after creation.
         :param pulumi.Input[pulumi.InputType['GenericTypesRulesArgs']] rules: Specify a list of rules which are evaluated in order. When **any** rule matches, the entity defined according to that rule will be extracted. Subsequent rules will not be evaluated.
         """
@@ -291,6 +329,7 @@ class GenericTypes(pulumi.CustomResource):
         __props__.__dict__["created_by"] = created_by
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["enabled"] = enabled
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["name"] = name
         __props__.__dict__["rules"] = rules
         return GenericTypes(resource_name, opts=opts, __props__=__props__)
@@ -318,6 +357,14 @@ class GenericTypes(pulumi.CustomResource):
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter

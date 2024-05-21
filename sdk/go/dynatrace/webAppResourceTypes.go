@@ -15,6 +15,8 @@ import (
 type WebAppResourceTypes struct {
 	pulumi.CustomResourceState
 
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
 	PrimaryResourceType pulumi.StringOutput `pulumi:"primaryResourceType"`
 	// The regular expression to detect the resource.
@@ -59,6 +61,8 @@ func GetWebAppResourceTypes(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering WebAppResourceTypes resources.
 type webAppResourceTypesState struct {
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
 	PrimaryResourceType *string `pulumi:"primaryResourceType"`
 	// The regular expression to detect the resource.
@@ -68,6 +72,8 @@ type webAppResourceTypesState struct {
 }
 
 type WebAppResourceTypesState struct {
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
 	PrimaryResourceType pulumi.StringPtrInput
 	// The regular expression to detect the resource.
@@ -81,6 +87,8 @@ func (WebAppResourceTypesState) ElementType() reflect.Type {
 }
 
 type webAppResourceTypesArgs struct {
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
 	PrimaryResourceType string `pulumi:"primaryResourceType"`
 	// The regular expression to detect the resource.
@@ -91,6 +99,8 @@ type webAppResourceTypesArgs struct {
 
 // The set of arguments for constructing a WebAppResourceTypes resource.
 type WebAppResourceTypesArgs struct {
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
 	PrimaryResourceType pulumi.StringInput
 	// The regular expression to detect the resource.
@@ -184,6 +194,11 @@ func (o WebAppResourceTypesOutput) ToWebAppResourceTypesOutput() WebAppResourceT
 
 func (o WebAppResourceTypesOutput) ToWebAppResourceTypesOutputWithContext(ctx context.Context) WebAppResourceTypesOutput {
 	return o
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o WebAppResourceTypesOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *WebAppResourceTypes) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`

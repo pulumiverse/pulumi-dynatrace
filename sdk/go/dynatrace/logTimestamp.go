@@ -17,10 +17,14 @@ type LogTimestamp struct {
 
 	// Name
 	ConfigItemTitle pulumi.StringOutput `pulumi:"configItemTitle"`
+	// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+	DateSearchLimit pulumi.IntPtrOutput `pulumi:"dateSearchLimit"`
 	// Date-time pattern
 	DateTimePattern pulumi.StringOutput `pulumi:"dateTimePattern"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// no documentation available
 	Matchers LogTimestampMatchersPtrOutput `pulumi:"matchers"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -73,10 +77,14 @@ func GetLogTimestamp(ctx *pulumi.Context,
 type logTimestampState struct {
 	// Name
 	ConfigItemTitle *string `pulumi:"configItemTitle"`
+	// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+	DateSearchLimit *int `pulumi:"dateSearchLimit"`
 	// Date-time pattern
 	DateTimePattern *string `pulumi:"dateTimePattern"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// no documentation available
 	Matchers *LogTimestampMatchers `pulumi:"matchers"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -88,10 +96,14 @@ type logTimestampState struct {
 type LogTimestampState struct {
 	// Name
 	ConfigItemTitle pulumi.StringPtrInput
+	// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+	DateSearchLimit pulumi.IntPtrInput
 	// Date-time pattern
 	DateTimePattern pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// no documentation available
 	Matchers LogTimestampMatchersPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -107,10 +119,14 @@ func (LogTimestampState) ElementType() reflect.Type {
 type logTimestampArgs struct {
 	// Name
 	ConfigItemTitle string `pulumi:"configItemTitle"`
+	// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+	DateSearchLimit *int `pulumi:"dateSearchLimit"`
 	// Date-time pattern
 	DateTimePattern string `pulumi:"dateTimePattern"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// no documentation available
 	Matchers *LogTimestampMatchers `pulumi:"matchers"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -123,10 +139,14 @@ type logTimestampArgs struct {
 type LogTimestampArgs struct {
 	// Name
 	ConfigItemTitle pulumi.StringInput
+	// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+	DateSearchLimit pulumi.IntPtrInput
 	// Date-time pattern
 	DateTimePattern pulumi.StringInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// no documentation available
 	Matchers LogTimestampMatchersPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -227,6 +247,11 @@ func (o LogTimestampOutput) ConfigItemTitle() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogTimestamp) pulumi.StringOutput { return v.ConfigItemTitle }).(pulumi.StringOutput)
 }
 
+// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+func (o LogTimestampOutput) DateSearchLimit() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *LogTimestamp) pulumi.IntPtrOutput { return v.DateSearchLimit }).(pulumi.IntPtrOutput)
+}
+
 // Date-time pattern
 func (o LogTimestampOutput) DateTimePattern() pulumi.StringOutput {
 	return o.ApplyT(func(v *LogTimestamp) pulumi.StringOutput { return v.DateTimePattern }).(pulumi.StringOutput)
@@ -235,6 +260,11 @@ func (o LogTimestampOutput) DateTimePattern() pulumi.StringOutput {
 // This setting is enabled (`true`) or disabled (`false`)
 func (o LogTimestampOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogTimestamp) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o LogTimestampOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *LogTimestamp) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // no documentation available

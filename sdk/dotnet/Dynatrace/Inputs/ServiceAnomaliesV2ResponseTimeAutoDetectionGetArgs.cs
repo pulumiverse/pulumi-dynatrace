@@ -20,13 +20,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<Inputs.ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtectionGetArgs> OverAlertingProtection { get; set; } = null!;
 
         /// <summary>
-        /// All requests. Alert if the average response time of all requests degrades beyond **both** the absolute and relative thresholds:
+        /// Alert if the median response time of all requests degrades beyond **both** the absolute and relative thresholds:
         /// </summary>
         [Input("responseTimeAll", required: true)]
         public Input<Inputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAllGetArgs> ResponseTimeAll { get; set; } = null!;
 
         /// <summary>
-        /// Slowest 10%. Alert if the average response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+        /// Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
         /// </summary>
         [Input("responseTimeSlowest", required: true)]
         public Input<Inputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowestGetArgs> ResponseTimeSlowest { get; set; } = null!;

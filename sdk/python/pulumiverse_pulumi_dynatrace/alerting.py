@@ -25,7 +25,7 @@ class AlertingArgs:
         The set of arguments for constructing a Alerting resource.
         :param pulumi.Input['AlertingFiltersArgs'] filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
         :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
-        :param pulumi.Input[str] management_zone: The ID of the management zone to which the alerting profile applies
+        :param pulumi.Input[str] management_zone: Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
         :param pulumi.Input[str] name: The name of the alerting profile, displayed in the UI
         :param pulumi.Input['AlertingRulesArgs'] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
@@ -68,7 +68,7 @@ class AlertingArgs:
     @pulumi.getter(name="managementZone")
     def management_zone(self) -> Optional[pulumi.Input[str]]:
         """
-        The ID of the management zone to which the alerting profile applies
+        Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
         """
         return pulumi.get(self, "management_zone")
 
@@ -113,7 +113,7 @@ class _AlertingState:
         Input properties used for looking up and filtering Alerting resources.
         :param pulumi.Input['AlertingFiltersArgs'] filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
         :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
-        :param pulumi.Input[str] management_zone: The ID of the management zone to which the alerting profile applies
+        :param pulumi.Input[str] management_zone: Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
         :param pulumi.Input[str] name: The name of the alerting profile, displayed in the UI
         :param pulumi.Input['AlertingRulesArgs'] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
@@ -156,7 +156,7 @@ class _AlertingState:
     @pulumi.getter(name="managementZone")
     def management_zone(self) -> Optional[pulumi.Input[str]]:
         """
-        The ID of the management zone to which the alerting profile applies
+        Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
         """
         return pulumi.get(self, "management_zone")
 
@@ -206,7 +206,7 @@ class Alerting(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['AlertingFiltersArgs']] filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
         :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
-        :param pulumi.Input[str] management_zone: The ID of the management zone to which the alerting profile applies
+        :param pulumi.Input[str] management_zone: Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
         :param pulumi.Input[str] name: The name of the alerting profile, displayed in the UI
         :param pulumi.Input[pulumi.InputType['AlertingRulesArgs']] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
@@ -276,7 +276,7 @@ class Alerting(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['AlertingFiltersArgs']] filters: The list of event filters.  For all filters that are *negated* inside of these event filters, that is all `Predefined` as well as `Custom` (Title and/or Description) ones the AND logic applies. For all *non-negated* ones the OR logic applies. Between these two groups, negated and non-negated, the AND logic applies.  If you specify both severity rule and event filter, the AND logic applies
         :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
-        :param pulumi.Input[str] management_zone: The ID of the management zone to which the alerting profile applies
+        :param pulumi.Input[str] management_zone: Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
         :param pulumi.Input[str] name: The name of the alerting profile, displayed in the UI
         :param pulumi.Input[pulumi.InputType['AlertingRulesArgs']] rules: A list of rules for management zone usage.  Each rule is evaluated independently of all other rules
         """
@@ -311,7 +311,7 @@ class Alerting(pulumi.CustomResource):
     @pulumi.getter(name="managementZone")
     def management_zone(self) -> pulumi.Output[Optional[str]]:
         """
-        The ID of the management zone to which the alerting profile applies
+        Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
         """
         return pulumi.get(self, "management_zone")
 

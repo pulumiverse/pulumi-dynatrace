@@ -18,7 +18,7 @@ type Alerting struct {
 	Filters AlertingFiltersPtrOutput `pulumi:"filters"`
 	// The ID of this setting when referred to by the Config REST API V1
 	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
-	// The ID of the management zone to which the alerting profile applies
+	// Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
 	ManagementZone pulumi.StringPtrOutput `pulumi:"managementZone"`
 	// The name of the alerting profile, displayed in the UI
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -60,7 +60,7 @@ type alertingState struct {
 	Filters *AlertingFilters `pulumi:"filters"`
 	// The ID of this setting when referred to by the Config REST API V1
 	LegacyId *string `pulumi:"legacyId"`
-	// The ID of the management zone to which the alerting profile applies
+	// Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
 	ManagementZone *string `pulumi:"managementZone"`
 	// The name of the alerting profile, displayed in the UI
 	Name *string `pulumi:"name"`
@@ -73,7 +73,7 @@ type AlertingState struct {
 	Filters AlertingFiltersPtrInput
 	// The ID of this setting when referred to by the Config REST API V1
 	LegacyId pulumi.StringPtrInput
-	// The ID of the management zone to which the alerting profile applies
+	// Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
 	ManagementZone pulumi.StringPtrInput
 	// The name of the alerting profile, displayed in the UI
 	Name pulumi.StringPtrInput
@@ -90,7 +90,7 @@ type alertingArgs struct {
 	Filters *AlertingFilters `pulumi:"filters"`
 	// The ID of this setting when referred to by the Config REST API V1
 	LegacyId *string `pulumi:"legacyId"`
-	// The ID of the management zone to which the alerting profile applies
+	// Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
 	ManagementZone *string `pulumi:"managementZone"`
 	// The name of the alerting profile, displayed in the UI
 	Name *string `pulumi:"name"`
@@ -104,7 +104,7 @@ type AlertingArgs struct {
 	Filters AlertingFiltersPtrInput
 	// The ID of this setting when referred to by the Config REST API V1
 	LegacyId pulumi.StringPtrInput
-	// The ID of the management zone to which the alerting profile applies
+	// Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
 	ManagementZone pulumi.StringPtrInput
 	// The name of the alerting profile, displayed in the UI
 	Name pulumi.StringPtrInput
@@ -209,7 +209,7 @@ func (o AlertingOutput) LegacyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Alerting) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
-// The ID of the management zone to which the alerting profile applies
+// Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
 func (o AlertingOutput) ManagementZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Alerting) pulumi.StringPtrOutput { return v.ManagementZone }).(pulumi.StringPtrOutput)
 }

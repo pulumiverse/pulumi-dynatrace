@@ -14,10 +14,16 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class AlertingFiltersFilterCustomMetadataItemsFilterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Type 'dt.' for key hints.
+        /// GET /api/v2/eventProperties for list of available keys
         /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
+        [Input("negate")]
+        public Input<bool>? Negate { get; set; }
 
         /// <summary>
         /// Value

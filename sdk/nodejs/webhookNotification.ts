@@ -63,6 +63,10 @@ export class WebhookNotification extends pulumi.CustomResource {
      */
     public readonly notifyEventMerges!: pulumi.Output<boolean | undefined>;
     /**
+     * To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+     */
+    public readonly oauth2Credentials!: pulumi.Output<outputs.WebhookNotificationOauth2Credentials | undefined>;
+    /**
      * The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      */
     public readonly payload!: pulumi.Output<string>;
@@ -71,9 +75,21 @@ export class WebhookNotification extends pulumi.CustomResource {
      */
     public readonly profile!: pulumi.Output<string>;
     /**
+     * The secret URL of the webhook endpoint.
+     */
+    public readonly secretUrl!: pulumi.Output<string | undefined>;
+    /**
      * The URL of the WebHook endpoint
      */
-    public readonly url!: pulumi.Output<string>;
+    public readonly url!: pulumi.Output<string | undefined>;
+    /**
+     * Secret webhook URL
+     */
+    public readonly urlContainsSecret!: pulumi.Output<boolean | undefined>;
+    /**
+     * Use OAuth 2.0 for authentication
+     */
+    public readonly useOauth2!: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a WebhookNotification resource with the given unique name, arguments, and options.
@@ -95,9 +111,13 @@ export class WebhookNotification extends pulumi.CustomResource {
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["notifyClosedProblems"] = state ? state.notifyClosedProblems : undefined;
             resourceInputs["notifyEventMerges"] = state ? state.notifyEventMerges : undefined;
+            resourceInputs["oauth2Credentials"] = state ? state.oauth2Credentials : undefined;
             resourceInputs["payload"] = state ? state.payload : undefined;
             resourceInputs["profile"] = state ? state.profile : undefined;
+            resourceInputs["secretUrl"] = state ? state.secretUrl : undefined;
             resourceInputs["url"] = state ? state.url : undefined;
+            resourceInputs["urlContainsSecret"] = state ? state.urlContainsSecret : undefined;
+            resourceInputs["useOauth2"] = state ? state.useOauth2 : undefined;
         } else {
             const args = argsOrState as WebhookNotificationArgs | undefined;
             if ((!args || args.active === undefined) && !opts.urn) {
@@ -109,9 +129,6 @@ export class WebhookNotification extends pulumi.CustomResource {
             if ((!args || args.profile === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'profile'");
             }
-            if ((!args || args.url === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'url'");
-            }
             resourceInputs["active"] = args ? args.active : undefined;
             resourceInputs["headers"] = args ? args.headers : undefined;
             resourceInputs["insecure"] = args ? args.insecure : undefined;
@@ -119,11 +136,17 @@ export class WebhookNotification extends pulumi.CustomResource {
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["notifyClosedProblems"] = args ? args.notifyClosedProblems : undefined;
             resourceInputs["notifyEventMerges"] = args ? args.notifyEventMerges : undefined;
+            resourceInputs["oauth2Credentials"] = args ? args.oauth2Credentials : undefined;
             resourceInputs["payload"] = args ? args.payload : undefined;
             resourceInputs["profile"] = args ? args.profile : undefined;
+            resourceInputs["secretUrl"] = args?.secretUrl ? pulumi.secret(args.secretUrl) : undefined;
             resourceInputs["url"] = args ? args.url : undefined;
+            resourceInputs["urlContainsSecret"] = args ? args.urlContainsSecret : undefined;
+            resourceInputs["useOauth2"] = args ? args.useOauth2 : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["secretUrl"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(WebhookNotification.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -161,6 +184,10 @@ export interface WebhookNotificationState {
      */
     notifyEventMerges?: pulumi.Input<boolean>;
     /**
+     * To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+     */
+    oauth2Credentials?: pulumi.Input<inputs.WebhookNotificationOauth2Credentials>;
+    /**
      * The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      */
     payload?: pulumi.Input<string>;
@@ -169,9 +196,21 @@ export interface WebhookNotificationState {
      */
     profile?: pulumi.Input<string>;
     /**
+     * The secret URL of the webhook endpoint.
+     */
+    secretUrl?: pulumi.Input<string>;
+    /**
      * The URL of the WebHook endpoint
      */
     url?: pulumi.Input<string>;
+    /**
+     * Secret webhook URL
+     */
+    urlContainsSecret?: pulumi.Input<boolean>;
+    /**
+     * Use OAuth 2.0 for authentication
+     */
+    useOauth2?: pulumi.Input<boolean>;
 }
 
 /**
@@ -207,6 +246,10 @@ export interface WebhookNotificationArgs {
      */
     notifyEventMerges?: pulumi.Input<boolean>;
     /**
+     * To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+     */
+    oauth2Credentials?: pulumi.Input<inputs.WebhookNotificationOauth2Credentials>;
+    /**
      * The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
      */
     payload: pulumi.Input<string>;
@@ -215,7 +258,19 @@ export interface WebhookNotificationArgs {
      */
     profile: pulumi.Input<string>;
     /**
+     * The secret URL of the webhook endpoint.
+     */
+    secretUrl?: pulumi.Input<string>;
+    /**
      * The URL of the WebHook endpoint
      */
-    url: pulumi.Input<string>;
+    url?: pulumi.Input<string>;
+    /**
+     * Secret webhook URL
+     */
+    urlContainsSecret?: pulumi.Input<boolean>;
+    /**
+     * Use OAuth 2.0 for authentication
+     */
+    useOauth2?: pulumi.Input<boolean>;
 }

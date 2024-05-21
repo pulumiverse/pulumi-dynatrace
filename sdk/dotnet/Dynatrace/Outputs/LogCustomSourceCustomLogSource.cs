@@ -15,22 +15,36 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class LogCustomSourceCustomLogSource
     {
         /// <summary>
+        /// Accept binary content
+        /// </summary>
+        public readonly bool? AcceptBinary;
+        /// <summary>
         /// Possible Values: `LOG_PATH_PATTERN`, `WINDOWS_EVENT_LOG`
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+        /// (Required attribute for cluster v1.291 and under) It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
         /// </summary>
         public readonly ImmutableArray<string> Values;
+        /// <summary>
+        /// (Required attribute for cluster v1.292+) It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+        /// </summary>
+        public readonly Outputs.LogCustomSourceCustomLogSourceValuesAndEnrichment? ValuesAndEnrichment;
 
         [OutputConstructor]
         private LogCustomSourceCustomLogSource(
+            bool? acceptBinary,
+
             string type,
 
-            ImmutableArray<string> values)
+            ImmutableArray<string> values,
+
+            Outputs.LogCustomSourceCustomLogSourceValuesAndEnrichment? valuesAndEnrichment)
         {
+            AcceptBinary = acceptBinary;
             Type = type;
             Values = values;
+            ValuesAndEnrichment = valuesAndEnrichment;
         }
     }
 }

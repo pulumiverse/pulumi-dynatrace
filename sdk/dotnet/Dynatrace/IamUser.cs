@@ -11,6 +11,10 @@ using Pulumi;
 namespace Pulumiverse.PulumiPackage.Dynatrace
 {
     /// <summary>
+    /// &gt; This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
+    /// 
+    /// &gt; This resource requires the API token scopes **Allow read access for identity resources (users and groups)** (`account-idm-read`) and **Allow write access for identity resources (users and groups)** (`account-idm-write`)
+    /// 
     /// ## Dynatrace Documentation
     /// 
     /// - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -64,6 +68,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
 
         [Output("groups")]
         public Output<ImmutableArray<string>> Groups { get; private set; } = null!;
+
+        [Output("uid")]
+        public Output<string> Uid { get; private set; } = null!;
 
 
         /// <summary>
@@ -141,6 +148,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
             get => _groups ?? (_groups = new InputList<string>());
             set => _groups = value;
         }
+
+        [Input("uid")]
+        public Input<string>? Uid { get; set; }
 
         public IamUserState()
         {

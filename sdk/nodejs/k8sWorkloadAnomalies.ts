@@ -57,11 +57,31 @@ export class K8sWorkloadAnomalies extends pulumi.CustomResource {
     /**
      * no documentation available
      */
+    public readonly jobFailureEvents!: pulumi.Output<outputs.K8sWorkloadAnomaliesJobFailureEvents>;
+    /**
+     * no documentation available
+     */
     public readonly notAllPodsReady!: pulumi.Output<outputs.K8sWorkloadAnomaliesNotAllPodsReady>;
     /**
      * no documentation available
      */
+    public readonly oomKills!: pulumi.Output<outputs.K8sWorkloadAnomaliesOomKills>;
+    /**
+     * no documentation available
+     */
     public readonly pendingPods!: pulumi.Output<outputs.K8sWorkloadAnomaliesPendingPods>;
+    /**
+     * no documentation available
+     */
+    public readonly podBackoffEvents!: pulumi.Output<outputs.K8sWorkloadAnomaliesPodBackoffEvents>;
+    /**
+     * no documentation available
+     */
+    public readonly podEvictionEvents!: pulumi.Output<outputs.K8sWorkloadAnomaliesPodEvictionEvents>;
+    /**
+     * no documentation available
+     */
+    public readonly podPreemptionEvents!: pulumi.Output<outputs.K8sWorkloadAnomaliesPodPreemptionEvents>;
     /**
      * no documentation available
      */
@@ -93,8 +113,13 @@ export class K8sWorkloadAnomalies extends pulumi.CustomResource {
             resourceInputs["highCpuThrottling"] = state ? state.highCpuThrottling : undefined;
             resourceInputs["highCpuUsage"] = state ? state.highCpuUsage : undefined;
             resourceInputs["highMemoryUsage"] = state ? state.highMemoryUsage : undefined;
+            resourceInputs["jobFailureEvents"] = state ? state.jobFailureEvents : undefined;
             resourceInputs["notAllPodsReady"] = state ? state.notAllPodsReady : undefined;
+            resourceInputs["oomKills"] = state ? state.oomKills : undefined;
             resourceInputs["pendingPods"] = state ? state.pendingPods : undefined;
+            resourceInputs["podBackoffEvents"] = state ? state.podBackoffEvents : undefined;
+            resourceInputs["podEvictionEvents"] = state ? state.podEvictionEvents : undefined;
+            resourceInputs["podPreemptionEvents"] = state ? state.podPreemptionEvents : undefined;
             resourceInputs["podStuckInTerminating"] = state ? state.podStuckInTerminating : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
             resourceInputs["workloadWithoutReadyPods"] = state ? state.workloadWithoutReadyPods : undefined;
@@ -115,11 +140,26 @@ export class K8sWorkloadAnomalies extends pulumi.CustomResource {
             if ((!args || args.highMemoryUsage === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'highMemoryUsage'");
             }
+            if ((!args || args.jobFailureEvents === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'jobFailureEvents'");
+            }
             if ((!args || args.notAllPodsReady === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'notAllPodsReady'");
             }
+            if ((!args || args.oomKills === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'oomKills'");
+            }
             if ((!args || args.pendingPods === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'pendingPods'");
+            }
+            if ((!args || args.podBackoffEvents === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'podBackoffEvents'");
+            }
+            if ((!args || args.podEvictionEvents === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'podEvictionEvents'");
+            }
+            if ((!args || args.podPreemptionEvents === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'podPreemptionEvents'");
             }
             if ((!args || args.podStuckInTerminating === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'podStuckInTerminating'");
@@ -132,8 +172,13 @@ export class K8sWorkloadAnomalies extends pulumi.CustomResource {
             resourceInputs["highCpuThrottling"] = args ? args.highCpuThrottling : undefined;
             resourceInputs["highCpuUsage"] = args ? args.highCpuUsage : undefined;
             resourceInputs["highMemoryUsage"] = args ? args.highMemoryUsage : undefined;
+            resourceInputs["jobFailureEvents"] = args ? args.jobFailureEvents : undefined;
             resourceInputs["notAllPodsReady"] = args ? args.notAllPodsReady : undefined;
+            resourceInputs["oomKills"] = args ? args.oomKills : undefined;
             resourceInputs["pendingPods"] = args ? args.pendingPods : undefined;
+            resourceInputs["podBackoffEvents"] = args ? args.podBackoffEvents : undefined;
+            resourceInputs["podEvictionEvents"] = args ? args.podEvictionEvents : undefined;
+            resourceInputs["podPreemptionEvents"] = args ? args.podPreemptionEvents : undefined;
             resourceInputs["podStuckInTerminating"] = args ? args.podStuckInTerminating : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
             resourceInputs["workloadWithoutReadyPods"] = args ? args.workloadWithoutReadyPods : undefined;
@@ -170,11 +215,31 @@ export interface K8sWorkloadAnomaliesState {
     /**
      * no documentation available
      */
+    jobFailureEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesJobFailureEvents>;
+    /**
+     * no documentation available
+     */
     notAllPodsReady?: pulumi.Input<inputs.K8sWorkloadAnomaliesNotAllPodsReady>;
     /**
      * no documentation available
      */
+    oomKills?: pulumi.Input<inputs.K8sWorkloadAnomaliesOomKills>;
+    /**
+     * no documentation available
+     */
     pendingPods?: pulumi.Input<inputs.K8sWorkloadAnomaliesPendingPods>;
+    /**
+     * no documentation available
+     */
+    podBackoffEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodBackoffEvents>;
+    /**
+     * no documentation available
+     */
+    podEvictionEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodEvictionEvents>;
+    /**
+     * no documentation available
+     */
+    podPreemptionEvents?: pulumi.Input<inputs.K8sWorkloadAnomaliesPodPreemptionEvents>;
     /**
      * no documentation available
      */
@@ -216,11 +281,31 @@ export interface K8sWorkloadAnomaliesArgs {
     /**
      * no documentation available
      */
+    jobFailureEvents: pulumi.Input<inputs.K8sWorkloadAnomaliesJobFailureEvents>;
+    /**
+     * no documentation available
+     */
     notAllPodsReady: pulumi.Input<inputs.K8sWorkloadAnomaliesNotAllPodsReady>;
     /**
      * no documentation available
      */
+    oomKills: pulumi.Input<inputs.K8sWorkloadAnomaliesOomKills>;
+    /**
+     * no documentation available
+     */
     pendingPods: pulumi.Input<inputs.K8sWorkloadAnomaliesPendingPods>;
+    /**
+     * no documentation available
+     */
+    podBackoffEvents: pulumi.Input<inputs.K8sWorkloadAnomaliesPodBackoffEvents>;
+    /**
+     * no documentation available
+     */
+    podEvictionEvents: pulumi.Input<inputs.K8sWorkloadAnomaliesPodEvictionEvents>;
+    /**
+     * no documentation available
+     */
+    podPreemptionEvents: pulumi.Input<inputs.K8sWorkloadAnomaliesPodPreemptionEvents>;
     /**
      * no documentation available
      */

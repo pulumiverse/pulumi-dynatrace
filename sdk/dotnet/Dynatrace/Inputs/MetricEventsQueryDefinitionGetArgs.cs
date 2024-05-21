@@ -14,13 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class MetricEventsQueryDefinitionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The aggregation of the query definition
+        /// Possible Values: `AVG`, `COUNT`, `MAX`, `MEDIAN`, `MIN`, `PERCENTILE90`, `SUM`, `VALUE`
         /// </summary>
         [Input("aggregation")]
         public Input<string>? Aggregation { get; set; }
 
         /// <summary>
-        /// The dimension filters of the query definition
+        /// Dimension filter
         /// </summary>
         [Input("dimensionFilter")]
         public Input<Inputs.MetricEventsQueryDefinitionDimensionFilterGetArgs>? DimensionFilter { get; set; }
@@ -32,10 +32,16 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<Inputs.MetricEventsQueryDefinitionEntityFilterGetArgs>? EntityFilter { get; set; }
 
         /// <summary>
-        /// The metric key of the query definition
+        /// The `legacy_id` of a Management Zone (as provided by the resource `dynatrace.ManagementZoneV2` or the data source `dynatrace.ManagementZone`)
         /// </summary>
-        [Input("metricKey", required: true)]
-        public Input<string> MetricKey { get; set; } = null!;
+        [Input("managementZone")]
+        public Input<string>? ManagementZone { get; set; }
+
+        /// <summary>
+        /// Metric key
+        /// </summary>
+        [Input("metricKey")]
+        public Input<string>? MetricKey { get; set; }
 
         /// <summary>
         /// To learn more, visit [Metric Selector](https://dt-url.net/metselad)
@@ -50,7 +56,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<int>? QueryOffset { get; set; }
 
         /// <summary>
-        /// The type of query definition
+        /// Possible Values: `METRIC_KEY`, `METRIC_SELECTOR`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

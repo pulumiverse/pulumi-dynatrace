@@ -4,6 +4,23 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The calculated service metric data source allows the metric ID to be retrieved by its name.
+ *
+ * - `name` (String) - The name of the calculated service metric
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const example = dynatrace.getCalculatedServiceMetric({
+ *     name: "Terraform Example",
+ * });
+ * export const groups = example.then(example => example.id);
+ * ```
+ */
 export function getCalculatedServiceMetric(args: GetCalculatedServiceMetricArgs, opts?: pulumi.InvokeOptions): Promise<GetCalculatedServiceMetricResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -29,6 +46,23 @@ export interface GetCalculatedServiceMetricResult {
     readonly id: string;
     readonly name: string;
 }
+/**
+ * The calculated service metric data source allows the metric ID to be retrieved by its name.
+ *
+ * - `name` (String) - The name of the calculated service metric
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const example = dynatrace.getCalculatedServiceMetric({
+ *     name: "Terraform Example",
+ * });
+ * export const groups = example.then(example => example.id);
+ * ```
+ */
 export function getCalculatedServiceMetricOutput(args: GetCalculatedServiceMetricOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCalculatedServiceMetricResult> {
     return pulumi.output(args).apply((a: any) => getCalculatedServiceMetric(a, opts))
 }

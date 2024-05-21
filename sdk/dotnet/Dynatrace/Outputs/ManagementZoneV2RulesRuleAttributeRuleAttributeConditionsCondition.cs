@@ -51,7 +51,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly string? StringValue;
         /// <summary>
-        /// Tag. Format: `[CONTEXT]tagKey:tagValue`
+        /// Format: `[CONTEXT]tagKey:tagValue`
         /// </summary>
         public readonly string? Tag;
 

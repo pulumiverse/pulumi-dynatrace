@@ -27,6 +27,8 @@ type ContainerTechnology struct {
 	DockerWindows pulumi.BoolOutput `pulumi:"dockerWindows"`
 	// Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
 	Garden pulumi.BoolOutput `pulumi:"garden"`
+	// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+	Podman pulumi.BoolOutput `pulumi:"podman"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 	// Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
@@ -57,6 +59,9 @@ func NewContainerTechnology(ctx *pulumi.Context,
 	}
 	if args.Garden == nil {
 		return nil, errors.New("invalid value for required argument 'Garden'")
+	}
+	if args.Podman == nil {
+		return nil, errors.New("invalid value for required argument 'Podman'")
 	}
 	if args.Winc == nil {
 		return nil, errors.New("invalid value for required argument 'Winc'")
@@ -96,6 +101,8 @@ type containerTechnologyState struct {
 	DockerWindows *bool `pulumi:"dockerWindows"`
 	// Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
 	Garden *bool `pulumi:"garden"`
+	// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+	Podman *bool `pulumi:"podman"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 	// Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
@@ -115,6 +122,8 @@ type ContainerTechnologyState struct {
 	DockerWindows pulumi.BoolPtrInput
 	// Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
 	Garden pulumi.BoolPtrInput
+	// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+	Podman pulumi.BoolPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 	// Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
@@ -138,6 +147,8 @@ type containerTechnologyArgs struct {
 	DockerWindows bool `pulumi:"dockerWindows"`
 	// Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
 	Garden bool `pulumi:"garden"`
+	// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+	Podman bool `pulumi:"podman"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 	// Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
@@ -158,6 +169,8 @@ type ContainerTechnologyArgs struct {
 	DockerWindows pulumi.BoolInput
 	// Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
 	Garden pulumi.BoolInput
+	// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+	Podman pulumi.BoolInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 	// Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
@@ -279,6 +292,11 @@ func (o ContainerTechnologyOutput) DockerWindows() pulumi.BoolOutput {
 // Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
 func (o ContainerTechnologyOutput) Garden() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerTechnology) pulumi.BoolOutput { return v.Garden }).(pulumi.BoolOutput)
+}
+
+// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+func (o ContainerTechnologyOutput) Podman() pulumi.BoolOutput {
+	return o.ApplyT(func(v *ContainerTechnology) pulumi.BoolOutput { return v.Podman }).(pulumi.BoolOutput)
 }
 
 // The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.

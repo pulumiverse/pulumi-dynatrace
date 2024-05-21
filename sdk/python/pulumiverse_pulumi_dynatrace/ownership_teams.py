@@ -27,12 +27,12 @@ class OwnershipTeamsArgs:
                  supplementary_identifiers: Optional[pulumi.Input['OwnershipTeamsSupplementaryIdentifiersArgs']] = None):
         """
         The set of arguments for constructing a OwnershipTeams resource.
-        :param pulumi.Input[str] identifier: The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+        :param pulumi.Input[str] identifier: The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
         :param pulumi.Input['OwnershipTeamsResponsibilitiesArgs'] responsibilities: Turn on all responsibility assignments that apply to this team.
         :param pulumi.Input['OwnershipTeamsAdditionalInformationArgs'] additional_information: Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
         :param pulumi.Input['OwnershipTeamsContactDetailsArgs'] contact_details: Define options for messaging integration or other means of contacting this team.
         :param pulumi.Input[str] description: Description
-        :param pulumi.Input[str] external_id: This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+        :param pulumi.Input[str] external_id: This field should only be used for the automation purpose when importing team information.
         :param pulumi.Input['OwnershipTeamsLinksArgs'] links: Include links to online resources where information relevant to this team’s responsibilities can be found.
         :param pulumi.Input[str] name: Team name
         :param pulumi.Input['OwnershipTeamsSupplementaryIdentifiersArgs'] supplementary_identifiers: The supplementary team identifiers can be optionally used in addition to the main team identifier to reference this team from any entity in Dynatrace. Up to 3 supplementary identifiers are supported.
@@ -58,7 +58,7 @@ class OwnershipTeamsArgs:
     @pulumi.getter
     def identifier(self) -> pulumi.Input[str]:
         """
-        The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+        The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
         """
         return pulumi.get(self, "identifier")
 
@@ -118,7 +118,7 @@ class OwnershipTeamsArgs:
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
         """
-        This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+        This field should only be used for the automation purpose when importing team information.
         """
         return pulumi.get(self, "external_id")
 
@@ -180,8 +180,8 @@ class _OwnershipTeamsState:
         :param pulumi.Input['OwnershipTeamsAdditionalInformationArgs'] additional_information: Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
         :param pulumi.Input['OwnershipTeamsContactDetailsArgs'] contact_details: Define options for messaging integration or other means of contacting this team.
         :param pulumi.Input[str] description: Description
-        :param pulumi.Input[str] external_id: This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
-        :param pulumi.Input[str] identifier: The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+        :param pulumi.Input[str] external_id: This field should only be used for the automation purpose when importing team information.
+        :param pulumi.Input[str] identifier: The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
         :param pulumi.Input['OwnershipTeamsLinksArgs'] links: Include links to online resources where information relevant to this team’s responsibilities can be found.
         :param pulumi.Input[str] name: Team name
         :param pulumi.Input['OwnershipTeamsResponsibilitiesArgs'] responsibilities: Turn on all responsibility assignments that apply to this team.
@@ -246,7 +246,7 @@ class _OwnershipTeamsState:
     @pulumi.getter(name="externalId")
     def external_id(self) -> Optional[pulumi.Input[str]]:
         """
-        This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+        This field should only be used for the automation purpose when importing team information.
         """
         return pulumi.get(self, "external_id")
 
@@ -258,7 +258,7 @@ class _OwnershipTeamsState:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+        The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
         """
         return pulumi.get(self, "identifier")
 
@@ -337,8 +337,8 @@ class OwnershipTeams(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['OwnershipTeamsAdditionalInformationArgs']] additional_information: Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
         :param pulumi.Input[pulumi.InputType['OwnershipTeamsContactDetailsArgs']] contact_details: Define options for messaging integration or other means of contacting this team.
         :param pulumi.Input[str] description: Description
-        :param pulumi.Input[str] external_id: This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
-        :param pulumi.Input[str] identifier: The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+        :param pulumi.Input[str] external_id: This field should only be used for the automation purpose when importing team information.
+        :param pulumi.Input[str] identifier: The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
         :param pulumi.Input[pulumi.InputType['OwnershipTeamsLinksArgs']] links: Include links to online resources where information relevant to this team’s responsibilities can be found.
         :param pulumi.Input[str] name: Team name
         :param pulumi.Input[pulumi.InputType['OwnershipTeamsResponsibilitiesArgs']] responsibilities: Turn on all responsibility assignments that apply to this team.
@@ -427,8 +427,8 @@ class OwnershipTeams(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['OwnershipTeamsAdditionalInformationArgs']] additional_information: Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
         :param pulumi.Input[pulumi.InputType['OwnershipTeamsContactDetailsArgs']] contact_details: Define options for messaging integration or other means of contacting this team.
         :param pulumi.Input[str] description: Description
-        :param pulumi.Input[str] external_id: This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
-        :param pulumi.Input[str] identifier: The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+        :param pulumi.Input[str] external_id: This field should only be used for the automation purpose when importing team information.
+        :param pulumi.Input[str] identifier: The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
         :param pulumi.Input[pulumi.InputType['OwnershipTeamsLinksArgs']] links: Include links to online resources where information relevant to this team’s responsibilities can be found.
         :param pulumi.Input[str] name: Team name
         :param pulumi.Input[pulumi.InputType['OwnershipTeamsResponsibilitiesArgs']] responsibilities: Turn on all responsibility assignments that apply to this team.
@@ -477,7 +477,7 @@ class OwnershipTeams(pulumi.CustomResource):
     @pulumi.getter(name="externalId")
     def external_id(self) -> pulumi.Output[Optional[str]]:
         """
-        This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+        This field should only be used for the automation purpose when importing team information.
         """
         return pulumi.get(self, "external_id")
 
@@ -485,7 +485,7 @@ class OwnershipTeams(pulumi.CustomResource):
     @pulumi.getter
     def identifier(self) -> pulumi.Output[str]:
         """
-        The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+        The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
         """
         return pulumi.get(self, "identifier")
 

@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class Slo extends pulumi.CustomResource {
@@ -45,6 +47,10 @@ export class Slo extends pulumi.CustomResource {
      */
     public readonly disabled!: pulumi.Output<boolean | undefined>;
     /**
+     * Error budget burn rate configuration of a service-level objective (SLO).
+     */
+    public readonly errorBudgetBurnRate!: pulumi.Output<outputs.SloErrorBudgetBurnRate | undefined>;
+    /**
      * The evaluation type of the SLO. Currently only `AGGREGATE` is supported
      */
     public readonly evaluation!: pulumi.Output<string>;
@@ -56,6 +62,10 @@ export class Slo extends pulumi.CustomResource {
      * The percentage-based metric expression for the calculation of the SLO
      */
     public readonly metricExpression!: pulumi.Output<string | undefined>;
+    /**
+     * The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+     */
+    public readonly metricName!: pulumi.Output<string | undefined>;
     /**
      * The name of the rule
      */
@@ -99,9 +109,11 @@ export class Slo extends pulumi.CustomResource {
             resourceInputs["denominator"] = state ? state.denominator : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["disabled"] = state ? state.disabled : undefined;
+            resourceInputs["errorBudgetBurnRate"] = state ? state.errorBudgetBurnRate : undefined;
             resourceInputs["evaluation"] = state ? state.evaluation : undefined;
             resourceInputs["filter"] = state ? state.filter : undefined;
             resourceInputs["metricExpression"] = state ? state.metricExpression : undefined;
+            resourceInputs["metricName"] = state ? state.metricName : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["numerator"] = state ? state.numerator : undefined;
             resourceInputs["rate"] = state ? state.rate : undefined;
@@ -125,9 +137,11 @@ export class Slo extends pulumi.CustomResource {
             resourceInputs["denominator"] = args ? args.denominator : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["disabled"] = args ? args.disabled : undefined;
+            resourceInputs["errorBudgetBurnRate"] = args ? args.errorBudgetBurnRate : undefined;
             resourceInputs["evaluation"] = args ? args.evaluation : undefined;
             resourceInputs["filter"] = args ? args.filter : undefined;
             resourceInputs["metricExpression"] = args ? args.metricExpression : undefined;
+            resourceInputs["metricName"] = args ? args.metricName : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["numerator"] = args ? args.numerator : undefined;
             resourceInputs["rate"] = args ? args.rate : undefined;
@@ -157,6 +171,10 @@ export interface SloState {
      */
     disabled?: pulumi.Input<boolean>;
     /**
+     * Error budget burn rate configuration of a service-level objective (SLO).
+     */
+    errorBudgetBurnRate?: pulumi.Input<inputs.SloErrorBudgetBurnRate>;
+    /**
      * The evaluation type of the SLO. Currently only `AGGREGATE` is supported
      */
     evaluation?: pulumi.Input<string>;
@@ -168,6 +186,10 @@ export interface SloState {
      * The percentage-based metric expression for the calculation of the SLO
      */
     metricExpression?: pulumi.Input<string>;
+    /**
+     * The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+     */
+    metricName?: pulumi.Input<string>;
     /**
      * The name of the rule
      */
@@ -213,6 +235,10 @@ export interface SloArgs {
      */
     disabled?: pulumi.Input<boolean>;
     /**
+     * Error budget burn rate configuration of a service-level objective (SLO).
+     */
+    errorBudgetBurnRate?: pulumi.Input<inputs.SloErrorBudgetBurnRate>;
+    /**
      * The evaluation type of the SLO. Currently only `AGGREGATE` is supported
      */
     evaluation: pulumi.Input<string>;
@@ -224,6 +250,10 @@ export interface SloArgs {
      * The percentage-based metric expression for the calculation of the SLO
      */
     metricExpression?: pulumi.Input<string>;
+    /**
+     * The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+     */
+    metricName?: pulumi.Input<string>;
     /**
      * The name of the rule
      */

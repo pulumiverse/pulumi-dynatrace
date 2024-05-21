@@ -26,6 +26,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<Outputs.BusinessEventsOneagentEvent> Event { get; private set; } = null!;
 
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Output("insertAfter")]
+        public Output<string> InsertAfter { get; private set; } = null!;
+
+        /// <summary>
         /// Rule name
         /// </summary>
         [Output("ruleName")]
@@ -38,7 +44,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<string?> Scope { get; private set; } = null!;
 
         /// <summary>
-        /// Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+        /// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         /// </summary>
         [Output("triggers")]
         public Output<Outputs.BusinessEventsOneagentTriggers> Triggers { get; private set; } = null!;
@@ -103,6 +109,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<Inputs.BusinessEventsOneagentEventArgs> Event { get; set; } = null!;
 
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
+
+        /// <summary>
         /// Rule name
         /// </summary>
         [Input("ruleName", required: true)]
@@ -115,7 +127,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+        /// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         /// </summary>
         [Input("triggers", required: true)]
         public Input<Inputs.BusinessEventsOneagentTriggersArgs> Triggers { get; set; } = null!;
@@ -141,6 +153,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<Inputs.BusinessEventsOneagentEventGetArgs>? Event { get; set; }
 
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
+
+        /// <summary>
         /// Rule name
         /// </summary>
         [Input("ruleName")]
@@ -153,7 +171,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+        /// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         /// </summary>
         [Input("triggers")]
         public Input<Inputs.BusinessEventsOneagentTriggersGetArgs>? Triggers { get; set; }

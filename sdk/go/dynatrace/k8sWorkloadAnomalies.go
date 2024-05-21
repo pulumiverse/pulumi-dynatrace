@@ -26,9 +26,19 @@ type K8sWorkloadAnomalies struct {
 	// no documentation available
 	HighMemoryUsage K8sWorkloadAnomaliesHighMemoryUsageOutput `pulumi:"highMemoryUsage"`
 	// no documentation available
+	JobFailureEvents K8sWorkloadAnomaliesJobFailureEventsOutput `pulumi:"jobFailureEvents"`
+	// no documentation available
 	NotAllPodsReady K8sWorkloadAnomaliesNotAllPodsReadyOutput `pulumi:"notAllPodsReady"`
 	// no documentation available
+	OomKills K8sWorkloadAnomaliesOomKillsOutput `pulumi:"oomKills"`
+	// no documentation available
 	PendingPods K8sWorkloadAnomaliesPendingPodsOutput `pulumi:"pendingPods"`
+	// no documentation available
+	PodBackoffEvents K8sWorkloadAnomaliesPodBackoffEventsOutput `pulumi:"podBackoffEvents"`
+	// no documentation available
+	PodEvictionEvents K8sWorkloadAnomaliesPodEvictionEventsOutput `pulumi:"podEvictionEvents"`
+	// no documentation available
+	PodPreemptionEvents K8sWorkloadAnomaliesPodPreemptionEventsOutput `pulumi:"podPreemptionEvents"`
 	// no documentation available
 	PodStuckInTerminating K8sWorkloadAnomaliesPodStuckInTerminatingOutput `pulumi:"podStuckInTerminating"`
 	// The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
@@ -59,11 +69,26 @@ func NewK8sWorkloadAnomalies(ctx *pulumi.Context,
 	if args.HighMemoryUsage == nil {
 		return nil, errors.New("invalid value for required argument 'HighMemoryUsage'")
 	}
+	if args.JobFailureEvents == nil {
+		return nil, errors.New("invalid value for required argument 'JobFailureEvents'")
+	}
 	if args.NotAllPodsReady == nil {
 		return nil, errors.New("invalid value for required argument 'NotAllPodsReady'")
 	}
+	if args.OomKills == nil {
+		return nil, errors.New("invalid value for required argument 'OomKills'")
+	}
 	if args.PendingPods == nil {
 		return nil, errors.New("invalid value for required argument 'PendingPods'")
+	}
+	if args.PodBackoffEvents == nil {
+		return nil, errors.New("invalid value for required argument 'PodBackoffEvents'")
+	}
+	if args.PodEvictionEvents == nil {
+		return nil, errors.New("invalid value for required argument 'PodEvictionEvents'")
+	}
+	if args.PodPreemptionEvents == nil {
+		return nil, errors.New("invalid value for required argument 'PodPreemptionEvents'")
 	}
 	if args.PodStuckInTerminating == nil {
 		return nil, errors.New("invalid value for required argument 'PodStuckInTerminating'")
@@ -105,9 +130,19 @@ type k8sWorkloadAnomaliesState struct {
 	// no documentation available
 	HighMemoryUsage *K8sWorkloadAnomaliesHighMemoryUsage `pulumi:"highMemoryUsage"`
 	// no documentation available
+	JobFailureEvents *K8sWorkloadAnomaliesJobFailureEvents `pulumi:"jobFailureEvents"`
+	// no documentation available
 	NotAllPodsReady *K8sWorkloadAnomaliesNotAllPodsReady `pulumi:"notAllPodsReady"`
 	// no documentation available
+	OomKills *K8sWorkloadAnomaliesOomKills `pulumi:"oomKills"`
+	// no documentation available
 	PendingPods *K8sWorkloadAnomaliesPendingPods `pulumi:"pendingPods"`
+	// no documentation available
+	PodBackoffEvents *K8sWorkloadAnomaliesPodBackoffEvents `pulumi:"podBackoffEvents"`
+	// no documentation available
+	PodEvictionEvents *K8sWorkloadAnomaliesPodEvictionEvents `pulumi:"podEvictionEvents"`
+	// no documentation available
+	PodPreemptionEvents *K8sWorkloadAnomaliesPodPreemptionEvents `pulumi:"podPreemptionEvents"`
 	// no documentation available
 	PodStuckInTerminating *K8sWorkloadAnomaliesPodStuckInTerminating `pulumi:"podStuckInTerminating"`
 	// The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
@@ -128,9 +163,19 @@ type K8sWorkloadAnomaliesState struct {
 	// no documentation available
 	HighMemoryUsage K8sWorkloadAnomaliesHighMemoryUsagePtrInput
 	// no documentation available
+	JobFailureEvents K8sWorkloadAnomaliesJobFailureEventsPtrInput
+	// no documentation available
 	NotAllPodsReady K8sWorkloadAnomaliesNotAllPodsReadyPtrInput
 	// no documentation available
+	OomKills K8sWorkloadAnomaliesOomKillsPtrInput
+	// no documentation available
 	PendingPods K8sWorkloadAnomaliesPendingPodsPtrInput
+	// no documentation available
+	PodBackoffEvents K8sWorkloadAnomaliesPodBackoffEventsPtrInput
+	// no documentation available
+	PodEvictionEvents K8sWorkloadAnomaliesPodEvictionEventsPtrInput
+	// no documentation available
+	PodPreemptionEvents K8sWorkloadAnomaliesPodPreemptionEventsPtrInput
 	// no documentation available
 	PodStuckInTerminating K8sWorkloadAnomaliesPodStuckInTerminatingPtrInput
 	// The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
@@ -155,9 +200,19 @@ type k8sWorkloadAnomaliesArgs struct {
 	// no documentation available
 	HighMemoryUsage K8sWorkloadAnomaliesHighMemoryUsage `pulumi:"highMemoryUsage"`
 	// no documentation available
+	JobFailureEvents K8sWorkloadAnomaliesJobFailureEvents `pulumi:"jobFailureEvents"`
+	// no documentation available
 	NotAllPodsReady K8sWorkloadAnomaliesNotAllPodsReady `pulumi:"notAllPodsReady"`
 	// no documentation available
+	OomKills K8sWorkloadAnomaliesOomKills `pulumi:"oomKills"`
+	// no documentation available
 	PendingPods K8sWorkloadAnomaliesPendingPods `pulumi:"pendingPods"`
+	// no documentation available
+	PodBackoffEvents K8sWorkloadAnomaliesPodBackoffEvents `pulumi:"podBackoffEvents"`
+	// no documentation available
+	PodEvictionEvents K8sWorkloadAnomaliesPodEvictionEvents `pulumi:"podEvictionEvents"`
+	// no documentation available
+	PodPreemptionEvents K8sWorkloadAnomaliesPodPreemptionEvents `pulumi:"podPreemptionEvents"`
 	// no documentation available
 	PodStuckInTerminating K8sWorkloadAnomaliesPodStuckInTerminating `pulumi:"podStuckInTerminating"`
 	// The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
@@ -179,9 +234,19 @@ type K8sWorkloadAnomaliesArgs struct {
 	// no documentation available
 	HighMemoryUsage K8sWorkloadAnomaliesHighMemoryUsageInput
 	// no documentation available
+	JobFailureEvents K8sWorkloadAnomaliesJobFailureEventsInput
+	// no documentation available
 	NotAllPodsReady K8sWorkloadAnomaliesNotAllPodsReadyInput
 	// no documentation available
+	OomKills K8sWorkloadAnomaliesOomKillsInput
+	// no documentation available
 	PendingPods K8sWorkloadAnomaliesPendingPodsInput
+	// no documentation available
+	PodBackoffEvents K8sWorkloadAnomaliesPodBackoffEventsInput
+	// no documentation available
+	PodEvictionEvents K8sWorkloadAnomaliesPodEvictionEventsInput
+	// no documentation available
+	PodPreemptionEvents K8sWorkloadAnomaliesPodPreemptionEventsInput
 	// no documentation available
 	PodStuckInTerminating K8sWorkloadAnomaliesPodStuckInTerminatingInput
 	// The scope of this setting (CLOUD*APPLICATION*NAMESPACE, KUBERNETES_CLUSTER). Omit this property if you want to cover the whole environment.
@@ -303,13 +368,40 @@ func (o K8sWorkloadAnomaliesOutput) HighMemoryUsage() K8sWorkloadAnomaliesHighMe
 }
 
 // no documentation available
+func (o K8sWorkloadAnomaliesOutput) JobFailureEvents() K8sWorkloadAnomaliesJobFailureEventsOutput {
+	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesJobFailureEventsOutput { return v.JobFailureEvents }).(K8sWorkloadAnomaliesJobFailureEventsOutput)
+}
+
+// no documentation available
 func (o K8sWorkloadAnomaliesOutput) NotAllPodsReady() K8sWorkloadAnomaliesNotAllPodsReadyOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesNotAllPodsReadyOutput { return v.NotAllPodsReady }).(K8sWorkloadAnomaliesNotAllPodsReadyOutput)
 }
 
 // no documentation available
+func (o K8sWorkloadAnomaliesOutput) OomKills() K8sWorkloadAnomaliesOomKillsOutput {
+	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesOomKillsOutput { return v.OomKills }).(K8sWorkloadAnomaliesOomKillsOutput)
+}
+
+// no documentation available
 func (o K8sWorkloadAnomaliesOutput) PendingPods() K8sWorkloadAnomaliesPendingPodsOutput {
 	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesPendingPodsOutput { return v.PendingPods }).(K8sWorkloadAnomaliesPendingPodsOutput)
+}
+
+// no documentation available
+func (o K8sWorkloadAnomaliesOutput) PodBackoffEvents() K8sWorkloadAnomaliesPodBackoffEventsOutput {
+	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesPodBackoffEventsOutput { return v.PodBackoffEvents }).(K8sWorkloadAnomaliesPodBackoffEventsOutput)
+}
+
+// no documentation available
+func (o K8sWorkloadAnomaliesOutput) PodEvictionEvents() K8sWorkloadAnomaliesPodEvictionEventsOutput {
+	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesPodEvictionEventsOutput { return v.PodEvictionEvents }).(K8sWorkloadAnomaliesPodEvictionEventsOutput)
+}
+
+// no documentation available
+func (o K8sWorkloadAnomaliesOutput) PodPreemptionEvents() K8sWorkloadAnomaliesPodPreemptionEventsOutput {
+	return o.ApplyT(func(v *K8sWorkloadAnomalies) K8sWorkloadAnomaliesPodPreemptionEventsOutput {
+		return v.PodPreemptionEvents
+	}).(K8sWorkloadAnomaliesPodPreemptionEventsOutput)
 }
 
 // no documentation available

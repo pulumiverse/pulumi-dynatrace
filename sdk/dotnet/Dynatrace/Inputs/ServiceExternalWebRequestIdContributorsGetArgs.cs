@@ -26,7 +26,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<Inputs.ServiceExternalWebRequestIdContributorsContextRootGetArgs> ContextRoot { get; set; } = null!;
 
         /// <summary>
-        /// Let the Port contribute to the Service Id
+        /// Let the port contribute to the Service Id
         /// </summary>
         [Input("portForServiceId", required: true)]
         public Input<bool> PortForServiceId { get; set; } = null!;

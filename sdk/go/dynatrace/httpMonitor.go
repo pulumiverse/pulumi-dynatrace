@@ -27,8 +27,10 @@ type HttpMonitor struct {
 	ManuallyAssignedApps pulumi.StringArrayOutput `pulumi:"manuallyAssignedApps"`
 	// The name of the monitor.
 	Name pulumi.StringOutput `pulumi:"name"`
+	// No script block - handle requests via `HttpMonitorScript` resource
+	NoScript pulumi.BoolPtrOutput `pulumi:"noScript"`
 	// The HTTP Script
-	Script HttpMonitorScriptPtrOutput `pulumi:"script"`
+	Script HttpMonitorScriptTypePtrOutput `pulumi:"script"`
 	// A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
 	// source 'USER' will be added automatically.
 	Tags HttpMonitorTagArrayOutput `pulumi:"tags"`
@@ -79,8 +81,10 @@ type httpMonitorState struct {
 	ManuallyAssignedApps []string `pulumi:"manuallyAssignedApps"`
 	// The name of the monitor.
 	Name *string `pulumi:"name"`
+	// No script block - handle requests via `HttpMonitorScript` resource
+	NoScript *bool `pulumi:"noScript"`
 	// The HTTP Script
-	Script *HttpMonitorScript `pulumi:"script"`
+	Script *HttpMonitorScriptType `pulumi:"script"`
 	// A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
 	// source 'USER' will be added automatically.
 	Tags []HttpMonitorTag `pulumi:"tags"`
@@ -99,8 +103,10 @@ type HttpMonitorState struct {
 	ManuallyAssignedApps pulumi.StringArrayInput
 	// The name of the monitor.
 	Name pulumi.StringPtrInput
+	// No script block - handle requests via `HttpMonitorScript` resource
+	NoScript pulumi.BoolPtrInput
 	// The HTTP Script
-	Script HttpMonitorScriptPtrInput
+	Script HttpMonitorScriptTypePtrInput
 	// A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
 	// source 'USER' will be added automatically.
 	Tags HttpMonitorTagArrayInput
@@ -123,8 +129,10 @@ type httpMonitorArgs struct {
 	ManuallyAssignedApps []string `pulumi:"manuallyAssignedApps"`
 	// The name of the monitor.
 	Name *string `pulumi:"name"`
+	// No script block - handle requests via `HttpMonitorScript` resource
+	NoScript *bool `pulumi:"noScript"`
 	// The HTTP Script
-	Script *HttpMonitorScript `pulumi:"script"`
+	Script *HttpMonitorScriptType `pulumi:"script"`
 	// A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
 	// source 'USER' will be added automatically.
 	Tags []HttpMonitorTag `pulumi:"tags"`
@@ -144,8 +152,10 @@ type HttpMonitorArgs struct {
 	ManuallyAssignedApps pulumi.StringArrayInput
 	// The name of the monitor.
 	Name pulumi.StringPtrInput
+	// No script block - handle requests via `HttpMonitorScript` resource
+	NoScript pulumi.BoolPtrInput
 	// The HTTP Script
-	Script HttpMonitorScriptPtrInput
+	Script HttpMonitorScriptTypePtrInput
 	// A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
 	// source 'USER' will be added automatically.
 	Tags HttpMonitorTagArrayInput
@@ -268,9 +278,14 @@ func (o HttpMonitorOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *HttpMonitor) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// No script block - handle requests via `HttpMonitorScript` resource
+func (o HttpMonitorOutput) NoScript() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HttpMonitor) pulumi.BoolPtrOutput { return v.NoScript }).(pulumi.BoolPtrOutput)
+}
+
 // The HTTP Script
-func (o HttpMonitorOutput) Script() HttpMonitorScriptPtrOutput {
-	return o.ApplyT(func(v *HttpMonitor) HttpMonitorScriptPtrOutput { return v.Script }).(HttpMonitorScriptPtrOutput)
+func (o HttpMonitorOutput) Script() HttpMonitorScriptTypePtrOutput {
+	return o.ApplyT(func(v *HttpMonitor) HttpMonitorScriptTypePtrOutput { return v.Script }).(HttpMonitorScriptTypePtrOutput)
 }
 
 // A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and

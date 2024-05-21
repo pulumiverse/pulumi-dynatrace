@@ -19,6 +19,37 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     [DynatraceResourceType("pulumi:providers:dynatrace")]
     public partial class Provider : global::Pulumi.ProviderResource
     {
+        [Output("accountId")]
+        public Output<string?> AccountId { get; private set; } = null!;
+
+        [Output("automationClientId")]
+        public Output<string?> AutomationClientId { get; private set; } = null!;
+
+        [Output("automationClientSecret")]
+        public Output<string?> AutomationClientSecret { get; private set; } = null!;
+
+        /// <summary>
+        /// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+        /// optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+        /// `https://#####.apps.dynatrace.com`
+        /// </summary>
+        [Output("automationEnvUrl")]
+        public Output<string?> AutomationEnvUrl { get; private set; } = null!;
+
+        /// <summary>
+        /// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+        /// `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+        /// `https://#####.apps.dynatrace.com`
+        /// </summary>
+        [Output("automationTokenUrl")]
+        public Output<string?> AutomationTokenUrl { get; private set; } = null!;
+
+        [Output("clientId")]
+        public Output<string?> ClientId { get; private set; } = null!;
+
+        [Output("clientSecret")]
+        public Output<string?> ClientSecret { get; private set; } = null!;
+
         [Output("dtApiToken")]
         public Output<string?> DtApiToken { get; private set; } = null!;
 
@@ -61,6 +92,11 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
                 PluginDownloadURL = "github://api.github.com/pulumiverse",
                 AdditionalSecretOutputs =
                 {
+                    "accountId",
+                    "automationClientId",
+                    "automationClientSecret",
+                    "clientId",
+                    "clientSecret",
                     "dtApiToken",
                     "dtClusterApiToken",
                     "dtClusterUrl",
@@ -78,6 +114,82 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
 
     public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
+        [Input("accountId")]
+        private Input<string>? _accountId;
+        public Input<string>? AccountId
+        {
+            get => _accountId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _accountId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("automationClientId")]
+        private Input<string>? _automationClientId;
+        public Input<string>? AutomationClientId
+        {
+            get => _automationClientId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _automationClientId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("automationClientSecret")]
+        private Input<string>? _automationClientSecret;
+        public Input<string>? AutomationClientSecret
+        {
+            get => _automationClientSecret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _automationClientSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+        /// optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+        /// `https://#####.apps.dynatrace.com`
+        /// </summary>
+        [Input("automationEnvUrl")]
+        public Input<string>? AutomationEnvUrl { get; set; }
+
+        /// <summary>
+        /// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+        /// `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+        /// `https://#####.apps.dynatrace.com`
+        /// </summary>
+        [Input("automationTokenUrl")]
+        public Input<string>? AutomationTokenUrl { get; set; }
+
+        [Input("clientId")]
+        private Input<string>? _clientId;
+        public Input<string>? ClientId
+        {
+            get => _clientId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clientId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("clientSecret")]
+        private Input<string>? _clientSecret;
+        public Input<string>? ClientSecret
+        {
+            get => _clientSecret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clientSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
         [Input("dtApiToken")]
         private Input<string>? _dtApiToken;
         public Input<string>? DtApiToken

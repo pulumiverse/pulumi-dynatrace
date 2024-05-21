@@ -41,6 +41,12 @@ export class ProcessGroupSimpleDetection extends pulumi.CustomResource {
      */
     public readonly groupIdentifier!: pulumi.Output<string>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+     * specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Use a variable to identify instances within a process group.
      */
     public readonly instanceIdentifier!: pulumi.Output<string>;
@@ -68,6 +74,7 @@ export class ProcessGroupSimpleDetection extends pulumi.CustomResource {
             const state = argsOrState as ProcessGroupSimpleDetectionState | undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
             resourceInputs["groupIdentifier"] = state ? state.groupIdentifier : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["instanceIdentifier"] = state ? state.instanceIdentifier : undefined;
             resourceInputs["processType"] = state ? state.processType : undefined;
             resourceInputs["ruleType"] = state ? state.ruleType : undefined;
@@ -87,6 +94,7 @@ export class ProcessGroupSimpleDetection extends pulumi.CustomResource {
             }
             resourceInputs["enabled"] = args ? args.enabled : undefined;
             resourceInputs["groupIdentifier"] = args ? args.groupIdentifier : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["instanceIdentifier"] = args ? args.instanceIdentifier : undefined;
             resourceInputs["processType"] = args ? args.processType : undefined;
             resourceInputs["ruleType"] = args ? args.ruleType : undefined;
@@ -108,6 +116,12 @@ export interface ProcessGroupSimpleDetectionState {
      * If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
      */
     groupIdentifier?: pulumi.Input<string>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+     * specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Use a variable to identify instances within a process group.
      */
@@ -134,6 +148,12 @@ export interface ProcessGroupSimpleDetectionArgs {
      * If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
      */
     groupIdentifier: pulumi.Input<string>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+     * specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Use a variable to identify instances within a process group.
      */

@@ -4,6 +4,50 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
+ *
+ * > This resource requires the API token scope **Allow IAM policy configuration for environments** (`iam-policies-management`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Dynatrace IAM Policy Management - https://www.dynatrace.com/support/help/manage/access-control/user-management-and-sso/manage-groups-and-permissions/iam/iam-policy-mgt
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions/iam/iam-getting-started
+ *
+ * ## Prerequisites
+ *
+ * Using this resource requires an OAuth client to be configured within your account settings.
+ * The scopes of the OAuth Client need to include `account-idm-read`, `account-idm-write`, `account-env-read`, `account-env-write`, `iam-policies-management`, `iam:policies:write`, `iam:policies:read`, `iam:bindings:write`, `iam:bindings:read` and `iam:effective-permissions:read`.
+ *
+ * Finally the provider configuration requires the credentials for that OAuth Client.
+ * The configuration section of your provider needs to look like this.
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * ```
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
+ *
+ * const policy = new dynatrace.IamPolicy("policy", {
+ *     environment: "siz654##",
+ *     statementQuery: "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";",
+ * });
+ * ```
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
+ *
+ * const policy = new dynatrace.IamPolicy("policy", {
+ *     account: "########-####-####-####-############",
+ *     statementQuery: "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";",
+ * });
+ * ```
+ */
 export class IamPolicy extends pulumi.CustomResource {
     /**
      * Get an existing IamPolicy resource's state with the given name, ID, and optional extra
@@ -56,6 +100,10 @@ export class IamPolicy extends pulumi.CustomResource {
      * Tags for this policy
      */
     public readonly tags!: pulumi.Output<string[] | undefined>;
+    /**
+     * The ID of this resource is a concatenation of multiple pieces of information (policy UUID, accountID, environmentID, ...). There are use cases where you JUST need the UUID of the Policy, though
+     */
+    public /*out*/ readonly uuid!: pulumi.Output<string>;
 
     /**
      * Create a IamPolicy resource with the given unique name, arguments, and options.
@@ -76,6 +124,7 @@ export class IamPolicy extends pulumi.CustomResource {
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["statementQuery"] = state ? state.statementQuery : undefined;
             resourceInputs["tags"] = state ? state.tags : undefined;
+            resourceInputs["uuid"] = state ? state.uuid : undefined;
         } else {
             const args = argsOrState as IamPolicyArgs | undefined;
             if ((!args || args.statementQuery === undefined) && !opts.urn) {
@@ -87,6 +136,7 @@ export class IamPolicy extends pulumi.CustomResource {
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["statementQuery"] = args ? args.statementQuery : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["uuid"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IamPolicy.__pulumiType, name, resourceInputs, opts);
@@ -121,6 +171,10 @@ export interface IamPolicyState {
      * Tags for this policy
      */
     tags?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The ID of this resource is a concatenation of multiple pieces of information (policy UUID, accountID, environmentID, ...). There are use cases where you JUST need the UUID of the Policy, though
+     */
+    uuid?: pulumi.Input<string>;
 }
 
 /**

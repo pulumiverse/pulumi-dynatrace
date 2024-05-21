@@ -59,6 +59,10 @@ export class HttpMonitor extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     /**
+     * No script block - handle requests via `dynatrace.HttpMonitorScript` resource
+     */
+    public readonly noScript!: pulumi.Output<boolean | undefined>;
+    /**
      * The HTTP Script
      */
     public readonly script!: pulumi.Output<outputs.HttpMonitorScript | undefined>;
@@ -87,6 +91,7 @@ export class HttpMonitor extends pulumi.CustomResource {
             resourceInputs["locations"] = state ? state.locations : undefined;
             resourceInputs["manuallyAssignedApps"] = state ? state.manuallyAssignedApps : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["noScript"] = state ? state.noScript : undefined;
             resourceInputs["script"] = state ? state.script : undefined;
             resourceInputs["tags"] = state ? state.tags : undefined;
         } else {
@@ -100,6 +105,7 @@ export class HttpMonitor extends pulumi.CustomResource {
             resourceInputs["locations"] = args ? args.locations : undefined;
             resourceInputs["manuallyAssignedApps"] = args ? args.manuallyAssignedApps : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["noScript"] = args ? args.noScript : undefined;
             resourceInputs["script"] = args ? args.script : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
         }
@@ -136,6 +142,10 @@ export interface HttpMonitorState {
      * The name of the monitor.
      */
     name?: pulumi.Input<string>;
+    /**
+     * No script block - handle requests via `dynatrace.HttpMonitorScript` resource
+     */
+    noScript?: pulumi.Input<boolean>;
     /**
      * The HTTP Script
      */
@@ -175,6 +185,10 @@ export interface HttpMonitorArgs {
      * The name of the monitor.
      */
     name?: pulumi.Input<string>;
+    /**
+     * No script block - handle requests via `dynatrace.HttpMonitorScript` resource
+     */
+    noScript?: pulumi.Input<boolean>;
     /**
      * The HTTP Script
      */

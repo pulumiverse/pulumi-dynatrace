@@ -20,20 +20,21 @@ class ServiceAnomaliesV2Args:
                  load_drops: pulumi.Input['ServiceAnomaliesV2LoadDropsArgs'],
                  load_spikes: pulumi.Input['ServiceAnomaliesV2LoadSpikesArgs'],
                  response_time: pulumi.Input['ServiceAnomaliesV2ResponseTimeArgs'],
-                 scope: pulumi.Input[str]):
+                 scope: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ServiceAnomaliesV2 resource.
         :param pulumi.Input['ServiceAnomaliesV2FailureRateArgs'] failure_rate: Failure rate
         :param pulumi.Input['ServiceAnomaliesV2LoadDropsArgs'] load_drops: Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time:
         :param pulumi.Input['ServiceAnomaliesV2LoadSpikesArgs'] load_spikes: Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time:
         :param pulumi.Input['ServiceAnomaliesV2ResponseTimeArgs'] response_time: Response time
-        :param pulumi.Input[str] scope: The scope for the service anomaly detection
+        :param pulumi.Input[str] scope: The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "failure_rate", failure_rate)
         pulumi.set(__self__, "load_drops", load_drops)
         pulumi.set(__self__, "load_spikes", load_spikes)
         pulumi.set(__self__, "response_time", response_time)
-        pulumi.set(__self__, "scope", scope)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
 
     @property
     @pulumi.getter(name="failureRate")
@@ -85,14 +86,14 @@ class ServiceAnomaliesV2Args:
 
     @property
     @pulumi.getter
-    def scope(self) -> pulumi.Input[str]:
+    def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope for the service anomaly detection
+        The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: pulumi.Input[str]):
+    def scope(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -110,7 +111,7 @@ class _ServiceAnomaliesV2State:
         :param pulumi.Input['ServiceAnomaliesV2LoadDropsArgs'] load_drops: Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time:
         :param pulumi.Input['ServiceAnomaliesV2LoadSpikesArgs'] load_spikes: Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time:
         :param pulumi.Input['ServiceAnomaliesV2ResponseTimeArgs'] response_time: Response time
-        :param pulumi.Input[str] scope: The scope for the service anomaly detection
+        :param pulumi.Input[str] scope: The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         if failure_rate is not None:
             pulumi.set(__self__, "failure_rate", failure_rate)
@@ -175,7 +176,7 @@ class _ServiceAnomaliesV2State:
     @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
-        The scope for the service anomaly detection
+        The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 
@@ -203,7 +204,7 @@ class ServiceAnomaliesV2(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['ServiceAnomaliesV2LoadDropsArgs']] load_drops: Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time:
         :param pulumi.Input[pulumi.InputType['ServiceAnomaliesV2LoadSpikesArgs']] load_spikes: Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time:
         :param pulumi.Input[pulumi.InputType['ServiceAnomaliesV2ResponseTimeArgs']] response_time: Response time
-        :param pulumi.Input[str] scope: The scope for the service anomaly detection
+        :param pulumi.Input[str] scope: The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         ...
     @overload
@@ -254,8 +255,6 @@ class ServiceAnomaliesV2(pulumi.CustomResource):
             if response_time is None and not opts.urn:
                 raise TypeError("Missing required property 'response_time'")
             __props__.__dict__["response_time"] = response_time
-            if scope is None and not opts.urn:
-                raise TypeError("Missing required property 'scope'")
             __props__.__dict__["scope"] = scope
         super(ServiceAnomaliesV2, __self__).__init__(
             'dynatrace:index/serviceAnomaliesV2:ServiceAnomaliesV2',
@@ -283,7 +282,7 @@ class ServiceAnomaliesV2(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['ServiceAnomaliesV2LoadDropsArgs']] load_drops: Alert if the observed load is lower than the expected load by a specified margin for a specified amount of time:
         :param pulumi.Input[pulumi.InputType['ServiceAnomaliesV2LoadSpikesArgs']] load_spikes: Alert if the observed load exceeds the expected load by a specified margin for a specified amount of time:
         :param pulumi.Input[pulumi.InputType['ServiceAnomaliesV2ResponseTimeArgs']] response_time: Response time
-        :param pulumi.Input[str] scope: The scope for the service anomaly detection
+        :param pulumi.Input[str] scope: The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -330,9 +329,9 @@ class ServiceAnomaliesV2(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def scope(self) -> pulumi.Output[str]:
+    def scope(self) -> pulumi.Output[Optional[str]]:
         """
-        The scope for the service anomaly detection
+        The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
         """
         return pulumi.get(self, "scope")
 

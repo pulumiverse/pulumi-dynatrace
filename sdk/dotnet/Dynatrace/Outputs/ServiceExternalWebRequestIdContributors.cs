@@ -23,7 +23,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.ServiceExternalWebRequestIdContributorsContextRoot ContextRoot;
         /// <summary>
-        /// Let the Port contribute to the Service Id
+        /// Let the port contribute to the Service Id
         /// </summary>
         public readonly bool PortForServiceId;
         /// <summary>

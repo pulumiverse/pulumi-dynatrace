@@ -14,13 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public partial class LogOneagent : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Detect container time zones
+        /// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
         /// </summary>
         [Output("containerTimezoneHeuristicEnabled")]
         public Output<bool> ContainerTimezoneHeuristicEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Detect logs inside containers
+        /// Allows detection of log messages written to the containerized application's stdout/stderr streams.
         /// </summary>
         [Output("containersLogsDetectionEnabled")]
         public Output<bool> ContainersLogsDetectionEnabled { get; private set; } = null!;
@@ -44,13 +44,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<int> EventLogQueryTimeoutSec { get; private set; } = null!;
 
         /// <summary>
-        /// Detect IIS logs
+        /// Allows detection of logs and event logs written by IIS server.
         /// </summary>
         [Output("iisdetectionEnabled")]
         public Output<bool> IisdetectionEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Detect logs on Network File Systems (NFS)
+        /// Allows detection of logs written to mounted network storage drives.
         /// </summary>
         [Output("logScannerLinuxNfsEnabled")]
         public Output<bool> LogScannerLinuxNfsEnabled { get; private set; } = null!;
@@ -68,13 +68,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<int> MinBinaryDetectionLimitBytes { get; private set; } = null!;
 
         /// <summary>
-        /// Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+        /// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
         /// </summary>
         [Output("monitorOwnLogsEnabled")]
         public Output<bool> MonitorOwnLogsEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Detect open log files
+        /// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
         /// </summary>
         [Output("openLogFilesDetectionEnabled")]
         public Output<bool> OpenLogFilesDetectionEnabled { get; private set; } = null!;
@@ -98,16 +98,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<int> SeverityDetectionLinesLimit { get; private set; } = null!;
 
         /// <summary>
-        /// (Linux: syslog, message log) (Windows: system, application, security event logs)
+        /// Linux: syslog, message log Windows: system, application, security event logs
         /// </summary>
         [Output("systemLogsDetectionEnabled")]
         public Output<bool> SystemLogsDetectionEnabled { get; private set; } = null!;
-
-        /// <summary>
-        /// Deprecated for OneAgent 1.247+
-        /// </summary>
-        [Output("utcasDefaultContainerTimezone")]
-        public Output<bool> UtcasDefaultContainerTimezone { get; private set; } = null!;
 
 
         /// <summary>
@@ -157,13 +151,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class LogOneagentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Detect container time zones
+        /// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
         /// </summary>
         [Input("containerTimezoneHeuristicEnabled", required: true)]
         public Input<bool> ContainerTimezoneHeuristicEnabled { get; set; } = null!;
 
         /// <summary>
-        /// Detect logs inside containers
+        /// Allows detection of log messages written to the containerized application's stdout/stderr streams.
         /// </summary>
         [Input("containersLogsDetectionEnabled", required: true)]
         public Input<bool> ContainersLogsDetectionEnabled { get; set; } = null!;
@@ -187,13 +181,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<int> EventLogQueryTimeoutSec { get; set; } = null!;
 
         /// <summary>
-        /// Detect IIS logs
+        /// Allows detection of logs and event logs written by IIS server.
         /// </summary>
         [Input("iisdetectionEnabled", required: true)]
         public Input<bool> IisdetectionEnabled { get; set; } = null!;
 
         /// <summary>
-        /// Detect logs on Network File Systems (NFS)
+        /// Allows detection of logs written to mounted network storage drives.
         /// </summary>
         [Input("logScannerLinuxNfsEnabled", required: true)]
         public Input<bool> LogScannerLinuxNfsEnabled { get; set; } = null!;
@@ -211,13 +205,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<int> MinBinaryDetectionLimitBytes { get; set; } = null!;
 
         /// <summary>
-        /// Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+        /// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
         /// </summary>
         [Input("monitorOwnLogsEnabled", required: true)]
         public Input<bool> MonitorOwnLogsEnabled { get; set; } = null!;
 
         /// <summary>
-        /// Detect open log files
+        /// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
         /// </summary>
         [Input("openLogFilesDetectionEnabled", required: true)]
         public Input<bool> OpenLogFilesDetectionEnabled { get; set; } = null!;
@@ -241,16 +235,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<int> SeverityDetectionLinesLimit { get; set; } = null!;
 
         /// <summary>
-        /// (Linux: syslog, message log) (Windows: system, application, security event logs)
+        /// Linux: syslog, message log Windows: system, application, security event logs
         /// </summary>
         [Input("systemLogsDetectionEnabled", required: true)]
         public Input<bool> SystemLogsDetectionEnabled { get; set; } = null!;
-
-        /// <summary>
-        /// Deprecated for OneAgent 1.247+
-        /// </summary>
-        [Input("utcasDefaultContainerTimezone", required: true)]
-        public Input<bool> UtcasDefaultContainerTimezone { get; set; } = null!;
 
         public LogOneagentArgs()
         {
@@ -261,13 +249,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class LogOneagentState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Detect container time zones
+        /// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
         /// </summary>
         [Input("containerTimezoneHeuristicEnabled")]
         public Input<bool>? ContainerTimezoneHeuristicEnabled { get; set; }
 
         /// <summary>
-        /// Detect logs inside containers
+        /// Allows detection of log messages written to the containerized application's stdout/stderr streams.
         /// </summary>
         [Input("containersLogsDetectionEnabled")]
         public Input<bool>? ContainersLogsDetectionEnabled { get; set; }
@@ -291,13 +279,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<int>? EventLogQueryTimeoutSec { get; set; }
 
         /// <summary>
-        /// Detect IIS logs
+        /// Allows detection of logs and event logs written by IIS server.
         /// </summary>
         [Input("iisdetectionEnabled")]
         public Input<bool>? IisdetectionEnabled { get; set; }
 
         /// <summary>
-        /// Detect logs on Network File Systems (NFS)
+        /// Allows detection of logs written to mounted network storage drives.
         /// </summary>
         [Input("logScannerLinuxNfsEnabled")]
         public Input<bool>? LogScannerLinuxNfsEnabled { get; set; }
@@ -315,13 +303,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<int>? MinBinaryDetectionLimitBytes { get; set; }
 
         /// <summary>
-        /// Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+        /// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
         /// </summary>
         [Input("monitorOwnLogsEnabled")]
         public Input<bool>? MonitorOwnLogsEnabled { get; set; }
 
         /// <summary>
-        /// Detect open log files
+        /// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
         /// </summary>
         [Input("openLogFilesDetectionEnabled")]
         public Input<bool>? OpenLogFilesDetectionEnabled { get; set; }
@@ -345,16 +333,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<int>? SeverityDetectionLinesLimit { get; set; }
 
         /// <summary>
-        /// (Linux: syslog, message log) (Windows: system, application, security event logs)
+        /// Linux: syslog, message log Windows: system, application, security event logs
         /// </summary>
         [Input("systemLogsDetectionEnabled")]
         public Input<bool>? SystemLogsDetectionEnabled { get; set; }
-
-        /// <summary>
-        /// Deprecated for OneAgent 1.247+
-        /// </summary>
-        [Input("utcasDefaultContainerTimezone")]
-        public Input<bool>? UtcasDefaultContainerTimezone { get; set; }
 
         public LogOneagentState()
         {

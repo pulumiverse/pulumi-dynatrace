@@ -453,7 +453,7 @@ class TrelloNotification(pulumi.CustomResource):
             if application_key is None and not opts.urn:
                 raise TypeError("Missing required property 'application_key'")
             __props__.__dict__["application_key"] = application_key
-            __props__.__dict__["authorization_token"] = authorization_token
+            __props__.__dict__["authorization_token"] = None if authorization_token is None else pulumi.Output.secret(authorization_token)
             if board_id is None and not opts.urn:
                 raise TypeError("Missing required property 'board_id'")
             __props__.__dict__["board_id"] = board_id
@@ -474,6 +474,8 @@ class TrelloNotification(pulumi.CustomResource):
             if text is None and not opts.urn:
                 raise TypeError("Missing required property 'text'")
             __props__.__dict__["text"] = text
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["authorizationToken"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(TrelloNotification, __self__).__init__(
             'dynatrace:index/trelloNotification:TrelloNotification',
             resource_name,

@@ -122,7 +122,8 @@ class _IamPolicyState:
                  environment: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  statement_query: Optional[pulumi.Input[str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 uuid: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering IamPolicy resources.
         :param pulumi.Input[str] account: The UUID of the account (`urn:dtaccount:<account-uuid>`) in case the policy should be applied to all environments of this account. The prefix `urn:dtaccount:` MUST be omitted here.
@@ -131,6 +132,7 @@ class _IamPolicyState:
         :param pulumi.Input[str] name: The name of the policy
         :param pulumi.Input[str] statement_query: The Statement Query of the policy
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: Tags for this policy
+        :param pulumi.Input[str] uuid: The ID of this resource is a concatenation of multiple pieces of information (policy UUID, accountID, environmentID, ...). There are use cases where you JUST need the UUID of the Policy, though
         """
         if account is not None:
             pulumi.set(__self__, "account", account)
@@ -144,6 +146,8 @@ class _IamPolicyState:
             pulumi.set(__self__, "statement_query", statement_query)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
+        if uuid is not None:
+            pulumi.set(__self__, "uuid", uuid)
 
     @property
     @pulumi.getter
@@ -217,6 +221,18 @@ class _IamPolicyState:
     def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "tags", value)
 
+    @property
+    @pulumi.getter
+    def uuid(self) -> Optional[pulumi.Input[str]]:
+        """
+        The ID of this resource is a concatenation of multiple pieces of information (policy UUID, accountID, environmentID, ...). There are use cases where you JUST need the UUID of the Policy, though
+        """
+        return pulumi.get(self, "uuid")
+
+    @uuid.setter
+    def uuid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "uuid", value)
+
 
 class IamPolicy(pulumi.CustomResource):
     @overload
@@ -231,7 +247,47 @@ class IamPolicy(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        Create a IamPolicy resource with the given unique name, props, and options.
+        > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
+
+        > This resource requires the API token scope **Allow IAM policy configuration for environments** (`iam-policies-management`)
+
+        ## Dynatrace Documentation
+
+        - Dynatrace IAM Policy Management - https://www.dynatrace.com/support/help/manage/access-control/user-management-and-sso/manage-groups-and-permissions/iam/iam-policy-mgt
+
+        - Settings API - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions/iam/iam-getting-started
+
+        ## Prerequisites
+
+        Using this resource requires an OAuth client to be configured within your account settings.
+        The scopes of the OAuth Client need to include `account-idm-read`, `account-idm-write`, `account-env-read`, `account-env-write`, `iam-policies-management`, `iam:policies:write`, `iam:policies:read`, `iam:bindings:write`, `iam:bindings:read` and `iam:effective-permissions:read`.
+
+        Finally the provider configuration requires the credentials for that OAuth Client.
+        The configuration section of your provider needs to look like this.
+        ```python
+        import pulumi
+        ```
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_pulumi_dynatrace as dynatrace
+
+        policy = dynatrace.IamPolicy("policy",
+            environment="siz654##",
+            statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
+        ```
+
+        ```python
+        import pulumi
+        import pulumiverse_pulumi_dynatrace as dynatrace
+
+        policy = dynatrace.IamPolicy("policy",
+            account="########-####-####-####-############",
+            statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] account: The UUID of the account (`urn:dtaccount:<account-uuid>`) in case the policy should be applied to all environments of this account. The prefix `urn:dtaccount:` MUST be omitted here.
@@ -248,7 +304,47 @@ class IamPolicy(pulumi.CustomResource):
                  args: IamPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a IamPolicy resource with the given unique name, props, and options.
+        > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
+
+        > This resource requires the API token scope **Allow IAM policy configuration for environments** (`iam-policies-management`)
+
+        ## Dynatrace Documentation
+
+        - Dynatrace IAM Policy Management - https://www.dynatrace.com/support/help/manage/access-control/user-management-and-sso/manage-groups-and-permissions/iam/iam-policy-mgt
+
+        - Settings API - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions/iam/iam-getting-started
+
+        ## Prerequisites
+
+        Using this resource requires an OAuth client to be configured within your account settings.
+        The scopes of the OAuth Client need to include `account-idm-read`, `account-idm-write`, `account-env-read`, `account-env-write`, `iam-policies-management`, `iam:policies:write`, `iam:policies:read`, `iam:bindings:write`, `iam:bindings:read` and `iam:effective-permissions:read`.
+
+        Finally the provider configuration requires the credentials for that OAuth Client.
+        The configuration section of your provider needs to look like this.
+        ```python
+        import pulumi
+        ```
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_pulumi_dynatrace as dynatrace
+
+        policy = dynatrace.IamPolicy("policy",
+            environment="siz654##",
+            statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
+        ```
+
+        ```python
+        import pulumi
+        import pulumiverse_pulumi_dynatrace as dynatrace
+
+        policy = dynatrace.IamPolicy("policy",
+            account="########-####-####-####-############",
+            statement_query="ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \\"string\\";")
+        ```
+
         :param str resource_name: The name of the resource.
         :param IamPolicyArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -287,6 +383,7 @@ class IamPolicy(pulumi.CustomResource):
                 raise TypeError("Missing required property 'statement_query'")
             __props__.__dict__["statement_query"] = statement_query
             __props__.__dict__["tags"] = tags
+            __props__.__dict__["uuid"] = None
         super(IamPolicy, __self__).__init__(
             'dynatrace:index/iamPolicy:IamPolicy',
             resource_name,
@@ -302,7 +399,8 @@ class IamPolicy(pulumi.CustomResource):
             environment: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             statement_query: Optional[pulumi.Input[str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'IamPolicy':
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            uuid: Optional[pulumi.Input[str]] = None) -> 'IamPolicy':
         """
         Get an existing IamPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -316,6 +414,7 @@ class IamPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the policy
         :param pulumi.Input[str] statement_query: The Statement Query of the policy
         :param pulumi.Input[Sequence[pulumi.Input[str]]] tags: Tags for this policy
+        :param pulumi.Input[str] uuid: The ID of this resource is a concatenation of multiple pieces of information (policy UUID, accountID, environmentID, ...). There are use cases where you JUST need the UUID of the Policy, though
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -327,6 +426,7 @@ class IamPolicy(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         __props__.__dict__["statement_query"] = statement_query
         __props__.__dict__["tags"] = tags
+        __props__.__dict__["uuid"] = uuid
         return IamPolicy(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -376,4 +476,12 @@ class IamPolicy(pulumi.CustomResource):
         Tags for this policy
         """
         return pulumi.get(self, "tags")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> pulumi.Output[str]:
+        """
+        The ID of this resource is a concatenation of multiple pieces of information (policy UUID, accountID, environmentID, ...). There are use cases where you JUST need the UUID of the Policy, though
+        """
+        return pulumi.get(self, "uuid")
 

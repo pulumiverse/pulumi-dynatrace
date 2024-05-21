@@ -16,6 +16,44 @@ __config__ = pulumi.Config('dynatrace')
 
 class _ExportableConfig(types.ModuleType):
     @property
+    def account_id(self) -> Optional[str]:
+        return __config__.get('accountId')
+
+    @property
+    def automation_client_id(self) -> Optional[str]:
+        return __config__.get('automationClientId')
+
+    @property
+    def automation_client_secret(self) -> Optional[str]:
+        return __config__.get('automationClientSecret')
+
+    @property
+    def automation_env_url(self) -> Optional[str]:
+        """
+        The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+        optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+        `https://#####.apps.dynatrace.com`
+        """
+        return __config__.get('automationEnvUrl')
+
+    @property
+    def automation_token_url(self) -> Optional[str]:
+        """
+        The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+        `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+        `https://#####.apps.dynatrace.com`
+        """
+        return __config__.get('automationTokenUrl')
+
+    @property
+    def client_id(self) -> Optional[str]:
+        return __config__.get('clientId')
+
+    @property
+    def client_secret(self) -> Optional[str]:
+        return __config__.get('clientSecret')
+
+    @property
     def dt_api_token(self) -> Optional[str]:
         return __config__.get('dtApiToken') or _utilities.get_env('DYNATRACE_API_TOKEN', 'DT_API_TOKEN')
 

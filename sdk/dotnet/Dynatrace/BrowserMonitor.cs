@@ -35,7 +35,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// The key performance metrics configuration
         /// </summary>
         [Output("keyPerformanceMetrics")]
-        public Output<Outputs.BrowserMonitorKeyPerformanceMetrics?> KeyPerformanceMetrics { get; private set; } = null!;
+        public Output<Outputs.BrowserMonitorKeyPerformanceMetrics> KeyPerformanceMetrics { get; private set; } = null!;
 
         /// <summary>
         /// A list of locations from which the monitor is executed. To specify a location, use its entity ID.
@@ -136,8 +136,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// The key performance metrics configuration
         /// </summary>
-        [Input("keyPerformanceMetrics")]
-        public Input<Inputs.BrowserMonitorKeyPerformanceMetricsArgs>? KeyPerformanceMetrics { get; set; }
+        [Input("keyPerformanceMetrics", required: true)]
+        public Input<Inputs.BrowserMonitorKeyPerformanceMetricsArgs> KeyPerformanceMetrics { get; set; } = null!;
 
         [Input("locations")]
         private InputList<string>? _locations;

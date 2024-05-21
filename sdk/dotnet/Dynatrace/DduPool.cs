@@ -11,6 +11,10 @@ using Pulumi;
 namespace Pulumiverse.PulumiPackage.Dynatrace
 {
     /// <summary>
+    /// !&gt; This resource API endpoint has been deprecated.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read settings** (`settings.read`) and **Write settings** (`settings.write`)
+    /// 
     /// ## Dynatrace Documentation
     /// 
     /// - DDU Pools - https://www.dynatrace.com/support/help/monitoring-consumption/davis-data-units#ddu-pools

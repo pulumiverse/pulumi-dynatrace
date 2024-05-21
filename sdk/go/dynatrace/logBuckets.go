@@ -19,6 +19,8 @@ type LogBuckets struct {
 	BucketName pulumi.StringOutput `pulumi:"bucketName"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Matcher (DQL)
 	Matcher pulumi.StringOutput `pulumi:"matcher"`
 	// Rule name
@@ -71,6 +73,8 @@ type logBucketsState struct {
 	BucketName *string `pulumi:"bucketName"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Matcher (DQL)
 	Matcher *string `pulumi:"matcher"`
 	// Rule name
@@ -82,6 +86,8 @@ type LogBucketsState struct {
 	BucketName pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Matcher (DQL)
 	Matcher pulumi.StringPtrInput
 	// Rule name
@@ -97,6 +103,8 @@ type logBucketsArgs struct {
 	BucketName string `pulumi:"bucketName"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Matcher (DQL)
 	Matcher string `pulumi:"matcher"`
 	// Rule name
@@ -109,6 +117,8 @@ type LogBucketsArgs struct {
 	BucketName pulumi.StringInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Matcher (DQL)
 	Matcher pulumi.StringInput
 	// Rule name
@@ -210,6 +220,11 @@ func (o LogBucketsOutput) BucketName() pulumi.StringOutput {
 // This setting is enabled (`true`) or disabled (`false`)
 func (o LogBucketsOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogBuckets) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o LogBucketsOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *LogBuckets) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // Matcher (DQL)

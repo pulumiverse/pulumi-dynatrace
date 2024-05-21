@@ -164,6 +164,14 @@ func Provider() tfbridge.ProviderInfo {
 				Fields: map[string]*tfbridge.SchemaInfo{"connectivity_alerts": {CSharpName: "EnableConnectivityAlerts"}},
 			},
 			"dynatrace_container_builtin_rule":         {Tok: dynatraceResource(mainMod, "ContainerBuiltinRule")},
+			"dynatrace_container_registry": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "ContainerRegistry"),
+				Fields: map[string]*tfbridge.SchemaInfo{
+					"container_registry": {
+						CSharpName: "RegistryUrl",
+					},
+				},
+			},
 			"dynatrace_container_rule":                 {Tok: dynatraceResource(mainMod, "ContainerRule")},
 			"dynatrace_container_technology":           {Tok: dynatraceResource(mainMod, "ContainerTechnology")},
 			"dynatrace_credentials":                    {Tok: dynatraceResource(mainMod, "Credentials")},

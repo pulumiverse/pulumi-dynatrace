@@ -43,6 +43,10 @@ export class ProcessGroupDetection extends pulumi.CustomResource {
      */
     public readonly groupExtraction!: pulumi.Output<outputs.ProcessGroupDetectionGroupExtraction>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * You can define the properties that should be used to identify your process instances.
      */
     public readonly instanceExtraction!: pulumi.Output<outputs.ProcessGroupDetectionInstanceExtraction | undefined>;
@@ -66,6 +70,7 @@ export class ProcessGroupDetection extends pulumi.CustomResource {
             const state = argsOrState as ProcessGroupDetectionState | undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
             resourceInputs["groupExtraction"] = state ? state.groupExtraction : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["instanceExtraction"] = state ? state.instanceExtraction : undefined;
             resourceInputs["processDetection"] = state ? state.processDetection : undefined;
         } else {
@@ -81,6 +86,7 @@ export class ProcessGroupDetection extends pulumi.CustomResource {
             }
             resourceInputs["enabled"] = args ? args.enabled : undefined;
             resourceInputs["groupExtraction"] = args ? args.groupExtraction : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["instanceExtraction"] = args ? args.instanceExtraction : undefined;
             resourceInputs["processDetection"] = args ? args.processDetection : undefined;
         }
@@ -101,6 +107,10 @@ export interface ProcessGroupDetectionState {
      * You can define the properties that should be used to identify your process groups.
      */
     groupExtraction?: pulumi.Input<inputs.ProcessGroupDetectionGroupExtraction>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * You can define the properties that should be used to identify your process instances.
      */
@@ -123,6 +133,10 @@ export interface ProcessGroupDetectionArgs {
      * You can define the properties that should be used to identify your process groups.
      */
     groupExtraction: pulumi.Input<inputs.ProcessGroupDetectionGroupExtraction>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * You can define the properties that should be used to identify your process instances.
      */

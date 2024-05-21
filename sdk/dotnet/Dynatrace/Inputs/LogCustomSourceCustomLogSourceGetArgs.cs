@@ -14,22 +14,34 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class LogCustomSourceCustomLogSourceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Accept binary content
+        /// </summary>
+        [Input("acceptBinary")]
+        public Input<bool>? AcceptBinary { get; set; }
+
+        /// <summary>
         /// Possible Values: `LOG_PATH_PATTERN`, `WINDOWS_EVENT_LOG`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
-        [Input("values", required: true)]
+        [Input("values")]
         private InputList<string>? _values;
 
         /// <summary>
-        /// It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+        /// (Required attribute for cluster v1.291 and under) It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
         /// </summary>
         public InputList<string> Values
         {
             get => _values ?? (_values = new InputList<string>());
             set => _values = value;
         }
+
+        /// <summary>
+        /// (Required attribute for cluster v1.292+) It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+        /// </summary>
+        [Input("valuesAndEnrichment")]
+        public Input<Inputs.LogCustomSourceCustomLogSourceValuesAndEnrichmentGetArgs>? ValuesAndEnrichment { get; set; }
 
         public LogCustomSourceCustomLogSourceGetArgs()
         {

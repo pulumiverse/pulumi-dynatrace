@@ -56,7 +56,19 @@ class AwaitableGetRequestAttributeResult(GetRequestAttributeResult):
 def get_request_attribute(name: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRequestAttributeResult:
     """
-    Use this data source to access information about an existing resource.
+    The `RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
+
+    - `name` (String) - The name of the request attribute
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+
+    example = dynatrace.get_request_attribute(name="Terraform Example")
+    pulumi.export("id", example.id)
+    ```
     """
     __args__ = dict()
     __args__['name'] = name
@@ -72,6 +84,18 @@ def get_request_attribute(name: Optional[str] = None,
 def get_request_attribute_output(name: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRequestAttributeResult]:
     """
-    Use this data source to access information about an existing resource.
+    The `RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
+
+    - `name` (String) - The name of the request attribute
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+
+    example = dynatrace.get_request_attribute(name="Terraform Example")
+    pulumi.export("id", example.id)
+    ```
     """
     ...

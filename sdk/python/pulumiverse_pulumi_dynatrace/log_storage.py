@@ -18,6 +18,7 @@ class LogStorageArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[bool],
                  send_to_storage: pulumi.Input[bool],
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matchers: Optional[pulumi.Input['LogStorageMatchersArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None):
@@ -25,12 +26,15 @@ class LogStorageArgs:
         The set of arguments for constructing a LogStorage resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[bool] send_to_storage: If `true` matching logs will be included in storage. If `false` matching logs will be excluded from storage.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogStorageMatchersArgs'] matchers: no documentation available
         :param pulumi.Input[str] name: Name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "send_to_storage", send_to_storage)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if matchers is not None:
             pulumi.set(__self__, "matchers", matchers)
         if name is not None:
@@ -61,6 +65,18 @@ class LogStorageArgs:
     @send_to_storage.setter
     def send_to_storage(self, value: pulumi.Input[bool]):
         pulumi.set(self, "send_to_storage", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter
@@ -103,6 +119,7 @@ class LogStorageArgs:
 class _LogStorageState:
     def __init__(__self__, *,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matchers: Optional[pulumi.Input['LogStorageMatchersArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -110,6 +127,7 @@ class _LogStorageState:
         """
         Input properties used for looking up and filtering LogStorage resources.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogStorageMatchersArgs'] matchers: no documentation available
         :param pulumi.Input[str] name: Name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -117,6 +135,8 @@ class _LogStorageState:
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if matchers is not None:
             pulumi.set(__self__, "matchers", matchers)
         if name is not None:
@@ -137,6 +157,18 @@ class _LogStorageState:
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter
@@ -193,6 +225,7 @@ class LogStorage(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matchers: Optional[pulumi.Input[pulumi.InputType['LogStorageMatchersArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -203,6 +236,7 @@ class LogStorage(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[pulumi.InputType['LogStorageMatchersArgs']] matchers: no documentation available
         :param pulumi.Input[str] name: Name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -232,6 +266,7 @@ class LogStorage(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matchers: Optional[pulumi.Input[pulumi.InputType['LogStorageMatchersArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -248,6 +283,7 @@ class LogStorage(pulumi.CustomResource):
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
+            __props__.__dict__["insert_after"] = insert_after
             __props__.__dict__["matchers"] = matchers
             __props__.__dict__["name"] = name
             __props__.__dict__["scope"] = scope
@@ -265,6 +301,7 @@ class LogStorage(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             matchers: Optional[pulumi.Input[pulumi.InputType['LogStorageMatchersArgs']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             scope: Optional[pulumi.Input[str]] = None,
@@ -277,6 +314,7 @@ class LogStorage(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[pulumi.InputType['LogStorageMatchersArgs']] matchers: no documentation available
         :param pulumi.Input[str] name: Name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -287,6 +325,7 @@ class LogStorage(pulumi.CustomResource):
         __props__ = _LogStorageState.__new__(_LogStorageState)
 
         __props__.__dict__["enabled"] = enabled
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["matchers"] = matchers
         __props__.__dict__["name"] = name
         __props__.__dict__["scope"] = scope
@@ -300,6 +339,14 @@ class LogStorage(pulumi.CustomResource):
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter

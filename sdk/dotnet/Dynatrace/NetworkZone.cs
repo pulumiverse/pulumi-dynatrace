@@ -26,7 +26,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
-        /// Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+        /// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -121,7 +121,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+        /// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -177,7 +177,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+        /// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

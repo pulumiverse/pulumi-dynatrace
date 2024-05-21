@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['SloArgs', 'Slo']
 
@@ -21,8 +23,10 @@ class SloArgs:
                  denominator: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  disabled: Optional[pulumi.Input[bool]] = None,
+                 error_budget_burn_rate: Optional[pulumi.Input['SloErrorBudgetBurnRateArgs']] = None,
                  filter: Optional[pulumi.Input[str]] = None,
                  metric_expression: Optional[pulumi.Input[str]] = None,
+                 metric_name: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  numerator: Optional[pulumi.Input[str]] = None,
                  rate: Optional[pulumi.Input[str]] = None):
@@ -35,8 +39,10 @@ class SloArgs:
         :param pulumi.Input[str] denominator: The total count metric (the denominator in rate calculation)
         :param pulumi.Input[str] description: The custom description of the SLO (optional)
         :param pulumi.Input[bool] disabled: The SLO is enabled (`false`) or disabled (`true`)
+        :param pulumi.Input['SloErrorBudgetBurnRateArgs'] error_budget_burn_rate: Error budget burn rate configuration of a service-level objective (SLO).
         :param pulumi.Input[str] filter: The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
         :param pulumi.Input[str] metric_expression: The percentage-based metric expression for the calculation of the SLO
+        :param pulumi.Input[str] metric_name: The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
         :param pulumi.Input[str] name: The name of the rule
         :param pulumi.Input[str] numerator: The metric for the count of successes (the numerator in rate calculation)
         :param pulumi.Input[str] rate: The percentage-based metric for the calculation of the SLO
@@ -51,10 +57,14 @@ class SloArgs:
             pulumi.set(__self__, "description", description)
         if disabled is not None:
             pulumi.set(__self__, "disabled", disabled)
+        if error_budget_burn_rate is not None:
+            pulumi.set(__self__, "error_budget_burn_rate", error_budget_burn_rate)
         if filter is not None:
             pulumi.set(__self__, "filter", filter)
         if metric_expression is not None:
             pulumi.set(__self__, "metric_expression", metric_expression)
+        if metric_name is not None:
+            pulumi.set(__self__, "metric_name", metric_name)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if numerator is not None:
@@ -150,6 +160,18 @@ class SloArgs:
         pulumi.set(self, "disabled", value)
 
     @property
+    @pulumi.getter(name="errorBudgetBurnRate")
+    def error_budget_burn_rate(self) -> Optional[pulumi.Input['SloErrorBudgetBurnRateArgs']]:
+        """
+        Error budget burn rate configuration of a service-level objective (SLO).
+        """
+        return pulumi.get(self, "error_budget_burn_rate")
+
+    @error_budget_burn_rate.setter
+    def error_budget_burn_rate(self, value: Optional[pulumi.Input['SloErrorBudgetBurnRateArgs']]):
+        pulumi.set(self, "error_budget_burn_rate", value)
+
+    @property
     @pulumi.getter
     def filter(self) -> Optional[pulumi.Input[str]]:
         """
@@ -172,6 +194,18 @@ class SloArgs:
     @metric_expression.setter
     def metric_expression(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "metric_expression", value)
+
+    @property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+        """
+        return pulumi.get(self, "metric_name")
+
+    @metric_name.setter
+    def metric_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "metric_name", value)
 
     @property
     @pulumi.getter
@@ -219,9 +253,11 @@ class _SloState:
                  denominator: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  disabled: Optional[pulumi.Input[bool]] = None,
+                 error_budget_burn_rate: Optional[pulumi.Input['SloErrorBudgetBurnRateArgs']] = None,
                  evaluation: Optional[pulumi.Input[str]] = None,
                  filter: Optional[pulumi.Input[str]] = None,
                  metric_expression: Optional[pulumi.Input[str]] = None,
+                 metric_name: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  numerator: Optional[pulumi.Input[str]] = None,
                  rate: Optional[pulumi.Input[str]] = None,
@@ -233,9 +269,11 @@ class _SloState:
         :param pulumi.Input[str] denominator: The total count metric (the denominator in rate calculation)
         :param pulumi.Input[str] description: The custom description of the SLO (optional)
         :param pulumi.Input[bool] disabled: The SLO is enabled (`false`) or disabled (`true`)
+        :param pulumi.Input['SloErrorBudgetBurnRateArgs'] error_budget_burn_rate: Error budget burn rate configuration of a service-level objective (SLO).
         :param pulumi.Input[str] evaluation: The evaluation type of the SLO. Currently only `AGGREGATE` is supported
         :param pulumi.Input[str] filter: The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
         :param pulumi.Input[str] metric_expression: The percentage-based metric expression for the calculation of the SLO
+        :param pulumi.Input[str] metric_name: The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
         :param pulumi.Input[str] name: The name of the rule
         :param pulumi.Input[str] numerator: The metric for the count of successes (the numerator in rate calculation)
         :param pulumi.Input[str] rate: The percentage-based metric for the calculation of the SLO
@@ -249,12 +287,16 @@ class _SloState:
             pulumi.set(__self__, "description", description)
         if disabled is not None:
             pulumi.set(__self__, "disabled", disabled)
+        if error_budget_burn_rate is not None:
+            pulumi.set(__self__, "error_budget_burn_rate", error_budget_burn_rate)
         if evaluation is not None:
             pulumi.set(__self__, "evaluation", evaluation)
         if filter is not None:
             pulumi.set(__self__, "filter", filter)
         if metric_expression is not None:
             pulumi.set(__self__, "metric_expression", metric_expression)
+        if metric_name is not None:
+            pulumi.set(__self__, "metric_name", metric_name)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if numerator is not None:
@@ -308,6 +350,18 @@ class _SloState:
         pulumi.set(self, "disabled", value)
 
     @property
+    @pulumi.getter(name="errorBudgetBurnRate")
+    def error_budget_burn_rate(self) -> Optional[pulumi.Input['SloErrorBudgetBurnRateArgs']]:
+        """
+        Error budget burn rate configuration of a service-level objective (SLO).
+        """
+        return pulumi.get(self, "error_budget_burn_rate")
+
+    @error_budget_burn_rate.setter
+    def error_budget_burn_rate(self, value: Optional[pulumi.Input['SloErrorBudgetBurnRateArgs']]):
+        pulumi.set(self, "error_budget_burn_rate", value)
+
+    @property
     @pulumi.getter
     def evaluation(self) -> Optional[pulumi.Input[str]]:
         """
@@ -342,6 +396,18 @@ class _SloState:
     @metric_expression.setter
     def metric_expression(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "metric_expression", value)
+
+    @property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+        """
+        return pulumi.get(self, "metric_name")
+
+    @metric_name.setter
+    def metric_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "metric_name", value)
 
     @property
     @pulumi.getter
@@ -427,9 +493,11 @@ class Slo(pulumi.CustomResource):
                  denominator: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  disabled: Optional[pulumi.Input[bool]] = None,
+                 error_budget_burn_rate: Optional[pulumi.Input[pulumi.InputType['SloErrorBudgetBurnRateArgs']]] = None,
                  evaluation: Optional[pulumi.Input[str]] = None,
                  filter: Optional[pulumi.Input[str]] = None,
                  metric_expression: Optional[pulumi.Input[str]] = None,
+                 metric_name: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  numerator: Optional[pulumi.Input[str]] = None,
                  rate: Optional[pulumi.Input[str]] = None,
@@ -444,9 +512,11 @@ class Slo(pulumi.CustomResource):
         :param pulumi.Input[str] denominator: The total count metric (the denominator in rate calculation)
         :param pulumi.Input[str] description: The custom description of the SLO (optional)
         :param pulumi.Input[bool] disabled: The SLO is enabled (`false`) or disabled (`true`)
+        :param pulumi.Input[pulumi.InputType['SloErrorBudgetBurnRateArgs']] error_budget_burn_rate: Error budget burn rate configuration of a service-level objective (SLO).
         :param pulumi.Input[str] evaluation: The evaluation type of the SLO. Currently only `AGGREGATE` is supported
         :param pulumi.Input[str] filter: The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
         :param pulumi.Input[str] metric_expression: The percentage-based metric expression for the calculation of the SLO
+        :param pulumi.Input[str] metric_name: The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
         :param pulumi.Input[str] name: The name of the rule
         :param pulumi.Input[str] numerator: The metric for the count of successes (the numerator in rate calculation)
         :param pulumi.Input[str] rate: The percentage-based metric for the calculation of the SLO
@@ -480,9 +550,11 @@ class Slo(pulumi.CustomResource):
                  denominator: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  disabled: Optional[pulumi.Input[bool]] = None,
+                 error_budget_burn_rate: Optional[pulumi.Input[pulumi.InputType['SloErrorBudgetBurnRateArgs']]] = None,
                  evaluation: Optional[pulumi.Input[str]] = None,
                  filter: Optional[pulumi.Input[str]] = None,
                  metric_expression: Optional[pulumi.Input[str]] = None,
+                 metric_name: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  numerator: Optional[pulumi.Input[str]] = None,
                  rate: Optional[pulumi.Input[str]] = None,
@@ -501,11 +573,13 @@ class Slo(pulumi.CustomResource):
             __props__.__dict__["denominator"] = denominator
             __props__.__dict__["description"] = description
             __props__.__dict__["disabled"] = disabled
+            __props__.__dict__["error_budget_burn_rate"] = error_budget_burn_rate
             if evaluation is None and not opts.urn:
                 raise TypeError("Missing required property 'evaluation'")
             __props__.__dict__["evaluation"] = evaluation
             __props__.__dict__["filter"] = filter
             __props__.__dict__["metric_expression"] = metric_expression
+            __props__.__dict__["metric_name"] = metric_name
             __props__.__dict__["name"] = name
             __props__.__dict__["numerator"] = numerator
             __props__.__dict__["rate"] = rate
@@ -531,9 +605,11 @@ class Slo(pulumi.CustomResource):
             denominator: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
             disabled: Optional[pulumi.Input[bool]] = None,
+            error_budget_burn_rate: Optional[pulumi.Input[pulumi.InputType['SloErrorBudgetBurnRateArgs']]] = None,
             evaluation: Optional[pulumi.Input[str]] = None,
             filter: Optional[pulumi.Input[str]] = None,
             metric_expression: Optional[pulumi.Input[str]] = None,
+            metric_name: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             numerator: Optional[pulumi.Input[str]] = None,
             rate: Optional[pulumi.Input[str]] = None,
@@ -550,9 +626,11 @@ class Slo(pulumi.CustomResource):
         :param pulumi.Input[str] denominator: The total count metric (the denominator in rate calculation)
         :param pulumi.Input[str] description: The custom description of the SLO (optional)
         :param pulumi.Input[bool] disabled: The SLO is enabled (`false`) or disabled (`true`)
+        :param pulumi.Input[pulumi.InputType['SloErrorBudgetBurnRateArgs']] error_budget_burn_rate: Error budget burn rate configuration of a service-level objective (SLO).
         :param pulumi.Input[str] evaluation: The evaluation type of the SLO. Currently only `AGGREGATE` is supported
         :param pulumi.Input[str] filter: The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
         :param pulumi.Input[str] metric_expression: The percentage-based metric expression for the calculation of the SLO
+        :param pulumi.Input[str] metric_name: The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
         :param pulumi.Input[str] name: The name of the rule
         :param pulumi.Input[str] numerator: The metric for the count of successes (the numerator in rate calculation)
         :param pulumi.Input[str] rate: The percentage-based metric for the calculation of the SLO
@@ -567,9 +645,11 @@ class Slo(pulumi.CustomResource):
         __props__.__dict__["denominator"] = denominator
         __props__.__dict__["description"] = description
         __props__.__dict__["disabled"] = disabled
+        __props__.__dict__["error_budget_burn_rate"] = error_budget_burn_rate
         __props__.__dict__["evaluation"] = evaluation
         __props__.__dict__["filter"] = filter
         __props__.__dict__["metric_expression"] = metric_expression
+        __props__.__dict__["metric_name"] = metric_name
         __props__.__dict__["name"] = name
         __props__.__dict__["numerator"] = numerator
         __props__.__dict__["rate"] = rate
@@ -603,6 +683,14 @@ class Slo(pulumi.CustomResource):
         return pulumi.get(self, "disabled")
 
     @property
+    @pulumi.getter(name="errorBudgetBurnRate")
+    def error_budget_burn_rate(self) -> pulumi.Output[Optional['outputs.SloErrorBudgetBurnRate']]:
+        """
+        Error budget burn rate configuration of a service-level objective (SLO).
+        """
+        return pulumi.get(self, "error_budget_burn_rate")
+
+    @property
     @pulumi.getter
     def evaluation(self) -> pulumi.Output[str]:
         """
@@ -625,6 +713,14 @@ class Slo(pulumi.CustomResource):
         The percentage-based metric expression for the calculation of the SLO
         """
         return pulumi.get(self, "metric_expression")
+
+    @property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> pulumi.Output[Optional[str]]:
+        """
+        The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+        """
+        return pulumi.get(self, "metric_name")
 
     @property
     @pulumi.getter

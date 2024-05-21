@@ -59,7 +59,8 @@ type LookupIamUserResult struct {
 	Email  string   `pulumi:"email"`
 	Groups []string `pulumi:"groups"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id  string `pulumi:"id"`
+	Uid string `pulumi:"uid"`
 }
 
 func LookupIamUserOutput(ctx *pulumi.Context, args LookupIamUserOutputArgs, opts ...pulumi.InvokeOption) LookupIamUserResultOutput {
@@ -110,6 +111,10 @@ func (o LookupIamUserResultOutput) Groups() pulumi.StringArrayOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o LookupIamUserResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIamUserResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupIamUserResultOutput) Uid() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupIamUserResult) string { return v.Uid }).(pulumi.StringOutput)
 }
 
 func init() {

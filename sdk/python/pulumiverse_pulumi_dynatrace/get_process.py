@@ -69,6 +69,8 @@ def get_process(name: Optional[str] = None,
                 tags: Optional[Sequence[str]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProcessResult:
     """
+    !> The data source API endpoint has been deprecated, please use get_entity with entity type `PROCESS_GROUP_INSTANCE` instead.
+
     The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
 
     - `name` queries for all processes with the specified name
@@ -114,6 +116,8 @@ def get_process_output(name: Optional[pulumi.Input[str]] = None,
                        tags: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProcessResult]:
     """
+    !> The data source API endpoint has been deprecated, please use get_entity with entity type `PROCESS_GROUP_INSTANCE` instead.
+
     The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
 
     - `name` queries for all processes with the specified name

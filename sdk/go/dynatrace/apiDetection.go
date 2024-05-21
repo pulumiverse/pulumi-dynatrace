@@ -21,6 +21,8 @@ type ApiDetection struct {
 	ApiName pulumi.StringOutput `pulumi:"apiName"`
 	// List of conditions
 	Conditions ApiDetectionConditionsPtrOutput `pulumi:"conditions"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Restrict this rule to a specific technology.
 	Technology pulumi.StringPtrOutput `pulumi:"technology"`
 	// This API defines a third party library
@@ -72,6 +74,8 @@ type apiDetectionState struct {
 	ApiName *string `pulumi:"apiName"`
 	// List of conditions
 	Conditions *ApiDetectionConditions `pulumi:"conditions"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Restrict this rule to a specific technology.
 	Technology *string `pulumi:"technology"`
 	// This API defines a third party library
@@ -85,6 +89,8 @@ type ApiDetectionState struct {
 	ApiName pulumi.StringPtrInput
 	// List of conditions
 	Conditions ApiDetectionConditionsPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Restrict this rule to a specific technology.
 	Technology pulumi.StringPtrInput
 	// This API defines a third party library
@@ -102,6 +108,8 @@ type apiDetectionArgs struct {
 	ApiName string `pulumi:"apiName"`
 	// List of conditions
 	Conditions *ApiDetectionConditions `pulumi:"conditions"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Restrict this rule to a specific technology.
 	Technology *string `pulumi:"technology"`
 	// This API defines a third party library
@@ -116,6 +124,8 @@ type ApiDetectionArgs struct {
 	ApiName pulumi.StringInput
 	// List of conditions
 	Conditions ApiDetectionConditionsPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Restrict this rule to a specific technology.
 	Technology pulumi.StringPtrInput
 	// This API defines a third party library
@@ -222,6 +232,11 @@ func (o ApiDetectionOutput) ApiName() pulumi.StringOutput {
 // List of conditions
 func (o ApiDetectionOutput) Conditions() ApiDetectionConditionsPtrOutput {
 	return o.ApplyT(func(v *ApiDetection) ApiDetectionConditionsPtrOutput { return v.Conditions }).(ApiDetectionConditionsPtrOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o ApiDetectionOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *ApiDetection) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // Restrict this rule to a specific technology.

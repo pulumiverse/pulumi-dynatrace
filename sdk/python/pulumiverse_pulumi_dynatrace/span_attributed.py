@@ -19,8 +19,8 @@ class SpanAttributedArgs:
                  persistent: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a SpanAttributed resource.
-        :param pulumi.Input[str] key: the key of the attribute to capture
-        :param pulumi.Input[str] masking: granular control over the visibility of attribute values
+        :param pulumi.Input[str] key: Key of the span attribute to store
+        :param pulumi.Input[str] masking: Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "masking", masking)
@@ -31,7 +31,7 @@ class SpanAttributedArgs:
     @pulumi.getter
     def key(self) -> pulumi.Input[str]:
         """
-        the key of the attribute to capture
+        Key of the span attribute to store
         """
         return pulumi.get(self, "key")
 
@@ -43,7 +43,7 @@ class SpanAttributedArgs:
     @pulumi.getter
     def masking(self) -> pulumi.Input[str]:
         """
-        granular control over the visibility of attribute values
+        Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         """
         return pulumi.get(self, "masking")
 
@@ -69,8 +69,8 @@ class _SpanAttributedState:
                  persistent: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering SpanAttributed resources.
-        :param pulumi.Input[str] key: the key of the attribute to capture
-        :param pulumi.Input[str] masking: granular control over the visibility of attribute values
+        :param pulumi.Input[str] key: Key of the span attribute to store
+        :param pulumi.Input[str] masking: Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -83,7 +83,7 @@ class _SpanAttributedState:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        the key of the attribute to capture
+        Key of the span attribute to store
         """
         return pulumi.get(self, "key")
 
@@ -95,7 +95,7 @@ class _SpanAttributedState:
     @pulumi.getter
     def masking(self) -> Optional[pulumi.Input[str]]:
         """
-        granular control over the visibility of attribute values
+        Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         """
         return pulumi.get(self, "masking")
 
@@ -126,8 +126,8 @@ class SpanAttributed(pulumi.CustomResource):
         Create a SpanAttributed resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] key: the key of the attribute to capture
-        :param pulumi.Input[str] masking: granular control over the visibility of attribute values
+        :param pulumi.Input[str] key: Key of the span attribute to store
+        :param pulumi.Input[str] masking: Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         """
         ...
     @overload
@@ -191,8 +191,8 @@ class SpanAttributed(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] key: the key of the attribute to capture
-        :param pulumi.Input[str] masking: granular control over the visibility of attribute values
+        :param pulumi.Input[str] key: Key of the span attribute to store
+        :param pulumi.Input[str] masking: Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -207,7 +207,7 @@ class SpanAttributed(pulumi.CustomResource):
     @pulumi.getter
     def key(self) -> pulumi.Output[str]:
         """
-        the key of the attribute to capture
+        Key of the span attribute to store
         """
         return pulumi.get(self, "key")
 
@@ -215,7 +215,7 @@ class SpanAttributed(pulumi.CustomResource):
     @pulumi.getter
     def masking(self) -> pulumi.Output[str]:
         """
-        granular control over the visibility of attribute values
+        Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         """
         return pulumi.get(self, "masking")
 

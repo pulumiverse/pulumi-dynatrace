@@ -20,6 +20,7 @@ class ApiDetectionArgs:
                  api_name: pulumi.Input[str],
                  third_party_api: pulumi.Input[bool],
                  conditions: Optional[pulumi.Input['ApiDetectionConditionsArgs']] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  technology: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ApiDetection resource.
@@ -27,6 +28,7 @@ class ApiDetectionArgs:
         :param pulumi.Input[str] api_name: API name
         :param pulumi.Input[bool] third_party_api: This API defines a third party library
         :param pulumi.Input['ApiDetectionConditionsArgs'] conditions: List of conditions
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] technology: Restrict this rule to a specific technology.
         """
         pulumi.set(__self__, "api_color", api_color)
@@ -34,6 +36,8 @@ class ApiDetectionArgs:
         pulumi.set(__self__, "third_party_api", third_party_api)
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if technology is not None:
             pulumi.set(__self__, "technology", technology)
 
@@ -86,6 +90,18 @@ class ApiDetectionArgs:
         pulumi.set(self, "conditions", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter
     def technology(self) -> Optional[pulumi.Input[str]]:
         """
@@ -104,6 +120,7 @@ class _ApiDetectionState:
                  api_color: Optional[pulumi.Input[str]] = None,
                  api_name: Optional[pulumi.Input[str]] = None,
                  conditions: Optional[pulumi.Input['ApiDetectionConditionsArgs']] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  technology: Optional[pulumi.Input[str]] = None,
                  third_party_api: Optional[pulumi.Input[bool]] = None):
         """
@@ -111,6 +128,7 @@ class _ApiDetectionState:
         :param pulumi.Input[str] api_color: This color will be used to highlight APIs when viewing code level data, such as distributed traces or method hotspots.
         :param pulumi.Input[str] api_name: API name
         :param pulumi.Input['ApiDetectionConditionsArgs'] conditions: List of conditions
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] technology: Restrict this rule to a specific technology.
         :param pulumi.Input[bool] third_party_api: This API defines a third party library
         """
@@ -120,6 +138,8 @@ class _ApiDetectionState:
             pulumi.set(__self__, "api_name", api_name)
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if technology is not None:
             pulumi.set(__self__, "technology", technology)
         if third_party_api is not None:
@@ -162,6 +182,18 @@ class _ApiDetectionState:
         pulumi.set(self, "conditions", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter
     def technology(self) -> Optional[pulumi.Input[str]]:
         """
@@ -194,6 +226,7 @@ class ApiDetection(pulumi.CustomResource):
                  api_color: Optional[pulumi.Input[str]] = None,
                  api_name: Optional[pulumi.Input[str]] = None,
                  conditions: Optional[pulumi.Input[pulumi.InputType['ApiDetectionConditionsArgs']]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  technology: Optional[pulumi.Input[str]] = None,
                  third_party_api: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -204,6 +237,7 @@ class ApiDetection(pulumi.CustomResource):
         :param pulumi.Input[str] api_color: This color will be used to highlight APIs when viewing code level data, such as distributed traces or method hotspots.
         :param pulumi.Input[str] api_name: API name
         :param pulumi.Input[pulumi.InputType['ApiDetectionConditionsArgs']] conditions: List of conditions
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] technology: Restrict this rule to a specific technology.
         :param pulumi.Input[bool] third_party_api: This API defines a third party library
         """
@@ -233,6 +267,7 @@ class ApiDetection(pulumi.CustomResource):
                  api_color: Optional[pulumi.Input[str]] = None,
                  api_name: Optional[pulumi.Input[str]] = None,
                  conditions: Optional[pulumi.Input[pulumi.InputType['ApiDetectionConditionsArgs']]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  technology: Optional[pulumi.Input[str]] = None,
                  third_party_api: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -251,6 +286,7 @@ class ApiDetection(pulumi.CustomResource):
                 raise TypeError("Missing required property 'api_name'")
             __props__.__dict__["api_name"] = api_name
             __props__.__dict__["conditions"] = conditions
+            __props__.__dict__["insert_after"] = insert_after
             __props__.__dict__["technology"] = technology
             if third_party_api is None and not opts.urn:
                 raise TypeError("Missing required property 'third_party_api'")
@@ -268,6 +304,7 @@ class ApiDetection(pulumi.CustomResource):
             api_color: Optional[pulumi.Input[str]] = None,
             api_name: Optional[pulumi.Input[str]] = None,
             conditions: Optional[pulumi.Input[pulumi.InputType['ApiDetectionConditionsArgs']]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             technology: Optional[pulumi.Input[str]] = None,
             third_party_api: Optional[pulumi.Input[bool]] = None) -> 'ApiDetection':
         """
@@ -280,6 +317,7 @@ class ApiDetection(pulumi.CustomResource):
         :param pulumi.Input[str] api_color: This color will be used to highlight APIs when viewing code level data, such as distributed traces or method hotspots.
         :param pulumi.Input[str] api_name: API name
         :param pulumi.Input[pulumi.InputType['ApiDetectionConditionsArgs']] conditions: List of conditions
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] technology: Restrict this rule to a specific technology.
         :param pulumi.Input[bool] third_party_api: This API defines a third party library
         """
@@ -290,6 +328,7 @@ class ApiDetection(pulumi.CustomResource):
         __props__.__dict__["api_color"] = api_color
         __props__.__dict__["api_name"] = api_name
         __props__.__dict__["conditions"] = conditions
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["technology"] = technology
         __props__.__dict__["third_party_api"] = third_party_api
         return ApiDetection(resource_name, opts=opts, __props__=__props__)
@@ -317,6 +356,14 @@ class ApiDetection(pulumi.CustomResource):
         List of conditions
         """
         return pulumi.get(self, "conditions")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter

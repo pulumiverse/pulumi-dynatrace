@@ -37,7 +37,7 @@ export class ExtensionExecutionController extends pulumi.CustomResource {
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
-     * Enable local PIPE/HTTP metric and Log Ingest API
+     * Enable local HTTP Metric, Log and Event Ingest API
      */
     public readonly ingestActive!: pulumi.Output<boolean | undefined>;
     /**
@@ -96,7 +96,7 @@ export interface ExtensionExecutionControllerState {
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * Enable local PIPE/HTTP metric and Log Ingest API
+     * Enable local HTTP Metric, Log and Event Ingest API
      */
     ingestActive?: pulumi.Input<boolean>;
     /**
@@ -122,7 +122,7 @@ export interface ExtensionExecutionControllerArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * Enable local PIPE/HTTP metric and Log Ingest API
+     * Enable local HTTP Metric, Log and Event Ingest API
      */
     ingestActive?: pulumi.Input<boolean>;
     /**

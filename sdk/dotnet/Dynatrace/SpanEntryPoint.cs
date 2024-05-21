@@ -20,6 +20,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<string> Action { get; private set; } = null!;
 
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Output("insertAfter")]
+        public Output<string> InsertAfter { get; private set; } = null!;
+
+        /// <summary>
         /// Matching strategies for the Span
         /// </summary>
         [Output("matches")]
@@ -85,6 +91,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string> Action { get; set; } = null!;
 
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
+
+        /// <summary>
         /// Matching strategies for the Span
         /// </summary>
         [Input("matches", required: true)]
@@ -109,6 +121,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Input("action")]
         public Input<string>? Action { get; set; }
+
+        /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
         /// Matching strategies for the Span

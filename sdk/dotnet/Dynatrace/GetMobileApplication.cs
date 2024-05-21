@@ -15,7 +15,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// The `dynatrace.MobileApplication` data source allows the mobile application ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the dashboard
+        /// - `name` (String) - The name of the mobile application
         /// 
         /// ## Example Usage
         /// 
@@ -45,7 +45,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// The `dynatrace.MobileApplication` data source allows the mobile application ID to be retrieved by its name.
         /// 
-        /// - `name` (String) - The name of the dashboard
+        /// - `name` (String) - The name of the mobile application
         /// 
         /// ## Example Usage
         /// 

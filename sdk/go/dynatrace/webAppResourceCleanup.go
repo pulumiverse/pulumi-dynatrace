@@ -15,6 +15,8 @@ import (
 type WebAppResourceCleanup struct {
 	pulumi.CustomResourceState
 
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// For example: *Mask journeyId*
 	Name pulumi.StringOutput `pulumi:"name"`
 	// For example: `(.*)(journeyId=)-?\d+(.*)`
@@ -59,6 +61,8 @@ func GetWebAppResourceCleanup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering WebAppResourceCleanup resources.
 type webAppResourceCleanupState struct {
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// For example: *Mask journeyId*
 	Name *string `pulumi:"name"`
 	// For example: `(.*)(journeyId=)-?\d+(.*)`
@@ -68,6 +72,8 @@ type webAppResourceCleanupState struct {
 }
 
 type WebAppResourceCleanupState struct {
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// For example: *Mask journeyId*
 	Name pulumi.StringPtrInput
 	// For example: `(.*)(journeyId=)-?\d+(.*)`
@@ -81,6 +87,8 @@ func (WebAppResourceCleanupState) ElementType() reflect.Type {
 }
 
 type webAppResourceCleanupArgs struct {
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// For example: *Mask journeyId*
 	Name *string `pulumi:"name"`
 	// For example: `(.*)(journeyId=)-?\d+(.*)`
@@ -91,6 +99,8 @@ type webAppResourceCleanupArgs struct {
 
 // The set of arguments for constructing a WebAppResourceCleanup resource.
 type WebAppResourceCleanupArgs struct {
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// For example: *Mask journeyId*
 	Name pulumi.StringPtrInput
 	// For example: `(.*)(journeyId=)-?\d+(.*)`
@@ -184,6 +194,11 @@ func (o WebAppResourceCleanupOutput) ToWebAppResourceCleanupOutput() WebAppResou
 
 func (o WebAppResourceCleanupOutput) ToWebAppResourceCleanupOutputWithContext(ctx context.Context) WebAppResourceCleanupOutput {
 	return o
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o WebAppResourceCleanupOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *WebAppResourceCleanup) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // For example: *Mask journeyId*

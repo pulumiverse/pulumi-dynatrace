@@ -15,15 +15,17 @@ import (
 type ServiceExternalWebRequest struct {
 	pulumi.CustomResourceState
 
-	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions ServiceExternalWebRequestConditionsPtrOutput `pulumi:"conditions"`
 	// Description
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Contributors to the Service Identifier calculation. All of the Contributors except for Port always get applied. It is possible to exclude Port from contributing by toggling the switch off.
+	// Contributors to the Service Identifier calculation. All of the Contributors except for the port are always applied. You can exclude the port contribution by disabling the switch.
 	IdContributors ServiceExternalWebRequestIdContributorsOutput `pulumi:"idContributors"`
-	// Define a management zone filter for this service detection rule.
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
+	// Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
 	ManagementZones pulumi.StringArrayOutput `pulumi:"managementZones"`
 	// Rule name
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -65,30 +67,34 @@ func GetServiceExternalWebRequest(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ServiceExternalWebRequest resources.
 type serviceExternalWebRequestState struct {
-	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions *ServiceExternalWebRequestConditions `pulumi:"conditions"`
 	// Description
 	Description *string `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// Contributors to the Service Identifier calculation. All of the Contributors except for Port always get applied. It is possible to exclude Port from contributing by toggling the switch off.
+	// Contributors to the Service Identifier calculation. All of the Contributors except for the port are always applied. You can exclude the port contribution by disabling the switch.
 	IdContributors *ServiceExternalWebRequestIdContributors `pulumi:"idContributors"`
-	// Define a management zone filter for this service detection rule.
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
+	// Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
 	ManagementZones []string `pulumi:"managementZones"`
 	// Rule name
 	Name *string `pulumi:"name"`
 }
 
 type ServiceExternalWebRequestState struct {
-	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions ServiceExternalWebRequestConditionsPtrInput
 	// Description
 	Description pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// Contributors to the Service Identifier calculation. All of the Contributors except for Port always get applied. It is possible to exclude Port from contributing by toggling the switch off.
+	// Contributors to the Service Identifier calculation. All of the Contributors except for the port are always applied. You can exclude the port contribution by disabling the switch.
 	IdContributors ServiceExternalWebRequestIdContributorsPtrInput
-	// Define a management zone filter for this service detection rule.
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
+	// Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
 	ManagementZones pulumi.StringArrayInput
 	// Rule name
 	Name pulumi.StringPtrInput
@@ -99,15 +105,17 @@ func (ServiceExternalWebRequestState) ElementType() reflect.Type {
 }
 
 type serviceExternalWebRequestArgs struct {
-	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions *ServiceExternalWebRequestConditions `pulumi:"conditions"`
 	// Description
 	Description *string `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// Contributors to the Service Identifier calculation. All of the Contributors except for Port always get applied. It is possible to exclude Port from contributing by toggling the switch off.
+	// Contributors to the Service Identifier calculation. All of the Contributors except for the port are always applied. You can exclude the port contribution by disabling the switch.
 	IdContributors ServiceExternalWebRequestIdContributors `pulumi:"idContributors"`
-	// Define a management zone filter for this service detection rule.
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
+	// Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
 	ManagementZones []string `pulumi:"managementZones"`
 	// Rule name
 	Name *string `pulumi:"name"`
@@ -115,15 +123,17 @@ type serviceExternalWebRequestArgs struct {
 
 // The set of arguments for constructing a ServiceExternalWebRequest resource.
 type ServiceExternalWebRequestArgs struct {
-	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions ServiceExternalWebRequestConditionsPtrInput
 	// Description
 	Description pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// Contributors to the Service Identifier calculation. All of the Contributors except for Port always get applied. It is possible to exclude Port from contributing by toggling the switch off.
+	// Contributors to the Service Identifier calculation. All of the Contributors except for the port are always applied. You can exclude the port contribution by disabling the switch.
 	IdContributors ServiceExternalWebRequestIdContributorsInput
-	// Define a management zone filter for this service detection rule.
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
+	// Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
 	ManagementZones pulumi.StringArrayInput
 	// Rule name
 	Name pulumi.StringPtrInput
@@ -216,7 +226,7 @@ func (o ServiceExternalWebRequestOutput) ToServiceExternalWebRequestOutputWithCo
 	return o
 }
 
-// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 func (o ServiceExternalWebRequestOutput) Conditions() ServiceExternalWebRequestConditionsPtrOutput {
 	return o.ApplyT(func(v *ServiceExternalWebRequest) ServiceExternalWebRequestConditionsPtrOutput { return v.Conditions }).(ServiceExternalWebRequestConditionsPtrOutput)
 }
@@ -231,14 +241,19 @@ func (o ServiceExternalWebRequestOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ServiceExternalWebRequest) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Contributors to the Service Identifier calculation. All of the Contributors except for Port always get applied. It is possible to exclude Port from contributing by toggling the switch off.
+// Contributors to the Service Identifier calculation. All of the Contributors except for the port are always applied. You can exclude the port contribution by disabling the switch.
 func (o ServiceExternalWebRequestOutput) IdContributors() ServiceExternalWebRequestIdContributorsOutput {
 	return o.ApplyT(func(v *ServiceExternalWebRequest) ServiceExternalWebRequestIdContributorsOutput {
 		return v.IdContributors
 	}).(ServiceExternalWebRequestIdContributorsOutput)
 }
 
-// Define a management zone filter for this service detection rule.
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o ServiceExternalWebRequestOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *ServiceExternalWebRequest) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
+}
+
+// Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
 func (o ServiceExternalWebRequestOutput) ManagementZones() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ServiceExternalWebRequest) pulumi.StringArrayOutput { return v.ManagementZones }).(pulumi.StringArrayOutput)
 }

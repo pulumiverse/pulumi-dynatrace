@@ -17,6 +17,8 @@ type RumIpDetermination struct {
 
 	// Client IP header name
 	HeaderName pulumi.StringOutput `pulumi:"headerName"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 }
 
 // NewRumIpDetermination registers a new resource with the given unique name, arguments, and options.
@@ -54,11 +56,15 @@ func GetRumIpDetermination(ctx *pulumi.Context,
 type rumIpDeterminationState struct {
 	// Client IP header name
 	HeaderName *string `pulumi:"headerName"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 }
 
 type RumIpDeterminationState struct {
 	// Client IP header name
 	HeaderName pulumi.StringPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 }
 
 func (RumIpDeterminationState) ElementType() reflect.Type {
@@ -68,12 +74,16 @@ func (RumIpDeterminationState) ElementType() reflect.Type {
 type rumIpDeterminationArgs struct {
 	// Client IP header name
 	HeaderName string `pulumi:"headerName"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 }
 
 // The set of arguments for constructing a RumIpDetermination resource.
 type RumIpDeterminationArgs struct {
 	// Client IP header name
 	HeaderName pulumi.StringInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 }
 
 func (RumIpDeterminationArgs) ElementType() reflect.Type {
@@ -166,6 +176,11 @@ func (o RumIpDeterminationOutput) ToRumIpDeterminationOutputWithContext(ctx cont
 // Client IP header name
 func (o RumIpDeterminationOutput) HeaderName() pulumi.StringOutput {
 	return o.ApplyT(func(v *RumIpDetermination) pulumi.StringOutput { return v.HeaderName }).(pulumi.StringOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o RumIpDeterminationOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *RumIpDetermination) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 type RumIpDeterminationArrayOutput struct{ *pulumi.OutputState }

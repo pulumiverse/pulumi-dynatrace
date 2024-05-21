@@ -37,6 +37,10 @@ export class IssueTracking extends pulumi.CustomResource {
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Set a label to identify these issues, for example, `releaseBlocker` or `non-critical`
      */
     public readonly issuelabel!: pulumi.Output<string>;
@@ -83,6 +87,7 @@ export class IssueTracking extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as IssueTrackingState | undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["issuelabel"] = state ? state.issuelabel : undefined;
             resourceInputs["issuequery"] = state ? state.issuequery : undefined;
             resourceInputs["issuetheme"] = state ? state.issuetheme : undefined;
@@ -115,6 +120,7 @@ export class IssueTracking extends pulumi.CustomResource {
                 throw new Error("Missing required property 'username'");
             }
             resourceInputs["enabled"] = args ? args.enabled : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["issuelabel"] = args ? args.issuelabel : undefined;
             resourceInputs["issuequery"] = args ? args.issuequery : undefined;
             resourceInputs["issuetheme"] = args ? args.issuetheme : undefined;
@@ -139,6 +145,10 @@ export interface IssueTrackingState {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Set a label to identify these issues, for example, `releaseBlocker` or `non-critical`
      */
@@ -181,6 +191,10 @@ export interface IssueTrackingArgs {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Set a label to identify these issues, for example, `releaseBlocker` or `non-critical`
      */

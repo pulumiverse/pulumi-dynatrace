@@ -69,6 +69,8 @@ def get_host(name: Optional[str] = None,
              tags: Optional[Sequence[str]] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHostResult:
     """
+    !> The data source API endpoint has been deprecated, please use get_entity with entity type `HOST` instead.
+
     The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
 
     - `name` queries for all hosts with the specified name
@@ -114,6 +116,8 @@ def get_host_output(name: Optional[pulumi.Input[str]] = None,
                     tags: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHostResult]:
     """
+    !> The data source API endpoint has been deprecated, please use get_entity with entity type `HOST` instead.
+
     The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
 
     - `name` queries for all hosts with the specified name

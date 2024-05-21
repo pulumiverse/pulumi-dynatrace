@@ -20,6 +20,8 @@ type ApplicationDetectionRule struct {
 	// The condition of an application detection rule
 	FilterConfig ApplicationDetectionRuleFilterConfigOutput `pulumi:"filterConfig"`
 	// The unique name of the Application detection rule
+	//
+	// Deprecated: Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The order of the rule in the rules list
 	Order pulumi.StringPtrOutput `pulumi:"order"`
@@ -66,6 +68,8 @@ type applicationDetectionRuleState struct {
 	// The condition of an application detection rule
 	FilterConfig *ApplicationDetectionRuleFilterConfig `pulumi:"filterConfig"`
 	// The unique name of the Application detection rule
+	//
+	// Deprecated: Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.
 	Name *string `pulumi:"name"`
 	// The order of the rule in the rules list
 	Order *string `pulumi:"order"`
@@ -77,6 +81,8 @@ type ApplicationDetectionRuleState struct {
 	// The condition of an application detection rule
 	FilterConfig ApplicationDetectionRuleFilterConfigPtrInput
 	// The unique name of the Application detection rule
+	//
+	// Deprecated: Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.
 	Name pulumi.StringPtrInput
 	// The order of the rule in the rules list
 	Order pulumi.StringPtrInput
@@ -92,6 +98,8 @@ type applicationDetectionRuleArgs struct {
 	// The condition of an application detection rule
 	FilterConfig ApplicationDetectionRuleFilterConfig `pulumi:"filterConfig"`
 	// The unique name of the Application detection rule
+	//
+	// Deprecated: Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.
 	Name *string `pulumi:"name"`
 	// The order of the rule in the rules list
 	Order *string `pulumi:"order"`
@@ -104,6 +112,8 @@ type ApplicationDetectionRuleArgs struct {
 	// The condition of an application detection rule
 	FilterConfig ApplicationDetectionRuleFilterConfigInput
 	// The unique name of the Application detection rule
+	//
+	// Deprecated: Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.
 	Name pulumi.StringPtrInput
 	// The order of the rule in the rules list
 	Order pulumi.StringPtrInput
@@ -207,6 +217,8 @@ func (o ApplicationDetectionRuleOutput) FilterConfig() ApplicationDetectionRuleF
 }
 
 // The unique name of the Application detection rule
+//
+// Deprecated: Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.
 func (o ApplicationDetectionRuleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ApplicationDetectionRule) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

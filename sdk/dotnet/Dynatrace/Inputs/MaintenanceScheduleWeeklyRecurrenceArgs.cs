@@ -14,7 +14,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class MaintenanceScheduleWeeklyRecurrenceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The day of the week for weekly maintenance.  The format is the full name of the day in upper case, for example `THURSDAY`
+        /// The day of the week for weekly maintenance, possible values: `FRIDAY`, `MONDAY`, `SATURDAY`, `SUNDAY`, `THURSDAY`, `TUESDAY`, `WEDNESDAY`
         /// </summary>
         [Input("dayOfWeek", required: true)]
         public Input<string> DayOfWeek { get; set; } = null!;

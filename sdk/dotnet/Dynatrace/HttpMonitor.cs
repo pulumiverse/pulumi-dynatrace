@@ -50,6 +50,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
+        /// No script block - handle requests via `dynatrace.HttpMonitorScript` resource
+        /// </summary>
+        [Output("noScript")]
+        public Output<bool?> NoScript { get; private set; } = null!;
+
+        /// <summary>
         /// The HTTP Script
         /// </summary>
         [Output("script")]
@@ -164,6 +170,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? Name { get; set; }
 
         /// <summary>
+        /// No script block - handle requests via `dynatrace.HttpMonitorScript` resource
+        /// </summary>
+        [Input("noScript")]
+        public Input<bool>? NoScript { get; set; }
+
+        /// <summary>
         /// The HTTP Script
         /// </summary>
         [Input("script")]
@@ -243,6 +255,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// No script block - handle requests via `dynatrace.HttpMonitorScript` resource
+        /// </summary>
+        [Input("noScript")]
+        public Input<bool>? NoScript { get; set; }
 
         /// <summary>
         /// The HTTP Script

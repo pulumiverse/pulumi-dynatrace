@@ -94,6 +94,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<string> InjectionMode { get; set; } = null!;
 
         /// <summary>
+        /// Instrumented web or app server.
+        /// </summary>
+        [Input("instrumentedWebServer")]
+        public Input<bool>? InstrumentedWebServer { get; set; }
+
+        /// <summary>
         /// Settings for restricting certain ip addresses and for introducing subnet mask. It also restricts the mode
         /// </summary>
         [Input("ipAddressRestrictionSettings")]
@@ -132,6 +138,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<string>? MonitoringDataPath { get; set; }
 
         /// <summary>
+        /// Same site cookie attribute
+        /// </summary>
+        [Input("sameSiteCookieAttribute")]
+        public Input<string>? SameSiteCookieAttribute { get; set; }
+
+        /// <summary>
         /// Time duration for the cache settings
         /// </summary>
         [Input("scriptTagCacheDurationInHours")]
@@ -148,6 +160,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         /// </summary>
         [Input("serverRequestPathId")]
         public Input<string>? ServerRequestPathId { get; set; }
+
+        /// <summary>
+        /// Send beacon data via CORS.
+        /// </summary>
+        [Input("useCors")]
+        public Input<bool>? UseCors { get; set; }
 
         /// <summary>
         /// `XmlHttpRequest` support enabled/disabled

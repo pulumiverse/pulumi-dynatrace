@@ -71,6 +71,48 @@ def get_synthetic_locations(id: Optional[str] = None,
     """
     The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+    import pulumiverse_pulumi_dynatrace as dynatrace
+
+    test = dynatrace.get_synthetic_locations(name="Sydney")
+    _name_ = dynatrace.HttpMonitor("#name#",
+        enabled=True,
+        frequency=60,
+        locations=[test.locations.entity_id],
+        anomaly_detections=[dynatrace.HttpMonitorAnomalyDetectionArgs(
+            loading_time_thresholds=[dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs(
+                enabled=True,
+            )],
+            outage_handlings=[dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArgs(
+                global_outage=True,
+                local_outage=False,
+                retry_on_error=False,
+            )],
+        )],
+        script=dynatrace.HttpMonitorScriptArgs(
+            requests=[dynatrace.HttpMonitorScriptRequestArgs(
+                description="google.com",
+                method="GET",
+                url="https://www.google.com",
+                configuration=dynatrace.HttpMonitorScriptRequestConfigurationArgs(
+                    accept_any_certificate=True,
+                    follow_redirects=True,
+                ),
+                validation=dynatrace.HttpMonitorScriptRequestValidationArgs(
+                    rules=[dynatrace.HttpMonitorScriptRequestValidationRuleArgs(
+                        type="httpStatusesList",
+                        pass_if_found=False,
+                        value=">=400",
+                    )],
+                ),
+            )],
+        ))
+    ```
+
 
     :param str id: The ID of this resource.
     """
@@ -94,6 +136,48 @@ def get_synthetic_locations_output(id: Optional[pulumi.Input[Optional[str]]] = N
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSyntheticLocationsResult]:
     """
     The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+    import pulumiverse_pulumi_dynatrace as dynatrace
+
+    test = dynatrace.get_synthetic_locations(name="Sydney")
+    _name_ = dynatrace.HttpMonitor("#name#",
+        enabled=True,
+        frequency=60,
+        locations=[test.locations.entity_id],
+        anomaly_detections=[dynatrace.HttpMonitorAnomalyDetectionArgs(
+            loading_time_thresholds=[dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs(
+                enabled=True,
+            )],
+            outage_handlings=[dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArgs(
+                global_outage=True,
+                local_outage=False,
+                retry_on_error=False,
+            )],
+        )],
+        script=dynatrace.HttpMonitorScriptArgs(
+            requests=[dynatrace.HttpMonitorScriptRequestArgs(
+                description="google.com",
+                method="GET",
+                url="https://www.google.com",
+                configuration=dynatrace.HttpMonitorScriptRequestConfigurationArgs(
+                    accept_any_certificate=True,
+                    follow_redirects=True,
+                ),
+                validation=dynatrace.HttpMonitorScriptRequestValidationArgs(
+                    rules=[dynatrace.HttpMonitorScriptRequestValidationRuleArgs(
+                        type="httpStatusesList",
+                        pass_if_found=False,
+                        value=">=400",
+                    )],
+                ),
+            )],
+        ))
+    ```
 
 
     :param str id: The ID of this resource.

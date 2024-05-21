@@ -7,6 +7,10 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
+ * > This is a child resource of dynatrace_json_dashboard, therefore it is automatically retrieved with the dashboard.
+ *
+ * > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+ *
  * ## Dynatrace Documentation
  *
  * - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
@@ -46,15 +50,19 @@ export class DashboardSharing extends pulumi.CustomResource {
      */
     public readonly dashboardId!: pulumi.Output<string>;
     /**
-     * The dashboard is shared (`true`) or private (`false`)
+     * The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `dynatrace.Dashboard` and `dynatrace.JsonDashboard`. Otherwise you will encounter non-empty plans.
      */
     public readonly enabled!: pulumi.Output<boolean | undefined>;
+    /**
+     * Reserved for internal use by the provider
+     */
+    public /*out*/ readonly muted!: pulumi.Output<boolean>;
     /**
      * Access permissions of the dashboard
      */
     public readonly permissions!: pulumi.Output<outputs.DashboardSharingPermissions | undefined>;
     /**
-     * If `true` the dashboard will be marked as preset
+     * If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `dynatrace.Dashboard` and `dynatrace.JsonDashboard`. Otherwise you will encounter non-empty plans.
      */
     public readonly preset!: pulumi.Output<boolean | undefined>;
     /**
@@ -77,6 +85,7 @@ export class DashboardSharing extends pulumi.CustomResource {
             const state = argsOrState as DashboardSharingState | undefined;
             resourceInputs["dashboardId"] = state ? state.dashboardId : undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
+            resourceInputs["muted"] = state ? state.muted : undefined;
             resourceInputs["permissions"] = state ? state.permissions : undefined;
             resourceInputs["preset"] = state ? state.preset : undefined;
             resourceInputs["public"] = state ? state.public : undefined;
@@ -90,6 +99,7 @@ export class DashboardSharing extends pulumi.CustomResource {
             resourceInputs["permissions"] = args ? args.permissions : undefined;
             resourceInputs["preset"] = args ? args.preset : undefined;
             resourceInputs["public"] = args ? args.public : undefined;
+            resourceInputs["muted"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DashboardSharing.__pulumiType, name, resourceInputs, opts);
@@ -105,15 +115,19 @@ export interface DashboardSharingState {
      */
     dashboardId?: pulumi.Input<string>;
     /**
-     * The dashboard is shared (`true`) or private (`false`)
+     * The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `dynatrace.Dashboard` and `dynatrace.JsonDashboard`. Otherwise you will encounter non-empty plans.
      */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Reserved for internal use by the provider
+     */
+    muted?: pulumi.Input<boolean>;
     /**
      * Access permissions of the dashboard
      */
     permissions?: pulumi.Input<inputs.DashboardSharingPermissions>;
     /**
-     * If `true` the dashboard will be marked as preset
+     * If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `dynatrace.Dashboard` and `dynatrace.JsonDashboard`. Otherwise you will encounter non-empty plans.
      */
     preset?: pulumi.Input<boolean>;
     /**
@@ -131,7 +145,7 @@ export interface DashboardSharingArgs {
      */
     dashboardId: pulumi.Input<string>;
     /**
-     * The dashboard is shared (`true`) or private (`false`)
+     * The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `dynatrace.Dashboard` and `dynatrace.JsonDashboard`. Otherwise you will encounter non-empty plans.
      */
     enabled?: pulumi.Input<boolean>;
     /**
@@ -139,7 +153,7 @@ export interface DashboardSharingArgs {
      */
     permissions?: pulumi.Input<inputs.DashboardSharingPermissions>;
     /**
-     * If `true` the dashboard will be marked as preset
+     * If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `dynatrace.Dashboard` and `dynatrace.JsonDashboard`. Otherwise you will encounter non-empty plans.
      */
     preset?: pulumi.Input<boolean>;
     /**

@@ -35,7 +35,7 @@ export class ServiceExternalWebService extends pulumi.CustomResource {
     }
 
     /**
-     * A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+     * A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
      */
     public readonly conditions!: pulumi.Output<outputs.ServiceExternalWebServiceConditions | undefined>;
     /**
@@ -47,11 +47,15 @@ export class ServiceExternalWebService extends pulumi.CustomResource {
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
-     * Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. It is possible to exclude Port from contributing by toggling the switch off.
+     * Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. You can exclude the port contribution by disabling the switch.
      */
     public readonly idContributors!: pulumi.Output<outputs.ServiceExternalWebServiceIdContributors>;
     /**
-     * Define a management zone filter for this service detection rule.
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
+     * Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
      */
     public readonly managementZones!: pulumi.Output<string[] | undefined>;
     /**
@@ -76,6 +80,7 @@ export class ServiceExternalWebService extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
             resourceInputs["idContributors"] = state ? state.idContributors : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["managementZones"] = state ? state.managementZones : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
         } else {
@@ -90,6 +95,7 @@ export class ServiceExternalWebService extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["enabled"] = args ? args.enabled : undefined;
             resourceInputs["idContributors"] = args ? args.idContributors : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["managementZones"] = args ? args.managementZones : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
         }
@@ -103,7 +109,7 @@ export class ServiceExternalWebService extends pulumi.CustomResource {
  */
 export interface ServiceExternalWebServiceState {
     /**
-     * A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+     * A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
      */
     conditions?: pulumi.Input<inputs.ServiceExternalWebServiceConditions>;
     /**
@@ -115,11 +121,15 @@ export interface ServiceExternalWebServiceState {
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. It is possible to exclude Port from contributing by toggling the switch off.
+     * Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. You can exclude the port contribution by disabling the switch.
      */
     idContributors?: pulumi.Input<inputs.ServiceExternalWebServiceIdContributors>;
     /**
-     * Define a management zone filter for this service detection rule.
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
+    /**
+     * Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
      */
     managementZones?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -133,7 +143,7 @@ export interface ServiceExternalWebServiceState {
  */
 export interface ServiceExternalWebServiceArgs {
     /**
-     * A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+     * A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
      */
     conditions?: pulumi.Input<inputs.ServiceExternalWebServiceConditions>;
     /**
@@ -145,11 +155,15 @@ export interface ServiceExternalWebServiceArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. It is possible to exclude Port from contributing by toggling the switch off.
+     * Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. You can exclude the port contribution by disabling the switch.
      */
     idContributors: pulumi.Input<inputs.ServiceExternalWebServiceIdContributors>;
     /**
-     * Define a management zone filter for this service detection rule.
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
+    /**
+     * Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
      */
     managementZones?: pulumi.Input<pulumi.Input<string>[]>;
     /**

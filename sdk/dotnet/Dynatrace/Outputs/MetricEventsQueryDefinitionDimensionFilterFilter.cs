@@ -15,22 +15,29 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class MetricEventsQueryDefinitionDimensionFilterFilter
     {
         /// <summary>
-        /// The key of the dimension filter
+        /// Dimension key
         /// </summary>
         public readonly string DimensionKey;
         /// <summary>
-        /// The value of the dimension filter
+        /// Dimension value
         /// </summary>
         public readonly string DimensionValue;
+        /// <summary>
+        /// Possible Values: `CONTAINS_CASE_SENSITIVE`, `DOES_NOT_CONTAIN_CASE_SENSITIVE`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS`, `STARTS_WITH`
+        /// </summary>
+        public readonly string? Operator;
 
         [OutputConstructor]
         private MetricEventsQueryDefinitionDimensionFilterFilter(
             string dimensionKey,
 
-            string dimensionValue)
+            string dimensionValue,
+
+            string? @operator)
         {
             DimensionKey = dimensionKey;
             DimensionValue = dimensionValue;
+            Operator = @operator;
         }
     }
 }

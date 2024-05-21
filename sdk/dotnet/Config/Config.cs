@@ -32,6 +32,65 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
 
         private static readonly global::Pulumi.Config __config = new global::Pulumi.Config("dynatrace");
 
+        private static readonly __Value<string?> _accountId = new __Value<string?>(() => __config.Get("accountId"));
+        public static string? AccountId
+        {
+            get => _accountId.Get();
+            set => _accountId.Set(value);
+        }
+
+        private static readonly __Value<string?> _automationClientId = new __Value<string?>(() => __config.Get("automationClientId"));
+        public static string? AutomationClientId
+        {
+            get => _automationClientId.Get();
+            set => _automationClientId.Set(value);
+        }
+
+        private static readonly __Value<string?> _automationClientSecret = new __Value<string?>(() => __config.Get("automationClientSecret"));
+        public static string? AutomationClientSecret
+        {
+            get => _automationClientSecret.Get();
+            set => _automationClientSecret.Set(value);
+        }
+
+        private static readonly __Value<string?> _automationEnvUrl = new __Value<string?>(() => __config.Get("automationEnvUrl"));
+        /// <summary>
+        /// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+        /// optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+        /// `https://#####.apps.dynatrace.com`
+        /// </summary>
+        public static string? AutomationEnvUrl
+        {
+            get => _automationEnvUrl.Get();
+            set => _automationEnvUrl.Set(value);
+        }
+
+        private static readonly __Value<string?> _automationTokenUrl = new __Value<string?>(() => __config.Get("automationTokenUrl"));
+        /// <summary>
+        /// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+        /// `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+        /// `https://#####.apps.dynatrace.com`
+        /// </summary>
+        public static string? AutomationTokenUrl
+        {
+            get => _automationTokenUrl.Get();
+            set => _automationTokenUrl.Set(value);
+        }
+
+        private static readonly __Value<string?> _clientId = new __Value<string?>(() => __config.Get("clientId"));
+        public static string? ClientId
+        {
+            get => _clientId.Get();
+            set => _clientId.Set(value);
+        }
+
+        private static readonly __Value<string?> _clientSecret = new __Value<string?>(() => __config.Get("clientSecret"));
+        public static string? ClientSecret
+        {
+            get => _clientSecret.Get();
+            set => _clientSecret.Set(value);
+        }
+
         private static readonly __Value<string?> _dtApiToken = new __Value<string?>(() => __config.Get("dtApiToken") ?? Utilities.GetEnv("DYNATRACE_API_TOKEN", "DT_API_TOKEN"));
         public static string? DtApiToken
         {

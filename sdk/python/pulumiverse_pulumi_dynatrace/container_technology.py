@@ -20,6 +20,7 @@ class ContainerTechnologyArgs:
                  docker: pulumi.Input[bool],
                  docker_windows: pulumi.Input[bool],
                  garden: pulumi.Input[bool],
+                 podman: pulumi.Input[bool],
                  winc: pulumi.Input[bool],
                  scope: Optional[pulumi.Input[str]] = None):
         """
@@ -30,6 +31,7 @@ class ContainerTechnologyArgs:
         :param pulumi.Input[bool] docker: Platform: Docker and Kubernetes Status: Released Operating system: Linux
         :param pulumi.Input[bool] docker_windows: Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
         :param pulumi.Input[bool] garden: Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+        :param pulumi.Input[bool] podman: Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
         :param pulumi.Input[bool] winc: Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -39,6 +41,7 @@ class ContainerTechnologyArgs:
         pulumi.set(__self__, "docker", docker)
         pulumi.set(__self__, "docker_windows", docker_windows)
         pulumi.set(__self__, "garden", garden)
+        pulumi.set(__self__, "podman", podman)
         pulumi.set(__self__, "winc", winc)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
@@ -117,6 +120,18 @@ class ContainerTechnologyArgs:
 
     @property
     @pulumi.getter
+    def podman(self) -> pulumi.Input[bool]:
+        """
+        Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        """
+        return pulumi.get(self, "podman")
+
+    @podman.setter
+    def podman(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "podman", value)
+
+    @property
+    @pulumi.getter
     def winc(self) -> pulumi.Input[bool]:
         """
         Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
@@ -149,6 +164,7 @@ class _ContainerTechnologyState:
                  docker: Optional[pulumi.Input[bool]] = None,
                  docker_windows: Optional[pulumi.Input[bool]] = None,
                  garden: Optional[pulumi.Input[bool]] = None,
+                 podman: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  winc: Optional[pulumi.Input[bool]] = None):
         """
@@ -159,6 +175,7 @@ class _ContainerTechnologyState:
         :param pulumi.Input[bool] docker: Platform: Docker and Kubernetes Status: Released Operating system: Linux
         :param pulumi.Input[bool] docker_windows: Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
         :param pulumi.Input[bool] garden: Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+        :param pulumi.Input[bool] podman: Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[bool] winc: Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
         """
@@ -174,6 +191,8 @@ class _ContainerTechnologyState:
             pulumi.set(__self__, "docker_windows", docker_windows)
         if garden is not None:
             pulumi.set(__self__, "garden", garden)
+        if podman is not None:
+            pulumi.set(__self__, "podman", podman)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
         if winc is not None:
@@ -253,6 +272,18 @@ class _ContainerTechnologyState:
 
     @property
     @pulumi.getter
+    def podman(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        """
+        return pulumi.get(self, "podman")
+
+    @podman.setter
+    def podman(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "podman", value)
+
+    @property
+    @pulumi.getter
     def scope(self) -> Optional[pulumi.Input[str]]:
         """
         The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -287,6 +318,7 @@ class ContainerTechnology(pulumi.CustomResource):
                  docker: Optional[pulumi.Input[bool]] = None,
                  docker_windows: Optional[pulumi.Input[bool]] = None,
                  garden: Optional[pulumi.Input[bool]] = None,
+                 podman: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  winc: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -300,6 +332,7 @@ class ContainerTechnology(pulumi.CustomResource):
         :param pulumi.Input[bool] docker: Platform: Docker and Kubernetes Status: Released Operating system: Linux
         :param pulumi.Input[bool] docker_windows: Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
         :param pulumi.Input[bool] garden: Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+        :param pulumi.Input[bool] podman: Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[bool] winc: Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
         """
@@ -332,6 +365,7 @@ class ContainerTechnology(pulumi.CustomResource):
                  docker: Optional[pulumi.Input[bool]] = None,
                  docker_windows: Optional[pulumi.Input[bool]] = None,
                  garden: Optional[pulumi.Input[bool]] = None,
+                 podman: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  winc: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -361,6 +395,9 @@ class ContainerTechnology(pulumi.CustomResource):
             if garden is None and not opts.urn:
                 raise TypeError("Missing required property 'garden'")
             __props__.__dict__["garden"] = garden
+            if podman is None and not opts.urn:
+                raise TypeError("Missing required property 'podman'")
+            __props__.__dict__["podman"] = podman
             __props__.__dict__["scope"] = scope
             if winc is None and not opts.urn:
                 raise TypeError("Missing required property 'winc'")
@@ -381,6 +418,7 @@ class ContainerTechnology(pulumi.CustomResource):
             docker: Optional[pulumi.Input[bool]] = None,
             docker_windows: Optional[pulumi.Input[bool]] = None,
             garden: Optional[pulumi.Input[bool]] = None,
+            podman: Optional[pulumi.Input[bool]] = None,
             scope: Optional[pulumi.Input[str]] = None,
             winc: Optional[pulumi.Input[bool]] = None) -> 'ContainerTechnology':
         """
@@ -396,6 +434,7 @@ class ContainerTechnology(pulumi.CustomResource):
         :param pulumi.Input[bool] docker: Platform: Docker and Kubernetes Status: Released Operating system: Linux
         :param pulumi.Input[bool] docker_windows: Platform: Docker Status: Early adopter Operating system: Windows Min agent version: 1.149
         :param pulumi.Input[bool] garden: Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
+        :param pulumi.Input[bool] podman: Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[bool] winc: Platform: Cloud Foundry Status: Early adopter Operating system: Windows Min agent version: 1.175
         """
@@ -409,6 +448,7 @@ class ContainerTechnology(pulumi.CustomResource):
         __props__.__dict__["docker"] = docker
         __props__.__dict__["docker_windows"] = docker_windows
         __props__.__dict__["garden"] = garden
+        __props__.__dict__["podman"] = podman
         __props__.__dict__["scope"] = scope
         __props__.__dict__["winc"] = winc
         return ContainerTechnology(resource_name, opts=opts, __props__=__props__)
@@ -460,6 +500,14 @@ class ContainerTechnology(pulumi.CustomResource):
         Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
         """
         return pulumi.get(self, "garden")
+
+    @property
+    @pulumi.getter
+    def podman(self) -> pulumi.Output[bool]:
+        """
+        Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        """
+        return pulumi.get(self, "podman")
 
     @property
     @pulumi.getter

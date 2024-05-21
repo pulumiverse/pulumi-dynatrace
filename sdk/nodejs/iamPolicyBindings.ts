@@ -4,6 +4,28 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
+ *
+ * > This resource requires the API token scope **Allow IAM policy configuration for environments** (`iam-policies-management`)
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Dynatrace IAM Group Permissions - https://www.dynatrace.com/support/help/manage/access-control/user-management-and-sso/manage-groups-and-permissions/iam/iam-group-mgt
+ *
+ * - Settings API - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions/iam/iam-getting-started
+ *
+ * ## Prerequisites
+ *
+ * Using this resource requires an OAuth client to be configured within your account settings.
+ * The scopes of the OAuth Client need to include `account-idm-read`, `account-idm-write`, `account-env-read`, `account-env-write`, `iam-policies-management`, `iam:policies:write`, `iam:policies:read`, `iam:bindings:write`, `iam:bindings:read` and `iam:effective-permissions:read`.
+ *
+ * Finally the provider configuration requires the credentials for that OAuth Client.
+ * The configuration section of your provider needs to look like this.
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * ```
+ */
 export class IamPolicyBindings extends pulumi.CustomResource {
     /**
      * Get an existing IamPolicyBindings resource's state with the given name, ID, and optional extra

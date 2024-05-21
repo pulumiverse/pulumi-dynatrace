@@ -20,6 +20,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<string>? AdditionalEventCapturedAsUserInput { get; set; }
 
         /// <summary>
+        /// Change enabled/disabled
+        /// </summary>
+        [Input("change")]
+        public Input<bool>? Change { get; set; }
+
+        /// <summary>
         /// Click enabled/disabled
         /// </summary>
         [Input("click")]
@@ -60,6 +66,18 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         /// </summary>
         [Input("scroll")]
         public Input<bool>? Scroll { get; set; }
+
+        /// <summary>
+        /// TouchEnd enabled/disabled
+        /// </summary>
+        [Input("touchEnd")]
+        public Input<bool>? TouchEnd { get; set; }
+
+        /// <summary>
+        /// TouchStart enabled/disabled
+        /// </summary>
+        [Input("touchStart")]
+        public Input<bool>? TouchStart { get; set; }
 
         public WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettingsGetArgs()
         {

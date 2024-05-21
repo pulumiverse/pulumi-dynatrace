@@ -14,6 +14,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public partial class DiskOptions : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Deactivate NFS monitoring on all supported systems
+        /// </summary>
+        [Output("disableNfsDiskMonitoring")]
+        public Output<bool?> DisableNfsDiskMonitoring { get; private set; } = null!;
+
+        /// <summary>
         /// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
         /// disks from the monitoring list.
         /// </summary>
@@ -25,7 +31,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// Requires OneAgent 1.209 or later
         /// </summary>
         [Output("nfsShowAll")]
-        public Output<bool> NfsShowAll { get; private set; } = null!;
+        public Output<bool?> NfsShowAll { get; private set; } = null!;
 
         /// <summary>
         /// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -41,7 +47,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public DiskOptions(string name, DiskOptionsArgs args, CustomResourceOptions? options = null)
+        public DiskOptions(string name, DiskOptionsArgs? args = null, CustomResourceOptions? options = null)
             : base("dynatrace:index/diskOptions:DiskOptions", name, args ?? new DiskOptionsArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -81,6 +87,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class DiskOptionsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Deactivate NFS monitoring on all supported systems
+        /// </summary>
+        [Input("disableNfsDiskMonitoring")]
+        public Input<bool>? DisableNfsDiskMonitoring { get; set; }
+
+        /// <summary>
         /// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
         /// disks from the monitoring list.
         /// </summary>
@@ -91,8 +103,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
         /// Requires OneAgent 1.209 or later
         /// </summary>
-        [Input("nfsShowAll", required: true)]
-        public Input<bool> NfsShowAll { get; set; } = null!;
+        [Input("nfsShowAll")]
+        public Input<bool>? NfsShowAll { get; set; }
 
         /// <summary>
         /// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -108,6 +120,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
 
     public sealed class DiskOptionsState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Deactivate NFS monitoring on all supported systems
+        /// </summary>
+        [Input("disableNfsDiskMonitoring")]
+        public Input<bool>? DisableNfsDiskMonitoring { get; set; }
+
         /// <summary>
         /// OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
         /// disks from the monitoring list.

@@ -14,7 +14,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public partial class LogMetrics : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// no documentation available
+        /// To enable splitting on your metric, add desired dimensions.
         /// </summary>
         [Output("dimensions")]
         public Output<ImmutableArray<string>> Dimensions { get; private set; } = null!;
@@ -100,7 +100,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         private InputList<string>? _dimensions;
 
         /// <summary>
-        /// no documentation available
+        /// To enable splitting on your metric, add desired dimensions.
         /// </summary>
         public InputList<string> Dimensions
         {
@@ -150,7 +150,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         private InputList<string>? _dimensions;
 
         /// <summary>
-        /// no documentation available
+        /// To enable splitting on your metric, add desired dimensions.
         /// </summary>
         public InputList<string> Dimensions
         {

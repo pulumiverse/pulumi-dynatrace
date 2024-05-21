@@ -66,9 +66,6 @@ func NewSloV2(ctx *pulumi.Context,
 	if args.MetricExpression == nil {
 		return nil, errors.New("invalid value for required argument 'MetricExpression'")
 	}
-	if args.MetricName == nil {
-		return nil, errors.New("invalid value for required argument 'MetricName'")
-	}
 	if args.TargetSuccess == nil {
 		return nil, errors.New("invalid value for required argument 'TargetSuccess'")
 	}
@@ -173,7 +170,7 @@ type sloV2Args struct {
 	// For details, see the [Metrics page](https://www.terraform.io/ui/metrics).
 	MetricExpression string `pulumi:"metricExpression"`
 	// Metric name
-	MetricName string `pulumi:"metricName"`
+	MetricName *string `pulumi:"metricName"`
 	// SLO name
 	Name *string `pulumi:"name"`
 	// Set the target value of the SLO. A percentage below this value indicates a failure.
@@ -201,7 +198,7 @@ type SloV2Args struct {
 	// For details, see the [Metrics page](https://www.terraform.io/ui/metrics).
 	MetricExpression pulumi.StringInput
 	// Metric name
-	MetricName pulumi.StringInput
+	MetricName pulumi.StringPtrInput
 	// SLO name
 	Name pulumi.StringPtrInput
 	// Set the target value of the SLO. A percentage below this value indicates a failure.

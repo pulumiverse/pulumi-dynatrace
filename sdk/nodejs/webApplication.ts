@@ -48,6 +48,8 @@ export class WebApplication extends pulumi.CustomResource {
     public readonly customActionApdexSettings!: pulumi.Output<outputs.WebApplicationCustomActionApdexSettings>;
     /**
      * User Action names to be flagged as Key User Actions
+     *
+     * @deprecated Configuring Key User Actions within `dynatrace.WebApplication` is discouraged. Use the dedicated resource `dynatrace.KeyUserAction` instead.
      */
     public readonly keyUserActions!: pulumi.Output<outputs.WebApplicationKeyUserAction[] | undefined>;
     /**
@@ -77,7 +79,7 @@ export class WebApplication extends pulumi.CustomResource {
     /**
      * Settings regarding Session Replay
      */
-    public readonly sessionReplayConfig!: pulumi.Output<outputs.WebApplicationSessionReplayConfig | undefined>;
+    public readonly sessionReplayConfig!: pulumi.Output<outputs.WebApplicationSessionReplayConfig>;
     /**
      * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
      */
@@ -215,6 +217,8 @@ export interface WebApplicationState {
     customActionApdexSettings?: pulumi.Input<inputs.WebApplicationCustomActionApdexSettings>;
     /**
      * User Action names to be flagged as Key User Actions
+     *
+     * @deprecated Configuring Key User Actions within `dynatrace.WebApplication` is discouraged. Use the dedicated resource `dynatrace.KeyUserAction` instead.
      */
     keyUserActions?: pulumi.Input<pulumi.Input<inputs.WebApplicationKeyUserAction>[]>;
     /**
@@ -297,6 +301,8 @@ export interface WebApplicationArgs {
     customActionApdexSettings: pulumi.Input<inputs.WebApplicationCustomActionApdexSettings>;
     /**
      * User Action names to be flagged as Key User Actions
+     *
+     * @deprecated Configuring Key User Actions within `dynatrace.WebApplication` is discouraged. Use the dedicated resource `dynatrace.KeyUserAction` instead.
      */
     keyUserActions?: pulumi.Input<pulumi.Input<inputs.WebApplicationKeyUserAction>[]>;
     /**

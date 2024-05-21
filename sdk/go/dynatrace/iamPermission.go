@@ -12,6 +12,10 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
+//
+// > This resource requires the API token scopes **Allow read access for identity resources (users and groups)** (`account-idm-read`) and **Allow write access for identity resources (users and groups)** (`account-idm-write`)
+//
 // ## Dynatrace Documentation
 //
 // - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -79,7 +83,7 @@ type IamPermission struct {
 	Group pulumi.StringOutput `pulumi:"group"`
 	// The management zone this permission is valid for. You need to use the attribute `legacyId` when referring to a resource `ManagementZoneV2` or a data source `ManagementZone`. The attribute `environment` is required to get specified also in order to identify the management zone uniquely.
 	ManagementZone pulumi.StringPtrOutput `pulumi:"managementZone"`
-	// Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-manage-support-tickets`
+	// Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `account-saml-flexible-federation`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-view-security-problems`, `tenant-manage-support-tickets`
 	Name pulumi.StringOutput `pulumi:"name"`
 }
 
@@ -124,7 +128,7 @@ type iamPermissionState struct {
 	Group *string `pulumi:"group"`
 	// The management zone this permission is valid for. You need to use the attribute `legacyId` when referring to a resource `ManagementZoneV2` or a data source `ManagementZone`. The attribute `environment` is required to get specified also in order to identify the management zone uniquely.
 	ManagementZone *string `pulumi:"managementZone"`
-	// Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-manage-support-tickets`
+	// Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `account-saml-flexible-federation`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-view-security-problems`, `tenant-manage-support-tickets`
 	Name *string `pulumi:"name"`
 }
 
@@ -137,7 +141,7 @@ type IamPermissionState struct {
 	Group pulumi.StringPtrInput
 	// The management zone this permission is valid for. You need to use the attribute `legacyId` when referring to a resource `ManagementZoneV2` or a data source `ManagementZone`. The attribute `environment` is required to get specified also in order to identify the management zone uniquely.
 	ManagementZone pulumi.StringPtrInput
-	// Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-manage-support-tickets`
+	// Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `account-saml-flexible-federation`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-view-security-problems`, `tenant-manage-support-tickets`
 	Name pulumi.StringPtrInput
 }
 
@@ -154,7 +158,7 @@ type iamPermissionArgs struct {
 	Group string `pulumi:"group"`
 	// The management zone this permission is valid for. You need to use the attribute `legacyId` when referring to a resource `ManagementZoneV2` or a data source `ManagementZone`. The attribute `environment` is required to get specified also in order to identify the management zone uniquely.
 	ManagementZone *string `pulumi:"managementZone"`
-	// Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-manage-support-tickets`
+	// Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `account-saml-flexible-federation`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-view-security-problems`, `tenant-manage-support-tickets`
 	Name *string `pulumi:"name"`
 }
 
@@ -168,7 +172,7 @@ type IamPermissionArgs struct {
 	Group pulumi.StringInput
 	// The management zone this permission is valid for. You need to use the attribute `legacyId` when referring to a resource `ManagementZoneV2` or a data source `ManagementZone`. The attribute `environment` is required to get specified also in order to identify the management zone uniquely.
 	ManagementZone pulumi.StringPtrInput
-	// Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-manage-support-tickets`
+	// Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `account-saml-flexible-federation`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-view-security-problems`, `tenant-manage-support-tickets`
 	Name pulumi.StringPtrInput
 }
 
@@ -279,7 +283,7 @@ func (o IamPermissionOutput) ManagementZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IamPermission) pulumi.StringPtrOutput { return v.ManagementZone }).(pulumi.StringPtrOutput)
 }
 
-// Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-manage-support-tickets`
+// Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `account-saml-flexible-federation`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-view-security-problems`, `tenant-manage-support-tickets`
 func (o IamPermissionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *IamPermission) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

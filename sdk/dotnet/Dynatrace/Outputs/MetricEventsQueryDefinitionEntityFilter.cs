@@ -15,9 +15,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class MetricEventsQueryDefinitionEntityFilter
     {
         /// <summary>
-        /// Conditions of entity type to filter
+        /// no documentation available
         /// </summary>
-        public readonly ImmutableArray<Outputs.MetricEventsQueryDefinitionEntityFilterCondition> Conditions;
+        public readonly Outputs.MetricEventsQueryDefinitionEntityFilterConditions? Conditions;
         /// <summary>
         /// Dimension key of entity type to filter
         /// </summary>
@@ -25,7 +25,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
 
         [OutputConstructor]
         private MetricEventsQueryDefinitionEntityFilter(
-            ImmutableArray<Outputs.MetricEventsQueryDefinitionEntityFilterCondition> conditions,
+            Outputs.MetricEventsQueryDefinitionEntityFilterConditions? conditions,
 
             string? dimensionKey)
         {

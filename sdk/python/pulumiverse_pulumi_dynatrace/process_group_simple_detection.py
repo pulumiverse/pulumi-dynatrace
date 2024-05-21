@@ -18,6 +18,7 @@ class ProcessGroupSimpleDetectionArgs:
                  group_identifier: pulumi.Input[str],
                  instance_identifier: pulumi.Input[str],
                  rule_type: pulumi.Input[str],
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  process_type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ProcessGroupSimpleDetection resource.
@@ -25,12 +26,17 @@ class ProcessGroupSimpleDetectionArgs:
         :param pulumi.Input[str] group_identifier: If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
         :param pulumi.Input[str] instance_identifier: Use a variable to identify instances within a process group.
         :param pulumi.Input[str] rule_type: Possible Values: `Prop`, `Env`
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input[str] process_type: Note: Not all types can be detected at startup.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "group_identifier", group_identifier)
         pulumi.set(__self__, "instance_identifier", instance_identifier)
         pulumi.set(__self__, "rule_type", rule_type)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if process_type is not None:
             pulumi.set(__self__, "process_type", process_type)
 
@@ -83,6 +89,20 @@ class ProcessGroupSimpleDetectionArgs:
         pulumi.set(self, "rule_type", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter(name="processType")
     def process_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -100,6 +120,7 @@ class _ProcessGroupSimpleDetectionState:
     def __init__(__self__, *,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  group_identifier: Optional[pulumi.Input[str]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  instance_identifier: Optional[pulumi.Input[str]] = None,
                  process_type: Optional[pulumi.Input[str]] = None,
                  rule_type: Optional[pulumi.Input[str]] = None):
@@ -107,6 +128,9 @@ class _ProcessGroupSimpleDetectionState:
         Input properties used for looking up and filtering ProcessGroupSimpleDetection resources.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] group_identifier: If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input[str] instance_identifier: Use a variable to identify instances within a process group.
         :param pulumi.Input[str] process_type: Note: Not all types can be detected at startup.
         :param pulumi.Input[str] rule_type: Possible Values: `Prop`, `Env`
@@ -115,6 +139,8 @@ class _ProcessGroupSimpleDetectionState:
             pulumi.set(__self__, "enabled", enabled)
         if group_identifier is not None:
             pulumi.set(__self__, "group_identifier", group_identifier)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if instance_identifier is not None:
             pulumi.set(__self__, "instance_identifier", instance_identifier)
         if process_type is not None:
@@ -145,6 +171,20 @@ class _ProcessGroupSimpleDetectionState:
     @group_identifier.setter
     def group_identifier(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "group_identifier", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter(name="instanceIdentifier")
@@ -190,6 +230,7 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  group_identifier: Optional[pulumi.Input[str]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  instance_identifier: Optional[pulumi.Input[str]] = None,
                  process_type: Optional[pulumi.Input[str]] = None,
                  rule_type: Optional[pulumi.Input[str]] = None,
@@ -200,6 +241,9 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] group_identifier: If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input[str] instance_identifier: Use a variable to identify instances within a process group.
         :param pulumi.Input[str] process_type: Note: Not all types can be detected at startup.
         :param pulumi.Input[str] rule_type: Possible Values: `Prop`, `Env`
@@ -229,6 +273,7 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  group_identifier: Optional[pulumi.Input[str]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  instance_identifier: Optional[pulumi.Input[str]] = None,
                  process_type: Optional[pulumi.Input[str]] = None,
                  rule_type: Optional[pulumi.Input[str]] = None,
@@ -247,6 +292,7 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
             if group_identifier is None and not opts.urn:
                 raise TypeError("Missing required property 'group_identifier'")
             __props__.__dict__["group_identifier"] = group_identifier
+            __props__.__dict__["insert_after"] = insert_after
             if instance_identifier is None and not opts.urn:
                 raise TypeError("Missing required property 'instance_identifier'")
             __props__.__dict__["instance_identifier"] = instance_identifier
@@ -266,6 +312,7 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             group_identifier: Optional[pulumi.Input[str]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             instance_identifier: Optional[pulumi.Input[str]] = None,
             process_type: Optional[pulumi.Input[str]] = None,
             rule_type: Optional[pulumi.Input[str]] = None) -> 'ProcessGroupSimpleDetection':
@@ -278,6 +325,9 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] group_identifier: If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input[str] instance_identifier: Use a variable to identify instances within a process group.
         :param pulumi.Input[str] process_type: Note: Not all types can be detected at startup.
         :param pulumi.Input[str] rule_type: Possible Values: `Prop`, `Env`
@@ -288,6 +338,7 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
 
         __props__.__dict__["enabled"] = enabled
         __props__.__dict__["group_identifier"] = group_identifier
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["instance_identifier"] = instance_identifier
         __props__.__dict__["process_type"] = process_type
         __props__.__dict__["rule_type"] = rule_type
@@ -308,6 +359,16 @@ class ProcessGroupSimpleDetection(pulumi.CustomResource):
         If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
         """
         return pulumi.get(self, "group_identifier")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter(name="instanceIdentifier")

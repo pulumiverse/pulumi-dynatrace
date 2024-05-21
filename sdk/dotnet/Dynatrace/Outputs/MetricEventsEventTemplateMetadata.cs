@@ -15,11 +15,11 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class MetricEventsEventTemplateMetadata
     {
         /// <summary>
-        /// The key of the metadata item
+        /// Type 'dt.' for key hints.
         /// </summary>
         public readonly string MetadataKey;
         /// <summary>
-        /// The value of the metadata item
+        /// no documentation available
         /// </summary>
         public readonly string MetadataValue;
 

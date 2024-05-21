@@ -29,12 +29,20 @@ type WebhookNotification struct {
 	NotifyClosedProblems pulumi.BoolPtrOutput `pulumi:"notifyClosedProblems"`
 	// Call webhook if new events merge into existing problems
 	NotifyEventMerges pulumi.BoolPtrOutput `pulumi:"notifyEventMerges"`
+	// To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+	Oauth2Credentials WebhookNotificationOauth2CredentialsPtrOutput `pulumi:"oauth2Credentials"`
 	// The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
 	Payload pulumi.StringOutput `pulumi:"payload"`
 	// The ID of the associated alerting profile
 	Profile pulumi.StringOutput `pulumi:"profile"`
+	// The secret URL of the webhook endpoint.
+	SecretUrl pulumi.StringPtrOutput `pulumi:"secretUrl"`
 	// The URL of the WebHook endpoint
-	Url pulumi.StringOutput `pulumi:"url"`
+	Url pulumi.StringPtrOutput `pulumi:"url"`
+	// Secret webhook URL
+	UrlContainsSecret pulumi.BoolPtrOutput `pulumi:"urlContainsSecret"`
+	// Use OAuth 2.0 for authentication
+	UseOauth2 pulumi.BoolPtrOutput `pulumi:"useOauth2"`
 }
 
 // NewWebhookNotification registers a new resource with the given unique name, arguments, and options.
@@ -53,9 +61,13 @@ func NewWebhookNotification(ctx *pulumi.Context,
 	if args.Profile == nil {
 		return nil, errors.New("invalid value for required argument 'Profile'")
 	}
-	if args.Url == nil {
-		return nil, errors.New("invalid value for required argument 'Url'")
+	if args.SecretUrl != nil {
+		args.SecretUrl = pulumi.ToSecret(args.SecretUrl).(pulumi.StringPtrInput)
 	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"secretUrl",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource WebhookNotification
 	err := ctx.RegisterResource("dynatrace:index/webhookNotification:WebhookNotification", name, args, &resource, opts...)
@@ -93,12 +105,20 @@ type webhookNotificationState struct {
 	NotifyClosedProblems *bool `pulumi:"notifyClosedProblems"`
 	// Call webhook if new events merge into existing problems
 	NotifyEventMerges *bool `pulumi:"notifyEventMerges"`
+	// To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+	Oauth2Credentials *WebhookNotificationOauth2Credentials `pulumi:"oauth2Credentials"`
 	// The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
 	Payload *string `pulumi:"payload"`
 	// The ID of the associated alerting profile
 	Profile *string `pulumi:"profile"`
+	// The secret URL of the webhook endpoint.
+	SecretUrl *string `pulumi:"secretUrl"`
 	// The URL of the WebHook endpoint
 	Url *string `pulumi:"url"`
+	// Secret webhook URL
+	UrlContainsSecret *bool `pulumi:"urlContainsSecret"`
+	// Use OAuth 2.0 for authentication
+	UseOauth2 *bool `pulumi:"useOauth2"`
 }
 
 type WebhookNotificationState struct {
@@ -116,12 +136,20 @@ type WebhookNotificationState struct {
 	NotifyClosedProblems pulumi.BoolPtrInput
 	// Call webhook if new events merge into existing problems
 	NotifyEventMerges pulumi.BoolPtrInput
+	// To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+	Oauth2Credentials WebhookNotificationOauth2CredentialsPtrInput
 	// The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
 	Payload pulumi.StringPtrInput
 	// The ID of the associated alerting profile
 	Profile pulumi.StringPtrInput
+	// The secret URL of the webhook endpoint.
+	SecretUrl pulumi.StringPtrInput
 	// The URL of the WebHook endpoint
 	Url pulumi.StringPtrInput
+	// Secret webhook URL
+	UrlContainsSecret pulumi.BoolPtrInput
+	// Use OAuth 2.0 for authentication
+	UseOauth2 pulumi.BoolPtrInput
 }
 
 func (WebhookNotificationState) ElementType() reflect.Type {
@@ -143,12 +171,20 @@ type webhookNotificationArgs struct {
 	NotifyClosedProblems *bool `pulumi:"notifyClosedProblems"`
 	// Call webhook if new events merge into existing problems
 	NotifyEventMerges *bool `pulumi:"notifyEventMerges"`
+	// To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+	Oauth2Credentials *WebhookNotificationOauth2Credentials `pulumi:"oauth2Credentials"`
 	// The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
 	Payload string `pulumi:"payload"`
 	// The ID of the associated alerting profile
 	Profile string `pulumi:"profile"`
+	// The secret URL of the webhook endpoint.
+	SecretUrl *string `pulumi:"secretUrl"`
 	// The URL of the WebHook endpoint
-	Url string `pulumi:"url"`
+	Url *string `pulumi:"url"`
+	// Secret webhook URL
+	UrlContainsSecret *bool `pulumi:"urlContainsSecret"`
+	// Use OAuth 2.0 for authentication
+	UseOauth2 *bool `pulumi:"useOauth2"`
 }
 
 // The set of arguments for constructing a WebhookNotification resource.
@@ -167,12 +203,20 @@ type WebhookNotificationArgs struct {
 	NotifyClosedProblems pulumi.BoolPtrInput
 	// Call webhook if new events merge into existing problems
 	NotifyEventMerges pulumi.BoolPtrInput
+	// To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+	Oauth2Credentials WebhookNotificationOauth2CredentialsPtrInput
 	// The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
 	Payload pulumi.StringInput
 	// The ID of the associated alerting profile
 	Profile pulumi.StringInput
+	// The secret URL of the webhook endpoint.
+	SecretUrl pulumi.StringPtrInput
 	// The URL of the WebHook endpoint
-	Url pulumi.StringInput
+	Url pulumi.StringPtrInput
+	// Secret webhook URL
+	UrlContainsSecret pulumi.BoolPtrInput
+	// Use OAuth 2.0 for authentication
+	UseOauth2 pulumi.BoolPtrInput
 }
 
 func (WebhookNotificationArgs) ElementType() reflect.Type {
@@ -297,6 +341,11 @@ func (o WebhookNotificationOutput) NotifyEventMerges() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *WebhookNotification) pulumi.BoolPtrOutput { return v.NotifyEventMerges }).(pulumi.BoolPtrOutput)
 }
 
+// To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+func (o WebhookNotificationOutput) Oauth2Credentials() WebhookNotificationOauth2CredentialsPtrOutput {
+	return o.ApplyT(func(v *WebhookNotification) WebhookNotificationOauth2CredentialsPtrOutput { return v.Oauth2Credentials }).(WebhookNotificationOauth2CredentialsPtrOutput)
+}
+
 // The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
 func (o WebhookNotificationOutput) Payload() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebhookNotification) pulumi.StringOutput { return v.Payload }).(pulumi.StringOutput)
@@ -307,9 +356,24 @@ func (o WebhookNotificationOutput) Profile() pulumi.StringOutput {
 	return o.ApplyT(func(v *WebhookNotification) pulumi.StringOutput { return v.Profile }).(pulumi.StringOutput)
 }
 
+// The secret URL of the webhook endpoint.
+func (o WebhookNotificationOutput) SecretUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebhookNotification) pulumi.StringPtrOutput { return v.SecretUrl }).(pulumi.StringPtrOutput)
+}
+
 // The URL of the WebHook endpoint
-func (o WebhookNotificationOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v *WebhookNotification) pulumi.StringOutput { return v.Url }).(pulumi.StringOutput)
+func (o WebhookNotificationOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WebhookNotification) pulumi.StringPtrOutput { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+// Secret webhook URL
+func (o WebhookNotificationOutput) UrlContainsSecret() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebhookNotification) pulumi.BoolPtrOutput { return v.UrlContainsSecret }).(pulumi.BoolPtrOutput)
+}
+
+// Use OAuth 2.0 for authentication
+func (o WebhookNotificationOutput) UseOauth2() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WebhookNotification) pulumi.BoolPtrOutput { return v.UseOauth2 }).(pulumi.BoolPtrOutput)
 }
 
 type WebhookNotificationArrayOutput struct{ *pulumi.OutputState }

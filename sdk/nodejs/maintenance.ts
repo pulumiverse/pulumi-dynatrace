@@ -35,13 +35,14 @@ export class Maintenance extends pulumi.CustomResource {
     }
 
     /**
-     * The maintenance window is enabled or disabled
+     * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean | undefined>;
+    public readonly enabled!: pulumi.Output<boolean>;
     /**
-     * The filters of the maintenance window
+     * ## Filters
+     * Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
      */
-    public readonly filters!: pulumi.Output<outputs.MaintenanceFilter[] | undefined>;
+    public readonly filters!: pulumi.Output<outputs.MaintenanceFilters | undefined>;
     /**
      * The general properties of the maintenance window
      */
@@ -75,6 +76,9 @@ export class Maintenance extends pulumi.CustomResource {
             resourceInputs["schedule"] = state ? state.schedule : undefined;
         } else {
             const args = argsOrState as MaintenanceArgs | undefined;
+            if ((!args || args.enabled === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'enabled'");
+            }
             if ((!args || args.generalProperties === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'generalProperties'");
             }
@@ -97,13 +101,14 @@ export class Maintenance extends pulumi.CustomResource {
  */
 export interface MaintenanceState {
     /**
-     * The maintenance window is enabled or disabled
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * The filters of the maintenance window
+     * ## Filters
+     * Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
      */
-    filters?: pulumi.Input<pulumi.Input<inputs.MaintenanceFilter>[]>;
+    filters?: pulumi.Input<inputs.MaintenanceFilters>;
     /**
      * The general properties of the maintenance window
      */
@@ -123,13 +128,14 @@ export interface MaintenanceState {
  */
 export interface MaintenanceArgs {
     /**
-     * The maintenance window is enabled or disabled
+     * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled: pulumi.Input<boolean>;
     /**
-     * The filters of the maintenance window
+     * ## Filters
+     * Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
      */
-    filters?: pulumi.Input<pulumi.Input<inputs.MaintenanceFilter>[]>;
+    filters?: pulumi.Input<inputs.MaintenanceFilters>;
     /**
      * The general properties of the maintenance window
      */

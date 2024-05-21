@@ -32,7 +32,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<Inputs.MaintenanceScheduleOnceRecurrenceGetArgs>? OnceRecurrence { get; set; }
 
         /// <summary>
-        /// The time window of the maintenance window
+        /// The type maintenance window, possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

@@ -15,10 +15,11 @@ import (
 type Maintenance struct {
 	pulumi.CustomResourceState
 
-	// The maintenance window is enabled or disabled
-	Enabled pulumi.BoolPtrOutput `pulumi:"enabled"`
-	// The filters of the maintenance window
-	Filters MaintenanceFilterArrayOutput `pulumi:"filters"`
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// ## Filters
+	// Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
+	Filters MaintenanceFiltersPtrOutput `pulumi:"filters"`
 	// The general properties of the maintenance window
 	GeneralProperties MaintenanceGeneralPropertiesOutput `pulumi:"generalProperties"`
 	// The ID of this setting when referred to by the Config REST API V1
@@ -34,6 +35,9 @@ func NewMaintenance(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
+	if args.Enabled == nil {
+		return nil, errors.New("invalid value for required argument 'Enabled'")
+	}
 	if args.GeneralProperties == nil {
 		return nil, errors.New("invalid value for required argument 'GeneralProperties'")
 	}
@@ -63,10 +67,11 @@ func GetMaintenance(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Maintenance resources.
 type maintenanceState struct {
-	// The maintenance window is enabled or disabled
+	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// The filters of the maintenance window
-	Filters []MaintenanceFilter `pulumi:"filters"`
+	// ## Filters
+	// Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
+	Filters *MaintenanceFilters `pulumi:"filters"`
 	// The general properties of the maintenance window
 	GeneralProperties *MaintenanceGeneralProperties `pulumi:"generalProperties"`
 	// The ID of this setting when referred to by the Config REST API V1
@@ -76,10 +81,11 @@ type maintenanceState struct {
 }
 
 type MaintenanceState struct {
-	// The maintenance window is enabled or disabled
+	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// The filters of the maintenance window
-	Filters MaintenanceFilterArrayInput
+	// ## Filters
+	// Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
+	Filters MaintenanceFiltersPtrInput
 	// The general properties of the maintenance window
 	GeneralProperties MaintenanceGeneralPropertiesPtrInput
 	// The ID of this setting when referred to by the Config REST API V1
@@ -93,10 +99,11 @@ func (MaintenanceState) ElementType() reflect.Type {
 }
 
 type maintenanceArgs struct {
-	// The maintenance window is enabled or disabled
-	Enabled *bool `pulumi:"enabled"`
-	// The filters of the maintenance window
-	Filters []MaintenanceFilter `pulumi:"filters"`
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled bool `pulumi:"enabled"`
+	// ## Filters
+	// Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
+	Filters *MaintenanceFilters `pulumi:"filters"`
 	// The general properties of the maintenance window
 	GeneralProperties MaintenanceGeneralProperties `pulumi:"generalProperties"`
 	// The ID of this setting when referred to by the Config REST API V1
@@ -107,10 +114,11 @@ type maintenanceArgs struct {
 
 // The set of arguments for constructing a Maintenance resource.
 type MaintenanceArgs struct {
-	// The maintenance window is enabled or disabled
-	Enabled pulumi.BoolPtrInput
-	// The filters of the maintenance window
-	Filters MaintenanceFilterArrayInput
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled pulumi.BoolInput
+	// ## Filters
+	// Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
+	Filters MaintenanceFiltersPtrInput
 	// The general properties of the maintenance window
 	GeneralProperties MaintenanceGeneralPropertiesInput
 	// The ID of this setting when referred to by the Config REST API V1
@@ -206,14 +214,15 @@ func (o MaintenanceOutput) ToMaintenanceOutputWithContext(ctx context.Context) M
 	return o
 }
 
-// The maintenance window is enabled or disabled
-func (o MaintenanceOutput) Enabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *Maintenance) pulumi.BoolPtrOutput { return v.Enabled }).(pulumi.BoolPtrOutput)
+// This setting is enabled (`true`) or disabled (`false`)
+func (o MaintenanceOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Maintenance) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// The filters of the maintenance window
-func (o MaintenanceOutput) Filters() MaintenanceFilterArrayOutput {
-	return o.ApplyT(func(v *Maintenance) MaintenanceFilterArrayOutput { return v.Filters }).(MaintenanceFilterArrayOutput)
+// ## Filters
+// Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
+func (o MaintenanceOutput) Filters() MaintenanceFiltersPtrOutput {
+	return o.ApplyT(func(v *Maintenance) MaintenanceFiltersPtrOutput { return v.Filters }).(MaintenanceFiltersPtrOutput)
 }
 
 // The general properties of the maintenance window

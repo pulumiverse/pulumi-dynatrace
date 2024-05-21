@@ -14,11 +14,11 @@ import (
 type QueueSharingGroups struct {
 	pulumi.CustomResourceState
 
-	// The name of the queue sharing group
+	// Queue sharing group name
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Queue manager(s) that belong to the queue sharing group
+	// Queue managers
 	QueueManagers pulumi.StringArrayOutput `pulumi:"queueManagers"`
-	// Shared queue(s) that belong to the queue sharing group
+	// Shared queues
 	SharedQueues pulumi.StringArrayOutput `pulumi:"sharedQueues"`
 }
 
@@ -52,20 +52,20 @@ func GetQueueSharingGroups(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering QueueSharingGroups resources.
 type queueSharingGroupsState struct {
-	// The name of the queue sharing group
+	// Queue sharing group name
 	Name *string `pulumi:"name"`
-	// Queue manager(s) that belong to the queue sharing group
+	// Queue managers
 	QueueManagers []string `pulumi:"queueManagers"`
-	// Shared queue(s) that belong to the queue sharing group
+	// Shared queues
 	SharedQueues []string `pulumi:"sharedQueues"`
 }
 
 type QueueSharingGroupsState struct {
-	// The name of the queue sharing group
+	// Queue sharing group name
 	Name pulumi.StringPtrInput
-	// Queue manager(s) that belong to the queue sharing group
+	// Queue managers
 	QueueManagers pulumi.StringArrayInput
-	// Shared queue(s) that belong to the queue sharing group
+	// Shared queues
 	SharedQueues pulumi.StringArrayInput
 }
 
@@ -74,21 +74,21 @@ func (QueueSharingGroupsState) ElementType() reflect.Type {
 }
 
 type queueSharingGroupsArgs struct {
-	// The name of the queue sharing group
+	// Queue sharing group name
 	Name *string `pulumi:"name"`
-	// Queue manager(s) that belong to the queue sharing group
+	// Queue managers
 	QueueManagers []string `pulumi:"queueManagers"`
-	// Shared queue(s) that belong to the queue sharing group
+	// Shared queues
 	SharedQueues []string `pulumi:"sharedQueues"`
 }
 
 // The set of arguments for constructing a QueueSharingGroups resource.
 type QueueSharingGroupsArgs struct {
-	// The name of the queue sharing group
+	// Queue sharing group name
 	Name pulumi.StringPtrInput
-	// Queue manager(s) that belong to the queue sharing group
+	// Queue managers
 	QueueManagers pulumi.StringArrayInput
-	// Shared queue(s) that belong to the queue sharing group
+	// Shared queues
 	SharedQueues pulumi.StringArrayInput
 }
 
@@ -179,17 +179,17 @@ func (o QueueSharingGroupsOutput) ToQueueSharingGroupsOutputWithContext(ctx cont
 	return o
 }
 
-// The name of the queue sharing group
+// Queue sharing group name
 func (o QueueSharingGroupsOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *QueueSharingGroups) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// Queue manager(s) that belong to the queue sharing group
+// Queue managers
 func (o QueueSharingGroupsOutput) QueueManagers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *QueueSharingGroups) pulumi.StringArrayOutput { return v.QueueManagers }).(pulumi.StringArrayOutput)
 }
 
-// Shared queue(s) that belong to the queue sharing group
+// Shared queues
 func (o QueueSharingGroupsOutput) SharedQueues() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *QueueSharingGroups) pulumi.StringArrayOutput { return v.SharedQueues }).(pulumi.StringArrayOutput)
 }

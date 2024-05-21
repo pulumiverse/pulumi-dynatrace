@@ -47,6 +47,10 @@ export class ApiDetection extends pulumi.CustomResource {
      */
     public readonly conditions!: pulumi.Output<outputs.ApiDetectionConditions | undefined>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Restrict this rule to a specific technology.
      */
     public readonly technology!: pulumi.Output<string | undefined>;
@@ -71,6 +75,7 @@ export class ApiDetection extends pulumi.CustomResource {
             resourceInputs["apiColor"] = state ? state.apiColor : undefined;
             resourceInputs["apiName"] = state ? state.apiName : undefined;
             resourceInputs["conditions"] = state ? state.conditions : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["technology"] = state ? state.technology : undefined;
             resourceInputs["thirdPartyApi"] = state ? state.thirdPartyApi : undefined;
         } else {
@@ -87,6 +92,7 @@ export class ApiDetection extends pulumi.CustomResource {
             resourceInputs["apiColor"] = args ? args.apiColor : undefined;
             resourceInputs["apiName"] = args ? args.apiName : undefined;
             resourceInputs["conditions"] = args ? args.conditions : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["technology"] = args ? args.technology : undefined;
             resourceInputs["thirdPartyApi"] = args ? args.thirdPartyApi : undefined;
         }
@@ -111,6 +117,10 @@ export interface ApiDetectionState {
      * List of conditions
      */
     conditions?: pulumi.Input<inputs.ApiDetectionConditions>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Restrict this rule to a specific technology.
      */
@@ -137,6 +147,10 @@ export interface ApiDetectionArgs {
      * List of conditions
      */
     conditions?: pulumi.Input<inputs.ApiDetectionConditions>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Restrict this rule to a specific technology.
      */

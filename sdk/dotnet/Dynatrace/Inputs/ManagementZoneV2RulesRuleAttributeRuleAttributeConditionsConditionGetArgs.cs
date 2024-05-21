@@ -68,7 +68,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<string>? StringValue { get; set; }
 
         /// <summary>
-        /// Tag. Format: `[CONTEXT]tagKey:tagValue`
+        /// Format: `[CONTEXT]tagKey:tagValue`
         /// </summary>
         [Input("tag")]
         public Input<string>? Tag { get; set; }

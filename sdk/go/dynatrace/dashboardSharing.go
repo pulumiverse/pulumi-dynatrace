@@ -12,6 +12,10 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This is a child resource of dynatrace_json_dashboard, therefore it is automatically retrieved with the dashboard.
+//
+// > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+//
 // ## Dynatrace Documentation
 //
 // - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
@@ -22,11 +26,13 @@ type DashboardSharing struct {
 
 	// The Dynatrace entity ID of the dashboard
 	DashboardId pulumi.StringOutput `pulumi:"dashboardId"`
-	// The dashboard is shared (`true`) or private (`false`)
+	// The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
 	Enabled pulumi.BoolPtrOutput `pulumi:"enabled"`
+	// Reserved for internal use by the provider
+	Muted pulumi.BoolOutput `pulumi:"muted"`
 	// Access permissions of the dashboard
 	Permissions DashboardSharingPermissionsPtrOutput `pulumi:"permissions"`
-	// If `true` the dashboard will be marked as preset
+	// If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
 	Preset pulumi.BoolPtrOutput `pulumi:"preset"`
 	// Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
 	Public DashboardSharingPublicPtrOutput `pulumi:"public"`
@@ -67,11 +73,13 @@ func GetDashboardSharing(ctx *pulumi.Context,
 type dashboardSharingState struct {
 	// The Dynatrace entity ID of the dashboard
 	DashboardId *string `pulumi:"dashboardId"`
-	// The dashboard is shared (`true`) or private (`false`)
+	// The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
 	Enabled *bool `pulumi:"enabled"`
+	// Reserved for internal use by the provider
+	Muted *bool `pulumi:"muted"`
 	// Access permissions of the dashboard
 	Permissions *DashboardSharingPermissions `pulumi:"permissions"`
-	// If `true` the dashboard will be marked as preset
+	// If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
 	Preset *bool `pulumi:"preset"`
 	// Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
 	Public *DashboardSharingPublic `pulumi:"public"`
@@ -80,11 +88,13 @@ type dashboardSharingState struct {
 type DashboardSharingState struct {
 	// The Dynatrace entity ID of the dashboard
 	DashboardId pulumi.StringPtrInput
-	// The dashboard is shared (`true`) or private (`false`)
+	// The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
 	Enabled pulumi.BoolPtrInput
+	// Reserved for internal use by the provider
+	Muted pulumi.BoolPtrInput
 	// Access permissions of the dashboard
 	Permissions DashboardSharingPermissionsPtrInput
-	// If `true` the dashboard will be marked as preset
+	// If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
 	Preset pulumi.BoolPtrInput
 	// Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
 	Public DashboardSharingPublicPtrInput
@@ -97,11 +107,11 @@ func (DashboardSharingState) ElementType() reflect.Type {
 type dashboardSharingArgs struct {
 	// The Dynatrace entity ID of the dashboard
 	DashboardId string `pulumi:"dashboardId"`
-	// The dashboard is shared (`true`) or private (`false`)
+	// The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
 	Enabled *bool `pulumi:"enabled"`
 	// Access permissions of the dashboard
 	Permissions *DashboardSharingPermissions `pulumi:"permissions"`
-	// If `true` the dashboard will be marked as preset
+	// If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
 	Preset *bool `pulumi:"preset"`
 	// Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
 	Public *DashboardSharingPublic `pulumi:"public"`
@@ -111,11 +121,11 @@ type dashboardSharingArgs struct {
 type DashboardSharingArgs struct {
 	// The Dynatrace entity ID of the dashboard
 	DashboardId pulumi.StringInput
-	// The dashboard is shared (`true`) or private (`false`)
+	// The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
 	Enabled pulumi.BoolPtrInput
 	// Access permissions of the dashboard
 	Permissions DashboardSharingPermissionsPtrInput
-	// If `true` the dashboard will be marked as preset
+	// If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
 	Preset pulumi.BoolPtrInput
 	// Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
 	Public DashboardSharingPublicPtrInput
@@ -213,9 +223,14 @@ func (o DashboardSharingOutput) DashboardId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DashboardSharing) pulumi.StringOutput { return v.DashboardId }).(pulumi.StringOutput)
 }
 
-// The dashboard is shared (`true`) or private (`false`)
+// The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
 func (o DashboardSharingOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DashboardSharing) pulumi.BoolPtrOutput { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+// Reserved for internal use by the provider
+func (o DashboardSharingOutput) Muted() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DashboardSharing) pulumi.BoolOutput { return v.Muted }).(pulumi.BoolOutput)
 }
 
 // Access permissions of the dashboard
@@ -223,7 +238,7 @@ func (o DashboardSharingOutput) Permissions() DashboardSharingPermissionsPtrOutp
 	return o.ApplyT(func(v *DashboardSharing) DashboardSharingPermissionsPtrOutput { return v.Permissions }).(DashboardSharingPermissionsPtrOutput)
 }
 
-// If `true` the dashboard will be marked as preset
+// If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
 func (o DashboardSharingOutput) Preset() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DashboardSharing) pulumi.BoolPtrOutput { return v.Preset }).(pulumi.BoolPtrOutput)
 }

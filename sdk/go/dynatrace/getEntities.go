@@ -30,7 +30,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			test, err := dynatrace.GetEntities(ctx, &dynatrace.GetEntitiesArgs{
-//				Type: "SERVICE",
+//				Type: pulumi.StringRef("SERVICE"),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -53,16 +53,21 @@ func GetEntities(ctx *pulumi.Context, args *GetEntitiesArgs, opts ...pulumi.Invo
 
 // A collection of arguments for invoking getEntities.
 type GetEntitiesArgs struct {
-	Entities *GetEntitiesEntities `pulumi:"entities"`
-	Type     string               `pulumi:"type"`
+	EntitySelector *string `pulumi:"entitySelector"`
+	From           *string `pulumi:"from"`
+	To             *string `pulumi:"to"`
+	Type           *string `pulumi:"type"`
 }
 
 // A collection of values returned by getEntities.
 type GetEntitiesResult struct {
-	Entities GetEntitiesEntities `pulumi:"entities"`
+	Entities       []GetEntitiesEntity `pulumi:"entities"`
+	EntitySelector *string             `pulumi:"entitySelector"`
+	From           *string             `pulumi:"from"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Type string `pulumi:"type"`
+	Id   string  `pulumi:"id"`
+	To   *string `pulumi:"to"`
+	Type *string `pulumi:"type"`
 }
 
 func GetEntitiesOutput(ctx *pulumi.Context, args GetEntitiesOutputArgs, opts ...pulumi.InvokeOption) GetEntitiesResultOutput {
@@ -80,8 +85,10 @@ func GetEntitiesOutput(ctx *pulumi.Context, args GetEntitiesOutputArgs, opts ...
 
 // A collection of arguments for invoking getEntities.
 type GetEntitiesOutputArgs struct {
-	Entities GetEntitiesEntitiesPtrInput `pulumi:"entities"`
-	Type     pulumi.StringInput          `pulumi:"type"`
+	EntitySelector pulumi.StringPtrInput `pulumi:"entitySelector"`
+	From           pulumi.StringPtrInput `pulumi:"from"`
+	To             pulumi.StringPtrInput `pulumi:"to"`
+	Type           pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetEntitiesOutputArgs) ElementType() reflect.Type {
@@ -103,8 +110,16 @@ func (o GetEntitiesResultOutput) ToGetEntitiesResultOutputWithContext(ctx contex
 	return o
 }
 
-func (o GetEntitiesResultOutput) Entities() GetEntitiesEntitiesOutput {
-	return o.ApplyT(func(v GetEntitiesResult) GetEntitiesEntities { return v.Entities }).(GetEntitiesEntitiesOutput)
+func (o GetEntitiesResultOutput) Entities() GetEntitiesEntityArrayOutput {
+	return o.ApplyT(func(v GetEntitiesResult) []GetEntitiesEntity { return v.Entities }).(GetEntitiesEntityArrayOutput)
+}
+
+func (o GetEntitiesResultOutput) EntitySelector() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEntitiesResult) *string { return v.EntitySelector }).(pulumi.StringPtrOutput)
+}
+
+func (o GetEntitiesResultOutput) From() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEntitiesResult) *string { return v.From }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
@@ -112,8 +127,12 @@ func (o GetEntitiesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEntitiesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o GetEntitiesResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEntitiesResult) string { return v.Type }).(pulumi.StringOutput)
+func (o GetEntitiesResultOutput) To() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEntitiesResult) *string { return v.To }).(pulumi.StringPtrOutput)
+}
+
+func (o GetEntitiesResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEntitiesResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

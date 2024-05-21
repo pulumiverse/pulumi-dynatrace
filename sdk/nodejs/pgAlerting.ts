@@ -33,16 +33,15 @@ export class PgAlerting extends pulumi.CustomResource {
     }
 
     /**
-     * **if any process becomes unavailable:**
-     * Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+     * Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
      */
     public readonly alertingMode!: pulumi.Output<string | undefined>;
     /**
-     * Enable process group availability monitoring
+     * Enable (`true`) or disable (`false`) process group availability monitoring
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
-     * Open a new problem if the number of active process instances in the group is fewer than:
+     * Open a new problem if the number of active process instances in the group is fewer than X
      */
     public readonly minimumInstanceThreshold!: pulumi.Output<number | undefined>;
     /**
@@ -90,16 +89,15 @@ export class PgAlerting extends pulumi.CustomResource {
  */
 export interface PgAlertingState {
     /**
-     * **if any process becomes unavailable:**
-     * Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+     * Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
      */
     alertingMode?: pulumi.Input<string>;
     /**
-     * Enable process group availability monitoring
+     * Enable (`true`) or disable (`false`) process group availability monitoring
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * Open a new problem if the number of active process instances in the group is fewer than:
+     * Open a new problem if the number of active process instances in the group is fewer than X
      */
     minimumInstanceThreshold?: pulumi.Input<number>;
     /**
@@ -113,16 +111,15 @@ export interface PgAlertingState {
  */
 export interface PgAlertingArgs {
     /**
-     * **if any process becomes unavailable:**
-     * Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+     * Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
      */
     alertingMode?: pulumi.Input<string>;
     /**
-     * Enable process group availability monitoring
+     * Enable (`true`) or disable (`false`) process group availability monitoring
      */
     enabled: pulumi.Input<boolean>;
     /**
-     * Open a new problem if the number of active process instances in the group is fewer than:
+     * Open a new problem if the number of active process instances in the group is fewer than X
      */
     minimumInstanceThreshold?: pulumi.Input<number>;
     /**

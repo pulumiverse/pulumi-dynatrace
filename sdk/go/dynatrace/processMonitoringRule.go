@@ -21,6 +21,8 @@ type ProcessMonitoringRule struct {
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
 	HostGroupId pulumi.StringPtrOutput `pulumi:"hostGroupId"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Possible Values: `MONITORING_ON`, `MONITORING_OFF`
 	Mode pulumi.StringOutput `pulumi:"mode"`
 }
@@ -70,6 +72,8 @@ type processMonitoringRuleState struct {
 	Enabled *bool `pulumi:"enabled"`
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
 	HostGroupId *string `pulumi:"hostGroupId"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Possible Values: `MONITORING_ON`, `MONITORING_OFF`
 	Mode *string `pulumi:"mode"`
 }
@@ -81,6 +85,8 @@ type ProcessMonitoringRuleState struct {
 	Enabled pulumi.BoolPtrInput
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
 	HostGroupId pulumi.StringPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Possible Values: `MONITORING_ON`, `MONITORING_OFF`
 	Mode pulumi.StringPtrInput
 }
@@ -96,6 +102,8 @@ type processMonitoringRuleArgs struct {
 	Enabled bool `pulumi:"enabled"`
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
 	HostGroupId *string `pulumi:"hostGroupId"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Possible Values: `MONITORING_ON`, `MONITORING_OFF`
 	Mode string `pulumi:"mode"`
 }
@@ -108,6 +116,8 @@ type ProcessMonitoringRuleArgs struct {
 	Enabled pulumi.BoolInput
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
 	HostGroupId pulumi.StringPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Possible Values: `MONITORING_ON`, `MONITORING_OFF`
 	Mode pulumi.StringInput
 }
@@ -212,6 +222,11 @@ func (o ProcessMonitoringRuleOutput) Enabled() pulumi.BoolOutput {
 // The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
 func (o ProcessMonitoringRuleOutput) HostGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProcessMonitoringRule) pulumi.StringPtrOutput { return v.HostGroupId }).(pulumi.StringPtrOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o ProcessMonitoringRuleOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *ProcessMonitoringRule) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // Possible Values: `MONITORING_ON`, `MONITORING_OFF`

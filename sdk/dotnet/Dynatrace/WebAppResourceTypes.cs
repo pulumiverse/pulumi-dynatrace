@@ -14,6 +14,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public partial class WebAppResourceTypes : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Output("insertAfter")]
+        public Output<string> InsertAfter { get; private set; } = null!;
+
+        /// <summary>
         /// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         /// </summary>
         [Output("primaryResourceType")]
@@ -79,6 +85,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class WebAppResourceTypesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
+
+        /// <summary>
         /// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         /// </summary>
         [Input("primaryResourceType", required: true)]
@@ -104,6 +116,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
 
     public sealed class WebAppResourceTypesState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
+
         /// <summary>
         /// Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
         /// </summary>

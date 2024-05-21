@@ -24,7 +24,10 @@ class SyntheticLocationArgs:
                  country_code: Optional[pulumi.Input[str]] = None,
                  deployment_type: Optional[pulumi.Input[str]] = None,
                  location_node_outage_delay_in_minutes: Optional[pulumi.Input[int]] = None,
+                 max_active_gate_count: Optional[pulumi.Input[int]] = None,
+                 min_active_gate_count: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 node_size: Optional[pulumi.Input[str]] = None,
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  region_code: Optional[pulumi.Input[str]] = None):
         """
@@ -42,7 +45,10 @@ class SyntheticLocationArgs:
                location is deployed on Kubernetes
         :param pulumi.Input[int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
                **availability_location_outage** or **availability_node_outage** is set to `true`
+        :param pulumi.Input[int] max_active_gate_count: The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        :param pulumi.Input[int] min_active_gate_count: The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
         :param pulumi.Input[str] name: The name of the location
+        :param pulumi.Input[str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nodes: A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
                nodes](https://dt-url.net/miy3rpl) call
         :param pulumi.Input[str] region_code: The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
@@ -67,8 +73,14 @@ class SyntheticLocationArgs:
             pulumi.set(__self__, "deployment_type", deployment_type)
         if location_node_outage_delay_in_minutes is not None:
             pulumi.set(__self__, "location_node_outage_delay_in_minutes", location_node_outage_delay_in_minutes)
+        if max_active_gate_count is not None:
+            pulumi.set(__self__, "max_active_gate_count", max_active_gate_count)
+        if min_active_gate_count is not None:
+            pulumi.set(__self__, "min_active_gate_count", min_active_gate_count)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if node_size is not None:
+            pulumi.set(__self__, "node_size", node_size)
         if nodes is not None:
             pulumi.set(__self__, "nodes", nodes)
         if region_code is not None:
@@ -198,6 +210,30 @@ class SyntheticLocationArgs:
         pulumi.set(self, "location_node_outage_delay_in_minutes", value)
 
     @property
+    @pulumi.getter(name="maxActiveGateCount")
+    def max_active_gate_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        """
+        return pulumi.get(self, "max_active_gate_count")
+
+    @max_active_gate_count.setter
+    def max_active_gate_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_active_gate_count", value)
+
+    @property
+    @pulumi.getter(name="minActiveGateCount")
+    def min_active_gate_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        """
+        return pulumi.get(self, "min_active_gate_count")
+
+    @min_active_gate_count.setter
+    def min_active_gate_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_active_gate_count", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -208,6 +244,18 @@ class SyntheticLocationArgs:
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="nodeSize")
+    def node_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
+        """
+        return pulumi.get(self, "node_size")
+
+    @node_size.setter
+    def node_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "node_size", value)
 
     @property
     @pulumi.getter
@@ -250,7 +298,10 @@ class _SyntheticLocationState:
                  latitude: Optional[pulumi.Input[float]] = None,
                  location_node_outage_delay_in_minutes: Optional[pulumi.Input[int]] = None,
                  longitude: Optional[pulumi.Input[float]] = None,
+                 max_active_gate_count: Optional[pulumi.Input[int]] = None,
+                 min_active_gate_count: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 node_size: Optional[pulumi.Input[str]] = None,
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  region_code: Optional[pulumi.Input[str]] = None):
         """
@@ -268,7 +319,10 @@ class _SyntheticLocationState:
         :param pulumi.Input[int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
                **availability_location_outage** or **availability_node_outage** is set to `true`
         :param pulumi.Input[float] longitude: The longitude of the location in `DDD.dddd` format
+        :param pulumi.Input[int] max_active_gate_count: The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        :param pulumi.Input[int] min_active_gate_count: The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
         :param pulumi.Input[str] name: The name of the location
+        :param pulumi.Input[str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nodes: A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
                nodes](https://dt-url.net/miy3rpl) call
         :param pulumi.Input[str] region_code: The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
@@ -295,8 +349,14 @@ class _SyntheticLocationState:
             pulumi.set(__self__, "location_node_outage_delay_in_minutes", location_node_outage_delay_in_minutes)
         if longitude is not None:
             pulumi.set(__self__, "longitude", longitude)
+        if max_active_gate_count is not None:
+            pulumi.set(__self__, "max_active_gate_count", max_active_gate_count)
+        if min_active_gate_count is not None:
+            pulumi.set(__self__, "min_active_gate_count", min_active_gate_count)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if node_size is not None:
+            pulumi.set(__self__, "node_size", node_size)
         if nodes is not None:
             pulumi.set(__self__, "nodes", nodes)
         if region_code is not None:
@@ -426,6 +486,30 @@ class _SyntheticLocationState:
         pulumi.set(self, "longitude", value)
 
     @property
+    @pulumi.getter(name="maxActiveGateCount")
+    def max_active_gate_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        """
+        return pulumi.get(self, "max_active_gate_count")
+
+    @max_active_gate_count.setter
+    def max_active_gate_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_active_gate_count", value)
+
+    @property
+    @pulumi.getter(name="minActiveGateCount")
+    def min_active_gate_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        """
+        return pulumi.get(self, "min_active_gate_count")
+
+    @min_active_gate_count.setter
+    def min_active_gate_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "min_active_gate_count", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -436,6 +520,18 @@ class _SyntheticLocationState:
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="nodeSize")
+    def node_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
+        """
+        return pulumi.get(self, "node_size")
+
+    @node_size.setter
+    def node_size(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "node_size", value)
 
     @property
     @pulumi.getter
@@ -480,7 +576,10 @@ class SyntheticLocation(pulumi.CustomResource):
                  latitude: Optional[pulumi.Input[float]] = None,
                  location_node_outage_delay_in_minutes: Optional[pulumi.Input[int]] = None,
                  longitude: Optional[pulumi.Input[float]] = None,
+                 max_active_gate_count: Optional[pulumi.Input[int]] = None,
+                 min_active_gate_count: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 node_size: Optional[pulumi.Input[str]] = None,
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  region_code: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -501,7 +600,10 @@ class SyntheticLocation(pulumi.CustomResource):
         :param pulumi.Input[int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
                **availability_location_outage** or **availability_node_outage** is set to `true`
         :param pulumi.Input[float] longitude: The longitude of the location in `DDD.dddd` format
+        :param pulumi.Input[int] max_active_gate_count: The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        :param pulumi.Input[int] min_active_gate_count: The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
         :param pulumi.Input[str] name: The name of the location
+        :param pulumi.Input[str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nodes: A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
                nodes](https://dt-url.net/miy3rpl) call
         :param pulumi.Input[str] region_code: The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
@@ -541,7 +643,10 @@ class SyntheticLocation(pulumi.CustomResource):
                  latitude: Optional[pulumi.Input[float]] = None,
                  location_node_outage_delay_in_minutes: Optional[pulumi.Input[int]] = None,
                  longitude: Optional[pulumi.Input[float]] = None,
+                 max_active_gate_count: Optional[pulumi.Input[int]] = None,
+                 min_active_gate_count: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 node_size: Optional[pulumi.Input[str]] = None,
                  nodes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  region_code: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -567,7 +672,10 @@ class SyntheticLocation(pulumi.CustomResource):
             if longitude is None and not opts.urn:
                 raise TypeError("Missing required property 'longitude'")
             __props__.__dict__["longitude"] = longitude
+            __props__.__dict__["max_active_gate_count"] = max_active_gate_count
+            __props__.__dict__["min_active_gate_count"] = min_active_gate_count
             __props__.__dict__["name"] = name
+            __props__.__dict__["node_size"] = node_size
             __props__.__dict__["nodes"] = nodes
             __props__.__dict__["region_code"] = region_code
         super(SyntheticLocation, __self__).__init__(
@@ -590,7 +698,10 @@ class SyntheticLocation(pulumi.CustomResource):
             latitude: Optional[pulumi.Input[float]] = None,
             location_node_outage_delay_in_minutes: Optional[pulumi.Input[int]] = None,
             longitude: Optional[pulumi.Input[float]] = None,
+            max_active_gate_count: Optional[pulumi.Input[int]] = None,
+            min_active_gate_count: Optional[pulumi.Input[int]] = None,
             name: Optional[pulumi.Input[str]] = None,
+            node_size: Optional[pulumi.Input[str]] = None,
             nodes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             region_code: Optional[pulumi.Input[str]] = None) -> 'SyntheticLocation':
         """
@@ -613,7 +724,10 @@ class SyntheticLocation(pulumi.CustomResource):
         :param pulumi.Input[int] location_node_outage_delay_in_minutes: Alert if the location or node outage lasts longer than *X* minutes. Only applicable when
                **availability_location_outage** or **availability_node_outage** is set to `true`
         :param pulumi.Input[float] longitude: The longitude of the location in `DDD.dddd` format
+        :param pulumi.Input[int] max_active_gate_count: The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        :param pulumi.Input[int] min_active_gate_count: The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
         :param pulumi.Input[str] name: The name of the location
+        :param pulumi.Input[str] node_size: Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nodes: A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
                nodes](https://dt-url.net/miy3rpl) call
         :param pulumi.Input[str] region_code: The region code of the location. For the [USA](https://dt-url.net/iso3166us) or [Canada](https://dt-url.net/iso3166ca)
@@ -634,7 +748,10 @@ class SyntheticLocation(pulumi.CustomResource):
         __props__.__dict__["latitude"] = latitude
         __props__.__dict__["location_node_outage_delay_in_minutes"] = location_node_outage_delay_in_minutes
         __props__.__dict__["longitude"] = longitude
+        __props__.__dict__["max_active_gate_count"] = max_active_gate_count
+        __props__.__dict__["min_active_gate_count"] = min_active_gate_count
         __props__.__dict__["name"] = name
+        __props__.__dict__["node_size"] = node_size
         __props__.__dict__["nodes"] = nodes
         __props__.__dict__["region_code"] = region_code
         return SyntheticLocation(resource_name, opts=opts, __props__=__props__)
@@ -723,12 +840,36 @@ class SyntheticLocation(pulumi.CustomResource):
         return pulumi.get(self, "longitude")
 
     @property
+    @pulumi.getter(name="maxActiveGateCount")
+    def max_active_gate_count(self) -> pulumi.Output[Optional[int]]:
+        """
+        The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        """
+        return pulumi.get(self, "max_active_gate_count")
+
+    @property
+    @pulumi.getter(name="minActiveGateCount")
+    def min_active_gate_count(self) -> pulumi.Output[Optional[int]]:
+        """
+        The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        """
+        return pulumi.get(self, "min_active_gate_count")
+
+    @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
         The name of the location
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="nodeSize")
+    def node_size(self) -> pulumi.Output[Optional[str]]:
+        """
+        Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
+        """
+        return pulumi.get(self, "node_size")
 
     @property
     @pulumi.getter

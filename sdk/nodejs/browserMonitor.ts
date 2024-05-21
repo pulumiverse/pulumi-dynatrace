@@ -49,7 +49,7 @@ export class BrowserMonitor extends pulumi.CustomResource {
     /**
      * The key performance metrics configuration
      */
-    public readonly keyPerformanceMetrics!: pulumi.Output<outputs.BrowserMonitorKeyPerformanceMetrics | undefined>;
+    public readonly keyPerformanceMetrics!: pulumi.Output<outputs.BrowserMonitorKeyPerformanceMetrics>;
     /**
      * A list of locations from which the monitor is executed. To specify a location, use its entity ID.
      */
@@ -98,6 +98,9 @@ export class BrowserMonitor extends pulumi.CustomResource {
             const args = argsOrState as BrowserMonitorArgs | undefined;
             if ((!args || args.frequency === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'frequency'");
+            }
+            if ((!args || args.keyPerformanceMetrics === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'keyPerformanceMetrics'");
             }
             resourceInputs["anomalyDetection"] = args ? args.anomalyDetection : undefined;
             resourceInputs["enabled"] = args ? args.enabled : undefined;
@@ -176,7 +179,7 @@ export interface BrowserMonitorArgs {
     /**
      * The key performance metrics configuration
      */
-    keyPerformanceMetrics?: pulumi.Input<inputs.BrowserMonitorKeyPerformanceMetrics>;
+    keyPerformanceMetrics: pulumi.Input<inputs.BrowserMonitorKeyPerformanceMetrics>;
     /**
      * A list of locations from which the monitor is executed. To specify a location, use its entity ID.
      */

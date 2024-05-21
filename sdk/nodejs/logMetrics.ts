@@ -33,7 +33,7 @@ export class LogMetrics extends pulumi.CustomResource {
     }
 
     /**
-     * no documentation available
+     * To enable splitting on your metric, add desired dimensions.
      */
     public readonly dimensions!: pulumi.Output<string[] | undefined>;
     /**
@@ -107,7 +107,7 @@ export class LogMetrics extends pulumi.CustomResource {
  */
 export interface LogMetricsState {
     /**
-     * no documentation available
+     * To enable splitting on your metric, add desired dimensions.
      */
     dimensions?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -137,7 +137,7 @@ export interface LogMetricsState {
  */
 export interface LogMetricsArgs {
     /**
-     * no documentation available
+     * To enable splitting on your metric, add desired dimensions.
      */
     dimensions?: pulumi.Input<pulumi.Input<string>[]>;
     /**

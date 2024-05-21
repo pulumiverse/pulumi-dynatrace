@@ -20,7 +20,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<bool> DetectAsWebRequestService { get; set; } = null!;
 
         /// <summary>
-        /// Let the Port contribute to the Service Id
+        /// Let the port contribute to the Service Id
         /// </summary>
         [Input("portForServiceId")]
         public Input<bool>? PortForServiceId { get; set; }

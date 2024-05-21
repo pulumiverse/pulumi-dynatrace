@@ -15,7 +15,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class ServiceAnomaliesV2LoadDrops
     {
         /// <summary>
-        /// Detect service load drops
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         public readonly bool Enabled;
         /// <summary>

@@ -38,10 +38,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<Outputs.ServiceAnomaliesV2ResponseTime> ResponseTime { get; private set; } = null!;
 
         /// <summary>
-        /// The scope for the service anomaly detection
+        /// The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Output("scope")]
-        public Output<string> Scope { get; private set; } = null!;
+        public Output<string?> Scope { get; private set; } = null!;
 
 
         /// <summary>
@@ -115,10 +115,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<Inputs.ServiceAnomaliesV2ResponseTimeArgs> ResponseTime { get; set; } = null!;
 
         /// <summary>
-        /// The scope for the service anomaly detection
+        /// The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
-        [Input("scope", required: true)]
-        public Input<string> Scope { get; set; } = null!;
+        [Input("scope")]
+        public Input<string>? Scope { get; set; }
 
         public ServiceAnomaliesV2Args()
         {
@@ -153,7 +153,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<Inputs.ServiceAnomaliesV2ResponseTimeGetArgs>? ResponseTime { get; set; }
 
         /// <summary>
-        /// The scope for the service anomaly detection
+        /// The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }

@@ -15,7 +15,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class MetricEventsModelProperties
     {
         /// <summary>
-        /// The alert condition of the model properties
+        /// Possible Values: `ABOVE`, `BELOW`, `OUTSIDE`
         /// </summary>
         public readonly string AlertCondition;
         /// <summary>
@@ -43,7 +43,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly double? Tolerance;
         /// <summary>
-        /// Metric-key-based query definitions only support static thresholds.
+        /// Possible Values: `AUTO_ADAPTIVE_THRESHOLD`, `SEASONAL_BASELINE`, `STATIC_THRESHOLD`
         /// </summary>
         public readonly string Type;
         /// <summary>

@@ -39,6 +39,10 @@ export class SpanContextPropagation extends pulumi.CustomResource {
      */
     public readonly action!: pulumi.Output<string>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Matching strategies for the Span
      */
     public readonly matches!: pulumi.Output<outputs.SpanContextPropagationMatches>;
@@ -61,6 +65,7 @@ export class SpanContextPropagation extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as SpanContextPropagationState | undefined;
             resourceInputs["action"] = state ? state.action : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["matches"] = state ? state.matches : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
         } else {
@@ -72,6 +77,7 @@ export class SpanContextPropagation extends pulumi.CustomResource {
                 throw new Error("Missing required property 'matches'");
             }
             resourceInputs["action"] = args ? args.action : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["matches"] = args ? args.matches : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
         }
@@ -88,6 +94,10 @@ export interface SpanContextPropagationState {
      * Whether to create an entry point or not
      */
     action?: pulumi.Input<string>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Matching strategies for the Span
      */
@@ -106,6 +116,10 @@ export interface SpanContextPropagationArgs {
      * Whether to create an entry point or not
      */
     action: pulumi.Input<string>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Matching strategies for the Span
      */

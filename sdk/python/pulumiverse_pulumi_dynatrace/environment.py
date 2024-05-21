@@ -232,6 +232,8 @@ class Environment(pulumi.CustomResource):
                  trial: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
+        > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+
         ## Dynatrace Documentation
 
         - Manage your monitoring environments - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-managed/operation/manage-your-monitoring-environments
@@ -254,6 +256,8 @@ class Environment(pulumi.CustomResource):
                  args: EnvironmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > This resource requires the cluster API token scope **Service Provider API** (`ServiceProviderAPI`)
+
         ## Dynatrace Documentation
 
         - Manage your monitoring environments - https://www.dynatrace.com/support/help/setup-and-configuration/dynatrace-managed/operation/manage-your-monitoring-environments

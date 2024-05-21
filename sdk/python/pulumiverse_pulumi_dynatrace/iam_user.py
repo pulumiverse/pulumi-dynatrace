@@ -46,7 +46,8 @@ class IamUserArgs:
 class _IamUserState:
     def __init__(__self__, *,
                  email: Optional[pulumi.Input[str]] = None,
-                 groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 uid: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering IamUser resources.
         """
@@ -54,6 +55,8 @@ class _IamUserState:
             pulumi.set(__self__, "email", email)
         if groups is not None:
             pulumi.set(__self__, "groups", groups)
+        if uid is not None:
+            pulumi.set(__self__, "uid", uid)
 
     @property
     @pulumi.getter
@@ -73,6 +76,15 @@ class _IamUserState:
     def groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "groups", value)
 
+    @property
+    @pulumi.getter
+    def uid(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "uid")
+
+    @uid.setter
+    def uid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "uid", value)
+
 
 class IamUser(pulumi.CustomResource):
     @overload
@@ -83,6 +95,10 @@ class IamUser(pulumi.CustomResource):
                  groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
+        > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
+
+        > This resource requires the API token scopes **Allow read access for identity resources (users and groups)** (`account-idm-read`) and **Allow write access for identity resources (users and groups)** (`account-idm-write`)
+
         ## Dynatrace Documentation
 
         - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -121,6 +137,10 @@ class IamUser(pulumi.CustomResource):
                  args: IamUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
+
+        > This resource requires the API token scopes **Allow read access for identity resources (users and groups)** (`account-idm-read`) and **Allow write access for identity resources (users and groups)** (`account-idm-write`)
+
         ## Dynatrace Documentation
 
         - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -179,6 +199,7 @@ class IamUser(pulumi.CustomResource):
                 raise TypeError("Missing required property 'email'")
             __props__.__dict__["email"] = email
             __props__.__dict__["groups"] = groups
+            __props__.__dict__["uid"] = None
         super(IamUser, __self__).__init__(
             'dynatrace:index/iamUser:IamUser',
             resource_name,
@@ -190,7 +211,8 @@ class IamUser(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             email: Optional[pulumi.Input[str]] = None,
-            groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'IamUser':
+            groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            uid: Optional[pulumi.Input[str]] = None) -> 'IamUser':
         """
         Get an existing IamUser resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -205,6 +227,7 @@ class IamUser(pulumi.CustomResource):
 
         __props__.__dict__["email"] = email
         __props__.__dict__["groups"] = groups
+        __props__.__dict__["uid"] = uid
         return IamUser(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -216,4 +239,9 @@ class IamUser(pulumi.CustomResource):
     @pulumi.getter
     def groups(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "groups")
+
+    @property
+    @pulumi.getter
+    def uid(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "uid")
 

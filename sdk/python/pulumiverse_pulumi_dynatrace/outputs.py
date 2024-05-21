@@ -55,6 +55,45 @@ __all__ = [
     'ApplicationErrorRulesCustomErrorsRule',
     'ApplicationErrorRulesHttpErrors',
     'ApplicationErrorRulesHttpErrorsRule',
+    'AppsecNotificationAttackCandidateBasedEmailPayload',
+    'AppsecNotificationAttackCandidateBasedJiraPayload',
+    'AppsecNotificationAttackCandidateBasedWebhookPayload',
+    'AppsecNotificationEmailConfiguration',
+    'AppsecNotificationJiraConfiguration',
+    'AppsecNotificationSecurityProblemBasedEmailPayload',
+    'AppsecNotificationSecurityProblemBasedJiraPayload',
+    'AppsecNotificationSecurityProblemBasedWebhookPayload',
+    'AppsecNotificationWebhookConfiguration',
+    'AppsecNotificationWebhookConfigurationHeaders',
+    'AppsecNotificationWebhookConfigurationHeadersHeader',
+    'AttackAllowlistAttackHandling',
+    'AttackAllowlistCriteria',
+    'AttackAllowlistMetadata',
+    'AttackRulesAttackHandling',
+    'AttackRulesCriteria',
+    'AttackRulesMetadata',
+    'AttackSettingsDefaultAttackHandling',
+    'AutomationBusinessCalendarHolidays',
+    'AutomationBusinessCalendarHolidaysHoliday',
+    'AutomationSchedulingRuleFixedOffset',
+    'AutomationSchedulingRuleGrouping',
+    'AutomationSchedulingRuleRecurrence',
+    'AutomationSchedulingRuleRelativeOffset',
+    'AutomationWorkflowTasks',
+    'AutomationWorkflowTasksTask',
+    'AutomationWorkflowTasksTaskConditions',
+    'AutomationWorkflowTasksTaskPosition',
+    'AutomationWorkflowTasksTaskRetry',
+    'AutomationWorkflowTrigger',
+    'AutomationWorkflowTriggerEvent',
+    'AutomationWorkflowTriggerEventConfig',
+    'AutomationWorkflowTriggerEventConfigDavisEvent',
+    'AutomationWorkflowTriggerEventConfigDavisProblem',
+    'AutomationWorkflowTriggerEventConfigDavisProblemCategory',
+    'AutomationWorkflowTriggerEventConfigEvent',
+    'AutomationWorkflowTriggerSchedule',
+    'AutomationWorkflowTriggerScheduleFilterParameters',
+    'AutomationWorkflowTriggerScheduleTrigger',
     'AutotagEntitySelectorBasedRule',
     'AutotagRule',
     'AutotagRuleCondition',
@@ -134,6 +173,11 @@ __all__ = [
     'AutotagRuleConditionTagValue',
     'AutotagRuleConditionTech',
     'AutotagRuleConditionTechValue',
+    'AutotagRulesRules',
+    'AutotagRulesRulesRule',
+    'AutotagRulesRulesRuleAttributeRule',
+    'AutotagRulesRulesRuleAttributeRuleConditions',
+    'AutotagRulesRulesRuleAttributeRuleConditionsCondition',
     'AutotagV2Rules',
     'AutotagV2RulesRule',
     'AutotagV2RulesRuleAttributeRule',
@@ -159,10 +203,12 @@ __all__ = [
     'AwsCredentialsSupportingServicesToMonitor',
     'AwsCredentialsSupportingServicesToMonitorMonitoredMetric',
     'AwsCredentialsTagsToMonitor',
+    'AwsServiceMetric',
     'AzureCredentialsMonitorOnlyExcludingTagPair',
     'AzureCredentialsMonitorOnlyTagPair',
     'AzureCredentialsSupportingService',
     'AzureCredentialsSupportingServiceMonitoredMetric',
+    'AzureServiceMetric',
     'BrowserMonitorAnomalyDetection',
     'BrowserMonitorAnomalyDetectionLoadingTimeThreshold',
     'BrowserMonitorAnomalyDetectionLoadingTimeThresholdThreshold',
@@ -288,6 +334,10 @@ __all__ = [
     'BusinessEventsProcessingRuleTesting',
     'BusinessEventsProcessingTransformationFields',
     'BusinessEventsProcessingTransformationFieldsTransformationField',
+    'BusinessEventsSecurityContextSecurityContextRule',
+    'CalculatedMobileMetricDimension',
+    'CalculatedMobileMetricDimensionDimension',
+    'CalculatedMobileMetricUserActionFilter',
     'CalculatedServiceMetricCondition',
     'CalculatedServiceMetricConditionCondition',
     'CalculatedServiceMetricConditionConditionComparison',
@@ -324,6 +374,15 @@ __all__ = [
     'CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSourceServiceTag',
     'CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSourceServiceTagTagKey',
     'CalculatedServiceMetricMetricDefinition',
+    'CalculatedSyntheticMetricDimension',
+    'CalculatedSyntheticMetricDimensionDimension',
+    'CalculatedSyntheticMetricFilter',
+    'CalculatedWebMetricDimension',
+    'CalculatedWebMetricDimensionDimension',
+    'CalculatedWebMetricMetricDefinition',
+    'CalculatedWebMetricUserActionFilter',
+    'CalculatedWebMetricUserActionFilterUserActionProperty',
+    'CalculatedWebMetricUserActionFilterUserActionPropertyProperty',
     'CloudappWorkloaddetectionCloudFoundry',
     'CloudappWorkloaddetectionDocker',
     'CloudappWorkloaddetectionKubernetes',
@@ -446,6 +505,13 @@ __all__ = [
     'DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection',
     'DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll',
     'DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest',
+    'DavisAnomalyDetectorsAnalyzer',
+    'DavisAnomalyDetectorsAnalyzerInput',
+    'DavisAnomalyDetectorsAnalyzerInputAnalyzerInputField',
+    'DavisAnomalyDetectorsEventTemplate',
+    'DavisAnomalyDetectorsEventTemplateProperties',
+    'DavisAnomalyDetectorsEventTemplatePropertiesProperty',
+    'DavisAnomalyDetectorsExecutionSettings',
     'DduPoolEvents',
     'DduPoolLogMonitoring',
     'DduPoolMetrics',
@@ -455,6 +521,8 @@ __all__ = [
     'DeclarativeGroupingDetectionProcessDefinition',
     'DeclarativeGroupingDetectionProcessDefinitionRules',
     'DeclarativeGroupingDetectionProcessDefinitionRulesRule',
+    'DirectSharesRecipients',
+    'DirectSharesRecipientsRecipient',
     'DiskAnomaliesDiskName',
     'DiskAnomaliesTags',
     'DiskAnomaliesTagsFilter',
@@ -511,6 +579,8 @@ __all__ = [
     'GenericTypesRulesRuleRequiredDimensionsRequiredDimension',
     'GenericTypesRulesRuleSources',
     'GenericTypesRulesRuleSourcesSource',
+    'GrailMetricsAllowlistAllowRules',
+    'GrailMetricsAllowlistAllowRulesAllowRule',
     'HostAnomaliesConnections',
     'HostAnomaliesCpu',
     'HostAnomaliesCpuThresholds',
@@ -676,10 +746,21 @@ __all__ = [
     'HttpMonitorScriptRequestConfigurationHeadersHeader',
     'HttpMonitorScriptRequestValidation',
     'HttpMonitorScriptRequestValidationRule',
+    'HttpMonitorScriptScript',
+    'HttpMonitorScriptScriptRequest',
+    'HttpMonitorScriptScriptRequestAuthentication',
+    'HttpMonitorScriptScriptRequestConfiguration',
+    'HttpMonitorScriptScriptRequestConfigurationHeaders',
+    'HttpMonitorScriptScriptRequestConfigurationHeadersHeader',
+    'HttpMonitorScriptScriptRequestValidation',
+    'HttpMonitorScriptScriptRequestValidationRule',
     'HttpMonitorTag',
     'HttpMonitorTagTag',
+    'HubSubscriptionsTokenSubscriptions',
+    'HubSubscriptionsTokenSubscriptionsTokenSubscription',
     'IamGroupPermissions',
     'IamGroupPermissionsPermission',
+    'IamPolicyBindingsV2Policy',
     'ImsBridgesQueueManager',
     'ImsBridgesQueueManagerQueueManager',
     'K8sClusterAnomaliesCpuRequestsSaturation',
@@ -693,6 +774,8 @@ __all__ = [
     'K8sClusterAnomaliesReadinessIssues',
     'K8sClusterAnomaliesReadinessIssuesConfiguration',
     'K8sCredentialsEventsFieldSelector',
+    'K8sMonitoringEventPatterns',
+    'K8sMonitoringEventPatternsEventPattern',
     'K8sNamespaceAnomaliesCpuLimitsQuotaSaturation',
     'K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfiguration',
     'K8sNamespaceAnomaliesCpuRequestsQuotaSaturation',
@@ -727,24 +810,36 @@ __all__ = [
     'K8sWorkloadAnomaliesHighCpuUsageConfiguration',
     'K8sWorkloadAnomaliesHighMemoryUsage',
     'K8sWorkloadAnomaliesHighMemoryUsageConfiguration',
+    'K8sWorkloadAnomaliesJobFailureEvents',
     'K8sWorkloadAnomaliesNotAllPodsReady',
     'K8sWorkloadAnomaliesNotAllPodsReadyConfiguration',
+    'K8sWorkloadAnomaliesOomKills',
     'K8sWorkloadAnomaliesPendingPods',
     'K8sWorkloadAnomaliesPendingPodsConfiguration',
+    'K8sWorkloadAnomaliesPodBackoffEvents',
+    'K8sWorkloadAnomaliesPodEvictionEvents',
+    'K8sWorkloadAnomaliesPodPreemptionEvents',
     'K8sWorkloadAnomaliesPodStuckInTerminating',
     'K8sWorkloadAnomaliesPodStuckInTerminatingConfiguration',
     'K8sWorkloadAnomaliesWorkloadWithoutReadyPods',
     'K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration',
+    'KubernetesAppKubernetesAppOptions',
     'KubernetesEventPatterns',
     'KubernetesEventPatternsEventPattern',
+    'LimitOutboundConnectionsAllowedOutboundConnections',
     'LogCustomSourceContext',
     'LogCustomSourceContextContext',
     'LogCustomSourceCustomLogSource',
+    'LogCustomSourceCustomLogSourceValuesAndEnrichment',
+    'LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichment',
+    'LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichmentEnrichment',
+    'LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichmentEnrichmentEnrichment',
     'LogEventsEventTemplate',
     'LogEventsEventTemplateMetadata',
     'LogEventsEventTemplateMetadataItem',
     'LogProcessingProcessorDefinition',
     'LogProcessingRuleTesting',
+    'LogSecurityContextSecurityContextRule',
     'LogSensitiveDataMaskingMasking',
     'LogSensitiveDataMaskingMatchers',
     'LogSensitiveDataMaskingMatchersMatcher',
@@ -752,8 +847,8 @@ __all__ = [
     'LogStorageMatchersMatcher',
     'LogTimestampMatchers',
     'LogTimestampMatchersMatcher',
-    'MaintenanceFilter',
-    'MaintenanceFilterFilter',
+    'MaintenanceFilters',
+    'MaintenanceFiltersFilter',
     'MaintenanceGeneralProperties',
     'MaintenanceSchedule',
     'MaintenanceScheduleDailyRecurrence',
@@ -867,8 +962,8 @@ __all__ = [
     'MetricEventsQueryDefinitionDimensionFilter',
     'MetricEventsQueryDefinitionDimensionFilterFilter',
     'MetricEventsQueryDefinitionEntityFilter',
-    'MetricEventsQueryDefinitionEntityFilterCondition',
-    'MetricEventsQueryDefinitionEntityFilterConditionCondition',
+    'MetricEventsQueryDefinitionEntityFilterConditions',
+    'MetricEventsQueryDefinitionEntityFilterConditionsCondition',
     'MetricMetadataDimensions',
     'MetricMetadataDimensionsDimension',
     'MetricMetadataMetricProperties',
@@ -891,6 +986,7 @@ __all__ = [
     'MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed',
     'MobileAppEnablementRum',
     'MobileAppEnablementSessionReplay',
+    'MobileAppKeyPerformanceThresholds',
     'MobileAppRequestErrorsErrorRules',
     'MobileAppRequestErrorsErrorRulesErrorRule',
     'MobileApplicationApdex',
@@ -923,8 +1019,10 @@ __all__ = [
     'OpentelemetryMetricsToDropAttributesToDropAttribute',
     'OsServicesDetectionConditionsLinux',
     'OsServicesDetectionConditionsLinuxLinuxDetectionCondition',
+    'OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition',
     'OsServicesDetectionConditionsWindows',
     'OsServicesDetectionConditionsWindowsDetectionConditionsWindow',
+    'OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition',
     'OsServicesMetadata',
     'OsServicesMetadataItem',
     'OwnershipConfigOwnershipIdentifiers',
@@ -944,6 +1042,7 @@ __all__ = [
     'ProcessAvailabilityMetadataItem',
     'ProcessAvailabilityRules',
     'ProcessAvailabilityRulesRule',
+    'ProcessAvailabilityRulesRuleHostMetadataCondition',
     'ProcessGroupDetectionGroupExtraction',
     'ProcessGroupDetectionGroupExtractionDelimiter',
     'ProcessGroupDetectionInstanceExtraction',
@@ -1278,6 +1377,11 @@ __all__ = [
     'SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule',
     'SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRules',
     'SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule',
+    'SiteReliabilityGuardianObjectives',
+    'SiteReliabilityGuardianObjectivesObjective',
+    'SiteReliabilityGuardianVariables',
+    'SiteReliabilityGuardianVariablesVariable',
+    'SloErrorBudgetBurnRate',
     'SloV2ErrorBudgetBurnRate',
     'SpanCaptureRuleMatches',
     'SpanCaptureRuleMatchesMatch',
@@ -1297,6 +1401,8 @@ __all__ = [
     'UpdateWindowsWeeklyRecurrenceRecurrenceRange',
     'UpdateWindowsWeeklyRecurrenceSelectedWeekDays',
     'UpdateWindowsWeeklyRecurrenceUpdateTime',
+    'UrlBasedSamplingQueryParameters',
+    'UrlBasedSamplingQueryParametersParameter',
     'UserActionMetricsFilters',
     'UserActionMetricsFiltersFilter',
     'UserActionMetricsValue',
@@ -1321,6 +1427,10 @@ __all__ = [
     'VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds',
     'VmwareAnomaliesUndersizedStorageDetection',
     'VmwareAnomaliesUndersizedStorageDetectionCustomThresholds',
+    'VulnerabilityCodeCriteria',
+    'VulnerabilityCodeMetadata',
+    'VulnerabilityCodeVulnerabilityDetectionControl',
+    'VulnerabilitySettingsTechnologies',
     'WebAppAnomaliesErrorRate',
     'WebAppAnomaliesErrorRateErrorRateAuto',
     'WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection',
@@ -1343,6 +1453,11 @@ __all__ = [
     'WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings',
     'WebAppEnablementRum',
     'WebAppEnablementSessionReplay',
+    'WebAppKeyPerformanceCustomThresholds',
+    'WebAppKeyPerformanceLoadFallbackThresholds',
+    'WebAppKeyPerformanceLoadThresholds',
+    'WebAppKeyPerformanceXhrFallbackThresholds',
+    'WebAppKeyPerformanceXhrThresholds',
     'WebAppRequestErrorsErrorRules',
     'WebAppRequestErrorsErrorRulesErrorRule',
     'WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings',
@@ -1403,15 +1518,20 @@ __all__ = [
     'WebApplicationXhrActionApdexSettings',
     'WebhookNotificationHeaders',
     'WebhookNotificationHeadersHeader',
+    'WebhookNotificationOauth2Credentials',
     'XmattersNotificationHeaders',
     'XmattersNotificationHeadersHeader',
     'GetAlertingProfilesValueResult',
-    'GetEntitiesEntitiesResult',
-    'GetEntitiesEntitiesEntityResult',
-    'GetEntitiesEntitiesEntityTagResult',
-    'GetEntitiesEntitiesEntityTagTagResult',
+    'GetDocumentsValueResult',
+    'GetEntitiesEntityResult',
+    'GetEntitiesEntityTagResult',
+    'GetEntitiesEntityTagTagResult',
+    'GetHubItemsItemResult',
+    'GetIamPoliciesPolicyResult',
     'GetManagementZonesValueResult',
+    'GetRemoteEnvironmentsRemoteEnvironmentResult',
     'GetSyntheticLocationsLocationsResult',
+    'GetSyntheticNodesNodeResult',
 ]
 
 @pulumi.output_type
@@ -1533,7 +1653,7 @@ class AlertingFiltersFilterCustomDescription(dict):
                  enabled: Optional[bool] = None,
                  negate: Optional[bool] = None):
         """
-        :param str operator: Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+        :param str operator: Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `REGEX_MATCHES`, `ENDS_WITH` and `STRING_EQUALS`
         :param str value: The value to compare to
         :param bool case_sensitive: The condition is case sensitive (`false`) or case insensitive (`true`).   If not set, then `false` is used, making the condition case sensitive
         :param bool enabled: The filter is enabled (`true`) or disabled (`false`)
@@ -1552,7 +1672,7 @@ class AlertingFiltersFilterCustomDescription(dict):
     @pulumi.getter
     def operator(self) -> str:
         """
-        Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+        Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `REGEX_MATCHES`, `ENDS_WITH` and `STRING_EQUALS`
         """
         return pulumi.get(self, "operator")
 
@@ -1623,19 +1743,23 @@ class AlertingFiltersFilterCustomMetadataItems(dict):
 class AlertingFiltersFilterCustomMetadataItemsFilter(dict):
     def __init__(__self__, *,
                  key: str,
-                 value: str):
+                 value: str,
+                 negate: Optional[bool] = None):
         """
-        :param str key: Type 'dt.' for key hints.
+        :param str key: GET /api/v2/eventProperties for list of available keys
         :param str value: Value
+        :param bool negate: no documentation available
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
+        if negate is not None:
+            pulumi.set(__self__, "negate", negate)
 
     @property
     @pulumi.getter
     def key(self) -> str:
         """
-        Type 'dt.' for key hints.
+        GET /api/v2/eventProperties for list of available keys
         """
         return pulumi.get(self, "key")
 
@@ -1646,6 +1770,14 @@ class AlertingFiltersFilterCustomMetadataItemsFilter(dict):
         Value
         """
         return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter
+    def negate(self) -> Optional[bool]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "negate")
 
 
 @pulumi.output_type
@@ -1674,7 +1806,7 @@ class AlertingFiltersFilterCustomTitle(dict):
                  enabled: Optional[bool] = None,
                  negate: Optional[bool] = None):
         """
-        :param str operator: Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+        :param str operator: Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `REGEX_MATCHES`, `ENDS_WITH` and `STRING_EQUALS`
         :param str value: The value to compare to
         :param bool case_sensitive: The condition is case sensitive (`false`) or case insensitive (`true`).   If not set, then `false` is used, making the condition case sensitive
         :param bool enabled: The filter is enabled (`true`) or disabled (`false`)
@@ -1693,7 +1825,7 @@ class AlertingFiltersFilterCustomTitle(dict):
     @pulumi.getter
     def operator(self) -> str:
         """
-        Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+        Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `REGEX_MATCHES`, `ENDS_WITH` and `STRING_EQUALS`
         """
         return pulumi.get(self, "operator")
 
@@ -2421,7 +2553,7 @@ class AlertingRulesRule(dict):
         :param int delay_in_minutes: Send a notification if a problem remains open longer than *X* minutes
         :param str include_mode: The filtering mode:  * `INCLUDE_ANY`: The rule applies to monitored entities that have at least one of the specified tags. You can specify up to 100 tags.  * `INCLUDE_ALL`: The rule applies to monitored entities that have **all** of the specified tags. You can specify up to 10 tags.  * `NONE`: The rule applies to all monitored entities
         :param str severity_level: The severity level to trigger the alert. Possible values are `AVAILABILITY`,	`CUSTOM_ALERT`,	`ERRORS`,`MONITORING_UNAVAILABLE`,`PERFORMANCE` and `RESOURCE_CONTENTION`.
-        :param Sequence[str] tags: A set of tags you want to filter by. You can also specify a tag value alongside the tag name using the syntax `name:value`.
+        :param Sequence[str] tags: Entities which contain any/all of the configured tags will match this alerting profile. It is recommended to use manual tags.
         """
         pulumi.set(__self__, "delay_in_minutes", delay_in_minutes)
         pulumi.set(__self__, "include_mode", include_mode)
@@ -2457,7 +2589,7 @@ class AlertingRulesRule(dict):
     @pulumi.getter
     def tags(self) -> Optional[Sequence[str]]:
         """
-        A set of tags you want to filter by. You can also specify a tag value alongside the tag name using the syntax `name:value`.
+        Entities which contain any/all of the configured tags will match this alerting profile. It is recommended to use manual tags.
         """
         return pulumi.get(self, "tags")
 
@@ -3579,6 +3711,2283 @@ class ApplicationErrorRulesHttpErrorsRule(dict):
         The URL to look for
         """
         return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class AppsecNotificationAttackCandidateBasedEmailPayload(dict):
+    def __init__(__self__, *,
+                 body: str,
+                 subject: str):
+        """
+        :param str body: The template of the email notifications.  
+               In case a value of a security problem is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the body might leak information to untrusted parties.  
+                 
+               Available placeholders:  
+               **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example: "A-1234".  
+               **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+               **{Type}**: The type of attack, for example: "SQL Injection".  
+               **{AttackUrl}**: URL of the attack in Dynatrace.  
+               **{ProcessGroupId}**: Details about the process group attacked.  
+               **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+               **{Status}**: The status of the attack, for example: "Exploited"  
+               **{Timestamp}**: When the attack happened.  
+               **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+        :param str subject: The subject of the email notifications.. Available placeholders:  
+               **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example, "A-1234".  
+               **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+               **{Type}**: The type of attack, for example: "SQL Injection".  
+               **{AttackUrl}**: URL of the attack in Dynatrace.  
+               **{ProcessGroupId}**: Details about the process group attacked.  
+               **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+               **{Status}**: The status of the attack, for example: "Exploited"  
+               **{Timestamp}**: When the attack happened.  
+               **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+        """
+        pulumi.set(__self__, "body", body)
+        pulumi.set(__self__, "subject", subject)
+
+    @property
+    @pulumi.getter
+    def body(self) -> str:
+        """
+        The template of the email notifications.  
+        In case a value of a security problem is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the body might leak information to untrusted parties.  
+          
+        Available placeholders:  
+        **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example: "A-1234".  
+        **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+        **{Type}**: The type of attack, for example: "SQL Injection".  
+        **{AttackUrl}**: URL of the attack in Dynatrace.  
+        **{ProcessGroupId}**: Details about the process group attacked.  
+        **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+        **{Status}**: The status of the attack, for example: "Exploited"  
+        **{Timestamp}**: When the attack happened.  
+        **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+        """
+        return pulumi.get(self, "body")
+
+    @property
+    @pulumi.getter
+    def subject(self) -> str:
+        """
+        The subject of the email notifications.. Available placeholders:  
+        **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example, "A-1234".  
+        **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+        **{Type}**: The type of attack, for example: "SQL Injection".  
+        **{AttackUrl}**: URL of the attack in Dynatrace.  
+        **{ProcessGroupId}**: Details about the process group attacked.  
+        **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+        **{Status}**: The status of the attack, for example: "Exploited"  
+        **{Timestamp}**: When the attack happened.  
+        **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+        """
+        return pulumi.get(self, "subject")
+
+
+@pulumi.output_type
+class AppsecNotificationAttackCandidateBasedJiraPayload(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 summary: str):
+        """
+        :param str description: The description of the Jira issue to be created by this notification.  
+               In case a value of an attack is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the description might leak information to untrusted parties.  
+                 
+               Available placeholders:  
+               **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example: "A-1234".  
+               **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+               **{Type}**: The type of attack, for example: "SQL Injection".  
+               **{AttackUrl}**: URL of the attack in Dynatrace.  
+               **{ProcessGroupId}**: Details about the process group attacked.  
+               **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+               **{Status}**: The status of the attack, for example: "Exploited"  
+               **{Timestamp}**: When the attack happened.  
+               **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+        :param str summary: The summary of the Jira issue to be created by this notification.. **Note:** The Jira summary field must contain less than 255 characters. Any content exceeding this limit after evaluating the placeholders will be discarded.  
+                 
+               Available placeholders:  
+               **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example, "A-1234".  
+               **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+               **{Type}**: The type of attack, for example: "SQL Injection".  
+               **{AttackUrl}**: URL of the attack in Dynatrace.  
+               **{ProcessGroupId}**: Details about the process group attacked.  
+               **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+               **{Status}**: The status of the attack, for example: "Exploited"  
+               **{Timestamp}**: When the attack happened.  
+               **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "summary", summary)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the Jira issue to be created by this notification.  
+        In case a value of an attack is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the description might leak information to untrusted parties.  
+          
+        Available placeholders:  
+        **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example: "A-1234".  
+        **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+        **{Type}**: The type of attack, for example: "SQL Injection".  
+        **{AttackUrl}**: URL of the attack in Dynatrace.  
+        **{ProcessGroupId}**: Details about the process group attacked.  
+        **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+        **{Status}**: The status of the attack, for example: "Exploited"  
+        **{Timestamp}**: When the attack happened.  
+        **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def summary(self) -> str:
+        """
+        The summary of the Jira issue to be created by this notification.. **Note:** The Jira summary field must contain less than 255 characters. Any content exceeding this limit after evaluating the placeholders will be discarded.  
+          
+        Available placeholders:  
+        **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example, "A-1234".  
+        **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+        **{Type}**: The type of attack, for example: "SQL Injection".  
+        **{AttackUrl}**: URL of the attack in Dynatrace.  
+        **{ProcessGroupId}**: Details about the process group attacked.  
+        **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+        **{Status}**: The status of the attack, for example: "Exploited"  
+        **{Timestamp}**: When the attack happened.  
+        **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+        """
+        return pulumi.get(self, "summary")
+
+
+@pulumi.output_type
+class AppsecNotificationAttackCandidateBasedWebhookPayload(dict):
+    def __init__(__self__, *,
+                 payload: str):
+        """
+        :param str payload: This is the content your notification message will include when users view it.  
+               In case a value of an attack is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the custom payload might leak information to untrusted parties.  
+                 
+               Available placeholders:  
+               **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example: "A-1234".  
+               **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+               **{Type}**: The type of attack, for example: "SQL Injection".  
+               **{AttackUrl}**: URL of the attack in Dynatrace.  
+               **{ProcessGroupId}**: Details about the process group attacked.  
+               **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+               **{Status}**: The status of the attack, for example: "Exploited"  
+               **{Timestamp}**: When the attack happened.  
+               **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+        """
+        pulumi.set(__self__, "payload", payload)
+
+    @property
+    @pulumi.getter
+    def payload(self) -> str:
+        """
+        This is the content your notification message will include when users view it.  
+        In case a value of an attack is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the custom payload might leak information to untrusted parties.  
+          
+        Available placeholders:  
+        **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example: "A-1234".  
+        **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+        **{Type}**: The type of attack, for example: "SQL Injection".  
+        **{AttackUrl}**: URL of the attack in Dynatrace.  
+        **{ProcessGroupId}**: Details about the process group attacked.  
+        **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+        **{Status}**: The status of the attack, for example: "Exploited"  
+        **{Timestamp}**: When the attack happened.  
+        **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+        """
+        return pulumi.get(self, "payload")
+
+
+@pulumi.output_type
+class AppsecNotificationEmailConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "bccRecipients":
+            suggest = "bcc_recipients"
+        elif key == "ccRecipients":
+            suggest = "cc_recipients"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AppsecNotificationEmailConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AppsecNotificationEmailConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AppsecNotificationEmailConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 recipients: Sequence[str],
+                 bcc_recipients: Optional[Sequence[str]] = None,
+                 cc_recipients: Optional[Sequence[str]] = None):
+        """
+        :param Sequence[str] recipients: To
+        :param Sequence[str] bcc_recipients: BCC
+        :param Sequence[str] cc_recipients: CC
+        """
+        pulumi.set(__self__, "recipients", recipients)
+        if bcc_recipients is not None:
+            pulumi.set(__self__, "bcc_recipients", bcc_recipients)
+        if cc_recipients is not None:
+            pulumi.set(__self__, "cc_recipients", cc_recipients)
+
+    @property
+    @pulumi.getter
+    def recipients(self) -> Sequence[str]:
+        """
+        To
+        """
+        return pulumi.get(self, "recipients")
+
+    @property
+    @pulumi.getter(name="bccRecipients")
+    def bcc_recipients(self) -> Optional[Sequence[str]]:
+        """
+        BCC
+        """
+        return pulumi.get(self, "bcc_recipients")
+
+    @property
+    @pulumi.getter(name="ccRecipients")
+    def cc_recipients(self) -> Optional[Sequence[str]]:
+        """
+        CC
+        """
+        return pulumi.get(self, "cc_recipients")
+
+
+@pulumi.output_type
+class AppsecNotificationJiraConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "apiToken":
+            suggest = "api_token"
+        elif key == "issueType":
+            suggest = "issue_type"
+        elif key == "projectKey":
+            suggest = "project_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AppsecNotificationJiraConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AppsecNotificationJiraConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AppsecNotificationJiraConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 api_token: str,
+                 issue_type: str,
+                 project_key: str,
+                 url: str,
+                 username: str):
+        """
+        :param str api_token: The API token for the Jira profile. Using password authentication [was deprecated by Jira](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-basic-auth-and-cookie-based-auth/)
+        :param str issue_type: The type of the Jira issue to be created by this notification.
+               
+               To find all available issue types or create your own, in Jira, go to Project settings > Issue types.
+        :param str project_key: The project key of the Jira issue to be created by this notification.
+        :param str url: The URL of the Jira API endpoint.
+        :param str username: The username of the Jira profile.
+        """
+        pulumi.set(__self__, "api_token", api_token)
+        pulumi.set(__self__, "issue_type", issue_type)
+        pulumi.set(__self__, "project_key", project_key)
+        pulumi.set(__self__, "url", url)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="apiToken")
+    def api_token(self) -> str:
+        """
+        The API token for the Jira profile. Using password authentication [was deprecated by Jira](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-basic-auth-and-cookie-based-auth/)
+        """
+        return pulumi.get(self, "api_token")
+
+    @property
+    @pulumi.getter(name="issueType")
+    def issue_type(self) -> str:
+        """
+        The type of the Jira issue to be created by this notification.
+
+        To find all available issue types or create your own, in Jira, go to Project settings > Issue types.
+        """
+        return pulumi.get(self, "issue_type")
+
+    @property
+    @pulumi.getter(name="projectKey")
+    def project_key(self) -> str:
+        """
+        The project key of the Jira issue to be created by this notification.
+        """
+        return pulumi.get(self, "project_key")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        """
+        The URL of the Jira API endpoint.
+        """
+        return pulumi.get(self, "url")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        The username of the Jira profile.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class AppsecNotificationSecurityProblemBasedEmailPayload(dict):
+    def __init__(__self__, *,
+                 body: str,
+                 subject: str):
+        """
+        :param str body: The template of the email notifications.  
+               In case a value of a security problem is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the description might leak information to untrusted parties.  
+                 
+               Available placeholders:  
+               **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+               **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+               **{Description}**: A more detailed description of the vulnerability.  
+               **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+               **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+               **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+               **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+               **{AffectedEntities}**: Details about the entities affected by the security problem in a json array.  
+               **{ManagementZones}**: Comma-separated list of all management zones affected by the vulnerability at the time of detection.  
+               **{Tags}**: Comma-separated list of tags that are defined for a vulnerability's affected entities. For example: "PROD, owner:John". Assign the tag's key in square brackets: **{Tags[key]}** to get all associated values. For example: "{Tags[owner]}" will be resolved as "John". Tags without an assigned value will be resolved as empty string.  
+               **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+               **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+               **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+        :param str subject: The subject of the email notifications.. Available placeholders:  
+               **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+               **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+               **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+               **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+               **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+               **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+               **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+               **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+               **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+        """
+        pulumi.set(__self__, "body", body)
+        pulumi.set(__self__, "subject", subject)
+
+    @property
+    @pulumi.getter
+    def body(self) -> str:
+        """
+        The template of the email notifications.  
+        In case a value of a security problem is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the description might leak information to untrusted parties.  
+          
+        Available placeholders:  
+        **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+        **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+        **{Description}**: A more detailed description of the vulnerability.  
+        **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+        **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+        **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+        **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+        **{AffectedEntities}**: Details about the entities affected by the security problem in a json array.  
+        **{ManagementZones}**: Comma-separated list of all management zones affected by the vulnerability at the time of detection.  
+        **{Tags}**: Comma-separated list of tags that are defined for a vulnerability's affected entities. For example: "PROD, owner:John". Assign the tag's key in square brackets: **{Tags[key]}** to get all associated values. For example: "{Tags[owner]}" will be resolved as "John". Tags without an assigned value will be resolved as empty string.  
+        **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+        **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+        **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+        """
+        return pulumi.get(self, "body")
+
+    @property
+    @pulumi.getter
+    def subject(self) -> str:
+        """
+        The subject of the email notifications.. Available placeholders:  
+        **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+        **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+        **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+        **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+        **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+        **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+        **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+        **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+        **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+        """
+        return pulumi.get(self, "subject")
+
+
+@pulumi.output_type
+class AppsecNotificationSecurityProblemBasedJiraPayload(dict):
+    def __init__(__self__, *,
+                 description: str,
+                 summary: str):
+        """
+        :param str description: The description of the Jira issue to be created by this notification.  
+               In case a value of a security problem is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the description might leak information to untrusted parties.  
+                 
+               Available placeholders:  
+               **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+               **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+               **{Description}**: A more detailed description of the vulnerability.  
+               **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+               **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+               **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+               **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+               **{AffectedEntities}**: Details about the entities affected by the security problem in a json array.  
+               **{ManagementZones}**: Comma-separated list of all management zones affected by the vulnerability at the time of detection.  
+               **{Tags}**: Comma-separated list of tags that are defined for a vulnerability's affected entities. For example: "PROD, owner:John". Assign the tag's key in square brackets: **{Tags[key]}** to get all associated values. For example: "{Tags[owner]}" will be resolved as "John". Tags without an assigned value will be resolved as empty string.  
+               **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+               **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+               **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+        :param str summary: The summary of the Jira issue to be created by this notification.. **Note:** The Jira summary field must contain less than 255 characters. Any content exceeding this limit after evaluating the placeholders will be discarded.  
+                 
+               Available placeholders:  
+               **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+               **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+               **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+               **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+               **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+               **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+               **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+               **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+               **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "summary", summary)
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the Jira issue to be created by this notification.  
+        In case a value of a security problem is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the description might leak information to untrusted parties.  
+          
+        Available placeholders:  
+        **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+        **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+        **{Description}**: A more detailed description of the vulnerability.  
+        **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+        **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+        **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+        **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+        **{AffectedEntities}**: Details about the entities affected by the security problem in a json array.  
+        **{ManagementZones}**: Comma-separated list of all management zones affected by the vulnerability at the time of detection.  
+        **{Tags}**: Comma-separated list of tags that are defined for a vulnerability's affected entities. For example: "PROD, owner:John". Assign the tag's key in square brackets: **{Tags[key]}** to get all associated values. For example: "{Tags[owner]}" will be resolved as "John". Tags without an assigned value will be resolved as empty string.  
+        **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+        **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+        **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def summary(self) -> str:
+        """
+        The summary of the Jira issue to be created by this notification.. **Note:** The Jira summary field must contain less than 255 characters. Any content exceeding this limit after evaluating the placeholders will be discarded.  
+          
+        Available placeholders:  
+        **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+        **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+        **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+        **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+        **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+        **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+        **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+        **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+        **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+        """
+        return pulumi.get(self, "summary")
+
+
+@pulumi.output_type
+class AppsecNotificationSecurityProblemBasedWebhookPayload(dict):
+    def __init__(__self__, *,
+                 payload: str):
+        """
+        :param str payload: This is the content your notification message will include when users view it.  
+               In case a value of a security problem is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the custom payload might leak information to untrusted parties.  
+                 
+               Available placeholders:  
+               **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+               **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+               **{Description}**: A more detailed description of the vulnerability.  
+               **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+               **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+               **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+               **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+               **{AffectedEntities}**: Details about the entities affected by the security problem in a json array.  
+               **{ManagementZones}**: Comma-separated list of all management zones affected by the vulnerability at the time of detection.  
+               **{Tags}**: Comma-separated list of tags that are defined for a vulnerability's affected entities. For example: "PROD, owner:John". Assign the tag's key in square brackets: **{Tags[key]}** to get all associated values. For example: "{Tags[owner]}" will be resolved as "John". Tags without an assigned value will be resolved as empty string.  
+               **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+               **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+               **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+        """
+        pulumi.set(__self__, "payload", payload)
+
+    @property
+    @pulumi.getter
+    def payload(self) -> str:
+        """
+        This is the content your notification message will include when users view it.  
+        In case a value of a security problem is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the custom payload might leak information to untrusted parties.  
+          
+        Available placeholders:  
+        **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+        **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+        **{Description}**: A more detailed description of the vulnerability.  
+        **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+        **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+        **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+        **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+        **{AffectedEntities}**: Details about the entities affected by the security problem in a json array.  
+        **{ManagementZones}**: Comma-separated list of all management zones affected by the vulnerability at the time of detection.  
+        **{Tags}**: Comma-separated list of tags that are defined for a vulnerability's affected entities. For example: "PROD, owner:John". Assign the tag's key in square brackets: **{Tags[key]}** to get all associated values. For example: "{Tags[owner]}" will be resolved as "John". Tags without an assigned value will be resolved as empty string.  
+        **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+        **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+        **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+        """
+        return pulumi.get(self, "payload")
+
+
+@pulumi.output_type
+class AppsecNotificationWebhookConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "acceptAnyCertificate":
+            suggest = "accept_any_certificate"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AppsecNotificationWebhookConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AppsecNotificationWebhookConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AppsecNotificationWebhookConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 accept_any_certificate: bool,
+                 url: str,
+                 headers: Optional['outputs.AppsecNotificationWebhookConfigurationHeaders'] = None):
+        """
+        :param bool accept_any_certificate: Accept any SSL certificate (including self-signed and invalid certificates)
+        :param str url: Webhook endpoint URL
+        :param 'AppsecNotificationWebhookConfigurationHeadersArgs' headers: Use additional HTTP headers to attach any additional information, for example, configuration, authorization, or metadata.  
+                 
+               Note that JSON-based webhook endpoints require the addition of the **Content-Type: application/json** header to enable escaping of special characters and to avoid malformed JSON content.
+        """
+        pulumi.set(__self__, "accept_any_certificate", accept_any_certificate)
+        pulumi.set(__self__, "url", url)
+        if headers is not None:
+            pulumi.set(__self__, "headers", headers)
+
+    @property
+    @pulumi.getter(name="acceptAnyCertificate")
+    def accept_any_certificate(self) -> bool:
+        """
+        Accept any SSL certificate (including self-signed and invalid certificates)
+        """
+        return pulumi.get(self, "accept_any_certificate")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        """
+        Webhook endpoint URL
+        """
+        return pulumi.get(self, "url")
+
+    @property
+    @pulumi.getter
+    def headers(self) -> Optional['outputs.AppsecNotificationWebhookConfigurationHeaders']:
+        """
+        Use additional HTTP headers to attach any additional information, for example, configuration, authorization, or metadata.  
+          
+        Note that JSON-based webhook endpoints require the addition of the **Content-Type: application/json** header to enable escaping of special characters and to avoid malformed JSON content.
+        """
+        return pulumi.get(self, "headers")
+
+
+@pulumi.output_type
+class AppsecNotificationWebhookConfigurationHeaders(dict):
+    def __init__(__self__, *,
+                 headers: Sequence['outputs.AppsecNotificationWebhookConfigurationHeadersHeader']):
+        pulumi.set(__self__, "headers", headers)
+
+    @property
+    @pulumi.getter
+    def headers(self) -> Sequence['outputs.AppsecNotificationWebhookConfigurationHeadersHeader']:
+        return pulumi.get(self, "headers")
+
+
+@pulumi.output_type
+class AppsecNotificationWebhookConfigurationHeadersHeader(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "secretValue":
+            suggest = "secret_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AppsecNotificationWebhookConfigurationHeadersHeader. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AppsecNotificationWebhookConfigurationHeadersHeader.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AppsecNotificationWebhookConfigurationHeadersHeader.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: str,
+                 secret: bool,
+                 secret_value: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str name: no documentation available
+        :param bool secret: Secret HTTP header value
+        :param str secret_value: The secret value of the HTTP header. May contain an empty value.
+        :param str value: The value of the HTTP header. May contain an empty value.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "secret", secret)
+        if secret_value is not None:
+            pulumi.set(__self__, "secret_value", secret_value)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def secret(self) -> bool:
+        """
+        Secret HTTP header value
+        """
+        return pulumi.get(self, "secret")
+
+    @property
+    @pulumi.getter(name="secretValue")
+    def secret_value(self) -> Optional[str]:
+        """
+        The secret value of the HTTP header. May contain an empty value.
+        """
+        return pulumi.get(self, "secret_value")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        The value of the HTTP header. May contain an empty value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class AttackAllowlistAttackHandling(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockingStrategy":
+            suggest = "blocking_strategy"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AttackAllowlistAttackHandling. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AttackAllowlistAttackHandling.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AttackAllowlistAttackHandling.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 blocking_strategy: str):
+        """
+        :param str blocking_strategy: Possible Values: `MONITOR`, `OFF`
+        """
+        pulumi.set(__self__, "blocking_strategy", blocking_strategy)
+
+    @property
+    @pulumi.getter(name="blockingStrategy")
+    def blocking_strategy(self) -> str:
+        """
+        Possible Values: `MONITOR`, `OFF`
+        """
+        return pulumi.get(self, "blocking_strategy")
+
+
+@pulumi.output_type
+class AttackAllowlistCriteria(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attackPattern":
+            suggest = "attack_pattern"
+        elif key == "sourceIp":
+            suggest = "source_ip"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AttackAllowlistCriteria. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AttackAllowlistCriteria.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AttackAllowlistCriteria.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attack_pattern: Optional[str] = None,
+                 source_ip: Optional[str] = None):
+        """
+        :param str attack_pattern: Only consider attacks matching the specified pattern.
+        :param str source_ip: Source IP
+        """
+        if attack_pattern is not None:
+            pulumi.set(__self__, "attack_pattern", attack_pattern)
+        if source_ip is not None:
+            pulumi.set(__self__, "source_ip", source_ip)
+
+    @property
+    @pulumi.getter(name="attackPattern")
+    def attack_pattern(self) -> Optional[str]:
+        """
+        Only consider attacks matching the specified pattern.
+        """
+        return pulumi.get(self, "attack_pattern")
+
+    @property
+    @pulumi.getter(name="sourceIp")
+    def source_ip(self) -> Optional[str]:
+        """
+        Source IP
+        """
+        return pulumi.get(self, "source_ip")
+
+
+@pulumi.output_type
+class AttackAllowlistMetadata(dict):
+    def __init__(__self__, *,
+                 comment: str):
+        """
+        :param str comment: no documentation available
+        """
+        pulumi.set(__self__, "comment", comment)
+
+    @property
+    @pulumi.getter
+    def comment(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "comment")
+
+
+@pulumi.output_type
+class AttackRulesAttackHandling(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockingStrategy":
+            suggest = "blocking_strategy"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AttackRulesAttackHandling. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AttackRulesAttackHandling.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AttackRulesAttackHandling.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 blocking_strategy: str):
+        """
+        :param str blocking_strategy: Possible Values: `BLOCK`, `MONITOR`, `OFF`
+        """
+        pulumi.set(__self__, "blocking_strategy", blocking_strategy)
+
+    @property
+    @pulumi.getter(name="blockingStrategy")
+    def blocking_strategy(self) -> str:
+        """
+        Possible Values: `BLOCK`, `MONITOR`, `OFF`
+        """
+        return pulumi.get(self, "blocking_strategy")
+
+
+@pulumi.output_type
+class AttackRulesCriteria(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "attackType":
+            suggest = "attack_type"
+        elif key == "processGroup":
+            suggest = "process_group"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AttackRulesCriteria. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AttackRulesCriteria.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AttackRulesCriteria.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 attack_type: str,
+                 process_group: Optional[str] = None):
+        """
+        :param str attack_type: Possible Values: `ANY`, `CMD_INJECTION`, `JNDI_INJECTION`, `SQL_INJECTION`, `SSRF`
+        :param str process_group: Process group
+        """
+        pulumi.set(__self__, "attack_type", attack_type)
+        if process_group is not None:
+            pulumi.set(__self__, "process_group", process_group)
+
+    @property
+    @pulumi.getter(name="attackType")
+    def attack_type(self) -> str:
+        """
+        Possible Values: `ANY`, `CMD_INJECTION`, `JNDI_INJECTION`, `SQL_INJECTION`, `SSRF`
+        """
+        return pulumi.get(self, "attack_type")
+
+    @property
+    @pulumi.getter(name="processGroup")
+    def process_group(self) -> Optional[str]:
+        """
+        Process group
+        """
+        return pulumi.get(self, "process_group")
+
+
+@pulumi.output_type
+class AttackRulesMetadata(dict):
+    def __init__(__self__, *,
+                 comment: str):
+        """
+        :param str comment: no documentation available
+        """
+        pulumi.set(__self__, "comment", comment)
+
+    @property
+    @pulumi.getter
+    def comment(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "comment")
+
+
+@pulumi.output_type
+class AttackSettingsDefaultAttackHandling(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockingStrategyJava":
+            suggest = "blocking_strategy_java"
+        elif key == "blockingStrategyDotNet":
+            suggest = "blocking_strategy_dot_net"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AttackSettingsDefaultAttackHandling. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AttackSettingsDefaultAttackHandling.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AttackSettingsDefaultAttackHandling.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 blocking_strategy_java: str,
+                 blocking_strategy_dot_net: Optional[str] = None):
+        """
+        :param str blocking_strategy_java: Possible Values: `BLOCK`, `MONITOR`, `OFF`
+        :param str blocking_strategy_dot_net: (v1.290) Possible Values: `BLOCK`, `MONITOR`, `OFF`
+        """
+        pulumi.set(__self__, "blocking_strategy_java", blocking_strategy_java)
+        if blocking_strategy_dot_net is not None:
+            pulumi.set(__self__, "blocking_strategy_dot_net", blocking_strategy_dot_net)
+
+    @property
+    @pulumi.getter(name="blockingStrategyJava")
+    def blocking_strategy_java(self) -> str:
+        """
+        Possible Values: `BLOCK`, `MONITOR`, `OFF`
+        """
+        return pulumi.get(self, "blocking_strategy_java")
+
+    @property
+    @pulumi.getter(name="blockingStrategyDotNet")
+    def blocking_strategy_dot_net(self) -> Optional[str]:
+        """
+        (v1.290) Possible Values: `BLOCK`, `MONITOR`, `OFF`
+        """
+        return pulumi.get(self, "blocking_strategy_dot_net")
+
+
+@pulumi.output_type
+class AutomationBusinessCalendarHolidays(dict):
+    def __init__(__self__, *,
+                 holidays: Sequence['outputs.AutomationBusinessCalendarHolidaysHoliday']):
+        """
+        :param Sequence['AutomationBusinessCalendarHolidaysHolidayArgs'] holidays: A (unordered) list of holidays valid in this calendar
+        """
+        pulumi.set(__self__, "holidays", holidays)
+
+    @property
+    @pulumi.getter
+    def holidays(self) -> Sequence['outputs.AutomationBusinessCalendarHolidaysHoliday']:
+        """
+        A (unordered) list of holidays valid in this calendar
+        """
+        return pulumi.get(self, "holidays")
+
+
+@pulumi.output_type
+class AutomationBusinessCalendarHolidaysHoliday(dict):
+    def __init__(__self__, *,
+                 date: str,
+                 title: str):
+        """
+        :param str date: The date of this holiday: Example `2017-07-04` for July 4th 2017
+        :param str title: An official name for this holiday
+        """
+        pulumi.set(__self__, "date", date)
+        pulumi.set(__self__, "title", title)
+
+    @property
+    @pulumi.getter
+    def date(self) -> str:
+        """
+        The date of this holiday: Example `2017-07-04` for July 4th 2017
+        """
+        return pulumi.get(self, "date")
+
+    @property
+    @pulumi.getter
+    def title(self) -> str:
+        """
+        An official name for this holiday
+        """
+        return pulumi.get(self, "title")
+
+
+@pulumi.output_type
+class AutomationSchedulingRuleFixedOffset(dict):
+    def __init__(__self__, *,
+                 offset: int,
+                 rule: str):
+        """
+        :param int offset: Every day of the scheduling rule referred to with `rule` will be offset by this amount of days
+        :param str rule: Refers to a scheduling rule for which to produce valid days with an offset
+        """
+        pulumi.set(__self__, "offset", offset)
+        pulumi.set(__self__, "rule", rule)
+
+    @property
+    @pulumi.getter
+    def offset(self) -> int:
+        """
+        Every day of the scheduling rule referred to with `rule` will be offset by this amount of days
+        """
+        return pulumi.get(self, "offset")
+
+    @property
+    @pulumi.getter
+    def rule(self) -> str:
+        """
+        Refers to a scheduling rule for which to produce valid days with an offset
+        """
+        return pulumi.get(self, "rule")
+
+
+@pulumi.output_type
+class AutomationSchedulingRuleGrouping(dict):
+    def __init__(__self__, *,
+                 combines: Sequence[str],
+                 intersects: Optional[Sequence[str]] = None,
+                 subtracts: Optional[Sequence[str]] = None):
+        """
+        :param Sequence[str] combines: The IDs of scheduling rules determining the days the schedule should apply to
+        :param Sequence[str] intersects: The IDs of scheduling rules determining the days the schedule is allowed apply to. If specified, only days that are covered by `combine` and `intersect` are valid days for the schedule
+        :param Sequence[str] subtracts: The IDs of scheduling rules determing the days the schedule must not apply. If specified it reduces down the set of days covered by `combine` and `intersect`
+        """
+        pulumi.set(__self__, "combines", combines)
+        if intersects is not None:
+            pulumi.set(__self__, "intersects", intersects)
+        if subtracts is not None:
+            pulumi.set(__self__, "subtracts", subtracts)
+
+    @property
+    @pulumi.getter
+    def combines(self) -> Sequence[str]:
+        """
+        The IDs of scheduling rules determining the days the schedule should apply to
+        """
+        return pulumi.get(self, "combines")
+
+    @property
+    @pulumi.getter
+    def intersects(self) -> Optional[Sequence[str]]:
+        """
+        The IDs of scheduling rules determining the days the schedule is allowed apply to. If specified, only days that are covered by `combine` and `intersect` are valid days for the schedule
+        """
+        return pulumi.get(self, "intersects")
+
+    @property
+    @pulumi.getter
+    def subtracts(self) -> Optional[Sequence[str]]:
+        """
+        The IDs of scheduling rules determing the days the schedule must not apply. If specified it reduces down the set of days covered by `combine` and `intersect`
+        """
+        return pulumi.get(self, "subtracts")
+
+
+@pulumi.output_type
+class AutomationSchedulingRuleRecurrence(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "daysInMonths":
+            suggest = "days_in_months"
+        elif key == "daysInYears":
+            suggest = "days_in_years"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomationSchedulingRuleRecurrence. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomationSchedulingRuleRecurrence.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomationSchedulingRuleRecurrence.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 datestart: str,
+                 frequency: str,
+                 workdays: str,
+                 days_in_months: Optional[Sequence[int]] = None,
+                 days_in_years: Optional[Sequence[int]] = None,
+                 easters: Optional[Sequence[int]] = None,
+                 interval: Optional[int] = None,
+                 months: Optional[Sequence[int]] = None,
+                 weekdays: Optional[Sequence[str]] = None,
+                 weeks: Optional[Sequence[int]] = None):
+        """
+        :param str datestart: The recurrence start. Example: `2017-07-04` represents July 4th 2017
+        :param str frequency: Possible values are `YEARLY`, `MONTHLY`, `WEEKLY`, `DAILY`, `HOURLY`, `MINUTELY` and `SECONDLY`. Example: `frequency` = `DAILY` and `interval` = `2` schedules for every other day
+        :param str workdays: Possible values are `WORKING` (Work days), `HOLIDAYS` (Holidays) and `OFF` (Weekends + Holidays)
+        :param Sequence[int] days_in_months: Restricts the recurrence to specific days within a month. `1`, `2`, `3`, ... refers to the first, second, third day in the month. You can also specify negative values to refer to values relative to the last day. `-1` refers to the last day, `-2` refers to the second to the last day, ...
+        :param Sequence[int] days_in_years: Restricts the recurrence to specific days within a year. `1`, `2`, `3`, ... refers to the first, second, third day of the year. You can also specify negative values to refer to values relative to the last day. `-1` refers to the last day, `-2` refers to the second to the last day, ...
+        :param Sequence[int] easters: Restricts the recurrence to specific days relative to Easter Sunday. `0` will yield the Easter Sunday itself
+        :param int interval: The interval between each iteration. Default: 1. Example: `frequency` = `DAILY` and `interval` = `2` schedules for every other day
+        :param Sequence[int] months: Restricts the recurrence to specific months. `1` for `January`, `2` for `February`, ..., `12` for `December`
+        :param Sequence[str] weekdays: Restricts the recurrence to specific week days. Possible values are `MO`, `TU`, `WE`, `TH`, `FR`, `SA` and `SU`
+        :param Sequence[int] weeks: Restricts the recurrence to specific weeks within a year. `1`, `2`, `3`, ... refers to the first, second, third week of the year. You can also specify negative values to refer to values relative to the last week. `-1` refers to the last week, `-2` refers to the second to the last week, ...
+        """
+        pulumi.set(__self__, "datestart", datestart)
+        pulumi.set(__self__, "frequency", frequency)
+        pulumi.set(__self__, "workdays", workdays)
+        if days_in_months is not None:
+            pulumi.set(__self__, "days_in_months", days_in_months)
+        if days_in_years is not None:
+            pulumi.set(__self__, "days_in_years", days_in_years)
+        if easters is not None:
+            pulumi.set(__self__, "easters", easters)
+        if interval is not None:
+            pulumi.set(__self__, "interval", interval)
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if weekdays is not None:
+            pulumi.set(__self__, "weekdays", weekdays)
+        if weeks is not None:
+            pulumi.set(__self__, "weeks", weeks)
+
+    @property
+    @pulumi.getter
+    def datestart(self) -> str:
+        """
+        The recurrence start. Example: `2017-07-04` represents July 4th 2017
+        """
+        return pulumi.get(self, "datestart")
+
+    @property
+    @pulumi.getter
+    def frequency(self) -> str:
+        """
+        Possible values are `YEARLY`, `MONTHLY`, `WEEKLY`, `DAILY`, `HOURLY`, `MINUTELY` and `SECONDLY`. Example: `frequency` = `DAILY` and `interval` = `2` schedules for every other day
+        """
+        return pulumi.get(self, "frequency")
+
+    @property
+    @pulumi.getter
+    def workdays(self) -> str:
+        """
+        Possible values are `WORKING` (Work days), `HOLIDAYS` (Holidays) and `OFF` (Weekends + Holidays)
+        """
+        return pulumi.get(self, "workdays")
+
+    @property
+    @pulumi.getter(name="daysInMonths")
+    def days_in_months(self) -> Optional[Sequence[int]]:
+        """
+        Restricts the recurrence to specific days within a month. `1`, `2`, `3`, ... refers to the first, second, third day in the month. You can also specify negative values to refer to values relative to the last day. `-1` refers to the last day, `-2` refers to the second to the last day, ...
+        """
+        return pulumi.get(self, "days_in_months")
+
+    @property
+    @pulumi.getter(name="daysInYears")
+    def days_in_years(self) -> Optional[Sequence[int]]:
+        """
+        Restricts the recurrence to specific days within a year. `1`, `2`, `3`, ... refers to the first, second, third day of the year. You can also specify negative values to refer to values relative to the last day. `-1` refers to the last day, `-2` refers to the second to the last day, ...
+        """
+        return pulumi.get(self, "days_in_years")
+
+    @property
+    @pulumi.getter
+    def easters(self) -> Optional[Sequence[int]]:
+        """
+        Restricts the recurrence to specific days relative to Easter Sunday. `0` will yield the Easter Sunday itself
+        """
+        return pulumi.get(self, "easters")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> Optional[int]:
+        """
+        The interval between each iteration. Default: 1. Example: `frequency` = `DAILY` and `interval` = `2` schedules for every other day
+        """
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter
+    def months(self) -> Optional[Sequence[int]]:
+        """
+        Restricts the recurrence to specific months. `1` for `January`, `2` for `February`, ..., `12` for `December`
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter
+    def weekdays(self) -> Optional[Sequence[str]]:
+        """
+        Restricts the recurrence to specific week days. Possible values are `MO`, `TU`, `WE`, `TH`, `FR`, `SA` and `SU`
+        """
+        return pulumi.get(self, "weekdays")
+
+    @property
+    @pulumi.getter
+    def weeks(self) -> Optional[Sequence[int]]:
+        """
+        Restricts the recurrence to specific weeks within a year. `1`, `2`, `3`, ... refers to the first, second, third week of the year. You can also specify negative values to refer to values relative to the last week. `-1` refers to the last week, `-2` refers to the second to the last week, ...
+        """
+        return pulumi.get(self, "weeks")
+
+
+@pulumi.output_type
+class AutomationSchedulingRuleRelativeOffset(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceRule":
+            suggest = "source_rule"
+        elif key == "targetRule":
+            suggest = "target_rule"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomationSchedulingRuleRelativeOffset. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomationSchedulingRuleRelativeOffset.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomationSchedulingRuleRelativeOffset.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 direction: str,
+                 source_rule: str,
+                 target_rule: str):
+        pulumi.set(__self__, "direction", direction)
+        pulumi.set(__self__, "source_rule", source_rule)
+        pulumi.set(__self__, "target_rule", target_rule)
+
+    @property
+    @pulumi.getter
+    def direction(self) -> str:
+        return pulumi.get(self, "direction")
+
+    @property
+    @pulumi.getter(name="sourceRule")
+    def source_rule(self) -> str:
+        return pulumi.get(self, "source_rule")
+
+    @property
+    @pulumi.getter(name="targetRule")
+    def target_rule(self) -> str:
+        return pulumi.get(self, "target_rule")
+
+
+@pulumi.output_type
+class AutomationWorkflowTasks(dict):
+    def __init__(__self__, *,
+                 tasks: Optional[Sequence['outputs.AutomationWorkflowTasksTask']] = None):
+        """
+        :param Sequence['AutomationWorkflowTasksTaskArgs'] tasks: TODO: No documentation available
+        """
+        if tasks is not None:
+            pulumi.set(__self__, "tasks", tasks)
+
+    @property
+    @pulumi.getter
+    def tasks(self) -> Optional[Sequence['outputs.AutomationWorkflowTasksTask']]:
+        """
+        TODO: No documentation available
+        """
+        return pulumi.get(self, "tasks")
+
+
+@pulumi.output_type
+class AutomationWorkflowTasksTask(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "withItems":
+            suggest = "with_items"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomationWorkflowTasksTask. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomationWorkflowTasksTask.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomationWorkflowTasksTask.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action: str,
+                 name: str,
+                 active: Optional[bool] = None,
+                 concurrency: Optional[str] = None,
+                 conditions: Optional['outputs.AutomationWorkflowTasksTaskConditions'] = None,
+                 description: Optional[str] = None,
+                 input: Optional[str] = None,
+                 position: Optional['outputs.AutomationWorkflowTasksTaskPosition'] = None,
+                 retry: Optional['outputs.AutomationWorkflowTasksTaskRetry'] = None,
+                 timeout: Optional[str] = None,
+                 with_items: Optional[str] = None):
+        """
+        :param str action: Currently known and supported values are `dynatrace.automations:http-function`, `dynatrace.automations:run-javascript` and `dynatrace.automations:execute-dql-query`
+        :param str name: The name of the task
+        :param bool active: Specifies whether a task should be skipped as a no operation or not
+        :param str concurrency: Required if `with_items` is specified. By default loops execute sequentially with concurrency set to 1. You can increase how often it runs in parallel
+        :param 'AutomationWorkflowTasksTaskConditionsArgs' conditions: Conditions that have to be met in order to execute that task
+        :param str description: A description for this task
+        :param str input: Parameters and values for this task as JSON code. Contents depend on the kind of task - determined by the attribute `action`
+        :param 'AutomationWorkflowTasksTaskPositionArgs' position: Layouting information about the task tile when visualized. If not specified Dynatrace will position the task tiles automatically
+        :param 'AutomationWorkflowTasksTaskRetryArgs' retry: Configure whether to automatically rerun the task on failure. If not specified no retries will be attempted
+        :param str timeout: Specifies a default task timeout in seconds. 15 * 60 (15min) is used when not set. Minimum 1. Maximum 604800
+        :param str with_items: Iterates over items in a list, allowing actions to be executed repeatedly. Example: Specifying `item in [1, 2, 3]` here will execute the task three times for the numbers 1, 2 and 3 - with the current number available for scripting using the expression `{{ _.item }}`
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "name", name)
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if concurrency is not None:
+            pulumi.set(__self__, "concurrency", concurrency)
+        if conditions is not None:
+            pulumi.set(__self__, "conditions", conditions)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if input is not None:
+            pulumi.set(__self__, "input", input)
+        if position is not None:
+            pulumi.set(__self__, "position", position)
+        if retry is not None:
+            pulumi.set(__self__, "retry", retry)
+        if timeout is not None:
+            pulumi.set(__self__, "timeout", timeout)
+        if with_items is not None:
+            pulumi.set(__self__, "with_items", with_items)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        """
+        Currently known and supported values are `dynatrace.automations:http-function`, `dynatrace.automations:run-javascript` and `dynatrace.automations:execute-dql-query`
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the task
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        Specifies whether a task should be skipped as a no operation or not
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def concurrency(self) -> Optional[str]:
+        """
+        Required if `with_items` is specified. By default loops execute sequentially with concurrency set to 1. You can increase how often it runs in parallel
+        """
+        return pulumi.get(self, "concurrency")
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Optional['outputs.AutomationWorkflowTasksTaskConditions']:
+        """
+        Conditions that have to be met in order to execute that task
+        """
+        return pulumi.get(self, "conditions")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        A description for this task
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def input(self) -> Optional[str]:
+        """
+        Parameters and values for this task as JSON code. Contents depend on the kind of task - determined by the attribute `action`
+        """
+        return pulumi.get(self, "input")
+
+    @property
+    @pulumi.getter
+    def position(self) -> Optional['outputs.AutomationWorkflowTasksTaskPosition']:
+        """
+        Layouting information about the task tile when visualized. If not specified Dynatrace will position the task tiles automatically
+        """
+        return pulumi.get(self, "position")
+
+    @property
+    @pulumi.getter
+    def retry(self) -> Optional['outputs.AutomationWorkflowTasksTaskRetry']:
+        """
+        Configure whether to automatically rerun the task on failure. If not specified no retries will be attempted
+        """
+        return pulumi.get(self, "retry")
+
+    @property
+    @pulumi.getter
+    def timeout(self) -> Optional[str]:
+        """
+        Specifies a default task timeout in seconds. 15 * 60 (15min) is used when not set. Minimum 1. Maximum 604800
+        """
+        return pulumi.get(self, "timeout")
+
+    @property
+    @pulumi.getter(name="withItems")
+    def with_items(self) -> Optional[str]:
+        """
+        Iterates over items in a list, allowing actions to be executed repeatedly. Example: Specifying `item in [1, 2, 3]` here will execute the task three times for the numbers 1, 2 and 3 - with the current number available for scripting using the expression `{{ _.item }}`
+        """
+        return pulumi.get(self, "with_items")
+
+
+@pulumi.output_type
+class AutomationWorkflowTasksTaskConditions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "else":
+            suggest = "else_"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomationWorkflowTasksTaskConditions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomationWorkflowTasksTaskConditions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomationWorkflowTasksTaskConditions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 states: Mapping[str, Any],
+                 custom: Optional[str] = None,
+                 else_: Optional[str] = None):
+        """
+        :param Mapping[str, Any] states: key/value pairs where the `key` is the name of another task and the value the status it needs to be for the current task to get executed. Possible values are `SUCCESS`, `ERROR`, `ANY`, `OK` (Success or Skipped) and `NOK` (Error or Cancelled)
+        :param str custom: A custom condition that needs to be met for the current task to get executed
+        :param str else_: Possible values are `SKIP` and `STOP`
+        """
+        pulumi.set(__self__, "states", states)
+        if custom is not None:
+            pulumi.set(__self__, "custom", custom)
+        if else_ is not None:
+            pulumi.set(__self__, "else_", else_)
+
+    @property
+    @pulumi.getter
+    def states(self) -> Mapping[str, Any]:
+        """
+        key/value pairs where the `key` is the name of another task and the value the status it needs to be for the current task to get executed. Possible values are `SUCCESS`, `ERROR`, `ANY`, `OK` (Success or Skipped) and `NOK` (Error or Cancelled)
+        """
+        return pulumi.get(self, "states")
+
+    @property
+    @pulumi.getter
+    def custom(self) -> Optional[str]:
+        """
+        A custom condition that needs to be met for the current task to get executed
+        """
+        return pulumi.get(self, "custom")
+
+    @property
+    @pulumi.getter(name="else")
+    def else_(self) -> Optional[str]:
+        """
+        Possible values are `SKIP` and `STOP`
+        """
+        return pulumi.get(self, "else_")
+
+
+@pulumi.output_type
+class AutomationWorkflowTasksTaskPosition(dict):
+    def __init__(__self__, *,
+                 x: int,
+                 y: int):
+        """
+        :param int x: x-coordinate for layouting
+        :param int y: y-coordinate for layouting
+        """
+        pulumi.set(__self__, "x", x)
+        pulumi.set(__self__, "y", y)
+
+    @property
+    @pulumi.getter
+    def x(self) -> int:
+        """
+        x-coordinate for layouting
+        """
+        return pulumi.get(self, "x")
+
+    @property
+    @pulumi.getter
+    def y(self) -> int:
+        """
+        y-coordinate for layouting
+        """
+        return pulumi.get(self, "y")
+
+
+@pulumi.output_type
+class AutomationWorkflowTasksTaskRetry(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "failedLoopIterationsOnly":
+            suggest = "failed_loop_iterations_only"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomationWorkflowTasksTaskRetry. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomationWorkflowTasksTaskRetry.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomationWorkflowTasksTaskRetry.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 count: Optional[str] = None,
+                 delay: Optional[str] = None,
+                 failed_loop_iterations_only: Optional[bool] = None):
+        """
+        :param str count: Specifies a maximum number of times that a task can be repeated in case it fails on execution. You can specify either a number between 1 and 99 here or use an expression (`{{}}`). Default: 1
+        :param str delay: Specifies a delay in seconds between subsequent task retries. You can specify either a number between 1 and 3600 here or an expression (`{{...}}`). Default: 1
+        :param bool failed_loop_iterations_only: Specifies whether retrying the failed iterations or the whole loop. Default: true
+        """
+        if count is not None:
+            pulumi.set(__self__, "count", count)
+        if delay is not None:
+            pulumi.set(__self__, "delay", delay)
+        if failed_loop_iterations_only is not None:
+            pulumi.set(__self__, "failed_loop_iterations_only", failed_loop_iterations_only)
+
+    @property
+    @pulumi.getter
+    def count(self) -> Optional[str]:
+        """
+        Specifies a maximum number of times that a task can be repeated in case it fails on execution. You can specify either a number between 1 and 99 here or use an expression (`{{}}`). Default: 1
+        """
+        return pulumi.get(self, "count")
+
+    @property
+    @pulumi.getter
+    def delay(self) -> Optional[str]:
+        """
+        Specifies a delay in seconds between subsequent task retries. You can specify either a number between 1 and 3600 here or an expression (`{{...}}`). Default: 1
+        """
+        return pulumi.get(self, "delay")
+
+    @property
+    @pulumi.getter(name="failedLoopIterationsOnly")
+    def failed_loop_iterations_only(self) -> Optional[bool]:
+        """
+        Specifies whether retrying the failed iterations or the whole loop. Default: true
+        """
+        return pulumi.get(self, "failed_loop_iterations_only")
+
+
+@pulumi.output_type
+class AutomationWorkflowTrigger(dict):
+    def __init__(__self__, *,
+                 event: Optional['outputs.AutomationWorkflowTriggerEvent'] = None,
+                 schedule: Optional['outputs.AutomationWorkflowTriggerSchedule'] = None):
+        """
+        :param 'AutomationWorkflowTriggerEventArgs' event: If specified the workflow is getting triggered based on events
+        :param 'AutomationWorkflowTriggerScheduleArgs' schedule: If specified the workflow is getting triggered based on a schedule
+        """
+        if event is not None:
+            pulumi.set(__self__, "event", event)
+        if schedule is not None:
+            pulumi.set(__self__, "schedule", schedule)
+
+    @property
+    @pulumi.getter
+    def event(self) -> Optional['outputs.AutomationWorkflowTriggerEvent']:
+        """
+        If specified the workflow is getting triggered based on events
+        """
+        return pulumi.get(self, "event")
+
+    @property
+    @pulumi.getter
+    def schedule(self) -> Optional['outputs.AutomationWorkflowTriggerSchedule']:
+        """
+        If specified the workflow is getting triggered based on a schedule
+        """
+        return pulumi.get(self, "schedule")
+
+
+@pulumi.output_type
+class AutomationWorkflowTriggerEvent(dict):
+    def __init__(__self__, *,
+                 active: Optional[bool] = None,
+                 config: Optional['outputs.AutomationWorkflowTriggerEventConfig'] = None):
+        """
+        :param bool active: If specified the workflow is getting triggered based on a schedule
+        :param 'AutomationWorkflowTriggerEventConfigArgs' config: If specified the workflow is getting triggered based on events
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if config is not None:
+            pulumi.set(__self__, "config", config)
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        If specified the workflow is getting triggered based on a schedule
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def config(self) -> Optional['outputs.AutomationWorkflowTriggerEventConfig']:
+        """
+        If specified the workflow is getting triggered based on events
+        """
+        return pulumi.get(self, "config")
+
+
+@pulumi.output_type
+class AutomationWorkflowTriggerEventConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "davisEvent":
+            suggest = "davis_event"
+        elif key == "davisProblem":
+            suggest = "davis_problem"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomationWorkflowTriggerEventConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomationWorkflowTriggerEventConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomationWorkflowTriggerEventConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 davis_event: Optional['outputs.AutomationWorkflowTriggerEventConfigDavisEvent'] = None,
+                 davis_problem: Optional['outputs.AutomationWorkflowTriggerEventConfigDavisProblem'] = None,
+                 event: Optional['outputs.AutomationWorkflowTriggerEventConfigEvent'] = None,
+                 type: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param 'AutomationWorkflowTriggerEventConfigDavisEventArgs' davis_event: Contains trigger configuration based on Davis Events. Either `davis_event`, `davis_problem`, `davis_event` or `config` need to set
+        :param 'AutomationWorkflowTriggerEventConfigDavisProblemArgs' davis_problem: Contains trigger configuration based on Davis Problems. Either `davis_event`, `davis_problem`, `davis_event` or `config` need to set
+        :param 'AutomationWorkflowTriggerEventConfigEventArgs' event: Contains trigger configuration based on Davis Problems. Either `davis_event`, `davis_problem`, `davis_event` or `config` need to set
+        :param str type: The type of the trigger configuration to expect within attribute `value`. Only required if `config` is set. Must not be set if `davis_event`, `davis_problem` or `event` are present
+        :param str value: Contains JSON encoded trigger configuration if the trigger type is neither `davis_event`, `davis_problem` or `event`. It requires the attribute `type` to be set in combination
+        """
+        if davis_event is not None:
+            pulumi.set(__self__, "davis_event", davis_event)
+        if davis_problem is not None:
+            pulumi.set(__self__, "davis_problem", davis_problem)
+        if event is not None:
+            pulumi.set(__self__, "event", event)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="davisEvent")
+    def davis_event(self) -> Optional['outputs.AutomationWorkflowTriggerEventConfigDavisEvent']:
+        """
+        Contains trigger configuration based on Davis Events. Either `davis_event`, `davis_problem`, `davis_event` or `config` need to set
+        """
+        return pulumi.get(self, "davis_event")
+
+    @property
+    @pulumi.getter(name="davisProblem")
+    def davis_problem(self) -> Optional['outputs.AutomationWorkflowTriggerEventConfigDavisProblem']:
+        """
+        Contains trigger configuration based on Davis Problems. Either `davis_event`, `davis_problem`, `davis_event` or `config` need to set
+        """
+        return pulumi.get(self, "davis_problem")
+
+    @property
+    @pulumi.getter
+    def event(self) -> Optional['outputs.AutomationWorkflowTriggerEventConfigEvent']:
+        """
+        Contains trigger configuration based on Davis Problems. Either `davis_event`, `davis_problem`, `davis_event` or `config` need to set
+        """
+        return pulumi.get(self, "event")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        The type of the trigger configuration to expect within attribute `value`. Only required if `config` is set. Must not be set if `davis_event`, `davis_problem` or `event` are present
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        Contains JSON encoded trigger configuration if the trigger type is neither `davis_event`, `davis_problem` or `event`. It requires the attribute `type` to be set in combination
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class AutomationWorkflowTriggerEventConfigDavisEvent(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "entityTags":
+            suggest = "entity_tags"
+        elif key == "entityTagsMatch":
+            suggest = "entity_tags_match"
+        elif key == "onProblemClose":
+            suggest = "on_problem_close"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomationWorkflowTriggerEventConfigDavisEvent. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomationWorkflowTriggerEventConfigDavisEvent.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomationWorkflowTriggerEventConfigDavisEvent.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 types: Sequence[str],
+                 entity_tags: Optional[Mapping[str, str]] = None,
+                 entity_tags_match: Optional[str] = None,
+                 on_problem_close: Optional[bool] = None):
+        """
+        :param Sequence[str] types: The types of davis events to trigger an execution. Possible values are `CUSTOM_ANNOTATION`, `APPLICATION_UNEXPECTED_HIGH_LOAD`, `APPLICATION_UNEXPECTED_LOW_LOAD`, `APPLICATION_OVERLOAD_PREVENTION`, `APPLICATION_SLOWDOWN`, `AVAILABILITY_EVENT`, `LOG_AVAILABILITY`, `EC2_HIGH_CPU`, `RDS_BACKUP_COMPLETED`, `RDS_BACKUP_STARTED`, `SYNTHETIC_GLOBAL_OUTAGE`, `SYNTHETIC_LOCAL_OUTAGE`, `SYNTHETIC_TEST_LOCATION_SLOWDOWN`, `CUSTOM_CONFIGURATION`, `PROCESS_NA_HIGH_CONN_FAIL_RATE`, `OSI_HIGH_CPU`, `CUSTOM_ALERT`, `CUSTOM_APP_CRASH_RATE_INCREASED`, `CUSTOM_APPLICATION_ERROR_RATE_INCREASED`, `CUSTOM_APPLICATION_UNEXPECTED_HIGH_LOAD`, `CUSTOM_APPLICATION_UNEXPECTED_LOW_LOAD`, `CUSTOM_APPLICATION_OVERLOAD_PREVENTION`, `CUSTOM_APPLICATION_SLOWDOWN`, `PGI_CUSTOM_AVAILABILITY`, `PGI_CUSTOM_ERROR`, `CUSTOM_INFO`, `PGI_CUSTOM_PERFORMANCE`, `CUSTOM_DEPLOYMENT`, `DEPLOYMENT_CHANGED_CHANGE`, `DEPLOYMENT_CHANGED_NEW`, `DEPLOYMENT_CHANGED_REMOVED`, `EBS_VOLUME_HIGH_LATENCY`, `ERROR_EVENT`, `LOG_ERROR`, `ESXI_HOST_CONNECTION_FAILED`, `ESXI_HOST_CONNECTION_LOST`, `ESXI_GUEST_CPU_LIMIT_REACHED`, `ESXI_GUEST_ACTIVE_SWAP_WAIT`, `ESXI_HOST_CPU_SATURATION`, `ESXI_HOST_MEMORY_SATURATION`, `ESXI_HOST_MAINTENANCE`, `ESXI_HOST_NETWORK_PROBLEMS`, `ESXI_HOST_NO_CONNECTION`, `ESXI_HOST_SHUTDOWN`, `ESXI_HOST_DISK_SLOW`, `ESXI_HOST_UP`, `ESXI_HOST_TIMEOUT`, `ESXI_VM_IMPACT_HOST_CPU_SATURATION`, `ESXI_VM_IMPACT_HOST_MEMORY_SATURATION`, `DATABASE_CONNECTION_FAILURE`, `RDS_AZ_FAILOVER_COMPLETED`, `RDS_AZ_FAILOVER_STARTED`, `SERVICE_ERROR_RATE_INCREASED`, `RDS_HIGH_LATENCY`, `OSI_NIC_UTILIZATION_HIGH`, `OSI_NIC_ERRORS_HIGH`, `PGI_HAPROXY_QUEUED_REQUESTS_HIGH`, `PGI_RMQ_HIGH_FILE_DESC_USAGE`, `PGI_RMQ_HIGH_MEM_USAGE`, `PGI_RMQ_HIGH_PROCESS_USAGE`, `PGI_RMQ_HIGH_SOCKETS_USAGE`, `OSI_NIC_DROPPED_PACKETS_HIGH`, `PGI_MYSQL_SLOW_QUERIES_RATE_HIGH`, `PGI_KEYSTONE_SLOW`, `PGI_HAPROXY_SESSION_USAGE_HIGH`, `HOST_LOG_AVAILABILITY`, `HOST_LOG_ERROR`, `OSI_GRACEFULLY_SHUTDOWN`, `HOST_LOG_MATCHED`, `OSI_UNEXPECTEDLY_UNAVAILABLE`, `HOST_LOG_PERFORMANCE`, `HOST_OF_SERVICE_UNAVAILABLE`, `HTTP_CHECK_GLOBAL_OUTAGE`, `HTTP_CHECK_LOCAL_OUTAGE`, `HTTP_CHECK_TEST_LOCATION_SLOWDOWN`, `ESXI_HOST_DISK_QUEUE_SLOW`, `LOG_MATCHED`, `APPLICATION_ERROR_RATE_INCREASED`, `APPLICATION_JS_FRAMEWORK_DETECTED`, `AWS_LAMBDA_HIGH_ERROR_RATE`, `ELB_HIGH_BACKEND_ERROR_RATE`, `ELB_HIGH_FRONTEND_ERROR_RATE`, `ELB_HIGH_UNHEALTHY_HOST_RATE`, `PROCESS_HIGH_GC_ACTIVITY`, `ESXI_HOST_DATASTORE_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_DATA_SPACE`, `OSI_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_METADATA_SPACE`, `OSI_DISK_LOW_INODES`, `PGI_RMQ_LOW_DISK_SPACE`, `RDS_LOW_STORAGE_SPACE`, `MARKED_FOR_TERMINATION`, `PROCESS_MEMORY_RESOURCE_EXHAUSTED`, `OSI_HIGH_MEMORY`, `MOBILE_APP_CRASH_RATE_INCREASED`, `MOBILE_APPLICATION_ERROR_RATE_INCREASED`, `MOBILE_APPLICATION_OVERLOAD_PREVENTION`, `MOBILE_APPLICATION_SLOWDOWN`, `MOBILE_APPLICATION_UNEXPECTED_HIGH_LOAD`, `MOBILE_APPLICATION_UNEXPECTED_LOW_LOAD`, `MONITORING_UNAVAILABLE`, `PROCESS_NA_HIGH_LOSS_RATE`, `PGI_KEYSTONE_UNHEALTHY`, `ESXI_HOST_OVERLOADED_STORAGE`, `PERFORMANCE_EVENT`, `LOG_PERFORMANCE`, `PGI_LOG_AVAILABILITY`, `PGI_CRASHED_INFO`, `PROCESS_CRASHED`, `PGI_LOG_ERROR`, `PG_LOW_INSTANCE_COUNT`, `PGI_LOG_MATCHED`, `PGI_MEMDUMP`, `PGI_LOG_PERFORMANCE`, `PROCESS_RESTART`, `PGI_UNAVAILABLE`, `RDS_HIGH_CPU`, `RDS_LOW_MEMORY`, `RDS_OF_SERVICE_UNAVAILABLE`, `RESOURCE_CONTENTION_EVENT`, `SERVICE_SLOWDOWN`, `RDS_RESTART`, `RDS_RESTART_SEQUENCE`, `PGI_OF_SERVICE_UNAVAILABLE`, `OSI_SLOW_DISK`, `SYNTHETIC_NODE_OUTAGE`, `SYNTHETIC_PRIVATE_LOCATION_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_SLOWDOWN`, `PROCESS_THREADS_RESOURCE_EXHAUSTED`, `SERVICE_UNEXPECTED_HIGH_LOAD`, `SERVICE_UNEXPECTED_LOW_LOAD`, `ESXI_VM_DISCONNECTED`, `OPENSTACK_VM_LAUNCH_FAILED`, `ESXI_HOST_VM_MOTION_LEFT`, `ESXI_HOST_VM_MOTION_ARRIVED`, `ESXI_VM_MOTION`, `OPENSTACK_VM_MOTION`, `ESXI_VM_POWER_OFF`, `ESXI_VM_SHUTDOWN`, `OPENSTACK_HOST_VM_SHUTDOWN`, `ESXI_VM_START`, `ESXI_HOST_VM_STARTED`, `OPENSTACK_HOST_VM_STARTED`
+        :param Mapping[str, str] entity_tags: key/value pairs for entity tags to match for. For tags that don't require a value, just specify an empty string as value. Omit this attribute if all entities should match
+        :param str entity_tags_match: Specifies whether all or just any of the configured entity tags need to match. Possible values: `all` and `any`. Omit this attribute if all entities should match
+        :param bool on_problem_close: If set to `true` closing a problem also is considered an event that triggers the execution
+        """
+        pulumi.set(__self__, "types", types)
+        if entity_tags is not None:
+            pulumi.set(__self__, "entity_tags", entity_tags)
+        if entity_tags_match is not None:
+            pulumi.set(__self__, "entity_tags_match", entity_tags_match)
+        if on_problem_close is not None:
+            pulumi.set(__self__, "on_problem_close", on_problem_close)
+
+    @property
+    @pulumi.getter
+    def types(self) -> Sequence[str]:
+        """
+        The types of davis events to trigger an execution. Possible values are `CUSTOM_ANNOTATION`, `APPLICATION_UNEXPECTED_HIGH_LOAD`, `APPLICATION_UNEXPECTED_LOW_LOAD`, `APPLICATION_OVERLOAD_PREVENTION`, `APPLICATION_SLOWDOWN`, `AVAILABILITY_EVENT`, `LOG_AVAILABILITY`, `EC2_HIGH_CPU`, `RDS_BACKUP_COMPLETED`, `RDS_BACKUP_STARTED`, `SYNTHETIC_GLOBAL_OUTAGE`, `SYNTHETIC_LOCAL_OUTAGE`, `SYNTHETIC_TEST_LOCATION_SLOWDOWN`, `CUSTOM_CONFIGURATION`, `PROCESS_NA_HIGH_CONN_FAIL_RATE`, `OSI_HIGH_CPU`, `CUSTOM_ALERT`, `CUSTOM_APP_CRASH_RATE_INCREASED`, `CUSTOM_APPLICATION_ERROR_RATE_INCREASED`, `CUSTOM_APPLICATION_UNEXPECTED_HIGH_LOAD`, `CUSTOM_APPLICATION_UNEXPECTED_LOW_LOAD`, `CUSTOM_APPLICATION_OVERLOAD_PREVENTION`, `CUSTOM_APPLICATION_SLOWDOWN`, `PGI_CUSTOM_AVAILABILITY`, `PGI_CUSTOM_ERROR`, `CUSTOM_INFO`, `PGI_CUSTOM_PERFORMANCE`, `CUSTOM_DEPLOYMENT`, `DEPLOYMENT_CHANGED_CHANGE`, `DEPLOYMENT_CHANGED_NEW`, `DEPLOYMENT_CHANGED_REMOVED`, `EBS_VOLUME_HIGH_LATENCY`, `ERROR_EVENT`, `LOG_ERROR`, `ESXI_HOST_CONNECTION_FAILED`, `ESXI_HOST_CONNECTION_LOST`, `ESXI_GUEST_CPU_LIMIT_REACHED`, `ESXI_GUEST_ACTIVE_SWAP_WAIT`, `ESXI_HOST_CPU_SATURATION`, `ESXI_HOST_MEMORY_SATURATION`, `ESXI_HOST_MAINTENANCE`, `ESXI_HOST_NETWORK_PROBLEMS`, `ESXI_HOST_NO_CONNECTION`, `ESXI_HOST_SHUTDOWN`, `ESXI_HOST_DISK_SLOW`, `ESXI_HOST_UP`, `ESXI_HOST_TIMEOUT`, `ESXI_VM_IMPACT_HOST_CPU_SATURATION`, `ESXI_VM_IMPACT_HOST_MEMORY_SATURATION`, `DATABASE_CONNECTION_FAILURE`, `RDS_AZ_FAILOVER_COMPLETED`, `RDS_AZ_FAILOVER_STARTED`, `SERVICE_ERROR_RATE_INCREASED`, `RDS_HIGH_LATENCY`, `OSI_NIC_UTILIZATION_HIGH`, `OSI_NIC_ERRORS_HIGH`, `PGI_HAPROXY_QUEUED_REQUESTS_HIGH`, `PGI_RMQ_HIGH_FILE_DESC_USAGE`, `PGI_RMQ_HIGH_MEM_USAGE`, `PGI_RMQ_HIGH_PROCESS_USAGE`, `PGI_RMQ_HIGH_SOCKETS_USAGE`, `OSI_NIC_DROPPED_PACKETS_HIGH`, `PGI_MYSQL_SLOW_QUERIES_RATE_HIGH`, `PGI_KEYSTONE_SLOW`, `PGI_HAPROXY_SESSION_USAGE_HIGH`, `HOST_LOG_AVAILABILITY`, `HOST_LOG_ERROR`, `OSI_GRACEFULLY_SHUTDOWN`, `HOST_LOG_MATCHED`, `OSI_UNEXPECTEDLY_UNAVAILABLE`, `HOST_LOG_PERFORMANCE`, `HOST_OF_SERVICE_UNAVAILABLE`, `HTTP_CHECK_GLOBAL_OUTAGE`, `HTTP_CHECK_LOCAL_OUTAGE`, `HTTP_CHECK_TEST_LOCATION_SLOWDOWN`, `ESXI_HOST_DISK_QUEUE_SLOW`, `LOG_MATCHED`, `APPLICATION_ERROR_RATE_INCREASED`, `APPLICATION_JS_FRAMEWORK_DETECTED`, `AWS_LAMBDA_HIGH_ERROR_RATE`, `ELB_HIGH_BACKEND_ERROR_RATE`, `ELB_HIGH_FRONTEND_ERROR_RATE`, `ELB_HIGH_UNHEALTHY_HOST_RATE`, `PROCESS_HIGH_GC_ACTIVITY`, `ESXI_HOST_DATASTORE_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_DATA_SPACE`, `OSI_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_METADATA_SPACE`, `OSI_DISK_LOW_INODES`, `PGI_RMQ_LOW_DISK_SPACE`, `RDS_LOW_STORAGE_SPACE`, `MARKED_FOR_TERMINATION`, `PROCESS_MEMORY_RESOURCE_EXHAUSTED`, `OSI_HIGH_MEMORY`, `MOBILE_APP_CRASH_RATE_INCREASED`, `MOBILE_APPLICATION_ERROR_RATE_INCREASED`, `MOBILE_APPLICATION_OVERLOAD_PREVENTION`, `MOBILE_APPLICATION_SLOWDOWN`, `MOBILE_APPLICATION_UNEXPECTED_HIGH_LOAD`, `MOBILE_APPLICATION_UNEXPECTED_LOW_LOAD`, `MONITORING_UNAVAILABLE`, `PROCESS_NA_HIGH_LOSS_RATE`, `PGI_KEYSTONE_UNHEALTHY`, `ESXI_HOST_OVERLOADED_STORAGE`, `PERFORMANCE_EVENT`, `LOG_PERFORMANCE`, `PGI_LOG_AVAILABILITY`, `PGI_CRASHED_INFO`, `PROCESS_CRASHED`, `PGI_LOG_ERROR`, `PG_LOW_INSTANCE_COUNT`, `PGI_LOG_MATCHED`, `PGI_MEMDUMP`, `PGI_LOG_PERFORMANCE`, `PROCESS_RESTART`, `PGI_UNAVAILABLE`, `RDS_HIGH_CPU`, `RDS_LOW_MEMORY`, `RDS_OF_SERVICE_UNAVAILABLE`, `RESOURCE_CONTENTION_EVENT`, `SERVICE_SLOWDOWN`, `RDS_RESTART`, `RDS_RESTART_SEQUENCE`, `PGI_OF_SERVICE_UNAVAILABLE`, `OSI_SLOW_DISK`, `SYNTHETIC_NODE_OUTAGE`, `SYNTHETIC_PRIVATE_LOCATION_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_SLOWDOWN`, `PROCESS_THREADS_RESOURCE_EXHAUSTED`, `SERVICE_UNEXPECTED_HIGH_LOAD`, `SERVICE_UNEXPECTED_LOW_LOAD`, `ESXI_VM_DISCONNECTED`, `OPENSTACK_VM_LAUNCH_FAILED`, `ESXI_HOST_VM_MOTION_LEFT`, `ESXI_HOST_VM_MOTION_ARRIVED`, `ESXI_VM_MOTION`, `OPENSTACK_VM_MOTION`, `ESXI_VM_POWER_OFF`, `ESXI_VM_SHUTDOWN`, `OPENSTACK_HOST_VM_SHUTDOWN`, `ESXI_VM_START`, `ESXI_HOST_VM_STARTED`, `OPENSTACK_HOST_VM_STARTED`
+        """
+        return pulumi.get(self, "types")
+
+    @property
+    @pulumi.getter(name="entityTags")
+    def entity_tags(self) -> Optional[Mapping[str, str]]:
+        """
+        key/value pairs for entity tags to match for. For tags that don't require a value, just specify an empty string as value. Omit this attribute if all entities should match
+        """
+        return pulumi.get(self, "entity_tags")
+
+    @property
+    @pulumi.getter(name="entityTagsMatch")
+    def entity_tags_match(self) -> Optional[str]:
+        """
+        Specifies whether all or just any of the configured entity tags need to match. Possible values: `all` and `any`. Omit this attribute if all entities should match
+        """
+        return pulumi.get(self, "entity_tags_match")
+
+    @property
+    @pulumi.getter(name="onProblemClose")
+    def on_problem_close(self) -> Optional[bool]:
+        """
+        If set to `true` closing a problem also is considered an event that triggers the execution
+        """
+        return pulumi.get(self, "on_problem_close")
+
+
+@pulumi.output_type
+class AutomationWorkflowTriggerEventConfigDavisProblem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customFilter":
+            suggest = "custom_filter"
+        elif key == "entityTags":
+            suggest = "entity_tags"
+        elif key == "entityTagsMatch":
+            suggest = "entity_tags_match"
+        elif key == "onProblemClose":
+            suggest = "on_problem_close"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomationWorkflowTriggerEventConfigDavisProblem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomationWorkflowTriggerEventConfigDavisProblem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomationWorkflowTriggerEventConfigDavisProblem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 categories: Sequence['outputs.AutomationWorkflowTriggerEventConfigDavisProblemCategory'],
+                 custom_filter: Optional[str] = None,
+                 entity_tags: Optional[Mapping[str, str]] = None,
+                 entity_tags_match: Optional[str] = None,
+                 on_problem_close: Optional[bool] = None):
+        """
+        :param Mapping[str, str] entity_tags: key/value pairs for entity tags to match for. For tags that don't require a value, just specify an empty string as value. Omit this attribute if all entities should match
+        :param str entity_tags_match: Specifies whether all or just any of the configured entity tags need to match. Possible values: `all` and `any`. Omit this attribute if all entities should match
+        :param bool on_problem_close: If set to `true` closing a problem also is considered an event that triggers the execution
+        """
+        pulumi.set(__self__, "categories", categories)
+        if custom_filter is not None:
+            pulumi.set(__self__, "custom_filter", custom_filter)
+        if entity_tags is not None:
+            pulumi.set(__self__, "entity_tags", entity_tags)
+        if entity_tags_match is not None:
+            pulumi.set(__self__, "entity_tags_match", entity_tags_match)
+        if on_problem_close is not None:
+            pulumi.set(__self__, "on_problem_close", on_problem_close)
+
+    @property
+    @pulumi.getter
+    def categories(self) -> Sequence['outputs.AutomationWorkflowTriggerEventConfigDavisProblemCategory']:
+        return pulumi.get(self, "categories")
+
+    @property
+    @pulumi.getter(name="customFilter")
+    def custom_filter(self) -> Optional[str]:
+        return pulumi.get(self, "custom_filter")
+
+    @property
+    @pulumi.getter(name="entityTags")
+    def entity_tags(self) -> Optional[Mapping[str, str]]:
+        """
+        key/value pairs for entity tags to match for. For tags that don't require a value, just specify an empty string as value. Omit this attribute if all entities should match
+        """
+        return pulumi.get(self, "entity_tags")
+
+    @property
+    @pulumi.getter(name="entityTagsMatch")
+    def entity_tags_match(self) -> Optional[str]:
+        """
+        Specifies whether all or just any of the configured entity tags need to match. Possible values: `all` and `any`. Omit this attribute if all entities should match
+        """
+        return pulumi.get(self, "entity_tags_match")
+
+    @property
+    @pulumi.getter(name="onProblemClose")
+    def on_problem_close(self) -> Optional[bool]:
+        """
+        If set to `true` closing a problem also is considered an event that triggers the execution
+        """
+        return pulumi.get(self, "on_problem_close")
+
+
+@pulumi.output_type
+class AutomationWorkflowTriggerEventConfigDavisProblemCategory(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "monitoringUnavailable":
+            suggest = "monitoring_unavailable"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomationWorkflowTriggerEventConfigDavisProblemCategory. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomationWorkflowTriggerEventConfigDavisProblemCategory.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomationWorkflowTriggerEventConfigDavisProblemCategory.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 availability: Optional[bool] = None,
+                 custom: Optional[bool] = None,
+                 error: Optional[bool] = None,
+                 info: Optional[bool] = None,
+                 monitoring_unavailable: Optional[bool] = None,
+                 resource: Optional[bool] = None,
+                 slowdown: Optional[bool] = None):
+        if availability is not None:
+            pulumi.set(__self__, "availability", availability)
+        if custom is not None:
+            pulumi.set(__self__, "custom", custom)
+        if error is not None:
+            pulumi.set(__self__, "error", error)
+        if info is not None:
+            pulumi.set(__self__, "info", info)
+        if monitoring_unavailable is not None:
+            pulumi.set(__self__, "monitoring_unavailable", monitoring_unavailable)
+        if resource is not None:
+            pulumi.set(__self__, "resource", resource)
+        if slowdown is not None:
+            pulumi.set(__self__, "slowdown", slowdown)
+
+    @property
+    @pulumi.getter
+    def availability(self) -> Optional[bool]:
+        return pulumi.get(self, "availability")
+
+    @property
+    @pulumi.getter
+    def custom(self) -> Optional[bool]:
+        return pulumi.get(self, "custom")
+
+    @property
+    @pulumi.getter
+    def error(self) -> Optional[bool]:
+        return pulumi.get(self, "error")
+
+    @property
+    @pulumi.getter
+    def info(self) -> Optional[bool]:
+        return pulumi.get(self, "info")
+
+    @property
+    @pulumi.getter(name="monitoringUnavailable")
+    def monitoring_unavailable(self) -> Optional[bool]:
+        return pulumi.get(self, "monitoring_unavailable")
+
+    @property
+    @pulumi.getter
+    def resource(self) -> Optional[bool]:
+        return pulumi.get(self, "resource")
+
+    @property
+    @pulumi.getter
+    def slowdown(self) -> Optional[bool]:
+        return pulumi.get(self, "slowdown")
+
+
+@pulumi.output_type
+class AutomationWorkflowTriggerEventConfigEvent(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventType":
+            suggest = "event_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomationWorkflowTriggerEventConfigEvent. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomationWorkflowTriggerEventConfigEvent.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomationWorkflowTriggerEventConfigEvent.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 query: str,
+                 event_type: Optional[str] = None):
+        """
+        :param str query: A query based on DQL for events that trigger executions
+        :param str event_type: Possible values: `events` or `bizevents`. Default: `events`
+        """
+        pulumi.set(__self__, "query", query)
+        if event_type is not None:
+            pulumi.set(__self__, "event_type", event_type)
+
+    @property
+    @pulumi.getter
+    def query(self) -> str:
+        """
+        A query based on DQL for events that trigger executions
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter(name="eventType")
+    def event_type(self) -> Optional[str]:
+        """
+        Possible values: `events` or `bizevents`. Default: `events`
+        """
+        return pulumi.get(self, "event_type")
+
+
+@pulumi.output_type
+class AutomationWorkflowTriggerSchedule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "filterParameters":
+            suggest = "filter_parameters"
+        elif key == "timeZone":
+            suggest = "time_zone"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomationWorkflowTriggerSchedule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomationWorkflowTriggerSchedule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomationWorkflowTriggerSchedule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 trigger: 'outputs.AutomationWorkflowTriggerScheduleTrigger',
+                 active: Optional[bool] = None,
+                 filter_parameters: Optional['outputs.AutomationWorkflowTriggerScheduleFilterParameters'] = None,
+                 rule: Optional[str] = None,
+                 time_zone: Optional[str] = None):
+        """
+        :param 'AutomationWorkflowTriggerScheduleTriggerArgs' trigger: Detailed configuration about the timing constraints that trigger the execution
+        :param bool active: The trigger is enabled (`true`) or not (`false`). Default is `false`
+        :param 'AutomationWorkflowTriggerScheduleFilterParametersArgs' filter_parameters: Advanced restrictions for the schedule to trigger executions
+        :param str rule: Refers to a configured rule that determines at which days the schedule should be active. If not specified it implies that the schedule is valid every day
+        :param str time_zone: A time zone the scheduled times to align with. If not specified it will be chosen automatically based on the location of the Dynatrace Server
+        """
+        pulumi.set(__self__, "trigger", trigger)
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if filter_parameters is not None:
+            pulumi.set(__self__, "filter_parameters", filter_parameters)
+        if rule is not None:
+            pulumi.set(__self__, "rule", rule)
+        if time_zone is not None:
+            pulumi.set(__self__, "time_zone", time_zone)
+
+    @property
+    @pulumi.getter
+    def trigger(self) -> 'outputs.AutomationWorkflowTriggerScheduleTrigger':
+        """
+        Detailed configuration about the timing constraints that trigger the execution
+        """
+        return pulumi.get(self, "trigger")
+
+    @property
+    @pulumi.getter
+    def active(self) -> Optional[bool]:
+        """
+        The trigger is enabled (`true`) or not (`false`). Default is `false`
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter(name="filterParameters")
+    def filter_parameters(self) -> Optional['outputs.AutomationWorkflowTriggerScheduleFilterParameters']:
+        """
+        Advanced restrictions for the schedule to trigger executions
+        """
+        return pulumi.get(self, "filter_parameters")
+
+    @property
+    @pulumi.getter
+    def rule(self) -> Optional[str]:
+        """
+        Refers to a configured rule that determines at which days the schedule should be active. If not specified it implies that the schedule is valid every day
+        """
+        return pulumi.get(self, "rule")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> Optional[str]:
+        """
+        A time zone the scheduled times to align with. If not specified it will be chosen automatically based on the location of the Dynatrace Server
+        """
+        return pulumi.get(self, "time_zone")
+
+
+@pulumi.output_type
+class AutomationWorkflowTriggerScheduleFilterParameters(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "earliestStart":
+            suggest = "earliest_start"
+        elif key == "earliestStartTime":
+            suggest = "earliest_start_time"
+        elif key == "excludeDates":
+            suggest = "exclude_dates"
+        elif key == "includeDates":
+            suggest = "include_dates"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomationWorkflowTriggerScheduleFilterParameters. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomationWorkflowTriggerScheduleFilterParameters.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomationWorkflowTriggerScheduleFilterParameters.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 count: Optional[int] = None,
+                 earliest_start: Optional[str] = None,
+                 earliest_start_time: Optional[str] = None,
+                 exclude_dates: Optional[Sequence[str]] = None,
+                 include_dates: Optional[Sequence[str]] = None,
+                 until: Optional[str] = None):
+        """
+        :param int count: If specified, the schedule will end triggering executions af the given amount of executions. Minimum: 1, Maximum: 10
+        :param str earliest_start: If specified, the schedule won't trigger executions before the given date
+        :param str earliest_start_time: If specified, the schedule won't trigger executions before the given time
+        :param Sequence[str] exclude_dates: If specified, the schedule won't trigger exeuctions on the given dates
+        :param Sequence[str] include_dates: If specified, the schedule will trigger executions on the given dates, even if the main configuration prohibits it
+        :param str until: If specified, the schedule won't trigger executions after the given date
+        """
+        if count is not None:
+            pulumi.set(__self__, "count", count)
+        if earliest_start is not None:
+            pulumi.set(__self__, "earliest_start", earliest_start)
+        if earliest_start_time is not None:
+            pulumi.set(__self__, "earliest_start_time", earliest_start_time)
+        if exclude_dates is not None:
+            pulumi.set(__self__, "exclude_dates", exclude_dates)
+        if include_dates is not None:
+            pulumi.set(__self__, "include_dates", include_dates)
+        if until is not None:
+            pulumi.set(__self__, "until", until)
+
+    @property
+    @pulumi.getter
+    def count(self) -> Optional[int]:
+        """
+        If specified, the schedule will end triggering executions af the given amount of executions. Minimum: 1, Maximum: 10
+        """
+        return pulumi.get(self, "count")
+
+    @property
+    @pulumi.getter(name="earliestStart")
+    def earliest_start(self) -> Optional[str]:
+        """
+        If specified, the schedule won't trigger executions before the given date
+        """
+        return pulumi.get(self, "earliest_start")
+
+    @property
+    @pulumi.getter(name="earliestStartTime")
+    def earliest_start_time(self) -> Optional[str]:
+        """
+        If specified, the schedule won't trigger executions before the given time
+        """
+        return pulumi.get(self, "earliest_start_time")
+
+    @property
+    @pulumi.getter(name="excludeDates")
+    def exclude_dates(self) -> Optional[Sequence[str]]:
+        """
+        If specified, the schedule won't trigger exeuctions on the given dates
+        """
+        return pulumi.get(self, "exclude_dates")
+
+    @property
+    @pulumi.getter(name="includeDates")
+    def include_dates(self) -> Optional[Sequence[str]]:
+        """
+        If specified, the schedule will trigger executions on the given dates, even if the main configuration prohibits it
+        """
+        return pulumi.get(self, "include_dates")
+
+    @property
+    @pulumi.getter
+    def until(self) -> Optional[str]:
+        """
+        If specified, the schedule won't trigger executions after the given date
+        """
+        return pulumi.get(self, "until")
+
+
+@pulumi.output_type
+class AutomationWorkflowTriggerScheduleTrigger(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "betweenEnd":
+            suggest = "between_end"
+        elif key == "betweenStart":
+            suggest = "between_start"
+        elif key == "intervalMinutes":
+            suggest = "interval_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomationWorkflowTriggerScheduleTrigger. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomationWorkflowTriggerScheduleTrigger.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomationWorkflowTriggerScheduleTrigger.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 between_end: Optional[str] = None,
+                 between_start: Optional[str] = None,
+                 cron: Optional[str] = None,
+                 interval_minutes: Optional[int] = None,
+                 time: Optional[str] = None):
+        """
+        :param str between_end: Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22:44). Conflicts with `cron` and `time`. Required with `interval_minutes` and `between_start`
+        :param str between_start: Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22:44). Conflicts with `cron` and `time`. Required with `interval_minutes` and `between_end`
+        :param str cron: Configures using cron syntax. Conflicts with `time`, `interval_minutes`, `between_start` and `between_end`
+        :param int interval_minutes: Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `between_start` and `between_end`. Conflicts with `cron` and `time`
+        :param str time: Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23:59`). Conflicts with `cron`, `interval_minutes`, `between_start` and `between_end`
+        """
+        if between_end is not None:
+            pulumi.set(__self__, "between_end", between_end)
+        if between_start is not None:
+            pulumi.set(__self__, "between_start", between_start)
+        if cron is not None:
+            pulumi.set(__self__, "cron", cron)
+        if interval_minutes is not None:
+            pulumi.set(__self__, "interval_minutes", interval_minutes)
+        if time is not None:
+            pulumi.set(__self__, "time", time)
+
+    @property
+    @pulumi.getter(name="betweenEnd")
+    def between_end(self) -> Optional[str]:
+        """
+        Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22:44). Conflicts with `cron` and `time`. Required with `interval_minutes` and `between_start`
+        """
+        return pulumi.get(self, "between_end")
+
+    @property
+    @pulumi.getter(name="betweenStart")
+    def between_start(self) -> Optional[str]:
+        """
+        Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22:44). Conflicts with `cron` and `time`. Required with `interval_minutes` and `between_end`
+        """
+        return pulumi.get(self, "between_start")
+
+    @property
+    @pulumi.getter
+    def cron(self) -> Optional[str]:
+        """
+        Configures using cron syntax. Conflicts with `time`, `interval_minutes`, `between_start` and `between_end`
+        """
+        return pulumi.get(self, "cron")
+
+    @property
+    @pulumi.getter(name="intervalMinutes")
+    def interval_minutes(self) -> Optional[int]:
+        """
+        Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `between_start` and `between_end`. Conflicts with `cron` and `time`
+        """
+        return pulumi.get(self, "interval_minutes")
+
+    @property
+    @pulumi.getter
+    def time(self) -> Optional[str]:
+        """
+        Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23:59`). Conflicts with `cron`, `interval_minutes`, `between_start` and `between_end`
+        """
+        return pulumi.get(self, "time")
 
 
 @pulumi.output_type
@@ -9780,6 +12189,427 @@ class AutotagRuleConditionTechValue(dict):
 
 
 @pulumi.output_type
+class AutotagRulesRules(dict):
+    def __init__(__self__, *,
+                 rules: Sequence['outputs.AutotagRulesRulesRule']):
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.AutotagRulesRulesRule']:
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class AutotagRulesRulesRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "valueNormalization":
+            suggest = "value_normalization"
+        elif key == "attributeRule":
+            suggest = "attribute_rule"
+        elif key == "entitySelector":
+            suggest = "entity_selector"
+        elif key == "valueFormat":
+            suggest = "value_format"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutotagRulesRulesRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutotagRulesRulesRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutotagRulesRulesRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 type: str,
+                 value_normalization: str,
+                 attribute_rule: Optional['outputs.AutotagRulesRulesRuleAttributeRule'] = None,
+                 entity_selector: Optional[str] = None,
+                 value_format: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param str type: Possible Values: `ME`, `SELECTOR`
+        :param str value_normalization: Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        :param 'AutotagRulesRulesRuleAttributeRuleArgs' attribute_rule: no documentation available
+        :param str entity_selector: The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+        :param str value_format: Type '{' for placeholder suggestions
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value_normalization", value_normalization)
+        if attribute_rule is not None:
+            pulumi.set(__self__, "attribute_rule", attribute_rule)
+        if entity_selector is not None:
+            pulumi.set(__self__, "entity_selector", entity_selector)
+        if value_format is not None:
+            pulumi.set(__self__, "value_format", value_format)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Possible Values: `ME`, `SELECTOR`
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="valueNormalization")
+    def value_normalization(self) -> str:
+        """
+        Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        """
+        return pulumi.get(self, "value_normalization")
+
+    @property
+    @pulumi.getter(name="attributeRule")
+    def attribute_rule(self) -> Optional['outputs.AutotagRulesRulesRuleAttributeRule']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "attribute_rule")
+
+    @property
+    @pulumi.getter(name="entitySelector")
+    def entity_selector(self) -> Optional[str]:
+        """
+        The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+        """
+        return pulumi.get(self, "entity_selector")
+
+    @property
+    @pulumi.getter(name="valueFormat")
+    def value_format(self) -> Optional[str]:
+        """
+        Type '{' for placeholder suggestions
+        """
+        return pulumi.get(self, "value_format")
+
+
+@pulumi.output_type
+class AutotagRulesRulesRuleAttributeRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "entityType":
+            suggest = "entity_type"
+        elif key == "azureToPgpropagation":
+            suggest = "azure_to_pgpropagation"
+        elif key == "azureToServicePropagation":
+            suggest = "azure_to_service_propagation"
+        elif key == "hostToPgpropagation":
+            suggest = "host_to_pgpropagation"
+        elif key == "pgToHostPropagation":
+            suggest = "pg_to_host_propagation"
+        elif key == "pgToServicePropagation":
+            suggest = "pg_to_service_propagation"
+        elif key == "serviceToHostPropagation":
+            suggest = "service_to_host_propagation"
+        elif key == "serviceToPgpropagation":
+            suggest = "service_to_pgpropagation"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutotagRulesRulesRuleAttributeRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutotagRulesRulesRuleAttributeRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutotagRulesRulesRuleAttributeRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 conditions: 'outputs.AutotagRulesRulesRuleAttributeRuleConditions',
+                 entity_type: str,
+                 azure_to_pgpropagation: Optional[bool] = None,
+                 azure_to_service_propagation: Optional[bool] = None,
+                 host_to_pgpropagation: Optional[bool] = None,
+                 pg_to_host_propagation: Optional[bool] = None,
+                 pg_to_service_propagation: Optional[bool] = None,
+                 service_to_host_propagation: Optional[bool] = None,
+                 service_to_pgpropagation: Optional[bool] = None):
+        """
+        :param 'AutotagRulesRulesRuleAttributeRuleConditionsArgs' conditions: no documentation available
+        :param str entity_type: Possible Values: `APPLICATION`, `AWS_APPLICATION_LOAD_BALANCER`, `AWS_CLASSIC_LOAD_BALANCER`, `AWS_NETWORK_LOAD_BALANCER`, `AWS_RELATIONAL_DATABASE_SERVICE`, `AZURE`, `CUSTOM_APPLICATION`, `CUSTOM_DEVICE`, `DCRUM_APPLICATION`, `ESXI_HOST`, `EXTERNAL_SYNTHETIC_TEST`, `HOST`, `HTTP_CHECK`, `MOBILE_APPLICATION`, `PROCESS_GROUP`, `SERVICE`, `SYNTHETIC_TEST`
+        :param bool azure_to_pgpropagation: Apply to process groups connected to matching Azure entities
+        :param bool azure_to_service_propagation: Apply to services provided by matching Azure entities
+        :param bool host_to_pgpropagation: Apply to processes running on matching hosts
+        :param bool pg_to_host_propagation: Apply to underlying hosts of matching process groups
+        :param bool pg_to_service_propagation: Apply to all services provided by the process groups
+        :param bool service_to_host_propagation: Apply to underlying hosts of matching services
+        :param bool service_to_pgpropagation: Apply to underlying process groups of matching services
+        """
+        pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "entity_type", entity_type)
+        if azure_to_pgpropagation is not None:
+            pulumi.set(__self__, "azure_to_pgpropagation", azure_to_pgpropagation)
+        if azure_to_service_propagation is not None:
+            pulumi.set(__self__, "azure_to_service_propagation", azure_to_service_propagation)
+        if host_to_pgpropagation is not None:
+            pulumi.set(__self__, "host_to_pgpropagation", host_to_pgpropagation)
+        if pg_to_host_propagation is not None:
+            pulumi.set(__self__, "pg_to_host_propagation", pg_to_host_propagation)
+        if pg_to_service_propagation is not None:
+            pulumi.set(__self__, "pg_to_service_propagation", pg_to_service_propagation)
+        if service_to_host_propagation is not None:
+            pulumi.set(__self__, "service_to_host_propagation", service_to_host_propagation)
+        if service_to_pgpropagation is not None:
+            pulumi.set(__self__, "service_to_pgpropagation", service_to_pgpropagation)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> 'outputs.AutotagRulesRulesRuleAttributeRuleConditions':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "conditions")
+
+    @property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> str:
+        """
+        Possible Values: `APPLICATION`, `AWS_APPLICATION_LOAD_BALANCER`, `AWS_CLASSIC_LOAD_BALANCER`, `AWS_NETWORK_LOAD_BALANCER`, `AWS_RELATIONAL_DATABASE_SERVICE`, `AZURE`, `CUSTOM_APPLICATION`, `CUSTOM_DEVICE`, `DCRUM_APPLICATION`, `ESXI_HOST`, `EXTERNAL_SYNTHETIC_TEST`, `HOST`, `HTTP_CHECK`, `MOBILE_APPLICATION`, `PROCESS_GROUP`, `SERVICE`, `SYNTHETIC_TEST`
+        """
+        return pulumi.get(self, "entity_type")
+
+    @property
+    @pulumi.getter(name="azureToPgpropagation")
+    def azure_to_pgpropagation(self) -> Optional[bool]:
+        """
+        Apply to process groups connected to matching Azure entities
+        """
+        return pulumi.get(self, "azure_to_pgpropagation")
+
+    @property
+    @pulumi.getter(name="azureToServicePropagation")
+    def azure_to_service_propagation(self) -> Optional[bool]:
+        """
+        Apply to services provided by matching Azure entities
+        """
+        return pulumi.get(self, "azure_to_service_propagation")
+
+    @property
+    @pulumi.getter(name="hostToPgpropagation")
+    def host_to_pgpropagation(self) -> Optional[bool]:
+        """
+        Apply to processes running on matching hosts
+        """
+        return pulumi.get(self, "host_to_pgpropagation")
+
+    @property
+    @pulumi.getter(name="pgToHostPropagation")
+    def pg_to_host_propagation(self) -> Optional[bool]:
+        """
+        Apply to underlying hosts of matching process groups
+        """
+        return pulumi.get(self, "pg_to_host_propagation")
+
+    @property
+    @pulumi.getter(name="pgToServicePropagation")
+    def pg_to_service_propagation(self) -> Optional[bool]:
+        """
+        Apply to all services provided by the process groups
+        """
+        return pulumi.get(self, "pg_to_service_propagation")
+
+    @property
+    @pulumi.getter(name="serviceToHostPropagation")
+    def service_to_host_propagation(self) -> Optional[bool]:
+        """
+        Apply to underlying hosts of matching services
+        """
+        return pulumi.get(self, "service_to_host_propagation")
+
+    @property
+    @pulumi.getter(name="serviceToPgpropagation")
+    def service_to_pgpropagation(self) -> Optional[bool]:
+        """
+        Apply to underlying process groups of matching services
+        """
+        return pulumi.get(self, "service_to_pgpropagation")
+
+
+@pulumi.output_type
+class AutotagRulesRulesRuleAttributeRuleConditions(dict):
+    def __init__(__self__, *,
+                 conditions: Sequence['outputs.AutotagRulesRulesRuleAttributeRuleConditionsCondition']):
+        pulumi.set(__self__, "conditions", conditions)
+
+    @property
+    @pulumi.getter
+    def conditions(self) -> Sequence['outputs.AutotagRulesRulesRuleAttributeRuleConditionsCondition']:
+        return pulumi.get(self, "conditions")
+
+
+@pulumi.output_type
+class AutotagRulesRulesRuleAttributeRuleConditionsCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "caseSensitive":
+            suggest = "case_sensitive"
+        elif key == "dynamicKey":
+            suggest = "dynamic_key"
+        elif key == "dynamicKeySource":
+            suggest = "dynamic_key_source"
+        elif key == "entityId":
+            suggest = "entity_id"
+        elif key == "enumValue":
+            suggest = "enum_value"
+        elif key == "integerValue":
+            suggest = "integer_value"
+        elif key == "stringValue":
+            suggest = "string_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutotagRulesRulesRuleAttributeRuleConditionsCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutotagRulesRulesRuleAttributeRuleConditionsCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutotagRulesRulesRuleAttributeRuleConditionsCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: str,
+                 operator: str,
+                 case_sensitive: Optional[bool] = None,
+                 dynamic_key: Optional[str] = None,
+                 dynamic_key_source: Optional[str] = None,
+                 entity_id: Optional[str] = None,
+                 enum_value: Optional[str] = None,
+                 integer_value: Optional[int] = None,
+                 string_value: Optional[str] = None,
+                 tag: Optional[str] = None):
+        """
+        :param str key: Possible Values: `APPMON_SERVER_NAME`, `APPMON_SYSTEM_PROFILE_NAME`, `AWS_ACCOUNT_ID`, `AWS_ACCOUNT_NAME`, `AWS_APPLICATION_LOAD_BALANCER_NAME`, `AWS_APPLICATION_LOAD_BALANCER_TAGS`, `AWS_AUTO_SCALING_GROUP_NAME`, `AWS_AUTO_SCALING_GROUP_TAGS`, `AWS_AVAILABILITY_ZONE_NAME`, `AWS_CLASSIC_LOAD_BALANCER_FRONTEND_PORTS`, `AWS_CLASSIC_LOAD_BALANCER_NAME`, `AWS_CLASSIC_LOAD_BALANCER_TAGS`, `AWS_NETWORK_LOAD_BALANCER_NAME`, `AWS_NETWORK_LOAD_BALANCER_TAGS`, `AWS_RELATIONAL_DATABASE_SERVICE_DB_NAME`, `AWS_RELATIONAL_DATABASE_SERVICE_ENDPOINT`, `AWS_RELATIONAL_DATABASE_SERVICE_ENGINE`, `AWS_RELATIONAL_DATABASE_SERVICE_INSTANCE_CLASS`, `AWS_RELATIONAL_DATABASE_SERVICE_NAME`, `AWS_RELATIONAL_DATABASE_SERVICE_PORT`, `AWS_RELATIONAL_DATABASE_SERVICE_TAGS`, `AZURE_ENTITY_NAME`, `AZURE_ENTITY_TAGS`, `AZURE_MGMT_GROUP_NAME`, `AZURE_MGMT_GROUP_UUID`, `AZURE_REGION_NAME`, `AZURE_SCALE_SET_NAME`, `AZURE_SUBSCRIPTION_NAME`, `AZURE_SUBSCRIPTION_UUID`, `AZURE_TENANT_NAME`, `AZURE_TENANT_UUID`, `AZURE_VM_NAME`, `BROWSER_MONITOR_NAME`, `BROWSER_MONITOR_TAGS`, `CLOUD_APPLICATION_LABELS`, `CLOUD_APPLICATION_NAME`, `CLOUD_APPLICATION_NAMESPACE_LABELS`, `CLOUD_APPLICATION_NAMESPACE_NAME`, `CLOUD_FOUNDRY_FOUNDATION_NAME`, `CLOUD_FOUNDRY_ORG_NAME`, `CUSTOM_APPLICATION_NAME`, `CUSTOM_APPLICATION_PLATFORM`, `CUSTOM_APPLICATION_TAGS`, `CUSTOM_APPLICATION_TYPE`, `CUSTOM_DEVICE_DNS_ADDRESS`, `CUSTOM_DEVICE_GROUP_NAME`, `CUSTOM_DEVICE_GROUP_TAGS`, `CUSTOM_DEVICE_IP_ADDRESS`, `CUSTOM_DEVICE_METADATA`, `CUSTOM_DEVICE_NAME`, `CUSTOM_DEVICE_PORT`, `CUSTOM_DEVICE_TAGS`, `CUSTOM_DEVICE_TECHNOLOGY`, `DATA_CENTER_SERVICE_DECODER_TYPE`, `DATA_CENTER_SERVICE_IP_ADDRESS`, `DATA_CENTER_SERVICE_METADATA`, `DATA_CENTER_SERVICE_NAME`, `DATA_CENTER_SERVICE_PORT`, `DATA_CENTER_SERVICE_TAGS`, `DOCKER_CONTAINER_NAME`, `DOCKER_FULL_IMAGE_NAME`, `DOCKER_IMAGE_VERSION`, `EC2_INSTANCE_AMI_ID`, `EC2_INSTANCE_AWS_INSTANCE_TYPE`, `EC2_INSTANCE_AWS_SECURITY_GROUP`, `EC2_INSTANCE_BEANSTALK_ENV_NAME`, `EC2_INSTANCE_ID`, `EC2_INSTANCE_NAME`, `EC2_INSTANCE_PRIVATE_HOST_NAME`, `EC2_INSTANCE_PUBLIC_HOST_NAME`, `EC2_INSTANCE_TAGS`, `ENTERPRISE_APPLICATION_DECODER_TYPE`, `ENTERPRISE_APPLICATION_IP_ADDRESS`, `ENTERPRISE_APPLICATION_METADATA`, `ENTERPRISE_APPLICATION_NAME`, `ENTERPRISE_APPLICATION_PORT`, `ENTERPRISE_APPLICATION_TAGS`, `ESXI_HOST_CLUSTER_NAME`, `ESXI_HOST_HARDWARE_MODEL`, `ESXI_HOST_HARDWARE_VENDOR`, `ESXI_HOST_NAME`, `ESXI_HOST_PRODUCT_NAME`, `ESXI_HOST_PRODUCT_VERSION`, `ESXI_HOST_TAGS`, `EXTERNAL_MONITOR_ENGINE_DESCRIPTION`, `EXTERNAL_MONITOR_ENGINE_NAME`, `EXTERNAL_MONITOR_ENGINE_TYPE`, `EXTERNAL_MONITOR_NAME`, `EXTERNAL_MONITOR_TAGS`, `GEOLOCATION_SITE_NAME`, `GOOGLE_CLOUD_PLATFORM_ZONE_NAME`, `GOOGLE_COMPUTE_INSTANCE_ID`, `GOOGLE_COMPUTE_INSTANCE_MACHINE_TYPE`, `GOOGLE_COMPUTE_INSTANCE_NAME`, `GOOGLE_COMPUTE_INSTANCE_PROJECT`, `GOOGLE_COMPUTE_INSTANCE_PROJECT_ID`, `GOOGLE_COMPUTE_INSTANCE_PUBLIC_IP_ADDRESSES`, `HOST_AIX_LOGICAL_CPU_COUNT`, `HOST_AIX_SIMULTANEOUS_THREADS`, `HOST_AIX_VIRTUAL_CPU_COUNT`, `HOST_ARCHITECTURE`, `HOST_AWS_NAME_TAG`, `HOST_AZURE_COMPUTE_MODE`, `HOST_AZURE_SKU`, `HOST_AZURE_WEB_APPLICATION_HOST_NAMES`, `HOST_AZURE_WEB_APPLICATION_SITE_NAMES`, `HOST_BITNESS`, `HOST_BOSH_AVAILABILITY_ZONE`, `HOST_BOSH_DEPLOYMENT_ID`, `HOST_BOSH_INSTANCE_ID`, `HOST_BOSH_INSTANCE_NAME`, `HOST_BOSH_NAME`, `HOST_BOSH_STEMCELL_VERSION`, `HOST_CLOUD_TYPE`, `HOST_CPU_CORES`, `HOST_CUSTOM_METADATA`, `HOST_DETECTED_NAME`, `HOST_GROUP_ID`, `HOST_GROUP_NAME`, `HOST_HYPERVISOR_TYPE`, `HOST_IP_ADDRESS`, `HOST_KUBERNETES_LABELS`, `HOST_LOGICAL_CPU_CORES`, `HOST_NAME`, `HOST_ONEAGENT_CUSTOM_HOST_NAME`, `HOST_OS_TYPE`, `HOST_OS_VERSION`, `HOST_PAAS_MEMORY_LIMIT`, `HOST_PAAS_TYPE`, `HOST_TAGS`, `HOST_TECHNOLOGY`, `HTTP_MONITOR_NAME`, `HTTP_MONITOR_TAGS`, `KUBERNETES_CLUSTER_NAME`, `KUBERNETES_NODE_NAME`, `KUBERNETES_SERVICE_NAME`, `MOBILE_APPLICATION_NAME`, `MOBILE_APPLICATION_PLATFORM`, `MOBILE_APPLICATION_TAGS`, `NAME_OF_COMPUTE_NODE`, `OPENSTACK_ACCOUNT_NAME`, `OPENSTACK_ACCOUNT_PROJECT_NAME`, `OPENSTACK_AVAILABILITY_ZONE_NAME`, `OPENSTACK_PROJECT_NAME`, `OPENSTACK_REGION_NAME`, `OPENSTACK_VM_INSTANCE_TYPE`, `OPENSTACK_VM_NAME`, `OPENSTACK_VM_SECURITY_GROUP`, `PROCESS_GROUP_AZURE_HOST_NAME`, `PROCESS_GROUP_AZURE_SITE_NAME`, `PROCESS_GROUP_CUSTOM_METADATA`, `PROCESS_GROUP_DETECTED_NAME`, `PROCESS_GROUP_ID`, `PROCESS_GROUP_LISTEN_PORT`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_PREDEFINED_METADATA`, `PROCESS_GROUP_TAGS`, `PROCESS_GROUP_TECHNOLOGY`, `PROCESS_GROUP_TECHNOLOGY_EDITION`, `PROCESS_GROUP_TECHNOLOGY_VERSION`, `QUEUE_NAME`, `QUEUE_TECHNOLOGY`, `QUEUE_VENDOR`, `SERVICE_AKKA_ACTOR_SYSTEM`, `SERVICE_CTG_SERVICE_NAME`, `SERVICE_DATABASE_HOST_NAME`, `SERVICE_DATABASE_NAME`, `SERVICE_DATABASE_TOPOLOGY`, `SERVICE_DATABASE_VENDOR`, `SERVICE_DETECTED_NAME`, `SERVICE_ESB_APPLICATION_NAME`, `SERVICE_IBM_CTG_GATEWAY_URL`, `SERVICE_MESSAGING_LISTENER_CLASS_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REMOTE_ENDPOINT`, `SERVICE_REMOTE_SERVICE_NAME`, `SERVICE_TAGS`, `SERVICE_TECHNOLOGY`, `SERVICE_TECHNOLOGY_EDITION`, `SERVICE_TECHNOLOGY_VERSION`, `SERVICE_TOPOLOGY`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_ENDPOINT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `VMWARE_DATACENTER_NAME`, `VMWARE_VM_NAME`, `WEB_APPLICATION_NAME`, `WEB_APPLICATION_NAME_PATTERN`, `WEB_APPLICATION_TAGS`, `WEB_APPLICATION_TYPE`
+        :param str operator: Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `IS_IP_IN_RANGE`, `LOWER_THAN`, `LOWER_THAN_OR_EQUAL`, `NOT_BEGINS_WITH`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_GREATER_THAN`, `NOT_GREATER_THAN_OR_EQUAL`, `NOT_IS_IP_IN_RANGE`, `NOT_LOWER_THAN`, `NOT_LOWER_THAN_OR_EQUAL`, `NOT_REGEX_MATCHES`, `NOT_TAG_KEY_EQUALS`, `REGEX_MATCHES`, `TAG_KEY_EQUALS`
+        :param bool case_sensitive: Case sensitive
+        :param str dynamic_key: Dynamic key
+        :param str dynamic_key_source: Key source
+        :param str entity_id: Value
+        :param str enum_value: Value
+        :param int integer_value: Value
+        :param str string_value: Value
+        :param str tag: Format: `[CONTEXT]tagKey:tagValue`
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "operator", operator)
+        if case_sensitive is not None:
+            pulumi.set(__self__, "case_sensitive", case_sensitive)
+        if dynamic_key is not None:
+            pulumi.set(__self__, "dynamic_key", dynamic_key)
+        if dynamic_key_source is not None:
+            pulumi.set(__self__, "dynamic_key_source", dynamic_key_source)
+        if entity_id is not None:
+            pulumi.set(__self__, "entity_id", entity_id)
+        if enum_value is not None:
+            pulumi.set(__self__, "enum_value", enum_value)
+        if integer_value is not None:
+            pulumi.set(__self__, "integer_value", integer_value)
+        if string_value is not None:
+            pulumi.set(__self__, "string_value", string_value)
+        if tag is not None:
+            pulumi.set(__self__, "tag", tag)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        Possible Values: `APPMON_SERVER_NAME`, `APPMON_SYSTEM_PROFILE_NAME`, `AWS_ACCOUNT_ID`, `AWS_ACCOUNT_NAME`, `AWS_APPLICATION_LOAD_BALANCER_NAME`, `AWS_APPLICATION_LOAD_BALANCER_TAGS`, `AWS_AUTO_SCALING_GROUP_NAME`, `AWS_AUTO_SCALING_GROUP_TAGS`, `AWS_AVAILABILITY_ZONE_NAME`, `AWS_CLASSIC_LOAD_BALANCER_FRONTEND_PORTS`, `AWS_CLASSIC_LOAD_BALANCER_NAME`, `AWS_CLASSIC_LOAD_BALANCER_TAGS`, `AWS_NETWORK_LOAD_BALANCER_NAME`, `AWS_NETWORK_LOAD_BALANCER_TAGS`, `AWS_RELATIONAL_DATABASE_SERVICE_DB_NAME`, `AWS_RELATIONAL_DATABASE_SERVICE_ENDPOINT`, `AWS_RELATIONAL_DATABASE_SERVICE_ENGINE`, `AWS_RELATIONAL_DATABASE_SERVICE_INSTANCE_CLASS`, `AWS_RELATIONAL_DATABASE_SERVICE_NAME`, `AWS_RELATIONAL_DATABASE_SERVICE_PORT`, `AWS_RELATIONAL_DATABASE_SERVICE_TAGS`, `AZURE_ENTITY_NAME`, `AZURE_ENTITY_TAGS`, `AZURE_MGMT_GROUP_NAME`, `AZURE_MGMT_GROUP_UUID`, `AZURE_REGION_NAME`, `AZURE_SCALE_SET_NAME`, `AZURE_SUBSCRIPTION_NAME`, `AZURE_SUBSCRIPTION_UUID`, `AZURE_TENANT_NAME`, `AZURE_TENANT_UUID`, `AZURE_VM_NAME`, `BROWSER_MONITOR_NAME`, `BROWSER_MONITOR_TAGS`, `CLOUD_APPLICATION_LABELS`, `CLOUD_APPLICATION_NAME`, `CLOUD_APPLICATION_NAMESPACE_LABELS`, `CLOUD_APPLICATION_NAMESPACE_NAME`, `CLOUD_FOUNDRY_FOUNDATION_NAME`, `CLOUD_FOUNDRY_ORG_NAME`, `CUSTOM_APPLICATION_NAME`, `CUSTOM_APPLICATION_PLATFORM`, `CUSTOM_APPLICATION_TAGS`, `CUSTOM_APPLICATION_TYPE`, `CUSTOM_DEVICE_DNS_ADDRESS`, `CUSTOM_DEVICE_GROUP_NAME`, `CUSTOM_DEVICE_GROUP_TAGS`, `CUSTOM_DEVICE_IP_ADDRESS`, `CUSTOM_DEVICE_METADATA`, `CUSTOM_DEVICE_NAME`, `CUSTOM_DEVICE_PORT`, `CUSTOM_DEVICE_TAGS`, `CUSTOM_DEVICE_TECHNOLOGY`, `DATA_CENTER_SERVICE_DECODER_TYPE`, `DATA_CENTER_SERVICE_IP_ADDRESS`, `DATA_CENTER_SERVICE_METADATA`, `DATA_CENTER_SERVICE_NAME`, `DATA_CENTER_SERVICE_PORT`, `DATA_CENTER_SERVICE_TAGS`, `DOCKER_CONTAINER_NAME`, `DOCKER_FULL_IMAGE_NAME`, `DOCKER_IMAGE_VERSION`, `EC2_INSTANCE_AMI_ID`, `EC2_INSTANCE_AWS_INSTANCE_TYPE`, `EC2_INSTANCE_AWS_SECURITY_GROUP`, `EC2_INSTANCE_BEANSTALK_ENV_NAME`, `EC2_INSTANCE_ID`, `EC2_INSTANCE_NAME`, `EC2_INSTANCE_PRIVATE_HOST_NAME`, `EC2_INSTANCE_PUBLIC_HOST_NAME`, `EC2_INSTANCE_TAGS`, `ENTERPRISE_APPLICATION_DECODER_TYPE`, `ENTERPRISE_APPLICATION_IP_ADDRESS`, `ENTERPRISE_APPLICATION_METADATA`, `ENTERPRISE_APPLICATION_NAME`, `ENTERPRISE_APPLICATION_PORT`, `ENTERPRISE_APPLICATION_TAGS`, `ESXI_HOST_CLUSTER_NAME`, `ESXI_HOST_HARDWARE_MODEL`, `ESXI_HOST_HARDWARE_VENDOR`, `ESXI_HOST_NAME`, `ESXI_HOST_PRODUCT_NAME`, `ESXI_HOST_PRODUCT_VERSION`, `ESXI_HOST_TAGS`, `EXTERNAL_MONITOR_ENGINE_DESCRIPTION`, `EXTERNAL_MONITOR_ENGINE_NAME`, `EXTERNAL_MONITOR_ENGINE_TYPE`, `EXTERNAL_MONITOR_NAME`, `EXTERNAL_MONITOR_TAGS`, `GEOLOCATION_SITE_NAME`, `GOOGLE_CLOUD_PLATFORM_ZONE_NAME`, `GOOGLE_COMPUTE_INSTANCE_ID`, `GOOGLE_COMPUTE_INSTANCE_MACHINE_TYPE`, `GOOGLE_COMPUTE_INSTANCE_NAME`, `GOOGLE_COMPUTE_INSTANCE_PROJECT`, `GOOGLE_COMPUTE_INSTANCE_PROJECT_ID`, `GOOGLE_COMPUTE_INSTANCE_PUBLIC_IP_ADDRESSES`, `HOST_AIX_LOGICAL_CPU_COUNT`, `HOST_AIX_SIMULTANEOUS_THREADS`, `HOST_AIX_VIRTUAL_CPU_COUNT`, `HOST_ARCHITECTURE`, `HOST_AWS_NAME_TAG`, `HOST_AZURE_COMPUTE_MODE`, `HOST_AZURE_SKU`, `HOST_AZURE_WEB_APPLICATION_HOST_NAMES`, `HOST_AZURE_WEB_APPLICATION_SITE_NAMES`, `HOST_BITNESS`, `HOST_BOSH_AVAILABILITY_ZONE`, `HOST_BOSH_DEPLOYMENT_ID`, `HOST_BOSH_INSTANCE_ID`, `HOST_BOSH_INSTANCE_NAME`, `HOST_BOSH_NAME`, `HOST_BOSH_STEMCELL_VERSION`, `HOST_CLOUD_TYPE`, `HOST_CPU_CORES`, `HOST_CUSTOM_METADATA`, `HOST_DETECTED_NAME`, `HOST_GROUP_ID`, `HOST_GROUP_NAME`, `HOST_HYPERVISOR_TYPE`, `HOST_IP_ADDRESS`, `HOST_KUBERNETES_LABELS`, `HOST_LOGICAL_CPU_CORES`, `HOST_NAME`, `HOST_ONEAGENT_CUSTOM_HOST_NAME`, `HOST_OS_TYPE`, `HOST_OS_VERSION`, `HOST_PAAS_MEMORY_LIMIT`, `HOST_PAAS_TYPE`, `HOST_TAGS`, `HOST_TECHNOLOGY`, `HTTP_MONITOR_NAME`, `HTTP_MONITOR_TAGS`, `KUBERNETES_CLUSTER_NAME`, `KUBERNETES_NODE_NAME`, `KUBERNETES_SERVICE_NAME`, `MOBILE_APPLICATION_NAME`, `MOBILE_APPLICATION_PLATFORM`, `MOBILE_APPLICATION_TAGS`, `NAME_OF_COMPUTE_NODE`, `OPENSTACK_ACCOUNT_NAME`, `OPENSTACK_ACCOUNT_PROJECT_NAME`, `OPENSTACK_AVAILABILITY_ZONE_NAME`, `OPENSTACK_PROJECT_NAME`, `OPENSTACK_REGION_NAME`, `OPENSTACK_VM_INSTANCE_TYPE`, `OPENSTACK_VM_NAME`, `OPENSTACK_VM_SECURITY_GROUP`, `PROCESS_GROUP_AZURE_HOST_NAME`, `PROCESS_GROUP_AZURE_SITE_NAME`, `PROCESS_GROUP_CUSTOM_METADATA`, `PROCESS_GROUP_DETECTED_NAME`, `PROCESS_GROUP_ID`, `PROCESS_GROUP_LISTEN_PORT`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_PREDEFINED_METADATA`, `PROCESS_GROUP_TAGS`, `PROCESS_GROUP_TECHNOLOGY`, `PROCESS_GROUP_TECHNOLOGY_EDITION`, `PROCESS_GROUP_TECHNOLOGY_VERSION`, `QUEUE_NAME`, `QUEUE_TECHNOLOGY`, `QUEUE_VENDOR`, `SERVICE_AKKA_ACTOR_SYSTEM`, `SERVICE_CTG_SERVICE_NAME`, `SERVICE_DATABASE_HOST_NAME`, `SERVICE_DATABASE_NAME`, `SERVICE_DATABASE_TOPOLOGY`, `SERVICE_DATABASE_VENDOR`, `SERVICE_DETECTED_NAME`, `SERVICE_ESB_APPLICATION_NAME`, `SERVICE_IBM_CTG_GATEWAY_URL`, `SERVICE_MESSAGING_LISTENER_CLASS_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REMOTE_ENDPOINT`, `SERVICE_REMOTE_SERVICE_NAME`, `SERVICE_TAGS`, `SERVICE_TECHNOLOGY`, `SERVICE_TECHNOLOGY_EDITION`, `SERVICE_TECHNOLOGY_VERSION`, `SERVICE_TOPOLOGY`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_ENDPOINT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `VMWARE_DATACENTER_NAME`, `VMWARE_VM_NAME`, `WEB_APPLICATION_NAME`, `WEB_APPLICATION_NAME_PATTERN`, `WEB_APPLICATION_TAGS`, `WEB_APPLICATION_TYPE`
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> str:
+        """
+        Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `IS_IP_IN_RANGE`, `LOWER_THAN`, `LOWER_THAN_OR_EQUAL`, `NOT_BEGINS_WITH`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_GREATER_THAN`, `NOT_GREATER_THAN_OR_EQUAL`, `NOT_IS_IP_IN_RANGE`, `NOT_LOWER_THAN`, `NOT_LOWER_THAN_OR_EQUAL`, `NOT_REGEX_MATCHES`, `NOT_TAG_KEY_EQUALS`, `REGEX_MATCHES`, `TAG_KEY_EQUALS`
+        """
+        return pulumi.get(self, "operator")
+
+    @property
+    @pulumi.getter(name="caseSensitive")
+    def case_sensitive(self) -> Optional[bool]:
+        """
+        Case sensitive
+        """
+        return pulumi.get(self, "case_sensitive")
+
+    @property
+    @pulumi.getter(name="dynamicKey")
+    def dynamic_key(self) -> Optional[str]:
+        """
+        Dynamic key
+        """
+        return pulumi.get(self, "dynamic_key")
+
+    @property
+    @pulumi.getter(name="dynamicKeySource")
+    def dynamic_key_source(self) -> Optional[str]:
+        """
+        Key source
+        """
+        return pulumi.get(self, "dynamic_key_source")
+
+    @property
+    @pulumi.getter(name="entityId")
+    def entity_id(self) -> Optional[str]:
+        """
+        Value
+        """
+        return pulumi.get(self, "entity_id")
+
+    @property
+    @pulumi.getter(name="enumValue")
+    def enum_value(self) -> Optional[str]:
+        """
+        Value
+        """
+        return pulumi.get(self, "enum_value")
+
+    @property
+    @pulumi.getter(name="integerValue")
+    def integer_value(self) -> Optional[int]:
+        """
+        Value
+        """
+        return pulumi.get(self, "integer_value")
+
+    @property
+    @pulumi.getter(name="stringValue")
+    def string_value(self) -> Optional[str]:
+        """
+        Value
+        """
+        return pulumi.get(self, "string_value")
+
+    @property
+    @pulumi.getter
+    def tag(self) -> Optional[str]:
+        """
+        Format: `[CONTEXT]tagKey:tagValue`
+        """
+        return pulumi.get(self, "tag")
+
+
+@pulumi.output_type
 class AutotagV2Rules(dict):
     def __init__(__self__, *,
                  rules: Sequence['outputs.AutotagV2RulesRule']):
@@ -11244,6 +14074,48 @@ class AwsCredentialsTagsToMonitor(dict):
 
 
 @pulumi.output_type
+class AwsServiceMetric(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 dimensions: Optional[Sequence[str]] = None,
+                 statistic: Optional[str] = None):
+        """
+        :param str name: the name of the metric of the supporting service
+        :param Sequence[str] dimensions: a list of metric's dimensions names
+        :param str statistic: Possible values are `AVERAGE`, `AVG_MIN_MAX`, `MAXIMUM`, `MINIMUM`, `SAMPLE_COUNT` and `SUM`
+        """
+        pulumi.set(__self__, "name", name)
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
+        if statistic is not None:
+            pulumi.set(__self__, "statistic", statistic)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        the name of the metric of the supporting service
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Optional[Sequence[str]]:
+        """
+        a list of metric's dimensions names
+        """
+        return pulumi.get(self, "dimensions")
+
+    @property
+    @pulumi.getter
+    def statistic(self) -> Optional[str]:
+        """
+        Possible values are `AVERAGE`, `AVG_MIN_MAX`, `MAXIMUM`, `MINIMUM`, `SAMPLE_COUNT` and `SUM`
+        """
+        return pulumi.get(self, "statistic")
+
+
+@pulumi.output_type
 class AzureCredentialsMonitorOnlyExcludingTagPair(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None,
@@ -11430,6 +14302,36 @@ class AzureCredentialsSupportingServiceMonitoredMetric(dict):
         Any attributes that aren't yet supported by this provider
         """
         return pulumi.get(self, "unknowns")
+
+
+@pulumi.output_type
+class AzureServiceMetric(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 dimensions: Optional[Sequence[str]] = None):
+        """
+        :param str name: the name of the metric of the supporting service
+        :param Sequence[str] dimensions: a list of metric's dimensions names
+        """
+        pulumi.set(__self__, "name", name)
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        the name of the metric of the supporting service
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Optional[Sequence[str]]:
+        """
+        a list of metric's dimensions names
+        """
+        return pulumi.get(self, "dimensions")
 
 
 @pulumi.output_type
@@ -13776,6 +16678,8 @@ class BrowserMonitorScriptEventsEventKeystrokes(dict):
         suggest = None
         if key == "simulateBlurEvent":
             suggest = "simulate_blur_event"
+        elif key == "simulateReturnKey":
+            suggest = "simulate_return_key"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in BrowserMonitorScriptEventsEventKeystrokes. Access the value via the '{suggest}' property getter instead.")
@@ -13792,6 +16696,7 @@ class BrowserMonitorScriptEventsEventKeystrokes(dict):
                  credential: Optional['outputs.BrowserMonitorScriptEventsEventKeystrokesCredential'] = None,
                  masked: Optional[bool] = None,
                  simulate_blur_event: Optional[bool] = None,
+                 simulate_return_key: Optional[bool] = None,
                  target: Optional['outputs.BrowserMonitorScriptEventsEventKeystrokesTarget'] = None,
                  text: Optional[str] = None,
                  validate: Optional['outputs.BrowserMonitorScriptEventsEventKeystrokesValidate'] = None,
@@ -13801,6 +16706,7 @@ class BrowserMonitorScriptEventsEventKeystrokes(dict):
         :param bool masked: Indicates whether the `textValue` is encrypted (`true`) or not (`false`). Must not be specified if `credentials` from the vault are being used
         :param bool simulate_blur_event: Defines whether to blur the text field when it loses focus.
                Set to `true` to trigger the blur the `textValue`
+        :param bool simulate_return_key: Simulates pressing the 'Return' key after simulating other keystrokes. For example, to submit a form or trigger a login.
         :param 'BrowserMonitorScriptEventsEventKeystrokesTargetArgs' target: The tab on which the page should open
         :param str text: The text to enter. Must not be specified if `credentials` from the vault are being used
         :param 'BrowserMonitorScriptEventsEventKeystrokesValidateArgs' validate: The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
@@ -13812,6 +16718,8 @@ class BrowserMonitorScriptEventsEventKeystrokes(dict):
             pulumi.set(__self__, "masked", masked)
         if simulate_blur_event is not None:
             pulumi.set(__self__, "simulate_blur_event", simulate_blur_event)
+        if simulate_return_key is not None:
+            pulumi.set(__self__, "simulate_return_key", simulate_return_key)
         if target is not None:
             pulumi.set(__self__, "target", target)
         if text is not None:
@@ -13845,6 +16753,14 @@ class BrowserMonitorScriptEventsEventKeystrokes(dict):
         Set to `true` to trigger the blur the `textValue`
         """
         return pulumi.get(self, "simulate_blur_event")
+
+    @property
+    @pulumi.getter(name="simulateReturnKey")
+    def simulate_return_key(self) -> Optional[bool]:
+        """
+        Simulates pressing the 'Return' key after simulating other keystrokes. For example, to submit a form or trigger a login.
+        """
+        return pulumi.get(self, "simulate_return_key")
 
     @property
     @pulumi.getter
@@ -16311,7 +19227,7 @@ class BusinessEventsOneagentEventCategory(dict):
                  path: Optional[str] = None,
                  source: Optional[str] = None):
         """
-        :param str source_type: Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+        :param str source_type: Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
         :param str path: [See our documentation](https://dt-url.net/ei034bx)
         :param str source: Fixed value
         """
@@ -16325,7 +19241,7 @@ class BusinessEventsOneagentEventCategory(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+        Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
         """
         return pulumi.get(self, "source_type")
 
@@ -16428,7 +19344,7 @@ class BusinessEventsOneagentEventDataEventDataFieldComplexSource(dict):
                  path: Optional[str] = None,
                  source: Optional[str] = None):
         """
-        :param str source_type: Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+        :param str source_type: Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
         :param str path: [See our documentation](https://dt-url.net/ei034bx)
         :param str source: Fixed value
         """
@@ -16442,7 +19358,7 @@ class BusinessEventsOneagentEventDataEventDataFieldComplexSource(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+        Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
         """
         return pulumi.get(self, "source_type")
 
@@ -16487,7 +19403,7 @@ class BusinessEventsOneagentEventProvider(dict):
                  path: Optional[str] = None,
                  source: Optional[str] = None):
         """
-        :param str source_type: Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+        :param str source_type: Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
         :param str path: [See our documentation](https://dt-url.net/ei034bx)
         :param str source: Fixed value
         """
@@ -16501,7 +19417,7 @@ class BusinessEventsOneagentEventProvider(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+        Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
         """
         return pulumi.get(self, "source_type")
 
@@ -16546,7 +19462,7 @@ class BusinessEventsOneagentEventType(dict):
                  path: Optional[str] = None,
                  source: Optional[str] = None):
         """
-        :param str source_type: Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+        :param str source_type: Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
         :param str path: [See our documentation](https://dt-url.net/ei034bx)
         :param str source: Fixed value
         """
@@ -16560,7 +19476,7 @@ class BusinessEventsOneagentEventType(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+        Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
         """
         return pulumi.get(self, "source_type")
 
@@ -16686,7 +19602,7 @@ class BusinessEventsOneagentTriggersTriggerSource(dict):
                  data_source: str,
                  path: Optional[str] = None):
         """
-        :param str data_source: Possible Values: `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+        :param str data_source: Possible Values: `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
         :param str path: [See our documentation](https://dt-url.net/ei034bx)
         """
         pulumi.set(__self__, "data_source", data_source)
@@ -16697,7 +19613,7 @@ class BusinessEventsOneagentTriggersTriggerSource(dict):
     @pulumi.getter(name="dataSource")
     def data_source(self) -> str:
         """
-        Possible Values: `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+        Possible Values: `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
         """
         return pulumi.get(self, "data_source")
 
@@ -16834,6 +19750,450 @@ class BusinessEventsProcessingTransformationFieldsTransformationField(dict):
         Possible Values: `BOOLEAN`, `DOUBLE`, `DURATION`, `INT`, `IPADDR`, `LONG`, `STRING`, `TIMESTAMP`
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class BusinessEventsSecurityContextSecurityContextRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ruleName":
+            suggest = "rule_name"
+        elif key == "valueSource":
+            suggest = "value_source"
+        elif key == "valueSourceField":
+            suggest = "value_source_field"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BusinessEventsSecurityContextSecurityContextRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BusinessEventsSecurityContextSecurityContextRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BusinessEventsSecurityContextSecurityContextRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 query: str,
+                 rule_name: str,
+                 value_source: str,
+                 value: Optional[str] = None,
+                 value_source_field: Optional[str] = None):
+        """
+        :param str query: Matcher
+        :param str rule_name: Rule name
+        :param str value_source: Possible Values: `FIELD`, `LITERAL`
+        :param str value: Literal value to be set
+        :param str value_source_field: Name of field used to copy value
+        """
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "rule_name", rule_name)
+        pulumi.set(__self__, "value_source", value_source)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if value_source_field is not None:
+            pulumi.set(__self__, "value_source_field", value_source_field)
+
+    @property
+    @pulumi.getter
+    def query(self) -> str:
+        """
+        Matcher
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> str:
+        """
+        Rule name
+        """
+        return pulumi.get(self, "rule_name")
+
+    @property
+    @pulumi.getter(name="valueSource")
+    def value_source(self) -> str:
+        """
+        Possible Values: `FIELD`, `LITERAL`
+        """
+        return pulumi.get(self, "value_source")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        Literal value to be set
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="valueSourceField")
+    def value_source_field(self) -> Optional[str]:
+        """
+        Name of field used to copy value
+        """
+        return pulumi.get(self, "value_source_field")
+
+
+@pulumi.output_type
+class CalculatedMobileMetricDimension(dict):
+    def __init__(__self__, *,
+                 dimensions: Optional[Sequence['outputs.CalculatedMobileMetricDimensionDimension']] = None):
+        """
+        :param Sequence['CalculatedMobileMetricDimensionDimensionArgs'] dimensions: A dimensions for the metric usage
+        """
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Optional[Sequence['outputs.CalculatedMobileMetricDimensionDimension']]:
+        """
+        A dimensions for the metric usage
+        """
+        return pulumi.get(self, "dimensions")
+
+
+@pulumi.output_type
+class CalculatedMobileMetricDimensionDimension(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "topX":
+            suggest = "top_x"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CalculatedMobileMetricDimensionDimension. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CalculatedMobileMetricDimensionDimension.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CalculatedMobileMetricDimensionDimension.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dimension: str,
+                 top_x: int):
+        """
+        :param str dimension: The dimension of the metric. Possible values are `ApdexType`, `Browser`, `ErrorContext`, `ErrorOrigin`, `ErrorType`, `GeoLocation`, `StringProperty`, `UserActionType`
+        :param int top_x: The number of top values to be calculated
+        """
+        pulumi.set(__self__, "dimension", dimension)
+        pulumi.set(__self__, "top_x", top_x)
+
+    @property
+    @pulumi.getter
+    def dimension(self) -> str:
+        """
+        The dimension of the metric. Possible values are `ApdexType`, `Browser`, `ErrorContext`, `ErrorOrigin`, `ErrorType`, `GeoLocation`, `StringProperty`, `UserActionType`
+        """
+        return pulumi.get(self, "dimension")
+
+    @property
+    @pulumi.getter(name="topX")
+    def top_x(self) -> int:
+        """
+        The number of top values to be calculated
+        """
+        return pulumi.get(self, "top_x")
+
+
+@pulumi.output_type
+class CalculatedMobileMetricUserActionFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "actionDurationFromMilliseconds":
+            suggest = "action_duration_from_milliseconds"
+        elif key == "actionDurationToMilliseconds":
+            suggest = "action_duration_to_milliseconds"
+        elif key == "appVersion":
+            suggest = "app_version"
+        elif key == "connectionType":
+            suggest = "connection_type"
+        elif key == "hasHttpError":
+            suggest = "has_http_error"
+        elif key == "hasReportedError":
+            suggest = "has_reported_error"
+        elif key == "networkTechnology":
+            suggest = "network_technology"
+        elif key == "osFamily":
+            suggest = "os_family"
+        elif key == "osVersion":
+            suggest = "os_version"
+        elif key == "userActionName":
+            suggest = "user_action_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CalculatedMobileMetricUserActionFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CalculatedMobileMetricUserActionFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CalculatedMobileMetricUserActionFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action_duration_from_milliseconds: Optional[int] = None,
+                 action_duration_to_milliseconds: Optional[int] = None,
+                 apdex: Optional[str] = None,
+                 app_version: Optional[str] = None,
+                 carrier: Optional[str] = None,
+                 city: Optional[str] = None,
+                 connection_type: Optional[str] = None,
+                 continent: Optional[str] = None,
+                 country: Optional[str] = None,
+                 device: Optional[str] = None,
+                 has_http_error: Optional[bool] = None,
+                 has_reported_error: Optional[bool] = None,
+                 isp: Optional[str] = None,
+                 manufacturer: Optional[str] = None,
+                 network_technology: Optional[str] = None,
+                 orientation: Optional[str] = None,
+                 os_family: Optional[str] = None,
+                 os_version: Optional[str] = None,
+                 region: Optional[str] = None,
+                 resolution: Optional[str] = None,
+                 user_action_name: Optional[str] = None):
+        """
+        :param int action_duration_from_milliseconds: Only actions with a duration more than or equal to this value (in milliseconds) are included in the metric calculation.
+        :param int action_duration_to_milliseconds: Only actions with a duration less than or equal to this value (in milliseconds) are included in the metric calculation.
+        :param str apdex: Only actions with the specified Apdex score are included in the metric calculation. Possible values: [ Frustrated, Satisfied, Tolerating, Unknown ]
+        :param str app_version: Only actions coming from this app version are included in the metric calculation.
+        :param str carrier: Only actions coming from this carrier type are included in the metric calculation.
+        :param str city: Only actions of users from this city are included in the metric calculation. Specify geolocation ID here.
+        :param str connection_type: Only actions coming from this connection type are included in the metric calculation. Possible values: [ LAN, MOBILE, OFFLINE, UNKNOWN, WIFI ]
+        :param str continent: Only actions of users from this continent are included in the metric calculation. Specify geolocation ID here.
+        :param str country: Only actions of users from this country are included in the metric calculation. Specify geolocation ID here.
+        :param str device: Only actions coming from this app version are included in the metric calculation.
+        :param bool has_http_error: The request error status of the actions to be included in the metric calculation: `true` or `false`
+        :param bool has_reported_error: The error status of the actions to be included in the metric calculation: `true` or `false`
+        :param str isp: Only actions coming from this internet service provider are included in the metric calculation.
+        :param str manufacturer: Only actions coming from devices of this manufacturer are included in the metric calculation.
+        :param str network_technology: Filter by network technology
+        :param str orientation: Only actions coming from devices with this display orientation are included in the metric calculation. Possible values: [ LANDSCAPE, PORTRAIT, UNKNOWN ]
+        :param str os_family: Only actions coming from this OS family are included in the metric calculation.
+        :param str os_version: Only actions coming from this OS version are included in the metric calculation.
+        :param str region: Only actions of users from this region are included in the metric calculation. Specify geolocation ID here.
+        :param str resolution: Only actions coming from devices with this display resolution are included in the metric calculation. Possible values: [ CGA, DCI2K, DCI4K, DVGA, FHD, FWVGA, FWXGA, GHDPlus, HD, HQVGA, HQVGA2, HSXGA, HUXGA, HVGA, HXGA, NTSC, PAL, QHD, QQVGA, QSXGA, QUXGA, QVGA, QWXGA, QXGA, SVGA, SXGA, SXGAMinus, SXGAPlus, UGA, UHD16K, UHD4K, UHD8K, UHDPlus, UNKNOWN, UWQHD, UXGA, VGA, WHSXGA, WHUXGA, WHXGA, WQSXGA, WQUXGA, WQVGA, WQVGA2, WQVGA3, WQXGA, WQXGA2, WSVGA, WSVGA2, WSXGA, WSXGAPlus, WUXGA, WVGA, WVGA2, WXGA, WXGA2, WXGA3, WXGAPlus, XGA, XGAPLUS, _1280x854, nHD, qHD ]
+        :param str user_action_name: Only actions with this name are included in the metric calculation.
+        """
+        if action_duration_from_milliseconds is not None:
+            pulumi.set(__self__, "action_duration_from_milliseconds", action_duration_from_milliseconds)
+        if action_duration_to_milliseconds is not None:
+            pulumi.set(__self__, "action_duration_to_milliseconds", action_duration_to_milliseconds)
+        if apdex is not None:
+            pulumi.set(__self__, "apdex", apdex)
+        if app_version is not None:
+            pulumi.set(__self__, "app_version", app_version)
+        if carrier is not None:
+            pulumi.set(__self__, "carrier", carrier)
+        if city is not None:
+            pulumi.set(__self__, "city", city)
+        if connection_type is not None:
+            pulumi.set(__self__, "connection_type", connection_type)
+        if continent is not None:
+            pulumi.set(__self__, "continent", continent)
+        if country is not None:
+            pulumi.set(__self__, "country", country)
+        if device is not None:
+            pulumi.set(__self__, "device", device)
+        if has_http_error is not None:
+            pulumi.set(__self__, "has_http_error", has_http_error)
+        if has_reported_error is not None:
+            pulumi.set(__self__, "has_reported_error", has_reported_error)
+        if isp is not None:
+            pulumi.set(__self__, "isp", isp)
+        if manufacturer is not None:
+            pulumi.set(__self__, "manufacturer", manufacturer)
+        if network_technology is not None:
+            pulumi.set(__self__, "network_technology", network_technology)
+        if orientation is not None:
+            pulumi.set(__self__, "orientation", orientation)
+        if os_family is not None:
+            pulumi.set(__self__, "os_family", os_family)
+        if os_version is not None:
+            pulumi.set(__self__, "os_version", os_version)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if resolution is not None:
+            pulumi.set(__self__, "resolution", resolution)
+        if user_action_name is not None:
+            pulumi.set(__self__, "user_action_name", user_action_name)
+
+    @property
+    @pulumi.getter(name="actionDurationFromMilliseconds")
+    def action_duration_from_milliseconds(self) -> Optional[int]:
+        """
+        Only actions with a duration more than or equal to this value (in milliseconds) are included in the metric calculation.
+        """
+        return pulumi.get(self, "action_duration_from_milliseconds")
+
+    @property
+    @pulumi.getter(name="actionDurationToMilliseconds")
+    def action_duration_to_milliseconds(self) -> Optional[int]:
+        """
+        Only actions with a duration less than or equal to this value (in milliseconds) are included in the metric calculation.
+        """
+        return pulumi.get(self, "action_duration_to_milliseconds")
+
+    @property
+    @pulumi.getter
+    def apdex(self) -> Optional[str]:
+        """
+        Only actions with the specified Apdex score are included in the metric calculation. Possible values: [ Frustrated, Satisfied, Tolerating, Unknown ]
+        """
+        return pulumi.get(self, "apdex")
+
+    @property
+    @pulumi.getter(name="appVersion")
+    def app_version(self) -> Optional[str]:
+        """
+        Only actions coming from this app version are included in the metric calculation.
+        """
+        return pulumi.get(self, "app_version")
+
+    @property
+    @pulumi.getter
+    def carrier(self) -> Optional[str]:
+        """
+        Only actions coming from this carrier type are included in the metric calculation.
+        """
+        return pulumi.get(self, "carrier")
+
+    @property
+    @pulumi.getter
+    def city(self) -> Optional[str]:
+        """
+        Only actions of users from this city are included in the metric calculation. Specify geolocation ID here.
+        """
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> Optional[str]:
+        """
+        Only actions coming from this connection type are included in the metric calculation. Possible values: [ LAN, MOBILE, OFFLINE, UNKNOWN, WIFI ]
+        """
+        return pulumi.get(self, "connection_type")
+
+    @property
+    @pulumi.getter
+    def continent(self) -> Optional[str]:
+        """
+        Only actions of users from this continent are included in the metric calculation. Specify geolocation ID here.
+        """
+        return pulumi.get(self, "continent")
+
+    @property
+    @pulumi.getter
+    def country(self) -> Optional[str]:
+        """
+        Only actions of users from this country are included in the metric calculation. Specify geolocation ID here.
+        """
+        return pulumi.get(self, "country")
+
+    @property
+    @pulumi.getter
+    def device(self) -> Optional[str]:
+        """
+        Only actions coming from this app version are included in the metric calculation.
+        """
+        return pulumi.get(self, "device")
+
+    @property
+    @pulumi.getter(name="hasHttpError")
+    def has_http_error(self) -> Optional[bool]:
+        """
+        The request error status of the actions to be included in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "has_http_error")
+
+    @property
+    @pulumi.getter(name="hasReportedError")
+    def has_reported_error(self) -> Optional[bool]:
+        """
+        The error status of the actions to be included in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "has_reported_error")
+
+    @property
+    @pulumi.getter
+    def isp(self) -> Optional[str]:
+        """
+        Only actions coming from this internet service provider are included in the metric calculation.
+        """
+        return pulumi.get(self, "isp")
+
+    @property
+    @pulumi.getter
+    def manufacturer(self) -> Optional[str]:
+        """
+        Only actions coming from devices of this manufacturer are included in the metric calculation.
+        """
+        return pulumi.get(self, "manufacturer")
+
+    @property
+    @pulumi.getter(name="networkTechnology")
+    def network_technology(self) -> Optional[str]:
+        """
+        Filter by network technology
+        """
+        return pulumi.get(self, "network_technology")
+
+    @property
+    @pulumi.getter
+    def orientation(self) -> Optional[str]:
+        """
+        Only actions coming from devices with this display orientation are included in the metric calculation. Possible values: [ LANDSCAPE, PORTRAIT, UNKNOWN ]
+        """
+        return pulumi.get(self, "orientation")
+
+    @property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> Optional[str]:
+        """
+        Only actions coming from this OS family are included in the metric calculation.
+        """
+        return pulumi.get(self, "os_family")
+
+    @property
+    @pulumi.getter(name="osVersion")
+    def os_version(self) -> Optional[str]:
+        """
+        Only actions coming from this OS version are included in the metric calculation.
+        """
+        return pulumi.get(self, "os_version")
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[str]:
+        """
+        Only actions of users from this region are included in the metric calculation. Specify geolocation ID here.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def resolution(self) -> Optional[str]:
+        """
+        Only actions coming from devices with this display resolution are included in the metric calculation. Possible values: [ CGA, DCI2K, DCI4K, DVGA, FHD, FWVGA, FWXGA, GHDPlus, HD, HQVGA, HQVGA2, HSXGA, HUXGA, HVGA, HXGA, NTSC, PAL, QHD, QQVGA, QSXGA, QUXGA, QVGA, QWXGA, QXGA, SVGA, SXGA, SXGAMinus, SXGAPlus, UGA, UHD16K, UHD4K, UHD8K, UHDPlus, UNKNOWN, UWQHD, UXGA, VGA, WHSXGA, WHUXGA, WHXGA, WQSXGA, WQUXGA, WQVGA, WQVGA2, WQVGA3, WQXGA, WQXGA2, WSVGA, WSVGA2, WSXGA, WSXGAPlus, WUXGA, WVGA, WVGA2, WXGA, WXGA2, WXGA3, WXGAPlus, XGA, XGAPLUS, _1280x854, nHD, qHD ]
+        """
+        return pulumi.get(self, "resolution")
+
+    @property
+    @pulumi.getter(name="userActionName")
+    def user_action_name(self) -> Optional[str]:
+        """
+        Only actions with this name are included in the metric calculation.
+        """
+        return pulumi.get(self, "user_action_name")
 
 
 @pulumi.output_type
@@ -19212,6 +22572,913 @@ class CalculatedServiceMetricMetricDefinition(dict):
         The request attribute to be captured. Only applicable when the **metric** parameter is set to `REQUEST_ATTRIBUTE`
         """
         return pulumi.get(self, "request_attribute")
+
+
+@pulumi.output_type
+class CalculatedSyntheticMetricDimension(dict):
+    def __init__(__self__, *,
+                 dimensions: Optional[Sequence['outputs.CalculatedSyntheticMetricDimensionDimension']] = None):
+        """
+        :param Sequence['CalculatedSyntheticMetricDimensionDimensionArgs'] dimensions: A dimensions for the metric usage
+        """
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Optional[Sequence['outputs.CalculatedSyntheticMetricDimensionDimension']]:
+        """
+        A dimensions for the metric usage
+        """
+        return pulumi.get(self, "dimensions")
+
+
+@pulumi.output_type
+class CalculatedSyntheticMetricDimensionDimension(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "topX":
+            suggest = "top_x"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CalculatedSyntheticMetricDimensionDimension. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CalculatedSyntheticMetricDimensionDimension.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CalculatedSyntheticMetricDimensionDimension.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dimension: str,
+                 top_x: Optional[int] = None):
+        """
+        :param str dimension: The dimension of the metric. Possible values are `Event`, `Location`, `ResourceOrigin`
+        :param int top_x: The number of top values to be calculated
+        """
+        pulumi.set(__self__, "dimension", dimension)
+        if top_x is not None:
+            pulumi.set(__self__, "top_x", top_x)
+
+    @property
+    @pulumi.getter
+    def dimension(self) -> str:
+        """
+        The dimension of the metric. Possible values are `Event`, `Location`, `ResourceOrigin`
+        """
+        return pulumi.get(self, "dimension")
+
+    @property
+    @pulumi.getter(name="topX")
+    def top_x(self) -> Optional[int]:
+        """
+        The number of top values to be calculated
+        """
+        return pulumi.get(self, "top_x")
+
+
+@pulumi.output_type
+class CalculatedSyntheticMetricFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "actionType":
+            suggest = "action_type"
+        elif key == "errorCode":
+            suggest = "error_code"
+        elif key == "hasError":
+            suggest = "has_error"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CalculatedSyntheticMetricFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CalculatedSyntheticMetricFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CalculatedSyntheticMetricFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action_type: Optional[str] = None,
+                 error_code: Optional[int] = None,
+                 event: Optional[str] = None,
+                 has_error: Optional[bool] = None,
+                 location: Optional[str] = None):
+        """
+        :param str action_type: Only user actions of the specified type are included in the metric calculation
+        :param int error_code: Only executions finished with the specified error code are included in the metric calculation.
+        :param str event: Only the specified browser clickpath event is included in the metric calculation. Specify the Dynatrace entity ID of the event here.
+        :param bool has_error: The execution status of the monitors to be included in the metric calculation: `true` or `false`
+        :param str location: Only executions from the specified location are included in the metric calculation. Specify the Dynatrace entity ID of the location here.
+        """
+        if action_type is not None:
+            pulumi.set(__self__, "action_type", action_type)
+        if error_code is not None:
+            pulumi.set(__self__, "error_code", error_code)
+        if event is not None:
+            pulumi.set(__self__, "event", event)
+        if has_error is not None:
+            pulumi.set(__self__, "has_error", has_error)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+
+    @property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> Optional[str]:
+        """
+        Only user actions of the specified type are included in the metric calculation
+        """
+        return pulumi.get(self, "action_type")
+
+    @property
+    @pulumi.getter(name="errorCode")
+    def error_code(self) -> Optional[int]:
+        """
+        Only executions finished with the specified error code are included in the metric calculation.
+        """
+        return pulumi.get(self, "error_code")
+
+    @property
+    @pulumi.getter
+    def event(self) -> Optional[str]:
+        """
+        Only the specified browser clickpath event is included in the metric calculation. Specify the Dynatrace entity ID of the event here.
+        """
+        return pulumi.get(self, "event")
+
+    @property
+    @pulumi.getter(name="hasError")
+    def has_error(self) -> Optional[bool]:
+        """
+        The execution status of the monitors to be included in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "has_error")
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[str]:
+        """
+        Only executions from the specified location are included in the metric calculation. Specify the Dynatrace entity ID of the location here.
+        """
+        return pulumi.get(self, "location")
+
+
+@pulumi.output_type
+class CalculatedWebMetricDimension(dict):
+    def __init__(__self__, *,
+                 dimensions: Optional[Sequence['outputs.CalculatedWebMetricDimensionDimension']] = None):
+        """
+        :param Sequence['CalculatedWebMetricDimensionDimensionArgs'] dimensions: A dimensions for the metric usage
+        """
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Optional[Sequence['outputs.CalculatedWebMetricDimensionDimension']]:
+        """
+        A dimensions for the metric usage
+        """
+        return pulumi.get(self, "dimensions")
+
+
+@pulumi.output_type
+class CalculatedWebMetricDimensionDimension(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "topX":
+            suggest = "top_x"
+        elif key == "propertyKey":
+            suggest = "property_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CalculatedWebMetricDimensionDimension. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CalculatedWebMetricDimensionDimension.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CalculatedWebMetricDimensionDimension.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dimension: str,
+                 top_x: int,
+                 property_key: Optional[str] = None):
+        """
+        :param str dimension: The dimension of the metric. Possible values are `ApdexType`, `Browser`, `ErrorContext`, `ErrorOrigin`, `ErrorType`, `GeoLocation`, `StringProperty`, `UserActionType`
+        :param int top_x: The number of top values to be calculated
+        :param str property_key: The key of the user action property. Only applicable for the StringProperty dimension.
+        """
+        pulumi.set(__self__, "dimension", dimension)
+        pulumi.set(__self__, "top_x", top_x)
+        if property_key is not None:
+            pulumi.set(__self__, "property_key", property_key)
+
+    @property
+    @pulumi.getter
+    def dimension(self) -> str:
+        """
+        The dimension of the metric. Possible values are `ApdexType`, `Browser`, `ErrorContext`, `ErrorOrigin`, `ErrorType`, `GeoLocation`, `StringProperty`, `UserActionType`
+        """
+        return pulumi.get(self, "dimension")
+
+    @property
+    @pulumi.getter(name="topX")
+    def top_x(self) -> int:
+        """
+        The number of top values to be calculated
+        """
+        return pulumi.get(self, "top_x")
+
+    @property
+    @pulumi.getter(name="propertyKey")
+    def property_key(self) -> Optional[str]:
+        """
+        The key of the user action property. Only applicable for the StringProperty dimension.
+        """
+        return pulumi.get(self, "property_key")
+
+
+@pulumi.output_type
+class CalculatedWebMetricMetricDefinition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "propertyKey":
+            suggest = "property_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CalculatedWebMetricMetricDefinition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CalculatedWebMetricMetricDefinition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CalculatedWebMetricMetricDefinition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 metric: str,
+                 property_key: Optional[str] = None):
+        """
+        :param str metric: The metric to be captured. Possible values are `Apdex`, `ApplicationCache`, `Callback`, `CumulativeLayoutShift`, `DNSLookup`, `DOMComplete`, `DOMContentLoaded`, `DOMInteractive`, `DoubleProperty`, `ErrorCount`, `FirstContentfulPaint`, `FirstInputDelay`, `FirstInputStart`, `FirstPaint`, `HTMLDownloaded`, `LargestContentfulPaint`, `LoadEventEnd`, `LoadEventStart`, `LongProperty`, `LongTasksTime`, `NavigationStart`, `OnDOMContentLoaded`, `OnLoad`, `Processing`, `RedirectTime`, `Request`, `RequestStart`, `Response`, `SecureConnect`, `SpeedIndex`, `TCPConnect`, `TimeToFirstByte`, `UserActionDuration`, `VisuallyComplete`
+        :param str property_key: The key of the user action property. Only applicable for DoubleProperty and LongProperty metrics.
+        """
+        pulumi.set(__self__, "metric", metric)
+        if property_key is not None:
+            pulumi.set(__self__, "property_key", property_key)
+
+    @property
+    @pulumi.getter
+    def metric(self) -> str:
+        """
+        The metric to be captured. Possible values are `Apdex`, `ApplicationCache`, `Callback`, `CumulativeLayoutShift`, `DNSLookup`, `DOMComplete`, `DOMContentLoaded`, `DOMInteractive`, `DoubleProperty`, `ErrorCount`, `FirstContentfulPaint`, `FirstInputDelay`, `FirstInputStart`, `FirstPaint`, `HTMLDownloaded`, `LargestContentfulPaint`, `LoadEventEnd`, `LoadEventStart`, `LongProperty`, `LongTasksTime`, `NavigationStart`, `OnDOMContentLoaded`, `OnLoad`, `Processing`, `RedirectTime`, `Request`, `RequestStart`, `Response`, `SecureConnect`, `SpeedIndex`, `TCPConnect`, `TimeToFirstByte`, `UserActionDuration`, `VisuallyComplete`
+        """
+        return pulumi.get(self, "metric")
+
+    @property
+    @pulumi.getter(name="propertyKey")
+    def property_key(self) -> Optional[str]:
+        """
+        The key of the user action property. Only applicable for DoubleProperty and LongProperty metrics.
+        """
+        return pulumi.get(self, "property_key")
+
+
+@pulumi.output_type
+class CalculatedWebMetricUserActionFilter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "actionDurationFromMilliseconds":
+            suggest = "action_duration_from_milliseconds"
+        elif key == "actionDurationToMilliseconds":
+            suggest = "action_duration_to_milliseconds"
+        elif key == "browserFamily":
+            suggest = "browser_family"
+        elif key == "browserType":
+            suggest = "browser_type"
+        elif key == "browserVersion":
+            suggest = "browser_version"
+        elif key == "customAction":
+            suggest = "custom_action"
+        elif key == "customErrorName":
+            suggest = "custom_error_name"
+        elif key == "customErrorType":
+            suggest = "custom_error_type"
+        elif key == "hasAnyError":
+            suggest = "has_any_error"
+        elif key == "hasCustomErrors":
+            suggest = "has_custom_errors"
+        elif key == "hasHttpErrors":
+            suggest = "has_http_errors"
+        elif key == "hasJavascriptErrors":
+            suggest = "has_javascript_errors"
+        elif key == "httpErrorCode":
+            suggest = "http_error_code"
+        elif key == "httpErrorCodeTo":
+            suggest = "http_error_code_to"
+        elif key == "httpPath":
+            suggest = "http_path"
+        elif key == "ipV6Traffic":
+            suggest = "ip_v6_traffic"
+        elif key == "loadAction":
+            suggest = "load_action"
+        elif key == "osFamily":
+            suggest = "os_family"
+        elif key == "osVersion":
+            suggest = "os_version"
+        elif key == "realUser":
+            suggest = "real_user"
+        elif key == "targetViewGroup":
+            suggest = "target_view_group"
+        elif key == "targetViewGroupNameMatchType":
+            suggest = "target_view_group_name_match_type"
+        elif key == "targetViewName":
+            suggest = "target_view_name"
+        elif key == "targetViewNameMatchType":
+            suggest = "target_view_name_match_type"
+        elif key == "userActionName":
+            suggest = "user_action_name"
+        elif key == "userActionProperties":
+            suggest = "user_action_properties"
+        elif key == "xhrAction":
+            suggest = "xhr_action"
+        elif key == "xhrRouteChangeAction":
+            suggest = "xhr_route_change_action"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CalculatedWebMetricUserActionFilter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CalculatedWebMetricUserActionFilter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CalculatedWebMetricUserActionFilter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 action_duration_from_milliseconds: Optional[int] = None,
+                 action_duration_to_milliseconds: Optional[int] = None,
+                 apdex: Optional[str] = None,
+                 browser_family: Optional[str] = None,
+                 browser_type: Optional[str] = None,
+                 browser_version: Optional[str] = None,
+                 city: Optional[str] = None,
+                 continent: Optional[str] = None,
+                 country: Optional[str] = None,
+                 custom_action: Optional[bool] = None,
+                 custom_error_name: Optional[str] = None,
+                 custom_error_type: Optional[str] = None,
+                 domain: Optional[str] = None,
+                 has_any_error: Optional[bool] = None,
+                 has_custom_errors: Optional[bool] = None,
+                 has_http_errors: Optional[bool] = None,
+                 has_javascript_errors: Optional[bool] = None,
+                 http_error_code: Optional[int] = None,
+                 http_error_code_to: Optional[int] = None,
+                 http_path: Optional[str] = None,
+                 ip: Optional[str] = None,
+                 ip_v6_traffic: Optional[bool] = None,
+                 load_action: Optional[bool] = None,
+                 os_family: Optional[str] = None,
+                 os_version: Optional[str] = None,
+                 real_user: Optional[bool] = None,
+                 region: Optional[str] = None,
+                 robot: Optional[bool] = None,
+                 synthetic: Optional[bool] = None,
+                 target_view_group: Optional[str] = None,
+                 target_view_group_name_match_type: Optional[str] = None,
+                 target_view_name: Optional[str] = None,
+                 target_view_name_match_type: Optional[str] = None,
+                 user_action_name: Optional[str] = None,
+                 user_action_properties: Optional[Sequence['outputs.CalculatedWebMetricUserActionFilterUserActionProperty']] = None,
+                 xhr_action: Optional[bool] = None,
+                 xhr_route_change_action: Optional[bool] = None):
+        """
+        :param int action_duration_from_milliseconds: Only actions with a duration more than or equal to this value (in milliseconds) are included in the metric calculation.
+        :param int action_duration_to_milliseconds: Only actions with a duration less than or equal to this value (in milliseconds) are included in the metric calculation.
+        :param str apdex: Only actions with the specified Apdex score are included in the metric calculation. Possible values: [ Frustrated, Satisfied, Tolerating, Unknown ]
+        :param str browser_family: Only user actions coming from the specified browser family are included in the metric calculation.
+        :param str browser_type: Only user actions coming from the specified browser type are included in the metric calculation.
+        :param str browser_version: Only user actions coming from the specified browser version are included in the metric calculation.
+        :param str city: Only actions of users from this city are included in the metric calculation. Specify geolocation ID here.
+        :param str continent: Only actions of users from this continent are included in the metric calculation. Specify geolocation ID here.
+        :param str country: Only actions of users from this country are included in the metric calculation. Specify geolocation ID here.
+        :param bool custom_action: The status of custom actions in the metric calculation: `true` or `false`
+        :param str custom_error_name: The custom error name of the actions to be included in the metric calculation.
+        :param str custom_error_type: The custom error type of the actions to be included in the metric calculation.
+        :param str domain: Only user actions coming from the specified domain are included in the metric calculation.
+        :param bool has_any_error: The error status of the actions to be included in the metric calculation: `true` or `false`
+        :param bool has_custom_errors: The custom error status of the actions to be included in the metric calculation: `true` or `false`
+        :param bool has_http_errors: The request error status of the actions to be included in the metric calculation: `true` or `false`
+        :param bool has_javascript_errors: The JavaScript error status of the actions to be included in the metric calculation: `true` or `false`
+        :param int http_error_code: The HTTP error status code of the actions to be included in the metric calculation.
+        :param int http_error_code_to: Can be used in combination with httpErrorCode to define a range of error codes that will be included in the metric calculation.
+        :param str http_path: The request path that has been determined to be the origin of an HTTP error of the actions to be included in the metric calculation.
+        :param str ip: Only actions coming from this IP address are included in the metric calculation.
+        :param bool ip_v6_traffic: The IPv6 status of the actions to be included in the metric calculation: `true` or `false`
+        :param bool load_action: The status of load actions in the metric calculation: `true` or `false`
+        :param str os_family: Only actions coming from this OS family are included in the metric calculation.
+        :param str os_version: Only actions coming from this OS version are included in the metric calculation.
+        :param bool real_user: The status of actions coming from real users in the metric calculation: `true` or `false`
+        :param str region: Only actions of users from this region are included in the metric calculation. Specify geolocation ID here.
+        :param bool robot: The status of actions coming from robots in the metric calculation: `true` or `false`
+        :param bool synthetic: The status of actions coming from synthetic monitors in the metric calculation: `true` or `false`
+        :param str target_view_group: Only actions on the specified group of views are included in the metric calculation.
+        :param str target_view_group_name_match_type: Specifies the match type of the view group filter, e.g. using Contains or Equals. Defaults to Equals.
+        :param str target_view_name: Only actions on the specified view are included in the metric calculation.
+        :param str target_view_name_match_type: Specifies the match type of the view name filter, e.g. using Contains or Equals. Defaults to Equals.
+        :param str user_action_name: Only actions with this name are included in the metric calculation.
+        :param Sequence['CalculatedWebMetricUserActionFilterUserActionPropertyArgs'] user_action_properties: The definition of a calculated web metric.
+        :param bool xhr_action: The status of xhr actions in the metric calculation: `true` or `false`
+        :param bool xhr_route_change_action: The status of route actions in the metric calculation: `true` or `false`
+        """
+        if action_duration_from_milliseconds is not None:
+            pulumi.set(__self__, "action_duration_from_milliseconds", action_duration_from_milliseconds)
+        if action_duration_to_milliseconds is not None:
+            pulumi.set(__self__, "action_duration_to_milliseconds", action_duration_to_milliseconds)
+        if apdex is not None:
+            pulumi.set(__self__, "apdex", apdex)
+        if browser_family is not None:
+            pulumi.set(__self__, "browser_family", browser_family)
+        if browser_type is not None:
+            pulumi.set(__self__, "browser_type", browser_type)
+        if browser_version is not None:
+            pulumi.set(__self__, "browser_version", browser_version)
+        if city is not None:
+            pulumi.set(__self__, "city", city)
+        if continent is not None:
+            pulumi.set(__self__, "continent", continent)
+        if country is not None:
+            pulumi.set(__self__, "country", country)
+        if custom_action is not None:
+            pulumi.set(__self__, "custom_action", custom_action)
+        if custom_error_name is not None:
+            pulumi.set(__self__, "custom_error_name", custom_error_name)
+        if custom_error_type is not None:
+            pulumi.set(__self__, "custom_error_type", custom_error_type)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if has_any_error is not None:
+            pulumi.set(__self__, "has_any_error", has_any_error)
+        if has_custom_errors is not None:
+            pulumi.set(__self__, "has_custom_errors", has_custom_errors)
+        if has_http_errors is not None:
+            pulumi.set(__self__, "has_http_errors", has_http_errors)
+        if has_javascript_errors is not None:
+            pulumi.set(__self__, "has_javascript_errors", has_javascript_errors)
+        if http_error_code is not None:
+            pulumi.set(__self__, "http_error_code", http_error_code)
+        if http_error_code_to is not None:
+            pulumi.set(__self__, "http_error_code_to", http_error_code_to)
+        if http_path is not None:
+            pulumi.set(__self__, "http_path", http_path)
+        if ip is not None:
+            pulumi.set(__self__, "ip", ip)
+        if ip_v6_traffic is not None:
+            pulumi.set(__self__, "ip_v6_traffic", ip_v6_traffic)
+        if load_action is not None:
+            pulumi.set(__self__, "load_action", load_action)
+        if os_family is not None:
+            pulumi.set(__self__, "os_family", os_family)
+        if os_version is not None:
+            pulumi.set(__self__, "os_version", os_version)
+        if real_user is not None:
+            pulumi.set(__self__, "real_user", real_user)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if robot is not None:
+            pulumi.set(__self__, "robot", robot)
+        if synthetic is not None:
+            pulumi.set(__self__, "synthetic", synthetic)
+        if target_view_group is not None:
+            pulumi.set(__self__, "target_view_group", target_view_group)
+        if target_view_group_name_match_type is not None:
+            pulumi.set(__self__, "target_view_group_name_match_type", target_view_group_name_match_type)
+        if target_view_name is not None:
+            pulumi.set(__self__, "target_view_name", target_view_name)
+        if target_view_name_match_type is not None:
+            pulumi.set(__self__, "target_view_name_match_type", target_view_name_match_type)
+        if user_action_name is not None:
+            pulumi.set(__self__, "user_action_name", user_action_name)
+        if user_action_properties is not None:
+            pulumi.set(__self__, "user_action_properties", user_action_properties)
+        if xhr_action is not None:
+            pulumi.set(__self__, "xhr_action", xhr_action)
+        if xhr_route_change_action is not None:
+            pulumi.set(__self__, "xhr_route_change_action", xhr_route_change_action)
+
+    @property
+    @pulumi.getter(name="actionDurationFromMilliseconds")
+    def action_duration_from_milliseconds(self) -> Optional[int]:
+        """
+        Only actions with a duration more than or equal to this value (in milliseconds) are included in the metric calculation.
+        """
+        return pulumi.get(self, "action_duration_from_milliseconds")
+
+    @property
+    @pulumi.getter(name="actionDurationToMilliseconds")
+    def action_duration_to_milliseconds(self) -> Optional[int]:
+        """
+        Only actions with a duration less than or equal to this value (in milliseconds) are included in the metric calculation.
+        """
+        return pulumi.get(self, "action_duration_to_milliseconds")
+
+    @property
+    @pulumi.getter
+    def apdex(self) -> Optional[str]:
+        """
+        Only actions with the specified Apdex score are included in the metric calculation. Possible values: [ Frustrated, Satisfied, Tolerating, Unknown ]
+        """
+        return pulumi.get(self, "apdex")
+
+    @property
+    @pulumi.getter(name="browserFamily")
+    def browser_family(self) -> Optional[str]:
+        """
+        Only user actions coming from the specified browser family are included in the metric calculation.
+        """
+        return pulumi.get(self, "browser_family")
+
+    @property
+    @pulumi.getter(name="browserType")
+    def browser_type(self) -> Optional[str]:
+        """
+        Only user actions coming from the specified browser type are included in the metric calculation.
+        """
+        return pulumi.get(self, "browser_type")
+
+    @property
+    @pulumi.getter(name="browserVersion")
+    def browser_version(self) -> Optional[str]:
+        """
+        Only user actions coming from the specified browser version are included in the metric calculation.
+        """
+        return pulumi.get(self, "browser_version")
+
+    @property
+    @pulumi.getter
+    def city(self) -> Optional[str]:
+        """
+        Only actions of users from this city are included in the metric calculation. Specify geolocation ID here.
+        """
+        return pulumi.get(self, "city")
+
+    @property
+    @pulumi.getter
+    def continent(self) -> Optional[str]:
+        """
+        Only actions of users from this continent are included in the metric calculation. Specify geolocation ID here.
+        """
+        return pulumi.get(self, "continent")
+
+    @property
+    @pulumi.getter
+    def country(self) -> Optional[str]:
+        """
+        Only actions of users from this country are included in the metric calculation. Specify geolocation ID here.
+        """
+        return pulumi.get(self, "country")
+
+    @property
+    @pulumi.getter(name="customAction")
+    def custom_action(self) -> Optional[bool]:
+        """
+        The status of custom actions in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "custom_action")
+
+    @property
+    @pulumi.getter(name="customErrorName")
+    def custom_error_name(self) -> Optional[str]:
+        """
+        The custom error name of the actions to be included in the metric calculation.
+        """
+        return pulumi.get(self, "custom_error_name")
+
+    @property
+    @pulumi.getter(name="customErrorType")
+    def custom_error_type(self) -> Optional[str]:
+        """
+        The custom error type of the actions to be included in the metric calculation.
+        """
+        return pulumi.get(self, "custom_error_type")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[str]:
+        """
+        Only user actions coming from the specified domain are included in the metric calculation.
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="hasAnyError")
+    def has_any_error(self) -> Optional[bool]:
+        """
+        The error status of the actions to be included in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "has_any_error")
+
+    @property
+    @pulumi.getter(name="hasCustomErrors")
+    def has_custom_errors(self) -> Optional[bool]:
+        """
+        The custom error status of the actions to be included in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "has_custom_errors")
+
+    @property
+    @pulumi.getter(name="hasHttpErrors")
+    def has_http_errors(self) -> Optional[bool]:
+        """
+        The request error status of the actions to be included in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "has_http_errors")
+
+    @property
+    @pulumi.getter(name="hasJavascriptErrors")
+    def has_javascript_errors(self) -> Optional[bool]:
+        """
+        The JavaScript error status of the actions to be included in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "has_javascript_errors")
+
+    @property
+    @pulumi.getter(name="httpErrorCode")
+    def http_error_code(self) -> Optional[int]:
+        """
+        The HTTP error status code of the actions to be included in the metric calculation.
+        """
+        return pulumi.get(self, "http_error_code")
+
+    @property
+    @pulumi.getter(name="httpErrorCodeTo")
+    def http_error_code_to(self) -> Optional[int]:
+        """
+        Can be used in combination with httpErrorCode to define a range of error codes that will be included in the metric calculation.
+        """
+        return pulumi.get(self, "http_error_code_to")
+
+    @property
+    @pulumi.getter(name="httpPath")
+    def http_path(self) -> Optional[str]:
+        """
+        The request path that has been determined to be the origin of an HTTP error of the actions to be included in the metric calculation.
+        """
+        return pulumi.get(self, "http_path")
+
+    @property
+    @pulumi.getter
+    def ip(self) -> Optional[str]:
+        """
+        Only actions coming from this IP address are included in the metric calculation.
+        """
+        return pulumi.get(self, "ip")
+
+    @property
+    @pulumi.getter(name="ipV6Traffic")
+    def ip_v6_traffic(self) -> Optional[bool]:
+        """
+        The IPv6 status of the actions to be included in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "ip_v6_traffic")
+
+    @property
+    @pulumi.getter(name="loadAction")
+    def load_action(self) -> Optional[bool]:
+        """
+        The status of load actions in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "load_action")
+
+    @property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> Optional[str]:
+        """
+        Only actions coming from this OS family are included in the metric calculation.
+        """
+        return pulumi.get(self, "os_family")
+
+    @property
+    @pulumi.getter(name="osVersion")
+    def os_version(self) -> Optional[str]:
+        """
+        Only actions coming from this OS version are included in the metric calculation.
+        """
+        return pulumi.get(self, "os_version")
+
+    @property
+    @pulumi.getter(name="realUser")
+    def real_user(self) -> Optional[bool]:
+        """
+        The status of actions coming from real users in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "real_user")
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[str]:
+        """
+        Only actions of users from this region are included in the metric calculation. Specify geolocation ID here.
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def robot(self) -> Optional[bool]:
+        """
+        The status of actions coming from robots in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "robot")
+
+    @property
+    @pulumi.getter
+    def synthetic(self) -> Optional[bool]:
+        """
+        The status of actions coming from synthetic monitors in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "synthetic")
+
+    @property
+    @pulumi.getter(name="targetViewGroup")
+    def target_view_group(self) -> Optional[str]:
+        """
+        Only actions on the specified group of views are included in the metric calculation.
+        """
+        return pulumi.get(self, "target_view_group")
+
+    @property
+    @pulumi.getter(name="targetViewGroupNameMatchType")
+    def target_view_group_name_match_type(self) -> Optional[str]:
+        """
+        Specifies the match type of the view group filter, e.g. using Contains or Equals. Defaults to Equals.
+        """
+        return pulumi.get(self, "target_view_group_name_match_type")
+
+    @property
+    @pulumi.getter(name="targetViewName")
+    def target_view_name(self) -> Optional[str]:
+        """
+        Only actions on the specified view are included in the metric calculation.
+        """
+        return pulumi.get(self, "target_view_name")
+
+    @property
+    @pulumi.getter(name="targetViewNameMatchType")
+    def target_view_name_match_type(self) -> Optional[str]:
+        """
+        Specifies the match type of the view name filter, e.g. using Contains or Equals. Defaults to Equals.
+        """
+        return pulumi.get(self, "target_view_name_match_type")
+
+    @property
+    @pulumi.getter(name="userActionName")
+    def user_action_name(self) -> Optional[str]:
+        """
+        Only actions with this name are included in the metric calculation.
+        """
+        return pulumi.get(self, "user_action_name")
+
+    @property
+    @pulumi.getter(name="userActionProperties")
+    def user_action_properties(self) -> Optional[Sequence['outputs.CalculatedWebMetricUserActionFilterUserActionProperty']]:
+        """
+        The definition of a calculated web metric.
+        """
+        return pulumi.get(self, "user_action_properties")
+
+    @property
+    @pulumi.getter(name="xhrAction")
+    def xhr_action(self) -> Optional[bool]:
+        """
+        The status of xhr actions in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "xhr_action")
+
+    @property
+    @pulumi.getter(name="xhrRouteChangeAction")
+    def xhr_route_change_action(self) -> Optional[bool]:
+        """
+        The status of route actions in the metric calculation: `true` or `false`
+        """
+        return pulumi.get(self, "xhr_route_change_action")
+
+
+@pulumi.output_type
+class CalculatedWebMetricUserActionFilterUserActionProperty(dict):
+    def __init__(__self__, *,
+                 properties: Optional[Sequence['outputs.CalculatedWebMetricUserActionFilterUserActionPropertyProperty']] = None):
+        """
+        :param Sequence['CalculatedWebMetricUserActionFilterUserActionPropertyPropertyArgs'] properties: User Action Property
+        """
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Optional[Sequence['outputs.CalculatedWebMetricUserActionFilterUserActionPropertyProperty']]:
+        """
+        User Action Property
+        """
+        return pulumi.get(self, "properties")
+
+
+@pulumi.output_type
+class CalculatedWebMetricUserActionFilterUserActionPropertyProperty(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "from":
+            suggest = "from_"
+        elif key == "matchType":
+            suggest = "match_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CalculatedWebMetricUserActionFilterUserActionPropertyProperty. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CalculatedWebMetricUserActionFilterUserActionPropertyProperty.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CalculatedWebMetricUserActionFilterUserActionPropertyProperty.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 from_: Optional[float] = None,
+                 key: Optional[str] = None,
+                 match_type: Optional[str] = None,
+                 to: Optional[float] = None,
+                 value: Optional[str] = None):
+        """
+        :param float from_: Only actions that have a value greater than or equal to this are included in the metric calculation.
+        :param str key: The key of the action property we're checking.
+        :param str match_type: Specifies the match type of a string filter, e.g. using Contains or Equals.
+        :param float to: Only actions that have a value less than or equal to this are included in the metric calculation.
+        :param str value: Only actions that have this value in the specified property are included in the metric calculation.
+        """
+        if from_ is not None:
+            pulumi.set(__self__, "from_", from_)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if match_type is not None:
+            pulumi.set(__self__, "match_type", match_type)
+        if to is not None:
+            pulumi.set(__self__, "to", to)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="from")
+    def from_(self) -> Optional[float]:
+        """
+        Only actions that have a value greater than or equal to this are included in the metric calculation.
+        """
+        return pulumi.get(self, "from_")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        The key of the action property we're checking.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter(name="matchType")
+    def match_type(self) -> Optional[str]:
+        """
+        Specifies the match type of a string filter, e.g. using Contains or Equals.
+        """
+        return pulumi.get(self, "match_type")
+
+    @property
+    @pulumi.getter
+    def to(self) -> Optional[float]:
+        """
+        Only actions that have a value less than or equal to this are included in the metric calculation.
+        """
+        return pulumi.get(self, "to")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        Only actions that have this value in the specified property are included in the metric calculation.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -24267,14 +28534,14 @@ class DataPrivacyMasking(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "ipAddressMaskingEnabled":
-            suggest = "ip_address_masking_enabled"
-        elif key == "personalDataUriMaskingEnabled":
+        if key == "personalDataUriMaskingEnabled":
             suggest = "personal_data_uri_masking_enabled"
         elif key == "userActionMaskingEnabled":
             suggest = "user_action_masking_enabled"
         elif key == "ipAddressMasking":
             suggest = "ip_address_masking"
+        elif key == "ipAddressMaskingEnabled":
+            suggest = "ip_address_masking_enabled"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DataPrivacyMasking. Access the value via the '{suggest}' property getter instead.")
@@ -24288,12 +28555,11 @@ class DataPrivacyMasking(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 ip_address_masking_enabled: bool,
                  personal_data_uri_masking_enabled: bool,
                  user_action_masking_enabled: bool,
-                 ip_address_masking: Optional[str] = None):
+                 ip_address_masking: Optional[str] = None,
+                 ip_address_masking_enabled: Optional[bool] = None):
         """
-        :param bool ip_address_masking_enabled: Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
         :param bool personal_data_uri_masking_enabled: Dynatrace captures the URIs and request headers sent from desktop and mobile browsers. Dynatrace also captures full URIs on the server-side to enable detailed performance analysis of your applications. For complete details, visit [Mask personal data in URIs](https://dt-url.net/mask-personal-data-in-URIs).. URIs and request headers contain personal data. When this setting is enabled, Dynatrace automatically detects UUIDs, credit card numbers, email addresses, IP addresses, and other IDs and replaces those values with placeholders. The personal data is then masked in PurePath analysis, error analysis, user action naming for RUM, and elsewhere in Dynatrace.
         :param bool user_action_masking_enabled: When Dynatrace detects a user action that triggers a page load or an AJAX/XHR action. To learn more about masking user actions, visit [Mask user actions](https://dt-url.net/mask-user-action).. When Dynatrace detects a user action that triggers a page load or an AJAX/XHR action, it constructs a name for the user action based on:
                
@@ -24312,20 +28578,16 @@ class DataPrivacyMasking(dict):
                - keypress on TEXTAREA on page /contact.html
                - touch on DIV of page /list.jsf
         :param str ip_address_masking: Possible Values: `All`, `Public`
+        :param bool ip_address_masking_enabled: Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
+               
+               Once enabled, IP address masking sets the last octet of monitored IPv4 addresses and the last 80 bits of IPv6 addresses to zeroes. GPS coordinates are rounded up to 1 decimal place (~10 km). This masking occurs in memory. Full IP addresses are never written to disk. Location lookups are made using anonymized IP addresses and GPS coordinates.
         """
-        pulumi.set(__self__, "ip_address_masking_enabled", ip_address_masking_enabled)
         pulumi.set(__self__, "personal_data_uri_masking_enabled", personal_data_uri_masking_enabled)
         pulumi.set(__self__, "user_action_masking_enabled", user_action_masking_enabled)
         if ip_address_masking is not None:
             pulumi.set(__self__, "ip_address_masking", ip_address_masking)
-
-    @property
-    @pulumi.getter(name="ipAddressMaskingEnabled")
-    def ip_address_masking_enabled(self) -> bool:
-        """
-        Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
-        """
-        return pulumi.get(self, "ip_address_masking_enabled")
+        if ip_address_masking_enabled is not None:
+            pulumi.set(__self__, "ip_address_masking_enabled", ip_address_masking_enabled)
 
     @property
     @pulumi.getter(name="personalDataUriMaskingEnabled")
@@ -24364,7 +28626,23 @@ class DataPrivacyMasking(dict):
         """
         Possible Values: `All`, `Public`
         """
+        warnings.warn("""This property is not supported anymore by the Dynatrace REST API (since schema version 4)""", DeprecationWarning)
+        pulumi.log.warn("""ip_address_masking is deprecated: This property is not supported anymore by the Dynatrace REST API (since schema version 4)""")
+
         return pulumi.get(self, "ip_address_masking")
+
+    @property
+    @pulumi.getter(name="ipAddressMaskingEnabled")
+    def ip_address_masking_enabled(self) -> Optional[bool]:
+        """
+        Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
+
+        Once enabled, IP address masking sets the last octet of monitored IPv4 addresses and the last 80 bits of IPv6 addresses to zeroes. GPS coordinates are rounded up to 1 decimal place (~10 km). This masking occurs in memory. Full IP addresses are never written to disk. Location lookups are made using anonymized IP addresses and GPS coordinates.
+        """
+        warnings.warn("""This property is not supported anymore by the Dynatrace REST API (since schema version 4)""", DeprecationWarning)
+        pulumi.log.warn("""ip_address_masking_enabled is deprecated: This property is not supported anymore by the Dynatrace REST API (since schema version 4)""")
+
+        return pulumi.get(self, "ip_address_masking_enabled")
 
 
 @pulumi.output_type
@@ -25817,6 +30095,190 @@ class DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest(dict):
 
 
 @pulumi.output_type
+class DavisAnomalyDetectorsAnalyzer(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 input: Optional['outputs.DavisAnomalyDetectorsAnalyzerInput'] = None):
+        """
+        :param str name: Fully qualified name of the analyzer
+        :param 'DavisAnomalyDetectorsAnalyzerInputArgs' input: Input fields for the specified analyzer
+        """
+        pulumi.set(__self__, "name", name)
+        if input is not None:
+            pulumi.set(__self__, "input", input)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Fully qualified name of the analyzer
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def input(self) -> Optional['outputs.DavisAnomalyDetectorsAnalyzerInput']:
+        """
+        Input fields for the specified analyzer
+        """
+        return pulumi.get(self, "input")
+
+
+@pulumi.output_type
+class DavisAnomalyDetectorsAnalyzerInput(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "analyzerInputFields":
+            suggest = "analyzer_input_fields"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DavisAnomalyDetectorsAnalyzerInput. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DavisAnomalyDetectorsAnalyzerInput.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DavisAnomalyDetectorsAnalyzerInput.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 analyzer_input_fields: Sequence['outputs.DavisAnomalyDetectorsAnalyzerInputAnalyzerInputField']):
+        pulumi.set(__self__, "analyzer_input_fields", analyzer_input_fields)
+
+    @property
+    @pulumi.getter(name="analyzerInputFields")
+    def analyzer_input_fields(self) -> Sequence['outputs.DavisAnomalyDetectorsAnalyzerInputAnalyzerInputField']:
+        return pulumi.get(self, "analyzer_input_fields")
+
+
+@pulumi.output_type
+class DavisAnomalyDetectorsAnalyzerInputAnalyzerInputField(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 value: str):
+        """
+        :param str key: no documentation available
+        :param str value: no documentation available
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DavisAnomalyDetectorsEventTemplate(dict):
+    def __init__(__self__, *,
+                 properties: Optional['outputs.DavisAnomalyDetectorsEventTemplateProperties'] = None):
+        """
+        :param 'DavisAnomalyDetectorsEventTemplatePropertiesArgs' properties: Set of additional key-value properties to be attached to the triggered event.
+        """
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Optional['outputs.DavisAnomalyDetectorsEventTemplateProperties']:
+        """
+        Set of additional key-value properties to be attached to the triggered event.
+        """
+        return pulumi.get(self, "properties")
+
+
+@pulumi.output_type
+class DavisAnomalyDetectorsEventTemplateProperties(dict):
+    def __init__(__self__, *,
+                 properties: Sequence['outputs.DavisAnomalyDetectorsEventTemplatePropertiesProperty']):
+        pulumi.set(__self__, "properties", properties)
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.DavisAnomalyDetectorsEventTemplatePropertiesProperty']:
+        return pulumi.get(self, "properties")
+
+
+@pulumi.output_type
+class DavisAnomalyDetectorsEventTemplatePropertiesProperty(dict):
+    def __init__(__self__, *,
+                 key: str,
+                 value: str):
+        """
+        :param str key: no documentation available
+        :param str value: no documentation available
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DavisAnomalyDetectorsExecutionSettings(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "queryOffset":
+            suggest = "query_offset"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DavisAnomalyDetectorsExecutionSettings. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DavisAnomalyDetectorsExecutionSettings.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DavisAnomalyDetectorsExecutionSettings.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 query_offset: Optional[int] = None):
+        """
+        :param int query_offset: Minute offset of sliding evaluation window for metrics with latency
+        """
+        if query_offset is not None:
+            pulumi.set(__self__, "query_offset", query_offset)
+
+    @property
+    @pulumi.getter(name="queryOffset")
+    def query_offset(self) -> Optional[int]:
+        """
+        Minute offset of sliding evaluation window for metrics with latency
+        """
+        return pulumi.get(self, "query_offset")
+
+
+@pulumi.output_type
 class DduPoolEvents(dict):
     def __init__(__self__, *,
                  enabled: bool,
@@ -26177,6 +30639,55 @@ class DeclarativeGroupingDetectionProcessDefinitionRulesRule(dict):
         Possible Values: `Executable`, `ExecutablePath`, `CommandLine`
         """
         return pulumi.get(self, "property")
+
+
+@pulumi.output_type
+class DirectSharesRecipients(dict):
+    def __init__(__self__, *,
+                 recipients: Optional[Sequence['outputs.DirectSharesRecipientsRecipient']] = None):
+        """
+        :param Sequence['DirectSharesRecipientsRecipientArgs'] recipients: Recipient of the direct share
+        """
+        if recipients is not None:
+            pulumi.set(__self__, "recipients", recipients)
+
+    @property
+    @pulumi.getter
+    def recipients(self) -> Optional[Sequence['outputs.DirectSharesRecipientsRecipient']]:
+        """
+        Recipient of the direct share
+        """
+        return pulumi.get(self, "recipients")
+
+
+@pulumi.output_type
+class DirectSharesRecipientsRecipient(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 type: Optional[str] = None):
+        """
+        :param str id: Identifier of the recipient
+        :param str type: Type of the recipient. Possible values are `group' and`user'
+        """
+        pulumi.set(__self__, "id", id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Identifier of the recipient
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        Type of the recipient. Possible values are `group' and`user'
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -28390,7 +32901,7 @@ class GenericRelationshipsSourcesSource(dict):
                  condition: Optional[str] = None,
                  mapping_rules: Optional['outputs.GenericRelationshipsSourcesSourceMappingRules'] = None):
         """
-        :param str source_type: Possible Values: `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+        :param str source_type: Possible Values: `BusinessEvents`, `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
         :param str condition: Specify a filter that needs to match in order for the extraction to happen.. Two different filters are supported: `$eq(value)` will ensure that the source matches exactly 'value', while `$prefix(value)` will ensure that the source begins with exactly 'value'.
                If your value contains the characters '(', ')' or '~', you need to escape them by adding a '~' in front of them.
         :param 'GenericRelationshipsSourcesSourceMappingRulesArgs' mapping_rules: Specify all properties which should be compared. If all mapping rules match a relationship between entities will be created.
@@ -28405,7 +32916,7 @@ class GenericRelationshipsSourcesSource(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Possible Values: `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+        Possible Values: `BusinessEvents`, `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
         """
         return pulumi.get(self, "source_type")
 
@@ -28835,7 +33346,7 @@ class GenericTypesRulesRuleSourcesSource(dict):
                  source_type: str,
                  condition: Optional[str] = None):
         """
-        :param str source_type: Possible Values: `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+        :param str source_type: Possible Values: `BusinessEvents`, `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
         :param str condition: Specify a filter that needs to match in order for the extraction to happen.. Three different filters are supported: `$eq(value)` will ensure that the source matches exactly 'value', `$prefix(value)` will ensure that the source begins with exactly 'value', '$exists()' will ensure that any source with matching dimension filter exists.
                If your value contains the characters '(', ')' or '~', you need to escape them by adding a '~' in front of them.
         """
@@ -28847,7 +33358,7 @@ class GenericTypesRulesRuleSourcesSource(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        Possible Values: `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+        Possible Values: `BusinessEvents`, `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
         """
         return pulumi.get(self, "source_type")
 
@@ -28859,6 +33370,92 @@ class GenericTypesRulesRuleSourcesSource(dict):
         If your value contains the characters '(', ')' or '~', you need to escape them by adding a '~' in front of them.
         """
         return pulumi.get(self, "condition")
+
+
+@pulumi.output_type
+class GrailMetricsAllowlistAllowRules(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowRules":
+            suggest = "allow_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GrailMetricsAllowlistAllowRules. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GrailMetricsAllowlistAllowRules.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GrailMetricsAllowlistAllowRules.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allow_rules: Sequence['outputs.GrailMetricsAllowlistAllowRulesAllowRule']):
+        pulumi.set(__self__, "allow_rules", allow_rules)
+
+    @property
+    @pulumi.getter(name="allowRules")
+    def allow_rules(self) -> Sequence['outputs.GrailMetricsAllowlistAllowRulesAllowRule']:
+        return pulumi.get(self, "allow_rules")
+
+
+@pulumi.output_type
+class GrailMetricsAllowlistAllowRulesAllowRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metricKey":
+            suggest = "metric_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GrailMetricsAllowlistAllowRulesAllowRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GrailMetricsAllowlistAllowRulesAllowRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GrailMetricsAllowlistAllowRulesAllowRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled: bool,
+                 metric_key: str,
+                 pattern: str):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param str metric_key: Metric key
+        :param str pattern: Possible Values: `CONTAINS`, `EQUALS`, `STARTSWITH`
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "metric_key", metric_key)
+        pulumi.set(__self__, "pattern", pattern)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="metricKey")
+    def metric_key(self) -> str:
+        """
+        Metric key
+        """
+        return pulumi.get(self, "metric_key")
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> str:
+        """
+        Possible Values: `CONTAINS`, `EQUALS`, `STARTSWITH`
+        """
+        return pulumi.get(self, "pattern")
 
 
 @pulumi.output_type
@@ -39306,6 +43903,473 @@ class HttpMonitorScriptRequestValidationRule(dict):
 
 
 @pulumi.output_type
+class HttpMonitorScriptScript(dict):
+    def __init__(__self__, *,
+                 requests: Sequence['outputs.HttpMonitorScriptScriptRequest']):
+        """
+        :param Sequence['HttpMonitorScriptScriptRequestArgs'] requests: A HTTP request to be performed by the monitor.
+        """
+        pulumi.set(__self__, "requests", requests)
+
+    @property
+    @pulumi.getter
+    def requests(self) -> Sequence['outputs.HttpMonitorScriptScriptRequest']:
+        """
+        A HTTP request to be performed by the monitor.
+        """
+        return pulumi.get(self, "requests")
+
+
+@pulumi.output_type
+class HttpMonitorScriptScriptRequest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "postProcessing":
+            suggest = "post_processing"
+        elif key == "preProcessing":
+            suggest = "pre_processing"
+        elif key == "requestTimeout":
+            suggest = "request_timeout"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HttpMonitorScriptScriptRequest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HttpMonitorScriptScriptRequest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HttpMonitorScriptScriptRequest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 method: str,
+                 url: str,
+                 authentication: Optional['outputs.HttpMonitorScriptScriptRequestAuthentication'] = None,
+                 body: Optional[str] = None,
+                 configuration: Optional['outputs.HttpMonitorScriptScriptRequestConfiguration'] = None,
+                 description: Optional[str] = None,
+                 post_processing: Optional[str] = None,
+                 pre_processing: Optional[str] = None,
+                 request_timeout: Optional[int] = None,
+                 validation: Optional['outputs.HttpMonitorScriptScriptRequestValidation'] = None):
+        """
+        :param str method: The HTTP method of the request.
+        :param str url: The URL to check.
+        :param 'HttpMonitorScriptScriptRequestAuthenticationArgs' authentication: Authentication options for this request
+        :param str body: The body of the HTTP request.
+        :param 'HttpMonitorScriptScriptRequestConfigurationArgs' configuration: The setup of the monitor
+        :param str description: A short description of the event to appear in the web UI.
+        :param str post_processing: Javascript code to execute after sending the request.
+        :param str pre_processing: Javascript code to execute before sending the request.
+        :param int request_timeout: Adapt request timeout option - the maximum time this request is allowed to consume. Keep in mind the maximum timeout of the complete monitor is 60 seconds
+        :param 'HttpMonitorScriptScriptRequestValidationArgs' validation: Validation helps you verify that your HTTP monitor loads the expected content
+        """
+        pulumi.set(__self__, "method", method)
+        pulumi.set(__self__, "url", url)
+        if authentication is not None:
+            pulumi.set(__self__, "authentication", authentication)
+        if body is not None:
+            pulumi.set(__self__, "body", body)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if post_processing is not None:
+            pulumi.set(__self__, "post_processing", post_processing)
+        if pre_processing is not None:
+            pulumi.set(__self__, "pre_processing", pre_processing)
+        if request_timeout is not None:
+            pulumi.set(__self__, "request_timeout", request_timeout)
+        if validation is not None:
+            pulumi.set(__self__, "validation", validation)
+
+    @property
+    @pulumi.getter
+    def method(self) -> str:
+        """
+        The HTTP method of the request.
+        """
+        return pulumi.get(self, "method")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        """
+        The URL to check.
+        """
+        return pulumi.get(self, "url")
+
+    @property
+    @pulumi.getter
+    def authentication(self) -> Optional['outputs.HttpMonitorScriptScriptRequestAuthentication']:
+        """
+        Authentication options for this request
+        """
+        return pulumi.get(self, "authentication")
+
+    @property
+    @pulumi.getter
+    def body(self) -> Optional[str]:
+        """
+        The body of the HTTP request.
+        """
+        return pulumi.get(self, "body")
+
+    @property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.HttpMonitorScriptScriptRequestConfiguration']:
+        """
+        The setup of the monitor
+        """
+        return pulumi.get(self, "configuration")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        A short description of the event to appear in the web UI.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="postProcessing")
+    def post_processing(self) -> Optional[str]:
+        """
+        Javascript code to execute after sending the request.
+        """
+        return pulumi.get(self, "post_processing")
+
+    @property
+    @pulumi.getter(name="preProcessing")
+    def pre_processing(self) -> Optional[str]:
+        """
+        Javascript code to execute before sending the request.
+        """
+        return pulumi.get(self, "pre_processing")
+
+    @property
+    @pulumi.getter(name="requestTimeout")
+    def request_timeout(self) -> Optional[int]:
+        """
+        Adapt request timeout option - the maximum time this request is allowed to consume. Keep in mind the maximum timeout of the complete monitor is 60 seconds
+        """
+        return pulumi.get(self, "request_timeout")
+
+    @property
+    @pulumi.getter
+    def validation(self) -> Optional['outputs.HttpMonitorScriptScriptRequestValidation']:
+        """
+        Validation helps you verify that your HTTP monitor loads the expected content
+        """
+        return pulumi.get(self, "validation")
+
+
+@pulumi.output_type
+class HttpMonitorScriptScriptRequestAuthentication(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "kdcIp":
+            suggest = "kdc_ip"
+        elif key == "realmName":
+            suggest = "realm_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HttpMonitorScriptScriptRequestAuthentication. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HttpMonitorScriptScriptRequestAuthentication.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HttpMonitorScriptScriptRequestAuthentication.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 credentials: str,
+                 type: str,
+                 kdc_ip: Optional[str] = None,
+                 realm_name: Optional[str] = None):
+        """
+        :param str credentials: The ID of the credentials within the Dynatrace Credentials Vault.
+        :param str type: The type of authentication. Possible values are `BASIC_AUTHENTICATION`, `NTLM` and `KERBEROS`.
+        :param str kdc_ip: The KDC IP. Valid and required only if the type of authentication is `KERBEROS`.
+        :param str realm_name: The Realm Name. Valid and required only if the type of authentication is `KERBEROS`.
+        """
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "type", type)
+        if kdc_ip is not None:
+            pulumi.set(__self__, "kdc_ip", kdc_ip)
+        if realm_name is not None:
+            pulumi.set(__self__, "realm_name", realm_name)
+
+    @property
+    @pulumi.getter
+    def credentials(self) -> str:
+        """
+        The ID of the credentials within the Dynatrace Credentials Vault.
+        """
+        return pulumi.get(self, "credentials")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of authentication. Possible values are `BASIC_AUTHENTICATION`, `NTLM` and `KERBEROS`.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="kdcIp")
+    def kdc_ip(self) -> Optional[str]:
+        """
+        The KDC IP. Valid and required only if the type of authentication is `KERBEROS`.
+        """
+        return pulumi.get(self, "kdc_ip")
+
+    @property
+    @pulumi.getter(name="realmName")
+    def realm_name(self) -> Optional[str]:
+        """
+        The Realm Name. Valid and required only if the type of authentication is `KERBEROS`.
+        """
+        return pulumi.get(self, "realm_name")
+
+
+@pulumi.output_type
+class HttpMonitorScriptScriptRequestConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "acceptAnyCertificate":
+            suggest = "accept_any_certificate"
+        elif key == "clientCertificate":
+            suggest = "client_certificate"
+        elif key == "followRedirects":
+            suggest = "follow_redirects"
+        elif key == "sensitiveData":
+            suggest = "sensitive_data"
+        elif key == "userAgent":
+            suggest = "user_agent"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HttpMonitorScriptScriptRequestConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HttpMonitorScriptScriptRequestConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HttpMonitorScriptScriptRequestConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 accept_any_certificate: Optional[bool] = None,
+                 client_certificate: Optional[str] = None,
+                 follow_redirects: Optional[bool] = None,
+                 headers: Optional['outputs.HttpMonitorScriptScriptRequestConfigurationHeaders'] = None,
+                 sensitive_data: Optional[bool] = None,
+                 user_agent: Optional[str] = None):
+        """
+        :param bool accept_any_certificate: If set to `false`, then the monitor fails with invalid SSL certificates.
+        :param str client_certificate: The client certificate, if applicable - eg. CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX
+        :param bool follow_redirects: If set to `false`, redirects are reported as successful requests with response code 3xx.
+               
+               If not set, the `false` option is used.
+        :param 'HttpMonitorScriptScriptRequestConfigurationHeadersArgs' headers: The setup of the monitor
+        :param bool sensitive_data: Option not to store and display request and response bodies and header values in execution details, `true` or `false`. If not set, `false`.
+        :param str user_agent: The User agent of the request
+        """
+        if accept_any_certificate is not None:
+            pulumi.set(__self__, "accept_any_certificate", accept_any_certificate)
+        if client_certificate is not None:
+            pulumi.set(__self__, "client_certificate", client_certificate)
+        if follow_redirects is not None:
+            pulumi.set(__self__, "follow_redirects", follow_redirects)
+        if headers is not None:
+            pulumi.set(__self__, "headers", headers)
+        if sensitive_data is not None:
+            pulumi.set(__self__, "sensitive_data", sensitive_data)
+        if user_agent is not None:
+            pulumi.set(__self__, "user_agent", user_agent)
+
+    @property
+    @pulumi.getter(name="acceptAnyCertificate")
+    def accept_any_certificate(self) -> Optional[bool]:
+        """
+        If set to `false`, then the monitor fails with invalid SSL certificates.
+        """
+        return pulumi.get(self, "accept_any_certificate")
+
+    @property
+    @pulumi.getter(name="clientCertificate")
+    def client_certificate(self) -> Optional[str]:
+        """
+        The client certificate, if applicable - eg. CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX
+        """
+        return pulumi.get(self, "client_certificate")
+
+    @property
+    @pulumi.getter(name="followRedirects")
+    def follow_redirects(self) -> Optional[bool]:
+        """
+        If set to `false`, redirects are reported as successful requests with response code 3xx.
+
+        If not set, the `false` option is used.
+        """
+        return pulumi.get(self, "follow_redirects")
+
+    @property
+    @pulumi.getter
+    def headers(self) -> Optional['outputs.HttpMonitorScriptScriptRequestConfigurationHeaders']:
+        """
+        The setup of the monitor
+        """
+        return pulumi.get(self, "headers")
+
+    @property
+    @pulumi.getter(name="sensitiveData")
+    def sensitive_data(self) -> Optional[bool]:
+        """
+        Option not to store and display request and response bodies and header values in execution details, `true` or `false`. If not set, `false`.
+        """
+        return pulumi.get(self, "sensitive_data")
+
+    @property
+    @pulumi.getter(name="userAgent")
+    def user_agent(self) -> Optional[str]:
+        """
+        The User agent of the request
+        """
+        return pulumi.get(self, "user_agent")
+
+
+@pulumi.output_type
+class HttpMonitorScriptScriptRequestConfigurationHeaders(dict):
+    def __init__(__self__, *,
+                 headers: Sequence['outputs.HttpMonitorScriptScriptRequestConfigurationHeadersHeader']):
+        """
+        :param Sequence['HttpMonitorScriptScriptRequestConfigurationHeadersHeaderArgs'] headers: contains an HTTP header of the request
+        """
+        pulumi.set(__self__, "headers", headers)
+
+    @property
+    @pulumi.getter
+    def headers(self) -> Sequence['outputs.HttpMonitorScriptScriptRequestConfigurationHeadersHeader']:
+        """
+        contains an HTTP header of the request
+        """
+        return pulumi.get(self, "headers")
+
+
+@pulumi.output_type
+class HttpMonitorScriptScriptRequestConfigurationHeadersHeader(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: The key of the header
+        :param str value: The value of the header
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The key of the header
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The value of the header
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class HttpMonitorScriptScriptRequestValidation(dict):
+    def __init__(__self__, *,
+                 rules: Sequence['outputs.HttpMonitorScriptScriptRequestValidationRule']):
+        """
+        :param Sequence['HttpMonitorScriptScriptRequestValidationRuleArgs'] rules: A list of validation rules
+        """
+        pulumi.set(__self__, "rules", rules)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.HttpMonitorScriptScriptRequestValidationRule']:
+        """
+        A list of validation rules
+        """
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class HttpMonitorScriptScriptRequestValidationRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "passIfFound":
+            suggest = "pass_if_found"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HttpMonitorScriptScriptRequestValidationRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HttpMonitorScriptScriptRequestValidationRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HttpMonitorScriptScriptRequestValidationRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 value: str,
+                 pass_if_found: Optional[bool] = None):
+        """
+        :param str type: The type of the rule. Possible values are `patternConstraint`, `regexConstraint`, `httpStatusesList` and `certificateExpiryDateConstraint`
+        :param str value: The content to look for
+        :param bool pass_if_found: The validation condition. `true` means validation succeeds if the specified content/element is found. `false` means validation fails if the specified content/element is found. Always specify `false` for `certificateExpiryDateConstraint` to fail the monitor if SSL certificate expiry is within the specified number of days
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+        if pass_if_found is not None:
+            pulumi.set(__self__, "pass_if_found", pass_if_found)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the rule. Possible values are `patternConstraint`, `regexConstraint`, `httpStatusesList` and `certificateExpiryDateConstraint`
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The content to look for
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="passIfFound")
+    def pass_if_found(self) -> Optional[bool]:
+        """
+        The validation condition. `true` means validation succeeds if the specified content/element is found. `false` means validation fails if the specified content/element is found. Always specify `false` for `certificateExpiryDateConstraint` to fail the monitor if SSL certificate expiry is within the specified number of days
+        """
+        return pulumi.get(self, "pass_if_found")
+
+
+@pulumi.output_type
 class HttpMonitorTag(dict):
     def __init__(__self__, *,
                  tags: Optional[Sequence['outputs.HttpMonitorTagTag']] = None):
@@ -39386,6 +44450,87 @@ class HttpMonitorTagTag(dict):
 
 
 @pulumi.output_type
+class HubSubscriptionsTokenSubscriptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "tokenSubscriptions":
+            suggest = "token_subscriptions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HubSubscriptionsTokenSubscriptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HubSubscriptionsTokenSubscriptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HubSubscriptionsTokenSubscriptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 token_subscriptions: Sequence['outputs.HubSubscriptionsTokenSubscriptionsTokenSubscription']):
+        pulumi.set(__self__, "token_subscriptions", token_subscriptions)
+
+    @property
+    @pulumi.getter(name="tokenSubscriptions")
+    def token_subscriptions(self) -> Sequence['outputs.HubSubscriptionsTokenSubscriptionsTokenSubscription']:
+        return pulumi.get(self, "token_subscriptions")
+
+
+@pulumi.output_type
+class HubSubscriptionsTokenSubscriptionsTokenSubscription(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 name: str,
+                 token: str,
+                 description: Optional[str] = None):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param str name: Name of subscription
+        :param str token: Subscription token
+        :param str description: no documentation available
+        """
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "token", token)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of subscription
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def token(self) -> str:
+        """
+        Subscription token
+        """
+        return pulumi.get(self, "token")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "description")
+
+
+@pulumi.output_type
 class IamGroupPermissions(dict):
     def __init__(__self__, *,
                  permissions: Sequence['outputs.IamGroupPermissionsPermission']):
@@ -39410,7 +44555,7 @@ class IamGroupPermissionsPermission(dict):
                  scope: str,
                  type: str):
         """
-        :param str name: Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-manage-support-tickets`
+        :param str name: Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `account-saml-flexible-federation`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-view-security-problems`, `tenant-manage-support-tickets`
         :param str scope: If `type` is `account` this attribute should hold the UUID of the account. If `type` is 'tenant`this attribute should hold the ID of the environment (`https://\\n\\n.live.dynatrace.com`). If`type`is`management-zone`this attribute should hold a value like`\\n\\n:\\n\\n. You need to use the attribute `legacy_id` when referring to a resource `ManagementZoneV2` or a data source `ManagementZone`.
         :param str type: The type of this permission. Possible values are `account`, `tenant`, `management-zone`
         """
@@ -39422,7 +44567,7 @@ class IamGroupPermissionsPermission(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-manage-support-tickets`
+        Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `account-saml-flexible-federation`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-view-security-problems`, `tenant-manage-support-tickets`
         """
         return pulumi.get(self, "name")
 
@@ -39441,6 +44586,40 @@ class IamGroupPermissionsPermission(dict):
         The type of this permission. Possible values are `account`, `tenant`, `management-zone`
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class IamPolicyBindingsV2Policy(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 metadata: Optional[Mapping[str, str]] = None,
+                 parameters: Optional[Mapping[str, str]] = None):
+        """
+        :param str id: Either the attribute `id` or the attribute `uuid` of a `IamPolicy`. Initially just the `id` attribute was supported (which is a concatenation of several configuration settings) - and is still supported for backwards compatibility
+        """
+        pulumi.set(__self__, "id", id)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Either the attribute `id` or the attribute `uuid` of a `IamPolicy`. Initially just the `id` attribute was supported (which is a concatenation of several configuration settings) - and is still supported for backwards compatibility
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> Optional[Mapping[str, str]]:
+        return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Optional[Mapping[str, str]]:
+        return pulumi.get(self, "parameters")
 
 
 @pulumi.output_type
@@ -40016,6 +45195,75 @@ class K8sCredentialsEventsFieldSelector(dict):
         Any attributes that aren't yet supported by this provider
         """
         return pulumi.get(self, "unknowns")
+
+
+@pulumi.output_type
+class K8sMonitoringEventPatterns(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventPatterns":
+            suggest = "event_patterns"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in K8sMonitoringEventPatterns. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        K8sMonitoringEventPatterns.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        K8sMonitoringEventPatterns.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 event_patterns: Sequence['outputs.K8sMonitoringEventPatternsEventPattern']):
+        pulumi.set(__self__, "event_patterns", event_patterns)
+
+    @property
+    @pulumi.getter(name="eventPatterns")
+    def event_patterns(self) -> Sequence['outputs.K8sMonitoringEventPatternsEventPattern']:
+        return pulumi.get(self, "event_patterns")
+
+
+@pulumi.output_type
+class K8sMonitoringEventPatternsEventPattern(dict):
+    def __init__(__self__, *,
+                 active: bool,
+                 label: str,
+                 pattern: str):
+        """
+        :param bool active: Activate
+        :param str label: Field selector name
+        :param str pattern: The set of allowed characters for this field has been extended with ActiveGate version 1.259. For more details, see the [documentation](https://dt-url.net/7h23wuk#set-up-event-field-selectors).
+        """
+        pulumi.set(__self__, "active", active)
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "pattern", pattern)
+
+    @property
+    @pulumi.getter
+    def active(self) -> bool:
+        """
+        Activate
+        """
+        return pulumi.get(self, "active")
+
+    @property
+    @pulumi.getter
+    def label(self) -> str:
+        """
+        Field selector name
+        """
+        return pulumi.get(self, "label")
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> str:
+        """
+        The set of allowed characters for this field has been extended with ActiveGate version 1.259. For more details, see the [documentation](https://dt-url.net/7h23wuk#set-up-event-field-selectors).
+        """
+        return pulumi.get(self, "pattern")
 
 
 @pulumi.output_type
@@ -41499,6 +46747,24 @@ class K8sWorkloadAnomaliesHighMemoryUsageConfiguration(dict):
 
 
 @pulumi.output_type
+class K8sWorkloadAnomaliesJobFailureEvents(dict):
+    def __init__(__self__, *,
+                 enabled: bool):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        """
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+
+@pulumi.output_type
 class K8sWorkloadAnomaliesNotAllPodsReady(dict):
     def __init__(__self__, *,
                  enabled: bool,
@@ -41574,6 +46840,24 @@ class K8sWorkloadAnomaliesNotAllPodsReadyConfiguration(dict):
         some workload pods are not ready for at least
         """
         return pulumi.get(self, "sample_period_in_minutes")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesOomKills(dict):
+    def __init__(__self__, *,
+                 enabled: bool):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        """
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
 
 
 @pulumi.output_type
@@ -41663,6 +46947,60 @@ class K8sWorkloadAnomaliesPendingPodsConfiguration(dict):
         there is at least
         """
         return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesPodBackoffEvents(dict):
+    def __init__(__self__, *,
+                 enabled: bool):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        """
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesPodEvictionEvents(dict):
+    def __init__(__self__, *,
+                 enabled: bool):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        """
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+
+@pulumi.output_type
+class K8sWorkloadAnomaliesPodPreemptionEvents(dict):
+    def __init__(__self__, *,
+                 enabled: bool):
+        """
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        """
+        pulumi.set(__self__, "enabled", enabled)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
 
 
 @pulumi.output_type
@@ -41822,6 +47160,41 @@ class K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration(dict):
 
 
 @pulumi.output_type
+class KubernetesAppKubernetesAppOptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableKubernetesApp":
+            suggest = "enable_kubernetes_app"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in KubernetesAppKubernetesAppOptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        KubernetesAppKubernetesAppOptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        KubernetesAppKubernetesAppOptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_kubernetes_app: bool):
+        """
+        :param bool enable_kubernetes_app: New Kubernetes experience
+        """
+        pulumi.set(__self__, "enable_kubernetes_app", enable_kubernetes_app)
+
+    @property
+    @pulumi.getter(name="enableKubernetesApp")
+    def enable_kubernetes_app(self) -> bool:
+        """
+        New Kubernetes experience
+        """
+        return pulumi.get(self, "enable_kubernetes_app")
+
+
+@pulumi.output_type
 class KubernetesEventPatterns(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -41891,6 +47264,53 @@ class KubernetesEventPatternsEventPattern(dict):
 
 
 @pulumi.output_type
+class LimitOutboundConnectionsAllowedOutboundConnections(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hostLists":
+            suggest = "host_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LimitOutboundConnectionsAllowedOutboundConnections. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LimitOutboundConnectionsAllowedOutboundConnections.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LimitOutboundConnectionsAllowedOutboundConnections.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enforced: bool,
+                 host_lists: Optional[Sequence[str]] = None):
+        """
+        :param bool enforced: If enabled, the Dynatrace JavaScript runtime will only be able to connect to the specified hosts.
+        :param Sequence[str] host_lists: The Dynatrace JavaScript runtime will only be to connect to these hosts.
+        """
+        pulumi.set(__self__, "enforced", enforced)
+        if host_lists is not None:
+            pulumi.set(__self__, "host_lists", host_lists)
+
+    @property
+    @pulumi.getter
+    def enforced(self) -> bool:
+        """
+        If enabled, the Dynatrace JavaScript runtime will only be able to connect to the specified hosts.
+        """
+        return pulumi.get(self, "enforced")
+
+    @property
+    @pulumi.getter(name="hostLists")
+    def host_lists(self) -> Optional[Sequence[str]]:
+        """
+        The Dynatrace JavaScript runtime will only be to connect to these hosts.
+        """
+        return pulumi.get(self, "host_lists")
+
+
+@pulumi.output_type
 class LogCustomSourceContext(dict):
     def __init__(__self__, *,
                  contexts: Sequence['outputs.LogCustomSourceContextContext']):
@@ -41933,15 +47353,43 @@ class LogCustomSourceContextContext(dict):
 
 @pulumi.output_type
 class LogCustomSourceCustomLogSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "acceptBinary":
+            suggest = "accept_binary"
+        elif key == "valuesAndEnrichment":
+            suggest = "values_and_enrichment"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LogCustomSourceCustomLogSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LogCustomSourceCustomLogSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LogCustomSourceCustomLogSource.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  type: str,
-                 values: Sequence[str]):
+                 accept_binary: Optional[bool] = None,
+                 values: Optional[Sequence[str]] = None,
+                 values_and_enrichment: Optional['outputs.LogCustomSourceCustomLogSourceValuesAndEnrichment'] = None):
         """
         :param str type: Possible Values: `LOG_PATH_PATTERN`, `WINDOWS_EVENT_LOG`
-        :param Sequence[str] values: It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+        :param bool accept_binary: Accept binary content
+        :param Sequence[str] values: (Required attribute for cluster v1.291 and under) It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+        :param 'LogCustomSourceCustomLogSourceValuesAndEnrichmentArgs' values_and_enrichment: (Required attribute for cluster v1.292+) It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
         """
         pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "values", values)
+        if accept_binary is not None:
+            pulumi.set(__self__, "accept_binary", accept_binary)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+        if values_and_enrichment is not None:
+            pulumi.set(__self__, "values_and_enrichment", values_and_enrichment)
 
     @property
     @pulumi.getter
@@ -41952,12 +47400,141 @@ class LogCustomSourceCustomLogSource(dict):
         return pulumi.get(self, "type")
 
     @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
+    @pulumi.getter(name="acceptBinary")
+    def accept_binary(self) -> Optional[bool]:
         """
-        It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+        Accept binary content
+        """
+        return pulumi.get(self, "accept_binary")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[str]]:
+        """
+        (Required attribute for cluster v1.291 and under) It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
         """
         return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter(name="valuesAndEnrichment")
+    def values_and_enrichment(self) -> Optional['outputs.LogCustomSourceCustomLogSourceValuesAndEnrichment']:
+        """
+        (Required attribute for cluster v1.292+) It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+        """
+        return pulumi.get(self, "values_and_enrichment")
+
+
+@pulumi.output_type
+class LogCustomSourceCustomLogSourceValuesAndEnrichment(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customLogSourceWithEnrichments":
+            suggest = "custom_log_source_with_enrichments"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LogCustomSourceCustomLogSourceValuesAndEnrichment. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LogCustomSourceCustomLogSourceValuesAndEnrichment.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LogCustomSourceCustomLogSourceValuesAndEnrichment.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_log_source_with_enrichments: Sequence['outputs.LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichment']):
+        pulumi.set(__self__, "custom_log_source_with_enrichments", custom_log_source_with_enrichments)
+
+    @property
+    @pulumi.getter(name="customLogSourceWithEnrichments")
+    def custom_log_source_with_enrichments(self) -> Sequence['outputs.LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichment']:
+        return pulumi.get(self, "custom_log_source_with_enrichments")
+
+
+@pulumi.output_type
+class LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichment(dict):
+    def __init__(__self__, *,
+                 path: str,
+                 enrichment: Optional['outputs.LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichmentEnrichment'] = None):
+        """
+        :param str path: Values
+        :param 'LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichmentEnrichmentArgs' enrichment: Optional field that allows to define attributes that will enrich logs. ${N} can be used in attribute value to expand the value matched by wildcards where N denotes the number of the wildcard the expand
+        """
+        pulumi.set(__self__, "path", path)
+        if enrichment is not None:
+            pulumi.set(__self__, "enrichment", enrichment)
+
+    @property
+    @pulumi.getter
+    def path(self) -> str:
+        """
+        Values
+        """
+        return pulumi.get(self, "path")
+
+    @property
+    @pulumi.getter
+    def enrichment(self) -> Optional['outputs.LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichmentEnrichment']:
+        """
+        Optional field that allows to define attributes that will enrich logs. ${N} can be used in attribute value to expand the value matched by wildcards where N denotes the number of the wildcard the expand
+        """
+        return pulumi.get(self, "enrichment")
+
+
+@pulumi.output_type
+class LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichmentEnrichment(dict):
+    def __init__(__self__, *,
+                 enrichments: Sequence['outputs.LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichmentEnrichmentEnrichment']):
+        pulumi.set(__self__, "enrichments", enrichments)
+
+    @property
+    @pulumi.getter
+    def enrichments(self) -> Sequence['outputs.LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichmentEnrichmentEnrichment']:
+        return pulumi.get(self, "enrichments")
+
+
+@pulumi.output_type
+class LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichmentEnrichmentEnrichment(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 key: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str type: Possible Values: `Attribute`
+        :param str key: no documentation available
+        :param str value: no documentation available
+        """
+        pulumi.set(__self__, "type", type)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Possible Values: `Attribute`
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def key(self) -> Optional[str]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -42157,6 +47734,91 @@ class LogProcessingRuleTesting(dict):
 
 
 @pulumi.output_type
+class LogSecurityContextSecurityContextRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ruleName":
+            suggest = "rule_name"
+        elif key == "valueSource":
+            suggest = "value_source"
+        elif key == "valueSourceField":
+            suggest = "value_source_field"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LogSecurityContextSecurityContextRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LogSecurityContextSecurityContextRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LogSecurityContextSecurityContextRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 query: str,
+                 rule_name: str,
+                 value_source: str,
+                 value: Optional[str] = None,
+                 value_source_field: Optional[str] = None):
+        """
+        :param str query: Matcher
+        :param str rule_name: Rule name
+        :param str value_source: Possible Values: `FIELD`, `LITERAL`
+        :param str value: Literal value to be set
+        :param str value_source_field: Name of field used to copy value
+        """
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "rule_name", rule_name)
+        pulumi.set(__self__, "value_source", value_source)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if value_source_field is not None:
+            pulumi.set(__self__, "value_source_field", value_source_field)
+
+    @property
+    @pulumi.getter
+    def query(self) -> str:
+        """
+        Matcher
+        """
+        return pulumi.get(self, "query")
+
+    @property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> str:
+        """
+        Rule name
+        """
+        return pulumi.get(self, "rule_name")
+
+    @property
+    @pulumi.getter(name="valueSource")
+    def value_source(self) -> str:
+        """
+        Possible Values: `FIELD`, `LITERAL`
+        """
+        return pulumi.get(self, "value_source")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        Literal value to be set
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="valueSourceField")
+    def value_source_field(self) -> Optional[str]:
+        """
+        Name of field used to copy value
+        """
+        return pulumi.get(self, "value_source_field")
+
+
+@pulumi.output_type
 class LogSensitiveDataMaskingMasking(dict):
     def __init__(__self__, *,
                  expression: str,
@@ -42216,7 +47878,7 @@ class LogSensitiveDataMaskingMatchersMatcher(dict):
                  operator: str,
                  values: Sequence[str]):
         """
-        :param str attribute: Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_source`, `Process_technology`
+        :param str attribute: Possible Values: `container.name`, `dt.entity.container_group`, `dt.entity.process_group`, `k8s.container.name`, `k8s.deployment.name`, `k8s.namespace.name`, `log.source`, `process.technology` and `host.tag`
         :param str operator: Possible Values: `MATCHES`
         :param Sequence[str] values: no documentation available
         """
@@ -42228,7 +47890,7 @@ class LogSensitiveDataMaskingMatchersMatcher(dict):
     @pulumi.getter
     def attribute(self) -> str:
         """
-        Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_source`, `Process_technology`
+        Possible Values: `container.name`, `dt.entity.container_group`, `dt.entity.process_group`, `k8s.container.name`, `k8s.deployment.name`, `k8s.namespace.name`, `log.source`, `process.technology` and `host.tag`
         """
         return pulumi.get(self, "attribute")
 
@@ -42268,7 +47930,7 @@ class LogStorageMatchersMatcher(dict):
                  operator: str,
                  values: Sequence[str]):
         """
-        :param str attribute: Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_content`, `Log_source`, `Process_technology`
+        :param str attribute: Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `Host_tag`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_content`, `Log_source`, `Loglevel`, `Process_technology`, `Winlog_eventid`, `Winlog_opcode`, `Winlog_provider`, `Winlog_task`
         :param str operator: Possible Values: `MATCHES`
         :param Sequence[str] values: no documentation available
         """
@@ -42280,7 +47942,7 @@ class LogStorageMatchersMatcher(dict):
     @pulumi.getter
     def attribute(self) -> str:
         """
-        Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_content`, `Log_source`, `Process_technology`
+        Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `Host_tag`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_content`, `Log_source`, `Loglevel`, `Process_technology`, `Winlog_eventid`, `Winlog_opcode`, `Winlog_provider`, `Winlog_task`
         """
         return pulumi.get(self, "attribute")
 
@@ -42354,26 +48016,19 @@ class LogTimestampMatchersMatcher(dict):
 
 
 @pulumi.output_type
-class MaintenanceFilter(dict):
+class MaintenanceFilters(dict):
     def __init__(__self__, *,
-                 filters: Optional[Sequence['outputs.MaintenanceFilterFilter']] = None):
-        """
-        :param Sequence['MaintenanceFilterFilterArgs'] filters: A list of matching rules for dynamic filter formation.  If several rules are set, the OR logic applies
-        """
-        if filters is not None:
-            pulumi.set(__self__, "filters", filters)
+                 filters: Sequence['outputs.MaintenanceFiltersFilter']):
+        pulumi.set(__self__, "filters", filters)
 
     @property
     @pulumi.getter
-    def filters(self) -> Optional[Sequence['outputs.MaintenanceFilterFilter']]:
-        """
-        A list of matching rules for dynamic filter formation.  If several rules are set, the OR logic applies
-        """
+    def filters(self) -> Sequence['outputs.MaintenanceFiltersFilter']:
         return pulumi.get(self, "filters")
 
 
 @pulumi.output_type
-class MaintenanceFilterFilter(dict):
+class MaintenanceFiltersFilter(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -42387,14 +48042,14 @@ class MaintenanceFilterFilter(dict):
             suggest = "management_zones"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in MaintenanceFilterFilter. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in MaintenanceFiltersFilter. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        MaintenanceFilterFilter.__key_warning(key)
+        MaintenanceFiltersFilter.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        MaintenanceFilterFilter.__key_warning(key)
+        MaintenanceFiltersFilter.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -42403,10 +48058,10 @@ class MaintenanceFilterFilter(dict):
                  entity_type: Optional[str] = None,
                  management_zones: Optional[Sequence[str]] = None):
         """
-        :param str entity_id: A specific entity that should match this maintenance window
-        :param Sequence[str] entity_tags: The tags you want to use for matching in the format key or key:value
-        :param str entity_type: Type of entities this maintenance window should match
-        :param Sequence[str] management_zones: The IDs of management zones to which the matched entities must belong
+        :param str entity_id: A specific entity that should match this maintenance window.. **Note**: If an entity type filter value is set, it must be equal to the type of the selected entity. Otherwise this maintenance window will not match.
+        :param Sequence[str] entity_tags: Entities which contain all of the configured tags will match this maintenance window.
+        :param str entity_type: Type of entities this maintenance window should match.. If no entity type is selected all entities regardless of the type will match.
+        :param Sequence[str] management_zones: Entities which are part of all the configured management zones will match this maintenance window.
         """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
@@ -42421,7 +48076,7 @@ class MaintenanceFilterFilter(dict):
     @pulumi.getter(name="entityId")
     def entity_id(self) -> Optional[str]:
         """
-        A specific entity that should match this maintenance window
+        A specific entity that should match this maintenance window.. **Note**: If an entity type filter value is set, it must be equal to the type of the selected entity. Otherwise this maintenance window will not match.
         """
         return pulumi.get(self, "entity_id")
 
@@ -42429,7 +48084,7 @@ class MaintenanceFilterFilter(dict):
     @pulumi.getter(name="entityTags")
     def entity_tags(self) -> Optional[Sequence[str]]:
         """
-        The tags you want to use for matching in the format key or key:value
+        Entities which contain all of the configured tags will match this maintenance window.
         """
         return pulumi.get(self, "entity_tags")
 
@@ -42437,7 +48092,7 @@ class MaintenanceFilterFilter(dict):
     @pulumi.getter(name="entityType")
     def entity_type(self) -> Optional[str]:
         """
-        Type of entities this maintenance window should match
+        Type of entities this maintenance window should match.. If no entity type is selected all entities regardless of the type will match.
         """
         return pulumi.get(self, "entity_type")
 
@@ -42445,7 +48100,7 @@ class MaintenanceFilterFilter(dict):
     @pulumi.getter(name="managementZones")
     def management_zones(self) -> Optional[Sequence[str]]:
         """
-        The IDs of management zones to which the matched entities must belong
+        Entities which are part of all the configured management zones will match this maintenance window.
         """
         return pulumi.get(self, "management_zones")
 
@@ -42470,25 +48125,32 @@ class MaintenanceGeneralProperties(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 disable_synthetic: bool,
                  name: str,
                  suppression: str,
                  type: str,
-                 description: Optional[str] = None,
-                 disable_synthetic: Optional[bool] = None):
+                 description: Optional[str] = None):
         """
+        :param bool disable_synthetic: Disables the execution of the synthetic monitors that are within [the scope of this maintenance window](https://dt-url.net/0e0341m).
         :param str name: The name of the maintenance window, displayed in the UI
-        :param str suppression: The type of suppression of alerting and problem detection during the maintenance
-        :param str type: The type of the maintenance: planned or unplanned
-        :param str description: A short description of the maintenance purpose
-        :param bool disable_synthetic: Suppress execution of synthetic monitors during the maintenance
+        :param str suppression: The type of suppression of alerting and problem detection during the maintenance. Possible Values: `DETECT_PROBLEMS_AND_ALERT`, `DETECT_PROBLEMS_DONT_ALERT`, `DONT_DETECT_PROBLEMS`
+        :param str type: The type of the maintenance, possible values: `PLANNED` or `UNPLANNED`
+        :param str description: A short description of the maintenance purpose.
         """
+        pulumi.set(__self__, "disable_synthetic", disable_synthetic)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "suppression", suppression)
         pulumi.set(__self__, "type", type)
         if description is not None:
             pulumi.set(__self__, "description", description)
-        if disable_synthetic is not None:
-            pulumi.set(__self__, "disable_synthetic", disable_synthetic)
+
+    @property
+    @pulumi.getter(name="disableSynthetic")
+    def disable_synthetic(self) -> bool:
+        """
+        Disables the execution of the synthetic monitors that are within [the scope of this maintenance window](https://dt-url.net/0e0341m).
+        """
+        return pulumi.get(self, "disable_synthetic")
 
     @property
     @pulumi.getter
@@ -42502,7 +48164,7 @@ class MaintenanceGeneralProperties(dict):
     @pulumi.getter
     def suppression(self) -> str:
         """
-        The type of suppression of alerting and problem detection during the maintenance
+        The type of suppression of alerting and problem detection during the maintenance. Possible Values: `DETECT_PROBLEMS_AND_ALERT`, `DETECT_PROBLEMS_DONT_ALERT`, `DONT_DETECT_PROBLEMS`
         """
         return pulumi.get(self, "suppression")
 
@@ -42510,7 +48172,7 @@ class MaintenanceGeneralProperties(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of the maintenance: planned or unplanned
+        The type of the maintenance, possible values: `PLANNED` or `UNPLANNED`
         """
         return pulumi.get(self, "type")
 
@@ -42518,17 +48180,9 @@ class MaintenanceGeneralProperties(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        A short description of the maintenance purpose
+        A short description of the maintenance purpose.
         """
         return pulumi.get(self, "description")
-
-    @property
-    @pulumi.getter(name="disableSynthetic")
-    def disable_synthetic(self) -> Optional[bool]:
-        """
-        Suppress execution of synthetic monitors during the maintenance
-        """
-        return pulumi.get(self, "disable_synthetic")
 
 
 @pulumi.output_type
@@ -42563,7 +48217,7 @@ class MaintenanceSchedule(dict):
                  once_recurrence: Optional['outputs.MaintenanceScheduleOnceRecurrence'] = None,
                  weekly_recurrence: Optional['outputs.MaintenanceScheduleWeeklyRecurrence'] = None):
         """
-        :param str type: The time window of the maintenance window
+        :param str type: The type maintenance window, possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
         :param 'MaintenanceScheduleDailyRecurrenceArgs' daily_recurrence: The configuration for maintenance windows occuring daily
         :param 'MaintenanceScheduleMonthlyRecurrenceArgs' monthly_recurrence: The configuration for maintenance windows occuring monthly
         :param 'MaintenanceScheduleOnceRecurrenceArgs' once_recurrence: The configuration for maintenance windows occuring once
@@ -42583,7 +48237,7 @@ class MaintenanceSchedule(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The time window of the maintenance window
+        The type maintenance window, possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
         """
         return pulumi.get(self, "type")
 
@@ -42805,7 +48459,7 @@ class MaintenanceScheduleMonthlyRecurrence(dict):
                  recurrence_range: 'outputs.MaintenanceScheduleMonthlyRecurrenceRecurrenceRange',
                  time_window: 'outputs.MaintenanceScheduleMonthlyRecurrenceTimeWindow'):
         """
-        :param int day_of_month: The day of the month for monthly maintenance.  The value of `31` is treated as the last day of the month for months that don't have a 31st day. The value of `30` is also treated as the last day of the month for February
+        :param int day_of_month: The day of the month for monthly maintenance. If the selected day does not fall within the month, the maintenance window will be active on the last day of the month.
         :param 'MaintenanceScheduleMonthlyRecurrenceRecurrenceRangeArgs' recurrence_range: The recurrence date range of the maintenance window
         :param 'MaintenanceScheduleMonthlyRecurrenceTimeWindowArgs' time_window: The time window of the maintenance window
         """
@@ -42817,7 +48471,7 @@ class MaintenanceScheduleMonthlyRecurrence(dict):
     @pulumi.getter(name="dayOfMonth")
     def day_of_month(self) -> int:
         """
-        The day of the month for monthly maintenance.  The value of `31` is treated as the last day of the month for months that don't have a 31st day. The value of `30` is also treated as the last day of the month for February
+        The day of the month for monthly maintenance. If the selected day does not fall within the month, the maintenance window will be active on the last day of the month.
         """
         return pulumi.get(self, "day_of_month")
 
@@ -43036,7 +48690,7 @@ class MaintenanceScheduleWeeklyRecurrence(dict):
                  recurrence_range: 'outputs.MaintenanceScheduleWeeklyRecurrenceRecurrenceRange',
                  time_window: 'outputs.MaintenanceScheduleWeeklyRecurrenceTimeWindow'):
         """
-        :param str day_of_week: The day of the week for weekly maintenance.  The format is the full name of the day in upper case, for example `THURSDAY`
+        :param str day_of_week: The day of the week for weekly maintenance, possible values: `FRIDAY`, `MONDAY`, `SATURDAY`, `SUNDAY`, `THURSDAY`, `TUESDAY`, `WEDNESDAY`
         :param 'MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeArgs' recurrence_range: The recurrence date range of the maintenance window
         :param 'MaintenanceScheduleWeeklyRecurrenceTimeWindowArgs' time_window: The time window of the maintenance window
         """
@@ -43048,7 +48702,7 @@ class MaintenanceScheduleWeeklyRecurrence(dict):
     @pulumi.getter(name="dayOfWeek")
     def day_of_week(self) -> str:
         """
-        The day of the week for weekly maintenance.  The format is the full name of the day in upper case, for example `THURSDAY`
+        The day of the week for weekly maintenance, possible values: `FRIDAY`, `MONDAY`, `SATURDAY`, `SUNDAY`, `THURSDAY`, `TUESDAY`, `WEDNESDAY`
         """
         return pulumi.get(self, "day_of_week")
 
@@ -49823,16 +55477,15 @@ class ManagementZoneRuleConditionTechValue(dict):
 @pulumi.output_type
 class ManagementZoneV2Rules(dict):
     def __init__(__self__, *,
-                 rules: Optional[Sequence['outputs.ManagementZoneV2RulesRule']] = None):
+                 rules: Sequence['outputs.ManagementZoneV2RulesRule']):
         """
         :param Sequence['ManagementZoneV2RulesRuleArgs'] rules: A management zone rule
         """
-        if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+        pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter
-    def rules(self) -> Optional[Sequence['outputs.ManagementZoneV2RulesRule']]:
+    def rules(self) -> Sequence['outputs.ManagementZoneV2RulesRule']:
         """
         A management zone rule
         """
@@ -49869,11 +55522,11 @@ class ManagementZoneV2RulesRule(dict):
                  dimension_rule: Optional['outputs.ManagementZoneV2RulesRuleDimensionRule'] = None,
                  entity_selector: Optional[str] = None):
         """
-        :param bool enabled: Enabled
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
         :param str type: Possible Values: `DIMENSION`, `ME`, `SELECTOR`
-        :param 'ManagementZoneV2RulesRuleAttributeRuleArgs' attribute_rule: No documentation available
-        :param 'ManagementZoneV2RulesRuleDimensionRuleArgs' dimension_rule: No documentation available
-        :param str entity_selector: Entity selector. The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+        :param 'ManagementZoneV2RulesRuleAttributeRuleArgs' attribute_rule: no documentation available
+        :param 'ManagementZoneV2RulesRuleDimensionRuleArgs' dimension_rule: no documentation available
+        :param str entity_selector: The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "type", type)
@@ -49888,7 +55541,7 @@ class ManagementZoneV2RulesRule(dict):
     @pulumi.getter
     def enabled(self) -> bool:
         """
-        Enabled
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
@@ -49904,7 +55557,7 @@ class ManagementZoneV2RulesRule(dict):
     @pulumi.getter(name="attributeRule")
     def attribute_rule(self) -> Optional['outputs.ManagementZoneV2RulesRuleAttributeRule']:
         """
-        No documentation available
+        no documentation available
         """
         return pulumi.get(self, "attribute_rule")
 
@@ -49912,7 +55565,7 @@ class ManagementZoneV2RulesRule(dict):
     @pulumi.getter(name="dimensionRule")
     def dimension_rule(self) -> Optional['outputs.ManagementZoneV2RulesRuleDimensionRule']:
         """
-        No documentation available
+        no documentation available
         """
         return pulumi.get(self, "dimension_rule")
 
@@ -49920,7 +55573,7 @@ class ManagementZoneV2RulesRule(dict):
     @pulumi.getter(name="entitySelector")
     def entity_selector(self) -> Optional[str]:
         """
-        Entity selector. The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+        The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
         """
         return pulumi.get(self, "entity_selector")
 
@@ -49974,7 +55627,7 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
                  service_to_host_propagation: Optional[bool] = None,
                  service_to_pgpropagation: Optional[bool] = None):
         """
-        :param 'ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsArgs' attribute_conditions: Conditions
+        :param 'ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsArgs' attribute_conditions: no documentation available
         :param str entity_type: Possible Values: `APPMON_SERVER`, `APPMON_SYSTEM_PROFILE`, `AWS_ACCOUNT`, `AWS_APPLICATION_LOAD_BALANCER`, `AWS_AUTO_SCALING_GROUP`, `AWS_CLASSIC_LOAD_BALANCER`, `AWS_NETWORK_LOAD_BALANCER`, `AWS_RELATIONAL_DATABASE_SERVICE`, `AZURE`, `BROWSER_MONITOR`, `CLOUD_APPLICATION`, `CLOUD_APPLICATION_NAMESPACE`, `CLOUD_FOUNDRY_FOUNDATION`, `CUSTOM_APPLICATION`, `CUSTOM_DEVICE`, `CUSTOM_DEVICE_GROUP`, `DATA_CENTER_SERVICE`, `ENTERPRISE_APPLICATION`, `ESXI_HOST`, `EXTERNAL_MONITOR`, `HOST`, `HOST_GROUP`, `HTTP_MONITOR`, `KUBERNETES_CLUSTER`, `KUBERNETES_SERVICE`, `MOBILE_APPLICATION`, `OPENSTACK_ACCOUNT`, `PROCESS_GROUP`, `QUEUE`, `SERVICE`, `WEB_APPLICATION`
         :param bool azure_to_pgpropagation: Apply to process groups connected to matching Azure entities
         :param bool azure_to_service_propagation: Apply to services provided by matching Azure entities
@@ -50008,7 +55661,7 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
     @pulumi.getter(name="attributeConditions")
     def attribute_conditions(self) -> 'outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditions':
         """
-        Conditions
+        no documentation available
         """
         return pulumi.get(self, "attribute_conditions")
 
@@ -50088,16 +55741,15 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
 @pulumi.output_type
 class ManagementZoneV2RulesRuleAttributeRuleAttributeConditions(dict):
     def __init__(__self__, *,
-                 conditions: Optional[Sequence['outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition']] = None):
+                 conditions: Sequence['outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition']):
         """
         :param Sequence['ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsConditionArgs'] conditions: Attribute conditions
         """
-        if conditions is not None:
-            pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "conditions", conditions)
 
     @property
     @pulumi.getter
-    def conditions(self) -> Optional[Sequence['outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition']]:
+    def conditions(self) -> Sequence['outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition']:
         """
         Attribute conditions
         """
@@ -50156,7 +55808,7 @@ class ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition(dict):
         :param str enum_value: Value
         :param int integer_value: Value
         :param str string_value: Value
-        :param str tag: Tag. Format: `[CONTEXT]tagKey:tagValue`
+        :param str tag: Format: `[CONTEXT]tagKey:tagValue`
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "operator", operator)
@@ -50253,7 +55905,7 @@ class ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition(dict):
     @pulumi.getter
     def tag(self) -> Optional[str]:
         """
-        Tag. Format: `[CONTEXT]tagKey:tagValue`
+        Format: `[CONTEXT]tagKey:tagValue`
         """
         return pulumi.get(self, "tag")
 
@@ -50310,16 +55962,15 @@ class ManagementZoneV2RulesRuleDimensionRule(dict):
 @pulumi.output_type
 class ManagementZoneV2RulesRuleDimensionRuleDimensionConditions(dict):
     def __init__(__self__, *,
-                 conditions: Optional[Sequence['outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition']] = None):
+                 conditions: Sequence['outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition']):
         """
         :param Sequence['ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsConditionArgs'] conditions: Dimension conditions
         """
-        if conditions is not None:
-            pulumi.set(__self__, "conditions", conditions)
+        pulumi.set(__self__, "conditions", conditions)
 
     @property
     @pulumi.getter
-    def conditions(self) -> Optional[Sequence['outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition']]:
+    def conditions(self) -> Sequence['outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition']:
         """
         Dimension conditions
         """
@@ -50355,8 +56006,8 @@ class ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition(dict):
         """
         :param str condition_type: Possible Values: `DIMENSION`, `LOG_FILE_NAME`, `METRIC_KEY`
         :param str rule_matcher: Possible Values: `BEGINS_WITH`, `EQUALS`
-        :param str value: Value
-        :param str key: Key
+        :param str value: no documentation available
+        :param str key: no documentation available
         """
         pulumi.set(__self__, "condition_type", condition_type)
         pulumi.set(__self__, "rule_matcher", rule_matcher)
@@ -50384,7 +56035,7 @@ class ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition(dict):
     @pulumi.getter
     def value(self) -> str:
         """
-        Value
+        no documentation available
         """
         return pulumi.get(self, "value")
 
@@ -50392,7 +56043,7 @@ class ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition(dict):
     @pulumi.getter
     def key(self) -> Optional[str]:
         """
-        Key
+        no documentation available
         """
         return pulumi.get(self, "key")
 
@@ -50426,7 +56077,7 @@ class MetricEventsEventTemplate(dict):
                  metadatas: Optional[Sequence['outputs.MetricEventsEventTemplateMetadata']] = None):
         """
         :param str description: The description of the event to trigger.
-        :param str event_type: The event type to trigger.
+        :param str event_type: Possible Values: `AVAILABILITY`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `ERROR`, `INFO`, `MARKED_FOR_TERMINATION`, `RESOURCE`, `SLOWDOWN`
         :param str title: The title of the event to trigger.
         :param bool davis_merge: Davis® AI will try to merge this event into existing problems, otherwise a new problem will always be created.
         :param Sequence['MetricEventsEventTemplateMetadataArgs'] metadatas: Set of additional key-value properties to be attached to the triggered event.
@@ -50451,7 +56102,7 @@ class MetricEventsEventTemplate(dict):
     @pulumi.getter(name="eventType")
     def event_type(self) -> str:
         """
-        The event type to trigger.
+        Possible Values: `AVAILABILITY`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `ERROR`, `INFO`, `MARKED_FOR_TERMINATION`, `RESOURCE`, `SLOWDOWN`
         """
         return pulumi.get(self, "event_type")
 
@@ -50505,8 +56156,8 @@ class MetricEventsEventTemplateMetadata(dict):
                  metadata_key: str,
                  metadata_value: str):
         """
-        :param str metadata_key: The key of the metadata item
-        :param str metadata_value: The value of the metadata item
+        :param str metadata_key: Type 'dt.' for key hints.
+        :param str metadata_value: no documentation available
         """
         pulumi.set(__self__, "metadata_key", metadata_key)
         pulumi.set(__self__, "metadata_value", metadata_value)
@@ -50515,7 +56166,7 @@ class MetricEventsEventTemplateMetadata(dict):
     @pulumi.getter(name="metadataKey")
     def metadata_key(self) -> str:
         """
-        The key of the metadata item
+        Type 'dt.' for key hints.
         """
         return pulumi.get(self, "metadata_key")
 
@@ -50523,7 +56174,7 @@ class MetricEventsEventTemplateMetadata(dict):
     @pulumi.getter(name="metadataValue")
     def metadata_value(self) -> str:
         """
-        The value of the metadata item
+        no documentation available
         """
         return pulumi.get(self, "metadata_value")
 
@@ -50566,11 +56217,11 @@ class MetricEventsModelProperties(dict):
                  threshold: Optional[float] = None,
                  tolerance: Optional[float] = None):
         """
-        :param str alert_condition: The alert condition of the model properties
+        :param str alert_condition: Possible Values: `ABOVE`, `BELOW`, `OUTSIDE`
         :param bool alert_on_no_data: The ability to set an alert on missing data in a metric. When enabled, missing data samples will contribute as violating samples defined in advanced model properties. We recommend to not alert on missing data for sparse timeseries as this leads to alert spam.
         :param int dealerting_samples: The number of one-minute samples within the evaluation window that must go back to normal to close the event.
         :param int samples: The number of one-minute samples that form the sliding evaluation window.
-        :param str type: Metric-key-based query definitions only support static thresholds.
+        :param str type: Possible Values: `AUTO_ADAPTIVE_THRESHOLD`, `SEASONAL_BASELINE`, `STATIC_THRESHOLD`
         :param int violating_samples: The number of one-minute samples within the evaluation window that must violate to trigger an event.
         :param float signal_fluctuation: Controls how many times the signal fluctuation is added to the baseline to produce the actual threshold for alerting
         :param float threshold: Raise an event if this value is violated
@@ -50593,7 +56244,7 @@ class MetricEventsModelProperties(dict):
     @pulumi.getter(name="alertCondition")
     def alert_condition(self) -> str:
         """
-        The alert condition of the model properties
+        Possible Values: `ABOVE`, `BELOW`, `OUTSIDE`
         """
         return pulumi.get(self, "alert_condition")
 
@@ -50625,7 +56276,7 @@ class MetricEventsModelProperties(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        Metric-key-based query definitions only support static thresholds.
+        Possible Values: `AUTO_ADAPTIVE_THRESHOLD`, `SEASONAL_BASELINE`, `STATIC_THRESHOLD`
         """
         return pulumi.get(self, "type")
 
@@ -50667,12 +56318,14 @@ class MetricEventsQueryDefinition(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "metricKey":
-            suggest = "metric_key"
-        elif key == "dimensionFilter":
+        if key == "dimensionFilter":
             suggest = "dimension_filter"
         elif key == "entityFilter":
             suggest = "entity_filter"
+        elif key == "managementZone":
+            suggest = "management_zone"
+        elif key == "metricKey":
+            suggest = "metric_key"
         elif key == "metricSelector":
             suggest = "metric_selector"
         elif key == "queryOffset":
@@ -50690,23 +56343,24 @@ class MetricEventsQueryDefinition(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 metric_key: str,
                  type: str,
                  aggregation: Optional[str] = None,
                  dimension_filter: Optional['outputs.MetricEventsQueryDefinitionDimensionFilter'] = None,
                  entity_filter: Optional['outputs.MetricEventsQueryDefinitionEntityFilter'] = None,
+                 management_zone: Optional[str] = None,
+                 metric_key: Optional[str] = None,
                  metric_selector: Optional[str] = None,
                  query_offset: Optional[int] = None):
         """
-        :param str metric_key: The metric key of the query definition
-        :param str type: The type of query definition
-        :param str aggregation: The aggregation of the query definition
-        :param 'MetricEventsQueryDefinitionDimensionFilterArgs' dimension_filter: The dimension filters of the query definition
+        :param str type: Possible Values: `METRIC_KEY`, `METRIC_SELECTOR`
+        :param str aggregation: Possible Values: `AVG`, `COUNT`, `MAX`, `MEDIAN`, `MIN`, `PERCENTILE90`, `SUM`, `VALUE`
+        :param 'MetricEventsQueryDefinitionDimensionFilterArgs' dimension_filter: Dimension filter
         :param 'MetricEventsQueryDefinitionEntityFilterArgs' entity_filter: Use rule-based filters to define the scope this event monitors.
+        :param str management_zone: The `legacy_id` of a Management Zone (as provided by the resource `ManagementZoneV2` or the data source `ManagementZone`)
+        :param str metric_key: Metric key
         :param str metric_selector: To learn more, visit [Metric Selector](https://dt-url.net/metselad)
         :param int query_offset: Minute offset of sliding evaluation window for metrics with latency
         """
-        pulumi.set(__self__, "metric_key", metric_key)
         pulumi.set(__self__, "type", type)
         if aggregation is not None:
             pulumi.set(__self__, "aggregation", aggregation)
@@ -50714,24 +56368,20 @@ class MetricEventsQueryDefinition(dict):
             pulumi.set(__self__, "dimension_filter", dimension_filter)
         if entity_filter is not None:
             pulumi.set(__self__, "entity_filter", entity_filter)
+        if management_zone is not None:
+            pulumi.set(__self__, "management_zone", management_zone)
+        if metric_key is not None:
+            pulumi.set(__self__, "metric_key", metric_key)
         if metric_selector is not None:
             pulumi.set(__self__, "metric_selector", metric_selector)
         if query_offset is not None:
             pulumi.set(__self__, "query_offset", query_offset)
 
     @property
-    @pulumi.getter(name="metricKey")
-    def metric_key(self) -> str:
-        """
-        The metric key of the query definition
-        """
-        return pulumi.get(self, "metric_key")
-
-    @property
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of query definition
+        Possible Values: `METRIC_KEY`, `METRIC_SELECTOR`
         """
         return pulumi.get(self, "type")
 
@@ -50739,7 +56389,7 @@ class MetricEventsQueryDefinition(dict):
     @pulumi.getter
     def aggregation(self) -> Optional[str]:
         """
-        The aggregation of the query definition
+        Possible Values: `AVG`, `COUNT`, `MAX`, `MEDIAN`, `MIN`, `PERCENTILE90`, `SUM`, `VALUE`
         """
         return pulumi.get(self, "aggregation")
 
@@ -50747,7 +56397,7 @@ class MetricEventsQueryDefinition(dict):
     @pulumi.getter(name="dimensionFilter")
     def dimension_filter(self) -> Optional['outputs.MetricEventsQueryDefinitionDimensionFilter']:
         """
-        The dimension filters of the query definition
+        Dimension filter
         """
         return pulumi.get(self, "dimension_filter")
 
@@ -50758,6 +56408,22 @@ class MetricEventsQueryDefinition(dict):
         Use rule-based filters to define the scope this event monitors.
         """
         return pulumi.get(self, "entity_filter")
+
+    @property
+    @pulumi.getter(name="managementZone")
+    def management_zone(self) -> Optional[str]:
+        """
+        The `legacy_id` of a Management Zone (as provided by the resource `ManagementZoneV2` or the data source `ManagementZone`)
+        """
+        return pulumi.get(self, "management_zone")
+
+    @property
+    @pulumi.getter(name="metricKey")
+    def metric_key(self) -> Optional[str]:
+        """
+        Metric key
+        """
+        return pulumi.get(self, "metric_key")
 
     @property
     @pulumi.getter(name="metricSelector")
@@ -50779,19 +56445,12 @@ class MetricEventsQueryDefinition(dict):
 @pulumi.output_type
 class MetricEventsQueryDefinitionDimensionFilter(dict):
     def __init__(__self__, *,
-                 filters: Optional[Sequence['outputs.MetricEventsQueryDefinitionDimensionFilterFilter']] = None):
-        """
-        :param Sequence['MetricEventsQueryDefinitionDimensionFilterFilterArgs'] filters: Dimension filter definitions
-        """
-        if filters is not None:
-            pulumi.set(__self__, "filters", filters)
+                 filters: Sequence['outputs.MetricEventsQueryDefinitionDimensionFilterFilter']):
+        pulumi.set(__self__, "filters", filters)
 
     @property
     @pulumi.getter
-    def filters(self) -> Optional[Sequence['outputs.MetricEventsQueryDefinitionDimensionFilterFilter']]:
-        """
-        Dimension filter definitions
-        """
+    def filters(self) -> Sequence['outputs.MetricEventsQueryDefinitionDimensionFilterFilter']:
         return pulumi.get(self, "filters")
 
 
@@ -50818,19 +56477,23 @@ class MetricEventsQueryDefinitionDimensionFilterFilter(dict):
 
     def __init__(__self__, *,
                  dimension_key: str,
-                 dimension_value: str):
+                 dimension_value: str,
+                 operator: Optional[str] = None):
         """
-        :param str dimension_key: The key of the dimension filter
-        :param str dimension_value: The value of the dimension filter
+        :param str dimension_key: Dimension key
+        :param str dimension_value: Dimension value
+        :param str operator: Possible Values: `CONTAINS_CASE_SENSITIVE`, `DOES_NOT_CONTAIN_CASE_SENSITIVE`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS`, `STARTS_WITH`
         """
         pulumi.set(__self__, "dimension_key", dimension_key)
         pulumi.set(__self__, "dimension_value", dimension_value)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
 
     @property
     @pulumi.getter(name="dimensionKey")
     def dimension_key(self) -> str:
         """
-        The key of the dimension filter
+        Dimension key
         """
         return pulumi.get(self, "dimension_key")
 
@@ -50838,9 +56501,17 @@ class MetricEventsQueryDefinitionDimensionFilterFilter(dict):
     @pulumi.getter(name="dimensionValue")
     def dimension_value(self) -> str:
         """
-        The value of the dimension filter
+        Dimension value
         """
         return pulumi.get(self, "dimension_value")
+
+    @property
+    @pulumi.getter
+    def operator(self) -> Optional[str]:
+        """
+        Possible Values: `CONTAINS_CASE_SENSITIVE`, `DOES_NOT_CONTAIN_CASE_SENSITIVE`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS`, `STARTS_WITH`
+        """
+        return pulumi.get(self, "operator")
 
 
 @pulumi.output_type
@@ -50863,10 +56534,10 @@ class MetricEventsQueryDefinitionEntityFilter(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 conditions: Optional[Sequence['outputs.MetricEventsQueryDefinitionEntityFilterCondition']] = None,
+                 conditions: Optional['outputs.MetricEventsQueryDefinitionEntityFilterConditions'] = None,
                  dimension_key: Optional[str] = None):
         """
-        :param Sequence['MetricEventsQueryDefinitionEntityFilterConditionArgs'] conditions: Conditions of entity type to filter
+        :param 'MetricEventsQueryDefinitionEntityFilterConditionsArgs' conditions: no documentation available
         :param str dimension_key: Dimension key of entity type to filter
         """
         if conditions is not None:
@@ -50876,9 +56547,9 @@ class MetricEventsQueryDefinitionEntityFilter(dict):
 
     @property
     @pulumi.getter
-    def conditions(self) -> Optional[Sequence['outputs.MetricEventsQueryDefinitionEntityFilterCondition']]:
+    def conditions(self) -> Optional['outputs.MetricEventsQueryDefinitionEntityFilterConditions']:
         """
-        Conditions of entity type to filter
+        no documentation available
         """
         return pulumi.get(self, "conditions")
 
@@ -50892,30 +56563,28 @@ class MetricEventsQueryDefinitionEntityFilter(dict):
 
 
 @pulumi.output_type
-class MetricEventsQueryDefinitionEntityFilterCondition(dict):
+class MetricEventsQueryDefinitionEntityFilterConditions(dict):
     def __init__(__self__, *,
-                 conditions: Optional[Sequence['outputs.MetricEventsQueryDefinitionEntityFilterConditionCondition']] = None):
-        """
-        :param Sequence['MetricEventsQueryDefinitionEntityFilterConditionConditionArgs'] conditions: Entity filter conditions
-        """
-        if conditions is not None:
-            pulumi.set(__self__, "conditions", conditions)
+                 conditions: Sequence['outputs.MetricEventsQueryDefinitionEntityFilterConditionsCondition']):
+        pulumi.set(__self__, "conditions", conditions)
 
     @property
     @pulumi.getter
-    def conditions(self) -> Optional[Sequence['outputs.MetricEventsQueryDefinitionEntityFilterConditionCondition']]:
-        """
-        Entity filter conditions
-        """
+    def conditions(self) -> Sequence['outputs.MetricEventsQueryDefinitionEntityFilterConditionsCondition']:
         return pulumi.get(self, "conditions")
 
 
 @pulumi.output_type
-class MetricEventsQueryDefinitionEntityFilterConditionCondition(dict):
+class MetricEventsQueryDefinitionEntityFilterConditionsCondition(dict):
     def __init__(__self__, *,
                  operator: str,
                  type: str,
                  value: str):
+        """
+        :param str operator: Possible Values: `CONTAINS_CASE_INSENSITIVE`, `CONTAINS_CASE_SENSITIVE`, `DOES_NOT_CONTAIN_CASE_INSENSITIVE`, `DOES_NOT_CONTAIN_CASE_SENSITIVE`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS`, `STARTS_WITH`
+        :param str type: Possible Values: `CUSTOM_DEVICE_GROUP_NAME`, `ENTITY_ID`, `HOST_GROUP_NAME`, `HOST_NAME`, `MANAGEMENT_ZONE`, `NAME`, `PROCESS_GROUP_ID`, `PROCESS_GROUP_NAME`, `TAG`
+        :param str value: no documentation available
+        """
         pulumi.set(__self__, "operator", operator)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "value", value)
@@ -50923,16 +56592,25 @@ class MetricEventsQueryDefinitionEntityFilterConditionCondition(dict):
     @property
     @pulumi.getter
     def operator(self) -> str:
+        """
+        Possible Values: `CONTAINS_CASE_INSENSITIVE`, `CONTAINS_CASE_SENSITIVE`, `DOES_NOT_CONTAIN_CASE_INSENSITIVE`, `DOES_NOT_CONTAIN_CASE_SENSITIVE`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS`, `STARTS_WITH`
+        """
         return pulumi.get(self, "operator")
 
     @property
     @pulumi.getter
     def type(self) -> str:
+        """
+        Possible Values: `CUSTOM_DEVICE_GROUP_NAME`, `ENTITY_ID`, `HOST_GROUP_NAME`, `HOST_NAME`, `MANAGEMENT_ZONE`, `NAME`, `PROCESS_GROUP_ID`, `PROCESS_GROUP_NAME`, `TAG`
+        """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def value(self) -> str:
+        """
+        no documentation available
+        """
         return pulumi.get(self, "value")
 
 
@@ -52078,6 +57756,54 @@ class MobileAppEnablementSessionReplay(dict):
         Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay](https://dt-url.net/t23s0ppi).
         """
         return pulumi.get(self, "on_crash")
+
+
+@pulumi.output_type
+class MobileAppKeyPerformanceThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "frustratingThresholdSeconds":
+            suggest = "frustrating_threshold_seconds"
+        elif key == "tolerableThresholdSeconds":
+            suggest = "tolerable_threshold_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MobileAppKeyPerformanceThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MobileAppKeyPerformanceThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MobileAppKeyPerformanceThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 frustrating_threshold_seconds: float,
+                 tolerable_threshold_seconds: float):
+        """
+        :param float frustrating_threshold_seconds: If the action duration is above this value, the Apdex is considered to be **Frustrating**.
+        :param float tolerable_threshold_seconds: If the action duration is below this value, the Apdex is considered to be **Satisfactory**.
+        """
+        pulumi.set(__self__, "frustrating_threshold_seconds", frustrating_threshold_seconds)
+        pulumi.set(__self__, "tolerable_threshold_seconds", tolerable_threshold_seconds)
+
+    @property
+    @pulumi.getter(name="frustratingThresholdSeconds")
+    def frustrating_threshold_seconds(self) -> float:
+        """
+        If the action duration is above this value, the Apdex is considered to be **Frustrating**.
+        """
+        return pulumi.get(self, "frustrating_threshold_seconds")
+
+    @property
+    @pulumi.getter(name="tolerableThresholdSeconds")
+    def tolerable_threshold_seconds(self) -> float:
+        """
+        If the action duration is below this value, the Apdex is considered to be **Satisfactory**.
+        """
+        return pulumi.get(self, "tolerable_threshold_seconds")
 
 
 @pulumi.output_type
@@ -54415,7 +60141,11 @@ class OsServicesDetectionConditionsLinuxLinuxDetectionCondition(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "startupCondition":
+        if key == "hostMetadataCondition":
+            suggest = "host_metadata_condition"
+        elif key == "ruleType":
+            suggest = "rule_type"
+        elif key == "startupCondition":
             suggest = "startup_condition"
 
         if suggest:
@@ -54430,12 +60160,16 @@ class OsServicesDetectionConditionsLinuxLinuxDetectionCondition(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 property: str,
                  condition: Optional[str] = None,
+                 host_metadata_condition: Optional['outputs.OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition'] = None,
+                 property: Optional[str] = None,
+                 rule_type: Optional[str] = None,
                  startup_condition: Optional[str] = None):
         """
-        :param str property: Possible Values: `ServiceName`, `StartupType`
         :param str condition: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        :param 'OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataConditionArgs' host_metadata_condition: Custom metadata
+        :param str property: Possible Values: `ServiceName`, `StartupType`
+        :param str rule_type: Possible Values: `RuleTypeHost`, `RuleTypeOsService`
         :param str startup_condition: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
                
                - `$eq(enabled)` – Matches services with startup type equal to enabled.
@@ -54451,9 +60185,14 @@ class OsServicesDetectionConditionsLinuxLinuxDetectionCondition(dict):
                - `static`
                - `disabled`
         """
-        pulumi.set(__self__, "property", property)
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
+        if host_metadata_condition is not None:
+            pulumi.set(__self__, "host_metadata_condition", host_metadata_condition)
+        if property is not None:
+            pulumi.set(__self__, "property", property)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
         if startup_condition is not None:
             pulumi.set(__self__, "startup_condition", startup_condition)
 
@@ -54464,6 +60203,22 @@ class OsServicesDetectionConditionsLinuxLinuxDetectionCondition(dict):
         This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
         """
         return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="hostMetadataCondition")
+    def host_metadata_condition(self) -> Optional['outputs.OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition']:
+        """
+        Custom metadata
+        """
+        return pulumi.get(self, "host_metadata_condition")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> Optional[str]:
+        """
+        Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+        """
+        return pulumi.get(self, "rule_type")
 
     @property
     @pulumi.getter(name="startupCondition")
@@ -54488,11 +60243,59 @@ class OsServicesDetectionConditionsLinuxLinuxDetectionCondition(dict):
 
     @property
     @pulumi.getter
-    def property(self) -> str:
+    def property(self) -> Optional[str]:
         """
         Possible Values: `ServiceName`, `StartupType`
         """
         return pulumi.get(self, "property")
+
+
+@pulumi.output_type
+class OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metadataCondition":
+            suggest = "metadata_condition"
+        elif key == "metadataKey":
+            suggest = "metadata_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 metadata_condition: str,
+                 metadata_key: str):
+        """
+        :param str metadata_condition: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        :param str metadata_key: Key
+        """
+        pulumi.set(__self__, "metadata_condition", metadata_condition)
+        pulumi.set(__self__, "metadata_key", metadata_key)
+
+    @property
+    @pulumi.getter(name="metadataCondition")
+    def metadata_condition(self) -> str:
+        """
+        This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        """
+        return pulumi.get(self, "metadata_condition")
+
+    @property
+    @pulumi.getter(name="metadataKey")
+    def metadata_key(self) -> str:
+        """
+        Key
+        """
+        return pulumi.get(self, "metadata_key")
 
 
 @pulumi.output_type
@@ -54529,7 +60332,11 @@ class OsServicesDetectionConditionsWindowsDetectionConditionsWindow(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "startupCondition":
+        if key == "hostMetadataCondition":
+            suggest = "host_metadata_condition"
+        elif key == "ruleType":
+            suggest = "rule_type"
+        elif key == "startupCondition":
             suggest = "startup_condition"
 
         if suggest:
@@ -54544,12 +60351,16 @@ class OsServicesDetectionConditionsWindowsDetectionConditionsWindow(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 property: str,
                  condition: Optional[str] = None,
+                 host_metadata_condition: Optional['outputs.OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition'] = None,
+                 property: Optional[str] = None,
+                 rule_type: Optional[str] = None,
                  startup_condition: Optional[str] = None):
         """
-        :param str property: Possible Values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
         :param str condition: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        :param 'OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionArgs' host_metadata_condition: Custom metadata
+        :param str property: Possible Values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
+        :param str rule_type: Possible Values: `RuleTypeHost`, `RuleTypeOsService`
         :param str startup_condition: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
                
                - `$eq(manual)` – Matches services that are started manually.
@@ -54568,9 +60379,14 @@ class OsServicesDetectionConditionsWindowsDetectionConditionsWindow(dict):
                - `auto_delay_trigger` for Automatic (Delayed Start, Trigger Start)
                - `disabled` for Disabled
         """
-        pulumi.set(__self__, "property", property)
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
+        if host_metadata_condition is not None:
+            pulumi.set(__self__, "host_metadata_condition", host_metadata_condition)
+        if property is not None:
+            pulumi.set(__self__, "property", property)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
         if startup_condition is not None:
             pulumi.set(__self__, "startup_condition", startup_condition)
 
@@ -54581,6 +60397,22 @@ class OsServicesDetectionConditionsWindowsDetectionConditionsWindow(dict):
         This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
         """
         return pulumi.get(self, "condition")
+
+    @property
+    @pulumi.getter(name="hostMetadataCondition")
+    def host_metadata_condition(self) -> Optional['outputs.OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition']:
+        """
+        Custom metadata
+        """
+        return pulumi.get(self, "host_metadata_condition")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> Optional[str]:
+        """
+        Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+        """
+        return pulumi.get(self, "rule_type")
 
     @property
     @pulumi.getter(name="startupCondition")
@@ -54608,11 +60440,59 @@ class OsServicesDetectionConditionsWindowsDetectionConditionsWindow(dict):
 
     @property
     @pulumi.getter
-    def property(self) -> str:
+    def property(self) -> Optional[str]:
         """
         Possible Values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
         """
         return pulumi.get(self, "property")
+
+
+@pulumi.output_type
+class OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metadataCondition":
+            suggest = "metadata_condition"
+        elif key == "metadataKey":
+            suggest = "metadata_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 metadata_condition: str,
+                 metadata_key: str):
+        """
+        :param str metadata_condition: This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        :param str metadata_key: Key
+        """
+        pulumi.set(__self__, "metadata_condition", metadata_condition)
+        pulumi.set(__self__, "metadata_key", metadata_key)
+
+    @property
+    @pulumi.getter(name="metadataCondition")
+    def metadata_condition(self) -> str:
+        """
+        This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        """
+        return pulumi.get(self, "metadata_condition")
+
+    @property
+    @pulumi.getter(name="metadataKey")
+    def metadata_key(self) -> str:
+        """
+        Key
+        """
+        return pulumi.get(self, "metadata_key")
 
 
 @pulumi.output_type
@@ -55280,9 +61160,30 @@ class ProcessAvailabilityRules(dict):
 
 @pulumi.output_type
 class ProcessAvailabilityRulesRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hostMetadataCondition":
+            suggest = "host_metadata_condition"
+        elif key == "ruleType":
+            suggest = "rule_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProcessAvailabilityRulesRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProcessAvailabilityRulesRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProcessAvailabilityRulesRule.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
-                 condition: str,
-                 property: str):
+                 condition: Optional[str] = None,
+                 host_metadata_condition: Optional['outputs.ProcessAvailabilityRulesRuleHostMetadataCondition'] = None,
+                 property: Optional[str] = None,
+                 rule_type: Optional[str] = None):
         """
         :param str condition: - $contains(svc) – Matches if svc appears anywhere in the process property value.
                - $eq(svc.exe) – Matches if svc.exe matches the process property value exactly.
@@ -55292,14 +61193,26 @@ class ProcessAvailabilityRulesRule(dict):
                For example, $suffix(svc.py) would detect processes named loyaltysvc.py and paymentssvc.py.
                
                For more details, see [Process availability](https://dt-url.net/v923x37).
-        :param str property: Possible Values: `Executable`, `ExecutablePath`, `CommandLine`
+        :param 'ProcessAvailabilityRulesRuleHostMetadataConditionArgs' host_metadata_condition: Host custom metadata refers to user-defined key-value pairs that you can assign to hosts monitored by Dynatrace.
+               
+               By defining custom metadata, you can enrich the monitoring data with context specific to your organization's needs, such as environment names, team ownership, application versions, or any other relevant details.
+               
+               See [Define tags and metadata for hosts](https://dt-url.net/w3hv0kbw).
+        :param str property: Possible Values: `CommandLine`, `Executable`, `ExecutablePath`, `User`
+        :param str rule_type: Possible Values: `RuleTypeHost`, `RuleTypeProcess`
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "property", property)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if host_metadata_condition is not None:
+            pulumi.set(__self__, "host_metadata_condition", host_metadata_condition)
+        if property is not None:
+            pulumi.set(__self__, "property", property)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
 
     @property
     @pulumi.getter
-    def condition(self) -> str:
+    def condition(self) -> Optional[str]:
         """
         - $contains(svc) – Matches if svc appears anywhere in the process property value.
         - $eq(svc.exe) – Matches if svc.exe matches the process property value exactly.
@@ -55313,12 +61226,104 @@ class ProcessAvailabilityRulesRule(dict):
         return pulumi.get(self, "condition")
 
     @property
-    @pulumi.getter
-    def property(self) -> str:
+    @pulumi.getter(name="hostMetadataCondition")
+    def host_metadata_condition(self) -> Optional['outputs.ProcessAvailabilityRulesRuleHostMetadataCondition']:
         """
-        Possible Values: `Executable`, `ExecutablePath`, `CommandLine`
+        Host custom metadata refers to user-defined key-value pairs that you can assign to hosts monitored by Dynatrace.
+
+        By defining custom metadata, you can enrich the monitoring data with context specific to your organization's needs, such as environment names, team ownership, application versions, or any other relevant details.
+
+        See [Define tags and metadata for hosts](https://dt-url.net/w3hv0kbw).
+        """
+        return pulumi.get(self, "host_metadata_condition")
+
+    @property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> Optional[str]:
+        """
+        Possible Values: `RuleTypeHost`, `RuleTypeProcess`
+        """
+        return pulumi.get(self, "rule_type")
+
+    @property
+    @pulumi.getter
+    def property(self) -> Optional[str]:
+        """
+        Possible Values: `CommandLine`, `Executable`, `ExecutablePath`, `User`
         """
         return pulumi.get(self, "property")
+
+
+@pulumi.output_type
+class ProcessAvailabilityRulesRuleHostMetadataCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metadataCondition":
+            suggest = "metadata_condition"
+        elif key == "metadataKey":
+            suggest = "metadata_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProcessAvailabilityRulesRuleHostMetadataCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProcessAvailabilityRulesRuleHostMetadataCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProcessAvailabilityRulesRuleHostMetadataCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 metadata_condition: str,
+                 metadata_key: str):
+        """
+        :param str metadata_condition: This string has to match a required format.
+               
+               - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
+               - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
+               - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
+               - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
+               
+               Available logic operations:
+               - `$not($eq(production))` – Matches if the host metadata value is different from `production`.
+               - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`.
+               - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.
+               
+               Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
+        :param str metadata_key: Key
+        """
+        pulumi.set(__self__, "metadata_condition", metadata_condition)
+        pulumi.set(__self__, "metadata_key", metadata_key)
+
+    @property
+    @pulumi.getter(name="metadataCondition")
+    def metadata_condition(self) -> str:
+        """
+        This string has to match a required format.
+
+        - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
+        - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
+        - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
+        - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
+
+        Available logic operations:
+        - `$not($eq(production))` – Matches if the host metadata value is different from `production`.
+        - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`.
+        - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.
+
+        Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
+        """
+        return pulumi.get(self, "metadata_condition")
+
+    @property
+    @pulumi.getter(name="metadataKey")
+    def metadata_key(self) -> str:
+        """
+        Key
+        """
+        return pulumi.get(self, "metadata_key")
 
 
 @pulumi.output_type
@@ -65093,19 +71098,12 @@ class RequestNamingPlaceholdersPlaceholderSourceServiceTagTagKey(dict):
 @pulumi.output_type
 class ResourceAttributesKeys(dict):
     def __init__(__self__, *,
-                 rules: Optional[Sequence['outputs.ResourceAttributesKeysRule']] = None):
-        """
-        :param Sequence['ResourceAttributesKeysRuleArgs'] rules: Attribute key allow-list
-        """
-        if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+                 rules: Sequence['outputs.ResourceAttributesKeysRule']):
+        pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter
-    def rules(self) -> Optional[Sequence['outputs.ResourceAttributesKeysRule']]:
-        """
-        Attribute key allow-list
-        """
+    def rules(self) -> Sequence['outputs.ResourceAttributesKeysRule']:
         return pulumi.get(self, "rules")
 
 
@@ -65134,11 +71132,8 @@ class ResourceAttributesKeysRule(dict):
                  masking: str):
         """
         :param str attribute_key: Attribute key **service.name** is automatically captured by default
-        :param bool enabled: If this is true, the value of the specified key is stored.
-        :param str masking: Introduce more granular control over the visibility of attribute values.  
-               Choose **Do not mask** to allow every user to see the actual value and use it in defining other configurations.  
-               Choose **Mask entire value** to hide the whole value of this attribute from everyone who does not have 'View sensitive request data' permission. These attributes can't be used to define other configurations. 
-               Choose **Mask only confidential data** to apply automatic masking strategies to your data. These strategies include, for example, credit card numbers, IBAN, IPs, email-addresses, etc. It may not be possible to recognize all sensitive data so please always make sure to verify that sensitive data is actually masked. If sensitive data is not recognized, please use **Mask entire value** instead. Users with 'View sensitive request data' permission will be able to see the entire value, others only the non-sensitive parts. These attributes can't be used to define other configurations.
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param str masking: Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         """
         pulumi.set(__self__, "attribute_key", attribute_key)
         pulumi.set(__self__, "enabled", enabled)
@@ -65156,7 +71151,7 @@ class ResourceAttributesKeysRule(dict):
     @pulumi.getter
     def enabled(self) -> bool:
         """
-        If this is true, the value of the specified key is stored.
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
@@ -65164,10 +71159,7 @@ class ResourceAttributesKeysRule(dict):
     @pulumi.getter
     def masking(self) -> str:
         """
-        Introduce more granular control over the visibility of attribute values.  
-        Choose **Do not mask** to allow every user to see the actual value and use it in defining other configurations.  
-        Choose **Mask entire value** to hide the whole value of this attribute from everyone who does not have 'View sensitive request data' permission. These attributes can't be used to define other configurations. 
-        Choose **Mask only confidential data** to apply automatic masking strategies to your data. These strategies include, for example, credit card numbers, IBAN, IPs, email-addresses, etc. It may not be possible to recognize all sensitive data so please always make sure to verify that sensitive data is actually masked. If sensitive data is not recognized, please use **Mask entire value** instead. Users with 'View sensitive request data' permission will be able to see the entire value, others only the non-sensitive parts. These attributes can't be used to define other configurations.
+        Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
         """
         return pulumi.get(self, "masking")
 
@@ -65206,7 +71198,7 @@ class RumProviderBreakdownDomainNamePatternListDomainNamePattern(dict):
     def __init__(__self__, *,
                  pattern: str):
         """
-        :param str pattern: Please type at least part of this content provider's URL. Asterisks (*) can be used as wildcard characters.
+        :param str pattern: Use a ends-with pattern for this content provider's domain
         """
         pulumi.set(__self__, "pattern", pattern)
 
@@ -65214,7 +71206,7 @@ class RumProviderBreakdownDomainNamePatternListDomainNamePattern(dict):
     @pulumi.getter
     def pattern(self) -> str:
         """
-        Please type at least part of this content provider's URL. Asterisks (*) can be used as wildcard characters.
+        Use a ends-with pattern for this content provider's domain
         """
         return pulumi.get(self, "pattern")
 
@@ -65670,10 +71662,10 @@ class ServiceAnomaliesV2FailureRate(dict):
                  detection_mode: Optional[str] = None,
                  fixed_detection: Optional['outputs.ServiceAnomaliesV2FailureRateFixedDetection'] = None):
         """
-        :param bool enabled: Detect increases in failure rate
-        :param 'ServiceAnomaliesV2FailureRateAutoDetectionArgs' auto_detection: . Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
-        :param str detection_mode: Detection mode for increases in failure rate
-        :param 'ServiceAnomaliesV2FailureRateFixedDetectionArgs' fixed_detection: . Alert if a given failure rate is exceeded during any 5-minute-period
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'ServiceAnomaliesV2FailureRateAutoDetectionArgs' auto_detection: Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+        :param str detection_mode: Possible Values: `Auto`, `Fixed`
+        :param 'ServiceAnomaliesV2FailureRateFixedDetectionArgs' fixed_detection: Alert if a given failure rate is exceeded during any 5-minute-period
         """
         pulumi.set(__self__, "enabled", enabled)
         if auto_detection is not None:
@@ -65687,7 +71679,7 @@ class ServiceAnomaliesV2FailureRate(dict):
     @pulumi.getter
     def enabled(self) -> bool:
         """
-        Detect increases in failure rate
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
@@ -65695,7 +71687,7 @@ class ServiceAnomaliesV2FailureRate(dict):
     @pulumi.getter(name="autoDetection")
     def auto_detection(self) -> Optional['outputs.ServiceAnomaliesV2FailureRateAutoDetection']:
         """
-        . Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+        Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
         """
         return pulumi.get(self, "auto_detection")
 
@@ -65703,7 +71695,7 @@ class ServiceAnomaliesV2FailureRate(dict):
     @pulumi.getter(name="detectionMode")
     def detection_mode(self) -> Optional[str]:
         """
-        Detection mode for increases in failure rate
+        Possible Values: `Auto`, `Fixed`
         """
         return pulumi.get(self, "detection_mode")
 
@@ -65711,7 +71703,7 @@ class ServiceAnomaliesV2FailureRate(dict):
     @pulumi.getter(name="fixedDetection")
     def fixed_detection(self) -> Optional['outputs.ServiceAnomaliesV2FailureRateFixedDetection']:
         """
-        . Alert if a given failure rate is exceeded during any 5-minute-period
+        Alert if a given failure rate is exceeded during any 5-minute-period
         """
         return pulumi.get(self, "fixed_detection")
 
@@ -65850,8 +71842,8 @@ class ServiceAnomaliesV2FailureRateFixedDetection(dict):
                  threshold: float):
         """
         :param 'ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtectionArgs' over_alerting_protection: Avoid over-alerting
-        :param str sensitivity: Sensitivity
-        :param float threshold: Threshold
+        :param str sensitivity: Possible Values: `High`, `Low`, `Medium`
+        :param float threshold: no documentation available
         """
         pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
         pulumi.set(__self__, "sensitivity", sensitivity)
@@ -65869,7 +71861,7 @@ class ServiceAnomaliesV2FailureRateFixedDetection(dict):
     @pulumi.getter
     def sensitivity(self) -> str:
         """
-        Sensitivity
+        Possible Values: `High`, `Low`, `Medium`
         """
         return pulumi.get(self, "sensitivity")
 
@@ -65877,7 +71869,7 @@ class ServiceAnomaliesV2FailureRateFixedDetection(dict):
     @pulumi.getter
     def threshold(self) -> float:
         """
-        Threshold
+        no documentation available
         """
         return pulumi.get(self, "threshold")
 
@@ -65956,7 +71948,7 @@ class ServiceAnomaliesV2LoadDrops(dict):
                  load_drop_percent: Optional[float] = None,
                  minutes_abnormal_state: Optional[int] = None):
         """
-        :param bool enabled: Detect service load drops
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
         :param float load_drop_percent: Threshold
         :param int minutes_abnormal_state: Time span
         """
@@ -65970,7 +71962,7 @@ class ServiceAnomaliesV2LoadDrops(dict):
     @pulumi.getter
     def enabled(self) -> bool:
         """
-        Detect service load drops
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
@@ -66017,7 +72009,7 @@ class ServiceAnomaliesV2LoadSpikes(dict):
                  load_spike_percent: Optional[float] = None,
                  minutes_abnormal_state: Optional[int] = None):
         """
-        :param bool enabled: Detect service load spikes
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
         :param float load_spike_percent: Threshold
         :param int minutes_abnormal_state: Time span
         """
@@ -66031,7 +72023,7 @@ class ServiceAnomaliesV2LoadSpikes(dict):
     @pulumi.getter
     def enabled(self) -> bool:
         """
-        Detect service load spikes
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
@@ -66081,10 +72073,10 @@ class ServiceAnomaliesV2ResponseTime(dict):
                  detection_mode: Optional[str] = None,
                  fixed_detection: Optional['outputs.ServiceAnomaliesV2ResponseTimeFixedDetection'] = None):
         """
-        :param bool enabled: Detect response time degradations
-        :param 'ServiceAnomaliesV2ResponseTimeAutoDetectionArgs' auto_detection: No documentation available
-        :param str detection_mode: Detection mode for response time degradations
-        :param 'ServiceAnomaliesV2ResponseTimeFixedDetectionArgs' fixed_detection: No documentation available
+        :param bool enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param 'ServiceAnomaliesV2ResponseTimeAutoDetectionArgs' auto_detection: no documentation available
+        :param str detection_mode: Possible Values: `Auto`, `Fixed`
+        :param 'ServiceAnomaliesV2ResponseTimeFixedDetectionArgs' fixed_detection: no documentation available
         """
         pulumi.set(__self__, "enabled", enabled)
         if auto_detection is not None:
@@ -66098,7 +72090,7 @@ class ServiceAnomaliesV2ResponseTime(dict):
     @pulumi.getter
     def enabled(self) -> bool:
         """
-        Detect response time degradations
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
@@ -66106,7 +72098,7 @@ class ServiceAnomaliesV2ResponseTime(dict):
     @pulumi.getter(name="autoDetection")
     def auto_detection(self) -> Optional['outputs.ServiceAnomaliesV2ResponseTimeAutoDetection']:
         """
-        No documentation available
+        no documentation available
         """
         return pulumi.get(self, "auto_detection")
 
@@ -66114,7 +72106,7 @@ class ServiceAnomaliesV2ResponseTime(dict):
     @pulumi.getter(name="detectionMode")
     def detection_mode(self) -> Optional[str]:
         """
-        Detection mode for response time degradations
+        Possible Values: `Auto`, `Fixed`
         """
         return pulumi.get(self, "detection_mode")
 
@@ -66122,7 +72114,7 @@ class ServiceAnomaliesV2ResponseTime(dict):
     @pulumi.getter(name="fixedDetection")
     def fixed_detection(self) -> Optional['outputs.ServiceAnomaliesV2ResponseTimeFixedDetection']:
         """
-        No documentation available
+        no documentation available
         """
         return pulumi.get(self, "fixed_detection")
 
@@ -66156,8 +72148,8 @@ class ServiceAnomaliesV2ResponseTimeAutoDetection(dict):
                  response_time_slowest: 'outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest'):
         """
         :param 'ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtectionArgs' over_alerting_protection: Avoid over-alerting
-        :param 'ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAllArgs' response_time_all: All requests. Alert if the average response time of all requests degrades beyond **both** the absolute and relative thresholds:
-        :param 'ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowestArgs' response_time_slowest: Slowest 10%. Alert if the average response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+        :param 'ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAllArgs' response_time_all: Alert if the median response time of all requests degrades beyond **both** the absolute and relative thresholds:
+        :param 'ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowestArgs' response_time_slowest: Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
         """
         pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
         pulumi.set(__self__, "response_time_all", response_time_all)
@@ -66175,7 +72167,7 @@ class ServiceAnomaliesV2ResponseTimeAutoDetection(dict):
     @pulumi.getter(name="responseTimeAll")
     def response_time_all(self) -> 'outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll':
         """
-        All requests. Alert if the average response time of all requests degrades beyond **both** the absolute and relative thresholds:
+        Alert if the median response time of all requests degrades beyond **both** the absolute and relative thresholds:
         """
         return pulumi.get(self, "response_time_all")
 
@@ -66183,7 +72175,7 @@ class ServiceAnomaliesV2ResponseTimeAutoDetection(dict):
     @pulumi.getter(name="responseTimeSlowest")
     def response_time_slowest(self) -> 'outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest':
         """
-        Slowest 10%. Alert if the average response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+        Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
         """
         return pulumi.get(self, "response_time_slowest")
 
@@ -66362,9 +72354,9 @@ class ServiceAnomaliesV2ResponseTimeFixedDetection(dict):
                  sensitivity: str):
         """
         :param 'ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtectionArgs' over_alerting_protection: Avoid over-alerting
-        :param 'ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAllArgs' response_time_all: All requests. Alert if the average response time of all requests degrades beyond this threshold:
-        :param 'ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs' response_time_slowest: Slowest 10%. Alert if the average response time of the slowest 10% of requests degrades beyond this threshold:
-        :param str sensitivity: Sensitivity
+        :param 'ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAllArgs' response_time_all: Alert if the median response time of all requests degrades beyond this threshold:
+        :param 'ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowestArgs' response_time_slowest: Alert if the response time of the slowest 10% of requests degrades beyond this threshold:
+        :param str sensitivity: Possible Values: `High`, `Low`, `Medium`
         """
         pulumi.set(__self__, "over_alerting_protection", over_alerting_protection)
         pulumi.set(__self__, "response_time_all", response_time_all)
@@ -66383,7 +72375,7 @@ class ServiceAnomaliesV2ResponseTimeFixedDetection(dict):
     @pulumi.getter(name="responseTimeAll")
     def response_time_all(self) -> 'outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll':
         """
-        All requests. Alert if the average response time of all requests degrades beyond this threshold:
+        Alert if the median response time of all requests degrades beyond this threshold:
         """
         return pulumi.get(self, "response_time_all")
 
@@ -66391,7 +72383,7 @@ class ServiceAnomaliesV2ResponseTimeFixedDetection(dict):
     @pulumi.getter(name="responseTimeSlowest")
     def response_time_slowest(self) -> 'outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest':
         """
-        Slowest 10%. Alert if the average response time of the slowest 10% of requests degrades beyond this threshold:
+        Alert if the response time of the slowest 10% of requests degrades beyond this threshold:
         """
         return pulumi.get(self, "response_time_slowest")
 
@@ -66399,7 +72391,7 @@ class ServiceAnomaliesV2ResponseTimeFixedDetection(dict):
     @pulumi.getter
     def sensitivity(self) -> str:
         """
-        Sensitivity
+        Possible Values: `High`, `Low`, `Medium`
         """
         return pulumi.get(self, "sensitivity")
 
@@ -66723,7 +72715,7 @@ class ServiceExternalWebRequestIdContributors(dict):
         """
         :param 'ServiceExternalWebRequestIdContributorsApplicationIdArgs' application_id: Application identifier
         :param 'ServiceExternalWebRequestIdContributorsContextRootArgs' context_root: URL context root
-        :param bool port_for_service_id: Let the Port contribute to the Service Id
+        :param bool port_for_service_id: Let the port contribute to the Service Id
         :param 'ServiceExternalWebRequestIdContributorsPublicDomainNameArgs' public_domain_name: Public domain name
         """
         pulumi.set(__self__, "application_id", application_id)
@@ -66751,7 +72743,7 @@ class ServiceExternalWebRequestIdContributors(dict):
     @pulumi.getter(name="portForServiceId")
     def port_for_service_id(self) -> bool:
         """
-        Let the Port contribute to the Service Id
+        Let the port contribute to the Service Id
         """
         return pulumi.get(self, "port_for_service_id")
 
@@ -66840,7 +72832,7 @@ class ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor(d
                  value_override: Optional['outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride'] = None):
         """
         :param str contribution_type: Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
-        :param 'ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs' transformations: Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs' transformations: Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         :param 'ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs' value_override: The value to be used instead of the detected value.
         """
         pulumi.set(__self__, "contribution_type", contribution_type)
@@ -66861,7 +72853,7 @@ class ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor(d
     @pulumi.getter
     def transformations(self) -> Optional['outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations']:
         """
-        Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         """
         return pulumi.get(self, "transformations")
 
@@ -67141,7 +73133,7 @@ class ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor(dic
         """
         :param str contribution_type: Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
         :param int segment_count: The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
-        :param 'ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs' transformations: Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs' transformations: Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         :param 'ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverrideArgs' value_override: The value to be used instead of the detected value.
         """
         pulumi.set(__self__, "contribution_type", contribution_type)
@@ -67172,7 +73164,7 @@ class ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor(dic
     @pulumi.getter
     def transformations(self) -> Optional['outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations']:
         """
-        Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         """
         return pulumi.get(self, "transformations")
 
@@ -67396,7 +73388,7 @@ class ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributo
         """
         :param str contribution_type: Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
         :param bool copy_from_host_name: Use the detected host name instead of the request's domain name.
-        :param 'ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsArgs' transformations: Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsArgs' transformations: Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         :param 'ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverrideArgs' value_override: The value to be used instead of the detected value.
         """
         pulumi.set(__self__, "contribution_type", contribution_type)
@@ -67427,7 +73419,7 @@ class ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributo
     @pulumi.getter
     def transformations(self) -> Optional['outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformations']:
         """
-        Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         """
         return pulumi.get(self, "transformations")
 
@@ -67824,7 +73816,7 @@ class ServiceExternalWebServiceIdContributors(dict):
                  url_path: Optional['outputs.ServiceExternalWebServiceIdContributorsUrlPath'] = None):
         """
         :param bool detect_as_web_request_service: Detect the matching requests as web request services instead of web services.
-        :param bool port_for_service_id: Let the Port contribute to the Service Id
+        :param bool port_for_service_id: Let the port contribute to the Service Id
         :param 'ServiceExternalWebServiceIdContributorsUrlPathArgs' url_path: URL path
         """
         pulumi.set(__self__, "detect_as_web_request_service", detect_as_web_request_service)
@@ -67845,7 +73837,7 @@ class ServiceExternalWebServiceIdContributors(dict):
     @pulumi.getter(name="portForServiceId")
     def port_for_service_id(self) -> Optional[bool]:
         """
-        Let the Port contribute to the Service Id
+        Let the port contribute to the Service Id
         """
         return pulumi.get(self, "port_for_service_id")
 
@@ -67934,7 +73926,7 @@ class ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor(dict):
                  value_override: Optional['outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride'] = None):
         """
         :param str contribution_type: Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
-        :param 'ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs' transformations: Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsArgs' transformations: Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         :param 'ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverrideArgs' value_override: The value to be used instead of the detected value.
         """
         pulumi.set(__self__, "contribution_type", contribution_type)
@@ -67955,7 +73947,7 @@ class ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor(dict):
     @pulumi.getter
     def transformations(self) -> Optional['outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations']:
         """
-        Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         """
         return pulumi.get(self, "transformations")
 
@@ -68859,7 +74851,7 @@ class ServiceFullWebRequestIdContributors(dict):
                  server_name: 'outputs.ServiceFullWebRequestIdContributorsServerName'):
         """
         :param 'ServiceFullWebRequestIdContributorsApplicationIdArgs' application_id: Application identifier
-        :param 'ServiceFullWebRequestIdContributorsContextRootArgs' context_root: The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceFullWebRequestIdContributorsContextRootArgs' context_root: The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the **Service overview page** under **Properties and tags**.
         :param 'ServiceFullWebRequestIdContributorsServerNameArgs' server_name: Server Name
         """
         pulumi.set(__self__, "application_id", application_id)
@@ -68878,7 +74870,7 @@ class ServiceFullWebRequestIdContributors(dict):
     @pulumi.getter(name="contextRoot")
     def context_root(self) -> 'outputs.ServiceFullWebRequestIdContributorsContextRoot':
         """
-        The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+        The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the **Service overview page** under **Properties and tags**.
         """
         return pulumi.get(self, "context_root")
 
@@ -68967,7 +74959,7 @@ class ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor(dict)
                  value_override: Optional['outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride'] = None):
         """
         :param str contribution_type: Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
-        :param 'ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs' transformations: Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsArgs' transformations: Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         :param 'ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverrideArgs' value_override: The value to be used instead of the detected value.
         """
         pulumi.set(__self__, "contribution_type", contribution_type)
@@ -68988,7 +74980,7 @@ class ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor(dict)
     @pulumi.getter
     def transformations(self) -> Optional['outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformations']:
         """
-        Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         """
         return pulumi.get(self, "transformations")
 
@@ -69268,7 +75260,7 @@ class ServiceFullWebRequestIdContributorsContextRootServiceIdContributor(dict):
         """
         :param str contribution_type: Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
         :param int segment_count: The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
-        :param 'ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs' transformations: Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsArgs' transformations: Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         :param 'ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverrideArgs' value_override: The value to be used instead of the detected value.
         """
         pulumi.set(__self__, "contribution_type", contribution_type)
@@ -69299,7 +75291,7 @@ class ServiceFullWebRequestIdContributorsContextRootServiceIdContributor(dict):
     @pulumi.getter
     def transformations(self) -> Optional['outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformations']:
         """
-        Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         """
         return pulumi.get(self, "transformations")
 
@@ -69519,7 +75511,7 @@ class ServiceFullWebRequestIdContributorsServerNameServiceIdContributor(dict):
                  value_override: Optional['outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverride'] = None):
         """
         :param str contribution_type: Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
-        :param 'ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsArgs' transformations: Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsArgs' transformations: Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         :param 'ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverrideArgs' value_override: The value to be used instead of the detected value.
         """
         pulumi.set(__self__, "contribution_type", contribution_type)
@@ -69540,7 +75532,7 @@ class ServiceFullWebRequestIdContributorsServerNameServiceIdContributor(dict):
     @pulumi.getter
     def transformations(self) -> Optional['outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformations']:
         """
-        Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         """
         return pulumi.get(self, "transformations")
 
@@ -69947,7 +75939,7 @@ class ServiceFullWebServiceIdContributors(dict):
         """
         :param bool detect_as_web_request_service: Detect the matching requests as full web services (false) or web request services (true).
         :param 'ServiceFullWebServiceIdContributorsApplicationIdArgs' application_id: Application identifier
-        :param 'ServiceFullWebServiceIdContributorsContextRootArgs' context_root: The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceFullWebServiceIdContributorsContextRootArgs' context_root: The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the **Service overview page** under **Properties and tags**.
         :param 'ServiceFullWebServiceIdContributorsServerNameArgs' server_name: Server name
         :param 'ServiceFullWebServiceIdContributorsWebServiceNameArgs' web_service_name: Web service name
         :param 'ServiceFullWebServiceIdContributorsWebServiceNamespaceArgs' web_service_namespace: Web service namespace
@@ -69984,7 +75976,7 @@ class ServiceFullWebServiceIdContributors(dict):
     @pulumi.getter(name="contextRoot")
     def context_root(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsContextRoot']:
         """
-        The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+        The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the **Service overview page** under **Properties and tags**.
         """
         return pulumi.get(self, "context_root")
 
@@ -70089,7 +76081,7 @@ class ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor(dict)
                  value_override: Optional['outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverride'] = None):
         """
         :param str contribution_type: Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
-        :param 'ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsArgs' transformations: Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsArgs' transformations: Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         :param 'ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverrideArgs' value_override: The value to be used instead of the detected value.
         """
         pulumi.set(__self__, "contribution_type", contribution_type)
@@ -70110,7 +76102,7 @@ class ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor(dict)
     @pulumi.getter
     def transformations(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformations']:
         """
-        Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         """
         return pulumi.get(self, "transformations")
 
@@ -70390,7 +76382,7 @@ class ServiceFullWebServiceIdContributorsContextRootServiceIdContributor(dict):
         """
         :param str contribution_type: Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
         :param int segment_count: The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
-        :param 'ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsArgs' transformations: Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsArgs' transformations: Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         :param 'ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverrideArgs' value_override: The value to be used instead of the detected value.
         """
         pulumi.set(__self__, "contribution_type", contribution_type)
@@ -70421,7 +76413,7 @@ class ServiceFullWebServiceIdContributorsContextRootServiceIdContributor(dict):
     @pulumi.getter
     def transformations(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformations']:
         """
-        Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         """
         return pulumi.get(self, "transformations")
 
@@ -70641,7 +76633,7 @@ class ServiceFullWebServiceIdContributorsServerNameServiceIdContributor(dict):
                  value_override: Optional['outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverride'] = None):
         """
         :param str contribution_type: Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
-        :param 'ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsArgs' transformations: Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsArgs' transformations: Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         :param 'ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverrideArgs' value_override: The value to be used instead of the detected value.
         """
         pulumi.set(__self__, "contribution_type", contribution_type)
@@ -70662,7 +76654,7 @@ class ServiceFullWebServiceIdContributorsServerNameServiceIdContributor(dict):
     @pulumi.getter
     def transformations(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformations']:
         """
-        Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         """
         return pulumi.get(self, "transformations")
 
@@ -70938,7 +76930,7 @@ class ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor(dict
                  value_override: Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride'] = None):
         """
         :param str contribution_type: Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
-        :param 'ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsArgs' transformations: Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsArgs' transformations: Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         :param 'ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverrideArgs' value_override: The value to be used instead of the detected value.
         """
         pulumi.set(__self__, "contribution_type", contribution_type)
@@ -70959,7 +76951,7 @@ class ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor(dict
     @pulumi.getter
     def transformations(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformations']:
         """
-        Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         """
         return pulumi.get(self, "transformations")
 
@@ -71235,7 +77227,7 @@ class ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor
                  value_override: Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride'] = None):
         """
         :param str contribution_type: Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
-        :param 'ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs' transformations: Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        :param 'ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsArgs' transformations: Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         :param 'ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverrideArgs' value_override: The value to be used instead of the detected value.
         """
         pulumi.set(__self__, "contribution_type", contribution_type)
@@ -71256,7 +77248,7 @@ class ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor
     @pulumi.getter
     def transformations(self) -> Optional['outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations']:
         """
-        Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         """
         return pulumi.get(self, "transformations")
 
@@ -78076,6 +84068,232 @@ class SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockLi
 
 
 @pulumi.output_type
+class SiteReliabilityGuardianObjectives(dict):
+    def __init__(__self__, *,
+                 objectives: Sequence['outputs.SiteReliabilityGuardianObjectivesObjective']):
+        pulumi.set(__self__, "objectives", objectives)
+
+    @property
+    @pulumi.getter
+    def objectives(self) -> Sequence['outputs.SiteReliabilityGuardianObjectivesObjective']:
+        return pulumi.get(self, "objectives")
+
+
+@pulumi.output_type
+class SiteReliabilityGuardianObjectivesObjective(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "comparisonOperator":
+            suggest = "comparison_operator"
+        elif key == "objectiveType":
+            suggest = "objective_type"
+        elif key == "dqlQuery":
+            suggest = "dql_query"
+        elif key == "referenceSlo":
+            suggest = "reference_slo"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SiteReliabilityGuardianObjectivesObjective. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SiteReliabilityGuardianObjectivesObjective.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SiteReliabilityGuardianObjectivesObjective.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 comparison_operator: str,
+                 name: str,
+                 objective_type: str,
+                 description: Optional[str] = None,
+                 dql_query: Optional[str] = None,
+                 reference_slo: Optional[str] = None,
+                 target: Optional[float] = None,
+                 warning: Optional[float] = None):
+        """
+        :param str comparison_operator: Possible Values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
+        :param str name: Objective name
+        :param str objective_type: Possible Values: `DQL`, `REFERENCE_SLO`
+        :param str description: no documentation available
+        :param str dql_query: DQL query
+        :param str reference_slo: Please enter the metric key of your desired SLO. SLO metric keys have to start with 'func:slo.'
+        :param float target: no documentation available
+        :param float warning: no documentation available
+        """
+        pulumi.set(__self__, "comparison_operator", comparison_operator)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "objective_type", objective_type)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if dql_query is not None:
+            pulumi.set(__self__, "dql_query", dql_query)
+        if reference_slo is not None:
+            pulumi.set(__self__, "reference_slo", reference_slo)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+        if warning is not None:
+            pulumi.set(__self__, "warning", warning)
+
+    @property
+    @pulumi.getter(name="comparisonOperator")
+    def comparison_operator(self) -> str:
+        """
+        Possible Values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
+        """
+        return pulumi.get(self, "comparison_operator")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Objective name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectiveType")
+    def objective_type(self) -> str:
+        """
+        Possible Values: `DQL`, `REFERENCE_SLO`
+        """
+        return pulumi.get(self, "objective_type")
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="dqlQuery")
+    def dql_query(self) -> Optional[str]:
+        """
+        DQL query
+        """
+        return pulumi.get(self, "dql_query")
+
+    @property
+    @pulumi.getter(name="referenceSlo")
+    def reference_slo(self) -> Optional[str]:
+        """
+        Please enter the metric key of your desired SLO. SLO metric keys have to start with 'func:slo.'
+        """
+        return pulumi.get(self, "reference_slo")
+
+    @property
+    @pulumi.getter
+    def target(self) -> Optional[float]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "target")
+
+    @property
+    @pulumi.getter
+    def warning(self) -> Optional[float]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "warning")
+
+
+@pulumi.output_type
+class SiteReliabilityGuardianVariables(dict):
+    def __init__(__self__, *,
+                 variables: Sequence['outputs.SiteReliabilityGuardianVariablesVariable']):
+        pulumi.set(__self__, "variables", variables)
+
+    @property
+    @pulumi.getter
+    def variables(self) -> Sequence['outputs.SiteReliabilityGuardianVariablesVariable']:
+        return pulumi.get(self, "variables")
+
+
+@pulumi.output_type
+class SiteReliabilityGuardianVariablesVariable(dict):
+    def __init__(__self__, *,
+                 definition: str,
+                 name: str):
+        """
+        :param str definition: Value
+        :param str name: no documentation available
+        """
+        pulumi.set(__self__, "definition", definition)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def definition(self) -> str:
+        """
+        Value
+        """
+        return pulumi.get(self, "definition")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class SloErrorBudgetBurnRate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "burnRateVisualizationEnabled":
+            suggest = "burn_rate_visualization_enabled"
+        elif key == "fastBurnThreshold":
+            suggest = "fast_burn_threshold"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SloErrorBudgetBurnRate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SloErrorBudgetBurnRate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SloErrorBudgetBurnRate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 burn_rate_visualization_enabled: Optional[bool] = None,
+                 fast_burn_threshold: Optional[float] = None):
+        """
+        :param bool burn_rate_visualization_enabled: The error budget burn rate calculation is enabled (true) or disabled (false).
+        :param float fast_burn_threshold: The threshold between a slow and a fast burn rate.
+        """
+        if burn_rate_visualization_enabled is not None:
+            pulumi.set(__self__, "burn_rate_visualization_enabled", burn_rate_visualization_enabled)
+        if fast_burn_threshold is not None:
+            pulumi.set(__self__, "fast_burn_threshold", fast_burn_threshold)
+
+    @property
+    @pulumi.getter(name="burnRateVisualizationEnabled")
+    def burn_rate_visualization_enabled(self) -> Optional[bool]:
+        """
+        The error budget burn rate calculation is enabled (true) or disabled (false).
+        """
+        return pulumi.get(self, "burn_rate_visualization_enabled")
+
+    @property
+    @pulumi.getter(name="fastBurnThreshold")
+    def fast_burn_threshold(self) -> Optional[float]:
+        """
+        The threshold between a slow and a fast burn rate.
+        """
+        return pulumi.get(self, "fast_burn_threshold")
+
+
+@pulumi.output_type
 class SloV2ErrorBudgetBurnRate(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -79061,6 +85279,77 @@ class UpdateWindowsWeeklyRecurrenceUpdateTime(dict):
         Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
         """
         return pulumi.get(self, "time_zone")
+
+
+@pulumi.output_type
+class UrlBasedSamplingQueryParameters(dict):
+    def __init__(__self__, *,
+                 parameters: Sequence['outputs.UrlBasedSamplingQueryParametersParameter']):
+        pulumi.set(__self__, "parameters", parameters)
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Sequence['outputs.UrlBasedSamplingQueryParametersParameter']:
+        return pulumi.get(self, "parameters")
+
+
+@pulumi.output_type
+class UrlBasedSamplingQueryParametersParameter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "valueIsUndefined":
+            suggest = "value_is_undefined"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UrlBasedSamplingQueryParametersParameter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UrlBasedSamplingQueryParametersParameter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UrlBasedSamplingQueryParametersParameter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: str,
+                 value: Optional[str] = None,
+                 value_is_undefined: Optional[bool] = None):
+        """
+        :param str name: Query parameter name
+        :param str value: Query parameter value
+        :param bool value_is_undefined: Query parameter value is undefined
+        """
+        pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+        if value_is_undefined is not None:
+            pulumi.set(__self__, "value_is_undefined", value_is_undefined)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Query parameter name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        Query parameter value
+        """
+        return pulumi.get(self, "value")
+
+    @property
+    @pulumi.getter(name="valueIsUndefined")
+    def value_is_undefined(self) -> Optional[bool]:
+        """
+        Query parameter value is undefined
+        """
+        return pulumi.get(self, "value_is_undefined")
 
 
 @pulumi.output_type
@@ -80217,6 +86506,237 @@ class VmwareAnomaliesUndersizedStorageDetectionCustomThresholds(dict):
         Peak queue command latency is higher than
         """
         return pulumi.get(self, "peak_queue_command_latency")
+
+
+@pulumi.output_type
+class VulnerabilityCodeCriteria(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "processGroup":
+            suggest = "process_group"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VulnerabilityCodeCriteria. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VulnerabilityCodeCriteria.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VulnerabilityCodeCriteria.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 process_group: Optional[str] = None):
+        """
+        :param str process_group: Process group
+        """
+        if process_group is not None:
+            pulumi.set(__self__, "process_group", process_group)
+
+    @property
+    @pulumi.getter(name="processGroup")
+    def process_group(self) -> Optional[str]:
+        """
+        Process group
+        """
+        return pulumi.get(self, "process_group")
+
+
+@pulumi.output_type
+class VulnerabilityCodeMetadata(dict):
+    def __init__(__self__, *,
+                 comment: str):
+        """
+        :param str comment: no documentation available
+        """
+        pulumi.set(__self__, "comment", comment)
+
+    @property
+    @pulumi.getter
+    def comment(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "comment")
+
+
+@pulumi.output_type
+class VulnerabilityCodeVulnerabilityDetectionControl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "monitoringMode":
+            suggest = "monitoring_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VulnerabilityCodeVulnerabilityDetectionControl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VulnerabilityCodeVulnerabilityDetectionControl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VulnerabilityCodeVulnerabilityDetectionControl.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 monitoring_mode: str):
+        """
+        :param str monitoring_mode: Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+        """
+        pulumi.set(__self__, "monitoring_mode", monitoring_mode)
+
+    @property
+    @pulumi.getter(name="monitoringMode")
+    def monitoring_mode(self) -> str:
+        """
+        Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+        """
+        return pulumi.get(self, "monitoring_mode")
+
+
+@pulumi.output_type
+class VulnerabilitySettingsTechnologies(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enableDotNet":
+            suggest = "enable_dot_net"
+        elif key == "enableGo":
+            suggest = "enable_go"
+        elif key == "enableJava":
+            suggest = "enable_java"
+        elif key == "enableKubernetes":
+            suggest = "enable_kubernetes"
+        elif key == "enableNodeJs":
+            suggest = "enable_node_js"
+        elif key == "enablePhp":
+            suggest = "enable_php"
+        elif key == "enableDotNetRuntime":
+            suggest = "enable_dot_net_runtime"
+        elif key == "enableJavaRuntime":
+            suggest = "enable_java_runtime"
+        elif key == "enableNodeJsRuntime":
+            suggest = "enable_node_js_runtime"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VulnerabilitySettingsTechnologies. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VulnerabilitySettingsTechnologies.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VulnerabilitySettingsTechnologies.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_dot_net: bool,
+                 enable_go: bool,
+                 enable_java: bool,
+                 enable_kubernetes: bool,
+                 enable_node_js: bool,
+                 enable_php: bool,
+                 enable_dot_net_runtime: Optional[bool] = None,
+                 enable_java_runtime: Optional[bool] = None,
+                 enable_node_js_runtime: Optional[bool] = None):
+        """
+        :param bool enable_dot_net: NET
+        :param bool enable_go: Go
+        :param bool enable_java: Java
+        :param bool enable_kubernetes: Kubernetes
+        :param bool enable_node_js: Node.js
+        :param bool enable_php: PHP
+        :param bool enable_dot_net_runtime: NET runtimes
+        :param bool enable_java_runtime: Java runtimes
+        :param bool enable_node_js_runtime: Node.js runtimes
+        """
+        pulumi.set(__self__, "enable_dot_net", enable_dot_net)
+        pulumi.set(__self__, "enable_go", enable_go)
+        pulumi.set(__self__, "enable_java", enable_java)
+        pulumi.set(__self__, "enable_kubernetes", enable_kubernetes)
+        pulumi.set(__self__, "enable_node_js", enable_node_js)
+        pulumi.set(__self__, "enable_php", enable_php)
+        if enable_dot_net_runtime is not None:
+            pulumi.set(__self__, "enable_dot_net_runtime", enable_dot_net_runtime)
+        if enable_java_runtime is not None:
+            pulumi.set(__self__, "enable_java_runtime", enable_java_runtime)
+        if enable_node_js_runtime is not None:
+            pulumi.set(__self__, "enable_node_js_runtime", enable_node_js_runtime)
+
+    @property
+    @pulumi.getter(name="enableDotNet")
+    def enable_dot_net(self) -> bool:
+        """
+        NET
+        """
+        return pulumi.get(self, "enable_dot_net")
+
+    @property
+    @pulumi.getter(name="enableGo")
+    def enable_go(self) -> bool:
+        """
+        Go
+        """
+        return pulumi.get(self, "enable_go")
+
+    @property
+    @pulumi.getter(name="enableJava")
+    def enable_java(self) -> bool:
+        """
+        Java
+        """
+        return pulumi.get(self, "enable_java")
+
+    @property
+    @pulumi.getter(name="enableKubernetes")
+    def enable_kubernetes(self) -> bool:
+        """
+        Kubernetes
+        """
+        return pulumi.get(self, "enable_kubernetes")
+
+    @property
+    @pulumi.getter(name="enableNodeJs")
+    def enable_node_js(self) -> bool:
+        """
+        Node.js
+        """
+        return pulumi.get(self, "enable_node_js")
+
+    @property
+    @pulumi.getter(name="enablePhp")
+    def enable_php(self) -> bool:
+        """
+        PHP
+        """
+        return pulumi.get(self, "enable_php")
+
+    @property
+    @pulumi.getter(name="enableDotNetRuntime")
+    def enable_dot_net_runtime(self) -> Optional[bool]:
+        """
+        NET runtimes
+        """
+        return pulumi.get(self, "enable_dot_net_runtime")
+
+    @property
+    @pulumi.getter(name="enableJavaRuntime")
+    def enable_java_runtime(self) -> Optional[bool]:
+        """
+        Java runtimes
+        """
+        return pulumi.get(self, "enable_java_runtime")
+
+    @property
+    @pulumi.getter(name="enableNodeJsRuntime")
+    def enable_node_js_runtime(self) -> Optional[bool]:
+        """
+        Node.js runtimes
+        """
+        return pulumi.get(self, "enable_node_js_runtime")
 
 
 @pulumi.output_type
@@ -81409,6 +87929,246 @@ class WebAppEnablementSessionReplay(dict):
 
 
 @pulumi.output_type
+class WebAppKeyPerformanceCustomThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "frustratingThresholdSeconds":
+            suggest = "frustrating_threshold_seconds"
+        elif key == "toleratedThresholdSeconds":
+            suggest = "tolerated_threshold_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppKeyPerformanceCustomThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppKeyPerformanceCustomThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppKeyPerformanceCustomThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 frustrating_threshold_seconds: float,
+                 tolerated_threshold_seconds: float):
+        """
+        :param float frustrating_threshold_seconds: If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+        :param float tolerated_threshold_seconds: If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+        """
+        pulumi.set(__self__, "frustrating_threshold_seconds", frustrating_threshold_seconds)
+        pulumi.set(__self__, "tolerated_threshold_seconds", tolerated_threshold_seconds)
+
+    @property
+    @pulumi.getter(name="frustratingThresholdSeconds")
+    def frustrating_threshold_seconds(self) -> float:
+        """
+        If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+        """
+        return pulumi.get(self, "frustrating_threshold_seconds")
+
+    @property
+    @pulumi.getter(name="toleratedThresholdSeconds")
+    def tolerated_threshold_seconds(self) -> float:
+        """
+        If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+        """
+        return pulumi.get(self, "tolerated_threshold_seconds")
+
+
+@pulumi.output_type
+class WebAppKeyPerformanceLoadFallbackThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "frustratingFallbackThresholdSeconds":
+            suggest = "frustrating_fallback_threshold_seconds"
+        elif key == "toleratedFallbackThresholdSeconds":
+            suggest = "tolerated_fallback_threshold_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppKeyPerformanceLoadFallbackThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppKeyPerformanceLoadFallbackThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppKeyPerformanceLoadFallbackThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 frustrating_fallback_threshold_seconds: float,
+                 tolerated_fallback_threshold_seconds: float):
+        """
+        :param float frustrating_fallback_threshold_seconds: If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+        :param float tolerated_fallback_threshold_seconds: If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+        """
+        pulumi.set(__self__, "frustrating_fallback_threshold_seconds", frustrating_fallback_threshold_seconds)
+        pulumi.set(__self__, "tolerated_fallback_threshold_seconds", tolerated_fallback_threshold_seconds)
+
+    @property
+    @pulumi.getter(name="frustratingFallbackThresholdSeconds")
+    def frustrating_fallback_threshold_seconds(self) -> float:
+        """
+        If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+        """
+        return pulumi.get(self, "frustrating_fallback_threshold_seconds")
+
+    @property
+    @pulumi.getter(name="toleratedFallbackThresholdSeconds")
+    def tolerated_fallback_threshold_seconds(self) -> float:
+        """
+        If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+        """
+        return pulumi.get(self, "tolerated_fallback_threshold_seconds")
+
+
+@pulumi.output_type
+class WebAppKeyPerformanceLoadThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "frustratingThresholdSeconds":
+            suggest = "frustrating_threshold_seconds"
+        elif key == "toleratedThresholdSeconds":
+            suggest = "tolerated_threshold_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppKeyPerformanceLoadThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppKeyPerformanceLoadThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppKeyPerformanceLoadThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 frustrating_threshold_seconds: float,
+                 tolerated_threshold_seconds: float):
+        """
+        :param float frustrating_threshold_seconds: If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+        :param float tolerated_threshold_seconds: If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+        """
+        pulumi.set(__self__, "frustrating_threshold_seconds", frustrating_threshold_seconds)
+        pulumi.set(__self__, "tolerated_threshold_seconds", tolerated_threshold_seconds)
+
+    @property
+    @pulumi.getter(name="frustratingThresholdSeconds")
+    def frustrating_threshold_seconds(self) -> float:
+        """
+        If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+        """
+        return pulumi.get(self, "frustrating_threshold_seconds")
+
+    @property
+    @pulumi.getter(name="toleratedThresholdSeconds")
+    def tolerated_threshold_seconds(self) -> float:
+        """
+        If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+        """
+        return pulumi.get(self, "tolerated_threshold_seconds")
+
+
+@pulumi.output_type
+class WebAppKeyPerformanceXhrFallbackThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "frustratingFallbackThresholdSeconds":
+            suggest = "frustrating_fallback_threshold_seconds"
+        elif key == "toleratedFallbackThresholdSeconds":
+            suggest = "tolerated_fallback_threshold_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppKeyPerformanceXhrFallbackThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppKeyPerformanceXhrFallbackThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppKeyPerformanceXhrFallbackThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 frustrating_fallback_threshold_seconds: float,
+                 tolerated_fallback_threshold_seconds: float):
+        """
+        :param float frustrating_fallback_threshold_seconds: If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+        :param float tolerated_fallback_threshold_seconds: If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+        """
+        pulumi.set(__self__, "frustrating_fallback_threshold_seconds", frustrating_fallback_threshold_seconds)
+        pulumi.set(__self__, "tolerated_fallback_threshold_seconds", tolerated_fallback_threshold_seconds)
+
+    @property
+    @pulumi.getter(name="frustratingFallbackThresholdSeconds")
+    def frustrating_fallback_threshold_seconds(self) -> float:
+        """
+        If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+        """
+        return pulumi.get(self, "frustrating_fallback_threshold_seconds")
+
+    @property
+    @pulumi.getter(name="toleratedFallbackThresholdSeconds")
+    def tolerated_fallback_threshold_seconds(self) -> float:
+        """
+        If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+        """
+        return pulumi.get(self, "tolerated_fallback_threshold_seconds")
+
+
+@pulumi.output_type
+class WebAppKeyPerformanceXhrThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "frustratingThresholdSeconds":
+            suggest = "frustrating_threshold_seconds"
+        elif key == "toleratedThresholdSeconds":
+            suggest = "tolerated_threshold_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebAppKeyPerformanceXhrThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebAppKeyPerformanceXhrThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebAppKeyPerformanceXhrThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 frustrating_threshold_seconds: float,
+                 tolerated_threshold_seconds: float):
+        """
+        :param float frustrating_threshold_seconds: If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+        :param float tolerated_threshold_seconds: If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+        """
+        pulumi.set(__self__, "frustrating_threshold_seconds", frustrating_threshold_seconds)
+        pulumi.set(__self__, "tolerated_threshold_seconds", tolerated_threshold_seconds)
+
+    @property
+    @pulumi.getter(name="frustratingThresholdSeconds")
+    def frustrating_threshold_seconds(self) -> float:
+        """
+        If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+        """
+        return pulumi.get(self, "frustrating_threshold_seconds")
+
+    @property
+    @pulumi.getter(name="toleratedThresholdSeconds")
+    def tolerated_threshold_seconds(self) -> float:
+        """
+        If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+        """
+        return pulumi.get(self, "tolerated_threshold_seconds")
+
+
+@pulumi.output_type
 class WebAppRequestErrorsErrorRules(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -82339,6 +89099,8 @@ class WebApplicationMonitoringSettings(dict):
             suggest = "exclude_xhr_regex"
         elif key == "fetchRequests":
             suggest = "fetch_requests"
+        elif key == "instrumentedWebServer":
+            suggest = "instrumented_web_server"
         elif key == "ipAddressRestrictionSettings":
             suggest = "ip_address_restriction_settings"
         elif key == "javascriptFrameworkSupport":
@@ -82349,12 +89111,16 @@ class WebApplicationMonitoringSettings(dict):
             suggest = "library_file_location"
         elif key == "monitoringDataPath":
             suggest = "monitoring_data_path"
+        elif key == "sameSiteCookieAttribute":
+            suggest = "same_site_cookie_attribute"
         elif key == "scriptTagCacheDurationInHours":
             suggest = "script_tag_cache_duration_in_hours"
         elif key == "secureCookieAttribute":
             suggest = "secure_cookie_attribute"
         elif key == "serverRequestPathId":
             suggest = "server_request_path_id"
+        elif key == "useCors":
+            suggest = "use_cors"
         elif key == "xmlHttpRequest":
             suggest = "xml_http_request"
 
@@ -82382,14 +89148,17 @@ class WebApplicationMonitoringSettings(dict):
                  custom_configuration_properties: Optional[str] = None,
                  exclude_xhr_regex: Optional[str] = None,
                  fetch_requests: Optional[bool] = None,
+                 instrumented_web_server: Optional[bool] = None,
                  ip_address_restriction_settings: Optional['outputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettings'] = None,
                  javascript_framework_support: Optional['outputs.WebApplicationMonitoringSettingsJavascriptFrameworkSupport'] = None,
                  javascript_injection_rules: Optional['outputs.WebApplicationMonitoringSettingsJavascriptInjectionRules'] = None,
                  library_file_location: Optional[str] = None,
                  monitoring_data_path: Optional[str] = None,
+                 same_site_cookie_attribute: Optional[str] = None,
                  script_tag_cache_duration_in_hours: Optional[int] = None,
                  secure_cookie_attribute: Optional[bool] = None,
                  server_request_path_id: Optional[str] = None,
+                 use_cors: Optional[bool] = None,
                  xml_http_request: Optional[bool] = None):
         """
         :param 'WebApplicationMonitoringSettingsContentCaptureArgs' content_capture: Settings for content capture
@@ -82412,6 +89181,7 @@ class WebApplicationMonitoringSettings(dict):
                
                If noting specified the feature is disabled
         :param bool fetch_requests: `fetch()` request capture enabled/disabled
+        :param bool instrumented_web_server: Instrumented web or app server.
         :param 'WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs' ip_address_restriction_settings: Settings for restricting certain ip addresses and for introducing subnet mask. It also restricts the mode
         :param 'WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs' javascript_framework_support: Support of various JavaScript frameworks
         :param 'WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs' javascript_injection_rules: Java script injection rules
@@ -82425,9 +89195,11 @@ class WebApplicationMonitoringSettings(dict):
                 Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS. 
                
                 **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
+        :param str same_site_cookie_attribute: Same site cookie attribute
         :param int script_tag_cache_duration_in_hours: Time duration for the cache settings
         :param bool secure_cookie_attribute: Secure attribute usage for Dynatrace cookies enabled/disabled
         :param str server_request_path_id: Path to identify the server’s request ID. Maximum 150 characters.
+        :param bool use_cors: Send beacon data via CORS.
         :param bool xml_http_request: `XmlHttpRequest` support enabled/disabled
         """
         pulumi.set(__self__, "content_capture", content_capture)
@@ -82452,6 +89224,8 @@ class WebApplicationMonitoringSettings(dict):
             pulumi.set(__self__, "exclude_xhr_regex", exclude_xhr_regex)
         if fetch_requests is not None:
             pulumi.set(__self__, "fetch_requests", fetch_requests)
+        if instrumented_web_server is not None:
+            pulumi.set(__self__, "instrumented_web_server", instrumented_web_server)
         if ip_address_restriction_settings is not None:
             pulumi.set(__self__, "ip_address_restriction_settings", ip_address_restriction_settings)
         if javascript_framework_support is not None:
@@ -82462,12 +89236,16 @@ class WebApplicationMonitoringSettings(dict):
             pulumi.set(__self__, "library_file_location", library_file_location)
         if monitoring_data_path is not None:
             pulumi.set(__self__, "monitoring_data_path", monitoring_data_path)
+        if same_site_cookie_attribute is not None:
+            pulumi.set(__self__, "same_site_cookie_attribute", same_site_cookie_attribute)
         if script_tag_cache_duration_in_hours is not None:
             pulumi.set(__self__, "script_tag_cache_duration_in_hours", script_tag_cache_duration_in_hours)
         if secure_cookie_attribute is not None:
             pulumi.set(__self__, "secure_cookie_attribute", secure_cookie_attribute)
         if server_request_path_id is not None:
             pulumi.set(__self__, "server_request_path_id", server_request_path_id)
+        if use_cors is not None:
+            pulumi.set(__self__, "use_cors", use_cors)
         if xml_http_request is not None:
             pulumi.set(__self__, "xml_http_request", xml_http_request)
 
@@ -82576,6 +89354,14 @@ class WebApplicationMonitoringSettings(dict):
         return pulumi.get(self, "fetch_requests")
 
     @property
+    @pulumi.getter(name="instrumentedWebServer")
+    def instrumented_web_server(self) -> Optional[bool]:
+        """
+        Instrumented web or app server.
+        """
+        return pulumi.get(self, "instrumented_web_server")
+
+    @property
     @pulumi.getter(name="ipAddressRestrictionSettings")
     def ip_address_restriction_settings(self) -> Optional['outputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettings']:
         """
@@ -82624,6 +89410,14 @@ class WebApplicationMonitoringSettings(dict):
         return pulumi.get(self, "monitoring_data_path")
 
     @property
+    @pulumi.getter(name="sameSiteCookieAttribute")
+    def same_site_cookie_attribute(self) -> Optional[str]:
+        """
+        Same site cookie attribute
+        """
+        return pulumi.get(self, "same_site_cookie_attribute")
+
+    @property
     @pulumi.getter(name="scriptTagCacheDurationInHours")
     def script_tag_cache_duration_in_hours(self) -> Optional[int]:
         """
@@ -82646,6 +89440,14 @@ class WebApplicationMonitoringSettings(dict):
         Path to identify the server’s request ID. Maximum 150 characters.
         """
         return pulumi.get(self, "server_request_path_id")
+
+    @property
+    @pulumi.getter(name="useCors")
+    def use_cors(self) -> Optional[bool]:
+        """
+        Send beacon data via CORS.
+        """
+        return pulumi.get(self, "use_cors")
 
     @property
     @pulumi.getter(name="xmlHttpRequest")
@@ -83018,6 +89820,10 @@ class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCa
         suggest = None
         if key == "additionalEventCapturedAsUserInput":
             suggest = "additional_event_captured_as_user_input"
+        elif key == "touchEnd":
+            suggest = "touch_end"
+        elif key == "touchStart":
+            suggest = "touch_start"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings. Access the value via the '{suggest}' property getter instead.")
@@ -83032,15 +89838,19 @@ class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCa
 
     def __init__(__self__, *,
                  additional_event_captured_as_user_input: Optional[str] = None,
+                 change: Optional[bool] = None,
                  click: Optional[bool] = None,
                  doubleclick: Optional[bool] = None,
                  keydown: Optional[bool] = None,
                  keyup: Optional[bool] = None,
                  mousedown: Optional[bool] = None,
                  mouseup: Optional[bool] = None,
-                 scroll: Optional[bool] = None):
+                 scroll: Optional[bool] = None,
+                 touch_end: Optional[bool] = None,
+                 touch_start: Optional[bool] = None):
         """
         :param str additional_event_captured_as_user_input: Additional events to be captured globally as user input.
+        :param bool change: Change enabled/disabled
         :param bool click: Click enabled/disabled
         :param bool doubleclick: DoubleClick enabled/disabled
         :param bool keydown: KeyDown enabled/disabled
@@ -83048,9 +89858,13 @@ class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCa
         :param bool mousedown: MouseDown enabled/disabled
         :param bool mouseup: MouseUp enabled/disabled
         :param bool scroll: Scroll enabled/disabled
+        :param bool touch_end: TouchEnd enabled/disabled
+        :param bool touch_start: TouchStart enabled/disabled
         """
         if additional_event_captured_as_user_input is not None:
             pulumi.set(__self__, "additional_event_captured_as_user_input", additional_event_captured_as_user_input)
+        if change is not None:
+            pulumi.set(__self__, "change", change)
         if click is not None:
             pulumi.set(__self__, "click", click)
         if doubleclick is not None:
@@ -83065,6 +89879,10 @@ class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCa
             pulumi.set(__self__, "mouseup", mouseup)
         if scroll is not None:
             pulumi.set(__self__, "scroll", scroll)
+        if touch_end is not None:
+            pulumi.set(__self__, "touch_end", touch_end)
+        if touch_start is not None:
+            pulumi.set(__self__, "touch_start", touch_start)
 
     @property
     @pulumi.getter(name="additionalEventCapturedAsUserInput")
@@ -83073,6 +89891,14 @@ class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCa
         Additional events to be captured globally as user input.
         """
         return pulumi.get(self, "additional_event_captured_as_user_input")
+
+    @property
+    @pulumi.getter
+    def change(self) -> Optional[bool]:
+        """
+        Change enabled/disabled
+        """
+        return pulumi.get(self, "change")
 
     @property
     @pulumi.getter
@@ -83129,6 +89955,22 @@ class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCa
         Scroll enabled/disabled
         """
         return pulumi.get(self, "scroll")
+
+    @property
+    @pulumi.getter(name="touchEnd")
+    def touch_end(self) -> Optional[bool]:
+        """
+        TouchEnd enabled/disabled
+        """
+        return pulumi.get(self, "touch_end")
+
+    @property
+    @pulumi.getter(name="touchStart")
+    def touch_start(self) -> Optional[bool]:
+        """
+        TouchStart enabled/disabled
+        """
+        return pulumi.get(self, "touch_start")
 
 
 @pulumi.output_type
@@ -84279,7 +91121,7 @@ class WebApplicationUserActionNamingSettings(dict):
         :param bool ignore_case: Case insensitive naming
         :param 'WebApplicationUserActionNamingSettingsLoadActionNamingRulesArgs' load_action_naming_rules: User action naming rules for loading actions
         :param 'WebApplicationUserActionNamingSettingsPlaceholdersArgs' placeholders: User action placeholders
-        :param Sequence[str] query_parameter_cleanups: User action naming rules for custom actions
+        :param Sequence[str] query_parameter_cleanups: User action naming rules for custom actions. If not specified Dynatrace assumes `__sid`, `cfid`, `cftoken`, `phpsessid` and `sid`.
         :param bool split_user_actions_by_domain: Deactivate this setting if different domains should not result in separate user actions
         :param bool use_first_detected_load_action: First load action found under an XHR action should be used when true. Else the deepest one under the xhr action is used
         :param 'WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs' xhr_action_naming_rules: User action naming rules for XHR actions
@@ -84337,7 +91179,7 @@ class WebApplicationUserActionNamingSettings(dict):
     @pulumi.getter(name="queryParameterCleanups")
     def query_parameter_cleanups(self) -> Optional[Sequence[str]]:
         """
-        User action naming rules for custom actions
+        User action naming rules for custom actions. If not specified Dynatrace assumes `__sid`, `cfid`, `cftoken`, `phpsessid` and `sid`.
         """
         return pulumi.get(self, "query_parameter_cleanups")
 
@@ -85455,6 +92297,79 @@ class WebhookNotificationHeadersHeader(dict):
 
 
 @pulumi.output_type
+class WebhookNotificationOauth2Credentials(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accessTokenUrl":
+            suggest = "access_token_url"
+        elif key == "clientId":
+            suggest = "client_id"
+        elif key == "clientSecret":
+            suggest = "client_secret"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in WebhookNotificationOauth2Credentials. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        WebhookNotificationOauth2Credentials.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        WebhookNotificationOauth2Credentials.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 access_token_url: str,
+                 client_id: str,
+                 client_secret: str,
+                 scope: Optional[str] = None):
+        """
+        :param str access_token_url: Access token URL
+        :param str client_id: Client ID
+        :param str client_secret: Client secret
+        :param str scope: The scope of access you are requesting
+        """
+        pulumi.set(__self__, "access_token_url", access_token_url)
+        pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "client_secret", client_secret)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
+
+    @property
+    @pulumi.getter(name="accessTokenUrl")
+    def access_token_url(self) -> str:
+        """
+        Access token URL
+        """
+        return pulumi.get(self, "access_token_url")
+
+    @property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> str:
+        """
+        Client ID
+        """
+        return pulumi.get(self, "client_id")
+
+    @property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> str:
+        """
+        Client secret
+        """
+        return pulumi.get(self, "client_secret")
+
+    @property
+    @pulumi.getter
+    def scope(self) -> Optional[str]:
+        """
+        The scope of access you are requesting
+        """
+        return pulumi.get(self, "scope")
+
+
+@pulumi.output_type
 class XmattersNotificationHeaders(dict):
     def __init__(__self__, *,
                  headers: Sequence['outputs.XmattersNotificationHeadersHeader']):
@@ -85594,45 +92509,92 @@ class GetAlertingProfilesValueResult(dict):
 
 
 @pulumi.output_type
-class GetEntitiesEntitiesResult(dict):
+class GetDocumentsValueResult(dict):
     def __init__(__self__, *,
-                 entities: Optional[Sequence['outputs.GetEntitiesEntitiesEntityResult']] = None):
+                 id: str,
+                 name: str,
+                 owner: str,
+                 type: str):
         """
-        :param Sequence['GetEntitiesEntitiesEntityArgs'] entities: A list of monitored entities.
+        :param str id: The unique identifier of the document.
+        :param str name: The name of the document.
+        :param str owner: The owner of the document. This could be a user or a group that has ownership rights over the document.
+        :param str type: The type of the document. This could be a specific format or category the document belongs to.
         """
-        if entities is not None:
-            pulumi.set(__self__, "entities", entities)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def entities(self) -> Optional[Sequence['outputs.GetEntitiesEntitiesEntityResult']]:
+    def id(self) -> str:
         """
-        A list of monitored entities.
+        The unique identifier of the document.
         """
-        return pulumi.get(self, "entities")
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the document.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def owner(self) -> str:
+        """
+        The owner of the document. This could be a user or a group that has ownership rights over the document.
+        """
+        return pulumi.get(self, "owner")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the document. This could be a specific format or category the document belongs to.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
-class GetEntitiesEntitiesEntityResult(dict):
+class GetEntitiesEntityResult(dict):
     def __init__(__self__, *,
+                 properties: Mapping[str, str],
                  display_name: Optional[str] = None,
                  entity_id: Optional[str] = None,
-                 tags: Optional[Sequence['outputs.GetEntitiesEntitiesEntityTagResult']] = None,
+                 last_seen_tms: Optional[int] = None,
+                 tags: Optional[Sequence['outputs.GetEntitiesEntityTagResult']] = None,
                  type: Optional[str] = None):
         """
+        :param Mapping[str, str] properties: Properties defining the entity.
         :param str display_name: The name of the entity, displayed in the UI.
         :param str entity_id: The ID of the entity.
-        :param Sequence['GetEntitiesEntitiesEntityTagArgs'] tags: A set of tags assigned to the entity.
+        :param int last_seen_tms: The timestamp at which the entity was last seen, in UTC milliseconds.
+        :param Sequence['GetEntitiesEntityTagArgs'] tags: A set of tags assigned to the entity.
         :param str type: The type of the entity.
         """
+        pulumi.set(__self__, "properties", properties)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
+        if last_seen_tms is not None:
+            pulumi.set(__self__, "last_seen_tms", last_seen_tms)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
         if type is not None:
             pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Mapping[str, str]:
+        """
+        Properties defining the entity.
+        """
+        return pulumi.get(self, "properties")
 
     @property
     @pulumi.getter(name="displayName")
@@ -85651,8 +92613,16 @@ class GetEntitiesEntitiesEntityResult(dict):
         return pulumi.get(self, "entity_id")
 
     @property
+    @pulumi.getter(name="lastSeenTms")
+    def last_seen_tms(self) -> Optional[int]:
+        """
+        The timestamp at which the entity was last seen, in UTC milliseconds.
+        """
+        return pulumi.get(self, "last_seen_tms")
+
+    @property
     @pulumi.getter
-    def tags(self) -> Optional[Sequence['outputs.GetEntitiesEntitiesEntityTagResult']]:
+    def tags(self) -> Optional[Sequence['outputs.GetEntitiesEntityTagResult']]:
         """
         A set of tags assigned to the entity.
         """
@@ -85668,18 +92638,18 @@ class GetEntitiesEntitiesEntityResult(dict):
 
 
 @pulumi.output_type
-class GetEntitiesEntitiesEntityTagResult(dict):
+class GetEntitiesEntityTagResult(dict):
     def __init__(__self__, *,
-                 tags: Optional[Sequence['outputs.GetEntitiesEntitiesEntityTagTagResult']] = None):
+                 tags: Optional[Sequence['outputs.GetEntitiesEntityTagTagResult']] = None):
         """
-        :param Sequence['GetEntitiesEntitiesEntityTagTagArgs'] tags: A tag assigned to the entity
+        :param Sequence['GetEntitiesEntityTagTagArgs'] tags: A tag assigned to the entity
         """
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
 
     @property
     @pulumi.getter
-    def tags(self) -> Optional[Sequence['outputs.GetEntitiesEntitiesEntityTagTagResult']]:
+    def tags(self) -> Optional[Sequence['outputs.GetEntitiesEntityTagTagResult']]:
         """
         A tag assigned to the entity
         """
@@ -85687,7 +92657,7 @@ class GetEntitiesEntitiesEntityTagResult(dict):
 
 
 @pulumi.output_type
-class GetEntitiesEntitiesEntityTagTagResult(dict):
+class GetEntitiesEntityTagTagResult(dict):
     def __init__(__self__, *,
                  context: str,
                  key: str,
@@ -85740,6 +92710,261 @@ class GetEntitiesEntitiesEntityTagTagResult(dict):
 
 
 @pulumi.output_type
+class GetHubItemsItemResult(dict):
+    def __init__(__self__, *,
+                 activation_link: str,
+                 artifact_id: str,
+                 author_logo: str,
+                 author_name: str,
+                 cluster_compatible: bool,
+                 coming_soon: bool,
+                 description: str,
+                 documentation_link: str,
+                 has_description_blocks: bool,
+                 item_id: str,
+                 logo: str,
+                 marketing_link: str,
+                 name: str,
+                 not_compatible_reason: str,
+                 tags: Sequence[str],
+                 type: str):
+        """
+        :param str activation_link: The activation link for a technology
+        :param str artifact_id: The unique ID used by the artifacts contained in releases
+        :param str author_logo: URL for the author's logo
+        :param str author_name: Name of the author of the item
+        :param bool cluster_compatible: Checks if the item is compatible with the cluster version
+        :param bool coming_soon: Whether or not the item is planned to be released soon
+        :param str description: Description of the item
+        :param str documentation_link: An absolute link to the documentation page of this item
+        :param bool has_description_blocks: Whether or not the details call will contain description blocks
+        :param str item_id: Unique Id of the item
+        :param str logo: The logo of the item. Can be a URL or Base64 encoded. Intended for HTML tags
+        :param str marketing_link: An absolute link to the marketing page of this item
+        :param str name: Name of the item
+        :param str not_compatible_reason: The reason why the item is not compatible with the cluster version
+        :param Sequence[str] tags: Grouping of items with keywords
+        :param str type: Represents the type of item. It can be `TECHNOLOGY`, `EXTENSION1` or `EXTENSION2`
+        """
+        pulumi.set(__self__, "activation_link", activation_link)
+        pulumi.set(__self__, "artifact_id", artifact_id)
+        pulumi.set(__self__, "author_logo", author_logo)
+        pulumi.set(__self__, "author_name", author_name)
+        pulumi.set(__self__, "cluster_compatible", cluster_compatible)
+        pulumi.set(__self__, "coming_soon", coming_soon)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "documentation_link", documentation_link)
+        pulumi.set(__self__, "has_description_blocks", has_description_blocks)
+        pulumi.set(__self__, "item_id", item_id)
+        pulumi.set(__self__, "logo", logo)
+        pulumi.set(__self__, "marketing_link", marketing_link)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "not_compatible_reason", not_compatible_reason)
+        pulumi.set(__self__, "tags", tags)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="activationLink")
+    def activation_link(self) -> str:
+        """
+        The activation link for a technology
+        """
+        return pulumi.get(self, "activation_link")
+
+    @property
+    @pulumi.getter(name="artifactId")
+    def artifact_id(self) -> str:
+        """
+        The unique ID used by the artifacts contained in releases
+        """
+        return pulumi.get(self, "artifact_id")
+
+    @property
+    @pulumi.getter(name="authorLogo")
+    def author_logo(self) -> str:
+        """
+        URL for the author's logo
+        """
+        return pulumi.get(self, "author_logo")
+
+    @property
+    @pulumi.getter(name="authorName")
+    def author_name(self) -> str:
+        """
+        Name of the author of the item
+        """
+        return pulumi.get(self, "author_name")
+
+    @property
+    @pulumi.getter(name="clusterCompatible")
+    def cluster_compatible(self) -> bool:
+        """
+        Checks if the item is compatible with the cluster version
+        """
+        return pulumi.get(self, "cluster_compatible")
+
+    @property
+    @pulumi.getter(name="comingSoon")
+    def coming_soon(self) -> bool:
+        """
+        Whether or not the item is planned to be released soon
+        """
+        return pulumi.get(self, "coming_soon")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Description of the item
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="documentationLink")
+    def documentation_link(self) -> str:
+        """
+        An absolute link to the documentation page of this item
+        """
+        return pulumi.get(self, "documentation_link")
+
+    @property
+    @pulumi.getter(name="hasDescriptionBlocks")
+    def has_description_blocks(self) -> bool:
+        """
+        Whether or not the details call will contain description blocks
+        """
+        return pulumi.get(self, "has_description_blocks")
+
+    @property
+    @pulumi.getter(name="itemId")
+    def item_id(self) -> str:
+        """
+        Unique Id of the item
+        """
+        return pulumi.get(self, "item_id")
+
+    @property
+    @pulumi.getter
+    def logo(self) -> str:
+        """
+        The logo of the item. Can be a URL or Base64 encoded. Intended for HTML tags
+        """
+        return pulumi.get(self, "logo")
+
+    @property
+    @pulumi.getter(name="marketingLink")
+    def marketing_link(self) -> str:
+        """
+        An absolute link to the marketing page of this item
+        """
+        return pulumi.get(self, "marketing_link")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the item
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="notCompatibleReason")
+    def not_compatible_reason(self) -> str:
+        """
+        The reason why the item is not compatible with the cluster version
+        """
+        return pulumi.get(self, "not_compatible_reason")
+
+    @property
+    @pulumi.getter
+    def tags(self) -> Sequence[str]:
+        """
+        Grouping of items with keywords
+        """
+        return pulumi.get(self, "tags")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Represents the type of item. It can be `TECHNOLOGY`, `EXTENSION1` or `EXTENSION2`
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetIamPoliciesPolicyResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 name: str,
+                 uuid: str,
+                 account: Optional[str] = None,
+                 environment: Optional[str] = None,
+                 global_: Optional[bool] = None):
+        """
+        :param str name: The name of the policy
+        :param str uuid: The UUID of the policy
+        :param str account: The account UUID the policy is defined for
+        :param str environment: The environment ID the policy is defined for
+        :param bool global_: `true` if this is a global policy`
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "uuid", uuid)
+        if account is not None:
+            pulumi.set(__self__, "account", account)
+        if environment is not None:
+            pulumi.set(__self__, "environment", environment)
+        if global_ is not None:
+            pulumi.set(__self__, "global_", global_)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the policy
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> str:
+        """
+        The UUID of the policy
+        """
+        return pulumi.get(self, "uuid")
+
+    @property
+    @pulumi.getter
+    def account(self) -> Optional[str]:
+        """
+        The account UUID the policy is defined for
+        """
+        return pulumi.get(self, "account")
+
+    @property
+    @pulumi.getter
+    def environment(self) -> Optional[str]:
+        """
+        The environment ID the policy is defined for
+        """
+        return pulumi.get(self, "environment")
+
+    @property
+    @pulumi.getter(name="global")
+    def global_(self) -> Optional[bool]:
+        """
+        `true` if this is a global policy`
+        """
+        return pulumi.get(self, "global_")
+
+
+@pulumi.output_type
 class GetManagementZonesValueResult(dict):
     def __init__(__self__, *,
                  description: str,
@@ -85788,6 +93013,57 @@ class GetManagementZonesValueResult(dict):
         The name of the Management Zone
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetRemoteEnvironmentsRemoteEnvironmentResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 network_scope: str,
+                 token: str,
+                 uri: str):
+        """
+        :param str name: Name
+        :param str network_scope: Possible Values: `CLUSTER`, `EXTERNAL`, `INTERNAL`
+        :param str token: Provide a valid token created on the remote environment.
+        :param str uri: Specify the full URI to the remote environment. Your local environment will have to be able to connect this URI on a network level.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "network_scope", network_scope)
+        pulumi.set(__self__, "token", token)
+        pulumi.set(__self__, "uri", uri)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="networkScope")
+    def network_scope(self) -> str:
+        """
+        Possible Values: `CLUSTER`, `EXTERNAL`, `INTERNAL`
+        """
+        return pulumi.get(self, "network_scope")
+
+    @property
+    @pulumi.getter
+    def token(self) -> str:
+        """
+        Provide a valid token created on the remote environment.
+        """
+        return pulumi.get(self, "token")
+
+    @property
+    @pulumi.getter
+    def uri(self) -> str:
+        """
+        Specify the full URI to the remote environment. Your local environment will have to be able to connect this URI on a network level.
+        """
+        return pulumi.get(self, "uri")
 
 
 @pulumi.output_type
@@ -85887,5 +93163,144 @@ class GetSyntheticLocationsLocationsResult(dict):
         The type of the location. Supported values are `PUBLIC`, `PRIVATE` and `CLUSTER`
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetSyntheticNodesNodeResult(dict):
+    def __init__(__self__, *,
+                 active_gate_version: str,
+                 auto_update: bool,
+                 browser_monitors: bool,
+                 health_check_status: str,
+                 hostname: str,
+                 id: str,
+                 ips: Sequence[str],
+                 one_agent_routing: bool,
+                 operating_system: str,
+                 player_version: str,
+                 status: str,
+                 version: str):
+        """
+        :param str active_gate_version: The version of the Active Gate
+        :param bool auto_update: Specifies whether the Active Gate  has the Auto update option enabled
+        :param bool browser_monitors: Specifies whether Browser Monitors are enabled or not
+        :param str health_check_status: The health check status of the synthetic node
+        :param str hostname: The hostname of a node
+        :param str id: The ID of a node for usage within `SyntheticLocation`
+        :param Sequence[str] ips: The known IP addresses of the node
+        :param bool one_agent_routing: Specifies whether the Active Gate has the One Agent routing enabled
+        :param str operating_system: The Active Gate's host operating system
+        :param str player_version: The version of the synthetic player
+        :param str status: The status of the synthetic node
+        :param str version: The version of a node
+        """
+        pulumi.set(__self__, "active_gate_version", active_gate_version)
+        pulumi.set(__self__, "auto_update", auto_update)
+        pulumi.set(__self__, "browser_monitors", browser_monitors)
+        pulumi.set(__self__, "health_check_status", health_check_status)
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "ips", ips)
+        pulumi.set(__self__, "one_agent_routing", one_agent_routing)
+        pulumi.set(__self__, "operating_system", operating_system)
+        pulumi.set(__self__, "player_version", player_version)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="activeGateVersion")
+    def active_gate_version(self) -> str:
+        """
+        The version of the Active Gate
+        """
+        return pulumi.get(self, "active_gate_version")
+
+    @property
+    @pulumi.getter(name="autoUpdate")
+    def auto_update(self) -> bool:
+        """
+        Specifies whether the Active Gate  has the Auto update option enabled
+        """
+        return pulumi.get(self, "auto_update")
+
+    @property
+    @pulumi.getter(name="browserMonitors")
+    def browser_monitors(self) -> bool:
+        """
+        Specifies whether Browser Monitors are enabled or not
+        """
+        return pulumi.get(self, "browser_monitors")
+
+    @property
+    @pulumi.getter(name="healthCheckStatus")
+    def health_check_status(self) -> str:
+        """
+        The health check status of the synthetic node
+        """
+        return pulumi.get(self, "health_check_status")
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> str:
+        """
+        The hostname of a node
+        """
+        return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The ID of a node for usage within `SyntheticLocation`
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def ips(self) -> Sequence[str]:
+        """
+        The known IP addresses of the node
+        """
+        return pulumi.get(self, "ips")
+
+    @property
+    @pulumi.getter(name="oneAgentRouting")
+    def one_agent_routing(self) -> bool:
+        """
+        Specifies whether the Active Gate has the One Agent routing enabled
+        """
+        return pulumi.get(self, "one_agent_routing")
+
+    @property
+    @pulumi.getter(name="operatingSystem")
+    def operating_system(self) -> str:
+        """
+        The Active Gate's host operating system
+        """
+        return pulumi.get(self, "operating_system")
+
+    @property
+    @pulumi.getter(name="playerVersion")
+    def player_version(self) -> str:
+        """
+        The version of the synthetic player
+        """
+        return pulumi.get(self, "player_version")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        The status of the synthetic node
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of a node
+        """
+        return pulumi.get(self, "version")
 
 

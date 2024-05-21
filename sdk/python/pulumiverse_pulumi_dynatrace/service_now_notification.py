@@ -20,6 +20,7 @@ class ServiceNowNotificationArgs:
                  profile: pulumi.Input[str],
                  username: pulumi.Input[str],
                  events: Optional[pulumi.Input[bool]] = None,
+                 format_problem_details_as_text: Optional[pulumi.Input[bool]] = None,
                  instance: Optional[pulumi.Input[str]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -33,6 +34,7 @@ class ServiceNowNotificationArgs:
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
         :param pulumi.Input[str] username: The username of the ServiceNow account.   Make sure that your user account has the `rest_service`, `web_request_admin`, and `x_dynat_ruxit.Integration` roles
         :param pulumi.Input[bool] events: Send events into ServiceNow ITOM
+        :param pulumi.Input[bool] format_problem_details_as_text: Use text format for problem details instead of HTML.
         :param pulumi.Input[str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
         :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
@@ -46,6 +48,8 @@ class ServiceNowNotificationArgs:
         pulumi.set(__self__, "username", username)
         if events is not None:
             pulumi.set(__self__, "events", events)
+        if format_problem_details_as_text is not None:
+            pulumi.set(__self__, "format_problem_details_as_text", format_problem_details_as_text)
         if instance is not None:
             pulumi.set(__self__, "instance", instance)
         if legacy_id is not None:
@@ -130,6 +134,18 @@ class ServiceNowNotificationArgs:
         pulumi.set(self, "events", value)
 
     @property
+    @pulumi.getter(name="formatProblemDetailsAsText")
+    def format_problem_details_as_text(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Use text format for problem details instead of HTML.
+        """
+        return pulumi.get(self, "format_problem_details_as_text")
+
+    @format_problem_details_as_text.setter
+    def format_problem_details_as_text(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "format_problem_details_as_text", value)
+
+    @property
     @pulumi.getter
     def instance(self) -> Optional[pulumi.Input[str]]:
         """
@@ -195,6 +211,7 @@ class _ServiceNowNotificationState:
     def __init__(__self__, *,
                  active: Optional[pulumi.Input[bool]] = None,
                  events: Optional[pulumi.Input[bool]] = None,
+                 format_problem_details_as_text: Optional[pulumi.Input[bool]] = None,
                  incidents: Optional[pulumi.Input[bool]] = None,
                  instance: Optional[pulumi.Input[str]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
@@ -208,6 +225,7 @@ class _ServiceNowNotificationState:
         Input properties used for looking up and filtering ServiceNowNotification resources.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[bool] events: Send events into ServiceNow ITOM
+        :param pulumi.Input[bool] format_problem_details_as_text: Use text format for problem details instead of HTML.
         :param pulumi.Input[bool] incidents: Send incidents into ServiceNow ITSM
         :param pulumi.Input[str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
         :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
@@ -222,6 +240,8 @@ class _ServiceNowNotificationState:
             pulumi.set(__self__, "active", active)
         if events is not None:
             pulumi.set(__self__, "events", events)
+        if format_problem_details_as_text is not None:
+            pulumi.set(__self__, "format_problem_details_as_text", format_problem_details_as_text)
         if incidents is not None:
             pulumi.set(__self__, "incidents", incidents)
         if instance is not None:
@@ -264,6 +284,18 @@ class _ServiceNowNotificationState:
     @events.setter
     def events(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "events", value)
+
+    @property
+    @pulumi.getter(name="formatProblemDetailsAsText")
+    def format_problem_details_as_text(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Use text format for problem details instead of HTML.
+        """
+        return pulumi.get(self, "format_problem_details_as_text")
+
+    @format_problem_details_as_text.setter
+    def format_problem_details_as_text(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "format_problem_details_as_text", value)
 
     @property
     @pulumi.getter
@@ -381,6 +413,7 @@ class ServiceNowNotification(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: Optional[pulumi.Input[bool]] = None,
                  events: Optional[pulumi.Input[bool]] = None,
+                 format_problem_details_as_text: Optional[pulumi.Input[bool]] = None,
                  incidents: Optional[pulumi.Input[bool]] = None,
                  instance: Optional[pulumi.Input[str]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
@@ -397,6 +430,7 @@ class ServiceNowNotification(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[bool] events: Send events into ServiceNow ITOM
+        :param pulumi.Input[bool] format_problem_details_as_text: Use text format for problem details instead of HTML.
         :param pulumi.Input[bool] incidents: Send incidents into ServiceNow ITSM
         :param pulumi.Input[str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
         :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
@@ -432,6 +466,7 @@ class ServiceNowNotification(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  active: Optional[pulumi.Input[bool]] = None,
                  events: Optional[pulumi.Input[bool]] = None,
+                 format_problem_details_as_text: Optional[pulumi.Input[bool]] = None,
                  incidents: Optional[pulumi.Input[bool]] = None,
                  instance: Optional[pulumi.Input[str]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
@@ -454,6 +489,7 @@ class ServiceNowNotification(pulumi.CustomResource):
                 raise TypeError("Missing required property 'active'")
             __props__.__dict__["active"] = active
             __props__.__dict__["events"] = events
+            __props__.__dict__["format_problem_details_as_text"] = format_problem_details_as_text
             if incidents is None and not opts.urn:
                 raise TypeError("Missing required property 'incidents'")
             __props__.__dict__["incidents"] = incidents
@@ -485,6 +521,7 @@ class ServiceNowNotification(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             active: Optional[pulumi.Input[bool]] = None,
             events: Optional[pulumi.Input[bool]] = None,
+            format_problem_details_as_text: Optional[pulumi.Input[bool]] = None,
             incidents: Optional[pulumi.Input[bool]] = None,
             instance: Optional[pulumi.Input[str]] = None,
             legacy_id: Optional[pulumi.Input[str]] = None,
@@ -503,6 +540,7 @@ class ServiceNowNotification(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[bool] events: Send events into ServiceNow ITOM
+        :param pulumi.Input[bool] format_problem_details_as_text: Use text format for problem details instead of HTML.
         :param pulumi.Input[bool] incidents: Send incidents into ServiceNow ITSM
         :param pulumi.Input[str] instance: The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
         :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
@@ -519,6 +557,7 @@ class ServiceNowNotification(pulumi.CustomResource):
 
         __props__.__dict__["active"] = active
         __props__.__dict__["events"] = events
+        __props__.__dict__["format_problem_details_as_text"] = format_problem_details_as_text
         __props__.__dict__["incidents"] = incidents
         __props__.__dict__["instance"] = instance
         __props__.__dict__["legacy_id"] = legacy_id
@@ -545,6 +584,14 @@ class ServiceNowNotification(pulumi.CustomResource):
         Send events into ServiceNow ITOM
         """
         return pulumi.get(self, "events")
+
+    @property
+    @pulumi.getter(name="formatProblemDetailsAsText")
+    def format_problem_details_as_text(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Use text format for problem details instead of HTML.
+        """
+        return pulumi.get(self, "format_problem_details_as_text")
 
     @property
     @pulumi.getter

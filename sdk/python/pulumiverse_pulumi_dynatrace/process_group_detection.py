@@ -19,17 +19,21 @@ class ProcessGroupDetectionArgs:
                  enabled: pulumi.Input[bool],
                  group_extraction: pulumi.Input['ProcessGroupDetectionGroupExtractionArgs'],
                  process_detection: pulumi.Input['ProcessGroupDetectionProcessDetectionArgs'],
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  instance_extraction: Optional[pulumi.Input['ProcessGroupDetectionInstanceExtractionArgs']] = None):
         """
         The set of arguments for constructing a ProcessGroupDetection resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['ProcessGroupDetectionGroupExtractionArgs'] group_extraction: You can define the properties that should be used to identify your process groups.
         :param pulumi.Input['ProcessGroupDetectionProcessDetectionArgs'] process_detection: Apply this rule to processes where the selected property contains the specified string.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['ProcessGroupDetectionInstanceExtractionArgs'] instance_extraction: You can define the properties that should be used to identify your process instances.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "group_extraction", group_extraction)
         pulumi.set(__self__, "process_detection", process_detection)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if instance_extraction is not None:
             pulumi.set(__self__, "instance_extraction", instance_extraction)
 
@@ -70,6 +74,18 @@ class ProcessGroupDetectionArgs:
         pulumi.set(self, "process_detection", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter(name="instanceExtraction")
     def instance_extraction(self) -> Optional[pulumi.Input['ProcessGroupDetectionInstanceExtractionArgs']]:
         """
@@ -87,12 +103,14 @@ class _ProcessGroupDetectionState:
     def __init__(__self__, *,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  group_extraction: Optional[pulumi.Input['ProcessGroupDetectionGroupExtractionArgs']] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  instance_extraction: Optional[pulumi.Input['ProcessGroupDetectionInstanceExtractionArgs']] = None,
                  process_detection: Optional[pulumi.Input['ProcessGroupDetectionProcessDetectionArgs']] = None):
         """
         Input properties used for looking up and filtering ProcessGroupDetection resources.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['ProcessGroupDetectionGroupExtractionArgs'] group_extraction: You can define the properties that should be used to identify your process groups.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['ProcessGroupDetectionInstanceExtractionArgs'] instance_extraction: You can define the properties that should be used to identify your process instances.
         :param pulumi.Input['ProcessGroupDetectionProcessDetectionArgs'] process_detection: Apply this rule to processes where the selected property contains the specified string.
         """
@@ -100,6 +118,8 @@ class _ProcessGroupDetectionState:
             pulumi.set(__self__, "enabled", enabled)
         if group_extraction is not None:
             pulumi.set(__self__, "group_extraction", group_extraction)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if instance_extraction is not None:
             pulumi.set(__self__, "instance_extraction", instance_extraction)
         if process_detection is not None:
@@ -128,6 +148,18 @@ class _ProcessGroupDetectionState:
     @group_extraction.setter
     def group_extraction(self, value: Optional[pulumi.Input['ProcessGroupDetectionGroupExtractionArgs']]):
         pulumi.set(self, "group_extraction", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter(name="instanceExtraction")
@@ -161,6 +193,7 @@ class ProcessGroupDetection(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  group_extraction: Optional[pulumi.Input[pulumi.InputType['ProcessGroupDetectionGroupExtractionArgs']]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  instance_extraction: Optional[pulumi.Input[pulumi.InputType['ProcessGroupDetectionInstanceExtractionArgs']]] = None,
                  process_detection: Optional[pulumi.Input[pulumi.InputType['ProcessGroupDetectionProcessDetectionArgs']]] = None,
                  __props__=None):
@@ -170,6 +203,7 @@ class ProcessGroupDetection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[pulumi.InputType['ProcessGroupDetectionGroupExtractionArgs']] group_extraction: You can define the properties that should be used to identify your process groups.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[pulumi.InputType['ProcessGroupDetectionInstanceExtractionArgs']] instance_extraction: You can define the properties that should be used to identify your process instances.
         :param pulumi.Input[pulumi.InputType['ProcessGroupDetectionProcessDetectionArgs']] process_detection: Apply this rule to processes where the selected property contains the specified string.
         """
@@ -198,6 +232,7 @@ class ProcessGroupDetection(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  group_extraction: Optional[pulumi.Input[pulumi.InputType['ProcessGroupDetectionGroupExtractionArgs']]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  instance_extraction: Optional[pulumi.Input[pulumi.InputType['ProcessGroupDetectionInstanceExtractionArgs']]] = None,
                  process_detection: Optional[pulumi.Input[pulumi.InputType['ProcessGroupDetectionProcessDetectionArgs']]] = None,
                  __props__=None):
@@ -215,6 +250,7 @@ class ProcessGroupDetection(pulumi.CustomResource):
             if group_extraction is None and not opts.urn:
                 raise TypeError("Missing required property 'group_extraction'")
             __props__.__dict__["group_extraction"] = group_extraction
+            __props__.__dict__["insert_after"] = insert_after
             __props__.__dict__["instance_extraction"] = instance_extraction
             if process_detection is None and not opts.urn:
                 raise TypeError("Missing required property 'process_detection'")
@@ -231,6 +267,7 @@ class ProcessGroupDetection(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             group_extraction: Optional[pulumi.Input[pulumi.InputType['ProcessGroupDetectionGroupExtractionArgs']]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             instance_extraction: Optional[pulumi.Input[pulumi.InputType['ProcessGroupDetectionInstanceExtractionArgs']]] = None,
             process_detection: Optional[pulumi.Input[pulumi.InputType['ProcessGroupDetectionProcessDetectionArgs']]] = None) -> 'ProcessGroupDetection':
         """
@@ -242,6 +279,7 @@ class ProcessGroupDetection(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[pulumi.InputType['ProcessGroupDetectionGroupExtractionArgs']] group_extraction: You can define the properties that should be used to identify your process groups.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[pulumi.InputType['ProcessGroupDetectionInstanceExtractionArgs']] instance_extraction: You can define the properties that should be used to identify your process instances.
         :param pulumi.Input[pulumi.InputType['ProcessGroupDetectionProcessDetectionArgs']] process_detection: Apply this rule to processes where the selected property contains the specified string.
         """
@@ -251,6 +289,7 @@ class ProcessGroupDetection(pulumi.CustomResource):
 
         __props__.__dict__["enabled"] = enabled
         __props__.__dict__["group_extraction"] = group_extraction
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["instance_extraction"] = instance_extraction
         __props__.__dict__["process_detection"] = process_detection
         return ProcessGroupDetection(resource_name, opts=opts, __props__=__props__)
@@ -270,6 +309,14 @@ class ProcessGroupDetection(pulumi.CustomResource):
         You can define the properties that should be used to identify your process groups.
         """
         return pulumi.get(self, "group_extraction")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter(name="instanceExtraction")

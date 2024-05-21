@@ -20,11 +20,10 @@ class PgAlertingArgs:
                  minimum_instance_threshold: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a PgAlerting resource.
-        :param pulumi.Input[bool] enabled: Enable process group availability monitoring
+        :param pulumi.Input[bool] enabled: Enable (`true`) or disable (`false`) process group availability monitoring
         :param pulumi.Input[str] process_group: The process group ID for availability monitoring
-        :param pulumi.Input[str] alerting_mode: **if any process becomes unavailable:**
-               Dynatrace will open a new problem if a single process in this group shuts down or crashes.
-        :param pulumi.Input[int] minimum_instance_threshold: Open a new problem if the number of active process instances in the group is fewer than:
+        :param pulumi.Input[str] alerting_mode: Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
+        :param pulumi.Input[int] minimum_instance_threshold: Open a new problem if the number of active process instances in the group is fewer than X
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "process_group", process_group)
@@ -37,7 +36,7 @@ class PgAlertingArgs:
     @pulumi.getter
     def enabled(self) -> pulumi.Input[bool]:
         """
-        Enable process group availability monitoring
+        Enable (`true`) or disable (`false`) process group availability monitoring
         """
         return pulumi.get(self, "enabled")
 
@@ -61,8 +60,7 @@ class PgAlertingArgs:
     @pulumi.getter(name="alertingMode")
     def alerting_mode(self) -> Optional[pulumi.Input[str]]:
         """
-        **if any process becomes unavailable:**
-        Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+        Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
         """
         return pulumi.get(self, "alerting_mode")
 
@@ -74,7 +72,7 @@ class PgAlertingArgs:
     @pulumi.getter(name="minimumInstanceThreshold")
     def minimum_instance_threshold(self) -> Optional[pulumi.Input[int]]:
         """
-        Open a new problem if the number of active process instances in the group is fewer than:
+        Open a new problem if the number of active process instances in the group is fewer than X
         """
         return pulumi.get(self, "minimum_instance_threshold")
 
@@ -92,10 +90,9 @@ class _PgAlertingState:
                  process_group: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PgAlerting resources.
-        :param pulumi.Input[str] alerting_mode: **if any process becomes unavailable:**
-               Dynatrace will open a new problem if a single process in this group shuts down or crashes.
-        :param pulumi.Input[bool] enabled: Enable process group availability monitoring
-        :param pulumi.Input[int] minimum_instance_threshold: Open a new problem if the number of active process instances in the group is fewer than:
+        :param pulumi.Input[str] alerting_mode: Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
+        :param pulumi.Input[bool] enabled: Enable (`true`) or disable (`false`) process group availability monitoring
+        :param pulumi.Input[int] minimum_instance_threshold: Open a new problem if the number of active process instances in the group is fewer than X
         :param pulumi.Input[str] process_group: The process group ID for availability monitoring
         """
         if alerting_mode is not None:
@@ -111,8 +108,7 @@ class _PgAlertingState:
     @pulumi.getter(name="alertingMode")
     def alerting_mode(self) -> Optional[pulumi.Input[str]]:
         """
-        **if any process becomes unavailable:**
-        Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+        Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
         """
         return pulumi.get(self, "alerting_mode")
 
@@ -124,7 +120,7 @@ class _PgAlertingState:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Enable process group availability monitoring
+        Enable (`true`) or disable (`false`) process group availability monitoring
         """
         return pulumi.get(self, "enabled")
 
@@ -136,7 +132,7 @@ class _PgAlertingState:
     @pulumi.getter(name="minimumInstanceThreshold")
     def minimum_instance_threshold(self) -> Optional[pulumi.Input[int]]:
         """
-        Open a new problem if the number of active process instances in the group is fewer than:
+        Open a new problem if the number of active process instances in the group is fewer than X
         """
         return pulumi.get(self, "minimum_instance_threshold")
 
@@ -171,10 +167,9 @@ class PgAlerting(pulumi.CustomResource):
         Create a PgAlerting resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] alerting_mode: **if any process becomes unavailable:**
-               Dynatrace will open a new problem if a single process in this group shuts down or crashes.
-        :param pulumi.Input[bool] enabled: Enable process group availability monitoring
-        :param pulumi.Input[int] minimum_instance_threshold: Open a new problem if the number of active process instances in the group is fewer than:
+        :param pulumi.Input[str] alerting_mode: Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
+        :param pulumi.Input[bool] enabled: Enable (`true`) or disable (`false`) process group availability monitoring
+        :param pulumi.Input[int] minimum_instance_threshold: Open a new problem if the number of active process instances in the group is fewer than X
         :param pulumi.Input[str] process_group: The process group ID for availability monitoring
         """
         ...
@@ -242,10 +237,9 @@ class PgAlerting(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] alerting_mode: **if any process becomes unavailable:**
-               Dynatrace will open a new problem if a single process in this group shuts down or crashes.
-        :param pulumi.Input[bool] enabled: Enable process group availability monitoring
-        :param pulumi.Input[int] minimum_instance_threshold: Open a new problem if the number of active process instances in the group is fewer than:
+        :param pulumi.Input[str] alerting_mode: Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
+        :param pulumi.Input[bool] enabled: Enable (`true`) or disable (`false`) process group availability monitoring
+        :param pulumi.Input[int] minimum_instance_threshold: Open a new problem if the number of active process instances in the group is fewer than X
         :param pulumi.Input[str] process_group: The process group ID for availability monitoring
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -262,8 +256,7 @@ class PgAlerting(pulumi.CustomResource):
     @pulumi.getter(name="alertingMode")
     def alerting_mode(self) -> pulumi.Output[Optional[str]]:
         """
-        **if any process becomes unavailable:**
-        Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+        Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
         """
         return pulumi.get(self, "alerting_mode")
 
@@ -271,7 +264,7 @@ class PgAlerting(pulumi.CustomResource):
     @pulumi.getter
     def enabled(self) -> pulumi.Output[bool]:
         """
-        Enable process group availability monitoring
+        Enable (`true`) or disable (`false`) process group availability monitoring
         """
         return pulumi.get(self, "enabled")
 
@@ -279,7 +272,7 @@ class PgAlerting(pulumi.CustomResource):
     @pulumi.getter(name="minimumInstanceThreshold")
     def minimum_instance_threshold(self) -> pulumi.Output[Optional[int]]:
         """
-        Open a new problem if the number of active process instances in the group is fewer than:
+        Open a new problem if the number of active process instances in the group is fewer than X
         """
         return pulumi.get(self, "minimum_instance_threshold")
 

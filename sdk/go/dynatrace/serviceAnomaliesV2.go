@@ -23,8 +23,8 @@ type ServiceAnomaliesV2 struct {
 	LoadSpikes ServiceAnomaliesV2LoadSpikesOutput `pulumi:"loadSpikes"`
 	// Response time
 	ResponseTime ServiceAnomaliesV2ResponseTimeOutput `pulumi:"responseTime"`
-	// The scope for the service anomaly detection
-	Scope pulumi.StringOutput `pulumi:"scope"`
+	// The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
+	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 }
 
 // NewServiceAnomaliesV2 registers a new resource with the given unique name, arguments, and options.
@@ -45,9 +45,6 @@ func NewServiceAnomaliesV2(ctx *pulumi.Context,
 	}
 	if args.ResponseTime == nil {
 		return nil, errors.New("invalid value for required argument 'ResponseTime'")
-	}
-	if args.Scope == nil {
-		return nil, errors.New("invalid value for required argument 'Scope'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ServiceAnomaliesV2
@@ -80,7 +77,7 @@ type serviceAnomaliesV2State struct {
 	LoadSpikes *ServiceAnomaliesV2LoadSpikes `pulumi:"loadSpikes"`
 	// Response time
 	ResponseTime *ServiceAnomaliesV2ResponseTime `pulumi:"responseTime"`
-	// The scope for the service anomaly detection
+	// The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
 }
 
@@ -93,7 +90,7 @@ type ServiceAnomaliesV2State struct {
 	LoadSpikes ServiceAnomaliesV2LoadSpikesPtrInput
 	// Response time
 	ResponseTime ServiceAnomaliesV2ResponseTimePtrInput
-	// The scope for the service anomaly detection
+	// The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
 }
 
@@ -110,8 +107,8 @@ type serviceAnomaliesV2Args struct {
 	LoadSpikes ServiceAnomaliesV2LoadSpikes `pulumi:"loadSpikes"`
 	// Response time
 	ResponseTime ServiceAnomaliesV2ResponseTime `pulumi:"responseTime"`
-	// The scope for the service anomaly detection
-	Scope string `pulumi:"scope"`
+	// The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
+	Scope *string `pulumi:"scope"`
 }
 
 // The set of arguments for constructing a ServiceAnomaliesV2 resource.
@@ -124,8 +121,8 @@ type ServiceAnomaliesV2Args struct {
 	LoadSpikes ServiceAnomaliesV2LoadSpikesInput
 	// Response time
 	ResponseTime ServiceAnomaliesV2ResponseTimeInput
-	// The scope for the service anomaly detection
-	Scope pulumi.StringInput
+	// The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
+	Scope pulumi.StringPtrInput
 }
 
 func (ServiceAnomaliesV2Args) ElementType() reflect.Type {
@@ -235,9 +232,9 @@ func (o ServiceAnomaliesV2Output) ResponseTime() ServiceAnomaliesV2ResponseTimeO
 	return o.ApplyT(func(v *ServiceAnomaliesV2) ServiceAnomaliesV2ResponseTimeOutput { return v.ResponseTime }).(ServiceAnomaliesV2ResponseTimeOutput)
 }
 
-// The scope for the service anomaly detection
-func (o ServiceAnomaliesV2Output) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v *ServiceAnomaliesV2) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
+// The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
+func (o ServiceAnomaliesV2Output) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ServiceAnomaliesV2) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 type ServiceAnomaliesV2ArrayOutput struct{ *pulumi.OutputState }

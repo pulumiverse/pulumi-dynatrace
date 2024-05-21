@@ -31,6 +31,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Output("partitionType")]
         public Output<string> PartitionType { get; private set; } = null!;
 
+        /// <summary>
+        /// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
+        /// </summary>
+        [Output("removeDefaults")]
+        public Output<bool?> RemoveDefaults { get; private set; } = null!;
+
         [Output("supportingServicesManagedInDynatrace")]
         public Output<bool?> SupportingServicesManagedInDynatrace { get; private set; } = null!;
 
@@ -123,6 +129,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Input("partitionType", required: true)]
         public Input<string> PartitionType { get; set; } = null!;
 
+        /// <summary>
+        /// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
+        /// </summary>
+        [Input("removeDefaults")]
+        public Input<bool>? RemoveDefaults { get; set; }
+
         [Input("supportingServicesManagedInDynatrace")]
         public Input<bool>? SupportingServicesManagedInDynatrace { get; set; }
 
@@ -132,6 +144,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// supporting services to be monitored
         /// </summary>
+        [Obsolete(@"Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `dynatrace.AwsService`")]
         public InputList<Inputs.AwsCredentialsSupportingServicesToMonitorArgs> SupportingServicesToMonitors
         {
             get => _supportingServicesToMonitors ?? (_supportingServicesToMonitors = new InputList<Inputs.AwsCredentialsSupportingServicesToMonitorArgs>());
@@ -188,6 +201,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Input("partitionType")]
         public Input<string>? PartitionType { get; set; }
 
+        /// <summary>
+        /// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
+        /// </summary>
+        [Input("removeDefaults")]
+        public Input<bool>? RemoveDefaults { get; set; }
+
         [Input("supportingServicesManagedInDynatrace")]
         public Input<bool>? SupportingServicesManagedInDynatrace { get; set; }
 
@@ -197,6 +216,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// supporting services to be monitored
         /// </summary>
+        [Obsolete(@"Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `dynatrace.AwsService`")]
         public InputList<Inputs.AwsCredentialsSupportingServicesToMonitorGetArgs> SupportingServicesToMonitors
         {
             get => _supportingServicesToMonitors ?? (_supportingServicesToMonitors = new InputList<Inputs.AwsCredentialsSupportingServicesToMonitorGetArgs>());

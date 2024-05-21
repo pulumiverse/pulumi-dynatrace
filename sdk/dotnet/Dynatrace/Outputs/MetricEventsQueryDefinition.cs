@@ -15,11 +15,11 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class MetricEventsQueryDefinition
     {
         /// <summary>
-        /// The aggregation of the query definition
+        /// Possible Values: `AVG`, `COUNT`, `MAX`, `MEDIAN`, `MIN`, `PERCENTILE90`, `SUM`, `VALUE`
         /// </summary>
         public readonly string? Aggregation;
         /// <summary>
-        /// The dimension filters of the query definition
+        /// Dimension filter
         /// </summary>
         public readonly Outputs.MetricEventsQueryDefinitionDimensionFilter? DimensionFilter;
         /// <summary>
@@ -27,9 +27,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.MetricEventsQueryDefinitionEntityFilter? EntityFilter;
         /// <summary>
-        /// The metric key of the query definition
+        /// The `legacy_id` of a Management Zone (as provided by the resource `dynatrace.ManagementZoneV2` or the data source `dynatrace.ManagementZone`)
         /// </summary>
-        public readonly string MetricKey;
+        public readonly string? ManagementZone;
+        /// <summary>
+        /// Metric key
+        /// </summary>
+        public readonly string? MetricKey;
         /// <summary>
         /// To learn more, visit [Metric Selector](https://dt-url.net/metselad)
         /// </summary>
@@ -39,7 +43,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly int? QueryOffset;
         /// <summary>
-        /// The type of query definition
+        /// Possible Values: `METRIC_KEY`, `METRIC_SELECTOR`
         /// </summary>
         public readonly string Type;
 
@@ -51,7 +55,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
 
             Outputs.MetricEventsQueryDefinitionEntityFilter? entityFilter,
 
-            string metricKey,
+            string? managementZone,
+
+            string? metricKey,
 
             string? metricSelector,
 
@@ -62,6 +68,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
             Aggregation = aggregation;
             DimensionFilter = dimensionFilter;
             EntityFilter = entityFilter;
+            ManagementZone = managementZone;
             MetricKey = metricKey;
             MetricSelector = metricSelector;
             QueryOffset = queryOffset;

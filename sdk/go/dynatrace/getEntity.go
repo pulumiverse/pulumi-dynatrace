@@ -33,8 +33,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			test, err := dynatrace.GetEntity(ctx, &dynatrace.GetEntityArgs{
-//				Type: "SERVICE",
-//				Name: "BookingService",
+//				Type: pulumi.StringRef("SERVICE"),
+//				Name: pulumi.StringRef("BookingService"),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -57,16 +57,23 @@ func GetEntity(ctx *pulumi.Context, args *GetEntityArgs, opts ...pulumi.InvokeOp
 
 // A collection of arguments for invoking getEntity.
 type GetEntityArgs struct {
-	Name string `pulumi:"name"`
-	Type string `pulumi:"type"`
+	EntitySelector *string `pulumi:"entitySelector"`
+	From           *string `pulumi:"from"`
+	Name           *string `pulumi:"name"`
+	To             *string `pulumi:"to"`
+	Type           *string `pulumi:"type"`
 }
 
 // A collection of values returned by getEntity.
 type GetEntityResult struct {
+	EntitySelector *string `pulumi:"entitySelector"`
+	From           *string `pulumi:"from"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Name string `pulumi:"name"`
-	Type string `pulumi:"type"`
+	Id         string            `pulumi:"id"`
+	Name       *string           `pulumi:"name"`
+	Properties map[string]string `pulumi:"properties"`
+	To         *string           `pulumi:"to"`
+	Type       *string           `pulumi:"type"`
 }
 
 func GetEntityOutput(ctx *pulumi.Context, args GetEntityOutputArgs, opts ...pulumi.InvokeOption) GetEntityResultOutput {
@@ -84,8 +91,11 @@ func GetEntityOutput(ctx *pulumi.Context, args GetEntityOutputArgs, opts ...pulu
 
 // A collection of arguments for invoking getEntity.
 type GetEntityOutputArgs struct {
-	Name pulumi.StringInput `pulumi:"name"`
-	Type pulumi.StringInput `pulumi:"type"`
+	EntitySelector pulumi.StringPtrInput `pulumi:"entitySelector"`
+	From           pulumi.StringPtrInput `pulumi:"from"`
+	Name           pulumi.StringPtrInput `pulumi:"name"`
+	To             pulumi.StringPtrInput `pulumi:"to"`
+	Type           pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetEntityOutputArgs) ElementType() reflect.Type {
@@ -107,17 +117,33 @@ func (o GetEntityResultOutput) ToGetEntityResultOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o GetEntityResultOutput) EntitySelector() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEntityResult) *string { return v.EntitySelector }).(pulumi.StringPtrOutput)
+}
+
+func (o GetEntityResultOutput) From() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEntityResult) *string { return v.From }).(pulumi.StringPtrOutput)
+}
+
 // The provider-assigned unique ID for this managed resource.
 func (o GetEntityResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEntityResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o GetEntityResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEntityResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetEntityResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEntityResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-func (o GetEntityResultOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetEntityResult) string { return v.Type }).(pulumi.StringOutput)
+func (o GetEntityResultOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEntityResult) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
+}
+
+func (o GetEntityResultOutput) To() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEntityResult) *string { return v.To }).(pulumi.StringPtrOutput)
+}
+
+func (o GetEntityResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetEntityResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

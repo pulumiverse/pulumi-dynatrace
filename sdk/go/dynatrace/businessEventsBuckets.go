@@ -19,6 +19,8 @@ type BusinessEventsBuckets struct {
 	BucketName pulumi.StringOutput `pulumi:"bucketName"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringOutput `pulumi:"matcher"`
 	// Rule name
@@ -71,6 +73,8 @@ type businessEventsBucketsState struct {
 	BucketName *string `pulumi:"bucketName"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher *string `pulumi:"matcher"`
 	// Rule name
@@ -82,6 +86,8 @@ type BusinessEventsBucketsState struct {
 	BucketName pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringPtrInput
 	// Rule name
@@ -97,6 +103,8 @@ type businessEventsBucketsArgs struct {
 	BucketName string `pulumi:"bucketName"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher string `pulumi:"matcher"`
 	// Rule name
@@ -109,6 +117,8 @@ type BusinessEventsBucketsArgs struct {
 	BucketName pulumi.StringInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringInput
 	// Rule name
@@ -210,6 +220,11 @@ func (o BusinessEventsBucketsOutput) BucketName() pulumi.StringOutput {
 // This setting is enabled (`true`) or disabled (`false`)
 func (o BusinessEventsBucketsOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *BusinessEventsBuckets) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o BusinessEventsBucketsOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *BusinessEventsBuckets) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // [See our documentation](https://dt-url.net/bp234rv)

@@ -15,16 +15,24 @@ import (
 type UserSettings struct {
 	pulumi.CustomResourceState
 
-	// Possible Values: `Auto`, `En`, `Ja`
-	Language pulumi.StringOutput `pulumi:"language"`
+	// Language - use browser default
+	AutoLanguage pulumi.BoolOutput `pulumi:"autoLanguage"`
+	// Region - use browser default
+	AutoRegion pulumi.BoolOutput `pulumi:"autoRegion"`
+	// Theme - use browser default
+	AutoTheme pulumi.BoolOutput `pulumi:"autoTheme"`
+	// Timezone - use browser default
+	AutoTimezone pulumi.BoolOutput `pulumi:"autoTimezone"`
+	// Possible Values: `En`, `Ja`
+	Language pulumi.StringPtrOutput `pulumi:"language"`
 	// Region
-	Region pulumi.StringOutput `pulumi:"region"`
+	Region pulumi.StringPtrOutput `pulumi:"region"`
 	// The scope of this setting (user, userdefaults)
 	Scope pulumi.StringOutput `pulumi:"scope"`
-	// Possible Values: `Auto`, `Dark`, `Light`
-	Theme pulumi.StringOutput `pulumi:"theme"`
+	// Possible Values: `Dark`, `Light`
+	Theme pulumi.StringPtrOutput `pulumi:"theme"`
 	// Timezone
-	Timezone pulumi.StringOutput `pulumi:"timezone"`
+	Timezone pulumi.StringPtrOutput `pulumi:"timezone"`
 }
 
 // NewUserSettings registers a new resource with the given unique name, arguments, and options.
@@ -34,20 +42,20 @@ func NewUserSettings(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.Language == nil {
-		return nil, errors.New("invalid value for required argument 'Language'")
+	if args.AutoLanguage == nil {
+		return nil, errors.New("invalid value for required argument 'AutoLanguage'")
 	}
-	if args.Region == nil {
-		return nil, errors.New("invalid value for required argument 'Region'")
+	if args.AutoRegion == nil {
+		return nil, errors.New("invalid value for required argument 'AutoRegion'")
+	}
+	if args.AutoTheme == nil {
+		return nil, errors.New("invalid value for required argument 'AutoTheme'")
+	}
+	if args.AutoTimezone == nil {
+		return nil, errors.New("invalid value for required argument 'AutoTimezone'")
 	}
 	if args.Scope == nil {
 		return nil, errors.New("invalid value for required argument 'Scope'")
-	}
-	if args.Theme == nil {
-		return nil, errors.New("invalid value for required argument 'Theme'")
-	}
-	if args.Timezone == nil {
-		return nil, errors.New("invalid value for required argument 'Timezone'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource UserSettings
@@ -72,26 +80,42 @@ func GetUserSettings(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering UserSettings resources.
 type userSettingsState struct {
-	// Possible Values: `Auto`, `En`, `Ja`
+	// Language - use browser default
+	AutoLanguage *bool `pulumi:"autoLanguage"`
+	// Region - use browser default
+	AutoRegion *bool `pulumi:"autoRegion"`
+	// Theme - use browser default
+	AutoTheme *bool `pulumi:"autoTheme"`
+	// Timezone - use browser default
+	AutoTimezone *bool `pulumi:"autoTimezone"`
+	// Possible Values: `En`, `Ja`
 	Language *string `pulumi:"language"`
 	// Region
 	Region *string `pulumi:"region"`
 	// The scope of this setting (user, userdefaults)
 	Scope *string `pulumi:"scope"`
-	// Possible Values: `Auto`, `Dark`, `Light`
+	// Possible Values: `Dark`, `Light`
 	Theme *string `pulumi:"theme"`
 	// Timezone
 	Timezone *string `pulumi:"timezone"`
 }
 
 type UserSettingsState struct {
-	// Possible Values: `Auto`, `En`, `Ja`
+	// Language - use browser default
+	AutoLanguage pulumi.BoolPtrInput
+	// Region - use browser default
+	AutoRegion pulumi.BoolPtrInput
+	// Theme - use browser default
+	AutoTheme pulumi.BoolPtrInput
+	// Timezone - use browser default
+	AutoTimezone pulumi.BoolPtrInput
+	// Possible Values: `En`, `Ja`
 	Language pulumi.StringPtrInput
 	// Region
 	Region pulumi.StringPtrInput
 	// The scope of this setting (user, userdefaults)
 	Scope pulumi.StringPtrInput
-	// Possible Values: `Auto`, `Dark`, `Light`
+	// Possible Values: `Dark`, `Light`
 	Theme pulumi.StringPtrInput
 	// Timezone
 	Timezone pulumi.StringPtrInput
@@ -102,30 +126,46 @@ func (UserSettingsState) ElementType() reflect.Type {
 }
 
 type userSettingsArgs struct {
-	// Possible Values: `Auto`, `En`, `Ja`
-	Language string `pulumi:"language"`
+	// Language - use browser default
+	AutoLanguage bool `pulumi:"autoLanguage"`
+	// Region - use browser default
+	AutoRegion bool `pulumi:"autoRegion"`
+	// Theme - use browser default
+	AutoTheme bool `pulumi:"autoTheme"`
+	// Timezone - use browser default
+	AutoTimezone bool `pulumi:"autoTimezone"`
+	// Possible Values: `En`, `Ja`
+	Language *string `pulumi:"language"`
 	// Region
-	Region string `pulumi:"region"`
+	Region *string `pulumi:"region"`
 	// The scope of this setting (user, userdefaults)
 	Scope string `pulumi:"scope"`
-	// Possible Values: `Auto`, `Dark`, `Light`
-	Theme string `pulumi:"theme"`
+	// Possible Values: `Dark`, `Light`
+	Theme *string `pulumi:"theme"`
 	// Timezone
-	Timezone string `pulumi:"timezone"`
+	Timezone *string `pulumi:"timezone"`
 }
 
 // The set of arguments for constructing a UserSettings resource.
 type UserSettingsArgs struct {
-	// Possible Values: `Auto`, `En`, `Ja`
-	Language pulumi.StringInput
+	// Language - use browser default
+	AutoLanguage pulumi.BoolInput
+	// Region - use browser default
+	AutoRegion pulumi.BoolInput
+	// Theme - use browser default
+	AutoTheme pulumi.BoolInput
+	// Timezone - use browser default
+	AutoTimezone pulumi.BoolInput
+	// Possible Values: `En`, `Ja`
+	Language pulumi.StringPtrInput
 	// Region
-	Region pulumi.StringInput
+	Region pulumi.StringPtrInput
 	// The scope of this setting (user, userdefaults)
 	Scope pulumi.StringInput
-	// Possible Values: `Auto`, `Dark`, `Light`
-	Theme pulumi.StringInput
+	// Possible Values: `Dark`, `Light`
+	Theme pulumi.StringPtrInput
 	// Timezone
-	Timezone pulumi.StringInput
+	Timezone pulumi.StringPtrInput
 }
 
 func (UserSettingsArgs) ElementType() reflect.Type {
@@ -215,14 +255,34 @@ func (o UserSettingsOutput) ToUserSettingsOutputWithContext(ctx context.Context)
 	return o
 }
 
-// Possible Values: `Auto`, `En`, `Ja`
-func (o UserSettingsOutput) Language() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserSettings) pulumi.StringOutput { return v.Language }).(pulumi.StringOutput)
+// Language - use browser default
+func (o UserSettingsOutput) AutoLanguage() pulumi.BoolOutput {
+	return o.ApplyT(func(v *UserSettings) pulumi.BoolOutput { return v.AutoLanguage }).(pulumi.BoolOutput)
+}
+
+// Region - use browser default
+func (o UserSettingsOutput) AutoRegion() pulumi.BoolOutput {
+	return o.ApplyT(func(v *UserSettings) pulumi.BoolOutput { return v.AutoRegion }).(pulumi.BoolOutput)
+}
+
+// Theme - use browser default
+func (o UserSettingsOutput) AutoTheme() pulumi.BoolOutput {
+	return o.ApplyT(func(v *UserSettings) pulumi.BoolOutput { return v.AutoTheme }).(pulumi.BoolOutput)
+}
+
+// Timezone - use browser default
+func (o UserSettingsOutput) AutoTimezone() pulumi.BoolOutput {
+	return o.ApplyT(func(v *UserSettings) pulumi.BoolOutput { return v.AutoTimezone }).(pulumi.BoolOutput)
+}
+
+// Possible Values: `En`, `Ja`
+func (o UserSettingsOutput) Language() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserSettings) pulumi.StringPtrOutput { return v.Language }).(pulumi.StringPtrOutput)
 }
 
 // Region
-func (o UserSettingsOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserSettings) pulumi.StringOutput { return v.Region }).(pulumi.StringOutput)
+func (o UserSettingsOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserSettings) pulumi.StringPtrOutput { return v.Region }).(pulumi.StringPtrOutput)
 }
 
 // The scope of this setting (user, userdefaults)
@@ -230,14 +290,14 @@ func (o UserSettingsOutput) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserSettings) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
 }
 
-// Possible Values: `Auto`, `Dark`, `Light`
-func (o UserSettingsOutput) Theme() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserSettings) pulumi.StringOutput { return v.Theme }).(pulumi.StringOutput)
+// Possible Values: `Dark`, `Light`
+func (o UserSettingsOutput) Theme() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserSettings) pulumi.StringPtrOutput { return v.Theme }).(pulumi.StringPtrOutput)
 }
 
 // Timezone
-func (o UserSettingsOutput) Timezone() pulumi.StringOutput {
-	return o.ApplyT(func(v *UserSettings) pulumi.StringOutput { return v.Timezone }).(pulumi.StringOutput)
+func (o UserSettingsOutput) Timezone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *UserSettings) pulumi.StringPtrOutput { return v.Timezone }).(pulumi.StringPtrOutput)
 }
 
 type UserSettingsArrayOutput struct{ *pulumi.OutputState }

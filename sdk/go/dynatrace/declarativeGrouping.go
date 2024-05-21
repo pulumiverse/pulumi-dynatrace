@@ -20,6 +20,10 @@ type DeclarativeGrouping struct {
 	Detection DeclarativeGroupingDetectionPtrOutput `pulumi:"detection"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Monitored technology name
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -64,6 +68,10 @@ type declarativeGroupingState struct {
 	Detection *DeclarativeGroupingDetection `pulumi:"detection"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Monitored technology name
 	Name *string `pulumi:"name"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -76,6 +84,10 @@ type DeclarativeGroupingState struct {
 	Detection DeclarativeGroupingDetectionPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Monitored technology name
 	Name pulumi.StringPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -92,6 +104,10 @@ type declarativeGroupingArgs struct {
 	Detection *DeclarativeGroupingDetection `pulumi:"detection"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Monitored technology name
 	Name *string `pulumi:"name"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -105,6 +121,10 @@ type DeclarativeGroupingArgs struct {
 	Detection DeclarativeGroupingDetectionPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Monitored technology name
 	Name pulumi.StringPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -207,6 +227,13 @@ func (o DeclarativeGroupingOutput) Detection() DeclarativeGroupingDetectionPtrOu
 // This setting is enabled (`true`) or disabled (`false`)
 func (o DeclarativeGroupingOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DeclarativeGrouping) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+// specified during update the order will remain untouched
+func (o DeclarativeGroupingOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *DeclarativeGrouping) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // Monitored technology name

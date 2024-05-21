@@ -26,7 +26,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<string> LegacyId { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the management zone to which the alerting profile applies
+        /// Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
         /// </summary>
         [Output("managementZone")]
         public Output<string?> ManagementZone { get; private set; } = null!;
@@ -103,7 +103,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The ID of the management zone to which the alerting profile applies
+        /// Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
         /// </summary>
         [Input("managementZone")]
         public Input<string>? ManagementZone { get; set; }
@@ -141,7 +141,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The ID of the management zone to which the alerting profile applies
+        /// Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
         /// </summary>
         [Input("managementZone")]
         public Input<string>? ManagementZone { get; set; }

@@ -33,25 +33,41 @@ export class UserSettings extends pulumi.CustomResource {
     }
 
     /**
-     * Possible Values: `Auto`, `En`, `Ja`
+     * Language - use browser default
      */
-    public readonly language!: pulumi.Output<string>;
+    public readonly autoLanguage!: pulumi.Output<boolean>;
+    /**
+     * Region - use browser default
+     */
+    public readonly autoRegion!: pulumi.Output<boolean>;
+    /**
+     * Theme - use browser default
+     */
+    public readonly autoTheme!: pulumi.Output<boolean>;
+    /**
+     * Timezone - use browser default
+     */
+    public readonly autoTimezone!: pulumi.Output<boolean>;
+    /**
+     * Possible Values: `En`, `Ja`
+     */
+    public readonly language!: pulumi.Output<string | undefined>;
     /**
      * Region
      */
-    public readonly region!: pulumi.Output<string>;
+    public readonly region!: pulumi.Output<string | undefined>;
     /**
      * The scope of this setting (user, userdefaults)
      */
     public readonly scope!: pulumi.Output<string>;
     /**
-     * Possible Values: `Auto`, `Dark`, `Light`
+     * Possible Values: `Dark`, `Light`
      */
-    public readonly theme!: pulumi.Output<string>;
+    public readonly theme!: pulumi.Output<string | undefined>;
     /**
      * Timezone
      */
-    public readonly timezone!: pulumi.Output<string>;
+    public readonly timezone!: pulumi.Output<string | undefined>;
 
     /**
      * Create a UserSettings resource with the given unique name, arguments, and options.
@@ -66,6 +82,10 @@ export class UserSettings extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UserSettingsState | undefined;
+            resourceInputs["autoLanguage"] = state ? state.autoLanguage : undefined;
+            resourceInputs["autoRegion"] = state ? state.autoRegion : undefined;
+            resourceInputs["autoTheme"] = state ? state.autoTheme : undefined;
+            resourceInputs["autoTimezone"] = state ? state.autoTimezone : undefined;
             resourceInputs["language"] = state ? state.language : undefined;
             resourceInputs["region"] = state ? state.region : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
@@ -73,21 +93,25 @@ export class UserSettings extends pulumi.CustomResource {
             resourceInputs["timezone"] = state ? state.timezone : undefined;
         } else {
             const args = argsOrState as UserSettingsArgs | undefined;
-            if ((!args || args.language === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'language'");
+            if ((!args || args.autoLanguage === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'autoLanguage'");
             }
-            if ((!args || args.region === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'region'");
+            if ((!args || args.autoRegion === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'autoRegion'");
+            }
+            if ((!args || args.autoTheme === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'autoTheme'");
+            }
+            if ((!args || args.autoTimezone === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'autoTimezone'");
             }
             if ((!args || args.scope === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'scope'");
             }
-            if ((!args || args.theme === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'theme'");
-            }
-            if ((!args || args.timezone === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'timezone'");
-            }
+            resourceInputs["autoLanguage"] = args ? args.autoLanguage : undefined;
+            resourceInputs["autoRegion"] = args ? args.autoRegion : undefined;
+            resourceInputs["autoTheme"] = args ? args.autoTheme : undefined;
+            resourceInputs["autoTimezone"] = args ? args.autoTimezone : undefined;
             resourceInputs["language"] = args ? args.language : undefined;
             resourceInputs["region"] = args ? args.region : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
@@ -104,7 +128,23 @@ export class UserSettings extends pulumi.CustomResource {
  */
 export interface UserSettingsState {
     /**
-     * Possible Values: `Auto`, `En`, `Ja`
+     * Language - use browser default
+     */
+    autoLanguage?: pulumi.Input<boolean>;
+    /**
+     * Region - use browser default
+     */
+    autoRegion?: pulumi.Input<boolean>;
+    /**
+     * Theme - use browser default
+     */
+    autoTheme?: pulumi.Input<boolean>;
+    /**
+     * Timezone - use browser default
+     */
+    autoTimezone?: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `En`, `Ja`
      */
     language?: pulumi.Input<string>;
     /**
@@ -116,7 +156,7 @@ export interface UserSettingsState {
      */
     scope?: pulumi.Input<string>;
     /**
-     * Possible Values: `Auto`, `Dark`, `Light`
+     * Possible Values: `Dark`, `Light`
      */
     theme?: pulumi.Input<string>;
     /**
@@ -130,23 +170,39 @@ export interface UserSettingsState {
  */
 export interface UserSettingsArgs {
     /**
-     * Possible Values: `Auto`, `En`, `Ja`
+     * Language - use browser default
      */
-    language: pulumi.Input<string>;
+    autoLanguage: pulumi.Input<boolean>;
+    /**
+     * Region - use browser default
+     */
+    autoRegion: pulumi.Input<boolean>;
+    /**
+     * Theme - use browser default
+     */
+    autoTheme: pulumi.Input<boolean>;
+    /**
+     * Timezone - use browser default
+     */
+    autoTimezone: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `En`, `Ja`
+     */
+    language?: pulumi.Input<string>;
     /**
      * Region
      */
-    region: pulumi.Input<string>;
+    region?: pulumi.Input<string>;
     /**
      * The scope of this setting (user, userdefaults)
      */
     scope: pulumi.Input<string>;
     /**
-     * Possible Values: `Auto`, `Dark`, `Light`
+     * Possible Values: `Dark`, `Light`
      */
-    theme: pulumi.Input<string>;
+    theme?: pulumi.Input<string>;
     /**
      * Timezone
      */
-    timezone: pulumi.Input<string>;
+    timezone?: pulumi.Input<string>;
 }

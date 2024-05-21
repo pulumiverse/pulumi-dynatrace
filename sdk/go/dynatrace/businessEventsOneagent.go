@@ -19,11 +19,13 @@ type BusinessEventsOneagent struct {
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Event meta data
 	Event BusinessEventsOneagentEventOutput `pulumi:"event"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Rule name
 	RuleName pulumi.StringOutput `pulumi:"ruleName"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
-	// Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+	// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
 	Triggers BusinessEventsOneagentTriggersOutput `pulumi:"triggers"`
 }
 
@@ -73,11 +75,13 @@ type businessEventsOneagentState struct {
 	Enabled *bool `pulumi:"enabled"`
 	// Event meta data
 	Event *BusinessEventsOneagentEvent `pulumi:"event"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Rule name
 	RuleName *string `pulumi:"ruleName"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
-	// Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+	// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
 	Triggers *BusinessEventsOneagentTriggers `pulumi:"triggers"`
 }
 
@@ -86,11 +90,13 @@ type BusinessEventsOneagentState struct {
 	Enabled pulumi.BoolPtrInput
 	// Event meta data
 	Event BusinessEventsOneagentEventPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Rule name
 	RuleName pulumi.StringPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
-	// Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+	// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
 	Triggers BusinessEventsOneagentTriggersPtrInput
 }
 
@@ -103,11 +109,13 @@ type businessEventsOneagentArgs struct {
 	Enabled bool `pulumi:"enabled"`
 	// Event meta data
 	Event BusinessEventsOneagentEvent `pulumi:"event"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Rule name
 	RuleName string `pulumi:"ruleName"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
-	// Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+	// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
 	Triggers BusinessEventsOneagentTriggers `pulumi:"triggers"`
 }
 
@@ -117,11 +125,13 @@ type BusinessEventsOneagentArgs struct {
 	Enabled pulumi.BoolInput
 	// Event meta data
 	Event BusinessEventsOneagentEventInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Rule name
 	RuleName pulumi.StringInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
-	// Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+	// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
 	Triggers BusinessEventsOneagentTriggersInput
 }
 
@@ -222,6 +232,11 @@ func (o BusinessEventsOneagentOutput) Event() BusinessEventsOneagentEventOutput 
 	return o.ApplyT(func(v *BusinessEventsOneagent) BusinessEventsOneagentEventOutput { return v.Event }).(BusinessEventsOneagentEventOutput)
 }
 
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o BusinessEventsOneagentOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *BusinessEventsOneagent) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
+}
+
 // Rule name
 func (o BusinessEventsOneagentOutput) RuleName() pulumi.StringOutput {
 	return o.ApplyT(func(v *BusinessEventsOneagent) pulumi.StringOutput { return v.RuleName }).(pulumi.StringOutput)
@@ -232,7 +247,7 @@ func (o BusinessEventsOneagentOutput) Scope() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *BusinessEventsOneagent) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
-// Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+// Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
 func (o BusinessEventsOneagentOutput) Triggers() BusinessEventsOneagentTriggersOutput {
 	return o.ApplyT(func(v *BusinessEventsOneagent) BusinessEventsOneagentTriggersOutput { return v.Triggers }).(BusinessEventsOneagentTriggersOutput)
 }

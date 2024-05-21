@@ -15,19 +15,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class ManagementZoneV2RulesRule
     {
         /// <summary>
-        /// No documentation available
+        /// no documentation available
         /// </summary>
         public readonly Outputs.ManagementZoneV2RulesRuleAttributeRule? AttributeRule;
         /// <summary>
-        /// No documentation available
+        /// no documentation available
         /// </summary>
         public readonly Outputs.ManagementZoneV2RulesRuleDimensionRule? DimensionRule;
         /// <summary>
-        /// Enabled
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// Entity selector. The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+        /// The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
         /// </summary>
         public readonly string? EntitySelector;
         /// <summary>

@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ActivegateToken{}
 	case "dynatrace:index/activegateUpdates:ActivegateUpdates":
 		r = &ActivegateUpdates{}
+	case "dynatrace:index/agToken:AgToken":
+		r = &AgToken{}
 	case "dynatrace:index/aixExtension:AixExtension":
 		r = &AixExtension{}
 	case "dynatrace:index/alerting:Alerting":
@@ -37,6 +39,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ApiDetection{}
 	case "dynatrace:index/apiToken:ApiToken":
 		r = &ApiToken{}
+	case "dynatrace:index/appMonitoring:AppMonitoring":
+		r = &AppMonitoring{}
 	case "dynatrace:index/applicationAnomalies:ApplicationAnomalies":
 		r = &ApplicationAnomalies{}
 	case "dynatrace:index/applicationDataPrivacy:ApplicationDataPrivacy":
@@ -47,24 +51,60 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ApplicationDetectionRuleV2{}
 	case "dynatrace:index/applicationErrorRules:ApplicationErrorRules":
 		r = &ApplicationErrorRules{}
+	case "dynatrace:index/appsecNotification:AppsecNotification":
+		r = &AppsecNotification{}
+	case "dynatrace:index/attackAlerting:AttackAlerting":
+		r = &AttackAlerting{}
+	case "dynatrace:index/attackAllowlist:AttackAllowlist":
+		r = &AttackAllowlist{}
+	case "dynatrace:index/attackRules:AttackRules":
+		r = &AttackRules{}
+	case "dynatrace:index/attackSettings:AttackSettings":
+		r = &AttackSettings{}
+	case "dynatrace:index/attributeAllowList:AttributeAllowList":
+		r = &AttributeAllowList{}
+	case "dynatrace:index/attributeBlockList:AttributeBlockList":
+		r = &AttributeBlockList{}
+	case "dynatrace:index/attributeMasking:AttributeMasking":
+		r = &AttributeMasking{}
+	case "dynatrace:index/attributesPreferences:AttributesPreferences":
+		r = &AttributesPreferences{}
 	case "dynatrace:index/auditLog:AuditLog":
 		r = &AuditLog{}
+	case "dynatrace:index/automationBusinessCalendar:AutomationBusinessCalendar":
+		r = &AutomationBusinessCalendar{}
+	case "dynatrace:index/automationSchedulingRule:AutomationSchedulingRule":
+		r = &AutomationSchedulingRule{}
+	case "dynatrace:index/automationWorkflow:AutomationWorkflow":
+		r = &AutomationWorkflow{}
+	case "dynatrace:index/automationWorkflowJira:AutomationWorkflowJira":
+		r = &AutomationWorkflowJira{}
+	case "dynatrace:index/automationWorkflowSlack:AutomationWorkflowSlack":
+		r = &AutomationWorkflowSlack{}
 	case "dynatrace:index/autotag:Autotag":
 		r = &Autotag{}
+	case "dynatrace:index/autotagRules:AutotagRules":
+		r = &AutotagRules{}
 	case "dynatrace:index/autotagV2:AutotagV2":
 		r = &AutotagV2{}
 	case "dynatrace:index/awsAnomalies:AwsAnomalies":
 		r = &AwsAnomalies{}
 	case "dynatrace:index/awsCredentials:AwsCredentials":
 		r = &AwsCredentials{}
+	case "dynatrace:index/awsService:AwsService":
+		r = &AwsService{}
 	case "dynatrace:index/azureCredentials:AzureCredentials":
 		r = &AzureCredentials{}
+	case "dynatrace:index/azureService:AzureService":
+		r = &AzureService{}
 	case "dynatrace:index/browserMonitor:BrowserMonitor":
 		r = &BrowserMonitor{}
 	case "dynatrace:index/browserMonitorOutage:BrowserMonitorOutage":
 		r = &BrowserMonitorOutage{}
 	case "dynatrace:index/browserMonitorPerformance:BrowserMonitorPerformance":
 		r = &BrowserMonitorPerformance{}
+	case "dynatrace:index/builtinProcessMonitoring:BuiltinProcessMonitoring":
+		r = &BuiltinProcessMonitoring{}
 	case "dynatrace:index/businessEventsBuckets:BusinessEventsBuckets":
 		r = &BusinessEventsBuckets{}
 	case "dynatrace:index/businessEventsMetrics:BusinessEventsMetrics":
@@ -73,8 +113,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BusinessEventsOneagent{}
 	case "dynatrace:index/businessEventsProcessing:BusinessEventsProcessing":
 		r = &BusinessEventsProcessing{}
+	case "dynatrace:index/businessEventsSecurityContext:BusinessEventsSecurityContext":
+		r = &BusinessEventsSecurityContext{}
+	case "dynatrace:index/calculatedMobileMetric:CalculatedMobileMetric":
+		r = &CalculatedMobileMetric{}
 	case "dynatrace:index/calculatedServiceMetric:CalculatedServiceMetric":
 		r = &CalculatedServiceMetric{}
+	case "dynatrace:index/calculatedSyntheticMetric:CalculatedSyntheticMetric":
+		r = &CalculatedSyntheticMetric{}
+	case "dynatrace:index/calculatedWebMetric:CalculatedWebMetric":
+		r = &CalculatedWebMetric{}
 	case "dynatrace:index/cloudFoundry:CloudFoundry":
 		r = &CloudFoundry{}
 	case "dynatrace:index/cloudappWorkloaddetection:CloudappWorkloaddetection":
@@ -85,10 +133,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ConnectivityAlerts{}
 	case "dynatrace:index/containerBuiltinRule:ContainerBuiltinRule":
 		r = &ContainerBuiltinRule{}
+	case "dynatrace:index/containerRegistry:ContainerRegistry":
+		r = &ContainerRegistry{}
 	case "dynatrace:index/containerRule:ContainerRule":
 		r = &ContainerRule{}
 	case "dynatrace:index/containerTechnology:ContainerTechnology":
 		r = &ContainerTechnology{}
+	case "dynatrace:index/crashdumpAnalytics:CrashdumpAnalytics":
+		r = &CrashdumpAnalytics{}
 	case "dynatrace:index/credentials:Credentials":
 		r = &Credentials{}
 	case "dynatrace:index/customAnomalies:CustomAnomalies":
@@ -99,6 +151,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CustomAppCrashRate{}
 	case "dynatrace:index/customAppEnablement:CustomAppEnablement":
 		r = &CustomAppEnablement{}
+	case "dynatrace:index/customDevice:CustomDevice":
+		r = &CustomDevice{}
 	case "dynatrace:index/customService:CustomService":
 		r = &CustomService{}
 	case "dynatrace:index/customTags:CustomTags":
@@ -121,10 +175,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DatabaseAnomalies{}
 	case "dynatrace:index/databaseAnomaliesV2:DatabaseAnomaliesV2":
 		r = &DatabaseAnomaliesV2{}
+	case "dynatrace:index/davisAnomalyDetectors:DavisAnomalyDetectors":
+		r = &DavisAnomalyDetectors{}
+	case "dynatrace:index/dbAppFeatureFlags:DbAppFeatureFlags":
+		r = &DbAppFeatureFlags{}
 	case "dynatrace:index/dduPool:DduPool":
 		r = &DduPool{}
 	case "dynatrace:index/declarativeGrouping:DeclarativeGrouping":
 		r = &DeclarativeGrouping{}
+	case "dynatrace:index/directShares:DirectShares":
+		r = &DirectShares{}
 	case "dynatrace:index/diskAnalytics:DiskAnalytics":
 		r = &DiskAnalytics{}
 	case "dynatrace:index/diskAnomalies:DiskAnomalies":
@@ -137,6 +197,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DiskOptions{}
 	case "dynatrace:index/diskSpecificAnomaliesV2:DiskSpecificAnomaliesV2":
 		r = &DiskSpecificAnomaliesV2{}
+	case "dynatrace:index/document:Document":
+		r = &Document{}
+	case "dynatrace:index/ebpfServiceDiscovery:EbpfServiceDiscovery":
+		r = &EbpfServiceDiscovery{}
 	case "dynatrace:index/emailNotification:EmailNotification":
 		r = &EmailNotification{}
 	case "dynatrace:index/environment:Environment":
@@ -155,16 +219,28 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &FrequentIssues{}
 	case "dynatrace:index/genericRelationships:GenericRelationships":
 		r = &GenericRelationships{}
+	case "dynatrace:index/genericSetting:GenericSetting":
+		r = &GenericSetting{}
 	case "dynatrace:index/genericTypes:GenericTypes":
 		r = &GenericTypes{}
 	case "dynatrace:index/geolocation:Geolocation":
 		r = &Geolocation{}
+	case "dynatrace:index/grailMetricsAllowall:GrailMetricsAllowall":
+		r = &GrailMetricsAllowall{}
+	case "dynatrace:index/grailMetricsAllowlist:GrailMetricsAllowlist":
+		r = &GrailMetricsAllowlist{}
+	case "dynatrace:index/grailSecurityContext:GrailSecurityContext":
+		r = &GrailSecurityContext{}
 	case "dynatrace:index/hostAnomalies:HostAnomalies":
 		r = &HostAnomalies{}
 	case "dynatrace:index/hostAnomaliesV2:HostAnomaliesV2":
 		r = &HostAnomaliesV2{}
 	case "dynatrace:index/hostMonitoring:HostMonitoring":
 		r = &HostMonitoring{}
+	case "dynatrace:index/hostMonitoringAdvanced:HostMonitoringAdvanced":
+		r = &HostMonitoringAdvanced{}
+	case "dynatrace:index/hostMonitoringMode:HostMonitoringMode":
+		r = &HostMonitoringMode{}
 	case "dynatrace:index/hostNaming:HostNaming":
 		r = &HostNaming{}
 	case "dynatrace:index/hostProcessGroupMonitoring:HostProcessGroupMonitoring":
@@ -177,6 +253,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &HttpMonitorOutage{}
 	case "dynatrace:index/httpMonitorPerformance:HttpMonitorPerformance":
 		r = &HttpMonitorPerformance{}
+	case "dynatrace:index/httpMonitorScript:HttpMonitorScript":
+		r = &HttpMonitorScript{}
+	case "dynatrace:index/hubExtensionActiveVersion:HubExtensionActiveVersion":
+		r = &HubExtensionActiveVersion{}
+	case "dynatrace:index/hubExtensionConfig:HubExtensionConfig":
+		r = &HubExtensionConfig{}
+	case "dynatrace:index/hubSubscriptions:HubSubscriptions":
+		r = &HubSubscriptions{}
 	case "dynatrace:index/iamGroup:IamGroup":
 		r = &IamGroup{}
 	case "dynatrace:index/iamPermission:IamPermission":
@@ -185,22 +269,32 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &IamPolicy{}
 	case "dynatrace:index/iamPolicyBindings:IamPolicyBindings":
 		r = &IamPolicyBindings{}
+	case "dynatrace:index/iamPolicyBindingsV2:IamPolicyBindingsV2":
+		r = &IamPolicyBindingsV2{}
 	case "dynatrace:index/iamUser:IamUser":
 		r = &IamUser{}
 	case "dynatrace:index/ibmMqFilters:IbmMqFilters":
 		r = &IbmMqFilters{}
 	case "dynatrace:index/imsBridges:ImsBridges":
 		r = &ImsBridges{}
+	case "dynatrace:index/infraopsAppFeatureFlags:InfraopsAppFeatureFlags":
+		r = &InfraopsAppFeatureFlags{}
+	case "dynatrace:index/ipAddressMasking:IpAddressMasking":
+		r = &IpAddressMasking{}
 	case "dynatrace:index/issueTracking:IssueTracking":
 		r = &IssueTracking{}
 	case "dynatrace:index/jiraNotification:JiraNotification":
 		r = &JiraNotification{}
 	case "dynatrace:index/jsonDashboard:JsonDashboard":
 		r = &JsonDashboard{}
+	case "dynatrace:index/jsonDashboardBase:JsonDashboardBase":
+		r = &JsonDashboardBase{}
 	case "dynatrace:index/k8sClusterAnomalies:K8sClusterAnomalies":
 		r = &K8sClusterAnomalies{}
 	case "dynatrace:index/k8sCredentials:K8sCredentials":
 		r = &K8sCredentials{}
+	case "dynatrace:index/k8sMonitoring:K8sMonitoring":
+		r = &K8sMonitoring{}
 	case "dynatrace:index/k8sNamespaceAnomalies:K8sNamespaceAnomalies":
 		r = &K8sNamespaceAnomalies{}
 	case "dynatrace:index/k8sNodeAnomalies:K8sNodeAnomalies":
@@ -211,14 +305,22 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &K8sWorkloadAnomalies{}
 	case "dynatrace:index/keyRequests:KeyRequests":
 		r = &KeyRequests{}
+	case "dynatrace:index/keyUserAction:KeyUserAction":
+		r = &KeyUserAction{}
 	case "dynatrace:index/kubernetes:Kubernetes":
 		r = &Kubernetes{}
+	case "dynatrace:index/kubernetesApp:KubernetesApp":
+		r = &KubernetesApp{}
+	case "dynatrace:index/limitOutboundConnections:LimitOutboundConnections":
+		r = &LimitOutboundConnections{}
 	case "dynatrace:index/logBuckets:LogBuckets":
 		r = &LogBuckets{}
 	case "dynatrace:index/logCustomAttribute:LogCustomAttribute":
 		r = &LogCustomAttribute{}
 	case "dynatrace:index/logCustomSource:LogCustomSource":
 		r = &LogCustomSource{}
+	case "dynatrace:index/logDebugSettings:LogDebugSettings":
+		r = &LogDebugSettings{}
 	case "dynatrace:index/logEvents:LogEvents":
 		r = &LogEvents{}
 	case "dynatrace:index/logGrail:LogGrail":
@@ -229,6 +331,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &LogOneagent{}
 	case "dynatrace:index/logProcessing:LogProcessing":
 		r = &LogProcessing{}
+	case "dynatrace:index/logSecurityContext:LogSecurityContext":
+		r = &LogSecurityContext{}
 	case "dynatrace:index/logSensitiveDataMasking:LogSensitiveDataMasking":
 		r = &LogSensitiveDataMasking{}
 	case "dynatrace:index/logStorage:LogStorage":
@@ -241,6 +345,20 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Maintenance{}
 	case "dynatrace:index/maintenanceWindow:MaintenanceWindow":
 		r = &MaintenanceWindow{}
+	case "dynatrace:index/managedBackup:ManagedBackup":
+		r = &ManagedBackup{}
+	case "dynatrace:index/managedInternetProxy:ManagedInternetProxy":
+		r = &ManagedInternetProxy{}
+	case "dynatrace:index/managedNetworkZones:ManagedNetworkZones":
+		r = &ManagedNetworkZones{}
+	case "dynatrace:index/managedPreferences:ManagedPreferences":
+		r = &ManagedPreferences{}
+	case "dynatrace:index/managedPublicEndpoints:ManagedPublicEndpoints":
+		r = &ManagedPublicEndpoints{}
+	case "dynatrace:index/managedRemoteAccess:ManagedRemoteAccess":
+		r = &ManagedRemoteAccess{}
+	case "dynatrace:index/managedSmtp:ManagedSmtp":
+		r = &ManagedSmtp{}
 	case "dynatrace:index/managementZone:ManagementZone":
 		r = &ManagementZone{}
 	case "dynatrace:index/managementZoneV2:ManagementZoneV2":
@@ -259,10 +377,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &MobileAppCrashRate{}
 	case "dynatrace:index/mobileAppEnablement:MobileAppEnablement":
 		r = &MobileAppEnablement{}
+	case "dynatrace:index/mobileAppKeyPerformance:MobileAppKeyPerformance":
+		r = &MobileAppKeyPerformance{}
 	case "dynatrace:index/mobileAppRequestErrors:MobileAppRequestErrors":
 		r = &MobileAppRequestErrors{}
 	case "dynatrace:index/mobileApplication:MobileApplication":
 		r = &MobileApplication{}
+	case "dynatrace:index/mobileNotifications:MobileNotifications":
+		r = &MobileNotifications{}
 	case "dynatrace:index/monitoredTechnologiesApache:MonitoredTechnologiesApache":
 		r = &MonitoredTechnologiesApache{}
 	case "dynatrace:index/monitoredTechnologiesDotnet:MonitoredTechnologiesDotnet":
@@ -301,6 +423,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &OneagentDefaultVersion{}
 	case "dynatrace:index/oneagentFeatures:OneagentFeatures":
 		r = &OneagentFeatures{}
+	case "dynatrace:index/oneagentSideMasking:OneagentSideMasking":
+		r = &OneagentSideMasking{}
 	case "dynatrace:index/oneagentUpdates:OneagentUpdates":
 		r = &OneagentUpdates{}
 	case "dynatrace:index/opentelemetryMetrics:OpentelemetryMetrics":
@@ -319,6 +443,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &PgAlerting{}
 	case "dynatrace:index/pgAnomalies:PgAnomalies":
 		r = &PgAnomalies{}
+	case "dynatrace:index/platformBucket:PlatformBucket":
+		r = &PlatformBucket{}
 	case "dynatrace:index/policy:Policy":
 		r = &Policy{}
 	case "dynatrace:index/policyBindings:PolicyBindings":
@@ -393,6 +519,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SessionReplayResourceCapture{}
 	case "dynatrace:index/sessionReplayWebPrivacy:SessionReplayWebPrivacy":
 		r = &SessionReplayWebPrivacy{}
+	case "dynatrace:index/siteReliabilityGuardian:SiteReliabilityGuardian":
+		r = &SiteReliabilityGuardian{}
 	case "dynatrace:index/slackNotification:SlackNotification":
 		r = &SlackNotification{}
 	case "dynatrace:index/slo:Slo":
@@ -409,6 +537,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SpanContextPropagation{}
 	case "dynatrace:index/spanEntryPoint:SpanEntryPoint":
 		r = &SpanEntryPoint{}
+	case "dynatrace:index/spanEvents:SpanEvents":
+		r = &SpanEvents{}
 	case "dynatrace:index/syntheticAvailability:SyntheticAvailability":
 		r = &SyntheticAvailability{}
 	case "dynatrace:index/syntheticLocation:SyntheticLocation":
@@ -419,8 +549,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &TransactionStartFilters{}
 	case "dynatrace:index/trelloNotification:TrelloNotification":
 		r = &TrelloNotification{}
+	case "dynatrace:index/unifiedServicesMetrics:UnifiedServicesMetrics":
+		r = &UnifiedServicesMetrics{}
+	case "dynatrace:index/unifiedServicesOpentel:UnifiedServicesOpentel":
+		r = &UnifiedServicesOpentel{}
 	case "dynatrace:index/updateWindows:UpdateWindows":
 		r = &UpdateWindows{}
+	case "dynatrace:index/urlBasedSampling:UrlBasedSampling":
+		r = &UrlBasedSampling{}
 	case "dynatrace:index/usabilityAnalytics:UsabilityAnalytics":
 		r = &UsabilityAnalytics{}
 	case "dynatrace:index/user:User":
@@ -437,20 +573,42 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &UserSettings{}
 	case "dynatrace:index/victorOpsNotification:VictorOpsNotification":
 		r = &VictorOpsNotification{}
+	case "dynatrace:index/vmware:Vmware":
+		r = &Vmware{}
 	case "dynatrace:index/vmwareAnomalies:VmwareAnomalies":
 		r = &VmwareAnomalies{}
+	case "dynatrace:index/vulnerabilityAlerting:VulnerabilityAlerting":
+		r = &VulnerabilityAlerting{}
+	case "dynatrace:index/vulnerabilityCode:VulnerabilityCode":
+		r = &VulnerabilityCode{}
+	case "dynatrace:index/vulnerabilitySettings:VulnerabilitySettings":
+		r = &VulnerabilitySettings{}
+	case "dynatrace:index/vulnerabilityThirdParty:VulnerabilityThirdParty":
+		r = &VulnerabilityThirdParty{}
 	case "dynatrace:index/webAppAnomalies:WebAppAnomalies":
 		r = &WebAppAnomalies{}
+	case "dynatrace:index/webAppBeaconEndpoint:WebAppBeaconEndpoint":
+		r = &WebAppBeaconEndpoint{}
 	case "dynatrace:index/webAppBeaconOrigins:WebAppBeaconOrigins":
 		r = &WebAppBeaconOrigins{}
+	case "dynatrace:index/webAppCustomConfigProperties:WebAppCustomConfigProperties":
+		r = &WebAppCustomConfigProperties{}
 	case "dynatrace:index/webAppCustomErrors:WebAppCustomErrors":
 		r = &WebAppCustomErrors{}
 	case "dynatrace:index/webAppEnablement:WebAppEnablement":
 		r = &WebAppEnablement{}
+	case "dynatrace:index/webAppInjectionCookie:WebAppInjectionCookie":
+		r = &WebAppInjectionCookie{}
 	case "dynatrace:index/webAppJavascriptUpdates:WebAppJavascriptUpdates":
 		r = &WebAppJavascriptUpdates{}
 	case "dynatrace:index/webAppJavascriptVersion:WebAppJavascriptVersion":
 		r = &WebAppJavascriptVersion{}
+	case "dynatrace:index/webAppKeyPerformanceCustom:WebAppKeyPerformanceCustom":
+		r = &WebAppKeyPerformanceCustom{}
+	case "dynatrace:index/webAppKeyPerformanceLoad:WebAppKeyPerformanceLoad":
+		r = &WebAppKeyPerformanceLoad{}
+	case "dynatrace:index/webAppKeyPerformanceXhr:WebAppKeyPerformanceXhr":
+		r = &WebAppKeyPerformanceXhr{}
 	case "dynatrace:index/webAppRequestErrors:WebAppRequestErrors":
 		r = &WebAppRequestErrors{}
 	case "dynatrace:index/webAppResourceCleanup:WebAppResourceCleanup":
@@ -506,6 +664,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/agToken",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/aixExtension",
 		&module{version},
 	)
@@ -536,6 +699,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/appMonitoring",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/applicationAnomalies",
 		&module{version},
 	)
@@ -561,12 +729,87 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/appsecNotification",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/attackAlerting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/attackAllowlist",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/attackRules",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/attackSettings",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/attributeAllowList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/attributeBlockList",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/attributeMasking",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/attributesPreferences",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/auditLog",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/automationBusinessCalendar",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/automationSchedulingRule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/automationWorkflow",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/automationWorkflowJira",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/automationWorkflowSlack",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/autotag",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/autotagRules",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -586,7 +829,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/awsService",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/azureCredentials",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/azureService",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -602,6 +855,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/browserMonitorPerformance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/builtinProcessMonitoring",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -626,7 +884,27 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/businessEventsSecurityContext",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/calculatedMobileMetric",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/calculatedServiceMetric",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/calculatedSyntheticMetric",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/calculatedWebMetric",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -656,12 +934,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/containerRegistry",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/containerRule",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/containerTechnology",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/crashdumpAnalytics",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -687,6 +975,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/customAppEnablement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/customDevice",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -746,12 +1039,27 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/davisAnomalyDetectors",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/dbAppFeatureFlags",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/dduPool",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/declarativeGrouping",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/directShares",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -782,6 +1090,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/diskSpecificAnomaliesV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/document",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/ebpfServiceDiscovery",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -831,12 +1149,32 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/genericSetting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/genericTypes",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/geolocation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/grailMetricsAllowall",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/grailMetricsAllowlist",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/grailSecurityContext",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -852,6 +1190,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/hostMonitoring",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/hostMonitoringAdvanced",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/hostMonitoringMode",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -886,6 +1234,26 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/httpMonitorScript",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/hubExtensionActiveVersion",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/hubExtensionConfig",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/hubSubscriptions",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/iamGroup",
 		&module{version},
 	)
@@ -906,6 +1274,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/iamPolicyBindingsV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/iamUser",
 		&module{version},
 	)
@@ -917,6 +1290,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/imsBridges",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/infraopsAppFeatureFlags",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/ipAddressMasking",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -936,12 +1319,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/jsonDashboardBase",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/k8sClusterAnomalies",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/k8sCredentials",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/k8sMonitoring",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -971,7 +1364,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/keyUserAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/kubernetes",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/kubernetesApp",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/limitOutboundConnections",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -987,6 +1395,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/logCustomSource",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/logDebugSettings",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1012,6 +1425,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/logProcessing",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/logSecurityContext",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1042,6 +1460,41 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/maintenanceWindow",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/managedBackup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/managedInternetProxy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/managedNetworkZones",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/managedPreferences",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/managedPublicEndpoints",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/managedRemoteAccess",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/managedSmtp",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1091,12 +1544,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/mobileAppKeyPerformance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/mobileAppRequestErrors",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/mobileApplication",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/mobileNotifications",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1196,6 +1659,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/oneagentSideMasking",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/oneagentUpdates",
 		&module{version},
 	)
@@ -1237,6 +1705,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/pgAnomalies",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/platformBucket",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1426,6 +1899,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/siteReliabilityGuardian",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/slackNotification",
 		&module{version},
 	)
@@ -1466,6 +1944,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/spanEvents",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/syntheticAvailability",
 		&module{version},
 	)
@@ -1491,7 +1974,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/unifiedServicesMetrics",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/unifiedServicesOpentel",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/updateWindows",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/urlBasedSampling",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1536,7 +2034,32 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/vmware",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/vmwareAnomalies",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/vulnerabilityAlerting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/vulnerabilityCode",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/vulnerabilitySettings",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/vulnerabilityThirdParty",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1546,7 +2069,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/webAppBeaconEndpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/webAppBeaconOrigins",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/webAppCustomConfigProperties",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1561,12 +2094,32 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/webAppInjectionCookie",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/webAppJavascriptUpdates",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/webAppJavascriptVersion",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/webAppKeyPerformanceCustom",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/webAppKeyPerformanceLoad",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/webAppKeyPerformanceXhr",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

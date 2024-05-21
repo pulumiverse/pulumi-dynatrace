@@ -39,19 +39,21 @@ export class DataPrivacy extends pulumi.CustomResource {
      */
     public readonly applicationId!: pulumi.Output<string | undefined>;
     /**
-     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
+     * To provide your end users with the ability to decide for themselves if their activities should be tracked to measure
+     * application performance and usage, enable opt-in mode.
      */
     public readonly dataCollection!: pulumi.Output<outputs.DataPrivacyDataCollection>;
     /**
-     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
+     * Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual
+     * users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
      */
     public readonly doNotTrack!: pulumi.Output<outputs.DataPrivacyDoNotTrack>;
     /**
-     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`)
+     * no documentation available
      */
     public readonly masking!: pulumi.Output<outputs.DataPrivacyMasking>;
     /**
-     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) User tracking
+     * User tracking
      */
     public readonly userTracking!: pulumi.Output<outputs.DataPrivacyUserTracking>;
 
@@ -107,19 +109,21 @@ export interface DataPrivacyState {
      */
     applicationId?: pulumi.Input<string>;
     /**
-     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
+     * To provide your end users with the ability to decide for themselves if their activities should be tracked to measure
+     * application performance and usage, enable opt-in mode.
      */
     dataCollection?: pulumi.Input<inputs.DataPrivacyDataCollection>;
     /**
-     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
+     * Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual
+     * users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
      */
     doNotTrack?: pulumi.Input<inputs.DataPrivacyDoNotTrack>;
     /**
-     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`)
+     * no documentation available
      */
     masking?: pulumi.Input<inputs.DataPrivacyMasking>;
     /**
-     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) User tracking
+     * User tracking
      */
     userTracking?: pulumi.Input<inputs.DataPrivacyUserTracking>;
 }
@@ -133,19 +137,21 @@ export interface DataPrivacyArgs {
      */
     applicationId?: pulumi.Input<string>;
     /**
-     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
+     * To provide your end users with the ability to decide for themselves if their activities should be tracked to measure
+     * application performance and usage, enable opt-in mode.
      */
     dataCollection: pulumi.Input<inputs.DataPrivacyDataCollection>;
     /**
-     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
+     * Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual
+     * users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
      */
     doNotTrack: pulumi.Input<inputs.DataPrivacyDoNotTrack>;
     /**
-     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`)
+     * no documentation available
      */
     masking: pulumi.Input<inputs.DataPrivacyMasking>;
     /**
-     * (Field has overlap with `dynatrace.ApplicationDataPrivacy`) User tracking
+     * User tracking
      */
     userTracking: pulumi.Input<inputs.DataPrivacyUserTracking>;
 }

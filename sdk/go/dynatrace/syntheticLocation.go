@@ -38,8 +38,14 @@ type SyntheticLocation struct {
 	LocationNodeOutageDelayInMinutes pulumi.IntPtrOutput `pulumi:"locationNodeOutageDelayInMinutes"`
 	// The longitude of the location in `DDD.dddd` format
 	Longitude pulumi.Float64Output `pulumi:"longitude"`
+	// The maximum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+	MaxActiveGateCount pulumi.IntPtrOutput `pulumi:"maxActiveGateCount"`
+	// The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+	MinActiveGateCount pulumi.IntPtrOutput `pulumi:"minActiveGateCount"`
 	// The name of the location
 	Name pulumi.StringOutput `pulumi:"name"`
+	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
+	NodeSize pulumi.StringPtrOutput `pulumi:"nodeSize"`
 	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
 	// nodes](https://dt-url.net/miy3rpl) call
 	Nodes pulumi.StringArrayOutput `pulumi:"nodes"`
@@ -108,8 +114,14 @@ type syntheticLocationState struct {
 	LocationNodeOutageDelayInMinutes *int `pulumi:"locationNodeOutageDelayInMinutes"`
 	// The longitude of the location in `DDD.dddd` format
 	Longitude *float64 `pulumi:"longitude"`
+	// The maximum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+	MaxActiveGateCount *int `pulumi:"maxActiveGateCount"`
+	// The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+	MinActiveGateCount *int `pulumi:"minActiveGateCount"`
 	// The name of the location
 	Name *string `pulumi:"name"`
+	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
+	NodeSize *string `pulumi:"nodeSize"`
 	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
 	// nodes](https://dt-url.net/miy3rpl) call
 	Nodes []string `pulumi:"nodes"`
@@ -143,8 +155,14 @@ type SyntheticLocationState struct {
 	LocationNodeOutageDelayInMinutes pulumi.IntPtrInput
 	// The longitude of the location in `DDD.dddd` format
 	Longitude pulumi.Float64PtrInput
+	// The maximum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+	MaxActiveGateCount pulumi.IntPtrInput
+	// The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+	MinActiveGateCount pulumi.IntPtrInput
 	// The name of the location
 	Name pulumi.StringPtrInput
+	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
+	NodeSize pulumi.StringPtrInput
 	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
 	// nodes](https://dt-url.net/miy3rpl) call
 	Nodes pulumi.StringArrayInput
@@ -182,8 +200,14 @@ type syntheticLocationArgs struct {
 	LocationNodeOutageDelayInMinutes *int `pulumi:"locationNodeOutageDelayInMinutes"`
 	// The longitude of the location in `DDD.dddd` format
 	Longitude float64 `pulumi:"longitude"`
+	// The maximum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+	MaxActiveGateCount *int `pulumi:"maxActiveGateCount"`
+	// The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+	MinActiveGateCount *int `pulumi:"minActiveGateCount"`
 	// The name of the location
 	Name *string `pulumi:"name"`
+	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
+	NodeSize *string `pulumi:"nodeSize"`
 	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
 	// nodes](https://dt-url.net/miy3rpl) call
 	Nodes []string `pulumi:"nodes"`
@@ -218,8 +242,14 @@ type SyntheticLocationArgs struct {
 	LocationNodeOutageDelayInMinutes pulumi.IntPtrInput
 	// The longitude of the location in `DDD.dddd` format
 	Longitude pulumi.Float64Input
+	// The maximum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+	MaxActiveGateCount pulumi.IntPtrInput
+	// The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+	MinActiveGateCount pulumi.IntPtrInput
 	// The name of the location
 	Name pulumi.StringPtrInput
+	// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
+	NodeSize pulumi.StringPtrInput
 	// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
 	// nodes](https://dt-url.net/miy3rpl) call
 	Nodes pulumi.StringArrayInput
@@ -369,9 +399,24 @@ func (o SyntheticLocationOutput) Longitude() pulumi.Float64Output {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.Float64Output { return v.Longitude }).(pulumi.Float64Output)
 }
 
+// The maximum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+func (o SyntheticLocationOutput) MaxActiveGateCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SyntheticLocation) pulumi.IntPtrOutput { return v.MaxActiveGateCount }).(pulumi.IntPtrOutput)
+}
+
+// The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+func (o SyntheticLocationOutput) MinActiveGateCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SyntheticLocation) pulumi.IntPtrOutput { return v.MinActiveGateCount }).(pulumi.IntPtrOutput)
+}
+
 // The name of the location
 func (o SyntheticLocationOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
+func (o SyntheticLocationOutput) NodeSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SyntheticLocation) pulumi.StringPtrOutput { return v.NodeSize }).(pulumi.StringPtrOutput)
 }
 
 // A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all

@@ -267,12 +267,7 @@ class UserGroup(pulumi.CustomResource):
                  sso_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
-        ## Dynatrace Documentation
-
-        - User management and SSO - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso
-
-        - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
-
+        Create a UserGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] access_account: If `true`, then the group has the access account rights
@@ -290,12 +285,7 @@ class UserGroup(pulumi.CustomResource):
                  args: Optional[UserGroupArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Dynatrace Documentation
-
-        - User management and SSO - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso
-
-        - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
-
+        Create a UserGroup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param UserGroupArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.

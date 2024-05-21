@@ -19,6 +19,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Output("headerName")]
         public Output<string> HeaderName { get; private set; } = null!;
 
+        /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Output("insertAfter")]
+        public Output<string> InsertAfter { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a RumIpDetermination resource with the given unique name, arguments, and options.
@@ -72,6 +78,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Input("headerName", required: true)]
         public Input<string> HeaderName { get; set; } = null!;
 
+        /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
+
         public RumIpDeterminationArgs()
         {
         }
@@ -85,6 +97,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Input("headerName")]
         public Input<string>? HeaderName { get; set; }
+
+        /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
 
         public RumIpDeterminationState()
         {

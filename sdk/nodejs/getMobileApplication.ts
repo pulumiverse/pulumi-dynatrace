@@ -7,7 +7,7 @@ import * as utilities from "./utilities";
 /**
  * The `dynatrace.MobileApplication` data source allows the mobile application ID to be retrieved by its name.
  *
- * - `name` (String) - The name of the dashboard
+ * - `name` (String) - The name of the mobile application
  *
  * ## Example Usage
  *
@@ -49,7 +49,7 @@ export interface GetMobileApplicationResult {
 /**
  * The `dynatrace.MobileApplication` data source allows the mobile application ID to be retrieved by its name.
  *
- * - `name` (String) - The name of the dashboard
+ * - `name` (String) - The name of the mobile application
  *
  * ## Example Usage
  *

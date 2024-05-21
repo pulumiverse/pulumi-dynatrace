@@ -44,6 +44,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<string?> EntityId { get; private set; } = null!;
 
         /// <summary>
+        /// Metric should (true) or not (false) ignore muted requests.
+        /// </summary>
+        [Output("ignoreMutedRequests")]
+        public Output<bool?> IgnoreMutedRequests { get; private set; } = null!;
+
+        /// <summary>
         /// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
         /// </summary>
         [Output("managementZones")]
@@ -175,6 +181,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Input("entityId")]
         public Input<string>? EntityId { get; set; }
 
+        /// <summary>
+        /// Metric should (true) or not (false) ignore muted requests.
+        /// </summary>
+        [Input("ignoreMutedRequests")]
+        public Input<bool>? IgnoreMutedRequests { get; set; }
+
         [Input("managementZones")]
         private InputList<string>? _managementZones;
 
@@ -273,6 +285,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Input("entityId")]
         public Input<string>? EntityId { get; set; }
+
+        /// <summary>
+        /// Metric should (true) or not (false) ignore muted requests.
+        /// </summary>
+        [Input("ignoreMutedRequests")]
+        public Input<bool>? IgnoreMutedRequests { get; set; }
 
         [Input("managementZones")]
         private InputList<string>? _managementZones;

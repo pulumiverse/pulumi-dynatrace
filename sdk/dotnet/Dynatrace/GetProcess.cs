@@ -13,6 +13,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public static class GetProcess
     {
         /// <summary>
+        /// !&gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `PROCESS_GROUP_INSTANCE` instead.
+        /// 
         /// The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
         /// - `name` queries for all processes with the specified name
@@ -60,6 +62,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProcessResult>("dynatrace:index/getProcess:getProcess", args ?? new GetProcessArgs(), options.WithDefaults());
 
         /// <summary>
+        /// !&gt; The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `PROCESS_GROUP_INSTANCE` instead.
+        /// 
         /// The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
         /// 
         /// - `name` queries for all processes with the specified name

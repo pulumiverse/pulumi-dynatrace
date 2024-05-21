@@ -17,6 +17,8 @@ type IssueTracking struct {
 
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Set a label to identify these issues, for example, `releaseBlocker` or `non-critical`
 	Issuelabel pulumi.StringOutput `pulumi:"issuelabel"`
 	// You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
@@ -95,6 +97,8 @@ func GetIssueTracking(ctx *pulumi.Context,
 type issueTrackingState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Set a label to identify these issues, for example, `releaseBlocker` or `non-critical`
 	Issuelabel *string `pulumi:"issuelabel"`
 	// You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
@@ -116,6 +120,8 @@ type issueTrackingState struct {
 type IssueTrackingState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Set a label to identify these issues, for example, `releaseBlocker` or `non-critical`
 	Issuelabel pulumi.StringPtrInput
 	// You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
@@ -141,6 +147,8 @@ func (IssueTrackingState) ElementType() reflect.Type {
 type issueTrackingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Set a label to identify these issues, for example, `releaseBlocker` or `non-critical`
 	Issuelabel string `pulumi:"issuelabel"`
 	// You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
@@ -163,6 +171,8 @@ type issueTrackingArgs struct {
 type IssueTrackingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Set a label to identify these issues, for example, `releaseBlocker` or `non-critical`
 	Issuelabel pulumi.StringInput
 	// You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
@@ -271,6 +281,11 @@ func (o IssueTrackingOutput) ToIssueTrackingOutputWithContext(ctx context.Contex
 // This setting is enabled (`true`) or disabled (`false`)
 func (o IssueTrackingOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *IssueTracking) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o IssueTrackingOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *IssueTracking) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // Set a label to identify these issues, for example, `releaseBlocker` or `non-critical`

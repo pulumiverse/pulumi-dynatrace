@@ -136,6 +136,10 @@ class IamGroup(pulumi.CustomResource):
                  permissions: Optional[pulumi.Input[pulumi.InputType['IamGroupPermissionsArgs']]] = None,
                  __props__=None):
         """
+        > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
+
+        > This resource requires the API token scopes **Allow read access for identity resources (users and groups)** (`account-idm-read`) and **Allow write access for identity resources (users and groups)** (`account-idm-write`)
+
         ## Dynatrace Documentation
 
         - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -178,6 +182,10 @@ class IamGroup(pulumi.CustomResource):
                  args: Optional[IamGroupArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
+
+        > This resource requires the API token scopes **Allow read access for identity resources (users and groups)** (`account-idm-read`) and **Allow write access for identity resources (users and groups)** (`account-idm-write`)
+
         ## Dynatrace Documentation
 
         - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions

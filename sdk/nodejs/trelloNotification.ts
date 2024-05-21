@@ -129,7 +129,7 @@ export class TrelloNotification extends pulumi.CustomResource {
             }
             resourceInputs["active"] = args ? args.active : undefined;
             resourceInputs["applicationKey"] = args ? args.applicationKey : undefined;
-            resourceInputs["authorizationToken"] = args ? args.authorizationToken : undefined;
+            resourceInputs["authorizationToken"] = args?.authorizationToken ? pulumi.secret(args.authorizationToken) : undefined;
             resourceInputs["boardId"] = args ? args.boardId : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["legacyId"] = args ? args.legacyId : undefined;
@@ -140,6 +140,8 @@ export class TrelloNotification extends pulumi.CustomResource {
             resourceInputs["text"] = args ? args.text : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["authorizationToken"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(TrelloNotification.__pulumiType, name, resourceInputs, opts);
     }
 }

@@ -15,15 +15,17 @@ import (
 type ServiceFullWebRequest struct {
 	pulumi.CustomResourceState
 
-	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions ServiceFullWebRequestConditionsPtrOutput `pulumi:"conditions"`
 	// Description
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Contributors to the Service Identifier calculation. All of the Contributors always get applied.
+	// Contributors to the Service Identifier calculation. All of the Contributors are always applied.
 	IdContributors ServiceFullWebRequestIdContributorsOutput `pulumi:"idContributors"`
-	// Define a management zone filter for this service detection rule.
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
+	// Define a management zone of the process group for which this service detection rule should be created.
 	ManagementZones pulumi.StringArrayOutput `pulumi:"managementZones"`
 	// Rule name
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -65,30 +67,34 @@ func GetServiceFullWebRequest(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ServiceFullWebRequest resources.
 type serviceFullWebRequestState struct {
-	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions *ServiceFullWebRequestConditions `pulumi:"conditions"`
 	// Description
 	Description *string `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// Contributors to the Service Identifier calculation. All of the Contributors always get applied.
+	// Contributors to the Service Identifier calculation. All of the Contributors are always applied.
 	IdContributors *ServiceFullWebRequestIdContributors `pulumi:"idContributors"`
-	// Define a management zone filter for this service detection rule.
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
+	// Define a management zone of the process group for which this service detection rule should be created.
 	ManagementZones []string `pulumi:"managementZones"`
 	// Rule name
 	Name *string `pulumi:"name"`
 }
 
 type ServiceFullWebRequestState struct {
-	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions ServiceFullWebRequestConditionsPtrInput
 	// Description
 	Description pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// Contributors to the Service Identifier calculation. All of the Contributors always get applied.
+	// Contributors to the Service Identifier calculation. All of the Contributors are always applied.
 	IdContributors ServiceFullWebRequestIdContributorsPtrInput
-	// Define a management zone filter for this service detection rule.
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
+	// Define a management zone of the process group for which this service detection rule should be created.
 	ManagementZones pulumi.StringArrayInput
 	// Rule name
 	Name pulumi.StringPtrInput
@@ -99,15 +105,17 @@ func (ServiceFullWebRequestState) ElementType() reflect.Type {
 }
 
 type serviceFullWebRequestArgs struct {
-	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions *ServiceFullWebRequestConditions `pulumi:"conditions"`
 	// Description
 	Description *string `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// Contributors to the Service Identifier calculation. All of the Contributors always get applied.
+	// Contributors to the Service Identifier calculation. All of the Contributors are always applied.
 	IdContributors ServiceFullWebRequestIdContributors `pulumi:"idContributors"`
-	// Define a management zone filter for this service detection rule.
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
+	// Define a management zone of the process group for which this service detection rule should be created.
 	ManagementZones []string `pulumi:"managementZones"`
 	// Rule name
 	Name *string `pulumi:"name"`
@@ -115,15 +123,17 @@ type serviceFullWebRequestArgs struct {
 
 // The set of arguments for constructing a ServiceFullWebRequest resource.
 type ServiceFullWebRequestArgs struct {
-	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+	// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 	Conditions ServiceFullWebRequestConditionsPtrInput
 	// Description
 	Description pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// Contributors to the Service Identifier calculation. All of the Contributors always get applied.
+	// Contributors to the Service Identifier calculation. All of the Contributors are always applied.
 	IdContributors ServiceFullWebRequestIdContributorsInput
-	// Define a management zone filter for this service detection rule.
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
+	// Define a management zone of the process group for which this service detection rule should be created.
 	ManagementZones pulumi.StringArrayInput
 	// Rule name
 	Name pulumi.StringPtrInput
@@ -216,7 +226,7 @@ func (o ServiceFullWebRequestOutput) ToServiceFullWebRequestOutputWithContext(ct
 	return o
 }
 
-// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
 func (o ServiceFullWebRequestOutput) Conditions() ServiceFullWebRequestConditionsPtrOutput {
 	return o.ApplyT(func(v *ServiceFullWebRequest) ServiceFullWebRequestConditionsPtrOutput { return v.Conditions }).(ServiceFullWebRequestConditionsPtrOutput)
 }
@@ -231,12 +241,17 @@ func (o ServiceFullWebRequestOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ServiceFullWebRequest) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Contributors to the Service Identifier calculation. All of the Contributors always get applied.
+// Contributors to the Service Identifier calculation. All of the Contributors are always applied.
 func (o ServiceFullWebRequestOutput) IdContributors() ServiceFullWebRequestIdContributorsOutput {
 	return o.ApplyT(func(v *ServiceFullWebRequest) ServiceFullWebRequestIdContributorsOutput { return v.IdContributors }).(ServiceFullWebRequestIdContributorsOutput)
 }
 
-// Define a management zone filter for this service detection rule.
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o ServiceFullWebRequestOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *ServiceFullWebRequest) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
+}
+
+// Define a management zone of the process group for which this service detection rule should be created.
 func (o ServiceFullWebRequestOutput) ManagementZones() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ServiceFullWebRequest) pulumi.StringArrayOutput { return v.ManagementZones }).(pulumi.StringArrayOutput)
 }

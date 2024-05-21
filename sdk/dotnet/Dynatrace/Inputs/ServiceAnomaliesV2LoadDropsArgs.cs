@@ -14,7 +14,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class ServiceAnomaliesV2LoadDropsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Detect service load drops
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;

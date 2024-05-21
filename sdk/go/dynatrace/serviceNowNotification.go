@@ -19,6 +19,8 @@ type ServiceNowNotification struct {
 	Active pulumi.BoolOutput `pulumi:"active"`
 	// Send events into ServiceNow ITOM
 	Events pulumi.BoolPtrOutput `pulumi:"events"`
+	// Use text format for problem details instead of HTML.
+	FormatProblemDetailsAsText pulumi.BoolPtrOutput `pulumi:"formatProblemDetailsAsText"`
 	// Send incidents into ServiceNow ITSM
 	Incidents pulumi.BoolOutput `pulumi:"incidents"`
 	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
@@ -95,6 +97,8 @@ type serviceNowNotificationState struct {
 	Active *bool `pulumi:"active"`
 	// Send events into ServiceNow ITOM
 	Events *bool `pulumi:"events"`
+	// Use text format for problem details instead of HTML.
+	FormatProblemDetailsAsText *bool `pulumi:"formatProblemDetailsAsText"`
 	// Send incidents into ServiceNow ITSM
 	Incidents *bool `pulumi:"incidents"`
 	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
@@ -120,6 +124,8 @@ type ServiceNowNotificationState struct {
 	Active pulumi.BoolPtrInput
 	// Send events into ServiceNow ITOM
 	Events pulumi.BoolPtrInput
+	// Use text format for problem details instead of HTML.
+	FormatProblemDetailsAsText pulumi.BoolPtrInput
 	// Send incidents into ServiceNow ITSM
 	Incidents pulumi.BoolPtrInput
 	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
@@ -149,6 +155,8 @@ type serviceNowNotificationArgs struct {
 	Active bool `pulumi:"active"`
 	// Send events into ServiceNow ITOM
 	Events *bool `pulumi:"events"`
+	// Use text format for problem details instead of HTML.
+	FormatProblemDetailsAsText *bool `pulumi:"formatProblemDetailsAsText"`
 	// Send incidents into ServiceNow ITSM
 	Incidents bool `pulumi:"incidents"`
 	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
@@ -175,6 +183,8 @@ type ServiceNowNotificationArgs struct {
 	Active pulumi.BoolInput
 	// Send events into ServiceNow ITOM
 	Events pulumi.BoolPtrInput
+	// Use text format for problem details instead of HTML.
+	FormatProblemDetailsAsText pulumi.BoolPtrInput
 	// Send incidents into ServiceNow ITSM
 	Incidents pulumi.BoolInput
 	// The ServiceNow instance identifier. It refers to the first part of your own ServiceNow URL. This field is mutually exclusive with the **url** field. You can only use one of them
@@ -290,6 +300,11 @@ func (o ServiceNowNotificationOutput) Active() pulumi.BoolOutput {
 // Send events into ServiceNow ITOM
 func (o ServiceNowNotificationOutput) Events() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ServiceNowNotification) pulumi.BoolPtrOutput { return v.Events }).(pulumi.BoolPtrOutput)
+}
+
+// Use text format for problem details instead of HTML.
+func (o ServiceNowNotificationOutput) FormatProblemDetailsAsText() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ServiceNowNotification) pulumi.BoolPtrOutput { return v.FormatProblemDetailsAsText }).(pulumi.BoolPtrOutput)
 }
 
 // Send incidents into ServiceNow ITSM

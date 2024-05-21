@@ -32,13 +32,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
-        /// This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+        /// This field should only be used for the automation purpose when importing team information.
         /// </summary>
         [Output("externalId")]
         public Output<string?> ExternalId { get; private set; } = null!;
 
         /// <summary>
-        /// The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+        /// The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
         /// </summary>
         [Output("identifier")]
         public Output<string> Identifier { get; private set; } = null!;
@@ -133,13 +133,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+        /// This field should only be used for the automation purpose when importing team information.
         /// </summary>
         [Input("externalId")]
         public Input<string>? ExternalId { get; set; }
 
         /// <summary>
-        /// The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+        /// The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
         /// </summary>
         [Input("identifier", required: true)]
         public Input<string> Identifier { get; set; } = null!;
@@ -195,13 +195,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+        /// This field should only be used for the automation purpose when importing team information.
         /// </summary>
         [Input("externalId")]
         public Input<string>? ExternalId { get; set; }
 
         /// <summary>
-        /// The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+        /// The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
         /// </summary>
         [Input("identifier")]
         public Input<string>? Identifier { get; set; }

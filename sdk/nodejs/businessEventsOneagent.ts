@@ -43,6 +43,10 @@ export class BusinessEventsOneagent extends pulumi.CustomResource {
      */
     public readonly event!: pulumi.Output<outputs.BusinessEventsOneagentEvent>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Rule name
      */
     public readonly ruleName!: pulumi.Output<string>;
@@ -51,7 +55,7 @@ export class BusinessEventsOneagent extends pulumi.CustomResource {
      */
     public readonly scope!: pulumi.Output<string | undefined>;
     /**
-     * Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+     * Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
      */
     public readonly triggers!: pulumi.Output<outputs.BusinessEventsOneagentTriggers>;
 
@@ -70,6 +74,7 @@ export class BusinessEventsOneagent extends pulumi.CustomResource {
             const state = argsOrState as BusinessEventsOneagentState | undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
             resourceInputs["event"] = state ? state.event : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["ruleName"] = state ? state.ruleName : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
             resourceInputs["triggers"] = state ? state.triggers : undefined;
@@ -89,6 +94,7 @@ export class BusinessEventsOneagent extends pulumi.CustomResource {
             }
             resourceInputs["enabled"] = args ? args.enabled : undefined;
             resourceInputs["event"] = args ? args.event : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["ruleName"] = args ? args.ruleName : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
             resourceInputs["triggers"] = args ? args.triggers : undefined;
@@ -111,6 +117,10 @@ export interface BusinessEventsOneagentState {
      */
     event?: pulumi.Input<inputs.BusinessEventsOneagentEvent>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
+    /**
      * Rule name
      */
     ruleName?: pulumi.Input<string>;
@@ -119,7 +129,7 @@ export interface BusinessEventsOneagentState {
      */
     scope?: pulumi.Input<string>;
     /**
-     * Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+     * Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
      */
     triggers?: pulumi.Input<inputs.BusinessEventsOneagentTriggers>;
 }
@@ -137,6 +147,10 @@ export interface BusinessEventsOneagentArgs {
      */
     event: pulumi.Input<inputs.BusinessEventsOneagentEvent>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
+    /**
      * Rule name
      */
     ruleName: pulumi.Input<string>;
@@ -145,7 +159,7 @@ export interface BusinessEventsOneagentArgs {
      */
     scope?: pulumi.Input<string>;
     /**
-     * Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+     * Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
      */
     triggers: pulumi.Input<inputs.BusinessEventsOneagentTriggers>;
 }

@@ -21,6 +21,8 @@ type GenericTypes struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// The entity type name. This type name must be unique and must not be changed after creation.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Specify a list of rules which are evaluated in order. When **any** rule matches, the entity defined according to that rule will be extracted. Subsequent rules will not be evaluated.
@@ -75,6 +77,8 @@ type genericTypesState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// The entity type name. This type name must be unique and must not be changed after creation.
 	Name *string `pulumi:"name"`
 	// Specify a list of rules which are evaluated in order. When **any** rule matches, the entity defined according to that rule will be extracted. Subsequent rules will not be evaluated.
@@ -88,6 +92,8 @@ type GenericTypesState struct {
 	DisplayName pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// The entity type name. This type name must be unique and must not be changed after creation.
 	Name pulumi.StringPtrInput
 	// Specify a list of rules which are evaluated in order. When **any** rule matches, the entity defined according to that rule will be extracted. Subsequent rules will not be evaluated.
@@ -105,6 +111,8 @@ type genericTypesArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// The entity type name. This type name must be unique and must not be changed after creation.
 	Name *string `pulumi:"name"`
 	// Specify a list of rules which are evaluated in order. When **any** rule matches, the entity defined according to that rule will be extracted. Subsequent rules will not be evaluated.
@@ -119,6 +127,8 @@ type GenericTypesArgs struct {
 	DisplayName pulumi.StringInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// The entity type name. This type name must be unique and must not be changed after creation.
 	Name pulumi.StringPtrInput
 	// Specify a list of rules which are evaluated in order. When **any** rule matches, the entity defined according to that rule will be extracted. Subsequent rules will not be evaluated.
@@ -225,6 +235,11 @@ func (o GenericTypesOutput) DisplayName() pulumi.StringOutput {
 // This setting is enabled (`true`) or disabled (`false`)
 func (o GenericTypesOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *GenericTypes) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o GenericTypesOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *GenericTypes) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // The entity type name. This type name must be unique and must not be changed after creation.

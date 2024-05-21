@@ -22,11 +22,11 @@ class SloV2Args:
                  evaluation_window: pulumi.Input[str],
                  filter: pulumi.Input[str],
                  metric_expression: pulumi.Input[str],
-                 metric_name: pulumi.Input[str],
                  target_success: pulumi.Input[float],
                  target_warning: pulumi.Input[float],
                  custom_description: Optional[pulumi.Input[str]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
+                 metric_name: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a SloV2 resource.
@@ -36,11 +36,11 @@ class SloV2Args:
         :param pulumi.Input[str] evaluation_window: Define the timeframe during which the SLO is to be evaluated. For the timeframe you can enter expressions like -1h (last hour), -1w (last week) or complex expressions like -2d to now (last two days), -1d/d to now/d (beginning of yesterday to beginning of today).
         :param pulumi.Input[str] filter: Set a filter parameter (entitySelector) on any GET call to evaluate this SLO against specific services only (for example, type("SERVICE")).  For details, see the [Entity Selector documentation](https://dt-url.net/entityselector).
         :param pulumi.Input[str] metric_expression: For details, see the [Metrics page](https://www.terraform.io/ui/metrics).
-        :param pulumi.Input[str] metric_name: Metric name
         :param pulumi.Input[float] target_success: Set the target value of the SLO. A percentage below this value indicates a failure.
         :param pulumi.Input[float] target_warning: Set the warning value of the SLO. At the warning state the SLO is fulfilled. However, it is getting close to a failure.
         :param pulumi.Input[str] custom_description: The description of the SLO
         :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
+        :param pulumi.Input[str] metric_name: Metric name
         :param pulumi.Input[str] name: SLO name
         """
         pulumi.set(__self__, "enabled", enabled)
@@ -49,13 +49,14 @@ class SloV2Args:
         pulumi.set(__self__, "evaluation_window", evaluation_window)
         pulumi.set(__self__, "filter", filter)
         pulumi.set(__self__, "metric_expression", metric_expression)
-        pulumi.set(__self__, "metric_name", metric_name)
         pulumi.set(__self__, "target_success", target_success)
         pulumi.set(__self__, "target_warning", target_warning)
         if custom_description is not None:
             pulumi.set(__self__, "custom_description", custom_description)
         if legacy_id is not None:
             pulumi.set(__self__, "legacy_id", legacy_id)
+        if metric_name is not None:
+            pulumi.set(__self__, "metric_name", metric_name)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -132,18 +133,6 @@ class SloV2Args:
         pulumi.set(self, "metric_expression", value)
 
     @property
-    @pulumi.getter(name="metricName")
-    def metric_name(self) -> pulumi.Input[str]:
-        """
-        Metric name
-        """
-        return pulumi.get(self, "metric_name")
-
-    @metric_name.setter
-    def metric_name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "metric_name", value)
-
-    @property
     @pulumi.getter(name="targetSuccess")
     def target_success(self) -> pulumi.Input[float]:
         """
@@ -190,6 +179,18 @@ class SloV2Args:
     @legacy_id.setter
     def legacy_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "legacy_id", value)
+
+    @property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Metric name
+        """
+        return pulumi.get(self, "metric_name")
+
+    @metric_name.setter
+    def metric_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "metric_name", value)
 
     @property
     @pulumi.getter
@@ -503,8 +504,6 @@ class SloV2(pulumi.CustomResource):
             if metric_expression is None and not opts.urn:
                 raise TypeError("Missing required property 'metric_expression'")
             __props__.__dict__["metric_expression"] = metric_expression
-            if metric_name is None and not opts.urn:
-                raise TypeError("Missing required property 'metric_name'")
             __props__.__dict__["metric_name"] = metric_name
             __props__.__dict__["name"] = name
             if target_success is None and not opts.urn:

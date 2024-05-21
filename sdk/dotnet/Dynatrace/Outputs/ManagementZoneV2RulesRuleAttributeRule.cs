@@ -15,7 +15,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class ManagementZoneV2RulesRuleAttributeRule
     {
         /// <summary>
-        /// Conditions
+        /// no documentation available
         /// </summary>
         public readonly Outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditions AttributeConditions;
         /// <summary>

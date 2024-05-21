@@ -12,9 +12,63 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
 {
     public static class GetIamGroup
     {
+        /// <summary>
+        /// The IAM group data source allows the group ID to be retrieved by its name.
+        /// 
+        /// - `name` (String) - The name of the IAM group
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetIamGroup.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["groups"] = example.Apply(getIamGroupResult =&gt; getIamGroupResult.Id),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
         public static Task<GetIamGroupResult> InvokeAsync(GetIamGroupArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamGroupResult>("dynatrace:index/getIamGroup:getIamGroup", args ?? new GetIamGroupArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// The IAM group data source allows the group ID to be retrieved by its name.
+        /// 
+        /// - `name` (String) - The name of the IAM group
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetIamGroup.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["groups"] = example.Apply(getIamGroupResult =&gt; getIamGroupResult.Id),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetIamGroupResult> Invoke(GetIamGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamGroupResult>("dynatrace:index/getIamGroup:getIamGroup", args ?? new GetIamGroupInvokeArgs(), options.WithDefaults());
     }

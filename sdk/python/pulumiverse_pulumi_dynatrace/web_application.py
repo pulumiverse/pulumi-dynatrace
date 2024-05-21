@@ -69,6 +69,9 @@ class WebApplicationArgs:
         if conversion_goals is not None:
             pulumi.set(__self__, "conversion_goals", conversion_goals)
         if key_user_actions is not None:
+            warnings.warn("""Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""", DeprecationWarning)
+            pulumi.log.warn("""key_user_actions is deprecated: Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""")
+        if key_user_actions is not None:
             pulumi.set(__self__, "key_user_actions", key_user_actions)
         if meta_data_capture_settings is not None:
             pulumi.set(__self__, "meta_data_capture_settings", meta_data_capture_settings)
@@ -213,6 +216,9 @@ class WebApplicationArgs:
         """
         User Action names to be flagged as Key User Actions
         """
+        warnings.warn("""Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""", DeprecationWarning)
+        pulumi.log.warn("""key_user_actions is deprecated: Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""")
+
         return pulumi.get(self, "key_user_actions")
 
     @key_user_actions.setter
@@ -367,6 +373,9 @@ class _WebApplicationState:
         if custom_action_apdex_settings is not None:
             pulumi.set(__self__, "custom_action_apdex_settings", custom_action_apdex_settings)
         if key_user_actions is not None:
+            warnings.warn("""Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""", DeprecationWarning)
+            pulumi.log.warn("""key_user_actions is deprecated: Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""")
+        if key_user_actions is not None:
             pulumi.set(__self__, "key_user_actions", key_user_actions)
         if load_action_apdex_settings is not None:
             pulumi.set(__self__, "load_action_apdex_settings", load_action_apdex_settings)
@@ -441,6 +450,9 @@ class _WebApplicationState:
         """
         User Action names to be flagged as Key User Actions
         """
+        warnings.warn("""Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""", DeprecationWarning)
+        pulumi.log.warn("""key_user_actions is deprecated: Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""")
+
         return pulumi.get(self, "key_user_actions")
 
     @key_user_actions.setter
@@ -876,6 +888,9 @@ class WebApplication(pulumi.CustomResource):
         """
         User Action names to be flagged as Key User Actions
         """
+        warnings.warn("""Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""", DeprecationWarning)
+        pulumi.log.warn("""key_user_actions is deprecated: Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.""")
+
         return pulumi.get(self, "key_user_actions")
 
     @property
@@ -928,7 +943,7 @@ class WebApplication(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="sessionReplayConfig")
-    def session_replay_config(self) -> pulumi.Output[Optional['outputs.WebApplicationSessionReplayConfig']]:
+    def session_replay_config(self) -> pulumi.Output['outputs.WebApplicationSessionReplayConfig']:
         """
         Settings regarding Session Replay
         """

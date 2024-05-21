@@ -15,9 +15,9 @@ import (
 type LogOneagent struct {
 	pulumi.CustomResourceState
 
-	// Detect container time zones
+	// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
 	ContainerTimezoneHeuristicEnabled pulumi.BoolOutput `pulumi:"containerTimezoneHeuristicEnabled"`
-	// Detect logs inside containers
+	// Allows detection of log messages written to the containerized application's stdout/stderr streams.
 	ContainersLogsDetectionEnabled pulumi.BoolOutput `pulumi:"containersLogsDetectionEnabled"`
 	// Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
 	DateSearchLimitBytes pulumi.IntOutput `pulumi:"dateSearchLimitBytes"`
@@ -25,17 +25,17 @@ type LogOneagent struct {
 	DefaultTimezone pulumi.StringOutput `pulumi:"defaultTimezone"`
 	// Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
 	EventLogQueryTimeoutSec pulumi.IntOutput `pulumi:"eventLogQueryTimeoutSec"`
-	// Detect IIS logs
+	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled pulumi.BoolOutput `pulumi:"iisdetectionEnabled"`
-	// Detect logs on Network File Systems (NFS)
+	// Allows detection of logs written to mounted network storage drives.
 	LogScannerLinuxNfsEnabled pulumi.BoolOutput `pulumi:"logScannerLinuxNfsEnabled"`
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount pulumi.IntOutput `pulumi:"maxLgisPerEntityCount"`
 	// Defines the minimum number of bytes in log file required for binary detection.
 	MinBinaryDetectionLimitBytes pulumi.IntOutput `pulumi:"minBinaryDetectionLimitBytes"`
-	// Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
 	MonitorOwnLogsEnabled pulumi.BoolOutput `pulumi:"monitorOwnLogsEnabled"`
-	// Detect open log files
+	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled pulumi.BoolOutput `pulumi:"openLogFilesDetectionEnabled"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrOutput `pulumi:"scope"`
@@ -43,10 +43,8 @@ type LogOneagent struct {
 	SeverityDetectionLimitBytes pulumi.IntOutput `pulumi:"severityDetectionLimitBytes"`
 	// Defines the number of the first lines of every log entry where severity is searched.
 	SeverityDetectionLinesLimit pulumi.IntOutput `pulumi:"severityDetectionLinesLimit"`
-	// (Linux: syslog, message log) (Windows: system, application, security event logs)
+	// Linux: syslog, message log Windows: system, application, security event logs
 	SystemLogsDetectionEnabled pulumi.BoolOutput `pulumi:"systemLogsDetectionEnabled"`
-	// Deprecated for OneAgent 1.247+
-	UtcasDefaultContainerTimezone pulumi.BoolOutput `pulumi:"utcasDefaultContainerTimezone"`
 }
 
 // NewLogOneagent registers a new resource with the given unique name, arguments, and options.
@@ -98,9 +96,6 @@ func NewLogOneagent(ctx *pulumi.Context,
 	if args.SystemLogsDetectionEnabled == nil {
 		return nil, errors.New("invalid value for required argument 'SystemLogsDetectionEnabled'")
 	}
-	if args.UtcasDefaultContainerTimezone == nil {
-		return nil, errors.New("invalid value for required argument 'UtcasDefaultContainerTimezone'")
-	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LogOneagent
 	err := ctx.RegisterResource("dynatrace:index/logOneagent:LogOneagent", name, args, &resource, opts...)
@@ -124,9 +119,9 @@ func GetLogOneagent(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering LogOneagent resources.
 type logOneagentState struct {
-	// Detect container time zones
+	// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
 	ContainerTimezoneHeuristicEnabled *bool `pulumi:"containerTimezoneHeuristicEnabled"`
-	// Detect logs inside containers
+	// Allows detection of log messages written to the containerized application's stdout/stderr streams.
 	ContainersLogsDetectionEnabled *bool `pulumi:"containersLogsDetectionEnabled"`
 	// Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
 	DateSearchLimitBytes *int `pulumi:"dateSearchLimitBytes"`
@@ -134,17 +129,17 @@ type logOneagentState struct {
 	DefaultTimezone *string `pulumi:"defaultTimezone"`
 	// Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
 	EventLogQueryTimeoutSec *int `pulumi:"eventLogQueryTimeoutSec"`
-	// Detect IIS logs
+	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled *bool `pulumi:"iisdetectionEnabled"`
-	// Detect logs on Network File Systems (NFS)
+	// Allows detection of logs written to mounted network storage drives.
 	LogScannerLinuxNfsEnabled *bool `pulumi:"logScannerLinuxNfsEnabled"`
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount *int `pulumi:"maxLgisPerEntityCount"`
 	// Defines the minimum number of bytes in log file required for binary detection.
 	MinBinaryDetectionLimitBytes *int `pulumi:"minBinaryDetectionLimitBytes"`
-	// Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
 	MonitorOwnLogsEnabled *bool `pulumi:"monitorOwnLogsEnabled"`
-	// Detect open log files
+	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled *bool `pulumi:"openLogFilesDetectionEnabled"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
@@ -152,16 +147,14 @@ type logOneagentState struct {
 	SeverityDetectionLimitBytes *int `pulumi:"severityDetectionLimitBytes"`
 	// Defines the number of the first lines of every log entry where severity is searched.
 	SeverityDetectionLinesLimit *int `pulumi:"severityDetectionLinesLimit"`
-	// (Linux: syslog, message log) (Windows: system, application, security event logs)
+	// Linux: syslog, message log Windows: system, application, security event logs
 	SystemLogsDetectionEnabled *bool `pulumi:"systemLogsDetectionEnabled"`
-	// Deprecated for OneAgent 1.247+
-	UtcasDefaultContainerTimezone *bool `pulumi:"utcasDefaultContainerTimezone"`
 }
 
 type LogOneagentState struct {
-	// Detect container time zones
+	// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
 	ContainerTimezoneHeuristicEnabled pulumi.BoolPtrInput
-	// Detect logs inside containers
+	// Allows detection of log messages written to the containerized application's stdout/stderr streams.
 	ContainersLogsDetectionEnabled pulumi.BoolPtrInput
 	// Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
 	DateSearchLimitBytes pulumi.IntPtrInput
@@ -169,17 +162,17 @@ type LogOneagentState struct {
 	DefaultTimezone pulumi.StringPtrInput
 	// Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
 	EventLogQueryTimeoutSec pulumi.IntPtrInput
-	// Detect IIS logs
+	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled pulumi.BoolPtrInput
-	// Detect logs on Network File Systems (NFS)
+	// Allows detection of logs written to mounted network storage drives.
 	LogScannerLinuxNfsEnabled pulumi.BoolPtrInput
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount pulumi.IntPtrInput
 	// Defines the minimum number of bytes in log file required for binary detection.
 	MinBinaryDetectionLimitBytes pulumi.IntPtrInput
-	// Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
 	MonitorOwnLogsEnabled pulumi.BoolPtrInput
-	// Detect open log files
+	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled pulumi.BoolPtrInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
@@ -187,10 +180,8 @@ type LogOneagentState struct {
 	SeverityDetectionLimitBytes pulumi.IntPtrInput
 	// Defines the number of the first lines of every log entry where severity is searched.
 	SeverityDetectionLinesLimit pulumi.IntPtrInput
-	// (Linux: syslog, message log) (Windows: system, application, security event logs)
+	// Linux: syslog, message log Windows: system, application, security event logs
 	SystemLogsDetectionEnabled pulumi.BoolPtrInput
-	// Deprecated for OneAgent 1.247+
-	UtcasDefaultContainerTimezone pulumi.BoolPtrInput
 }
 
 func (LogOneagentState) ElementType() reflect.Type {
@@ -198,9 +189,9 @@ func (LogOneagentState) ElementType() reflect.Type {
 }
 
 type logOneagentArgs struct {
-	// Detect container time zones
+	// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
 	ContainerTimezoneHeuristicEnabled bool `pulumi:"containerTimezoneHeuristicEnabled"`
-	// Detect logs inside containers
+	// Allows detection of log messages written to the containerized application's stdout/stderr streams.
 	ContainersLogsDetectionEnabled bool `pulumi:"containersLogsDetectionEnabled"`
 	// Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
 	DateSearchLimitBytes int `pulumi:"dateSearchLimitBytes"`
@@ -208,17 +199,17 @@ type logOneagentArgs struct {
 	DefaultTimezone string `pulumi:"defaultTimezone"`
 	// Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
 	EventLogQueryTimeoutSec int `pulumi:"eventLogQueryTimeoutSec"`
-	// Detect IIS logs
+	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled bool `pulumi:"iisdetectionEnabled"`
-	// Detect logs on Network File Systems (NFS)
+	// Allows detection of logs written to mounted network storage drives.
 	LogScannerLinuxNfsEnabled bool `pulumi:"logScannerLinuxNfsEnabled"`
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount int `pulumi:"maxLgisPerEntityCount"`
 	// Defines the minimum number of bytes in log file required for binary detection.
 	MinBinaryDetectionLimitBytes int `pulumi:"minBinaryDetectionLimitBytes"`
-	// Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
 	MonitorOwnLogsEnabled bool `pulumi:"monitorOwnLogsEnabled"`
-	// Detect open log files
+	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled bool `pulumi:"openLogFilesDetectionEnabled"`
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope *string `pulumi:"scope"`
@@ -226,17 +217,15 @@ type logOneagentArgs struct {
 	SeverityDetectionLimitBytes int `pulumi:"severityDetectionLimitBytes"`
 	// Defines the number of the first lines of every log entry where severity is searched.
 	SeverityDetectionLinesLimit int `pulumi:"severityDetectionLinesLimit"`
-	// (Linux: syslog, message log) (Windows: system, application, security event logs)
+	// Linux: syslog, message log Windows: system, application, security event logs
 	SystemLogsDetectionEnabled bool `pulumi:"systemLogsDetectionEnabled"`
-	// Deprecated for OneAgent 1.247+
-	UtcasDefaultContainerTimezone bool `pulumi:"utcasDefaultContainerTimezone"`
 }
 
 // The set of arguments for constructing a LogOneagent resource.
 type LogOneagentArgs struct {
-	// Detect container time zones
+	// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
 	ContainerTimezoneHeuristicEnabled pulumi.BoolInput
-	// Detect logs inside containers
+	// Allows detection of log messages written to the containerized application's stdout/stderr streams.
 	ContainersLogsDetectionEnabled pulumi.BoolInput
 	// Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
 	DateSearchLimitBytes pulumi.IntInput
@@ -244,17 +233,17 @@ type LogOneagentArgs struct {
 	DefaultTimezone pulumi.StringInput
 	// Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
 	EventLogQueryTimeoutSec pulumi.IntInput
-	// Detect IIS logs
+	// Allows detection of logs and event logs written by IIS server.
 	IisdetectionEnabled pulumi.BoolInput
-	// Detect logs on Network File Systems (NFS)
+	// Allows detection of logs written to mounted network storage drives.
 	LogScannerLinuxNfsEnabled pulumi.BoolInput
 	// Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
 	MaxLgisPerEntityCount pulumi.IntInput
 	// Defines the minimum number of bytes in log file required for binary detection.
 	MinBinaryDetectionLimitBytes pulumi.IntInput
-	// Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+	// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
 	MonitorOwnLogsEnabled pulumi.BoolInput
-	// Detect open log files
+	// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 	OpenLogFilesDetectionEnabled pulumi.BoolInput
 	// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
 	Scope pulumi.StringPtrInput
@@ -262,10 +251,8 @@ type LogOneagentArgs struct {
 	SeverityDetectionLimitBytes pulumi.IntInput
 	// Defines the number of the first lines of every log entry where severity is searched.
 	SeverityDetectionLinesLimit pulumi.IntInput
-	// (Linux: syslog, message log) (Windows: system, application, security event logs)
+	// Linux: syslog, message log Windows: system, application, security event logs
 	SystemLogsDetectionEnabled pulumi.BoolInput
-	// Deprecated for OneAgent 1.247+
-	UtcasDefaultContainerTimezone pulumi.BoolInput
 }
 
 func (LogOneagentArgs) ElementType() reflect.Type {
@@ -355,12 +342,12 @@ func (o LogOneagentOutput) ToLogOneagentOutputWithContext(ctx context.Context) L
 	return o
 }
 
-// Detect container time zones
+// Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
 func (o LogOneagentOutput) ContainerTimezoneHeuristicEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.ContainerTimezoneHeuristicEnabled }).(pulumi.BoolOutput)
 }
 
-// Detect logs inside containers
+// Allows detection of log messages written to the containerized application's stdout/stderr streams.
 func (o LogOneagentOutput) ContainersLogsDetectionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.ContainersLogsDetectionEnabled }).(pulumi.BoolOutput)
 }
@@ -380,12 +367,12 @@ func (o LogOneagentOutput) EventLogQueryTimeoutSec() pulumi.IntOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.IntOutput { return v.EventLogQueryTimeoutSec }).(pulumi.IntOutput)
 }
 
-// Detect IIS logs
+// Allows detection of logs and event logs written by IIS server.
 func (o LogOneagentOutput) IisdetectionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.IisdetectionEnabled }).(pulumi.BoolOutput)
 }
 
-// Detect logs on Network File Systems (NFS)
+// Allows detection of logs written to mounted network storage drives.
 func (o LogOneagentOutput) LogScannerLinuxNfsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.LogScannerLinuxNfsEnabled }).(pulumi.BoolOutput)
 }
@@ -400,12 +387,12 @@ func (o LogOneagentOutput) MinBinaryDetectionLimitBytes() pulumi.IntOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.IntOutput { return v.MinBinaryDetectionLimitBytes }).(pulumi.IntOutput)
 }
 
-// Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+// Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
 func (o LogOneagentOutput) MonitorOwnLogsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.MonitorOwnLogsEnabled }).(pulumi.BoolOutput)
 }
 
-// Detect open log files
+// Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
 func (o LogOneagentOutput) OpenLogFilesDetectionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.OpenLogFilesDetectionEnabled }).(pulumi.BoolOutput)
 }
@@ -425,14 +412,9 @@ func (o LogOneagentOutput) SeverityDetectionLinesLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.IntOutput { return v.SeverityDetectionLinesLimit }).(pulumi.IntOutput)
 }
 
-// (Linux: syslog, message log) (Windows: system, application, security event logs)
+// Linux: syslog, message log Windows: system, application, security event logs
 func (o LogOneagentOutput) SystemLogsDetectionEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.SystemLogsDetectionEnabled }).(pulumi.BoolOutput)
-}
-
-// Deprecated for OneAgent 1.247+
-func (o LogOneagentOutput) UtcasDefaultContainerTimezone() pulumi.BoolOutput {
-	return o.ApplyT(func(v *LogOneagent) pulumi.BoolOutput { return v.UtcasDefaultContainerTimezone }).(pulumi.BoolOutput)
 }
 
 type LogOneagentArrayOutput struct{ *pulumi.OutputState }

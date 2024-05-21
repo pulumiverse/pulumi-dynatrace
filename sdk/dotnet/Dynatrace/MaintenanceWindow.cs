@@ -11,7 +11,9 @@ using Pulumi;
 namespace Pulumiverse.PulumiPackage.Dynatrace
 {
     /// <summary>
-    /// The API utilized for this resource is deprecated, please use dynatrace.Maintenance instead.
+    /// !&gt; This resource API endpoint has been deprecated, please use dynatrace.Maintenance instead.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
     /// 
     /// ## Dynatrace Documentation
     /// 

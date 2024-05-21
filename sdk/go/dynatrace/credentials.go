@@ -7,7 +7,6 @@ import (
 	"context"
 	"reflect"
 
-	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
@@ -15,6 +14,8 @@ import (
 type Credentials struct {
 	pulumi.CustomResourceState
 
+	// Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+	AllowContextlessRequests pulumi.BoolPtrOutput `pulumi:"allowContextlessRequests"`
 	// The certificate in the string format.
 	Certificate pulumi.StringPtrOutput `pulumi:"certificate"`
 	// The list contains summary data related to the use of credentials
@@ -35,7 +36,11 @@ type Credentials struct {
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public pulumi.BoolPtrOutput `pulumi:"public"`
 	// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
-	Scope pulumi.StringOutput `pulumi:"scope"`
+	//
+	// Deprecated: Deprecated(v279), please use `scopes` instead.
+	Scope pulumi.StringPtrOutput `pulumi:"scope"`
+	// The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+	Scopes pulumi.StringArrayOutput `pulumi:"scopes"`
 	// Token in the string format. Specifying a token implies `Token Authentication`.
 	Token pulumi.StringPtrOutput `pulumi:"token"`
 	// The username of the credentials set.
@@ -46,12 +51,9 @@ type Credentials struct {
 func NewCredentials(ctx *pulumi.Context,
 	name string, args *CredentialsArgs, opts ...pulumi.ResourceOption) (*Credentials, error) {
 	if args == nil {
-		return nil, errors.New("missing one or more required arguments")
+		args = &CredentialsArgs{}
 	}
 
-	if args.Scope == nil {
-		return nil, errors.New("invalid value for required argument 'Scope'")
-	}
 	if args.Password != nil {
 		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringPtrInput)
 	}
@@ -90,6 +92,8 @@ func GetCredentials(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Credentials resources.
 type credentialsState struct {
+	// Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+	AllowContextlessRequests *bool `pulumi:"allowContextlessRequests"`
 	// The certificate in the string format.
 	Certificate *string `pulumi:"certificate"`
 	// The list contains summary data related to the use of credentials
@@ -110,7 +114,11 @@ type credentialsState struct {
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public *bool `pulumi:"public"`
 	// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+	//
+	// Deprecated: Deprecated(v279), please use `scopes` instead.
 	Scope *string `pulumi:"scope"`
+	// The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+	Scopes []string `pulumi:"scopes"`
 	// Token in the string format. Specifying a token implies `Token Authentication`.
 	Token *string `pulumi:"token"`
 	// The username of the credentials set.
@@ -118,6 +126,8 @@ type credentialsState struct {
 }
 
 type CredentialsState struct {
+	// Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+	AllowContextlessRequests pulumi.BoolPtrInput
 	// The certificate in the string format.
 	Certificate pulumi.StringPtrInput
 	// The list contains summary data related to the use of credentials
@@ -138,7 +148,11 @@ type CredentialsState struct {
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public pulumi.BoolPtrInput
 	// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+	//
+	// Deprecated: Deprecated(v279), please use `scopes` instead.
 	Scope pulumi.StringPtrInput
+	// The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+	Scopes pulumi.StringArrayInput
 	// Token in the string format. Specifying a token implies `Token Authentication`.
 	Token pulumi.StringPtrInput
 	// The username of the credentials set.
@@ -150,6 +164,8 @@ func (CredentialsState) ElementType() reflect.Type {
 }
 
 type credentialsArgs struct {
+	// Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+	AllowContextlessRequests *bool `pulumi:"allowContextlessRequests"`
 	// The certificate in the string format.
 	Certificate *string `pulumi:"certificate"`
 	// The list contains summary data related to the use of credentials
@@ -170,7 +186,11 @@ type credentialsArgs struct {
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public *bool `pulumi:"public"`
 	// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
-	Scope string `pulumi:"scope"`
+	//
+	// Deprecated: Deprecated(v279), please use `scopes` instead.
+	Scope *string `pulumi:"scope"`
+	// The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+	Scopes []string `pulumi:"scopes"`
 	// Token in the string format. Specifying a token implies `Token Authentication`.
 	Token *string `pulumi:"token"`
 	// The username of the credentials set.
@@ -179,6 +199,8 @@ type credentialsArgs struct {
 
 // The set of arguments for constructing a Credentials resource.
 type CredentialsArgs struct {
+	// Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+	AllowContextlessRequests pulumi.BoolPtrInput
 	// The certificate in the string format.
 	Certificate pulumi.StringPtrInput
 	// The list contains summary data related to the use of credentials
@@ -199,7 +221,11 @@ type CredentialsArgs struct {
 	// For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
 	Public pulumi.BoolPtrInput
 	// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
-	Scope pulumi.StringInput
+	//
+	// Deprecated: Deprecated(v279), please use `scopes` instead.
+	Scope pulumi.StringPtrInput
+	// The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+	Scopes pulumi.StringArrayInput
 	// Token in the string format. Specifying a token implies `Token Authentication`.
 	Token pulumi.StringPtrInput
 	// The username of the credentials set.
@@ -293,6 +319,11 @@ func (o CredentialsOutput) ToCredentialsOutputWithContext(ctx context.Context) C
 	return o
 }
 
+// Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+func (o CredentialsOutput) AllowContextlessRequests() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Credentials) pulumi.BoolPtrOutput { return v.AllowContextlessRequests }).(pulumi.BoolPtrOutput)
+}
+
 // The certificate in the string format.
 func (o CredentialsOutput) Certificate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Credentials) pulumi.StringPtrOutput { return v.Certificate }).(pulumi.StringPtrOutput)
@@ -340,8 +371,15 @@ func (o CredentialsOutput) Public() pulumi.BoolPtrOutput {
 }
 
 // The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
-func (o CredentialsOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v *Credentials) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
+//
+// Deprecated: Deprecated(v279), please use `scopes` instead.
+func (o CredentialsOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Credentials) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
+}
+
+// The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+func (o CredentialsOutput) Scopes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Credentials) pulumi.StringArrayOutput { return v.Scopes }).(pulumi.StringArrayOutput)
 }
 
 // Token in the string format. Specifying a token implies `Token Authentication`.

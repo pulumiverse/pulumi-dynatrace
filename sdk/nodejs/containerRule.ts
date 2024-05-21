@@ -37,6 +37,10 @@ export class ContainerRule extends pulumi.CustomResource {
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Possible Values: `MONITORING_OFF`, `MONITORING_ON`
      */
     public readonly mode!: pulumi.Output<string>;
@@ -67,6 +71,7 @@ export class ContainerRule extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ContainerRuleState | undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["mode"] = state ? state.mode : undefined;
             resourceInputs["operator"] = state ? state.operator : undefined;
             resourceInputs["property"] = state ? state.property : undefined;
@@ -86,6 +91,7 @@ export class ContainerRule extends pulumi.CustomResource {
                 throw new Error("Missing required property 'property'");
             }
             resourceInputs["enabled"] = args ? args.enabled : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["mode"] = args ? args.mode : undefined;
             resourceInputs["operator"] = args ? args.operator : undefined;
             resourceInputs["property"] = args ? args.property : undefined;
@@ -104,6 +110,10 @@ export interface ContainerRuleState {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Possible Values: `MONITORING_OFF`, `MONITORING_ON`
      */
@@ -130,6 +140,10 @@ export interface ContainerRuleArgs {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Possible Values: `MONITORING_OFF`, `MONITORING_ON`
      */

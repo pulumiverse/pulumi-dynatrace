@@ -26,7 +26,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<string> Description { get; set; } = null!;
 
         /// <summary>
-        /// The event type to trigger.
+        /// Possible Values: `AVAILABILITY`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `ERROR`, `INFO`, `MARKED_FOR_TERMINATION`, `RESOURCE`, `SLOWDOWN`
         /// </summary>
         [Input("eventType", required: true)]
         public Input<string> EventType { get; set; } = null!;

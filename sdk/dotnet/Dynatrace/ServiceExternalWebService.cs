@@ -14,7 +14,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public partial class ServiceExternalWebService : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+        /// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
         /// </summary>
         [Output("conditions")]
         public Output<Outputs.ServiceExternalWebServiceConditions?> Conditions { get; private set; } = null!;
@@ -32,13 +32,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. It is possible to exclude Port from contributing by toggling the switch off.
+        /// Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. You can exclude the port contribution by disabling the switch.
         /// </summary>
         [Output("idContributors")]
         public Output<Outputs.ServiceExternalWebServiceIdContributors> IdContributors { get; private set; } = null!;
 
         /// <summary>
-        /// Define a management zone filter for this service detection rule.
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Output("insertAfter")]
+        public Output<string> InsertAfter { get; private set; } = null!;
+
+        /// <summary>
+        /// Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
         /// </summary>
         [Output("managementZones")]
         public Output<ImmutableArray<string>> ManagementZones { get; private set; } = null!;
@@ -97,7 +103,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class ServiceExternalWebServiceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+        /// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
         /// </summary>
         [Input("conditions")]
         public Input<Inputs.ServiceExternalWebServiceConditionsArgs>? Conditions { get; set; }
@@ -115,16 +121,22 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. It is possible to exclude Port from contributing by toggling the switch off.
+        /// Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. You can exclude the port contribution by disabling the switch.
         /// </summary>
         [Input("idContributors", required: true)]
         public Input<Inputs.ServiceExternalWebServiceIdContributorsArgs> IdContributors { get; set; } = null!;
+
+        /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
 
         [Input("managementZones")]
         private InputList<string>? _managementZones;
 
         /// <summary>
-        /// Define a management zone filter for this service detection rule.
+        /// Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
         /// </summary>
         public InputList<string> ManagementZones
         {
@@ -147,7 +159,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class ServiceExternalWebServiceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they **all** must match a Request for the rule to apply. Conditions evaluate against attributes, but do not modify them.
+        /// A list of conditions necessary for the rule to take effect. If multiple conditions are specified, they must **all** match a Request for the rule to apply. If there is no condition at all, the rule is always applied. Conditions are evaluated against attributes, but do not modify them.
         /// </summary>
         [Input("conditions")]
         public Input<Inputs.ServiceExternalWebServiceConditionsGetArgs>? Conditions { get; set; }
@@ -165,16 +177,22 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. It is possible to exclude Port from contributing by toggling the switch off.
+        /// Contributors to the Service Identifier calculation. URL path is always applied as an Id Contributor. You can exclude the port contribution by disabling the switch.
         /// </summary>
         [Input("idContributors")]
         public Input<Inputs.ServiceExternalWebServiceIdContributorsGetArgs>? IdContributors { get; set; }
+
+        /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
 
         [Input("managementZones")]
         private InputList<string>? _managementZones;
 
         /// <summary>
-        /// Define a management zone filter for this service detection rule.
+        /// Define a management zone of the process group for which this service detection rule should be created.  Note: in case of external requests/services the PG might not always be known. See [here](https://dt-url.net/9i03b79)
         /// </summary>
         public InputList<string> ManagementZones
         {

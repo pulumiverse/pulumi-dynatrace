@@ -17,6 +17,8 @@ type LogSensitiveDataMasking struct {
 
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// no documentation available
 	Masking LogSensitiveDataMaskingMaskingOutput `pulumi:"masking"`
 	// no documentation available
@@ -65,6 +67,8 @@ func GetLogSensitiveDataMasking(ctx *pulumi.Context,
 type logSensitiveDataMaskingState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// no documentation available
 	Masking *LogSensitiveDataMaskingMasking `pulumi:"masking"`
 	// no documentation available
@@ -78,6 +82,8 @@ type logSensitiveDataMaskingState struct {
 type LogSensitiveDataMaskingState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// no documentation available
 	Masking LogSensitiveDataMaskingMaskingPtrInput
 	// no documentation available
@@ -95,6 +101,8 @@ func (LogSensitiveDataMaskingState) ElementType() reflect.Type {
 type logSensitiveDataMaskingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// no documentation available
 	Masking LogSensitiveDataMaskingMasking `pulumi:"masking"`
 	// no documentation available
@@ -109,6 +117,8 @@ type logSensitiveDataMaskingArgs struct {
 type LogSensitiveDataMaskingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// no documentation available
 	Masking LogSensitiveDataMaskingMaskingInput
 	// no documentation available
@@ -209,6 +219,11 @@ func (o LogSensitiveDataMaskingOutput) ToLogSensitiveDataMaskingOutputWithContex
 // This setting is enabled (`true`) or disabled (`false`)
 func (o LogSensitiveDataMaskingOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogSensitiveDataMasking) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o LogSensitiveDataMaskingOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *LogSensitiveDataMasking) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // no documentation available

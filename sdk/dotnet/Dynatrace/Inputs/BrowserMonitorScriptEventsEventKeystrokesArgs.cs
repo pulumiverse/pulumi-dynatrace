@@ -33,6 +33,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<bool>? SimulateBlurEvent { get; set; }
 
         /// <summary>
+        /// Simulates pressing the 'Return' key after simulating other keystrokes. For example, to submit a form or trigger a login.
+        /// </summary>
+        [Input("simulateReturnKey")]
+        public Input<bool>? SimulateReturnKey { get; set; }
+
+        /// <summary>
         /// The tab on which the page should open
         /// </summary>
         [Input("target")]

@@ -17,7 +17,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
         /// </summary>
         [Output("autoInjection")]
-        public Output<bool> AutoInjection { get; private set; } = null!;
+        public Output<bool?> AutoInjection { get; private set; } = null!;
 
         /// <summary>
         /// This setting is enabled (`true`) or disabled (`false`)
@@ -29,7 +29,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
         /// </summary>
         [Output("fullStack")]
-        public Output<bool> FullStack { get; private set; } = null!;
+        public Output<bool?> FullStack { get; private set; } = null!;
 
         /// <summary>
         /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
@@ -87,8 +87,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
         /// </summary>
-        [Input("autoInjection", required: true)]
-        public Input<bool> AutoInjection { get; set; } = null!;
+        [Input("autoInjection")]
+        public Input<bool>? AutoInjection { get; set; }
 
         /// <summary>
         /// This setting is enabled (`true`) or disabled (`false`)
@@ -99,8 +99,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
         /// </summary>
-        [Input("fullStack", required: true)]
-        public Input<bool> FullStack { get; set; } = null!;
+        [Input("fullStack")]
+        public Input<bool>? FullStack { get; set; }
 
         /// <summary>
         /// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.

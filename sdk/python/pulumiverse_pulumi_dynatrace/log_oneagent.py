@@ -28,25 +28,23 @@ class LogOneagentArgs:
                  severity_detection_limit_bytes: pulumi.Input[int],
                  severity_detection_lines_limit: pulumi.Input[int],
                  system_logs_detection_enabled: pulumi.Input[bool],
-                 utcas_default_container_timezone: pulumi.Input[bool],
                  scope: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a LogOneagent resource.
-        :param pulumi.Input[bool] container_timezone_heuristic_enabled: Detect container time zones
-        :param pulumi.Input[bool] containers_logs_detection_enabled: Detect logs inside containers
+        :param pulumi.Input[bool] container_timezone_heuristic_enabled: Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
+        :param pulumi.Input[bool] containers_logs_detection_enabled: Allows detection of log messages written to the containerized application's stdout/stderr streams.
         :param pulumi.Input[int] date_search_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[str] default_timezone: Default timezone for agent if more specific configurations is not defined.
         :param pulumi.Input[int] event_log_query_timeout_sec: Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
-        :param pulumi.Input[bool] iisdetection_enabled: Detect IIS logs
-        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Detect logs on Network File Systems (NFS)
+        :param pulumi.Input[bool] iisdetection_enabled: Allows detection of logs and event logs written by IIS server.
+        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives.
         :param pulumi.Input[int] max_lgis_per_entity_count: Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
         :param pulumi.Input[int] min_binary_detection_limit_bytes: Defines the minimum number of bytes in log file required for binary detection.
-        :param pulumi.Input[bool] monitor_own_logs_enabled: Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
-        :param pulumi.Input[bool] open_log_files_detection_enabled: Detect open log files
+        :param pulumi.Input[bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+        :param pulumi.Input[bool] open_log_files_detection_enabled: Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
         :param pulumi.Input[int] severity_detection_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
         :param pulumi.Input[int] severity_detection_lines_limit: Defines the number of the first lines of every log entry where severity is searched.
-        :param pulumi.Input[bool] system_logs_detection_enabled: (Linux: syslog, message log) (Windows: system, application, security event logs)
-        :param pulumi.Input[bool] utcas_default_container_timezone: Deprecated for OneAgent 1.247+
+        :param pulumi.Input[bool] system_logs_detection_enabled: Linux: syslog, message log Windows: system, application, security event logs
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "container_timezone_heuristic_enabled", container_timezone_heuristic_enabled)
@@ -63,7 +61,6 @@ class LogOneagentArgs:
         pulumi.set(__self__, "severity_detection_limit_bytes", severity_detection_limit_bytes)
         pulumi.set(__self__, "severity_detection_lines_limit", severity_detection_lines_limit)
         pulumi.set(__self__, "system_logs_detection_enabled", system_logs_detection_enabled)
-        pulumi.set(__self__, "utcas_default_container_timezone", utcas_default_container_timezone)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
 
@@ -71,7 +68,7 @@ class LogOneagentArgs:
     @pulumi.getter(name="containerTimezoneHeuristicEnabled")
     def container_timezone_heuristic_enabled(self) -> pulumi.Input[bool]:
         """
-        Detect container time zones
+        Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
         """
         return pulumi.get(self, "container_timezone_heuristic_enabled")
 
@@ -83,7 +80,7 @@ class LogOneagentArgs:
     @pulumi.getter(name="containersLogsDetectionEnabled")
     def containers_logs_detection_enabled(self) -> pulumi.Input[bool]:
         """
-        Detect logs inside containers
+        Allows detection of log messages written to the containerized application's stdout/stderr streams.
         """
         return pulumi.get(self, "containers_logs_detection_enabled")
 
@@ -131,7 +128,7 @@ class LogOneagentArgs:
     @pulumi.getter(name="iisdetectionEnabled")
     def iisdetection_enabled(self) -> pulumi.Input[bool]:
         """
-        Detect IIS logs
+        Allows detection of logs and event logs written by IIS server.
         """
         return pulumi.get(self, "iisdetection_enabled")
 
@@ -143,7 +140,7 @@ class LogOneagentArgs:
     @pulumi.getter(name="logScannerLinuxNfsEnabled")
     def log_scanner_linux_nfs_enabled(self) -> pulumi.Input[bool]:
         """
-        Detect logs on Network File Systems (NFS)
+        Allows detection of logs written to mounted network storage drives.
         """
         return pulumi.get(self, "log_scanner_linux_nfs_enabled")
 
@@ -179,7 +176,7 @@ class LogOneagentArgs:
     @pulumi.getter(name="monitorOwnLogsEnabled")
     def monitor_own_logs_enabled(self) -> pulumi.Input[bool]:
         """
-        Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+        Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
         """
         return pulumi.get(self, "monitor_own_logs_enabled")
 
@@ -191,7 +188,7 @@ class LogOneagentArgs:
     @pulumi.getter(name="openLogFilesDetectionEnabled")
     def open_log_files_detection_enabled(self) -> pulumi.Input[bool]:
         """
-        Detect open log files
+        Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
         """
         return pulumi.get(self, "open_log_files_detection_enabled")
 
@@ -227,25 +224,13 @@ class LogOneagentArgs:
     @pulumi.getter(name="systemLogsDetectionEnabled")
     def system_logs_detection_enabled(self) -> pulumi.Input[bool]:
         """
-        (Linux: syslog, message log) (Windows: system, application, security event logs)
+        Linux: syslog, message log Windows: system, application, security event logs
         """
         return pulumi.get(self, "system_logs_detection_enabled")
 
     @system_logs_detection_enabled.setter
     def system_logs_detection_enabled(self, value: pulumi.Input[bool]):
         pulumi.set(self, "system_logs_detection_enabled", value)
-
-    @property
-    @pulumi.getter(name="utcasDefaultContainerTimezone")
-    def utcas_default_container_timezone(self) -> pulumi.Input[bool]:
-        """
-        Deprecated for OneAgent 1.247+
-        """
-        return pulumi.get(self, "utcas_default_container_timezone")
-
-    @utcas_default_container_timezone.setter
-    def utcas_default_container_timezone(self, value: pulumi.Input[bool]):
-        pulumi.set(self, "utcas_default_container_timezone", value)
 
     @property
     @pulumi.getter
@@ -277,26 +262,24 @@ class _LogOneagentState:
                  scope: Optional[pulumi.Input[str]] = None,
                  severity_detection_limit_bytes: Optional[pulumi.Input[int]] = None,
                  severity_detection_lines_limit: Optional[pulumi.Input[int]] = None,
-                 system_logs_detection_enabled: Optional[pulumi.Input[bool]] = None,
-                 utcas_default_container_timezone: Optional[pulumi.Input[bool]] = None):
+                 system_logs_detection_enabled: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering LogOneagent resources.
-        :param pulumi.Input[bool] container_timezone_heuristic_enabled: Detect container time zones
-        :param pulumi.Input[bool] containers_logs_detection_enabled: Detect logs inside containers
+        :param pulumi.Input[bool] container_timezone_heuristic_enabled: Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
+        :param pulumi.Input[bool] containers_logs_detection_enabled: Allows detection of log messages written to the containerized application's stdout/stderr streams.
         :param pulumi.Input[int] date_search_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[str] default_timezone: Default timezone for agent if more specific configurations is not defined.
         :param pulumi.Input[int] event_log_query_timeout_sec: Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
-        :param pulumi.Input[bool] iisdetection_enabled: Detect IIS logs
-        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Detect logs on Network File Systems (NFS)
+        :param pulumi.Input[bool] iisdetection_enabled: Allows detection of logs and event logs written by IIS server.
+        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives.
         :param pulumi.Input[int] max_lgis_per_entity_count: Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
         :param pulumi.Input[int] min_binary_detection_limit_bytes: Defines the minimum number of bytes in log file required for binary detection.
-        :param pulumi.Input[bool] monitor_own_logs_enabled: Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
-        :param pulumi.Input[bool] open_log_files_detection_enabled: Detect open log files
+        :param pulumi.Input[bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+        :param pulumi.Input[bool] open_log_files_detection_enabled: Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[int] severity_detection_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
         :param pulumi.Input[int] severity_detection_lines_limit: Defines the number of the first lines of every log entry where severity is searched.
-        :param pulumi.Input[bool] system_logs_detection_enabled: (Linux: syslog, message log) (Windows: system, application, security event logs)
-        :param pulumi.Input[bool] utcas_default_container_timezone: Deprecated for OneAgent 1.247+
+        :param pulumi.Input[bool] system_logs_detection_enabled: Linux: syslog, message log Windows: system, application, security event logs
         """
         if container_timezone_heuristic_enabled is not None:
             pulumi.set(__self__, "container_timezone_heuristic_enabled", container_timezone_heuristic_enabled)
@@ -328,14 +311,12 @@ class _LogOneagentState:
             pulumi.set(__self__, "severity_detection_lines_limit", severity_detection_lines_limit)
         if system_logs_detection_enabled is not None:
             pulumi.set(__self__, "system_logs_detection_enabled", system_logs_detection_enabled)
-        if utcas_default_container_timezone is not None:
-            pulumi.set(__self__, "utcas_default_container_timezone", utcas_default_container_timezone)
 
     @property
     @pulumi.getter(name="containerTimezoneHeuristicEnabled")
     def container_timezone_heuristic_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Detect container time zones
+        Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
         """
         return pulumi.get(self, "container_timezone_heuristic_enabled")
 
@@ -347,7 +328,7 @@ class _LogOneagentState:
     @pulumi.getter(name="containersLogsDetectionEnabled")
     def containers_logs_detection_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Detect logs inside containers
+        Allows detection of log messages written to the containerized application's stdout/stderr streams.
         """
         return pulumi.get(self, "containers_logs_detection_enabled")
 
@@ -395,7 +376,7 @@ class _LogOneagentState:
     @pulumi.getter(name="iisdetectionEnabled")
     def iisdetection_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Detect IIS logs
+        Allows detection of logs and event logs written by IIS server.
         """
         return pulumi.get(self, "iisdetection_enabled")
 
@@ -407,7 +388,7 @@ class _LogOneagentState:
     @pulumi.getter(name="logScannerLinuxNfsEnabled")
     def log_scanner_linux_nfs_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Detect logs on Network File Systems (NFS)
+        Allows detection of logs written to mounted network storage drives.
         """
         return pulumi.get(self, "log_scanner_linux_nfs_enabled")
 
@@ -443,7 +424,7 @@ class _LogOneagentState:
     @pulumi.getter(name="monitorOwnLogsEnabled")
     def monitor_own_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+        Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
         """
         return pulumi.get(self, "monitor_own_logs_enabled")
 
@@ -455,7 +436,7 @@ class _LogOneagentState:
     @pulumi.getter(name="openLogFilesDetectionEnabled")
     def open_log_files_detection_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Detect open log files
+        Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
         """
         return pulumi.get(self, "open_log_files_detection_enabled")
 
@@ -503,25 +484,13 @@ class _LogOneagentState:
     @pulumi.getter(name="systemLogsDetectionEnabled")
     def system_logs_detection_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Linux: syslog, message log) (Windows: system, application, security event logs)
+        Linux: syslog, message log Windows: system, application, security event logs
         """
         return pulumi.get(self, "system_logs_detection_enabled")
 
     @system_logs_detection_enabled.setter
     def system_logs_detection_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "system_logs_detection_enabled", value)
-
-    @property
-    @pulumi.getter(name="utcasDefaultContainerTimezone")
-    def utcas_default_container_timezone(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Deprecated for OneAgent 1.247+
-        """
-        return pulumi.get(self, "utcas_default_container_timezone")
-
-    @utcas_default_container_timezone.setter
-    def utcas_default_container_timezone(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "utcas_default_container_timezone", value)
 
 
 class LogOneagent(pulumi.CustomResource):
@@ -544,28 +513,26 @@ class LogOneagent(pulumi.CustomResource):
                  severity_detection_limit_bytes: Optional[pulumi.Input[int]] = None,
                  severity_detection_lines_limit: Optional[pulumi.Input[int]] = None,
                  system_logs_detection_enabled: Optional[pulumi.Input[bool]] = None,
-                 utcas_default_container_timezone: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
         Create a LogOneagent resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] container_timezone_heuristic_enabled: Detect container time zones
-        :param pulumi.Input[bool] containers_logs_detection_enabled: Detect logs inside containers
+        :param pulumi.Input[bool] container_timezone_heuristic_enabled: Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
+        :param pulumi.Input[bool] containers_logs_detection_enabled: Allows detection of log messages written to the containerized application's stdout/stderr streams.
         :param pulumi.Input[int] date_search_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[str] default_timezone: Default timezone for agent if more specific configurations is not defined.
         :param pulumi.Input[int] event_log_query_timeout_sec: Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
-        :param pulumi.Input[bool] iisdetection_enabled: Detect IIS logs
-        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Detect logs on Network File Systems (NFS)
+        :param pulumi.Input[bool] iisdetection_enabled: Allows detection of logs and event logs written by IIS server.
+        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives.
         :param pulumi.Input[int] max_lgis_per_entity_count: Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
         :param pulumi.Input[int] min_binary_detection_limit_bytes: Defines the minimum number of bytes in log file required for binary detection.
-        :param pulumi.Input[bool] monitor_own_logs_enabled: Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
-        :param pulumi.Input[bool] open_log_files_detection_enabled: Detect open log files
+        :param pulumi.Input[bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+        :param pulumi.Input[bool] open_log_files_detection_enabled: Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[int] severity_detection_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
         :param pulumi.Input[int] severity_detection_lines_limit: Defines the number of the first lines of every log entry where severity is searched.
-        :param pulumi.Input[bool] system_logs_detection_enabled: (Linux: syslog, message log) (Windows: system, application, security event logs)
-        :param pulumi.Input[bool] utcas_default_container_timezone: Deprecated for OneAgent 1.247+
+        :param pulumi.Input[bool] system_logs_detection_enabled: Linux: syslog, message log Windows: system, application, security event logs
         """
         ...
     @overload
@@ -605,7 +572,6 @@ class LogOneagent(pulumi.CustomResource):
                  severity_detection_limit_bytes: Optional[pulumi.Input[int]] = None,
                  severity_detection_lines_limit: Optional[pulumi.Input[int]] = None,
                  system_logs_detection_enabled: Optional[pulumi.Input[bool]] = None,
-                 utcas_default_container_timezone: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -658,9 +624,6 @@ class LogOneagent(pulumi.CustomResource):
             if system_logs_detection_enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'system_logs_detection_enabled'")
             __props__.__dict__["system_logs_detection_enabled"] = system_logs_detection_enabled
-            if utcas_default_container_timezone is None and not opts.urn:
-                raise TypeError("Missing required property 'utcas_default_container_timezone'")
-            __props__.__dict__["utcas_default_container_timezone"] = utcas_default_container_timezone
         super(LogOneagent, __self__).__init__(
             'dynatrace:index/logOneagent:LogOneagent',
             resource_name,
@@ -685,8 +648,7 @@ class LogOneagent(pulumi.CustomResource):
             scope: Optional[pulumi.Input[str]] = None,
             severity_detection_limit_bytes: Optional[pulumi.Input[int]] = None,
             severity_detection_lines_limit: Optional[pulumi.Input[int]] = None,
-            system_logs_detection_enabled: Optional[pulumi.Input[bool]] = None,
-            utcas_default_container_timezone: Optional[pulumi.Input[bool]] = None) -> 'LogOneagent':
+            system_logs_detection_enabled: Optional[pulumi.Input[bool]] = None) -> 'LogOneagent':
         """
         Get an existing LogOneagent resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -694,22 +656,21 @@ class LogOneagent(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] container_timezone_heuristic_enabled: Detect container time zones
-        :param pulumi.Input[bool] containers_logs_detection_enabled: Detect logs inside containers
+        :param pulumi.Input[bool] container_timezone_heuristic_enabled: Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
+        :param pulumi.Input[bool] containers_logs_detection_enabled: Allows detection of log messages written to the containerized application's stdout/stderr streams.
         :param pulumi.Input[int] date_search_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[str] default_timezone: Default timezone for agent if more specific configurations is not defined.
         :param pulumi.Input[int] event_log_query_timeout_sec: Defines the maximum timeout value, in seconds, for the query extracting Windows Event Logs
-        :param pulumi.Input[bool] iisdetection_enabled: Detect IIS logs
-        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Detect logs on Network File Systems (NFS)
+        :param pulumi.Input[bool] iisdetection_enabled: Allows detection of logs and event logs written by IIS server.
+        :param pulumi.Input[bool] log_scanner_linux_nfs_enabled: Allows detection of logs written to mounted network storage drives.
         :param pulumi.Input[int] max_lgis_per_entity_count: Defines the maximum number of log group instances per entity after which, the new automatic ones wouldn't be added.
         :param pulumi.Input[int] min_binary_detection_limit_bytes: Defines the minimum number of bytes in log file required for binary detection.
-        :param pulumi.Input[bool] monitor_own_logs_enabled: Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
-        :param pulumi.Input[bool] open_log_files_detection_enabled: Detect open log files
+        :param pulumi.Input[bool] monitor_own_logs_enabled: Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
+        :param pulumi.Input[bool] open_log_files_detection_enabled: Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[int] severity_detection_limit_bytes: Defines the number of characters in every log line (starting from the first character in the line) where severity is searched.
         :param pulumi.Input[int] severity_detection_lines_limit: Defines the number of the first lines of every log entry where severity is searched.
-        :param pulumi.Input[bool] system_logs_detection_enabled: (Linux: syslog, message log) (Windows: system, application, security event logs)
-        :param pulumi.Input[bool] utcas_default_container_timezone: Deprecated for OneAgent 1.247+
+        :param pulumi.Input[bool] system_logs_detection_enabled: Linux: syslog, message log Windows: system, application, security event logs
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -730,14 +691,13 @@ class LogOneagent(pulumi.CustomResource):
         __props__.__dict__["severity_detection_limit_bytes"] = severity_detection_limit_bytes
         __props__.__dict__["severity_detection_lines_limit"] = severity_detection_lines_limit
         __props__.__dict__["system_logs_detection_enabled"] = system_logs_detection_enabled
-        __props__.__dict__["utcas_default_container_timezone"] = utcas_default_container_timezone
         return LogOneagent(resource_name, opts=opts, __props__=__props__)
 
     @property
     @pulumi.getter(name="containerTimezoneHeuristicEnabled")
     def container_timezone_heuristic_enabled(self) -> pulumi.Output[bool]:
         """
-        Detect container time zones
+        Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
         """
         return pulumi.get(self, "container_timezone_heuristic_enabled")
 
@@ -745,7 +705,7 @@ class LogOneagent(pulumi.CustomResource):
     @pulumi.getter(name="containersLogsDetectionEnabled")
     def containers_logs_detection_enabled(self) -> pulumi.Output[bool]:
         """
-        Detect logs inside containers
+        Allows detection of log messages written to the containerized application's stdout/stderr streams.
         """
         return pulumi.get(self, "containers_logs_detection_enabled")
 
@@ -777,7 +737,7 @@ class LogOneagent(pulumi.CustomResource):
     @pulumi.getter(name="iisdetectionEnabled")
     def iisdetection_enabled(self) -> pulumi.Output[bool]:
         """
-        Detect IIS logs
+        Allows detection of logs and event logs written by IIS server.
         """
         return pulumi.get(self, "iisdetection_enabled")
 
@@ -785,7 +745,7 @@ class LogOneagent(pulumi.CustomResource):
     @pulumi.getter(name="logScannerLinuxNfsEnabled")
     def log_scanner_linux_nfs_enabled(self) -> pulumi.Output[bool]:
         """
-        Detect logs on Network File Systems (NFS)
+        Allows detection of logs written to mounted network storage drives.
         """
         return pulumi.get(self, "log_scanner_linux_nfs_enabled")
 
@@ -809,7 +769,7 @@ class LogOneagent(pulumi.CustomResource):
     @pulumi.getter(name="monitorOwnLogsEnabled")
     def monitor_own_logs_enabled(self) -> pulumi.Output[bool]:
         """
-        Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+        Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
         """
         return pulumi.get(self, "monitor_own_logs_enabled")
 
@@ -817,7 +777,7 @@ class LogOneagent(pulumi.CustomResource):
     @pulumi.getter(name="openLogFilesDetectionEnabled")
     def open_log_files_detection_enabled(self) -> pulumi.Output[bool]:
         """
-        Detect open log files
+        Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
         """
         return pulumi.get(self, "open_log_files_detection_enabled")
 
@@ -849,15 +809,7 @@ class LogOneagent(pulumi.CustomResource):
     @pulumi.getter(name="systemLogsDetectionEnabled")
     def system_logs_detection_enabled(self) -> pulumi.Output[bool]:
         """
-        (Linux: syslog, message log) (Windows: system, application, security event logs)
+        Linux: syslog, message log Windows: system, application, security event logs
         """
         return pulumi.get(self, "system_logs_detection_enabled")
-
-    @property
-    @pulumi.getter(name="utcasDefaultContainerTimezone")
-    def utcas_default_container_timezone(self) -> pulumi.Output[bool]:
-        """
-        Deprecated for OneAgent 1.247+
-        """
-        return pulumi.get(self, "utcas_default_container_timezone")
 

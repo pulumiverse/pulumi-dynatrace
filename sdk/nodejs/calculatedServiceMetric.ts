@@ -55,6 +55,10 @@ export class CalculatedServiceMetric extends pulumi.CustomResource {
      */
     public readonly entityId!: pulumi.Output<string | undefined>;
     /**
+     * Metric should (true) or not (false) ignore muted requests.
+     */
+    public readonly ignoreMutedRequests!: pulumi.Output<boolean | undefined>;
+    /**
      * Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
      */
     public readonly managementZones!: pulumi.Output<string[] | undefined>;
@@ -108,6 +112,7 @@ export class CalculatedServiceMetric extends pulumi.CustomResource {
             resourceInputs["dimensionDefinition"] = state ? state.dimensionDefinition : undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
             resourceInputs["entityId"] = state ? state.entityId : undefined;
+            resourceInputs["ignoreMutedRequests"] = state ? state.ignoreMutedRequests : undefined;
             resourceInputs["managementZones"] = state ? state.managementZones : undefined;
             resourceInputs["metricDefinition"] = state ? state.metricDefinition : undefined;
             resourceInputs["metricKey"] = state ? state.metricKey : undefined;
@@ -128,6 +133,7 @@ export class CalculatedServiceMetric extends pulumi.CustomResource {
             resourceInputs["dimensionDefinition"] = args ? args.dimensionDefinition : undefined;
             resourceInputs["enabled"] = args ? args.enabled : undefined;
             resourceInputs["entityId"] = args ? args.entityId : undefined;
+            resourceInputs["ignoreMutedRequests"] = args ? args.ignoreMutedRequests : undefined;
             resourceInputs["managementZones"] = args ? args.managementZones : undefined;
             resourceInputs["metricDefinition"] = args ? args.metricDefinition : undefined;
             resourceInputs["metricKey"] = args ? args.metricKey : undefined;
@@ -165,6 +171,10 @@ export interface CalculatedServiceMetricState {
      * Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
      */
     entityId?: pulumi.Input<string>;
+    /**
+     * Metric should (true) or not (false) ignore muted requests.
+     */
+    ignoreMutedRequests?: pulumi.Input<boolean>;
     /**
      * Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
      */
@@ -226,6 +236,10 @@ export interface CalculatedServiceMetricArgs {
      * Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
      */
     entityId?: pulumi.Input<string>;
+    /**
+     * Metric should (true) or not (false) ignore muted requests.
+     */
+    ignoreMutedRequests?: pulumi.Input<boolean>;
     /**
      * Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
      */

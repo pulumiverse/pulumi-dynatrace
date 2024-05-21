@@ -17,6 +17,8 @@ type JsonDashboard struct {
 
 	// Contains the JSON Code of the Dashboard
 	Contents pulumi.StringOutput `pulumi:"contents"`
+	// ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
+	LinkId pulumi.StringOutput `pulumi:"linkId"`
 }
 
 // NewJsonDashboard registers a new resource with the given unique name, arguments, and options.
@@ -54,11 +56,15 @@ func GetJsonDashboard(ctx *pulumi.Context,
 type jsonDashboardState struct {
 	// Contains the JSON Code of the Dashboard
 	Contents *string `pulumi:"contents"`
+	// ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
+	LinkId *string `pulumi:"linkId"`
 }
 
 type JsonDashboardState struct {
 	// Contains the JSON Code of the Dashboard
 	Contents pulumi.StringPtrInput
+	// ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
+	LinkId pulumi.StringPtrInput
 }
 
 func (JsonDashboardState) ElementType() reflect.Type {
@@ -68,12 +74,16 @@ func (JsonDashboardState) ElementType() reflect.Type {
 type jsonDashboardArgs struct {
 	// Contains the JSON Code of the Dashboard
 	Contents string `pulumi:"contents"`
+	// ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
+	LinkId *string `pulumi:"linkId"`
 }
 
 // The set of arguments for constructing a JsonDashboard resource.
 type JsonDashboardArgs struct {
 	// Contains the JSON Code of the Dashboard
 	Contents pulumi.StringInput
+	// ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
+	LinkId pulumi.StringPtrInput
 }
 
 func (JsonDashboardArgs) ElementType() reflect.Type {
@@ -166,6 +176,11 @@ func (o JsonDashboardOutput) ToJsonDashboardOutputWithContext(ctx context.Contex
 // Contains the JSON Code of the Dashboard
 func (o JsonDashboardOutput) Contents() pulumi.StringOutput {
 	return o.ApplyT(func(v *JsonDashboard) pulumi.StringOutput { return v.Contents }).(pulumi.StringOutput)
+}
+
+// ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
+func (o JsonDashboardOutput) LinkId() pulumi.StringOutput {
+	return o.ApplyT(func(v *JsonDashboard) pulumi.StringOutput { return v.LinkId }).(pulumi.StringOutput)
 }
 
 type JsonDashboardArrayOutput struct{ *pulumi.OutputState }

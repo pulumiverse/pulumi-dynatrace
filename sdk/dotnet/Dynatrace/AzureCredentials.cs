@@ -68,6 +68,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<bool> MonitorOnlyTaggedEntities { get; private set; } = null!;
 
         /// <summary>
+        /// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `dynatrace.AzureService` subsequently won't get touched.
+        /// </summary>
+        [Output("removeDefaults")]
+        public Output<bool?> RemoveDefaults { get; private set; } = null!;
+
+        /// <summary>
         /// A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
         /// </summary>
         [Output("supportingServices")]
@@ -209,12 +215,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Input("monitorOnlyTaggedEntities", required: true)]
         public Input<bool> MonitorOnlyTaggedEntities { get; set; } = null!;
 
+        /// <summary>
+        /// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `dynatrace.AzureService` subsequently won't get touched.
+        /// </summary>
+        [Input("removeDefaults")]
+        public Input<bool>? RemoveDefaults { get; set; }
+
         [Input("supportingServices")]
         private InputList<Inputs.AzureCredentialsSupportingServiceArgs>? _supportingServices;
 
         /// <summary>
         /// A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
         /// </summary>
+        [Obsolete(@"Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `dynatrace.AzureService` instead.")]
         public InputList<Inputs.AzureCredentialsSupportingServiceArgs> SupportingServices
         {
             get => _supportingServices ?? (_supportingServices = new InputList<Inputs.AzureCredentialsSupportingServiceArgs>());
@@ -314,12 +327,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Input("monitorOnlyTaggedEntities")]
         public Input<bool>? MonitorOnlyTaggedEntities { get; set; }
 
+        /// <summary>
+        /// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `dynatrace.AzureService` subsequently won't get touched.
+        /// </summary>
+        [Input("removeDefaults")]
+        public Input<bool>? RemoveDefaults { get; set; }
+
         [Input("supportingServices")]
         private InputList<Inputs.AzureCredentialsSupportingServiceGetArgs>? _supportingServices;
 
         /// <summary>
         /// A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
         /// </summary>
+        [Obsolete(@"Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `dynatrace.AzureService` instead.")]
         public InputList<Inputs.AzureCredentialsSupportingServiceGetArgs> SupportingServices
         {
             get => _supportingServices ?? (_supportingServices = new InputList<Inputs.AzureCredentialsSupportingServiceGetArgs>());

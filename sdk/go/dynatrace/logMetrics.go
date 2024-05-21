@@ -15,7 +15,7 @@ import (
 type LogMetrics struct {
 	pulumi.CustomResourceState
 
-	// no documentation available
+	// To enable splitting on your metric, add desired dimensions.
 	Dimensions pulumi.StringArrayOutput `pulumi:"dimensions"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
@@ -71,7 +71,7 @@ func GetLogMetrics(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering LogMetrics resources.
 type logMetricsState struct {
-	// no documentation available
+	// To enable splitting on your metric, add desired dimensions.
 	Dimensions []string `pulumi:"dimensions"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
@@ -86,7 +86,7 @@ type logMetricsState struct {
 }
 
 type LogMetricsState struct {
-	// no documentation available
+	// To enable splitting on your metric, add desired dimensions.
 	Dimensions pulumi.StringArrayInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
@@ -105,7 +105,7 @@ func (LogMetricsState) ElementType() reflect.Type {
 }
 
 type logMetricsArgs struct {
-	// no documentation available
+	// To enable splitting on your metric, add desired dimensions.
 	Dimensions []string `pulumi:"dimensions"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
@@ -121,7 +121,7 @@ type logMetricsArgs struct {
 
 // The set of arguments for constructing a LogMetrics resource.
 type LogMetricsArgs struct {
-	// no documentation available
+	// To enable splitting on your metric, add desired dimensions.
 	Dimensions pulumi.StringArrayInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
@@ -222,7 +222,7 @@ func (o LogMetricsOutput) ToLogMetricsOutputWithContext(ctx context.Context) Log
 	return o
 }
 
-// no documentation available
+// To enable splitting on your metric, add desired dimensions.
 func (o LogMetricsOutput) Dimensions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *LogMetrics) pulumi.StringArrayOutput { return v.Dimensions }).(pulumi.StringArrayOutput)
 }

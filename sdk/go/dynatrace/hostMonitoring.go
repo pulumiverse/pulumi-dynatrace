@@ -16,11 +16,15 @@ type HostMonitoring struct {
 	pulumi.CustomResourceState
 
 	// An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
-	AutoInjection pulumi.BoolOutput `pulumi:"autoInjection"`
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.
+	AutoInjection pulumi.BoolPtrOutput `pulumi:"autoInjection"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
-	FullStack pulumi.BoolOutput `pulumi:"fullStack"`
+	//
+	// Deprecated: This attribute is not supported anymore by the Dynatrace API
+	FullStack pulumi.BoolPtrOutput `pulumi:"fullStack"`
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	HostId pulumi.StringOutput `pulumi:"hostId"`
 }
@@ -32,14 +36,8 @@ func NewHostMonitoring(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.AutoInjection == nil {
-		return nil, errors.New("invalid value for required argument 'AutoInjection'")
-	}
 	if args.Enabled == nil {
 		return nil, errors.New("invalid value for required argument 'Enabled'")
-	}
-	if args.FullStack == nil {
-		return nil, errors.New("invalid value for required argument 'FullStack'")
 	}
 	if args.HostId == nil {
 		return nil, errors.New("invalid value for required argument 'HostId'")
@@ -68,10 +66,14 @@ func GetHostMonitoring(ctx *pulumi.Context,
 // Input properties used for looking up and filtering HostMonitoring resources.
 type hostMonitoringState struct {
 	// An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.
 	AutoInjection *bool `pulumi:"autoInjection"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
 	// Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
+	//
+	// Deprecated: This attribute is not supported anymore by the Dynatrace API
 	FullStack *bool `pulumi:"fullStack"`
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	HostId *string `pulumi:"hostId"`
@@ -79,10 +81,14 @@ type hostMonitoringState struct {
 
 type HostMonitoringState struct {
 	// An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.
 	AutoInjection pulumi.BoolPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
 	// Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
+	//
+	// Deprecated: This attribute is not supported anymore by the Dynatrace API
 	FullStack pulumi.BoolPtrInput
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	HostId pulumi.StringPtrInput
@@ -94,11 +100,15 @@ func (HostMonitoringState) ElementType() reflect.Type {
 
 type hostMonitoringArgs struct {
 	// An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
-	AutoInjection bool `pulumi:"autoInjection"`
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.
+	AutoInjection *bool `pulumi:"autoInjection"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
 	// Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
-	FullStack bool `pulumi:"fullStack"`
+	//
+	// Deprecated: This attribute is not supported anymore by the Dynatrace API
+	FullStack *bool `pulumi:"fullStack"`
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	HostId string `pulumi:"hostId"`
 }
@@ -106,11 +116,15 @@ type hostMonitoringArgs struct {
 // The set of arguments for constructing a HostMonitoring resource.
 type HostMonitoringArgs struct {
 	// An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
-	AutoInjection pulumi.BoolInput
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.
+	AutoInjection pulumi.BoolPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
 	// Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
-	FullStack pulumi.BoolInput
+	//
+	// Deprecated: This attribute is not supported anymore by the Dynatrace API
+	FullStack pulumi.BoolPtrInput
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	HostId pulumi.StringInput
 }
@@ -203,8 +217,10 @@ func (o HostMonitoringOutput) ToHostMonitoringOutputWithContext(ctx context.Cont
 }
 
 // An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
-func (o HostMonitoringOutput) AutoInjection() pulumi.BoolOutput {
-	return o.ApplyT(func(v *HostMonitoring) pulumi.BoolOutput { return v.AutoInjection }).(pulumi.BoolOutput)
+//
+// Deprecated: This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.
+func (o HostMonitoringOutput) AutoInjection() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HostMonitoring) pulumi.BoolPtrOutput { return v.AutoInjection }).(pulumi.BoolPtrOutput)
 }
 
 // This setting is enabled (`true`) or disabled (`false`)
@@ -213,8 +229,10 @@ func (o HostMonitoringOutput) Enabled() pulumi.BoolOutput {
 }
 
 // Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
-func (o HostMonitoringOutput) FullStack() pulumi.BoolOutput {
-	return o.ApplyT(func(v *HostMonitoring) pulumi.BoolOutput { return v.FullStack }).(pulumi.BoolOutput)
+//
+// Deprecated: This attribute is not supported anymore by the Dynatrace API
+func (o HostMonitoringOutput) FullStack() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *HostMonitoring) pulumi.BoolPtrOutput { return v.FullStack }).(pulumi.BoolPtrOutput)
 }
 
 // The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.

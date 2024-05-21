@@ -15,7 +15,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class ServiceAnomaliesV2LoadSpikes
     {
         /// <summary>
-        /// Detect service load spikes
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         public readonly bool Enabled;
         /// <summary>

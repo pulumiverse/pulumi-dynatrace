@@ -26,6 +26,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<bool?> Events { get; private set; } = null!;
 
         /// <summary>
+        /// Use text format for problem details instead of HTML.
+        /// </summary>
+        [Output("formatProblemDetailsAsText")]
+        public Output<bool?> FormatProblemDetailsAsText { get; private set; } = null!;
+
+        /// <summary>
         /// Send incidents into ServiceNow ITSM
         /// </summary>
         [Output("incidents")]
@@ -143,6 +149,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? Events { get; set; }
 
         /// <summary>
+        /// Use text format for problem details instead of HTML.
+        /// </summary>
+        [Input("formatProblemDetailsAsText")]
+        public Input<bool>? FormatProblemDetailsAsText { get; set; }
+
+        /// <summary>
         /// Send incidents into ServiceNow ITSM
         /// </summary>
         [Input("incidents", required: true)]
@@ -225,6 +237,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Input("events")]
         public Input<bool>? Events { get; set; }
+
+        /// <summary>
+        /// Use text format for problem details instead of HTML.
+        /// </summary>
+        [Input("formatProblemDetailsAsText")]
+        public Input<bool>? FormatProblemDetailsAsText { get; set; }
 
         /// <summary>
         /// Send incidents into ServiceNow ITSM

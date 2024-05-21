@@ -13,6 +13,10 @@ import (
 
 // The management zone data source allows the management zone ID to be retrieved by its name.
 //
+// > This data source requires the API token scope **Read configuration** (`ReadConfig`)
+//
+// !> This data source is utilizing an older API endpoint, please use ManagementZoneV2 instead.
+//
 // - `name` queries for all management zones with the specified name
 //
 // ## Example Usage

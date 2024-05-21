@@ -22,7 +22,7 @@ class ExtensionExecutionControllerArgs:
         """
         The set of arguments for constructing a ExtensionExecutionController resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[bool] ingest_active: Enable local PIPE/HTTP metric and Log Ingest API
+        :param pulumi.Input[bool] ingest_active: Enable local HTTP Metric, Log and Event Ingest API
         :param pulumi.Input[str] performance_profile: Possible Values: `DEFAULT`, `HIGH`
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[bool] statsd_active: Enable Dynatrace StatsD
@@ -53,7 +53,7 @@ class ExtensionExecutionControllerArgs:
     @pulumi.getter(name="ingestActive")
     def ingest_active(self) -> Optional[pulumi.Input[bool]]:
         """
-        Enable local PIPE/HTTP metric and Log Ingest API
+        Enable local HTTP Metric, Log and Event Ingest API
         """
         return pulumi.get(self, "ingest_active")
 
@@ -109,7 +109,7 @@ class _ExtensionExecutionControllerState:
         """
         Input properties used for looking up and filtering ExtensionExecutionController resources.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[bool] ingest_active: Enable local PIPE/HTTP metric and Log Ingest API
+        :param pulumi.Input[bool] ingest_active: Enable local HTTP Metric, Log and Event Ingest API
         :param pulumi.Input[str] performance_profile: Possible Values: `DEFAULT`, `HIGH`
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[bool] statsd_active: Enable Dynatrace StatsD
@@ -141,7 +141,7 @@ class _ExtensionExecutionControllerState:
     @pulumi.getter(name="ingestActive")
     def ingest_active(self) -> Optional[pulumi.Input[bool]]:
         """
-        Enable local PIPE/HTTP metric and Log Ingest API
+        Enable local HTTP Metric, Log and Event Ingest API
         """
         return pulumi.get(self, "ingest_active")
 
@@ -202,7 +202,7 @@ class ExtensionExecutionController(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[bool] ingest_active: Enable local PIPE/HTTP metric and Log Ingest API
+        :param pulumi.Input[bool] ingest_active: Enable local HTTP Metric, Log and Event Ingest API
         :param pulumi.Input[str] performance_profile: Possible Values: `DEFAULT`, `HIGH`
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[bool] statsd_active: Enable Dynatrace StatsD
@@ -274,7 +274,7 @@ class ExtensionExecutionController(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[bool] ingest_active: Enable local PIPE/HTTP metric and Log Ingest API
+        :param pulumi.Input[bool] ingest_active: Enable local HTTP Metric, Log and Event Ingest API
         :param pulumi.Input[str] performance_profile: Possible Values: `DEFAULT`, `HIGH`
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[bool] statsd_active: Enable Dynatrace StatsD
@@ -302,7 +302,7 @@ class ExtensionExecutionController(pulumi.CustomResource):
     @pulumi.getter(name="ingestActive")
     def ingest_active(self) -> pulumi.Output[Optional[bool]]:
         """
-        Enable local PIPE/HTTP metric and Log Ingest API
+        Enable local HTTP Metric, Log and Event Ingest API
         """
         return pulumi.get(self, "ingest_active")
 

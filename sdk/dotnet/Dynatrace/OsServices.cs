@@ -44,13 +44,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Output("insertAfter")]
+        public Output<string> InsertAfter { get; private set; } = null!;
+
+        /// <summary>
         /// Set of additional key-value properties to be attached to the triggered event.
         /// </summary>
         [Output("metadata")]
         public Output<Outputs.OsServicesMetadata?> Metadata { get; private set; } = null!;
 
         /// <summary>
-        /// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics consume custom metrics (DDUs). Refer to [documentation](https://dt-url.net/vl03xzk) for DDU consumption examples. Each monitored service consumes one custom metric.
+        /// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
         /// </summary>
         [Output("monitoring")]
         public Output<bool> Monitoring { get; private set; } = null!;
@@ -173,13 +179,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
+
+        /// <summary>
         /// Set of additional key-value properties to be attached to the triggered event.
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.OsServicesMetadataArgs>? Metadata { get; set; }
 
         /// <summary>
-        /// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics consume custom metrics (DDUs). Refer to [documentation](https://dt-url.net/vl03xzk) for DDU consumption examples. Each monitored service consumes one custom metric.
+        /// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
         /// </summary>
         [Input("monitoring", required: true)]
         public Input<bool> Monitoring { get; set; } = null!;
@@ -263,13 +275,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
+
+        /// <summary>
         /// Set of additional key-value properties to be attached to the triggered event.
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.OsServicesMetadataGetArgs>? Metadata { get; set; }
 
         /// <summary>
-        /// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics consume custom metrics (DDUs). Refer to [documentation](https://dt-url.net/vl03xzk) for DDU consumption examples. Each monitored service consumes one custom metric.
+        /// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
         /// </summary>
         [Input("monitoring")]
         public Input<bool>? Monitoring { get; set; }

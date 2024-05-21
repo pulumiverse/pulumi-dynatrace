@@ -21,6 +21,8 @@ type FailureDetectionRules struct {
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Rule name
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Failure detection parameters
@@ -72,6 +74,8 @@ type failureDetectionRulesState struct {
 	Description *string `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Rule name
 	Name *string `pulumi:"name"`
 	// Failure detection parameters
@@ -85,6 +89,8 @@ type FailureDetectionRulesState struct {
 	Description pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Rule name
 	Name pulumi.StringPtrInput
 	// Failure detection parameters
@@ -102,6 +108,8 @@ type failureDetectionRulesArgs struct {
 	Description *string `pulumi:"description"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Rule name
 	Name *string `pulumi:"name"`
 	// Failure detection parameters
@@ -116,6 +124,8 @@ type FailureDetectionRulesArgs struct {
 	Description pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Rule name
 	Name pulumi.StringPtrInput
 	// Failure detection parameters
@@ -222,6 +232,11 @@ func (o FailureDetectionRulesOutput) Description() pulumi.StringPtrOutput {
 // This setting is enabled (`true`) or disabled (`false`)
 func (o FailureDetectionRulesOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *FailureDetectionRules) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o FailureDetectionRulesOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *FailureDetectionRules) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // Rule name

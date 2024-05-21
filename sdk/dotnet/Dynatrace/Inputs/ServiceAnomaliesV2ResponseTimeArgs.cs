@@ -14,25 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class ServiceAnomaliesV2ResponseTimeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// No documentation available
+        /// no documentation available
         /// </summary>
         [Input("autoDetection")]
         public Input<Inputs.ServiceAnomaliesV2ResponseTimeAutoDetectionArgs>? AutoDetection { get; set; }
 
         /// <summary>
-        /// Detection mode for response time degradations
+        /// Possible Values: `Auto`, `Fixed`
         /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }
 
         /// <summary>
-        /// Detect response time degradations
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// No documentation available
+        /// no documentation available
         /// </summary>
         [Input("fixedDetection")]
         public Input<Inputs.ServiceAnomaliesV2ResponseTimeFixedDetectionArgs>? FixedDetection { get; set; }

@@ -24,9 +24,9 @@ class DashboardSharingArgs:
         """
         The set of arguments for constructing a DashboardSharing resource.
         :param pulumi.Input[str] dashboard_id: The Dynatrace entity ID of the dashboard
-        :param pulumi.Input[bool] enabled: The dashboard is shared (`true`) or private (`false`)
+        :param pulumi.Input[bool] enabled: The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         :param pulumi.Input['DashboardSharingPermissionsArgs'] permissions: Access permissions of the dashboard
-        :param pulumi.Input[bool] preset: If `true` the dashboard will be marked as preset
+        :param pulumi.Input[bool] preset: If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         :param pulumi.Input['DashboardSharingPublicArgs'] public: Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
         """
         pulumi.set(__self__, "dashboard_id", dashboard_id)
@@ -55,7 +55,7 @@ class DashboardSharingArgs:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        The dashboard is shared (`true`) or private (`false`)
+        The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         """
         return pulumi.get(self, "enabled")
 
@@ -79,7 +79,7 @@ class DashboardSharingArgs:
     @pulumi.getter
     def preset(self) -> Optional[pulumi.Input[bool]]:
         """
-        If `true` the dashboard will be marked as preset
+        If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         """
         return pulumi.get(self, "preset")
 
@@ -105,21 +105,25 @@ class _DashboardSharingState:
     def __init__(__self__, *,
                  dashboard_id: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 muted: Optional[pulumi.Input[bool]] = None,
                  permissions: Optional[pulumi.Input['DashboardSharingPermissionsArgs']] = None,
                  preset: Optional[pulumi.Input[bool]] = None,
                  public: Optional[pulumi.Input['DashboardSharingPublicArgs']] = None):
         """
         Input properties used for looking up and filtering DashboardSharing resources.
         :param pulumi.Input[str] dashboard_id: The Dynatrace entity ID of the dashboard
-        :param pulumi.Input[bool] enabled: The dashboard is shared (`true`) or private (`false`)
+        :param pulumi.Input[bool] enabled: The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
+        :param pulumi.Input[bool] muted: Reserved for internal use by the provider
         :param pulumi.Input['DashboardSharingPermissionsArgs'] permissions: Access permissions of the dashboard
-        :param pulumi.Input[bool] preset: If `true` the dashboard will be marked as preset
+        :param pulumi.Input[bool] preset: If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         :param pulumi.Input['DashboardSharingPublicArgs'] public: Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
         """
         if dashboard_id is not None:
             pulumi.set(__self__, "dashboard_id", dashboard_id)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if muted is not None:
+            pulumi.set(__self__, "muted", muted)
         if permissions is not None:
             pulumi.set(__self__, "permissions", permissions)
         if preset is not None:
@@ -143,13 +147,25 @@ class _DashboardSharingState:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        The dashboard is shared (`true`) or private (`false`)
+        The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         """
         return pulumi.get(self, "enabled")
 
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter
+    def muted(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Reserved for internal use by the provider
+        """
+        return pulumi.get(self, "muted")
+
+    @muted.setter
+    def muted(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "muted", value)
 
     @property
     @pulumi.getter
@@ -167,7 +183,7 @@ class _DashboardSharingState:
     @pulumi.getter
     def preset(self) -> Optional[pulumi.Input[bool]]:
         """
-        If `true` the dashboard will be marked as preset
+        If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         """
         return pulumi.get(self, "preset")
 
@@ -200,6 +216,10 @@ class DashboardSharing(pulumi.CustomResource):
                  public: Optional[pulumi.Input[pulumi.InputType['DashboardSharingPublicArgs']]] = None,
                  __props__=None):
         """
+        > This is a child resource of dynatrace_json_dashboard, therefore it is automatically retrieved with the dashboard.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
         ## Dynatrace Documentation
 
         - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
@@ -209,9 +229,9 @@ class DashboardSharing(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] dashboard_id: The Dynatrace entity ID of the dashboard
-        :param pulumi.Input[bool] enabled: The dashboard is shared (`true`) or private (`false`)
+        :param pulumi.Input[bool] enabled: The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         :param pulumi.Input[pulumi.InputType['DashboardSharingPermissionsArgs']] permissions: Access permissions of the dashboard
-        :param pulumi.Input[bool] preset: If `true` the dashboard will be marked as preset
+        :param pulumi.Input[bool] preset: If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         :param pulumi.Input[pulumi.InputType['DashboardSharingPublicArgs']] public: Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
         """
         ...
@@ -221,6 +241,10 @@ class DashboardSharing(pulumi.CustomResource):
                  args: DashboardSharingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > This is a child resource of dynatrace_json_dashboard, therefore it is automatically retrieved with the dashboard.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
         ## Dynatrace Documentation
 
         - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
@@ -263,6 +287,7 @@ class DashboardSharing(pulumi.CustomResource):
             __props__.__dict__["permissions"] = permissions
             __props__.__dict__["preset"] = preset
             __props__.__dict__["public"] = public
+            __props__.__dict__["muted"] = None
         super(DashboardSharing, __self__).__init__(
             'dynatrace:index/dashboardSharing:DashboardSharing',
             resource_name,
@@ -275,6 +300,7 @@ class DashboardSharing(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             dashboard_id: Optional[pulumi.Input[str]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
+            muted: Optional[pulumi.Input[bool]] = None,
             permissions: Optional[pulumi.Input[pulumi.InputType['DashboardSharingPermissionsArgs']]] = None,
             preset: Optional[pulumi.Input[bool]] = None,
             public: Optional[pulumi.Input[pulumi.InputType['DashboardSharingPublicArgs']]] = None) -> 'DashboardSharing':
@@ -286,9 +312,10 @@ class DashboardSharing(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] dashboard_id: The Dynatrace entity ID of the dashboard
-        :param pulumi.Input[bool] enabled: The dashboard is shared (`true`) or private (`false`)
+        :param pulumi.Input[bool] enabled: The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
+        :param pulumi.Input[bool] muted: Reserved for internal use by the provider
         :param pulumi.Input[pulumi.InputType['DashboardSharingPermissionsArgs']] permissions: Access permissions of the dashboard
-        :param pulumi.Input[bool] preset: If `true` the dashboard will be marked as preset
+        :param pulumi.Input[bool] preset: If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         :param pulumi.Input[pulumi.InputType['DashboardSharingPublicArgs']] public: Configuration of the [anonymous access](https://dt-url.net/ov03sf1) to the dashboard
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -297,6 +324,7 @@ class DashboardSharing(pulumi.CustomResource):
 
         __props__.__dict__["dashboard_id"] = dashboard_id
         __props__.__dict__["enabled"] = enabled
+        __props__.__dict__["muted"] = muted
         __props__.__dict__["permissions"] = permissions
         __props__.__dict__["preset"] = preset
         __props__.__dict__["public"] = public
@@ -314,9 +342,17 @@ class DashboardSharing(pulumi.CustomResource):
     @pulumi.getter
     def enabled(self) -> pulumi.Output[Optional[bool]]:
         """
-        The dashboard is shared (`true`) or private (`false`)
+        The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         """
         return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def muted(self) -> pulumi.Output[bool]:
+        """
+        Reserved for internal use by the provider
+        """
+        return pulumi.get(self, "muted")
 
     @property
     @pulumi.getter
@@ -330,7 +366,7 @@ class DashboardSharing(pulumi.CustomResource):
     @pulumi.getter
     def preset(self) -> pulumi.Output[Optional[bool]]:
         """
-        If `true` the dashboard will be marked as preset
+        If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `Dashboard` and `JsonDashboard`. Otherwise you will encounter non-empty plans.
         """
         return pulumi.get(self, "preset")
 

@@ -13,17 +13,11 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class MetricEventsQueryDefinitionEntityFilterGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("conditions")]
-        private InputList<Inputs.MetricEventsQueryDefinitionEntityFilterConditionGetArgs>? _conditions;
-
         /// <summary>
-        /// Conditions of entity type to filter
+        /// no documentation available
         /// </summary>
-        public InputList<Inputs.MetricEventsQueryDefinitionEntityFilterConditionGetArgs> Conditions
-        {
-            get => _conditions ?? (_conditions = new InputList<Inputs.MetricEventsQueryDefinitionEntityFilterConditionGetArgs>());
-            set => _conditions = value;
-        }
+        [Input("conditions")]
+        public Input<Inputs.MetricEventsQueryDefinitionEntityFilterConditionsGetArgs>? Conditions { get; set; }
 
         /// <summary>
         /// Dimension key of entity type to filter

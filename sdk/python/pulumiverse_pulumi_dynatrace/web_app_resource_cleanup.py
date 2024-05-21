@@ -16,15 +16,19 @@ class WebAppResourceCleanupArgs:
     def __init__(__self__, *,
                  regular_expression: pulumi.Input[str],
                  replace_with: pulumi.Input[str],
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a WebAppResourceCleanup resource.
         :param pulumi.Input[str] regular_expression: For example: `(.*)(journeyId=)-?\\d+(.*)`
         :param pulumi.Input[str] replace_with: For example: `$1$2\\*$3`
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: For example: *Mask journeyId*
         """
         pulumi.set(__self__, "regular_expression", regular_expression)
         pulumi.set(__self__, "replace_with", replace_with)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -53,6 +57,18 @@ class WebAppResourceCleanupArgs:
         pulumi.set(self, "replace_with", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -68,21 +84,37 @@ class WebAppResourceCleanupArgs:
 @pulumi.input_type
 class _WebAppResourceCleanupState:
     def __init__(__self__, *,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  regular_expression: Optional[pulumi.Input[str]] = None,
                  replace_with: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering WebAppResourceCleanup resources.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: For example: *Mask journeyId*
         :param pulumi.Input[str] regular_expression: For example: `(.*)(journeyId=)-?\\d+(.*)`
         :param pulumi.Input[str] replace_with: For example: `$1$2\\*$3`
         """
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if regular_expression is not None:
             pulumi.set(__self__, "regular_expression", regular_expression)
         if replace_with is not None:
             pulumi.set(__self__, "replace_with", replace_with)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter
@@ -126,6 +158,7 @@ class WebAppResourceCleanup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  regular_expression: Optional[pulumi.Input[str]] = None,
                  replace_with: Optional[pulumi.Input[str]] = None,
@@ -134,6 +167,7 @@ class WebAppResourceCleanup(pulumi.CustomResource):
         Create a WebAppResourceCleanup resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: For example: *Mask journeyId*
         :param pulumi.Input[str] regular_expression: For example: `(.*)(journeyId=)-?\\d+(.*)`
         :param pulumi.Input[str] replace_with: For example: `$1$2\\*$3`
@@ -161,6 +195,7 @@ class WebAppResourceCleanup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  regular_expression: Optional[pulumi.Input[str]] = None,
                  replace_with: Optional[pulumi.Input[str]] = None,
@@ -173,6 +208,7 @@ class WebAppResourceCleanup(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = WebAppResourceCleanupArgs.__new__(WebAppResourceCleanupArgs)
 
+            __props__.__dict__["insert_after"] = insert_after
             __props__.__dict__["name"] = name
             if regular_expression is None and not opts.urn:
                 raise TypeError("Missing required property 'regular_expression'")
@@ -190,6 +226,7 @@ class WebAppResourceCleanup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             regular_expression: Optional[pulumi.Input[str]] = None,
             replace_with: Optional[pulumi.Input[str]] = None) -> 'WebAppResourceCleanup':
@@ -200,6 +237,7 @@ class WebAppResourceCleanup(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: For example: *Mask journeyId*
         :param pulumi.Input[str] regular_expression: For example: `(.*)(journeyId=)-?\\d+(.*)`
         :param pulumi.Input[str] replace_with: For example: `$1$2\\*$3`
@@ -208,10 +246,19 @@ class WebAppResourceCleanup(pulumi.CustomResource):
 
         __props__ = _WebAppResourceCleanupState.__new__(_WebAppResourceCleanupState)
 
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["name"] = name
         __props__.__dict__["regular_expression"] = regular_expression
         __props__.__dict__["replace_with"] = replace_with
         return WebAppResourceCleanup(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter

@@ -5,6 +5,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
+ * !> The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `SERVICE` instead.
+ *
  * The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
  *
  * - `name` queries for all services with the specified name
@@ -67,6 +69,8 @@ export interface GetServiceResult {
     readonly tags?: string[];
 }
 /**
+ * !> The data source API endpoint has been deprecated, please use dynatrace.getEntity with entity type `SERVICE` instead.
+ *
  * The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
  *
  * - `name` queries for all services with the specified name

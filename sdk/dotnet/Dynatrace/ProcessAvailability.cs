@@ -20,16 +20,36 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        /// specified during update the order will remain untouched
+        /// </summary>
+        [Output("insertAfter")]
+        public Output<string> InsertAfter { get; private set; } = null!;
+
+        /// <summary>
         /// Set of additional key-value properties to be attached to the triggered event.
         /// </summary>
         [Output("metadata")]
         public Output<Outputs.ProcessAvailabilityMetadata?> Metadata { get; private set; } = null!;
 
         /// <summary>
-        /// Monitored rule name
+        /// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+        /// </summary>
+        [Output("minimumProcesses")]
+        public Output<int?> MinimumProcesses { get; private set; } = null!;
+
+        /// <summary>
+        /// Monitoring rule name
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
+
+        /// <summary>
+        /// Select the operating systems on which the monitoring rule should be applied.
+        /// </summary>
+        [Output("operatingSystems")]
+        public Output<ImmutableArray<string>> OperatingSystems { get; private set; } = null!;
 
         /// <summary>
         /// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
@@ -98,16 +118,42 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        /// specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
+
+        /// <summary>
         /// Set of additional key-value properties to be attached to the triggered event.
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.ProcessAvailabilityMetadataArgs>? Metadata { get; set; }
 
         /// <summary>
-        /// Monitored rule name
+        /// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+        /// </summary>
+        [Input("minimumProcesses")]
+        public Input<int>? MinimumProcesses { get; set; }
+
+        /// <summary>
+        /// Monitoring rule name
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        [Input("operatingSystems")]
+        private InputList<string>? _operatingSystems;
+
+        /// <summary>
+        /// Select the operating systems on which the monitoring rule should be applied.
+        /// </summary>
+        public InputList<string> OperatingSystems
+        {
+            get => _operatingSystems ?? (_operatingSystems = new InputList<string>());
+            set => _operatingSystems = value;
+        }
 
         /// <summary>
         /// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
@@ -137,16 +183,42 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        /// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        /// specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
+
+        /// <summary>
         /// Set of additional key-value properties to be attached to the triggered event.
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.ProcessAvailabilityMetadataGetArgs>? Metadata { get; set; }
 
         /// <summary>
-        /// Monitored rule name
+        /// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+        /// </summary>
+        [Input("minimumProcesses")]
+        public Input<int>? MinimumProcesses { get; set; }
+
+        /// <summary>
+        /// Monitoring rule name
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        [Input("operatingSystems")]
+        private InputList<string>? _operatingSystems;
+
+        /// <summary>
+        /// Select the operating systems on which the monitoring rule should be applied.
+        /// </summary>
+        public InputList<string> OperatingSystems
+        {
+            get => _operatingSystems ?? (_operatingSystems = new InputList<string>());
+            set => _operatingSystems = value;
+        }
 
         /// <summary>
         /// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple

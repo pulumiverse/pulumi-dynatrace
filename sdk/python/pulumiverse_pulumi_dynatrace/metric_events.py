@@ -16,39 +16,50 @@ __all__ = ['MetricEventsArgs', 'MetricEvents']
 @pulumi.input_type
 class MetricEventsArgs:
     def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
                  event_template: pulumi.Input['MetricEventsEventTemplateArgs'],
                  model_properties: pulumi.Input['MetricEventsModelPropertiesArgs'],
                  query_definition: pulumi.Input['MetricEventsQueryDefinitionArgs'],
                  summary: pulumi.Input[str],
-                 enabled: Optional[pulumi.Input[bool]] = None,
                  event_entity_dimension_key: Optional[pulumi.Input[str]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a MetricEvents resource.
-        :param pulumi.Input['MetricEventsEventTemplateArgs'] event_template: The event template of the metric event entry
-        :param pulumi.Input['MetricEventsModelPropertiesArgs'] model_properties: The model properties of the metric event entry
-        :param pulumi.Input['MetricEventsQueryDefinitionArgs'] query_definition: The query definition of the metric event entry
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['MetricEventsEventTemplateArgs'] event_template: Event template
+        :param pulumi.Input['MetricEventsModelPropertiesArgs'] model_properties: Monitoring strategy
+        :param pulumi.Input['MetricEventsQueryDefinitionArgs'] query_definition: Query definition
         :param pulumi.Input[str] summary: The textual summary of the metric event entry
-        :param pulumi.Input[bool] enabled: Enabled toggle of metric event entry
         :param pulumi.Input[str] event_entity_dimension_key: Controls the preferred entity type used for triggered events.
-        :param pulumi.Input[str] legacy_id: The legacy id of the metric event entry
+        :param pulumi.Input[str] legacy_id: Config id
         """
+        pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "event_template", event_template)
         pulumi.set(__self__, "model_properties", model_properties)
         pulumi.set(__self__, "query_definition", query_definition)
         pulumi.set(__self__, "summary", summary)
-        if enabled is not None:
-            pulumi.set(__self__, "enabled", enabled)
         if event_entity_dimension_key is not None:
             pulumi.set(__self__, "event_entity_dimension_key", event_entity_dimension_key)
         if legacy_id is not None:
             pulumi.set(__self__, "legacy_id", legacy_id)
 
     @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
+
+    @property
     @pulumi.getter(name="eventTemplate")
     def event_template(self) -> pulumi.Input['MetricEventsEventTemplateArgs']:
         """
-        The event template of the metric event entry
+        Event template
         """
         return pulumi.get(self, "event_template")
 
@@ -60,7 +71,7 @@ class MetricEventsArgs:
     @pulumi.getter(name="modelProperties")
     def model_properties(self) -> pulumi.Input['MetricEventsModelPropertiesArgs']:
         """
-        The model properties of the metric event entry
+        Monitoring strategy
         """
         return pulumi.get(self, "model_properties")
 
@@ -72,7 +83,7 @@ class MetricEventsArgs:
     @pulumi.getter(name="queryDefinition")
     def query_definition(self) -> pulumi.Input['MetricEventsQueryDefinitionArgs']:
         """
-        The query definition of the metric event entry
+        Query definition
         """
         return pulumi.get(self, "query_definition")
 
@@ -93,18 +104,6 @@ class MetricEventsArgs:
         pulumi.set(self, "summary", value)
 
     @property
-    @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Enabled toggle of metric event entry
-        """
-        return pulumi.get(self, "enabled")
-
-    @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "enabled", value)
-
-    @property
     @pulumi.getter(name="eventEntityDimensionKey")
     def event_entity_dimension_key(self) -> Optional[pulumi.Input[str]]:
         """
@@ -120,7 +119,7 @@ class MetricEventsArgs:
     @pulumi.getter(name="legacyId")
     def legacy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The legacy id of the metric event entry
+        Config id
         """
         return pulumi.get(self, "legacy_id")
 
@@ -141,12 +140,12 @@ class _MetricEventsState:
                  summary: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MetricEvents resources.
-        :param pulumi.Input[bool] enabled: Enabled toggle of metric event entry
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] event_entity_dimension_key: Controls the preferred entity type used for triggered events.
-        :param pulumi.Input['MetricEventsEventTemplateArgs'] event_template: The event template of the metric event entry
-        :param pulumi.Input[str] legacy_id: The legacy id of the metric event entry
-        :param pulumi.Input['MetricEventsModelPropertiesArgs'] model_properties: The model properties of the metric event entry
-        :param pulumi.Input['MetricEventsQueryDefinitionArgs'] query_definition: The query definition of the metric event entry
+        :param pulumi.Input['MetricEventsEventTemplateArgs'] event_template: Event template
+        :param pulumi.Input[str] legacy_id: Config id
+        :param pulumi.Input['MetricEventsModelPropertiesArgs'] model_properties: Monitoring strategy
+        :param pulumi.Input['MetricEventsQueryDefinitionArgs'] query_definition: Query definition
         :param pulumi.Input[str] summary: The textual summary of the metric event entry
         """
         if enabled is not None:
@@ -168,7 +167,7 @@ class _MetricEventsState:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Enabled toggle of metric event entry
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
@@ -192,7 +191,7 @@ class _MetricEventsState:
     @pulumi.getter(name="eventTemplate")
     def event_template(self) -> Optional[pulumi.Input['MetricEventsEventTemplateArgs']]:
         """
-        The event template of the metric event entry
+        Event template
         """
         return pulumi.get(self, "event_template")
 
@@ -204,7 +203,7 @@ class _MetricEventsState:
     @pulumi.getter(name="legacyId")
     def legacy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The legacy id of the metric event entry
+        Config id
         """
         return pulumi.get(self, "legacy_id")
 
@@ -216,7 +215,7 @@ class _MetricEventsState:
     @pulumi.getter(name="modelProperties")
     def model_properties(self) -> Optional[pulumi.Input['MetricEventsModelPropertiesArgs']]:
         """
-        The model properties of the metric event entry
+        Monitoring strategy
         """
         return pulumi.get(self, "model_properties")
 
@@ -228,7 +227,7 @@ class _MetricEventsState:
     @pulumi.getter(name="queryDefinition")
     def query_definition(self) -> Optional[pulumi.Input['MetricEventsQueryDefinitionArgs']]:
         """
-        The query definition of the metric event entry
+        Query definition
         """
         return pulumi.get(self, "query_definition")
 
@@ -266,12 +265,12 @@ class MetricEvents(pulumi.CustomResource):
         Create a MetricEvents resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] enabled: Enabled toggle of metric event entry
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] event_entity_dimension_key: Controls the preferred entity type used for triggered events.
-        :param pulumi.Input[pulumi.InputType['MetricEventsEventTemplateArgs']] event_template: The event template of the metric event entry
-        :param pulumi.Input[str] legacy_id: The legacy id of the metric event entry
-        :param pulumi.Input[pulumi.InputType['MetricEventsModelPropertiesArgs']] model_properties: The model properties of the metric event entry
-        :param pulumi.Input[pulumi.InputType['MetricEventsQueryDefinitionArgs']] query_definition: The query definition of the metric event entry
+        :param pulumi.Input[pulumi.InputType['MetricEventsEventTemplateArgs']] event_template: Event template
+        :param pulumi.Input[str] legacy_id: Config id
+        :param pulumi.Input[pulumi.InputType['MetricEventsModelPropertiesArgs']] model_properties: Monitoring strategy
+        :param pulumi.Input[pulumi.InputType['MetricEventsQueryDefinitionArgs']] query_definition: Query definition
         :param pulumi.Input[str] summary: The textual summary of the metric event entry
         """
         ...
@@ -313,6 +312,8 @@ class MetricEvents(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = MetricEventsArgs.__new__(MetricEventsArgs)
 
+            if enabled is None and not opts.urn:
+                raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
             __props__.__dict__["event_entity_dimension_key"] = event_entity_dimension_key
             if event_template is None and not opts.urn:
@@ -352,12 +353,12 @@ class MetricEvents(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] enabled: Enabled toggle of metric event entry
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] event_entity_dimension_key: Controls the preferred entity type used for triggered events.
-        :param pulumi.Input[pulumi.InputType['MetricEventsEventTemplateArgs']] event_template: The event template of the metric event entry
-        :param pulumi.Input[str] legacy_id: The legacy id of the metric event entry
-        :param pulumi.Input[pulumi.InputType['MetricEventsModelPropertiesArgs']] model_properties: The model properties of the metric event entry
-        :param pulumi.Input[pulumi.InputType['MetricEventsQueryDefinitionArgs']] query_definition: The query definition of the metric event entry
+        :param pulumi.Input[pulumi.InputType['MetricEventsEventTemplateArgs']] event_template: Event template
+        :param pulumi.Input[str] legacy_id: Config id
+        :param pulumi.Input[pulumi.InputType['MetricEventsModelPropertiesArgs']] model_properties: Monitoring strategy
+        :param pulumi.Input[pulumi.InputType['MetricEventsQueryDefinitionArgs']] query_definition: Query definition
         :param pulumi.Input[str] summary: The textual summary of the metric event entry
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -375,9 +376,9 @@ class MetricEvents(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def enabled(self) -> pulumi.Output[Optional[bool]]:
+    def enabled(self) -> pulumi.Output[bool]:
         """
-        Enabled toggle of metric event entry
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
@@ -393,7 +394,7 @@ class MetricEvents(pulumi.CustomResource):
     @pulumi.getter(name="eventTemplate")
     def event_template(self) -> pulumi.Output['outputs.MetricEventsEventTemplate']:
         """
-        The event template of the metric event entry
+        Event template
         """
         return pulumi.get(self, "event_template")
 
@@ -401,7 +402,7 @@ class MetricEvents(pulumi.CustomResource):
     @pulumi.getter(name="legacyId")
     def legacy_id(self) -> pulumi.Output[str]:
         """
-        The legacy id of the metric event entry
+        Config id
         """
         return pulumi.get(self, "legacy_id")
 
@@ -409,7 +410,7 @@ class MetricEvents(pulumi.CustomResource):
     @pulumi.getter(name="modelProperties")
     def model_properties(self) -> pulumi.Output['outputs.MetricEventsModelProperties']:
         """
-        The model properties of the metric event entry
+        Monitoring strategy
         """
         return pulumi.get(self, "model_properties")
 
@@ -417,7 +418,7 @@ class MetricEvents(pulumi.CustomResource):
     @pulumi.getter(name="queryDefinition")
     def query_definition(self) -> pulumi.Output['outputs.MetricEventsQueryDefinition']:
         """
-        The query definition of the metric event entry
+        Query definition
         """
         return pulumi.get(self, "query_definition")
 

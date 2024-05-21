@@ -14,16 +14,40 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public partial class UserSettings : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Possible Values: `Auto`, `En`, `Ja`
+        /// Language - use browser default
+        /// </summary>
+        [Output("autoLanguage")]
+        public Output<bool> AutoLanguage { get; private set; } = null!;
+
+        /// <summary>
+        /// Region - use browser default
+        /// </summary>
+        [Output("autoRegion")]
+        public Output<bool> AutoRegion { get; private set; } = null!;
+
+        /// <summary>
+        /// Theme - use browser default
+        /// </summary>
+        [Output("autoTheme")]
+        public Output<bool> AutoTheme { get; private set; } = null!;
+
+        /// <summary>
+        /// Timezone - use browser default
+        /// </summary>
+        [Output("autoTimezone")]
+        public Output<bool> AutoTimezone { get; private set; } = null!;
+
+        /// <summary>
+        /// Possible Values: `En`, `Ja`
         /// </summary>
         [Output("language")]
-        public Output<string> Language { get; private set; } = null!;
+        public Output<string?> Language { get; private set; } = null!;
 
         /// <summary>
         /// Region
         /// </summary>
         [Output("region")]
-        public Output<string> Region { get; private set; } = null!;
+        public Output<string?> Region { get; private set; } = null!;
 
         /// <summary>
         /// The scope of this setting (user, userdefaults)
@@ -32,16 +56,16 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<string> Scope { get; private set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Auto`, `Dark`, `Light`
+        /// Possible Values: `Dark`, `Light`
         /// </summary>
         [Output("theme")]
-        public Output<string> Theme { get; private set; } = null!;
+        public Output<string?> Theme { get; private set; } = null!;
 
         /// <summary>
         /// Timezone
         /// </summary>
         [Output("timezone")]
-        public Output<string> Timezone { get; private set; } = null!;
+        public Output<string?> Timezone { get; private set; } = null!;
 
 
         /// <summary>
@@ -91,16 +115,40 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class UserSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `Auto`, `En`, `Ja`
+        /// Language - use browser default
         /// </summary>
-        [Input("language", required: true)]
-        public Input<string> Language { get; set; } = null!;
+        [Input("autoLanguage", required: true)]
+        public Input<bool> AutoLanguage { get; set; } = null!;
+
+        /// <summary>
+        /// Region - use browser default
+        /// </summary>
+        [Input("autoRegion", required: true)]
+        public Input<bool> AutoRegion { get; set; } = null!;
+
+        /// <summary>
+        /// Theme - use browser default
+        /// </summary>
+        [Input("autoTheme", required: true)]
+        public Input<bool> AutoTheme { get; set; } = null!;
+
+        /// <summary>
+        /// Timezone - use browser default
+        /// </summary>
+        [Input("autoTimezone", required: true)]
+        public Input<bool> AutoTimezone { get; set; } = null!;
+
+        /// <summary>
+        /// Possible Values: `En`, `Ja`
+        /// </summary>
+        [Input("language")]
+        public Input<string>? Language { get; set; }
 
         /// <summary>
         /// Region
         /// </summary>
-        [Input("region", required: true)]
-        public Input<string> Region { get; set; } = null!;
+        [Input("region")]
+        public Input<string>? Region { get; set; }
 
         /// <summary>
         /// The scope of this setting (user, userdefaults)
@@ -109,16 +157,16 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string> Scope { get; set; } = null!;
 
         /// <summary>
-        /// Possible Values: `Auto`, `Dark`, `Light`
+        /// Possible Values: `Dark`, `Light`
         /// </summary>
-        [Input("theme", required: true)]
-        public Input<string> Theme { get; set; } = null!;
+        [Input("theme")]
+        public Input<string>? Theme { get; set; }
 
         /// <summary>
         /// Timezone
         /// </summary>
-        [Input("timezone", required: true)]
-        public Input<string> Timezone { get; set; } = null!;
+        [Input("timezone")]
+        public Input<string>? Timezone { get; set; }
 
         public UserSettingsArgs()
         {
@@ -129,7 +177,31 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class UserSettingsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `Auto`, `En`, `Ja`
+        /// Language - use browser default
+        /// </summary>
+        [Input("autoLanguage")]
+        public Input<bool>? AutoLanguage { get; set; }
+
+        /// <summary>
+        /// Region - use browser default
+        /// </summary>
+        [Input("autoRegion")]
+        public Input<bool>? AutoRegion { get; set; }
+
+        /// <summary>
+        /// Theme - use browser default
+        /// </summary>
+        [Input("autoTheme")]
+        public Input<bool>? AutoTheme { get; set; }
+
+        /// <summary>
+        /// Timezone - use browser default
+        /// </summary>
+        [Input("autoTimezone")]
+        public Input<bool>? AutoTimezone { get; set; }
+
+        /// <summary>
+        /// Possible Values: `En`, `Ja`
         /// </summary>
         [Input("language")]
         public Input<string>? Language { get; set; }
@@ -147,7 +219,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? Scope { get; set; }
 
         /// <summary>
-        /// Possible Values: `Auto`, `Dark`, `Light`
+        /// Possible Values: `Dark`, `Light`
         /// </summary>
         [Input("theme")]
         public Input<string>? Theme { get; set; }

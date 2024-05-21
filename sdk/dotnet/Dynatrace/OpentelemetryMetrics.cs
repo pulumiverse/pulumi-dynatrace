@@ -14,12 +14,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public partial class OpentelemetryMetrics : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are
-        /// present in the OpenTelemetry resource or in the instrumentation scope. **Notes:** * Modifying this setting (renaming,
-        /// disabling or removing attributes) will cause the metric to change. This may have an impact on existing dashboards,
-        /// events and alerts that make use of these dimensions. In this case, they will need to be updated manually. * Dynatrace
-        /// does not recommend changing/removing the attributes starting with "dt.". Dynatrace leverages these attributes to [Enrich
-        /// metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+        /// When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
         /// </summary>
         [Output("additionalAttributes")]
         public Output<Outputs.OpentelemetryMetricsAdditionalAttributes?> AdditionalAttributes { get; private set; } = null!;
@@ -31,10 +26,16 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<bool> AdditionalAttributesToDimensionEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
+        /// When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs)
+        /// and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics. **Note:**
+        /// Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and
+        /// alerts that make use of these dimensions. In this case, they will need to be updated manually
         /// </summary>
         [Output("meterNameToDimensionEnabled")]
         public Output<bool> MeterNameToDimensionEnabled { get; private set; } = null!;
+
+        [Output("mode")]
+        public Output<string?> Mode { get; private set; } = null!;
 
         /// <summary>
         /// The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
@@ -63,7 +64,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public OpentelemetryMetrics(string name, OpentelemetryMetricsArgs args, CustomResourceOptions? options = null)
+        public OpentelemetryMetrics(string name, OpentelemetryMetricsArgs? args = null, CustomResourceOptions? options = null)
             : base("dynatrace:index/opentelemetryMetrics:OpentelemetryMetrics", name, args ?? new OpentelemetryMetricsArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -103,12 +104,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class OpentelemetryMetricsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are
-        /// present in the OpenTelemetry resource or in the instrumentation scope. **Notes:** * Modifying this setting (renaming,
-        /// disabling or removing attributes) will cause the metric to change. This may have an impact on existing dashboards,
-        /// events and alerts that make use of these dimensions. In this case, they will need to be updated manually. * Dynatrace
-        /// does not recommend changing/removing the attributes starting with "dt.". Dynatrace leverages these attributes to [Enrich
-        /// metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+        /// When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
         /// </summary>
         [Input("additionalAttributes")]
         public Input<Inputs.OpentelemetryMetricsAdditionalAttributesArgs>? AdditionalAttributes { get; set; }
@@ -116,14 +112,20 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// Add the resource and scope attributes configured below as dimensions
         /// </summary>
-        [Input("additionalAttributesToDimensionEnabled", required: true)]
-        public Input<bool> AdditionalAttributesToDimensionEnabled { get; set; } = null!;
+        [Input("additionalAttributesToDimensionEnabled")]
+        public Input<bool>? AdditionalAttributesToDimensionEnabled { get; set; }
 
         /// <summary>
-        /// When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
+        /// When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs)
+        /// and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics. **Note:**
+        /// Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and
+        /// alerts that make use of these dimensions. In this case, they will need to be updated manually
         /// </summary>
-        [Input("meterNameToDimensionEnabled", required: true)]
-        public Input<bool> MeterNameToDimensionEnabled { get; set; } = null!;
+        [Input("meterNameToDimensionEnabled")]
+        public Input<bool>? MeterNameToDimensionEnabled { get; set; }
+
+        [Input("mode")]
+        public Input<string>? Mode { get; set; }
 
         /// <summary>
         /// The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.
@@ -153,12 +155,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class OpentelemetryMetricsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are
-        /// present in the OpenTelemetry resource or in the instrumentation scope. **Notes:** * Modifying this setting (renaming,
-        /// disabling or removing attributes) will cause the metric to change. This may have an impact on existing dashboards,
-        /// events and alerts that make use of these dimensions. In this case, they will need to be updated manually. * Dynatrace
-        /// does not recommend changing/removing the attributes starting with "dt.". Dynatrace leverages these attributes to [Enrich
-        /// metrics](https://www.dynatrace.com/support/help/extend-dynatrace/extend-metrics/reference/enrich-metrics).
+        /// When enabled, the attributes defined in the list below will be added as dimensions to ingested OTLP metrics if they are present in the OpenTelemetry resource or in the instrumentation scope.
         /// </summary>
         [Input("additionalAttributes")]
         public Input<Inputs.OpentelemetryMetricsAdditionalAttributesGetArgs>? AdditionalAttributes { get; set; }
@@ -170,10 +167,16 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? AdditionalAttributesToDimensionEnabled { get; set; }
 
         /// <summary>
-        /// When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs) and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics.
+        /// When enabled, the Meter name (also referred to as InstrumentationScope or InstrumentationLibrary in OpenTelemetry SDKs)
+        /// and version will be added as dimensions (`otel.scope.name` and `otel.scope.version`) to ingested OTLP metrics. **Note:**
+        /// Modifying this setting will cause the metric to change. This may have an impact on existing dashboards, events and
+        /// alerts that make use of these dimensions. In this case, they will need to be updated manually
         /// </summary>
         [Input("meterNameToDimensionEnabled")]
         public Input<bool>? MeterNameToDimensionEnabled { get; set; }
+
+        [Input("mode")]
+        public Input<string>? Mode { get; set; }
 
         /// <summary>
         /// The scope of this setting (environment-default). Omit this property if you want to cover the whole environment.

@@ -41,7 +41,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         private InputList<string>? _queryParameterCleanups;
 
         /// <summary>
-        /// User action naming rules for custom actions
+        /// User action naming rules for custom actions. If not specified Dynatrace assumes `__sid`, `cfid`, `cftoken`, `phpsessid` and `sid`.
         /// </summary>
         public InputList<string> QueryParameterCleanups
         {

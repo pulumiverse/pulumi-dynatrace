@@ -20,7 +20,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly string? Condition;
         /// <summary>
-        /// Possible Values: `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+        /// Possible Values: `BusinessEvents`, `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
         /// </summary>
         public readonly string SourceType;
 

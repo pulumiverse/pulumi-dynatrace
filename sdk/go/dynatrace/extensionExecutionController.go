@@ -17,7 +17,7 @@ type ExtensionExecutionController struct {
 
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Enable local PIPE/HTTP metric and Log Ingest API
+	// Enable local HTTP Metric, Log and Event Ingest API
 	IngestActive pulumi.BoolPtrOutput `pulumi:"ingestActive"`
 	// Possible Values: `DEFAULT`, `HIGH`
 	PerformanceProfile pulumi.StringPtrOutput `pulumi:"performanceProfile"`
@@ -62,7 +62,7 @@ func GetExtensionExecutionController(ctx *pulumi.Context,
 type extensionExecutionControllerState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// Enable local PIPE/HTTP metric and Log Ingest API
+	// Enable local HTTP Metric, Log and Event Ingest API
 	IngestActive *bool `pulumi:"ingestActive"`
 	// Possible Values: `DEFAULT`, `HIGH`
 	PerformanceProfile *string `pulumi:"performanceProfile"`
@@ -75,7 +75,7 @@ type extensionExecutionControllerState struct {
 type ExtensionExecutionControllerState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// Enable local PIPE/HTTP metric and Log Ingest API
+	// Enable local HTTP Metric, Log and Event Ingest API
 	IngestActive pulumi.BoolPtrInput
 	// Possible Values: `DEFAULT`, `HIGH`
 	PerformanceProfile pulumi.StringPtrInput
@@ -92,7 +92,7 @@ func (ExtensionExecutionControllerState) ElementType() reflect.Type {
 type extensionExecutionControllerArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// Enable local PIPE/HTTP metric and Log Ingest API
+	// Enable local HTTP Metric, Log and Event Ingest API
 	IngestActive *bool `pulumi:"ingestActive"`
 	// Possible Values: `DEFAULT`, `HIGH`
 	PerformanceProfile *string `pulumi:"performanceProfile"`
@@ -106,7 +106,7 @@ type extensionExecutionControllerArgs struct {
 type ExtensionExecutionControllerArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// Enable local PIPE/HTTP metric and Log Ingest API
+	// Enable local HTTP Metric, Log and Event Ingest API
 	IngestActive pulumi.BoolPtrInput
 	// Possible Values: `DEFAULT`, `HIGH`
 	PerformanceProfile pulumi.StringPtrInput
@@ -208,7 +208,7 @@ func (o ExtensionExecutionControllerOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ExtensionExecutionController) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Enable local PIPE/HTTP metric and Log Ingest API
+// Enable local HTTP Metric, Log and Event Ingest API
 func (o ExtensionExecutionControllerOutput) IngestActive() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ExtensionExecutionController) pulumi.BoolPtrOutput { return v.IngestActive }).(pulumi.BoolPtrOutput)
 }

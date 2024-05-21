@@ -14,48 +14,88 @@ __all__ = ['UserSettingsArgs', 'UserSettings']
 @pulumi.input_type
 class UserSettingsArgs:
     def __init__(__self__, *,
-                 language: pulumi.Input[str],
-                 region: pulumi.Input[str],
+                 auto_language: pulumi.Input[bool],
+                 auto_region: pulumi.Input[bool],
+                 auto_theme: pulumi.Input[bool],
+                 auto_timezone: pulumi.Input[bool],
                  scope: pulumi.Input[str],
-                 theme: pulumi.Input[str],
-                 timezone: pulumi.Input[str]):
+                 language: Optional[pulumi.Input[str]] = None,
+                 region: Optional[pulumi.Input[str]] = None,
+                 theme: Optional[pulumi.Input[str]] = None,
+                 timezone: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a UserSettings resource.
-        :param pulumi.Input[str] language: Possible Values: `Auto`, `En`, `Ja`
-        :param pulumi.Input[str] region: Region
+        :param pulumi.Input[bool] auto_language: Language - use browser default
+        :param pulumi.Input[bool] auto_region: Region - use browser default
+        :param pulumi.Input[bool] auto_theme: Theme - use browser default
+        :param pulumi.Input[bool] auto_timezone: Timezone - use browser default
         :param pulumi.Input[str] scope: The scope of this setting (user, userdefaults)
-        :param pulumi.Input[str] theme: Possible Values: `Auto`, `Dark`, `Light`
+        :param pulumi.Input[str] language: Possible Values: `En`, `Ja`
+        :param pulumi.Input[str] region: Region
+        :param pulumi.Input[str] theme: Possible Values: `Dark`, `Light`
         :param pulumi.Input[str] timezone: Timezone
         """
-        pulumi.set(__self__, "language", language)
-        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "auto_language", auto_language)
+        pulumi.set(__self__, "auto_region", auto_region)
+        pulumi.set(__self__, "auto_theme", auto_theme)
+        pulumi.set(__self__, "auto_timezone", auto_timezone)
         pulumi.set(__self__, "scope", scope)
-        pulumi.set(__self__, "theme", theme)
-        pulumi.set(__self__, "timezone", timezone)
+        if language is not None:
+            pulumi.set(__self__, "language", language)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if theme is not None:
+            pulumi.set(__self__, "theme", theme)
+        if timezone is not None:
+            pulumi.set(__self__, "timezone", timezone)
 
     @property
-    @pulumi.getter
-    def language(self) -> pulumi.Input[str]:
+    @pulumi.getter(name="autoLanguage")
+    def auto_language(self) -> pulumi.Input[bool]:
         """
-        Possible Values: `Auto`, `En`, `Ja`
+        Language - use browser default
         """
-        return pulumi.get(self, "language")
+        return pulumi.get(self, "auto_language")
 
-    @language.setter
-    def language(self, value: pulumi.Input[str]):
-        pulumi.set(self, "language", value)
+    @auto_language.setter
+    def auto_language(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "auto_language", value)
 
     @property
-    @pulumi.getter
-    def region(self) -> pulumi.Input[str]:
+    @pulumi.getter(name="autoRegion")
+    def auto_region(self) -> pulumi.Input[bool]:
         """
-        Region
+        Region - use browser default
         """
-        return pulumi.get(self, "region")
+        return pulumi.get(self, "auto_region")
 
-    @region.setter
-    def region(self, value: pulumi.Input[str]):
-        pulumi.set(self, "region", value)
+    @auto_region.setter
+    def auto_region(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "auto_region", value)
+
+    @property
+    @pulumi.getter(name="autoTheme")
+    def auto_theme(self) -> pulumi.Input[bool]:
+        """
+        Theme - use browser default
+        """
+        return pulumi.get(self, "auto_theme")
+
+    @auto_theme.setter
+    def auto_theme(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "auto_theme", value)
+
+    @property
+    @pulumi.getter(name="autoTimezone")
+    def auto_timezone(self) -> pulumi.Input[bool]:
+        """
+        Timezone - use browser default
+        """
+        return pulumi.get(self, "auto_timezone")
+
+    @auto_timezone.setter
+    def auto_timezone(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "auto_timezone", value)
 
     @property
     @pulumi.getter
@@ -71,32 +111,60 @@ class UserSettingsArgs:
 
     @property
     @pulumi.getter
-    def theme(self) -> pulumi.Input[str]:
+    def language(self) -> Optional[pulumi.Input[str]]:
         """
-        Possible Values: `Auto`, `Dark`, `Light`
+        Possible Values: `En`, `Ja`
+        """
+        return pulumi.get(self, "language")
+
+    @language.setter
+    def language(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "language", value)
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[pulumi.Input[str]]:
+        """
+        Region
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "region", value)
+
+    @property
+    @pulumi.getter
+    def theme(self) -> Optional[pulumi.Input[str]]:
+        """
+        Possible Values: `Dark`, `Light`
         """
         return pulumi.get(self, "theme")
 
     @theme.setter
-    def theme(self, value: pulumi.Input[str]):
+    def theme(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "theme", value)
 
     @property
     @pulumi.getter
-    def timezone(self) -> pulumi.Input[str]:
+    def timezone(self) -> Optional[pulumi.Input[str]]:
         """
         Timezone
         """
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: pulumi.Input[str]):
+    def timezone(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "timezone", value)
 
 
 @pulumi.input_type
 class _UserSettingsState:
     def __init__(__self__, *,
+                 auto_language: Optional[pulumi.Input[bool]] = None,
+                 auto_region: Optional[pulumi.Input[bool]] = None,
+                 auto_theme: Optional[pulumi.Input[bool]] = None,
+                 auto_timezone: Optional[pulumi.Input[bool]] = None,
                  language: Optional[pulumi.Input[str]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -104,12 +172,24 @@ class _UserSettingsState:
                  timezone: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering UserSettings resources.
-        :param pulumi.Input[str] language: Possible Values: `Auto`, `En`, `Ja`
+        :param pulumi.Input[bool] auto_language: Language - use browser default
+        :param pulumi.Input[bool] auto_region: Region - use browser default
+        :param pulumi.Input[bool] auto_theme: Theme - use browser default
+        :param pulumi.Input[bool] auto_timezone: Timezone - use browser default
+        :param pulumi.Input[str] language: Possible Values: `En`, `Ja`
         :param pulumi.Input[str] region: Region
         :param pulumi.Input[str] scope: The scope of this setting (user, userdefaults)
-        :param pulumi.Input[str] theme: Possible Values: `Auto`, `Dark`, `Light`
+        :param pulumi.Input[str] theme: Possible Values: `Dark`, `Light`
         :param pulumi.Input[str] timezone: Timezone
         """
+        if auto_language is not None:
+            pulumi.set(__self__, "auto_language", auto_language)
+        if auto_region is not None:
+            pulumi.set(__self__, "auto_region", auto_region)
+        if auto_theme is not None:
+            pulumi.set(__self__, "auto_theme", auto_theme)
+        if auto_timezone is not None:
+            pulumi.set(__self__, "auto_timezone", auto_timezone)
         if language is not None:
             pulumi.set(__self__, "language", language)
         if region is not None:
@@ -122,10 +202,58 @@ class _UserSettingsState:
             pulumi.set(__self__, "timezone", timezone)
 
     @property
+    @pulumi.getter(name="autoLanguage")
+    def auto_language(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Language - use browser default
+        """
+        return pulumi.get(self, "auto_language")
+
+    @auto_language.setter
+    def auto_language(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "auto_language", value)
+
+    @property
+    @pulumi.getter(name="autoRegion")
+    def auto_region(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Region - use browser default
+        """
+        return pulumi.get(self, "auto_region")
+
+    @auto_region.setter
+    def auto_region(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "auto_region", value)
+
+    @property
+    @pulumi.getter(name="autoTheme")
+    def auto_theme(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Theme - use browser default
+        """
+        return pulumi.get(self, "auto_theme")
+
+    @auto_theme.setter
+    def auto_theme(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "auto_theme", value)
+
+    @property
+    @pulumi.getter(name="autoTimezone")
+    def auto_timezone(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Timezone - use browser default
+        """
+        return pulumi.get(self, "auto_timezone")
+
+    @auto_timezone.setter
+    def auto_timezone(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "auto_timezone", value)
+
+    @property
     @pulumi.getter
     def language(self) -> Optional[pulumi.Input[str]]:
         """
-        Possible Values: `Auto`, `En`, `Ja`
+        Possible Values: `En`, `Ja`
         """
         return pulumi.get(self, "language")
 
@@ -161,7 +289,7 @@ class _UserSettingsState:
     @pulumi.getter
     def theme(self) -> Optional[pulumi.Input[str]]:
         """
-        Possible Values: `Auto`, `Dark`, `Light`
+        Possible Values: `Dark`, `Light`
         """
         return pulumi.get(self, "theme")
 
@@ -187,6 +315,10 @@ class UserSettings(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 auto_language: Optional[pulumi.Input[bool]] = None,
+                 auto_region: Optional[pulumi.Input[bool]] = None,
+                 auto_theme: Optional[pulumi.Input[bool]] = None,
+                 auto_timezone: Optional[pulumi.Input[bool]] = None,
                  language: Optional[pulumi.Input[str]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -197,10 +329,14 @@ class UserSettings(pulumi.CustomResource):
         Create a UserSettings resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] language: Possible Values: `Auto`, `En`, `Ja`
+        :param pulumi.Input[bool] auto_language: Language - use browser default
+        :param pulumi.Input[bool] auto_region: Region - use browser default
+        :param pulumi.Input[bool] auto_theme: Theme - use browser default
+        :param pulumi.Input[bool] auto_timezone: Timezone - use browser default
+        :param pulumi.Input[str] language: Possible Values: `En`, `Ja`
         :param pulumi.Input[str] region: Region
         :param pulumi.Input[str] scope: The scope of this setting (user, userdefaults)
-        :param pulumi.Input[str] theme: Possible Values: `Auto`, `Dark`, `Light`
+        :param pulumi.Input[str] theme: Possible Values: `Dark`, `Light`
         :param pulumi.Input[str] timezone: Timezone
         """
         ...
@@ -226,6 +362,10 @@ class UserSettings(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 auto_language: Optional[pulumi.Input[bool]] = None,
+                 auto_region: Optional[pulumi.Input[bool]] = None,
+                 auto_theme: Optional[pulumi.Input[bool]] = None,
+                 auto_timezone: Optional[pulumi.Input[bool]] = None,
                  language: Optional[pulumi.Input[str]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
@@ -240,20 +380,24 @@ class UserSettings(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = UserSettingsArgs.__new__(UserSettingsArgs)
 
-            if language is None and not opts.urn:
-                raise TypeError("Missing required property 'language'")
+            if auto_language is None and not opts.urn:
+                raise TypeError("Missing required property 'auto_language'")
+            __props__.__dict__["auto_language"] = auto_language
+            if auto_region is None and not opts.urn:
+                raise TypeError("Missing required property 'auto_region'")
+            __props__.__dict__["auto_region"] = auto_region
+            if auto_theme is None and not opts.urn:
+                raise TypeError("Missing required property 'auto_theme'")
+            __props__.__dict__["auto_theme"] = auto_theme
+            if auto_timezone is None and not opts.urn:
+                raise TypeError("Missing required property 'auto_timezone'")
+            __props__.__dict__["auto_timezone"] = auto_timezone
             __props__.__dict__["language"] = language
-            if region is None and not opts.urn:
-                raise TypeError("Missing required property 'region'")
             __props__.__dict__["region"] = region
             if scope is None and not opts.urn:
                 raise TypeError("Missing required property 'scope'")
             __props__.__dict__["scope"] = scope
-            if theme is None and not opts.urn:
-                raise TypeError("Missing required property 'theme'")
             __props__.__dict__["theme"] = theme
-            if timezone is None and not opts.urn:
-                raise TypeError("Missing required property 'timezone'")
             __props__.__dict__["timezone"] = timezone
         super(UserSettings, __self__).__init__(
             'dynatrace:index/userSettings:UserSettings',
@@ -265,6 +409,10 @@ class UserSettings(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            auto_language: Optional[pulumi.Input[bool]] = None,
+            auto_region: Optional[pulumi.Input[bool]] = None,
+            auto_theme: Optional[pulumi.Input[bool]] = None,
+            auto_timezone: Optional[pulumi.Input[bool]] = None,
             language: Optional[pulumi.Input[str]] = None,
             region: Optional[pulumi.Input[str]] = None,
             scope: Optional[pulumi.Input[str]] = None,
@@ -277,16 +425,24 @@ class UserSettings(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] language: Possible Values: `Auto`, `En`, `Ja`
+        :param pulumi.Input[bool] auto_language: Language - use browser default
+        :param pulumi.Input[bool] auto_region: Region - use browser default
+        :param pulumi.Input[bool] auto_theme: Theme - use browser default
+        :param pulumi.Input[bool] auto_timezone: Timezone - use browser default
+        :param pulumi.Input[str] language: Possible Values: `En`, `Ja`
         :param pulumi.Input[str] region: Region
         :param pulumi.Input[str] scope: The scope of this setting (user, userdefaults)
-        :param pulumi.Input[str] theme: Possible Values: `Auto`, `Dark`, `Light`
+        :param pulumi.Input[str] theme: Possible Values: `Dark`, `Light`
         :param pulumi.Input[str] timezone: Timezone
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _UserSettingsState.__new__(_UserSettingsState)
 
+        __props__.__dict__["auto_language"] = auto_language
+        __props__.__dict__["auto_region"] = auto_region
+        __props__.__dict__["auto_theme"] = auto_theme
+        __props__.__dict__["auto_timezone"] = auto_timezone
         __props__.__dict__["language"] = language
         __props__.__dict__["region"] = region
         __props__.__dict__["scope"] = scope
@@ -295,16 +451,48 @@ class UserSettings(pulumi.CustomResource):
         return UserSettings(resource_name, opts=opts, __props__=__props__)
 
     @property
-    @pulumi.getter
-    def language(self) -> pulumi.Output[str]:
+    @pulumi.getter(name="autoLanguage")
+    def auto_language(self) -> pulumi.Output[bool]:
         """
-        Possible Values: `Auto`, `En`, `Ja`
+        Language - use browser default
+        """
+        return pulumi.get(self, "auto_language")
+
+    @property
+    @pulumi.getter(name="autoRegion")
+    def auto_region(self) -> pulumi.Output[bool]:
+        """
+        Region - use browser default
+        """
+        return pulumi.get(self, "auto_region")
+
+    @property
+    @pulumi.getter(name="autoTheme")
+    def auto_theme(self) -> pulumi.Output[bool]:
+        """
+        Theme - use browser default
+        """
+        return pulumi.get(self, "auto_theme")
+
+    @property
+    @pulumi.getter(name="autoTimezone")
+    def auto_timezone(self) -> pulumi.Output[bool]:
+        """
+        Timezone - use browser default
+        """
+        return pulumi.get(self, "auto_timezone")
+
+    @property
+    @pulumi.getter
+    def language(self) -> pulumi.Output[Optional[str]]:
+        """
+        Possible Values: `En`, `Ja`
         """
         return pulumi.get(self, "language")
 
     @property
     @pulumi.getter
-    def region(self) -> pulumi.Output[str]:
+    def region(self) -> pulumi.Output[Optional[str]]:
         """
         Region
         """
@@ -320,15 +508,15 @@ class UserSettings(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def theme(self) -> pulumi.Output[str]:
+    def theme(self) -> pulumi.Output[Optional[str]]:
         """
-        Possible Values: `Auto`, `Dark`, `Light`
+        Possible Values: `Dark`, `Light`
         """
         return pulumi.get(self, "theme")
 
     @property
     @pulumi.getter
-    def timezone(self) -> pulumi.Output[str]:
+    def timezone(self) -> pulumi.Output[Optional[str]]:
         """
         Timezone
         """

@@ -47,11 +47,11 @@ export class OwnershipTeams extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string | undefined>;
     /**
-     * This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+     * This field should only be used for the automation purpose when importing team information.
      */
     public readonly externalId!: pulumi.Output<string | undefined>;
     /**
-     * The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+     * The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
      */
     public readonly identifier!: pulumi.Output<string>;
     /**
@@ -133,11 +133,11 @@ export interface OwnershipTeamsState {
      */
     description?: pulumi.Input<string>;
     /**
-     * This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+     * This field should only be used for the automation purpose when importing team information.
      */
     externalId?: pulumi.Input<string>;
     /**
-     * The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+     * The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
      */
     identifier?: pulumi.Input<string>;
     /**
@@ -175,11 +175,11 @@ export interface OwnershipTeamsArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+     * This field should only be used for the automation purpose when importing team information.
      */
     externalId?: pulumi.Input<string>;
     /**
-     * The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+     * The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
      */
     identifier: pulumi.Input<string>;
     /**

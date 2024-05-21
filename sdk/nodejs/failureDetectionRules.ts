@@ -47,6 +47,10 @@ export class FailureDetectionRules extends pulumi.CustomResource {
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Rule name
      */
     public readonly name!: pulumi.Output<string>;
@@ -71,6 +75,7 @@ export class FailureDetectionRules extends pulumi.CustomResource {
             resourceInputs["conditions"] = state ? state.conditions : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["parameterId"] = state ? state.parameterId : undefined;
         } else {
@@ -87,6 +92,7 @@ export class FailureDetectionRules extends pulumi.CustomResource {
             resourceInputs["conditions"] = args ? args.conditions : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["enabled"] = args ? args.enabled : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["parameterId"] = args ? args.parameterId : undefined;
         }
@@ -111,6 +117,10 @@ export interface FailureDetectionRulesState {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Rule name
      */
@@ -137,6 +147,10 @@ export interface FailureDetectionRulesArgs {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Rule name
      */

@@ -26,7 +26,7 @@ class LogMetricsArgs:
         :param pulumi.Input[str] key: Metric key
         :param pulumi.Input[str] measure: Possible Values: `OCCURRENCE`, `ATTRIBUTE`
         :param pulumi.Input[str] query: Matcher
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dimensions: no documentation available
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] dimensions: To enable splitting on your metric, add desired dimensions.
         :param pulumi.Input[str] measure_attribute: Attribute
         """
         pulumi.set(__self__, "enabled", enabled)
@@ -90,7 +90,7 @@ class LogMetricsArgs:
     @pulumi.getter
     def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        no documentation available
+        To enable splitting on your metric, add desired dimensions.
         """
         return pulumi.get(self, "dimensions")
 
@@ -122,7 +122,7 @@ class _LogMetricsState:
                  query: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering LogMetrics resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dimensions: no documentation available
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] dimensions: To enable splitting on your metric, add desired dimensions.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] key: Metric key
         :param pulumi.Input[str] measure: Possible Values: `OCCURRENCE`, `ATTRIBUTE`
@@ -146,7 +146,7 @@ class _LogMetricsState:
     @pulumi.getter
     def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        no documentation available
+        To enable splitting on your metric, add desired dimensions.
         """
         return pulumi.get(self, "dimensions")
 
@@ -231,7 +231,7 @@ class LogMetrics(pulumi.CustomResource):
         Create a LogMetrics resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dimensions: no documentation available
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] dimensions: To enable splitting on your metric, add desired dimensions.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] key: Metric key
         :param pulumi.Input[str] measure: Possible Values: `OCCURRENCE`, `ATTRIBUTE`
@@ -313,7 +313,7 @@ class LogMetrics(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dimensions: no documentation available
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] dimensions: To enable splitting on your metric, add desired dimensions.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] key: Metric key
         :param pulumi.Input[str] measure: Possible Values: `OCCURRENCE`, `ATTRIBUTE`
@@ -336,7 +336,7 @@ class LogMetrics(pulumi.CustomResource):
     @pulumi.getter
     def dimensions(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        no documentation available
+        To enable splitting on your metric, add desired dimensions.
         """
         return pulumi.get(self, "dimensions")
 

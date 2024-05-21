@@ -34,16 +34,20 @@ export class HostMonitoring extends pulumi.CustomResource {
 
     /**
      * An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
+     *
+     * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.HostMonitoringAdvanced` to configure this field.
      */
-    public readonly autoInjection!: pulumi.Output<boolean>;
+    public readonly autoInjection!: pulumi.Output<boolean | undefined>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
      * Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
+     *
+     * @deprecated This attribute is not supported anymore by the Dynatrace API
      */
-    public readonly fullStack!: pulumi.Output<boolean>;
+    public readonly fullStack!: pulumi.Output<boolean | undefined>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */
@@ -68,14 +72,8 @@ export class HostMonitoring extends pulumi.CustomResource {
             resourceInputs["hostId"] = state ? state.hostId : undefined;
         } else {
             const args = argsOrState as HostMonitoringArgs | undefined;
-            if ((!args || args.autoInjection === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'autoInjection'");
-            }
             if ((!args || args.enabled === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'enabled'");
-            }
-            if ((!args || args.fullStack === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'fullStack'");
             }
             if ((!args || args.hostId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'hostId'");
@@ -96,6 +94,8 @@ export class HostMonitoring extends pulumi.CustomResource {
 export interface HostMonitoringState {
     /**
      * An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
+     *
+     * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.HostMonitoringAdvanced` to configure this field.
      */
     autoInjection?: pulumi.Input<boolean>;
     /**
@@ -104,6 +104,8 @@ export interface HostMonitoringState {
     enabled?: pulumi.Input<boolean>;
     /**
      * Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
+     *
+     * @deprecated This attribute is not supported anymore by the Dynatrace API
      */
     fullStack?: pulumi.Input<boolean>;
     /**
@@ -118,16 +120,20 @@ export interface HostMonitoringState {
 export interface HostMonitoringArgs {
     /**
      * An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
+     *
+     * @deprecated This field has been moved to a new schema, please utilize the resource `dynatrace.HostMonitoringAdvanced` to configure this field.
      */
-    autoInjection: pulumi.Input<boolean>;
+    autoInjection?: pulumi.Input<boolean>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: pulumi.Input<boolean>;
     /**
      * Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
+     *
+     * @deprecated This attribute is not supported anymore by the Dynatrace API
      */
-    fullStack: pulumi.Input<boolean>;
+    fullStack?: pulumi.Input<boolean>;
     /**
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
      */

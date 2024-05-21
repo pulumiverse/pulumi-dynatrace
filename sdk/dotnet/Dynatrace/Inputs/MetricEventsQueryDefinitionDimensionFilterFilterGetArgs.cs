@@ -14,16 +14,22 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class MetricEventsQueryDefinitionDimensionFilterFilterGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The key of the dimension filter
+        /// Dimension key
         /// </summary>
         [Input("dimensionKey", required: true)]
         public Input<string> DimensionKey { get; set; } = null!;
 
         /// <summary>
-        /// The value of the dimension filter
+        /// Dimension value
         /// </summary>
         [Input("dimensionValue", required: true)]
         public Input<string> DimensionValue { get; set; } = null!;
+
+        /// <summary>
+        /// Possible Values: `CONTAINS_CASE_SENSITIVE`, `DOES_NOT_CONTAIN_CASE_SENSITIVE`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS`, `STARTS_WITH`
+        /// </summary>
+        [Input("operator")]
+        public Input<string>? Operator { get; set; }
 
         public MetricEventsQueryDefinitionDimensionFilterFilterGetArgs()
         {

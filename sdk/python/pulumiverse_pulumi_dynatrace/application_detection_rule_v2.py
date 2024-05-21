@@ -16,16 +16,24 @@ class ApplicationDetectionRuleV2Args:
     def __init__(__self__, *,
                  application_id: pulumi.Input[str],
                  matcher: pulumi.Input[str],
-                 pattern: pulumi.Input[str]):
+                 pattern: pulumi.Input[str],
+                 description: Optional[pulumi.Input[str]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ApplicationDetectionRuleV2 resource.
         :param pulumi.Input[str] application_id: Select an existing application or create a new one.
         :param pulumi.Input[str] matcher: Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         :param pulumi.Input[str] pattern: Pattern
+        :param pulumi.Input[str] description: (v1.274) Add a description for your rule
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         """
         pulumi.set(__self__, "application_id", application_id)
         pulumi.set(__self__, "matcher", matcher)
         pulumi.set(__self__, "pattern", pattern)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
 
     @property
     @pulumi.getter(name="applicationId")
@@ -63,21 +71,53 @@ class ApplicationDetectionRuleV2Args:
     def pattern(self, value: pulumi.Input[str]):
         pulumi.set(self, "pattern", value)
 
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (v1.274) Add a description for your rule
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
 
 @pulumi.input_type
 class _ApplicationDetectionRuleV2State:
     def __init__(__self__, *,
                  application_id: Optional[pulumi.Input[str]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matcher: Optional[pulumi.Input[str]] = None,
                  pattern: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ApplicationDetectionRuleV2 resources.
         :param pulumi.Input[str] application_id: Select an existing application or create a new one.
+        :param pulumi.Input[str] description: (v1.274) Add a description for your rule
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] matcher: Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         :param pulumi.Input[str] pattern: Pattern
         """
         if application_id is not None:
             pulumi.set(__self__, "application_id", application_id)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if matcher is not None:
             pulumi.set(__self__, "matcher", matcher)
         if pattern is not None:
@@ -94,6 +134,30 @@ class _ApplicationDetectionRuleV2State:
     @application_id.setter
     def application_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "application_id", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        (v1.274) Add a description for your rule
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter
@@ -126,6 +190,8 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: Optional[pulumi.Input[str]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matcher: Optional[pulumi.Input[str]] = None,
                  pattern: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -134,6 +200,8 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] application_id: Select an existing application or create a new one.
+        :param pulumi.Input[str] description: (v1.274) Add a description for your rule
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] matcher: Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         :param pulumi.Input[str] pattern: Pattern
         """
@@ -161,6 +229,8 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  application_id: Optional[pulumi.Input[str]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matcher: Optional[pulumi.Input[str]] = None,
                  pattern: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -175,6 +245,8 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
             if application_id is None and not opts.urn:
                 raise TypeError("Missing required property 'application_id'")
             __props__.__dict__["application_id"] = application_id
+            __props__.__dict__["description"] = description
+            __props__.__dict__["insert_after"] = insert_after
             if matcher is None and not opts.urn:
                 raise TypeError("Missing required property 'matcher'")
             __props__.__dict__["matcher"] = matcher
@@ -192,6 +264,8 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             application_id: Optional[pulumi.Input[str]] = None,
+            description: Optional[pulumi.Input[str]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             matcher: Optional[pulumi.Input[str]] = None,
             pattern: Optional[pulumi.Input[str]] = None) -> 'ApplicationDetectionRuleV2':
         """
@@ -202,6 +276,8 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] application_id: Select an existing application or create a new one.
+        :param pulumi.Input[str] description: (v1.274) Add a description for your rule
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] matcher: Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
         :param pulumi.Input[str] pattern: Pattern
         """
@@ -210,6 +286,8 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
         __props__ = _ApplicationDetectionRuleV2State.__new__(_ApplicationDetectionRuleV2State)
 
         __props__.__dict__["application_id"] = application_id
+        __props__.__dict__["description"] = description
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["matcher"] = matcher
         __props__.__dict__["pattern"] = pattern
         return ApplicationDetectionRuleV2(resource_name, opts=opts, __props__=__props__)
@@ -221,6 +299,22 @@ class ApplicationDetectionRuleV2(pulumi.CustomResource):
         Select an existing application or create a new one.
         """
         return pulumi.get(self, "application_id")
+
+    @property
+    @pulumi.getter
+    def description(self) -> pulumi.Output[Optional[str]]:
+        """
+        (v1.274) Add a description for your rule
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter

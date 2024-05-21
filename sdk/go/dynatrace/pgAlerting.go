@@ -15,12 +15,11 @@ import (
 type PgAlerting struct {
 	pulumi.CustomResourceState
 
-	// **if any process becomes unavailable:**
-	// Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+	// Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
 	AlertingMode pulumi.StringPtrOutput `pulumi:"alertingMode"`
-	// Enable process group availability monitoring
+	// Enable (`true`) or disable (`false`) process group availability monitoring
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Open a new problem if the number of active process instances in the group is fewer than:
+	// Open a new problem if the number of active process instances in the group is fewer than X
 	MinimumInstanceThreshold pulumi.IntPtrOutput `pulumi:"minimumInstanceThreshold"`
 	// The process group ID for availability monitoring
 	ProcessGroup pulumi.StringOutput `pulumi:"processGroup"`
@@ -62,24 +61,22 @@ func GetPgAlerting(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PgAlerting resources.
 type pgAlertingState struct {
-	// **if any process becomes unavailable:**
-	// Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+	// Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
 	AlertingMode *string `pulumi:"alertingMode"`
-	// Enable process group availability monitoring
+	// Enable (`true`) or disable (`false`) process group availability monitoring
 	Enabled *bool `pulumi:"enabled"`
-	// Open a new problem if the number of active process instances in the group is fewer than:
+	// Open a new problem if the number of active process instances in the group is fewer than X
 	MinimumInstanceThreshold *int `pulumi:"minimumInstanceThreshold"`
 	// The process group ID for availability monitoring
 	ProcessGroup *string `pulumi:"processGroup"`
 }
 
 type PgAlertingState struct {
-	// **if any process becomes unavailable:**
-	// Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+	// Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
 	AlertingMode pulumi.StringPtrInput
-	// Enable process group availability monitoring
+	// Enable (`true`) or disable (`false`) process group availability monitoring
 	Enabled pulumi.BoolPtrInput
-	// Open a new problem if the number of active process instances in the group is fewer than:
+	// Open a new problem if the number of active process instances in the group is fewer than X
 	MinimumInstanceThreshold pulumi.IntPtrInput
 	// The process group ID for availability monitoring
 	ProcessGroup pulumi.StringPtrInput
@@ -90,12 +87,11 @@ func (PgAlertingState) ElementType() reflect.Type {
 }
 
 type pgAlertingArgs struct {
-	// **if any process becomes unavailable:**
-	// Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+	// Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
 	AlertingMode *string `pulumi:"alertingMode"`
-	// Enable process group availability monitoring
+	// Enable (`true`) or disable (`false`) process group availability monitoring
 	Enabled bool `pulumi:"enabled"`
-	// Open a new problem if the number of active process instances in the group is fewer than:
+	// Open a new problem if the number of active process instances in the group is fewer than X
 	MinimumInstanceThreshold *int `pulumi:"minimumInstanceThreshold"`
 	// The process group ID for availability monitoring
 	ProcessGroup string `pulumi:"processGroup"`
@@ -103,12 +99,11 @@ type pgAlertingArgs struct {
 
 // The set of arguments for constructing a PgAlerting resource.
 type PgAlertingArgs struct {
-	// **if any process becomes unavailable:**
-	// Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+	// Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
 	AlertingMode pulumi.StringPtrInput
-	// Enable process group availability monitoring
+	// Enable (`true`) or disable (`false`) process group availability monitoring
 	Enabled pulumi.BoolInput
-	// Open a new problem if the number of active process instances in the group is fewer than:
+	// Open a new problem if the number of active process instances in the group is fewer than X
 	MinimumInstanceThreshold pulumi.IntPtrInput
 	// The process group ID for availability monitoring
 	ProcessGroup pulumi.StringInput
@@ -201,18 +196,17 @@ func (o PgAlertingOutput) ToPgAlertingOutputWithContext(ctx context.Context) PgA
 	return o
 }
 
-// **if any process becomes unavailable:**
-// Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+// Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
 func (o PgAlertingOutput) AlertingMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PgAlerting) pulumi.StringPtrOutput { return v.AlertingMode }).(pulumi.StringPtrOutput)
 }
 
-// Enable process group availability monitoring
+// Enable (`true`) or disable (`false`) process group availability monitoring
 func (o PgAlertingOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *PgAlerting) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Open a new problem if the number of active process instances in the group is fewer than:
+// Open a new problem if the number of active process instances in the group is fewer than X
 func (o PgAlertingOutput) MinimumInstanceThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *PgAlerting) pulumi.IntPtrOutput { return v.MinimumInstanceThreshold }).(pulumi.IntPtrOutput)
 }

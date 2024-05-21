@@ -21,6 +21,7 @@ class IssueTrackingArgs:
                  issuetrackersystem: pulumi.Input[str],
                  url: pulumi.Input[str],
                  username: pulumi.Input[str],
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  token: Optional[pulumi.Input[str]] = None):
         """
@@ -32,6 +33,7 @@ class IssueTrackingArgs:
         :param pulumi.Input[str] issuetrackersystem: Possible Values: `GITHUB`, `GITLAB`, `JIRA`, `JIRA_CLOUD`, `JIRA_ON_PREMISE`, `SERVICENOW`
         :param pulumi.Input[str] url: For Jira, use the base URL (for example, https://jira.yourcompany.com); for GitHub, use the repository URL (for example, https://github.com/org/repo); for GitLab, use the specific project API for a single project (for example, https://gitlab.com/api/v4/projects/:projectId), and the specific group API for a multiple projects (for example, https://gitlab.com/api/v4/groups/:groupId); for ServiceNow, use your company instance URL (for example, https://yourinstance.service-now.com/)
         :param pulumi.Input[str] username: Username
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] password: Password
         :param pulumi.Input[str] token: Token
         """
@@ -42,6 +44,8 @@ class IssueTrackingArgs:
         pulumi.set(__self__, "issuetrackersystem", issuetrackersystem)
         pulumi.set(__self__, "url", url)
         pulumi.set(__self__, "username", username)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if password is not None:
             pulumi.set(__self__, "password", password)
         if token is not None:
@@ -132,6 +136,18 @@ class IssueTrackingArgs:
         pulumi.set(self, "username", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
         """
@@ -160,6 +176,7 @@ class IssueTrackingArgs:
 class _IssueTrackingState:
     def __init__(__self__, *,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  issuelabel: Optional[pulumi.Input[str]] = None,
                  issuequery: Optional[pulumi.Input[str]] = None,
                  issuetheme: Optional[pulumi.Input[str]] = None,
@@ -171,6 +188,7 @@ class _IssueTrackingState:
         """
         Input properties used for looking up and filtering IssueTracking resources.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] issuelabel: Set a label to identify these issues, for example, `release_blocker` or `non-critical`
         :param pulumi.Input[str] issuequery: You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
         :param pulumi.Input[str] issuetheme: Possible Values: `ERROR`, `INFO`, `RESOLVED`
@@ -182,6 +200,8 @@ class _IssueTrackingState:
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if issuelabel is not None:
             pulumi.set(__self__, "issuelabel", issuelabel)
         if issuequery is not None:
@@ -210,6 +230,18 @@ class _IssueTrackingState:
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter
@@ -314,6 +346,7 @@ class IssueTracking(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  issuelabel: Optional[pulumi.Input[str]] = None,
                  issuequery: Optional[pulumi.Input[str]] = None,
                  issuetheme: Optional[pulumi.Input[str]] = None,
@@ -328,6 +361,7 @@ class IssueTracking(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] issuelabel: Set a label to identify these issues, for example, `release_blocker` or `non-critical`
         :param pulumi.Input[str] issuequery: You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
         :param pulumi.Input[str] issuetheme: Possible Values: `ERROR`, `INFO`, `RESOLVED`
@@ -361,6 +395,7 @@ class IssueTracking(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  issuelabel: Optional[pulumi.Input[str]] = None,
                  issuequery: Optional[pulumi.Input[str]] = None,
                  issuetheme: Optional[pulumi.Input[str]] = None,
@@ -381,6 +416,7 @@ class IssueTracking(pulumi.CustomResource):
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
+            __props__.__dict__["insert_after"] = insert_after
             if issuelabel is None and not opts.urn:
                 raise TypeError("Missing required property 'issuelabel'")
             __props__.__dict__["issuelabel"] = issuelabel
@@ -414,6 +450,7 @@ class IssueTracking(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             issuelabel: Optional[pulumi.Input[str]] = None,
             issuequery: Optional[pulumi.Input[str]] = None,
             issuetheme: Optional[pulumi.Input[str]] = None,
@@ -430,6 +467,7 @@ class IssueTracking(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] issuelabel: Set a label to identify these issues, for example, `release_blocker` or `non-critical`
         :param pulumi.Input[str] issuequery: You can use the following placeholders to automatically insert values from the **Release monitoring** page in your query: `{NAME}`, `{VERSION}`, `{STAGE}`, `{PRODUCT}`.
         :param pulumi.Input[str] issuetheme: Possible Values: `ERROR`, `INFO`, `RESOLVED`
@@ -444,6 +482,7 @@ class IssueTracking(pulumi.CustomResource):
         __props__ = _IssueTrackingState.__new__(_IssueTrackingState)
 
         __props__.__dict__["enabled"] = enabled
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["issuelabel"] = issuelabel
         __props__.__dict__["issuequery"] = issuequery
         __props__.__dict__["issuetheme"] = issuetheme
@@ -461,6 +500,14 @@ class IssueTracking(pulumi.CustomResource):
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter

@@ -21,7 +21,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<string>? Condition { get; set; }
 
         /// <summary>
-        /// Possible Values: `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+        /// Possible Values: `BusinessEvents`, `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
         /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;

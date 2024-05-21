@@ -19,6 +19,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Output("activated")]
         public Output<bool> Activated { get; private set; } = null!;
 
+        /// <summary>
+        /// Possible Values: `NONE`, `SEVEN_DAYS`, `THIRTY_FIVE_DAYS`
+        /// </summary>
+        [Output("parallelIngestPeriod")]
+        public Output<string> ParallelIngestPeriod { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a LogGrail resource with the given unique name, arguments, and options.
@@ -72,6 +78,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Input("activated", required: true)]
         public Input<bool> Activated { get; set; } = null!;
 
+        /// <summary>
+        /// Possible Values: `NONE`, `SEVEN_DAYS`, `THIRTY_FIVE_DAYS`
+        /// </summary>
+        [Input("parallelIngestPeriod", required: true)]
+        public Input<string> ParallelIngestPeriod { get; set; } = null!;
+
         public LogGrailArgs()
         {
         }
@@ -85,6 +97,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Input("activated")]
         public Input<bool>? Activated { get; set; }
+
+        /// <summary>
+        /// Possible Values: `NONE`, `SEVEN_DAYS`, `THIRTY_FIVE_DAYS`
+        /// </summary>
+        [Input("parallelIngestPeriod")]
+        public Input<string>? ParallelIngestPeriod { get; set; }
 
         public LogGrailState()
         {
