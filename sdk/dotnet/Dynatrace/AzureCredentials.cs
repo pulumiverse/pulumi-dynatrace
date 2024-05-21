@@ -73,10 +73,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Output("supportingServices")]
         public Output<ImmutableArray<Outputs.AzureCredentialsSupportingService>> SupportingServices { get; private set; } = null!;
 
-        /// <summary>
-        /// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-        /// manage them via WebUI without interference by Terraform.
-        /// </summary>
         [Output("supportingServicesManagedInDynatrace")]
         public Output<bool?> SupportingServicesManagedInDynatrace { get; private set; } = null!;
 
@@ -225,10 +221,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
             set => _supportingServices = value;
         }
 
-        /// <summary>
-        /// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-        /// manage them via WebUI without interference by Terraform.
-        /// </summary>
         [Input("supportingServicesManagedInDynatrace")]
         public Input<bool>? SupportingServicesManagedInDynatrace { get; set; }
 
@@ -334,10 +326,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
             set => _supportingServices = value;
         }
 
-        /// <summary>
-        /// If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-        /// manage them via WebUI without interference by Terraform.
-        /// </summary>
         [Input("supportingServicesManagedInDynatrace")]
         public Input<bool>? SupportingServicesManagedInDynatrace { get; set; }
 

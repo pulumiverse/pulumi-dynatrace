@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class RequestAttributeDataSourceValueProcessingArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Preprocess by extracting a substring from the original value
+        /// </summary>
         [Input("extractSubstring")]
         public Input<Inputs.RequestAttributeDataSourceValueProcessingExtractSubstringArgs>? ExtractSubstring { get; set; }
 
+        /// <summary>
+        /// Split (preprocessed) string values at this separator
+        /// </summary>
         [Input("splitAt")]
         public Input<string>? SplitAt { get; set; }
 
+        /// <summary>
+        /// Prune Whitespaces. Defaults to false
+        /// </summary>
         [Input("trim")]
         public Input<bool>? Trim { get; set; }
 
@@ -28,9 +37,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 
+        /// <summary>
+        /// IBM integration bus label node name condition for which the value is captured
+        /// </summary>
         [Input("valueCondition")]
         public Input<Inputs.RequestAttributeDataSourceValueProcessingValueConditionArgs>? ValueCondition { get; set; }
 
+        /// <summary>
+        /// Extract value from captured data per regex
+        /// </summary>
         [Input("valueExtractorRegex")]
         public Input<string>? ValueExtractorRegex { get; set; }
 

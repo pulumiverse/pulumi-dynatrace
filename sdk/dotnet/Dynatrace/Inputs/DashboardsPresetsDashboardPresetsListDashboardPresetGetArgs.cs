@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DashboardsPresetsDashboardPresetsListDashboardPresetGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Dashboard preset to limit visibility for
+        /// </summary>
         [Input("dashboardPreset", required: true)]
         public Input<string> DashboardPreset { get; set; } = null!;
 
+        /// <summary>
+        /// User group to show selected dashboard preset to
+        /// </summary>
         [Input("userGroup", required: true)]
         public Input<string> UserGroup { get; set; } = null!;
 

@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor
     {
+        /// <summary>
+        /// Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
+        /// </summary>
         public readonly string ContributionType;
+        /// <summary>
+        /// The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
+        /// </summary>
         public readonly int? SegmentCount;
+        /// <summary>
+        /// Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        /// </summary>
         public readonly Outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations? Transformations;
+        /// <summary>
+        /// The value to be used instead of the detected value.
+        /// </summary>
         public readonly Outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride? ValueOverride;
 
         [OutputConstructor]

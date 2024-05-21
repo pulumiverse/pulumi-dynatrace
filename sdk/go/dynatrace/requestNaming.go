@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type RequestNaming struct {
@@ -43,7 +44,7 @@ func NewRequestNaming(ctx *pulumi.Context,
 	if args.NamingPattern == nil {
 		return nil, errors.New("invalid value for required argument 'NamingPattern'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource RequestNaming
 	err := ctx.RegisterResource("dynatrace:index/requestNaming:RequestNaming", name, args, &resource, opts...)
 	if err != nil {

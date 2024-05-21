@@ -191,6 +191,9 @@ class SloArgs:
         """
         The metric for the count of successes (the numerator in rate calculation)
         """
+        warnings.warn("""`numerator` and `denominator` have been replaced by `metric_expression`""", DeprecationWarning)
+        pulumi.log.warn("""numerator is deprecated: `numerator` and `denominator` have been replaced by `metric_expression`""")
+
         return pulumi.get(self, "numerator")
 
     @numerator.setter
@@ -358,6 +361,9 @@ class _SloState:
         """
         The metric for the count of successes (the numerator in rate calculation)
         """
+        warnings.warn("""`numerator` and `denominator` have been replaced by `metric_expression`""", DeprecationWarning)
+        pulumi.log.warn("""numerator is deprecated: `numerator` and `denominator` have been replaced by `metric_expression`""")
+
         return pulumi.get(self, "numerator")
 
     @numerator.setter
@@ -501,9 +507,6 @@ class Slo(pulumi.CustomResource):
             __props__.__dict__["filter"] = filter
             __props__.__dict__["metric_expression"] = metric_expression
             __props__.__dict__["name"] = name
-            if numerator is not None and not opts.urn:
-                warnings.warn("""`numerator` and `denominator` have been replaced by `metric_expression`""", DeprecationWarning)
-                pulumi.log.warn("""numerator is deprecated: `numerator` and `denominator` have been replaced by `metric_expression`""")
             __props__.__dict__["numerator"] = numerator
             __props__.__dict__["rate"] = rate
             if target is None and not opts.urn:
@@ -637,6 +640,9 @@ class Slo(pulumi.CustomResource):
         """
         The metric for the count of successes (the numerator in rate calculation)
         """
+        warnings.warn("""`numerator` and `denominator` have been replaced by `metric_expression`""", DeprecationWarning)
+        pulumi.log.warn("""numerator is deprecated: `numerator` and `denominator` have been replaced by `metric_expression`""")
+
         return pulumi.get(self, "numerator")
 
     @property

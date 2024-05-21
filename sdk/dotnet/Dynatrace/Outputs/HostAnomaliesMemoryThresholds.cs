@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesMemoryThresholds
     {
+        /// <summary>
+        /// Custom thresholds for Linux
+        /// </summary>
         public readonly Outputs.HostAnomaliesMemoryThresholdsLinux Linux;
+        /// <summary>
+        /// Custom thresholds for Windows
+        /// </summary>
         public readonly Outputs.HostAnomaliesMemoryThresholdsWindows Windows;
 
         [OutputConstructor]

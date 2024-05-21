@@ -14,14 +14,41 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ApplicationErrorRulesHttpErrorsRule
     {
+        /// <summary>
+        /// Capture (`true`) or ignore (`false`) the error
+        /// </summary>
         public readonly bool? Capture;
+        /// <summary>
+        /// If `true`, match by errors that have CSP Rule violations
+        /// </summary>
         public readonly bool? ConsiderBlockedRequests;
+        /// <summary>
+        /// Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysis](https://dt-url.net/a963kd2)
+        /// </summary>
         public readonly bool? ConsiderForAi;
+        /// <summary>
+        /// If `true`, match by errors that have unknown HTTP status code
+        /// </summary>
         public readonly bool? ConsiderUnknownErrorCode;
+        /// <summary>
+        /// The HTTP status code or status code range to match by.
+        /// </summary>
         public readonly string? ErrorCodes;
+        /// <summary>
+        /// The matching rule for the URL. Popssible values are `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH` and `EQUALS`.
+        /// </summary>
         public readonly string? Filter;
+        /// <summary>
+        /// If `true`, filter errors by URL
+        /// </summary>
         public readonly bool? FilterByUrl;
+        /// <summary>
+        /// Include (`true`) or exclude (`false`) the error in Apdex calculation
+        /// </summary>
         public readonly bool? ImpactApdex;
+        /// <summary>
+        /// The URL to look for
+        /// </summary>
         public readonly string? Url;
 
         [OutputConstructor]

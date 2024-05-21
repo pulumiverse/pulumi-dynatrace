@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("rules", required: true)]
         private InputList<Inputs.WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArgs>? _rules;
+
+        /// <summary>
+        /// The settings of naming rule
+        /// </summary>
         public InputList<Inputs.WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArgs> Rules
         {
             get => _rules ?? (_rules = new InputList<Inputs.WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleArgs>());

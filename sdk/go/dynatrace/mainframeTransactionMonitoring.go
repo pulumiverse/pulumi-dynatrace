@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type MainframeTransactionMonitoring struct {
@@ -58,7 +59,7 @@ func NewMainframeTransactionMonitoring(ctx *pulumi.Context,
 	if args.ZosImsServiceDetectionUsesTransactionId == nil {
 		return nil, errors.New("invalid value for required argument 'ZosImsServiceDetectionUsesTransactionId'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MainframeTransactionMonitoring
 	err := ctx.RegisterResource("dynatrace:index/mainframeTransactionMonitoring:MainframeTransactionMonitoring", name, args, &resource, opts...)
 	if err != nil {

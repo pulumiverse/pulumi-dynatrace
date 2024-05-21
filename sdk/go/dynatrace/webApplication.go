@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type WebApplication struct {
@@ -88,7 +89,7 @@ func NewWebApplication(ctx *pulumi.Context,
 	if args.XhrActionKeyPerformanceMetric == nil {
 		return nil, errors.New("invalid value for required argument 'XhrActionKeyPerformanceMetric'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource WebApplication
 	err := ctx.RegisterResource("dynatrace:index/webApplication:WebApplication", name, args, &resource, opts...)
 	if err != nil {

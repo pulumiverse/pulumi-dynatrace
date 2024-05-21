@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("configs")]
         private InputList<Inputs.DashboardTileFilterConfigChartConfigResultMetadataConfigArgs>? _configs;
+
+        /// <summary>
+        /// Additional metadata for charted metric
+        /// </summary>
         public InputList<Inputs.DashboardTileFilterConfigChartConfigResultMetadataConfigArgs> Configs
         {
             get => _configs ?? (_configs = new InputList<Inputs.DashboardTileFilterConfigChartConfigResultMetadataConfigArgs>());

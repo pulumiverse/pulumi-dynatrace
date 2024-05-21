@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DashboardsGeneralDefaultDashboardListDefaultDashboardArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Preset dashboard to show as default landing page
+        /// </summary>
         [Input("dashboard", required: true)]
         public Input<string> Dashboard { get; set; } = null!;
 
+        /// <summary>
+        /// Show selected dashboard by default for this user group
+        /// </summary>
         [Input("userGroup", required: true)]
         public Input<string> UserGroup { get; set; } = null!;
 

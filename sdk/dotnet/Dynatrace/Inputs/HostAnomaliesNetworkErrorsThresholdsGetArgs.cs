@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesNetworkErrorsThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Receive/transmit error packet percentage is higher than *X*% in 3 out of 5 samples
+        /// </summary>
         [Input("errorsPercentage", required: true)]
         public Input<int> ErrorsPercentage { get; set; } = null!;
 
+        /// <summary>
+        /// Total receive/transmit packets rate is higher than *X* packets per second in 3 out of 5 samples
+        /// </summary>
         [Input("totalPacketsRate", required: true)]
         public Input<int> TotalPacketsRate { get; set; } = null!;
 

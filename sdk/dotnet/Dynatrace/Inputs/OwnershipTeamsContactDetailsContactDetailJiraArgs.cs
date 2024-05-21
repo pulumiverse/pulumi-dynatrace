@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class OwnershipTeamsContactDetailsContactDetailJiraArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Default Assignee
+        /// </summary>
         [Input("defaultAssignee", required: true)]
         public Input<string> DefaultAssignee { get; set; } = null!;
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("project", required: true)]
         public Input<string> Project { get; set; } = null!;
 

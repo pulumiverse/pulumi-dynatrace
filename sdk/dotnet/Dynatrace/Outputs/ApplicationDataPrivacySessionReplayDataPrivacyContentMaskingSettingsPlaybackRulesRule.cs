@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlaybackRulesRule
     {
+        /// <summary>
+        /// The selector for the element or the attribute to be masked.
+        /// </summary>
         public readonly string Selector;
+        /// <summary>
+        /// The type of the masking rule
+        /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// Interactions with the element are (`true`) or are not (`false) masked
+        /// </summary>
         public readonly bool? UserInteractionHidden;
 
         [OutputConstructor]

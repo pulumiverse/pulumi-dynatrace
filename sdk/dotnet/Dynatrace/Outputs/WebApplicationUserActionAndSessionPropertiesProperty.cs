@@ -14,23 +14,60 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationUserActionAndSessionPropertiesProperty
     {
+        /// <summary>
+        /// The aggregation type of the property.
+        /// </summary>
         public readonly string? Aggregation;
+        /// <summary>
+        /// The cleanup rule of the property. 
+        /// 
+        /// Defines how to extract the data you need from a string value. Specify the [regular expression](https://dt-url.net/k9e0iaq) for the data you need there
+        /// </summary>
         public readonly string? CleanupRule;
+        /// <summary>
+        /// The display name of the property
+        /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// The ID of this resource.
+        /// Unique id among all userTags and properties of this application
         /// </summary>
         public readonly int Id;
+        /// <summary>
+        /// If `true`, the value of this property will always be stored in lower case. Defaults to `false`.
+        /// </summary>
         public readonly bool? IgnoreCase;
+        /// <summary>
+        /// Key of the property
+        /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// If the `type` is `LONG_STRING`, the max length for this property. Must be a multiple of `100`. Defaults to `200`. Maximum is `1000`.
+        /// </summary>
         public readonly int? LongStringLength;
+        /// <summary>
+        /// If the origin is `META_DATA`, metaData id of the property
+        /// </summary>
         public readonly int? MetadataId;
+        /// <summary>
+        /// The origin of the property. Possible values are `JAVASCRIPT_API`, `META_DATA` and `SERVER_SIDE_REQUEST_ATTRIBUTE`.
+        /// </summary>
         public readonly string Origin;
+        /// <summary>
+        /// The ID of the request attribute. 
+        /// 
+        /// Only applicable when the **origin** is set to `SERVER_SIDE_REQUEST_ATTRIBUTE`
+        /// </summary>
         public readonly string? ServerSideRequestAttribute;
+        /// <summary>
+        /// If `true`, the property is stored as a session property
+        /// </summary>
         public readonly bool? StoreAsSessionProperty;
+        /// <summary>
+        /// If `true`, the property is stored as a user action property
+        /// </summary>
         public readonly bool? StoreAsUserActionProperty;
         /// <summary>
-        /// The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
+        /// The data type of the property. Possible values are `DATE`, `DOUBLE`, `LONG`, `LONG_STRING` and `STRING`.
         /// </summary>
         public readonly string Type;
 

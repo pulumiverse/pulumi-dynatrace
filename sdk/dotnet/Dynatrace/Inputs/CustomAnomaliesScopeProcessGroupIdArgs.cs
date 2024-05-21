@@ -14,7 +14,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class CustomAnomaliesScopeProcessGroupIdArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of this resource.
+        /// The process groups id to match on
         /// </summary>
         [Input("id", required: true)]
         public Input<string> Id { get; set; } = null!;

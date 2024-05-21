@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("conditions")]
         private InputList<Inputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsConditionArgs>? _conditions;
+
+        /// <summary>
+        /// Dimension conditions
+        /// </summary>
         public InputList<Inputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsConditionArgs> Conditions
         {
             get => _conditions ?? (_conditions = new InputList<Inputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsConditionArgs>());

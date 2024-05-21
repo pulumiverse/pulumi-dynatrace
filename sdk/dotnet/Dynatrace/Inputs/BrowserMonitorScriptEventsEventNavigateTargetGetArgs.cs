@@ -15,12 +15,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("locators")]
         private InputList<Inputs.BrowserMonitorScriptEventsEventNavigateTargetLocatorGetArgs>? _locators;
+
+        /// <summary>
+        /// The list of locators identifying the desired element
+        /// </summary>
         public InputList<Inputs.BrowserMonitorScriptEventsEventNavigateTargetLocatorGetArgs> Locators
         {
             get => _locators ?? (_locators = new InputList<Inputs.BrowserMonitorScriptEventsEventNavigateTargetLocatorGetArgs>());
             set => _locators = value;
         }
 
+        /// <summary>
+        /// The tab of the target
+        /// </summary>
         [Input("window")]
         public Input<string>? Window { get; set; }
 

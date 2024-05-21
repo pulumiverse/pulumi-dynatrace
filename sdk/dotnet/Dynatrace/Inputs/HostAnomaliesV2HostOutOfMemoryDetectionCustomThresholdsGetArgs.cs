@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("eventThresholds", required: true)]
         public Input<Inputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholdsGetArgs> EventThresholds { get; set; } = null!;
 
+        /// <summary>
+        /// Alert if the number of Java out-of-memory exceptions is at least this value
+        /// </summary>
         [Input("outOfMemoryExceptionsNumber", required: true)]
         public Input<int> OutOfMemoryExceptionsNumber { get; set; } = null!;
 

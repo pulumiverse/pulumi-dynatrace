@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Number of restarts per minute is equal or higher than
+        /// </summary>
         [Input("restartsPerMinute", required: true)]
         public Input<int> RestartsPerMinute { get; set; } = null!;
 

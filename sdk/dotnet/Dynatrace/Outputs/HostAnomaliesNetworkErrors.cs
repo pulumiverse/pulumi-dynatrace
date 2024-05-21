@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesNetworkErrors
     {
+        /// <summary>
+        /// The detection is enabled (`true`) or disabled (`false`)
+        /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// Custom thresholds for network errors. If not set, automatic mode is used.   **All** of these conditions must be met to trigger an alert
+        /// </summary>
         public readonly Outputs.HostAnomaliesNetworkErrorsThresholds? Thresholds;
 
         [OutputConstructor]

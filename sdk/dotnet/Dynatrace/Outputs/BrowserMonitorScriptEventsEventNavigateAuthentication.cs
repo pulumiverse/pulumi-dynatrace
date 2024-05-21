@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEventsEventNavigateAuthentication
     {
+        /// <summary>
+        /// A reference to the entry within the credential vault
+        /// </summary>
         public readonly string Creds;
+        /// <summary>
+        /// The type of authentication
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

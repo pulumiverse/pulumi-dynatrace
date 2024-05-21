@@ -14,10 +14,29 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings
     {
+        /// <summary>
+        /// Instrumentation delay for monitoring resource and image resource impact in browsers that don't offer W3C resource timings.
+        /// </summary>
         public readonly int InstrumentationDelay;
+        /// <summary>
+        /// Timing for JavaScript files and images on non-W3C supported browsers enabled/disabled
+        /// </summary>
         public readonly bool? NonW3cResourceTimings;
+        /// <summary>
+        /// Defines how detailed resource timings are captured.
+        /// 
+        /// Only effective if **w3cResourceTimings** or **nonW3cResourceTimings** is enabled. Possible values are `CAPTURE_ALL_SUMMARIES`, `CAPTURE_FULL_DETAILS` and `CAPTURE_LIMITED_SUMMARIES`
+        /// </summary>
         public readonly string? ResourceTimingCaptureType;
+        /// <summary>
+        /// Limits the number of domains for which W3C resource timings are captured.
+        /// 
+        /// Only effective if **resourceTimingCaptureType** is `CAPTURE_LIMITED_SUMMARIES`. Valid values range from 0 to 50.
+        /// </summary>
         public readonly int? ResourceTimingsDomainLimit;
+        /// <summary>
+        /// W3C resource timings for third party/CDN enabled/disabled
+        /// </summary>
         public readonly bool? W3cResourceTimings;
 
         [OutputConstructor]

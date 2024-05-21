@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AzureCredentialsSupportingServiceMonitoredMetric
     {
+        /// <summary>
+        /// a list of metric's dimensions names
+        /// </summary>
         public readonly ImmutableArray<string> Dimensions;
+        /// <summary>
+        /// the name of the metric of the supporting service
+        /// </summary>
         public readonly string? Name;
         /// <summary>
         /// Any attributes that aren't yet supported by this provider

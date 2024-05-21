@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // This data source allows you to specify the email address of the user and produces an ordered list of group IDs this user is a member of
@@ -39,7 +40,7 @@ import (
 //
 // ```
 func LookupIamUser(ctx *pulumi.Context, args *LookupIamUserArgs, opts ...pulumi.InvokeOption) (*LookupIamUserResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupIamUserResult
 	err := ctx.Invoke("dynatrace:index/getIamUser:getIamUser", args, &rv, opts...)
 	if err != nil {

@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ActivegateUpdates struct {
@@ -30,7 +31,7 @@ func NewActivegateUpdates(ctx *pulumi.Context,
 	if args.AutoUpdate == nil {
 		return nil, errors.New("invalid value for required argument 'AutoUpdate'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ActivegateUpdates
 	err := ctx.RegisterResource("dynatrace:index/activegateUpdates:ActivegateUpdates", name, args, &resource, opts...)
 	if err != nil {

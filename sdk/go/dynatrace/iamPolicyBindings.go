@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type IamPolicyBindings struct {
@@ -37,7 +38,7 @@ func NewIamPolicyBindings(ctx *pulumi.Context,
 	if args.Policies == nil {
 		return nil, errors.New("invalid value for required argument 'Policies'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource IamPolicyBindings
 	err := ctx.RegisterResource("dynatrace:index/iamPolicyBindings:IamPolicyBindings", name, args, &resource, opts...)
 	if err != nil {

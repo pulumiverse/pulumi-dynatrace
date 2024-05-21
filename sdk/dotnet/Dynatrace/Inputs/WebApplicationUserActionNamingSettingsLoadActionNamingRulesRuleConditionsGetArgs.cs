@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("conditions", required: true)]
         private InputList<Inputs.WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionGetArgs>? _conditions;
+
+        /// <summary>
+        /// Defines the conditions when the naming rule should apply
+        /// </summary>
         public InputList<Inputs.WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionGetArgs> Conditions
         {
             get => _conditions ?? (_conditions = new InputList<Inputs.WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionGetArgs>());

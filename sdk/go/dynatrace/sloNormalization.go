@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type SloNormalization struct {
@@ -28,7 +29,7 @@ func NewSloNormalization(ctx *pulumi.Context,
 	if args.Normalize == nil {
 		return nil, errors.New("invalid value for required argument 'Normalize'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource SloNormalization
 	err := ctx.RegisterResource("dynatrace:index/sloNormalization:SloNormalization", name, args, &resource, opts...)
 	if err != nil {

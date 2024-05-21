@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ProcessgroupNamingConditionConditionCustomProcessMetadataDynamicKeyGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The actual key of the custom metadata
+        /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
+        /// <summary>
+        /// The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+        /// </summary>
         [Input("source", required: true)]
         public Input<string> Source { get; set; } = null!;
 
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 

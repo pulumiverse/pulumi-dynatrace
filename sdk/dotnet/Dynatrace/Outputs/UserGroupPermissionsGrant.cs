@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class UserGroupPermissionsGrant
     {
+        /// <summary>
+        /// The ids of the environments this permission grants the user access to.
+        /// </summary>
         public readonly ImmutableArray<string> Environments;
+        /// <summary>
+        /// The permission. Possible values are `VIEWER`, `MANAGE_SETTINGS`, `AGENT_INSTALL`, `LOG_VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`, `CONFIGURE_REQUEST_CAPTURE_DATA`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `MANAGE_SECURITY_PROBLEMS` and `MANAGE_SUPPORT_TICKETS`.
+        /// </summary>
         public readonly string Permission;
 
         [OutputConstructor]

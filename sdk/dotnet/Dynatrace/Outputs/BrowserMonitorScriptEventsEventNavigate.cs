@@ -14,10 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEventsEventNavigate
     {
+        /// <summary>
+        /// The login credentials to bypass the browser login mask
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventNavigateAuthentication? Authentication;
+        /// <summary>
+        /// The tab on which the page should open
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventNavigateTarget? Target;
+        /// <summary>
+        /// The URL to navigate to
+        /// </summary>
         public readonly string Url;
+        /// <summary>
+        /// The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventNavigateValidate? Validate;
+        /// <summary>
+        /// The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventNavigateWait? Wait;
 
         [OutputConstructor]

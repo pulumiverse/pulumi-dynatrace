@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class VmwareAnomaliesDroppedPacketsDetectionCustomThresholds
     {
+        /// <summary>
+        /// Receive/transmit dropped packets rate on NIC is higher than
+        /// </summary>
         public readonly int DroppedPacketsPerSecond;
 
         [OutputConstructor]

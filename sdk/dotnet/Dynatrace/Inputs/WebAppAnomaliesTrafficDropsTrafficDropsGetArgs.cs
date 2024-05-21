@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebAppAnomaliesTrafficDropsTrafficDropsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Minutes the observed traffic has to stay in abnormal state before alert
+        /// </summary>
         [Input("abnormalStateAbnormalState", required: true)]
         public Input<double> AbnormalStateAbnormalState { get; set; } = null!;
 
+        /// <summary>
+        /// Alert if the observed traffic is less than this percentage of the expected value
+        /// </summary>
         [Input("trafficDropPercentage", required: true)]
         public Input<double> TrafficDropPercentage { get; set; } = null!;
 

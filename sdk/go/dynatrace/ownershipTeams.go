@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type OwnershipTeams struct {
@@ -47,7 +48,7 @@ func NewOwnershipTeams(ctx *pulumi.Context,
 	if args.Responsibilities == nil {
 		return nil, errors.New("invalid value for required argument 'Responsibilities'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OwnershipTeams
 	err := ctx.RegisterResource("dynatrace:index/ownershipTeams:OwnershipTeams", name, args, &resource, opts...)
 	if err != nil {

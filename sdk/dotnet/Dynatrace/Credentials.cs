@@ -55,10 +55,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Output("ownerAccessOnly")]
         public Output<bool?> OwnerAccessOnly { get; private set; } = null!;
 
-        /// <summary>
-        /// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-        /// you want to set an empty password, use the value `--empty--`.
-        /// </summary>
         [Output("password")]
         public Output<string?> Password { get; private set; } = null!;
 
@@ -190,11 +186,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
 
         [Input("password")]
         private Input<string>? _password;
-
-        /// <summary>
-        /// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-        /// you want to set an empty password, use the value `--empty--`.
-        /// </summary>
         public Input<string>? Password
         {
             get => _password;
@@ -308,11 +299,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
 
         [Input("password")]
         private Input<string>? _password;
-
-        /// <summary>
-        /// The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-        /// you want to set an empty password, use the value `--empty--`.
-        /// </summary>
         public Input<string>? Password
         {
             get => _password;

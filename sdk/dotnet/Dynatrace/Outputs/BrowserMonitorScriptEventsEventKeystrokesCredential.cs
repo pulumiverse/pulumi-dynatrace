@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEventsEventKeystrokesCredential
     {
+        /// <summary>
+        /// Either `username` or `password`
+        /// </summary>
         public readonly string Field;
+        /// <summary>
+        /// The ID of the credential within the Credentials Vault
+        /// </summary>
         public readonly string VaultId;
 
         [OutputConstructor]

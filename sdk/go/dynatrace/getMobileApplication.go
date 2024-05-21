@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The `MobileApplication` data source allows the mobile application ID to be retrieved by its name.
@@ -41,7 +42,7 @@ import (
 //
 // ```
 func LookupMobileApplication(ctx *pulumi.Context, args *LookupMobileApplicationArgs, opts ...pulumi.InvokeOption) (*LookupMobileApplicationResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupMobileApplicationResult
 	err := ctx.Invoke("dynatrace:index/getMobileApplication:getMobileApplication", args, &rv, opts...)
 	if err != nil {

@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BrowserMonitorScriptConfigurationIgnoredErrorCodesGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Only apply to document request matching this regex
+        /// </summary>
         [Input("matchingDocumentRequests")]
         public Input<string>? MatchingDocumentRequests { get; set; }
 
+        /// <summary>
+        /// You can use exact number, range or status class mask. Multiple values can be separated by comma, i.e. 404, 405-410, 5xx
+        /// </summary>
         [Input("statusCodes", required: true)]
         public Input<string> StatusCodes { get; set; } = null!;
 

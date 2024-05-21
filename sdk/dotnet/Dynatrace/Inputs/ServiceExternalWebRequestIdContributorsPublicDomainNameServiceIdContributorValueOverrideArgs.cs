@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverrideArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
 

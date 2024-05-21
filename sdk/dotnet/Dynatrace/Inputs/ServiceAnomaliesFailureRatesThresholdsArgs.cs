@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ServiceAnomaliesFailureRatesThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers alert
+        /// </summary>
         [Input("sensitivity", required: true)]
         public Input<string> Sensitivity { get; set; } = null!;
 
+        /// <summary>
+        /// Failure rate during any 5-minute period to trigger an alert, %
+        /// </summary>
         [Input("threshold", required: true)]
         public Input<int> Threshold { get; set; } = null!;
 
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 

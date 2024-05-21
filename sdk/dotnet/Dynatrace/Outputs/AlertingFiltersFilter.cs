@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AlertingFiltersFilter
     {
+        /// <summary>
+        /// Configuration of a custom event filter. Filters custom events by title or description. If both specified, the AND logic applies
+        /// </summary>
         public readonly Outputs.AlertingFiltersFilterCustom? Custom;
+        /// <summary>
+        /// Configuration of a custom event filter. Filters custom events by title or description. If both specified, the AND logic applies
+        /// </summary>
         public readonly Outputs.AlertingFiltersFilterPredefined? Predefined;
 
         [OutputConstructor]

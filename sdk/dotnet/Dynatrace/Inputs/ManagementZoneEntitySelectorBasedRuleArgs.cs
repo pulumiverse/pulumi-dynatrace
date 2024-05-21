@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ManagementZoneEntitySelectorBasedRuleArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The rule is enabled (`true`) or disabled (`false`)
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// The entity selector string, by which the entities are selected
+        /// </summary>
         [Input("selector")]
         public Input<string>? Selector { get; set; }
 
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 

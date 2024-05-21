@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds EventThresholds;
+        /// <summary>
+        /// Alert if the System Load / Logical cpu core is higher than this threshold for the defined amount of samples
+        /// </summary>
         public readonly double SystemLoad;
 
         [OutputConstructor]

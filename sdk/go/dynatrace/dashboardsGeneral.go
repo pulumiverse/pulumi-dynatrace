@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type DashboardsGeneral struct {
@@ -30,7 +31,7 @@ func NewDashboardsGeneral(ctx *pulumi.Context,
 	if args.EnablePublicSharing == nil {
 		return nil, errors.New("invalid value for required argument 'EnablePublicSharing'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DashboardsGeneral
 	err := ctx.RegisterResource("dynatrace:index/dashboardsGeneral:DashboardsGeneral", name, args, &resource, opts...)
 	if err != nil {

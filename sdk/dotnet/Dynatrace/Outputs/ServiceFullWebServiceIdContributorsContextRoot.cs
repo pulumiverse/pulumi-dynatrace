@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ServiceFullWebServiceIdContributorsContextRoot
     {
+        /// <summary>
+        /// Transform this value before letting it contribute to the Service Id
+        /// </summary>
         public readonly bool EnableIdContributor;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributor? ServiceIdContributor;
 
         [OutputConstructor]

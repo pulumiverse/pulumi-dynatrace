@@ -13,18 +13,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ServiceNamingConditionConditionStringArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The comparison is case-sensitive (`true`) or insensitive (`false`)
+        /// </summary>
         [Input("caseSensitive")]
         public Input<bool>? CaseSensitive { get; set; }
 
+        /// <summary>
+        /// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+        /// </summary>
         [Input("negate")]
         public Input<bool>? Negate { get; set; }
 
+        /// <summary>
+        /// Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+        /// </summary>
         [Input("operator", required: true)]
         public Input<string> Operator { get; set; } = null!;
 
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 
+        /// <summary>
+        /// The value to compare to
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

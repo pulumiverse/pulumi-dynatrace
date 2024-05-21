@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("applicationTypeComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionApplicationTypeComparisonArgs>? _applicationTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionApplicationTypeComparisonArgs> ApplicationTypeComparisons
         {
@@ -24,6 +28,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("applicationTypes")]
         private InputList<Inputs.ServiceNamingConditionConditionApplicationTypeArgs>? _applicationTypes;
+
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionApplicationTypeArgs> ApplicationTypes
         {
             get => _applicationTypes ?? (_applicationTypes = new InputList<Inputs.ServiceNamingConditionConditionApplicationTypeArgs>());
@@ -32,6 +40,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureComputeModeComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionAzureComputeModeComparisonArgs>? _azureComputeModeComparisons;
+
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionAzureComputeModeComparisonArgs> AzureComputeModeComparisons
         {
             get => _azureComputeModeComparisons ?? (_azureComputeModeComparisons = new InputList<Inputs.ServiceNamingConditionConditionAzureComputeModeComparisonArgs>());
@@ -40,6 +52,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureComputeModes")]
         private InputList<Inputs.ServiceNamingConditionConditionAzureComputeModeArgs>? _azureComputeModes;
+
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionAzureComputeModeArgs> AzureComputeModes
         {
@@ -49,6 +65,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureSkuComparisions")]
         private InputList<Inputs.ServiceNamingConditionConditionAzureSkuComparisionArgs>? _azureSkuComparisions;
+
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         [Obsolete(@"You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionAzureSkuComparisionArgs> AzureSkuComparisions
         {
@@ -58,6 +78,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureSkus")]
         private InputList<Inputs.ServiceNamingConditionConditionAzureSkusArgs>? _azureSkus;
+
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionAzureSkusArgs> AzureSkus
         {
             get => _azureSkus ?? (_azureSkus = new InputList<Inputs.ServiceNamingConditionConditionAzureSkusArgs>());
@@ -66,6 +90,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("baseComparisonBasics")]
         private InputList<Inputs.ServiceNamingConditionConditionBaseComparisonBasicArgs>? _baseComparisonBasics;
+
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         [Obsolete(@"You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionBaseComparisonBasicArgs> BaseComparisonBasics
         {
@@ -75,6 +103,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("baseConditionKeys")]
         private InputList<Inputs.ServiceNamingConditionConditionBaseConditionKeyArgs>? _baseConditionKeys;
+
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         [Obsolete(@"'base_condition_key' is deprecated. You should use 'key'")]
         public InputList<Inputs.ServiceNamingConditionConditionBaseConditionKeyArgs> BaseConditionKeys
         {
@@ -84,6 +116,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("bitnessComparisions")]
         private InputList<Inputs.ServiceNamingConditionConditionBitnessComparisionArgs>? _bitnessComparisions;
+
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         [Obsolete(@"You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionBitnessComparisionArgs> BitnessComparisions
         {
@@ -93,6 +129,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("bitnesses")]
         private InputList<Inputs.ServiceNamingConditionConditionBitnessArgs>? _bitnesses;
+
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionBitnessArgs> Bitnesses
         {
             get => _bitnesses ?? (_bitnesses = new InputList<Inputs.ServiceNamingConditionConditionBitnessArgs>());
@@ -101,6 +141,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("cloudTypeComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionCloudTypeComparisonArgs>? _cloudTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionCloudTypeComparisonArgs> CloudTypeComparisons
         {
@@ -110,6 +154,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("cloudTypes")]
         private InputList<Inputs.ServiceNamingConditionConditionCloudTypeArgs>? _cloudTypes;
+
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionCloudTypeArgs> CloudTypes
         {
             get => _cloudTypes ?? (_cloudTypes = new InputList<Inputs.ServiceNamingConditionConditionCloudTypeArgs>());
@@ -118,6 +166,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("comparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionComparisonArgs>? _comparisons;
+
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionComparisonArgs> Comparisons
         {
             get => _comparisons ?? (_comparisons = new InputList<Inputs.ServiceNamingConditionConditionComparisonArgs>());
@@ -126,6 +178,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customApplicationTypeComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionCustomApplicationTypeComparisonArgs>? _customApplicationTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionCustomApplicationTypeComparisonArgs> CustomApplicationTypeComparisons
         {
@@ -135,6 +191,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customApplicationTypes")]
         private InputList<Inputs.ServiceNamingConditionConditionCustomApplicationTypeArgs>? _customApplicationTypes;
+
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionCustomApplicationTypeArgs> CustomApplicationTypes
         {
             get => _customApplicationTypes ?? (_customApplicationTypes = new InputList<Inputs.ServiceNamingConditionConditionCustomApplicationTypeArgs>());
@@ -143,6 +203,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customHostMetadataConditionKeys")]
         private InputList<Inputs.ServiceNamingConditionConditionCustomHostMetadataConditionKeyArgs>? _customHostMetadataConditionKeys;
+
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         [Obsolete(@"'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'")]
         public InputList<Inputs.ServiceNamingConditionConditionCustomHostMetadataConditionKeyArgs> CustomHostMetadataConditionKeys
         {
@@ -152,6 +216,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customHostMetadatas")]
         private InputList<Inputs.ServiceNamingConditionConditionCustomHostMetadataArgs>? _customHostMetadatas;
+
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionCustomHostMetadataArgs> CustomHostMetadatas
         {
             get => _customHostMetadatas ?? (_customHostMetadatas = new InputList<Inputs.ServiceNamingConditionConditionCustomHostMetadataArgs>());
@@ -160,6 +228,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customProcessMetadataConditionKeys")]
         private InputList<Inputs.ServiceNamingConditionConditionCustomProcessMetadataConditionKeyArgs>? _customProcessMetadataConditionKeys;
+
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         [Obsolete(@"'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'")]
         public InputList<Inputs.ServiceNamingConditionConditionCustomProcessMetadataConditionKeyArgs> CustomProcessMetadataConditionKeys
         {
@@ -169,6 +241,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customProcessMetadatas")]
         private InputList<Inputs.ServiceNamingConditionConditionCustomProcessMetadataArgs>? _customProcessMetadatas;
+
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionCustomProcessMetadataArgs> CustomProcessMetadatas
         {
             get => _customProcessMetadatas ?? (_customProcessMetadatas = new InputList<Inputs.ServiceNamingConditionConditionCustomProcessMetadataArgs>());
@@ -177,6 +253,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("databaseTopologies")]
         private InputList<Inputs.ServiceNamingConditionConditionDatabaseTopologyArgs>? _databaseTopologies;
+
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionDatabaseTopologyArgs> DatabaseTopologies
         {
             get => _databaseTopologies ?? (_databaseTopologies = new InputList<Inputs.ServiceNamingConditionConditionDatabaseTopologyArgs>());
@@ -185,6 +265,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("databaseTopologyComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionDatabaseTopologyComparisonArgs>? _databaseTopologyComparisons;
+
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         [Obsolete(@"You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionDatabaseTopologyComparisonArgs> DatabaseTopologyComparisons
         {
@@ -194,6 +278,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("dcrumDecoderComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionDcrumDecoderComparisonArgs>? _dcrumDecoderComparisons;
+
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionDcrumDecoderComparisonArgs> DcrumDecoderComparisons
         {
@@ -203,6 +291,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("dcrumDecoders")]
         private InputList<Inputs.ServiceNamingConditionConditionDcrumDecoderArgs>? _dcrumDecoders;
+
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionDcrumDecoderArgs> DcrumDecoders
         {
             get => _dcrumDecoders ?? (_dcrumDecoders = new InputList<Inputs.ServiceNamingConditionConditionDcrumDecoderArgs>());
@@ -211,6 +303,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("entities")]
         private InputList<Inputs.ServiceNamingConditionConditionEntityArgs>? _entities;
+
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionEntityArgs> Entities
         {
             get => _entities ?? (_entities = new InputList<Inputs.ServiceNamingConditionConditionEntityArgs>());
@@ -219,6 +315,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("entityIdComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionEntityIdComparisonArgs>? _entityIdComparisons;
+
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         [Obsolete(@"You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionEntityIdComparisonArgs> EntityIdComparisons
         {
@@ -228,6 +328,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("hostTeches")]
         private InputList<Inputs.ServiceNamingConditionConditionHostTechArgs>? _hostTeches;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionHostTechArgs> HostTeches
         {
             get => _hostTeches ?? (_hostTeches = new InputList<Inputs.ServiceNamingConditionConditionHostTechArgs>());
@@ -236,6 +340,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("hypervisorTypeComparisions")]
         private InputList<Inputs.ServiceNamingConditionConditionHypervisorTypeComparisionArgs>? _hypervisorTypeComparisions;
+
+        /// <summary>
+        /// `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+        /// </summary>
         [Obsolete(@"`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead")]
         public InputList<Inputs.ServiceNamingConditionConditionHypervisorTypeComparisionArgs> HypervisorTypeComparisions
         {
@@ -245,6 +353,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("hypervisors")]
         private InputList<Inputs.ServiceNamingConditionConditionHypervisorArgs>? _hypervisors;
+
+        /// <summary>
+        /// Comparison for `HYPERVISOR_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionHypervisorArgs> Hypervisors
         {
             get => _hypervisors ?? (_hypervisors = new InputList<Inputs.ServiceNamingConditionConditionHypervisorArgs>());
@@ -253,6 +365,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedNameComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionIndexedNameComparisonArgs>? _indexedNameComparisons;
+
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         [Obsolete(@"You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionIndexedNameComparisonArgs> IndexedNameComparisons
         {
@@ -262,6 +378,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedNames")]
         private InputList<Inputs.ServiceNamingConditionConditionIndexedNameArgs>? _indexedNames;
+
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionIndexedNameArgs> IndexedNames
         {
             get => _indexedNames ?? (_indexedNames = new InputList<Inputs.ServiceNamingConditionConditionIndexedNameArgs>());
@@ -270,6 +390,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedStringComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionIndexedStringComparisonArgs>? _indexedStringComparisons;
+
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         [Obsolete(@"You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionIndexedStringComparisonArgs> IndexedStringComparisons
         {
@@ -279,6 +403,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedStrings")]
         private InputList<Inputs.ServiceNamingConditionConditionIndexedStringArgs>? _indexedStrings;
+
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionIndexedStringArgs> IndexedStrings
         {
             get => _indexedStrings ?? (_indexedStrings = new InputList<Inputs.ServiceNamingConditionConditionIndexedStringArgs>());
@@ -287,6 +415,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedTagComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionIndexedTagComparisonArgs>? _indexedTagComparisons;
+
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         [Obsolete(@"You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionIndexedTagComparisonArgs> IndexedTagComparisons
         {
@@ -296,6 +428,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedTags")]
         private InputList<Inputs.ServiceNamingConditionConditionIndexedTagArgs>? _indexedTags;
+
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionIndexedTagArgs> IndexedTags
         {
             get => _indexedTags ?? (_indexedTags = new InputList<Inputs.ServiceNamingConditionConditionIndexedTagArgs>());
@@ -304,6 +440,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("integerComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionIntegerComparisonArgs>? _integerComparisons;
+
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         [Obsolete(@"You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionIntegerComparisonArgs> IntegerComparisons
         {
@@ -313,6 +453,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("integers")]
         private InputList<Inputs.ServiceNamingConditionConditionIntegerArgs>? _integers;
+
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionIntegerArgs> Integers
         {
             get => _integers ?? (_integers = new InputList<Inputs.ServiceNamingConditionConditionIntegerArgs>());
@@ -321,6 +465,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("ipaddressComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionIpaddressComparisonArgs>? _ipaddressComparisons;
+
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         [Obsolete(@"You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionIpaddressComparisonArgs> IpaddressComparisons
         {
@@ -330,6 +478,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("ipaddresses")]
         private InputList<Inputs.ServiceNamingConditionConditionIpaddressArgs>? _ipaddresses;
+
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionIpaddressArgs> Ipaddresses
         {
             get => _ipaddresses ?? (_ipaddresses = new InputList<Inputs.ServiceNamingConditionConditionIpaddressArgs>());
@@ -338,6 +490,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("keys")]
         private InputList<Inputs.ServiceNamingConditionConditionKeyArgs>? _keys;
+
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionKeyArgs> Keys
         {
             get => _keys ?? (_keys = new InputList<Inputs.ServiceNamingConditionConditionKeyArgs>());
@@ -346,6 +502,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("mobilePlatformComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionMobilePlatformComparisonArgs>? _mobilePlatformComparisons;
+
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         [Obsolete(@"You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionMobilePlatformComparisonArgs> MobilePlatformComparisons
         {
@@ -355,6 +515,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("mobilePlatforms")]
         private InputList<Inputs.ServiceNamingConditionConditionMobilePlatformArgs>? _mobilePlatforms;
+
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionMobilePlatformArgs> MobilePlatforms
         {
             get => _mobilePlatforms ?? (_mobilePlatforms = new InputList<Inputs.ServiceNamingConditionConditionMobilePlatformArgs>());
@@ -363,6 +527,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("osArches")]
         private InputList<Inputs.ServiceNamingConditionConditionOsArchArgs>? _osArches;
+
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionOsArchArgs> OsArches
         {
             get => _osArches ?? (_osArches = new InputList<Inputs.ServiceNamingConditionConditionOsArchArgs>());
@@ -371,6 +539,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("osTypes")]
         private InputList<Inputs.ServiceNamingConditionConditionOsTypeArgs>? _osTypes;
+
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionOsTypeArgs> OsTypes
         {
             get => _osTypes ?? (_osTypes = new InputList<Inputs.ServiceNamingConditionConditionOsTypeArgs>());
@@ -379,6 +551,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("osarchitectureComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionOsarchitectureComparisonArgs>? _osarchitectureComparisons;
+
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionOsarchitectureComparisonArgs> OsarchitectureComparisons
         {
@@ -388,6 +564,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("ostypeComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionOstypeComparisonArgs>? _ostypeComparisons;
+
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionOstypeComparisonArgs> OstypeComparisons
         {
@@ -397,6 +577,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("paasTypeComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionPaasTypeComparisonArgs>? _paasTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionPaasTypeComparisonArgs> PaasTypeComparisons
         {
@@ -406,6 +590,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("paasTypes")]
         private InputList<Inputs.ServiceNamingConditionConditionPaasTypeArgs>? _paasTypes;
+
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionPaasTypeArgs> PaasTypes
         {
             get => _paasTypes ?? (_paasTypes = new InputList<Inputs.ServiceNamingConditionConditionPaasTypeArgs>());
@@ -414,6 +602,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("processMetadataConditionKeys")]
         private InputList<Inputs.ServiceNamingConditionConditionProcessMetadataConditionKeyArgs>? _processMetadataConditionKeys;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         [Obsolete(@"'process_metadata_condition_key' is deprecated. You should use 'process_metadata'")]
         public InputList<Inputs.ServiceNamingConditionConditionProcessMetadataConditionKeyArgs> ProcessMetadataConditionKeys
         {
@@ -423,6 +615,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("processMetadatas")]
         private InputList<Inputs.ServiceNamingConditionConditionProcessMetadataArgs>? _processMetadatas;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionProcessMetadataArgs> ProcessMetadatas
         {
             get => _processMetadatas ?? (_processMetadatas = new InputList<Inputs.ServiceNamingConditionConditionProcessMetadataArgs>());
@@ -431,6 +627,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTopologies")]
         private InputList<Inputs.ServiceNamingConditionConditionServiceTopologyArgs>? _serviceTopologies;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionServiceTopologyArgs> ServiceTopologies
         {
             get => _serviceTopologies ?? (_serviceTopologies = new InputList<Inputs.ServiceNamingConditionConditionServiceTopologyArgs>());
@@ -439,6 +639,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTopologyComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionServiceTopologyComparisonArgs>? _serviceTopologyComparisons;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         [Obsolete(@"You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionServiceTopologyComparisonArgs> ServiceTopologyComparisons
         {
@@ -448,6 +652,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTypeComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionServiceTypeComparisonArgs>? _serviceTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionServiceTypeComparisonArgs> ServiceTypeComparisons
         {
@@ -457,6 +665,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTypes")]
         private InputList<Inputs.ServiceNamingConditionConditionServiceTypeArgs>? _serviceTypes;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionServiceTypeArgs> ServiceTypes
         {
             get => _serviceTypes ?? (_serviceTypes = new InputList<Inputs.ServiceNamingConditionConditionServiceTypeArgs>());
@@ -465,6 +677,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("simpleHostTechComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionSimpleHostTechComparisonArgs>? _simpleHostTechComparisons;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         [Obsolete(@"You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionSimpleHostTechComparisonArgs> SimpleHostTechComparisons
         {
@@ -474,6 +690,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("simpleTechComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionSimpleTechComparisonArgs>? _simpleTechComparisons;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         [Obsolete(@"You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionSimpleTechComparisonArgs> SimpleTechComparisons
         {
@@ -483,6 +703,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("stringComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionStringComparisonArgs>? _stringComparisons;
+
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         [Obsolete(@"You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionStringComparisonArgs> StringComparisons
         {
@@ -492,6 +716,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("stringConditionKeys")]
         private InputList<Inputs.ServiceNamingConditionConditionStringConditionKeyArgs>? _stringConditionKeys;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         [Obsolete(@"'string_condition_key' is deprecated. You should use 'string_key'")]
         public InputList<Inputs.ServiceNamingConditionConditionStringConditionKeyArgs> StringConditionKeys
         {
@@ -501,6 +729,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("stringKeys")]
         private InputList<Inputs.ServiceNamingConditionConditionStringKeyArgs>? _stringKeys;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionStringKeyArgs> StringKeys
         {
             get => _stringKeys ?? (_stringKeys = new InputList<Inputs.ServiceNamingConditionConditionStringKeyArgs>());
@@ -509,6 +741,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("strings")]
         private InputList<Inputs.ServiceNamingConditionConditionStringArgs>? _strings;
+
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionStringArgs> Strings
         {
             get => _strings ?? (_strings = new InputList<Inputs.ServiceNamingConditionConditionStringArgs>());
@@ -517,6 +753,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("syntheticEngineTypeComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionSyntheticEngineTypeComparisonArgs>? _syntheticEngineTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionSyntheticEngineTypeComparisonArgs> SyntheticEngineTypeComparisons
         {
@@ -526,6 +766,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("syntheticEngines")]
         private InputList<Inputs.ServiceNamingConditionConditionSyntheticEngineArgs>? _syntheticEngines;
+
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionSyntheticEngineArgs> SyntheticEngines
         {
             get => _syntheticEngines ?? (_syntheticEngines = new InputList<Inputs.ServiceNamingConditionConditionSyntheticEngineArgs>());
@@ -534,6 +778,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("tagComparisons")]
         private InputList<Inputs.ServiceNamingConditionConditionTagComparisonArgs>? _tagComparisons;
+
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         [Obsolete(@"You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ServiceNamingConditionConditionTagComparisonArgs> TagComparisons
         {
@@ -543,6 +791,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("tags")]
         private InputList<Inputs.ServiceNamingConditionConditionTagArgs>? _tags;
+
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionTagArgs> Tags
         {
             get => _tags ?? (_tags = new InputList<Inputs.ServiceNamingConditionConditionTagArgs>());
@@ -551,12 +803,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("teches")]
         private InputList<Inputs.ServiceNamingConditionConditionTechArgs>? _teches;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         public InputList<Inputs.ServiceNamingConditionConditionTechArgs> Teches
         {
             get => _teches ?? (_teches = new InputList<Inputs.ServiceNamingConditionConditionTechArgs>());
             set => _teches = value;
         }
 
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 

@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ProcessGroupDetectionFlags struct {
@@ -100,7 +101,7 @@ func NewProcessGroupDetectionFlags(ctx *pulumi.Context,
 	if args.UseDockerContainerName == nil {
 		return nil, errors.New("invalid value for required argument 'UseDockerContainerName'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ProcessGroupDetectionFlags
 	err := ctx.RegisterResource("dynatrace:index/processGroupDetectionFlags:ProcessGroupDetectionFlags", name, args, &resource, opts...)
 	if err != nil {

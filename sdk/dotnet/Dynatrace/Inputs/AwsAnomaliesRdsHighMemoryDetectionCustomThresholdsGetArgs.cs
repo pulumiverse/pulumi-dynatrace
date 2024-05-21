@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AwsAnomaliesRdsHighMemoryDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Freeable memory is lower than
+        /// </summary>
         [Input("freeMemory", required: true)]
         public Input<double> FreeMemory { get; set; } = null!;
 
+        /// <summary>
+        /// Swap usage is higher than
+        /// </summary>
         [Input("swapUsage", required: true)]
         public Input<double> SwapUsage { get; set; } = null!;
 

@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CustomAnomaliesDimensionEntityGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A filter for a string value based on the given operator
+        /// </summary>
         [Input("filter", required: true)]
         public Input<Inputs.CustomAnomaliesDimensionEntityFilterGetArgs> Filter { get; set; } = null!;
 
+        /// <summary>
+        /// The dimensions key on the metric
+        /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 

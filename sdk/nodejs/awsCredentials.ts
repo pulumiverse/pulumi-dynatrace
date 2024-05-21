@@ -46,10 +46,6 @@ export class AwsCredentials extends pulumi.CustomResource {
      * The type of the AWS partition
      */
     public readonly partitionType!: pulumi.Output<string>;
-    /**
-     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-     * manage them via WebUI without interference by Terraform.
-     */
     public readonly supportingServicesManagedInDynatrace!: pulumi.Output<boolean | undefined>;
     /**
      * supporting services to be monitored
@@ -130,10 +126,6 @@ export interface AwsCredentialsState {
      * The type of the AWS partition
      */
     partitionType?: pulumi.Input<string>;
-    /**
-     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-     * manage them via WebUI without interference by Terraform.
-     */
     supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
     /**
      * supporting services to be monitored
@@ -169,10 +161,6 @@ export interface AwsCredentialsArgs {
      * The type of the AWS partition
      */
     partitionType: pulumi.Input<string>;
-    /**
-     * If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-     * manage them via WebUI without interference by Terraform.
-     */
     supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
     /**
      * supporting services to be monitored

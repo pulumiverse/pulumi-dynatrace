@@ -14,21 +14,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CustomServiceRuleMethod
     {
+        /// <summary>
+        /// Fully qualified types of argument the method expects
+        /// </summary>
         public readonly ImmutableArray<string> Arguments;
         /// <summary>
-        /// The ID of this resource.
+        /// The ID of the method rule
         /// </summary>
         public readonly string? Id;
+        /// <summary>
+        /// The modifiers of the method rule. Possible values are `ABSTRACT`, `EXTERN`, `FINAL`, `NATIVE` and `STATIC`
+        /// </summary>
         public readonly ImmutableArray<string> Modifiers;
         /// <summary>
-        /// The name of the custom service, displayed in the UI
+        /// The method to instrument
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// Fully qualified type the method returns
+        /// </summary>
         public readonly string? Returns;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider
         /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// The visibility of the method rule. Possible values are `INTERNAL`, `PACKAGE_PROTECTED`, `PRIVATE`, `PROTECTED` and `PUBLIC`
+        /// </summary>
         public readonly string? Visibility;
 
         [OutputConstructor]

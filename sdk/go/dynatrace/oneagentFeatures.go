@@ -9,12 +9,12 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type OneagentFeatures struct {
 	pulumi.CustomResourceState
 
-	// Used internally by the terraform provider. Do not populate
 	_restore_ pulumi.StringOutput `pulumi:"_restore_"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
@@ -41,7 +41,7 @@ func NewOneagentFeatures(ctx *pulumi.Context,
 	if args.Key == nil {
 		return nil, errors.New("invalid value for required argument 'Key'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OneagentFeatures
 	err := ctx.RegisterResource("dynatrace:index/oneagentFeatures:OneagentFeatures", name, args, &resource, opts...)
 	if err != nil {
@@ -64,7 +64,6 @@ func GetOneagentFeatures(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering OneagentFeatures resources.
 type oneagentFeaturesState struct {
-	// Used internally by the terraform provider. Do not populate
 	_restore_ *string `pulumi:"_restore_"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
@@ -79,7 +78,6 @@ type oneagentFeaturesState struct {
 }
 
 type OneagentFeaturesState struct {
-	// Used internally by the terraform provider. Do not populate
 	_restore_ pulumi.StringPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
@@ -211,7 +209,6 @@ func (o OneagentFeaturesOutput) ToOneagentFeaturesOutputWithContext(ctx context.
 	return o
 }
 
-// Used internally by the terraform provider. Do not populate
 func (o OneagentFeaturesOutput) _restore_() pulumi.StringOutput {
 	return o.ApplyT(func(v *OneagentFeatures) pulumi.StringOutput { return v._restore_ }).(pulumi.StringOutput)
 }

@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class OpentelemetryMetricsToDropAttributesToDropAttributeArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Attribute key
+        /// </summary>
         [Input("attributeKey", required: true)]
         public Input<string> AttributeKey { get; set; } = null!;
 
+        /// <summary>
+        /// This setting is enabled (`true`) or disabled (`false`)
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 

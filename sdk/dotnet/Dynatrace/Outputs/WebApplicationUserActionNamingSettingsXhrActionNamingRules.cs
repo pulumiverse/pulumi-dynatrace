@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationUserActionNamingSettingsXhrActionNamingRules
     {
+        /// <summary>
+        /// The settings of naming rule
+        /// </summary>
         public readonly ImmutableArray<Outputs.WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule> Rules;
 
         [OutputConstructor]

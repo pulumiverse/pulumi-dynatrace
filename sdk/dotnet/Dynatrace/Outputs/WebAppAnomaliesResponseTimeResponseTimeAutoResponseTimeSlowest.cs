@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest
     {
+        /// <summary>
+        /// Absolute threshold
+        /// </summary>
         public readonly double SlowestDegradationMilliseconds;
+        /// <summary>
+        /// Relative threshold
+        /// </summary>
         public readonly double SlowestDegradationPercent;
 
         [OutputConstructor]

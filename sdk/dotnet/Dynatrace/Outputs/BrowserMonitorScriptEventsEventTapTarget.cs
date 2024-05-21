@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEventsEventTapTarget
     {
+        /// <summary>
+        /// The list of locators identifying the desired element
+        /// </summary>
         public readonly ImmutableArray<Outputs.BrowserMonitorScriptEventsEventTapTargetLocator> Locators;
+        /// <summary>
+        /// The tab of the target
+        /// </summary>
         public readonly string? Window;
 
         [OutputConstructor]

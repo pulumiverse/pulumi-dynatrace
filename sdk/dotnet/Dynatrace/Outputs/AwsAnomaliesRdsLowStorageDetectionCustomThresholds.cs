@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AwsAnomaliesRdsLowStorageDetectionCustomThresholds
     {
+        /// <summary>
+        /// Free storage space divided by allocated storage is lower than
+        /// </summary>
         public readonly int FreeStoragePercentage;
 
         [OutputConstructor]

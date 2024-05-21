@@ -13,11 +13,18 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Performance threshold is enabled (`true`) or disabled (`false`)
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         [Input("thresholds")]
         private InputList<Inputs.HttpMonitorAnomalyDetectionLoadingTimeThresholdThresholdArgs>? _thresholds;
+
+        /// <summary>
+        /// The list of performance threshold rules
+        /// </summary>
         public InputList<Inputs.HttpMonitorAnomalyDetectionLoadingTimeThresholdThresholdArgs> Thresholds
         {
             get => _thresholds ?? (_thresholds = new InputList<Inputs.HttpMonitorAnomalyDetectionLoadingTimeThresholdThresholdArgs>());

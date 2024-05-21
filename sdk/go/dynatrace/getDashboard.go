@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The `Dashboard` data source allows the dashboard ID to be retrieved by its name and owner.
@@ -45,7 +46,7 @@ import (
 //
 // ```
 func LookupDashboard(ctx *pulumi.Context, args *LookupDashboardArgs, opts ...pulumi.InvokeOption) (*LookupDashboardResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDashboardResult
 	err := ctx.Invoke("dynatrace:index/getDashboard:getDashboard", args, &rv, opts...)
 	if err != nil {

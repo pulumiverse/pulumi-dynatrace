@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesCpuThresholds
     {
+        /// <summary>
+        /// Alert if CPU usage is higher than *X*% in 3 out of 5 samples
+        /// </summary>
         public readonly int Saturation;
 
         [OutputConstructor]

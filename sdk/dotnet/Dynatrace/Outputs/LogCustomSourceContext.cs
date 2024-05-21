@@ -14,9 +14,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class LogCustomSourceContext
     {
-        /// <summary>
-        /// Define Custom Log Source only within context if provided
-        /// </summary>
         public readonly ImmutableArray<Outputs.LogCustomSourceContextContext> Contexts;
 
         [OutputConstructor]

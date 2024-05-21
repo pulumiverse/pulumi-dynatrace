@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsIpAddressRestrictionSettings
     {
+        /// <summary>
+        /// The mode of the list of ip address restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+        /// </summary>
         public readonly string Mode;
+        /// <summary>
+        /// The IP addresses or the IP address ranges to be mapped to the location
+        /// </summary>
         public readonly Outputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions? Restrictions;
 
         [OutputConstructor]

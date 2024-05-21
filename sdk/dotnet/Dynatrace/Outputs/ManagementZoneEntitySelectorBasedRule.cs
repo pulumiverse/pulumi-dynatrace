@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ManagementZoneEntitySelectorBasedRule
     {
+        /// <summary>
+        /// The rule is enabled (`true`) or disabled (`false`)
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// The entity selector string, by which the entities are selected
+        /// </summary>
         public readonly string? Selector;
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         public readonly string? Unknowns;
 
         [OutputConstructor]

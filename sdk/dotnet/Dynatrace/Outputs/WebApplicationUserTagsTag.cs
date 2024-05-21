@@ -14,14 +14,26 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationUserTagsTag
     {
-        public readonly string? CleanupRule;
         /// <summary>
-        /// The ID of this resource.
+        /// Cleanup rule expression of the userTag
         /// </summary>
+        public readonly string? CleanupRule;
         public readonly int? Id;
+        /// <summary>
+        /// If `true`, the value of this tag will always be stored in lower case. Defaults to `false`.
+        /// </summary>
         public readonly bool? IgnoreCase;
+        /// <summary>
+        /// If it's of type metaData, metaData id of the userTag
+        /// </summary>
         public readonly int? MetadataId;
+        /// <summary>
+        /// The ID of the RrequestAttribute for the userTag
+        /// </summary>
         public readonly string? ServerSideRequestAttribute;
+        /// <summary>
+        /// A unique ID among all userTags and properties of this application. Minimum value is 1.
+        /// </summary>
         public readonly int? UniqueId;
 
         [OutputConstructor]

@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("rules", required: true)]
         private InputList<Inputs.HttpMonitorScriptRequestValidationRuleGetArgs>? _rules;
+
+        /// <summary>
+        /// A list of validation rules
+        /// </summary>
         public InputList<Inputs.HttpMonitorScriptRequestValidationRuleGetArgs> Rules
         {
             get => _rules ?? (_rules = new InputList<Inputs.HttpMonitorScriptRequestValidationRuleGetArgs>());

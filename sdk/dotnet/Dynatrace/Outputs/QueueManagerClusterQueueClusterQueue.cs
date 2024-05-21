@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class QueueManagerClusterQueueClusterQueue
     {
+        /// <summary>
+        /// Name of the cluster(s) this local queue should be visible in
+        /// </summary>
         public readonly ImmutableArray<string> ClusterVisibilities;
+        /// <summary>
+        /// The name of the local queue
+        /// </summary>
         public readonly string LocalQueueName;
 
         [OutputConstructor]

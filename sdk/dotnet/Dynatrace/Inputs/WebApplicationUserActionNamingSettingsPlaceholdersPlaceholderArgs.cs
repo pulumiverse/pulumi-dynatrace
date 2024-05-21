@@ -13,24 +13,39 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The input for the place holder. Possible values are `ELEMENT_IDENTIFIER`, `INPUT_TYPE`, `METADATA`, `PAGE_TITLE`, `PAGE_URL`, `SOURCE_URL`, `TOP_XHR_URL` and `XHR_URL`
+        /// </summary>
         [Input("input", required: true)]
         public Input<string> Input { get; set; } = null!;
 
+        /// <summary>
+        /// The ID of the metadata
+        /// </summary>
         [Input("metadataId")]
         public Input<int>? MetadataId { get; set; }
 
         /// <summary>
-        /// The name of the web application, displayed in the UI
+        /// Placeholder name. Valid length needs to be between 1 and 50 characters
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// The part to process. Possible values are `ALL`, `ANCHOR` and `PATH`
+        /// </summary>
         [Input("processingPart", required: true)]
         public Input<string> ProcessingPart { get; set; } = null!;
 
+        /// <summary>
+        /// The processing step settings
+        /// </summary>
         [Input("processingSteps")]
         public Input<Inputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs>? ProcessingSteps { get; set; }
 
+        /// <summary>
+        /// Use the element identifier that was selected by Dynatrace
+        /// </summary>
         [Input("useGuessedElementIdentifier")]
         public Input<bool>? UseGuessedElementIdentifier { get; set; }
 

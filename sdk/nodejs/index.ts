@@ -367,7 +367,8 @@ utilities.lazyLoad(exports, ["getApplication","getApplicationOutput"], () => req
 
 export { GetAwsIamExternalResult } from "./getAwsIamExternal";
 export const getAwsIamExternal: typeof import("./getAwsIamExternal").getAwsIamExternal = null as any;
-utilities.lazyLoad(exports, ["getAwsIamExternal"], () => require("./getAwsIamExternal"));
+export const getAwsIamExternalOutput: typeof import("./getAwsIamExternal").getAwsIamExternalOutput = null as any;
+utilities.lazyLoad(exports, ["getAwsIamExternal","getAwsIamExternalOutput"], () => require("./getAwsIamExternal"));
 
 export { GetCalculatedServiceMetricArgs, GetCalculatedServiceMetricResult, GetCalculatedServiceMetricOutputArgs } from "./getCalculatedServiceMetric";
 export const getCalculatedServiceMetric: typeof import("./getCalculatedServiceMetric").getCalculatedServiceMetric = null as any;
@@ -416,7 +417,8 @@ utilities.lazyLoad(exports, ["getManagementZone","getManagementZoneOutput"], () 
 
 export { GetManagementZonesResult } from "./getManagementZones";
 export const getManagementZones: typeof import("./getManagementZones").getManagementZones = null as any;
-utilities.lazyLoad(exports, ["getManagementZones"], () => require("./getManagementZones"));
+export const getManagementZonesOutput: typeof import("./getManagementZones").getManagementZonesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementZones","getManagementZonesOutput"], () => require("./getManagementZones"));
 
 export { GetMobileApplicationArgs, GetMobileApplicationResult, GetMobileApplicationOutputArgs } from "./getMobileApplication";
 export const getMobileApplication: typeof import("./getMobileApplication").getMobileApplication = null as any;

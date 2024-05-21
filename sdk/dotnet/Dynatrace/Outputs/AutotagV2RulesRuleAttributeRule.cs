@@ -14,14 +14,41 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AutotagV2RulesRuleAttributeRule
     {
+        /// <summary>
+        /// Apply to process groups connected to matching Azure entities
+        /// </summary>
         public readonly bool? AzureToPgpropagation;
+        /// <summary>
+        /// Apply to services provided by matching Azure entities
+        /// </summary>
         public readonly bool? AzureToServicePropagation;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.AutotagV2RulesRuleAttributeRuleConditions Conditions;
+        /// <summary>
+        /// Possible Values: `APPLICATION`, `AWS_APPLICATION_LOAD_BALANCER`, `AWS_CLASSIC_LOAD_BALANCER`, `AWS_NETWORK_LOAD_BALANCER`, `AWS_RELATIONAL_DATABASE_SERVICE`, `AZURE`, `CUSTOM_APPLICATION`, `CUSTOM_DEVICE`, `DCRUM_APPLICATION`, `ESXI_HOST`, `EXTERNAL_SYNTHETIC_TEST`, `HOST`, `HTTP_CHECK`, `MOBILE_APPLICATION`, `PROCESS_GROUP`, `SERVICE`, `SYNTHETIC_TEST`
+        /// </summary>
         public readonly string EntityType;
+        /// <summary>
+        /// Apply to processes running on matching hosts
+        /// </summary>
         public readonly bool? HostToPgpropagation;
+        /// <summary>
+        /// Apply to underlying hosts of matching process groups
+        /// </summary>
         public readonly bool? PgToHostPropagation;
+        /// <summary>
+        /// Apply to all services provided by the process groups
+        /// </summary>
         public readonly bool? PgToServicePropagation;
+        /// <summary>
+        /// Apply to underlying hosts of matching services
+        /// </summary>
         public readonly bool? ServiceToHostPropagation;
+        /// <summary>
+        /// Apply to underlying process groups of matching services
+        /// </summary>
         public readonly bool? ServiceToPgpropagation;
 
         [OutputConstructor]

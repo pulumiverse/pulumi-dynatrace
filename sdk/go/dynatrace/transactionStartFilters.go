@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type TransactionStartFilters struct {
@@ -30,7 +31,7 @@ func NewTransactionStartFilters(ctx *pulumi.Context,
 		args = &TransactionStartFiltersArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource TransactionStartFilters
 	err := ctx.RegisterResource("dynatrace:index/transactionStartFilters:TransactionStartFilters", name, args, &resource, opts...)
 	if err != nil {

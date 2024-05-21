@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("filters")]
         private InputList<Inputs.DashboardTileFilterConfigFiltersFilterGetArgs>? _filters;
+
+        /// <summary>
+        /// the tiles this Dashboard consist of
+        /// </summary>
         public InputList<Inputs.DashboardTileFilterConfigFiltersFilterGetArgs> Filters
         {
             get => _filters ?? (_filters = new InputList<Inputs.DashboardTileFilterConfigFiltersFilterGetArgs>());

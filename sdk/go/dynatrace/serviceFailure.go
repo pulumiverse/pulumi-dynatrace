@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ServiceFailure struct {
@@ -35,7 +36,7 @@ func NewServiceFailure(ctx *pulumi.Context,
 	if args.ServiceId == nil {
 		return nil, errors.New("invalid value for required argument 'ServiceId'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ServiceFailure
 	err := ctx.RegisterResource("dynatrace:index/serviceFailure:ServiceFailure", name, args, &resource, opts...)
 	if err != nil {

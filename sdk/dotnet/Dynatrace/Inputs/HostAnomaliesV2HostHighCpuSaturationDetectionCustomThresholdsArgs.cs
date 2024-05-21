@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if the CPU usage is higher than this threshold for the defined amount of samples
+        /// </summary>
         [Input("cpuSaturation", required: true)]
         public Input<int> CpuSaturation { get; set; } = null!;
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("eventThresholds", required: true)]
         public Input<Inputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholdsArgs> EventThresholds { get; set; } = null!;
 

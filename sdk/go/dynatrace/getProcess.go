@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The process data source allows the process ID to be retrieved by its name and optionally tags / tag-value pairs.
@@ -60,7 +61,7 @@ import (
 //
 // ```
 func GetProcess(ctx *pulumi.Context, args *GetProcessArgs, opts ...pulumi.InvokeOption) (*GetProcessResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProcessResult
 	err := ctx.Invoke("dynatrace:index/getProcess:getProcess", args, &rv, opts...)
 	if err != nil {

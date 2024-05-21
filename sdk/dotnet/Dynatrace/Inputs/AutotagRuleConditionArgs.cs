@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("applicationTypeComparisons")]
         private InputList<Inputs.AutotagRuleConditionApplicationTypeComparisonArgs>? _applicationTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionApplicationTypeComparisonArgs> ApplicationTypeComparisons
         {
@@ -24,6 +28,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("applicationTypes")]
         private InputList<Inputs.AutotagRuleConditionApplicationTypeArgs>? _applicationTypes;
+
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionApplicationTypeArgs> ApplicationTypes
         {
             get => _applicationTypes ?? (_applicationTypes = new InputList<Inputs.AutotagRuleConditionApplicationTypeArgs>());
@@ -32,6 +40,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureComputeModeComparisons")]
         private InputList<Inputs.AutotagRuleConditionAzureComputeModeComparisonArgs>? _azureComputeModeComparisons;
+
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionAzureComputeModeComparisonArgs> AzureComputeModeComparisons
         {
             get => _azureComputeModeComparisons ?? (_azureComputeModeComparisons = new InputList<Inputs.AutotagRuleConditionAzureComputeModeComparisonArgs>());
@@ -40,6 +52,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureComputeModes")]
         private InputList<Inputs.AutotagRuleConditionAzureComputeModeArgs>? _azureComputeModes;
+
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionAzureComputeModeArgs> AzureComputeModes
         {
@@ -49,6 +65,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureSkuComparisions")]
         private InputList<Inputs.AutotagRuleConditionAzureSkuComparisionArgs>? _azureSkuComparisions;
+
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         [Obsolete(@"You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionAzureSkuComparisionArgs> AzureSkuComparisions
         {
@@ -58,6 +78,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureSkus")]
         private InputList<Inputs.AutotagRuleConditionAzureSkusArgs>? _azureSkus;
+
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionAzureSkusArgs> AzureSkus
         {
             get => _azureSkus ?? (_azureSkus = new InputList<Inputs.AutotagRuleConditionAzureSkusArgs>());
@@ -66,6 +90,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("baseComparisonBasics")]
         private InputList<Inputs.AutotagRuleConditionBaseComparisonBasicArgs>? _baseComparisonBasics;
+
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         [Obsolete(@"You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionBaseComparisonBasicArgs> BaseComparisonBasics
         {
@@ -75,6 +103,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("baseConditionKeys")]
         private InputList<Inputs.AutotagRuleConditionBaseConditionKeyArgs>? _baseConditionKeys;
+
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         [Obsolete(@"'base_condition_key' is deprecated. You should use 'key'")]
         public InputList<Inputs.AutotagRuleConditionBaseConditionKeyArgs> BaseConditionKeys
         {
@@ -84,6 +116,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("bitnessComparisions")]
         private InputList<Inputs.AutotagRuleConditionBitnessComparisionArgs>? _bitnessComparisions;
+
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         [Obsolete(@"You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionBitnessComparisionArgs> BitnessComparisions
         {
@@ -93,6 +129,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("bitnesses")]
         private InputList<Inputs.AutotagRuleConditionBitnessArgs>? _bitnesses;
+
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionBitnessArgs> Bitnesses
         {
             get => _bitnesses ?? (_bitnesses = new InputList<Inputs.AutotagRuleConditionBitnessArgs>());
@@ -101,6 +141,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("cloudTypeComparisons")]
         private InputList<Inputs.AutotagRuleConditionCloudTypeComparisonArgs>? _cloudTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionCloudTypeComparisonArgs> CloudTypeComparisons
         {
@@ -110,6 +154,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("cloudTypes")]
         private InputList<Inputs.AutotagRuleConditionCloudTypeArgs>? _cloudTypes;
+
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionCloudTypeArgs> CloudTypes
         {
             get => _cloudTypes ?? (_cloudTypes = new InputList<Inputs.AutotagRuleConditionCloudTypeArgs>());
@@ -118,6 +166,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("comparisons")]
         private InputList<Inputs.AutotagRuleConditionComparisonArgs>? _comparisons;
+
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionComparisonArgs> Comparisons
         {
             get => _comparisons ?? (_comparisons = new InputList<Inputs.AutotagRuleConditionComparisonArgs>());
@@ -126,6 +178,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customApplicationTypeComparisons")]
         private InputList<Inputs.AutotagRuleConditionCustomApplicationTypeComparisonArgs>? _customApplicationTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionCustomApplicationTypeComparisonArgs> CustomApplicationTypeComparisons
         {
@@ -135,6 +191,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customApplicationTypes")]
         private InputList<Inputs.AutotagRuleConditionCustomApplicationTypeArgs>? _customApplicationTypes;
+
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionCustomApplicationTypeArgs> CustomApplicationTypes
         {
             get => _customApplicationTypes ?? (_customApplicationTypes = new InputList<Inputs.AutotagRuleConditionCustomApplicationTypeArgs>());
@@ -143,6 +203,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customHostMetadataConditionKeys")]
         private InputList<Inputs.AutotagRuleConditionCustomHostMetadataConditionKeyArgs>? _customHostMetadataConditionKeys;
+
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         [Obsolete(@"'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'")]
         public InputList<Inputs.AutotagRuleConditionCustomHostMetadataConditionKeyArgs> CustomHostMetadataConditionKeys
         {
@@ -152,6 +216,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customHostMetadatas")]
         private InputList<Inputs.AutotagRuleConditionCustomHostMetadataArgs>? _customHostMetadatas;
+
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionCustomHostMetadataArgs> CustomHostMetadatas
         {
             get => _customHostMetadatas ?? (_customHostMetadatas = new InputList<Inputs.AutotagRuleConditionCustomHostMetadataArgs>());
@@ -160,6 +228,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customProcessMetadataConditionKeys")]
         private InputList<Inputs.AutotagRuleConditionCustomProcessMetadataConditionKeyArgs>? _customProcessMetadataConditionKeys;
+
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         [Obsolete(@"'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'")]
         public InputList<Inputs.AutotagRuleConditionCustomProcessMetadataConditionKeyArgs> CustomProcessMetadataConditionKeys
         {
@@ -169,6 +241,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customProcessMetadatas")]
         private InputList<Inputs.AutotagRuleConditionCustomProcessMetadataArgs>? _customProcessMetadatas;
+
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionCustomProcessMetadataArgs> CustomProcessMetadatas
         {
             get => _customProcessMetadatas ?? (_customProcessMetadatas = new InputList<Inputs.AutotagRuleConditionCustomProcessMetadataArgs>());
@@ -177,6 +253,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("databaseTopologies")]
         private InputList<Inputs.AutotagRuleConditionDatabaseTopologyArgs>? _databaseTopologies;
+
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionDatabaseTopologyArgs> DatabaseTopologies
         {
             get => _databaseTopologies ?? (_databaseTopologies = new InputList<Inputs.AutotagRuleConditionDatabaseTopologyArgs>());
@@ -185,6 +265,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("databaseTopologyComparisons")]
         private InputList<Inputs.AutotagRuleConditionDatabaseTopologyComparisonArgs>? _databaseTopologyComparisons;
+
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         [Obsolete(@"You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionDatabaseTopologyComparisonArgs> DatabaseTopologyComparisons
         {
@@ -194,6 +278,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("dcrumDecoderComparisons")]
         private InputList<Inputs.AutotagRuleConditionDcrumDecoderComparisonArgs>? _dcrumDecoderComparisons;
+
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionDcrumDecoderComparisonArgs> DcrumDecoderComparisons
         {
@@ -203,6 +291,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("dcrumDecoders")]
         private InputList<Inputs.AutotagRuleConditionDcrumDecoderArgs>? _dcrumDecoders;
+
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionDcrumDecoderArgs> DcrumDecoders
         {
             get => _dcrumDecoders ?? (_dcrumDecoders = new InputList<Inputs.AutotagRuleConditionDcrumDecoderArgs>());
@@ -211,6 +303,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("entities")]
         private InputList<Inputs.AutotagRuleConditionEntityArgs>? _entities;
+
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionEntityArgs> Entities
         {
             get => _entities ?? (_entities = new InputList<Inputs.AutotagRuleConditionEntityArgs>());
@@ -219,6 +315,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("entityIdComparisons")]
         private InputList<Inputs.AutotagRuleConditionEntityIdComparisonArgs>? _entityIdComparisons;
+
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         [Obsolete(@"You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionEntityIdComparisonArgs> EntityIdComparisons
         {
@@ -228,6 +328,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("hostTeches")]
         private InputList<Inputs.AutotagRuleConditionHostTechArgs>? _hostTeches;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionHostTechArgs> HostTeches
         {
             get => _hostTeches ?? (_hostTeches = new InputList<Inputs.AutotagRuleConditionHostTechArgs>());
@@ -236,6 +340,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("hypervisorTypeComparisions")]
         private InputList<Inputs.AutotagRuleConditionHypervisorTypeComparisionArgs>? _hypervisorTypeComparisions;
+
+        /// <summary>
+        /// `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+        /// </summary>
         [Obsolete(@"`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead")]
         public InputList<Inputs.AutotagRuleConditionHypervisorTypeComparisionArgs> HypervisorTypeComparisions
         {
@@ -245,6 +353,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("hypervisors")]
         private InputList<Inputs.AutotagRuleConditionHypervisorArgs>? _hypervisors;
+
+        /// <summary>
+        /// Comparison for `HYPERVISOR_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionHypervisorArgs> Hypervisors
         {
             get => _hypervisors ?? (_hypervisors = new InputList<Inputs.AutotagRuleConditionHypervisorArgs>());
@@ -253,6 +365,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedNameComparisons")]
         private InputList<Inputs.AutotagRuleConditionIndexedNameComparisonArgs>? _indexedNameComparisons;
+
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         [Obsolete(@"You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionIndexedNameComparisonArgs> IndexedNameComparisons
         {
@@ -262,6 +378,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedNames")]
         private InputList<Inputs.AutotagRuleConditionIndexedNameArgs>? _indexedNames;
+
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionIndexedNameArgs> IndexedNames
         {
             get => _indexedNames ?? (_indexedNames = new InputList<Inputs.AutotagRuleConditionIndexedNameArgs>());
@@ -270,6 +390,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedStringComparisons")]
         private InputList<Inputs.AutotagRuleConditionIndexedStringComparisonArgs>? _indexedStringComparisons;
+
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         [Obsolete(@"You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionIndexedStringComparisonArgs> IndexedStringComparisons
         {
@@ -279,6 +403,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedStrings")]
         private InputList<Inputs.AutotagRuleConditionIndexedStringArgs>? _indexedStrings;
+
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionIndexedStringArgs> IndexedStrings
         {
             get => _indexedStrings ?? (_indexedStrings = new InputList<Inputs.AutotagRuleConditionIndexedStringArgs>());
@@ -287,6 +415,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedTagComparisons")]
         private InputList<Inputs.AutotagRuleConditionIndexedTagComparisonArgs>? _indexedTagComparisons;
+
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         [Obsolete(@"You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionIndexedTagComparisonArgs> IndexedTagComparisons
         {
@@ -296,6 +428,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedTags")]
         private InputList<Inputs.AutotagRuleConditionIndexedTagArgs>? _indexedTags;
+
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionIndexedTagArgs> IndexedTags
         {
             get => _indexedTags ?? (_indexedTags = new InputList<Inputs.AutotagRuleConditionIndexedTagArgs>());
@@ -304,6 +440,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("integerComparisons")]
         private InputList<Inputs.AutotagRuleConditionIntegerComparisonArgs>? _integerComparisons;
+
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         [Obsolete(@"You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionIntegerComparisonArgs> IntegerComparisons
         {
@@ -313,6 +453,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("integers")]
         private InputList<Inputs.AutotagRuleConditionIntegerArgs>? _integers;
+
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionIntegerArgs> Integers
         {
             get => _integers ?? (_integers = new InputList<Inputs.AutotagRuleConditionIntegerArgs>());
@@ -321,6 +465,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("ipaddressComparisons")]
         private InputList<Inputs.AutotagRuleConditionIpaddressComparisonArgs>? _ipaddressComparisons;
+
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         [Obsolete(@"You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionIpaddressComparisonArgs> IpaddressComparisons
         {
@@ -330,6 +478,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("ipaddresses")]
         private InputList<Inputs.AutotagRuleConditionIpaddressArgs>? _ipaddresses;
+
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionIpaddressArgs> Ipaddresses
         {
             get => _ipaddresses ?? (_ipaddresses = new InputList<Inputs.AutotagRuleConditionIpaddressArgs>());
@@ -338,6 +490,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("keys")]
         private InputList<Inputs.AutotagRuleConditionKeyArgs>? _keys;
+
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionKeyArgs> Keys
         {
             get => _keys ?? (_keys = new InputList<Inputs.AutotagRuleConditionKeyArgs>());
@@ -346,6 +502,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("mobilePlatformComparisons")]
         private InputList<Inputs.AutotagRuleConditionMobilePlatformComparisonArgs>? _mobilePlatformComparisons;
+
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         [Obsolete(@"You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionMobilePlatformComparisonArgs> MobilePlatformComparisons
         {
@@ -355,6 +515,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("mobilePlatforms")]
         private InputList<Inputs.AutotagRuleConditionMobilePlatformArgs>? _mobilePlatforms;
+
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionMobilePlatformArgs> MobilePlatforms
         {
             get => _mobilePlatforms ?? (_mobilePlatforms = new InputList<Inputs.AutotagRuleConditionMobilePlatformArgs>());
@@ -363,6 +527,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("osArches")]
         private InputList<Inputs.AutotagRuleConditionOsArchArgs>? _osArches;
+
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionOsArchArgs> OsArches
         {
             get => _osArches ?? (_osArches = new InputList<Inputs.AutotagRuleConditionOsArchArgs>());
@@ -371,6 +539,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("osTypes")]
         private InputList<Inputs.AutotagRuleConditionOsTypeArgs>? _osTypes;
+
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionOsTypeArgs> OsTypes
         {
             get => _osTypes ?? (_osTypes = new InputList<Inputs.AutotagRuleConditionOsTypeArgs>());
@@ -379,6 +551,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("osarchitectureComparisons")]
         private InputList<Inputs.AutotagRuleConditionOsarchitectureComparisonArgs>? _osarchitectureComparisons;
+
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionOsarchitectureComparisonArgs> OsarchitectureComparisons
         {
@@ -388,6 +564,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("ostypeComparisons")]
         private InputList<Inputs.AutotagRuleConditionOstypeComparisonArgs>? _ostypeComparisons;
+
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionOstypeComparisonArgs> OstypeComparisons
         {
@@ -397,6 +577,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("paasTypeComparisons")]
         private InputList<Inputs.AutotagRuleConditionPaasTypeComparisonArgs>? _paasTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionPaasTypeComparisonArgs> PaasTypeComparisons
         {
@@ -406,6 +590,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("paasTypes")]
         private InputList<Inputs.AutotagRuleConditionPaasTypeArgs>? _paasTypes;
+
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionPaasTypeArgs> PaasTypes
         {
             get => _paasTypes ?? (_paasTypes = new InputList<Inputs.AutotagRuleConditionPaasTypeArgs>());
@@ -414,6 +602,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("processMetadataConditionKeys")]
         private InputList<Inputs.AutotagRuleConditionProcessMetadataConditionKeyArgs>? _processMetadataConditionKeys;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         [Obsolete(@"'process_metadata_condition_key' is deprecated. You should use 'process_metadata'")]
         public InputList<Inputs.AutotagRuleConditionProcessMetadataConditionKeyArgs> ProcessMetadataConditionKeys
         {
@@ -423,6 +615,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("processMetadatas")]
         private InputList<Inputs.AutotagRuleConditionProcessMetadataArgs>? _processMetadatas;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionProcessMetadataArgs> ProcessMetadatas
         {
             get => _processMetadatas ?? (_processMetadatas = new InputList<Inputs.AutotagRuleConditionProcessMetadataArgs>());
@@ -431,6 +627,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTopologies")]
         private InputList<Inputs.AutotagRuleConditionServiceTopologyArgs>? _serviceTopologies;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionServiceTopologyArgs> ServiceTopologies
         {
             get => _serviceTopologies ?? (_serviceTopologies = new InputList<Inputs.AutotagRuleConditionServiceTopologyArgs>());
@@ -439,6 +639,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTopologyComparisons")]
         private InputList<Inputs.AutotagRuleConditionServiceTopologyComparisonArgs>? _serviceTopologyComparisons;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         [Obsolete(@"You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionServiceTopologyComparisonArgs> ServiceTopologyComparisons
         {
@@ -448,6 +652,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTypeComparisons")]
         private InputList<Inputs.AutotagRuleConditionServiceTypeComparisonArgs>? _serviceTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionServiceTypeComparisonArgs> ServiceTypeComparisons
         {
@@ -457,6 +665,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTypes")]
         private InputList<Inputs.AutotagRuleConditionServiceTypeArgs>? _serviceTypes;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionServiceTypeArgs> ServiceTypes
         {
             get => _serviceTypes ?? (_serviceTypes = new InputList<Inputs.AutotagRuleConditionServiceTypeArgs>());
@@ -465,6 +677,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("simpleHostTechComparisons")]
         private InputList<Inputs.AutotagRuleConditionSimpleHostTechComparisonArgs>? _simpleHostTechComparisons;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         [Obsolete(@"You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionSimpleHostTechComparisonArgs> SimpleHostTechComparisons
         {
@@ -474,6 +690,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("simpleTechComparisons")]
         private InputList<Inputs.AutotagRuleConditionSimpleTechComparisonArgs>? _simpleTechComparisons;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         [Obsolete(@"You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionSimpleTechComparisonArgs> SimpleTechComparisons
         {
@@ -483,6 +703,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("stringComparisons")]
         private InputList<Inputs.AutotagRuleConditionStringComparisonArgs>? _stringComparisons;
+
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         [Obsolete(@"You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionStringComparisonArgs> StringComparisons
         {
@@ -492,6 +716,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("stringConditionKeys")]
         private InputList<Inputs.AutotagRuleConditionStringConditionKeyArgs>? _stringConditionKeys;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         [Obsolete(@"'string_condition_key' is deprecated. You should use 'string_key'")]
         public InputList<Inputs.AutotagRuleConditionStringConditionKeyArgs> StringConditionKeys
         {
@@ -501,6 +729,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("stringKeys")]
         private InputList<Inputs.AutotagRuleConditionStringKeyArgs>? _stringKeys;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionStringKeyArgs> StringKeys
         {
             get => _stringKeys ?? (_stringKeys = new InputList<Inputs.AutotagRuleConditionStringKeyArgs>());
@@ -509,6 +741,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("strings")]
         private InputList<Inputs.AutotagRuleConditionStringArgs>? _strings;
+
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionStringArgs> Strings
         {
             get => _strings ?? (_strings = new InputList<Inputs.AutotagRuleConditionStringArgs>());
@@ -517,6 +753,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("syntheticEngineTypeComparisons")]
         private InputList<Inputs.AutotagRuleConditionSyntheticEngineTypeComparisonArgs>? _syntheticEngineTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionSyntheticEngineTypeComparisonArgs> SyntheticEngineTypeComparisons
         {
@@ -526,6 +766,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("syntheticEngines")]
         private InputList<Inputs.AutotagRuleConditionSyntheticEngineArgs>? _syntheticEngines;
+
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionSyntheticEngineArgs> SyntheticEngines
         {
             get => _syntheticEngines ?? (_syntheticEngines = new InputList<Inputs.AutotagRuleConditionSyntheticEngineArgs>());
@@ -534,6 +778,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("tagComparisons")]
         private InputList<Inputs.AutotagRuleConditionTagComparisonArgs>? _tagComparisons;
+
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         [Obsolete(@"You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.AutotagRuleConditionTagComparisonArgs> TagComparisons
         {
@@ -543,6 +791,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("tags")]
         private InputList<Inputs.AutotagRuleConditionTagArgs>? _tags;
+
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionTagArgs> Tags
         {
             get => _tags ?? (_tags = new InputList<Inputs.AutotagRuleConditionTagArgs>());
@@ -551,12 +803,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("teches")]
         private InputList<Inputs.AutotagRuleConditionTechArgs>? _teches;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         public InputList<Inputs.AutotagRuleConditionTechArgs> Teches
         {
             get => _teches ?? (_teches = new InputList<Inputs.AutotagRuleConditionTechArgs>());
             set => _teches = value;
         }
 
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 

@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("applicationTypeComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionApplicationTypeComparisonArgs>? _applicationTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionApplicationTypeComparisonArgs> ApplicationTypeComparisons
         {
@@ -24,6 +28,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("applicationTypes")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionApplicationTypeArgs>? _applicationTypes;
+
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionApplicationTypeArgs> ApplicationTypes
         {
             get => _applicationTypes ?? (_applicationTypes = new InputList<Inputs.ProcessgroupNamingConditionConditionApplicationTypeArgs>());
@@ -32,6 +40,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureComputeModeComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionAzureComputeModeComparisonArgs>? _azureComputeModeComparisons;
+
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionAzureComputeModeComparisonArgs> AzureComputeModeComparisons
         {
             get => _azureComputeModeComparisons ?? (_azureComputeModeComparisons = new InputList<Inputs.ProcessgroupNamingConditionConditionAzureComputeModeComparisonArgs>());
@@ -40,6 +52,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureComputeModes")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionAzureComputeModeArgs>? _azureComputeModes;
+
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionAzureComputeModeArgs> AzureComputeModes
         {
@@ -49,6 +65,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureSkuComparisions")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionAzureSkuComparisionArgs>? _azureSkuComparisions;
+
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         [Obsolete(@"You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionAzureSkuComparisionArgs> AzureSkuComparisions
         {
@@ -58,6 +78,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureSkus")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionAzureSkusArgs>? _azureSkus;
+
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionAzureSkusArgs> AzureSkus
         {
             get => _azureSkus ?? (_azureSkus = new InputList<Inputs.ProcessgroupNamingConditionConditionAzureSkusArgs>());
@@ -66,6 +90,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("baseComparisonBasics")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionBaseComparisonBasicArgs>? _baseComparisonBasics;
+
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         [Obsolete(@"You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionBaseComparisonBasicArgs> BaseComparisonBasics
         {
@@ -75,6 +103,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("baseConditionKeys")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionBaseConditionKeyArgs>? _baseConditionKeys;
+
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         [Obsolete(@"'base_condition_key' is deprecated. You should use 'key'")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionBaseConditionKeyArgs> BaseConditionKeys
         {
@@ -84,6 +116,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("bitnessComparisions")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionBitnessComparisionArgs>? _bitnessComparisions;
+
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         [Obsolete(@"You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionBitnessComparisionArgs> BitnessComparisions
         {
@@ -93,6 +129,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("bitnesses")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionBitnessArgs>? _bitnesses;
+
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionBitnessArgs> Bitnesses
         {
             get => _bitnesses ?? (_bitnesses = new InputList<Inputs.ProcessgroupNamingConditionConditionBitnessArgs>());
@@ -101,6 +141,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("cloudTypeComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionCloudTypeComparisonArgs>? _cloudTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionCloudTypeComparisonArgs> CloudTypeComparisons
         {
@@ -110,6 +154,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("cloudTypes")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionCloudTypeArgs>? _cloudTypes;
+
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionCloudTypeArgs> CloudTypes
         {
             get => _cloudTypes ?? (_cloudTypes = new InputList<Inputs.ProcessgroupNamingConditionConditionCloudTypeArgs>());
@@ -118,6 +166,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("comparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionComparisonArgs>? _comparisons;
+
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionComparisonArgs> Comparisons
         {
             get => _comparisons ?? (_comparisons = new InputList<Inputs.ProcessgroupNamingConditionConditionComparisonArgs>());
@@ -126,6 +178,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customApplicationTypeComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionCustomApplicationTypeComparisonArgs>? _customApplicationTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionCustomApplicationTypeComparisonArgs> CustomApplicationTypeComparisons
         {
@@ -135,6 +191,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customApplicationTypes")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionCustomApplicationTypeArgs>? _customApplicationTypes;
+
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionCustomApplicationTypeArgs> CustomApplicationTypes
         {
             get => _customApplicationTypes ?? (_customApplicationTypes = new InputList<Inputs.ProcessgroupNamingConditionConditionCustomApplicationTypeArgs>());
@@ -143,6 +203,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customHostMetadataConditionKeys")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionCustomHostMetadataConditionKeyArgs>? _customHostMetadataConditionKeys;
+
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         [Obsolete(@"'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionCustomHostMetadataConditionKeyArgs> CustomHostMetadataConditionKeys
         {
@@ -152,6 +216,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customHostMetadatas")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionCustomHostMetadataArgs>? _customHostMetadatas;
+
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionCustomHostMetadataArgs> CustomHostMetadatas
         {
             get => _customHostMetadatas ?? (_customHostMetadatas = new InputList<Inputs.ProcessgroupNamingConditionConditionCustomHostMetadataArgs>());
@@ -160,6 +228,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customProcessMetadataConditionKeys")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionCustomProcessMetadataConditionKeyArgs>? _customProcessMetadataConditionKeys;
+
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         [Obsolete(@"'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionCustomProcessMetadataConditionKeyArgs> CustomProcessMetadataConditionKeys
         {
@@ -169,6 +241,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customProcessMetadatas")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionCustomProcessMetadataArgs>? _customProcessMetadatas;
+
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionCustomProcessMetadataArgs> CustomProcessMetadatas
         {
             get => _customProcessMetadatas ?? (_customProcessMetadatas = new InputList<Inputs.ProcessgroupNamingConditionConditionCustomProcessMetadataArgs>());
@@ -177,6 +253,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("databaseTopologies")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionDatabaseTopologyArgs>? _databaseTopologies;
+
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionDatabaseTopologyArgs> DatabaseTopologies
         {
             get => _databaseTopologies ?? (_databaseTopologies = new InputList<Inputs.ProcessgroupNamingConditionConditionDatabaseTopologyArgs>());
@@ -185,6 +265,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("databaseTopologyComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionDatabaseTopologyComparisonArgs>? _databaseTopologyComparisons;
+
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         [Obsolete(@"You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionDatabaseTopologyComparisonArgs> DatabaseTopologyComparisons
         {
@@ -194,6 +278,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("dcrumDecoderComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionDcrumDecoderComparisonArgs>? _dcrumDecoderComparisons;
+
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionDcrumDecoderComparisonArgs> DcrumDecoderComparisons
         {
@@ -203,6 +291,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("dcrumDecoders")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionDcrumDecoderArgs>? _dcrumDecoders;
+
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionDcrumDecoderArgs> DcrumDecoders
         {
             get => _dcrumDecoders ?? (_dcrumDecoders = new InputList<Inputs.ProcessgroupNamingConditionConditionDcrumDecoderArgs>());
@@ -211,6 +303,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("entities")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionEntityArgs>? _entities;
+
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionEntityArgs> Entities
         {
             get => _entities ?? (_entities = new InputList<Inputs.ProcessgroupNamingConditionConditionEntityArgs>());
@@ -219,6 +315,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("entityIdComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionEntityIdComparisonArgs>? _entityIdComparisons;
+
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         [Obsolete(@"You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionEntityIdComparisonArgs> EntityIdComparisons
         {
@@ -228,6 +328,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("hostTeches")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionHostTechArgs>? _hostTeches;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionHostTechArgs> HostTeches
         {
             get => _hostTeches ?? (_hostTeches = new InputList<Inputs.ProcessgroupNamingConditionConditionHostTechArgs>());
@@ -236,6 +340,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("hypervisorTypeComparisions")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionHypervisorTypeComparisionArgs>? _hypervisorTypeComparisions;
+
+        /// <summary>
+        /// `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+        /// </summary>
         [Obsolete(@"`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionHypervisorTypeComparisionArgs> HypervisorTypeComparisions
         {
@@ -245,6 +353,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("hypervisors")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionHypervisorArgs>? _hypervisors;
+
+        /// <summary>
+        /// Comparison for `HYPERVISOR_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionHypervisorArgs> Hypervisors
         {
             get => _hypervisors ?? (_hypervisors = new InputList<Inputs.ProcessgroupNamingConditionConditionHypervisorArgs>());
@@ -253,6 +365,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedNameComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionIndexedNameComparisonArgs>? _indexedNameComparisons;
+
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         [Obsolete(@"You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionIndexedNameComparisonArgs> IndexedNameComparisons
         {
@@ -262,6 +378,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedNames")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionIndexedNameArgs>? _indexedNames;
+
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionIndexedNameArgs> IndexedNames
         {
             get => _indexedNames ?? (_indexedNames = new InputList<Inputs.ProcessgroupNamingConditionConditionIndexedNameArgs>());
@@ -270,6 +390,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedStringComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionIndexedStringComparisonArgs>? _indexedStringComparisons;
+
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         [Obsolete(@"You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionIndexedStringComparisonArgs> IndexedStringComparisons
         {
@@ -279,6 +403,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedStrings")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionIndexedStringArgs>? _indexedStrings;
+
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionIndexedStringArgs> IndexedStrings
         {
             get => _indexedStrings ?? (_indexedStrings = new InputList<Inputs.ProcessgroupNamingConditionConditionIndexedStringArgs>());
@@ -287,6 +415,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedTagComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionIndexedTagComparisonArgs>? _indexedTagComparisons;
+
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         [Obsolete(@"You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionIndexedTagComparisonArgs> IndexedTagComparisons
         {
@@ -296,6 +428,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedTags")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionIndexedTagArgs>? _indexedTags;
+
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionIndexedTagArgs> IndexedTags
         {
             get => _indexedTags ?? (_indexedTags = new InputList<Inputs.ProcessgroupNamingConditionConditionIndexedTagArgs>());
@@ -304,6 +440,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("integerComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionIntegerComparisonArgs>? _integerComparisons;
+
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         [Obsolete(@"You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionIntegerComparisonArgs> IntegerComparisons
         {
@@ -313,6 +453,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("integers")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionIntegerArgs>? _integers;
+
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionIntegerArgs> Integers
         {
             get => _integers ?? (_integers = new InputList<Inputs.ProcessgroupNamingConditionConditionIntegerArgs>());
@@ -321,6 +465,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("ipaddressComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionIpaddressComparisonArgs>? _ipaddressComparisons;
+
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         [Obsolete(@"You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionIpaddressComparisonArgs> IpaddressComparisons
         {
@@ -330,6 +478,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("ipaddresses")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionIpaddressArgs>? _ipaddresses;
+
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionIpaddressArgs> Ipaddresses
         {
             get => _ipaddresses ?? (_ipaddresses = new InputList<Inputs.ProcessgroupNamingConditionConditionIpaddressArgs>());
@@ -338,6 +490,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("keys")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionKeyArgs>? _keys;
+
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionKeyArgs> Keys
         {
             get => _keys ?? (_keys = new InputList<Inputs.ProcessgroupNamingConditionConditionKeyArgs>());
@@ -346,6 +502,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("mobilePlatformComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionMobilePlatformComparisonArgs>? _mobilePlatformComparisons;
+
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         [Obsolete(@"You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionMobilePlatformComparisonArgs> MobilePlatformComparisons
         {
@@ -355,6 +515,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("mobilePlatforms")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionMobilePlatformArgs>? _mobilePlatforms;
+
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionMobilePlatformArgs> MobilePlatforms
         {
             get => _mobilePlatforms ?? (_mobilePlatforms = new InputList<Inputs.ProcessgroupNamingConditionConditionMobilePlatformArgs>());
@@ -363,6 +527,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("osArches")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionOsArchArgs>? _osArches;
+
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionOsArchArgs> OsArches
         {
             get => _osArches ?? (_osArches = new InputList<Inputs.ProcessgroupNamingConditionConditionOsArchArgs>());
@@ -371,6 +539,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("osTypes")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionOsTypeArgs>? _osTypes;
+
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionOsTypeArgs> OsTypes
         {
             get => _osTypes ?? (_osTypes = new InputList<Inputs.ProcessgroupNamingConditionConditionOsTypeArgs>());
@@ -379,6 +551,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("osarchitectureComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionOsarchitectureComparisonArgs>? _osarchitectureComparisons;
+
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionOsarchitectureComparisonArgs> OsarchitectureComparisons
         {
@@ -388,6 +564,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("ostypeComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionOstypeComparisonArgs>? _ostypeComparisons;
+
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionOstypeComparisonArgs> OstypeComparisons
         {
@@ -397,6 +577,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("paasTypeComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionPaasTypeComparisonArgs>? _paasTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionPaasTypeComparisonArgs> PaasTypeComparisons
         {
@@ -406,6 +590,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("paasTypes")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionPaasTypeArgs>? _paasTypes;
+
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionPaasTypeArgs> PaasTypes
         {
             get => _paasTypes ?? (_paasTypes = new InputList<Inputs.ProcessgroupNamingConditionConditionPaasTypeArgs>());
@@ -414,6 +602,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("processMetadataConditionKeys")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionProcessMetadataConditionKeyArgs>? _processMetadataConditionKeys;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         [Obsolete(@"'process_metadata_condition_key' is deprecated. You should use 'process_metadata'")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionProcessMetadataConditionKeyArgs> ProcessMetadataConditionKeys
         {
@@ -423,6 +615,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("processMetadatas")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionProcessMetadataArgs>? _processMetadatas;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionProcessMetadataArgs> ProcessMetadatas
         {
             get => _processMetadatas ?? (_processMetadatas = new InputList<Inputs.ProcessgroupNamingConditionConditionProcessMetadataArgs>());
@@ -431,6 +627,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTopologies")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionServiceTopologyArgs>? _serviceTopologies;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionServiceTopologyArgs> ServiceTopologies
         {
             get => _serviceTopologies ?? (_serviceTopologies = new InputList<Inputs.ProcessgroupNamingConditionConditionServiceTopologyArgs>());
@@ -439,6 +639,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTopologyComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionServiceTopologyComparisonArgs>? _serviceTopologyComparisons;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         [Obsolete(@"You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionServiceTopologyComparisonArgs> ServiceTopologyComparisons
         {
@@ -448,6 +652,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTypeComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionServiceTypeComparisonArgs>? _serviceTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionServiceTypeComparisonArgs> ServiceTypeComparisons
         {
@@ -457,6 +665,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTypes")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionServiceTypeArgs>? _serviceTypes;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionServiceTypeArgs> ServiceTypes
         {
             get => _serviceTypes ?? (_serviceTypes = new InputList<Inputs.ProcessgroupNamingConditionConditionServiceTypeArgs>());
@@ -465,6 +677,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("simpleHostTechComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionSimpleHostTechComparisonArgs>? _simpleHostTechComparisons;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         [Obsolete(@"You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionSimpleHostTechComparisonArgs> SimpleHostTechComparisons
         {
@@ -474,6 +690,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("simpleTechComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionSimpleTechComparisonArgs>? _simpleTechComparisons;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         [Obsolete(@"You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionSimpleTechComparisonArgs> SimpleTechComparisons
         {
@@ -483,6 +703,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("stringComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionStringComparisonArgs>? _stringComparisons;
+
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         [Obsolete(@"You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionStringComparisonArgs> StringComparisons
         {
@@ -492,6 +716,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("stringConditionKeys")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionStringConditionKeyArgs>? _stringConditionKeys;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         [Obsolete(@"'string_condition_key' is deprecated. You should use 'string_key'")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionStringConditionKeyArgs> StringConditionKeys
         {
@@ -501,6 +729,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("stringKeys")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionStringKeyArgs>? _stringKeys;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionStringKeyArgs> StringKeys
         {
             get => _stringKeys ?? (_stringKeys = new InputList<Inputs.ProcessgroupNamingConditionConditionStringKeyArgs>());
@@ -509,6 +741,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("strings")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionStringArgs>? _strings;
+
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionStringArgs> Strings
         {
             get => _strings ?? (_strings = new InputList<Inputs.ProcessgroupNamingConditionConditionStringArgs>());
@@ -517,6 +753,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("syntheticEngineTypeComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionSyntheticEngineTypeComparisonArgs>? _syntheticEngineTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionSyntheticEngineTypeComparisonArgs> SyntheticEngineTypeComparisons
         {
@@ -526,6 +766,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("syntheticEngines")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionSyntheticEngineArgs>? _syntheticEngines;
+
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionSyntheticEngineArgs> SyntheticEngines
         {
             get => _syntheticEngines ?? (_syntheticEngines = new InputList<Inputs.ProcessgroupNamingConditionConditionSyntheticEngineArgs>());
@@ -534,6 +778,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("tagComparisons")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionTagComparisonArgs>? _tagComparisons;
+
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         [Obsolete(@"You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ProcessgroupNamingConditionConditionTagComparisonArgs> TagComparisons
         {
@@ -543,6 +791,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("tags")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionTagArgs>? _tags;
+
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionTagArgs> Tags
         {
             get => _tags ?? (_tags = new InputList<Inputs.ProcessgroupNamingConditionConditionTagArgs>());
@@ -551,12 +803,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("teches")]
         private InputList<Inputs.ProcessgroupNamingConditionConditionTechArgs>? _teches;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         public InputList<Inputs.ProcessgroupNamingConditionConditionTechArgs> Teches
         {
             get => _teches ?? (_teches = new InputList<Inputs.ProcessgroupNamingConditionConditionTechArgs>());
             set => _teches = value;
         }
 
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 

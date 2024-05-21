@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class K8sWorkloadAnomaliesHighCpuThrottlingConfiguration
     {
+        /// <summary>
+        /// within the last
+        /// </summary>
         public readonly int ObservationPeriodInMinutes;
+        /// <summary>
+        /// of CPU usage for at least
+        /// </summary>
         public readonly int SamplePeriodInMinutes;
+        /// <summary>
+        /// amount of CPU throttling is above
+        /// </summary>
         public readonly int Threshold;
 
         [OutputConstructor]

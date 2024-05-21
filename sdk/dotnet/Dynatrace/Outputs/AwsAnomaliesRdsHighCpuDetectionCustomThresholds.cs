@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AwsAnomaliesRdsHighCpuDetectionCustomThresholds
     {
+        /// <summary>
+        /// CPU usage is higher than
+        /// </summary>
         public readonly double CpuUsage;
 
         [OutputConstructor]

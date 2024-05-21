@@ -13,11 +13,18 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AlertingProfileRuleTagFilterArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The filtering mode:  * `INCLUDE_ANY`: The rule applies to monitored entities that have at least one of the specified tags. You can specify up to 100 tags.  * `INCLUDE_ALL`: The rule applies to monitored entities that have **all** of the specified tags. You can specify up to 10 tags.  * `NONE`: The rule applies to all monitored entities
+        /// </summary>
         [Input("includeMode", required: true)]
         public Input<string> IncludeMode { get; set; } = null!;
 
         [Input("tagFilters")]
         private InputList<Inputs.AlertingProfileRuleTagFilterTagFilterArgs>? _tagFilters;
+
+        /// <summary>
+        /// A list of required tags
+        /// </summary>
         public InputList<Inputs.AlertingProfileRuleTagFilterTagFilterArgs> TagFilters
         {
             get => _tagFilters ?? (_tagFilters = new InputList<Inputs.AlertingProfileRuleTagFilterTagFilterArgs>());

@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class K8sNodeAnomaliesCpuRequestsSaturationConfiguration
     {
+        /// <summary>
+        /// within the last
+        /// </summary>
         public readonly int ObservationPeriodInMinutes;
+        /// <summary>
+        /// of node CPU capacity for at least
+        /// </summary>
         public readonly int SamplePeriodInMinutes;
+        /// <summary>
+        /// amount of requested CPU is higher than
+        /// </summary>
         public readonly int Threshold;
 
         [OutputConstructor]

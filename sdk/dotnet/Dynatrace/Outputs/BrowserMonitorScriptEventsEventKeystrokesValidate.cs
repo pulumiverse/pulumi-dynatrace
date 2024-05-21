@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEventsEventKeystrokesValidate
     {
+        /// <summary>
+        /// The element to wait for. Required for the `validation` type, not applicable otherwise.
+        /// </summary>
         public readonly ImmutableArray<Outputs.BrowserMonitorScriptEventsEventKeystrokesValidateValidation> Validations;
 
         [OutputConstructor]

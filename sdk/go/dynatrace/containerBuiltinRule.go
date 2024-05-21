@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ContainerBuiltinRule struct {
@@ -43,7 +44,7 @@ func NewContainerBuiltinRule(ctx *pulumi.Context,
 	if args.IgnoreOpenShiftSdnNamespace == nil {
 		return nil, errors.New("invalid value for required argument 'IgnoreOpenShiftSdnNamespace'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ContainerBuiltinRule
 	err := ctx.RegisterResource("dynatrace:index/containerBuiltinRule:ContainerBuiltinRule", name, args, &resource, opts...)
 	if err != nil {

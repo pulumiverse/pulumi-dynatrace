@@ -146,10 +146,10 @@ def get_credentials(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getCredentials:getCredentials', __args__, opts=opts, typ=GetCredentialsResult).value
 
     return AwaitableGetCredentialsResult(
-        id=__ret__.id,
-        name=__ret__.name,
-        scope=__ret__.scope,
-        type=__ret__.type)
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        scope=pulumi.get(__ret__, 'scope'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_credentials)

@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorAnomalyDetectionLoadingTimeThresholdThreshold
     {
+        /// <summary>
+        /// The list of performance threshold rules
+        /// </summary>
         public readonly ImmutableArray<Outputs.BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThreshold> Thresholds;
 
         [OutputConstructor]

@@ -13,18 +13,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationConversionGoalsGoalUserActionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Type of the action to which the rule applies. Possible values are `Custom`, `Load` and `Xhr`.
+        /// </summary>
         [Input("actionType")]
         public Input<string>? ActionType { get; set; }
 
+        /// <summary>
+        /// The match is case-sensitive (`true`) or (`false`)
+        /// </summary>
         [Input("caseSensitive")]
         public Input<bool>? CaseSensitive { get; set; }
 
+        /// <summary>
+        /// The type of the entity to which the rule applies. Possible values are `ActionName`, `CssSelector`, `JavaScriptVariable`, `MetaTag`, `PagePath`, `PageTitle`, `PageUrl`, `UrlAnchor` and `XhrUrl`.
+        /// </summary>
         [Input("matchEntity")]
         public Input<string>? MatchEntity { get; set; }
 
+        /// <summary>
+        /// The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
+        /// </summary>
         [Input("matchType")]
         public Input<string>? MatchType { get; set; }
 
+        /// <summary>
+        /// The value to be matched to hit the conversion goal
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The Alerting Profile queries for an Alerting Profile that has a specified name. In case multiple Alerting Profiles share the same name the first one found will be used.
@@ -35,7 +36,7 @@ import (
 //			}
 //			_, err = dynatrace.NewWebhookNotification(ctx, "myWebhookNotification", &dynatrace.WebhookNotificationArgs{
 //				Active:               pulumi.Bool(false),
-//				Profile:              *pulumi.String(_default.Id),
+//				Profile:              pulumi.String(_default.Id),
 //				Url:                  pulumi.String("https://webhook.site/40bf4d43-1a50-4ebd-913d-bf50ce7c3a1e"),
 //				Insecure:             pulumi.Bool(true),
 //				NotifyEventMerges:    pulumi.Bool(true),
@@ -51,7 +52,7 @@ import (
 //
 // ```
 func LookupAlertingProfile(ctx *pulumi.Context, args *LookupAlertingProfileArgs, opts ...pulumi.InvokeOption) (*LookupAlertingProfileResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAlertingProfileResult
 	err := ctx.Invoke("dynatrace:index/getAlertingProfile:getAlertingProfile", args, &rv, opts...)
 	if err != nil {

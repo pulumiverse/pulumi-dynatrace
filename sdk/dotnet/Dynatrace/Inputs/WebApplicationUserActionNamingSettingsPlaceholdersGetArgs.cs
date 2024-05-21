@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("placeholders", required: true)]
         private InputList<Inputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderGetArgs>? _placeholders;
+
+        /// <summary>
+        /// User action placeholders
+        /// </summary>
         public InputList<Inputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderGetArgs> Placeholders
         {
             get => _placeholders ?? (_placeholders = new InputList<Inputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderGetArgs>());

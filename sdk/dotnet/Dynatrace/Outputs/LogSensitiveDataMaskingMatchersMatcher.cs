@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class LogSensitiveDataMaskingMatchersMatcher
     {
+        /// <summary>
+        /// Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_source`, `Process_technology`
+        /// </summary>
         public readonly string Attribute;
+        /// <summary>
+        /// Possible Values: `MATCHES`
+        /// </summary>
         public readonly string Operator;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]

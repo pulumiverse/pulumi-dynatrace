@@ -14,10 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ManagementZoneRuleConditionApplicationTypeComparison
     {
+        /// <summary>
+        /// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+        /// </summary>
         public readonly bool? Negate;
+        /// <summary>
+        /// Operator of the comparison. You can reverse it by setting **negate** to `true`
+        /// </summary>
         public readonly string Operator;
+        /// <summary>
+        /// if specified, needs to be APPLICATION_TYPE
+        /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// The value to compare to
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

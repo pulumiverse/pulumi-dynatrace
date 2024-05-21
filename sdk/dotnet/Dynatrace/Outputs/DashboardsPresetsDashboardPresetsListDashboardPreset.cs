@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DashboardsPresetsDashboardPresetsListDashboardPreset
     {
+        /// <summary>
+        /// Dashboard preset to limit visibility for
+        /// </summary>
         public readonly string DashboardPreset;
+        /// <summary>
+        /// User group to show selected dashboard preset to
+        /// </summary>
         public readonly string UserGroup;
 
         [OutputConstructor]

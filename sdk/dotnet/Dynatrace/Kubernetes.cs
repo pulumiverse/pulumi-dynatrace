@@ -115,8 +115,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<bool> OpenMetricsPipelineEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// To enable dashboards and alerts, add the [Kubernetes persistent volume
-        /// claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+        /// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         /// </summary>
         [Output("pvcMonitoringEnabled")]
         public Output<bool> PvcMonitoringEnabled { get; private set; } = null!;
@@ -290,8 +289,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool> OpenMetricsPipelineEnabled { get; set; } = null!;
 
         /// <summary>
-        /// To enable dashboards and alerts, add the [Kubernetes persistent volume
-        /// claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+        /// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         /// </summary>
         [Input("pvcMonitoringEnabled", required: true)]
         public Input<bool> PvcMonitoringEnabled { get; set; } = null!;
@@ -422,8 +420,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? OpenMetricsPipelineEnabled { get; set; }
 
         /// <summary>
-        /// To enable dashboards and alerts, add the [Kubernetes persistent volume
-        /// claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+        /// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         /// </summary>
         [Input("pvcMonitoringEnabled")]
         public Input<bool>? PvcMonitoringEnabled { get; set; }

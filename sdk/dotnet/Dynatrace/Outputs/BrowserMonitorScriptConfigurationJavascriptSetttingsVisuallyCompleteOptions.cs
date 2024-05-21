@@ -14,10 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptConfigurationJavascriptSetttingsVisuallyCompleteOptions
     {
+        /// <summary>
+        /// Query CSS selectors to specify mutation nodes (elements that change) to ignore in Visually complete and Speed index calculation
+        /// </summary>
         public readonly ImmutableArray<string> ExcludedElements;
+        /// <summary>
+        /// Parameters for Visually complete and Speed index calculation
+        /// </summary>
         public readonly ImmutableArray<string> ExcludedUrls;
+        /// <summary>
+        /// Use this setting to define the minimum visible area per element (in pixels) for an element to be counted towards Visually complete and Speed index
+        /// </summary>
         public readonly int ImageSizeThreshold;
+        /// <summary>
+        /// The time the Visually complete module waits for inactivity and no further mutations on the page after the load action
+        /// </summary>
         public readonly int InactivityTimeout;
+        /// <summary>
+        /// The time the Visually complete module waits after an XHR or custom action closes to start the calculation
+        /// </summary>
         public readonly int MutationTimeout;
 
         [OutputConstructor]

@@ -14,11 +14,29 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostNamingConditionConditionIpaddressComparison
     {
+        /// <summary>
+        /// The comparison is case-sensitive (`true`) or insensitive (`false`)
+        /// </summary>
         public readonly bool? CaseSensitive;
+        /// <summary>
+        /// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+        /// </summary>
         public readonly bool? Negate;
+        /// <summary>
+        /// Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+        /// </summary>
         public readonly string Operator;
+        /// <summary>
+        /// if specified, needs to be IP_ADDRESS
+        /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// The value to compare to
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

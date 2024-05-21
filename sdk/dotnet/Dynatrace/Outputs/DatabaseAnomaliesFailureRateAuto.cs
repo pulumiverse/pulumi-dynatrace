@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DatabaseAnomaliesFailureRateAuto
     {
+        /// <summary>
+        /// Absolute increase of failing service calls to trigger an alert, %
+        /// </summary>
         public readonly int Absolute;
+        /// <summary>
+        /// Relative increase of failing service calls to trigger an alert, %
+        /// </summary>
         public readonly int Relative;
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         public readonly string? Unknowns;
 
         [OutputConstructor]

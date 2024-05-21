@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThreshold
     {
+        /// <summary>
+        /// Specify the event to which an ACTION threshold applies
+        /// </summary>
         public readonly int? EventIndex;
+        /// <summary>
+        /// Specify the request to which an ACTION threshold applies
+        /// </summary>
         public readonly int? RequestIndex;
+        /// <summary>
+        /// The type of the threshold: `TOTAL` (total loading time) or `ACTION` (action loading time)
+        /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// Notify if monitor takes longer than *X* milliseconds to load
+        /// </summary>
         public readonly int ValueMs;
 
         [OutputConstructor]

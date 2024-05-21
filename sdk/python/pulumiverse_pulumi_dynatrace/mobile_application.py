@@ -42,11 +42,11 @@ class MobileApplicationArgs:
         :param pulumi.Input[str] name: The name of the application
         :param pulumi.Input[bool] opt_in_mode: The opt-in mode is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['MobileApplicationPropertiesArgs'] properties: User Action and Session Properties
-        :param pulumi.Input[bool] session_replay: (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+        :param pulumi.Input[bool] session_replay: (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
                and **optInModeEnabled** values set to `true`.
-        :param pulumi.Input[int] user_session_percentage: (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-               apps) The percentage of user sessions to be analyzed
+        :param pulumi.Input[int] user_session_percentage: (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of
+               user sessions to be analyzed
         """
         pulumi.set(__self__, "apdex", apdex)
         pulumi.set(__self__, "beacon_endpoint_type", beacon_endpoint_type)
@@ -198,7 +198,7 @@ class MobileApplicationArgs:
     @pulumi.getter(name="sessionReplay")
     def session_replay(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+        (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
         """
         return pulumi.get(self, "session_replay")
 
@@ -223,8 +223,8 @@ class MobileApplicationArgs:
     @pulumi.getter(name="userSessionPercentage")
     def user_session_percentage(self) -> Optional[pulumi.Input[int]]:
         """
-        (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-        apps) The percentage of user sessions to be analyzed
+        (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of
+        user sessions to be analyzed
         """
         return pulumi.get(self, "user_session_percentage")
 
@@ -262,11 +262,11 @@ class _MobileApplicationState:
         :param pulumi.Input[str] name: The name of the application
         :param pulumi.Input[bool] opt_in_mode: The opt-in mode is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['MobileApplicationPropertiesArgs'] properties: User Action and Session Properties
-        :param pulumi.Input[bool] session_replay: (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+        :param pulumi.Input[bool] session_replay: (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
                and **optInModeEnabled** values set to `true`.
-        :param pulumi.Input[int] user_session_percentage: (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-               apps) The percentage of user sessions to be analyzed
+        :param pulumi.Input[int] user_session_percentage: (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of
+               user sessions to be analyzed
         """
         if apdex is not None:
             pulumi.set(__self__, "apdex", apdex)
@@ -420,7 +420,7 @@ class _MobileApplicationState:
     @pulumi.getter(name="sessionReplay")
     def session_replay(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+        (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
         """
         return pulumi.get(self, "session_replay")
 
@@ -445,8 +445,8 @@ class _MobileApplicationState:
     @pulumi.getter(name="userSessionPercentage")
     def user_session_percentage(self) -> Optional[pulumi.Input[int]]:
         """
-        (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-        apps) The percentage of user sessions to be analyzed
+        (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of
+        user sessions to be analyzed
         """
         return pulumi.get(self, "user_session_percentage")
 
@@ -489,11 +489,11 @@ class MobileApplication(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the application
         :param pulumi.Input[bool] opt_in_mode: The opt-in mode is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[pulumi.InputType['MobileApplicationPropertiesArgs']] properties: User Action and Session Properties
-        :param pulumi.Input[bool] session_replay: (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+        :param pulumi.Input[bool] session_replay: (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
                and **optInModeEnabled** values set to `true`.
-        :param pulumi.Input[int] user_session_percentage: (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-               apps) The percentage of user sessions to be analyzed
+        :param pulumi.Input[int] user_session_percentage: (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of
+               user sessions to be analyzed
         """
         ...
     @overload
@@ -598,11 +598,11 @@ class MobileApplication(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the application
         :param pulumi.Input[bool] opt_in_mode: The opt-in mode is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[pulumi.InputType['MobileApplicationPropertiesArgs']] properties: User Action and Session Properties
-        :param pulumi.Input[bool] session_replay: (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+        :param pulumi.Input[bool] session_replay: (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
         :param pulumi.Input[bool] session_replay_on_crash: The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
                and **optInModeEnabled** values set to `true`.
-        :param pulumi.Input[int] user_session_percentage: (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-               apps) The percentage of user sessions to be analyzed
+        :param pulumi.Input[int] user_session_percentage: (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of
+               user sessions to be analyzed
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -708,7 +708,7 @@ class MobileApplication(pulumi.CustomResource):
     @pulumi.getter(name="sessionReplay")
     def session_replay(self) -> pulumi.Output[Optional[bool]]:
         """
-        (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+        (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
         """
         return pulumi.get(self, "session_replay")
 
@@ -725,8 +725,8 @@ class MobileApplication(pulumi.CustomResource):
     @pulumi.getter(name="userSessionPercentage")
     def user_session_percentage(self) -> pulumi.Output[Optional[int]]:
         """
-        (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-        apps) The percentage of user sessions to be analyzed
+        (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of
+        user sessions to be analyzed
         """
         return pulumi.get(self, "user_session_percentage")
 

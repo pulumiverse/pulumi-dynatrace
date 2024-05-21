@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class RequestNamingPlaceholdersPlaceholderSource
     {
+        /// <summary>
+        /// Use only request attributes from services that belong to this management zone.. Use either this or `serviceTag`
+        /// </summary>
         public readonly string? ManagementZone;
+        /// <summary>
+        /// Use only request attributes from services that have this tag. Use either this or `managementZone`
+        /// </summary>
         public readonly Outputs.RequestNamingPlaceholdersPlaceholderSourceServiceTag? ServiceTag;
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         public readonly string? Unknowns;
 
         [OutputConstructor]

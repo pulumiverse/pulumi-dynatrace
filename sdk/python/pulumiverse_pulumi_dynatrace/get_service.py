@@ -112,10 +112,10 @@ def get_service(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getService:getService', __args__, opts=opts, typ=GetServiceResult).value
 
     return AwaitableGetServiceResult(
-        id=__ret__.id,
-        name=__ret__.name,
-        operator=__ret__.operator,
-        tags=__ret__.tags)
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        operator=pulumi.get(__ret__, 'operator'),
+        tags=pulumi.get(__ret__, 'tags'))
 
 
 @_utilities.lift_output_func(get_service)

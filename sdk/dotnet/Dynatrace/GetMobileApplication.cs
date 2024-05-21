@@ -17,9 +17,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// - `name` (String) - The name of the dashboard
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -40,8 +38,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         ///     };
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetMobileApplicationResult> InvokeAsync(GetMobileApplicationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMobileApplicationResult>("dynatrace:index/getMobileApplication:getMobileApplication", args ?? new GetMobileApplicationArgs(), options.WithDefaults());
@@ -51,9 +47,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// - `name` (String) - The name of the dashboard
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -74,8 +68,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         ///     };
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetMobileApplicationResult> Invoke(GetMobileApplicationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMobileApplicationResult>("dynatrace:index/getMobileApplication:getMobileApplication", args ?? new GetMobileApplicationInvokeArgs(), options.WithDefaults());

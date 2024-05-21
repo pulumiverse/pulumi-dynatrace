@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class LogProcessingRuleTestingGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Sample log in JSON format.
+        /// </summary>
         [Input("sampleLog", required: true)]
         public Input<string> SampleLog { get; set; } = null!;
 

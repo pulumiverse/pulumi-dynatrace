@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesGcThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// GC suspension is higher than *X*% in 3 out of 5 samples
+        /// </summary>
         [Input("suspensionPercentage", required: true)]
         public Input<int> SuspensionPercentage { get; set; } = null!;
 
+        /// <summary>
+        /// GC time is higher than *X*% in 3 out of 5 samples
+        /// </summary>
         [Input("timePercentage", required: true)]
         public Input<int> TimePercentage { get; set; } = null!;
 

@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class K8sNodeAnomaliesNodeProblematicConditionConfiguration
     {
+        /// <summary>
+        /// within the last
+        /// </summary>
         public readonly int ObservationPeriodInMinutes;
+        /// <summary>
+        /// node has problematic conditions for at least
+        /// </summary>
         public readonly int SamplePeriodInMinutes;
 
         [OutputConstructor]

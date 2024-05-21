@@ -15,7 +15,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class CustomAnomaliesScopeProcessGroupId
     {
         /// <summary>
-        /// The ID of this resource.
+        /// The process groups id to match on
         /// </summary>
         public readonly string Id;
         /// <summary>

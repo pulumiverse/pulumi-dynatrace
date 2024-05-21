@@ -14,12 +14,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CalculatedServiceMetricDimensionDefinition
     {
+        /// <summary>
+        /// The dimension value pattern. You can define custom placeholders in the `placeholders` field and use them here
+        /// </summary>
         public readonly string Dimension;
+        /// <summary>
+        /// The name of the dimension
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The list of custom placeholders to be used in a dimension value pattern
+        /// </summary>
         public readonly Outputs.CalculatedServiceMetricDimensionDefinitionPlaceholders? Placeholders;
+        /// <summary>
+        /// The number of top values to be calculated
+        /// </summary>
         public readonly int TopX;
+        /// <summary>
+        /// The aggregation of the dimension. Possible values are `AVERAGE`, `COUNT`, `MAX`, `MIN`, `OF_INTEREST_RATIO`, `OTHER_RATIO`, `SINGLE_VALUE` and `SUM`
+        /// </summary>
         public readonly string TopXAggregation;
+        /// <summary>
+        /// How to calculate the **topX** values. Possible values are `ASCENDING` and `DESCENDING`
+        /// </summary>
         public readonly string TopXDirection;
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         public readonly string? Unknowns;
 
         [OutputConstructor]

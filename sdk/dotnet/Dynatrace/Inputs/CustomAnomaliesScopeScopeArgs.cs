@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CustomAnomaliesScopeScopeArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Defines the actual set of fields depending on the value
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 

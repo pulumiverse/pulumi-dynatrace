@@ -13,30 +13,51 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class MobileApplicationPropertiesApiValueArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The aggregation type of the property. It defines how multiple values of the property are aggregated. Possible values are `SUM`, `MIN`, `MAX`, `FIRST` and `LAST`
+        /// </summary>
         [Input("aggregation")]
         public Input<string>? Aggregation { get; set; }
 
+        /// <summary>
+        /// The cleanup rule of the property. Defines how to extract the data you need from a string value. Specify the [regular expression](https://dt-url.net/k9e0iaq) for the data you need there
+        /// </summary>
         [Input("cleanupRule")]
         public Input<string>? CleanupRule { get; set; }
 
+        /// <summary>
+        /// The display name of the property
+        /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// The unique key of the mobile session or user action property
+        /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// The name of the application
+        /// The name of the reported value
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// If `true`, the property is stored as a session property
+        /// </summary>
         [Input("storeAsSessionProperty")]
         public Input<bool>? StoreAsSessionProperty { get; set; }
 
+        /// <summary>
+        /// If `true`, the property is stored as a user action property
+        /// </summary>
         [Input("storeAsUserActionProperty")]
         public Input<bool>? StoreAsUserActionProperty { get; set; }
 
+        /// <summary>
+        /// The data type of the property. Possible values are `DOUBLE`, `LONG` and `STRING`
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 

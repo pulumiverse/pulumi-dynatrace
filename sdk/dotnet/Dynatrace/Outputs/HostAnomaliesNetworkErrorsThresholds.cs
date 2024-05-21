@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesNetworkErrorsThresholds
     {
+        /// <summary>
+        /// Receive/transmit error packet percentage is higher than *X*% in 3 out of 5 samples
+        /// </summary>
         public readonly int ErrorsPercentage;
+        /// <summary>
+        /// Total receive/transmit packets rate is higher than *X* packets per second in 3 out of 5 samples
+        /// </summary>
         public readonly int TotalPacketsRate;
 
         [OutputConstructor]

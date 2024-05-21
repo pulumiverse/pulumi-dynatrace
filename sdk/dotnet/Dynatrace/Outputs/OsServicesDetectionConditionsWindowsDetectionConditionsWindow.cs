@@ -14,8 +14,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class OsServicesDetectionConditionsWindowsDetectionConditionsWindow
     {
+        /// <summary>
+        /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// </summary>
         public readonly string? Condition;
+        /// <summary>
+        /// Possible Values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
+        /// </summary>
         public readonly string Property;
+        /// <summary>
+        /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// 
+        /// - `$eq(manual)` – Matches services that are started manually.
+        /// 
+        /// Available logic operations:
+        /// - `$not($eq(auto))` – Matches services with startup type different from Automatic.
+        /// - `$or($eq(auto),$eq(manual))` – Matches if service's startup type is either Automatic or Manual.
+        /// 
+        /// Use one of the following values as a parameter for this condition:
+        /// 
+        /// - `manual` for Manual
+        /// - `manual_trigger` for Manual (Trigger Start)
+        /// - `auto` for Automatic
+        /// - `auto_delay` for Automatic (Delayed Start)
+        /// - `auto_trigger` for Automatic (Trigger Start)
+        /// - `auto_delay_trigger` for Automatic (Delayed Start, Trigger Start)
+        /// - `disabled` for Disabled
+        /// </summary>
         public readonly string? StartupCondition;
 
         [OutputConstructor]

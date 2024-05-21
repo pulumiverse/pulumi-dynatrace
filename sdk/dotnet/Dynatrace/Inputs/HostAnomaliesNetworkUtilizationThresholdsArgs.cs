@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesNetworkUtilizationThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if sent/received traffic utilization is higher than *X*% in 3 out of 5 samples
+        /// </summary>
         [Input("utilization", required: true)]
         public Input<int> Utilization { get; set; } = null!;
 

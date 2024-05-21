@@ -15,10 +15,16 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class GenericTypesRulesRuleAttributesAttribute
     {
         /// <summary>
-        /// The human readable type name for this entity type.
+        /// The human readable attribute name for this extraction rule. Leave blank to use the key as the display name.
         /// </summary>
         public readonly string? DisplayName;
+        /// <summary>
+        /// The attribute key is the unique name of the attribute.
+        /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// Pattern for specifying the value for the extracted attribute. Can be a static value, placeholders or a combination of both.
+        /// </summary>
         public readonly string Pattern;
 
         [OutputConstructor]

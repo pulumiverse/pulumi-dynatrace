@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The provider type for the dynatrace package. By default, resources use package-wide configuration
@@ -34,16 +35,24 @@ func NewProvider(ctx *pulumi.Context,
 	}
 
 	if args.DtApiToken == nil {
-		args.DtApiToken = pulumi.StringPtr(getEnvOrDefault("", nil, "DYNATRACE_API_TOKEN", "DT_API_TOKEN").(string))
+		if d := internal.GetEnvOrDefault(nil, nil, "DYNATRACE_API_TOKEN", "DT_API_TOKEN"); d != nil {
+			args.DtApiToken = pulumi.StringPtr(d.(string))
+		}
 	}
 	if args.DtClusterApiToken == nil {
-		args.DtClusterApiToken = pulumi.StringPtr(getEnvOrDefault("", nil, "DYNATRACE_CLUSTER_API_TOKEN", "DT_CLUSTER_API_TOKEN").(string))
+		if d := internal.GetEnvOrDefault(nil, nil, "DYNATRACE_CLUSTER_API_TOKEN", "DT_CLUSTER_API_TOKEN"); d != nil {
+			args.DtClusterApiToken = pulumi.StringPtr(d.(string))
+		}
 	}
 	if args.DtClusterUrl == nil {
-		args.DtClusterUrl = pulumi.StringPtr(getEnvOrDefault("", nil, "DYNATRACE_CLUSTER_URL", "DT_CLUSTER_URL").(string))
+		if d := internal.GetEnvOrDefault(nil, nil, "DYNATRACE_CLUSTER_URL", "DT_CLUSTER_URL"); d != nil {
+			args.DtClusterUrl = pulumi.StringPtr(d.(string))
+		}
 	}
 	if args.DtEnvUrl == nil {
-		args.DtEnvUrl = pulumi.StringPtr(getEnvOrDefault("", nil, "DYNATRACE_ENV_URL", "DT_ENV_URL").(string))
+		if d := internal.GetEnvOrDefault(nil, nil, "DYNATRACE_ENV_URL", "DT_ENV_URL"); d != nil {
+			args.DtEnvUrl = pulumi.StringPtr(d.(string))
+		}
 	}
 	if args.DtApiToken != nil {
 		args.DtApiToken = pulumi.ToSecret(args.DtApiToken).(pulumi.StringPtrInput)
@@ -72,7 +81,7 @@ func NewProvider(ctx *pulumi.Context,
 		"iamClientSecret",
 	})
 	opts = append(opts, secrets)
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Provider
 	err := ctx.RegisterResource("pulumi:providers:dynatrace", name, args, &resource, opts...)
 	if err != nil {

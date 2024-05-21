@@ -15,18 +15,31 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("entityTypes", required: true)]
         private InputList<string>? _entityTypes;
+
+        /// <summary>
+        /// Entity types affected by tag
+        /// </summary>
         public InputList<string> EntityTypes
         {
             get => _entityTypes ?? (_entityTypes = new InputList<string>());
             set => _entityTypes = value;
         }
 
+        /// <summary>
+        /// The display name used to identify this generic filter
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// The entity type for which the suggestions should be provided.
+        /// </summary>
         [Input("suggestionsFromEntityType")]
         public Input<string>? SuggestionsFromEntityType { get; set; }
 
+        /// <summary>
+        /// The tag key for this filter
+        /// </summary>
         [Input("tagKey")]
         public Input<string>? TagKey { get; set; }
 

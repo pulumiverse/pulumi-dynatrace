@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowestGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if the key performance metric of the slowest 10% degrades beyond this many ms within an observation period of 5 minutes
+        /// </summary>
         [Input("slowestDegradationMilliseconds", required: true)]
         public Input<double> SlowestDegradationMilliseconds { get; set; } = null!;
 

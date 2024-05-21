@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type MetricMetadata struct {
@@ -47,7 +48,7 @@ func NewMetricMetadata(ctx *pulumi.Context,
 	if args.Unit == nil {
 		return nil, errors.New("invalid value for required argument 'Unit'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MetricMetadata
 	err := ctx.RegisterResource("dynatrace:index/metricMetadata:MetricMetadata", name, args, &resource, opts...)
 	if err != nil {

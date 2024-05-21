@@ -40,8 +40,6 @@ class AzureCredentialsArgs:
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyExcludingTagPairArgs']]] monitor_only_excluding_tag_pairs: A list of Azure tags to be excluded from monitoring.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`.
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]] monitor_only_tag_pairs: A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
-        :param pulumi.Input[bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-               manage them via WebUI without interference by Terraform.
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
         """
         pulumi.set(__self__, "active", active)
@@ -190,10 +188,6 @@ class AzureCredentialsArgs:
     @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-        manage them via WebUI without interference by Terraform.
-        """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
@@ -240,8 +234,6 @@ class _AzureCredentialsState:
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsMonitorOnlyTagPairArgs']]] monitor_only_tag_pairs: A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
         :param pulumi.Input[bool] monitor_only_tagged_entities: Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
         :param pulumi.Input[Sequence[pulumi.Input['AzureCredentialsSupportingServiceArgs']]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
-        :param pulumi.Input[bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-               manage them via WebUI without interference by Terraform.
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
         """
         if active is not None:
@@ -392,10 +384,6 @@ class _AzureCredentialsState:
     @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-        manage them via WebUI without interference by Terraform.
-        """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
@@ -447,8 +435,6 @@ class AzureCredentials(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyTagPairArgs']]]] monitor_only_tag_pairs: A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
         :param pulumi.Input[bool] monitor_only_tagged_entities: Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsSupportingServiceArgs']]]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
-        :param pulumi.Input[bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-               manage them via WebUI without interference by Terraform.
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
         """
         ...
@@ -552,8 +538,6 @@ class AzureCredentials(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsMonitorOnlyTagPairArgs']]]] monitor_only_tag_pairs: A list of Azure tags to be monitored.  You can specify up to 20 tags. A resource tagged with *any* of the specified tags is monitored.  Only applicable when the **monitorOnlyTaggedEntities** parameter is set to `true`
         :param pulumi.Input[bool] monitor_only_tagged_entities: Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AzureCredentialsSupportingServiceArgs']]]] supporting_services: A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
-        :param pulumi.Input[bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-               manage them via WebUI without interference by Terraform.
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -657,10 +641,6 @@ class AzureCredentials(pulumi.CustomResource):
     @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     def supporting_services_managed_in_dynatrace(self) -> pulumi.Output[Optional[bool]]:
-        """
-        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-        manage them via WebUI without interference by Terraform.
-        """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @property

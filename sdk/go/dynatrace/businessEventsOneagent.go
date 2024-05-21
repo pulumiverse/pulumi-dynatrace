@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type BusinessEventsOneagent struct {
@@ -45,7 +46,7 @@ func NewBusinessEventsOneagent(ctx *pulumi.Context,
 	if args.Triggers == nil {
 		return nil, errors.New("invalid value for required argument 'Triggers'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BusinessEventsOneagent
 	err := ctx.RegisterResource("dynatrace:index/businessEventsOneagent:BusinessEventsOneagent", name, args, &resource, opts...)
 	if err != nil {

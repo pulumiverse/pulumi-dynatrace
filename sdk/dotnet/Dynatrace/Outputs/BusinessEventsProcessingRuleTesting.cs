@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BusinessEventsProcessingRuleTesting
     {
+        /// <summary>
+        /// Sample event to use for the test run. Only JSON format is supported.
+        /// </summary>
         public readonly string SampleEvent;
 
         [OutputConstructor]

@@ -13,21 +13,39 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CustomAnomaliesStrategyStaticArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The condition for the **threshold** value check: `ABOVE` or `BELOW`
+        /// </summary>
         [Input("alertCondition", required: true)]
         public Input<string> AlertCondition { get; set; } = null!;
 
+        /// <summary>
+        /// If true, also one-minute samples without data are counted as violating samples
+        /// </summary>
         [Input("alertingOnMissingData")]
         public Input<bool>? AlertingOnMissingData { get; set; }
 
+        /// <summary>
+        /// The number of one-minute samples within the evaluation window that must go back to normal to close the event
+        /// </summary>
         [Input("dealertingSamples", required: true)]
         public Input<int> DealertingSamples { get; set; } = null!;
 
+        /// <summary>
+        /// The number of one-minute samples that form the sliding evaluation window
+        /// </summary>
         [Input("samples", required: true)]
         public Input<int> Samples { get; set; } = null!;
 
+        /// <summary>
+        /// The value of the static threshold based on the specified unit
+        /// </summary>
         [Input("threshold", required: true)]
         public Input<double> Threshold { get; set; } = null!;
 
+        /// <summary>
+        /// The unit of the threshold, matching the metric definition
+        /// </summary>
         [Input("unit", required: true)]
         public Input<string> Unit { get; set; } = null!;
 
@@ -37,6 +55,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 
+        /// <summary>
+        /// The number of one-minute samples within the evaluation window that must violate the threshold to trigger an event
+        /// </summary>
         [Input("violatingSamples", required: true)]
         public Input<int> ViolatingSamples { get; set; } = null!;
 

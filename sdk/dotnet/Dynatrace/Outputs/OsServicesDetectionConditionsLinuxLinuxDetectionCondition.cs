@@ -14,8 +14,30 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class OsServicesDetectionConditionsLinuxLinuxDetectionCondition
     {
+        /// <summary>
+        /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// </summary>
         public readonly string? Condition;
+        /// <summary>
+        /// Possible Values: `ServiceName`, `StartupType`
+        /// </summary>
         public readonly string Property;
+        /// <summary>
+        /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+        /// 
+        /// - `$eq(enabled)` – Matches services with startup type equal to enabled.
+        /// 
+        /// Available logic operations:
+        /// - `$not($eq(enabled))` – Matches services with startup type different from enabled.
+        /// - `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
+        /// 
+        /// Use one of the following values as a parameter for this condition:
+        /// 
+        /// - `enabled`
+        /// - `enabled-runtime`
+        /// - `static`
+        /// - `disabled`
+        /// </summary>
         public readonly string? StartupCondition;
 
         [OutputConstructor]

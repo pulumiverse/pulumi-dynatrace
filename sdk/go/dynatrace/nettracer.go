@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type Nettracer struct {
@@ -30,7 +31,7 @@ func NewNettracer(ctx *pulumi.Context,
 	if args.NetTracer == nil {
 		return nil, errors.New("invalid value for required argument 'NetTracer'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Nettracer
 	err := ctx.RegisterResource("dynatrace:index/nettracer:Nettracer", name, args, &resource, opts...)
 	if err != nil {

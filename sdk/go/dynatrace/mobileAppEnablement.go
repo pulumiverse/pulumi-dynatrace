@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type MobileAppEnablement struct {
@@ -35,7 +36,7 @@ func NewMobileAppEnablement(ctx *pulumi.Context,
 	if args.SessionReplay == nil {
 		return nil, errors.New("invalid value for required argument 'SessionReplay'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MobileAppEnablement
 	err := ctx.RegisterResource("dynatrace:index/mobileAppEnablement:MobileAppEnablement", name, args, &resource, opts...)
 	if err != nil {

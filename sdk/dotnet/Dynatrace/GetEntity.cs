@@ -20,9 +20,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -44,8 +42,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         ///     };
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetEntityResult> InvokeAsync(GetEntityArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEntityResult>("dynatrace:index/getEntity:getEntity", args ?? new GetEntityArgs(), options.WithDefaults());
@@ -58,9 +54,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// If multiple services match the given criteria, the first result will be retrieved.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -82,8 +76,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         ///     };
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetEntityResult> Invoke(GetEntityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEntityResult>("dynatrace:index/getEntity:getEntity", args ?? new GetEntityInvokeArgs(), options.WithDefaults());

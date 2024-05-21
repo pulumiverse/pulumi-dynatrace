@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptConfigurationIgnoredErrorCodes
     {
+        /// <summary>
+        /// Only apply to document request matching this regex
+        /// </summary>
         public readonly string? MatchingDocumentRequests;
+        /// <summary>
+        /// You can use exact number, range or status class mask. Multiple values can be separated by comma, i.e. 404, 405-410, 5xx
+        /// </summary>
         public readonly string StatusCodes;
 
         [OutputConstructor]

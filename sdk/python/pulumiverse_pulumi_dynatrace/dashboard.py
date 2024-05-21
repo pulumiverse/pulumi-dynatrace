@@ -57,6 +57,9 @@ class DashboardArgs:
         """
         `metadata` exists for backwards compatibility but shouldn't get specified anymore
         """
+        warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
+        pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
+
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -132,6 +135,9 @@ class _DashboardState:
         """
         `metadata` exists for backwards compatibility but shouldn't get specified anymore
         """
+        warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
+        pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
+
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -219,9 +225,6 @@ class Dashboard(pulumi.CustomResource):
             __props__ = DashboardArgs.__new__(DashboardArgs)
 
             __props__.__dict__["dashboard_metadata"] = dashboard_metadata
-            if metadata is not None and not opts.urn:
-                warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
-                pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
             __props__.__dict__["metadata"] = metadata
             __props__.__dict__["tiles"] = tiles
             __props__.__dict__["unknowns"] = unknowns
@@ -275,6 +278,9 @@ class Dashboard(pulumi.CustomResource):
         """
         `metadata` exists for backwards compatibility but shouldn't get specified anymore
         """
+        warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
+        pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
+
         return pulumi.get(self, "metadata")
 
     @property

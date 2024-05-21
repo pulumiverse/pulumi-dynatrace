@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type JsonDashboard struct {
@@ -28,7 +29,7 @@ func NewJsonDashboard(ctx *pulumi.Context,
 	if args.Contents == nil {
 		return nil, errors.New("invalid value for required argument 'Contents'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource JsonDashboard
 	err := ctx.RegisterResource("dynatrace:index/jsonDashboard:JsonDashboard", name, args, &resource, opts...)
 	if err != nil {

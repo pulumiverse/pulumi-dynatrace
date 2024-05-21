@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholds
     {
+        /// <summary>
+        /// Datastore free space is lower than
+        /// </summary>
         public readonly int FreeSpacePercentage;
 
         [OutputConstructor]

@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type WebAppAnomalies struct {
@@ -45,7 +46,7 @@ func NewWebAppAnomalies(ctx *pulumi.Context,
 	if args.TrafficSpikes == nil {
 		return nil, errors.New("invalid value for required argument 'TrafficSpikes'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource WebAppAnomalies
 	err := ctx.RegisterResource("dynatrace:index/webAppAnomalies:WebAppAnomalies", name, args, &resource, opts...)
 	if err != nil {

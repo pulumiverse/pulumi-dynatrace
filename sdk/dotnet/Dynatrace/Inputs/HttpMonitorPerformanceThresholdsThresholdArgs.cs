@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HttpMonitorPerformanceThresholdsThresholdArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Request
+        /// </summary>
         [Input("event", required: true)]
         public Input<string> Event { get; set; } = null!;
 
+        /// <summary>
+        /// Threshold (in seconds)
+        /// </summary>
         [Input("threshold", required: true)]
         public Input<double> Threshold { get; set; } = null!;
 

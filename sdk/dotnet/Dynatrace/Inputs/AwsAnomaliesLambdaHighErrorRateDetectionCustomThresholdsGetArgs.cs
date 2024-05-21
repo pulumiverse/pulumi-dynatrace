@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Failed invocations rate is higher than
+        /// </summary>
         [Input("failedInvocationsRate", required: true)]
         public Input<int> FailedInvocationsRate { get; set; } = null!;
 

@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type NetworkZone struct {
@@ -36,7 +37,7 @@ func NewNetworkZone(ctx *pulumi.Context,
 		args = &NetworkZoneArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource NetworkZone
 	err := ctx.RegisterResource("dynatrace:index/networkZone:NetworkZone", name, args, &resource, opts...)
 	if err != nil {

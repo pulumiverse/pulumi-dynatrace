@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type AixExtension struct {
@@ -35,7 +36,7 @@ func NewAixExtension(ctx *pulumi.Context,
 	if args.UseGlobalSettings == nil {
 		return nil, errors.New("invalid value for required argument 'UseGlobalSettings'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AixExtension
 	err := ctx.RegisterResource("dynatrace:index/aixExtension:AixExtension", name, args, &resource, opts...)
 	if err != nil {

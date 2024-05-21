@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecordingArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The type of the masking:
+        /// </summary>
         [Input("preset", required: true)]
         public Input<string> Preset { get; set; } = null!;
 
+        /// <summary>
+        /// A list of masking rules
+        /// </summary>
         [Input("rules")]
         public Input<Inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecordingRulesArgs>? Rules { get; set; }
 

@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class EnvironmentQuotasLogsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Annual environment quota. Not set if unlimited
+        /// </summary>
         [Input("annual")]
         public Input<int>? Annual { get; set; }
 
+        /// <summary>
+        /// Monthly environment quota. Not set if unlimited
+        /// </summary>
         [Input("monthly")]
         public Input<int>? Monthly { get; set; }
 

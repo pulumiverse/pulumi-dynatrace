@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class VmwareAnomaliesEsxiHighCpuDetectionCustomThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// At least one peak occurred when Hypervisor CPU usage was higher than
+        /// </summary>
         [Input("cpuPeakPercentage", required: true)]
         public Input<int> CpuPeakPercentage { get; set; } = null!;
 
+        /// <summary>
+        /// CPU usage is higher than
+        /// </summary>
         [Input("cpuUsagePercentage", required: true)]
         public Input<int> CpuUsagePercentage { get; set; } = null!;
 
+        /// <summary>
+        /// VM CPU ready is higher than
+        /// </summary>
         [Input("vmCpuReadyPercentage", required: true)]
         public Input<int> VmCpuReadyPercentage { get; set; } = null!;
 

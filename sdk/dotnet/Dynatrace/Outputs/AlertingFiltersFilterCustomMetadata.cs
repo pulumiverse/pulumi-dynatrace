@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AlertingFiltersFilterCustomMetadata
     {
+        /// <summary>
+        /// Define filters for event properties. A maximum of 20 properties is allowed.
+        /// </summary>
         public readonly Outputs.AlertingFiltersFilterCustomMetadataItems Items;
 
         [OutputConstructor]

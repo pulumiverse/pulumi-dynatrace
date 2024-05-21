@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class K8sNodeAnomaliesReadinessIssuesConfigurationArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// within the last
+        /// </summary>
         [Input("observationPeriodInMinutes", required: true)]
         public Input<int> ObservationPeriodInMinutes { get; set; } = null!;
 
+        /// <summary>
+        /// node is not ready for at least
+        /// </summary>
         [Input("samplePeriodInMinutes", required: true)]
         public Input<int> SamplePeriodInMinutes { get; set; } = null!;
 

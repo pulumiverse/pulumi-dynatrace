@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2NetworkNetworkErrorsDetection
     {
+        /// <summary>
+        /// Alert if the receive/transmit error packet percentage is higher than the specified threshold **and** the total packets rate is higher than the defined threshold for the defined amount of samples
+        /// </summary>
         public readonly Outputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds? CustomThresholds;
+        /// <summary>
+        /// Detection mode for high number of network errors
+        /// </summary>
         public readonly string? DetectionMode;
+        /// <summary>
+        /// Detect high number of network errors
+        /// </summary>
         public readonly bool Enabled;
 
         [OutputConstructor]

@@ -13,27 +13,51 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// ActiveXObject support enabled/disabled
+        /// </summary>
         [Input("activeXObject")]
         public Input<bool>? ActiveXObject { get; set; }
 
+        /// <summary>
+        /// AngularJS and Angular support enabled/disabled
+        /// </summary>
         [Input("angular")]
         public Input<bool>? Angular { get; set; }
 
+        /// <summary>
+        /// Dojo support enabled/disabled
+        /// </summary>
         [Input("dojo")]
         public Input<bool>? Dojo { get; set; }
 
+        /// <summary>
+        /// ExtJS, Sencha Touch support enabled/disabled
+        /// </summary>
         [Input("extjs")]
         public Input<bool>? Extjs { get; set; }
 
+        /// <summary>
+        /// ICEfaces support enabled/disabled
+        /// </summary>
         [Input("icefaces")]
         public Input<bool>? Icefaces { get; set; }
 
+        /// <summary>
+        /// jQuery, Backbone.js support enabled/disabled
+        /// </summary>
         [Input("jquery")]
         public Input<bool>? Jquery { get; set; }
 
+        /// <summary>
+        /// MooTools support enabled/disabled
+        /// </summary>
         [Input("mooTools")]
         public Input<bool>? MooTools { get; set; }
 
+        /// <summary>
+        /// Prototype support enabled/disabled
+        /// </summary>
         [Input("prototype")]
         public Input<bool>? Prototype { get; set; }
 

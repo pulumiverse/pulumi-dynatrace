@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BrowserMonitorScriptEventsEventJavascriptGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The JavaScript code to be executed in this event
+        /// </summary>
         [Input("code", required: true)]
         public Input<string> Code { get; set; } = null!;
 
+        /// <summary>
+        /// The tab on which the page should open
+        /// </summary>
         [Input("target")]
         public Input<Inputs.BrowserMonitorScriptEventsEventJavascriptTargetGetArgs>? Target { get; set; }
 
+        /// <summary>
+        /// The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+        /// </summary>
         [Input("wait")]
         public Input<Inputs.BrowserMonitorScriptEventsEventJavascriptWaitGetArgs>? Wait { get; set; }
 

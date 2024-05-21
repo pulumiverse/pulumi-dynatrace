@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DashboardTileVisualizationConfig
     {
+        /// <summary>
+        /// The axis bucketing when enabled groups similar series in the same virtual axis
+        /// </summary>
         public readonly bool? HasAxisBucketing;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider

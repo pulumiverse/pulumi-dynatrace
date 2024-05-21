@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("eventThresholds", required: true)]
         public Input<Inputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholdsGetArgs> EventThresholds { get; set; } = null!;
 
+        /// <summary>
+        /// Alert if the number of Java out-of-threads exceptions is at least this value
+        /// </summary>
         [Input("outOfThreadsExceptionsNumber", required: true)]
         public Input<int> OutOfThreadsExceptionsNumber { get; set; } = null!;
 

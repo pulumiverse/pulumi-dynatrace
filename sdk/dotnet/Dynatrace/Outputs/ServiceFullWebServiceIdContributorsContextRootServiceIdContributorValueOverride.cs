@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverride
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

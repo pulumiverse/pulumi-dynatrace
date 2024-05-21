@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsBrowserRestrictionSettings
     {
+        /// <summary>
+        /// The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+        /// </summary>
         public readonly string Mode;
+        /// <summary>
+        /// A list of browser restrictions
+        /// </summary>
         public readonly Outputs.WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions? Restrictions;
 
         [OutputConstructor]

@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type CloudFoundry struct {
@@ -62,7 +63,7 @@ func NewCloudFoundry(ctx *pulumi.Context,
 		"password",
 	})
 	opts = append(opts, secrets)
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CloudFoundry
 	err := ctx.RegisterResource("dynatrace:index/cloudFoundry:CloudFoundry", name, args, &resource, opts...)
 	if err != nil {

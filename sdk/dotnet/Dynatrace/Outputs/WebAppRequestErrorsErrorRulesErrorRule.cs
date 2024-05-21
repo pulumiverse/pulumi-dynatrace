@@ -14,10 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebAppRequestErrorsErrorRulesErrorRule
     {
+        /// <summary>
+        /// Capture settings
+        /// </summary>
         public readonly Outputs.WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings CaptureSettings;
+        /// <summary>
+        /// Match by errors that have CSP violations
+        /// </summary>
         public readonly bool ConsiderCspViolations;
+        /// <summary>
+        /// Match by errors that have failed image requests
+        /// </summary>
         public readonly bool ConsiderFailedImages;
+        /// <summary>
+        /// Match by error code
+        /// </summary>
         public readonly string? ErrorCodes;
+        /// <summary>
+        /// Filter settings
+        /// </summary>
         public readonly Outputs.WebAppRequestErrorsErrorRulesErrorRuleFilterSettings FilterSettings;
 
         [OutputConstructor]

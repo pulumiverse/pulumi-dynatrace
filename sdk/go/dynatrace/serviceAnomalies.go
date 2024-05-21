@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ServiceAnomalies struct {
@@ -30,7 +31,7 @@ func NewServiceAnomalies(ctx *pulumi.Context,
 		args = &ServiceAnomaliesArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ServiceAnomalies
 	err := ctx.RegisterResource("dynatrace:index/serviceAnomalies:ServiceAnomalies", name, args, &resource, opts...)
 	if err != nil {

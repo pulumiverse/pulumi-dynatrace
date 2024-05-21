@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class NetworkTrafficExcludeIpIpAddressForm
     {
+        /// <summary>
+        /// IP address
+        /// </summary>
         public readonly string IpAddress;
 
         [OutputConstructor]

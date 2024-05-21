@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class K8sClusterAnomaliesMonitoringIssuesConfiguration
     {
+        /// <summary>
+        /// within the last
+        /// </summary>
         public readonly int ObservationPeriodInMinutes;
+        /// <summary>
+        /// monitoring is not available for at least
+        /// </summary>
         public readonly int SamplePeriodInMinutes;
 
         [OutputConstructor]

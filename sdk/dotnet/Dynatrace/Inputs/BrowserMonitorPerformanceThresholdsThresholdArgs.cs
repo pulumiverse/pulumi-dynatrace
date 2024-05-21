@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BrowserMonitorPerformanceThresholdsThresholdArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Synthetic event
+        /// </summary>
         [Input("event", required: true)]
         public Input<string> Event { get; set; } = null!;
 
+        /// <summary>
+        /// Threshold (in seconds)
+        /// </summary>
         [Input("threshold", required: true)]
         public Input<double> Threshold { get; set; } = null!;
 

@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Datastore free space is lower than
+        /// </summary>
         [Input("freeSpacePercentage", required: true)]
         public Input<int> FreeSpacePercentage { get; set; } = null!;
 

@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowestGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Absolute threshold
+        /// </summary>
         [Input("durationThreshold", required: true)]
         public Input<double> DurationThreshold { get; set; } = null!;
 

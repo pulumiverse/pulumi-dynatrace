@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2HostHighMemoryDetection
     {
+        /// <summary>
+        /// Alert if **both** the memory usage and the memory page fault rate thresholds are exceeded on Windows or on Unix systems
+        /// </summary>
         public readonly Outputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholds? CustomThresholds;
+        /// <summary>
+        /// Detection mode for high memory usage
+        /// </summary>
         public readonly string? DetectionMode;
+        /// <summary>
+        /// Detect high memory usage on host
+        /// </summary>
         public readonly bool Enabled;
 
         [OutputConstructor]

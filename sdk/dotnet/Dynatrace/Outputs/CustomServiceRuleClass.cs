@@ -14,9 +14,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CustomServiceRuleClass
     {
+        /// <summary>
+        /// Matcher applying to the class name (ENDS*WITH, EQUALS or STARTS*WITH). STARTS_WITH can only be used if there is at least one annotation defined. Default value is EQUALS
+        /// </summary>
         public readonly string? Match;
         /// <summary>
-        /// The name of the custom service, displayed in the UI
+        /// The full name of the class / the name to match the class name with
         /// </summary>
         public readonly string Name;
 

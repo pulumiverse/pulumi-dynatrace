@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixedGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Absolute threshold
+        /// </summary>
         [Input("absoluteCrashRate", required: true)]
         public Input<double> AbsoluteCrashRate { get; set; } = null!;
 
+        /// <summary>
+        /// Amount of users
+        /// </summary>
         [Input("concurrentUsers", required: true)]
         public Input<int> ConcurrentUsers { get; set; } = null!;
 

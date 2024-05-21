@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter
     {
+        /// <summary>
+        /// Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_STARTS`, `STARTS`
+        /// </summary>
         public readonly string MatchOperator;
+        /// <summary>
+        /// Namespace name
+        /// </summary>
         public readonly string? Namespace;
 
         [OutputConstructor]

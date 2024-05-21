@@ -9,8 +9,171 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// The API utilized for this resource is deprecated, please use Alerting instead.
+//
+// ## Dynatrace Documentation
+//
+// - Alerting profiles - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/notifications-and-alerting/alerting-profiles
+//
+// - Alerting profiles API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/alerting-profiles-api
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewAlertingProfile(ctx, "#name#", &dynatrace.AlertingProfileArgs{
+//				DisplayName: pulumi.String("#name#"),
+//				MzId:        pulumi.String(""),
+//				Rules: dynatrace.AlertingProfileRuleArray{
+//					&dynatrace.AlertingProfileRuleArgs{
+//						DelayInMinutes: pulumi.Int(0),
+//						SeverityLevel:  pulumi.String("AVAILABILITY"),
+//						TagFilters: dynatrace.AlertingProfileRuleTagFilterArray{
+//							&dynatrace.AlertingProfileRuleTagFilterArgs{
+//								IncludeMode: pulumi.String("INCLUDE_ALL"),
+//								TagFilters: dynatrace.AlertingProfileRuleTagFilterTagFilterArray{
+//									&dynatrace.AlertingProfileRuleTagFilterTagFilterArgs{
+//										Context: pulumi.String("CONTEXTLESS"),
+//										Key:     pulumi.String("EnvironmentA"),
+//										Value:   pulumi.String("production"),
+//									},
+//									&dynatrace.AlertingProfileRuleTagFilterTagFilterArgs{
+//										Context: pulumi.String("CONTEXTLESS"),
+//										Key:     pulumi.String("Team"),
+//										Value:   pulumi.String("test"),
+//									},
+//								},
+//							},
+//						},
+//					},
+//					&dynatrace.AlertingProfileRuleArgs{
+//						DelayInMinutes: pulumi.Int(0),
+//						SeverityLevel:  pulumi.String("CUSTOM_ALERT"),
+//						TagFilters: dynatrace.AlertingProfileRuleTagFilterArray{
+//							&dynatrace.AlertingProfileRuleTagFilterArgs{
+//								IncludeMode: pulumi.String("INCLUDE_ALL"),
+//								TagFilters: dynatrace.AlertingProfileRuleTagFilterTagFilterArray{
+//									&dynatrace.AlertingProfileRuleTagFilterTagFilterArgs{
+//										Context: pulumi.String("CONTEXTLESS"),
+//										Key:     pulumi.String("EnvironmentB"),
+//										Value:   pulumi.String("production"),
+//									},
+//									&dynatrace.AlertingProfileRuleTagFilterTagFilterArgs{
+//										Context: pulumi.String("CONTEXTLESS"),
+//										Key:     pulumi.String("Team"),
+//										Value:   pulumi.String("test"),
+//									},
+//								},
+//							},
+//						},
+//					},
+//					&dynatrace.AlertingProfileRuleArgs{
+//						DelayInMinutes: pulumi.Int(0),
+//						SeverityLevel:  pulumi.String("ERROR"),
+//						TagFilters: dynatrace.AlertingProfileRuleTagFilterArray{
+//							&dynatrace.AlertingProfileRuleTagFilterArgs{
+//								IncludeMode: pulumi.String("INCLUDE_ALL"),
+//								TagFilters: dynatrace.AlertingProfileRuleTagFilterTagFilterArray{
+//									&dynatrace.AlertingProfileRuleTagFilterTagFilterArgs{
+//										Context: pulumi.String("CONTEXTLESS"),
+//										Key:     pulumi.String("EnvironmentC"),
+//										Value:   pulumi.String("production"),
+//									},
+//									&dynatrace.AlertingProfileRuleTagFilterTagFilterArgs{
+//										Context: pulumi.String("CONTEXTLESS"),
+//										Key:     pulumi.String("Team"),
+//										Value:   pulumi.String("test"),
+//									},
+//								},
+//							},
+//						},
+//					},
+//					&dynatrace.AlertingProfileRuleArgs{
+//						DelayInMinutes: pulumi.Int(0),
+//						SeverityLevel:  pulumi.String("MONITORING_UNAVAILABLE"),
+//						TagFilters: dynatrace.AlertingProfileRuleTagFilterArray{
+//							&dynatrace.AlertingProfileRuleTagFilterArgs{
+//								IncludeMode: pulumi.String("INCLUDE_ALL"),
+//								TagFilters: dynatrace.AlertingProfileRuleTagFilterTagFilterArray{
+//									&dynatrace.AlertingProfileRuleTagFilterTagFilterArgs{
+//										Context: pulumi.String("CONTEXTLESS"),
+//										Key:     pulumi.String("EnvironmentD"),
+//										Value:   pulumi.String("production"),
+//									},
+//									&dynatrace.AlertingProfileRuleTagFilterTagFilterArgs{
+//										Context: pulumi.String("CONTEXTLESS"),
+//										Key:     pulumi.String("Team"),
+//										Value:   pulumi.String("test"),
+//									},
+//								},
+//							},
+//						},
+//					},
+//					&dynatrace.AlertingProfileRuleArgs{
+//						DelayInMinutes: pulumi.Int(0),
+//						SeverityLevel:  pulumi.String("PERFORMANCE"),
+//						TagFilters: dynatrace.AlertingProfileRuleTagFilterArray{
+//							&dynatrace.AlertingProfileRuleTagFilterArgs{
+//								IncludeMode: pulumi.String("INCLUDE_ALL"),
+//								TagFilters: dynatrace.AlertingProfileRuleTagFilterTagFilterArray{
+//									&dynatrace.AlertingProfileRuleTagFilterTagFilterArgs{
+//										Context: pulumi.String("CONTEXTLESS"),
+//										Key:     pulumi.String("EnvironmentE"),
+//										Value:   pulumi.String("production"),
+//									},
+//									&dynatrace.AlertingProfileRuleTagFilterTagFilterArgs{
+//										Context: pulumi.String("CONTEXTLESS"),
+//										Key:     pulumi.String("Team"),
+//										Value:   pulumi.String("test"),
+//									},
+//								},
+//							},
+//						},
+//					},
+//					&dynatrace.AlertingProfileRuleArgs{
+//						DelayInMinutes: pulumi.Int(0),
+//						SeverityLevel:  pulumi.String("RESOURCE_CONTENTION"),
+//						TagFilters: dynatrace.AlertingProfileRuleTagFilterArray{
+//							&dynatrace.AlertingProfileRuleTagFilterArgs{
+//								IncludeMode: pulumi.String("INCLUDE_ALL"),
+//								TagFilters: dynatrace.AlertingProfileRuleTagFilterTagFilterArray{
+//									&dynatrace.AlertingProfileRuleTagFilterTagFilterArgs{
+//										Context: pulumi.String("CONTEXTLESS"),
+//										Key:     pulumi.String("EnvironmentF"),
+//										Value:   pulumi.String("production"),
+//									},
+//									&dynatrace.AlertingProfileRuleTagFilterTagFilterArgs{
+//										Context: pulumi.String("CONTEXTLESS"),
+//										Key:     pulumi.String("Team"),
+//										Value:   pulumi.String("test"),
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AlertingProfile struct {
 	pulumi.CustomResourceState
 
@@ -40,7 +203,7 @@ func NewAlertingProfile(ctx *pulumi.Context,
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AlertingProfile
 	err := ctx.RegisterResource("dynatrace:index/alertingProfile:AlertingProfile", name, args, &resource, opts...)
 	if err != nil {

@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CloudappWorkloaddetectionKubernetesFiltersFilter
     {
+        /// <summary>
+        /// This setting is enabled (`true`) or disabled (`false`)
+        /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// ID calculation based on
+        /// </summary>
         public readonly Outputs.CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles InclusionToggles;
+        /// <summary>
+        /// When namespace
+        /// </summary>
         public readonly Outputs.CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter MatchFilter;
 
         [OutputConstructor]

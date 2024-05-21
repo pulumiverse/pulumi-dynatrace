@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsContentCaptureTimeoutSettings
     {
+        /// <summary>
+        /// Defines how deep temporary actions may cascade. 0 disables temporary actions completely. Recommended value if enabled is 3
+        /// </summary>
         public readonly int TemporaryActionLimit;
+        /// <summary>
+        /// The total timeout of all cascaded timeouts that should still be able to create a temporary action
+        /// </summary>
         public readonly int TemporaryActionTotalTimeout;
+        /// <summary>
+        /// Timed action support enabled/disabled.
+        /// </summary>
         public readonly bool? TimedActionSupport;
 
         [OutputConstructor]

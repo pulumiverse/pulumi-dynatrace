@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The entity data source allows the entity ID to be retrieved by its name and type.
@@ -45,7 +46,7 @@ import (
 //
 // ```
 func GetEntity(ctx *pulumi.Context, args *GetEntityArgs, opts ...pulumi.InvokeOption) (*GetEntityResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetEntityResult
 	err := ctx.Invoke("dynatrace:index/getEntity:getEntity", args, &rv, opts...)
 	if err != nil {

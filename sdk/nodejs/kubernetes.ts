@@ -104,8 +104,7 @@ export class Kubernetes extends pulumi.CustomResource {
      */
     public readonly openMetricsPipelineEnabled!: pulumi.Output<boolean>;
     /**
-     * To enable dashboards and alerts, add the [Kubernetes persistent volume
-     * claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+     * To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
      */
     public readonly pvcMonitoringEnabled!: pulumi.Output<boolean>;
     /**
@@ -273,8 +272,7 @@ export interface KubernetesState {
      */
     openMetricsPipelineEnabled?: pulumi.Input<boolean>;
     /**
-     * To enable dashboards and alerts, add the [Kubernetes persistent volume
-     * claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+     * To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
      */
     pvcMonitoringEnabled?: pulumi.Input<boolean>;
     /**
@@ -357,8 +355,7 @@ export interface KubernetesArgs {
      */
     openMetricsPipelineEnabled: pulumi.Input<boolean>;
     /**
-     * To enable dashboards and alerts, add the [Kubernetes persistent volume
-     * claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+     * To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
      */
     pvcMonitoringEnabled: pulumi.Input<boolean>;
     /**

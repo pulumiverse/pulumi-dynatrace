@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BrowserMonitorScriptEventsEventNavigateAuthenticationArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// A reference to the entry within the credential vault
+        /// </summary>
         [Input("creds", required: true)]
         public Input<string> Creds { get; set; } = null!;
 
+        /// <summary>
+        /// The type of authentication
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 

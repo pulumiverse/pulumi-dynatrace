@@ -23,3 +23,6 @@ export interface GetManagementZonesResult {
     readonly id: string;
     readonly values: outputs.GetManagementZonesValue[];
 }
+export function getManagementZonesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementZonesResult> {
+    return pulumi.output(getManagementZones(opts))
+}

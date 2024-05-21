@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("validations", required: true)]
         private InputList<Inputs.BrowserMonitorScriptEventsEventTapValidateValidationArgs>? _validations;
+
+        /// <summary>
+        /// The element to wait for. Required for the `validation` type, not applicable otherwise.
+        /// </summary>
         public InputList<Inputs.BrowserMonitorScriptEventsEventTapValidateValidationArgs> Validations
         {
             get => _validations ?? (_validations = new InputList<Inputs.BrowserMonitorScriptEventsEventTapValidateValidationArgs>());

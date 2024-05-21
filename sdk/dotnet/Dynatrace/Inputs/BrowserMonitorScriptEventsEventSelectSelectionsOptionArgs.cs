@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BrowserMonitorScriptEventsEventSelectSelectionsOptionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The index of the option to be selected
+        /// </summary>
         [Input("index", required: true)]
         public Input<int> Index { get; set; } = null!;
 
+        /// <summary>
+        /// The value of the option to be selected
+        /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
 

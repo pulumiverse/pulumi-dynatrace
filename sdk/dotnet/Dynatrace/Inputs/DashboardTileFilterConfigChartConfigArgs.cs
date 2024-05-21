@@ -15,37 +15,61 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("axisLimits")]
         private InputMap<double>? _axisLimits;
+
+        /// <summary>
+        /// The optional custom y-axis limits
+        /// </summary>
         public InputMap<double> AxisLimits
         {
             get => _axisLimits ?? (_axisLimits = new InputMap<double>());
             set => _axisLimits = value;
         }
 
+        /// <summary>
+        /// Either one of `Bit`, `BitPerHour`, `BitPerMinute`, `BitPerSecond`, `Byte`, `BytePerHour`, `BytePerMinute`, `BytePerSecond`, `Cores`, `Count`, `Day`, `DecibelMilliWatt`, `GibiByte`, `Giga`, `GigaByte`, `Hour`, `KibiByte`, `KibiBytePerHour`, `KibiBytePerMinute`, `KibiBytePerSecond`, `Kilo`, `KiloByte`, `KiloBytePerHour`, `KiloBytePerMinute`, `KiloBytePerSecond`, `MebiByte`, `MebiBytePerHour`, `MebiBytePerMinute`, `MebiBytePerSecond`, `Mega`, `MegaByte`, `MegaBytePerHour`, `MegaBytePerMinute`, `MegaBytePerSecond`, `MicroSecond`, `MilliCores`, `MilliSecond`, `MilliSecondPerMinute`, `Minute`, `Month`, `NanoSecond`, `NanoSecondPerMinute`, `NotApplicable`, `PerHour`, `PerMinute`, `PerSecond`, `Percent`, `Pixel`, `Promille`, `Ratio`, `Second`, `State`, `Unspecified`, `Week`, `Year`
+        /// </summary>
         [Input("leftAxisCustomUnit")]
         public Input<string>? LeftAxisCustomUnit { get; set; }
 
+        /// <summary>
+        /// Defines if a legend should be shown
+        /// </summary>
         [Input("legend")]
         public Input<bool>? Legend { get; set; }
 
         [Input("resultMetadatas")]
         private InputList<Inputs.DashboardTileFilterConfigChartConfigResultMetadataArgs>? _resultMetadatas;
+
+        /// <summary>
+        /// Additional information about charted metric
+        /// </summary>
         public InputList<Inputs.DashboardTileFilterConfigChartConfigResultMetadataArgs> ResultMetadatas
         {
             get => _resultMetadatas ?? (_resultMetadatas = new InputList<Inputs.DashboardTileFilterConfigChartConfigResultMetadataArgs>());
             set => _resultMetadatas = value;
         }
 
+        /// <summary>
+        /// Either one of `Bit`, `BitPerHour`, `BitPerMinute`, `BitPerSecond`, `Byte`, `BytePerHour`, `BytePerMinute`, `BytePerSecond`, `Cores`, `Count`, `Day`, `DecibelMilliWatt`, `GibiByte`, `Giga`, `GigaByte`, `Hour`, `KibiByte`, `KibiBytePerHour`, `KibiBytePerMinute`, `KibiBytePerSecond`, `Kilo`, `KiloByte`, `KiloBytePerHour`, `KiloBytePerMinute`, `KiloBytePerSecond`, `MebiByte`, `MebiBytePerHour`, `MebiBytePerMinute`, `MebiBytePerSecond`, `Mega`, `MegaByte`, `MegaBytePerHour`, `MegaBytePerMinute`, `MegaBytePerSecond`, `MicroSecond`, `MilliCores`, `MilliSecond`, `MilliSecondPerMinute`, `Minute`, `Month`, `NanoSecond`, `NanoSecondPerMinute`, `NotApplicable`, `PerHour`, `PerMinute`, `PerSecond`, `Percent`, `Pixel`, `Promille`, `Ratio`, `Second`, `State`, `Unspecified`, `Week`, `Year`
+        /// </summary>
         [Input("rightAxisCustomUnit")]
         public Input<string>? RightAxisCustomUnit { get; set; }
 
         [Input("series")]
         private InputList<Inputs.DashboardTileFilterConfigChartConfigSeriesArgs>? _series;
+
+        /// <summary>
+        /// A list of charted metrics
+        /// </summary>
         public InputList<Inputs.DashboardTileFilterConfigChartConfigSeriesArgs> Series
         {
             get => _series ?? (_series = new InputList<Inputs.DashboardTileFilterConfigChartConfigSeriesArgs>());
             set => _series = value;
         }
 
+        /// <summary>
+        /// The type of the chart
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 

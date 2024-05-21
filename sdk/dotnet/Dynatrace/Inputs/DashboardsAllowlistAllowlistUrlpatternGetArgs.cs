@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DashboardsAllowlistAllowlistUrlpatternGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Possible Values: `Equals`, `StartsWith`
+        /// </summary>
         [Input("rule", required: true)]
         public Input<string> Rule { get; set; } = null!;
 
+        /// <summary>
+        /// Pattern
+        /// </summary>
         [Input("template", required: true)]
         public Input<string> Template { get; set; } = null!;
 

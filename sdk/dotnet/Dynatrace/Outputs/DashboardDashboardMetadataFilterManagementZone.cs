@@ -14,11 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DashboardDashboardMetadataFilterManagementZone
     {
+        /// <summary>
+        /// a short description of the Dynatrace entity
+        /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// The ID of this resource.
+        /// the ID of the Dynatrace entity
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// the name of the Dynatrace entity
+        /// </summary>
         public readonly string? Name;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider

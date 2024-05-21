@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type OsServices struct {
@@ -40,7 +41,7 @@ type OsServices struct {
 	// – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
 	// that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
 	// paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-	// `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+	// `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
 	StatusConditionWindows pulumi.StringPtrOutput `pulumi:"statusConditionWindows"`
 	// Possible Values: `LINUX`, `WINDOWS`
 	System pulumi.StringOutput `pulumi:"system"`
@@ -65,7 +66,7 @@ func NewOsServices(ctx *pulumi.Context,
 	if args.System == nil {
 		return nil, errors.New("invalid value for required argument 'System'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OsServices
 	err := ctx.RegisterResource("dynatrace:index/osServices:OsServices", name, args, &resource, opts...)
 	if err != nil {
@@ -114,7 +115,7 @@ type osServicesState struct {
 	// – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
 	// that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
 	// paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-	// `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+	// `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
 	StatusConditionWindows *string `pulumi:"statusConditionWindows"`
 	// Possible Values: `LINUX`, `WINDOWS`
 	System *string `pulumi:"system"`
@@ -147,7 +148,7 @@ type OsServicesState struct {
 	// – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
 	// that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
 	// paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-	// `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+	// `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
 	StatusConditionWindows pulumi.StringPtrInput
 	// Possible Values: `LINUX`, `WINDOWS`
 	System pulumi.StringPtrInput
@@ -184,7 +185,7 @@ type osServicesArgs struct {
 	// – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
 	// that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
 	// paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-	// `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+	// `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
 	StatusConditionWindows *string `pulumi:"statusConditionWindows"`
 	// Possible Values: `LINUX`, `WINDOWS`
 	System string `pulumi:"system"`
@@ -218,7 +219,7 @@ type OsServicesArgs struct {
 	// – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
 	// that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
 	// paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-	// `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+	// `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
 	StatusConditionWindows pulumi.StringPtrInput
 	// Possible Values: `LINUX`, `WINDOWS`
 	System pulumi.StringInput
@@ -370,7 +371,7 @@ func (o OsServicesOutput) StatusConditionLinux() pulumi.StringPtrOutput {
 // – Matches services that are in paused state. Available logic operations: - `$not($eq(paused))` – Matches services
 // that are in state different from paused. - `$or($eq(paused),$eq(running))` – Matches services that are either in
 // paused or running state. Use one of the following values as a parameter for this condition: - `running` - `stopped` -
-// `start_pending` - `stop_pending` - `continue_pending` - `pause_pending` - `paused`
+// `startPending` - `stopPending` - `continuePending` - `pausePending` - `paused`
 func (o OsServicesOutput) StatusConditionWindows() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OsServices) pulumi.StringPtrOutput { return v.StatusConditionWindows }).(pulumi.StringPtrOutput)
 }

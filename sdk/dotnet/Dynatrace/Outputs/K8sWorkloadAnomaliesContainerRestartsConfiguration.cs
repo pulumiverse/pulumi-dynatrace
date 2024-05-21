@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class K8sWorkloadAnomaliesContainerRestartsConfiguration
     {
+        /// <summary>
+        /// within the last
+        /// </summary>
         public readonly int ObservationPeriodInMinutes;
+        /// <summary>
+        /// per minute, for any
+        /// </summary>
         public readonly int SamplePeriodInMinutes;
+        /// <summary>
+        /// there is at least
+        /// </summary>
         public readonly int Threshold;
 
         [OutputConstructor]

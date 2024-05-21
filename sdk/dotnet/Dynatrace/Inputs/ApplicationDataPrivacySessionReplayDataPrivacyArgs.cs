@@ -19,11 +19,18 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("contentMaskingSettings", required: true)]
         public Input<Inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsArgs> ContentMaskingSettings { get; set; } = null!;
 
+        /// <summary>
+        /// (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) If `true`, session recording is disabled until JavaScriptAPI `dtrum.enableSessionReplay()` is called
+        /// </summary>
         [Input("optIn")]
         public Input<bool>? OptIn { get; set; }
 
         [Input("urlExclusionRules")]
         private InputList<string>? _urlExclusionRules;
+
+        /// <summary>
+        /// (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) A list of URLs to be excluded from recording
+        /// </summary>
         public InputList<string> UrlExclusionRules
         {
             get => _urlExclusionRules ?? (_urlExclusionRules = new InputList<string>());

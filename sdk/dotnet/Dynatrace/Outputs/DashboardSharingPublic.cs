@@ -18,6 +18,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// A list of management zones that can display data on the publicly shared dashboard.
         /// </summary>
         public readonly ImmutableArray<string> ManagementZones;
+        /// <summary>
+        /// A list of URLs for anonymous access to the dashboard indexed by management zone name
+        /// </summary>
         public readonly ImmutableDictionary<string, string>? Urls;
 
         [OutputConstructor]

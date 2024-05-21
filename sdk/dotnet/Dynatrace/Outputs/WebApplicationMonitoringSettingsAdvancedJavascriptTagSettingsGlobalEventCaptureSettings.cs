@@ -14,13 +14,37 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings
     {
+        /// <summary>
+        /// Additional events to be captured globally as user input.
+        /// </summary>
         public readonly string? AdditionalEventCapturedAsUserInput;
+        /// <summary>
+        /// Click enabled/disabled
+        /// </summary>
         public readonly bool? Click;
+        /// <summary>
+        /// DoubleClick enabled/disabled
+        /// </summary>
         public readonly bool? Doubleclick;
+        /// <summary>
+        /// KeyDown enabled/disabled
+        /// </summary>
         public readonly bool? Keydown;
+        /// <summary>
+        /// KeyUp enabled/disabled
+        /// </summary>
         public readonly bool? Keyup;
+        /// <summary>
+        /// MouseDown enabled/disabled
+        /// </summary>
         public readonly bool? Mousedown;
+        /// <summary>
+        /// MouseUp enabled/disabled
+        /// </summary>
         public readonly bool? Mouseup;
+        /// <summary>
+        /// Scroll enabled/disabled
+        /// </summary>
         public readonly bool? Scroll;
 
         [OutputConstructor]

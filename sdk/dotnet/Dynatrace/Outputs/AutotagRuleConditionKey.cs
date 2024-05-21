@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AutotagRuleConditionKey
     {
+        /// <summary>
+        /// The attribute to be used for comparision
+        /// </summary>
         public readonly string Attribute;
+        /// <summary>
+        /// Defines the actual set of fields depending on the value
+        /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+        /// </summary>
         public readonly string? Unknowns;
 
         [OutputConstructor]

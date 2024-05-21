@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ManagementZoneV2RulesRuleDimensionRuleGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Possible Values: `ANY`, `LOG`, `METRIC`
+        /// </summary>
         [Input("appliesTo", required: true)]
         public Input<string> AppliesTo { get; set; } = null!;
 
+        /// <summary>
+        /// Conditions
+        /// </summary>
         [Input("dimensionConditions")]
         public Input<Inputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsGetArgs>? DimensionConditions { get; set; }
 

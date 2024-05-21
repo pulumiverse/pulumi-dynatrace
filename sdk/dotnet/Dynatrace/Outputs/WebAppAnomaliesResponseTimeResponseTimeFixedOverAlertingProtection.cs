@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection
     {
+        /// <summary>
+        /// Only alert if there are at least
+        /// </summary>
         public readonly double ActionsPerMinute;
+        /// <summary>
+        /// Only alert if the abnormal state remains for at least
+        /// </summary>
         public readonly double MinutesAbnormalState;
 
         [OutputConstructor]

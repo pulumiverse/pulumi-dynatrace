@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesDisksSpeed
     {
+        /// <summary>
+        /// The detection is enabled (`true`) or disabled (`false`)
+        /// </summary>
         public readonly bool Enabled;
+        /// <summary>
+        /// Custom thresholds for slow running disks. If not set, the automatic mode is used
+        /// </summary>
         public readonly Outputs.HostAnomaliesDisksSpeedThresholds? Thresholds;
 
         [OutputConstructor]

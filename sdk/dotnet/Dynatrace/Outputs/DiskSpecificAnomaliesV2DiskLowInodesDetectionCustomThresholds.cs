@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholds
     {
+        /// <summary>
+        /// Alert if the percentage of available inodes is lower than this threshold in 3 out of 5 samples
+        /// </summary>
         public readonly int FreeInodesPercentage;
 
         [OutputConstructor]

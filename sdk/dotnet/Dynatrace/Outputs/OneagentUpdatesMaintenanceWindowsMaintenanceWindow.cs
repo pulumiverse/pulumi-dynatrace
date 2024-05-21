@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class OneagentUpdatesMaintenanceWindowsMaintenanceWindow
     {
+        /// <summary>
+        /// Select a [maintenance window for OneAgent updates](https://www.terraform.io/ui/settings/builtin:deployment.management.update-windows)
+        /// </summary>
         public readonly string MaintenanceWindow;
 
         [OutputConstructor]

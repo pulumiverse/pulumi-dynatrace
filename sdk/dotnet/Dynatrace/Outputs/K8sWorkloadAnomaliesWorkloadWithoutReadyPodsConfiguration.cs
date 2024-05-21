@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration
     {
+        /// <summary>
+        /// within the last
+        /// </summary>
         public readonly int ObservationPeriodInMinutes;
+        /// <summary>
+        /// workload has no ready pods for at least
+        /// </summary>
         public readonly int SamplePeriodInMinutes;
 
         [OutputConstructor]

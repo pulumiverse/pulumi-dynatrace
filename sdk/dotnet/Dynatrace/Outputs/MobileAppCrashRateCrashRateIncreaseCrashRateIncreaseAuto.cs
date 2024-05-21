@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto
     {
+        /// <summary>
+        /// Dynatrace learns the typical crash rate for all app versions and will create an alert if the baseline is violated by more than a specified threshold. Analysis happens based on a sliding window of 10 minutes.
+        /// </summary>
         public readonly double BaselineViolationPercentage;
+        /// <summary>
+        /// Amount of users
+        /// </summary>
         public readonly double ConcurrentUsers;
+        /// <summary>
+        /// Possible Values: `Low`, `Medium`, `High`
+        /// </summary>
         public readonly string Sensitivity;
 
         [OutputConstructor]

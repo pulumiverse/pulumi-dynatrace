@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtectionGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Only alert if there are at least
+        /// </summary>
         [Input("actionsPerMinute", required: true)]
         public Input<double> ActionsPerMinute { get; set; } = null!;
 
+        /// <summary>
+        /// Only alert if the abnormal state remains for at least
+        /// </summary>
         [Input("minutesAbnormalState", required: true)]
         public Input<double> MinutesAbnormalState { get; set; } = null!;
 

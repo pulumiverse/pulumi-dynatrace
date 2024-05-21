@@ -14,6 +14,7 @@ __all__ = [
     'GetManagementZonesResult',
     'AwaitableGetManagementZonesResult',
     'get_management_zones',
+    'get_management_zones_output',
 ]
 
 @pulumi.output_type
@@ -62,5 +63,13 @@ def get_management_zones(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitab
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getManagementZones:getManagementZones', __args__, opts=opts, typ=GetManagementZonesResult).value
 
     return AwaitableGetManagementZonesResult(
-        id=__ret__.id,
-        values=__ret__.values)
+        id=pulumi.get(__ret__, 'id'),
+        values=pulumi.get(__ret__, 'values'))
+
+
+@_utilities.lift_output_func(get_management_zones)
+def get_management_zones_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementZonesResult]:
+    """
+    Use this data source to access information about an existing resource.
+    """
+    ...

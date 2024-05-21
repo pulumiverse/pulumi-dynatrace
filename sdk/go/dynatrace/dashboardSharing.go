@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // ## Dynatrace Documentation
@@ -41,7 +42,7 @@ func NewDashboardSharing(ctx *pulumi.Context,
 	if args.DashboardId == nil {
 		return nil, errors.New("invalid value for required argument 'DashboardId'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DashboardSharing
 	err := ctx.RegisterResource("dynatrace:index/dashboardSharing:DashboardSharing", name, args, &resource, opts...)
 	if err != nil {

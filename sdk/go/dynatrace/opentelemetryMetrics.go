@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type OpentelemetryMetrics struct {
@@ -51,7 +52,7 @@ func NewOpentelemetryMetrics(ctx *pulumi.Context,
 	if args.MeterNameToDimensionEnabled == nil {
 		return nil, errors.New("invalid value for required argument 'MeterNameToDimensionEnabled'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OpentelemetryMetrics
 	err := ctx.RegisterResource("dynatrace:index/opentelemetryMetrics:OpentelemetryMetrics", name, args, &resource, opts...)
 	if err != nil {

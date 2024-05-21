@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AlertingFiltersFilterCustomArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Configuration of a matching filter
+        /// </summary>
         [Input("description")]
         public Input<Inputs.AlertingFiltersFilterCustomDescriptionArgs>? Description { get; set; }
 
+        /// <summary>
+        /// Configuration of a matching filter
+        /// </summary>
         [Input("metadata")]
         public Input<Inputs.AlertingFiltersFilterCustomMetadataArgs>? Metadata { get; set; }
 
+        /// <summary>
+        /// Configuration of a matching filter
+        /// </summary>
         [Input("title")]
         public Input<Inputs.AlertingFiltersFilterCustomTitleArgs>? Title { get; set; }
 

@@ -15,9 +15,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class ImsBridgesQueueManagerQueueManager
     {
         /// <summary>
-        /// The name of the IMS bridge
+        /// The name of the queue manager
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// Queue(s) that belong to the queue manager
+        /// </summary>
         public readonly ImmutableArray<string> QueueManagerQueues;
 
         [OutputConstructor]

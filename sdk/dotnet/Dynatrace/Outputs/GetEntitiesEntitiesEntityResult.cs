@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class GetEntitiesEntitiesEntityResult
     {
+        /// <summary>
+        /// The name of the entity, displayed in the UI.
+        /// </summary>
         public readonly string? DisplayName;
+        /// <summary>
+        /// The ID of the entity.
+        /// </summary>
         public readonly string? EntityId;
+        /// <summary>
+        /// A set of tags assigned to the entity.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetEntitiesEntitiesEntityTagResult> Tags;
+        /// <summary>
+        /// The type of the entity.
+        /// </summary>
         public readonly string? Type;
 
         [OutputConstructor]

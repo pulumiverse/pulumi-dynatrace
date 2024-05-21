@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ResourceAttributes struct {
@@ -24,7 +25,7 @@ func NewResourceAttributes(ctx *pulumi.Context,
 		args = &ResourceAttributesArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ResourceAttributes
 	err := ctx.RegisterResource("dynatrace:index/resourceAttributes:ResourceAttributes", name, args, &resource, opts...)
 	if err != nil {

@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class LogProcessingRuleTesting
     {
+        /// <summary>
+        /// Sample log in JSON format.
+        /// </summary>
         public readonly string SampleLog;
 
         [OutputConstructor]

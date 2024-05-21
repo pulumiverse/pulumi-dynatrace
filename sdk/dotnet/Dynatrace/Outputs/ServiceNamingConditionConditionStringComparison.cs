@@ -14,11 +14,29 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ServiceNamingConditionConditionStringComparison
     {
+        /// <summary>
+        /// The comparison is case-sensitive (`true`) or insensitive (`false`)
+        /// </summary>
         public readonly bool? CaseSensitive;
+        /// <summary>
+        /// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+        /// </summary>
         public readonly bool? Negate;
+        /// <summary>
+        /// Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+        /// </summary>
         public readonly string Operator;
+        /// <summary>
+        /// if specified, needs to be STRING
+        /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// The value to compare to
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

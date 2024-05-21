@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type LogBuckets struct {
@@ -43,7 +44,7 @@ func NewLogBuckets(ctx *pulumi.Context,
 	if args.RuleName == nil {
 		return nil, errors.New("invalid value for required argument 'RuleName'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LogBuckets
 	err := ctx.RegisterResource("dynatrace:index/logBuckets:LogBuckets", name, args, &resource, opts...)
 	if err != nil {

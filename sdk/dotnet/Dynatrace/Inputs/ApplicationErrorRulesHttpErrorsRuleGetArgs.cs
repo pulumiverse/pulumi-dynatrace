@@ -13,30 +13,57 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ApplicationErrorRulesHttpErrorsRuleGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Capture (`true`) or ignore (`false`) the error
+        /// </summary>
         [Input("capture")]
         public Input<bool>? Capture { get; set; }
 
+        /// <summary>
+        /// If `true`, match by errors that have CSP Rule violations
+        /// </summary>
         [Input("considerBlockedRequests")]
         public Input<bool>? ConsiderBlockedRequests { get; set; }
 
+        /// <summary>
+        /// Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysis](https://dt-url.net/a963kd2)
+        /// </summary>
         [Input("considerForAi")]
         public Input<bool>? ConsiderForAi { get; set; }
 
+        /// <summary>
+        /// If `true`, match by errors that have unknown HTTP status code
+        /// </summary>
         [Input("considerUnknownErrorCode")]
         public Input<bool>? ConsiderUnknownErrorCode { get; set; }
 
+        /// <summary>
+        /// The HTTP status code or status code range to match by.
+        /// </summary>
         [Input("errorCodes")]
         public Input<string>? ErrorCodes { get; set; }
 
+        /// <summary>
+        /// The matching rule for the URL. Popssible values are `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH` and `EQUALS`.
+        /// </summary>
         [Input("filter")]
         public Input<string>? Filter { get; set; }
 
+        /// <summary>
+        /// If `true`, filter errors by URL
+        /// </summary>
         [Input("filterByUrl")]
         public Input<bool>? FilterByUrl { get; set; }
 
+        /// <summary>
+        /// Include (`true`) or exclude (`false`) the error in Apdex calculation
+        /// </summary>
         [Input("impactApdex")]
         public Input<bool>? ImpactApdex { get; set; }
 
+        /// <summary>
+        /// The URL to look for
+        /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
 

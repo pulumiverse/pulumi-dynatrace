@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MobileAppAnomaliesSlowUserActionsSlowUserActionsAuto
     {
+        /// <summary>
+        /// To avoid over-alerting do not alert for low traffic applications with less than
+        /// </summary>
         public readonly Outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting DurationAvoidOveralerting;
+        /// <summary>
+        /// Alert if the action duration of all user actions degrades beyond **both** the absolute and relative threshold:
+        /// </summary>
         public readonly Outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll DurationThresholdAll;
+        /// <summary>
+        /// Alert if the action duration of the slowest 10% of user actions degrades beyond **both** the absolute and relative threshold:
+        /// </summary>
         public readonly Outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest DurationThresholdSlowest;
 
         [OutputConstructor]

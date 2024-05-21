@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class UpdateWindowsDailyRecurrenceRecurrenceRangeGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("end", required: true)]
         public Input<string> End { get; set; } = null!;
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("start", required: true)]
         public Input<string> Start { get; set; } = null!;
 

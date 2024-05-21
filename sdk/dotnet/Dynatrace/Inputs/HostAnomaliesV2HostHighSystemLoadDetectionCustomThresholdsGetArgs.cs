@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("eventThresholds", required: true)]
         public Input<Inputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholdsGetArgs> EventThresholds { get; set; } = null!;
 
+        /// <summary>
+        /// Alert if the System Load / Logical cpu core is higher than this threshold for the defined amount of samples
+        /// </summary>
         [Input("systemLoad", required: true)]
         public Input<double> SystemLoad { get; set; } = null!;
 

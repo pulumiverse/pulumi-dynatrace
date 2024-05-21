@@ -67,8 +67,8 @@ def get_application(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getApplication:getApplication', __args__, opts=opts, typ=GetApplicationResult).value
 
     return AwaitableGetApplicationResult(
-        id=__ret__.id,
-        name=__ret__.name)
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_application)

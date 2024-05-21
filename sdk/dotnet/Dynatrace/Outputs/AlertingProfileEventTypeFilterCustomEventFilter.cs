@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AlertingProfileEventTypeFilterCustomEventFilter
     {
+        /// <summary>
+        /// Configuration of a matching filter
+        /// </summary>
         public readonly ImmutableArray<Outputs.AlertingProfileEventTypeFilterCustomEventFilterCustomDescriptionFilter> CustomDescriptionFilters;
+        /// <summary>
+        /// Configuration of a matching filter
+        /// </summary>
         public readonly ImmutableArray<Outputs.AlertingProfileEventTypeFilterCustomEventFilterCustomTitleFilter> CustomTitleFilters;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider

@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class MaintenanceScheduleWeeklyRecurrenceGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The day of the week for weekly maintenance.  The format is the full name of the day in upper case, for example `THURSDAY`
+        /// </summary>
         [Input("dayOfWeek", required: true)]
         public Input<string> DayOfWeek { get; set; } = null!;
 
+        /// <summary>
+        /// The recurrence date range of the maintenance window
+        /// </summary>
         [Input("recurrenceRange", required: true)]
         public Input<Inputs.MaintenanceScheduleWeeklyRecurrenceRecurrenceRangeGetArgs> RecurrenceRange { get; set; } = null!;
 
+        /// <summary>
+        /// The time window of the maintenance window
+        /// </summary>
         [Input("timeWindow", required: true)]
         public Input<Inputs.MaintenanceScheduleWeeklyRecurrenceTimeWindowGetArgs> TimeWindow { get; set; } = null!;
 

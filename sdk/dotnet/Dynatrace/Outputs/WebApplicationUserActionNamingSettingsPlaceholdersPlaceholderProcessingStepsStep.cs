@@ -14,16 +14,42 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep
     {
+        /// <summary>
+        /// If set to `true`: Returns the input if `patternBefore` or `patternAfter` cannot be found and the `type` is `SUBSTRING`. Returns the input if `regularExpression` doesn't match and `type` is `EXTRACT_BY_REGULAR_EXPRESSION`.
+        /// </summary>
         public readonly bool? FallbackToInput;
+        /// <summary>
+        /// The pattern after the required value. It will be removed.
+        /// </summary>
         public readonly string? PatternAfter;
+        /// <summary>
+        /// The required occurrence of **patternAfter**. Possible values are `FIRST` and `LAST`.
+        /// </summary>
         public readonly string? PatternAfterSearchType;
+        /// <summary>
+        /// The pattern before the required value. It will be removed.
+        /// </summary>
         public readonly string? PatternBefore;
+        /// <summary>
+        /// The required occurrence of **patternBefore**. Possible values are `FIRST` and `LAST`.
+        /// </summary>
         public readonly string? PatternBeforeSearchType;
+        /// <summary>
+        /// The pattern to be replaced. 
+        /// 
+        ///  Only applicable if the `type` is `REPLACE_WITH_PATTERN`.
+        /// </summary>
         public readonly string? PatternToReplace;
+        /// <summary>
+        /// A regular expression for the string to be extracted or replaced. Only applicable if the `type` is `EXTRACT_BY_REGULAR_EXPRESSION` or `REPLACE_WITH_REGULAR_EXPRESSION`.
+        /// </summary>
         public readonly string? RegularExpression;
+        /// <summary>
+        /// Replacement for the original value
+        /// </summary>
         public readonly string? Replacement;
         /// <summary>
-        /// The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
+        /// An action to be taken by the processing:
         /// </summary>
         public readonly string Type;
 

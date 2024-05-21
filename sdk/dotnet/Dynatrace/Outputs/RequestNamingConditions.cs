@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class RequestNamingConditions
     {
+        /// <summary>
+        /// A conditions for the metric usage
+        /// </summary>
         public readonly ImmutableArray<Outputs.RequestNamingConditionsCondition> Conditions;
 
         [OutputConstructor]

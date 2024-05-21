@@ -9,8 +9,67 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// The API utilized for this resource is deprecated, please use Maintenance instead.
+//
+// ## Dynatrace Documentation
+//
+// - Maintenance windows - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/notifications-and-alerting/maintenance-windows
+//
+// - Maintenance windows API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/maintenance-windows-api
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewMaintenanceWindow(ctx, "#name#", &dynatrace.MaintenanceWindowArgs{
+//				Schedule: &dynatrace.MaintenanceWindowScheduleArgs{
+//					End:            pulumi.String("2021-05-11 14:41"),
+//					RecurrenceType: pulumi.String("ONCE"),
+//					Start:          pulumi.String("2021-05-11 13:41"),
+//					ZoneId:         pulumi.String("Europe/Vienna"),
+//				},
+//				Scope: &dynatrace.MaintenanceWindowScopeArgs{
+//					Matches: dynatrace.MaintenanceWindowScopeMatchArray{
+//						&dynatrace.MaintenanceWindowScopeMatchArgs{
+//							TagCombination: pulumi.String("AND"),
+//							Tags: dynatrace.MaintenanceWindowScopeMatchTagArray{
+//								&dynatrace.MaintenanceWindowScopeMatchTagArgs{
+//									Context: pulumi.String("CONTEXTLESS"),
+//									Key:     pulumi.String("bggtedgxen"),
+//								},
+//								&dynatrace.MaintenanceWindowScopeMatchTagArgs{
+//									Context: pulumi.String("CONTEXTLESS"),
+//									Key:     pulumi.String("deldel1"),
+//								},
+//							},
+//						},
+//					},
+//				},
+//				SuppressSynthMonExec: pulumi.Bool(true),
+//				Suppression:          pulumi.String("DONT_DETECT_PROBLEMS"),
+//				Type:                 pulumi.String("PLANNED"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type MaintenanceWindow struct {
 	pulumi.CustomResourceState
 
@@ -47,7 +106,7 @@ func NewMaintenanceWindow(ctx *pulumi.Context,
 	if args.Type == nil {
 		return nil, errors.New("invalid value for required argument 'Type'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MaintenanceWindow
 	err := ctx.RegisterResource("dynatrace:index/maintenanceWindow:MaintenanceWindow", name, args, &resource, opts...)
 	if err != nil {

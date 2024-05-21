@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("options", required: true)]
         private InputList<Inputs.BrowserMonitorScriptEventsEventSelectSelectionsOptionGetArgs>? _options;
+
+        /// <summary>
+        /// The option to be selected
+        /// </summary>
         public InputList<Inputs.BrowserMonitorScriptEventsEventSelectSelectionsOptionGetArgs> Options
         {
             get => _options ?? (_options = new InputList<Inputs.BrowserMonitorScriptEventsEventSelectSelectionsOptionGetArgs>());

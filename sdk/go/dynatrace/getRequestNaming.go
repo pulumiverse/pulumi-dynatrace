@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The `RequestNaming` data source allows the request naming rule ID to be retrieved by its name.
@@ -43,7 +44,7 @@ import (
 //
 // ```
 func LookupRequestNaming(ctx *pulumi.Context, args *LookupRequestNamingArgs, opts ...pulumi.InvokeOption) (*LookupRequestNamingResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupRequestNamingResult
 	err := ctx.Invoke("dynatrace:index/getRequestNaming:getRequestNaming", args, &rv, opts...)
 	if err != nil {

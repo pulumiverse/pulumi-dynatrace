@@ -46,21 +46,73 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// To enable RUM for XHR calls to AWS Lambda, define a regular expression matching these calls, Dynatrace can then automatically add a custom header (`x-dtc`) to each such request to the respective endpoints in AWS.
         /// </summary>
         public readonly string? CorrelationHeaderInclusionRegex;
+        /// <summary>
+        /// The location to send monitoring data from the JavaScript tag.
+        /// 
+        ///  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS. 
+        /// 
+        ///  **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
+        /// </summary>
         public readonly string? CustomConfigurationProperties;
+        /// <summary>
+        /// You can exclude some actions from becoming XHR actions.
+        /// 
+        /// Put a regular expression, matching all the required URLs, here.
+        /// 
+        /// If noting specified the feature is disabled
+        /// </summary>
         public readonly string? ExcludeXhrRegex;
+        /// <summary>
+        /// `fetch()` request capture enabled/disabled
+        /// </summary>
         public readonly bool? FetchRequests;
         /// <summary>
         /// Possible valures are `CODE_SNIPPET`, `CODE_SNIPPET_ASYNC`, `INLINE_CODE` and `JAVASCRIPT_TAG`.
         /// </summary>
         public readonly string InjectionMode;
+        /// <summary>
+        /// Settings for restricting certain ip addresses and for introducing subnet mask. It also restricts the mode
+        /// </summary>
         public readonly Outputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettings? IpAddressRestrictionSettings;
+        /// <summary>
+        /// Support of various JavaScript frameworks
+        /// </summary>
         public readonly Outputs.WebApplicationMonitoringSettingsJavascriptFrameworkSupport? JavascriptFrameworkSupport;
+        /// <summary>
+        /// Java script injection rules
+        /// </summary>
         public readonly Outputs.WebApplicationMonitoringSettingsJavascriptInjectionRules? JavascriptInjectionRules;
+        /// <summary>
+        /// The location of your application’s custom JavaScript library file. 
+        /// 
+        ///  If nothing specified the root directory of your web server is used. 
+        /// 
+        ///  **Required** for auto-injected applications, not supported by agentless applications. Maximum 512 characters.
+        /// </summary>
         public readonly string? LibraryFileLocation;
+        /// <summary>
+        /// The location to send monitoring data from the JavaScript tag.
+        /// 
+        ///  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS. 
+        /// 
+        ///  **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
+        /// </summary>
         public readonly string? MonitoringDataPath;
+        /// <summary>
+        /// Time duration for the cache settings
+        /// </summary>
         public readonly int? ScriptTagCacheDurationInHours;
+        /// <summary>
+        /// Secure attribute usage for Dynatrace cookies enabled/disabled
+        /// </summary>
         public readonly bool? SecureCookieAttribute;
+        /// <summary>
+        /// Path to identify the server’s request ID. Maximum 150 characters.
+        /// </summary>
         public readonly string? ServerRequestPathId;
+        /// <summary>
+        /// `XmlHttpRequest` support enabled/disabled
+        /// </summary>
         public readonly bool? XmlHttpRequest;
 
         [OutputConstructor]

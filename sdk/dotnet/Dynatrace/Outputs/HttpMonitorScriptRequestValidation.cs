@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HttpMonitorScriptRequestValidation
     {
+        /// <summary>
+        /// A list of validation rules
+        /// </summary>
         public readonly ImmutableArray<Outputs.HttpMonitorScriptRequestValidationRule> Rules;
 
         [OutputConstructor]

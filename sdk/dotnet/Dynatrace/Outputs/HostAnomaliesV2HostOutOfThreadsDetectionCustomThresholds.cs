@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds EventThresholds;
+        /// <summary>
+        /// Alert if the number of Java out-of-threads exceptions is at least this value
+        /// </summary>
         public readonly int OutOfThreadsExceptionsNumber;
 
         [OutputConstructor]

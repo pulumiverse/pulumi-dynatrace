@@ -14,10 +14,26 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEventsEventNavigateValidateValidation
     {
+        /// <summary>
+        /// The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+        /// </summary>
         public readonly bool? FailIfFound;
+        /// <summary>
+        /// The content to look for on the page.
+        /// Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `content_match`, optional for `element_match`.
+        /// </summary>
         public readonly string? Match;
+        /// <summary>
+        /// Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+        /// </summary>
         public readonly bool? Regex;
+        /// <summary>
+        /// The elemnt to look for on the page
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventNavigateValidateValidationTarget? Target;
+        /// <summary>
+        /// The goal of the validation. `content_match` (check page for the specific content. Not allowed for validation inside of wait condition), `element_match` (check page for the specific element).
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

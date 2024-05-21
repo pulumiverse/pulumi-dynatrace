@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledExceptionGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The pattern will match if it is contained within the actual class name.
+        /// </summary>
         [Input("classPattern")]
         public Input<string>? ClassPattern { get; set; }
 
+        /// <summary>
+        /// Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+        /// </summary>
         [Input("messagePattern")]
         public Input<string>? MessagePattern { get; set; }
 

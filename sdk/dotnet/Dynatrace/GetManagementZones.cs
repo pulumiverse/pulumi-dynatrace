@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     {
         public static Task<GetManagementZonesResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementZonesResult>("dynatrace:index/getManagementZones:getManagementZones", InvokeArgs.Empty, options.WithDefaults());
+
+        public static Output<GetManagementZonesResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementZonesResult>("dynatrace:index/getManagementZones:getManagementZones", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

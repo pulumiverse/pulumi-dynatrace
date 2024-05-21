@@ -61,12 +61,29 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("correlationHeaderInclusionRegex")]
         public Input<string>? CorrelationHeaderInclusionRegex { get; set; }
 
+        /// <summary>
+        /// The location to send monitoring data from the JavaScript tag.
+        /// 
+        ///  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS. 
+        /// 
+        ///  **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
+        /// </summary>
         [Input("customConfigurationProperties")]
         public Input<string>? CustomConfigurationProperties { get; set; }
 
+        /// <summary>
+        /// You can exclude some actions from becoming XHR actions.
+        /// 
+        /// Put a regular expression, matching all the required URLs, here.
+        /// 
+        /// If noting specified the feature is disabled
+        /// </summary>
         [Input("excludeXhrRegex")]
         public Input<string>? ExcludeXhrRegex { get; set; }
 
+        /// <summary>
+        /// `fetch()` request capture enabled/disabled
+        /// </summary>
         [Input("fetchRequests")]
         public Input<bool>? FetchRequests { get; set; }
 
@@ -76,30 +93,65 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("injectionMode", required: true)]
         public Input<string> InjectionMode { get; set; } = null!;
 
+        /// <summary>
+        /// Settings for restricting certain ip addresses and for introducing subnet mask. It also restricts the mode
+        /// </summary>
         [Input("ipAddressRestrictionSettings")]
         public Input<Inputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettingsArgs>? IpAddressRestrictionSettings { get; set; }
 
+        /// <summary>
+        /// Support of various JavaScript frameworks
+        /// </summary>
         [Input("javascriptFrameworkSupport")]
         public Input<Inputs.WebApplicationMonitoringSettingsJavascriptFrameworkSupportArgs>? JavascriptFrameworkSupport { get; set; }
 
+        /// <summary>
+        /// Java script injection rules
+        /// </summary>
         [Input("javascriptInjectionRules")]
         public Input<Inputs.WebApplicationMonitoringSettingsJavascriptInjectionRulesArgs>? JavascriptInjectionRules { get; set; }
 
+        /// <summary>
+        /// The location of your application’s custom JavaScript library file. 
+        /// 
+        ///  If nothing specified the root directory of your web server is used. 
+        /// 
+        ///  **Required** for auto-injected applications, not supported by agentless applications. Maximum 512 characters.
+        /// </summary>
         [Input("libraryFileLocation")]
         public Input<string>? LibraryFileLocation { get; set; }
 
+        /// <summary>
+        /// The location to send monitoring data from the JavaScript tag.
+        /// 
+        ///  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS. 
+        /// 
+        ///  **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
+        /// </summary>
         [Input("monitoringDataPath")]
         public Input<string>? MonitoringDataPath { get; set; }
 
+        /// <summary>
+        /// Time duration for the cache settings
+        /// </summary>
         [Input("scriptTagCacheDurationInHours")]
         public Input<int>? ScriptTagCacheDurationInHours { get; set; }
 
+        /// <summary>
+        /// Secure attribute usage for Dynatrace cookies enabled/disabled
+        /// </summary>
         [Input("secureCookieAttribute")]
         public Input<bool>? SecureCookieAttribute { get; set; }
 
+        /// <summary>
+        /// Path to identify the server’s request ID. Maximum 150 characters.
+        /// </summary>
         [Input("serverRequestPathId")]
         public Input<string>? ServerRequestPathId { get; set; }
 
+        /// <summary>
+        /// `XmlHttpRequest` support enabled/disabled
+        /// </summary>
         [Input("xmlHttpRequest")]
         public Input<bool>? XmlHttpRequest { get; set; }
 

@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type LogSensitiveDataMasking struct {
@@ -39,7 +40,7 @@ func NewLogSensitiveDataMasking(ctx *pulumi.Context,
 	if args.Masking == nil {
 		return nil, errors.New("invalid value for required argument 'Masking'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LogSensitiveDataMasking
 	err := ctx.RegisterResource("dynatrace:index/logSensitiveDataMasking:LogSensitiveDataMasking", name, args, &resource, opts...)
 	if err != nil {

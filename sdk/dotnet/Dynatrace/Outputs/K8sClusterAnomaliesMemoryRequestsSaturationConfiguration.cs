@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class K8sClusterAnomaliesMemoryRequestsSaturationConfiguration
     {
+        /// <summary>
+        /// within the last
+        /// </summary>
         public readonly int ObservationPeriodInMinutes;
+        /// <summary>
+        /// of cluster memory capacity for at least
+        /// </summary>
         public readonly int SamplePeriodInMinutes;
+        /// <summary>
+        /// amount of requested memory is above
+        /// </summary>
         public readonly int Threshold;
 
         [OutputConstructor]

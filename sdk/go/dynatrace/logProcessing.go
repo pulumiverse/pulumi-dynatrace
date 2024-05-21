@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type LogProcessing struct {
@@ -49,7 +50,7 @@ func NewLogProcessing(ctx *pulumi.Context,
 	if args.RuleTesting == nil {
 		return nil, errors.New("invalid value for required argument 'RuleTesting'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LogProcessing
 	err := ctx.RegisterResource("dynatrace:index/logProcessing:LogProcessing", name, args, &resource, opts...)
 	if err != nil {

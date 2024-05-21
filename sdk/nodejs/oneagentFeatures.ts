@@ -32,9 +32,6 @@ export class OneagentFeatures extends pulumi.CustomResource {
         return obj['__pulumiType'] === OneagentFeatures.__pulumiType;
     }
 
-    /**
-     * Used internally by the terraform provider. Do not populate
-     */
     public /*out*/ readonly _restore_!: pulumi.Output<string>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)
@@ -100,9 +97,6 @@ export class OneagentFeatures extends pulumi.CustomResource {
  * Input properties used for looking up and filtering OneagentFeatures resources.
  */
 export interface OneagentFeaturesState {
-    /**
-     * Used internally by the terraform provider. Do not populate
-     */
     _restore_?: pulumi.Input<string>;
     /**
      * This setting is enabled (`true`) or disabled (`false`)

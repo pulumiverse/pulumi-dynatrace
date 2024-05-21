@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CustomTagsTagsFilterArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+        /// </summary>
         [Input("context", required: true)]
         public Input<string> Context { get; set; } = null!;
 
+        /// <summary>
+        /// The key of the tag. Custom tags have the tag value here
+        /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 
+        /// <summary>
+        /// The value of the tag. Not applicable to custom tags
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

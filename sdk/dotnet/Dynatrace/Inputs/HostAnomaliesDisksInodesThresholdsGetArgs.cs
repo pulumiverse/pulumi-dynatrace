@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesDisksInodesThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if percentage of available inodes is lower than *X*% in 3 out of 5 samples
+        /// </summary>
         [Input("percentage", required: true)]
         public Input<int> Percentage { get; set; } = null!;
 

@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class KubernetesEventPatternsEventPatternArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Activate
+        /// </summary>
         [Input("active", required: true)]
         public Input<bool> Active { get; set; } = null!;
 
+        /// <summary>
+        /// Field selector name
+        /// </summary>
         [Input("label", required: true)]
         public Input<string> Label { get; set; } = null!;
 
+        /// <summary>
+        /// The set of allowed characters for this field has been extended with ActiveGate version 1.259. For more details, see the [documentation](https://dt-url.net/7h23wuk#set-up-event-field-selectors).
+        /// </summary>
         [Input("pattern", required: true)]
         public Input<string> Pattern { get; set; } = null!;
 

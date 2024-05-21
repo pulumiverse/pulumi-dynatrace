@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The process group data source allows the process group ID to be retrieved by its name and optionally tags / tag-value pairs.
@@ -60,7 +61,7 @@ import (
 //
 // ```
 func GetProcessGroup(ctx *pulumi.Context, args *GetProcessGroupArgs, opts ...pulumi.InvokeOption) (*GetProcessGroupResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProcessGroupResult
 	err := ctx.Invoke("dynatrace:index/getProcessGroup:getProcessGroup", args, &rv, opts...)
 	if err != nil {

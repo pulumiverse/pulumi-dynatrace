@@ -13,25 +13,58 @@ export interface AlertingFilters {
 }
 
 export interface AlertingFiltersFilter {
+    /**
+     * Configuration of a custom event filter. Filters custom events by title or description. If both specified, the AND logic applies
+     */
     custom?: outputs.AlertingFiltersFilterCustom;
+    /**
+     * Configuration of a custom event filter. Filters custom events by title or description. If both specified, the AND logic applies
+     */
     predefined?: outputs.AlertingFiltersFilterPredefined;
 }
 
 export interface AlertingFiltersFilterCustom {
+    /**
+     * Configuration of a matching filter
+     */
     description?: outputs.AlertingFiltersFilterCustomDescription;
+    /**
+     * Configuration of a matching filter
+     */
     metadata?: outputs.AlertingFiltersFilterCustomMetadata;
+    /**
+     * Configuration of a matching filter
+     */
     title?: outputs.AlertingFiltersFilterCustomTitle;
 }
 
 export interface AlertingFiltersFilterCustomDescription {
+    /**
+     * The condition is case sensitive (`false`) or case insensitive (`true`).   If not set, then `false` is used, making the condition case sensitive
+     */
     caseSensitive?: boolean;
+    /**
+     * The filter is enabled (`true`) or disabled (`false`)
+     */
     enabled?: boolean;
+    /**
+     * Reverses the comparison **operator**. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+     */
     operator: string;
+    /**
+     * The value to compare to
+     */
     value: string;
 }
 
 export interface AlertingFiltersFilterCustomMetadata {
+    /**
+     * Define filters for event properties. A maximum of 20 properties is allowed.
+     */
     items: outputs.AlertingFiltersFilterCustomMetadataItems;
 }
 
@@ -40,20 +73,47 @@ export interface AlertingFiltersFilterCustomMetadataItems {
 }
 
 export interface AlertingFiltersFilterCustomMetadataItemsFilter {
+    /**
+     * Type 'dt.' for key hints.
+     */
     key: string;
+    /**
+     * Value
+     */
     value: string;
 }
 
 export interface AlertingFiltersFilterCustomTitle {
+    /**
+     * The condition is case sensitive (`false`) or case insensitive (`true`).   If not set, then `false` is used, making the condition case sensitive
+     */
     caseSensitive?: boolean;
+    /**
+     * The filter is enabled (`true`) or disabled (`false`)
+     */
     enabled?: boolean;
+    /**
+     * Reverses the comparison **operator**. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+     */
     operator: string;
+    /**
+     * The value to compare to
+     */
     value: string;
 }
 
 export interface AlertingFiltersFilterPredefined {
+    /**
+     * The alert triggers when the problem of specified severity arises while the specified event **is** happening (`false`) or while the specified event is **not** happening (`true`).   For example, if you chose the Slowdown (`PERFORMANCE`) severity and Unexpected high traffic (`APPLICATION_UNEXPECTED_HIGH_LOAD`) event with **negate** set to `true`, the alerting profile will trigger only when the slowdown problem is raised while there is no unexpected high traffic event.  Consider the following use case as an example. The Slowdown (`PERFORMANCE`) severity rule is set. Depending on the configuration of the event filter (Unexpected high traffic (`APPLICATION_UNEXPECTED_HIGH_LOAD`) event is used as an example), the options of the alerting profile is one of the following:* **negate** is set to `false`: The alert triggers when the slowdown problem is raised while unexpected high traffic event is happening.  * **negate** is set to `true`: The alert triggers when the slowdown problem is raised while there is no unexpected high traffic event.  * no event rule is set: The alert triggers when the slowdown problem is raised, regardless of any events
+     */
     negate?: boolean;
+    /**
+     * The type of the predefined event. Possible values are `APPLICATION_ERROR_RATE_INCREASED`, `APPLICATION_SLOWDOWN`, `APPLICATION_UNEXPECTED_HIGH_LOAD`, `APPLICATION_UNEXPECTED_LOW_LOAD`, `AWS_LAMBDA_HIGH_ERROR_RATE`, `CUSTOM_APPLICATION_ERROR_RATE_INCREASED`, `CUSTOM_APPLICATION_SLOWDOWN`, `CUSTOM_APPLICATION_UNEXPECTED_HIGH_LOAD`, `CUSTOM_APPLICATION_UNEXPECTED_LOW_LOAD`, `CUSTOM_APP_CRASH_RATE_INCREASED`, `DATABASE_CONNECTION_FAILURE`, `DATA_CENTER_SERVICE_PERFORMANCE_DEGRADATION`, `DATA_CENTER_SERVICE_UNAVAILABLE`, `EBS_VOLUME_HIGH_LATENCY`, `EC2_HIGH_CPU`, `ELB_HIGH_BACKEND_ERROR_RATE`, `ENTERPRICE_APPLICATION_PERFORMANCE_DEGRADATION`, `ENTERPRISE_APPLICATION_UNAVAILABLE`, `ESXI_GUEST_ACTIVE_SWAP_WAIT`, `ESXI_GUEST_CPU_LIMIT_REACHED`, `ESXI_HOST_CPU_SATURATION`, `ESXI_HOST_DATASTORE_LOW_DISK_SPACE`, `ESXI_HOST_DISK_QUEUE_SLOW`, `ESXI_HOST_DISK_SLOW`, `ESXI_HOST_MEMORY_SATURATION`, `ESXI_HOST_NETWORK_PROBLEMS`, `ESXI_HOST_OVERLOADED_STORAGE`, `ESXI_VM_IMPACT_HOST_CPU_SATURATION`, `ESXI_VM_IMPACT_HOST_MEMORY_SATURATION`, `EXTERNAL_SYNTHETIC_TEST_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_SLOWDOWN`, `HOST_OF_SERVICE_UNAVAILABLE`, `HTTP_CHECK_GLOBAL_OUTAGE`, `HTTP_CHECK_LOCAL_OUTAGE`, `HTTP_CHECK_TEST_LOCATION_SLOWDOWN`, `MOBILE_APPLICATION_ERROR_RATE_INCREASED`, `MOBILE_APPLICATION_SLOWDOWN`, `MOBILE_APPLICATION_UNEXPECTED_HIGH_LOAD`, `MOBILE_APPLICATION_UNEXPECTED_LOW_LOAD`, `MOBILE_APP_CRASH_RATE_INCREASED`, `MONITORING_UNAVAILABLE`, `OSI_DISK_LOW_INODES`, `OSI_GRACEFULLY_SHUTDOWN`, `OSI_HIGH_CPU`, `OSI_HIGH_MEMORY`, `OSI_LOW_DISK_SPACE`, `OSI_NIC_DROPPED_PACKETS_HIGH`, `OSI_NIC_ERRORS_HIGH`, `OSI_NIC_UTILIZATION_HIGH`, `OSI_SLOW_DISK`, `OSI_UNEXPECTEDLY_UNAVAILABLE`, `PGI_OF_SERVICE_UNAVAILABLE`, `PGI_UNAVAILABLE`, `PG_LOW_INSTANCE_COUNT`, `PROCESS_CRASHED`, `PROCESS_HIGH_GC_ACTIVITY`, `PROCESS_MEMORY_RESOURCE_EXHAUSTED`, `PROCESS_NA_HIGH_CONN_FAIL_RATE`, `PROCESS_NA_HIGH_LOSS_RATE`, `PROCESS_THREADS_RESOURCE_EXHAUSTED`, `RDS_HIGH_CPU`, `RDS_HIGH_LATENCY`, `RDS_LOW_MEMORY`, `RDS_LOW_STORAGE_SPACE`, `RDS_OF_SERVICE_UNAVAILABLE`, `RDS_RESTART_SEQUENCE`, `SERVICE_ERROR_RATE_INCREASED`, `SERVICE_SLOWDOWN`, `SERVICE_UNEXPECTED_HIGH_LOAD`, `SERVICE_UNEXPECTED_LOW_LOAD`, `SYNTHETIC_GLOBAL_OUTAGE`, `SYNTHETIC_LOCAL_OUTAGE`, `SYNTHETIC_NODE_OUTAGE`, `SYNTHETIC_PRIVATE_LOCATION_OUTAGE` and `SYNTHETIC_TEST_LOCATION_SLOWDOWN`
+     */
     type: string;
 }
 
@@ -73,7 +133,13 @@ export interface AlertingProfileEventTypeFilter {
 }
 
 export interface AlertingProfileEventTypeFilterCustomEventFilter {
+    /**
+     * Configuration of a matching filter
+     */
     customDescriptionFilters?: outputs.AlertingProfileEventTypeFilterCustomEventFilterCustomDescriptionFilter[];
+    /**
+     * Configuration of a matching filter
+     */
     customTitleFilters?: outputs.AlertingProfileEventTypeFilterCustomEventFilterCustomTitleFilter[];
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -82,31 +148,67 @@ export interface AlertingProfileEventTypeFilterCustomEventFilter {
 }
 
 export interface AlertingProfileEventTypeFilterCustomEventFilterCustomDescriptionFilter {
+    /**
+     * The condition is case sensitive (`false`) or case insensitive (`true`).   If not set, then `false` is used, making the condition case sensitive
+     */
     caseInsensitive?: boolean;
+    /**
+     * The filter is enabled (`true`) or disabled (`false`)
+     */
     enabled?: boolean;
+    /**
+     * Reverses the comparison **operator**. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+     */
     operator: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value: string;
 }
 
 export interface AlertingProfileEventTypeFilterCustomEventFilterCustomTitleFilter {
+    /**
+     * The condition is case sensitive (`false`) or case insensitive (`true`).   If not set, then `false` is used, making the condition case sensitive
+     */
     caseInsensitive?: boolean;
+    /**
+     * The filter is enabled (`true`) or disabled (`false`)
+     */
     enabled?: boolean;
+    /**
+     * Reverses the comparison **operator**. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+     */
     operator: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value: string;
 }
 
 export interface AlertingProfileEventTypeFilterPredefinedEventFilter {
+    /**
+     * The type of the predefined event. Possible values are `APPLICATION_ERROR_RATE_INCREASED`, `APPLICATION_SLOWDOWN`, `APPLICATION_UNEXPECTED_HIGH_LOAD`, `APPLICATION_UNEXPECTED_LOW_LOAD`, `AWS_LAMBDA_HIGH_ERROR_RATE`, `CUSTOM_APPLICATION_ERROR_RATE_INCREASED`, `CUSTOM_APPLICATION_SLOWDOWN`, `CUSTOM_APPLICATION_UNEXPECTED_HIGH_LOAD`, `CUSTOM_APPLICATION_UNEXPECTED_LOW_LOAD`, `CUSTOM_APP_CRASH_RATE_INCREASED`, `DATABASE_CONNECTION_FAILURE`, `DATA_CENTER_SERVICE_PERFORMANCE_DEGRADATION`, `DATA_CENTER_SERVICE_UNAVAILABLE`, `EBS_VOLUME_HIGH_LATENCY`, `EC2_HIGH_CPU`, `ELB_HIGH_BACKEND_ERROR_RATE`, `ENTERPRICE_APPLICATION_PERFORMANCE_DEGRADATION`, `ENTERPRISE_APPLICATION_UNAVAILABLE`, `ESXI_GUEST_ACTIVE_SWAP_WAIT`, `ESXI_GUEST_CPU_LIMIT_REACHED`, `ESXI_HOST_CPU_SATURATION`, `ESXI_HOST_DATASTORE_LOW_DISK_SPACE`, `ESXI_HOST_DISK_QUEUE_SLOW`, `ESXI_HOST_DISK_SLOW`, `ESXI_HOST_MEMORY_SATURATION`, `ESXI_HOST_NETWORK_PROBLEMS`, `ESXI_HOST_OVERLOADED_STORAGE`, `ESXI_VM_IMPACT_HOST_CPU_SATURATION`, `ESXI_VM_IMPACT_HOST_MEMORY_SATURATION`, `EXTERNAL_SYNTHETIC_TEST_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_SLOWDOWN`, `HOST_OF_SERVICE_UNAVAILABLE`, `HTTP_CHECK_GLOBAL_OUTAGE`, `HTTP_CHECK_LOCAL_OUTAGE`, `HTTP_CHECK_TEST_LOCATION_SLOWDOWN`, `MOBILE_APPLICATION_ERROR_RATE_INCREASED`, `MOBILE_APPLICATION_SLOWDOWN`, `MOBILE_APPLICATION_UNEXPECTED_HIGH_LOAD`, `MOBILE_APPLICATION_UNEXPECTED_LOW_LOAD`, `MOBILE_APP_CRASH_RATE_INCREASED`, `MONITORING_UNAVAILABLE`, `OSI_DISK_LOW_INODES`, `OSI_GRACEFULLY_SHUTDOWN`, `OSI_HIGH_CPU`, `OSI_HIGH_MEMORY`, `OSI_LOW_DISK_SPACE`, `OSI_NIC_DROPPED_PACKETS_HIGH`, `OSI_NIC_ERRORS_HIGH`, `OSI_NIC_UTILIZATION_HIGH`, `OSI_SLOW_DISK`, `OSI_UNEXPECTEDLY_UNAVAILABLE`, `PGI_OF_SERVICE_UNAVAILABLE`, `PGI_UNAVAILABLE`, `PG_LOW_INSTANCE_COUNT`, `PROCESS_CRASHED`, `PROCESS_HIGH_GC_ACTIVITY`, `PROCESS_MEMORY_RESOURCE_EXHAUSTED`, `PROCESS_NA_HIGH_CONN_FAIL_RATE`, `PROCESS_NA_HIGH_LOSS_RATE`, `PROCESS_THREADS_RESOURCE_EXHAUSTED`, `RDS_HIGH_CPU`, `RDS_HIGH_LATENCY`, `RDS_LOW_MEMORY`, `RDS_LOW_STORAGE_SPACE`, `RDS_OF_SERVICE_UNAVAILABLE`, `RDS_RESTART_SEQUENCE`, `SERVICE_ERROR_RATE_INCREASED`, `SERVICE_SLOWDOWN`, `SERVICE_UNEXPECTED_HIGH_LOAD`, `SERVICE_UNEXPECTED_LOW_LOAD`, `SYNTHETIC_GLOBAL_OUTAGE`, `SYNTHETIC_LOCAL_OUTAGE`, `SYNTHETIC_NODE_OUTAGE`, `SYNTHETIC_PRIVATE_LOCATION_OUTAGE` and `SYNTHETIC_TEST_LOCATION_SLOWDOWN`
+     */
     eventType: string;
+    /**
+     * The alert triggers when the problem of specified severity arises while the specified event **is** happening (`false`) or while the specified event is **not** happening (`true`).   For example, if you chose the Slowdown (`PERFORMANCE`) severity and Unexpected high traffic (`APPLICATION_UNEXPECTED_HIGH_LOAD`) event with **negate** set to `true`, the alerting profile will trigger only when the slowdown problem is raised while there is no unexpected high traffic event.  Consider the following use case as an example. The Slowdown (`PERFORMANCE`) severity rule is set. Depending on the configuration of the event filter (Unexpected high traffic (`APPLICATION_UNEXPECTED_HIGH_LOAD`) event is used as an example), the behavior of the alerting profile is one of the following:* **negate** is set to `false`: The alert triggers when the slowdown problem is raised while unexpected high traffic event is happening.  * **negate** is set to `true`: The alert triggers when the slowdown problem is raised while there is no unexpected high traffic event.  * no event rule is set: The alert triggers when the slowdown problem is raised, regardless of any events
+     */
     negate?: boolean;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -149,7 +251,13 @@ export interface AlertingProfileRule {
 }
 
 export interface AlertingProfileRuleTagFilter {
+    /**
+     * The filtering mode:  * `INCLUDE_ANY`: The rule applies to monitored entities that have at least one of the specified tags. You can specify up to 100 tags.  * `INCLUDE_ALL`: The rule applies to monitored entities that have **all** of the specified tags. You can specify up to 10 tags.  * `NONE`: The rule applies to all monitored entities
+     */
     includeMode: string;
+    /**
+     * A list of required tags
+     */
     tagFilters?: outputs.AlertingProfileRuleTagFilterTagFilter[];
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -158,8 +266,17 @@ export interface AlertingProfileRuleTagFilter {
 }
 
 export interface AlertingProfileRuleTagFilterTagFilter {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
@@ -171,9 +288,21 @@ export interface AlertingRules {
 }
 
 export interface AlertingRulesRule {
+    /**
+     * Send a notification if a problem remains open longer than *X* minutes
+     */
     delayInMinutes: number;
+    /**
+     * The filtering mode:  * `INCLUDE_ANY`: The rule applies to monitored entities that have at least one of the specified tags. You can specify up to 100 tags.  * `INCLUDE_ALL`: The rule applies to monitored entities that have **all** of the specified tags. You can specify up to 10 tags.  * `NONE`: The rule applies to all monitored entities
+     */
     includeMode: string;
+    /**
+     * The severity level to trigger the alert. Possible values are `AVAILABILITY`,	`CUSTOM_ALERT`,	`ERRORS`,`MONITORING_UNAVAILABLE`,`PERFORMANCE` and `RESOURCE_CONTENTION`.
+     */
     severityLevel: string;
+    /**
+     * A set of tags you want to filter by. You can also specify a tag value alongside the tag name using the syntax `name:value`.
+     */
     tags?: string[];
 }
 
@@ -182,8 +311,17 @@ export interface ApiDetectionConditions {
 }
 
 export interface ApiDetectionConditionsCondition {
+    /**
+     * Possible Values: `FILE_NAME`, `FQCN`, `PACKAGE`
+     */
     base: string;
+    /**
+     * Possible Values: `BEGINS_WITH`, `CONTAINS`
+     */
     matcher: string;
+    /**
+     * no documentation available
+     */
     pattern: string;
 }
 
@@ -199,14 +337,32 @@ export interface ApplicationAnomaliesFailureRate {
 }
 
 export interface ApplicationAnomaliesFailureRateAuto {
+    /**
+     * Absolute increase of failing service calls to trigger an alert, %
+     */
     absolute: number;
+    /**
+     * Relative increase of failing service calls to trigger an alert, %
+     */
     relative: number;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface ApplicationAnomaliesFailureRateThresholds {
+    /**
+     * Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers alert
+     */
     sensitivity: string;
+    /**
+     * Failure rate during any 5-minute period to trigger an alert, %
+     */
     threshold: number;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
@@ -222,19 +378,52 @@ export interface ApplicationAnomaliesResponseTime {
 }
 
 export interface ApplicationAnomaliesResponseTimeAuto {
+    /**
+     * Minimal service load to detect response time degradation. Response time degradation of services with smaller load won't trigger alerts. Possible values are `FIFTEEN_REQUESTS_PER_MINUTE`, `FIVE_REQUESTS_PER_MINUTE`, `ONE_REQUEST_PER_MINUTE` and `TEN_REQUESTS_PER_MINUTE`
+     */
     load: string;
+    /**
+     * Alert if the response time degrades by more than *X* milliseconds
+     */
     milliseconds: number;
+    /**
+     * Alert if the response time degrades by more than *X* %
+     */
     percent: number;
+    /**
+     * Alert if the response time of the slowest 10% degrades by more than *X* milliseconds
+     */
     slowestMilliseconds: number;
+    /**
+     * Alert if the response time of the slowest 10% degrades by more than *X* milliseconds
+     */
     slowestPercent: number;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface ApplicationAnomaliesResponseTimeThresholds {
+    /**
+     * Minimal service load to detect response time degradation. Response time degradation of services with smaller load won't trigger alerts. Possible values are `FIFTEEN_REQUESTS_PER_MINUTE`, `FIVE_REQUESTS_PER_MINUTE`, `ONE_REQUEST_PER_MINUTE` and `TEN_REQUESTS_PER_MINUTE`
+     */
     load: string;
+    /**
+     * Response time during any 5-minute period to trigger an alert, in milliseconds
+     */
     milliseconds: number;
+    /**
+     * Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers an alert
+     */
     sensitivity: string;
+    /**
+     * Response time of the 10% slowest during any 5-minute period to trigger an alert, in milliseconds
+     */
     slowestMilliseconds: number;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
@@ -250,12 +439,24 @@ export interface ApplicationAnomaliesTraffic {
 }
 
 export interface ApplicationAnomaliesTrafficDrops {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * Alert if the observed traffic is less than *X* % of the expected value
+     */
     percent?: number;
 }
 
 export interface ApplicationAnomaliesTrafficSpikes {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * Alert if the observed traffic is less than *X* % of the expected value
+     */
     percent?: number;
 }
 
@@ -264,42 +465,90 @@ export interface ApplicationDataPrivacySessionReplayDataPrivacy {
      * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Content masking settings for Session Replay.
      */
     contentMaskingSettings: outputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettings;
+    /**
+     * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) If `true`, session recording is disabled until JavaScriptAPI `dtrum.enableSessionReplay()` is called
+     */
     optIn?: boolean;
+    /**
+     * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) A list of URLs to be excluded from recording
+     */
     urlExclusionRules?: string[];
 }
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettings {
+    /**
+     * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Configuration of the Session Replay masking during Playback
+     */
     playback: outputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlayback;
+    /**
+     * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Configuration of the Session Replay masking during Recording
+     */
     recording: outputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecording;
 }
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlayback {
+    /**
+     * The type of the masking:
+     */
     preset: string;
+    /**
+     * A list of masking rules
+     */
     rules?: outputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlaybackRules;
 }
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlaybackRules {
+    /**
+     * The masking rule defining how data is hidden
+     */
     rules: outputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlaybackRulesRule[];
 }
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlaybackRulesRule {
+    /**
+     * The selector for the element or the attribute to be masked.
+     */
     selector: string;
+    /**
+     * The type of the masking rule
+     */
     type: string;
+    /**
+     * Interactions with the element are (`true`) or are not (`false) masked
+     */
     userInteractionHidden?: boolean;
 }
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecording {
+    /**
+     * The type of the masking:
+     */
     preset: string;
+    /**
+     * A list of masking rules
+     */
     rules?: outputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecordingRules;
 }
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecordingRules {
+    /**
+     * The masking rule defining how data is hidden
+     */
     rules: outputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecordingRulesRule[];
 }
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecordingRulesRule {
+    /**
+     * The selector for the element or the attribute to be masked.
+     */
     selector: string;
+    /**
+     * The type of the masking rule
+     */
     type: string;
+    /**
+     * Interactions with the element are (`true`) or are not (`false) masked
+     */
     userInteractionHidden?: boolean;
 }
 
@@ -326,12 +575,33 @@ export interface ApplicationErrorRulesCustomErrors {
 }
 
 export interface ApplicationErrorRulesCustomErrorsRule {
+    /**
+     * Capture (`true`) or ignore (`false`) the error
+     */
     capture?: boolean;
+    /**
+     * Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysis](https://dt-url.net/a963kd2)
+     */
     customAlerting?: boolean;
+    /**
+     * Include (`true`) or exclude (`false`) the error in Apdex calculation
+     */
     impactApdex?: boolean;
+    /**
+     * The matching operation for the **keyPattern**. Possible values are `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH` and `EQUALS`
+     */
     keyMatcher?: string;
+    /**
+     * The key of the error to look for
+     */
     keyPattern?: string;
+    /**
+     * The matching operation for the **valuePattern**. Possible values are `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH` and `EQUALS`.
+     */
     valueMatcher?: string;
+    /**
+     * The value of the error to look for
+     */
     valuePattern?: string;
 }
 
@@ -343,828 +613,2172 @@ export interface ApplicationErrorRulesHttpErrors {
 }
 
 export interface ApplicationErrorRulesHttpErrorsRule {
+    /**
+     * Capture (`true`) or ignore (`false`) the error
+     */
     capture?: boolean;
+    /**
+     * If `true`, match by errors that have CSP Rule violations
+     */
     considerBlockedRequests?: boolean;
+    /**
+     * Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysis](https://dt-url.net/a963kd2)
+     */
     considerForAi?: boolean;
+    /**
+     * If `true`, match by errors that have unknown HTTP status code
+     */
     considerUnknownErrorCode?: boolean;
+    /**
+     * The HTTP status code or status code range to match by.
+     */
     errorCodes?: string;
+    /**
+     * The matching rule for the URL. Popssible values are `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH` and `EQUALS`.
+     */
     filter?: string;
+    /**
+     * If `true`, filter errors by URL
+     */
     filterByUrl?: boolean;
+    /**
+     * Include (`true`) or exclude (`false`) the error in Apdex calculation
+     */
     impactApdex?: boolean;
+    /**
+     * The URL to look for
+     */
     url?: string;
 }
 
 export interface AutotagEntitySelectorBasedRule {
+    /**
+     * The rule is enabled (`true`) or disabled (`false`)
+     */
     enabled?: boolean;
+    /**
+     * Changes applied to the value after applying the value format. Possible values are `LEAVE_TEXT_AS_IS`, `TO_LOWER_CASE` and `TO_UPPER_CASE`. Default is `LEAVE_TEXT_AS_IS`
+     */
     normalization?: string;
+    /**
+     * The entity selector string, by which the entities are selected
+     */
     selector?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value of the entity-selector-based auto-tag. If specified, the tag is used in the `name:valueFormat` format. 
+     *
+     * For example, you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`
+     */
     valueFormat?: string;
 }
 
 export interface AutotagRule {
+    /**
+     * A list of matching rules for the management zone. The management zone applies only if **all** conditions are fulfilled
+     */
     conditions?: outputs.AutotagRuleCondition[];
+    /**
+     * The rule is enabled (`true`) or disabled (`false`)
+     */
     enabled?: boolean;
+    /**
+     * Changes applied to the value after applying the value format. Possible values are `LEAVE_TEXT_AS_IS`, `TO_LOWER_CASE` and `TO_UPPER_CASE`. Default is `LEAVE_TEXT_AS_IS`
+     */
     normalization?: string;
+    /**
+     * How to apply the management zone to underlying entities:
+     *    - `SERVICE_TO_HOST_LIKE`: Apply to underlying hosts of matching services
+     *    - `SERVICE_TO_PROCESS_GROUP_LIKE`: Apply to underlying process groups of matching services
+     *    - `PROCESS_GROUP_TO_HOST`: Apply to underlying hosts of matching process groups
+     *    - `PROCESS_GROUP_TO_SERVICE`: Apply to all services provided by matching process groups
+     *    - `HOST_TO_PROCESS_GROUP_INSTANCE`: Apply to processes running on matching hosts
+     *    - `CUSTOM_DEVICE_GROUP_TO_CUSTOM_DEVICE`: Apply to custom devices in matching custom device groups
+     *    - `AZURE_TO_PG`: Apply to process groups connected to matching Azure entities
+     *    - `AZURE_TO_SERVICE`: Apply to services provided by matching Azure entities
+     */
     propagationTypes?: string[];
+    /**
+     * The type of Dynatrace entities the management zone can be applied to
+     */
     type: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value of the auto-tag. If specified, the tag is used in the `name:valueFormat` format.  For example, you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.  You can use the following placeholders here:  * `{AwsAutoScalingGroup:Name}`  * `{AwsAvailabilityZone:Name}`  * `{AwsElasticLoadBalancer:Name}`  * `{AwsRelationalDatabaseService:DBName}`  * `{AwsRelationalDatabaseService:Endpoint}`  * `{AwsRelationalDatabaseService:Engine}`  * `{AwsRelationalDatabaseService:InstanceClass}`  * `{AwsRelationalDatabaseService:Name}`  * `{AwsRelationalDatabaseService:Port}`  * `{AzureRegion:Name}`  * `{AzureScaleSet:Name}`  * `{AzureVm:Name}`  * `{CloudFoundryOrganization:Name}`  * `{CustomDevice:DetectedName}`  * `{CustomDevice:DnsName}`  * `{CustomDevice:IpAddress}`  * `{CustomDevice:Port}`  * `{DockerContainerGroupInstance:ContainerName}`  * `{DockerContainerGroupInstance:FullImageName}`  * `{DockerContainerGroupInstance:ImageVersion}`  * `{DockerContainerGroupInstance:StrippedImageName}`  * `{ESXIHost:HardwareModel}`  * `{ESXIHost:HardwareVendor}`  * `{ESXIHost:Name}`  * `{ESXIHost:ProductName}`  * `{ESXIHost:ProductVersion}`  * `{Ec2Instance:AmiId}`  * `{Ec2Instance:BeanstalkEnvironmentName}`  * `{Ec2Instance:InstanceId}`  * `{Ec2Instance:InstanceType}`  * `{Ec2Instance:LocalHostName}`  * `{Ec2Instance:Name}`  * `{Ec2Instance:PublicHostName}`  * `{Ec2Instance:SecurityGroup}`  * `{GoogleComputeInstance:Id}`  * `{GoogleComputeInstance:IpAddresses}`  * `{GoogleComputeInstance:MachineType}`  * `{GoogleComputeInstance:Name}`  * `{GoogleComputeInstance:ProjectId}`  * `{GoogleComputeInstance:Project}`  * `{Host:AWSNameTag}`  * `{Host:AixLogicalCpuCount}`  * `{Host:AzureHostName}`  * `{Host:AzureSiteName}`  * `{Host:BoshDeploymentId}`  * `{Host:BoshInstanceId}`  * `{Host:BoshInstanceName}`  * `{Host:BoshName}`  * `{Host:BoshStemcellVersion}`  * `{Host:CpuCores}`  * `{Host:DetectedName}`  * `{Host:Environment:AppName}`  * `{Host:Environment:BoshReleaseVersion}`  * `{Host:Environment:Environment}`  * `{Host:Environment:Link}`  * `{Host:Environment:Organization}`  * `{Host:Environment:Owner}`  * `{Host:Environment:Support}`  * `{Host:IpAddress}`  * `{Host:LogicalCpuCores}`  * `{Host:OneAgentCustomHostName}`  * `{Host:OperatingSystemVersion}`  * `{Host:PaasMemoryLimit}`  * `{HostGroup:Name}`  * `{KubernetesCluster:Name}`  * `{KubernetesNode:DetectedName}`  * `{OpenstackAvailabilityZone:Name}`  * `{OpenstackZone:Name}`  * `{OpenstackComputeNode:Name}`  * `{OpenstackProject:Name}`  * `{OpenstackVm:UnstanceType}`  * `{OpenstackVm:Name}`  * `{OpenstackVm:SecurityGroup}`  * `{ProcessGroup:AmazonECRImageAccountId}`  * `{ProcessGroup:AmazonECRImageRegion}`  * `{ProcessGroup:AmazonECSCluster}`  * `{ProcessGroup:AmazonECSContainerName}`  * `{ProcessGroup:AmazonECSFamily}`  * `{ProcessGroup:AmazonECSRevision}`  * `{ProcessGroup:AmazonLambdaFunctionName}`  * `{ProcessGroup:AmazonRegion}`  * `{ProcessGroup:ApacheConfigPath}`  * `{ProcessGroup:ApacheSparkMasterIpAddress}`  * `{ProcessGroup:AspDotNetCoreApplicationPath}`  * `{ProcessGroup:AspDotNetCoreApplicationPath}`  * `{ProcessGroup:AzureHostName}`  * `{ProcessGroup:AzureSiteName}`  * `{ProcessGroup:CassandraClusterName}`  * `{ProcessGroup:CatalinaBase}`  * `{ProcessGroup:CatalinaHome}`  * `{ProcessGroup:CloudFoundryAppId}`  * `{ProcessGroup:CloudFoundryAppName}`  * `{ProcessGroup:CloudFoundryInstanceIndex}`  * `{ProcessGroup:CloudFoundrySpaceId}`  * `{ProcessGroup:CloudFoundrySpaceName}`  * `{ProcessGroup:ColdFusionJvmConfigFile}`  * `{ProcessGroup:ColdFusionServiceName}`  * `{ProcessGroup:CommandLineArgs}`  * `{ProcessGroup:DetectedName}`  * `{ProcessGroup:DotNetCommandPath}`  * `{ProcessGroup:DotNetCommand}`  * `{ProcessGroup:DotNetClusterId}`  * `{ProcessGroup:DotNetNodeId}`  * `{ProcessGroup:ElasticsearchClusterName}`  * `{ProcessGroup:ElasticsearchNodeName}`  * `{ProcessGroup:EquinoxConfigPath}`  * `{ProcessGroup:ExeName}`  * `{ProcessGroup:ExePath}`  * `{ProcessGroup:GlassFishDomainName}`  * `{ProcessGroup:GlassFishInstanceName}`  * `{ProcessGroup:GoogleAppEngineInstance}`  * `{ProcessGroup:GoogleAppEngineService}`  * `{ProcessGroup:GoogleCloudProject}`  * `{ProcessGroup:HybrisBinDirectory}`  * `{ProcessGroup:HybrisConfigDirectory}`  * `{ProcessGroup:HybrisConfigDirectory}`  * `{ProcessGroup:HybrisDataDirectory}`  * `{ProcessGroup:IBMCicsRegion}`  * `{ProcessGroup:IBMCtgName}`  * `{ProcessGroup:IBMImsConnectRegion}`  * `{ProcessGroup:IBMImsControlRegion}`  * `{ProcessGroup:IBMImsMessageProcessingRegion}`  * `{ProcessGroup:IBMImsSoapGwName}`  * `{ProcessGroup:IBMIntegrationNodeName}`  * `{ProcessGroup:IBMIntegrationServerName}`  * `{ProcessGroup:IISAppPool}`  * `{ProcessGroup:IISRoleName}`  * `{ProcessGroup:JbossHome}`  * `{ProcessGroup:JbossMode}`  * `{ProcessGroup:JbossServerName}`  * `{ProcessGroup:JavaJarFile}`  * `{ProcessGroup:JavaJarPath}`  * `{ProcessGroup:JavaMainCLass}`  * `{ProcessGroup:KubernetesBasePodName}`  * `{ProcessGroup:KubernetesContainerName}`  * `{ProcessGroup:KubernetesFullPodName}`  * `{ProcessGroup:KubernetesNamespace}`  * `{ProcessGroup:KubernetesPodUid}`  * `{ProcessGroup:MssqlInstanceName}`  * `{ProcessGroup:NodeJsAppBaseDirectory}`  * `{ProcessGroup:NodeJsAppName}`  * `{ProcessGroup:NodeJsScriptName}`  * `{ProcessGroup:OracleSid}`  * `{ProcessGroup:PHPScriptPath}`  * `{ProcessGroup:PHPWorkingDirectory}`  * `{ProcessGroup:Ports}`  * `{ProcessGroup:RubyAppRootPath}`  * `{ProcessGroup:RubyScriptPath}`  * `{ProcessGroup:SoftwareAGInstallRoot}`  * `{ProcessGroup:SoftwareAGProductPropertyName}`  * `{ProcessGroup:SpringBootAppName}`  * `{ProcessGroup:SpringBootProfileName}`  * `{ProcessGroup:SpringBootStartupClass}`  * `{ProcessGroup:TIBCOBusinessWorksAppNodeName}`  * `{ProcessGroup:TIBCOBusinessWorksAppSpaceName}`  * `{ProcessGroup:TIBCOBusinessWorksCeAppName}`  * `{ProcessGroup:TIBCOBusinessWorksCeVersion}`  * `{ProcessGroup:TIBCOBusinessWorksDomainName}`  * `{ProcessGroup:TIBCOBusinessWorksEnginePropertyFilePath}`  * `{ProcessGroup:TIBCOBusinessWorksEnginePropertyFile}`  * `{ProcessGroup:TIBCOBusinessWorksHome}`  * `{ProcessGroup:VarnishInstanceName}`  * `{ProcessGroup:WebLogicClusterName}`  * `{ProcessGroup:WebLogicDomainName}`  * `{ProcessGroup:WebLogicHome}`  * `{ProcessGroup:WebLogicName}`  * `{ProcessGroup:WebSphereCellName}`  * `{ProcessGroup:WebSphereClusterName}`  * `{ProcessGroup:WebSphereNodeName}`  * `{ProcessGroup:WebSphereServerName}`  * `{ProcessGroup:ActorSystem}`  * `{Service:STGServerName}`  * `{Service:DatabaseHostName}`  * `{Service:DatabaseName}`  * `{Service:DatabaseVendor}`  * `{Service:DetectedName}`  * `{Service:EndpointPath}`  * `{Service:EndpointPathGatewayUrl}`  * `{Service:IIBApplicationName}`  * `{Service:MessageListenerClassName}`  * `{Service:Port}`  * `{Service:PublicDomainName}`  * `{Service:RemoteEndpoint}`  * `{Service:RemoteName}`  * `{Service:WebApplicationId}`  * `{Service:WebContextRoot}`  * `{Service:WebServerName}`  * `{Service:WebServiceNamespace}`  * `{Service:WebServiceName}`  * `{VmwareDatacenter:Name}`  * `{VmwareVm:Name}`
+     */
     valueFormat?: string;
 }
 
 export interface AutotagRuleCondition {
     /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     applicationTypeComparisons?: outputs.AutotagRuleConditionApplicationTypeComparison[];
+    /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     */
     applicationTypes?: outputs.AutotagRuleConditionApplicationType[];
+    /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     */
     azureComputeModeComparisons?: outputs.AutotagRuleConditionAzureComputeModeComparison[];
     /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     *
      * @deprecated You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
      */
     azureComputeModes?: outputs.AutotagRuleConditionAzureComputeMode[];
     /**
+     * Comparison for `AZURE_SKU` attributes
+     *
      * @deprecated You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
      */
     azureSkuComparisions?: outputs.AutotagRuleConditionAzureSkuComparision[];
+    /**
+     * Comparison for `AZURE_SKU` attributes
+     */
     azureSkus?: outputs.AutotagRuleConditionAzureSkus[];
     /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     *
      * @deprecated You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
      */
     baseComparisonBasics?: outputs.AutotagRuleConditionBaseComparisonBasic[];
     /**
+     * Fallback for not yet known type
+     *
      * @deprecated 'base_condition_key' is deprecated. You should use 'key'
      */
     baseConditionKeys?: outputs.AutotagRuleConditionBaseConditionKey[];
     /**
+     * Comparison for `BITNESS` attributes
+     *
      * @deprecated You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
      */
     bitnessComparisions?: outputs.AutotagRuleConditionBitnessComparision[];
+    /**
+     * Comparison for `BITNESS` attributes
+     */
     bitnesses?: outputs.AutotagRuleConditionBitness[];
     /**
+     * Comparison for `CLOUD_TYPE` attributes
+     *
      * @deprecated You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
      */
     cloudTypeComparisons?: outputs.AutotagRuleConditionCloudTypeComparison[];
+    /**
+     * Comparison for `CLOUD_TYPE` attributes
+     */
     cloudTypes?: outputs.AutotagRuleConditionCloudType[];
+    /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     */
     comparisons?: outputs.AutotagRuleConditionComparison[];
     /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     customApplicationTypeComparisons?: outputs.AutotagRuleConditionCustomApplicationTypeComparison[];
+    /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     */
     customApplicationTypes?: outputs.AutotagRuleConditionCustomApplicationType[];
     /**
+     * Key for Custom Host Metadata
+     *
      * @deprecated 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
      */
     customHostMetadataConditionKeys?: outputs.AutotagRuleConditionCustomHostMetadataConditionKey[];
+    /**
+     * Key for Custom Host Metadata
+     */
     customHostMetadatas?: outputs.AutotagRuleConditionCustomHostMetadata[];
     /**
+     * Key for Custom Process Metadata
+     *
      * @deprecated 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
      */
     customProcessMetadataConditionKeys?: outputs.AutotagRuleConditionCustomProcessMetadataConditionKey[];
+    /**
+     * Key for Custom Process Metadata
+     */
     customProcessMetadatas?: outputs.AutotagRuleConditionCustomProcessMetadata[];
+    /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     */
     databaseTopologies?: outputs.AutotagRuleConditionDatabaseTopology[];
     /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     databaseTopologyComparisons?: outputs.AutotagRuleConditionDatabaseTopologyComparison[];
     /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     *
      * @deprecated You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
      */
     dcrumDecoderComparisons?: outputs.AutotagRuleConditionDcrumDecoderComparison[];
+    /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     */
     dcrumDecoders?: outputs.AutotagRuleConditionDcrumDecoder[];
+    /**
+     * Comparison for `ENTITY_ID` attributes
+     */
     entities?: outputs.AutotagRuleConditionEntity[];
     /**
+     * Comparison for `ENTITY_ID` attributes
+     *
      * @deprecated You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
      */
     entityIdComparisons?: outputs.AutotagRuleConditionEntityIdComparison[];
+    /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     */
     hostTeches?: outputs.AutotagRuleConditionHostTech[];
     /**
-     * @deprecated `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+     * `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
+     *
+     * @deprecated `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
      */
     hypervisorTypeComparisions?: outputs.AutotagRuleConditionHypervisorTypeComparision[];
+    /**
+     * Comparison for `HYPERVISOR_TYPE` attributes
+     */
     hypervisors?: outputs.AutotagRuleConditionHypervisor[];
     /**
+     * Comparison for `INDEXED_NAME` attributes
+     *
      * @deprecated You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedNameComparisons?: outputs.AutotagRuleConditionIndexedNameComparison[];
+    /**
+     * Comparison for `INDEXED_NAME` attributes
+     */
     indexedNames?: outputs.AutotagRuleConditionIndexedName[];
     /**
+     * Comparison for `INDEXED_STRING` attributes
+     *
      * @deprecated You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedStringComparisons?: outputs.AutotagRuleConditionIndexedStringComparison[];
+    /**
+     * Comparison for `INDEXED_STRING` attributes
+     */
     indexedStrings?: outputs.AutotagRuleConditionIndexedString[];
     /**
+     * Comparison for `INDEXED_TAG` attributes
+     *
      * @deprecated You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedTagComparisons?: outputs.AutotagRuleConditionIndexedTagComparison[];
+    /**
+     * Comparison for `INDEXED_TAG` attributes
+     */
     indexedTags?: outputs.AutotagRuleConditionIndexedTag[];
     /**
+     * Comparison for `INTEGER` attributes
+     *
      * @deprecated You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
      */
     integerComparisons?: outputs.AutotagRuleConditionIntegerComparison[];
+    /**
+     * Comparison for `INTEGER` attributes
+     */
     integers?: outputs.AutotagRuleConditionInteger[];
     /**
+     * Comparison for `IP_ADDRESS` attributes
+     *
      * @deprecated You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
      */
     ipaddressComparisons?: outputs.AutotagRuleConditionIpaddressComparison[];
+    /**
+     * Comparison for `IP_ADDRESS` attributes
+     */
     ipaddresses?: outputs.AutotagRuleConditionIpaddress[];
+    /**
+     * Fallback for not yet known type
+     */
     keys?: outputs.AutotagRuleConditionKey[];
     /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     *
      * @deprecated You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
      */
     mobilePlatformComparisons?: outputs.AutotagRuleConditionMobilePlatformComparison[];
+    /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     */
     mobilePlatforms?: outputs.AutotagRuleConditionMobilePlatform[];
+    /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     */
     osArches?: outputs.AutotagRuleConditionOsArch[];
+    /**
+     * Comparison for `OS_TYPE` attributes
+     */
     osTypes?: outputs.AutotagRuleConditionOsType[];
     /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     *
      * @deprecated You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
      */
     osarchitectureComparisons?: outputs.AutotagRuleConditionOsarchitectureComparison[];
     /**
+     * Comparison for `OS_TYPE` attributes
+     *
      * @deprecated You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
      */
     ostypeComparisons?: outputs.AutotagRuleConditionOstypeComparison[];
     /**
+     * Comparison for `PAAS_TYPE` attributes
+     *
      * @deprecated You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
      */
     paasTypeComparisons?: outputs.AutotagRuleConditionPaasTypeComparison[];
+    /**
+     * Comparison for `PAAS_TYPE` attributes
+     */
     paasTypes?: outputs.AutotagRuleConditionPaasType[];
     /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     *
      * @deprecated 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
      */
     processMetadataConditionKeys?: outputs.AutotagRuleConditionProcessMetadataConditionKey[];
+    /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     */
     processMetadatas?: outputs.AutotagRuleConditionProcessMetadata[];
+    /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     */
     serviceTopologies?: outputs.AutotagRuleConditionServiceTopology[];
     /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTopologyComparisons?: outputs.AutotagRuleConditionServiceTopologyComparison[];
     /**
+     * Comparison for `SERVICE_TYPE` attributes
+     *
      * @deprecated You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTypeComparisons?: outputs.AutotagRuleConditionServiceTypeComparison[];
+    /**
+     * Comparison for `SERVICE_TYPE` attributes
+     */
     serviceTypes?: outputs.AutotagRuleConditionServiceType[];
     /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     *
      * @deprecated You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleHostTechComparisons?: outputs.AutotagRuleConditionSimpleHostTechComparison[];
     /**
+     * Comparison for `SIMPLE_TECH` attributes
+     *
      * @deprecated You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleTechComparisons?: outputs.AutotagRuleConditionSimpleTechComparison[];
     /**
+     * Comparison for `STRING` attributes
+     *
      * @deprecated You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
      */
     stringComparisons?: outputs.AutotagRuleConditionStringComparison[];
     /**
+     * The key for dynamic attributes of the `STRING` type
+     *
      * @deprecated 'string_condition_key' is deprecated. You should use 'string_key'
      */
     stringConditionKeys?: outputs.AutotagRuleConditionStringConditionKey[];
+    /**
+     * The key for dynamic attributes of the `STRING` type
+     */
     stringKeys?: outputs.AutotagRuleConditionStringKey[];
+    /**
+     * Comparison for `STRING` attributes
+     */
     strings?: outputs.AutotagRuleConditionString[];
     /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     *
      * @deprecated You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
      */
     syntheticEngineTypeComparisons?: outputs.AutotagRuleConditionSyntheticEngineTypeComparison[];
+    /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     */
     syntheticEngines?: outputs.AutotagRuleConditionSyntheticEngine[];
     /**
+     * Comparison for `TAG` attributes
+     *
      * @deprecated You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
      */
     tagComparisons?: outputs.AutotagRuleConditionTagComparison[];
+    /**
+     * Comparison for `TAG` attributes
+     */
     tags?: outputs.AutotagRuleConditionTag[];
+    /**
+     * Comparison for `SIMPLE_TECH` attributes
+     */
     teches?: outputs.AutotagRuleConditionTech[];
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionApplicationType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionAzureComputeMode {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionAzureComputeModeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionAzureSkuComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be AZURE_SKU
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionAzureSkus {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionBaseComparisonBasic {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * The type of comparison
+     */
     type: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionBaseConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionBitness {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionBitnessComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be BITNESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionCloudType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionCloudTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be CLOUD_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * The type of comparison
+     */
     type: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionCustomApplicationType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionCustomApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be CUSTOM_APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionCustomHostMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.AutotagRuleConditionCustomHostMetadataDynamicKey;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionCustomHostMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.AutotagRuleConditionCustomHostMetadataConditionKeyDynamicKey;
     /**
+     * if specified, needs to be HOST_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionCustomHostMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionCustomHostMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionCustomProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.AutotagRuleConditionCustomProcessMetadataDynamicKey;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionCustomProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.AutotagRuleConditionCustomProcessMetadataConditionKeyDynamicKey;
     /**
+     * if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionCustomProcessMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionCustomProcessMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionDatabaseTopology {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionDatabaseTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be DATABASE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionDcrumDecoder {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionDcrumDecoderComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be DCRUM_DECODER_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionEntity {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionEntityIdComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be ENTITY_ID
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionHostTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.AutotagRuleConditionHostTechValue;
 }
 
 export interface AutotagRuleConditionHostTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface AutotagRuleConditionHypervisor {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionHypervisorTypeComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be HYPERVISOR_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionIndexedName {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionIndexedNameComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_NAME
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionIndexedString {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionIndexedStringComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionIndexedTag {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.AutotagRuleConditionIndexedTagValue;
 }
 
 export interface AutotagRuleConditionIndexedTagComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.AutotagRuleConditionIndexedTagComparisonValue;
 }
 
 export interface AutotagRuleConditionIndexedTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionIndexedTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionInteger {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: number;
 }
 
 export interface AutotagRuleConditionIntegerComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INTEGER
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: number;
 }
 
 export interface AutotagRuleConditionIpaddress {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionIpaddressComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be IP_ADDRESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionMobilePlatform {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionMobilePlatformComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be MOBILE_PLATFORM
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionOsArch {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionOsType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionOsarchitectureComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be OS_ARCHITECTURE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionOstypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be OS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionPaasType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionPaasTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be PAAS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: string;
     /**
+     * if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionServiceTopology {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionServiceTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SERVICE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionServiceType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionServiceTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SERVICE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionSimpleHostTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SIMPLE_HOST_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.AutotagRuleConditionSimpleHostTechComparisonValue;
 }
 
 export interface AutotagRuleConditionSimpleHostTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface AutotagRuleConditionSimpleTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SIMPLE_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.AutotagRuleConditionSimpleTechComparisonValue;
 }
 
 export interface AutotagRuleConditionSimpleTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface AutotagRuleConditionString {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionStringComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionStringConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: string;
     /**
+     * if specified, needs to be `STRING`
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionStringKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface AutotagRuleConditionSyntheticEngine {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionSyntheticEngineTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SYNTHETIC_ENGINE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionTag {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.AutotagRuleConditionTagValue;
 }
 
 export interface AutotagRuleConditionTagComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.AutotagRuleConditionTagComparisonValue;
 }
 
 export interface AutotagRuleConditionTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface AutotagRuleConditionTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.AutotagRuleConditionTechValue;
 }
 
 export interface AutotagRuleConditionTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
@@ -1173,23 +2787,68 @@ export interface AutotagV2Rules {
 }
 
 export interface AutotagV2RulesRule {
+    /**
+     * no documentation available
+     */
     attributeRule?: outputs.AutotagV2RulesRuleAttributeRule;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+     */
     entitySelector?: string;
+    /**
+     * Possible Values: `ME`, `SELECTOR`
+     */
     type: string;
+    /**
+     * Type '{' for placeholder suggestions
+     */
     valueFormat?: string;
+    /**
+     * Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+     */
     valueNormalization: string;
 }
 
 export interface AutotagV2RulesRuleAttributeRule {
+    /**
+     * Apply to process groups connected to matching Azure entities
+     */
     azureToPgpropagation?: boolean;
+    /**
+     * Apply to services provided by matching Azure entities
+     */
     azureToServicePropagation?: boolean;
+    /**
+     * no documentation available
+     */
     conditions: outputs.AutotagV2RulesRuleAttributeRuleConditions;
+    /**
+     * Possible Values: `APPLICATION`, `AWS_APPLICATION_LOAD_BALANCER`, `AWS_CLASSIC_LOAD_BALANCER`, `AWS_NETWORK_LOAD_BALANCER`, `AWS_RELATIONAL_DATABASE_SERVICE`, `AZURE`, `CUSTOM_APPLICATION`, `CUSTOM_DEVICE`, `DCRUM_APPLICATION`, `ESXI_HOST`, `EXTERNAL_SYNTHETIC_TEST`, `HOST`, `HTTP_CHECK`, `MOBILE_APPLICATION`, `PROCESS_GROUP`, `SERVICE`, `SYNTHETIC_TEST`
+     */
     entityType: string;
+    /**
+     * Apply to processes running on matching hosts
+     */
     hostToPgpropagation?: boolean;
+    /**
+     * Apply to underlying hosts of matching process groups
+     */
     pgToHostPropagation?: boolean;
+    /**
+     * Apply to all services provided by the process groups
+     */
     pgToServicePropagation?: boolean;
+    /**
+     * Apply to underlying hosts of matching services
+     */
     serviceToHostPropagation?: boolean;
+    /**
+     * Apply to underlying process groups of matching services
+     */
     serviceToPgpropagation?: boolean;
 }
 
@@ -1198,15 +2857,45 @@ export interface AutotagV2RulesRuleAttributeRuleConditions {
 }
 
 export interface AutotagV2RulesRuleAttributeRuleConditionsCondition {
+    /**
+     * Case sensitive
+     */
     caseSensitive?: boolean;
+    /**
+     * Dynamic key
+     */
     dynamicKey?: string;
+    /**
+     * Key source
+     */
     dynamicKeySource?: string;
+    /**
+     * Value
+     */
     entityId?: string;
+    /**
+     * Value
+     */
     enumValue?: string;
+    /**
+     * Value
+     */
     integerValue?: number;
+    /**
+     * Possible Values: `APPMON_SERVER_NAME`, `APPMON_SYSTEM_PROFILE_NAME`, `AWS_ACCOUNT_ID`, `AWS_ACCOUNT_NAME`, `AWS_APPLICATION_LOAD_BALANCER_NAME`, `AWS_APPLICATION_LOAD_BALANCER_TAGS`, `AWS_AUTO_SCALING_GROUP_NAME`, `AWS_AUTO_SCALING_GROUP_TAGS`, `AWS_AVAILABILITY_ZONE_NAME`, `AWS_CLASSIC_LOAD_BALANCER_FRONTEND_PORTS`, `AWS_CLASSIC_LOAD_BALANCER_NAME`, `AWS_CLASSIC_LOAD_BALANCER_TAGS`, `AWS_NETWORK_LOAD_BALANCER_NAME`, `AWS_NETWORK_LOAD_BALANCER_TAGS`, `AWS_RELATIONAL_DATABASE_SERVICE_DB_NAME`, `AWS_RELATIONAL_DATABASE_SERVICE_ENDPOINT`, `AWS_RELATIONAL_DATABASE_SERVICE_ENGINE`, `AWS_RELATIONAL_DATABASE_SERVICE_INSTANCE_CLASS`, `AWS_RELATIONAL_DATABASE_SERVICE_NAME`, `AWS_RELATIONAL_DATABASE_SERVICE_PORT`, `AWS_RELATIONAL_DATABASE_SERVICE_TAGS`, `AZURE_ENTITY_NAME`, `AZURE_ENTITY_TAGS`, `AZURE_MGMT_GROUP_NAME`, `AZURE_MGMT_GROUP_UUID`, `AZURE_REGION_NAME`, `AZURE_SCALE_SET_NAME`, `AZURE_SUBSCRIPTION_NAME`, `AZURE_SUBSCRIPTION_UUID`, `AZURE_TENANT_NAME`, `AZURE_TENANT_UUID`, `AZURE_VM_NAME`, `BROWSER_MONITOR_NAME`, `BROWSER_MONITOR_TAGS`, `CLOUD_APPLICATION_LABELS`, `CLOUD_APPLICATION_NAME`, `CLOUD_APPLICATION_NAMESPACE_LABELS`, `CLOUD_APPLICATION_NAMESPACE_NAME`, `CLOUD_FOUNDRY_FOUNDATION_NAME`, `CLOUD_FOUNDRY_ORG_NAME`, `CUSTOM_APPLICATION_NAME`, `CUSTOM_APPLICATION_PLATFORM`, `CUSTOM_APPLICATION_TAGS`, `CUSTOM_APPLICATION_TYPE`, `CUSTOM_DEVICE_DNS_ADDRESS`, `CUSTOM_DEVICE_GROUP_NAME`, `CUSTOM_DEVICE_GROUP_TAGS`, `CUSTOM_DEVICE_IP_ADDRESS`, `CUSTOM_DEVICE_METADATA`, `CUSTOM_DEVICE_NAME`, `CUSTOM_DEVICE_PORT`, `CUSTOM_DEVICE_TAGS`, `CUSTOM_DEVICE_TECHNOLOGY`, `DATA_CENTER_SERVICE_DECODER_TYPE`, `DATA_CENTER_SERVICE_IP_ADDRESS`, `DATA_CENTER_SERVICE_METADATA`, `DATA_CENTER_SERVICE_NAME`, `DATA_CENTER_SERVICE_PORT`, `DATA_CENTER_SERVICE_TAGS`, `DOCKER_CONTAINER_NAME`, `DOCKER_FULL_IMAGE_NAME`, `DOCKER_IMAGE_VERSION`, `EC2_INSTANCE_AMI_ID`, `EC2_INSTANCE_AWS_INSTANCE_TYPE`, `EC2_INSTANCE_AWS_SECURITY_GROUP`, `EC2_INSTANCE_BEANSTALK_ENV_NAME`, `EC2_INSTANCE_ID`, `EC2_INSTANCE_NAME`, `EC2_INSTANCE_PRIVATE_HOST_NAME`, `EC2_INSTANCE_PUBLIC_HOST_NAME`, `EC2_INSTANCE_TAGS`, `ENTERPRISE_APPLICATION_DECODER_TYPE`, `ENTERPRISE_APPLICATION_IP_ADDRESS`, `ENTERPRISE_APPLICATION_METADATA`, `ENTERPRISE_APPLICATION_NAME`, `ENTERPRISE_APPLICATION_PORT`, `ENTERPRISE_APPLICATION_TAGS`, `ESXI_HOST_CLUSTER_NAME`, `ESXI_HOST_HARDWARE_MODEL`, `ESXI_HOST_HARDWARE_VENDOR`, `ESXI_HOST_NAME`, `ESXI_HOST_PRODUCT_NAME`, `ESXI_HOST_PRODUCT_VERSION`, `ESXI_HOST_TAGS`, `EXTERNAL_MONITOR_ENGINE_DESCRIPTION`, `EXTERNAL_MONITOR_ENGINE_NAME`, `EXTERNAL_MONITOR_ENGINE_TYPE`, `EXTERNAL_MONITOR_NAME`, `EXTERNAL_MONITOR_TAGS`, `GEOLOCATION_SITE_NAME`, `GOOGLE_CLOUD_PLATFORM_ZONE_NAME`, `GOOGLE_COMPUTE_INSTANCE_ID`, `GOOGLE_COMPUTE_INSTANCE_MACHINE_TYPE`, `GOOGLE_COMPUTE_INSTANCE_NAME`, `GOOGLE_COMPUTE_INSTANCE_PROJECT`, `GOOGLE_COMPUTE_INSTANCE_PROJECT_ID`, `GOOGLE_COMPUTE_INSTANCE_PUBLIC_IP_ADDRESSES`, `HOST_AIX_LOGICAL_CPU_COUNT`, `HOST_AIX_SIMULTANEOUS_THREADS`, `HOST_AIX_VIRTUAL_CPU_COUNT`, `HOST_ARCHITECTURE`, `HOST_AWS_NAME_TAG`, `HOST_AZURE_COMPUTE_MODE`, `HOST_AZURE_SKU`, `HOST_AZURE_WEB_APPLICATION_HOST_NAMES`, `HOST_AZURE_WEB_APPLICATION_SITE_NAMES`, `HOST_BITNESS`, `HOST_BOSH_AVAILABILITY_ZONE`, `HOST_BOSH_DEPLOYMENT_ID`, `HOST_BOSH_INSTANCE_ID`, `HOST_BOSH_INSTANCE_NAME`, `HOST_BOSH_NAME`, `HOST_BOSH_STEMCELL_VERSION`, `HOST_CLOUD_TYPE`, `HOST_CPU_CORES`, `HOST_CUSTOM_METADATA`, `HOST_DETECTED_NAME`, `HOST_GROUP_ID`, `HOST_GROUP_NAME`, `HOST_HYPERVISOR_TYPE`, `HOST_IP_ADDRESS`, `HOST_KUBERNETES_LABELS`, `HOST_LOGICAL_CPU_CORES`, `HOST_NAME`, `HOST_ONEAGENT_CUSTOM_HOST_NAME`, `HOST_OS_TYPE`, `HOST_OS_VERSION`, `HOST_PAAS_MEMORY_LIMIT`, `HOST_PAAS_TYPE`, `HOST_TAGS`, `HOST_TECHNOLOGY`, `HTTP_MONITOR_NAME`, `HTTP_MONITOR_TAGS`, `KUBERNETES_CLUSTER_NAME`, `KUBERNETES_NODE_NAME`, `KUBERNETES_SERVICE_NAME`, `MOBILE_APPLICATION_NAME`, `MOBILE_APPLICATION_PLATFORM`, `MOBILE_APPLICATION_TAGS`, `NAME_OF_COMPUTE_NODE`, `OPENSTACK_ACCOUNT_NAME`, `OPENSTACK_ACCOUNT_PROJECT_NAME`, `OPENSTACK_AVAILABILITY_ZONE_NAME`, `OPENSTACK_PROJECT_NAME`, `OPENSTACK_REGION_NAME`, `OPENSTACK_VM_INSTANCE_TYPE`, `OPENSTACK_VM_NAME`, `OPENSTACK_VM_SECURITY_GROUP`, `PROCESS_GROUP_AZURE_HOST_NAME`, `PROCESS_GROUP_AZURE_SITE_NAME`, `PROCESS_GROUP_CUSTOM_METADATA`, `PROCESS_GROUP_DETECTED_NAME`, `PROCESS_GROUP_ID`, `PROCESS_GROUP_LISTEN_PORT`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_PREDEFINED_METADATA`, `PROCESS_GROUP_TAGS`, `PROCESS_GROUP_TECHNOLOGY`, `PROCESS_GROUP_TECHNOLOGY_EDITION`, `PROCESS_GROUP_TECHNOLOGY_VERSION`, `QUEUE_NAME`, `QUEUE_TECHNOLOGY`, `QUEUE_VENDOR`, `SERVICE_AKKA_ACTOR_SYSTEM`, `SERVICE_CTG_SERVICE_NAME`, `SERVICE_DATABASE_HOST_NAME`, `SERVICE_DATABASE_NAME`, `SERVICE_DATABASE_TOPOLOGY`, `SERVICE_DATABASE_VENDOR`, `SERVICE_DETECTED_NAME`, `SERVICE_ESB_APPLICATION_NAME`, `SERVICE_IBM_CTG_GATEWAY_URL`, `SERVICE_MESSAGING_LISTENER_CLASS_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REMOTE_ENDPOINT`, `SERVICE_REMOTE_SERVICE_NAME`, `SERVICE_TAGS`, `SERVICE_TECHNOLOGY`, `SERVICE_TECHNOLOGY_EDITION`, `SERVICE_TECHNOLOGY_VERSION`, `SERVICE_TOPOLOGY`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_ENDPOINT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `VMWARE_DATACENTER_NAME`, `VMWARE_VM_NAME`, `WEB_APPLICATION_NAME`, `WEB_APPLICATION_NAME_PATTERN`, `WEB_APPLICATION_TAGS`, `WEB_APPLICATION_TYPE`
+     */
     key: string;
+    /**
+     * Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `IS_IP_IN_RANGE`, `LOWER_THAN`, `LOWER_THAN_OR_EQUAL`, `NOT_BEGINS_WITH`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_GREATER_THAN`, `NOT_GREATER_THAN_OR_EQUAL`, `NOT_IS_IP_IN_RANGE`, `NOT_LOWER_THAN`, `NOT_LOWER_THAN_OR_EQUAL`, `NOT_REGEX_MATCHES`, `NOT_TAG_KEY_EQUALS`, `REGEX_MATCHES`, `TAG_KEY_EQUALS`
+     */
     operator: string;
+    /**
+     * Value
+     */
     stringValue?: string;
+    /**
+     * Format: `[CONTEXT]tagKey:tagValue`
+     */
     tag?: string;
 }
 
@@ -1226,6 +2915,9 @@ export interface AwsAnomaliesEc2CandidateHighCpuDetection {
 }
 
 export interface AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholds {
+    /**
+     * CPU usage is higher than
+     */
     cpuUsage: number;
 }
 
@@ -1245,6 +2937,9 @@ export interface AwsAnomaliesElbHighConnectionErrorsDetection {
 }
 
 export interface AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholds {
+    /**
+     * Number of backend connection errors is higher than
+     */
     connectionErrorsPerMinute: number;
 }
 
@@ -1264,6 +2959,9 @@ export interface AwsAnomaliesLambdaHighErrorRateDetection {
 }
 
 export interface AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholds {
+    /**
+     * Failed invocations rate is higher than
+     */
     failedInvocationsRate: number;
 }
 
@@ -1283,6 +2981,9 @@ export interface AwsAnomaliesRdsHighCpuDetection {
 }
 
 export interface AwsAnomaliesRdsHighCpuDetectionCustomThresholds {
+    /**
+     * CPU usage is higher than
+     */
     cpuUsage: number;
 }
 
@@ -1302,7 +3003,13 @@ export interface AwsAnomaliesRdsHighMemoryDetection {
 }
 
 export interface AwsAnomaliesRdsHighMemoryDetectionCustomThresholds {
+    /**
+     * Freeable memory is lower than
+     */
     freeMemory: number;
+    /**
+     * Swap usage is higher than
+     */
     swapUsage: number;
 }
 
@@ -1322,6 +3029,9 @@ export interface AwsAnomaliesRdsHighWriteReadLatencyDetection {
 }
 
 export interface AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholds {
+    /**
+     * Read/write latency is higher than
+     */
     readWriteLatency: number;
 }
 
@@ -1341,6 +3051,9 @@ export interface AwsAnomaliesRdsLowStorageDetection {
 }
 
 export interface AwsAnomaliesRdsLowStorageDetectionCustomThresholds {
+    /**
+     * Free storage space divided by allocated storage is lower than
+     */
     freeStoragePercentage: number;
 }
 
@@ -1360,6 +3073,9 @@ export interface AwsAnomaliesRdsRestartsSequenceDetection {
 }
 
 export interface AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds {
+    /**
+     * Number of restarts per minute is equal or higher than
+     */
     restartsPerMinute: number;
 }
 
@@ -1406,8 +3122,17 @@ export interface AwsCredentialsSupportingServicesToMonitor {
 }
 
 export interface AwsCredentialsSupportingServicesToMonitorMonitoredMetric {
+    /**
+     * a list of metric's dimensions names
+     */
     dimensions?: string[];
+    /**
+     * the name of the metric of the supporting service
+     */
     name?: string;
+    /**
+     * the statistic (aggregation) to be used for the metric. AVG*MIN*MAX value is 3 statistics at once: AVERAGE, MINIMUM and MAXIMUM
+     */
     statistic?: string;
     /**
      * Any attributes that aren't yet supported by this provider
@@ -1476,7 +3201,13 @@ export interface AzureCredentialsSupportingService {
 }
 
 export interface AzureCredentialsSupportingServiceMonitoredMetric {
+    /**
+     * a list of metric's dimensions names
+     */
     dimensions?: string[];
+    /**
+     * the name of the metric of the supporting service
+     */
     name?: string;
     /**
      * Any attributes that aren't yet supported by this provider
@@ -1496,35 +3227,82 @@ export interface BrowserMonitorAnomalyDetection {
 }
 
 export interface BrowserMonitorAnomalyDetectionLoadingTimeThreshold {
+    /**
+     * Performance threshold is enabled (`true`) or disabled (`false`)
+     */
     enabled?: boolean;
+    /**
+     * The list of performance threshold rules
+     */
     thresholds?: outputs.BrowserMonitorAnomalyDetectionLoadingTimeThresholdThreshold[];
 }
 
 export interface BrowserMonitorAnomalyDetectionLoadingTimeThresholdThreshold {
+    /**
+     * The list of performance threshold rules
+     */
     thresholds: outputs.BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThreshold[];
 }
 
 export interface BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThreshold {
+    /**
+     * Specify the event to which an ACTION threshold applies
+     */
     eventIndex?: number;
+    /**
+     * Specify the request to which an ACTION threshold applies
+     */
     requestIndex?: number;
+    /**
+     * The type of the threshold: `TOTAL` (total loading time) or `ACTION` (action loading time)
+     */
     type?: string;
+    /**
+     * Notify if monitor takes longer than *X* milliseconds to load
+     */
     valueMs: number;
 }
 
 export interface BrowserMonitorAnomalyDetectionOutageHandling {
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable at all configured locations
+     */
     globalOutage?: boolean;
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Global outage handling configuration.
+     */
     globalOutagePolicies?: outputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy[];
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location
+     */
     localOutage?: boolean;
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Local outage handling configuration. 
+     *
+     *  Alert if **affectedLocations** of locations are unable to access the web application **consecutiveRuns** times consecutively
+     */
     localOutagePolicies?: outputs.BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy[];
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Schedule retry if browser monitor execution results in a fail. For HTTP monitors this property is ignored
+     */
     retryOnError?: boolean;
 }
 
 export interface BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy {
+    /**
+     * The number of consecutive fails to trigger an alert
+     */
     consecutiveRuns: number;
 }
 
 export interface BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy {
+    /**
+     * The number of affected locations to trigger an alert
+     */
     affectedLocations: number;
+    /**
+     * The number of consecutive fails to trigger an alert
+     */
     consecutiveRuns: number;
 }
 
@@ -1544,7 +3322,13 @@ export interface BrowserMonitorPerformanceThresholds {
 }
 
 export interface BrowserMonitorPerformanceThresholdsThreshold {
+    /**
+     * Synthetic event
+     */
     event: string;
+    /**
+     * Threshold (in seconds)
+     */
     threshold: number;
 }
 
@@ -1564,560 +3348,1367 @@ export interface BrowserMonitorScript {
 }
 
 export interface BrowserMonitorScriptConfiguration {
+    /**
+     * The emulated device of the monitor—holds either the parameters of the custom device or the name and orientation of the preconfigured device.
+     */
     bandwidth?: outputs.BrowserMonitorScriptConfigurationBandwidth;
+    /**
+     * Block these URLs
+     */
     blocks?: string[];
+    /**
+     * Bypass Content Security Policy of monitored pages
+     */
     bypassCsp?: boolean;
+    /**
+     * These cookies are added before execution of the first step
+     */
     cookies?: outputs.BrowserMonitorScriptConfigurationCookies;
+    /**
+     * The emulated device of the monitor—holds either the parameters of the custom device or the name and orientation of the preconfigured device.
+     *
+     * If not set, then the Desktop preconfigured device is used
+     */
     device?: outputs.BrowserMonitorScriptConfigurationDevice;
+    /**
+     * No documentation available
+     */
     disableWebSecurity?: boolean;
+    /**
+     * The list of HTTP headers to be sent with requests of the monitor
+     */
     headers?: outputs.BrowserMonitorScriptConfigurationHeaders;
+    /**
+     * Ignore specific status codes
+     */
     ignoredErrorCodes?: outputs.BrowserMonitorScriptConfigurationIgnoredErrorCodes;
+    /**
+     * Custom JavaScript Agent settings
+     */
     javascriptSetttings?: outputs.BrowserMonitorScriptConfigurationJavascriptSetttings;
+    /**
+     * Capture performance metrics for pages loaded in frames
+     */
     monitorFrames?: boolean;
+    /**
+     * The user agent of the request
+     */
     userAgent?: string;
 }
 
 export interface BrowserMonitorScriptConfigurationBandwidth {
+    /**
+     * The download speed of the network, in bytes per second
+     */
     download?: number;
+    /**
+     * The latency of the network, in milliseconds
+     */
     latency?: number;
+    /**
+     * The type of the preconfigured network—when editing in the browser, press `Crtl+Spacebar` to see the list of available networks
+     */
     networkType?: string;
+    /**
+     * The upload speed of the network, in bytes per second
+     */
     upload?: number;
 }
 
 export interface BrowserMonitorScriptConfigurationCookies {
+    /**
+     * A request cookie
+     */
     cookies: outputs.BrowserMonitorScriptConfigurationCookiesCookie[];
 }
 
 export interface BrowserMonitorScriptConfigurationCookiesCookie {
+    /**
+     * The domain of the cookie.
+     */
     domain: string;
+    /**
+     * The name of the cookie. The following cookie names are now allowed: `dtCookie`, `dtLatC`, `dtPC`, `rxVisitor`, `rxlatency`, `rxpc`, `rxsession` and `rxvt`
+     */
     name: string;
+    /**
+     * The path of the cookie.
+     */
     path?: string;
+    /**
+     * The value of the cookie. The following symbols are not allowed: `;`, `,`, `\` and `"`.
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptConfigurationDevice {
+    /**
+     * The height of the screen in pixels.
+     * The maximum allowed width is `1080`.
+     */
     height?: number;
+    /**
+     * The flag of the mobile device.
+     * Set to `true` for mobile devices or `false` for a desktop or laptop.
+     */
     mobile?: boolean;
+    /**
+     * The name of the preconfigured device—when editing in the browser, press `Crtl+Spacebar` to see the list of available devices
+     */
     name?: string;
+    /**
+     * The orientation of the device. Possible values are `portrait` or `landscape`. Desktop and laptop devices are not allowed to use the `portrait` orientation
+     */
     orientation?: string;
+    /**
+     * The pixel ratio of the device.
+     */
     scaleFactor?: number;
+    /**
+     * The flag of the touchscreen.
+     * Set to `true` if the device uses touchscreen. In that case, use can set interaction event as `tap`.
+     */
     touchEnabled?: boolean;
+    /**
+     * The width of the screen in pixels.
+     * The maximum allowed width is `1920`.
+     */
     width?: number;
 }
 
 export interface BrowserMonitorScriptConfigurationHeaders {
+    /**
+     * contains an HTTP header of the request
+     */
     headers: outputs.BrowserMonitorScriptConfigurationHeadersHeader[];
+    /**
+     * Restrict applying headers to a set of URLs
+     */
     restrictions?: string[];
 }
 
 export interface BrowserMonitorScriptConfigurationHeadersHeader {
+    /**
+     * The key of the header
+     */
     name: string;
+    /**
+     * The value of the header
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptConfigurationIgnoredErrorCodes {
+    /**
+     * Only apply to document request matching this regex
+     */
     matchingDocumentRequests?: string;
+    /**
+     * You can use exact number, range or status class mask. Multiple values can be separated by comma, i.e. 404, 405-410, 5xx
+     */
     statusCodes: string;
 }
 
 export interface BrowserMonitorScriptConfigurationJavascriptSetttings {
+    /**
+     * Additional Javascript Agent Properties
+     */
     customProperties?: string;
+    /**
+     * Custom JavaScript Agent settings
+     */
     timeoutSettings?: outputs.BrowserMonitorScriptConfigurationJavascriptSetttingsTimeoutSettings;
+    /**
+     * Parameters for Visually complete and Speed index calculation
+     */
     visuallyCompleteOptions?: outputs.BrowserMonitorScriptConfigurationJavascriptSetttingsVisuallyCompleteOptions;
 }
 
 export interface BrowserMonitorScriptConfigurationJavascriptSetttingsTimeoutSettings {
+    /**
+     * Track up to n cascading setTimeout calls
+     */
     actionLimit: number;
+    /**
+     * Limit cascading timeouts cumulatively to n ms
+     */
     totalTimeout: number;
 }
 
 export interface BrowserMonitorScriptConfigurationJavascriptSetttingsVisuallyCompleteOptions {
+    /**
+     * Query CSS selectors to specify mutation nodes (elements that change) to ignore in Visually complete and Speed index calculation
+     */
     excludedElements?: string[];
+    /**
+     * Parameters for Visually complete and Speed index calculation
+     */
     excludedUrls?: string[];
+    /**
+     * Use this setting to define the minimum visible area per element (in pixels) for an element to be counted towards Visually complete and Speed index
+     */
     imageSizeThreshold: number;
+    /**
+     * The time the Visually complete module waits for inactivity and no further mutations on the page after the load action
+     */
     inactivityTimeout: number;
+    /**
+     * The time the Visually complete module waits after an XHR or custom action closes to start the calculation
+     */
     mutationTimeout: number;
 }
 
 export interface BrowserMonitorScriptEvents {
+    /**
+     * An event
+     */
     events?: outputs.BrowserMonitorScriptEventsEvent[];
 }
 
 export interface BrowserMonitorScriptEventsEvent {
+    /**
+     * Properties specified for a click event
+     */
     click?: outputs.BrowserMonitorScriptEventsEventClick;
+    /**
+     * Properties specified for a cookie event
+     */
     cookie?: outputs.BrowserMonitorScriptEventsEventCookie;
+    /**
+     * A short description of the event to appear in the UI
+     */
     description: string;
+    /**
+     * Properties specified for a javascript event
+     */
     javascript?: outputs.BrowserMonitorScriptEventsEventJavascript;
+    /**
+     * Properties specified for a key strokes event
+     */
     keystrokes?: outputs.BrowserMonitorScriptEventsEventKeystrokes;
+    /**
+     * Properties specified for a navigation event
+     */
     navigate?: outputs.BrowserMonitorScriptEventsEventNavigate;
+    /**
+     * Properties specified for a key strokes event.
+     */
     select?: outputs.BrowserMonitorScriptEventsEventSelect;
+    /**
+     * Properties specified for a tap event
+     */
     tap?: outputs.BrowserMonitorScriptEventsEventTap;
 }
 
 export interface BrowserMonitorScriptEventsEventClick {
+    /**
+     * the mouse button to be used for the click
+     */
     button: number;
+    /**
+     * The tab on which the page should open
+     */
     target?: outputs.BrowserMonitorScriptEventsEventClickTarget;
+    /**
+     * The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
+     */
     validate?: outputs.BrowserMonitorScriptEventsEventClickValidate;
+    /**
+     * The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+     */
     wait?: outputs.BrowserMonitorScriptEventsEventClickWait;
 }
 
 export interface BrowserMonitorScriptEventsEventClickTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventClickTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventClickTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventClickTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventClickTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventClickValidate {
+    /**
+     * The element to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validations: outputs.BrowserMonitorScriptEventsEventClickValidateValidation[];
 }
 
 export interface BrowserMonitorScriptEventsEventClickValidateValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: boolean;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: string;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: boolean;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: outputs.BrowserMonitorScriptEventsEventClickValidateValidationTarget;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: string;
 }
 
 export interface BrowserMonitorScriptEventsEventClickValidateValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventClickValidateValidationTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventClickValidateValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventClickValidateValidationTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventClickValidateValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventClickWait {
+    /**
+     * The time to wait, in millisencods. The maximum allowed value is `60000`. Required for the type `time`, not applicable otherwise.
+     */
     milliseconds?: number;
+    /**
+     * he maximum amount of time to wait for a certain element to appear, in milliseconds—if exceeded, the action is marked as failed.
+     * The maximum allowed value is 60000. Required for the type `validation`, not applicable otherwise..
+     */
     timeout?: number;
+    /**
+     * The elements to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validation?: outputs.BrowserMonitorScriptEventsEventClickWaitValidation;
+    /**
+     * The time to wait before the next event is triggered. Possible values are `pageComplete` (wait for the page to load completely), `network` (wait for background network activity to complete), `nextAction` (wait for the next action), `time` (wait for a specified periodof time) and `validation` (wait for a specific element to appear)
+     */
     waitFor: string;
 }
 
 export interface BrowserMonitorScriptEventsEventClickWaitValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: boolean;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: string;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: boolean;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: outputs.BrowserMonitorScriptEventsEventClickWaitValidationTarget;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: string;
 }
 
 export interface BrowserMonitorScriptEventsEventClickWaitValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventClickWaitValidationTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventClickWaitValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventClickWaitValidationTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventClickWaitValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventCookie {
+    /**
+     * Every cookie must be unique within the list. However, you can use the same cookie again in other event
+     */
     cookies: outputs.BrowserMonitorScriptEventsEventCookieCookies;
 }
 
 export interface BrowserMonitorScriptEventsEventCookieCookies {
+    /**
+     * A request cookie
+     */
     cookies: outputs.BrowserMonitorScriptEventsEventCookieCookiesCookie[];
 }
 
 export interface BrowserMonitorScriptEventsEventCookieCookiesCookie {
+    /**
+     * The domain of the cookie.
+     */
     domain: string;
+    /**
+     * The name of the cookie. The following cookie names are now allowed: `dtCookie`, `dtLatC`, `dtPC`, `rxVisitor`, `rxlatency`, `rxpc`, `rxsession` and `rxvt`
+     */
     name: string;
+    /**
+     * The path of the cookie.
+     */
     path?: string;
+    /**
+     * The value of the cookie. The following symbols are not allowed: `;`, `,`, `\` and `"`.
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascript {
+    /**
+     * The JavaScript code to be executed in this event
+     */
     code: string;
+    /**
+     * The tab on which the page should open
+     */
     target?: outputs.BrowserMonitorScriptEventsEventJavascriptTarget;
+    /**
+     * The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+     */
     wait?: outputs.BrowserMonitorScriptEventsEventJavascriptWait;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventJavascriptTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventJavascriptTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptWait {
+    /**
+     * The time to wait, in millisencods. The maximum allowed value is `60000`. Required for the type `time`, not applicable otherwise.
+     */
     milliseconds?: number;
+    /**
+     * he maximum amount of time to wait for a certain element to appear, in milliseconds—if exceeded, the action is marked as failed.
+     * The maximum allowed value is 60000. Required for the type `validation`, not applicable otherwise..
+     */
     timeout?: number;
+    /**
+     * The elements to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validation?: outputs.BrowserMonitorScriptEventsEventJavascriptWaitValidation;
+    /**
+     * The time to wait before the next event is triggered. Possible values are `pageComplete` (wait for the page to load completely), `network` (wait for background network activity to complete), `nextAction` (wait for the next action), `time` (wait for a specified periodof time) and `validation` (wait for a specific element to appear)
+     */
     waitFor: string;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptWaitValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: boolean;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: string;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: boolean;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: outputs.BrowserMonitorScriptEventsEventJavascriptWaitValidationTarget;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: string;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptWaitValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokes {
+    /**
+     * Credentials for this event
+     */
     credential?: outputs.BrowserMonitorScriptEventsEventKeystrokesCredential;
+    /**
+     * Indicates whether the `textValue` is encrypted (`true`) or not (`false`). Must not be specified if `credentials` from the vault are being used
+     */
     masked?: boolean;
+    /**
+     * Defines whether to blur the text field when it loses focus.
+     * Set to `true` to trigger the blur the `textValue`
+     */
     simulateBlurEvent?: boolean;
+    /**
+     * The tab on which the page should open
+     */
     target?: outputs.BrowserMonitorScriptEventsEventKeystrokesTarget;
+    /**
+     * The text to enter. Must not be specified if `credentials` from the vault are being used
+     */
     text?: string;
+    /**
+     * The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
+     */
     validate?: outputs.BrowserMonitorScriptEventsEventKeystrokesValidate;
+    /**
+     * The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+     */
     wait?: outputs.BrowserMonitorScriptEventsEventKeystrokesWait;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesCredential {
+    /**
+     * Either `username` or `password`
+     */
     field: string;
+    /**
+     * The ID of the credential within the Credentials Vault
+     */
     vaultId: string;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventKeystrokesTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventKeystrokesTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesValidate {
+    /**
+     * The element to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validations: outputs.BrowserMonitorScriptEventsEventKeystrokesValidateValidation[];
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesValidateValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: boolean;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: string;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: boolean;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: outputs.BrowserMonitorScriptEventsEventKeystrokesValidateValidationTarget;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: string;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesValidateValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventKeystrokesValidateValidationTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesValidateValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventKeystrokesValidateValidationTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesValidateValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesWait {
+    /**
+     * The time to wait, in millisencods. The maximum allowed value is `60000`. Required for the type `time`, not applicable otherwise.
+     */
     milliseconds?: number;
+    /**
+     * he maximum amount of time to wait for a certain element to appear, in milliseconds—if exceeded, the action is marked as failed.
+     * The maximum allowed value is 60000. Required for the type `validation`, not applicable otherwise..
+     */
     timeout?: number;
+    /**
+     * The elements to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validation?: outputs.BrowserMonitorScriptEventsEventKeystrokesWaitValidation;
+    /**
+     * The time to wait before the next event is triggered. Possible values are `pageComplete` (wait for the page to load completely), `network` (wait for background network activity to complete), `nextAction` (wait for the next action), `time` (wait for a specified periodof time) and `validation` (wait for a specific element to appear)
+     */
     waitFor: string;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesWaitValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: boolean;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: string;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: boolean;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: outputs.BrowserMonitorScriptEventsEventKeystrokesWaitValidationTarget;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: string;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesWaitValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventKeystrokesWaitValidationTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesWaitValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventKeystrokesWaitValidationTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesWaitValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigate {
+    /**
+     * The login credentials to bypass the browser login mask
+     */
     authentication?: outputs.BrowserMonitorScriptEventsEventNavigateAuthentication;
+    /**
+     * The tab on which the page should open
+     */
     target?: outputs.BrowserMonitorScriptEventsEventNavigateTarget;
+    /**
+     * The URL to navigate to
+     */
     url: string;
+    /**
+     * The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
+     */
     validate?: outputs.BrowserMonitorScriptEventsEventNavigateValidate;
+    /**
+     * The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+     */
     wait?: outputs.BrowserMonitorScriptEventsEventNavigateWait;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateAuthentication {
+    /**
+     * A reference to the entry within the credential vault
+     */
     creds: string;
+    /**
+     * The type of authentication
+     */
     type: string;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventNavigateTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventNavigateTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateValidate {
+    /**
+     * The element to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validations: outputs.BrowserMonitorScriptEventsEventNavigateValidateValidation[];
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateValidateValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: boolean;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: string;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: boolean;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: outputs.BrowserMonitorScriptEventsEventNavigateValidateValidationTarget;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: string;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateValidateValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventNavigateValidateValidationTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateValidateValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventNavigateValidateValidationTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateValidateValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateWait {
+    /**
+     * The time to wait, in millisencods. The maximum allowed value is `60000`. Required for the type `time`, not applicable otherwise.
+     */
     milliseconds?: number;
+    /**
+     * he maximum amount of time to wait for a certain element to appear, in milliseconds—if exceeded, the action is marked as failed.
+     * The maximum allowed value is 60000. Required for the type `validation`, not applicable otherwise..
+     */
     timeout?: number;
+    /**
+     * The elements to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validation?: outputs.BrowserMonitorScriptEventsEventNavigateWaitValidation;
+    /**
+     * The time to wait before the next event is triggered. Possible values are `pageComplete` (wait for the page to load completely), `network` (wait for background network activity to complete), `nextAction` (wait for the next action), `time` (wait for a specified periodof time) and `validation` (wait for a specific element to appear)
+     */
     waitFor: string;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateWaitValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: boolean;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: string;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: boolean;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: outputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTarget;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: string;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateWaitValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventSelect {
+    /**
+     * The options to be selected
+     */
     selections: outputs.BrowserMonitorScriptEventsEventSelectSelections;
+    /**
+     * The tab on which the page should open
+     */
     target?: outputs.BrowserMonitorScriptEventsEventSelectTarget;
+    /**
+     * The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
+     */
     validate?: outputs.BrowserMonitorScriptEventsEventSelectValidate;
+    /**
+     * The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+     */
     wait?: outputs.BrowserMonitorScriptEventsEventSelectWait;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectSelections {
+    /**
+     * The option to be selected
+     */
     options: outputs.BrowserMonitorScriptEventsEventSelectSelectionsOption[];
 }
 
 export interface BrowserMonitorScriptEventsEventSelectSelectionsOption {
+    /**
+     * The index of the option to be selected
+     */
     index: number;
+    /**
+     * The value of the option to be selected
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventSelectTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventSelectTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventSelectTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectValidate {
+    /**
+     * The element to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validations: outputs.BrowserMonitorScriptEventsEventSelectValidateValidation[];
 }
 
 export interface BrowserMonitorScriptEventsEventSelectValidateValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: boolean;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: string;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: boolean;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: outputs.BrowserMonitorScriptEventsEventSelectValidateValidationTarget;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: string;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectValidateValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventSelectValidateValidationTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectValidateValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventSelectValidateValidationTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventSelectValidateValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectWait {
+    /**
+     * The time to wait, in millisencods. The maximum allowed value is `60000`. Required for the type `time`, not applicable otherwise.
+     */
     milliseconds?: number;
+    /**
+     * he maximum amount of time to wait for a certain element to appear, in milliseconds—if exceeded, the action is marked as failed.
+     * The maximum allowed value is 60000. Required for the type `validation`, not applicable otherwise..
+     */
     timeout?: number;
+    /**
+     * The elements to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validation?: outputs.BrowserMonitorScriptEventsEventSelectWaitValidation;
+    /**
+     * The time to wait before the next event is triggered. Possible values are `pageComplete` (wait for the page to load completely), `network` (wait for background network activity to complete), `nextAction` (wait for the next action), `time` (wait for a specified periodof time) and `validation` (wait for a specific element to appear)
+     */
     waitFor: string;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectWaitValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: boolean;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: string;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: boolean;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: outputs.BrowserMonitorScriptEventsEventSelectWaitValidationTarget;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: string;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectWaitValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventSelectWaitValidationTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectWaitValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventSelectWaitValidationTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventSelectWaitValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventTap {
+    /**
+     * the mouse button to be used for the click
+     */
     button: number;
+    /**
+     * The tab on which the page should open
+     */
     target?: outputs.BrowserMonitorScriptEventsEventTapTarget;
+    /**
+     * The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
+     */
     validate?: outputs.BrowserMonitorScriptEventsEventTapValidate;
+    /**
+     * The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+     */
     wait?: outputs.BrowserMonitorScriptEventsEventTapWait;
 }
 
 export interface BrowserMonitorScriptEventsEventTapTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventTapTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventTapTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventTapTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventTapTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventTapValidate {
+    /**
+     * The element to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validations: outputs.BrowserMonitorScriptEventsEventTapValidateValidation[];
 }
 
 export interface BrowserMonitorScriptEventsEventTapValidateValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: boolean;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: string;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: boolean;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: outputs.BrowserMonitorScriptEventsEventTapValidateValidationTarget;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: string;
 }
 
 export interface BrowserMonitorScriptEventsEventTapValidateValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventTapValidateValidationTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventTapValidateValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventTapValidateValidationTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventTapValidateValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
 export interface BrowserMonitorScriptEventsEventTapWait {
+    /**
+     * The time to wait, in millisencods. The maximum allowed value is `60000`. Required for the type `time`, not applicable otherwise.
+     */
     milliseconds?: number;
+    /**
+     * he maximum amount of time to wait for a certain element to appear, in milliseconds—if exceeded, the action is marked as failed.
+     * The maximum allowed value is 60000. Required for the type `validation`, not applicable otherwise..
+     */
     timeout?: number;
+    /**
+     * The elements to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validation?: outputs.BrowserMonitorScriptEventsEventTapWaitValidation;
+    /**
+     * The time to wait before the next event is triggered. Possible values are `pageComplete` (wait for the page to load completely), `network` (wait for background network activity to complete), `nextAction` (wait for the next action), `time` (wait for a specified periodof time) and `validation` (wait for a specific element to appear)
+     */
     waitFor: string;
 }
 
 export interface BrowserMonitorScriptEventsEventTapWaitValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: boolean;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: string;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: boolean;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: outputs.BrowserMonitorScriptEventsEventTapWaitValidationTarget;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: string;
 }
 
 export interface BrowserMonitorScriptEventsEventTapWaitValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: outputs.BrowserMonitorScriptEventsEventTapWaitValidationTargetLocator[];
+    /**
+     * The tab of the target
+     */
     window?: string;
 }
 
 export interface BrowserMonitorScriptEventsEventTapWaitValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: outputs.BrowserMonitorScriptEventsEventTapWaitValidationTargetLocatorLocator[];
 }
 
 export interface BrowserMonitorScriptEventsEventTapWaitValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: string;
+    /**
+     * The name of the element to be found
+     */
     value: string;
 }
 
@@ -2129,9 +4720,25 @@ export interface BrowserMonitorTag {
 }
 
 export interface BrowserMonitorTagTag {
+    /**
+     * The origin of the tag. Supported values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_CLOUD` and `KUBERNETES`.
+     */
     context: string;
+    /**
+     * The key of the tag.
+     *
+     * Custom tags have the tag value here.
+     */
     key: string;
+    /**
+     * The source of the tag. Supported values are `USER`, `RULE_BASED` and `AUTO`.
+     */
     source?: string;
+    /**
+     * The value of the tag.
+     *
+     * Not applicable to custom tags.
+     */
     value?: string;
 }
 
@@ -2155,8 +4762,17 @@ export interface BusinessEventsOneagentEvent {
 }
 
 export interface BusinessEventsOneagentEventCategory {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
     path?: string;
+    /**
+     * Fixed value
+     */
     source?: string;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
     sourceType: string;
 }
 
@@ -2165,25 +4781,58 @@ export interface BusinessEventsOneagentEventData {
 }
 
 export interface BusinessEventsOneagentEventDataEventDataFieldComplex {
+    /**
+     * Field name to be added to data.
+     */
     name: string;
+    /**
+     * no documentation available
+     */
     source: outputs.BusinessEventsOneagentEventDataEventDataFieldComplexSource;
 }
 
 export interface BusinessEventsOneagentEventDataEventDataFieldComplexSource {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
     path?: string;
+    /**
+     * Fixed value
+     */
     source?: string;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
     sourceType: string;
 }
 
 export interface BusinessEventsOneagentEventProvider {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
     path?: string;
+    /**
+     * Fixed value
+     */
     source?: string;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
     sourceType: string;
 }
 
 export interface BusinessEventsOneagentEventType {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
     path?: string;
+    /**
+     * Fixed value
+     */
     source?: string;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
     sourceType: string;
 }
 
@@ -2192,18 +4841,39 @@ export interface BusinessEventsOneagentTriggers {
 }
 
 export interface BusinessEventsOneagentTriggersTrigger {
+    /**
+     * Case sensitive
+     */
     caseSensitive?: boolean;
+    /**
+     * no documentation available
+     */
     source: outputs.BusinessEventsOneagentTriggersTriggerSource;
+    /**
+     * Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `N_CONTAINS`, `N_ENDS_WITH`, `N_EQUALS`, `N_EXISTS`, `N_STARTS_WITH`, `STARTS_WITH`
+     */
     type: string;
+    /**
+     * no documentation available
+     */
     value?: string;
 }
 
 export interface BusinessEventsOneagentTriggersTriggerSource {
+    /**
+     * Possible Values: `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
     dataSource: string;
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
     path?: string;
 }
 
 export interface BusinessEventsProcessingRuleTesting {
+    /**
+     * Sample event to use for the test run. Only JSON format is supported.
+     */
     sampleEvent: string;
 }
 
@@ -2212,285 +4882,785 @@ export interface BusinessEventsProcessingTransformationFields {
 }
 
 export interface BusinessEventsProcessingTransformationFieldsTransformationField {
+    /**
+     * Is Array
+     */
     array: boolean;
+    /**
+     * no documentation available
+     */
     name: string;
+    /**
+     * no documentation available
+     */
     optional: boolean;
+    /**
+     * Read-only
+     */
     readonly: boolean;
+    /**
+     * Possible Values: `BOOLEAN`, `DOUBLE`, `DURATION`, `INT`, `IPADDR`, `LONG`, `STRING`, `TIMESTAMP`
+     */
     type: string;
 }
 
 export interface CalculatedServiceMetricCondition {
+    /**
+     * A conditions for the metric usage
+     */
     conditions?: outputs.CalculatedServiceMetricConditionCondition[];
 }
 
 export interface CalculatedServiceMetricConditionCondition {
+    /**
+     * The attribute to be matched.  Note that for a service property attribute you must use the comparison of the `FAST_STRING` type. Possible values are `ACTOR_SYSTEM`, `AKKA_ACTOR_CLASS_NAME`, `AKKA_ACTOR_MESSAGE_TYPE`, `AKKA_ACTOR_PATH`, `APPLICATION_BUILD_VERSION`, `APPLICATION_RELEASE_VERSION`, `AZURE_FUNCTIONS_FUNCTION_NAME`, `AZURE_FUNCTIONS_SITE_NAME`, `CICS_PROGRAM_NAME`, `CICS_SYSTEM_ID`, `CICS_TASK_ID`, `CICS_TRANSACTION_ID`, `CICS_USER_ID`, `CPU_TIME`, `CTG_GATEWAY_URL`, `CTG_PROGRAM`, `CTG_SERVER_NAME`, `CTG_TRANSACTION_ID`, `CUSTOMSERVICE_CLASS`, `CUSTOMSERVICE_METHOD`, `DATABASE_CHILD_CALL_COUNT`, `DATABASE_CHILD_CALL_TIME`, `DATABASE_HOST`, `DATABASE_NAME`, `DATABASE_TYPE`, `DATABASE_URL`, `DISK_IO_TIME`, `ERROR_COUNT`, `ESB_APPLICATION_NAME`, `ESB_INPUT_TYPE`, `ESB_LIBRARY_NAME`, `ESB_MESSAGE_FLOW_NAME`, `EXCEPTION_CLASS`, `EXCEPTION_MESSAGE`, `FAILED_STATE`, `FAILURE_REASON`, `FLAW_STATE`, `HTTP_REQUEST_METHOD`, `HTTP_STATUS`, `HTTP_STATUS_CLASS`, `IMS_PROGRAM_NAME`, `IMS_TRANSACTION_ID`, `IMS_USER_ID`, `IO_TIME`, `IS_KEY_REQUEST`, `LAMBDA_COLDSTART`, `LOCK_TIME`, `MESSAGING_DESTINATION_TYPE`, `MESSAGING_IS_TEMPORARY_QUEUE`, `MESSAGING_QUEUE_NAME`, `MESSAGING_QUEUE_VENDOR`, `NETWORK_IO_TIME`, `NON_DATABASE_CHILD_CALL_COUNT`, `NON_DATABASE_CHILD_CALL_TIME`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_TAG`, `REMOTE_ENDPOINT`, `REMOTE_METHOD`, `REMOTE_SERVICE_NAME`, `REQUEST_NAME`, `REQUEST_TYPE`, `RESPONSE_TIME`, `RESPONSE_TIME_CLIENT`, `RMI_CLASS`, `RMI_METHOD`, `SERVICE_DISPLAY_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REQUEST_ATTRIBUTE`, `SERVICE_TAG`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `SUSPENSION_TIME`, `TOTAL_PROCESSING_TIME`, `WAIT_TIME`, `WEBREQUEST_QUERY`, `WEBREQUEST_RELATIVE_URL`, `WEBREQUEST_URL`, `WEBREQUEST_URL_HOST`, `WEBREQUEST_URL_PATH`, `WEBREQUEST_URL_PORT`, `WEBSERVICE_ENDPOINT`, `WEBSERVICE_METHOD` and `ZOS_CALL_TYPE`
+     */
     attribute: string;
+    /**
+     * Type-specific comparison for attributes
+     */
     comparison: outputs.CalculatedServiceMetricConditionConditionComparison;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparison {
+    /**
+     * Boolean Comparison for `BOOLEAN` attributes
+     */
     boolean?: outputs.CalculatedServiceMetricConditionConditionComparisonBoolean;
+    /**
+     * Type-specific comparison information for attributes of type 'ESB_INPUT_NODE_TYPE'
+     */
     esbInputNodeType?: outputs.CalculatedServiceMetricConditionConditionComparisonEsbInputNodeType;
+    /**
+     * Comparison for `FAILED_STATE` attributes
+     */
     failedState?: outputs.CalculatedServiceMetricConditionConditionComparisonFailedState;
+    /**
+     * Comparison for `FAILURE_REASON` attributes
+     */
     failureReason?: outputs.CalculatedServiceMetricConditionConditionComparisonFailureReason;
+    /**
+     * Comparison for `FAST_STRING` attributes. Use it for all service property attributes
+     */
     fastString?: outputs.CalculatedServiceMetricConditionConditionComparisonFastString;
+    /**
+     * Comparison for `FLAW_STATE` attributes
+     */
     flawState?: outputs.CalculatedServiceMetricConditionConditionComparisonFlawState;
+    /**
+     * Comparison for `NUMBER` attributes
+     */
     generic?: outputs.CalculatedServiceMetricConditionConditionComparisonGeneric;
+    /**
+     * Comparison for `HTTP_METHOD` attributes
+     */
     httpMethod?: outputs.CalculatedServiceMetricConditionConditionComparisonHttpMethod;
+    /**
+     * Comparison for `HTTP_STATUS_CLASS` attributes
+     */
     httpStatusClass?: outputs.CalculatedServiceMetricConditionConditionComparisonHttpStatusClass;
+    /**
+     * Comparison for `IIB_INPUT_NODE_TYPE` attributes
+     */
     iibInputNodeType?: outputs.CalculatedServiceMetricConditionConditionComparisonIibInputNodeType;
+    /**
+     * Reverse the comparison **operator**. For example, it turns **equals** into **does not equal**
+     */
     negate?: boolean;
+    /**
+     * Comparison for `NUMBER` attributes
+     */
     number?: outputs.CalculatedServiceMetricConditionConditionComparisonNumber;
+    /**
+     * Comparison for `NUMBER_REQUEST_ATTRIBUTE` attributes
+     */
     numberRequestAttribute?: outputs.CalculatedServiceMetricConditionConditionComparisonNumberRequestAttribute;
+    /**
+     * Comparison for `SERVICE_TYPE` attributes
+     */
     serviceType?: outputs.CalculatedServiceMetricConditionConditionComparisonServiceType;
+    /**
+     * Comparison for `STRING` attributes
+     */
     string?: outputs.CalculatedServiceMetricConditionConditionComparisonString;
+    /**
+     * Comparison for `STRING_REQUEST_ATTRIBUTE` attributes
+     */
     stringRequestAttribute?: outputs.CalculatedServiceMetricConditionConditionComparisonStringRequestAttribute;
+    /**
+     * Comparison for `TAG` attributes
+     */
     tag?: outputs.CalculatedServiceMetricConditionConditionComparisonTag;
+    /**
+     * Comparison for `ZOS_CALL_TYPE` attributes
+     */
     zosCallType?: outputs.CalculatedServiceMetricConditionConditionComparisonZosCallType;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonBoolean {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value: boolean;
+    /**
+     * The values to compare to
+     */
     values?: boolean[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonEsbInputNodeType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     values?: string[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonFailedState {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `FAILED` and `FAILED`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `FAILED` and `FAILED`
+     */
     values?: string[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonFailureReason {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `EXCEPTION_AT_ENTRY_NODE`, `EXCEPTION_ON_ANY_NODE`, `HTTP_CODE` and `REQUEST_ATTRIBUTE`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `EXCEPTION_AT_ENTRY_NODE`, `EXCEPTION_ON_ANY_NODE`, `HTTP_CODE` and `REQUEST_ATTRIBUTE`
+     */
     values?: string[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonFastString {
+    /**
+     * The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `CONTAINS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
+    /**
+     * The values to compare to
+     */
     values?: string[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonFlawState {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `FLAWED` and `NOT_FLAWED`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `FLAWED` and `NOT_FLAWED`
+     */
     values?: string[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonGeneric {
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonHttpMethod {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `CONNECT`, `DELETE`, `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT` and `TRACE`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `CONNECT`, `DELETE`, `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT` and `TRACE`
+     */
     values?: string[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonHttpStatusClass {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `C_1XX`, `C_2XX`, `C_3XX`, `C_4XX`, `C_5XX` and `NO_RESPONSE`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `C_1XX`, `C_2XX`, `C_3XX`, `C_4XX`, `C_5XX` and `NO_RESPONSE`
+     */
     values?: string[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonIibInputNodeType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     values?: string[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonNumber {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `LOWER_THAN` and `LOWER_THAN_OR_EQUAL`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: number;
+    /**
+     * The values to compare to
+     */
     values?: number[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonNumberRequestAttribute {
+    /**
+     * If `true`, the request attribute is matched on child service calls. Default is `false`
+     */
     matchOnChildCalls?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `LOWER_THAN` and `LOWER_THAN_OR_EQUAL`
+     */
     operator?: string;
+    /**
+     * No documentation available for this attribute
+     */
     requestAttribute: string;
+    /**
+     * Defines valid sources of request attributes for conditions or placeholders
+     */
     source?: outputs.CalculatedServiceMetricConditionConditionComparisonNumberRequestAttributeSource;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: number;
+    /**
+     * The values to compare to
+     */
     values?: number[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonNumberRequestAttributeSource {
+    /**
+     * Use only request attributes from services that belong to this management zone.. Use either this or `serviceTag`
+     */
     managementZone?: string;
+    /**
+     * Use only request attributes from services that have this tag. Use either this or `managementZone`
+     */
     serviceTag?: outputs.CalculatedServiceMetricConditionConditionComparisonNumberRequestAttributeSourceServiceTag;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonNumberRequestAttributeSourceServiceTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. For custom tags use the `CONTEXTLESS` value. The context is set for tags that are automatically imported by OneAgent (for example, from the AWS console or environment variables). It’s useful for determining the origin of tags when not manually defined, and it also helps to prevent clashes with other existing tags. If the tag is not automatically imported, `CONTEXTLESS` set. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_COMPUTE_ENGINE` and `KUBERNETES`
+     */
     context?: string;
+    /**
+     * The key of the tag. For custom tags, put the tag value here. The key allows categorization of multiple tags. It is possible that there are multiple values for a single key which will all be represented as standalone tags. Therefore, the key does not have the semantic of a map key but is more like a key of a key-value tuple. In some cases, for example custom tags, the key represents the actual tag value and the value field is not set – those are called valueless tags
+     */
     key: string;
+    /**
+     * has no documentation
+     */
     tagKey?: outputs.CalculatedServiceMetricConditionConditionComparisonNumberRequestAttributeSourceServiceTagTagKey;
+    /**
+     * The value of the tag. Not applicable to custom tags. If a tag does have a separate key and value (in the textual representation they are split by the colon ‘:’), this field is set with the actual value. Key-value pairs can occur for automatically imported tags and tags set by rules if extractors are used
+     */
     value?: string;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonNumberRequestAttributeSourceServiceTagTagKey {
+    /**
+     * has no documentation
+     */
     context?: string;
+    /**
+     * has no documentation
+     */
     key?: string;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonServiceType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `BACKGROUND_ACTIVITY`, `CICS_SERVICE`, `CUSTOM_SERVICE`, `DATABASE_SERVICE`, `ENTERPRISE_SERVICE_BUS_SERVICE`, `EXTERNAL`, `IBM_INTEGRATION_BUS_SERVICE`, `IMS_SERVICE`, `MESSAGING_SERVICE`, `RMI_SERVICE`, `RPC_SERVICE`, `WEB_REQUEST_SERVICE` and `WEB_SERVICE`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `BACKGROUND_ACTIVITY`, `CICS_SERVICE`, `CUSTOM_SERVICE`, `DATABASE_SERVICE`, `ENTERPRISE_SERVICE_BUS_SERVICE`, `EXTERNAL`, `IBM_INTEGRATION_BUS_SERVICE`, `IMS_SERVICE`, `MESSAGING_SERVICE`, `RMI_SERVICE`, `RPC_SERVICE`, `WEB_REQUEST_SERVICE` and `WEB_SERVICE`
+     */
     values?: string[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonString {
+    /**
+     * The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `BEGINS_WITH`, `BEGINS_WITH_ANY_OF`, `CONTAINS`, `ENDS_WITH`, `ENDS_WITH_ANY_OF`, `EQUALS`, `EQUALS_ANY_OF`, `EXISTS` and `REGEX_MATCHES`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
+    /**
+     * The values to compare to
+     */
     values?: string[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonStringRequestAttribute {
+    /**
+     * The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * If `true`, the request attribute is matched on child service calls. Default is `false`
+     */
     matchOnChildCalls?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `BEGINS_WITH`, `BEGINS_WITH_ANY_OF`, `CONTAINS`, `ENDS_WITH`, `ENDS_WITH_ANY_OF`, `EQUALS`, `EQUALS_ANY_OF`, `EXISTS` and `REGEX_MATCHES`
+     */
     operator?: string;
+    /**
+     * No documentation available for this attribute
+     */
     requestAttribute: string;
+    /**
+     * Defines valid sources of request attributes for conditions or placeholders
+     */
     source?: outputs.CalculatedServiceMetricConditionConditionComparisonStringRequestAttributeSource;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
+    /**
+     * The values to compare to
+     */
     values?: string[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonStringRequestAttributeSource {
+    /**
+     * Use only request attributes from services that belong to this management zone.. Use either this or `serviceTag`
+     */
     managementZone?: string;
+    /**
+     * Use only request attributes from services that have this tag. Use either this or `managementZone`
+     */
     serviceTag?: outputs.CalculatedServiceMetricConditionConditionComparisonStringRequestAttributeSourceServiceTag;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonStringRequestAttributeSourceServiceTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. For custom tags use the `CONTEXTLESS` value. The context is set for tags that are automatically imported by OneAgent (for example, from the AWS console or environment variables). It’s useful for determining the origin of tags when not manually defined, and it also helps to prevent clashes with other existing tags. If the tag is not automatically imported, `CONTEXTLESS` set. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_COMPUTE_ENGINE` and `KUBERNETES`
+     */
     context?: string;
+    /**
+     * The key of the tag. For custom tags, put the tag value here. The key allows categorization of multiple tags. It is possible that there are multiple values for a single key which will all be represented as standalone tags. Therefore, the key does not have the semantic of a map key but is more like a key of a key-value tuple. In some cases, for example custom tags, the key represents the actual tag value and the value field is not set – those are called valueless tags
+     */
     key: string;
+    /**
+     * has no documentation
+     */
     tagKey?: outputs.CalculatedServiceMetricConditionConditionComparisonStringRequestAttributeSourceServiceTagTagKey;
+    /**
+     * The value of the tag. Not applicable to custom tags. If a tag does have a separate key and value (in the textual representation they are split by the colon ‘:’), this field is set with the actual value. Key-value pairs can occur for automatically imported tags and tags set by rules if extractors are used
+     */
     value?: string;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonStringRequestAttributeSourceServiceTagTagKey {
+    /**
+     * has no documentation
+     */
     context?: string;
+    /**
+     * has no documentation
+     */
     key?: string;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonTag {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `TAG_KEY_EQUALS` and `TAG_KEY_EQUALS_ANY_OF`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The values to compare to
+     */
     value?: outputs.CalculatedServiceMetricConditionConditionComparisonTagValue;
+    /**
+     * The values to compare to
+     */
     values?: outputs.CalculatedServiceMetricConditionConditionComparisonTagValues;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_CLOUD` and `KUBERNETES`
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonTagValues {
+    /**
+     * The values to compare to
+     */
     values?: outputs.CalculatedServiceMetricConditionConditionComparisonTagValuesValue[];
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonTagValuesValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_CLOUD` and `KUBERNETES`
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonZosCallType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `CTG`, `DPL`, `EXPLICIT_ADK`, `IMS_CONNECT`, `IMS_CONNECT_API`, `IMS_ITRA`, `IMS_MSC`, `IMS_PGM_SWITCH`, `IMS_SHARED_QUEUES`, `IMS_TRANS_EXEC`, `MQ`, `SOAP`, `START`, `TX` and `UNKNOWN`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `CTG`, `DPL`, `EXPLICIT_ADK`, `IMS_CONNECT`, `IMS_CONNECT_API`, `IMS_ITRA`, `IMS_MSC`, `IMS_PGM_SWITCH`, `IMS_SHARED_QUEUES`, `IMS_TRANS_EXEC`, `MQ`, `SOAP`, `START`, `TX` and `UNKNOWN`
+     */
     values?: string[];
 }
 
 export interface CalculatedServiceMetricDimensionDefinition {
+    /**
+     * The dimension value pattern. You can define custom placeholders in the `placeholders` field and use them here
+     */
     dimension: string;
+    /**
+     * The name of the dimension
+     */
     name: string;
+    /**
+     * The list of custom placeholders to be used in a dimension value pattern
+     */
     placeholders?: outputs.CalculatedServiceMetricDimensionDefinitionPlaceholders;
+    /**
+     * The number of top values to be calculated
+     */
     topX: number;
+    /**
+     * The aggregation of the dimension. Possible values are `AVERAGE`, `COUNT`, `MAX`, `MIN`, `OF_INTEREST_RATIO`, `OTHER_RATIO`, `SINGLE_VALUE` and `SUM`
+     */
     topXAggregation: string;
+    /**
+     * How to calculate the **topX** values. Possible values are `ASCENDING` and `DESCENDING`
+     */
     topXDirection: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface CalculatedServiceMetricDimensionDefinitionPlaceholders {
+    /**
+     * A custom placeholder to be used in a dimension value pattern
+     */
     placeholders?: outputs.CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholder[];
 }
 
 export interface CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholder {
+    /**
+     * Which value of the request attribute must be used when it occurs across multiple child requests. Only applicable for the `SERVICE_REQUEST_ATTRIBUTE` attribute, when **useFromChildCalls** is `true`. For the `COUNT` aggregation, the **kind** field is not applicable. Possible values are `COUNT`, `FIRST` and `LAST`.
+     */
     aggregation?: string;
+    /**
+     * The attribute to extract from. You can only use attributes of the **string** type. Possible values are `ACTOR_SYSTEM`, `AKKA_ACTOR_CLASS_NAME`, `AKKA_ACTOR_MESSAGE_TYPE`, `AKKA_ACTOR_PATH`, `APPLICATION_BUILD_VERSION`, `APPLICATION_RELEASE_VERSION`, `AZURE_FUNCTIONS_FUNCTION_NAME`, `AZURE_FUNCTIONS_SITE_NAME`, `CICS_PROGRAM_NAME`, `CICS_SYSTEM_ID`, `CICS_TASK_ID`, `CICS_TRANSACTION_ID`, `CICS_USER_ID`, `CPU_TIME`, `CTG_GATEWAY_URL`, `CTG_PROGRAM`, `CTG_SERVER_NAME`, `CTG_TRANSACTION_ID`, `CUSTOMSERVICE_CLASS`, `CUSTOMSERVICE_METHOD`, `DATABASE_CHILD_CALL_COUNT`, `DATABASE_CHILD_CALL_TIME`, `DATABASE_HOST`, `DATABASE_NAME`, `DATABASE_TYPE`, `DATABASE_URL`, `DISK_IO_TIME`, `ERROR_COUNT`, `ESB_APPLICATION_NAME`, `ESB_INPUT_TYPE`, `ESB_LIBRARY_NAME`, `ESB_MESSAGE_FLOW_NAME`, `EXCEPTION_CLASS`, `EXCEPTION_MESSAGE`, `FAILED_STATE`, `FAILURE_REASON`, `FLAW_STATE`, `HTTP_REQUEST_METHOD`, `HTTP_STATUS`, `HTTP_STATUS_CLASS`, `IMS_PROGRAM_NAME`, `IMS_TRANSACTION_ID`, `IMS_USER_ID`, `IO_TIME`, `IS_KEY_REQUEST`, `LAMBDA_COLDSTART`, `LOCK_TIME`, `MESSAGING_DESTINATION_TYPE`, `MESSAGING_IS_TEMPORARY_QUEUE`, `MESSAGING_QUEUE_NAME`, `MESSAGING_QUEUE_VENDOR`, `NETWORK_IO_TIME`, `NON_DATABASE_CHILD_CALL_COUNT`, `NON_DATABASE_CHILD_CALL_TIME`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_TAG`, `REMOTE_ENDPOINT`, `REMOTE_METHOD`, `REMOTE_SERVICE_NAME`, `REQUEST_NAME`, `REQUEST_TYPE`, `RESPONSE_TIME`, `RESPONSE_TIME_CLIENT`, `RMI_CLASS`, `RMI_METHOD`, `SERVICE_DISPLAY_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REQUEST_ATTRIBUTE`, `SERVICE_TAG`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `SUSPENSION_TIME`, `TOTAL_PROCESSING_TIME`, `WAIT_TIME`, `WEBREQUEST_QUERY`, `WEBREQUEST_RELATIVE_URL`, `WEBREQUEST_URL`, `WEBREQUEST_URL_HOST`, `WEBREQUEST_URL_PATH`, `WEBREQUEST_URL_PORT`, `WEBSERVICE_ENDPOINT`, `WEBSERVICE_METHOD` and `ZOS_CALL_TYPE`
+     */
     attribute: string;
+    /**
+     * Depending on the `kind` value:
+     *
+     *
+     * * `REGEX_EXTRACTION`: The regular expression.
+     *
+     *
+     * * `BETWEEN_DELIMITER`: The opening delimiter string to look for.
+     *
+     *
+     * * All other values: The delimiter string to look for
+     */
     delimiterOrRegex?: string;
+    /**
+     * The closing delimiter string to look for. Required if the `kind` value is `BETWEEN_DELIMITER`. Not applicable otherwise
+     */
     endDelimiter?: string;
+    /**
+     * The type of extraction. Defines either usage of regular expression (`regex`) or the position of request attribute value to be extracted. When the `attribute` is `SERVICE_REQUEST_ATTRIBUTE` attribute and `aggregation` is `COUNT`, needs to be set to `ORIGINAL_TEXT`. Possible values are 	`AFTER_DELIMITER`, `BEFORE_DELIMITER`, `BETWEEN_DELIMITER`, `ORIGINAL_TEXT` and `REGEX_EXTRACTION`
+     */
     kind: string;
+    /**
+     * The name of the placeholder. Use it in the naming pattern as `{name}`
+     */
     name: string;
+    /**
+     * The format of the extracted string. Possible values are `ORIGINAL`, `TO_LOWER_CASE` and `TO_UPPER_CASE`
+     */
     normalization?: string;
+    /**
+     * The request attribute to extract from. Required if the `kind` value is `SERVICE_REQUEST_ATTRIBUTE`. Not applicable otherwise
+     */
     requestAttribute?: string;
+    /**
+     * Defines valid sources of request attributes for conditions or placeholders
+     */
     source?: outputs.CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSource;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * If `true` request attribute will be taken from a child service call. Only applicable for the `SERVICE_REQUEST_ATTRIBUTE` attribute. Defaults to `false`
+     */
     useFromChildCalls?: boolean;
 }
 
 export interface CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSource {
+    /**
+     * Use only request attributes from services that belong to this management zone.. Use either this or `serviceTag`
+     */
     managementZone?: string;
+    /**
+     * Use only request attributes from services that have this tag. Use either this or `managementZone`
+     */
     serviceTag?: outputs.CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSourceServiceTag;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSourceServiceTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. For custom tags use the `CONTEXTLESS` value. The context is set for tags that are automatically imported by OneAgent (for example, from the AWS console or environment variables). It’s useful for determining the origin of tags when not manually defined, and it also helps to prevent clashes with other existing tags. If the tag is not automatically imported, `CONTEXTLESS` set. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_COMPUTE_ENGINE` and `KUBERNETES`
+     */
     context?: string;
+    /**
+     * The key of the tag. For custom tags, put the tag value here. The key allows categorization of multiple tags. It is possible that there are multiple values for a single key which will all be represented as standalone tags. Therefore, the key does not have the semantic of a map key but is more like a key of a key-value tuple. In some cases, for example custom tags, the key represents the actual tag value and the value field is not set – those are called valueless tags
+     */
     key: string;
+    /**
+     * has no documentation
+     */
     tagKey?: outputs.CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSourceServiceTagTagKey;
+    /**
+     * The value of the tag. Not applicable to custom tags. If a tag does have a separate key and value (in the textual representation they are split by the colon ‘:’), this field is set with the actual value. Key-value pairs can occur for automatically imported tags and tags set by rules if extractors are used
+     */
     value?: string;
 }
 
 export interface CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSourceServiceTagTagKey {
+    /**
+     * has no documentation
+     */
     context?: string;
+    /**
+     * has no documentation
+     */
     key?: string;
 }
 
 export interface CalculatedServiceMetricMetricDefinition {
+    /**
+     * The metric to be captured. Possible values are `CPU_TIME`, `DATABASE_CHILD_CALL_COUNT`, `DATABASE_CHILD_CALL_TIME`, `DISK_IO_TIME`, `EXCEPTION_COUNT`, `FAILED_REQUEST_COUNT`, `FAILED_REQUEST_COUNT_CLIENT`, `FAILURE_RATE`, `FAILURE_RATE_CLIENT`, `HTTP_4XX_ERROR_COUNT`, `HTTP_4XX_ERROR_COUNT_CLIENT`, `HTTP_5XX_ERROR_COUNT`, `HTTP_5XX_ERROR_COUNT_CLIENT`, `IO_TIME`, `LOCK_TIME`, `NETWORK_IO_TIME`, `NON_DATABASE_CHILD_CALL_COUNT`, `NON_DATABASE_CHILD_CALL_TIME`, `PROCESSING_TIME`, `REQUEST_ATTRIBUTE`, `REQUEST_COUNT`, `RESPONSE_TIME`, `RESPONSE_TIME_CLIENT`, `SUCCESSFUL_REQUEST_COUNT`, `SUCCESSFUL_REQUEST_COUNT_CLIENT` and `WAIT_TIME`
+     */
     metric: string;
+    /**
+     * The request attribute to be captured. Only applicable when the **metric** parameter is set to `REQUEST_ATTRIBUTE`
+     */
     requestAttribute?: string;
 }
 
 export interface CloudappWorkloaddetectionCloudFoundry {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
 }
 
 export interface CloudappWorkloaddetectionDocker {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
 }
 
 export interface CloudappWorkloaddetectionKubernetes {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * Define rules to merge similar Kubernetes workloads into process groups. 
+     *
+     *  You can use workload properties like namespace name, base pod name or container name as well as the [environment variables DT_RELEASE_STAGE and DT_RELEASE_PRODUCT](https://dt-url.net/sb02v2a) for grouping processes of similar workloads. The first applicable rule will be applied. If no rule matches, “Namespace name” + “Base pod name” + “Container name” is used as fallback.
+     */
     filters?: outputs.CloudappWorkloaddetectionKubernetesFilters;
 }
 
@@ -2499,21 +5669,51 @@ export interface CloudappWorkloaddetectionKubernetesFilters {
 }
 
 export interface CloudappWorkloaddetectionKubernetesFiltersFilter {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * ID calculation based on
+     */
     inclusionToggles: outputs.CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles;
+    /**
+     * When namespace
+     */
     matchFilter: outputs.CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter;
 }
 
 export interface CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles {
+    /**
+     * E.g. "cloud-credential-operator-" for "cloud-credential-operator-5ff6dbff57-gszgq"
+     */
     incBasepod: boolean;
+    /**
+     * Container name
+     */
     incContainer: boolean;
+    /**
+     * Namespace name
+     */
     incNamespace: boolean;
+    /**
+     * If Product is enabled and has no value, it defaults to Base pod name
+     */
     incProduct: boolean;
+    /**
+     * Stage
+     */
     incStage: boolean;
 }
 
 export interface CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter {
+    /**
+     * Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_STARTS`, `STARTS`
+     */
     matchOperator: string;
+    /**
+     * Namespace name
+     */
     namespace?: string;
 }
 
@@ -2529,9 +5729,6 @@ export interface CredentialsCredentialUsageSummary {
 }
 
 export interface CredentialsExternal {
-    /**
-     * Required for Hashicorp Certificate. The ID of Credentials within the Certificate Vault holding the certificate
-     */
     certificate?: string;
     /**
      * Required for Azure Client Secret. No further documentation available
@@ -2549,17 +5746,8 @@ export interface CredentialsExternal {
      * No documentation available
      */
     passwordSecretName?: string;
-    /**
-     * Required for Hashicorp App Role or Hashicorp Certificate. No further documentation available
-     */
     pathToCredentials?: string;
-    /**
-     * Required for Hashicorp App Role. No further documentation available
-     */
     roleid?: string;
-    /**
-     * Required for Hashicorp App Role. The ID of Credentials within the Certificate Vault holding the secret id
-     */
     secretid?: string;
     /**
      * Required for Azure Client Secret. No further documentation available
@@ -2573,9 +5761,6 @@ export interface CredentialsExternal {
      * No documentation available
      */
     usernameSecretName?: string;
-    /**
-     * Required for Hashicorp App Role. No further documentation available
-     */
     vaultNamespace?: string;
     /**
      * No documentation available
@@ -2599,12 +5784,21 @@ export interface CustomAnomaliesDimension {
 }
 
 export interface CustomAnomaliesDimensionDimension {
+    /**
+     * No documentation available
+     */
     index?: number;
+    /**
+     * The dimensions key on the metric
+     */
     key?: string;
     /**
-     * The name of the metric event displayed in the UI
+     * No documentation available
      */
     name?: string;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2613,7 +5807,13 @@ export interface CustomAnomaliesDimensionDimension {
 }
 
 export interface CustomAnomaliesDimensionEntity {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: outputs.CustomAnomaliesDimensionEntityFilter;
+    /**
+     * The dimensions key on the metric
+     */
     key?: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2622,16 +5822,31 @@ export interface CustomAnomaliesDimensionEntity {
 }
 
 export interface CustomAnomaliesDimensionEntityFilter {
+    /**
+     * The operator to match on
+     */
     operator: string;
+    /**
+     * The value to match on
+     */
     value: string;
 }
 
 export interface CustomAnomaliesDimensionString {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: outputs.CustomAnomaliesDimensionStringFilter;
+    /**
+     * No documentation available
+     */
     index?: number;
+    /**
+     * The dimensions key on the metric
+     */
     key?: string;
     /**
-     * The name of the metric event displayed in the UI
+     * No documentation available
      */
     name?: string;
     /**
@@ -2641,7 +5856,13 @@ export interface CustomAnomaliesDimensionString {
 }
 
 export interface CustomAnomaliesDimensionStringFilter {
+    /**
+     * The operator to match on
+     */
     operator: string;
+    /**
+     * The value to match on
+     */
     value: string;
 }
 
@@ -2689,6 +5910,9 @@ export interface CustomAnomaliesScope {
 }
 
 export interface CustomAnomaliesScopeCustomDeviceGroupName {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: outputs.CustomAnomaliesScopeCustomDeviceGroupNameFilter;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2697,13 +5921,19 @@ export interface CustomAnomaliesScopeCustomDeviceGroupName {
 }
 
 export interface CustomAnomaliesScopeCustomDeviceGroupNameFilter {
+    /**
+     * The operator to match on
+     */
     operator: string;
+    /**
+     * The value to match on
+     */
     value: string;
 }
 
 export interface CustomAnomaliesScopeEntity {
     /**
-     * The ID of this resource.
+     * The monitored entities id to match on
      */
     id: string;
     /**
@@ -2713,6 +5943,9 @@ export interface CustomAnomaliesScopeEntity {
 }
 
 export interface CustomAnomaliesScopeHostGroupName {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: outputs.CustomAnomaliesScopeHostGroupNameFilter;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2721,11 +5954,20 @@ export interface CustomAnomaliesScopeHostGroupName {
 }
 
 export interface CustomAnomaliesScopeHostGroupNameFilter {
+    /**
+     * The operator to match on
+     */
     operator: string;
+    /**
+     * The value to match on
+     */
     value: string;
 }
 
 export interface CustomAnomaliesScopeHostName {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: outputs.CustomAnomaliesScopeHostNameFilter;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2734,13 +5976,19 @@ export interface CustomAnomaliesScopeHostName {
 }
 
 export interface CustomAnomaliesScopeHostNameFilter {
+    /**
+     * The operator to match on
+     */
     operator: string;
+    /**
+     * The value to match on
+     */
     value: string;
 }
 
 export interface CustomAnomaliesScopeManagementZone {
     /**
-     * The ID of this resource.
+     * The management zone id to match on
      */
     id?: string;
     /**
@@ -2750,6 +5998,9 @@ export interface CustomAnomaliesScopeManagementZone {
 }
 
 export interface CustomAnomaliesScopeName {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: outputs.CustomAnomaliesScopeNameFilter;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2758,13 +6009,19 @@ export interface CustomAnomaliesScopeName {
 }
 
 export interface CustomAnomaliesScopeNameFilter {
+    /**
+     * The operator to match on
+     */
     operator: string;
+    /**
+     * The value to match on
+     */
     value: string;
 }
 
 export interface CustomAnomaliesScopeProcessGroupId {
     /**
-     * The ID of this resource.
+     * The process groups id to match on
      */
     id: string;
     /**
@@ -2774,6 +6031,9 @@ export interface CustomAnomaliesScopeProcessGroupId {
 }
 
 export interface CustomAnomaliesScopeProcessGroupName {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: outputs.CustomAnomaliesScopeProcessGroupNameFilter;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2782,11 +6042,20 @@ export interface CustomAnomaliesScopeProcessGroupName {
 }
 
 export interface CustomAnomaliesScopeProcessGroupNameFilter {
+    /**
+     * The operator to match on
+     */
     operator: string;
+    /**
+     * The value to match on
+     */
     value: string;
 }
 
 export interface CustomAnomaliesScopeScope {
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2795,6 +6064,9 @@ export interface CustomAnomaliesScopeScope {
 }
 
 export interface CustomAnomaliesScopeTag {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: outputs.CustomAnomaliesScopeTagFilter;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2803,8 +6075,17 @@ export interface CustomAnomaliesScopeTag {
 }
 
 export interface CustomAnomaliesScopeTagFilter {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
@@ -2824,19 +6105,40 @@ export interface CustomAnomaliesStrategy {
 }
 
 export interface CustomAnomaliesStrategyAuto {
+    /**
+     * The condition for the **threshold** value check: `ABOVE` or `BELOW`
+     */
     alertCondition: string;
+    /**
+     * If true, also one-minute samples without data are counted as violating samples
+     */
     alertingOnMissingData?: boolean;
+    /**
+     * The number of one-minute samples within the evaluation window that must go back to normal to close the event
+     */
     dealertingSamples: number;
+    /**
+     * The number of one-minute samples that form the sliding evaluation window
+     */
     samples: number;
+    /**
+     * Defines the factor of how many signal fluctuations are valid. Values above the baseline plus the signal fluctuation times the number of tolerated signal fluctuations are alerted
+     */
     signalFluctuations: number;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * The number of one-minute samples within the evaluation window that must violate the threshold to trigger an event
+     */
     violatingSamples: number;
 }
 
 export interface CustomAnomaliesStrategyGeneric {
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2845,16 +6147,37 @@ export interface CustomAnomaliesStrategyGeneric {
 }
 
 export interface CustomAnomaliesStrategyStatic {
+    /**
+     * The condition for the **threshold** value check: `ABOVE` or `BELOW`
+     */
     alertCondition: string;
+    /**
+     * If true, also one-minute samples without data are counted as violating samples
+     */
     alertingOnMissingData?: boolean;
+    /**
+     * The number of one-minute samples within the evaluation window that must go back to normal to close the event
+     */
     dealertingSamples: number;
+    /**
+     * The number of one-minute samples that form the sliding evaluation window
+     */
     samples: number;
+    /**
+     * The value of the static threshold based on the specified unit
+     */
     threshold: number;
+    /**
+     * The unit of the threshold, matching the metric definition
+     */
     unit: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * The number of one-minute samples within the evaluation window that must violate the threshold to trigger an event
+     */
     violatingSamples: number;
 }
 
@@ -2878,12 +6201,24 @@ export interface CustomAppAnomaliesErrorRateIncrease {
 }
 
 export interface CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto {
+    /**
+     * Absolute threshold
+     */
     thresholdAbsolute: number;
+    /**
+     * Relative threshold
+     */
     thresholdRelative: number;
 }
 
 export interface CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed {
+    /**
+     * Possible Values: `Low`, `Medium`, `High`
+     */
     sensitivity: string;
+    /**
+     * Absolute threshold
+     */
     thresholdAbsolute: number;
 }
 
@@ -2907,41 +6242,86 @@ export interface CustomAppAnomaliesSlowUserActions {
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAuto {
+    /**
+     * To avoid over-alerting do not alert for low traffic applications with less than
+     */
     durationAvoidOveralerting: outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting;
+    /**
+     * Alert if the action duration of all user actions degrades beyond **both** the absolute and relative threshold:
+     */
     durationThresholdAll: outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll;
+    /**
+     * Alert if the action duration of the slowest 10% of user actions degrades beyond **both** the absolute and relative threshold:
+     */
     durationThresholdSlowest: outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest;
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting {
+    /**
+     * no documentation available
+     */
     minActionRate: number;
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: number;
+    /**
+     * Relative threshold
+     */
     slowdownPercentage: number;
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: number;
+    /**
+     * Relative threshold
+     */
     slowdownPercentage: number;
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixed {
+    /**
+     * To avoid over-alerting do not alert for low traffic applications with less than
+     */
     durationAvoidOveralerting: outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting;
+    /**
+     * Alert if the action duration of all user actions degrades beyond the absolute threshold:
+     */
     durationThresholdAllFixed: outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed;
+    /**
+     * Alert if the action duration of the slowest 10% of user actions degrades beyond the absolute threshold:
+     */
     durationThresholdSlowest: outputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest;
+    /**
+     * Possible Values: `Medium`, `High`, `Low`
+     */
     sensitivity: string;
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting {
+    /**
+     * no documentation available
+     */
     minActionRate: number;
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: number;
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: number;
 }
 
@@ -2987,13 +6367,28 @@ export interface CustomAppCrashRateCrashRateIncrease {
 }
 
 export interface CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto {
+    /**
+     * Dynatrace learns the typical crash rate for all app versions and will create an alert if the baseline is violated by more than a specified threshold. Analysis happens based on a sliding window of 10 minutes.
+     */
     baselineViolationPercentage: number;
+    /**
+     * Amount of users
+     */
     concurrentUsers: number;
+    /**
+     * Possible Values: `Low`, `Medium`, `High`
+     */
     sensitivity: string;
 }
 
 export interface CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed {
+    /**
+     * Absolute threshold
+     */
     absoluteCrashRate: number;
+    /**
+     * Amount of users
+     */
     concurrentUsers: number;
 }
 
@@ -3036,37 +6431,55 @@ export interface CustomServiceRule {
 }
 
 export interface CustomServiceRuleClass {
+    /**
+     * Matcher applying to the class name (ENDS*WITH, EQUALS or STARTS*WITH). STARTS_WITH can only be used if there is at least one annotation defined. Default value is EQUALS
+     */
     match?: string;
     /**
-     * The name of the custom service, displayed in the UI
+     * The full name of the class / the name to match the class name with
      */
     name: string;
 }
 
 export interface CustomServiceRuleFile {
+    /**
+     * Matcher applying to the file name (ENDS*WITH, EQUALS or STARTS*WITH). Default value is ENDS_WITH (if applicable)
+     */
     match?: string;
     /**
-     * The name of the custom service, displayed in the UI
+     * The full name of the file / the name to match the file name with
      */
     name: string;
 }
 
 export interface CustomServiceRuleMethod {
+    /**
+     * Fully qualified types of argument the method expects
+     */
     arguments?: string[];
     /**
-     * The ID of this resource.
+     * The ID of the method rule
      */
     id: string;
+    /**
+     * The modifiers of the method rule. Possible values are `ABSTRACT`, `EXTERN`, `FINAL`, `NATIVE` and `STATIC`
+     */
     modifiers?: string[];
     /**
-     * The name of the custom service, displayed in the UI
+     * The method to instrument
      */
     name: string;
+    /**
+     * Fully qualified type the method returns
+     */
     returns?: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * The visibility of the method rule. Possible values are `INTERNAL`, `PACKAGE_PROTECTED`, `PRIVATE`, `PROTECTED` and `PUBLIC`
+     */
     visibility?: string;
 }
 
@@ -3078,8 +6491,17 @@ export interface CustomTagsTags {
 }
 
 export interface CustomTagsTagsFilter {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
@@ -3111,13 +6533,13 @@ export interface DashboardDashboardMetadata {
     /**
      * the dashboard is shared (`true`) or private (`false`)
      *
-     * @deprecated Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+     * @deprecated Please use the resource `dynatrace.DashboardSharing` to configure share settings
      */
     shared?: boolean;
     /**
      * represents sharing configuration of a dashboard
      *
-     * @deprecated Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+     * @deprecated Please use the resource `dynatrace.DashboardSharing` to configure share settings
      */
     sharingDetails?: outputs.DashboardDashboardMetadataSharingDetails;
     /**
@@ -3139,8 +6561,19 @@ export interface DashboardDashboardMetadata {
 }
 
 export interface DashboardDashboardMetadataDynamicFilters {
+    /**
+     * A set of all possible global dashboard filters that can be applied to a dashboard
+     */
     filters: string[];
+    /**
+     * A set of generic tag filters that can be applied to a dashboard
+     */
     genericTagFilters?: outputs.DashboardDashboardMetadataDynamicFiltersGenericTagFilters;
+    /**
+     * A set of entities applied for tag filter suggestions. You can fetch the list of possible values with the [GET all entity types](https://dt-url.net/dw03s7h)request. 
+     *
+     * Only applicable if the **filters** set includes `TAG_KEY:<tagname>`
+     */
     tagSuggestionTypes?: string[];
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3153,14 +6586,32 @@ export interface DashboardDashboardMetadataDynamicFiltersGenericTagFilters {
 }
 
 export interface DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilter {
+    /**
+     * Entity types affected by tag
+     */
     entityTypes: string[];
+    /**
+     * The display name used to identify this generic filter
+     */
     name?: string;
+    /**
+     * The entity type for which the suggestions should be provided.
+     */
     suggestionsFromEntityType?: string;
+    /**
+     * The tag key for this filter
+     */
     tagKey?: string;
 }
 
 export interface DashboardDashboardMetadataFilter {
+    /**
+     * the management zone this dashboard applies to
+     */
     managementZones?: outputs.DashboardDashboardMetadataFilterManagementZone[];
+    /**
+     * the default timeframe of the dashboard
+     */
     timeframe?: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3169,11 +6620,17 @@ export interface DashboardDashboardMetadataFilter {
 }
 
 export interface DashboardDashboardMetadataFilterManagementZone {
+    /**
+     * a short description of the Dynatrace entity
+     */
     description?: string;
     /**
-     * The ID of this resource.
+     * the ID of the Dynatrace entity
      */
     id: string;
+    /**
+     * the name of the Dynatrace entity
+     */
     name?: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3182,7 +6639,13 @@ export interface DashboardDashboardMetadataFilterManagementZone {
 }
 
 export interface DashboardDashboardMetadataSharingDetails {
+    /**
+     * If `true`, the dashboard is shared via link and authenticated users with the link can view
+     */
     linkShared?: boolean;
+    /**
+     * If `true`, the dashboard is published to anyone on this environment
+     */
     published?: boolean;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3214,10 +6677,16 @@ export interface DashboardSharingPermissions {
 
 export interface DashboardSharingPermissionsPermission {
     /**
-     * The ID of this resource.
+     * The ID of the user or group to whom the permission is granted.
      */
     id?: string;
+    /**
+     * The level of the permission:
+     */
     level: string;
+    /**
+     * The type of the permission:
+     */
     type: string;
 }
 
@@ -3226,6 +6695,9 @@ export interface DashboardSharingPublic {
      * A list of management zones that can display data on the publicly shared dashboard.
      */
     managementZones: string[];
+    /**
+     * A list of URLs for anonymous access to the dashboard indexed by management zone name
+     */
     urls: {[key: string]: string};
 }
 
@@ -3314,18 +6786,36 @@ export interface DashboardTile {
 }
 
 export interface DashboardTileBounds {
+    /**
+     * the height of the tile, in pixels
+     */
     height: number;
+    /**
+     * the horizontal distance from the top left corner of the dashboard to the top left corner of the tile, in pixels
+     */
     left: number;
+    /**
+     * the vertical distance from the top left corner of the dashboard to the top left corner of the tile, in pixels
+     */
     top: number;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * the width of the tile, in pixels
+     */
     width: number;
 }
 
 export interface DashboardTileFilter {
+    /**
+     * the management zone this tile applies to
+     */
     managementZones?: outputs.DashboardTileFilterManagementZone[];
+    /**
+     * the default timeframe of the tile
+     */
     timeframe?: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3334,10 +6824,25 @@ export interface DashboardTileFilter {
 }
 
 export interface DashboardTileFilterConfig {
+    /**
+     * Configuration of a custom chart
+     */
     chartConfig?: outputs.DashboardTileFilterConfigChartConfig;
+    /**
+     * The name of the tile, set by user
+     */
     customName: string;
+    /**
+     * The default name of the tile
+     */
     defaultName: string;
+    /**
+     * Configuration of a custom chart
+     */
     filters?: outputs.DashboardTileFilterConfigFilters;
+    /**
+     * The type of the filter. Possible values are `ALB`, `APPLICATION`, `APPLICATION_METHOD`, `APPMON`, `ASG`, `AWS_CREDENTIALS`, `AWS_CUSTOM_SERVICE`, `AWS_LAMBDA_FUNCTION`, `CLOUD_APPLICATION`, `CLOUD_APPLICATION_INSTANCE`, `CLOUD_APPLICATION_NAMESPACE`, `CONTAINER_GROUP_INSTANCE`, `CUSTOM_APPLICATION`, `CUSTOM_DEVICES`, `CUSTOM_SERVICES`, `DATABASE`, `DATABASE_KEY_REQUEST`, `DCRUM_APPLICATION`, `DCRUM_ENTITY`, `DYNAMO_DB`, `EBS`, `EC2`, `ELB`, `ENVIRONMENT`, `ESXI`, `EXTERNAL_SYNTHETIC_TEST`, `GLOBAL_BACKGROUND_ACTIVITY`, `HOST`, `IOT`, `KUBERNETES_CLUSTER`, `KUBERNETES_NODE`, `MDA_SERVICE`, `MIXED`, `MOBILE_APPLICATION`, `MONITORED_ENTITY`, `NLB`, `PG_BACKGROUND_ACTIVITY`, `PROBLEM`, `PROCESS_GROUP_INSTANCE`, `RDS`, `REMOTE_PLUGIN`, `SERVICE`, `SERVICE_KEY_REQUEST`, `SYNTHETIC_BROWSER_MONITOR`, `SYNTHETIC_HTTPCHECK`, `SYNTHETIC_HTTPCHECK_STEP`, `SYNTHETIC_LOCATION`, `SYNTHETIC_TEST`, `SYNTHETIC_TEST_STEP`, `UI_ENTITY`, `VIRTUAL_MACHINE`, `WEB_CHECK`.
+     */
     type: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3346,12 +6851,33 @@ export interface DashboardTileFilterConfig {
 }
 
 export interface DashboardTileFilterConfigChartConfig {
+    /**
+     * The optional custom y-axis limits
+     */
     axisLimits?: {[key: string]: number};
+    /**
+     * Either one of `Bit`, `BitPerHour`, `BitPerMinute`, `BitPerSecond`, `Byte`, `BytePerHour`, `BytePerMinute`, `BytePerSecond`, `Cores`, `Count`, `Day`, `DecibelMilliWatt`, `GibiByte`, `Giga`, `GigaByte`, `Hour`, `KibiByte`, `KibiBytePerHour`, `KibiBytePerMinute`, `KibiBytePerSecond`, `Kilo`, `KiloByte`, `KiloBytePerHour`, `KiloBytePerMinute`, `KiloBytePerSecond`, `MebiByte`, `MebiBytePerHour`, `MebiBytePerMinute`, `MebiBytePerSecond`, `Mega`, `MegaByte`, `MegaBytePerHour`, `MegaBytePerMinute`, `MegaBytePerSecond`, `MicroSecond`, `MilliCores`, `MilliSecond`, `MilliSecondPerMinute`, `Minute`, `Month`, `NanoSecond`, `NanoSecondPerMinute`, `NotApplicable`, `PerHour`, `PerMinute`, `PerSecond`, `Percent`, `Pixel`, `Promille`, `Ratio`, `Second`, `State`, `Unspecified`, `Week`, `Year`
+     */
     leftAxisCustomUnit?: string;
+    /**
+     * Defines if a legend should be shown
+     */
     legend?: boolean;
+    /**
+     * Additional information about charted metric
+     */
     resultMetadatas?: outputs.DashboardTileFilterConfigChartConfigResultMetadata[];
+    /**
+     * Either one of `Bit`, `BitPerHour`, `BitPerMinute`, `BitPerSecond`, `Byte`, `BytePerHour`, `BytePerMinute`, `BytePerSecond`, `Cores`, `Count`, `Day`, `DecibelMilliWatt`, `GibiByte`, `Giga`, `GigaByte`, `Hour`, `KibiByte`, `KibiBytePerHour`, `KibiBytePerMinute`, `KibiBytePerSecond`, `Kilo`, `KiloByte`, `KiloBytePerHour`, `KiloBytePerMinute`, `KiloBytePerSecond`, `MebiByte`, `MebiBytePerHour`, `MebiBytePerMinute`, `MebiBytePerSecond`, `Mega`, `MegaByte`, `MegaBytePerHour`, `MegaBytePerMinute`, `MegaBytePerSecond`, `MicroSecond`, `MilliCores`, `MilliSecond`, `MilliSecondPerMinute`, `Minute`, `Month`, `NanoSecond`, `NanoSecondPerMinute`, `NotApplicable`, `PerHour`, `PerMinute`, `PerSecond`, `Percent`, `Pixel`, `Promille`, `Ratio`, `Second`, `State`, `Unspecified`, `Week`, `Year`
+     */
     rightAxisCustomUnit?: string;
+    /**
+     * A list of charted metrics
+     */
     series?: outputs.DashboardTileFilterConfigChartConfigSeries[];
+    /**
+     * The type of the chart
+     */
     type: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3360,12 +6886,24 @@ export interface DashboardTileFilterConfigChartConfig {
 }
 
 export interface DashboardTileFilterConfigChartConfigResultMetadata {
+    /**
+     * Additional metadata for charted metric
+     */
     configs?: outputs.DashboardTileFilterConfigChartConfigResultMetadataConfig[];
 }
 
 export interface DashboardTileFilterConfigChartConfigResultMetadataConfig {
+    /**
+     * The color of the metric in the chart, hex format
+     */
     customColor?: string;
+    /**
+     * A generated key by the Dynatrace Server
+     */
     key?: string;
+    /**
+     * The timestamp of the last metadata modification, in UTC milliseconds
+     */
     lastModified?: number;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3374,14 +6912,38 @@ export interface DashboardTileFilterConfigChartConfigResultMetadataConfig {
 }
 
 export interface DashboardTileFilterConfigChartConfigSeries {
+    /**
+     * The charted aggregation of the metric
+     */
     aggregation: string;
     aggregationRate?: string;
+    /**
+     * Configuration of the charted metric splitting
+     */
     dimensions?: outputs.DashboardTileFilterConfigChartConfigSeriesDimension[];
+    /**
+     * The visualization of the timeseries chart
+     */
     entityType: string;
+    /**
+     * The name of the charted metric
+     */
     metric: string;
+    /**
+     * The charted percentile. Only applicable if the **aggregation** is set to `PERCENTILE`
+     */
     percentile?: number;
+    /**
+     * Sort ascending (`true`) or descending (`false`)
+     */
     sortAscending?: boolean;
+    /**
+     * Sort the column (`true`) or (`false`)
+     */
     sortColumn?: boolean;
+    /**
+     * The visualization of the timeseries chart. Possible values are `AREA`, `BAR` and `LINE`.
+     */
     type: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3392,37 +6954,64 @@ export interface DashboardTileFilterConfigChartConfigSeries {
 export interface DashboardTileFilterConfigChartConfigSeriesDimension {
     entityDimension?: boolean;
     /**
-     * The ID of this resource.
+     * The ID of the dimension by which the metric is split
      */
     id: string;
+    /**
+     * The name of the dimension by which the metric is split
+     */
     name?: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * The splitting value
+     */
     values?: string[];
 }
 
 export interface DashboardTileFilterConfigFilters {
+    /**
+     * the tiles this Dashboard consist of
+     */
     filters?: outputs.DashboardTileFilterConfigFiltersFilter[];
 }
 
 export interface DashboardTileFilterConfigFiltersFilter {
+    /**
+     * The entity type (e.g. HOST, SERVICE, ...)
+     */
     entityType: string;
+    /**
+     * the tiles this Dashboard consist of
+     */
     matches?: outputs.DashboardTileFilterConfigFiltersFilterMatch[];
 }
 
 export interface DashboardTileFilterConfigFiltersFilterMatch {
+    /**
+     * The entity type (e.g. HOST, SERVICE, ...)
+     */
     key: string;
+    /**
+     * the tiles this Dashboard consist of
+     */
     values?: string[];
 }
 
 export interface DashboardTileFilterManagementZone {
+    /**
+     * a short description of the Dynatrace entity
+     */
     description?: string;
     /**
-     * The ID of this resource.
+     * the ID of the Dynatrace entity
      */
     id: string;
+    /**
+     * the name of the Dynatrace entity
+     */
     name?: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3431,6 +7020,9 @@ export interface DashboardTileFilterManagementZone {
 }
 
 export interface DashboardTileVisualizationConfig {
+    /**
+     * The axis bucketing when enabled groups similar series in the same virtual axis
+     */
     hasAxisBucketing?: boolean;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3443,7 +7035,13 @@ export interface DashboardsAllowlistAllowlist {
 }
 
 export interface DashboardsAllowlistAllowlistUrlpattern {
+    /**
+     * Possible Values: `Equals`, `StartsWith`
+     */
     rule: string;
+    /**
+     * Pattern
+     */
     template: string;
 }
 
@@ -3452,7 +7050,13 @@ export interface DashboardsGeneralDefaultDashboardList {
 }
 
 export interface DashboardsGeneralDefaultDashboardListDefaultDashboard {
+    /**
+     * Preset dashboard to show as default landing page
+     */
     dashboard: string;
+    /**
+     * Show selected dashboard by default for this user group
+     */
     userGroup: string;
 }
 
@@ -3461,7 +7065,13 @@ export interface DashboardsPresetsDashboardPresetsList {
 }
 
 export interface DashboardsPresetsDashboardPresetsListDashboardPreset {
+    /**
+     * Dashboard preset to limit visibility for
+     */
     dashboardPreset: string;
+    /**
+     * User group to show selected dashboard preset to
+     */
     userGroup: string;
 }
 
@@ -3484,12 +7094,36 @@ export interface DataPrivacyDoNotTrack {
 }
 
 export interface DataPrivacyMasking {
+    /**
+     * Possible Values: `All`, `Public`
+     */
     ipAddressMasking?: string;
     /**
      * Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
      */
     ipAddressMaskingEnabled: boolean;
+    /**
+     * Dynatrace captures the URIs and request headers sent from desktop and mobile browsers. Dynatrace also captures full URIs on the server-side to enable detailed performance analysis of your applications. For complete details, visit [Mask personal data in URIs](https://dt-url.net/mask-personal-data-in-URIs).. URIs and request headers contain personal data. When this setting is enabled, Dynatrace automatically detects UUIDs, credit card numbers, email addresses, IP addresses, and other IDs and replaces those values with placeholders. The personal data is then masked in PurePath analysis, error analysis, user action naming for RUM, and elsewhere in Dynatrace.
+     */
     personalDataUriMaskingEnabled: boolean;
+    /**
+     * When Dynatrace detects a user action that triggers a page load or an AJAX/XHR action. To learn more about masking user actions, visit [Mask user actions](https://dt-url.net/mask-user-action).. When Dynatrace detects a user action that triggers a page load or an AJAX/XHR action, it constructs a name for the user action based on:
+     *
+     * - User event type (click on..., loading of page..., or keypress on...)
+     * - Title, caption, label, value, ID, className, or other available property of the related HTML element (for example, an image, button, checkbox, or text input field).
+     *
+     * In most instances, the default approach to user-action naming works well, resulting in user-action names such as:
+     *
+     * - click on "Search" on page /search.html
+     * - keypress on "Feedback" on page /contact.html
+     * - touch on "Homescreen" of page /list.jsf
+     *
+     * In rare circumstances, confidential data (for example, email addresses, usernames, or account numbers) can be unintentionally included in user action names because the confidential data itself is included in an HTML element label, attribute, or other value (for example, click on "my Account Number: 1231231"...). If such confidential data appears in your application's user action names, enable the Mask user action names setting. This setting replaces specific HTML element names and values with generic HTML element names. With user-action name masking enabled, the user action names listed above appear as:
+     *
+     * - click on INPUT on page /search.html
+     * - keypress on TEXTAREA on page /contact.html
+     * - touch on DIV of page /list.jsf
+     */
     userActionMaskingEnabled: boolean;
 }
 
@@ -3523,14 +7157,32 @@ export interface DatabaseAnomaliesFailureRate {
 }
 
 export interface DatabaseAnomaliesFailureRateAuto {
+    /**
+     * Absolute increase of failing service calls to trigger an alert, %
+     */
     absolute: number;
+    /**
+     * Relative increase of failing service calls to trigger an alert, %
+     */
     relative: number;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface DatabaseAnomaliesFailureRateThresholds {
+    /**
+     * Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers alert
+     */
     sensitivity: string;
+    /**
+     * Failure rate during any 5-minute period to trigger an alert, %
+     */
     threshold: number;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
@@ -3546,13 +7198,28 @@ export interface DatabaseAnomaliesLoad {
 }
 
 export interface DatabaseAnomaliesLoadDrops {
+    /**
+     * Alert if the service stays in abnormal state for at least *X* minutes
+     */
     minutes?: number;
+    /**
+     * Alert if the observed load is more than *X* % of the expected value
+     */
     percent?: number;
 }
 
 export interface DatabaseAnomaliesLoadSpikes {
+    /**
+     * Alert if the service stays in abnormal state for at least *X* minutes
+     */
     minutes?: number;
+    /**
+     * Alert if the observed load is more than *X* % of the expected value
+     */
     percent?: number;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
@@ -3569,24 +7236,51 @@ export interface DatabaseAnomaliesResponseTime {
 
 export interface DatabaseAnomaliesResponseTimeAuto {
     /**
-     * Configuration for anomalies regarding load drops and spikes
+     * Minimal service load to detect response time degradation. Response time degradation of services with smaller load won't trigger alerts. Possible values are `FIFTEEN_REQUESTS_PER_MINUTE`, `FIVE_REQUESTS_PER_MINUTE`, `ONE_REQUEST_PER_MINUTE` and `TEN_REQUESTS_PER_MINUTE`
      */
     load: string;
+    /**
+     * Alert if the response time degrades by more than *X* milliseconds
+     */
     milliseconds: number;
+    /**
+     * Alert if the response time degrades by more than *X* %
+     */
     percent: number;
+    /**
+     * Alert if the response time of the slowest 10% degrades by more than *X* milliseconds
+     */
     slowestMilliseconds: number;
+    /**
+     * Alert if the response time of the slowest 10% degrades by more than *X* milliseconds
+     */
     slowestPercent: number;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface DatabaseAnomaliesResponseTimeThresholds {
     /**
-     * Configuration for anomalies regarding load drops and spikes
+     * Minimal service load to detect response time degradation. Response time degradation of services with smaller load won't trigger alerts. Possible values are `FIFTEEN_REQUESTS_PER_MINUTE`, `FIVE_REQUESTS_PER_MINUTE`, `ONE_REQUEST_PER_MINUTE` and `TEN_REQUESTS_PER_MINUTE`
      */
     load: string;
+    /**
+     * Response time during any 5-minute period to trigger an alert, in milliseconds
+     */
     milliseconds: number;
+    /**
+     * Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers an alert
+     */
     sensitivity: string;
+    /**
+     * Response time of the 10% slowest during any 5-minute period to trigger an alert, in milliseconds
+     */
     slowestMilliseconds: number;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
@@ -3625,24 +7319,54 @@ export interface DatabaseAnomaliesV2FailureRate {
 }
 
 export interface DatabaseAnomaliesV2FailureRateAutoDetection {
+    /**
+     * Absolute threshold
+     */
     absoluteIncrease: number;
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: outputs.DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection;
+    /**
+     * Relative threshold
+     */
     relativeIncrease: number;
 }
 
 export interface DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: number;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: number;
 }
 
 export interface DatabaseAnomaliesV2FailureRateFixedDetection {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: outputs.DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection;
+    /**
+     * no documentation available
+     */
     sensitivity: string;
+    /**
+     * no documentation available
+     */
     threshold: number;
 }
 
 export interface DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: number;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: number;
 }
 
@@ -3696,43 +7420,94 @@ export interface DatabaseAnomaliesV2ResponseTime {
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeAutoDetection {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: outputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection;
+    /**
+     * Alert if the median response time of all requests degrades beyond **both** the absolute and relative thresholds:
+     */
     responseTimeAll: outputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll;
+    /**
+     * Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+     */
     responseTimeSlowest: outputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest;
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: number;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: number;
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll {
+    /**
+     * Absolute threshold
+     */
     degradationMilliseconds: number;
+    /**
+     * Relative threshold
+     */
     degradationPercent: number;
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest {
+    /**
+     * Absolute threshold
+     */
     slowestDegradationMilliseconds: number;
+    /**
+     * Relative threshold
+     */
     slowestDegradationPercent: number;
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeFixedDetection {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: outputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection;
+    /**
+     * Alert if the median response time of all requests degrades beyond this threshold within an observation period of 5 minutes:
+     */
     responseTimeAll: outputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll;
+    /**
+     * Alert if the response time of the slowest 10% of requests degrades beyond this threshold within an observation period of 5 minutes:
+     */
     responseTimeSlowest: outputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest;
+    /**
+     * no documentation available
+     */
     sensitivity: string;
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: number;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: number;
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll {
+    /**
+     * Threshold
+     */
     degradationMilliseconds: number;
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest {
+    /**
+     * Threshold
+     */
     slowestDegradationMilliseconds: number;
 }
 
@@ -3816,9 +7591,21 @@ export interface DeclarativeGroupingDetection {
 }
 
 export interface DeclarativeGroupingDetectionProcessDefinition {
+    /**
+     * Process group identifier
+     */
     id: string;
+    /**
+     * This identifier is used by Dynatrace to recognize this process group.
+     */
     processGroupName: string;
+    /**
+     * Possible Values: `never`, `always`, `highResourceUsage`
+     */
     report: string;
+    /**
+     * Define process detection rules by selecting a process property and a condition. Each process group can have multiple detection rules associated with it.
+     */
     rules?: outputs.DeclarativeGroupingDetectionProcessDefinitionRules;
 }
 
@@ -3827,7 +7614,20 @@ export interface DeclarativeGroupingDetectionProcessDefinitionRules {
 }
 
 export interface DeclarativeGroupingDetectionProcessDefinitionRulesRule {
+    /**
+     * - $contains(svc) – Matches if svc appears anywhere in the process property value.
+     * - $eq(svc.exe) – Matches if svc.exe matches the process property value exactly.
+     * - $prefix(svc) – Matches if app matches the prefix of the process property value.
+     * - $suffix(svc.py) – Matches if svc.py matches the suffix of the process property value.
+     *
+     * For example, $suffix(svc.py) would detect processes named loyaltysvc.py and paymentssvc.py.
+     *
+     * For more details, see [Declarative process grouping](https://dt-url.net/j142w57).
+     */
     condition: string;
+    /**
+     * Possible Values: `Executable`, `ExecutablePath`, `CommandLine`
+     */
     property: string;
 }
 
@@ -3850,8 +7650,17 @@ export interface DiskAnomaliesTags {
 }
 
 export interface DiskAnomaliesTagsFilter {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
@@ -3871,32 +7680,68 @@ export interface DiskAnomaliesV2Disk {
 }
 
 export interface DiskAnomaliesV2DiskDiskLowInodesDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: outputs.DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds;
+    /**
+     * Detection mode for low inodes number available
+     */
     detectionMode?: string;
+    /**
+     * Detect low inodes number available
+     */
     enabled: boolean;
 }
 
 export interface DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds {
+    /**
+     * Alert if the percentage of available inodes is lower than this threshold in 3 out of 5 samples
+     */
     freeInodesPercentage: number;
 }
 
 export interface DiskAnomaliesV2DiskDiskLowSpaceDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: outputs.DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds;
+    /**
+     * Detection mode for low disk space
+     */
     detectionMode?: string;
+    /**
+     * Detect low disk space
+     */
     enabled: boolean;
 }
 
 export interface DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds {
+    /**
+     * Alert if free disk space is lower than this percentage in 3 out of 5 samples
+     */
     freeSpacePercentage: number;
 }
 
 export interface DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: outputs.DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds;
+    /**
+     * Detection mode for slow running disks
+     */
     detectionMode?: string;
+    /**
+     * Detect slow-running disks
+     */
     enabled: boolean;
 }
 
 export interface DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds {
+    /**
+     * Alert if disk read time or write time is higher than this threshold in 3 out of 5 samples
+     */
     writeAndReadTime: number;
 }
 
@@ -3927,8 +7772,38 @@ export interface DiskOptionsExclusions {
 }
 
 export interface DiskOptionsExclusionsExclusion {
+    /**
+     * **File system type field:** the type of the file system to be excluded from monitoring. Examples:
+     *
+     * * ext4
+     * * ext3
+     * * btrfs
+     * * ext*
+     *
+     * ⚠️ File system types are case sensitive! 
+     *
+     * The wildcard in the last example means to exclude matching file systems such as types ext4 and ext3
+     */
     filesystem?: string;
+    /**
+     * **Disk or mount point path field:** the path to where the disk to be excluded from monitoring is mounted. Examples:
+     *
+     * * /mnt/my_disk
+     * * /staff/emp1
+     * * C:\
+     * * /staff/*
+     * * /disk*
+     *
+     *  ⚠️ Mount point paths are case sensitive! 
+     *
+     * The wildcard in **&#47;staff/*** means to exclude every child folder of /staff.
+     *
+     * The wildcard in **&#47;disk*** means to exclude every mount point starting with /disk, for example /disk1, /disk99,  /diskabc
+     */
     mountpoint?: string;
+    /**
+     * Possible Values: `OS_TYPE_AIX`, `OS_TYPE_DARWIN`, `OS_TYPE_HPUX`, `OS_TYPE_LINUX`, `OS_TYPE_SOLARIS`, `OS_TYPE_UNKNOWN`, `OS_TYPE_WINDOWS`, `OS_TYPE_ZOS`
+     */
     os: string;
 }
 
@@ -3948,6 +7823,9 @@ export interface DiskSpecificAnomaliesV2DiskLowInodesDetection {
 }
 
 export interface DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholds {
+    /**
+     * Alert if the percentage of available inodes is lower than this threshold in 3 out of 5 samples
+     */
     freeInodesPercentage: number;
 }
 
@@ -3967,6 +7845,9 @@ export interface DiskSpecificAnomaliesV2DiskLowSpaceDetection {
 }
 
 export interface DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholds {
+    /**
+     * Alert if free disk space is lower than this percentage in 3 out of 5 samples
+     */
     freeSpacePercentage: number;
 }
 
@@ -3986,6 +7867,9 @@ export interface DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection {
 }
 
 export interface DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholds {
+    /**
+     * Alert if disk read time or write time is higher than this threshold in 3 out of 5 samples
+     */
     writeAndReadTime: number;
 }
 
@@ -4017,27 +7901,57 @@ export interface EnvironmentQuotas {
 }
 
 export interface EnvironmentQuotasDdus {
+    /**
+     * Annual environment quota. Not set if unlimited
+     */
     annual?: number;
+    /**
+     * Monthly environment quota. Not set if unlimited
+     */
     monthly?: number;
 }
 
 export interface EnvironmentQuotasDemUnits {
+    /**
+     * Annual environment quota. Not set if unlimited
+     */
     annual?: number;
+    /**
+     * Monthly environment quota. Not set if unlimited
+     */
     monthly?: number;
 }
 
 export interface EnvironmentQuotasLogs {
+    /**
+     * Annual environment quota. Not set if unlimited
+     */
     annual?: number;
+    /**
+     * Monthly environment quota. Not set if unlimited
+     */
     monthly?: number;
 }
 
 export interface EnvironmentQuotasSynthetic {
+    /**
+     * Annual environment quota. Not set if unlimited
+     */
     annual?: number;
+    /**
+     * Monthly environment quota. Not set if unlimited
+     */
     monthly?: number;
 }
 
 export interface EnvironmentQuotasUserSessions {
+    /**
+     * Annual total User sessions environment quota. Not set if unlimited
+     */
     annual?: number;
+    /**
+     * Monthly total User sessions environment quota. Not set if unlimited
+     */
     monthly?: number;
 }
 
@@ -4055,18 +7969,48 @@ export interface EnvironmentStorage {
 }
 
 export interface EnvironmentStorageLimits {
+    /**
+     * Log monitoring storage usage and limit information on environment level in bytes. Not editable when Log monitoring is not allowed by license or not configured on cluster level. 0 for unlimited.
+     */
     logs?: number;
+    /**
+     * Session replay storage usage and limit information on environment level in bytes. 0 for unlimited.
+     */
     sessionReplay?: number;
+    /**
+     * Session replay storage usage and limit information on environment level in bytes. 0 for unlimited.
+     */
     symbolFiles?: number;
+    /**
+     * Transaction storage usage and limit information on environment level in bytes. 0 for unlimited.
+     */
     transactions?: number;
 }
 
 export interface EnvironmentStorageRetention {
+    /**
+     * Log monitoring retention settings on environment level in days. Not editable when Log monitoring is not allowed by license or not configured on cluster level. Can be set to any value from 5 to 90 days
+     */
     logs?: number;
+    /**
+     * Real user monitoring retention settings on environment level in days. Can be set to any value from 1 to 35 days
+     */
     rum: number;
+    /**
+     * Service code level retention settings on environment level in days. Service code level retention time can't be greater than service request level retention time and both can't exceed one year
+     */
     serviceCodeLevel: number;
+    /**
+     * Service request level retention settings on environment level in days. Service code level retention time can't be greater than service request level retention time and both can't exceed one year
+     */
     serviceRequestLevel: number;
+    /**
+     * Session replay retention settings on environment level in days. Can be set to any value from 1 to 35 days
+     */
     sessionReplay: number;
+    /**
+     * Synthetic monitoring retention settings on environment level in days. Can be set to any value from 1 to 35 days
+     */
     synthetic: number;
 }
 
@@ -4113,15 +8057,36 @@ export interface FailureDetectionParametersExceptionRulesCustomErrorRules {
 }
 
 export interface FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule {
+    /**
+     * Request attribute condition
+     */
     condition: outputs.FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition;
+    /**
+     * Request attribute
+     */
     requestAttribute: string;
 }
 
 export interface FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition {
+    /**
+     * Case sensitive
+     */
     caseSensitive?: boolean;
+    /**
+     * Apply this comparison
+     */
     compareOperationType: string;
+    /**
+     * Value
+     */
     doubleValue?: number;
+    /**
+     * Value
+     */
     intValue?: number;
+    /**
+     * Value
+     */
     textValue?: string;
 }
 
@@ -4130,7 +8095,13 @@ export interface FailureDetectionParametersExceptionRulesCustomHandledExceptions
 }
 
 export interface FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledException {
+    /**
+     * The pattern will match if it is contained within the actual class name.
+     */
     classPattern?: string;
+    /**
+     * Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+     */
     messagePattern?: string;
 }
 
@@ -4139,7 +8110,13 @@ export interface FailureDetectionParametersExceptionRulesIgnoredExceptions {
 }
 
 export interface FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledException {
+    /**
+     * The pattern will match if it is contained within the actual class name.
+     */
     classPattern?: string;
+    /**
+     * Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+     */
     messagePattern?: string;
 }
 
@@ -4148,7 +8125,13 @@ export interface FailureDetectionParametersExceptionRulesSuccessForcingException
 }
 
 export interface FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledException {
+    /**
+     * The pattern will match if it is contained within the actual class name.
+     */
     classPattern?: string;
+    /**
+     * Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+     */
     messagePattern?: string;
 }
 
@@ -4176,17 +8159,44 @@ export interface FailureDetectionRulesConditions {
 }
 
 export interface FailureDetectionRulesConditionsCondition {
+    /**
+     * Possible Values: `PG_NAME`, `PG_TAG`, `SERVICE_MANAGEMENT_ZONE`, `SERVICE_NAME`, `SERVICE_TAG`, `SERVICE_TYPE`
+     */
     attribute: string;
+    /**
+     * Condition to check the attribute against
+     */
     predicate: outputs.FailureDetectionRulesConditionsConditionPredicate;
 }
 
 export interface FailureDetectionRulesConditionsConditionPredicate {
+    /**
+     * Case sensitive
+     */
     caseSensitive?: boolean;
+    /**
+     * Management zones
+     */
     managementZones?: string[];
+    /**
+     * Predicate type
+     */
     predicateType: string;
+    /**
+     * Service types
+     */
     serviceTypes?: string[];
+    /**
+     * Tag keys
+     */
     tagKeys?: string[];
+    /**
+     * Tags (exact match)
+     */
     tags?: string[];
+    /**
+     * Names
+     */
     textValues?: string[];
 }
 
@@ -4195,8 +8205,18 @@ export interface GenericRelationshipsSources {
 }
 
 export interface GenericRelationshipsSourcesSource {
+    /**
+     * Specify a filter that needs to match in order for the extraction to happen.. Two different filters are supported: `$eq(value)` will ensure that the source matches exactly 'value', while `$prefix(value)` will ensure that the source begins with exactly 'value'.
+     * If your value contains the characters '(', ')' or '~', you need to escape them by adding a '~' in front of them.
+     */
     condition?: string;
+    /**
+     * Specify all properties which should be compared. If all mapping rules match a relationship between entities will be created.
+     */
     mappingRules?: outputs.GenericRelationshipsSourcesSourceMappingRules;
+    /**
+     * Possible Values: `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+     */
     sourceType: string;
 }
 
@@ -4205,9 +8225,21 @@ export interface GenericRelationshipsSourcesSourceMappingRules {
 }
 
 export interface GenericRelationshipsSourcesSourceMappingRulesMappingRule {
+    /**
+     * The case-sensitive name of a property of the destination type.
+     */
     destinationProperty: string;
+    /**
+     * Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+     */
     destinationTransformation: string;
+    /**
+     * The case-sensitive name of a property of the source type.
+     */
     sourceProperty: string;
+    /**
+     * Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+     */
     sourceTransformation: string;
 }
 
@@ -4216,12 +8248,33 @@ export interface GenericTypesRules {
 }
 
 export interface GenericTypesRulesRule {
+    /**
+     * All attribute extraction rules will be applied and found attributes will be added to the extracted type.
+     */
     attributes?: outputs.GenericTypesRulesRuleAttributes;
+    /**
+     * Define a pattern which is used to set the icon attribute of the entity. The extracted values must reference barista icon ids. You may define placeholders referencing data source dimensions.
+     */
     iconPattern?: string;
+    /**
+     * ID patterns are comprised of static text and placeholders referring to dimensions in the ingest data. An ID pattern **must** contain at least one placeholder to ensure that different entities will be created.. Take care that the pattern results in the same ID for the same entity. For example, using timestamp or counter-like dimensions as part of the ID would lead to the creation of new entities for each ingest data and is strongly discouraged!
+     */
     idPattern: string;
+    /**
+     * Define a pattern which is used to set the name attribute of the entity. You may define placeholders referencing data source dimensions.
+     */
     instanceNamePattern?: string;
+    /**
+     * In addition to the dimensions already referred to in the ID pattern, you may specify additional dimensions which must be present in order to evaluate this rule.
+     */
     requiredDimensions?: outputs.GenericTypesRulesRuleRequiredDimensions;
+    /**
+     * If you want to extract multiple entities of the same type from a single ingest line you need to define multiple rules with different roles.
+     */
     role?: string;
+    /**
+     * Specify all sources which should be evaluated for this rule. A rule is evaluated if any of the specified source filters match.
+     */
     sources: outputs.GenericTypesRulesRuleSources;
 }
 
@@ -4231,10 +8284,16 @@ export interface GenericTypesRulesRuleAttributes {
 
 export interface GenericTypesRulesRuleAttributesAttribute {
     /**
-     * The human readable type name for this entity type.
+     * The human readable attribute name for this extraction rule. Leave blank to use the key as the display name.
      */
     displayName?: string;
+    /**
+     * The attribute key is the unique name of the attribute.
+     */
     key: string;
+    /**
+     * Pattern for specifying the value for the extracted attribute. Can be a static value, placeholders or a combination of both.
+     */
     pattern: string;
 }
 
@@ -4243,7 +8302,13 @@ export interface GenericTypesRulesRuleRequiredDimensions {
 }
 
 export interface GenericTypesRulesRuleRequiredDimensionsRequiredDimension {
+    /**
+     * A dimension key which needs to exist in the ingest data to match this filter.
+     */
     key: string;
+    /**
+     * A dimension value pattern which needs to exist in the ingest data to match this filter.
+     */
     valuePattern?: string;
 }
 
@@ -4252,18 +8317,37 @@ export interface GenericTypesRulesRuleSources {
 }
 
 export interface GenericTypesRulesRuleSourcesSource {
+    /**
+     * Specify a filter that needs to match in order for the extraction to happen.. Three different filters are supported: `$eq(value)` will ensure that the source matches exactly 'value', `$prefix(value)` will ensure that the source begins with exactly 'value', '$exists()' will ensure that any source with matching dimension filter exists.
+     * If your value contains the characters '(', ')' or '~', you need to escape them by adding a '~' in front of them.
+     */
     condition?: string;
+    /**
+     * Possible Values: `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+     */
     sourceType: string;
 }
 
 export interface GetAlertingProfilesValue {
     /**
-     * The ID of this resource.
+     * The ID of the Alerting Profile when referred to as a Settings 2.0 resource (e.g. from within `dynatrace.SlackNotification`)
      */
     id: string;
+    /**
+     * The ID of the Alerting Profile when referred to as a Configuration API resource (e.g. from within `dynatrace.Notification`)
+     */
     legacyId: string;
+    /**
+     * The ID of the management zone to which the alerting profile applies (Settings 2.0)
+     */
     managementZoneId: string;
+    /**
+     * The ID of the management zone to which the alerting profile applies (Configuration API)
+     */
     managementZoneLegacyId: string;
+    /**
+     * The name of the Alerting Profile
+     */
     name: string;
 }
 
@@ -4275,30 +8359,66 @@ export interface GetEntitiesEntities {
 }
 
 export interface GetEntitiesEntitiesEntity {
+    /**
+     * The name of the entity, displayed in the UI.
+     */
     displayName?: string;
+    /**
+     * The ID of the entity.
+     */
     entityId?: string;
+    /**
+     * A set of tags assigned to the entity.
+     */
     tags?: outputs.GetEntitiesEntitiesEntityTag[];
+    /**
+     * The type of the entity.
+     */
     type?: string;
 }
 
 export interface GetEntitiesEntitiesEntityTag {
+    /**
+     * A tag assigned to the entity
+     */
     tags?: outputs.GetEntitiesEntitiesEntityTagTag[];
 }
 
 export interface GetEntitiesEntitiesEntityTagTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * The string representation of the tag
+     */
     stringRepresentation?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface GetManagementZonesValue {
+    /**
+     * The description of the Management Zone
+     */
     description: string;
     /**
-     * The ID of this resource.
+     * The ID of the Management Zone when referred to as a Settings 2.0 resource (e.g. from within `dynatrace.SlackNotification`)
      */
     id: string;
+    /**
+     * The ID of the Management Zone when referred to as a Configuration API resource (e.g. from within `dynatrace.Notification`)
+     */
     legacyId: string;
+    /**
+     * The name of the Management Zone
+     */
     name: string;
 }
 
@@ -4307,11 +8427,35 @@ export interface GetSyntheticLocationsLocations {
      * The cloud provider where the location is hosted.
      */
     cloudPlatform: string;
+    /**
+     * The unique ID of the location
+     */
     entityId?: string;
+    /**
+     * The list of IP addresses assigned to the location. 
+     *
+     *  Only applicable to `PUBLIC` locations
+     */
     ips: string[];
+    /**
+     * The name of the location
+     */
     name?: string;
+    /**
+     * The release stage of the location
+     */
     stage: string;
+    /**
+     * The status of the location: 
+     *
+     * * `ENABLED`: The location is displayed as active in the UI. You can assign monitors to the location. 
+     * * `DISABLED`: The location is displayed as inactive in the UI. You can't assign monitors to the location. Monitors already assigned to the location will stay there and will be executed from the location. 
+     * * `HIDDEN`: The location is not displayed in the UI. You can't assign monitors to the location. You can only set location as `HIDDEN` when no monitor is assigned to it
+     */
     status: string;
+    /**
+     * The type of the location. Supported values are `PUBLIC`, `PRIVATE` and `CLUSTER`
+     */
     type?: string;
 }
 
@@ -4338,6 +8482,9 @@ export interface HostAnomaliesCpu {
 }
 
 export interface HostAnomaliesCpuThresholds {
+    /**
+     * Alert if CPU usage is higher than *X*% in 3 out of 5 samples
+     */
     saturation: number;
 }
 
@@ -4357,29 +8504,56 @@ export interface HostAnomaliesDisks {
 }
 
 export interface HostAnomaliesDisksInodes {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * Custom thresholds for low disk inodes number. If not set, automatic mode is used
+     */
     thresholds?: outputs.HostAnomaliesDisksInodesThresholds;
 }
 
 export interface HostAnomaliesDisksInodesThresholds {
+    /**
+     * Alert if percentage of available inodes is lower than *X*% in 3 out of 5 samples
+     */
     percentage: number;
 }
 
 export interface HostAnomaliesDisksSpace {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * Custom thresholds for low disk space. If not set, automatic mode is used
+     */
     thresholds?: outputs.HostAnomaliesDisksSpaceThresholds;
 }
 
 export interface HostAnomaliesDisksSpaceThresholds {
+    /**
+     * Alert if free disk space is lower than *X*% in 3 out of 5 samples
+     */
     percentage: number;
 }
 
 export interface HostAnomaliesDisksSpeed {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * Custom thresholds for slow running disks. If not set, the automatic mode is used
+     */
     thresholds?: outputs.HostAnomaliesDisksSpeedThresholds;
 }
 
 export interface HostAnomaliesDisksSpeedThresholds {
+    /**
+     * Alert if disk read/write time is higher than *X* milliseconds in 3 out of 5 samples
+     */
     writeAndReadTime: number;
 }
 
@@ -4395,7 +8569,13 @@ export interface HostAnomaliesGc {
 }
 
 export interface HostAnomaliesGcThresholds {
+    /**
+     * GC suspension is higher than *X*% in 3 out of 5 samples
+     */
     suspensionPercentage: number;
+    /**
+     * GC time is higher than *X*% in 3 out of 5 samples
+     */
     timePercentage: number;
 }
 
@@ -4411,20 +8591,38 @@ export interface HostAnomaliesJava {
 }
 
 export interface HostAnomaliesJavaOutOfMemory {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * Custom thresholds for Java out of memory. If not set, automatic mode is used
+     */
     thresholds?: outputs.HostAnomaliesJavaOutOfMemoryThresholds;
 }
 
 export interface HostAnomaliesJavaOutOfMemoryThresholds {
+    /**
+     * Alert if the number of Java out of memory exceptions is *X* per minute or higher
+     */
     exceptionCount: number;
 }
 
 export interface HostAnomaliesJavaOutOfThreads {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * Custom thresholds for Java out of threads detection. If not set, automatic mode is used
+     */
     thresholds?: outputs.HostAnomaliesJavaOutOfThreadsThresholds;
 }
 
 export interface HostAnomaliesJavaOutOfThreadsThresholds {
+    /**
+     * Alert if the number of Java out of threads exceptions is *X* per minute or higher
+     */
     exceptionCount: number;
 }
 
@@ -4440,17 +8638,35 @@ export interface HostAnomaliesMemory {
 }
 
 export interface HostAnomaliesMemoryThresholds {
+    /**
+     * Custom thresholds for Linux
+     */
     linux: outputs.HostAnomaliesMemoryThresholdsLinux;
+    /**
+     * Custom thresholds for Windows
+     */
     windows: outputs.HostAnomaliesMemoryThresholdsWindows;
 }
 
 export interface HostAnomaliesMemoryThresholdsLinux {
+    /**
+     * Memory page fault rate is higher than *X* faults per second
+     */
     pageFaults: number;
+    /**
+     * Memory usage is higher than *X*%
+     */
     usage: number;
 }
 
 export interface HostAnomaliesMemoryThresholdsWindows {
+    /**
+     * Memory page fault rate is higher than *X* faults per second
+     */
     pageFaults: number;
+    /**
+     * Memory usage is higher than *X*%
+     */
     usage: number;
 }
 
@@ -4478,51 +8694,108 @@ export interface HostAnomaliesNetwork {
 }
 
 export interface HostAnomaliesNetworkConnectivity {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * Custom thresholds for TCP connection problems. If not set, automatic mode is used.   **All** of these conditions must be met to trigger an alert
+     */
     thresholds?: outputs.HostAnomaliesNetworkConnectivityThresholds;
 }
 
 export interface HostAnomaliesNetworkConnectivityThresholds {
+    /**
+     * Number of failed connections is higher than *X* connections per minute in 3 out of 5 samples
+     */
     failedConnections: number;
+    /**
+     * Percentage of new connection failures is higher than *X*% in 3 out of 5 samples
+     */
     newConnectionFailures: number;
 }
 
 export interface HostAnomaliesNetworkDroppedPackets {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * Custom thresholds for dropped packets. If not set, automatic mode is used.   **All** of these conditions must be met to trigger an alert
+     */
     thresholds?: outputs.HostAnomaliesNetworkDroppedPacketsThresholds;
 }
 
 export interface HostAnomaliesNetworkDroppedPacketsThresholds {
+    /**
+     * Receive/transmit dropped packet percentage is higher than *X*% in 3 out of 5 samples
+     */
     droppedPackets: number;
+    /**
+     * Total receive/transmit packets rate is higher than *X* packets per second in 3 out of 5 samples
+     */
     totalPacketsRate: number;
 }
 
 export interface HostAnomaliesNetworkErrors {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * Custom thresholds for network errors. If not set, automatic mode is used.   **All** of these conditions must be met to trigger an alert
+     */
     thresholds?: outputs.HostAnomaliesNetworkErrorsThresholds;
 }
 
 export interface HostAnomaliesNetworkErrorsThresholds {
+    /**
+     * Receive/transmit error packet percentage is higher than *X*% in 3 out of 5 samples
+     */
     errorsPercentage: number;
+    /**
+     * Total receive/transmit packets rate is higher than *X* packets per second in 3 out of 5 samples
+     */
     totalPacketsRate: number;
 }
 
 export interface HostAnomaliesNetworkRetransmission {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * Custom thresholds for high retransmission rate. If not set, automatic mode is used.   **All** of these conditions must be met to trigger an alert
+     */
     thresholds?: outputs.HostAnomaliesNetworkRetransmissionThresholds;
 }
 
 export interface HostAnomaliesNetworkRetransmissionThresholds {
+    /**
+     * Retransmission rate is higher than *X*% in 3 out of 5 samples
+     */
     retransmissionRate: number;
+    /**
+     * Number of retransmitted packets is higher than *X* packets per minute in 3 out of 5 samples
+     */
     retransmittedPackets: number;
 }
 
 export interface HostAnomaliesNetworkUtilization {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * Custom thresholds for high network utilization. If not set, automatic mode is used
+     */
     thresholds?: outputs.HostAnomaliesNetworkUtilizationThresholds;
 }
 
 export interface HostAnomaliesNetworkUtilizationThresholds {
+    /**
+     * Alert if sent/received traffic utilization is higher than *X*% in 3 out of 5 samples
+     */
     utilization: number;
 }
 
@@ -4558,119 +8831,299 @@ export interface HostAnomaliesV2Host {
 }
 
 export interface HostAnomaliesV2HostConnectionLostDetection {
+    /**
+     * Detect host or monitoring connection lost problems
+     */
     enabled: boolean;
+    /**
+     * Graceful host shutdowns
+     */
     onGracefulShutdowns?: string;
 }
 
 export interface HostAnomaliesV2HostHighCpuSaturationDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: outputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds;
+    /**
+     * Detection mode for CPU saturation
+     */
     detectionMode?: string;
+    /**
+     * Detect CPU saturation on host
+     */
     enabled: boolean;
 }
 
 export interface HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds {
+    /**
+     * Alert if the CPU usage is higher than this threshold for the defined amount of samples
+     */
     cpuSaturation: number;
+    /**
+     * no documentation available
+     */
     eventThresholds: outputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds;
 }
 
 export interface HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: number;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: number;
 }
 
 export interface HostAnomaliesV2HostHighGcActivityDetection {
+    /**
+     * Alert if the GC time **or** the GC suspension is exceeded
+     */
     customThresholds?: outputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds;
+    /**
+     * Detection mode for high GC activity
+     */
     detectionMode?: string;
+    /**
+     * You may also configure high GC activity alerting for .NET processes on [extensions events page](https://www.terraform.io/#settings/anomalydetection/extensionevents).
+     */
     enabled: boolean;
 }
 
 export interface HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds {
+    /**
+     * no documentation available
+     */
     eventThresholds: outputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds;
+    /**
+     * Alert if the GC suspension is higher than this threshold
+     */
     gcSuspensionPercentage: number;
+    /**
+     * Alert if GC time is higher than this threshold
+     */
     gcTimePercentage: number;
 }
 
 export interface HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: number;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: number;
 }
 
 export interface HostAnomaliesV2HostHighMemoryDetection {
+    /**
+     * Alert if **both** the memory usage and the memory page fault rate thresholds are exceeded on Windows or on Unix systems
+     */
     customThresholds?: outputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholds;
+    /**
+     * Detection mode for high memory usage
+     */
     detectionMode?: string;
+    /**
+     * Detect high memory usage on host
+     */
     enabled: boolean;
 }
 
 export interface HostAnomaliesV2HostHighMemoryDetectionCustomThresholds {
+    /**
+     * no documentation available
+     */
     eventThresholds: outputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds;
+    /**
+     * Alert if the memory page fault rate on Unix systems is higher than this threshold for the defined amount of samples
+     */
     pageFaultsPerSecondNonWindows: number;
+    /**
+     * Alert if the memory page fault rate on Windows is higher than this threshold for the defined amount of samples
+     */
     pageFaultsPerSecondWindows: number;
+    /**
+     * Alert if the memory usage on Unix systems is higher than this threshold
+     */
     usedMemoryPercentageNonWindows: number;
+    /**
+     * Alert if the memory usage on Windows is higher than this threshold
+     */
     usedMemoryPercentageWindows: number;
 }
 
 export interface HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: number;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: number;
 }
 
 export interface HostAnomaliesV2HostHighSystemLoadDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: outputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
     detectionMode?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
 }
 
 export interface HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds {
+    /**
+     * no documentation available
+     */
     eventThresholds: outputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds;
+    /**
+     * Alert if the System Load / Logical cpu core is higher than this threshold for the defined amount of samples
+     */
     systemLoad: number;
 }
 
 export interface HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: number;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: number;
 }
 
 export interface HostAnomaliesV2HostOutOfMemoryDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: outputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds;
+    /**
+     * Detection mode for Java out of memory problem
+     */
     detectionMode?: string;
+    /**
+     * Detect Java out of memory problem
+     */
     enabled: boolean;
 }
 
 export interface HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds {
+    /**
+     * no documentation available
+     */
     eventThresholds: outputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds;
+    /**
+     * Alert if the number of Java out-of-memory exceptions is at least this value
+     */
     outOfMemoryExceptionsNumber: number;
 }
 
 export interface HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: number;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: number;
 }
 
 export interface HostAnomaliesV2HostOutOfThreadsDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: outputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds;
+    /**
+     * Detection mode for Java out of threads problem
+     */
     detectionMode?: string;
+    /**
+     * Detect Java out of threads problem
+     */
     enabled: boolean;
 }
 
 export interface HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds {
+    /**
+     * no documentation available
+     */
     eventThresholds: outputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds;
+    /**
+     * Alert if the number of Java out-of-threads exceptions is at least this value
+     */
     outOfThreadsExceptionsNumber: number;
 }
 
 export interface HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: number;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: number;
 }
 
@@ -4698,896 +9151,2317 @@ export interface HostAnomaliesV2Network {
 }
 
 export interface HostAnomaliesV2NetworkHighNetworkDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: outputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds;
+    /**
+     * Detection mode for high network utilization
+     */
     detectionMode?: string;
+    /**
+     * Detect high network utilization
+     */
     enabled: boolean;
 }
 
 export interface HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds {
+    /**
+     * Alert if sent/received traffic utilization is higher than this threshold for the defined amount of samples
+     */
     errorsPercentage: number;
+    /**
+     * no documentation available
+     */
     eventThresholds: outputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds;
 }
 
 export interface HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: number;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: number;
 }
 
 export interface HostAnomaliesV2NetworkNetworkDroppedPacketsDetection {
+    /**
+     * Alert if the dropped packet percentage is higher than the specified threshold **and** the total packets rate is higher than the defined threshold for the defined amount of samples
+     */
     customThresholds?: outputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds;
+    /**
+     * Detection mode for high number of dropped packets
+     */
     detectionMode?: string;
+    /**
+     * Detect high number of dropped packets
+     */
     enabled: boolean;
 }
 
 export interface HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds {
+    /**
+     * Receive/transmit dropped packet percentage threshold
+     */
     droppedPacketsPercentage: number;
+    /**
+     * no documentation available
+     */
     eventThresholds: outputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds;
+    /**
+     * Total packets rate threshold
+     */
     totalPacketsRate: number;
 }
 
 export interface HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: number;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: number;
 }
 
 export interface HostAnomaliesV2NetworkNetworkErrorsDetection {
+    /**
+     * Alert if the receive/transmit error packet percentage is higher than the specified threshold **and** the total packets rate is higher than the defined threshold for the defined amount of samples
+     */
     customThresholds?: outputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds;
+    /**
+     * Detection mode for high number of network errors
+     */
     detectionMode?: string;
+    /**
+     * Detect high number of network errors
+     */
     enabled: boolean;
 }
 
 export interface HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds {
+    /**
+     * Receive/transmit error packet percentage threshold
+     */
     errorsPercentage: number;
+    /**
+     * no documentation available
+     */
     eventThresholds: outputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds;
+    /**
+     * Total packets rate threshold
+     */
     totalPacketsRate: number;
 }
 
 export interface HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: number;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: number;
 }
 
 export interface HostAnomaliesV2NetworkNetworkHighRetransmissionDetection {
+    /**
+     * Alert if the retransmission rate is higher than the specified threshold **and** the number of retransmitted packets is higher than the defined threshold for the defined amount of samples
+     */
     customThresholds?: outputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds;
+    /**
+     * Detection mode for high retransmission rate
+     */
     detectionMode?: string;
+    /**
+     * Detect high retransmission rate
+     */
     enabled: boolean;
 }
 
 export interface HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds {
+    /**
+     * no documentation available
+     */
     eventThresholds: outputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds;
+    /**
+     * Retransmission rate threshold
+     */
     retransmissionRatePercentage: number;
+    /**
+     * Number of retransmitted packets threshold
+     */
     retransmittedPacketsNumberPerMinute: number;
 }
 
 export interface HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: number;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: number;
 }
 
 export interface HostAnomaliesV2NetworkNetworkTcpProblemsDetection {
+    /**
+     * Alert if the percentage of new connection failures is higher than the specified threshold **and** the number of failed connections is higher than the defined threshold for the defined amount of samples
+     */
     customThresholds?: outputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds;
+    /**
+     * Detection mode for TCP connectivity problems
+     */
     detectionMode?: string;
+    /**
+     * Detect TCP connectivity problems for process
+     */
     enabled: boolean;
 }
 
 export interface HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds {
+    /**
+     * no documentation available
+     */
     eventThresholds: outputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds;
+    /**
+     * Number of failed connections threshold
+     */
     failedConnectionsNumberPerMinute: number;
+    /**
+     * New connection failure threshold
+     */
     newConnectionFailuresPercentage: number;
 }
 
 export interface HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: number;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: number;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: number;
 }
 
 export interface HostNamingCondition {
+    /**
+     * A conditions for the metric usage
+     */
     conditions?: outputs.HostNamingConditionCondition[];
 }
 
 export interface HostNamingConditionCondition {
     /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     applicationTypeComparisons?: outputs.HostNamingConditionConditionApplicationTypeComparison[];
+    /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     */
     applicationTypes?: outputs.HostNamingConditionConditionApplicationType[];
+    /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     */
     azureComputeModeComparisons?: outputs.HostNamingConditionConditionAzureComputeModeComparison[];
     /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     *
      * @deprecated You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
      */
     azureComputeModes?: outputs.HostNamingConditionConditionAzureComputeMode[];
     /**
+     * Comparison for `AZURE_SKU` attributes
+     *
      * @deprecated You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
      */
     azureSkuComparisions?: outputs.HostNamingConditionConditionAzureSkuComparision[];
+    /**
+     * Comparison for `AZURE_SKU` attributes
+     */
     azureSkus?: outputs.HostNamingConditionConditionAzureSkus[];
     /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     *
      * @deprecated You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
      */
     baseComparisonBasics?: outputs.HostNamingConditionConditionBaseComparisonBasic[];
     /**
+     * Fallback for not yet known type
+     *
      * @deprecated 'base_condition_key' is deprecated. You should use 'key'
      */
     baseConditionKeys?: outputs.HostNamingConditionConditionBaseConditionKey[];
     /**
+     * Comparison for `BITNESS` attributes
+     *
      * @deprecated You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
      */
     bitnessComparisions?: outputs.HostNamingConditionConditionBitnessComparision[];
+    /**
+     * Comparison for `BITNESS` attributes
+     */
     bitnesses?: outputs.HostNamingConditionConditionBitness[];
     /**
+     * Comparison for `CLOUD_TYPE` attributes
+     *
      * @deprecated You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
      */
     cloudTypeComparisons?: outputs.HostNamingConditionConditionCloudTypeComparison[];
+    /**
+     * Comparison for `CLOUD_TYPE` attributes
+     */
     cloudTypes?: outputs.HostNamingConditionConditionCloudType[];
+    /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     */
     comparisons?: outputs.HostNamingConditionConditionComparison[];
     /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     customApplicationTypeComparisons?: outputs.HostNamingConditionConditionCustomApplicationTypeComparison[];
+    /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     */
     customApplicationTypes?: outputs.HostNamingConditionConditionCustomApplicationType[];
     /**
+     * Key for Custom Host Metadata
+     *
      * @deprecated 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
      */
     customHostMetadataConditionKeys?: outputs.HostNamingConditionConditionCustomHostMetadataConditionKey[];
+    /**
+     * Key for Custom Host Metadata
+     */
     customHostMetadatas?: outputs.HostNamingConditionConditionCustomHostMetadata[];
     /**
+     * Key for Custom Process Metadata
+     *
      * @deprecated 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
      */
     customProcessMetadataConditionKeys?: outputs.HostNamingConditionConditionCustomProcessMetadataConditionKey[];
+    /**
+     * Key for Custom Process Metadata
+     */
     customProcessMetadatas?: outputs.HostNamingConditionConditionCustomProcessMetadata[];
+    /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     */
     databaseTopologies?: outputs.HostNamingConditionConditionDatabaseTopology[];
     /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     databaseTopologyComparisons?: outputs.HostNamingConditionConditionDatabaseTopologyComparison[];
     /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     *
      * @deprecated You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
      */
     dcrumDecoderComparisons?: outputs.HostNamingConditionConditionDcrumDecoderComparison[];
+    /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     */
     dcrumDecoders?: outputs.HostNamingConditionConditionDcrumDecoder[];
+    /**
+     * Comparison for `ENTITY_ID` attributes
+     */
     entities?: outputs.HostNamingConditionConditionEntity[];
     /**
+     * Comparison for `ENTITY_ID` attributes
+     *
      * @deprecated You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
      */
     entityIdComparisons?: outputs.HostNamingConditionConditionEntityIdComparison[];
+    /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     */
     hostTeches?: outputs.HostNamingConditionConditionHostTech[];
     /**
-     * @deprecated `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+     * `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
+     *
+     * @deprecated `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
      */
     hypervisorTypeComparisions?: outputs.HostNamingConditionConditionHypervisorTypeComparision[];
+    /**
+     * Comparison for `HYPERVISOR_TYPE` attributes
+     */
     hypervisors?: outputs.HostNamingConditionConditionHypervisor[];
     /**
+     * Comparison for `INDEXED_NAME` attributes
+     *
      * @deprecated You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedNameComparisons?: outputs.HostNamingConditionConditionIndexedNameComparison[];
+    /**
+     * Comparison for `INDEXED_NAME` attributes
+     */
     indexedNames?: outputs.HostNamingConditionConditionIndexedName[];
     /**
+     * Comparison for `INDEXED_STRING` attributes
+     *
      * @deprecated You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedStringComparisons?: outputs.HostNamingConditionConditionIndexedStringComparison[];
+    /**
+     * Comparison for `INDEXED_STRING` attributes
+     */
     indexedStrings?: outputs.HostNamingConditionConditionIndexedString[];
     /**
+     * Comparison for `INDEXED_TAG` attributes
+     *
      * @deprecated You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedTagComparisons?: outputs.HostNamingConditionConditionIndexedTagComparison[];
+    /**
+     * Comparison for `INDEXED_TAG` attributes
+     */
     indexedTags?: outputs.HostNamingConditionConditionIndexedTag[];
     /**
+     * Comparison for `INTEGER` attributes
+     *
      * @deprecated You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
      */
     integerComparisons?: outputs.HostNamingConditionConditionIntegerComparison[];
+    /**
+     * Comparison for `INTEGER` attributes
+     */
     integers?: outputs.HostNamingConditionConditionInteger[];
     /**
+     * Comparison for `IP_ADDRESS` attributes
+     *
      * @deprecated You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
      */
     ipaddressComparisons?: outputs.HostNamingConditionConditionIpaddressComparison[];
+    /**
+     * Comparison for `IP_ADDRESS` attributes
+     */
     ipaddresses?: outputs.HostNamingConditionConditionIpaddress[];
+    /**
+     * Fallback for not yet known type
+     */
     keys?: outputs.HostNamingConditionConditionKey[];
     /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     *
      * @deprecated You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
      */
     mobilePlatformComparisons?: outputs.HostNamingConditionConditionMobilePlatformComparison[];
+    /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     */
     mobilePlatforms?: outputs.HostNamingConditionConditionMobilePlatform[];
+    /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     */
     osArches?: outputs.HostNamingConditionConditionOsArch[];
+    /**
+     * Comparison for `OS_TYPE` attributes
+     */
     osTypes?: outputs.HostNamingConditionConditionOsType[];
     /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     *
      * @deprecated You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
      */
     osarchitectureComparisons?: outputs.HostNamingConditionConditionOsarchitectureComparison[];
     /**
+     * Comparison for `OS_TYPE` attributes
+     *
      * @deprecated You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
      */
     ostypeComparisons?: outputs.HostNamingConditionConditionOstypeComparison[];
     /**
+     * Comparison for `PAAS_TYPE` attributes
+     *
      * @deprecated You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
      */
     paasTypeComparisons?: outputs.HostNamingConditionConditionPaasTypeComparison[];
+    /**
+     * Comparison for `PAAS_TYPE` attributes
+     */
     paasTypes?: outputs.HostNamingConditionConditionPaasType[];
     /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     *
      * @deprecated 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
      */
     processMetadataConditionKeys?: outputs.HostNamingConditionConditionProcessMetadataConditionKey[];
+    /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     */
     processMetadatas?: outputs.HostNamingConditionConditionProcessMetadata[];
+    /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     */
     serviceTopologies?: outputs.HostNamingConditionConditionServiceTopology[];
     /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTopologyComparisons?: outputs.HostNamingConditionConditionServiceTopologyComparison[];
     /**
+     * Comparison for `SERVICE_TYPE` attributes
+     *
      * @deprecated You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTypeComparisons?: outputs.HostNamingConditionConditionServiceTypeComparison[];
+    /**
+     * Comparison for `SERVICE_TYPE` attributes
+     */
     serviceTypes?: outputs.HostNamingConditionConditionServiceType[];
     /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     *
      * @deprecated You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleHostTechComparisons?: outputs.HostNamingConditionConditionSimpleHostTechComparison[];
     /**
+     * Comparison for `SIMPLE_TECH` attributes
+     *
      * @deprecated You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleTechComparisons?: outputs.HostNamingConditionConditionSimpleTechComparison[];
     /**
+     * Comparison for `STRING` attributes
+     *
      * @deprecated You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
      */
     stringComparisons?: outputs.HostNamingConditionConditionStringComparison[];
     /**
+     * The key for dynamic attributes of the `STRING` type
+     *
      * @deprecated 'string_condition_key' is deprecated. You should use 'string_key'
      */
     stringConditionKeys?: outputs.HostNamingConditionConditionStringConditionKey[];
+    /**
+     * The key for dynamic attributes of the `STRING` type
+     */
     stringKeys?: outputs.HostNamingConditionConditionStringKey[];
+    /**
+     * Comparison for `STRING` attributes
+     */
     strings?: outputs.HostNamingConditionConditionString[];
     /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     *
      * @deprecated You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
      */
     syntheticEngineTypeComparisons?: outputs.HostNamingConditionConditionSyntheticEngineTypeComparison[];
+    /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     */
     syntheticEngines?: outputs.HostNamingConditionConditionSyntheticEngine[];
     /**
+     * Comparison for `TAG` attributes
+     *
      * @deprecated You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
      */
     tagComparisons?: outputs.HostNamingConditionConditionTagComparison[];
+    /**
+     * Comparison for `TAG` attributes
+     */
     tags?: outputs.HostNamingConditionConditionTag[];
+    /**
+     * Comparison for `SIMPLE_TECH` attributes
+     */
     teches?: outputs.HostNamingConditionConditionTech[];
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionApplicationType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionAzureComputeMode {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionAzureComputeModeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionAzureSkuComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be AZURE_SKU
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionAzureSkus {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionBaseComparisonBasic {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * The type of comparison
+     */
     type: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionBaseConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionBitness {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionBitnessComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be BITNESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionCloudType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionCloudTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be CLOUD_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * The type of comparison
+     */
     type: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionCustomApplicationType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionCustomApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be CUSTOM_APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionCustomHostMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.HostNamingConditionConditionCustomHostMetadataDynamicKey;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionCustomHostMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.HostNamingConditionConditionCustomHostMetadataConditionKeyDynamicKey;
     /**
+     * if specified, needs to be HOST_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionCustomHostMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionCustomHostMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionCustomProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.HostNamingConditionConditionCustomProcessMetadataDynamicKey;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionCustomProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.HostNamingConditionConditionCustomProcessMetadataConditionKeyDynamicKey;
     /**
+     * if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionCustomProcessMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionCustomProcessMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionDatabaseTopology {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionDatabaseTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be DATABASE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionDcrumDecoder {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionDcrumDecoderComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be DCRUM_DECODER_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionEntity {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionEntityIdComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be ENTITY_ID
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionHostTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.HostNamingConditionConditionHostTechValue;
 }
 
 export interface HostNamingConditionConditionHostTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface HostNamingConditionConditionHypervisor {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionHypervisorTypeComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be HYPERVISOR_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionIndexedName {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionIndexedNameComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_NAME
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionIndexedString {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionIndexedStringComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionIndexedTag {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.HostNamingConditionConditionIndexedTagValue;
 }
 
 export interface HostNamingConditionConditionIndexedTagComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.HostNamingConditionConditionIndexedTagComparisonValue;
 }
 
 export interface HostNamingConditionConditionIndexedTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionIndexedTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionInteger {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: number;
 }
 
 export interface HostNamingConditionConditionIntegerComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INTEGER
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: number;
 }
 
 export interface HostNamingConditionConditionIpaddress {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionIpaddressComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be IP_ADDRESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionMobilePlatform {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionMobilePlatformComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be MOBILE_PLATFORM
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionOsArch {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionOsType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionOsarchitectureComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be OS_ARCHITECTURE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionOstypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be OS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionPaasType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionPaasTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be PAAS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: string;
     /**
+     * if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionServiceTopology {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionServiceTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SERVICE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionServiceType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionServiceTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SERVICE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionSimpleHostTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SIMPLE_HOST_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.HostNamingConditionConditionSimpleHostTechComparisonValue;
 }
 
 export interface HostNamingConditionConditionSimpleHostTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface HostNamingConditionConditionSimpleTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SIMPLE_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.HostNamingConditionConditionSimpleTechComparisonValue;
 }
 
 export interface HostNamingConditionConditionSimpleTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface HostNamingConditionConditionString {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionStringComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionStringConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: string;
     /**
+     * if specified, needs to be `STRING`
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionStringKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface HostNamingConditionConditionSyntheticEngine {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionSyntheticEngineTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SYNTHETIC_ENGINE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionTag {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.HostNamingConditionConditionTagValue;
 }
 
 export interface HostNamingConditionConditionTagComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.HostNamingConditionConditionTagComparisonValue;
 }
 
 export interface HostNamingConditionConditionTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface HostNamingConditionConditionTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.HostNamingConditionConditionTechValue;
 }
 
 export interface HostNamingConditionConditionTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
@@ -5603,35 +11477,82 @@ export interface HttpMonitorAnomalyDetection {
 }
 
 export interface HttpMonitorAnomalyDetectionLoadingTimeThreshold {
+    /**
+     * Performance threshold is enabled (`true`) or disabled (`false`)
+     */
     enabled?: boolean;
+    /**
+     * The list of performance threshold rules
+     */
     thresholds?: outputs.HttpMonitorAnomalyDetectionLoadingTimeThresholdThreshold[];
 }
 
 export interface HttpMonitorAnomalyDetectionLoadingTimeThresholdThreshold {
+    /**
+     * The list of performance threshold rules
+     */
     thresholds: outputs.HttpMonitorAnomalyDetectionLoadingTimeThresholdThresholdThreshold[];
 }
 
 export interface HttpMonitorAnomalyDetectionLoadingTimeThresholdThresholdThreshold {
+    /**
+     * Specify the event to which an ACTION threshold applies
+     */
     eventIndex?: number;
+    /**
+     * Specify the request to which an ACTION threshold applies
+     */
     requestIndex?: number;
+    /**
+     * The type of the threshold: `TOTAL` (total loading time) or `ACTION` (action loading time)
+     */
     type?: string;
+    /**
+     * Notify if monitor takes longer than *X* milliseconds to load
+     */
     valueMs: number;
 }
 
 export interface HttpMonitorAnomalyDetectionOutageHandling {
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable at all configured locations
+     */
     globalOutage?: boolean;
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Global outage handling configuration.
+     */
     globalOutagePolicies?: outputs.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy[];
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location
+     */
     localOutage?: boolean;
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Local outage handling configuration. 
+     *
+     *  Alert if **affectedLocations** of locations are unable to access the web application **consecutiveRuns** times consecutively
+     */
     localOutagePolicies?: outputs.HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy[];
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Schedule retry if browser monitor execution results in a fail. For HTTP monitors this property is ignored
+     */
     retryOnError?: boolean;
 }
 
 export interface HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy {
+    /**
+     * The number of consecutive fails to trigger an alert
+     */
     consecutiveRuns: number;
 }
 
 export interface HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy {
+    /**
+     * The number of affected locations to trigger an alert
+     */
     affectedLocations: number;
+    /**
+     * The number of consecutive fails to trigger an alert
+     */
     consecutiveRuns: number;
 }
 
@@ -5640,9 +11561,21 @@ export interface HttpMonitorCookiesCookies {
 }
 
 export interface HttpMonitorCookiesCookiesCookie {
+    /**
+     * Enclose placeholder values in brackets, for example {email}
+     */
     domain: string;
+    /**
+     * Enclose placeholder values in brackets, for example {email}
+     */
     name: string;
+    /**
+     * Enclose placeholder values in brackets, for example {email}
+     */
     path?: string;
+    /**
+     * Enclose placeholder values in brackets, for example {email}
+     */
     value: string;
 }
 
@@ -5651,7 +11584,13 @@ export interface HttpMonitorPerformanceThresholds {
 }
 
 export interface HttpMonitorPerformanceThresholdsThreshold {
+    /**
+     * Request
+     */
     event: string;
+    /**
+     * Threshold (in seconds)
+     */
     threshold: number;
 }
 
@@ -5663,50 +11602,133 @@ export interface HttpMonitorScript {
 }
 
 export interface HttpMonitorScriptRequest {
+    /**
+     * Authentication options for this request
+     */
     authentication?: outputs.HttpMonitorScriptRequestAuthentication;
+    /**
+     * The body of the HTTP request.
+     */
     body?: string;
+    /**
+     * The setup of the monitor
+     */
     configuration?: outputs.HttpMonitorScriptRequestConfiguration;
+    /**
+     * A short description of the event to appear in the web UI.
+     */
     description?: string;
+    /**
+     * The HTTP method of the request.
+     */
     method: string;
+    /**
+     * Javascript code to execute after sending the request.
+     */
     postProcessing?: string;
+    /**
+     * Javascript code to execute before sending the request.
+     */
     preProcessing?: string;
+    /**
+     * Adapt request timeout option - the maximum time this request is allowed to consume. Keep in mind the maximum timeout of the complete monitor is 60 seconds
+     */
     requestTimeout?: number;
+    /**
+     * The URL to check.
+     */
     url: string;
+    /**
+     * Validation helps you verify that your HTTP monitor loads the expected content
+     */
     validation?: outputs.HttpMonitorScriptRequestValidation;
 }
 
 export interface HttpMonitorScriptRequestAuthentication {
+    /**
+     * The ID of the credentials within the Dynatrace Credentials Vault.
+     */
     credentials: string;
+    /**
+     * The KDC IP. Valid and required only if the type of authentication is `KERBEROS`.
+     */
     kdcIp?: string;
+    /**
+     * The Realm Name. Valid and required only if the type of authentication is `KERBEROS`.
+     */
     realmName?: string;
+    /**
+     * The type of authentication. Possible values are `BASIC_AUTHENTICATION`, `NTLM` and `KERBEROS`.
+     */
     type: string;
 }
 
 export interface HttpMonitorScriptRequestConfiguration {
+    /**
+     * If set to `false`, then the monitor fails with invalid SSL certificates.
+     */
     acceptAnyCertificate?: boolean;
+    /**
+     * The client certificate, if applicable - eg. CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX
+     */
     clientCertificate?: string;
+    /**
+     * If set to `false`, redirects are reported as successful requests with response code 3xx.
+     *
+     * If not set, the `false` option is used.
+     */
     followRedirects?: boolean;
+    /**
+     * The setup of the monitor
+     */
     headers?: outputs.HttpMonitorScriptRequestConfigurationHeaders;
+    /**
+     * Option not to store and display request and response bodies and header values in execution details, `true` or `false`. If not set, `false`.
+     */
     sensitiveData?: boolean;
+    /**
+     * The User agent of the request
+     */
     userAgent?: string;
 }
 
 export interface HttpMonitorScriptRequestConfigurationHeaders {
+    /**
+     * contains an HTTP header of the request
+     */
     headers: outputs.HttpMonitorScriptRequestConfigurationHeadersHeader[];
 }
 
 export interface HttpMonitorScriptRequestConfigurationHeadersHeader {
+    /**
+     * The key of the header
+     */
     name: string;
+    /**
+     * The value of the header
+     */
     value: string;
 }
 
 export interface HttpMonitorScriptRequestValidation {
+    /**
+     * A list of validation rules
+     */
     rules: outputs.HttpMonitorScriptRequestValidationRule[];
 }
 
 export interface HttpMonitorScriptRequestValidationRule {
+    /**
+     * The validation condition. `true` means validation succeeds if the specified content/element is found. `false` means validation fails if the specified content/element is found. Always specify `false` for `certificateExpiryDateConstraint` to fail the monitor if SSL certificate expiry is within the specified number of days
+     */
     passIfFound?: boolean;
+    /**
+     * The type of the rule. Possible values are `patternConstraint`, `regexConstraint`, `httpStatusesList` and `certificateExpiryDateConstraint`
+     */
     type: string;
+    /**
+     * The content to look for
+     */
     value: string;
 }
 
@@ -5718,9 +11740,25 @@ export interface HttpMonitorTag {
 }
 
 export interface HttpMonitorTagTag {
+    /**
+     * The origin of the tag. Supported values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_CLOUD` and `KUBERNETES`.
+     */
     context: string;
+    /**
+     * The key of the tag.
+     *
+     * Custom tags have the tag value here.
+     */
     key: string;
+    /**
+     * The source of the tag. Supported values are `USER`, `RULE_BASED` and `AUTO`.
+     */
     source?: string;
+    /**
+     * The value of the tag.
+     *
+     * Not applicable to custom tags.
+     */
     value?: string;
 }
 
@@ -5732,8 +11770,17 @@ export interface IamGroupPermissions {
 }
 
 export interface IamGroupPermissionsPermission {
+    /**
+     * Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-manage-support-tickets`
+     */
     name: string;
+    /**
+     * If `type` is `account` this attribute should hold the UUID of the account. If `type` is 'tenant`this attribute should hold the ID of the environment (`https://\n\n.live.dynatrace.com`). If`type`is`management-zone`this attribute should hold a value like`\n\n:\n\n. You need to use the attribute `legacyId` when referring to a resource `dynatrace.ManagementZoneV2` or a data source `dynatrace.ManagementZone`.
+     */
     scope: string;
+    /**
+     * The type of this permission. Possible values are `account`, `tenant`, `management-zone`
+     */
     type: string;
 }
 
@@ -5746,9 +11793,12 @@ export interface ImsBridgesQueueManager {
 
 export interface ImsBridgesQueueManagerQueueManager {
     /**
-     * The name of the IMS bridge
+     * The name of the queue manager
      */
     name: string;
+    /**
+     * Queue(s) that belong to the queue manager
+     */
     queueManagerQueues?: string[];
 }
 
@@ -5764,8 +11814,17 @@ export interface K8sClusterAnomaliesCpuRequestsSaturation {
 }
 
 export interface K8sClusterAnomaliesCpuRequestsSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * of cluster CPU capacity for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * amount of requested CPU is above
+     */
     threshold: number;
 }
 
@@ -5781,8 +11840,17 @@ export interface K8sClusterAnomaliesMemoryRequestsSaturation {
 }
 
 export interface K8sClusterAnomaliesMemoryRequestsSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * of cluster memory capacity for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * amount of requested memory is above
+     */
     threshold: number;
 }
 
@@ -5798,7 +11866,13 @@ export interface K8sClusterAnomaliesMonitoringIssues {
 }
 
 export interface K8sClusterAnomaliesMonitoringIssuesConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * monitoring is not available for at least
+     */
     samplePeriodInMinutes: number;
 }
 
@@ -5814,8 +11888,17 @@ export interface K8sClusterAnomaliesPodsSaturation {
 }
 
 export interface K8sClusterAnomaliesPodsSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * of schedulable pod capacity for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * number of running pods is higher than
+     */
     threshold: number;
 }
 
@@ -5831,7 +11914,13 @@ export interface K8sClusterAnomaliesReadinessIssues {
 }
 
 export interface K8sClusterAnomaliesReadinessIssuesConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * cluster is not ready for at least
+     */
     samplePeriodInMinutes: number;
 }
 
@@ -5866,8 +11955,17 @@ export interface K8sNamespaceAnomaliesCpuLimitsQuotaSaturation {
 }
 
 export interface K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * of quota for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * amount of utilized namespace CPU is above
+     */
     threshold: number;
 }
 
@@ -5883,8 +11981,17 @@ export interface K8sNamespaceAnomaliesCpuRequestsQuotaSaturation {
 }
 
 export interface K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * of quota for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * amount of requested namespace CPU is above
+     */
     threshold: number;
 }
 
@@ -5900,8 +12007,17 @@ export interface K8sNamespaceAnomaliesMemoryLimitsQuotaSaturation {
 }
 
 export interface K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * of quota for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * amount of utilized namespace memory is above
+     */
     threshold: number;
 }
 
@@ -5917,8 +12033,17 @@ export interface K8sNamespaceAnomaliesMemoryRequestsQuotaSaturation {
 }
 
 export interface K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * of quota for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * amount of requested namespace memory is above
+     */
     threshold: number;
 }
 
@@ -5934,8 +12059,17 @@ export interface K8sNamespaceAnomaliesPodsQuotaSaturation {
 }
 
 export interface K8sNamespaceAnomaliesPodsQuotaSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * of quota for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * number of utilized namespace pods is above
+     */
     threshold: number;
 }
 
@@ -5951,8 +12085,17 @@ export interface K8sNodeAnomaliesCpuRequestsSaturation {
 }
 
 export interface K8sNodeAnomaliesCpuRequestsSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * of node CPU capacity for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * amount of requested CPU is higher than
+     */
     threshold: number;
 }
 
@@ -5968,8 +12111,17 @@ export interface K8sNodeAnomaliesMemoryRequestsSaturation {
 }
 
 export interface K8sNodeAnomaliesMemoryRequestsSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * of node memory capacity for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * amount of requested memory is higher than
+     */
     threshold: number;
 }
 
@@ -5985,7 +12137,13 @@ export interface K8sNodeAnomaliesNodeProblematicCondition {
 }
 
 export interface K8sNodeAnomaliesNodeProblematicConditionConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * node has problematic conditions for at least
+     */
     samplePeriodInMinutes: number;
 }
 
@@ -6001,8 +12159,17 @@ export interface K8sNodeAnomaliesPodsSaturation {
 }
 
 export interface K8sNodeAnomaliesPodsSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * of node capacity for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * number of pods running on node is higher than
+     */
     threshold: number;
 }
 
@@ -6018,7 +12185,13 @@ export interface K8sNodeAnomaliesReadinessIssues {
 }
 
 export interface K8sNodeAnomaliesReadinessIssuesConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * node is not ready for at least
+     */
     samplePeriodInMinutes: number;
 }
 
@@ -6034,8 +12207,17 @@ export interface K8sPvcAnomaliesLowDiskSpaceCritical {
 }
 
 export interface K8sPvcAnomaliesLowDiskSpaceCriticalConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * the available disk space is below
+     */
     threshold: number;
 }
 
@@ -6051,8 +12233,17 @@ export interface K8sPvcAnomaliesLowDiskSpaceCriticalPercentage {
 }
 
 export interface K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * the available disk space is below
+     */
     threshold: number;
 }
 
@@ -6068,8 +12259,17 @@ export interface K8sWorkloadAnomaliesContainerRestarts {
 }
 
 export interface K8sWorkloadAnomaliesContainerRestartsConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * per minute, for any
+     */
     samplePeriodInMinutes: number;
+    /**
+     * there is at least
+     */
     threshold: number;
 }
 
@@ -6085,7 +12285,13 @@ export interface K8sWorkloadAnomaliesDeploymentStuck {
 }
 
 export interface K8sWorkloadAnomaliesDeploymentStuckConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * workload stops progressing for at least
+     */
     samplePeriodInMinutes: number;
 }
 
@@ -6101,8 +12307,17 @@ export interface K8sWorkloadAnomaliesHighCpuThrottling {
 }
 
 export interface K8sWorkloadAnomaliesHighCpuThrottlingConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * of CPU usage for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * amount of CPU throttling is above
+     */
     threshold: number;
 }
 
@@ -6118,8 +12333,17 @@ export interface K8sWorkloadAnomaliesHighCpuUsage {
 }
 
 export interface K8sWorkloadAnomaliesHighCpuUsageConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * of defined CPU limits for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * amount of utilized workload CPU is above
+     */
     threshold: number;
 }
 
@@ -6135,8 +12359,17 @@ export interface K8sWorkloadAnomaliesHighMemoryUsage {
 }
 
 export interface K8sWorkloadAnomaliesHighMemoryUsageConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * of defined memory limits for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * amount of utilized workload memory is above
+     */
     threshold: number;
 }
 
@@ -6152,7 +12385,13 @@ export interface K8sWorkloadAnomaliesNotAllPodsReady {
 }
 
 export interface K8sWorkloadAnomaliesNotAllPodsReadyConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * some workload pods are not ready for at least
+     */
     samplePeriodInMinutes: number;
 }
 
@@ -6168,8 +12407,17 @@ export interface K8sWorkloadAnomaliesPendingPods {
 }
 
 export interface K8sWorkloadAnomaliesPendingPodsConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * stuck in pending state for at least
+     */
     samplePeriodInMinutes: number;
+    /**
+     * there is at least
+     */
     threshold: number;
 }
 
@@ -6185,7 +12433,13 @@ export interface K8sWorkloadAnomaliesPodStuckInTerminating {
 }
 
 export interface K8sWorkloadAnomaliesPodStuckInTerminatingConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * pod termination stops progressing for at least
+     */
     samplePeriodInMinutes: number;
 }
 
@@ -6201,7 +12455,13 @@ export interface K8sWorkloadAnomaliesWorkloadWithoutReadyPods {
 }
 
 export interface K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: number;
+    /**
+     * workload has no ready pods for at least
+     */
     samplePeriodInMinutes: number;
 }
 
@@ -6210,20 +12470,32 @@ export interface KubernetesEventPatterns {
 }
 
 export interface KubernetesEventPatternsEventPattern {
+    /**
+     * Activate
+     */
     active: boolean;
+    /**
+     * Field selector name
+     */
     label: string;
+    /**
+     * The set of allowed characters for this field has been extended with ActiveGate version 1.259. For more details, see the [documentation](https://dt-url.net/7h23wuk#set-up-event-field-selectors).
+     */
     pattern: string;
 }
 
 export interface LogCustomSourceContext {
-    /**
-     * Define Custom Log Source only within context if provided
-     */
     contexts: outputs.LogCustomSourceContextContext[];
 }
 
 export interface LogCustomSourceContextContext {
+    /**
+     * Possible Values: `Dt_entity_process_group`
+     */
     attribute: string;
+    /**
+     * no documentation available
+     */
     values: string[];
 }
 
@@ -6266,15 +12538,27 @@ export interface LogEventsEventTemplateMetadata {
 }
 
 export interface LogEventsEventTemplateMetadataItem {
+    /**
+     * Type 'dt.' for key hints.
+     */
     metadataKey: string;
+    /**
+     * no documentation available
+     */
     metadataValue: string;
 }
 
 export interface LogProcessingProcessorDefinition {
+    /**
+     * Processor definition
+     */
     rule: string;
 }
 
 export interface LogProcessingRuleTesting {
+    /**
+     * Sample log in JSON format.
+     */
     sampleLog: string;
 }
 
@@ -6298,8 +12582,17 @@ export interface LogSensitiveDataMaskingMatchers {
 }
 
 export interface LogSensitiveDataMaskingMatchersMatcher {
+    /**
+     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_source`, `Process_technology`
+     */
     attribute: string;
+    /**
+     * Possible Values: `MATCHES`
+     */
     operator: string;
+    /**
+     * no documentation available
+     */
     values: string[];
 }
 
@@ -6308,8 +12601,17 @@ export interface LogStorageMatchers {
 }
 
 export interface LogStorageMatchersMatcher {
+    /**
+     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_content`, `Log_source`, `Process_technology`
+     */
     attribute: string;
+    /**
+     * Possible Values: `MATCHES`
+     */
     operator: string;
+    /**
+     * no documentation available
+     */
     values: string[];
 }
 
@@ -6318,8 +12620,17 @@ export interface LogTimestampMatchers {
 }
 
 export interface LogTimestampMatchersMatcher {
+    /**
+     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_source`, `Process_technology`
+     */
     attribute: string;
+    /**
+     * Possible Values: `MATCHES`
+     */
     operator: string;
+    /**
+     * no documentation available
+     */
     values: string[];
 }
 
@@ -6331,9 +12642,21 @@ export interface MaintenanceFilter {
 }
 
 export interface MaintenanceFilterFilter {
+    /**
+     * A specific entity that should match this maintenance window
+     */
     entityId?: string;
+    /**
+     * The tags you want to use for matching in the format key or key:value
+     */
     entityTags?: string[];
+    /**
+     * Type of entities this maintenance window should match
+     */
     entityType?: string;
+    /**
+     * The IDs of management zones to which the matched entities must belong
+     */
     managementZones?: string[];
 }
 
@@ -6384,58 +12707,136 @@ export interface MaintenanceSchedule {
 }
 
 export interface MaintenanceScheduleDailyRecurrence {
+    /**
+     * The recurrence date range of the maintenance window
+     */
     recurrenceRange: outputs.MaintenanceScheduleDailyRecurrenceRecurrenceRange;
+    /**
+     * The time window of the maintenance window
+     */
     timeWindow: outputs.MaintenanceScheduleDailyRecurrenceTimeWindow;
 }
 
 export interface MaintenanceScheduleDailyRecurrenceRecurrenceRange {
+    /**
+     * The end date of the recurrence range in YYYY-MM-DD format
+     */
     endDate: string;
+    /**
+     * The start date of the recurrence range in YYYY-MM-DD format
+     */
     startDate: string;
 }
 
 export interface MaintenanceScheduleDailyRecurrenceTimeWindow {
+    /**
+     * The end time of the maintenance window validity period in hh:mm:ss format
+     */
     endTime: string;
+    /**
+     * The start time of the maintenance window validity period in hh:mm:ss format
+     */
     startTime: string;
+    /**
+     * The time zone of the start and end time. Default time zone is UTC. You can use either UTC offset `UTC+01:00` format or the IANA Time Zone Database format (for example, `Europe/Vienna`)
+     */
     timeZone: string;
 }
 
 export interface MaintenanceScheduleMonthlyRecurrence {
+    /**
+     * The day of the month for monthly maintenance.  The value of `31` is treated as the last day of the month for months that don't have a 31st day. The value of `30` is also treated as the last day of the month for February
+     */
     dayOfMonth: number;
+    /**
+     * The recurrence date range of the maintenance window
+     */
     recurrenceRange: outputs.MaintenanceScheduleMonthlyRecurrenceRecurrenceRange;
+    /**
+     * The time window of the maintenance window
+     */
     timeWindow: outputs.MaintenanceScheduleMonthlyRecurrenceTimeWindow;
 }
 
 export interface MaintenanceScheduleMonthlyRecurrenceRecurrenceRange {
+    /**
+     * The end date of the recurrence range in YYYY-MM-DD format
+     */
     endDate: string;
+    /**
+     * The start date of the recurrence range in YYYY-MM-DD format
+     */
     startDate: string;
 }
 
 export interface MaintenanceScheduleMonthlyRecurrenceTimeWindow {
+    /**
+     * The end time of the maintenance window validity period in hh:mm:ss format
+     */
     endTime: string;
+    /**
+     * The start time of the maintenance window validity period in hh:mm:ss format
+     */
     startTime: string;
+    /**
+     * The time zone of the start and end time. Default time zone is UTC. You can use either UTC offset `UTC+01:00` format or the IANA Time Zone Database format (for example, `Europe/Vienna`)
+     */
     timeZone: string;
 }
 
 export interface MaintenanceScheduleOnceRecurrence {
+    /**
+     * The end time of the maintenance window validity period in YYYY-MM-DDThh:mm:ss format (for example, `2022-01-01T08:00:00`)
+     */
     endTime: string;
+    /**
+     * The start time of the maintenance window validity period in YYYY-MM-DDThh:mm:ss format (for example, `2022-01-01T08:00:00`)
+     */
     startTime: string;
+    /**
+     * The time zone of the start and end time. Default time zone is UTC. You can use either UTC offset `UTC+01:00` format or the IANA Time Zone Database format (for example, `Europe/Vienna`)
+     */
     timeZone: string;
 }
 
 export interface MaintenanceScheduleWeeklyRecurrence {
+    /**
+     * The day of the week for weekly maintenance.  The format is the full name of the day in upper case, for example `THURSDAY`
+     */
     dayOfWeek: string;
+    /**
+     * The recurrence date range of the maintenance window
+     */
     recurrenceRange: outputs.MaintenanceScheduleWeeklyRecurrenceRecurrenceRange;
+    /**
+     * The time window of the maintenance window
+     */
     timeWindow: outputs.MaintenanceScheduleWeeklyRecurrenceTimeWindow;
 }
 
 export interface MaintenanceScheduleWeeklyRecurrenceRecurrenceRange {
+    /**
+     * The end date of the recurrence range in YYYY-MM-DD format
+     */
     endDate: string;
+    /**
+     * The start date of the recurrence range in YYYY-MM-DD format
+     */
     startDate: string;
 }
 
 export interface MaintenanceScheduleWeeklyRecurrenceTimeWindow {
+    /**
+     * The end time of the maintenance window validity period in hh:mm:ss format
+     */
     endTime: string;
+    /**
+     * The start time of the maintenance window validity period in hh:mm:ss format
+     */
     startTime: string;
+    /**
+     * The time zone of the start and end time. Default time zone is UTC. You can use either UTC offset `UTC+01:00` format or the IANA Time Zone Database format (for example, `Europe/Vienna`)
+     */
     timeZone: string;
 }
 
@@ -6467,9 +12868,21 @@ export interface MaintenanceWindowSchedule {
 }
 
 export interface MaintenanceWindowScheduleRecurrence {
+    /**
+     * The day of the month for monthly maintenance.  The value of `31` is treated as the last day of the month for months that don't have a 31st day. The value of `30` is also treated as the last day of the month for February
+     */
     dayOfMonth?: number;
+    /**
+     * The day of the week for weekly maintenance.  The format is the full name of the day in upper case, for example `THURSDAY`
+     */
     dayOfWeek?: string;
+    /**
+     * The duration of the maintenance window in minutes
+     */
     durationMinutes: number;
+    /**
+     * The start time of the maintenance window in HH:mm format
+     */
     startTime: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -6493,11 +12906,20 @@ export interface MaintenanceWindowScope {
 }
 
 export interface MaintenanceWindowScopeMatch {
+    /**
+     * The ID of a management zone to which the matched entities must belong
+     */
     mzId?: string;
+    /**
+     * The logic that applies when several tags are specified: AND/OR.  If not set, the OR logic is used
+     */
     tagCombination?: string;
+    /**
+     * The tag you want to use for matching.  You can use custom tags from the UI, AWS tags, Cloud Foundry tags, OpenShift/Kubernetes, and tags based on environment variables
+     */
     tags?: outputs.MaintenanceWindowScopeMatchTag[];
     /**
-     * The type of the maintenance: planned or unplanned
+     * The type of the Dynatrace entities (for example, hosts or services) you want to pick up by matching
      */
     type?: string;
     /**
@@ -6507,837 +12929,2184 @@ export interface MaintenanceWindowScopeMatch {
 }
 
 export interface MaintenanceWindowScopeMatchTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface ManagementZoneDimensionalRule {
+    /**
+     * The target of the rule. Possible values are
+     *    - `ANY`
+     *    - `LOG`
+     *    - `METRIC`
+     */
     appliesTo: string;
+    /**
+     * A list of conditions for the management zone. The management zone applies only if **all** conditions are fulfilled
+     */
     conditions?: outputs.ManagementZoneDimensionalRuleCondition[];
+    /**
+     * The rule is enabled (`true`) or disabled (`false`)
+     */
     enabled?: boolean;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneDimensionalRuleCondition {
+    /**
+     * The reference value for comparison. For conditions of the `DIMENSION` type, specify the key here
+     */
     key: string;
+    /**
+     * How to compare. Possible values are 
+     *    - `BEGINS_WITH`
+     *    - `EQUALS`
+     */
     match: string;
+    /**
+     * The type of the condition. Possible values are 
+     *    - `DIMENSION`
+     *    - `LOG_FILE_NAME`
+     *    - `METRIC_KEY`
+     */
     type: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value of the dimension. Only applicable when type is set to `DIMENSION`
+     */
     value?: string;
 }
 
 export interface ManagementZoneEntitySelectorBasedRule {
+    /**
+     * The rule is enabled (`true`) or disabled (`false`)
+     */
     enabled?: boolean;
+    /**
+     * The entity selector string, by which the entities are selected
+     */
     selector?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRule {
+    /**
+     * A list of matching rules for the management zone. The management zone applies only if **all** conditions are fulfilled
+     */
     conditions?: outputs.ManagementZoneRuleCondition[];
+    /**
+     * The rule is enabled (`true`) or disabled (`false`)
+     */
     enabled?: boolean;
+    /**
+     * How to apply the management zone to underlying entities:
+     *    - `SERVICE_TO_HOST_LIKE`: Apply to underlying hosts of matching services
+     *    - `SERVICE_TO_PROCESS_GROUP_LIKE`: Apply to underlying process groups of matching services
+     *    - `PROCESS_GROUP_TO_HOST`: Apply to underlying hosts of matching process groups
+     *    - `PROCESS_GROUP_TO_SERVICE`: Apply to all services provided by matching process groups
+     *    - `HOST_TO_PROCESS_GROUP_INSTANCE`: Apply to processes running on matching hosts
+     *    - `CUSTOM_DEVICE_GROUP_TO_CUSTOM_DEVICE`: Apply to custom devices in matching custom device groups
+     *    - `AZURE_TO_PG`: Apply to process groups connected to matching Azure entities
+     *    - `AZURE_TO_SERVICE`: Apply to services provided by matching Azure entities
+     */
     propagationTypes?: string[];
+    /**
+     * The type of Dynatrace entities the management zone can be applied to
+     */
     type: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleCondition {
     /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     applicationTypeComparisons?: outputs.ManagementZoneRuleConditionApplicationTypeComparison[];
+    /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     */
     applicationTypes?: outputs.ManagementZoneRuleConditionApplicationType[];
+    /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     */
     azureComputeModeComparisons?: outputs.ManagementZoneRuleConditionAzureComputeModeComparison[];
     /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     *
      * @deprecated You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
      */
     azureComputeModes?: outputs.ManagementZoneRuleConditionAzureComputeMode[];
     /**
+     * Comparison for `AZURE_SKU` attributes
+     *
      * @deprecated You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
      */
     azureSkuComparisions?: outputs.ManagementZoneRuleConditionAzureSkuComparision[];
+    /**
+     * Comparison for `AZURE_SKU` attributes
+     */
     azureSkus?: outputs.ManagementZoneRuleConditionAzureSkus[];
     /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     *
      * @deprecated You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
      */
     baseComparisonBasics?: outputs.ManagementZoneRuleConditionBaseComparisonBasic[];
     /**
+     * Fallback for not yet known type
+     *
      * @deprecated 'base_condition_key' is deprecated. You should use 'key'
      */
     baseConditionKeys?: outputs.ManagementZoneRuleConditionBaseConditionKey[];
     /**
+     * Comparison for `BITNESS` attributes
+     *
      * @deprecated You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
      */
     bitnessComparisions?: outputs.ManagementZoneRuleConditionBitnessComparision[];
+    /**
+     * Comparison for `BITNESS` attributes
+     */
     bitnesses?: outputs.ManagementZoneRuleConditionBitness[];
     /**
+     * Comparison for `CLOUD_TYPE` attributes
+     *
      * @deprecated You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
      */
     cloudTypeComparisons?: outputs.ManagementZoneRuleConditionCloudTypeComparison[];
+    /**
+     * Comparison for `CLOUD_TYPE` attributes
+     */
     cloudTypes?: outputs.ManagementZoneRuleConditionCloudType[];
+    /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     */
     comparisons?: outputs.ManagementZoneRuleConditionComparison[];
     /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     customApplicationTypeComparisons?: outputs.ManagementZoneRuleConditionCustomApplicationTypeComparison[];
+    /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     */
     customApplicationTypes?: outputs.ManagementZoneRuleConditionCustomApplicationType[];
     /**
+     * Key for Custom Host Metadata
+     *
      * @deprecated 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
      */
     customHostMetadataConditionKeys?: outputs.ManagementZoneRuleConditionCustomHostMetadataConditionKey[];
+    /**
+     * Key for Custom Host Metadata
+     */
     customHostMetadatas?: outputs.ManagementZoneRuleConditionCustomHostMetadata[];
     /**
+     * Key for Custom Process Metadata
+     *
      * @deprecated 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
      */
     customProcessMetadataConditionKeys?: outputs.ManagementZoneRuleConditionCustomProcessMetadataConditionKey[];
+    /**
+     * Key for Custom Process Metadata
+     */
     customProcessMetadatas?: outputs.ManagementZoneRuleConditionCustomProcessMetadata[];
+    /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     */
     databaseTopologies?: outputs.ManagementZoneRuleConditionDatabaseTopology[];
     /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     databaseTopologyComparisons?: outputs.ManagementZoneRuleConditionDatabaseTopologyComparison[];
     /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     *
      * @deprecated You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
      */
     dcrumDecoderComparisons?: outputs.ManagementZoneRuleConditionDcrumDecoderComparison[];
+    /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     */
     dcrumDecoders?: outputs.ManagementZoneRuleConditionDcrumDecoder[];
+    /**
+     * Comparison for `ENTITY_ID` attributes
+     */
     entities?: outputs.ManagementZoneRuleConditionEntity[];
     /**
+     * Comparison for `ENTITY_ID` attributes
+     *
      * @deprecated You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
      */
     entityIdComparisons?: outputs.ManagementZoneRuleConditionEntityIdComparison[];
+    /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     */
     hostTeches?: outputs.ManagementZoneRuleConditionHostTech[];
     /**
-     * @deprecated `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+     * `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
+     *
+     * @deprecated `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
      */
     hypervisorTypeComparisions?: outputs.ManagementZoneRuleConditionHypervisorTypeComparision[];
+    /**
+     * Comparison for `HYPERVISOR_TYPE` attributes
+     */
     hypervisors?: outputs.ManagementZoneRuleConditionHypervisor[];
     /**
+     * Comparison for `INDEXED_NAME` attributes
+     *
      * @deprecated You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedNameComparisons?: outputs.ManagementZoneRuleConditionIndexedNameComparison[];
+    /**
+     * Comparison for `INDEXED_NAME` attributes
+     */
     indexedNames?: outputs.ManagementZoneRuleConditionIndexedName[];
     /**
+     * Comparison for `INDEXED_STRING` attributes
+     *
      * @deprecated You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedStringComparisons?: outputs.ManagementZoneRuleConditionIndexedStringComparison[];
+    /**
+     * Comparison for `INDEXED_STRING` attributes
+     */
     indexedStrings?: outputs.ManagementZoneRuleConditionIndexedString[];
     /**
+     * Comparison for `INDEXED_TAG` attributes
+     *
      * @deprecated You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedTagComparisons?: outputs.ManagementZoneRuleConditionIndexedTagComparison[];
+    /**
+     * Comparison for `INDEXED_TAG` attributes
+     */
     indexedTags?: outputs.ManagementZoneRuleConditionIndexedTag[];
     /**
+     * Comparison for `INTEGER` attributes
+     *
      * @deprecated You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
      */
     integerComparisons?: outputs.ManagementZoneRuleConditionIntegerComparison[];
+    /**
+     * Comparison for `INTEGER` attributes
+     */
     integers?: outputs.ManagementZoneRuleConditionInteger[];
     /**
+     * Comparison for `IP_ADDRESS` attributes
+     *
      * @deprecated You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
      */
     ipaddressComparisons?: outputs.ManagementZoneRuleConditionIpaddressComparison[];
+    /**
+     * Comparison for `IP_ADDRESS` attributes
+     */
     ipaddresses?: outputs.ManagementZoneRuleConditionIpaddress[];
+    /**
+     * Fallback for not yet known type
+     */
     keys?: outputs.ManagementZoneRuleConditionKey[];
     /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     *
      * @deprecated You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
      */
     mobilePlatformComparisons?: outputs.ManagementZoneRuleConditionMobilePlatformComparison[];
+    /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     */
     mobilePlatforms?: outputs.ManagementZoneRuleConditionMobilePlatform[];
+    /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     */
     osArches?: outputs.ManagementZoneRuleConditionOsArch[];
+    /**
+     * Comparison for `OS_TYPE` attributes
+     */
     osTypes?: outputs.ManagementZoneRuleConditionOsType[];
     /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     *
      * @deprecated You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
      */
     osarchitectureComparisons?: outputs.ManagementZoneRuleConditionOsarchitectureComparison[];
     /**
+     * Comparison for `OS_TYPE` attributes
+     *
      * @deprecated You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
      */
     ostypeComparisons?: outputs.ManagementZoneRuleConditionOstypeComparison[];
     /**
+     * Comparison for `PAAS_TYPE` attributes
+     *
      * @deprecated You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
      */
     paasTypeComparisons?: outputs.ManagementZoneRuleConditionPaasTypeComparison[];
+    /**
+     * Comparison for `PAAS_TYPE` attributes
+     */
     paasTypes?: outputs.ManagementZoneRuleConditionPaasType[];
     /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     *
      * @deprecated 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
      */
     processMetadataConditionKeys?: outputs.ManagementZoneRuleConditionProcessMetadataConditionKey[];
+    /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     */
     processMetadatas?: outputs.ManagementZoneRuleConditionProcessMetadata[];
+    /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     */
     serviceTopologies?: outputs.ManagementZoneRuleConditionServiceTopology[];
     /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTopologyComparisons?: outputs.ManagementZoneRuleConditionServiceTopologyComparison[];
     /**
+     * Comparison for `SERVICE_TYPE` attributes
+     *
      * @deprecated You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTypeComparisons?: outputs.ManagementZoneRuleConditionServiceTypeComparison[];
+    /**
+     * Comparison for `SERVICE_TYPE` attributes
+     */
     serviceTypes?: outputs.ManagementZoneRuleConditionServiceType[];
     /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     *
      * @deprecated You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleHostTechComparisons?: outputs.ManagementZoneRuleConditionSimpleHostTechComparison[];
     /**
+     * Comparison for `SIMPLE_TECH` attributes
+     *
      * @deprecated You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleTechComparisons?: outputs.ManagementZoneRuleConditionSimpleTechComparison[];
     /**
+     * Comparison for `STRING` attributes
+     *
      * @deprecated You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
      */
     stringComparisons?: outputs.ManagementZoneRuleConditionStringComparison[];
     /**
+     * The key for dynamic attributes of the `STRING` type
+     *
      * @deprecated 'string_condition_key' is deprecated. You should use 'string_key'
      */
     stringConditionKeys?: outputs.ManagementZoneRuleConditionStringConditionKey[];
+    /**
+     * The key for dynamic attributes of the `STRING` type
+     */
     stringKeys?: outputs.ManagementZoneRuleConditionStringKey[];
+    /**
+     * Comparison for `STRING` attributes
+     */
     strings?: outputs.ManagementZoneRuleConditionString[];
     /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     *
      * @deprecated You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
      */
     syntheticEngineTypeComparisons?: outputs.ManagementZoneRuleConditionSyntheticEngineTypeComparison[];
+    /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     */
     syntheticEngines?: outputs.ManagementZoneRuleConditionSyntheticEngine[];
     /**
+     * Comparison for `TAG` attributes
+     *
      * @deprecated You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
      */
     tagComparisons?: outputs.ManagementZoneRuleConditionTagComparison[];
+    /**
+     * Comparison for `TAG` attributes
+     */
     tags?: outputs.ManagementZoneRuleConditionTag[];
+    /**
+     * Comparison for `SIMPLE_TECH` attributes
+     */
     teches?: outputs.ManagementZoneRuleConditionTech[];
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionApplicationType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionAzureComputeMode {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionAzureComputeModeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionAzureSkuComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be AZURE_SKU
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionAzureSkus {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionBaseComparisonBasic {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * The type of comparison
+     */
     type: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionBaseConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionBitness {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionBitnessComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be BITNESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionCloudType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionCloudTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be CLOUD_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * The type of comparison
+     */
     type: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionCustomApplicationType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionCustomApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be CUSTOM_APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionCustomHostMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.ManagementZoneRuleConditionCustomHostMetadataDynamicKey;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionCustomHostMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.ManagementZoneRuleConditionCustomHostMetadataConditionKeyDynamicKey;
     /**
+     * if specified, needs to be HOST_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionCustomHostMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionCustomHostMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionCustomProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.ManagementZoneRuleConditionCustomProcessMetadataDynamicKey;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionCustomProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.ManagementZoneRuleConditionCustomProcessMetadataConditionKeyDynamicKey;
     /**
+     * if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionCustomProcessMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionCustomProcessMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionDatabaseTopology {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionDatabaseTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be DATABASE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionDcrumDecoder {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionDcrumDecoderComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be DCRUM_DECODER_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionEntity {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionEntityIdComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be ENTITY_ID
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionHostTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.ManagementZoneRuleConditionHostTechValue;
 }
 
 export interface ManagementZoneRuleConditionHostTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface ManagementZoneRuleConditionHypervisor {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionHypervisorTypeComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be HYPERVISOR_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionIndexedName {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionIndexedNameComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_NAME
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionIndexedString {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionIndexedStringComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionIndexedTag {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.ManagementZoneRuleConditionIndexedTagValue;
 }
 
 export interface ManagementZoneRuleConditionIndexedTagComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.ManagementZoneRuleConditionIndexedTagComparisonValue;
 }
 
 export interface ManagementZoneRuleConditionIndexedTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionIndexedTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionInteger {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: number;
 }
 
 export interface ManagementZoneRuleConditionIntegerComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INTEGER
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: number;
 }
 
 export interface ManagementZoneRuleConditionIpaddress {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionIpaddressComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be IP_ADDRESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionMobilePlatform {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionMobilePlatformComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be MOBILE_PLATFORM
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionOsArch {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionOsType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionOsarchitectureComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be OS_ARCHITECTURE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionOstypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be OS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionPaasType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionPaasTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be PAAS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: string;
     /**
+     * if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionServiceTopology {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionServiceTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SERVICE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionServiceType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionServiceTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SERVICE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionSimpleHostTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SIMPLE_HOST_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.ManagementZoneRuleConditionSimpleHostTechComparisonValue;
 }
 
 export interface ManagementZoneRuleConditionSimpleHostTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface ManagementZoneRuleConditionSimpleTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SIMPLE_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.ManagementZoneRuleConditionSimpleTechComparisonValue;
 }
 
 export interface ManagementZoneRuleConditionSimpleTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface ManagementZoneRuleConditionString {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionStringComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionStringConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: string;
     /**
+     * if specified, needs to be `STRING`
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionStringKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ManagementZoneRuleConditionSyntheticEngine {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionSyntheticEngineTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SYNTHETIC_ENGINE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionTag {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.ManagementZoneRuleConditionTagValue;
 }
 
 export interface ManagementZoneRuleConditionTagComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.ManagementZoneRuleConditionTagComparisonValue;
 }
 
 export interface ManagementZoneRuleConditionTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface ManagementZoneRuleConditionTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.ManagementZoneRuleConditionTechValue;
 }
 
 export interface ManagementZoneRuleConditionTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
@@ -7349,56 +15118,155 @@ export interface ManagementZoneV2Rules {
 }
 
 export interface ManagementZoneV2RulesRule {
+    /**
+     * No documentation available
+     */
     attributeRule?: outputs.ManagementZoneV2RulesRuleAttributeRule;
+    /**
+     * No documentation available
+     */
     dimensionRule?: outputs.ManagementZoneV2RulesRuleDimensionRule;
+    /**
+     * Enabled
+     */
     enabled: boolean;
+    /**
+     * Entity selector. The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+     */
     entitySelector?: string;
+    /**
+     * Possible Values: `DIMENSION`, `ME`, `SELECTOR`
+     */
     type: string;
 }
 
 export interface ManagementZoneV2RulesRuleAttributeRule {
+    /**
+     * Conditions
+     */
     attributeConditions: outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditions;
+    /**
+     * Apply to process groups connected to matching Azure entities
+     */
     azureToPgpropagation?: boolean;
+    /**
+     * Apply to services provided by matching Azure entities
+     */
     azureToServicePropagation?: boolean;
+    /**
+     * Apply to custom devices in a custom device group
+     */
     customDeviceGroupToCustomDevicePropagation?: boolean;
+    /**
+     * Possible Values: `APPMON_SERVER`, `APPMON_SYSTEM_PROFILE`, `AWS_ACCOUNT`, `AWS_APPLICATION_LOAD_BALANCER`, `AWS_AUTO_SCALING_GROUP`, `AWS_CLASSIC_LOAD_BALANCER`, `AWS_NETWORK_LOAD_BALANCER`, `AWS_RELATIONAL_DATABASE_SERVICE`, `AZURE`, `BROWSER_MONITOR`, `CLOUD_APPLICATION`, `CLOUD_APPLICATION_NAMESPACE`, `CLOUD_FOUNDRY_FOUNDATION`, `CUSTOM_APPLICATION`, `CUSTOM_DEVICE`, `CUSTOM_DEVICE_GROUP`, `DATA_CENTER_SERVICE`, `ENTERPRISE_APPLICATION`, `ESXI_HOST`, `EXTERNAL_MONITOR`, `HOST`, `HOST_GROUP`, `HTTP_MONITOR`, `KUBERNETES_CLUSTER`, `KUBERNETES_SERVICE`, `MOBILE_APPLICATION`, `OPENSTACK_ACCOUNT`, `PROCESS_GROUP`, `QUEUE`, `SERVICE`, `WEB_APPLICATION`
+     */
     entityType: string;
+    /**
+     * Apply to processes running on matching hosts
+     */
     hostToPgpropagation?: boolean;
+    /**
+     * Apply to underlying hosts of matching process groups
+     */
     pgToHostPropagation?: boolean;
+    /**
+     * Apply to all services provided by the process groups
+     */
     pgToServicePropagation?: boolean;
+    /**
+     * Apply to underlying hosts of matching services
+     */
     serviceToHostPropagation?: boolean;
+    /**
+     * Apply to underlying process groups of matching services
+     */
     serviceToPgpropagation?: boolean;
 }
 
 export interface ManagementZoneV2RulesRuleAttributeRuleAttributeConditions {
+    /**
+     * Attribute conditions
+     */
     conditions?: outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition[];
 }
 
 export interface ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition {
+    /**
+     * Case sensitive
+     */
     caseSensitive?: boolean;
+    /**
+     * Dynamic key
+     */
     dynamicKey?: string;
+    /**
+     * Key source
+     */
     dynamicKeySource?: string;
+    /**
+     * Value
+     */
     entityId?: string;
+    /**
+     * Value
+     */
     enumValue?: string;
+    /**
+     * Value
+     */
     integerValue?: number;
+    /**
+     * Possible Values: `APPMON_SERVER_NAME`, `APPMON_SYSTEM_PROFILE_NAME`, `AWS_ACCOUNT_ID`, `AWS_ACCOUNT_NAME`, `AWS_APPLICATION_LOAD_BALANCER_NAME`, `AWS_APPLICATION_LOAD_BALANCER_TAGS`, `AWS_AUTO_SCALING_GROUP_NAME`, `AWS_AUTO_SCALING_GROUP_TAGS`, `AWS_AVAILABILITY_ZONE_NAME`, `AWS_CLASSIC_LOAD_BALANCER_FRONTEND_PORTS`, `AWS_CLASSIC_LOAD_BALANCER_NAME`, `AWS_CLASSIC_LOAD_BALANCER_TAGS`, `AWS_NETWORK_LOAD_BALANCER_NAME`, `AWS_NETWORK_LOAD_BALANCER_TAGS`, `AWS_RELATIONAL_DATABASE_SERVICE_DB_NAME`, `AWS_RELATIONAL_DATABASE_SERVICE_ENDPOINT`, `AWS_RELATIONAL_DATABASE_SERVICE_ENGINE`, `AWS_RELATIONAL_DATABASE_SERVICE_INSTANCE_CLASS`, `AWS_RELATIONAL_DATABASE_SERVICE_NAME`, `AWS_RELATIONAL_DATABASE_SERVICE_PORT`, `AWS_RELATIONAL_DATABASE_SERVICE_TAGS`, `AZURE_ENTITY_NAME`, `AZURE_ENTITY_TAGS`, `AZURE_MGMT_GROUP_NAME`, `AZURE_MGMT_GROUP_UUID`, `AZURE_REGION_NAME`, `AZURE_SCALE_SET_NAME`, `AZURE_SUBSCRIPTION_NAME`, `AZURE_SUBSCRIPTION_UUID`, `AZURE_TENANT_NAME`, `AZURE_TENANT_UUID`, `AZURE_VM_NAME`, `BROWSER_MONITOR_NAME`, `BROWSER_MONITOR_TAGS`, `CLOUD_APPLICATION_LABELS`, `CLOUD_APPLICATION_NAME`, `CLOUD_APPLICATION_NAMESPACE_LABELS`, `CLOUD_APPLICATION_NAMESPACE_NAME`, `CLOUD_FOUNDRY_FOUNDATION_NAME`, `CLOUD_FOUNDRY_ORG_NAME`, `CUSTOM_APPLICATION_NAME`, `CUSTOM_APPLICATION_PLATFORM`, `CUSTOM_APPLICATION_TAGS`, `CUSTOM_APPLICATION_TYPE`, `CUSTOM_DEVICE_DNS_ADDRESS`, `CUSTOM_DEVICE_GROUP_NAME`, `CUSTOM_DEVICE_GROUP_TAGS`, `CUSTOM_DEVICE_IP_ADDRESS`, `CUSTOM_DEVICE_METADATA`, `CUSTOM_DEVICE_NAME`, `CUSTOM_DEVICE_PORT`, `CUSTOM_DEVICE_TAGS`, `CUSTOM_DEVICE_TECHNOLOGY`, `DATA_CENTER_SERVICE_DECODER_TYPE`, `DATA_CENTER_SERVICE_IP_ADDRESS`, `DATA_CENTER_SERVICE_METADATA`, `DATA_CENTER_SERVICE_NAME`, `DATA_CENTER_SERVICE_PORT`, `DATA_CENTER_SERVICE_TAGS`, `DOCKER_CONTAINER_NAME`, `DOCKER_FULL_IMAGE_NAME`, `DOCKER_IMAGE_VERSION`, `EC2_INSTANCE_AMI_ID`, `EC2_INSTANCE_AWS_INSTANCE_TYPE`, `EC2_INSTANCE_AWS_SECURITY_GROUP`, `EC2_INSTANCE_BEANSTALK_ENV_NAME`, `EC2_INSTANCE_ID`, `EC2_INSTANCE_NAME`, `EC2_INSTANCE_PRIVATE_HOST_NAME`, `EC2_INSTANCE_PUBLIC_HOST_NAME`, `EC2_INSTANCE_TAGS`, `ENTERPRISE_APPLICATION_DECODER_TYPE`, `ENTERPRISE_APPLICATION_IP_ADDRESS`, `ENTERPRISE_APPLICATION_METADATA`, `ENTERPRISE_APPLICATION_NAME`, `ENTERPRISE_APPLICATION_PORT`, `ENTERPRISE_APPLICATION_TAGS`, `ESXI_HOST_CLUSTER_NAME`, `ESXI_HOST_HARDWARE_MODEL`, `ESXI_HOST_HARDWARE_VENDOR`, `ESXI_HOST_NAME`, `ESXI_HOST_PRODUCT_NAME`, `ESXI_HOST_PRODUCT_VERSION`, `ESXI_HOST_TAGS`, `EXTERNAL_MONITOR_ENGINE_DESCRIPTION`, `EXTERNAL_MONITOR_ENGINE_NAME`, `EXTERNAL_MONITOR_ENGINE_TYPE`, `EXTERNAL_MONITOR_NAME`, `EXTERNAL_MONITOR_TAGS`, `GEOLOCATION_SITE_NAME`, `GOOGLE_CLOUD_PLATFORM_ZONE_NAME`, `GOOGLE_COMPUTE_INSTANCE_ID`, `GOOGLE_COMPUTE_INSTANCE_MACHINE_TYPE`, `GOOGLE_COMPUTE_INSTANCE_NAME`, `GOOGLE_COMPUTE_INSTANCE_PROJECT`, `GOOGLE_COMPUTE_INSTANCE_PROJECT_ID`, `GOOGLE_COMPUTE_INSTANCE_PUBLIC_IP_ADDRESSES`, `HOST_AIX_LOGICAL_CPU_COUNT`, `HOST_AIX_SIMULTANEOUS_THREADS`, `HOST_AIX_VIRTUAL_CPU_COUNT`, `HOST_ARCHITECTURE`, `HOST_AWS_NAME_TAG`, `HOST_AZURE_COMPUTE_MODE`, `HOST_AZURE_SKU`, `HOST_AZURE_WEB_APPLICATION_HOST_NAMES`, `HOST_AZURE_WEB_APPLICATION_SITE_NAMES`, `HOST_BITNESS`, `HOST_BOSH_AVAILABILITY_ZONE`, `HOST_BOSH_DEPLOYMENT_ID`, `HOST_BOSH_INSTANCE_ID`, `HOST_BOSH_INSTANCE_NAME`, `HOST_BOSH_NAME`, `HOST_BOSH_STEMCELL_VERSION`, `HOST_CLOUD_TYPE`, `HOST_CPU_CORES`, `HOST_CUSTOM_METADATA`, `HOST_DETECTED_NAME`, `HOST_GROUP_ID`, `HOST_GROUP_NAME`, `HOST_HYPERVISOR_TYPE`, `HOST_IP_ADDRESS`, `HOST_KUBERNETES_LABELS`, `HOST_LOGICAL_CPU_CORES`, `HOST_NAME`, `HOST_ONEAGENT_CUSTOM_HOST_NAME`, `HOST_OS_TYPE`, `HOST_OS_VERSION`, `HOST_PAAS_MEMORY_LIMIT`, `HOST_PAAS_TYPE`, `HOST_TAGS`, `HOST_TECHNOLOGY`, `HTTP_MONITOR_NAME`, `HTTP_MONITOR_TAGS`, `KUBERNETES_CLUSTER_NAME`, `KUBERNETES_NODE_NAME`, `KUBERNETES_SERVICE_NAME`, `MOBILE_APPLICATION_NAME`, `MOBILE_APPLICATION_PLATFORM`, `MOBILE_APPLICATION_TAGS`, `NAME_OF_COMPUTE_NODE`, `OPENSTACK_ACCOUNT_NAME`, `OPENSTACK_ACCOUNT_PROJECT_NAME`, `OPENSTACK_AVAILABILITY_ZONE_NAME`, `OPENSTACK_PROJECT_NAME`, `OPENSTACK_REGION_NAME`, `OPENSTACK_VM_INSTANCE_TYPE`, `OPENSTACK_VM_NAME`, `OPENSTACK_VM_SECURITY_GROUP`, `PROCESS_GROUP_AZURE_HOST_NAME`, `PROCESS_GROUP_AZURE_SITE_NAME`, `PROCESS_GROUP_CUSTOM_METADATA`, `PROCESS_GROUP_DETECTED_NAME`, `PROCESS_GROUP_ID`, `PROCESS_GROUP_LISTEN_PORT`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_PREDEFINED_METADATA`, `PROCESS_GROUP_TAGS`, `PROCESS_GROUP_TECHNOLOGY`, `PROCESS_GROUP_TECHNOLOGY_EDITION`, `PROCESS_GROUP_TECHNOLOGY_VERSION`, `QUEUE_NAME`, `QUEUE_TECHNOLOGY`, `QUEUE_VENDOR`, `SERVICE_AKKA_ACTOR_SYSTEM`, `SERVICE_CTG_SERVICE_NAME`, `SERVICE_DATABASE_HOST_NAME`, `SERVICE_DATABASE_NAME`, `SERVICE_DATABASE_TOPOLOGY`, `SERVICE_DATABASE_VENDOR`, `SERVICE_DETECTED_NAME`, `SERVICE_ESB_APPLICATION_NAME`, `SERVICE_IBM_CTG_GATEWAY_URL`, `SERVICE_MESSAGING_LISTENER_CLASS_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REMOTE_ENDPOINT`, `SERVICE_REMOTE_SERVICE_NAME`, `SERVICE_TAGS`, `SERVICE_TECHNOLOGY`, `SERVICE_TECHNOLOGY_EDITION`, `SERVICE_TECHNOLOGY_VERSION`, `SERVICE_TOPOLOGY`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_ENDPOINT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `VMWARE_DATACENTER_NAME`, `VMWARE_VM_NAME`, `WEB_APPLICATION_NAME`, `WEB_APPLICATION_NAME_PATTERN`, `WEB_APPLICATION_TAGS`, `WEB_APPLICATION_TYPE`
+     */
     key: string;
+    /**
+     * Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `IS_IP_IN_RANGE`, `LOWER_THAN`, `LOWER_THAN_OR_EQUAL`, `NOT_BEGINS_WITH`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_GREATER_THAN`, `NOT_GREATER_THAN_OR_EQUAL`, `NOT_IS_IP_IN_RANGE`, `NOT_LOWER_THAN`, `NOT_LOWER_THAN_OR_EQUAL`, `NOT_REGEX_MATCHES`, `NOT_TAG_KEY_EQUALS`, `REGEX_MATCHES`, `TAG_KEY_EQUALS`
+     */
     operator: string;
+    /**
+     * Value
+     */
     stringValue?: string;
+    /**
+     * Tag. Format: `[CONTEXT]tagKey:tagValue`
+     */
     tag?: string;
 }
 
 export interface ManagementZoneV2RulesRuleDimensionRule {
+    /**
+     * Possible Values: `ANY`, `LOG`, `METRIC`
+     */
     appliesTo: string;
+    /**
+     * Conditions
+     */
     dimensionConditions?: outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditions;
 }
 
 export interface ManagementZoneV2RulesRuleDimensionRuleDimensionConditions {
+    /**
+     * Dimension conditions
+     */
     conditions?: outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition[];
 }
 
 export interface ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition {
+    /**
+     * Possible Values: `DIMENSION`, `LOG_FILE_NAME`, `METRIC_KEY`
+     */
     conditionType: string;
+    /**
+     * Key
+     */
     key?: string;
+    /**
+     * Possible Values: `BEGINS_WITH`, `EQUALS`
+     */
     ruleMatcher: string;
+    /**
+     * Value
+     */
     value: string;
 }
 
@@ -7426,7 +15294,13 @@ export interface MetricEventsEventTemplate {
 }
 
 export interface MetricEventsEventTemplateMetadata {
+    /**
+     * The key of the metadata item
+     */
     metadataKey: string;
+    /**
+     * The value of the metadata item
+     */
     metadataValue: string;
 }
 
@@ -7501,20 +15375,38 @@ export interface MetricEventsQueryDefinition {
 }
 
 export interface MetricEventsQueryDefinitionDimensionFilter {
+    /**
+     * Dimension filter definitions
+     */
     filters?: outputs.MetricEventsQueryDefinitionDimensionFilterFilter[];
 }
 
 export interface MetricEventsQueryDefinitionDimensionFilterFilter {
+    /**
+     * The key of the dimension filter
+     */
     dimensionKey: string;
+    /**
+     * The value of the dimension filter
+     */
     dimensionValue: string;
 }
 
 export interface MetricEventsQueryDefinitionEntityFilter {
+    /**
+     * Conditions of entity type to filter
+     */
     conditions?: outputs.MetricEventsQueryDefinitionEntityFilterCondition[];
+    /**
+     * Dimension key of entity type to filter
+     */
     dimensionKey?: string;
 }
 
 export interface MetricEventsQueryDefinitionEntityFilterCondition {
+    /**
+     * Entity filter conditions
+     */
     conditions?: outputs.MetricEventsQueryDefinitionEntityFilterConditionCondition[];
 }
 
@@ -7533,6 +15425,9 @@ export interface MetricMetadataDimensionsDimension {
      * Display name
      */
     displayName?: string;
+    /**
+     * Dimension key
+     */
     key: string;
 }
 
@@ -7541,9 +15436,27 @@ export interface MetricMetadataMetricProperties {
      * Whether (true or false) the metric is relevant to a problem's impact.
      */
     impactRelevant?: boolean;
+    /**
+     * The latency of the metric, in minutes. 
+     *
+     *  The latency is the expected reporting delay (for example, caused by constraints of cloud vendors or other third-party data sources) between the observation of a metric data point and its availability in Dynatrace. 
+     *
+     * The allowed value range is from 1 to 60 minutes.
+     */
     latency?: number;
+    /**
+     * The maximum allowed value of the metric.
+     */
     maxValue?: number;
+    /**
+     * The minimum allowed value of the metric.
+     */
     minValue?: number;
+    /**
+     * Whether (true or false) the metric is related to a root cause of a problem.
+     *
+     * A root-cause relevant metric represents a strong indicator for a faulty component.
+     */
     rootCauseRelevant?: boolean;
     /**
      * Possible Values: `Error`, `Score`, `Unknown`
@@ -7571,12 +15484,24 @@ export interface MobileAppAnomaliesErrorRateIncrease {
 }
 
 export interface MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto {
+    /**
+     * Absolute threshold
+     */
     thresholdAbsolute: number;
+    /**
+     * Relative threshold
+     */
     thresholdRelative: number;
 }
 
 export interface MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed {
+    /**
+     * Possible Values: `Low`, `Medium`, `High`
+     */
     sensitivity: string;
+    /**
+     * Absolute threshold
+     */
     thresholdAbsolute: number;
 }
 
@@ -7600,41 +15525,86 @@ export interface MobileAppAnomaliesSlowUserActions {
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAuto {
+    /**
+     * To avoid over-alerting do not alert for low traffic applications with less than
+     */
     durationAvoidOveralerting: outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting;
+    /**
+     * Alert if the action duration of all user actions degrades beyond **both** the absolute and relative threshold:
+     */
     durationThresholdAll: outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll;
+    /**
+     * Alert if the action duration of the slowest 10% of user actions degrades beyond **both** the absolute and relative threshold:
+     */
     durationThresholdSlowest: outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest;
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting {
+    /**
+     * no documentation available
+     */
     minActionRate: number;
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: number;
+    /**
+     * Relative threshold
+     */
     slowdownPercentage: number;
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: number;
+    /**
+     * Relative threshold
+     */
     slowdownPercentage: number;
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixed {
+    /**
+     * To avoid over-alerting do not alert for low traffic applications with less than
+     */
     durationAvoidOveralerting: outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting;
+    /**
+     * Alert if the action duration of all user actions degrades beyond the absolute threshold:
+     */
     durationThresholdAllFixed: outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed;
+    /**
+     * Alert if the action duration of the slowest 10% of user actions degrades beyond the absolute threshold:
+     */
     durationThresholdSlowest: outputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest;
+    /**
+     * Possible Values: `Low`, `Medium`, `High`
+     */
     sensitivity: string;
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting {
+    /**
+     * no documentation available
+     */
     minActionRate: number;
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: number;
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: number;
 }
 
@@ -7680,13 +15650,28 @@ export interface MobileAppCrashRateCrashRateIncrease {
 }
 
 export interface MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto {
+    /**
+     * Dynatrace learns the typical crash rate for all app versions and will create an alert if the baseline is violated by more than a specified threshold. Analysis happens based on a sliding window of 10 minutes.
+     */
     baselineViolationPercentage: number;
+    /**
+     * Amount of users
+     */
     concurrentUsers: number;
+    /**
+     * Possible Values: `Low`, `Medium`, `High`
+     */
     sensitivity: string;
 }
 
 export interface MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed {
+    /**
+     * Absolute threshold
+     */
     absoluteCrashRate: number;
+    /**
+     * Amount of users
+     */
     concurrentUsers: number;
 }
 
@@ -7713,6 +15698,9 @@ export interface MobileAppRequestErrorsErrorRules {
 }
 
 export interface MobileAppRequestErrorsErrorRulesErrorRule {
+    /**
+     * Exclude response codes
+     */
     errorCodes: string;
 }
 
@@ -7743,27 +15731,72 @@ export interface MobileApplicationProperties {
 }
 
 export interface MobileApplicationPropertiesApiValue {
+    /**
+     * The aggregation type of the property. It defines how multiple values of the property are aggregated. Possible values are `SUM`, `MIN`, `MAX`, `FIRST` and `LAST`
+     */
     aggregation?: string;
+    /**
+     * The cleanup rule of the property. Defines how to extract the data you need from a string value. Specify the [regular expression](https://dt-url.net/k9e0iaq) for the data you need there
+     */
     cleanupRule?: string;
+    /**
+     * The display name of the property
+     */
     displayName?: string;
+    /**
+     * The unique key of the mobile session or user action property
+     */
     key: string;
     /**
-     * The name of the application
+     * The name of the reported value
      */
     name?: string;
+    /**
+     * If `true`, the property is stored as a session property
+     */
     storeAsSessionProperty?: boolean;
+    /**
+     * If `true`, the property is stored as a user action property
+     */
     storeAsUserActionProperty?: boolean;
+    /**
+     * The data type of the property. Possible values are `DOUBLE`, `LONG` and `STRING`
+     */
     type: string;
 }
 
 export interface MobileApplicationPropertiesRequestAttribute {
+    /**
+     * The aggregation type of the property. It defines how multiple values of the property are aggregated. Possible values are `SUM`, `MIN`, `MAX`, `FIRST` and `LAST`
+     */
     aggregation?: string;
+    /**
+     * The cleanup rule of the property. Defines how to extract the data you need from a string value. Specify the [regular expression](https://dt-url.net/k9e0iaq) for the data you need there
+     */
     cleanupRule?: string;
+    /**
+     * The display name of the property
+     */
     displayName?: string;
+    /**
+     * The ID of the request attribute
+     */
     id: string;
+    /**
+     * The unique key of the mobile session or user action property
+     */
     key: string;
+    /**
+     * If `true`, the property is stored as a session property
+     */
     storeAsSessionProperty?: boolean;
+    /**
+     * If `true`, the property is stored as a user action property
+     */
     storeAsUserActionProperty?: boolean;
+    /**
+     * The data type of the property. Possible values are `DOUBLE`, `LONG` and `STRING`. The value MUST match the data type of the Request Attribute.
+     */
     type: string;
 }
 
@@ -7772,6 +15805,9 @@ export interface NetworkTrafficExcludeIp {
 }
 
 export interface NetworkTrafficExcludeIpIpAddressForm {
+    /**
+     * IP address
+     */
     ipAddress: string;
 }
 
@@ -7780,7 +15816,13 @@ export interface NetworkTrafficExcludeNic {
 }
 
 export interface NetworkTrafficExcludeNicNicForm {
+    /**
+     * Network interface
+     */
     interface: string;
+    /**
+     * Possible Values: `OS_TYPE_AIX`, `OS_TYPE_DARWIN`, `OS_TYPE_HPUX`, `OS_TYPE_LINUX`, `OS_TYPE_SOLARIS`, `OS_TYPE_UNKNOWN`, `OS_TYPE_WINDOWS`, `OS_TYPE_ZOS`
+     */
     os: string;
 }
 
@@ -8194,7 +16236,13 @@ export interface NotificationWebHook {
 }
 
 export interface NotificationWebHookHeader {
+    /**
+     * The name of the HTTP header
+     */
     name: string;
+    /**
+     * The value of the HTTP header. May contain an empty value.   Required when creating a new notification.  For the **Authorization** header, GET requests return the `null` value.  If you want update a notification configuration with an **Authorization** header which you want to remain intact, set the **Authorization** header with the `null` value
+     */
     value?: string;
 }
 
@@ -8234,7 +16282,13 @@ export interface NotificationXmatters {
 }
 
 export interface NotificationXmattersHeader {
+    /**
+     * The name of the HTTP header
+     */
     name: string;
+    /**
+     * The value of the HTTP header. May contain an empty value.   Required when creating a new notification.  For the **Authorization** header, GET requests return the `null` value.  If you want update a notification configuration with an **Authorization** header which you want to remain intact, set the **Authorization** header with the `null` value
+     */
     value?: string;
 }
 
@@ -8243,6 +16297,9 @@ export interface OneagentUpdatesMaintenanceWindows {
 }
 
 export interface OneagentUpdatesMaintenanceWindowsMaintenanceWindow {
+    /**
+     * Select a [maintenance window for OneAgent updates](https://www.terraform.io/ui/settings/builtin:deployment.management.update-windows)
+     */
     maintenanceWindow: string;
 }
 
@@ -8251,7 +16308,13 @@ export interface OpentelemetryMetricsAdditionalAttributes {
 }
 
 export interface OpentelemetryMetricsAdditionalAttributesAdditionalAttribute {
+    /**
+     * Attribute key
+     */
     attributeKey: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
 }
 
@@ -8260,7 +16323,13 @@ export interface OpentelemetryMetricsToDropAttributes {
 }
 
 export interface OpentelemetryMetricsToDropAttributesToDropAttribute {
+    /**
+     * Attribute key
+     */
     attributeKey: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
 }
 
@@ -8269,8 +16338,30 @@ export interface OsServicesDetectionConditionsLinux {
 }
 
 export interface OsServicesDetectionConditionsLinuxLinuxDetectionCondition {
+    /**
+     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     */
     condition?: string;
+    /**
+     * Possible Values: `ServiceName`, `StartupType`
+     */
     property: string;
+    /**
+     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     *
+     * - `$eq(enabled)` – Matches services with startup type equal to enabled.
+     *
+     * Available logic operations:
+     * - `$not($eq(enabled))` – Matches services with startup type different from enabled.
+     * - `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
+     *
+     * Use one of the following values as a parameter for this condition:
+     *
+     * - `enabled`
+     * - `enabled-runtime`
+     * - `static`
+     * - `disabled`
+     */
     startupCondition?: string;
 }
 
@@ -8279,8 +16370,33 @@ export interface OsServicesDetectionConditionsWindows {
 }
 
 export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindow {
+    /**
+     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     */
     condition?: string;
+    /**
+     * Possible Values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
+     */
     property: string;
+    /**
+     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     *
+     * - `$eq(manual)` – Matches services that are started manually.
+     *
+     * Available logic operations:
+     * - `$not($eq(auto))` – Matches services with startup type different from Automatic.
+     * - `$or($eq(auto),$eq(manual))` – Matches if service's startup type is either Automatic or Manual.
+     *
+     * Use one of the following values as a parameter for this condition:
+     *
+     * - `manual` for Manual
+     * - `manualTrigger` for Manual (Trigger Start)
+     * - `auto` for Automatic
+     * - `autoDelay` for Automatic (Delayed Start)
+     * - `autoTrigger` for Automatic (Trigger Start)
+     * - `autoDelayTrigger` for Automatic (Delayed Start, Trigger Start)
+     * - `disabled` for Disabled
+     */
     startupCondition?: string;
 }
 
@@ -8289,7 +16405,13 @@ export interface OsServicesMetadata {
 }
 
 export interface OsServicesMetadataItem {
+    /**
+     * Type 'dt.' for key hints.
+     */
     metadataKey: string;
+    /**
+     * no documentation available
+     */
     metadataValue: string;
 }
 
@@ -8298,20 +16420,32 @@ export interface OwnershipConfigOwnershipIdentifiers {
 }
 
 export interface OwnershipConfigOwnershipIdentifiersOwnershipIdentifier {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: boolean;
+    /**
+     * Key for ownership metadata and tags
+     */
     key: string;
 }
 
 export interface OwnershipTeamsAdditionalInformation {
-    /**
-     * Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
-     */
     additionalInformations: outputs.OwnershipTeamsAdditionalInformationAdditionalInformation[];
 }
 
 export interface OwnershipTeamsAdditionalInformationAdditionalInformation {
+    /**
+     * Name
+     */
     key: string;
+    /**
+     * no documentation available
+     */
     url?: string;
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
@@ -8320,16 +16454,40 @@ export interface OwnershipTeamsContactDetails {
 }
 
 export interface OwnershipTeamsContactDetailsContactDetail {
+    /**
+     * no documentation available
+     */
     email?: string;
+    /**
+     * Possible Values: `EMAIL`, `JIRA`, `MS_TEAMS`, `SLACK`
+     */
     integrationType: string;
+    /**
+     * no documentation available
+     */
     jira?: outputs.OwnershipTeamsContactDetailsContactDetailJira;
+    /**
+     * Team
+     */
     msTeams?: string;
+    /**
+     * Channel
+     */
     slackChannel?: string;
+    /**
+     * no documentation available
+     */
     url?: string;
 }
 
 export interface OwnershipTeamsContactDetailsContactDetailJira {
+    /**
+     * Default Assignee
+     */
     defaultAssignee: string;
+    /**
+     * no documentation available
+     */
     project: string;
 }
 
@@ -8338,7 +16496,13 @@ export interface OwnershipTeamsLinks {
 }
 
 export interface OwnershipTeamsLinksLink {
+    /**
+     * Possible Values: `DASHBOARD`, `DOCUMENTATION`, `HEALTH_APP`, `REPOSITORY`, `RUNBOOK`, `URL`, `WIKI`
+     */
     linkType: string;
+    /**
+     * no documentation available
+     */
     url: string;
 }
 
@@ -8370,6 +16534,9 @@ export interface OwnershipTeamsSupplementaryIdentifiers {
 }
 
 export interface OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier {
+    /**
+     * Supplementary Identifier
+     */
     supplementaryIdentifier: string;
 }
 
@@ -8389,7 +16556,13 @@ export interface ProcessAvailabilityMetadata {
 }
 
 export interface ProcessAvailabilityMetadataItem {
+    /**
+     * Type 'dt.' for key hints.
+     */
     key: string;
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
@@ -8398,7 +16571,20 @@ export interface ProcessAvailabilityRules {
 }
 
 export interface ProcessAvailabilityRulesRule {
+    /**
+     * - $contains(svc) – Matches if svc appears anywhere in the process property value.
+     * - $eq(svc.exe) – Matches if svc.exe matches the process property value exactly.
+     * - $prefix(svc) – Matches if app matches the prefix of the process property value.
+     * - $suffix(svc.py) – Matches if svc.py matches the suffix of the process property value.
+     *
+     * For example, $suffix(svc.py) would detect processes named loyaltysvc.py and paymentssvc.py.
+     *
+     * For more details, see [Process availability](https://dt-url.net/v923x37).
+     */
     condition: string;
+    /**
+     * Possible Values: `Executable`, `ExecutablePath`, `CommandLine`
+     */
     property: string;
 }
 
@@ -8418,8 +16604,17 @@ export interface ProcessGroupDetectionGroupExtraction {
 }
 
 export interface ProcessGroupDetectionGroupExtractionDelimiter {
+    /**
+     * Delimit from
+     */
     from?: string;
+    /**
+     * (e.g. versions, hex, dates, and build numbers)
+     */
     removeIds: boolean;
+    /**
+     * Delimit to
+     */
     to?: string;
 }
 
@@ -8435,8 +16630,17 @@ export interface ProcessGroupDetectionInstanceExtraction {
 }
 
 export interface ProcessGroupDetectionInstanceExtractionDelimiter {
+    /**
+     * Delimit from
+     */
     from?: string;
+    /**
+     * (e.g. versions, hex, dates, and build numbers)
+     */
     removeIds: boolean;
+    /**
+     * Delimit to
+     */
     to?: string;
 }
 
@@ -8475,802 +16679,2076 @@ export interface ProcessMonitoringRuleCondition {
 }
 
 export interface ProcessgroupNamingCondition {
+    /**
+     * A conditions for the metric usage
+     */
     conditions?: outputs.ProcessgroupNamingConditionCondition[];
 }
 
 export interface ProcessgroupNamingConditionCondition {
     /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     applicationTypeComparisons?: outputs.ProcessgroupNamingConditionConditionApplicationTypeComparison[];
+    /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     */
     applicationTypes?: outputs.ProcessgroupNamingConditionConditionApplicationType[];
+    /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     */
     azureComputeModeComparisons?: outputs.ProcessgroupNamingConditionConditionAzureComputeModeComparison[];
     /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     *
      * @deprecated You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
      */
     azureComputeModes?: outputs.ProcessgroupNamingConditionConditionAzureComputeMode[];
     /**
+     * Comparison for `AZURE_SKU` attributes
+     *
      * @deprecated You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
      */
     azureSkuComparisions?: outputs.ProcessgroupNamingConditionConditionAzureSkuComparision[];
+    /**
+     * Comparison for `AZURE_SKU` attributes
+     */
     azureSkus?: outputs.ProcessgroupNamingConditionConditionAzureSkus[];
     /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     *
      * @deprecated You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
      */
     baseComparisonBasics?: outputs.ProcessgroupNamingConditionConditionBaseComparisonBasic[];
     /**
+     * Fallback for not yet known type
+     *
      * @deprecated 'base_condition_key' is deprecated. You should use 'key'
      */
     baseConditionKeys?: outputs.ProcessgroupNamingConditionConditionBaseConditionKey[];
     /**
+     * Comparison for `BITNESS` attributes
+     *
      * @deprecated You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
      */
     bitnessComparisions?: outputs.ProcessgroupNamingConditionConditionBitnessComparision[];
+    /**
+     * Comparison for `BITNESS` attributes
+     */
     bitnesses?: outputs.ProcessgroupNamingConditionConditionBitness[];
     /**
+     * Comparison for `CLOUD_TYPE` attributes
+     *
      * @deprecated You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
      */
     cloudTypeComparisons?: outputs.ProcessgroupNamingConditionConditionCloudTypeComparison[];
+    /**
+     * Comparison for `CLOUD_TYPE` attributes
+     */
     cloudTypes?: outputs.ProcessgroupNamingConditionConditionCloudType[];
+    /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     */
     comparisons?: outputs.ProcessgroupNamingConditionConditionComparison[];
     /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     customApplicationTypeComparisons?: outputs.ProcessgroupNamingConditionConditionCustomApplicationTypeComparison[];
+    /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     */
     customApplicationTypes?: outputs.ProcessgroupNamingConditionConditionCustomApplicationType[];
     /**
+     * Key for Custom Host Metadata
+     *
      * @deprecated 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
      */
     customHostMetadataConditionKeys?: outputs.ProcessgroupNamingConditionConditionCustomHostMetadataConditionKey[];
+    /**
+     * Key for Custom Host Metadata
+     */
     customHostMetadatas?: outputs.ProcessgroupNamingConditionConditionCustomHostMetadata[];
     /**
+     * Key for Custom Process Metadata
+     *
      * @deprecated 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
      */
     customProcessMetadataConditionKeys?: outputs.ProcessgroupNamingConditionConditionCustomProcessMetadataConditionKey[];
+    /**
+     * Key for Custom Process Metadata
+     */
     customProcessMetadatas?: outputs.ProcessgroupNamingConditionConditionCustomProcessMetadata[];
+    /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     */
     databaseTopologies?: outputs.ProcessgroupNamingConditionConditionDatabaseTopology[];
     /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     databaseTopologyComparisons?: outputs.ProcessgroupNamingConditionConditionDatabaseTopologyComparison[];
     /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     *
      * @deprecated You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
      */
     dcrumDecoderComparisons?: outputs.ProcessgroupNamingConditionConditionDcrumDecoderComparison[];
+    /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     */
     dcrumDecoders?: outputs.ProcessgroupNamingConditionConditionDcrumDecoder[];
+    /**
+     * Comparison for `ENTITY_ID` attributes
+     */
     entities?: outputs.ProcessgroupNamingConditionConditionEntity[];
     /**
+     * Comparison for `ENTITY_ID` attributes
+     *
      * @deprecated You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
      */
     entityIdComparisons?: outputs.ProcessgroupNamingConditionConditionEntityIdComparison[];
+    /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     */
     hostTeches?: outputs.ProcessgroupNamingConditionConditionHostTech[];
     /**
-     * @deprecated `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+     * `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
+     *
+     * @deprecated `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
      */
     hypervisorTypeComparisions?: outputs.ProcessgroupNamingConditionConditionHypervisorTypeComparision[];
+    /**
+     * Comparison for `HYPERVISOR_TYPE` attributes
+     */
     hypervisors?: outputs.ProcessgroupNamingConditionConditionHypervisor[];
     /**
+     * Comparison for `INDEXED_NAME` attributes
+     *
      * @deprecated You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedNameComparisons?: outputs.ProcessgroupNamingConditionConditionIndexedNameComparison[];
+    /**
+     * Comparison for `INDEXED_NAME` attributes
+     */
     indexedNames?: outputs.ProcessgroupNamingConditionConditionIndexedName[];
     /**
+     * Comparison for `INDEXED_STRING` attributes
+     *
      * @deprecated You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedStringComparisons?: outputs.ProcessgroupNamingConditionConditionIndexedStringComparison[];
+    /**
+     * Comparison for `INDEXED_STRING` attributes
+     */
     indexedStrings?: outputs.ProcessgroupNamingConditionConditionIndexedString[];
     /**
+     * Comparison for `INDEXED_TAG` attributes
+     *
      * @deprecated You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedTagComparisons?: outputs.ProcessgroupNamingConditionConditionIndexedTagComparison[];
+    /**
+     * Comparison for `INDEXED_TAG` attributes
+     */
     indexedTags?: outputs.ProcessgroupNamingConditionConditionIndexedTag[];
     /**
+     * Comparison for `INTEGER` attributes
+     *
      * @deprecated You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
      */
     integerComparisons?: outputs.ProcessgroupNamingConditionConditionIntegerComparison[];
+    /**
+     * Comparison for `INTEGER` attributes
+     */
     integers?: outputs.ProcessgroupNamingConditionConditionInteger[];
     /**
+     * Comparison for `IP_ADDRESS` attributes
+     *
      * @deprecated You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
      */
     ipaddressComparisons?: outputs.ProcessgroupNamingConditionConditionIpaddressComparison[];
+    /**
+     * Comparison for `IP_ADDRESS` attributes
+     */
     ipaddresses?: outputs.ProcessgroupNamingConditionConditionIpaddress[];
+    /**
+     * Fallback for not yet known type
+     */
     keys?: outputs.ProcessgroupNamingConditionConditionKey[];
     /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     *
      * @deprecated You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
      */
     mobilePlatformComparisons?: outputs.ProcessgroupNamingConditionConditionMobilePlatformComparison[];
+    /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     */
     mobilePlatforms?: outputs.ProcessgroupNamingConditionConditionMobilePlatform[];
+    /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     */
     osArches?: outputs.ProcessgroupNamingConditionConditionOsArch[];
+    /**
+     * Comparison for `OS_TYPE` attributes
+     */
     osTypes?: outputs.ProcessgroupNamingConditionConditionOsType[];
     /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     *
      * @deprecated You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
      */
     osarchitectureComparisons?: outputs.ProcessgroupNamingConditionConditionOsarchitectureComparison[];
     /**
+     * Comparison for `OS_TYPE` attributes
+     *
      * @deprecated You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
      */
     ostypeComparisons?: outputs.ProcessgroupNamingConditionConditionOstypeComparison[];
     /**
+     * Comparison for `PAAS_TYPE` attributes
+     *
      * @deprecated You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
      */
     paasTypeComparisons?: outputs.ProcessgroupNamingConditionConditionPaasTypeComparison[];
+    /**
+     * Comparison for `PAAS_TYPE` attributes
+     */
     paasTypes?: outputs.ProcessgroupNamingConditionConditionPaasType[];
     /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     *
      * @deprecated 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
      */
     processMetadataConditionKeys?: outputs.ProcessgroupNamingConditionConditionProcessMetadataConditionKey[];
+    /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     */
     processMetadatas?: outputs.ProcessgroupNamingConditionConditionProcessMetadata[];
+    /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     */
     serviceTopologies?: outputs.ProcessgroupNamingConditionConditionServiceTopology[];
     /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTopologyComparisons?: outputs.ProcessgroupNamingConditionConditionServiceTopologyComparison[];
     /**
+     * Comparison for `SERVICE_TYPE` attributes
+     *
      * @deprecated You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTypeComparisons?: outputs.ProcessgroupNamingConditionConditionServiceTypeComparison[];
+    /**
+     * Comparison for `SERVICE_TYPE` attributes
+     */
     serviceTypes?: outputs.ProcessgroupNamingConditionConditionServiceType[];
     /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     *
      * @deprecated You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleHostTechComparisons?: outputs.ProcessgroupNamingConditionConditionSimpleHostTechComparison[];
     /**
+     * Comparison for `SIMPLE_TECH` attributes
+     *
      * @deprecated You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleTechComparisons?: outputs.ProcessgroupNamingConditionConditionSimpleTechComparison[];
     /**
+     * Comparison for `STRING` attributes
+     *
      * @deprecated You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
      */
     stringComparisons?: outputs.ProcessgroupNamingConditionConditionStringComparison[];
     /**
+     * The key for dynamic attributes of the `STRING` type
+     *
      * @deprecated 'string_condition_key' is deprecated. You should use 'string_key'
      */
     stringConditionKeys?: outputs.ProcessgroupNamingConditionConditionStringConditionKey[];
+    /**
+     * The key for dynamic attributes of the `STRING` type
+     */
     stringKeys?: outputs.ProcessgroupNamingConditionConditionStringKey[];
+    /**
+     * Comparison for `STRING` attributes
+     */
     strings?: outputs.ProcessgroupNamingConditionConditionString[];
     /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     *
      * @deprecated You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
      */
     syntheticEngineTypeComparisons?: outputs.ProcessgroupNamingConditionConditionSyntheticEngineTypeComparison[];
+    /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     */
     syntheticEngines?: outputs.ProcessgroupNamingConditionConditionSyntheticEngine[];
     /**
+     * Comparison for `TAG` attributes
+     *
      * @deprecated You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
      */
     tagComparisons?: outputs.ProcessgroupNamingConditionConditionTagComparison[];
+    /**
+     * Comparison for `TAG` attributes
+     */
     tags?: outputs.ProcessgroupNamingConditionConditionTag[];
+    /**
+     * Comparison for `SIMPLE_TECH` attributes
+     */
     teches?: outputs.ProcessgroupNamingConditionConditionTech[];
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionApplicationType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionAzureComputeMode {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionAzureComputeModeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionAzureSkuComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be AZURE_SKU
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionAzureSkus {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionBaseComparisonBasic {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * The type of comparison
+     */
     type: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionBaseConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionBitness {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionBitnessComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be BITNESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionCloudType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionCloudTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be CLOUD_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * The type of comparison
+     */
     type: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomApplicationType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be CUSTOM_APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomHostMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.ProcessgroupNamingConditionConditionCustomHostMetadataDynamicKey;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomHostMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.ProcessgroupNamingConditionConditionCustomHostMetadataConditionKeyDynamicKey;
     /**
+     * if specified, needs to be HOST_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomHostMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomHostMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.ProcessgroupNamingConditionConditionCustomProcessMetadataDynamicKey;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.ProcessgroupNamingConditionConditionCustomProcessMetadataConditionKeyDynamicKey;
     /**
+     * if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomProcessMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomProcessMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionDatabaseTopology {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionDatabaseTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be DATABASE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionDcrumDecoder {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionDcrumDecoderComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be DCRUM_DECODER_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionEntity {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionEntityIdComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be ENTITY_ID
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionHostTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.ProcessgroupNamingConditionConditionHostTechValue;
 }
 
 export interface ProcessgroupNamingConditionConditionHostTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionHypervisor {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionHypervisorTypeComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be HYPERVISOR_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedName {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedNameComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_NAME
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedString {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedStringComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedTag {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.ProcessgroupNamingConditionConditionIndexedTagValue;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedTagComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.ProcessgroupNamingConditionConditionIndexedTagComparisonValue;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionInteger {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: number;
 }
 
 export interface ProcessgroupNamingConditionConditionIntegerComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INTEGER
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: number;
 }
 
 export interface ProcessgroupNamingConditionConditionIpaddress {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionIpaddressComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be IP_ADDRESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionMobilePlatform {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionMobilePlatformComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be MOBILE_PLATFORM
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionOsArch {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionOsType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionOsarchitectureComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be OS_ARCHITECTURE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionOstypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be OS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionPaasType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionPaasTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be PAAS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: string;
     /**
+     * if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionServiceTopology {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionServiceTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SERVICE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionServiceType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionServiceTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SERVICE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionSimpleHostTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SIMPLE_HOST_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.ProcessgroupNamingConditionConditionSimpleHostTechComparisonValue;
 }
 
 export interface ProcessgroupNamingConditionConditionSimpleHostTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionSimpleTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SIMPLE_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.ProcessgroupNamingConditionConditionSimpleTechComparisonValue;
 }
 
 export interface ProcessgroupNamingConditionConditionSimpleTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionString {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionStringComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionStringConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: string;
     /**
+     * if specified, needs to be `STRING`
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionStringKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionSyntheticEngine {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionSyntheticEngineTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SYNTHETIC_ENGINE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionTag {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.ProcessgroupNamingConditionConditionTagValue;
 }
 
 export interface ProcessgroupNamingConditionConditionTagComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.ProcessgroupNamingConditionConditionTagComparisonValue;
 }
 
 export interface ProcessgroupNamingConditionConditionTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface ProcessgroupNamingConditionConditionTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.ProcessgroupNamingConditionConditionTechValue;
 }
 
 export interface ProcessgroupNamingConditionConditionTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
@@ -9282,8 +18760,17 @@ export interface QueueManagerAliasQueue {
 }
 
 export interface QueueManagerAliasQueueAliasQueue {
+    /**
+     * The name of the alias queue
+     */
     aliasQueueName: string;
+    /**
+     * The name of the base queue
+     */
     baseQueueName: string;
+    /**
+     * Name of the cluster(s) this alias should be visible in
+     */
     clusterVisibilities?: string[];
 }
 
@@ -9295,7 +18782,13 @@ export interface QueueManagerClusterQueue {
 }
 
 export interface QueueManagerClusterQueueClusterQueue {
+    /**
+     * Name of the cluster(s) this local queue should be visible in
+     */
     clusterVisibilities?: string[];
+    /**
+     * The name of the local queue
+     */
     localQueueName: string;
 }
 
@@ -9307,9 +18800,21 @@ export interface QueueManagerRemoteQueue {
 }
 
 export interface QueueManagerRemoteQueueRemoteQueue {
+    /**
+     * Name of the cluster(s) this local definition of the remote queue should be visible in
+     */
     clusterVisibilities?: string[];
+    /**
+     * The name of the local queue
+     */
     localQueueName: string;
+    /**
+     * The name of the remote queue manager
+     */
     remoteQueueManager: string;
+    /**
+     * The name of the remote queue
+     */
     remoteQueueName: string;
 }
 
@@ -9358,48 +18863,95 @@ export interface RequestAttributeDataSource {
      * The source of the attribute to capture. Works in conjunction with **parameterName** or **methods** and **technology**
      */
     source: string;
+    /**
+     * The technology of the method to capture if the **source** value is `METHOD_PARAM`. 
+     *
+     *  Not applicable in other cases
+     */
     technology?: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * Process values as specified
+     */
     valueProcessing?: outputs.RequestAttributeDataSourceValueProcessing;
 }
 
 export interface RequestAttributeDataSourceCicsSdkMethodNodeCondition {
+    /**
+     * Negate the comparison
+     */
     negate?: boolean;
+    /**
+     * Operator comparing the extracted value to the comparison value
+     */
     operator: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value: string;
 }
 
 export interface RequestAttributeDataSourceIibLabelMethodNodeCondition {
+    /**
+     * Negate the comparison
+     */
     negate?: boolean;
+    /**
+     * Operator comparing the extracted value to the comparison value
+     */
     operator: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value: string;
 }
 
 export interface RequestAttributeDataSourceIibMethodNodeCondition {
+    /**
+     * Negate the comparison
+     */
     negate?: boolean;
+    /**
+     * Operator comparing the extracted value to the comparison value
+     */
     operator: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value: string;
 }
 
 export interface RequestAttributeDataSourceMethod {
+    /**
+     * The index of the argument to capture. Set `0` to capture the return value, `1` or higher to capture a mehtod argument.   Required if the **capture** is set to `ARGUMENT`.  Not applicable in other cases
+     */
     argumentIndex?: number;
+    /**
+     * What to capture from the method
+     */
     capture: string;
+    /**
+     * The getter chain to apply to the captured object. It is required in one of the following cases:  The **capture** is set to `THIS`.    The **capture** is set to `ARGUMENT`, and the argument is not a primitive, a primitive wrapper class, a string, or an array.   Not applicable in other cases
+     */
     deepObjectAccess?: string;
+    /**
+     * Configuration of a method to be captured
+     */
     method?: outputs.RequestAttributeDataSourceMethodMethod;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -9408,24 +18960,60 @@ export interface RequestAttributeDataSourceMethod {
 }
 
 export interface RequestAttributeDataSourceMethodMethod {
+    /**
+     * Configuration of a method to be captured
+     */
     argumentTypes?: string[];
+    /**
+     * The class name where the method to capture resides.   Either this or the **fileName** must be set
+     */
     className?: string;
+    /**
+     * The file name where the method to capture resides.   Either this or **className** must be set
+     */
     fileName?: string;
+    /**
+     * The operator of the comparison. If not set, `EQUALS` is used
+     */
     fileNameMatcher?: string;
+    /**
+     * The name of the method to capture
+     */
     methodName: string;
+    /**
+     * The modifiers of the method to capture
+     */
     modifiers?: string[];
+    /**
+     * The return type
+     */
     returnType: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * The visibility of the method to capture
+     */
     visibility: string;
 }
 
 export interface RequestAttributeDataSourceScope {
+    /**
+     * Only applies to this host group
+     */
     hostGroup?: string;
+    /**
+     * Only applies to this process group. Note that this can't be transferred between different clusters or environments
+     */
     processGroup?: string;
+    /**
+     * Only applies to this service technology
+     */
     serviceTechnology?: string;
+    /**
+     * Only apply to process groups matching this tag
+     */
     tagOfProcessGroup?: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -9434,20 +19022,44 @@ export interface RequestAttributeDataSourceScope {
 }
 
 export interface RequestAttributeDataSourceValueProcessing {
+    /**
+     * Preprocess by extracting a substring from the original value
+     */
     extractSubstring?: outputs.RequestAttributeDataSourceValueProcessingExtractSubstring;
+    /**
+     * Split (preprocessed) string values at this separator
+     */
     splitAt?: string;
+    /**
+     * Prune Whitespaces. Defaults to false
+     */
     trim?: boolean;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * IBM integration bus label node name condition for which the value is captured
+     */
     valueCondition?: outputs.RequestAttributeDataSourceValueProcessingValueCondition;
+    /**
+     * Extract value from captured data per regex
+     */
     valueExtractorRegex?: string;
 }
 
 export interface RequestAttributeDataSourceValueProcessingExtractSubstring {
+    /**
+     * The delimiter string
+     */
     delimiter: string;
+    /**
+     * The end-delimiter string.   Required if the **position** value is `BETWEEN`. Otherwise not allowed
+     */
     endDelimiter?: string;
+    /**
+     * The position of the extracted string relative to delimiters
+     */
     position: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -9456,269 +19068,737 @@ export interface RequestAttributeDataSourceValueProcessingExtractSubstring {
 }
 
 export interface RequestAttributeDataSourceValueProcessingValueCondition {
+    /**
+     * Negate the comparison
+     */
     negate?: boolean;
+    /**
+     * Operator comparing the extracted value to the comparison value
+     */
     operator: string;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value: string;
 }
 
 export interface RequestNamingConditions {
+    /**
+     * A conditions for the metric usage
+     */
     conditions?: outputs.RequestNamingConditionsCondition[];
 }
 
 export interface RequestNamingConditionsCondition {
+    /**
+     * The attribute to be matched.  Note that for a service property attribute you must use the comparison of the `FAST_STRING` type. Possible values are `ACTOR_SYSTEM`, `AKKA_ACTOR_CLASS_NAME`, `AKKA_ACTOR_MESSAGE_TYPE`, `AKKA_ACTOR_PATH`, `APPLICATION_BUILD_VERSION`, `APPLICATION_RELEASE_VERSION`, `AZURE_FUNCTIONS_FUNCTION_NAME`, `AZURE_FUNCTIONS_SITE_NAME`, `CICS_PROGRAM_NAME`, `CICS_SYSTEM_ID`, `CICS_TASK_ID`, `CICS_TRANSACTION_ID`, `CICS_USER_ID`, `CPU_TIME`, `CTG_GATEWAY_URL`, `CTG_PROGRAM`, `CTG_SERVER_NAME`, `CTG_TRANSACTION_ID`, `CUSTOMSERVICE_CLASS`, `CUSTOMSERVICE_METHOD`, `DATABASE_CHILD_CALL_COUNT`, `DATABASE_CHILD_CALL_TIME`, `DATABASE_HOST`, `DATABASE_NAME`, `DATABASE_TYPE`, `DATABASE_URL`, `DISK_IO_TIME`, `ERROR_COUNT`, `ESB_APPLICATION_NAME`, `ESB_INPUT_TYPE`, `ESB_LIBRARY_NAME`, `ESB_MESSAGE_FLOW_NAME`, `EXCEPTION_CLASS`, `EXCEPTION_MESSAGE`, `FAILED_STATE`, `FAILURE_REASON`, `FLAW_STATE`, `HTTP_REQUEST_METHOD`, `HTTP_STATUS`, `HTTP_STATUS_CLASS`, `IMS_PROGRAM_NAME`, `IMS_TRANSACTION_ID`, `IMS_USER_ID`, `IO_TIME`, `IS_KEY_REQUEST`, `LAMBDA_COLDSTART`, `LOCK_TIME`, `MESSAGING_DESTINATION_TYPE`, `MESSAGING_IS_TEMPORARY_QUEUE`, `MESSAGING_QUEUE_NAME`, `MESSAGING_QUEUE_VENDOR`, `NETWORK_IO_TIME`, `NON_DATABASE_CHILD_CALL_COUNT`, `NON_DATABASE_CHILD_CALL_TIME`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_TAG`, `REMOTE_ENDPOINT`, `REMOTE_METHOD`, `REMOTE_SERVICE_NAME`, `REQUEST_NAME`, `REQUEST_TYPE`, `RESPONSE_TIME`, `RESPONSE_TIME_CLIENT`, `RMI_CLASS`, `RMI_METHOD`, `SERVICE_DISPLAY_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REQUEST_ATTRIBUTE`, `SERVICE_TAG`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `SUSPENSION_TIME`, `TOTAL_PROCESSING_TIME`, `WAIT_TIME`, `WEBREQUEST_QUERY`, `WEBREQUEST_RELATIVE_URL`, `WEBREQUEST_URL`, `WEBREQUEST_URL_HOST`, `WEBREQUEST_URL_PATH`, `WEBREQUEST_URL_PORT`, `WEBSERVICE_ENDPOINT`, `WEBSERVICE_METHOD` and `ZOS_CALL_TYPE`
+     */
     attribute: string;
+    /**
+     * Type-specific comparison for attributes
+     */
     comparison: outputs.RequestNamingConditionsConditionComparison;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface RequestNamingConditionsConditionComparison {
+    /**
+     * Boolean Comparison for `BOOLEAN` attributes
+     */
     boolean?: outputs.RequestNamingConditionsConditionComparisonBoolean;
+    /**
+     * Type-specific comparison information for attributes of type 'ESB_INPUT_NODE_TYPE'
+     */
     esbInputNodeType?: outputs.RequestNamingConditionsConditionComparisonEsbInputNodeType;
+    /**
+     * Comparison for `FAILED_STATE` attributes
+     */
     failedState?: outputs.RequestNamingConditionsConditionComparisonFailedState;
+    /**
+     * Comparison for `FAILURE_REASON` attributes
+     */
     failureReason?: outputs.RequestNamingConditionsConditionComparisonFailureReason;
+    /**
+     * Comparison for `FAST_STRING` attributes. Use it for all service property attributes
+     */
     fastString?: outputs.RequestNamingConditionsConditionComparisonFastString;
+    /**
+     * Comparison for `FLAW_STATE` attributes
+     */
     flawState?: outputs.RequestNamingConditionsConditionComparisonFlawState;
+    /**
+     * Comparison for `NUMBER` attributes
+     */
     generic?: outputs.RequestNamingConditionsConditionComparisonGeneric;
+    /**
+     * Comparison for `HTTP_METHOD` attributes
+     */
     httpMethod?: outputs.RequestNamingConditionsConditionComparisonHttpMethod;
+    /**
+     * Comparison for `HTTP_STATUS_CLASS` attributes
+     */
     httpStatusClass?: outputs.RequestNamingConditionsConditionComparisonHttpStatusClass;
+    /**
+     * Comparison for `IIB_INPUT_NODE_TYPE` attributes
+     */
     iibInputNodeType?: outputs.RequestNamingConditionsConditionComparisonIibInputNodeType;
+    /**
+     * Reverse the comparison **operator**. For example, it turns **equals** into **does not equal**
+     */
     negate?: boolean;
+    /**
+     * Comparison for `NUMBER` attributes
+     */
     number?: outputs.RequestNamingConditionsConditionComparisonNumber;
+    /**
+     * Comparison for `NUMBER_REQUEST_ATTRIBUTE` attributes
+     */
     numberRequestAttribute?: outputs.RequestNamingConditionsConditionComparisonNumberRequestAttribute;
+    /**
+     * Comparison for `SERVICE_TYPE` attributes
+     */
     serviceType?: outputs.RequestNamingConditionsConditionComparisonServiceType;
+    /**
+     * Comparison for `STRING` attributes
+     */
     string?: outputs.RequestNamingConditionsConditionComparisonString;
+    /**
+     * Comparison for `STRING_REQUEST_ATTRIBUTE` attributes
+     */
     stringRequestAttribute?: outputs.RequestNamingConditionsConditionComparisonStringRequestAttribute;
+    /**
+     * Comparison for `TAG` attributes
+     */
     tag?: outputs.RequestNamingConditionsConditionComparisonTag;
+    /**
+     * Comparison for `ZOS_CALL_TYPE` attributes
+     */
     zosCallType?: outputs.RequestNamingConditionsConditionComparisonZosCallType;
 }
 
 export interface RequestNamingConditionsConditionComparisonBoolean {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value: boolean;
+    /**
+     * The values to compare to
+     */
     values?: boolean[];
 }
 
 export interface RequestNamingConditionsConditionComparisonEsbInputNodeType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     values?: string[];
 }
 
 export interface RequestNamingConditionsConditionComparisonFailedState {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `FAILED` and `FAILED`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `FAILED` and `FAILED`
+     */
     values?: string[];
 }
 
 export interface RequestNamingConditionsConditionComparisonFailureReason {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `EXCEPTION_AT_ENTRY_NODE`, `EXCEPTION_ON_ANY_NODE`, `HTTP_CODE` and `REQUEST_ATTRIBUTE`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `EXCEPTION_AT_ENTRY_NODE`, `EXCEPTION_ON_ANY_NODE`, `HTTP_CODE` and `REQUEST_ATTRIBUTE`
+     */
     values?: string[];
 }
 
 export interface RequestNamingConditionsConditionComparisonFastString {
+    /**
+     * The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `CONTAINS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
+    /**
+     * The values to compare to
+     */
     values?: string[];
 }
 
 export interface RequestNamingConditionsConditionComparisonFlawState {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `FLAWED` and `NOT_FLAWED`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `FLAWED` and `NOT_FLAWED`
+     */
     values?: string[];
 }
 
 export interface RequestNamingConditionsConditionComparisonGeneric {
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface RequestNamingConditionsConditionComparisonHttpMethod {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `CONNECT`, `DELETE`, `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT` and `TRACE`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `CONNECT`, `DELETE`, `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT` and `TRACE`
+     */
     values?: string[];
 }
 
 export interface RequestNamingConditionsConditionComparisonHttpStatusClass {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `C_1XX`, `C_2XX`, `C_3XX`, `C_4XX`, `C_5XX` and `NO_RESPONSE`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `C_1XX`, `C_2XX`, `C_3XX`, `C_4XX`, `C_5XX` and `NO_RESPONSE`
+     */
     values?: string[];
 }
 
 export interface RequestNamingConditionsConditionComparisonIibInputNodeType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     values?: string[];
 }
 
 export interface RequestNamingConditionsConditionComparisonNumber {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `LOWER_THAN` and `LOWER_THAN_OR_EQUAL`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: number;
+    /**
+     * The values to compare to
+     */
     values?: number[];
 }
 
 export interface RequestNamingConditionsConditionComparisonNumberRequestAttribute {
+    /**
+     * If `true`, the request attribute is matched on child service calls. Default is `false`
+     */
     matchOnChildCalls?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `LOWER_THAN` and `LOWER_THAN_OR_EQUAL`
+     */
     operator?: string;
+    /**
+     * No documentation available for this attribute
+     */
     requestAttribute: string;
+    /**
+     * Defines valid sources of request attributes for conditions or placeholders
+     */
     source?: outputs.RequestNamingConditionsConditionComparisonNumberRequestAttributeSource;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: number;
+    /**
+     * The values to compare to
+     */
     values?: number[];
 }
 
 export interface RequestNamingConditionsConditionComparisonNumberRequestAttributeSource {
+    /**
+     * Use only request attributes from services that belong to this management zone.. Use either this or `serviceTag`
+     */
     managementZone?: string;
+    /**
+     * Use only request attributes from services that have this tag. Use either this or `managementZone`
+     */
     serviceTag?: outputs.RequestNamingConditionsConditionComparisonNumberRequestAttributeSourceServiceTag;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface RequestNamingConditionsConditionComparisonNumberRequestAttributeSourceServiceTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. For custom tags use the `CONTEXTLESS` value. The context is set for tags that are automatically imported by OneAgent (for example, from the AWS console or environment variables). It’s useful for determining the origin of tags when not manually defined, and it also helps to prevent clashes with other existing tags. If the tag is not automatically imported, `CONTEXTLESS` set. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_COMPUTE_ENGINE` and `KUBERNETES`
+     */
     context?: string;
+    /**
+     * The key of the tag. For custom tags, put the tag value here. The key allows categorization of multiple tags. It is possible that there are multiple values for a single key which will all be represented as standalone tags. Therefore, the key does not have the semantic of a map key but is more like a key of a key-value tuple. In some cases, for example custom tags, the key represents the actual tag value and the value field is not set – those are called valueless tags
+     */
     key: string;
+    /**
+     * has no documentation
+     */
     tagKey?: outputs.RequestNamingConditionsConditionComparisonNumberRequestAttributeSourceServiceTagTagKey;
+    /**
+     * The value of the tag. Not applicable to custom tags. If a tag does have a separate key and value (in the textual representation they are split by the colon ‘:’), this field is set with the actual value. Key-value pairs can occur for automatically imported tags and tags set by rules if extractors are used
+     */
     value?: string;
 }
 
 export interface RequestNamingConditionsConditionComparisonNumberRequestAttributeSourceServiceTagTagKey {
+    /**
+     * has no documentation
+     */
     context?: string;
+    /**
+     * has no documentation
+     */
     key?: string;
 }
 
 export interface RequestNamingConditionsConditionComparisonServiceType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `BACKGROUND_ACTIVITY`, `CICS_SERVICE`, `CUSTOM_SERVICE`, `DATABASE_SERVICE`, `ENTERPRISE_SERVICE_BUS_SERVICE`, `EXTERNAL`, `IBM_INTEGRATION_BUS_SERVICE`, `IMS_SERVICE`, `MESSAGING_SERVICE`, `RMI_SERVICE`, `RPC_SERVICE`, `WEB_REQUEST_SERVICE` and `WEB_SERVICE`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `BACKGROUND_ACTIVITY`, `CICS_SERVICE`, `CUSTOM_SERVICE`, `DATABASE_SERVICE`, `ENTERPRISE_SERVICE_BUS_SERVICE`, `EXTERNAL`, `IBM_INTEGRATION_BUS_SERVICE`, `IMS_SERVICE`, `MESSAGING_SERVICE`, `RMI_SERVICE`, `RPC_SERVICE`, `WEB_REQUEST_SERVICE` and `WEB_SERVICE`
+     */
     values?: string[];
 }
 
 export interface RequestNamingConditionsConditionComparisonString {
+    /**
+     * The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `BEGINS_WITH`, `BEGINS_WITH_ANY_OF`, `CONTAINS`, `ENDS_WITH`, `ENDS_WITH_ANY_OF`, `EQUALS`, `EQUALS_ANY_OF`, `EXISTS` and `REGEX_MATCHES`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
+    /**
+     * The values to compare to
+     */
     values?: string[];
 }
 
 export interface RequestNamingConditionsConditionComparisonStringRequestAttribute {
+    /**
+     * The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * If `true`, the request attribute is matched on child service calls. Default is `false`
+     */
     matchOnChildCalls?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `BEGINS_WITH`, `BEGINS_WITH_ANY_OF`, `CONTAINS`, `ENDS_WITH`, `ENDS_WITH_ANY_OF`, `EQUALS`, `EQUALS_ANY_OF`, `EXISTS` and `REGEX_MATCHES`
+     */
     operator?: string;
+    /**
+     * No documentation available for this attribute
+     */
     requestAttribute: string;
+    /**
+     * Defines valid sources of request attributes for conditions or placeholders
+     */
     source?: outputs.RequestNamingConditionsConditionComparisonStringRequestAttributeSource;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
+    /**
+     * The values to compare to
+     */
     values?: string[];
 }
 
 export interface RequestNamingConditionsConditionComparisonStringRequestAttributeSource {
+    /**
+     * Use only request attributes from services that belong to this management zone.. Use either this or `serviceTag`
+     */
     managementZone?: string;
+    /**
+     * Use only request attributes from services that have this tag. Use either this or `managementZone`
+     */
     serviceTag?: outputs.RequestNamingConditionsConditionComparisonStringRequestAttributeSourceServiceTag;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface RequestNamingConditionsConditionComparisonStringRequestAttributeSourceServiceTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. For custom tags use the `CONTEXTLESS` value. The context is set for tags that are automatically imported by OneAgent (for example, from the AWS console or environment variables). It’s useful for determining the origin of tags when not manually defined, and it also helps to prevent clashes with other existing tags. If the tag is not automatically imported, `CONTEXTLESS` set. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_COMPUTE_ENGINE` and `KUBERNETES`
+     */
     context?: string;
+    /**
+     * The key of the tag. For custom tags, put the tag value here. The key allows categorization of multiple tags. It is possible that there are multiple values for a single key which will all be represented as standalone tags. Therefore, the key does not have the semantic of a map key but is more like a key of a key-value tuple. In some cases, for example custom tags, the key represents the actual tag value and the value field is not set – those are called valueless tags
+     */
     key: string;
+    /**
+     * has no documentation
+     */
     tagKey?: outputs.RequestNamingConditionsConditionComparisonStringRequestAttributeSourceServiceTagTagKey;
+    /**
+     * The value of the tag. Not applicable to custom tags. If a tag does have a separate key and value (in the textual representation they are split by the colon ‘:’), this field is set with the actual value. Key-value pairs can occur for automatically imported tags and tags set by rules if extractors are used
+     */
     value?: string;
 }
 
 export interface RequestNamingConditionsConditionComparisonStringRequestAttributeSourceServiceTagTagKey {
+    /**
+     * has no documentation
+     */
     context?: string;
+    /**
+     * has no documentation
+     */
     key?: string;
 }
 
 export interface RequestNamingConditionsConditionComparisonTag {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `TAG_KEY_EQUALS` and `TAG_KEY_EQUALS_ANY_OF`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The values to compare to
+     */
     value?: outputs.RequestNamingConditionsConditionComparisonTagValue;
+    /**
+     * The values to compare to
+     */
     values?: outputs.RequestNamingConditionsConditionComparisonTagValues;
 }
 
 export interface RequestNamingConditionsConditionComparisonTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_CLOUD` and `KUBERNETES`
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface RequestNamingConditionsConditionComparisonTagValues {
+    /**
+     * The values to compare to
+     */
     values?: outputs.RequestNamingConditionsConditionComparisonTagValuesValue[];
 }
 
 export interface RequestNamingConditionsConditionComparisonTagValuesValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_CLOUD` and `KUBERNETES`
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface RequestNamingConditionsConditionComparisonZosCallType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: string;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are `CTG`, `DPL`, `EXPLICIT_ADK`, `IMS_CONNECT`, `IMS_CONNECT_API`, `IMS_ITRA`, `IMS_MSC`, `IMS_PGM_SWITCH`, `IMS_SHARED_QUEUES`, `IMS_TRANS_EXEC`, `MQ`, `SOAP`, `START`, `TX` and `UNKNOWN`
+     */
     value?: string;
+    /**
+     * The values to compare to. Possible values are `CTG`, `DPL`, `EXPLICIT_ADK`, `IMS_CONNECT`, `IMS_CONNECT_API`, `IMS_ITRA`, `IMS_MSC`, `IMS_PGM_SWITCH`, `IMS_SHARED_QUEUES`, `IMS_TRANS_EXEC`, `MQ`, `SOAP`, `START`, `TX` and `UNKNOWN`
+     */
     values?: string[];
 }
 
 export interface RequestNamingPlaceholders {
+    /**
+     * A custom placeholder to be used in a dimension value pattern
+     */
     placeholders?: outputs.RequestNamingPlaceholdersPlaceholder[];
 }
 
 export interface RequestNamingPlaceholdersPlaceholder {
+    /**
+     * Which value of the request attribute must be used when it occurs across multiple child requests. Only applicable for the `SERVICE_REQUEST_ATTRIBUTE` attribute, when **useFromChildCalls** is `true`. For the `COUNT` aggregation, the **kind** field is not applicable. Possible values are `COUNT`, `FIRST` and `LAST`.
+     */
     aggregation?: string;
+    /**
+     * The attribute to extract from. You can only use attributes of the **string** type. Possible values are `ACTOR_SYSTEM`, `AKKA_ACTOR_CLASS_NAME`, `AKKA_ACTOR_MESSAGE_TYPE`, `AKKA_ACTOR_PATH`, `APPLICATION_BUILD_VERSION`, `APPLICATION_RELEASE_VERSION`, `AZURE_FUNCTIONS_FUNCTION_NAME`, `AZURE_FUNCTIONS_SITE_NAME`, `CICS_PROGRAM_NAME`, `CICS_SYSTEM_ID`, `CICS_TASK_ID`, `CICS_TRANSACTION_ID`, `CICS_USER_ID`, `CPU_TIME`, `CTG_GATEWAY_URL`, `CTG_PROGRAM`, `CTG_SERVER_NAME`, `CTG_TRANSACTION_ID`, `CUSTOMSERVICE_CLASS`, `CUSTOMSERVICE_METHOD`, `DATABASE_CHILD_CALL_COUNT`, `DATABASE_CHILD_CALL_TIME`, `DATABASE_HOST`, `DATABASE_NAME`, `DATABASE_TYPE`, `DATABASE_URL`, `DISK_IO_TIME`, `ERROR_COUNT`, `ESB_APPLICATION_NAME`, `ESB_INPUT_TYPE`, `ESB_LIBRARY_NAME`, `ESB_MESSAGE_FLOW_NAME`, `EXCEPTION_CLASS`, `EXCEPTION_MESSAGE`, `FAILED_STATE`, `FAILURE_REASON`, `FLAW_STATE`, `HTTP_REQUEST_METHOD`, `HTTP_STATUS`, `HTTP_STATUS_CLASS`, `IMS_PROGRAM_NAME`, `IMS_TRANSACTION_ID`, `IMS_USER_ID`, `IO_TIME`, `IS_KEY_REQUEST`, `LAMBDA_COLDSTART`, `LOCK_TIME`, `MESSAGING_DESTINATION_TYPE`, `MESSAGING_IS_TEMPORARY_QUEUE`, `MESSAGING_QUEUE_NAME`, `MESSAGING_QUEUE_VENDOR`, `NETWORK_IO_TIME`, `NON_DATABASE_CHILD_CALL_COUNT`, `NON_DATABASE_CHILD_CALL_TIME`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_TAG`, `REMOTE_ENDPOINT`, `REMOTE_METHOD`, `REMOTE_SERVICE_NAME`, `REQUEST_NAME`, `REQUEST_TYPE`, `RESPONSE_TIME`, `RESPONSE_TIME_CLIENT`, `RMI_CLASS`, `RMI_METHOD`, `SERVICE_DISPLAY_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REQUEST_ATTRIBUTE`, `SERVICE_TAG`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `SUSPENSION_TIME`, `TOTAL_PROCESSING_TIME`, `WAIT_TIME`, `WEBREQUEST_QUERY`, `WEBREQUEST_RELATIVE_URL`, `WEBREQUEST_URL`, `WEBREQUEST_URL_HOST`, `WEBREQUEST_URL_PATH`, `WEBREQUEST_URL_PORT`, `WEBSERVICE_ENDPOINT`, `WEBSERVICE_METHOD` and `ZOS_CALL_TYPE`
+     */
     attribute: string;
+    /**
+     * Depending on the `kind` value:
+     *
+     *
+     * * `REGEX_EXTRACTION`: The regular expression.
+     *
+     *
+     * * `BETWEEN_DELIMITER`: The opening delimiter string to look for.
+     *
+     *
+     * * All other values: The delimiter string to look for
+     */
     delimiterOrRegex?: string;
+    /**
+     * The closing delimiter string to look for. Required if the `kind` value is `BETWEEN_DELIMITER`. Not applicable otherwise
+     */
     endDelimiter?: string;
+    /**
+     * The type of extraction. Defines either usage of regular expression (`regex`) or the position of request attribute value to be extracted. When the `attribute` is `SERVICE_REQUEST_ATTRIBUTE` attribute and `aggregation` is `COUNT`, needs to be set to `ORIGINAL_TEXT`. Possible values are 	`AFTER_DELIMITER`, `BEFORE_DELIMITER`, `BETWEEN_DELIMITER`, `ORIGINAL_TEXT` and `REGEX_EXTRACTION`
+     */
     kind: string;
+    /**
+     * The name of the placeholder. Use it in the naming pattern as `{name}`
+     */
     name: string;
+    /**
+     * The format of the extracted string. Possible values are `ORIGINAL`, `TO_LOWER_CASE` and `TO_UPPER_CASE`
+     */
     normalization?: string;
+    /**
+     * The request attribute to extract from. Required if the `kind` value is `SERVICE_REQUEST_ATTRIBUTE`. Not applicable otherwise
+     */
     requestAttribute?: string;
+    /**
+     * Defines valid sources of request attributes for conditions or placeholders
+     */
     source?: outputs.RequestNamingPlaceholdersPlaceholderSource;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
+    /**
+     * If `true` request attribute will be taken from a child service call. Only applicable for the `SERVICE_REQUEST_ATTRIBUTE` attribute. Defaults to `false`
+     */
     useFromChildCalls?: boolean;
 }
 
 export interface RequestNamingPlaceholdersPlaceholderSource {
+    /**
+     * Use only request attributes from services that belong to this management zone.. Use either this or `serviceTag`
+     */
     managementZone?: string;
+    /**
+     * Use only request attributes from services that have this tag. Use either this or `managementZone`
+     */
     serviceTag?: outputs.RequestNamingPlaceholdersPlaceholderSourceServiceTag;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface RequestNamingPlaceholdersPlaceholderSourceServiceTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. For custom tags use the `CONTEXTLESS` value. The context is set for tags that are automatically imported by OneAgent (for example, from the AWS console or environment variables). It’s useful for determining the origin of tags when not manually defined, and it also helps to prevent clashes with other existing tags. If the tag is not automatically imported, `CONTEXTLESS` set. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_COMPUTE_ENGINE` and `KUBERNETES`
+     */
     context?: string;
+    /**
+     * The key of the tag. For custom tags, put the tag value here. The key allows categorization of multiple tags. It is possible that there are multiple values for a single key which will all be represented as standalone tags. Therefore, the key does not have the semantic of a map key but is more like a key of a key-value tuple. In some cases, for example custom tags, the key represents the actual tag value and the value field is not set – those are called valueless tags
+     */
     key: string;
+    /**
+     * has no documentation
+     */
     tagKey?: outputs.RequestNamingPlaceholdersPlaceholderSourceServiceTagTagKey;
+    /**
+     * The value of the tag. Not applicable to custom tags. If a tag does have a separate key and value (in the textual representation they are split by the colon ‘:’), this field is set with the actual value. Key-value pairs can occur for automatically imported tags and tags set by rules if extractors are used
+     */
     value?: string;
 }
 
 export interface RequestNamingPlaceholdersPlaceholderSourceServiceTagTagKey {
+    /**
+     * has no documentation
+     */
     context?: string;
+    /**
+     * has no documentation
+     */
     key?: string;
 }
 
 export interface ResourceAttributesKeys {
+    /**
+     * Attribute key allow-list
+     */
     rules?: outputs.ResourceAttributesKeysRule[];
 }
 
 export interface ResourceAttributesKeysRule {
+    /**
+     * Attribute key **service.name** is automatically captured by default
+     */
     attributeKey: string;
+    /**
+     * If this is true, the value of the specified key is stored.
+     */
     enabled: boolean;
+    /**
+     * Introduce more granular control over the visibility of attribute values.  
+     * Choose **Do not mask** to allow every user to see the actual value and use it in defining other configurations.  
+     * Choose **Mask entire value** to hide the whole value of this attribute from everyone who does not have 'View sensitive request data' permission. These attributes can't be used to define other configurations. 
+     * Choose **Mask only confidential data** to apply automatic masking strategies to your data. These strategies include, for example, credit card numbers, IBAN, IPs, email-addresses, etc. It may not be possible to recognize all sensitive data so please always make sure to verify that sensitive data is actually masked. If sensitive data is not recognized, please use **Mask entire value** instead. Users with 'View sensitive request data' permission will be able to see the entire value, others only the non-sensitive parts. These attributes can't be used to define other configurations.
+     */
     masking: string;
 }
 
@@ -9727,6 +19807,9 @@ export interface RumProviderBreakdownDomainNamePatternList {
 }
 
 export interface RumProviderBreakdownDomainNamePatternListDomainNamePattern {
+    /**
+     * Please type at least part of this content provider's URL. Asterisks (*) can be used as wildcard characters.
+     */
     pattern: string;
 }
 
@@ -9742,14 +19825,32 @@ export interface ServiceAnomaliesFailureRates {
 }
 
 export interface ServiceAnomaliesFailureRatesAuto {
+    /**
+     * Absolute increase of failing service calls to trigger an alert, %
+     */
     absolute: number;
+    /**
+     * Relative increase of failing service calls to trigger an alert, %
+     */
     relative: number;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface ServiceAnomaliesFailureRatesThresholds {
+    /**
+     * Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers alert
+     */
     sensitivity: string;
+    /**
+     * Failure rate during any 5-minute period to trigger an alert, %
+     */
     threshold: number;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
@@ -9776,8 +19877,17 @@ export interface ServiceAnomaliesLoadDrops {
 }
 
 export interface ServiceAnomaliesLoadSpikes {
+    /**
+     * Alert if the service stays in abnormal state for at least *X* minutes
+     */
     minutes?: number;
+    /**
+     * Alert if the observed load is more than *X* % of the expected value
+     */
     percent?: number;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
@@ -9794,24 +19904,51 @@ export interface ServiceAnomaliesResponseTimes {
 
 export interface ServiceAnomaliesResponseTimesAuto {
     /**
-     * The configuration of load spikes detection. Detecting load spikes will be disabled if this block is omitted.
+     * Minimal service load to detect response time degradation. Response time degradation of services with smaller load won't trigger alerts. Possible values are `FIFTEEN_REQUESTS_PER_MINUTE`, `FIVE_REQUESTS_PER_MINUTE`, `ONE_REQUEST_PER_MINUTE` and `TEN_REQUESTS_PER_MINUTE`
      */
     load: string;
+    /**
+     * Alert if the response time degrades by more than *X* milliseconds
+     */
     milliseconds: number;
+    /**
+     * Alert if the response time degrades by more than *X* %
+     */
     percent: number;
+    /**
+     * Alert if the response time of the slowest 10% degrades by more than *X* milliseconds
+     */
     slowestMilliseconds: number;
+    /**
+     * Alert if the response time of the slowest 10% degrades by more than *X* milliseconds
+     */
     slowestPercent: number;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
 export interface ServiceAnomaliesResponseTimesThresholds {
     /**
-     * The configuration of load spikes detection. Detecting load spikes will be disabled if this block is omitted.
+     * Minimal service load to detect response time degradation. Response time degradation of services with smaller load won't trigger alerts. Possible values are `FIFTEEN_REQUESTS_PER_MINUTE`, `FIVE_REQUESTS_PER_MINUTE`, `ONE_REQUEST_PER_MINUTE` and `TEN_REQUESTS_PER_MINUTE`
      */
     load: string;
+    /**
+     * Response time during any 5-minute period to trigger an alert, in milliseconds
+     */
     milliseconds: number;
+    /**
+     * Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers an alert
+     */
     sensitivity: string;
+    /**
+     * Response time of the 10% slowest during any 5-minute period to trigger an alert, in milliseconds
+     */
     slowestMilliseconds: number;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: string;
 }
 
@@ -9835,24 +19972,54 @@ export interface ServiceAnomaliesV2FailureRate {
 }
 
 export interface ServiceAnomaliesV2FailureRateAutoDetection {
+    /**
+     * Absolute threshold
+     */
     absoluteIncrease: number;
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: outputs.ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection;
+    /**
+     * Relative threshold
+     */
     relativeIncrease: number;
 }
 
 export interface ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: number;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: number;
 }
 
 export interface ServiceAnomaliesV2FailureRateFixedDetection {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: outputs.ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection;
+    /**
+     * Sensitivity
+     */
     sensitivity: string;
+    /**
+     * Threshold
+     */
     threshold: number;
 }
 
 export interface ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: number;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: number;
 }
 
@@ -9906,43 +20073,94 @@ export interface ServiceAnomaliesV2ResponseTime {
 }
 
 export interface ServiceAnomaliesV2ResponseTimeAutoDetection {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection;
+    /**
+     * All requests. Alert if the average response time of all requests degrades beyond **both** the absolute and relative thresholds:
+     */
     responseTimeAll: outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll;
+    /**
+     * Slowest 10%. Alert if the average response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+     */
     responseTimeSlowest: outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest;
 }
 
 export interface ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: number;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: number;
 }
 
 export interface ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll {
+    /**
+     * Absolute threshold
+     */
     degradationMilliseconds: number;
+    /**
+     * Relative threshold
+     */
     degradationPercent: number;
 }
 
 export interface ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest {
+    /**
+     * Absolute threshold
+     */
     slowestDegradationMilliseconds: number;
+    /**
+     * Relative threshold
+     */
     slowestDegradationPercent: number;
 }
 
 export interface ServiceAnomaliesV2ResponseTimeFixedDetection {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection;
+    /**
+     * All requests. Alert if the average response time of all requests degrades beyond this threshold:
+     */
     responseTimeAll: outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll;
+    /**
+     * Slowest 10%. Alert if the average response time of the slowest 10% of requests degrades beyond this threshold:
+     */
     responseTimeSlowest: outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest;
+    /**
+     * Sensitivity
+     */
     sensitivity: string;
 }
 
 export interface ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: number;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: number;
 }
 
 export interface ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll {
+    /**
+     * Alert if the response time degrades beyond this many ms within an observation period of 5 minutes
+     */
     degradationMilliseconds: number;
 }
 
 export interface ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest {
+    /**
+     * Alert if the response time of the slowest 10% degrades beyond this many ms within an observation period of 5 minutes
+     */
     slowestDegradationMilliseconds: number;
 }
 
@@ -9951,15 +20169,45 @@ export interface ServiceExternalWebRequestConditions {
 }
 
 export interface ServiceExternalWebRequestConditionsCondition {
+    /**
+     * Take the value of this attribute
+     */
     attribute: string;
+    /**
+     * Apply this operation
+     */
     compareOperationType: string;
+    /**
+     * Technology
+     */
     frameworks?: string[];
+    /**
+     * Ignore case sensitivity for texts.
+     */
     ignoreCase?: boolean;
+    /**
+     * Value
+     */
     intValue?: number;
+    /**
+     * Values
+     */
     intValues?: number[];
+    /**
+     * From
+     */
     ipRangeFrom?: string;
+    /**
+     * To
+     */
     ipRangeTo?: string;
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     tagValues?: string[];
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     textValues?: string[];
 }
 
@@ -9983,13 +20231,28 @@ export interface ServiceExternalWebRequestIdContributors {
 }
 
 export interface ServiceExternalWebRequestIdContributorsApplicationId {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: boolean;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor;
 }
 
 export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: string;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride;
 }
 
@@ -9998,31 +20261,82 @@ export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdCo
 }
 
 export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: boolean;
+    /**
+     * min digit count
+     */
     minDigitCount?: number;
+    /**
+     * no documentation available
+     */
     prefix?: string;
+    /**
+     * replacement
+     */
     replacementValue?: string;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: number;
+    /**
+     * select index
+     */
     selectIndex?: number;
+    /**
+     * split by
+     */
     splitDelimiter?: string;
+    /**
+     * no documentation available
+     */
     suffix?: string;
+    /**
+     * take from end
+     */
     takeFromEnd?: boolean;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: string;
 }
 
 export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
 export interface ServiceExternalWebRequestIdContributorsContextRoot {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: boolean;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor;
 }
 
 export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
+     */
     contributionType: string;
+    /**
+     * The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
+     */
     segmentCount?: number;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride;
 }
 
@@ -10031,27 +20345,66 @@ export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdCont
 }
 
 export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: boolean;
+    /**
+     * min digit count
+     */
     minDigitCount?: number;
+    /**
+     * no documentation available
+     */
     prefix?: string;
+    /**
+     * replacement
+     */
     replacementValue?: string;
+    /**
+     * no documentation available
+     */
     suffix?: string;
+    /**
+     * Possible Values: `BEFORE`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`
+     */
     transformationType: string;
 }
 
 export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
 export interface ServiceExternalWebRequestIdContributorsPublicDomainName {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: boolean;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor;
 }
 
 export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: string;
+    /**
+     * Use the detected host name instead of the request's domain name.
+     */
     copyFromHostName?: boolean;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformations;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverride;
 }
 
@@ -10060,19 +20413,52 @@ export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceI
 }
 
 export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: boolean;
+    /**
+     * min digit count
+     */
     minDigitCount?: number;
+    /**
+     * no documentation available
+     */
     prefix?: string;
+    /**
+     * replacement
+     */
     replacementValue?: string;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: number;
+    /**
+     * select index
+     */
     selectIndex?: number;
+    /**
+     * split by
+     */
     splitDelimiter?: string;
+    /**
+     * no documentation available
+     */
     suffix?: string;
+    /**
+     * take from end
+     */
     takeFromEnd?: boolean;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: string;
 }
 
 export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
@@ -10081,15 +20467,45 @@ export interface ServiceExternalWebServiceConditions {
 }
 
 export interface ServiceExternalWebServiceConditionsCondition {
+    /**
+     * Take the value of this attribute
+     */
     attribute: string;
+    /**
+     * Apply this operation
+     */
     compareOperationType: string;
+    /**
+     * Technology
+     */
     frameworks?: string[];
+    /**
+     * Ignore case sensitivity for texts.
+     */
     ignoreCase?: boolean;
+    /**
+     * Value
+     */
     intValue?: number;
+    /**
+     * Values
+     */
     intValues?: number[];
+    /**
+     * From
+     */
     ipRangeFrom?: string;
+    /**
+     * To
+     */
     ipRangeTo?: string;
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     tagValues?: string[];
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     textValues?: string[];
 }
 
@@ -10098,18 +20514,39 @@ export interface ServiceExternalWebServiceIdContributors {
      * Detect the matching requests as web request services instead of web services.
      */
     detectAsWebRequestService: boolean;
+    /**
+     * Let the Port contribute to the Service Id
+     */
     portForServiceId?: boolean;
+    /**
+     * URL path
+     */
     urlPath?: outputs.ServiceExternalWebServiceIdContributorsUrlPath;
 }
 
 export interface ServiceExternalWebServiceIdContributorsUrlPath {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: boolean;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor;
 }
 
 export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: string;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride;
 }
 
@@ -10118,19 +20555,52 @@ export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContribu
 }
 
 export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: boolean;
+    /**
+     * min digit count
+     */
     minDigitCount?: number;
+    /**
+     * no documentation available
+     */
     prefix?: string;
+    /**
+     * replacement
+     */
     replacementValue?: string;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: number;
+    /**
+     * select index
+     */
     selectIndex?: number;
+    /**
+     * split by
+     */
     splitDelimiter?: string;
+    /**
+     * no documentation available
+     */
     suffix?: string;
+    /**
+     * take from end
+     */
     takeFromEnd?: boolean;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: string;
 }
 
 export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
@@ -10166,15 +20636,36 @@ export interface ServiceFailureExceptionRulesCustomErrorRules {
 }
 
 export interface ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule {
+    /**
+     * Request attribute condition
+     */
     condition: outputs.ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition;
+    /**
+     * Request attribute
+     */
     requestAttribute: string;
 }
 
 export interface ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition {
+    /**
+     * Case sensitive
+     */
     caseSensitive?: boolean;
+    /**
+     * Apply this comparison
+     */
     compareOperationType: string;
+    /**
+     * Value
+     */
     doubleValue?: number;
+    /**
+     * Value
+     */
     intValue?: number;
+    /**
+     * Value
+     */
     textValue?: string;
 }
 
@@ -10183,7 +20674,13 @@ export interface ServiceFailureExceptionRulesCustomHandledExceptions {
 }
 
 export interface ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException {
+    /**
+     * The pattern will match if it is contained within the actual class name.
+     */
     classPattern?: string;
+    /**
+     * Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+     */
     messagePattern?: string;
 }
 
@@ -10192,7 +20689,13 @@ export interface ServiceFailureExceptionRulesIgnoredExceptions {
 }
 
 export interface ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledException {
+    /**
+     * The pattern will match if it is contained within the actual class name.
+     */
     classPattern?: string;
+    /**
+     * Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+     */
     messagePattern?: string;
 }
 
@@ -10201,7 +20704,13 @@ export interface ServiceFailureExceptionRulesSuccessForcingExceptions {
 }
 
 export interface ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledException {
+    /**
+     * The pattern will match if it is contained within the actual class name.
+     */
     classPattern?: string;
+    /**
+     * Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+     */
     messagePattern?: string;
 }
 
@@ -10210,15 +20719,45 @@ export interface ServiceFullWebRequestConditions {
 }
 
 export interface ServiceFullWebRequestConditionsCondition {
+    /**
+     * Take the value of this attribute
+     */
     attribute: string;
+    /**
+     * Apply this operation
+     */
     compareOperationType: string;
+    /**
+     * Technology
+     */
     frameworks?: string[];
+    /**
+     * Ignore case sensitivity for texts.
+     */
     ignoreCase?: boolean;
+    /**
+     * Value
+     */
     intValue?: number;
+    /**
+     * Values
+     */
     intValues?: number[];
+    /**
+     * From
+     */
     ipRangeFrom?: string;
+    /**
+     * To
+     */
     ipRangeTo?: string;
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     tagValues?: string[];
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     textValues?: string[];
 }
 
@@ -10238,13 +20777,28 @@ export interface ServiceFullWebRequestIdContributors {
 }
 
 export interface ServiceFullWebRequestIdContributorsApplicationId {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: boolean;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor;
 }
 
 export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: string;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformations;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride;
 }
 
@@ -10253,31 +20807,82 @@ export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContri
 }
 
 export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: boolean;
+    /**
+     * min digit count
+     */
     minDigitCount?: number;
+    /**
+     * no documentation available
+     */
     prefix?: string;
+    /**
+     * replacement
+     */
     replacementValue?: string;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: number;
+    /**
+     * select index
+     */
     selectIndex?: number;
+    /**
+     * split by
+     */
     splitDelimiter?: string;
+    /**
+     * no documentation available
+     */
     suffix?: string;
+    /**
+     * take from end
+     */
     takeFromEnd?: boolean;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: string;
 }
 
 export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
 export interface ServiceFullWebRequestIdContributorsContextRoot {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: boolean;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributor;
 }
 
 export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
+     */
     contributionType: string;
+    /**
+     * The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
+     */
     segmentCount?: number;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformations;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverride;
 }
 
@@ -10286,26 +20891,62 @@ export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContribu
 }
 
 export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: boolean;
+    /**
+     * min digit count
+     */
     minDigitCount?: number;
+    /**
+     * no documentation available
+     */
     prefix?: string;
+    /**
+     * replacement
+     */
     replacementValue?: string;
+    /**
+     * no documentation available
+     */
     suffix?: string;
+    /**
+     * Possible Values: `BEFORE`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`
+     */
     transformationType: string;
 }
 
 export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
 export interface ServiceFullWebRequestIdContributorsServerName {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: boolean;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributor;
 }
 
 export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: string;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformations;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverride;
 }
 
@@ -10314,19 +20955,52 @@ export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContribut
 }
 
 export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: boolean;
+    /**
+     * min digit count
+     */
     minDigitCount?: number;
+    /**
+     * no documentation available
+     */
     prefix?: string;
+    /**
+     * replacement
+     */
     replacementValue?: string;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: number;
+    /**
+     * select index
+     */
     selectIndex?: number;
+    /**
+     * split by
+     */
     splitDelimiter?: string;
+    /**
+     * no documentation available
+     */
     suffix?: string;
+    /**
+     * take from end
+     */
     takeFromEnd?: boolean;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: string;
 }
 
 export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
@@ -10335,38 +21009,98 @@ export interface ServiceFullWebServiceConditions {
 }
 
 export interface ServiceFullWebServiceConditionsCondition {
+    /**
+     * Take the value of this attribute
+     */
     attribute: string;
+    /**
+     * Apply this operation
+     */
     compareOperationType: string;
+    /**
+     * Technology
+     */
     frameworks?: string[];
+    /**
+     * Ignore case sensitivity for texts.
+     */
     ignoreCase?: boolean;
+    /**
+     * Value
+     */
     intValue?: number;
+    /**
+     * Values
+     */
     intValues?: number[];
+    /**
+     * From
+     */
     ipRangeFrom?: string;
+    /**
+     * To
+     */
     ipRangeTo?: string;
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     tagValues?: string[];
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     textValues?: string[];
 }
 
 export interface ServiceFullWebServiceIdContributors {
+    /**
+     * Application identifier
+     */
     applicationId?: outputs.ServiceFullWebServiceIdContributorsApplicationId;
+    /**
+     * The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+     */
     contextRoot?: outputs.ServiceFullWebServiceIdContributorsContextRoot;
     /**
      * Detect the matching requests as full web services (false) or web request services (true).
      */
     detectAsWebRequestService: boolean;
+    /**
+     * Server name
+     */
     serverName?: outputs.ServiceFullWebServiceIdContributorsServerName;
+    /**
+     * Web service name
+     */
     webServiceName?: outputs.ServiceFullWebServiceIdContributorsWebServiceName;
+    /**
+     * Web service namespace
+     */
     webServiceNamespace?: outputs.ServiceFullWebServiceIdContributorsWebServiceNamespace;
 }
 
 export interface ServiceFullWebServiceIdContributorsApplicationId {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: boolean;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor;
 }
 
 export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: string;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformations;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverride;
 }
 
@@ -10375,31 +21109,82 @@ export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContri
 }
 
 export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: boolean;
+    /**
+     * min digit count
+     */
     minDigitCount?: number;
+    /**
+     * no documentation available
+     */
     prefix?: string;
+    /**
+     * replacement
+     */
     replacementValue?: string;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: number;
+    /**
+     * select index
+     */
     selectIndex?: number;
+    /**
+     * split by
+     */
     splitDelimiter?: string;
+    /**
+     * no documentation available
+     */
     suffix?: string;
+    /**
+     * take from end
+     */
     takeFromEnd?: boolean;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: string;
 }
 
 export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
 export interface ServiceFullWebServiceIdContributorsContextRoot {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: boolean;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributor;
 }
 
 export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
+     */
     contributionType: string;
+    /**
+     * The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
+     */
     segmentCount?: number;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformations;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverride;
 }
 
@@ -10408,26 +21193,62 @@ export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContribu
 }
 
 export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: boolean;
+    /**
+     * min digit count
+     */
     minDigitCount?: number;
+    /**
+     * no documentation available
+     */
     prefix?: string;
+    /**
+     * replacement
+     */
     replacementValue?: string;
+    /**
+     * no documentation available
+     */
     suffix?: string;
+    /**
+     * Possible Values: `BEFORE`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`
+     */
     transformationType: string;
 }
 
 export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
 export interface ServiceFullWebServiceIdContributorsServerName {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: boolean;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributor;
 }
 
 export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: string;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformations;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverride;
 }
 
@@ -10436,30 +21257,78 @@ export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContribut
 }
 
 export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: boolean;
+    /**
+     * min digit count
+     */
     minDigitCount?: number;
+    /**
+     * no documentation available
+     */
     prefix?: string;
+    /**
+     * replacement
+     */
     replacementValue?: string;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: number;
+    /**
+     * select index
+     */
     selectIndex?: number;
+    /**
+     * split by
+     */
     splitDelimiter?: string;
+    /**
+     * no documentation available
+     */
     suffix?: string;
+    /**
+     * take from end
+     */
     takeFromEnd?: boolean;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: string;
 }
 
 export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceName {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: boolean;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor;
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: string;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformations;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride;
 }
 
@@ -10468,30 +21337,78 @@ export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContr
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: boolean;
+    /**
+     * min digit count
+     */
     minDigitCount?: number;
+    /**
+     * no documentation available
+     */
     prefix?: string;
+    /**
+     * replacement
+     */
     replacementValue?: string;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: number;
+    /**
+     * select index
+     */
     selectIndex?: number;
+    /**
+     * split by
+     */
     splitDelimiter?: string;
+    /**
+     * no documentation available
+     */
     suffix?: string;
+    /**
+     * take from end
+     */
     takeFromEnd?: boolean;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: string;
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceNamespace {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: boolean;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor;
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: string;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride;
 }
 
@@ -10500,19 +21417,52 @@ export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceId
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: boolean;
+    /**
+     * min digit count
+     */
     minDigitCount?: number;
+    /**
+     * no documentation available
+     */
     prefix?: string;
+    /**
+     * replacement
+     */
     replacementValue?: string;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: number;
+    /**
+     * select index
+     */
     selectIndex?: number;
+    /**
+     * split by
+     */
     splitDelimiter?: string;
+    /**
+     * no documentation available
+     */
     suffix?: string;
+    /**
+     * take from end
+     */
     takeFromEnd?: boolean;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: string;
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
@@ -10547,802 +21497,2076 @@ export interface ServiceHttpFailureHttpResponseCodes {
 }
 
 export interface ServiceNamingCondition {
+    /**
+     * A conditions for the metric usage
+     */
     conditions?: outputs.ServiceNamingConditionCondition[];
 }
 
 export interface ServiceNamingConditionCondition {
     /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     applicationTypeComparisons?: outputs.ServiceNamingConditionConditionApplicationTypeComparison[];
+    /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     */
     applicationTypes?: outputs.ServiceNamingConditionConditionApplicationType[];
+    /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     */
     azureComputeModeComparisons?: outputs.ServiceNamingConditionConditionAzureComputeModeComparison[];
     /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     *
      * @deprecated You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
      */
     azureComputeModes?: outputs.ServiceNamingConditionConditionAzureComputeMode[];
     /**
+     * Comparison for `AZURE_SKU` attributes
+     *
      * @deprecated You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
      */
     azureSkuComparisions?: outputs.ServiceNamingConditionConditionAzureSkuComparision[];
+    /**
+     * Comparison for `AZURE_SKU` attributes
+     */
     azureSkus?: outputs.ServiceNamingConditionConditionAzureSkus[];
     /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     *
      * @deprecated You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
      */
     baseComparisonBasics?: outputs.ServiceNamingConditionConditionBaseComparisonBasic[];
     /**
+     * Fallback for not yet known type
+     *
      * @deprecated 'base_condition_key' is deprecated. You should use 'key'
      */
     baseConditionKeys?: outputs.ServiceNamingConditionConditionBaseConditionKey[];
     /**
+     * Comparison for `BITNESS` attributes
+     *
      * @deprecated You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
      */
     bitnessComparisions?: outputs.ServiceNamingConditionConditionBitnessComparision[];
+    /**
+     * Comparison for `BITNESS` attributes
+     */
     bitnesses?: outputs.ServiceNamingConditionConditionBitness[];
     /**
+     * Comparison for `CLOUD_TYPE` attributes
+     *
      * @deprecated You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
      */
     cloudTypeComparisons?: outputs.ServiceNamingConditionConditionCloudTypeComparison[];
+    /**
+     * Comparison for `CLOUD_TYPE` attributes
+     */
     cloudTypes?: outputs.ServiceNamingConditionConditionCloudType[];
+    /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     */
     comparisons?: outputs.ServiceNamingConditionConditionComparison[];
     /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     customApplicationTypeComparisons?: outputs.ServiceNamingConditionConditionCustomApplicationTypeComparison[];
+    /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     */
     customApplicationTypes?: outputs.ServiceNamingConditionConditionCustomApplicationType[];
     /**
+     * Key for Custom Host Metadata
+     *
      * @deprecated 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
      */
     customHostMetadataConditionKeys?: outputs.ServiceNamingConditionConditionCustomHostMetadataConditionKey[];
+    /**
+     * Key for Custom Host Metadata
+     */
     customHostMetadatas?: outputs.ServiceNamingConditionConditionCustomHostMetadata[];
     /**
+     * Key for Custom Process Metadata
+     *
      * @deprecated 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
      */
     customProcessMetadataConditionKeys?: outputs.ServiceNamingConditionConditionCustomProcessMetadataConditionKey[];
+    /**
+     * Key for Custom Process Metadata
+     */
     customProcessMetadatas?: outputs.ServiceNamingConditionConditionCustomProcessMetadata[];
+    /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     */
     databaseTopologies?: outputs.ServiceNamingConditionConditionDatabaseTopology[];
     /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     databaseTopologyComparisons?: outputs.ServiceNamingConditionConditionDatabaseTopologyComparison[];
     /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     *
      * @deprecated You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
      */
     dcrumDecoderComparisons?: outputs.ServiceNamingConditionConditionDcrumDecoderComparison[];
+    /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     */
     dcrumDecoders?: outputs.ServiceNamingConditionConditionDcrumDecoder[];
+    /**
+     * Comparison for `ENTITY_ID` attributes
+     */
     entities?: outputs.ServiceNamingConditionConditionEntity[];
     /**
+     * Comparison for `ENTITY_ID` attributes
+     *
      * @deprecated You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
      */
     entityIdComparisons?: outputs.ServiceNamingConditionConditionEntityIdComparison[];
+    /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     */
     hostTeches?: outputs.ServiceNamingConditionConditionHostTech[];
     /**
-     * @deprecated `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+     * `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
+     *
+     * @deprecated `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
      */
     hypervisorTypeComparisions?: outputs.ServiceNamingConditionConditionHypervisorTypeComparision[];
+    /**
+     * Comparison for `HYPERVISOR_TYPE` attributes
+     */
     hypervisors?: outputs.ServiceNamingConditionConditionHypervisor[];
     /**
+     * Comparison for `INDEXED_NAME` attributes
+     *
      * @deprecated You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedNameComparisons?: outputs.ServiceNamingConditionConditionIndexedNameComparison[];
+    /**
+     * Comparison for `INDEXED_NAME` attributes
+     */
     indexedNames?: outputs.ServiceNamingConditionConditionIndexedName[];
     /**
+     * Comparison for `INDEXED_STRING` attributes
+     *
      * @deprecated You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedStringComparisons?: outputs.ServiceNamingConditionConditionIndexedStringComparison[];
+    /**
+     * Comparison for `INDEXED_STRING` attributes
+     */
     indexedStrings?: outputs.ServiceNamingConditionConditionIndexedString[];
     /**
+     * Comparison for `INDEXED_TAG` attributes
+     *
      * @deprecated You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedTagComparisons?: outputs.ServiceNamingConditionConditionIndexedTagComparison[];
+    /**
+     * Comparison for `INDEXED_TAG` attributes
+     */
     indexedTags?: outputs.ServiceNamingConditionConditionIndexedTag[];
     /**
+     * Comparison for `INTEGER` attributes
+     *
      * @deprecated You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
      */
     integerComparisons?: outputs.ServiceNamingConditionConditionIntegerComparison[];
+    /**
+     * Comparison for `INTEGER` attributes
+     */
     integers?: outputs.ServiceNamingConditionConditionInteger[];
     /**
+     * Comparison for `IP_ADDRESS` attributes
+     *
      * @deprecated You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
      */
     ipaddressComparisons?: outputs.ServiceNamingConditionConditionIpaddressComparison[];
+    /**
+     * Comparison for `IP_ADDRESS` attributes
+     */
     ipaddresses?: outputs.ServiceNamingConditionConditionIpaddress[];
+    /**
+     * Fallback for not yet known type
+     */
     keys?: outputs.ServiceNamingConditionConditionKey[];
     /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     *
      * @deprecated You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
      */
     mobilePlatformComparisons?: outputs.ServiceNamingConditionConditionMobilePlatformComparison[];
+    /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     */
     mobilePlatforms?: outputs.ServiceNamingConditionConditionMobilePlatform[];
+    /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     */
     osArches?: outputs.ServiceNamingConditionConditionOsArch[];
+    /**
+     * Comparison for `OS_TYPE` attributes
+     */
     osTypes?: outputs.ServiceNamingConditionConditionOsType[];
     /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     *
      * @deprecated You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
      */
     osarchitectureComparisons?: outputs.ServiceNamingConditionConditionOsarchitectureComparison[];
     /**
+     * Comparison for `OS_TYPE` attributes
+     *
      * @deprecated You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
      */
     ostypeComparisons?: outputs.ServiceNamingConditionConditionOstypeComparison[];
     /**
+     * Comparison for `PAAS_TYPE` attributes
+     *
      * @deprecated You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
      */
     paasTypeComparisons?: outputs.ServiceNamingConditionConditionPaasTypeComparison[];
+    /**
+     * Comparison for `PAAS_TYPE` attributes
+     */
     paasTypes?: outputs.ServiceNamingConditionConditionPaasType[];
     /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     *
      * @deprecated 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
      */
     processMetadataConditionKeys?: outputs.ServiceNamingConditionConditionProcessMetadataConditionKey[];
+    /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     */
     processMetadatas?: outputs.ServiceNamingConditionConditionProcessMetadata[];
+    /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     */
     serviceTopologies?: outputs.ServiceNamingConditionConditionServiceTopology[];
     /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTopologyComparisons?: outputs.ServiceNamingConditionConditionServiceTopologyComparison[];
     /**
+     * Comparison for `SERVICE_TYPE` attributes
+     *
      * @deprecated You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTypeComparisons?: outputs.ServiceNamingConditionConditionServiceTypeComparison[];
+    /**
+     * Comparison for `SERVICE_TYPE` attributes
+     */
     serviceTypes?: outputs.ServiceNamingConditionConditionServiceType[];
     /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     *
      * @deprecated You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleHostTechComparisons?: outputs.ServiceNamingConditionConditionSimpleHostTechComparison[];
     /**
+     * Comparison for `SIMPLE_TECH` attributes
+     *
      * @deprecated You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleTechComparisons?: outputs.ServiceNamingConditionConditionSimpleTechComparison[];
     /**
+     * Comparison for `STRING` attributes
+     *
      * @deprecated You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
      */
     stringComparisons?: outputs.ServiceNamingConditionConditionStringComparison[];
     /**
+     * The key for dynamic attributes of the `STRING` type
+     *
      * @deprecated 'string_condition_key' is deprecated. You should use 'string_key'
      */
     stringConditionKeys?: outputs.ServiceNamingConditionConditionStringConditionKey[];
+    /**
+     * The key for dynamic attributes of the `STRING` type
+     */
     stringKeys?: outputs.ServiceNamingConditionConditionStringKey[];
+    /**
+     * Comparison for `STRING` attributes
+     */
     strings?: outputs.ServiceNamingConditionConditionString[];
     /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     *
      * @deprecated You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
      */
     syntheticEngineTypeComparisons?: outputs.ServiceNamingConditionConditionSyntheticEngineTypeComparison[];
+    /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     */
     syntheticEngines?: outputs.ServiceNamingConditionConditionSyntheticEngine[];
     /**
+     * Comparison for `TAG` attributes
+     *
      * @deprecated You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
      */
     tagComparisons?: outputs.ServiceNamingConditionConditionTagComparison[];
+    /**
+     * Comparison for `TAG` attributes
+     */
     tags?: outputs.ServiceNamingConditionConditionTag[];
+    /**
+     * Comparison for `SIMPLE_TECH` attributes
+     */
     teches?: outputs.ServiceNamingConditionConditionTech[];
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionApplicationType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionAzureComputeMode {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionAzureComputeModeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionAzureSkuComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be AZURE_SKU
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionAzureSkus {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionBaseComparisonBasic {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * The type of comparison
+     */
     type: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionBaseConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionBitness {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionBitnessComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be BITNESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionCloudType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionCloudTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be CLOUD_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * The type of comparison
+     */
     type: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionCustomApplicationType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionCustomApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be CUSTOM_APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionCustomHostMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.ServiceNamingConditionConditionCustomHostMetadataDynamicKey;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionCustomHostMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.ServiceNamingConditionConditionCustomHostMetadataConditionKeyDynamicKey;
     /**
+     * if specified, needs to be HOST_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionCustomHostMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionCustomHostMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionCustomProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.ServiceNamingConditionConditionCustomProcessMetadataDynamicKey;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionCustomProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: outputs.ServiceNamingConditionConditionCustomProcessMetadataConditionKeyDynamicKey;
     /**
+     * if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionCustomProcessMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionCustomProcessMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: string;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionDatabaseTopology {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionDatabaseTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be DATABASE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionDcrumDecoder {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionDcrumDecoderComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be DCRUM_DECODER_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionEntity {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionEntityIdComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be ENTITY_ID
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionHostTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.ServiceNamingConditionConditionHostTechValue;
 }
 
 export interface ServiceNamingConditionConditionHostTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface ServiceNamingConditionConditionHypervisor {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionHypervisorTypeComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be HYPERVISOR_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionIndexedName {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionIndexedNameComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_NAME
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionIndexedString {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionIndexedStringComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionIndexedTag {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.ServiceNamingConditionConditionIndexedTagValue;
 }
 
 export interface ServiceNamingConditionConditionIndexedTagComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: boolean;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INDEXED_TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.ServiceNamingConditionConditionIndexedTagComparisonValue;
 }
 
 export interface ServiceNamingConditionConditionIndexedTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionIndexedTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionInteger {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: number;
 }
 
 export interface ServiceNamingConditionConditionIntegerComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be INTEGER
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: number;
 }
 
 export interface ServiceNamingConditionConditionIpaddress {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionIpaddressComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be IP_ADDRESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionMobilePlatform {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionMobilePlatformComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be MOBILE_PLATFORM
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionOsArch {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionOsType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionOsarchitectureComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be OS_ARCHITECTURE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionOstypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be OS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionPaasType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionPaasTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be PAAS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: string;
     /**
+     * if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionServiceTopology {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionServiceTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SERVICE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionServiceType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionServiceTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SERVICE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionSimpleHostTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SIMPLE_HOST_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.ServiceNamingConditionConditionSimpleHostTechComparisonValue;
 }
 
 export interface ServiceNamingConditionConditionSimpleHostTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface ServiceNamingConditionConditionSimpleTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SIMPLE_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.ServiceNamingConditionConditionSimpleTechComparisonValue;
 }
 
 export interface ServiceNamingConditionConditionSimpleTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
 export interface ServiceNamingConditionConditionString {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionStringComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionStringConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: string;
     /**
+     * if specified, needs to be `STRING`
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionStringKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: string;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
 }
 
 export interface ServiceNamingConditionConditionSyntheticEngine {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionSyntheticEngineTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be SYNTHETIC_ENGINE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionTag {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.ServiceNamingConditionConditionTagValue;
 }
 
 export interface ServiceNamingConditionConditionTagComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
     /**
+     * if specified, needs to be TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: outputs.ServiceNamingConditionConditionTagComparisonValue;
 }
 
 export interface ServiceNamingConditionConditionTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface ServiceNamingConditionConditionTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: boolean;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * The value to compare to
+     */
     value?: outputs.ServiceNamingConditionConditionTechValue;
 }
 
 export interface ServiceNamingConditionConditionTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: string;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: string;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: string;
 }
 
@@ -11378,8 +23602,17 @@ export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRu
 }
 
 export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule {
+    /**
+     * Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+     */
     attributeExpression?: string;
+    /**
+     * Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+     */
     cssExpression?: string;
+    /**
+     * Possible Values: `ATTRIBUTE`, `ELEMENT`
+     */
     target: string;
 }
 
@@ -11388,9 +23621,21 @@ export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRu
 }
 
 export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule {
+    /**
+     * Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+     */
     attributeExpression?: string;
+    /**
+     * Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+     */
     cssExpression?: string;
+    /**
+     * Hide user interactions with these elements, including clicks that expand elements, highlighting that results from hovering a cursor over an option, and selection of specific form options.
+     */
     hideUserInteraction?: boolean;
+    /**
+     * Possible Values: `ELEMENT`, `ATTRIBUTE`
+     */
     target: string;
 }
 
@@ -11399,8 +23644,17 @@ export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListR
 }
 
 export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule {
+    /**
+     * Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+     */
     attributeExpression?: string;
+    /**
+     * Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+     */
     cssExpression?: string;
+    /**
+     * Possible Values: `ATTRIBUTE`, `ELEMENT`
+     */
     target: string;
 }
 
@@ -11409,9 +23663,21 @@ export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListR
 }
 
 export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule {
+    /**
+     * Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+     */
     attributeExpression?: string;
+    /**
+     * Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+     */
     cssExpression?: string;
+    /**
+     * Hide user interactions with these elements, including clicks that expand elements, highlighting that results from hovering a cursor over an option, and selection of specific form options.
+     */
     hideUserInteraction?: boolean;
+    /**
+     * Possible Values: `ELEMENT`, `ATTRIBUTE`
+     */
     target: string;
 }
 
@@ -11434,10 +23700,25 @@ export interface SpanCaptureRuleMatches {
 }
 
 export interface SpanCaptureRuleMatchesMatch {
+    /**
+     * Whether to match strings case sensitively or not
+     */
     caseSensitive?: boolean;
+    /**
+     * Possible values are `EQUALS`, `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_CONTAIN`, `DOES_NOT_START_WITH` and `DOES_NOT_END_WITH`.
+     */
     comparison: string;
+    /**
+     * The name of the attribute if `source` is `ATTRIBUTE`
+     */
     key?: string;
+    /**
+     * What to match against. Possible values are `SPAN_NAME`, `SPAN_KIND`, `ATTRIBUTE`, `INSTRUMENTATION_LIBRARY_NAME` and `INSTRUMENTATION_LIBRARY_VERSION`
+     */
     source: string;
+    /**
+     * The value to compare against. When `source` is `SPAN_KIND` the only allowed values are `INTERNAL`, `SERVER`, `CLIENT`, `PRODUCER` and `CONSUMER`
+     */
     value?: string;
 }
 
@@ -11449,10 +23730,25 @@ export interface SpanContextPropagationMatches {
 }
 
 export interface SpanContextPropagationMatchesMatch {
+    /**
+     * Whether to match strings case sensitively or not
+     */
     caseSensitive?: boolean;
+    /**
+     * Possible values are `EQUALS`, `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_CONTAIN`, `DOES_NOT_START_WITH` and `DOES_NOT_END_WITH`.
+     */
     comparison: string;
+    /**
+     * The name of the attribute if `source` is `ATTRIBUTE`
+     */
     key?: string;
+    /**
+     * What to match against. Possible values are `SPAN_NAME`, `SPAN_KIND`, `ATTRIBUTE`, `INSTRUMENTATION_LIBRARY_NAME` and `INSTRUMENTATION_LIBRARY_VERSION`
+     */
     source: string;
+    /**
+     * The value to compare against. When `source` is `SPAN_KIND` the only allowed values are `INTERNAL`, `SERVER`, `CLIENT`, `PRODUCER` and `CONSUMER`
+     */
     value?: string;
 }
 
@@ -11464,82 +23760,217 @@ export interface SpanEntryPointMatches {
 }
 
 export interface SpanEntryPointMatchesMatch {
+    /**
+     * Whether to match strings case sensitively or not
+     */
     caseSensitive?: boolean;
+    /**
+     * Possible values are `EQUALS`, `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_CONTAIN`, `DOES_NOT_START_WITH` and `DOES_NOT_END_WITH`.
+     */
     comparison: string;
+    /**
+     * The name of the attribute if `source` is `ATTRIBUTE`
+     */
     key?: string;
+    /**
+     * What to match against. Possible values are `SPAN_NAME`, `SPAN_KIND`, `ATTRIBUTE`, `INSTRUMENTATION_LIBRARY_NAME` and `INSTRUMENTATION_LIBRARY_VERSION`
+     */
     source: string;
+    /**
+     * The value to compare against. When `source` is `SPAN_KIND` the only allowed values are `INTERNAL`, `SERVER`, `CLIENT`, `PRODUCER` and `CONSUMER`
+     */
     value?: string;
 }
 
 export interface UpdateWindowsDailyRecurrence {
+    /**
+     * Every **X** days:
+     * * `1` = every day,
+     * * `2` = every two days,
+     * * `3` = every three days,
+     * * etc.
+     */
     every: number;
+    /**
+     * Recurrence range
+     */
     recurrenceRange: outputs.UpdateWindowsDailyRecurrenceRecurrenceRange;
+    /**
+     * Update time
+     */
     updateTime: outputs.UpdateWindowsDailyRecurrenceUpdateTime;
 }
 
 export interface UpdateWindowsDailyRecurrenceRecurrenceRange {
+    /**
+     * no documentation available
+     */
     end: string;
+    /**
+     * no documentation available
+     */
     start: string;
 }
 
 export interface UpdateWindowsDailyRecurrenceUpdateTime {
+    /**
+     * Duration (minutes)
+     */
     duration: number;
+    /**
+     * Start time (24-hour clock)
+     */
     startTime: string;
+    /**
+     * Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+     */
     timeZone: string;
 }
 
 export interface UpdateWindowsMonthlyRecurrence {
+    /**
+     * Every **X** months:
+     * * `1` = every month,
+     * * `2` = every two months,
+     * * `3` = every three months,
+     * * etc.
+     */
     every: number;
+    /**
+     * Recurrence range
+     */
     recurrenceRange: outputs.UpdateWindowsMonthlyRecurrenceRecurrenceRange;
+    /**
+     * Day of the month
+     */
     selectedMonthDay: number;
+    /**
+     * Update time
+     */
     updateTime: outputs.UpdateWindowsMonthlyRecurrenceUpdateTime;
 }
 
 export interface UpdateWindowsMonthlyRecurrenceRecurrenceRange {
+    /**
+     * no documentation available
+     */
     end: string;
+    /**
+     * no documentation available
+     */
     start: string;
 }
 
 export interface UpdateWindowsMonthlyRecurrenceUpdateTime {
+    /**
+     * Duration (minutes)
+     */
     duration: number;
+    /**
+     * Start time (24-hour clock)
+     */
     startTime: string;
+    /**
+     * Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+     */
     timeZone: string;
 }
 
 export interface UpdateWindowsOnceRecurrence {
+    /**
+     * Update time
+     */
     recurrenceRange: outputs.UpdateWindowsOnceRecurrenceRecurrenceRange;
 }
 
 export interface UpdateWindowsOnceRecurrenceRecurrenceRange {
+    /**
+     * no documentation available
+     */
     end: string;
+    /**
+     * no documentation available
+     */
     start: string;
 }
 
 export interface UpdateWindowsWeeklyRecurrence {
+    /**
+     * Every **X** weeks:
+     * * `1` = every week,
+     * * `2` = every two weeks,
+     * * `3` = every three weeks,
+     * * etc.
+     */
     every: number;
+    /**
+     * Recurrence range
+     */
     recurrenceRange: outputs.UpdateWindowsWeeklyRecurrenceRecurrenceRange;
+    /**
+     * Day of the week
+     */
     selectedWeekDays: outputs.UpdateWindowsWeeklyRecurrenceSelectedWeekDays;
+    /**
+     * Update time
+     */
     updateTime: outputs.UpdateWindowsWeeklyRecurrenceUpdateTime;
 }
 
 export interface UpdateWindowsWeeklyRecurrenceRecurrenceRange {
+    /**
+     * no documentation available
+     */
     end: string;
+    /**
+     * no documentation available
+     */
     start: string;
 }
 
 export interface UpdateWindowsWeeklyRecurrenceSelectedWeekDays {
+    /**
+     * no documentation available
+     */
     friday: boolean;
+    /**
+     * no documentation available
+     */
     monday: boolean;
+    /**
+     * no documentation available
+     */
     saturday: boolean;
+    /**
+     * no documentation available
+     */
     sunday: boolean;
+    /**
+     * no documentation available
+     */
     thursday: boolean;
+    /**
+     * no documentation available
+     */
     tuesday: boolean;
+    /**
+     * no documentation available
+     */
     wednesday: boolean;
 }
 
 export interface UpdateWindowsWeeklyRecurrenceUpdateTime {
+    /**
+     * Duration (minutes)
+     */
     duration: number;
+    /**
+     * Start time (24-hour clock)
+     */
     startTime: string;
+    /**
+     * Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+     */
     timeZone: string;
 }
 
@@ -11548,12 +23979,21 @@ export interface UserActionMetricsFilters {
 }
 
 export interface UserActionMetricsFiltersFilter {
+    /**
+     * Field name
+     */
     fieldName: string;
+    /**
+     * Possible Values: `EQUALS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL_TO`, `IN`, `IS_NOT_NULL`, `IS_NULL`, `LESS_THAN`, `LESS_THAN_OR_EQUAL_TO`, `LIKE`, `NOT_EQUAL`, `NOT_LIKE`, `STARTS_WITH`
+     */
     operator: string;
     /**
-     * Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
+     * no documentation available
      */
     value?: string;
+    /**
+     * Values
+     */
     valueIns?: string[];
 }
 
@@ -11576,7 +24016,13 @@ export interface UserGroupPermissions {
 }
 
 export interface UserGroupPermissionsGrant {
+    /**
+     * The ids of the environments this permission grants the user access to.
+     */
     environments?: string[];
+    /**
+     * The permission. Possible values are `VIEWER`, `MANAGE_SETTINGS`, `AGENT_INSTALL`, `LOG_VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`, `CONFIGURE_REQUEST_CAPTURE_DATA`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `MANAGE_SECURITY_PROBLEMS` and `MANAGE_SUPPORT_TICKETS`.
+     */
     permission: string;
 }
 
@@ -11585,12 +24031,21 @@ export interface UserSessionMetricsFilters {
 }
 
 export interface UserSessionMetricsFiltersFilter {
+    /**
+     * Field name
+     */
     fieldName: string;
+    /**
+     * Possible Values: `EQUALS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL_TO`, `IN`, `IS_NOT_NULL`, `IS_NULL`, `LESS_THAN`, `LESS_THAN_OR_EQUAL_TO`, `LIKE`, `NOT_EQUAL`, `NOT_LIKE`, `STARTS_WITH`
+     */
     operator: string;
     /**
-     * Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
+     * no documentation available
      */
     value?: string;
+    /**
+     * Values
+     */
     valueIns?: string[];
 }
 
@@ -11621,6 +24076,9 @@ export interface VmwareAnomaliesDroppedPacketsDetection {
 }
 
 export interface VmwareAnomaliesDroppedPacketsDetectionCustomThresholds {
+    /**
+     * Receive/transmit dropped packets rate on NIC is higher than
+     */
     droppedPacketsPerSecond: number;
 }
 
@@ -11640,8 +24098,17 @@ export interface VmwareAnomaliesEsxiHighCpuDetection {
 }
 
 export interface VmwareAnomaliesEsxiHighCpuDetectionCustomThresholds {
+    /**
+     * At least one peak occurred when Hypervisor CPU usage was higher than
+     */
     cpuPeakPercentage: number;
+    /**
+     * CPU usage is higher than
+     */
     cpuUsagePercentage: number;
+    /**
+     * VM CPU ready is higher than
+     */
     vmCpuReadyPercentage: number;
 }
 
@@ -11661,6 +24128,9 @@ export interface VmwareAnomaliesEsxiHighMemoryDetection {
 }
 
 export interface VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholds {
+    /**
+     * ESXi host swap IN/OUT or compression/decompression rate is higher than
+     */
     compressionDecompressionRate: number;
 }
 
@@ -11680,8 +24150,17 @@ export interface VmwareAnomaliesGuestCpuLimitDetection {
 }
 
 export interface VmwareAnomaliesGuestCpuLimitDetectionCustomThresholds {
+    /**
+     * Hypervisor CPU usage is higher than
+     */
     hostCpuUsagePercentage: number;
+    /**
+     * VM CPU ready is higher than
+     */
     vmCpuReadyPercentage: number;
+    /**
+     * VM CPU usage (VM CPU Usage Mhz / VM CPU limit in Mhz) is higher than
+     */
     vmCpuUsagePercentage: number;
 }
 
@@ -11701,6 +24180,9 @@ export interface VmwareAnomaliesLowDatastoreSpaceDetection {
 }
 
 export interface VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholds {
+    /**
+     * Datastore free space is lower than
+     */
     freeSpacePercentage: number;
 }
 
@@ -11720,6 +24202,9 @@ export interface VmwareAnomaliesOverloadedStorageDetection {
 }
 
 export interface VmwareAnomaliesOverloadedStorageDetectionCustomThresholds {
+    /**
+     * Number of command aborts is higher than
+     */
     commandAbortsNumber: number;
 }
 
@@ -11739,7 +24224,13 @@ export interface VmwareAnomaliesSlowPhysicalStorageDetection {
 }
 
 export interface VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds {
+    /**
+     * Read/write latency is higher than
+     */
     avgReadWriteLatency: number;
+    /**
+     * Peak value for read/write latency is higher than
+     */
     peakReadWriteLatency: number;
 }
 
@@ -11759,7 +24250,13 @@ export interface VmwareAnomaliesUndersizedStorageDetection {
 }
 
 export interface VmwareAnomaliesUndersizedStorageDetectionCustomThresholds {
+    /**
+     * Average queue command latency is higher than
+     */
     averageQueueCommandLatency: number;
+    /**
+     * Peak queue command latency is higher than
+     */
     peakQueueCommandLatency: number;
 }
 
@@ -11783,20 +24280,47 @@ export interface WebAppAnomaliesErrorRate {
 }
 
 export interface WebAppAnomaliesErrorRateErrorRateAuto {
+    /**
+     * Absolute threshold
+     */
     absoluteIncrease: number;
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: outputs.WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection;
+    /**
+     * Relative threshold
+     */
     relativeIncrease: number;
 }
 
 export interface WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection {
+    /**
+     * Only alert if there are at least
+     */
     actionsPerMinute: number;
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: number;
 }
 
 export interface WebAppAnomaliesErrorRateErrorRateFixed {
+    /**
+     * To avoid over-alerting for low traffic applications
+     */
     errorRateReqPerMin: number;
+    /**
+     * Possible Values: `Low`, `Medium`, `High`
+     */
     errorRateSensitivity: string;
+    /**
+     * Alert if this custom error rate threshold is exceeded during any 5-minute-period
+     */
     maxFailureRateIncrease: number;
+    /**
+     * Amount of minutes the observed traffic has to stay in abnormal state before alert
+     */
     minutesAbnormalState: number;
 }
 
@@ -11820,43 +24344,94 @@ export interface WebAppAnomaliesResponseTime {
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeAuto {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: outputs.WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection;
+    /**
+     * Alert if the median response time of all user actions degrades beyond **both** the absolute and relative thresholds:
+     */
     responseTimeAll: outputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll;
+    /**
+     * Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+     */
     responseTimeSlowest: outputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest;
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection {
+    /**
+     * Only alert if there are at least
+     */
     actionsPerMinute: number;
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: number;
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll {
+    /**
+     * Absolute threshold
+     */
     degradationMilliseconds: number;
+    /**
+     * Relative threshold
+     */
     degradationPercent: number;
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest {
+    /**
+     * Absolute threshold
+     */
     slowestDegradationMilliseconds: number;
+    /**
+     * Relative threshold
+     */
     slowestDegradationPercent: number;
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeFixed {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: outputs.WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection;
+    /**
+     * Alert if the key performance metric of all requests degrades beyond this threshold:
+     */
     responseTimeAll: outputs.WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll;
+    /**
+     * Alert if the key performance metric of the slowest 10% of requests degrades beyond this threshold:
+     */
     responseTimeSlowest: outputs.WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest;
+    /**
+     * Possible Values: `Medium`, `High`, `Low`
+     */
     sensitivity: string;
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection {
+    /**
+     * Only alert if there are at least
+     */
     actionsPerMinute: number;
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: number;
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll {
+    /**
+     * Alert if the key performance metric degrades beyond this many ms within an observation period of 5 minutes
+     */
     degradationMilliseconds: number;
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest {
+    /**
+     * Alert if the key performance metric of the slowest 10% degrades beyond this many ms within an observation period of 5 minutes
+     */
     slowestDegradationMilliseconds: number;
 }
 
@@ -11872,7 +24447,13 @@ export interface WebAppAnomaliesTrafficDrops {
 }
 
 export interface WebAppAnomaliesTrafficDropsTrafficDrops {
+    /**
+     * Minutes the observed traffic has to stay in abnormal state before alert
+     */
     abnormalStateAbnormalState: number;
+    /**
+     * Alert if the observed traffic is less than this percentage of the expected value
+     */
     trafficDropPercentage: number;
 }
 
@@ -11888,7 +24469,13 @@ export interface WebAppAnomaliesTrafficSpikes {
 }
 
 export interface WebAppAnomaliesTrafficSpikesTrafficSpikes {
+    /**
+     * Minutes an application has to stay in abnormal state before alert
+     */
     minutesAbnormalState: number;
+    /**
+     * Alert if the observed traffic is more than this percentage of the expected value
+     */
     trafficSpikePercentage: number;
 }
 
@@ -11897,16 +24484,40 @@ export interface WebAppCustomErrorsErrorRules {
 }
 
 export interface WebAppCustomErrorsErrorRulesErrorRule {
+    /**
+     * Capture settings
+     */
     captureSettings: outputs.WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings;
+    /**
+     * Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+     */
     keyMatcher: string;
+    /**
+     * A case-insensitive key pattern
+     */
     keyPattern?: string;
+    /**
+     * Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+     */
     valueMatcher: string;
+    /**
+     * A case-insensitive value pattern
+     */
     valuePattern?: string;
 }
 
 export interface WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings {
+    /**
+     * Capture this error
+     */
     capture: boolean;
+    /**
+     * [View more details](https://dt-url.net/hd580p2k)
+     */
     considerForAi?: boolean;
+    /**
+     * Include error in Apdex calculations
+     */
     impactApdex?: boolean;
 }
 
@@ -11937,21 +24548,51 @@ export interface WebAppRequestErrorsErrorRules {
 }
 
 export interface WebAppRequestErrorsErrorRulesErrorRule {
+    /**
+     * Capture settings
+     */
     captureSettings: outputs.WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings;
+    /**
+     * Match by errors that have CSP violations
+     */
     considerCspViolations: boolean;
+    /**
+     * Match by errors that have failed image requests
+     */
     considerFailedImages: boolean;
+    /**
+     * Match by error code
+     */
     errorCodes?: string;
+    /**
+     * Filter settings
+     */
     filterSettings: outputs.WebAppRequestErrorsErrorRulesErrorRuleFilterSettings;
 }
 
 export interface WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings {
+    /**
+     * Capture this error
+     */
     capture: boolean;
+    /**
+     * [View more details](https://dt-url.net/hd580p2k)
+     */
     considerForAi?: boolean;
+    /**
+     * Include error in Apdex calculations
+     */
     impactApdex?: boolean;
 }
 
 export interface WebAppRequestErrorsErrorRulesErrorRuleFilterSettings {
+    /**
+     * Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+     */
     filter?: string;
+    /**
+     * no documentation available
+     */
     url?: string;
 }
 
@@ -11963,43 +24604,85 @@ export interface WebApplicationConversionGoals {
 }
 
 export interface WebApplicationConversionGoalsGoal {
+    /**
+     * Configuration of a destination-based conversion goal
+     */
     destination?: outputs.WebApplicationConversionGoalsGoalDestination;
     /**
-     * The ID of this resource.
+     * The ID of conversion goal.
      */
     id: string;
     /**
-     * The name of the web application, displayed in the UI
+     * The name of the conversion goal. Valid length within 1 and 50 characters.
      */
     name: string;
     /**
      * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
      */
     type?: string;
+    /**
+     * Configuration of a destination-based conversion goal
+     */
     userAction?: outputs.WebApplicationConversionGoalsGoalUserAction;
+    /**
+     * Configuration of a destination-based conversion goal
+     */
     visitDuration?: outputs.WebApplicationConversionGoalsGoalVisitDuration;
+    /**
+     * Configuration of a destination-based conversion goal
+     */
     visitNumAction?: outputs.WebApplicationConversionGoalsGoalVisitNumAction;
 }
 
 export interface WebApplicationConversionGoalsGoalDestination {
+    /**
+     * The match is case-sensitive (`true`) or (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
+     */
     matchType?: string;
+    /**
+     * The path to be reached to hit the conversion goal
+     */
     urlOrPath: string;
 }
 
 export interface WebApplicationConversionGoalsGoalUserAction {
+    /**
+     * Type of the action to which the rule applies. Possible values are `Custom`, `Load` and `Xhr`.
+     */
     actionType?: string;
+    /**
+     * The match is case-sensitive (`true`) or (`false`)
+     */
     caseSensitive?: boolean;
+    /**
+     * The type of the entity to which the rule applies. Possible values are `ActionName`, `CssSelector`, `JavaScriptVariable`, `MetaTag`, `PagePath`, `PageTitle`, `PageUrl`, `UrlAnchor` and `XhrUrl`.
+     */
     matchEntity?: string;
+    /**
+     * The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
+     */
     matchType?: string;
+    /**
+     * The value to be matched to hit the conversion goal
+     */
     value?: string;
 }
 
 export interface WebApplicationConversionGoalsGoalVisitDuration {
+    /**
+     * The duration of session to hit the conversion goal, in milliseconds
+     */
     duration: number;
 }
 
 export interface WebApplicationConversionGoalsGoalVisitNumAction {
+    /**
+     * The number of user actions to hit the conversion goal
+     */
     numUserActions?: number;
 }
 
@@ -12034,13 +24717,16 @@ export interface WebApplicationKeyUserAction {
 }
 
 export interface WebApplicationKeyUserActionAction {
+    /**
+     * The domain where the action is performed.
+     */
     domain?: string;
     /**
-     * The name of the web application, displayed in the UI
+     * The name of the action
      */
     name: string;
     /**
-     * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
+     * The type of the action. Possible values are `Custom`, `Load` and `Xhr`.
      */
     type: string;
 }
@@ -12076,17 +24762,29 @@ export interface WebApplicationMetaDataCaptureSettings {
 }
 
 export interface WebApplicationMetaDataCaptureSettingsCapture {
+    /**
+     * The name of the meta data to capture
+     */
     capturingName: string;
     /**
-     * The name of the web application, displayed in the UI
+     * Name for displaying the captured values in Dynatrace
      */
     name: string;
+    /**
+     * `true` if this metadata should be captured regardless of the privacy settings, `false` otherwise
+     */
     publicMetadata?: boolean;
     /**
-     * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
+     * The type of the meta data to capture. Possible values are `COOKIE`, `CSS_SELECTOR`, `JAVA_SCRIPT_FUNCTION`, `JAVA_SCRIPT_VARIABLE`, `META_TAG` and `QUERY_STRING`.
      */
     type: string;
+    /**
+     * The unique ID of the meta data to capture
+     */
     uniqueId?: number;
+    /**
+     * `true` if the last captured value should be used for this metadata. By default the first value will be used.
+     */
     useLastValue?: boolean;
 }
 
@@ -12123,148 +24821,432 @@ export interface WebApplicationMonitoringSettings {
      * To enable RUM for XHR calls to AWS Lambda, define a regular expression matching these calls, Dynatrace can then automatically add a custom header (`x-dtc`) to each such request to the respective endpoints in AWS.
      */
     correlationHeaderInclusionRegex?: string;
+    /**
+     * The location to send monitoring data from the JavaScript tag.
+     *
+     *  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS. 
+     *
+     *  **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
+     */
     customConfigurationProperties?: string;
+    /**
+     * You can exclude some actions from becoming XHR actions.
+     *
+     * Put a regular expression, matching all the required URLs, here.
+     *
+     * If noting specified the feature is disabled
+     */
     excludeXhrRegex?: string;
+    /**
+     * `fetch()` request capture enabled/disabled
+     */
     fetchRequests?: boolean;
     /**
      * Possible valures are `CODE_SNIPPET`, `CODE_SNIPPET_ASYNC`, `INLINE_CODE` and `JAVASCRIPT_TAG`.
      */
     injectionMode: string;
+    /**
+     * Settings for restricting certain ip addresses and for introducing subnet mask. It also restricts the mode
+     */
     ipAddressRestrictionSettings?: outputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettings;
+    /**
+     * Support of various JavaScript frameworks
+     */
     javascriptFrameworkSupport?: outputs.WebApplicationMonitoringSettingsJavascriptFrameworkSupport;
+    /**
+     * Java script injection rules
+     */
     javascriptInjectionRules?: outputs.WebApplicationMonitoringSettingsJavascriptInjectionRules;
+    /**
+     * The location of your application’s custom JavaScript library file. 
+     *
+     *  If nothing specified the root directory of your web server is used. 
+     *
+     *  **Required** for auto-injected applications, not supported by agentless applications. Maximum 512 characters.
+     */
     libraryFileLocation?: string;
+    /**
+     * The location to send monitoring data from the JavaScript tag.
+     *
+     *  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS. 
+     *
+     *  **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
+     */
     monitoringDataPath?: string;
+    /**
+     * Time duration for the cache settings
+     */
     scriptTagCacheDurationInHours?: number;
+    /**
+     * Secure attribute usage for Dynatrace cookies enabled/disabled
+     */
     secureCookieAttribute?: boolean;
+    /**
+     * Path to identify the server’s request ID. Maximum 150 characters.
+     */
     serverRequestPathId?: string;
+    /**
+     * `XmlHttpRequest` support enabled/disabled
+     */
     xmlHttpRequest?: boolean;
 }
 
 export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings {
+    /**
+     * Additional event handlers and wrappers
+     */
     additionalEventHandlers?: outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers;
+    /**
+     * In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
+     */
     eventWrapperSettings?: outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings;
+    /**
+     * Global event capture settings
+     */
     globalEventCaptureSettings?: outputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings;
+    /**
+     * Instrumentation of unsupported Ajax frameworks enabled/disabled
+     */
     instrumentUnsupportedAjaxFrameworks?: boolean;
+    /**
+     * Maximum character length for action names. Valid values range from 5 to 10000.
+     */
     maxActionNameLength: number;
+    /**
+     * Maximum number of errors to be captured per page. Valid values range from 0 to 50.
+     */
     maxErrorsToCapture: number;
+    /**
+     * Additional special characters that are to be escaped using non-alphanumeric characters in HTML escape format. Maximum length 30 character. Allowed characters are `^`, `\`, `<` and `>`.
+     */
     specialCharactersToEscape?: string;
+    /**
+     * Send the beacon signal as a synchronous XMLHttpRequest using Firefox enabled/disabled
+     */
     syncBeaconFirefox?: boolean;
+    /**
+     * Send the beacon signal as a synchronous XMLHttpRequest using Internet Explorer enabled/disabled
+     */
     syncBeaconInternetExplorer?: boolean;
 }
 
 export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers {
+    /**
+     * Blur event handler enabled/disabled
+     */
     blur?: boolean;
+    /**
+     * Change event handler enabled/disabled
+     */
     change?: boolean;
+    /**
+     * Click event handler enabled/disabled
+     */
     click?: boolean;
+    /**
+     * Max. number of DOM nodes to instrument. Valid values range from 0 to 100000.
+     */
     maxDomNodes: number;
+    /**
+     * Mouseup event handler enabled/disabled
+     */
     mouseup?: boolean;
+    /**
+     * toString method enabled/disabled
+     */
     toStringMethod?: boolean;
+    /**
+     * Use mouseup event for clicks enabled/disabled
+     */
     useMouseUpEventForClicks?: boolean;
 }
 
 export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings {
+    /**
+     * Blur enabled/disabled
+     */
     blur?: boolean;
+    /**
+     * Change enabled/disabled
+     */
     change?: boolean;
+    /**
+     * Click enabled/disabled
+     */
     click?: boolean;
+    /**
+     * MouseUp enabled/disabled
+     */
     mouseup?: boolean;
+    /**
+     * TouchEnd enabled/disabled
+     */
     touchEnd?: boolean;
+    /**
+     * TouchStart enabled/disabled
+     */
     touchStart?: boolean;
 }
 
 export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings {
+    /**
+     * Additional events to be captured globally as user input.
+     */
     additionalEventCapturedAsUserInput?: string;
+    /**
+     * Click enabled/disabled
+     */
     click?: boolean;
+    /**
+     * DoubleClick enabled/disabled
+     */
     doubleclick?: boolean;
+    /**
+     * KeyDown enabled/disabled
+     */
     keydown?: boolean;
+    /**
+     * KeyUp enabled/disabled
+     */
     keyup?: boolean;
+    /**
+     * MouseDown enabled/disabled
+     */
     mousedown?: boolean;
+    /**
+     * MouseUp enabled/disabled
+     */
     mouseup?: boolean;
+    /**
+     * Scroll enabled/disabled
+     */
     scroll?: boolean;
 }
 
 export interface WebApplicationMonitoringSettingsBrowserRestrictionSettings {
+    /**
+     * The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+     */
     mode: string;
+    /**
+     * A list of browser restrictions
+     */
     restrictions?: outputs.WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions;
 }
 
 export interface WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions {
+    /**
+     * Browser exclusion rules for the browsers that are to be excluded
+     */
     restrictions: outputs.WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction[];
 }
 
 export interface WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction {
+    /**
+     * The type of the browser that is used. Possible values are `ANDROID_WEBKIT`, `BOTS_SPIDERS`, `CHROME`, `EDGE`, `FIREFOX`, `INTERNET_EXPLORER,`OPERA`and`SAFARI`
+     */
     browserType: string;
+    /**
+     * The version of the browser that is used
+     */
     browserVersion?: string;
+    /**
+     * No documentation available. Possible values are `EQUALS`, `GREATER_THAN_OR_EQUAL` and `LOWER_THAN_OR_EQUAL`.
+     */
     comparator?: string;
+    /**
+     * The platform on which the browser is being used. Possible values are `ALL`, `DESKTOP` and `MOBILE`
+     */
     platform?: string;
 }
 
 export interface WebApplicationMonitoringSettingsContentCapture {
+    /**
+     * JavaScript errors monitoring enabled/disabled
+     */
     javascriptErrors?: boolean;
+    /**
+     * Settings for resource timings capture
+     */
     resourceTimingSettings?: outputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings;
+    /**
+     * Settings for timed action capture
+     */
     timeoutSettings?: outputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings;
+    /**
+     * Visually complete and Speed index support enabled/disabled
+     */
     visuallyCompleteAndSpeedIndex?: boolean;
+    /**
+     * Settings for VisuallyComplete
+     */
     visuallyCompleteSettings?: outputs.WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings;
 }
 
 export interface WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings {
+    /**
+     * Instrumentation delay for monitoring resource and image resource impact in browsers that don't offer W3C resource timings.
+     */
     instrumentationDelay: number;
+    /**
+     * Timing for JavaScript files and images on non-W3C supported browsers enabled/disabled
+     */
     nonW3cResourceTimings?: boolean;
+    /**
+     * Defines how detailed resource timings are captured.
+     *
+     * Only effective if **w3cResourceTimings** or **nonW3cResourceTimings** is enabled. Possible values are `CAPTURE_ALL_SUMMARIES`, `CAPTURE_FULL_DETAILS` and `CAPTURE_LIMITED_SUMMARIES`
+     */
     resourceTimingCaptureType?: string;
+    /**
+     * Limits the number of domains for which W3C resource timings are captured.
+     *
+     * Only effective if **resourceTimingCaptureType** is `CAPTURE_LIMITED_SUMMARIES`. Valid values range from 0 to 50.
+     */
     resourceTimingsDomainLimit?: number;
+    /**
+     * W3C resource timings for third party/CDN enabled/disabled
+     */
     w3cResourceTimings?: boolean;
 }
 
 export interface WebApplicationMonitoringSettingsContentCaptureTimeoutSettings {
+    /**
+     * Defines how deep temporary actions may cascade. 0 disables temporary actions completely. Recommended value if enabled is 3
+     */
     temporaryActionLimit: number;
+    /**
+     * The total timeout of all cascaded timeouts that should still be able to create a temporary action
+     */
     temporaryActionTotalTimeout: number;
+    /**
+     * Timed action support enabled/disabled.
+     */
     timedActionSupport?: boolean;
 }
 
 export interface WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings {
+    /**
+     * A RegularExpression used to exclude images and iframes from being detected by the VC module
+     */
     excludeUrlRegex?: string;
+    /**
+     * Query selector for mutation nodes to ignore in VC and SI calculation
+     */
     ignoredMutationsList?: string;
+    /**
+     * The time in ms the VC module waits for no mutations happening on the page after the load action. Defaults to 1000. Valid values range from 0 to 30000.
+     */
     inactivityTimeout?: number;
+    /**
+     * Determines the time in ms VC waits after an action closes to start calculation. Defaults to 50. Valid values range from 0 to 5000.
+     */
     mutationTimeout?: number;
+    /**
+     * Minimum visible area in pixels of elements to be counted towards VC and SI. Defaults to 50. Valid values range from 0 to 10000.
+     */
     threshold?: number;
 }
 
 export interface WebApplicationMonitoringSettingsIpAddressRestrictionSettings {
+    /**
+     * The mode of the list of ip address restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+     */
     mode: string;
+    /**
+     * The IP addresses or the IP address ranges to be mapped to the location
+     */
     restrictions?: outputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions;
 }
 
 export interface WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions {
+    /**
+     * The IP address or the IP address range to be mapped to the location
+     */
     ranges: outputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange[];
 }
 
 export interface WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange {
+    /**
+     * The IP address to be mapped.
+     */
     address: string;
+    /**
+     * The **to** address of the IP address range.
+     */
     addressTo?: string;
+    /**
+     * The subnet mask of the IP address range. Valid values range from 0 to 128.
+     */
     subnetMask?: number;
 }
 
 export interface WebApplicationMonitoringSettingsJavascriptFrameworkSupport {
+    /**
+     * ActiveXObject support enabled/disabled
+     */
     activeXObject?: boolean;
+    /**
+     * AngularJS and Angular support enabled/disabled
+     */
     angular?: boolean;
+    /**
+     * Dojo support enabled/disabled
+     */
     dojo?: boolean;
+    /**
+     * ExtJS, Sencha Touch support enabled/disabled
+     */
     extjs?: boolean;
+    /**
+     * ICEfaces support enabled/disabled
+     */
     icefaces?: boolean;
+    /**
+     * jQuery, Backbone.js support enabled/disabled
+     */
     jquery?: boolean;
+    /**
+     * MooTools support enabled/disabled
+     */
     mooTools?: boolean;
+    /**
+     * Prototype support enabled/disabled
+     */
     prototype?: boolean;
 }
 
 export interface WebApplicationMonitoringSettingsJavascriptInjectionRules {
+    /**
+     * Java script injection rule
+     */
     rules: outputs.WebApplicationMonitoringSettingsJavascriptInjectionRulesRule[];
 }
 
 export interface WebApplicationMonitoringSettingsJavascriptInjectionRulesRule {
+    /**
+     * `fetch()` request capture enabled/disabled
+     */
     enabled?: boolean;
+    /**
+     * The HTML pattern of the java script injection
+     */
     htmlPattern?: string;
+    /**
+     * The url rule of the java script injection. Possible values are `AFTER_SPECIFIC_HTML`, `AUTOMATIC_INJECTION`, `BEFORE_SPECIFIC_HTML` and `DO_NOT_INJECT`.
+     */
     rule: string;
+    /**
+     * The target against which the rule of the java script injection should be matched. Possible values are `PAGE_QUERY` and `URL`.
+     */
     target?: string;
+    /**
+     * The url operator of the java script injection. Possible values are `ALL_PAGES`, `CONTAINS`, `ENDS_WITH`, `EQUALS` and `STARTS_WITH`.
+     */
     urlOperator: string;
+    /**
+     * The url pattern of the java script injection
+     */
     urlPattern?: string;
 }
 
@@ -12295,23 +25277,60 @@ export interface WebApplicationUserActionAndSessionProperties {
 }
 
 export interface WebApplicationUserActionAndSessionPropertiesProperty {
+    /**
+     * The aggregation type of the property.
+     */
     aggregation?: string;
+    /**
+     * The cleanup rule of the property. 
+     *
+     * Defines how to extract the data you need from a string value. Specify the [regular expression](https://dt-url.net/k9e0iaq) for the data you need there
+     */
     cleanupRule?: string;
+    /**
+     * The display name of the property
+     */
     displayName?: string;
     /**
-     * The ID of this resource.
+     * Unique id among all userTags and properties of this application
      */
     id: number;
+    /**
+     * If `true`, the value of this property will always be stored in lower case. Defaults to `false`.
+     */
     ignoreCase?: boolean;
+    /**
+     * Key of the property
+     */
     key: string;
+    /**
+     * If the `type` is `LONG_STRING`, the max length for this property. Must be a multiple of `100`. Defaults to `200`. Maximum is `1000`.
+     */
     longStringLength?: number;
+    /**
+     * If the origin is `META_DATA`, metaData id of the property
+     */
     metadataId?: number;
+    /**
+     * The origin of the property. Possible values are `JAVASCRIPT_API`, `META_DATA` and `SERVER_SIDE_REQUEST_ATTRIBUTE`.
+     */
     origin: string;
+    /**
+     * The ID of the request attribute. 
+     *
+     * Only applicable when the **origin** is set to `SERVER_SIDE_REQUEST_ATTRIBUTE`
+     */
     serverSideRequestAttribute?: string;
+    /**
+     * If `true`, the property is stored as a session property
+     */
     storeAsSessionProperty?: boolean;
+    /**
+     * If `true`, the property is stored as a user action property
+     */
     storeAsUserActionProperty?: boolean;
     /**
-     * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
+     * The data type of the property. Possible values are `DATE`, `DOUBLE`, `LONG`, `LONG_STRING` and `STRING`.
      */
     type: string;
 }
@@ -12352,97 +25371,216 @@ export interface WebApplicationUserActionNamingSettings {
 }
 
 export interface WebApplicationUserActionNamingSettingsCustomActionNamingRules {
+    /**
+     * The settings of naming rule
+     */
     rules: outputs.WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule[];
 }
 
 export interface WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule {
+    /**
+     * Defines the conditions when the naming rule should apply
+     */
     conditions?: outputs.WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions;
+    /**
+     * Naming pattern. Use Curly brackets `{}` to select placeholders
+     */
     template: string;
+    /**
+     * If set to `true` the conditions will be connected by logical OR instead of logical AND
+     */
     useOrConditions?: boolean;
 }
 
 export interface WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions {
+    /**
+     * Defines the conditions when the naming rule should apply
+     */
     conditions: outputs.WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition[];
 }
 
 export interface WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition {
+    /**
+     * Must be a defined placeholder wrapped in curly braces
+     */
     operand1: string;
+    /**
+     * Must be null if operator is `IS_EMPTY`, a regex if operator is `MATCHES_REGULAR_ERPRESSION`. In all other cases the value can be a freetext or a placeholder wrapped in curly braces
+     */
     operand2?: string;
+    /**
+     * The operator of the condition. Possible values are `CONTAINS`, `ENDS_WITH`, `EQUALS`, `IS_EMPTY`, `IS_NOT_EMPTY`, `MATCHES_REGULAR_EXPRESSION`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_MATCHES_REGULAR_EXPRESSION`, `NOT_STARTS_WITH` and `STARTS_WITH`.
+     */
     operator: string;
 }
 
 export interface WebApplicationUserActionNamingSettingsLoadActionNamingRules {
+    /**
+     * The settings of naming rule
+     */
     rules: outputs.WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule[];
 }
 
 export interface WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule {
+    /**
+     * Defines the conditions when the naming rule should apply
+     */
     conditions?: outputs.WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions;
+    /**
+     * Naming pattern. Use Curly brackets `{}` to select placeholders
+     */
     template: string;
+    /**
+     * If set to `true` the conditions will be connected by logical OR instead of logical AND
+     */
     useOrConditions?: boolean;
 }
 
 export interface WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions {
+    /**
+     * Defines the conditions when the naming rule should apply
+     */
     conditions: outputs.WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition[];
 }
 
 export interface WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition {
+    /**
+     * Must be a defined placeholder wrapped in curly braces
+     */
     operand1: string;
+    /**
+     * Must be null if operator is `IS_EMPTY`, a regex if operator is `MATCHES_REGULAR_ERPRESSION`. In all other cases the value can be a freetext or a placeholder wrapped in curly braces
+     */
     operand2?: string;
+    /**
+     * The operator of the condition. Possible values are `CONTAINS`, `ENDS_WITH`, `EQUALS`, `IS_EMPTY`, `IS_NOT_EMPTY`, `MATCHES_REGULAR_EXPRESSION`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_MATCHES_REGULAR_EXPRESSION`, `NOT_STARTS_WITH` and `STARTS_WITH`.
+     */
     operator: string;
 }
 
 export interface WebApplicationUserActionNamingSettingsPlaceholders {
+    /**
+     * User action placeholders
+     */
     placeholders: outputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder[];
 }
 
 export interface WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder {
+    /**
+     * The input for the place holder. Possible values are `ELEMENT_IDENTIFIER`, `INPUT_TYPE`, `METADATA`, `PAGE_TITLE`, `PAGE_URL`, `SOURCE_URL`, `TOP_XHR_URL` and `XHR_URL`
+     */
     input: string;
+    /**
+     * The ID of the metadata
+     */
     metadataId?: number;
     /**
-     * The name of the web application, displayed in the UI
+     * Placeholder name. Valid length needs to be between 1 and 50 characters
      */
     name: string;
+    /**
+     * The part to process. Possible values are `ALL`, `ANCHOR` and `PATH`
+     */
     processingPart: string;
+    /**
+     * The processing step settings
+     */
     processingSteps?: outputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps;
+    /**
+     * Use the element identifier that was selected by Dynatrace
+     */
     useGuessedElementIdentifier?: boolean;
 }
 
 export interface WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps {
+    /**
+     * The processing step
+     */
     steps: outputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep[];
 }
 
 export interface WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep {
+    /**
+     * If set to `true`: Returns the input if `patternBefore` or `patternAfter` cannot be found and the `type` is `SUBSTRING`. Returns the input if `regularExpression` doesn't match and `type` is `EXTRACT_BY_REGULAR_EXPRESSION`.
+     */
     fallbackToInput?: boolean;
+    /**
+     * The pattern after the required value. It will be removed.
+     */
     patternAfter?: string;
+    /**
+     * The required occurrence of **patternAfter**. Possible values are `FIRST` and `LAST`.
+     */
     patternAfterSearchType?: string;
+    /**
+     * The pattern before the required value. It will be removed.
+     */
     patternBefore?: string;
+    /**
+     * The required occurrence of **patternBefore**. Possible values are `FIRST` and `LAST`.
+     */
     patternBeforeSearchType?: string;
+    /**
+     * The pattern to be replaced. 
+     *
+     *  Only applicable if the `type` is `REPLACE_WITH_PATTERN`.
+     */
     patternToReplace?: string;
+    /**
+     * A regular expression for the string to be extracted or replaced. Only applicable if the `type` is `EXTRACT_BY_REGULAR_EXPRESSION` or `REPLACE_WITH_REGULAR_EXPRESSION`.
+     */
     regularExpression?: string;
+    /**
+     * Replacement for the original value
+     */
     replacement?: string;
     /**
-     * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
+     * An action to be taken by the processing:
      */
     type: string;
 }
 
 export interface WebApplicationUserActionNamingSettingsXhrActionNamingRules {
+    /**
+     * The settings of naming rule
+     */
     rules: outputs.WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule[];
 }
 
 export interface WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule {
+    /**
+     * Defines the conditions when the naming rule should apply
+     */
     conditions?: outputs.WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions;
+    /**
+     * Naming pattern. Use Curly brackets `{}` to select placeholders
+     */
     template: string;
+    /**
+     * If set to `true` the conditions will be connected by logical OR instead of logical AND
+     */
     useOrConditions?: boolean;
 }
 
 export interface WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions {
+    /**
+     * Defines the conditions when the naming rule should apply
+     */
     conditions: outputs.WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsCondition[];
 }
 
 export interface WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsCondition {
+    /**
+     * Must be a defined placeholder wrapped in curly braces
+     */
     operand1: string;
+    /**
+     * Must be null if operator is `IS_EMPTY`, a regex if operator is `MATCHES_REGULAR_ERPRESSION`. In all other cases the value can be a freetext or a placeholder wrapped in curly braces
+     */
     operand2?: string;
+    /**
+     * The operator of the condition. Possible values are `CONTAINS`, `ENDS_WITH`, `EQUALS`, `IS_EMPTY`, `IS_NOT_EMPTY`, `MATCHES_REGULAR_EXPRESSION`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_MATCHES_REGULAR_EXPRESSION`, `NOT_STARTS_WITH` and `STARTS_WITH`.
+     */
     operator: string;
 }
 
@@ -12454,14 +25592,26 @@ export interface WebApplicationUserTags {
 }
 
 export interface WebApplicationUserTagsTag {
-    cleanupRule?: string;
     /**
-     * The ID of this resource.
+     * Cleanup rule expression of the userTag
      */
+    cleanupRule?: string;
     id?: number;
+    /**
+     * If `true`, the value of this tag will always be stored in lower case. Defaults to `false`.
+     */
     ignoreCase?: boolean;
+    /**
+     * If it's of type metaData, metaData id of the userTag
+     */
     metadataId?: number;
+    /**
+     * The ID of the RrequestAttribute for the userTag
+     */
     serverSideRequestAttribute?: string;
+    /**
+     * A unique ID among all userTags and properties of this application. Minimum value is 1.
+     */
     uniqueId: number;
 }
 
@@ -12528,10 +25678,16 @@ export interface WebhookNotificationHeaders {
 
 export interface WebhookNotificationHeadersHeader {
     /**
-     * The name of the notification configuration
+     * The name of the HTTP header
      */
     name: string;
+    /**
+     * The value of the HTTP header as a sensitive property. May contain an empty value. `secretValue` and `value` are mutually exclusive. Only one of those two is allowed to be specified.
+     */
     secretValue?: string;
+    /**
+     * The value of the HTTP header. May contain an empty value. `secretValue` and `value` are mutually exclusive. Only one of those two is allowed to be specified.
+     */
     value?: string;
 }
 
@@ -12544,10 +25700,16 @@ export interface XmattersNotificationHeaders {
 
 export interface XmattersNotificationHeadersHeader {
     /**
-     * The name of the notification configuration
+     * The name of the HTTP header
      */
     name: string;
+    /**
+     * The value of the HTTP header as a sensitive property. May contain an empty value. `secretValue` and `value` are mutually exclusive. Only one of those two is allowed to be specified.
+     */
     secretValue?: string;
+    /**
+     * The value of the HTTP header. May contain an empty value. `secretValue` and `value` are mutually exclusive. Only one of those two is allowed to be specified.
+     */
     value?: string;
 }
 

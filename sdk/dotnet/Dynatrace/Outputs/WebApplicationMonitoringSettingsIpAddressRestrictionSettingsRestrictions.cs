@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions
     {
+        /// <summary>
+        /// The IP address or the IP address range to be mapped to the location
+        /// </summary>
         public readonly ImmutableArray<Outputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange> Ranges;
 
         [OutputConstructor]

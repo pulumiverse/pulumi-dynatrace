@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CalculatedServiceMetricConditionConditionComparisonStringRequestAttributeSourceServiceTagTagKeyGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// has no documentation
+        /// </summary>
         [Input("context")]
         public Input<string>? Context { get; set; }
 
+        /// <summary>
+        /// has no documentation
+        /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 

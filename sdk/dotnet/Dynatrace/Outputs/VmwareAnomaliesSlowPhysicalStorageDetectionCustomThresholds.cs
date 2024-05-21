@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds
     {
+        /// <summary>
+        /// Read/write latency is higher than
+        /// </summary>
         public readonly int AvgReadWriteLatency;
+        /// <summary>
+        /// Peak value for read/write latency is higher than
+        /// </summary>
         public readonly int PeakReadWriteLatency;
 
         [OutputConstructor]

@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class K8sWorkloadAnomaliesPendingPodsConfiguration
     {
+        /// <summary>
+        /// within the last
+        /// </summary>
         public readonly int ObservationPeriodInMinutes;
+        /// <summary>
+        /// stuck in pending state for at least
+        /// </summary>
         public readonly int SamplePeriodInMinutes;
+        /// <summary>
+        /// there is at least
+        /// </summary>
         public readonly int Threshold;
 
         [OutputConstructor]

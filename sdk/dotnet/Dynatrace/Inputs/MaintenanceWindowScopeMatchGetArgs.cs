@@ -13,14 +13,24 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class MaintenanceWindowScopeMatchGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The ID of a management zone to which the matched entities must belong
+        /// </summary>
         [Input("mzId")]
         public Input<string>? MzId { get; set; }
 
+        /// <summary>
+        /// The logic that applies when several tags are specified: AND/OR.  If not set, the OR logic is used
+        /// </summary>
         [Input("tagCombination")]
         public Input<string>? TagCombination { get; set; }
 
         [Input("tags")]
         private InputList<Inputs.MaintenanceWindowScopeMatchTagGetArgs>? _tags;
+
+        /// <summary>
+        /// The tag you want to use for matching.  You can use custom tags from the UI, AWS tags, Cloud Foundry tags, OpenShift/Kubernetes, and tags based on environment variables
+        /// </summary>
         public InputList<Inputs.MaintenanceWindowScopeMatchTagGetArgs> Tags
         {
             get => _tags ?? (_tags = new InputList<Inputs.MaintenanceWindowScopeMatchTagGetArgs>());
@@ -28,7 +38,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         }
 
         /// <summary>
-        /// The type of the maintenance: planned or unplanned
+        /// The type of the Dynatrace entities (for example, hosts or services) you want to pick up by matching
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

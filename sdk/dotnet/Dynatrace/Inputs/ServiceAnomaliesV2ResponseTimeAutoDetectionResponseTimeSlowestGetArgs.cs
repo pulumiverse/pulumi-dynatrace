@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowestGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Absolute threshold
+        /// </summary>
         [Input("slowestDegradationMilliseconds", required: true)]
         public Input<double> SlowestDegradationMilliseconds { get; set; } = null!;
 
+        /// <summary>
+        /// Relative threshold
+        /// </summary>
         [Input("slowestDegradationPercent", required: true)]
         public Input<double> SlowestDegradationPercent { get; set; } = null!;
 

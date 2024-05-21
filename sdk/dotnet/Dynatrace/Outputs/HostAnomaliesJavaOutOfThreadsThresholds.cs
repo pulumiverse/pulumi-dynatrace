@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesJavaOutOfThreadsThresholds
     {
+        /// <summary>
+        /// Alert if the number of Java out of threads exceptions is *X* per minute or higher
+        /// </summary>
         public readonly int ExceptionCount;
 
         [OutputConstructor]

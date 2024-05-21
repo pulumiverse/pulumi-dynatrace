@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type UserActionMetrics struct {
@@ -42,7 +43,7 @@ func NewUserActionMetrics(ctx *pulumi.Context,
 	if args.Value == nil {
 		return nil, errors.New("invalid value for required argument 'Value'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource UserActionMetrics
 	err := ctx.RegisterResource("dynatrace:index/userActionMetrics:UserActionMetrics", name, args, &resource, opts...)
 	if err != nil {

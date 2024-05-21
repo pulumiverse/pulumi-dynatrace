@@ -13,18 +13,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleConditionGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Case sensitive
+        /// </summary>
         [Input("caseSensitive")]
         public Input<bool>? CaseSensitive { get; set; }
 
+        /// <summary>
+        /// Apply this comparison
+        /// </summary>
         [Input("compareOperationType", required: true)]
         public Input<string> CompareOperationType { get; set; } = null!;
 
+        /// <summary>
+        /// Value
+        /// </summary>
         [Input("doubleValue")]
         public Input<double>? DoubleValue { get; set; }
 
+        /// <summary>
+        /// Value
+        /// </summary>
         [Input("intValue")]
         public Input<int>? IntValue { get; set; }
 
+        /// <summary>
+        /// Value
+        /// </summary>
         [Input("textValue")]
         public Input<string>? TextValue { get; set; }
 

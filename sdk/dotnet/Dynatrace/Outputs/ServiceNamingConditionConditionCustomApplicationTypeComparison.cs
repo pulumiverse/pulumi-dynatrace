@@ -14,10 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ServiceNamingConditionConditionCustomApplicationTypeComparison
     {
+        /// <summary>
+        /// Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+        /// </summary>
         public readonly bool? Negate;
+        /// <summary>
+        /// Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+        /// </summary>
         public readonly string Operator;
+        /// <summary>
+        /// if specified, needs to be CUSTOM_APPLICATION_TYPE
+        /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+        /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

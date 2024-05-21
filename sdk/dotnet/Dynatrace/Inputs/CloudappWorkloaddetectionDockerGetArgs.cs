@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CloudappWorkloaddetectionDockerGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// This setting is enabled (`true`) or disabled (`false`)
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 

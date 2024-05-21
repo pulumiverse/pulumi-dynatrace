@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationMonitoringSettingsBrowserRestrictionSettingsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+        /// </summary>
         [Input("mode", required: true)]
         public Input<string> Mode { get; set; } = null!;
 
+        /// <summary>
+        /// A list of browser restrictions
+        /// </summary>
         [Input("restrictions")]
         public Input<Inputs.WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsArgs>? Restrictions { get; set; }
 

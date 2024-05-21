@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptEventsEventCookie
     {
+        /// <summary>
+        /// Every cookie must be unique within the list. However, you can use the same cookie again in other event
+        /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventCookieCookies Cookies;
 
         [OutputConstructor]

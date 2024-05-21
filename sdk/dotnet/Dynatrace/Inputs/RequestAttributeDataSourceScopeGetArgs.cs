@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class RequestAttributeDataSourceScopeGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Only applies to this host group
+        /// </summary>
         [Input("hostGroup")]
         public Input<string>? HostGroup { get; set; }
 
+        /// <summary>
+        /// Only applies to this process group. Note that this can't be transferred between different clusters or environments
+        /// </summary>
         [Input("processGroup")]
         public Input<string>? ProcessGroup { get; set; }
 
+        /// <summary>
+        /// Only applies to this service technology
+        /// </summary>
         [Input("serviceTechnology")]
         public Input<string>? ServiceTechnology { get; set; }
 
+        /// <summary>
+        /// Only apply to process groups matching this tag
+        /// </summary>
         [Input("tagOfProcessGroup")]
         public Input<string>? TagOfProcessGroup { get; set; }
 

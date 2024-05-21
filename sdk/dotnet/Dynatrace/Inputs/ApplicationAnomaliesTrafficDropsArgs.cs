@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ApplicationAnomaliesTrafficDropsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The detection is enabled (`true`) or disabled (`false`)
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
+        /// <summary>
+        /// Alert if the observed traffic is less than *X* % of the expected value
+        /// </summary>
         [Input("percent")]
         public Input<int>? Percent { get; set; }
 

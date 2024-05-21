@@ -19,9 +19,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("detectAsWebRequestService", required: true)]
         public Input<bool> DetectAsWebRequestService { get; set; } = null!;
 
+        /// <summary>
+        /// Let the Port contribute to the Service Id
+        /// </summary>
         [Input("portForServiceId")]
         public Input<bool>? PortForServiceId { get; set; }
 
+        /// <summary>
+        /// URL path
+        /// </summary>
         [Input("urlPath")]
         public Input<Inputs.ServiceExternalWebServiceIdContributorsUrlPathArgs>? UrlPath { get; set; }
 

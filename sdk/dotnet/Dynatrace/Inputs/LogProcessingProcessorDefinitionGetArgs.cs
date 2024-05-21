@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class LogProcessingProcessorDefinitionGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Processor definition
+        /// </summary>
         [Input("rule", required: true)]
         public Input<string> Rule { get; set; } = null!;
 

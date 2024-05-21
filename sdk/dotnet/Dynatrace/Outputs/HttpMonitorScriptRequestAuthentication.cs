@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HttpMonitorScriptRequestAuthentication
     {
+        /// <summary>
+        /// The ID of the credentials within the Dynatrace Credentials Vault.
+        /// </summary>
         public readonly string Credentials;
+        /// <summary>
+        /// The KDC IP. Valid and required only if the type of authentication is `KERBEROS`.
+        /// </summary>
         public readonly string? KdcIp;
+        /// <summary>
+        /// The Realm Name. Valid and required only if the type of authentication is `KERBEROS`.
+        /// </summary>
         public readonly string? RealmName;
+        /// <summary>
+        /// The type of authentication. Possible values are `BASIC_AUTHENTICATION`, `NTLM` and `KERBEROS`.
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

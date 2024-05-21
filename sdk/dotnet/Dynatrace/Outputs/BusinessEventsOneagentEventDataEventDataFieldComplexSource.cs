@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BusinessEventsOneagentEventDataEventDataFieldComplexSource
     {
+        /// <summary>
+        /// [See our documentation](https://dt-url.net/ei034bx)
+        /// </summary>
         public readonly string? Path;
+        /// <summary>
+        /// Fixed value
+        /// </summary>
         public readonly string? Source;
+        /// <summary>
+        /// Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+        /// </summary>
         public readonly string SourceType;
 
         [OutputConstructor]

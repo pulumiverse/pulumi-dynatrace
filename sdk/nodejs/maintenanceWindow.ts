@@ -6,6 +6,49 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * The API utilized for this resource is deprecated, please use dynatrace.Maintenance instead.
+ *
+ * ## Dynatrace Documentation
+ *
+ * - Maintenance windows - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/notifications-and-alerting/maintenance-windows
+ *
+ * - Maintenance windows API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/maintenance-windows-api
+ *
+ * ## Resource Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
+ *
+ * const _name_ = new dynatrace.MaintenanceWindow("#name#", {
+ *     schedule: {
+ *         end: "2021-05-11 14:41",
+ *         recurrenceType: "ONCE",
+ *         start: "2021-05-11 13:41",
+ *         zoneId: "Europe/Vienna",
+ *     },
+ *     scope: {
+ *         matches: [{
+ *             tagCombination: "AND",
+ *             tags: [
+ *                 {
+ *                     context: "CONTEXTLESS",
+ *                     key: "bggtedgxen",
+ *                 },
+ *                 {
+ *                     context: "CONTEXTLESS",
+ *                     key: "deldel1",
+ *                 },
+ *             ],
+ *         }],
+ *     },
+ *     suppressSynthMonExec: true,
+ *     suppression: "DONT_DETECT_PROBLEMS",
+ *     type: "PLANNED",
+ * });
+ * ```
+ */
 export class MaintenanceWindow extends pulumi.CustomResource {
     /**
      * Get an existing MaintenanceWindow resource's state with the given name, ID, and optional extra

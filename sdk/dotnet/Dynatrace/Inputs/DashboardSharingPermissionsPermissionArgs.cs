@@ -14,14 +14,20 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class DashboardSharingPermissionsPermissionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The ID of this resource.
+        /// The ID of the user or group to whom the permission is granted.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
+        /// <summary>
+        /// The level of the permission:
+        /// </summary>
         [Input("level", required: true)]
         public Input<string> Level { get; set; } = null!;
 
+        /// <summary>
+        /// The type of the permission:
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 

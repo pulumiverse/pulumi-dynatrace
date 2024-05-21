@@ -14,15 +14,45 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ManagementZoneV2RulesRuleAttributeRule
     {
+        /// <summary>
+        /// Conditions
+        /// </summary>
         public readonly Outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditions AttributeConditions;
+        /// <summary>
+        /// Apply to process groups connected to matching Azure entities
+        /// </summary>
         public readonly bool? AzureToPgpropagation;
+        /// <summary>
+        /// Apply to services provided by matching Azure entities
+        /// </summary>
         public readonly bool? AzureToServicePropagation;
+        /// <summary>
+        /// Apply to custom devices in a custom device group
+        /// </summary>
         public readonly bool? CustomDeviceGroupToCustomDevicePropagation;
+        /// <summary>
+        /// Possible Values: `APPMON_SERVER`, `APPMON_SYSTEM_PROFILE`, `AWS_ACCOUNT`, `AWS_APPLICATION_LOAD_BALANCER`, `AWS_AUTO_SCALING_GROUP`, `AWS_CLASSIC_LOAD_BALANCER`, `AWS_NETWORK_LOAD_BALANCER`, `AWS_RELATIONAL_DATABASE_SERVICE`, `AZURE`, `BROWSER_MONITOR`, `CLOUD_APPLICATION`, `CLOUD_APPLICATION_NAMESPACE`, `CLOUD_FOUNDRY_FOUNDATION`, `CUSTOM_APPLICATION`, `CUSTOM_DEVICE`, `CUSTOM_DEVICE_GROUP`, `DATA_CENTER_SERVICE`, `ENTERPRISE_APPLICATION`, `ESXI_HOST`, `EXTERNAL_MONITOR`, `HOST`, `HOST_GROUP`, `HTTP_MONITOR`, `KUBERNETES_CLUSTER`, `KUBERNETES_SERVICE`, `MOBILE_APPLICATION`, `OPENSTACK_ACCOUNT`, `PROCESS_GROUP`, `QUEUE`, `SERVICE`, `WEB_APPLICATION`
+        /// </summary>
         public readonly string EntityType;
+        /// <summary>
+        /// Apply to processes running on matching hosts
+        /// </summary>
         public readonly bool? HostToPgpropagation;
+        /// <summary>
+        /// Apply to underlying hosts of matching process groups
+        /// </summary>
         public readonly bool? PgToHostPropagation;
+        /// <summary>
+        /// Apply to all services provided by the process groups
+        /// </summary>
         public readonly bool? PgToServicePropagation;
+        /// <summary>
+        /// Apply to underlying hosts of matching services
+        /// </summary>
         public readonly bool? ServiceToHostPropagation;
+        /// <summary>
+        /// Apply to underlying process groups of matching services
+        /// </summary>
         public readonly bool? ServiceToPgpropagation;
 
         [OutputConstructor]

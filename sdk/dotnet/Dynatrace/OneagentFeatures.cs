@@ -13,9 +13,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     [DynatraceResourceType("dynatrace:index/oneagentFeatures:OneagentFeatures")]
     public partial class OneagentFeatures : global::Pulumi.CustomResource
     {
-        /// <summary>
-        /// Used internally by the terraform provider. Do not populate
-        /// </summary>
         [Output("_restore_")]
         public Output<string> _restore_ { get; private set; } = null!;
 
@@ -134,9 +131,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
 
     public sealed class OneagentFeaturesState : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Used internally by the terraform provider. Do not populate
-        /// </summary>
         [Input("_restore_")]
         public Input<string>? _restore_ { get; set; }
 

@@ -41,7 +41,7 @@ export class Credentials extends pulumi.CustomResource {
     /**
      * The list contains summary data related to the use of credentials
      *
-     * @deprecated `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
+     * @deprecated `credentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
      */
     public readonly credentialUsageSummaries!: pulumi.Output<outputs.CredentialsCredentialUsageSummary[] | undefined>;
     /**
@@ -64,10 +64,6 @@ export class Credentials extends pulumi.CustomResource {
      * The credentials set is available to every user (`false`) or to owner only (`true`)
      */
     public readonly ownerAccessOnly!: pulumi.Output<boolean | undefined>;
-    /**
-     * The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-     * you want to set an empty password, use the value `--empty--`.
-     */
     public readonly password!: pulumi.Output<string | undefined>;
     /**
      * For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
@@ -147,7 +143,7 @@ export interface CredentialsState {
     /**
      * The list contains summary data related to the use of credentials
      *
-     * @deprecated `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
+     * @deprecated `credentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
      */
     credentialUsageSummaries?: pulumi.Input<pulumi.Input<inputs.CredentialsCredentialUsageSummary>[]>;
     /**
@@ -170,10 +166,6 @@ export interface CredentialsState {
      * The credentials set is available to every user (`false`) or to owner only (`true`)
      */
     ownerAccessOnly?: pulumi.Input<boolean>;
-    /**
-     * The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-     * you want to set an empty password, use the value `--empty--`.
-     */
     password?: pulumi.Input<string>;
     /**
      * For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
@@ -204,7 +196,7 @@ export interface CredentialsArgs {
     /**
      * The list contains summary data related to the use of credentials
      *
-     * @deprecated `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
+     * @deprecated `credentialUsageSummary` will be removed in future versions. It's not getting filled anymore, because it's runtime data
      */
     credentialUsageSummaries?: pulumi.Input<pulumi.Input<inputs.CredentialsCredentialUsageSummary>[]>;
     /**
@@ -227,10 +219,6 @@ export interface CredentialsArgs {
      * The credentials set is available to every user (`false`) or to owner only (`true`)
      */
     ownerAccessOnly?: pulumi.Input<boolean>;
-    /**
-     * The password of the credential. Note: Terraform treats an empty string for a value as if the attribute was absent. If
-     * you want to set an empty password, use the value `--empty--`.
-     */
     password?: pulumi.Input<string>;
     /**
      * For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).

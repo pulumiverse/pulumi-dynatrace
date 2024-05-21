@@ -13,18 +13,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CustomAnomaliesStrategyAutoArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The condition for the **threshold** value check: `ABOVE` or `BELOW`
+        /// </summary>
         [Input("alertCondition", required: true)]
         public Input<string> AlertCondition { get; set; } = null!;
 
+        /// <summary>
+        /// If true, also one-minute samples without data are counted as violating samples
+        /// </summary>
         [Input("alertingOnMissingData")]
         public Input<bool>? AlertingOnMissingData { get; set; }
 
+        /// <summary>
+        /// The number of one-minute samples within the evaluation window that must go back to normal to close the event
+        /// </summary>
         [Input("dealertingSamples", required: true)]
         public Input<int> DealertingSamples { get; set; } = null!;
 
+        /// <summary>
+        /// The number of one-minute samples that form the sliding evaluation window
+        /// </summary>
         [Input("samples", required: true)]
         public Input<int> Samples { get; set; } = null!;
 
+        /// <summary>
+        /// Defines the factor of how many signal fluctuations are valid. Values above the baseline plus the signal fluctuation times the number of tolerated signal fluctuations are alerted
+        /// </summary>
         [Input("signalFluctuations", required: true)]
         public Input<double> SignalFluctuations { get; set; } = null!;
 
@@ -34,6 +49,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 
+        /// <summary>
+        /// The number of one-minute samples within the evaluation window that must violate the threshold to trigger an event
+        /// </summary>
         [Input("violatingSamples", required: true)]
         public Input<int> ViolatingSamples { get; set; } = null!;
 

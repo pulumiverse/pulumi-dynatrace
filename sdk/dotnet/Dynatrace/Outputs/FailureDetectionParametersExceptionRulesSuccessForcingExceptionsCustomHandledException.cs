@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledException
     {
+        /// <summary>
+        /// The pattern will match if it is contained within the actual class name.
+        /// </summary>
         public readonly string? ClassPattern;
+        /// <summary>
+        /// Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+        /// </summary>
         public readonly string? MessagePattern;
 
         [OutputConstructor]

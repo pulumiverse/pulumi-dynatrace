@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class OneagentUpdatesMaintenanceWindowsMaintenanceWindowArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Select a [maintenance window for OneAgent updates](https://www.terraform.io/ui/settings/builtin:deployment.management.update-windows)
+        /// </summary>
         [Input("maintenanceWindow", required: true)]
         public Input<string> MaintenanceWindow { get; set; } = null!;
 

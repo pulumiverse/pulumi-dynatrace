@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type ApplicationDataPrivacy struct {
@@ -42,7 +43,7 @@ func NewApplicationDataPrivacy(ctx *pulumi.Context,
 	if args.WebApplicationId == nil {
 		return nil, errors.New("invalid value for required argument 'WebApplicationId'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ApplicationDataPrivacy
 	err := ctx.RegisterResource("dynatrace:index/applicationDataPrivacy:ApplicationDataPrivacy", name, args, &resource, opts...)
 	if err != nil {

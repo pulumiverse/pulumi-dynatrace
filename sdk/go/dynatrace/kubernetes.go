@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type Kubernetes struct {
@@ -50,8 +51,7 @@ type Kubernetes struct {
 	OpenMetricsBuiltinEnabled pulumi.BoolOutput `pulumi:"openMetricsBuiltinEnabled"`
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled pulumi.BoolOutput `pulumi:"openMetricsPipelineEnabled"`
-	// To enable dashboards and alerts, add the [Kubernetes persistent volume
-	// claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
 	PvcMonitoringEnabled pulumi.BoolOutput `pulumi:"pvcMonitoringEnabled"`
 	// The scope of this setting (KUBERNETES_CLUSTER)
 	Scope pulumi.StringOutput `pulumi:"scope"`
@@ -98,7 +98,7 @@ func NewKubernetes(ctx *pulumi.Context,
 		"authToken",
 	})
 	opts = append(opts, secrets)
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Kubernetes
 	err := ctx.RegisterResource("dynatrace:index/kubernetes:Kubernetes", name, args, &resource, opts...)
 	if err != nil {
@@ -157,8 +157,7 @@ type kubernetesState struct {
 	OpenMetricsBuiltinEnabled *bool `pulumi:"openMetricsBuiltinEnabled"`
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled *bool `pulumi:"openMetricsPipelineEnabled"`
-	// To enable dashboards and alerts, add the [Kubernetes persistent volume
-	// claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
 	PvcMonitoringEnabled *bool `pulumi:"pvcMonitoringEnabled"`
 	// The scope of this setting (KUBERNETES_CLUSTER)
 	Scope *string `pulumi:"scope"`
@@ -201,8 +200,7 @@ type KubernetesState struct {
 	OpenMetricsBuiltinEnabled pulumi.BoolPtrInput
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled pulumi.BoolPtrInput
-	// To enable dashboards and alerts, add the [Kubernetes persistent volume
-	// claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
 	PvcMonitoringEnabled pulumi.BoolPtrInput
 	// The scope of this setting (KUBERNETES_CLUSTER)
 	Scope pulumi.StringPtrInput
@@ -249,8 +247,7 @@ type kubernetesArgs struct {
 	OpenMetricsBuiltinEnabled bool `pulumi:"openMetricsBuiltinEnabled"`
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled bool `pulumi:"openMetricsPipelineEnabled"`
-	// To enable dashboards and alerts, add the [Kubernetes persistent volume
-	// claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
 	PvcMonitoringEnabled bool `pulumi:"pvcMonitoringEnabled"`
 	// The scope of this setting (KUBERNETES_CLUSTER)
 	Scope string `pulumi:"scope"`
@@ -294,8 +291,7 @@ type KubernetesArgs struct {
 	OpenMetricsBuiltinEnabled pulumi.BoolInput
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
 	OpenMetricsPipelineEnabled pulumi.BoolInput
-	// To enable dashboards and alerts, add the [Kubernetes persistent volume
-	// claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
 	PvcMonitoringEnabled pulumi.BoolInput
 	// The scope of this setting (KUBERNETES_CLUSTER)
 	Scope pulumi.StringInput
@@ -472,8 +468,7 @@ func (o KubernetesOutput) OpenMetricsPipelineEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Kubernetes) pulumi.BoolOutput { return v.OpenMetricsPipelineEnabled }).(pulumi.BoolOutput)
 }
 
-// To enable dashboards and alerts, add the [Kubernetes persistent volume
-// claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
 func (o KubernetesOutput) PvcMonitoringEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Kubernetes) pulumi.BoolOutput { return v.PvcMonitoringEnabled }).(pulumi.BoolOutput)
 }

@@ -40,10 +40,6 @@ export class SpanAttributed extends pulumi.CustomResource {
      * granular control over the visibility of attribute values
      */
     public readonly masking!: pulumi.Output<string>;
-    /**
-     * Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
-     * are defined by default on every Dynatrace environment.
-     */
     public readonly persistent!: pulumi.Output<boolean>;
 
     /**
@@ -91,10 +87,6 @@ export interface SpanAttributedState {
      * granular control over the visibility of attribute values
      */
     masking?: pulumi.Input<string>;
-    /**
-     * Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
-     * are defined by default on every Dynatrace environment.
-     */
     persistent?: pulumi.Input<boolean>;
 }
 
@@ -110,9 +102,5 @@ export interface SpanAttributedArgs {
      * granular control over the visibility of attribute values
      */
     masking: pulumi.Input<string>;
-    /**
-     * Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
-     * are defined by default on every Dynatrace environment.
-     */
     persistent?: pulumi.Input<boolean>;
 }

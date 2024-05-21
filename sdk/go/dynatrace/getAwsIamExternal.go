@@ -4,12 +4,16 @@
 package dynatrace
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The AWS IAM external data source allows the AWS IAM external ID to be retrieved.
 func GetAwsIamExternal(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetAwsIamExternalResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAwsIamExternalResult
 	err := ctx.Invoke("dynatrace:index/getAwsIamExternal:getAwsIamExternal", nil, &rv, opts...)
 	if err != nil {
@@ -22,4 +26,39 @@ func GetAwsIamExternal(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetAw
 type GetAwsIamExternalResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetAwsIamExternalOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetAwsIamExternalResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetAwsIamExternalResult, error) {
+		r, err := GetAwsIamExternal(ctx, opts...)
+		var s GetAwsIamExternalResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetAwsIamExternalResultOutput)
+}
+
+// A collection of values returned by getAwsIamExternal.
+type GetAwsIamExternalResultOutput struct{ *pulumi.OutputState }
+
+func (GetAwsIamExternalResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAwsIamExternalResult)(nil)).Elem()
+}
+
+func (o GetAwsIamExternalResultOutput) ToGetAwsIamExternalResultOutput() GetAwsIamExternalResultOutput {
+	return o
+}
+
+func (o GetAwsIamExternalResultOutput) ToGetAwsIamExternalResultOutputWithContext(ctx context.Context) GetAwsIamExternalResultOutput {
+	return o
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetAwsIamExternalResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAwsIamExternalResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetAwsIamExternalResultOutput{})
 }

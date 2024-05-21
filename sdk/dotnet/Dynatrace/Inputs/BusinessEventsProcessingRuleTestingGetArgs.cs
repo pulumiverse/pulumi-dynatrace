@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BusinessEventsProcessingRuleTestingGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Sample event to use for the test run. Only JSON format is supported.
+        /// </summary>
         [Input("sampleEvent", required: true)]
         public Input<string> SampleEvent { get; set; } = null!;
 

@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type MobileAppCrashRate struct {
@@ -30,7 +31,7 @@ func NewMobileAppCrashRate(ctx *pulumi.Context,
 	if args.CrashRateIncrease == nil {
 		return nil, errors.New("invalid value for required argument 'CrashRateIncrease'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MobileAppCrashRate
 	err := ctx.RegisterResource("dynatrace:index/mobileAppCrashRate:MobileAppCrashRate", name, args, &resource, opts...)
 	if err != nil {

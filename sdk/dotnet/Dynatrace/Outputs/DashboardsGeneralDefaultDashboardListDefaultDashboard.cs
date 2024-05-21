@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DashboardsGeneralDefaultDashboardListDefaultDashboard
     {
+        /// <summary>
+        /// Preset dashboard to show as default landing page
+        /// </summary>
         public readonly string Dashboard;
+        /// <summary>
+        /// Show selected dashboard by default for this user group
+        /// </summary>
         public readonly string UserGroup;
 
         [OutputConstructor]

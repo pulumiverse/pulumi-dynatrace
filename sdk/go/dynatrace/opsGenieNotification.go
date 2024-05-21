@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type OpsGenieNotification struct {
@@ -56,7 +57,7 @@ func NewOpsGenieNotification(ctx *pulumi.Context,
 		"apiKey",
 	})
 	opts = append(opts, secrets)
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OpsGenieNotification
 	err := ctx.RegisterResource("dynatrace:index/opsGenieNotification:OpsGenieNotification", name, args, &resource, opts...)
 	if err != nil {

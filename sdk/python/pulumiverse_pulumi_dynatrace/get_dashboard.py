@@ -91,9 +91,9 @@ def get_dashboard(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getDashboard:getDashboard', __args__, opts=opts, typ=GetDashboardResult).value
 
     return AwaitableGetDashboardResult(
-        id=__ret__.id,
-        name=__ret__.name,
-        owner=__ret__.owner)
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        owner=pulumi.get(__ret__, 'owner'))
 
 
 @_utilities.lift_output_func(get_dashboard)

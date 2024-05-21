@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type Autotag struct {
@@ -34,7 +35,7 @@ func NewAutotag(ctx *pulumi.Context,
 		args = &AutotagArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Autotag
 	err := ctx.RegisterResource("dynatrace:index/autotag:Autotag", name, args, &resource, opts...)
 	if err != nil {

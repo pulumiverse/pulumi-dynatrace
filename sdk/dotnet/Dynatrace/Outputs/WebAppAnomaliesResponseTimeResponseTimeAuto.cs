@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebAppAnomaliesResponseTimeResponseTimeAuto
     {
+        /// <summary>
+        /// Avoid over-alerting
+        /// </summary>
         public readonly Outputs.WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection OverAlertingProtection;
+        /// <summary>
+        /// Alert if the median response time of all user actions degrades beyond **both** the absolute and relative thresholds:
+        /// </summary>
         public readonly Outputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll ResponseTimeAll;
+        /// <summary>
+        /// Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+        /// </summary>
         public readonly Outputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest ResponseTimeSlowest;
 
         [OutputConstructor]

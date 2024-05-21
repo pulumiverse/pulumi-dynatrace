@@ -13,20 +13,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class GetEntitiesEntitiesEntityArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The name of the entity, displayed in the UI.
+        /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
 
+        /// <summary>
+        /// The ID of the entity.
+        /// </summary>
         [Input("entityId")]
         public string? EntityId { get; set; }
 
         [Input("tags")]
         private List<Inputs.GetEntitiesEntitiesEntityTagArgs>? _tags;
+
+        /// <summary>
+        /// A set of tags assigned to the entity.
+        /// </summary>
         public List<Inputs.GetEntitiesEntitiesEntityTagArgs> Tags
         {
             get => _tags ?? (_tags = new List<Inputs.GetEntitiesEntitiesEntityTagArgs>());
             set => _tags = value;
         }
 
+        /// <summary>
+        /// The type of the entity.
+        /// </summary>
         [Input("type")]
         public string? Type { get; set; }
 

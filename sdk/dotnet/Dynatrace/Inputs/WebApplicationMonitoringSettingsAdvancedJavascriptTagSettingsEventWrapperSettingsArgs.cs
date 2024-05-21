@@ -13,21 +13,39 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettingsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Blur enabled/disabled
+        /// </summary>
         [Input("blur")]
         public Input<bool>? Blur { get; set; }
 
+        /// <summary>
+        /// Change enabled/disabled
+        /// </summary>
         [Input("change")]
         public Input<bool>? Change { get; set; }
 
+        /// <summary>
+        /// Click enabled/disabled
+        /// </summary>
         [Input("click")]
         public Input<bool>? Click { get; set; }
 
+        /// <summary>
+        /// MouseUp enabled/disabled
+        /// </summary>
         [Input("mouseup")]
         public Input<bool>? Mouseup { get; set; }
 
+        /// <summary>
+        /// TouchEnd enabled/disabled
+        /// </summary>
         [Input("touchEnd")]
         public Input<bool>? TouchEnd { get; set; }
 
+        /// <summary>
+        /// TouchStart enabled/disabled
+        /// </summary>
         [Input("touchStart")]
         public Input<bool>? TouchStart { get; set; }
 

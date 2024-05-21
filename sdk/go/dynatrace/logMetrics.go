@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type LogMetrics struct {
@@ -47,7 +48,7 @@ func NewLogMetrics(ctx *pulumi.Context,
 	if args.Query == nil {
 		return nil, errors.New("invalid value for required argument 'Query'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LogMetrics
 	err := ctx.RegisterResource("dynatrace:index/logMetrics:LogMetrics", name, args, &resource, opts...)
 	if err != nil {

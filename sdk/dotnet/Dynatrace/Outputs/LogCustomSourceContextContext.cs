@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class LogCustomSourceContextContext
     {
+        /// <summary>
+        /// Possible Values: `Dt_entity_process_group`
+        /// </summary>
         public readonly string Attribute;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]

@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings
     {
+        /// <summary>
+        /// Capture this error
+        /// </summary>
         public readonly bool Capture;
+        /// <summary>
+        /// [View more details](https://dt-url.net/hd580p2k)
+        /// </summary>
         public readonly bool? ConsiderForAi;
+        /// <summary>
+        /// Include error in Apdex calculations
+        /// </summary>
         public readonly bool? ImpactApdex;
 
         [OutputConstructor]

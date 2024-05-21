@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesJavaOutOfThreadsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The detection is enabled (`true`) or disabled (`false`)
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
+        /// <summary>
+        /// Custom thresholds for Java out of threads detection. If not set, automatic mode is used
+        /// </summary>
         [Input("thresholds")]
         public Input<Inputs.HostAnomaliesJavaOutOfThreadsThresholdsGetArgs>? Thresholds { get; set; }
 

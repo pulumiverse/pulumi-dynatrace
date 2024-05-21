@@ -13,21 +13,39 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformationArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// include hexadecimal numbers
+        /// </summary>
         [Input("includeHexNumbers")]
         public Input<bool>? IncludeHexNumbers { get; set; }
 
+        /// <summary>
+        /// min digit count
+        /// </summary>
         [Input("minDigitCount")]
         public Input<int>? MinDigitCount { get; set; }
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("prefix")]
         public Input<string>? Prefix { get; set; }
 
+        /// <summary>
+        /// replacement
+        /// </summary>
         [Input("replacementValue")]
         public Input<string>? ReplacementValue { get; set; }
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("suffix")]
         public Input<string>? Suffix { get; set; }
 
+        /// <summary>
+        /// Possible Values: `BEFORE`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`
+        /// </summary>
         [Input("transformationType", required: true)]
         public Input<string> TransformationType { get; set; } = null!;
 

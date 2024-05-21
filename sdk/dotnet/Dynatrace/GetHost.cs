@@ -20,9 +20,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// If multiple hosts match the given criteria, the first result will be retrieved.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -57,8 +55,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetHostResult> InvokeAsync(GetHostArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetHostResult>("dynatrace:index/getHost:getHost", args ?? new GetHostArgs(), options.WithDefaults());
@@ -71,9 +67,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// If multiple hosts match the given criteria, the first result will be retrieved.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -108,8 +102,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetHostResult> Invoke(GetHostInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostResult>("dynatrace:index/getHost:getHost", args ?? new GetHostInvokeArgs(), options.WithDefaults());

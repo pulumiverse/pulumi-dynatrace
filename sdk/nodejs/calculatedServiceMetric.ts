@@ -51,11 +51,11 @@ export class CalculatedServiceMetric extends pulumi.CustomResource {
      */
     public readonly enabled!: pulumi.Output<boolean | undefined>;
     /**
-     * Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+     * Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
      */
     public readonly entityId!: pulumi.Output<string | undefined>;
     /**
-     * Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
+     * Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
      */
     public readonly managementZones!: pulumi.Output<string[] | undefined>;
     /**
@@ -162,11 +162,11 @@ export interface CalculatedServiceMetricState {
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+     * Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
      */
     entityId?: pulumi.Input<string>;
     /**
-     * Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
+     * Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
      */
     managementZones?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -223,11 +223,11 @@ export interface CalculatedServiceMetricArgs {
      */
     enabled?: pulumi.Input<boolean>;
     /**
-     * Restricts the metric usage to the specified service. This field is mutually exclusive with the `management_zones` field
+     * Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
      */
     entityId?: pulumi.Input<string>;
     /**
-     * Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entity_id` field
+     * Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
      */
     managementZones?: pulumi.Input<pulumi.Input<string>[]>;
     /**

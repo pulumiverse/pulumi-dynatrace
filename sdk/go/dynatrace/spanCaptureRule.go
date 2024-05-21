@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type SpanCaptureRule struct {
@@ -35,7 +36,7 @@ func NewSpanCaptureRule(ctx *pulumi.Context,
 	if args.Matches == nil {
 		return nil, errors.New("invalid value for required argument 'Matches'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource SpanCaptureRule
 	err := ctx.RegisterResource("dynatrace:index/spanCaptureRule:SpanCaptureRule", name, args, &resource, opts...)
 	if err != nil {

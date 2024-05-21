@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsJavascriptInjectionRules
     {
+        /// <summary>
+        /// Java script injection rule
+        /// </summary>
         public readonly ImmutableArray<Outputs.WebApplicationMonitoringSettingsJavascriptInjectionRulesRule> Rules;
 
         [OutputConstructor]

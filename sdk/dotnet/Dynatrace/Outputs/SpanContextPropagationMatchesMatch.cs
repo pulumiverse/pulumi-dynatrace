@@ -14,10 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class SpanContextPropagationMatchesMatch
     {
+        /// <summary>
+        /// Whether to match strings case sensitively or not
+        /// </summary>
         public readonly bool? CaseSensitive;
+        /// <summary>
+        /// Possible values are `EQUALS`, `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_CONTAIN`, `DOES_NOT_START_WITH` and `DOES_NOT_END_WITH`.
+        /// </summary>
         public readonly string Comparison;
+        /// <summary>
+        /// The name of the attribute if `source` is `ATTRIBUTE`
+        /// </summary>
         public readonly string? Key;
+        /// <summary>
+        /// What to match against. Possible values are `SPAN_NAME`, `SPAN_KIND`, `ATTRIBUTE`, `INSTRUMENTATION_LIBRARY_NAME` and `INSTRUMENTATION_LIBRARY_VERSION`
+        /// </summary>
         public readonly string Source;
+        /// <summary>
+        /// The value to compare against. When `source` is `SPAN_KIND` the only allowed values are `INTERNAL`, `SERVER`, `CLIENT`, `PRODUCER` and `CONSUMER`
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

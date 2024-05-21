@@ -19,6 +19,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// Dimension key
+        /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;
 

@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesCpuThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if CPU usage is higher than *X*% in 3 out of 5 samples
+        /// </summary>
         [Input("saturation", required: true)]
         public Input<int> Saturation { get; set; } = null!;
 

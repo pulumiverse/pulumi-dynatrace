@@ -4,11 +4,15 @@
 package dynatrace
 
 import (
+	"context"
+	"reflect"
+
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 func GetManagementZones(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetManagementZonesResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagementZonesResult
 	err := ctx.Invoke("dynatrace:index/getManagementZones:getManagementZones", nil, &rv, opts...)
 	if err != nil {
@@ -22,4 +26,43 @@ type GetManagementZonesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id     string                    `pulumi:"id"`
 	Values []GetManagementZonesValue `pulumi:"values"`
+}
+
+func GetManagementZonesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetManagementZonesResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetManagementZonesResult, error) {
+		r, err := GetManagementZones(ctx, opts...)
+		var s GetManagementZonesResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetManagementZonesResultOutput)
+}
+
+// A collection of values returned by getManagementZones.
+type GetManagementZonesResultOutput struct{ *pulumi.OutputState }
+
+func (GetManagementZonesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementZonesResult)(nil)).Elem()
+}
+
+func (o GetManagementZonesResultOutput) ToGetManagementZonesResultOutput() GetManagementZonesResultOutput {
+	return o
+}
+
+func (o GetManagementZonesResultOutput) ToGetManagementZonesResultOutputWithContext(ctx context.Context) GetManagementZonesResultOutput {
+	return o
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetManagementZonesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementZonesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetManagementZonesResultOutput) Values() GetManagementZonesValueArrayOutput {
+	return o.ApplyT(func(v GetManagementZonesResult) []GetManagementZonesValue { return v.Values }).(GetManagementZonesValueArrayOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetManagementZonesResultOutput{})
 }

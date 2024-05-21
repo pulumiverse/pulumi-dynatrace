@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ManagementZoneV2RulesRuleDimensionRuleDimensionConditions
     {
+        /// <summary>
+        /// Dimension conditions
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition> Conditions;
 
         [OutputConstructor]

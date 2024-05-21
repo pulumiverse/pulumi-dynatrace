@@ -13,25 +13,58 @@ export interface AlertingFilters {
 }
 
 export interface AlertingFiltersFilter {
+    /**
+     * Configuration of a custom event filter. Filters custom events by title or description. If both specified, the AND logic applies
+     */
     custom?: pulumi.Input<inputs.AlertingFiltersFilterCustom>;
+    /**
+     * Configuration of a custom event filter. Filters custom events by title or description. If both specified, the AND logic applies
+     */
     predefined?: pulumi.Input<inputs.AlertingFiltersFilterPredefined>;
 }
 
 export interface AlertingFiltersFilterCustom {
+    /**
+     * Configuration of a matching filter
+     */
     description?: pulumi.Input<inputs.AlertingFiltersFilterCustomDescription>;
+    /**
+     * Configuration of a matching filter
+     */
     metadata?: pulumi.Input<inputs.AlertingFiltersFilterCustomMetadata>;
+    /**
+     * Configuration of a matching filter
+     */
     title?: pulumi.Input<inputs.AlertingFiltersFilterCustomTitle>;
 }
 
 export interface AlertingFiltersFilterCustomDescription {
+    /**
+     * The condition is case sensitive (`false`) or case insensitive (`true`).   If not set, then `false` is used, making the condition case sensitive
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * The filter is enabled (`true`) or disabled (`false`)
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Reverses the comparison **operator**. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value: pulumi.Input<string>;
 }
 
 export interface AlertingFiltersFilterCustomMetadata {
+    /**
+     * Define filters for event properties. A maximum of 20 properties is allowed.
+     */
     items: pulumi.Input<inputs.AlertingFiltersFilterCustomMetadataItems>;
 }
 
@@ -40,20 +73,47 @@ export interface AlertingFiltersFilterCustomMetadataItems {
 }
 
 export interface AlertingFiltersFilterCustomMetadataItemsFilter {
+    /**
+     * Type 'dt.' for key hints.
+     */
     key: pulumi.Input<string>;
+    /**
+     * Value
+     */
     value: pulumi.Input<string>;
 }
 
 export interface AlertingFiltersFilterCustomTitle {
+    /**
+     * The condition is case sensitive (`false`) or case insensitive (`true`).   If not set, then `false` is used, making the condition case sensitive
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * The filter is enabled (`true`) or disabled (`false`)
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Reverses the comparison **operator**. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value: pulumi.Input<string>;
 }
 
 export interface AlertingFiltersFilterPredefined {
+    /**
+     * The alert triggers when the problem of specified severity arises while the specified event **is** happening (`false`) or while the specified event is **not** happening (`true`).   For example, if you chose the Slowdown (`PERFORMANCE`) severity and Unexpected high traffic (`APPLICATION_UNEXPECTED_HIGH_LOAD`) event with **negate** set to `true`, the alerting profile will trigger only when the slowdown problem is raised while there is no unexpected high traffic event.  Consider the following use case as an example. The Slowdown (`PERFORMANCE`) severity rule is set. Depending on the configuration of the event filter (Unexpected high traffic (`APPLICATION_UNEXPECTED_HIGH_LOAD`) event is used as an example), the options of the alerting profile is one of the following:* **negate** is set to `false`: The alert triggers when the slowdown problem is raised while unexpected high traffic event is happening.  * **negate** is set to `true`: The alert triggers when the slowdown problem is raised while there is no unexpected high traffic event.  * no event rule is set: The alert triggers when the slowdown problem is raised, regardless of any events
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * The type of the predefined event. Possible values are `APPLICATION_ERROR_RATE_INCREASED`, `APPLICATION_SLOWDOWN`, `APPLICATION_UNEXPECTED_HIGH_LOAD`, `APPLICATION_UNEXPECTED_LOW_LOAD`, `AWS_LAMBDA_HIGH_ERROR_RATE`, `CUSTOM_APPLICATION_ERROR_RATE_INCREASED`, `CUSTOM_APPLICATION_SLOWDOWN`, `CUSTOM_APPLICATION_UNEXPECTED_HIGH_LOAD`, `CUSTOM_APPLICATION_UNEXPECTED_LOW_LOAD`, `CUSTOM_APP_CRASH_RATE_INCREASED`, `DATABASE_CONNECTION_FAILURE`, `DATA_CENTER_SERVICE_PERFORMANCE_DEGRADATION`, `DATA_CENTER_SERVICE_UNAVAILABLE`, `EBS_VOLUME_HIGH_LATENCY`, `EC2_HIGH_CPU`, `ELB_HIGH_BACKEND_ERROR_RATE`, `ENTERPRICE_APPLICATION_PERFORMANCE_DEGRADATION`, `ENTERPRISE_APPLICATION_UNAVAILABLE`, `ESXI_GUEST_ACTIVE_SWAP_WAIT`, `ESXI_GUEST_CPU_LIMIT_REACHED`, `ESXI_HOST_CPU_SATURATION`, `ESXI_HOST_DATASTORE_LOW_DISK_SPACE`, `ESXI_HOST_DISK_QUEUE_SLOW`, `ESXI_HOST_DISK_SLOW`, `ESXI_HOST_MEMORY_SATURATION`, `ESXI_HOST_NETWORK_PROBLEMS`, `ESXI_HOST_OVERLOADED_STORAGE`, `ESXI_VM_IMPACT_HOST_CPU_SATURATION`, `ESXI_VM_IMPACT_HOST_MEMORY_SATURATION`, `EXTERNAL_SYNTHETIC_TEST_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_SLOWDOWN`, `HOST_OF_SERVICE_UNAVAILABLE`, `HTTP_CHECK_GLOBAL_OUTAGE`, `HTTP_CHECK_LOCAL_OUTAGE`, `HTTP_CHECK_TEST_LOCATION_SLOWDOWN`, `MOBILE_APPLICATION_ERROR_RATE_INCREASED`, `MOBILE_APPLICATION_SLOWDOWN`, `MOBILE_APPLICATION_UNEXPECTED_HIGH_LOAD`, `MOBILE_APPLICATION_UNEXPECTED_LOW_LOAD`, `MOBILE_APP_CRASH_RATE_INCREASED`, `MONITORING_UNAVAILABLE`, `OSI_DISK_LOW_INODES`, `OSI_GRACEFULLY_SHUTDOWN`, `OSI_HIGH_CPU`, `OSI_HIGH_MEMORY`, `OSI_LOW_DISK_SPACE`, `OSI_NIC_DROPPED_PACKETS_HIGH`, `OSI_NIC_ERRORS_HIGH`, `OSI_NIC_UTILIZATION_HIGH`, `OSI_SLOW_DISK`, `OSI_UNEXPECTEDLY_UNAVAILABLE`, `PGI_OF_SERVICE_UNAVAILABLE`, `PGI_UNAVAILABLE`, `PG_LOW_INSTANCE_COUNT`, `PROCESS_CRASHED`, `PROCESS_HIGH_GC_ACTIVITY`, `PROCESS_MEMORY_RESOURCE_EXHAUSTED`, `PROCESS_NA_HIGH_CONN_FAIL_RATE`, `PROCESS_NA_HIGH_LOSS_RATE`, `PROCESS_THREADS_RESOURCE_EXHAUSTED`, `RDS_HIGH_CPU`, `RDS_HIGH_LATENCY`, `RDS_LOW_MEMORY`, `RDS_LOW_STORAGE_SPACE`, `RDS_OF_SERVICE_UNAVAILABLE`, `RDS_RESTART_SEQUENCE`, `SERVICE_ERROR_RATE_INCREASED`, `SERVICE_SLOWDOWN`, `SERVICE_UNEXPECTED_HIGH_LOAD`, `SERVICE_UNEXPECTED_LOW_LOAD`, `SYNTHETIC_GLOBAL_OUTAGE`, `SYNTHETIC_LOCAL_OUTAGE`, `SYNTHETIC_NODE_OUTAGE`, `SYNTHETIC_PRIVATE_LOCATION_OUTAGE` and `SYNTHETIC_TEST_LOCATION_SLOWDOWN`
+     */
     type: pulumi.Input<string>;
 }
 
@@ -73,7 +133,13 @@ export interface AlertingProfileEventTypeFilter {
 }
 
 export interface AlertingProfileEventTypeFilterCustomEventFilter {
+    /**
+     * Configuration of a matching filter
+     */
     customDescriptionFilters?: pulumi.Input<pulumi.Input<inputs.AlertingProfileEventTypeFilterCustomEventFilterCustomDescriptionFilter>[]>;
+    /**
+     * Configuration of a matching filter
+     */
     customTitleFilters?: pulumi.Input<pulumi.Input<inputs.AlertingProfileEventTypeFilterCustomEventFilterCustomTitleFilter>[]>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -82,31 +148,67 @@ export interface AlertingProfileEventTypeFilterCustomEventFilter {
 }
 
 export interface AlertingProfileEventTypeFilterCustomEventFilterCustomDescriptionFilter {
+    /**
+     * The condition is case sensitive (`false`) or case insensitive (`true`).   If not set, then `false` is used, making the condition case sensitive
+     */
     caseInsensitive?: pulumi.Input<boolean>;
+    /**
+     * The filter is enabled (`true`) or disabled (`false`)
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Reverses the comparison **operator**. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+     */
     operator: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value: pulumi.Input<string>;
 }
 
 export interface AlertingProfileEventTypeFilterCustomEventFilterCustomTitleFilter {
+    /**
+     * The condition is case sensitive (`false`) or case insensitive (`true`).   If not set, then `false` is used, making the condition case sensitive
+     */
     caseInsensitive?: pulumi.Input<boolean>;
+    /**
+     * The filter is enabled (`true`) or disabled (`false`)
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Reverses the comparison **operator**. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+     */
     operator: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value: pulumi.Input<string>;
 }
 
 export interface AlertingProfileEventTypeFilterPredefinedEventFilter {
+    /**
+     * The type of the predefined event. Possible values are `APPLICATION_ERROR_RATE_INCREASED`, `APPLICATION_SLOWDOWN`, `APPLICATION_UNEXPECTED_HIGH_LOAD`, `APPLICATION_UNEXPECTED_LOW_LOAD`, `AWS_LAMBDA_HIGH_ERROR_RATE`, `CUSTOM_APPLICATION_ERROR_RATE_INCREASED`, `CUSTOM_APPLICATION_SLOWDOWN`, `CUSTOM_APPLICATION_UNEXPECTED_HIGH_LOAD`, `CUSTOM_APPLICATION_UNEXPECTED_LOW_LOAD`, `CUSTOM_APP_CRASH_RATE_INCREASED`, `DATABASE_CONNECTION_FAILURE`, `DATA_CENTER_SERVICE_PERFORMANCE_DEGRADATION`, `DATA_CENTER_SERVICE_UNAVAILABLE`, `EBS_VOLUME_HIGH_LATENCY`, `EC2_HIGH_CPU`, `ELB_HIGH_BACKEND_ERROR_RATE`, `ENTERPRICE_APPLICATION_PERFORMANCE_DEGRADATION`, `ENTERPRISE_APPLICATION_UNAVAILABLE`, `ESXI_GUEST_ACTIVE_SWAP_WAIT`, `ESXI_GUEST_CPU_LIMIT_REACHED`, `ESXI_HOST_CPU_SATURATION`, `ESXI_HOST_DATASTORE_LOW_DISK_SPACE`, `ESXI_HOST_DISK_QUEUE_SLOW`, `ESXI_HOST_DISK_SLOW`, `ESXI_HOST_MEMORY_SATURATION`, `ESXI_HOST_NETWORK_PROBLEMS`, `ESXI_HOST_OVERLOADED_STORAGE`, `ESXI_VM_IMPACT_HOST_CPU_SATURATION`, `ESXI_VM_IMPACT_HOST_MEMORY_SATURATION`, `EXTERNAL_SYNTHETIC_TEST_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_SLOWDOWN`, `HOST_OF_SERVICE_UNAVAILABLE`, `HTTP_CHECK_GLOBAL_OUTAGE`, `HTTP_CHECK_LOCAL_OUTAGE`, `HTTP_CHECK_TEST_LOCATION_SLOWDOWN`, `MOBILE_APPLICATION_ERROR_RATE_INCREASED`, `MOBILE_APPLICATION_SLOWDOWN`, `MOBILE_APPLICATION_UNEXPECTED_HIGH_LOAD`, `MOBILE_APPLICATION_UNEXPECTED_LOW_LOAD`, `MOBILE_APP_CRASH_RATE_INCREASED`, `MONITORING_UNAVAILABLE`, `OSI_DISK_LOW_INODES`, `OSI_GRACEFULLY_SHUTDOWN`, `OSI_HIGH_CPU`, `OSI_HIGH_MEMORY`, `OSI_LOW_DISK_SPACE`, `OSI_NIC_DROPPED_PACKETS_HIGH`, `OSI_NIC_ERRORS_HIGH`, `OSI_NIC_UTILIZATION_HIGH`, `OSI_SLOW_DISK`, `OSI_UNEXPECTEDLY_UNAVAILABLE`, `PGI_OF_SERVICE_UNAVAILABLE`, `PGI_UNAVAILABLE`, `PG_LOW_INSTANCE_COUNT`, `PROCESS_CRASHED`, `PROCESS_HIGH_GC_ACTIVITY`, `PROCESS_MEMORY_RESOURCE_EXHAUSTED`, `PROCESS_NA_HIGH_CONN_FAIL_RATE`, `PROCESS_NA_HIGH_LOSS_RATE`, `PROCESS_THREADS_RESOURCE_EXHAUSTED`, `RDS_HIGH_CPU`, `RDS_HIGH_LATENCY`, `RDS_LOW_MEMORY`, `RDS_LOW_STORAGE_SPACE`, `RDS_OF_SERVICE_UNAVAILABLE`, `RDS_RESTART_SEQUENCE`, `SERVICE_ERROR_RATE_INCREASED`, `SERVICE_SLOWDOWN`, `SERVICE_UNEXPECTED_HIGH_LOAD`, `SERVICE_UNEXPECTED_LOW_LOAD`, `SYNTHETIC_GLOBAL_OUTAGE`, `SYNTHETIC_LOCAL_OUTAGE`, `SYNTHETIC_NODE_OUTAGE`, `SYNTHETIC_PRIVATE_LOCATION_OUTAGE` and `SYNTHETIC_TEST_LOCATION_SLOWDOWN`
+     */
     eventType: pulumi.Input<string>;
+    /**
+     * The alert triggers when the problem of specified severity arises while the specified event **is** happening (`false`) or while the specified event is **not** happening (`true`).   For example, if you chose the Slowdown (`PERFORMANCE`) severity and Unexpected high traffic (`APPLICATION_UNEXPECTED_HIGH_LOAD`) event with **negate** set to `true`, the alerting profile will trigger only when the slowdown problem is raised while there is no unexpected high traffic event.  Consider the following use case as an example. The Slowdown (`PERFORMANCE`) severity rule is set. Depending on the configuration of the event filter (Unexpected high traffic (`APPLICATION_UNEXPECTED_HIGH_LOAD`) event is used as an example), the behavior of the alerting profile is one of the following:* **negate** is set to `false`: The alert triggers when the slowdown problem is raised while unexpected high traffic event is happening.  * **negate** is set to `true`: The alert triggers when the slowdown problem is raised while there is no unexpected high traffic event.  * no event rule is set: The alert triggers when the slowdown problem is raised, regardless of any events
+     */
     negate?: pulumi.Input<boolean>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -149,7 +251,13 @@ export interface AlertingProfileRule {
 }
 
 export interface AlertingProfileRuleTagFilter {
+    /**
+     * The filtering mode:  * `INCLUDE_ANY`: The rule applies to monitored entities that have at least one of the specified tags. You can specify up to 100 tags.  * `INCLUDE_ALL`: The rule applies to monitored entities that have **all** of the specified tags. You can specify up to 10 tags.  * `NONE`: The rule applies to all monitored entities
+     */
     includeMode: pulumi.Input<string>;
+    /**
+     * A list of required tags
+     */
     tagFilters?: pulumi.Input<pulumi.Input<inputs.AlertingProfileRuleTagFilterTagFilter>[]>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -158,8 +266,17 @@ export interface AlertingProfileRuleTagFilter {
 }
 
 export interface AlertingProfileRuleTagFilterTagFilter {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -171,9 +288,21 @@ export interface AlertingRules {
 }
 
 export interface AlertingRulesRule {
+    /**
+     * Send a notification if a problem remains open longer than *X* minutes
+     */
     delayInMinutes: pulumi.Input<number>;
+    /**
+     * The filtering mode:  * `INCLUDE_ANY`: The rule applies to monitored entities that have at least one of the specified tags. You can specify up to 100 tags.  * `INCLUDE_ALL`: The rule applies to monitored entities that have **all** of the specified tags. You can specify up to 10 tags.  * `NONE`: The rule applies to all monitored entities
+     */
     includeMode: pulumi.Input<string>;
+    /**
+     * The severity level to trigger the alert. Possible values are `AVAILABILITY`,	`CUSTOM_ALERT`,	`ERRORS`,`MONITORING_UNAVAILABLE`,`PERFORMANCE` and `RESOURCE_CONTENTION`.
+     */
     severityLevel: pulumi.Input<string>;
+    /**
+     * A set of tags you want to filter by. You can also specify a tag value alongside the tag name using the syntax `name:value`.
+     */
     tags?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -182,8 +311,17 @@ export interface ApiDetectionConditions {
 }
 
 export interface ApiDetectionConditionsCondition {
+    /**
+     * Possible Values: `FILE_NAME`, `FQCN`, `PACKAGE`
+     */
     base: pulumi.Input<string>;
+    /**
+     * Possible Values: `BEGINS_WITH`, `CONTAINS`
+     */
     matcher: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     pattern: pulumi.Input<string>;
 }
 
@@ -199,14 +337,32 @@ export interface ApplicationAnomaliesFailureRate {
 }
 
 export interface ApplicationAnomaliesFailureRateAuto {
+    /**
+     * Absolute increase of failing service calls to trigger an alert, %
+     */
     absolute: pulumi.Input<number>;
+    /**
+     * Relative increase of failing service calls to trigger an alert, %
+     */
     relative: pulumi.Input<number>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ApplicationAnomaliesFailureRateThresholds {
+    /**
+     * Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers alert
+     */
     sensitivity: pulumi.Input<string>;
+    /**
+     * Failure rate during any 5-minute period to trigger an alert, %
+     */
     threshold: pulumi.Input<number>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
@@ -222,19 +378,52 @@ export interface ApplicationAnomaliesResponseTime {
 }
 
 export interface ApplicationAnomaliesResponseTimeAuto {
+    /**
+     * Minimal service load to detect response time degradation. Response time degradation of services with smaller load won't trigger alerts. Possible values are `FIFTEEN_REQUESTS_PER_MINUTE`, `FIVE_REQUESTS_PER_MINUTE`, `ONE_REQUEST_PER_MINUTE` and `TEN_REQUESTS_PER_MINUTE`
+     */
     load: pulumi.Input<string>;
+    /**
+     * Alert if the response time degrades by more than *X* milliseconds
+     */
     milliseconds: pulumi.Input<number>;
+    /**
+     * Alert if the response time degrades by more than *X* %
+     */
     percent: pulumi.Input<number>;
+    /**
+     * Alert if the response time of the slowest 10% degrades by more than *X* milliseconds
+     */
     slowestMilliseconds: pulumi.Input<number>;
+    /**
+     * Alert if the response time of the slowest 10% degrades by more than *X* milliseconds
+     */
     slowestPercent: pulumi.Input<number>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ApplicationAnomaliesResponseTimeThresholds {
+    /**
+     * Minimal service load to detect response time degradation. Response time degradation of services with smaller load won't trigger alerts. Possible values are `FIFTEEN_REQUESTS_PER_MINUTE`, `FIVE_REQUESTS_PER_MINUTE`, `ONE_REQUEST_PER_MINUTE` and `TEN_REQUESTS_PER_MINUTE`
+     */
     load: pulumi.Input<string>;
+    /**
+     * Response time during any 5-minute period to trigger an alert, in milliseconds
+     */
     milliseconds: pulumi.Input<number>;
+    /**
+     * Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers an alert
+     */
     sensitivity: pulumi.Input<string>;
+    /**
+     * Response time of the 10% slowest during any 5-minute period to trigger an alert, in milliseconds
+     */
     slowestMilliseconds: pulumi.Input<number>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
@@ -250,12 +439,24 @@ export interface ApplicationAnomaliesTraffic {
 }
 
 export interface ApplicationAnomaliesTrafficDrops {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Alert if the observed traffic is less than *X* % of the expected value
+     */
     percent?: pulumi.Input<number>;
 }
 
 export interface ApplicationAnomaliesTrafficSpikes {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Alert if the observed traffic is less than *X* % of the expected value
+     */
     percent?: pulumi.Input<number>;
 }
 
@@ -264,42 +465,90 @@ export interface ApplicationDataPrivacySessionReplayDataPrivacy {
      * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Content masking settings for Session Replay.
      */
     contentMaskingSettings: pulumi.Input<inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettings>;
+    /**
+     * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) If `true`, session recording is disabled until JavaScriptAPI `dtrum.enableSessionReplay()` is called
+     */
     optIn?: pulumi.Input<boolean>;
+    /**
+     * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) A list of URLs to be excluded from recording
+     */
     urlExclusionRules?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettings {
+    /**
+     * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Configuration of the Session Replay masking during Playback
+     */
     playback: pulumi.Input<inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlayback>;
+    /**
+     * (Field has overlap with `dynatrace.SessionReplayWebPrivacy`) Configuration of the Session Replay masking during Recording
+     */
     recording: pulumi.Input<inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecording>;
 }
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlayback {
+    /**
+     * The type of the masking:
+     */
     preset: pulumi.Input<string>;
+    /**
+     * A list of masking rules
+     */
     rules?: pulumi.Input<inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlaybackRules>;
 }
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlaybackRules {
+    /**
+     * The masking rule defining how data is hidden
+     */
     rules: pulumi.Input<pulumi.Input<inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlaybackRulesRule>[]>;
 }
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsPlaybackRulesRule {
+    /**
+     * The selector for the element or the attribute to be masked.
+     */
     selector: pulumi.Input<string>;
+    /**
+     * The type of the masking rule
+     */
     type: pulumi.Input<string>;
+    /**
+     * Interactions with the element are (`true`) or are not (`false) masked
+     */
     userInteractionHidden?: pulumi.Input<boolean>;
 }
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecording {
+    /**
+     * The type of the masking:
+     */
     preset: pulumi.Input<string>;
+    /**
+     * A list of masking rules
+     */
     rules?: pulumi.Input<inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecordingRules>;
 }
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecordingRules {
+    /**
+     * The masking rule defining how data is hidden
+     */
     rules: pulumi.Input<pulumi.Input<inputs.ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecordingRulesRule>[]>;
 }
 
 export interface ApplicationDataPrivacySessionReplayDataPrivacyContentMaskingSettingsRecordingRulesRule {
+    /**
+     * The selector for the element or the attribute to be masked.
+     */
     selector: pulumi.Input<string>;
+    /**
+     * The type of the masking rule
+     */
     type: pulumi.Input<string>;
+    /**
+     * Interactions with the element are (`true`) or are not (`false) masked
+     */
     userInteractionHidden?: pulumi.Input<boolean>;
 }
 
@@ -326,12 +575,33 @@ export interface ApplicationErrorRulesCustomErrors {
 }
 
 export interface ApplicationErrorRulesCustomErrorsRule {
+    /**
+     * Capture (`true`) or ignore (`false`) the error
+     */
     capture?: pulumi.Input<boolean>;
+    /**
+     * Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysis](https://dt-url.net/a963kd2)
+     */
     customAlerting?: pulumi.Input<boolean>;
+    /**
+     * Include (`true`) or exclude (`false`) the error in Apdex calculation
+     */
     impactApdex?: pulumi.Input<boolean>;
+    /**
+     * The matching operation for the **keyPattern**. Possible values are `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH` and `EQUALS`
+     */
     keyMatcher?: pulumi.Input<string>;
+    /**
+     * The key of the error to look for
+     */
     keyPattern?: pulumi.Input<string>;
+    /**
+     * The matching operation for the **valuePattern**. Possible values are `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH` and `EQUALS`.
+     */
     valueMatcher?: pulumi.Input<string>;
+    /**
+     * The value of the error to look for
+     */
     valuePattern?: pulumi.Input<string>;
 }
 
@@ -343,828 +613,2172 @@ export interface ApplicationErrorRulesHttpErrors {
 }
 
 export interface ApplicationErrorRulesHttpErrorsRule {
+    /**
+     * Capture (`true`) or ignore (`false`) the error
+     */
     capture?: pulumi.Input<boolean>;
+    /**
+     * If `true`, match by errors that have CSP Rule violations
+     */
     considerBlockedRequests?: pulumi.Input<boolean>;
+    /**
+     * Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysis](https://dt-url.net/a963kd2)
+     */
     considerForAi?: pulumi.Input<boolean>;
+    /**
+     * If `true`, match by errors that have unknown HTTP status code
+     */
     considerUnknownErrorCode?: pulumi.Input<boolean>;
+    /**
+     * The HTTP status code or status code range to match by.
+     */
     errorCodes?: pulumi.Input<string>;
+    /**
+     * The matching rule for the URL. Popssible values are `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH` and `EQUALS`.
+     */
     filter?: pulumi.Input<string>;
+    /**
+     * If `true`, filter errors by URL
+     */
     filterByUrl?: pulumi.Input<boolean>;
+    /**
+     * Include (`true`) or exclude (`false`) the error in Apdex calculation
+     */
     impactApdex?: pulumi.Input<boolean>;
+    /**
+     * The URL to look for
+     */
     url?: pulumi.Input<string>;
 }
 
 export interface AutotagEntitySelectorBasedRule {
+    /**
+     * The rule is enabled (`true`) or disabled (`false`)
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Changes applied to the value after applying the value format. Possible values are `LEAVE_TEXT_AS_IS`, `TO_LOWER_CASE` and `TO_UPPER_CASE`. Default is `LEAVE_TEXT_AS_IS`
+     */
     normalization?: pulumi.Input<string>;
+    /**
+     * The entity selector string, by which the entities are selected
+     */
     selector?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the entity-selector-based auto-tag. If specified, the tag is used in the `name:valueFormat` format. 
+     *
+     * For example, you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`
+     */
     valueFormat?: pulumi.Input<string>;
 }
 
 export interface AutotagRule {
+    /**
+     * A list of matching rules for the management zone. The management zone applies only if **all** conditions are fulfilled
+     */
     conditions?: pulumi.Input<pulumi.Input<inputs.AutotagRuleCondition>[]>;
+    /**
+     * The rule is enabled (`true`) or disabled (`false`)
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Changes applied to the value after applying the value format. Possible values are `LEAVE_TEXT_AS_IS`, `TO_LOWER_CASE` and `TO_UPPER_CASE`. Default is `LEAVE_TEXT_AS_IS`
+     */
     normalization?: pulumi.Input<string>;
+    /**
+     * How to apply the management zone to underlying entities:
+     *    - `SERVICE_TO_HOST_LIKE`: Apply to underlying hosts of matching services
+     *    - `SERVICE_TO_PROCESS_GROUP_LIKE`: Apply to underlying process groups of matching services
+     *    - `PROCESS_GROUP_TO_HOST`: Apply to underlying hosts of matching process groups
+     *    - `PROCESS_GROUP_TO_SERVICE`: Apply to all services provided by matching process groups
+     *    - `HOST_TO_PROCESS_GROUP_INSTANCE`: Apply to processes running on matching hosts
+     *    - `CUSTOM_DEVICE_GROUP_TO_CUSTOM_DEVICE`: Apply to custom devices in matching custom device groups
+     *    - `AZURE_TO_PG`: Apply to process groups connected to matching Azure entities
+     *    - `AZURE_TO_SERVICE`: Apply to services provided by matching Azure entities
+     */
     propagationTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The type of Dynatrace entities the management zone can be applied to
+     */
     type: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the auto-tag. If specified, the tag is used in the `name:valueFormat` format.  For example, you can extend the `Infrastructure` tag to `Infrastructure:Windows` and `Infrastructure:Linux`.  You can use the following placeholders here:  * `{AwsAutoScalingGroup:Name}`  * `{AwsAvailabilityZone:Name}`  * `{AwsElasticLoadBalancer:Name}`  * `{AwsRelationalDatabaseService:DBName}`  * `{AwsRelationalDatabaseService:Endpoint}`  * `{AwsRelationalDatabaseService:Engine}`  * `{AwsRelationalDatabaseService:InstanceClass}`  * `{AwsRelationalDatabaseService:Name}`  * `{AwsRelationalDatabaseService:Port}`  * `{AzureRegion:Name}`  * `{AzureScaleSet:Name}`  * `{AzureVm:Name}`  * `{CloudFoundryOrganization:Name}`  * `{CustomDevice:DetectedName}`  * `{CustomDevice:DnsName}`  * `{CustomDevice:IpAddress}`  * `{CustomDevice:Port}`  * `{DockerContainerGroupInstance:ContainerName}`  * `{DockerContainerGroupInstance:FullImageName}`  * `{DockerContainerGroupInstance:ImageVersion}`  * `{DockerContainerGroupInstance:StrippedImageName}`  * `{ESXIHost:HardwareModel}`  * `{ESXIHost:HardwareVendor}`  * `{ESXIHost:Name}`  * `{ESXIHost:ProductName}`  * `{ESXIHost:ProductVersion}`  * `{Ec2Instance:AmiId}`  * `{Ec2Instance:BeanstalkEnvironmentName}`  * `{Ec2Instance:InstanceId}`  * `{Ec2Instance:InstanceType}`  * `{Ec2Instance:LocalHostName}`  * `{Ec2Instance:Name}`  * `{Ec2Instance:PublicHostName}`  * `{Ec2Instance:SecurityGroup}`  * `{GoogleComputeInstance:Id}`  * `{GoogleComputeInstance:IpAddresses}`  * `{GoogleComputeInstance:MachineType}`  * `{GoogleComputeInstance:Name}`  * `{GoogleComputeInstance:ProjectId}`  * `{GoogleComputeInstance:Project}`  * `{Host:AWSNameTag}`  * `{Host:AixLogicalCpuCount}`  * `{Host:AzureHostName}`  * `{Host:AzureSiteName}`  * `{Host:BoshDeploymentId}`  * `{Host:BoshInstanceId}`  * `{Host:BoshInstanceName}`  * `{Host:BoshName}`  * `{Host:BoshStemcellVersion}`  * `{Host:CpuCores}`  * `{Host:DetectedName}`  * `{Host:Environment:AppName}`  * `{Host:Environment:BoshReleaseVersion}`  * `{Host:Environment:Environment}`  * `{Host:Environment:Link}`  * `{Host:Environment:Organization}`  * `{Host:Environment:Owner}`  * `{Host:Environment:Support}`  * `{Host:IpAddress}`  * `{Host:LogicalCpuCores}`  * `{Host:OneAgentCustomHostName}`  * `{Host:OperatingSystemVersion}`  * `{Host:PaasMemoryLimit}`  * `{HostGroup:Name}`  * `{KubernetesCluster:Name}`  * `{KubernetesNode:DetectedName}`  * `{OpenstackAvailabilityZone:Name}`  * `{OpenstackZone:Name}`  * `{OpenstackComputeNode:Name}`  * `{OpenstackProject:Name}`  * `{OpenstackVm:UnstanceType}`  * `{OpenstackVm:Name}`  * `{OpenstackVm:SecurityGroup}`  * `{ProcessGroup:AmazonECRImageAccountId}`  * `{ProcessGroup:AmazonECRImageRegion}`  * `{ProcessGroup:AmazonECSCluster}`  * `{ProcessGroup:AmazonECSContainerName}`  * `{ProcessGroup:AmazonECSFamily}`  * `{ProcessGroup:AmazonECSRevision}`  * `{ProcessGroup:AmazonLambdaFunctionName}`  * `{ProcessGroup:AmazonRegion}`  * `{ProcessGroup:ApacheConfigPath}`  * `{ProcessGroup:ApacheSparkMasterIpAddress}`  * `{ProcessGroup:AspDotNetCoreApplicationPath}`  * `{ProcessGroup:AspDotNetCoreApplicationPath}`  * `{ProcessGroup:AzureHostName}`  * `{ProcessGroup:AzureSiteName}`  * `{ProcessGroup:CassandraClusterName}`  * `{ProcessGroup:CatalinaBase}`  * `{ProcessGroup:CatalinaHome}`  * `{ProcessGroup:CloudFoundryAppId}`  * `{ProcessGroup:CloudFoundryAppName}`  * `{ProcessGroup:CloudFoundryInstanceIndex}`  * `{ProcessGroup:CloudFoundrySpaceId}`  * `{ProcessGroup:CloudFoundrySpaceName}`  * `{ProcessGroup:ColdFusionJvmConfigFile}`  * `{ProcessGroup:ColdFusionServiceName}`  * `{ProcessGroup:CommandLineArgs}`  * `{ProcessGroup:DetectedName}`  * `{ProcessGroup:DotNetCommandPath}`  * `{ProcessGroup:DotNetCommand}`  * `{ProcessGroup:DotNetClusterId}`  * `{ProcessGroup:DotNetNodeId}`  * `{ProcessGroup:ElasticsearchClusterName}`  * `{ProcessGroup:ElasticsearchNodeName}`  * `{ProcessGroup:EquinoxConfigPath}`  * `{ProcessGroup:ExeName}`  * `{ProcessGroup:ExePath}`  * `{ProcessGroup:GlassFishDomainName}`  * `{ProcessGroup:GlassFishInstanceName}`  * `{ProcessGroup:GoogleAppEngineInstance}`  * `{ProcessGroup:GoogleAppEngineService}`  * `{ProcessGroup:GoogleCloudProject}`  * `{ProcessGroup:HybrisBinDirectory}`  * `{ProcessGroup:HybrisConfigDirectory}`  * `{ProcessGroup:HybrisConfigDirectory}`  * `{ProcessGroup:HybrisDataDirectory}`  * `{ProcessGroup:IBMCicsRegion}`  * `{ProcessGroup:IBMCtgName}`  * `{ProcessGroup:IBMImsConnectRegion}`  * `{ProcessGroup:IBMImsControlRegion}`  * `{ProcessGroup:IBMImsMessageProcessingRegion}`  * `{ProcessGroup:IBMImsSoapGwName}`  * `{ProcessGroup:IBMIntegrationNodeName}`  * `{ProcessGroup:IBMIntegrationServerName}`  * `{ProcessGroup:IISAppPool}`  * `{ProcessGroup:IISRoleName}`  * `{ProcessGroup:JbossHome}`  * `{ProcessGroup:JbossMode}`  * `{ProcessGroup:JbossServerName}`  * `{ProcessGroup:JavaJarFile}`  * `{ProcessGroup:JavaJarPath}`  * `{ProcessGroup:JavaMainCLass}`  * `{ProcessGroup:KubernetesBasePodName}`  * `{ProcessGroup:KubernetesContainerName}`  * `{ProcessGroup:KubernetesFullPodName}`  * `{ProcessGroup:KubernetesNamespace}`  * `{ProcessGroup:KubernetesPodUid}`  * `{ProcessGroup:MssqlInstanceName}`  * `{ProcessGroup:NodeJsAppBaseDirectory}`  * `{ProcessGroup:NodeJsAppName}`  * `{ProcessGroup:NodeJsScriptName}`  * `{ProcessGroup:OracleSid}`  * `{ProcessGroup:PHPScriptPath}`  * `{ProcessGroup:PHPWorkingDirectory}`  * `{ProcessGroup:Ports}`  * `{ProcessGroup:RubyAppRootPath}`  * `{ProcessGroup:RubyScriptPath}`  * `{ProcessGroup:SoftwareAGInstallRoot}`  * `{ProcessGroup:SoftwareAGProductPropertyName}`  * `{ProcessGroup:SpringBootAppName}`  * `{ProcessGroup:SpringBootProfileName}`  * `{ProcessGroup:SpringBootStartupClass}`  * `{ProcessGroup:TIBCOBusinessWorksAppNodeName}`  * `{ProcessGroup:TIBCOBusinessWorksAppSpaceName}`  * `{ProcessGroup:TIBCOBusinessWorksCeAppName}`  * `{ProcessGroup:TIBCOBusinessWorksCeVersion}`  * `{ProcessGroup:TIBCOBusinessWorksDomainName}`  * `{ProcessGroup:TIBCOBusinessWorksEnginePropertyFilePath}`  * `{ProcessGroup:TIBCOBusinessWorksEnginePropertyFile}`  * `{ProcessGroup:TIBCOBusinessWorksHome}`  * `{ProcessGroup:VarnishInstanceName}`  * `{ProcessGroup:WebLogicClusterName}`  * `{ProcessGroup:WebLogicDomainName}`  * `{ProcessGroup:WebLogicHome}`  * `{ProcessGroup:WebLogicName}`  * `{ProcessGroup:WebSphereCellName}`  * `{ProcessGroup:WebSphereClusterName}`  * `{ProcessGroup:WebSphereNodeName}`  * `{ProcessGroup:WebSphereServerName}`  * `{ProcessGroup:ActorSystem}`  * `{Service:STGServerName}`  * `{Service:DatabaseHostName}`  * `{Service:DatabaseName}`  * `{Service:DatabaseVendor}`  * `{Service:DetectedName}`  * `{Service:EndpointPath}`  * `{Service:EndpointPathGatewayUrl}`  * `{Service:IIBApplicationName}`  * `{Service:MessageListenerClassName}`  * `{Service:Port}`  * `{Service:PublicDomainName}`  * `{Service:RemoteEndpoint}`  * `{Service:RemoteName}`  * `{Service:WebApplicationId}`  * `{Service:WebContextRoot}`  * `{Service:WebServerName}`  * `{Service:WebServiceNamespace}`  * `{Service:WebServiceName}`  * `{VmwareDatacenter:Name}`  * `{VmwareVm:Name}`
+     */
     valueFormat?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleCondition {
     /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     applicationTypeComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionApplicationTypeComparison>[]>;
+    /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     */
     applicationTypes?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionApplicationType>[]>;
+    /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     */
     azureComputeModeComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionAzureComputeModeComparison>[]>;
     /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     *
      * @deprecated You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
      */
     azureComputeModes?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionAzureComputeMode>[]>;
     /**
+     * Comparison for `AZURE_SKU` attributes
+     *
      * @deprecated You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
      */
     azureSkuComparisions?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionAzureSkuComparision>[]>;
+    /**
+     * Comparison for `AZURE_SKU` attributes
+     */
     azureSkus?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionAzureSkus>[]>;
     /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     *
      * @deprecated You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
      */
     baseComparisonBasics?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionBaseComparisonBasic>[]>;
     /**
+     * Fallback for not yet known type
+     *
      * @deprecated 'base_condition_key' is deprecated. You should use 'key'
      */
     baseConditionKeys?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionBaseConditionKey>[]>;
     /**
+     * Comparison for `BITNESS` attributes
+     *
      * @deprecated You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
      */
     bitnessComparisions?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionBitnessComparision>[]>;
+    /**
+     * Comparison for `BITNESS` attributes
+     */
     bitnesses?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionBitness>[]>;
     /**
+     * Comparison for `CLOUD_TYPE` attributes
+     *
      * @deprecated You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
      */
     cloudTypeComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionCloudTypeComparison>[]>;
+    /**
+     * Comparison for `CLOUD_TYPE` attributes
+     */
     cloudTypes?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionCloudType>[]>;
+    /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     */
     comparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionComparison>[]>;
     /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     customApplicationTypeComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionCustomApplicationTypeComparison>[]>;
+    /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     */
     customApplicationTypes?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionCustomApplicationType>[]>;
     /**
+     * Key for Custom Host Metadata
+     *
      * @deprecated 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
      */
     customHostMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionCustomHostMetadataConditionKey>[]>;
+    /**
+     * Key for Custom Host Metadata
+     */
     customHostMetadatas?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionCustomHostMetadata>[]>;
     /**
+     * Key for Custom Process Metadata
+     *
      * @deprecated 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
      */
     customProcessMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionCustomProcessMetadataConditionKey>[]>;
+    /**
+     * Key for Custom Process Metadata
+     */
     customProcessMetadatas?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionCustomProcessMetadata>[]>;
+    /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     */
     databaseTopologies?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionDatabaseTopology>[]>;
     /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     databaseTopologyComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionDatabaseTopologyComparison>[]>;
     /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     *
      * @deprecated You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
      */
     dcrumDecoderComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionDcrumDecoderComparison>[]>;
+    /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     */
     dcrumDecoders?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionDcrumDecoder>[]>;
+    /**
+     * Comparison for `ENTITY_ID` attributes
+     */
     entities?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionEntity>[]>;
     /**
+     * Comparison for `ENTITY_ID` attributes
+     *
      * @deprecated You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
      */
     entityIdComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionEntityIdComparison>[]>;
+    /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     */
     hostTeches?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionHostTech>[]>;
     /**
-     * @deprecated `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+     * `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
+     *
+     * @deprecated `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
      */
     hypervisorTypeComparisions?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionHypervisorTypeComparision>[]>;
+    /**
+     * Comparison for `HYPERVISOR_TYPE` attributes
+     */
     hypervisors?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionHypervisor>[]>;
     /**
+     * Comparison for `INDEXED_NAME` attributes
+     *
      * @deprecated You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedNameComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionIndexedNameComparison>[]>;
+    /**
+     * Comparison for `INDEXED_NAME` attributes
+     */
     indexedNames?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionIndexedName>[]>;
     /**
+     * Comparison for `INDEXED_STRING` attributes
+     *
      * @deprecated You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedStringComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionIndexedStringComparison>[]>;
+    /**
+     * Comparison for `INDEXED_STRING` attributes
+     */
     indexedStrings?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionIndexedString>[]>;
     /**
+     * Comparison for `INDEXED_TAG` attributes
+     *
      * @deprecated You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedTagComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionIndexedTagComparison>[]>;
+    /**
+     * Comparison for `INDEXED_TAG` attributes
+     */
     indexedTags?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionIndexedTag>[]>;
     /**
+     * Comparison for `INTEGER` attributes
+     *
      * @deprecated You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
      */
     integerComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionIntegerComparison>[]>;
+    /**
+     * Comparison for `INTEGER` attributes
+     */
     integers?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionInteger>[]>;
     /**
+     * Comparison for `IP_ADDRESS` attributes
+     *
      * @deprecated You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
      */
     ipaddressComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionIpaddressComparison>[]>;
+    /**
+     * Comparison for `IP_ADDRESS` attributes
+     */
     ipaddresses?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionIpaddress>[]>;
+    /**
+     * Fallback for not yet known type
+     */
     keys?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionKey>[]>;
     /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     *
      * @deprecated You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
      */
     mobilePlatformComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionMobilePlatformComparison>[]>;
+    /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     */
     mobilePlatforms?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionMobilePlatform>[]>;
+    /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     */
     osArches?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionOsArch>[]>;
+    /**
+     * Comparison for `OS_TYPE` attributes
+     */
     osTypes?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionOsType>[]>;
     /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     *
      * @deprecated You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
      */
     osarchitectureComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionOsarchitectureComparison>[]>;
     /**
+     * Comparison for `OS_TYPE` attributes
+     *
      * @deprecated You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
      */
     ostypeComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionOstypeComparison>[]>;
     /**
+     * Comparison for `PAAS_TYPE` attributes
+     *
      * @deprecated You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
      */
     paasTypeComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionPaasTypeComparison>[]>;
+    /**
+     * Comparison for `PAAS_TYPE` attributes
+     */
     paasTypes?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionPaasType>[]>;
     /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     *
      * @deprecated 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
      */
     processMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionProcessMetadataConditionKey>[]>;
+    /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     */
     processMetadatas?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionProcessMetadata>[]>;
+    /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     */
     serviceTopologies?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionServiceTopology>[]>;
     /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTopologyComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionServiceTopologyComparison>[]>;
     /**
+     * Comparison for `SERVICE_TYPE` attributes
+     *
      * @deprecated You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTypeComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionServiceTypeComparison>[]>;
+    /**
+     * Comparison for `SERVICE_TYPE` attributes
+     */
     serviceTypes?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionServiceType>[]>;
     /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     *
      * @deprecated You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleHostTechComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionSimpleHostTechComparison>[]>;
     /**
+     * Comparison for `SIMPLE_TECH` attributes
+     *
      * @deprecated You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleTechComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionSimpleTechComparison>[]>;
     /**
+     * Comparison for `STRING` attributes
+     *
      * @deprecated You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
      */
     stringComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionStringComparison>[]>;
     /**
+     * The key for dynamic attributes of the `STRING` type
+     *
      * @deprecated 'string_condition_key' is deprecated. You should use 'string_key'
      */
     stringConditionKeys?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionStringConditionKey>[]>;
+    /**
+     * The key for dynamic attributes of the `STRING` type
+     */
     stringKeys?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionStringKey>[]>;
+    /**
+     * Comparison for `STRING` attributes
+     */
     strings?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionString>[]>;
     /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     *
      * @deprecated You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
      */
     syntheticEngineTypeComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionSyntheticEngineTypeComparison>[]>;
+    /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     */
     syntheticEngines?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionSyntheticEngine>[]>;
     /**
+     * Comparison for `TAG` attributes
+     *
      * @deprecated You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
      */
     tagComparisons?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionTagComparison>[]>;
+    /**
+     * Comparison for `TAG` attributes
+     */
     tags?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionTag>[]>;
+    /**
+     * Comparison for `SIMPLE_TECH` attributes
+     */
     teches?: pulumi.Input<pulumi.Input<inputs.AutotagRuleConditionTech>[]>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionApplicationType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionAzureComputeMode {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionAzureComputeModeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionAzureSkuComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be AZURE_SKU
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionAzureSkus {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionBaseComparisonBasic {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * The type of comparison
+     */
     type: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionBaseConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionBitness {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionBitnessComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be BITNESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionCloudType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionCloudTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be CLOUD_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * The type of comparison
+     */
     type: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionCustomApplicationType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionCustomApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be CUSTOM_APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionCustomHostMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.AutotagRuleConditionCustomHostMetadataDynamicKey>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionCustomHostMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.AutotagRuleConditionCustomHostMetadataConditionKeyDynamicKey>;
     /**
+     * if specified, needs to be HOST_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionCustomHostMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionCustomHostMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionCustomProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.AutotagRuleConditionCustomProcessMetadataDynamicKey>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionCustomProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.AutotagRuleConditionCustomProcessMetadataConditionKeyDynamicKey>;
     /**
+     * if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionCustomProcessMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionCustomProcessMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionDatabaseTopology {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionDatabaseTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be DATABASE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionDcrumDecoder {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionDcrumDecoderComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be DCRUM_DECODER_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionEntity {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionEntityIdComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be ENTITY_ID
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionHostTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.AutotagRuleConditionHostTechValue>;
 }
 
 export interface AutotagRuleConditionHostTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionHypervisor {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionHypervisorTypeComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be HYPERVISOR_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionIndexedName {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionIndexedNameComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_NAME
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionIndexedString {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionIndexedStringComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionIndexedTag {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.AutotagRuleConditionIndexedTagValue>;
 }
 
 export interface AutotagRuleConditionIndexedTagComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.AutotagRuleConditionIndexedTagComparisonValue>;
 }
 
 export interface AutotagRuleConditionIndexedTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionIndexedTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionInteger {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<number>;
 }
 
 export interface AutotagRuleConditionIntegerComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INTEGER
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<number>;
 }
 
 export interface AutotagRuleConditionIpaddress {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionIpaddressComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be IP_ADDRESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionMobilePlatform {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionMobilePlatformComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be MOBILE_PLATFORM
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionOsArch {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionOsType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionOsarchitectureComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be OS_ARCHITECTURE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionOstypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be OS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionPaasType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionPaasTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be PAAS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: pulumi.Input<string>;
     /**
+     * if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionServiceTopology {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionServiceTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SERVICE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionServiceType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionServiceTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SERVICE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionSimpleHostTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SIMPLE_HOST_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.AutotagRuleConditionSimpleHostTechComparisonValue>;
 }
 
 export interface AutotagRuleConditionSimpleHostTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionSimpleTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SIMPLE_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.AutotagRuleConditionSimpleTechComparisonValue>;
 }
 
 export interface AutotagRuleConditionSimpleTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionString {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionStringComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionStringConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: pulumi.Input<string>;
     /**
+     * if specified, needs to be `STRING`
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionStringKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionSyntheticEngine {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionSyntheticEngineTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SYNTHETIC_ENGINE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionTag {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.AutotagRuleConditionTagValue>;
 }
 
 export interface AutotagRuleConditionTagComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.AutotagRuleConditionTagComparisonValue>;
 }
 
 export interface AutotagRuleConditionTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface AutotagRuleConditionTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.AutotagRuleConditionTechValue>;
 }
 
 export interface AutotagRuleConditionTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
@@ -1173,23 +2787,68 @@ export interface AutotagV2Rules {
 }
 
 export interface AutotagV2RulesRule {
+    /**
+     * no documentation available
+     */
     attributeRule?: pulumi.Input<inputs.AutotagV2RulesRuleAttributeRule>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+     */
     entitySelector?: pulumi.Input<string>;
+    /**
+     * Possible Values: `ME`, `SELECTOR`
+     */
     type: pulumi.Input<string>;
+    /**
+     * Type '{' for placeholder suggestions
+     */
     valueFormat?: pulumi.Input<string>;
+    /**
+     * Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+     */
     valueNormalization: pulumi.Input<string>;
 }
 
 export interface AutotagV2RulesRuleAttributeRule {
+    /**
+     * Apply to process groups connected to matching Azure entities
+     */
     azureToPgpropagation?: pulumi.Input<boolean>;
+    /**
+     * Apply to services provided by matching Azure entities
+     */
     azureToServicePropagation?: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     conditions: pulumi.Input<inputs.AutotagV2RulesRuleAttributeRuleConditions>;
+    /**
+     * Possible Values: `APPLICATION`, `AWS_APPLICATION_LOAD_BALANCER`, `AWS_CLASSIC_LOAD_BALANCER`, `AWS_NETWORK_LOAD_BALANCER`, `AWS_RELATIONAL_DATABASE_SERVICE`, `AZURE`, `CUSTOM_APPLICATION`, `CUSTOM_DEVICE`, `DCRUM_APPLICATION`, `ESXI_HOST`, `EXTERNAL_SYNTHETIC_TEST`, `HOST`, `HTTP_CHECK`, `MOBILE_APPLICATION`, `PROCESS_GROUP`, `SERVICE`, `SYNTHETIC_TEST`
+     */
     entityType: pulumi.Input<string>;
+    /**
+     * Apply to processes running on matching hosts
+     */
     hostToPgpropagation?: pulumi.Input<boolean>;
+    /**
+     * Apply to underlying hosts of matching process groups
+     */
     pgToHostPropagation?: pulumi.Input<boolean>;
+    /**
+     * Apply to all services provided by the process groups
+     */
     pgToServicePropagation?: pulumi.Input<boolean>;
+    /**
+     * Apply to underlying hosts of matching services
+     */
     serviceToHostPropagation?: pulumi.Input<boolean>;
+    /**
+     * Apply to underlying process groups of matching services
+     */
     serviceToPgpropagation?: pulumi.Input<boolean>;
 }
 
@@ -1198,15 +2857,45 @@ export interface AutotagV2RulesRuleAttributeRuleConditions {
 }
 
 export interface AutotagV2RulesRuleAttributeRuleConditionsCondition {
+    /**
+     * Case sensitive
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Dynamic key
+     */
     dynamicKey?: pulumi.Input<string>;
+    /**
+     * Key source
+     */
     dynamicKeySource?: pulumi.Input<string>;
+    /**
+     * Value
+     */
     entityId?: pulumi.Input<string>;
+    /**
+     * Value
+     */
     enumValue?: pulumi.Input<string>;
+    /**
+     * Value
+     */
     integerValue?: pulumi.Input<number>;
+    /**
+     * Possible Values: `APPMON_SERVER_NAME`, `APPMON_SYSTEM_PROFILE_NAME`, `AWS_ACCOUNT_ID`, `AWS_ACCOUNT_NAME`, `AWS_APPLICATION_LOAD_BALANCER_NAME`, `AWS_APPLICATION_LOAD_BALANCER_TAGS`, `AWS_AUTO_SCALING_GROUP_NAME`, `AWS_AUTO_SCALING_GROUP_TAGS`, `AWS_AVAILABILITY_ZONE_NAME`, `AWS_CLASSIC_LOAD_BALANCER_FRONTEND_PORTS`, `AWS_CLASSIC_LOAD_BALANCER_NAME`, `AWS_CLASSIC_LOAD_BALANCER_TAGS`, `AWS_NETWORK_LOAD_BALANCER_NAME`, `AWS_NETWORK_LOAD_BALANCER_TAGS`, `AWS_RELATIONAL_DATABASE_SERVICE_DB_NAME`, `AWS_RELATIONAL_DATABASE_SERVICE_ENDPOINT`, `AWS_RELATIONAL_DATABASE_SERVICE_ENGINE`, `AWS_RELATIONAL_DATABASE_SERVICE_INSTANCE_CLASS`, `AWS_RELATIONAL_DATABASE_SERVICE_NAME`, `AWS_RELATIONAL_DATABASE_SERVICE_PORT`, `AWS_RELATIONAL_DATABASE_SERVICE_TAGS`, `AZURE_ENTITY_NAME`, `AZURE_ENTITY_TAGS`, `AZURE_MGMT_GROUP_NAME`, `AZURE_MGMT_GROUP_UUID`, `AZURE_REGION_NAME`, `AZURE_SCALE_SET_NAME`, `AZURE_SUBSCRIPTION_NAME`, `AZURE_SUBSCRIPTION_UUID`, `AZURE_TENANT_NAME`, `AZURE_TENANT_UUID`, `AZURE_VM_NAME`, `BROWSER_MONITOR_NAME`, `BROWSER_MONITOR_TAGS`, `CLOUD_APPLICATION_LABELS`, `CLOUD_APPLICATION_NAME`, `CLOUD_APPLICATION_NAMESPACE_LABELS`, `CLOUD_APPLICATION_NAMESPACE_NAME`, `CLOUD_FOUNDRY_FOUNDATION_NAME`, `CLOUD_FOUNDRY_ORG_NAME`, `CUSTOM_APPLICATION_NAME`, `CUSTOM_APPLICATION_PLATFORM`, `CUSTOM_APPLICATION_TAGS`, `CUSTOM_APPLICATION_TYPE`, `CUSTOM_DEVICE_DNS_ADDRESS`, `CUSTOM_DEVICE_GROUP_NAME`, `CUSTOM_DEVICE_GROUP_TAGS`, `CUSTOM_DEVICE_IP_ADDRESS`, `CUSTOM_DEVICE_METADATA`, `CUSTOM_DEVICE_NAME`, `CUSTOM_DEVICE_PORT`, `CUSTOM_DEVICE_TAGS`, `CUSTOM_DEVICE_TECHNOLOGY`, `DATA_CENTER_SERVICE_DECODER_TYPE`, `DATA_CENTER_SERVICE_IP_ADDRESS`, `DATA_CENTER_SERVICE_METADATA`, `DATA_CENTER_SERVICE_NAME`, `DATA_CENTER_SERVICE_PORT`, `DATA_CENTER_SERVICE_TAGS`, `DOCKER_CONTAINER_NAME`, `DOCKER_FULL_IMAGE_NAME`, `DOCKER_IMAGE_VERSION`, `EC2_INSTANCE_AMI_ID`, `EC2_INSTANCE_AWS_INSTANCE_TYPE`, `EC2_INSTANCE_AWS_SECURITY_GROUP`, `EC2_INSTANCE_BEANSTALK_ENV_NAME`, `EC2_INSTANCE_ID`, `EC2_INSTANCE_NAME`, `EC2_INSTANCE_PRIVATE_HOST_NAME`, `EC2_INSTANCE_PUBLIC_HOST_NAME`, `EC2_INSTANCE_TAGS`, `ENTERPRISE_APPLICATION_DECODER_TYPE`, `ENTERPRISE_APPLICATION_IP_ADDRESS`, `ENTERPRISE_APPLICATION_METADATA`, `ENTERPRISE_APPLICATION_NAME`, `ENTERPRISE_APPLICATION_PORT`, `ENTERPRISE_APPLICATION_TAGS`, `ESXI_HOST_CLUSTER_NAME`, `ESXI_HOST_HARDWARE_MODEL`, `ESXI_HOST_HARDWARE_VENDOR`, `ESXI_HOST_NAME`, `ESXI_HOST_PRODUCT_NAME`, `ESXI_HOST_PRODUCT_VERSION`, `ESXI_HOST_TAGS`, `EXTERNAL_MONITOR_ENGINE_DESCRIPTION`, `EXTERNAL_MONITOR_ENGINE_NAME`, `EXTERNAL_MONITOR_ENGINE_TYPE`, `EXTERNAL_MONITOR_NAME`, `EXTERNAL_MONITOR_TAGS`, `GEOLOCATION_SITE_NAME`, `GOOGLE_CLOUD_PLATFORM_ZONE_NAME`, `GOOGLE_COMPUTE_INSTANCE_ID`, `GOOGLE_COMPUTE_INSTANCE_MACHINE_TYPE`, `GOOGLE_COMPUTE_INSTANCE_NAME`, `GOOGLE_COMPUTE_INSTANCE_PROJECT`, `GOOGLE_COMPUTE_INSTANCE_PROJECT_ID`, `GOOGLE_COMPUTE_INSTANCE_PUBLIC_IP_ADDRESSES`, `HOST_AIX_LOGICAL_CPU_COUNT`, `HOST_AIX_SIMULTANEOUS_THREADS`, `HOST_AIX_VIRTUAL_CPU_COUNT`, `HOST_ARCHITECTURE`, `HOST_AWS_NAME_TAG`, `HOST_AZURE_COMPUTE_MODE`, `HOST_AZURE_SKU`, `HOST_AZURE_WEB_APPLICATION_HOST_NAMES`, `HOST_AZURE_WEB_APPLICATION_SITE_NAMES`, `HOST_BITNESS`, `HOST_BOSH_AVAILABILITY_ZONE`, `HOST_BOSH_DEPLOYMENT_ID`, `HOST_BOSH_INSTANCE_ID`, `HOST_BOSH_INSTANCE_NAME`, `HOST_BOSH_NAME`, `HOST_BOSH_STEMCELL_VERSION`, `HOST_CLOUD_TYPE`, `HOST_CPU_CORES`, `HOST_CUSTOM_METADATA`, `HOST_DETECTED_NAME`, `HOST_GROUP_ID`, `HOST_GROUP_NAME`, `HOST_HYPERVISOR_TYPE`, `HOST_IP_ADDRESS`, `HOST_KUBERNETES_LABELS`, `HOST_LOGICAL_CPU_CORES`, `HOST_NAME`, `HOST_ONEAGENT_CUSTOM_HOST_NAME`, `HOST_OS_TYPE`, `HOST_OS_VERSION`, `HOST_PAAS_MEMORY_LIMIT`, `HOST_PAAS_TYPE`, `HOST_TAGS`, `HOST_TECHNOLOGY`, `HTTP_MONITOR_NAME`, `HTTP_MONITOR_TAGS`, `KUBERNETES_CLUSTER_NAME`, `KUBERNETES_NODE_NAME`, `KUBERNETES_SERVICE_NAME`, `MOBILE_APPLICATION_NAME`, `MOBILE_APPLICATION_PLATFORM`, `MOBILE_APPLICATION_TAGS`, `NAME_OF_COMPUTE_NODE`, `OPENSTACK_ACCOUNT_NAME`, `OPENSTACK_ACCOUNT_PROJECT_NAME`, `OPENSTACK_AVAILABILITY_ZONE_NAME`, `OPENSTACK_PROJECT_NAME`, `OPENSTACK_REGION_NAME`, `OPENSTACK_VM_INSTANCE_TYPE`, `OPENSTACK_VM_NAME`, `OPENSTACK_VM_SECURITY_GROUP`, `PROCESS_GROUP_AZURE_HOST_NAME`, `PROCESS_GROUP_AZURE_SITE_NAME`, `PROCESS_GROUP_CUSTOM_METADATA`, `PROCESS_GROUP_DETECTED_NAME`, `PROCESS_GROUP_ID`, `PROCESS_GROUP_LISTEN_PORT`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_PREDEFINED_METADATA`, `PROCESS_GROUP_TAGS`, `PROCESS_GROUP_TECHNOLOGY`, `PROCESS_GROUP_TECHNOLOGY_EDITION`, `PROCESS_GROUP_TECHNOLOGY_VERSION`, `QUEUE_NAME`, `QUEUE_TECHNOLOGY`, `QUEUE_VENDOR`, `SERVICE_AKKA_ACTOR_SYSTEM`, `SERVICE_CTG_SERVICE_NAME`, `SERVICE_DATABASE_HOST_NAME`, `SERVICE_DATABASE_NAME`, `SERVICE_DATABASE_TOPOLOGY`, `SERVICE_DATABASE_VENDOR`, `SERVICE_DETECTED_NAME`, `SERVICE_ESB_APPLICATION_NAME`, `SERVICE_IBM_CTG_GATEWAY_URL`, `SERVICE_MESSAGING_LISTENER_CLASS_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REMOTE_ENDPOINT`, `SERVICE_REMOTE_SERVICE_NAME`, `SERVICE_TAGS`, `SERVICE_TECHNOLOGY`, `SERVICE_TECHNOLOGY_EDITION`, `SERVICE_TECHNOLOGY_VERSION`, `SERVICE_TOPOLOGY`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_ENDPOINT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `VMWARE_DATACENTER_NAME`, `VMWARE_VM_NAME`, `WEB_APPLICATION_NAME`, `WEB_APPLICATION_NAME_PATTERN`, `WEB_APPLICATION_TAGS`, `WEB_APPLICATION_TYPE`
+     */
     key: pulumi.Input<string>;
+    /**
+     * Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `IS_IP_IN_RANGE`, `LOWER_THAN`, `LOWER_THAN_OR_EQUAL`, `NOT_BEGINS_WITH`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_GREATER_THAN`, `NOT_GREATER_THAN_OR_EQUAL`, `NOT_IS_IP_IN_RANGE`, `NOT_LOWER_THAN`, `NOT_LOWER_THAN_OR_EQUAL`, `NOT_REGEX_MATCHES`, `NOT_TAG_KEY_EQUALS`, `REGEX_MATCHES`, `TAG_KEY_EQUALS`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Value
+     */
     stringValue?: pulumi.Input<string>;
+    /**
+     * Format: `[CONTEXT]tagKey:tagValue`
+     */
     tag?: pulumi.Input<string>;
 }
 
@@ -1226,6 +2915,9 @@ export interface AwsAnomaliesEc2CandidateHighCpuDetection {
 }
 
 export interface AwsAnomaliesEc2CandidateHighCpuDetectionCustomThresholds {
+    /**
+     * CPU usage is higher than
+     */
     cpuUsage: pulumi.Input<number>;
 }
 
@@ -1245,6 +2937,9 @@ export interface AwsAnomaliesElbHighConnectionErrorsDetection {
 }
 
 export interface AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholds {
+    /**
+     * Number of backend connection errors is higher than
+     */
     connectionErrorsPerMinute: pulumi.Input<number>;
 }
 
@@ -1264,6 +2959,9 @@ export interface AwsAnomaliesLambdaHighErrorRateDetection {
 }
 
 export interface AwsAnomaliesLambdaHighErrorRateDetectionCustomThresholds {
+    /**
+     * Failed invocations rate is higher than
+     */
     failedInvocationsRate: pulumi.Input<number>;
 }
 
@@ -1283,6 +2981,9 @@ export interface AwsAnomaliesRdsHighCpuDetection {
 }
 
 export interface AwsAnomaliesRdsHighCpuDetectionCustomThresholds {
+    /**
+     * CPU usage is higher than
+     */
     cpuUsage: pulumi.Input<number>;
 }
 
@@ -1302,7 +3003,13 @@ export interface AwsAnomaliesRdsHighMemoryDetection {
 }
 
 export interface AwsAnomaliesRdsHighMemoryDetectionCustomThresholds {
+    /**
+     * Freeable memory is lower than
+     */
     freeMemory: pulumi.Input<number>;
+    /**
+     * Swap usage is higher than
+     */
     swapUsage: pulumi.Input<number>;
 }
 
@@ -1322,6 +3029,9 @@ export interface AwsAnomaliesRdsHighWriteReadLatencyDetection {
 }
 
 export interface AwsAnomaliesRdsHighWriteReadLatencyDetectionCustomThresholds {
+    /**
+     * Read/write latency is higher than
+     */
     readWriteLatency: pulumi.Input<number>;
 }
 
@@ -1341,6 +3051,9 @@ export interface AwsAnomaliesRdsLowStorageDetection {
 }
 
 export interface AwsAnomaliesRdsLowStorageDetectionCustomThresholds {
+    /**
+     * Free storage space divided by allocated storage is lower than
+     */
     freeStoragePercentage: pulumi.Input<number>;
 }
 
@@ -1360,6 +3073,9 @@ export interface AwsAnomaliesRdsRestartsSequenceDetection {
 }
 
 export interface AwsAnomaliesRdsRestartsSequenceDetectionCustomThresholds {
+    /**
+     * Number of restarts per minute is equal or higher than
+     */
     restartsPerMinute: pulumi.Input<number>;
 }
 
@@ -1406,8 +3122,17 @@ export interface AwsCredentialsSupportingServicesToMonitor {
 }
 
 export interface AwsCredentialsSupportingServicesToMonitorMonitoredMetric {
+    /**
+     * a list of metric's dimensions names
+     */
     dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * the name of the metric of the supporting service
+     */
     name?: pulumi.Input<string>;
+    /**
+     * the statistic (aggregation) to be used for the metric. AVG*MIN*MAX value is 3 statistics at once: AVERAGE, MINIMUM and MAXIMUM
+     */
     statistic?: pulumi.Input<string>;
     /**
      * Any attributes that aren't yet supported by this provider
@@ -1476,7 +3201,13 @@ export interface AzureCredentialsSupportingService {
 }
 
 export interface AzureCredentialsSupportingServiceMonitoredMetric {
+    /**
+     * a list of metric's dimensions names
+     */
     dimensions?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * the name of the metric of the supporting service
+     */
     name?: pulumi.Input<string>;
     /**
      * Any attributes that aren't yet supported by this provider
@@ -1496,35 +3227,82 @@ export interface BrowserMonitorAnomalyDetection {
 }
 
 export interface BrowserMonitorAnomalyDetectionLoadingTimeThreshold {
+    /**
+     * Performance threshold is enabled (`true`) or disabled (`false`)
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * The list of performance threshold rules
+     */
     thresholds?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorAnomalyDetectionLoadingTimeThresholdThreshold>[]>;
 }
 
 export interface BrowserMonitorAnomalyDetectionLoadingTimeThresholdThreshold {
+    /**
+     * The list of performance threshold rules
+     */
     thresholds: pulumi.Input<pulumi.Input<inputs.BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThreshold>[]>;
 }
 
 export interface BrowserMonitorAnomalyDetectionLoadingTimeThresholdThresholdThreshold {
+    /**
+     * Specify the event to which an ACTION threshold applies
+     */
     eventIndex?: pulumi.Input<number>;
+    /**
+     * Specify the request to which an ACTION threshold applies
+     */
     requestIndex?: pulumi.Input<number>;
+    /**
+     * The type of the threshold: `TOTAL` (total loading time) or `ACTION` (action loading time)
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Notify if monitor takes longer than *X* milliseconds to load
+     */
     valueMs: pulumi.Input<number>;
 }
 
 export interface BrowserMonitorAnomalyDetectionOutageHandling {
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable at all configured locations
+     */
     globalOutage?: pulumi.Input<boolean>;
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Global outage handling configuration.
+     */
     globalOutagePolicies?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy>[]>;
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location
+     */
     localOutage?: pulumi.Input<boolean>;
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Local outage handling configuration. 
+     *
+     *  Alert if **affectedLocations** of locations are unable to access the web application **consecutiveRuns** times consecutively
+     */
     localOutagePolicies?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy>[]>;
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Schedule retry if browser monitor execution results in a fail. For HTTP monitors this property is ignored
+     */
     retryOnError?: pulumi.Input<boolean>;
 }
 
 export interface BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy {
+    /**
+     * The number of consecutive fails to trigger an alert
+     */
     consecutiveRuns: pulumi.Input<number>;
 }
 
 export interface BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy {
+    /**
+     * The number of affected locations to trigger an alert
+     */
     affectedLocations: pulumi.Input<number>;
+    /**
+     * The number of consecutive fails to trigger an alert
+     */
     consecutiveRuns: pulumi.Input<number>;
 }
 
@@ -1544,7 +3322,13 @@ export interface BrowserMonitorPerformanceThresholds {
 }
 
 export interface BrowserMonitorPerformanceThresholdsThreshold {
+    /**
+     * Synthetic event
+     */
     event: pulumi.Input<string>;
+    /**
+     * Threshold (in seconds)
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -1564,560 +3348,1367 @@ export interface BrowserMonitorScript {
 }
 
 export interface BrowserMonitorScriptConfiguration {
+    /**
+     * The emulated device of the monitor—holds either the parameters of the custom device or the name and orientation of the preconfigured device.
+     */
     bandwidth?: pulumi.Input<inputs.BrowserMonitorScriptConfigurationBandwidth>;
+    /**
+     * Block these URLs
+     */
     blocks?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Bypass Content Security Policy of monitored pages
+     */
     bypassCsp?: pulumi.Input<boolean>;
+    /**
+     * These cookies are added before execution of the first step
+     */
     cookies?: pulumi.Input<inputs.BrowserMonitorScriptConfigurationCookies>;
+    /**
+     * The emulated device of the monitor—holds either the parameters of the custom device or the name and orientation of the preconfigured device.
+     *
+     * If not set, then the Desktop preconfigured device is used
+     */
     device?: pulumi.Input<inputs.BrowserMonitorScriptConfigurationDevice>;
+    /**
+     * No documentation available
+     */
     disableWebSecurity?: pulumi.Input<boolean>;
+    /**
+     * The list of HTTP headers to be sent with requests of the monitor
+     */
     headers?: pulumi.Input<inputs.BrowserMonitorScriptConfigurationHeaders>;
+    /**
+     * Ignore specific status codes
+     */
     ignoredErrorCodes?: pulumi.Input<inputs.BrowserMonitorScriptConfigurationIgnoredErrorCodes>;
+    /**
+     * Custom JavaScript Agent settings
+     */
     javascriptSetttings?: pulumi.Input<inputs.BrowserMonitorScriptConfigurationJavascriptSetttings>;
+    /**
+     * Capture performance metrics for pages loaded in frames
+     */
     monitorFrames?: pulumi.Input<boolean>;
+    /**
+     * The user agent of the request
+     */
     userAgent?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptConfigurationBandwidth {
+    /**
+     * The download speed of the network, in bytes per second
+     */
     download?: pulumi.Input<number>;
+    /**
+     * The latency of the network, in milliseconds
+     */
     latency?: pulumi.Input<number>;
+    /**
+     * The type of the preconfigured network—when editing in the browser, press `Crtl+Spacebar` to see the list of available networks
+     */
     networkType?: pulumi.Input<string>;
+    /**
+     * The upload speed of the network, in bytes per second
+     */
     upload?: pulumi.Input<number>;
 }
 
 export interface BrowserMonitorScriptConfigurationCookies {
+    /**
+     * A request cookie
+     */
     cookies: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptConfigurationCookiesCookie>[]>;
 }
 
 export interface BrowserMonitorScriptConfigurationCookiesCookie {
+    /**
+     * The domain of the cookie.
+     */
     domain: pulumi.Input<string>;
+    /**
+     * The name of the cookie. The following cookie names are now allowed: `dtCookie`, `dtLatC`, `dtPC`, `rxVisitor`, `rxlatency`, `rxpc`, `rxsession` and `rxvt`
+     */
     name: pulumi.Input<string>;
+    /**
+     * The path of the cookie.
+     */
     path?: pulumi.Input<string>;
+    /**
+     * The value of the cookie. The following symbols are not allowed: `;`, `,`, `\` and `"`.
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptConfigurationDevice {
+    /**
+     * The height of the screen in pixels.
+     * The maximum allowed width is `1080`.
+     */
     height?: pulumi.Input<number>;
+    /**
+     * The flag of the mobile device.
+     * Set to `true` for mobile devices or `false` for a desktop or laptop.
+     */
     mobile?: pulumi.Input<boolean>;
+    /**
+     * The name of the preconfigured device—when editing in the browser, press `Crtl+Spacebar` to see the list of available devices
+     */
     name?: pulumi.Input<string>;
+    /**
+     * The orientation of the device. Possible values are `portrait` or `landscape`. Desktop and laptop devices are not allowed to use the `portrait` orientation
+     */
     orientation?: pulumi.Input<string>;
+    /**
+     * The pixel ratio of the device.
+     */
     scaleFactor?: pulumi.Input<number>;
+    /**
+     * The flag of the touchscreen.
+     * Set to `true` if the device uses touchscreen. In that case, use can set interaction event as `tap`.
+     */
     touchEnabled?: pulumi.Input<boolean>;
+    /**
+     * The width of the screen in pixels.
+     * The maximum allowed width is `1920`.
+     */
     width?: pulumi.Input<number>;
 }
 
 export interface BrowserMonitorScriptConfigurationHeaders {
+    /**
+     * contains an HTTP header of the request
+     */
     headers: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptConfigurationHeadersHeader>[]>;
+    /**
+     * Restrict applying headers to a set of URLs
+     */
     restrictions?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface BrowserMonitorScriptConfigurationHeadersHeader {
+    /**
+     * The key of the header
+     */
     name: pulumi.Input<string>;
+    /**
+     * The value of the header
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptConfigurationIgnoredErrorCodes {
+    /**
+     * Only apply to document request matching this regex
+     */
     matchingDocumentRequests?: pulumi.Input<string>;
+    /**
+     * You can use exact number, range or status class mask. Multiple values can be separated by comma, i.e. 404, 405-410, 5xx
+     */
     statusCodes: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptConfigurationJavascriptSetttings {
+    /**
+     * Additional Javascript Agent Properties
+     */
     customProperties?: pulumi.Input<string>;
+    /**
+     * Custom JavaScript Agent settings
+     */
     timeoutSettings?: pulumi.Input<inputs.BrowserMonitorScriptConfigurationJavascriptSetttingsTimeoutSettings>;
+    /**
+     * Parameters for Visually complete and Speed index calculation
+     */
     visuallyCompleteOptions?: pulumi.Input<inputs.BrowserMonitorScriptConfigurationJavascriptSetttingsVisuallyCompleteOptions>;
 }
 
 export interface BrowserMonitorScriptConfigurationJavascriptSetttingsTimeoutSettings {
+    /**
+     * Track up to n cascading setTimeout calls
+     */
     actionLimit: pulumi.Input<number>;
+    /**
+     * Limit cascading timeouts cumulatively to n ms
+     */
     totalTimeout: pulumi.Input<number>;
 }
 
 export interface BrowserMonitorScriptConfigurationJavascriptSetttingsVisuallyCompleteOptions {
+    /**
+     * Query CSS selectors to specify mutation nodes (elements that change) to ignore in Visually complete and Speed index calculation
+     */
     excludedElements?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Parameters for Visually complete and Speed index calculation
+     */
     excludedUrls?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Use this setting to define the minimum visible area per element (in pixels) for an element to be counted towards Visually complete and Speed index
+     */
     imageSizeThreshold: pulumi.Input<number>;
+    /**
+     * The time the Visually complete module waits for inactivity and no further mutations on the page after the load action
+     */
     inactivityTimeout: pulumi.Input<number>;
+    /**
+     * The time the Visually complete module waits after an XHR or custom action closes to start the calculation
+     */
     mutationTimeout: pulumi.Input<number>;
 }
 
 export interface BrowserMonitorScriptEvents {
+    /**
+     * An event
+     */
     events?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEvent>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEvent {
+    /**
+     * Properties specified for a click event
+     */
     click?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventClick>;
+    /**
+     * Properties specified for a cookie event
+     */
     cookie?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventCookie>;
+    /**
+     * A short description of the event to appear in the UI
+     */
     description: pulumi.Input<string>;
+    /**
+     * Properties specified for a javascript event
+     */
     javascript?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventJavascript>;
+    /**
+     * Properties specified for a key strokes event
+     */
     keystrokes?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokes>;
+    /**
+     * Properties specified for a navigation event
+     */
     navigate?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigate>;
+    /**
+     * Properties specified for a key strokes event.
+     */
     select?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelect>;
+    /**
+     * Properties specified for a tap event
+     */
     tap?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventTap>;
 }
 
 export interface BrowserMonitorScriptEventsEventClick {
+    /**
+     * the mouse button to be used for the click
+     */
     button: pulumi.Input<number>;
+    /**
+     * The tab on which the page should open
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickTarget>;
+    /**
+     * The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
+     */
     validate?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickValidate>;
+    /**
+     * The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+     */
     wait?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickWait>;
 }
 
 export interface BrowserMonitorScriptEventsEventClickTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventClickTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventClickTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventClickValidate {
+    /**
+     * The element to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validations: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickValidateValidation>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventClickValidateValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: pulumi.Input<boolean>;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: pulumi.Input<string>;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: pulumi.Input<boolean>;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickValidateValidationTarget>;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventClickValidateValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickValidateValidationTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventClickValidateValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickValidateValidationTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventClickValidateValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventClickWait {
+    /**
+     * The time to wait, in millisencods. The maximum allowed value is `60000`. Required for the type `time`, not applicable otherwise.
+     */
     milliseconds?: pulumi.Input<number>;
+    /**
+     * he maximum amount of time to wait for a certain element to appear, in milliseconds—if exceeded, the action is marked as failed.
+     * The maximum allowed value is 60000. Required for the type `validation`, not applicable otherwise..
+     */
     timeout?: pulumi.Input<number>;
+    /**
+     * The elements to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validation?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickWaitValidation>;
+    /**
+     * The time to wait before the next event is triggered. Possible values are `pageComplete` (wait for the page to load completely), `network` (wait for background network activity to complete), `nextAction` (wait for the next action), `time` (wait for a specified periodof time) and `validation` (wait for a specific element to appear)
+     */
     waitFor: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventClickWaitValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: pulumi.Input<boolean>;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: pulumi.Input<string>;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: pulumi.Input<boolean>;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickWaitValidationTarget>;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventClickWaitValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickWaitValidationTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventClickWaitValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventClickWaitValidationTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventClickWaitValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventCookie {
+    /**
+     * Every cookie must be unique within the list. However, you can use the same cookie again in other event
+     */
     cookies: pulumi.Input<inputs.BrowserMonitorScriptEventsEventCookieCookies>;
 }
 
 export interface BrowserMonitorScriptEventsEventCookieCookies {
+    /**
+     * A request cookie
+     */
     cookies: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventCookieCookiesCookie>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventCookieCookiesCookie {
+    /**
+     * The domain of the cookie.
+     */
     domain: pulumi.Input<string>;
+    /**
+     * The name of the cookie. The following cookie names are now allowed: `dtCookie`, `dtLatC`, `dtPC`, `rxVisitor`, `rxlatency`, `rxpc`, `rxsession` and `rxvt`
+     */
     name: pulumi.Input<string>;
+    /**
+     * The path of the cookie.
+     */
     path?: pulumi.Input<string>;
+    /**
+     * The value of the cookie. The following symbols are not allowed: `;`, `,`, `\` and `"`.
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascript {
+    /**
+     * The JavaScript code to be executed in this event
+     */
     code: pulumi.Input<string>;
+    /**
+     * The tab on which the page should open
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventJavascriptTarget>;
+    /**
+     * The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+     */
     wait?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventJavascriptWait>;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventJavascriptTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventJavascriptTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptWait {
+    /**
+     * The time to wait, in millisencods. The maximum allowed value is `60000`. Required for the type `time`, not applicable otherwise.
+     */
     milliseconds?: pulumi.Input<number>;
+    /**
+     * he maximum amount of time to wait for a certain element to appear, in milliseconds—if exceeded, the action is marked as failed.
+     * The maximum allowed value is 60000. Required for the type `validation`, not applicable otherwise..
+     */
     timeout?: pulumi.Input<number>;
+    /**
+     * The elements to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validation?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventJavascriptWaitValidation>;
+    /**
+     * The time to wait before the next event is triggered. Possible values are `pageComplete` (wait for the page to load completely), `network` (wait for background network activity to complete), `nextAction` (wait for the next action), `time` (wait for a specified periodof time) and `validation` (wait for a specific element to appear)
+     */
     waitFor: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptWaitValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: pulumi.Input<boolean>;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: pulumi.Input<string>;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: pulumi.Input<boolean>;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventJavascriptWaitValidationTarget>;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptWaitValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventJavascriptWaitValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokes {
+    /**
+     * Credentials for this event
+     */
     credential?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesCredential>;
+    /**
+     * Indicates whether the `textValue` is encrypted (`true`) or not (`false`). Must not be specified if `credentials` from the vault are being used
+     */
     masked?: pulumi.Input<boolean>;
+    /**
+     * Defines whether to blur the text field when it loses focus.
+     * Set to `true` to trigger the blur the `textValue`
+     */
     simulateBlurEvent?: pulumi.Input<boolean>;
+    /**
+     * The tab on which the page should open
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesTarget>;
+    /**
+     * The text to enter. Must not be specified if `credentials` from the vault are being used
+     */
     text?: pulumi.Input<string>;
+    /**
+     * The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
+     */
     validate?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesValidate>;
+    /**
+     * The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+     */
     wait?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesWait>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesCredential {
+    /**
+     * Either `username` or `password`
+     */
     field: pulumi.Input<string>;
+    /**
+     * The ID of the credential within the Credentials Vault
+     */
     vaultId: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesValidate {
+    /**
+     * The element to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validations: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesValidateValidation>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesValidateValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: pulumi.Input<boolean>;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: pulumi.Input<string>;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: pulumi.Input<boolean>;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesValidateValidationTarget>;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesValidateValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesValidateValidationTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesValidateValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesValidateValidationTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesValidateValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesWait {
+    /**
+     * The time to wait, in millisencods. The maximum allowed value is `60000`. Required for the type `time`, not applicable otherwise.
+     */
     milliseconds?: pulumi.Input<number>;
+    /**
+     * he maximum amount of time to wait for a certain element to appear, in milliseconds—if exceeded, the action is marked as failed.
+     * The maximum allowed value is 60000. Required for the type `validation`, not applicable otherwise..
+     */
     timeout?: pulumi.Input<number>;
+    /**
+     * The elements to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validation?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesWaitValidation>;
+    /**
+     * The time to wait before the next event is triggered. Possible values are `pageComplete` (wait for the page to load completely), `network` (wait for background network activity to complete), `nextAction` (wait for the next action), `time` (wait for a specified periodof time) and `validation` (wait for a specific element to appear)
+     */
     waitFor: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesWaitValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: pulumi.Input<boolean>;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: pulumi.Input<string>;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: pulumi.Input<boolean>;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesWaitValidationTarget>;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesWaitValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesWaitValidationTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesWaitValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventKeystrokesWaitValidationTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventKeystrokesWaitValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigate {
+    /**
+     * The login credentials to bypass the browser login mask
+     */
     authentication?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateAuthentication>;
+    /**
+     * The tab on which the page should open
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateTarget>;
+    /**
+     * The URL to navigate to
+     */
     url: pulumi.Input<string>;
+    /**
+     * The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
+     */
     validate?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateValidate>;
+    /**
+     * The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+     */
     wait?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateWait>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateAuthentication {
+    /**
+     * A reference to the entry within the credential vault
+     */
     creds: pulumi.Input<string>;
+    /**
+     * The type of authentication
+     */
     type: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateValidate {
+    /**
+     * The element to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validations: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateValidateValidation>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateValidateValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: pulumi.Input<boolean>;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: pulumi.Input<string>;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: pulumi.Input<boolean>;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateValidateValidationTarget>;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateValidateValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateValidateValidationTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateValidateValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateValidateValidationTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateValidateValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateWait {
+    /**
+     * The time to wait, in millisencods. The maximum allowed value is `60000`. Required for the type `time`, not applicable otherwise.
+     */
     milliseconds?: pulumi.Input<number>;
+    /**
+     * he maximum amount of time to wait for a certain element to appear, in milliseconds—if exceeded, the action is marked as failed.
+     * The maximum allowed value is 60000. Required for the type `validation`, not applicable otherwise..
+     */
     timeout?: pulumi.Input<number>;
+    /**
+     * The elements to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validation?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateWaitValidation>;
+    /**
+     * The time to wait before the next event is triggered. Possible values are `pageComplete` (wait for the page to load completely), `network` (wait for background network activity to complete), `nextAction` (wait for the next action), `time` (wait for a specified periodof time) and `validation` (wait for a specific element to appear)
+     */
     waitFor: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateWaitValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: pulumi.Input<boolean>;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: pulumi.Input<string>;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: pulumi.Input<boolean>;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTarget>;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateWaitValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventNavigateWaitValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelect {
+    /**
+     * The options to be selected
+     */
     selections: pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectSelections>;
+    /**
+     * The tab on which the page should open
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectTarget>;
+    /**
+     * The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
+     */
     validate?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectValidate>;
+    /**
+     * The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+     */
     wait?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectWait>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectSelections {
+    /**
+     * The option to be selected
+     */
     options: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectSelectionsOption>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectSelectionsOption {
+    /**
+     * The index of the option to be selected
+     */
     index: pulumi.Input<number>;
+    /**
+     * The value of the option to be selected
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectValidate {
+    /**
+     * The element to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validations: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectValidateValidation>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectValidateValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: pulumi.Input<boolean>;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: pulumi.Input<string>;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: pulumi.Input<boolean>;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectValidateValidationTarget>;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectValidateValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectValidateValidationTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectValidateValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectValidateValidationTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectValidateValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectWait {
+    /**
+     * The time to wait, in millisencods. The maximum allowed value is `60000`. Required for the type `time`, not applicable otherwise.
+     */
     milliseconds?: pulumi.Input<number>;
+    /**
+     * he maximum amount of time to wait for a certain element to appear, in milliseconds—if exceeded, the action is marked as failed.
+     * The maximum allowed value is 60000. Required for the type `validation`, not applicable otherwise..
+     */
     timeout?: pulumi.Input<number>;
+    /**
+     * The elements to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validation?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectWaitValidation>;
+    /**
+     * The time to wait before the next event is triggered. Possible values are `pageComplete` (wait for the page to load completely), `network` (wait for background network activity to complete), `nextAction` (wait for the next action), `time` (wait for a specified periodof time) and `validation` (wait for a specific element to appear)
+     */
     waitFor: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectWaitValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: pulumi.Input<boolean>;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: pulumi.Input<string>;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: pulumi.Input<boolean>;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectWaitValidationTarget>;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectWaitValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectWaitValidationTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectWaitValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventSelectWaitValidationTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventSelectWaitValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventTap {
+    /**
+     * the mouse button to be used for the click
+     */
     button: pulumi.Input<number>;
+    /**
+     * The tab on which the page should open
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapTarget>;
+    /**
+     * The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
+     */
     validate?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapValidate>;
+    /**
+     * The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+     */
     wait?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapWait>;
 }
 
 export interface BrowserMonitorScriptEventsEventTapTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventTapTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventTapTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventTapValidate {
+    /**
+     * The element to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validations: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapValidateValidation>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventTapValidateValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: pulumi.Input<boolean>;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: pulumi.Input<string>;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: pulumi.Input<boolean>;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapValidateValidationTarget>;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventTapValidateValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapValidateValidationTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventTapValidateValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapValidateValidationTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventTapValidateValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventTapWait {
+    /**
+     * The time to wait, in millisencods. The maximum allowed value is `60000`. Required for the type `time`, not applicable otherwise.
+     */
     milliseconds?: pulumi.Input<number>;
+    /**
+     * he maximum amount of time to wait for a certain element to appear, in milliseconds—if exceeded, the action is marked as failed.
+     * The maximum allowed value is 60000. Required for the type `validation`, not applicable otherwise..
+     */
     timeout?: pulumi.Input<number>;
+    /**
+     * The elements to wait for. Required for the `validation` type, not applicable otherwise.
+     */
     validation?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapWaitValidation>;
+    /**
+     * The time to wait before the next event is triggered. Possible values are `pageComplete` (wait for the page to load completely), `network` (wait for background network activity to complete), `nextAction` (wait for the next action), `time` (wait for a specified periodof time) and `validation` (wait for a specific element to appear)
+     */
     waitFor: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventTapWaitValidation {
+    /**
+     * The condition of the validation. `false` means the validation succeeds if the specified content/element is found. `true` means the validation fails if the specified content/element is found
+     */
     failIfFound?: pulumi.Input<boolean>;
+    /**
+     * The content to look for on the page.
+     * Regular expressions are allowed. In that case set `isRegex` as `true`. Required for `contentMatch`, optional for `elementMatch`.
+     */
     match?: pulumi.Input<string>;
+    /**
+     * Defines whether `match` is plain text (`false`) or a regular expression (`true`)
+     */
     regex?: pulumi.Input<boolean>;
+    /**
+     * The elemnt to look for on the page
+     */
     target?: pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapWaitValidationTarget>;
+    /**
+     * The goal of the validation. `contentMatch` (check page for the specific content. Not allowed for validation inside of wait condition), `elementMatch` (check page for the specific element).
+     */
     type: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventTapWaitValidationTarget {
+    /**
+     * The list of locators identifying the desired element
+     */
     locators?: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapWaitValidationTargetLocator>[]>;
+    /**
+     * The tab of the target
+     */
     window?: pulumi.Input<string>;
 }
 
 export interface BrowserMonitorScriptEventsEventTapWaitValidationTargetLocator {
+    /**
+     * A locator dentifyies the desired element
+     */
     locators: pulumi.Input<pulumi.Input<inputs.BrowserMonitorScriptEventsEventTapWaitValidationTargetLocatorLocator>[]>;
 }
 
 export interface BrowserMonitorScriptEventsEventTapWaitValidationTargetLocatorLocator {
+    /**
+     * Defines where to look for an element. `css` (CSS Selector) or `dom` (Javascript code)
+     */
     type: pulumi.Input<string>;
+    /**
+     * The name of the element to be found
+     */
     value: pulumi.Input<string>;
 }
 
@@ -2129,9 +4720,25 @@ export interface BrowserMonitorTag {
 }
 
 export interface BrowserMonitorTagTag {
+    /**
+     * The origin of the tag. Supported values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_CLOUD` and `KUBERNETES`.
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag.
+     *
+     * Custom tags have the tag value here.
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the tag. Supported values are `USER`, `RULE_BASED` and `AUTO`.
+     */
     source?: pulumi.Input<string>;
+    /**
+     * The value of the tag.
+     *
+     * Not applicable to custom tags.
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -2155,8 +4762,17 @@ export interface BusinessEventsOneagentEvent {
 }
 
 export interface BusinessEventsOneagentEventCategory {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
     path?: pulumi.Input<string>;
+    /**
+     * Fixed value
+     */
     source?: pulumi.Input<string>;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
     sourceType: pulumi.Input<string>;
 }
 
@@ -2165,25 +4781,58 @@ export interface BusinessEventsOneagentEventData {
 }
 
 export interface BusinessEventsOneagentEventDataEventDataFieldComplex {
+    /**
+     * Field name to be added to data.
+     */
     name: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     source: pulumi.Input<inputs.BusinessEventsOneagentEventDataEventDataFieldComplexSource>;
 }
 
 export interface BusinessEventsOneagentEventDataEventDataFieldComplexSource {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
     path?: pulumi.Input<string>;
+    /**
+     * Fixed value
+     */
     source?: pulumi.Input<string>;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
     sourceType: pulumi.Input<string>;
 }
 
 export interface BusinessEventsOneagentEventProvider {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
     path?: pulumi.Input<string>;
+    /**
+     * Fixed value
+     */
     source?: pulumi.Input<string>;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
     sourceType: pulumi.Input<string>;
 }
 
 export interface BusinessEventsOneagentEventType {
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
     path?: pulumi.Input<string>;
+    /**
+     * Fixed value
+     */
     source?: pulumi.Input<string>;
+    /**
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
     sourceType: pulumi.Input<string>;
 }
 
@@ -2192,18 +4841,39 @@ export interface BusinessEventsOneagentTriggers {
 }
 
 export interface BusinessEventsOneagentTriggersTrigger {
+    /**
+     * Case sensitive
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     source: pulumi.Input<inputs.BusinessEventsOneagentTriggersTriggerSource>;
+    /**
+     * Possible Values: `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `N_CONTAINS`, `N_ENDS_WITH`, `N_EQUALS`, `N_EXISTS`, `N_STARTS_WITH`, `STARTS_WITH`
+     */
     type: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface BusinessEventsOneagentTriggersTriggerSource {
+    /**
+     * Possible Values: `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     */
     dataSource: pulumi.Input<string>;
+    /**
+     * [See our documentation](https://dt-url.net/ei034bx)
+     */
     path?: pulumi.Input<string>;
 }
 
 export interface BusinessEventsProcessingRuleTesting {
+    /**
+     * Sample event to use for the test run. Only JSON format is supported.
+     */
     sampleEvent: pulumi.Input<string>;
 }
 
@@ -2212,285 +4882,785 @@ export interface BusinessEventsProcessingTransformationFields {
 }
 
 export interface BusinessEventsProcessingTransformationFieldsTransformationField {
+    /**
+     * Is Array
+     */
     array: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     name: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     optional: pulumi.Input<boolean>;
+    /**
+     * Read-only
+     */
     readonly: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `BOOLEAN`, `DOUBLE`, `DURATION`, `INT`, `IPADDR`, `LONG`, `STRING`, `TIMESTAMP`
+     */
     type: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricCondition {
+    /**
+     * A conditions for the metric usage
+     */
     conditions?: pulumi.Input<pulumi.Input<inputs.CalculatedServiceMetricConditionCondition>[]>;
 }
 
 export interface CalculatedServiceMetricConditionCondition {
+    /**
+     * The attribute to be matched.  Note that for a service property attribute you must use the comparison of the `FAST_STRING` type. Possible values are `ACTOR_SYSTEM`, `AKKA_ACTOR_CLASS_NAME`, `AKKA_ACTOR_MESSAGE_TYPE`, `AKKA_ACTOR_PATH`, `APPLICATION_BUILD_VERSION`, `APPLICATION_RELEASE_VERSION`, `AZURE_FUNCTIONS_FUNCTION_NAME`, `AZURE_FUNCTIONS_SITE_NAME`, `CICS_PROGRAM_NAME`, `CICS_SYSTEM_ID`, `CICS_TASK_ID`, `CICS_TRANSACTION_ID`, `CICS_USER_ID`, `CPU_TIME`, `CTG_GATEWAY_URL`, `CTG_PROGRAM`, `CTG_SERVER_NAME`, `CTG_TRANSACTION_ID`, `CUSTOMSERVICE_CLASS`, `CUSTOMSERVICE_METHOD`, `DATABASE_CHILD_CALL_COUNT`, `DATABASE_CHILD_CALL_TIME`, `DATABASE_HOST`, `DATABASE_NAME`, `DATABASE_TYPE`, `DATABASE_URL`, `DISK_IO_TIME`, `ERROR_COUNT`, `ESB_APPLICATION_NAME`, `ESB_INPUT_TYPE`, `ESB_LIBRARY_NAME`, `ESB_MESSAGE_FLOW_NAME`, `EXCEPTION_CLASS`, `EXCEPTION_MESSAGE`, `FAILED_STATE`, `FAILURE_REASON`, `FLAW_STATE`, `HTTP_REQUEST_METHOD`, `HTTP_STATUS`, `HTTP_STATUS_CLASS`, `IMS_PROGRAM_NAME`, `IMS_TRANSACTION_ID`, `IMS_USER_ID`, `IO_TIME`, `IS_KEY_REQUEST`, `LAMBDA_COLDSTART`, `LOCK_TIME`, `MESSAGING_DESTINATION_TYPE`, `MESSAGING_IS_TEMPORARY_QUEUE`, `MESSAGING_QUEUE_NAME`, `MESSAGING_QUEUE_VENDOR`, `NETWORK_IO_TIME`, `NON_DATABASE_CHILD_CALL_COUNT`, `NON_DATABASE_CHILD_CALL_TIME`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_TAG`, `REMOTE_ENDPOINT`, `REMOTE_METHOD`, `REMOTE_SERVICE_NAME`, `REQUEST_NAME`, `REQUEST_TYPE`, `RESPONSE_TIME`, `RESPONSE_TIME_CLIENT`, `RMI_CLASS`, `RMI_METHOD`, `SERVICE_DISPLAY_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REQUEST_ATTRIBUTE`, `SERVICE_TAG`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `SUSPENSION_TIME`, `TOTAL_PROCESSING_TIME`, `WAIT_TIME`, `WEBREQUEST_QUERY`, `WEBREQUEST_RELATIVE_URL`, `WEBREQUEST_URL`, `WEBREQUEST_URL_HOST`, `WEBREQUEST_URL_PATH`, `WEBREQUEST_URL_PORT`, `WEBSERVICE_ENDPOINT`, `WEBSERVICE_METHOD` and `ZOS_CALL_TYPE`
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Type-specific comparison for attributes
+     */
     comparison: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparison>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparison {
+    /**
+     * Boolean Comparison for `BOOLEAN` attributes
+     */
     boolean?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonBoolean>;
+    /**
+     * Type-specific comparison information for attributes of type 'ESB_INPUT_NODE_TYPE'
+     */
     esbInputNodeType?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonEsbInputNodeType>;
+    /**
+     * Comparison for `FAILED_STATE` attributes
+     */
     failedState?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonFailedState>;
+    /**
+     * Comparison for `FAILURE_REASON` attributes
+     */
     failureReason?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonFailureReason>;
+    /**
+     * Comparison for `FAST_STRING` attributes. Use it for all service property attributes
+     */
     fastString?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonFastString>;
+    /**
+     * Comparison for `FLAW_STATE` attributes
+     */
     flawState?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonFlawState>;
+    /**
+     * Comparison for `NUMBER` attributes
+     */
     generic?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonGeneric>;
+    /**
+     * Comparison for `HTTP_METHOD` attributes
+     */
     httpMethod?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonHttpMethod>;
+    /**
+     * Comparison for `HTTP_STATUS_CLASS` attributes
+     */
     httpStatusClass?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonHttpStatusClass>;
+    /**
+     * Comparison for `IIB_INPUT_NODE_TYPE` attributes
+     */
     iibInputNodeType?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonIibInputNodeType>;
+    /**
+     * Reverse the comparison **operator**. For example, it turns **equals** into **does not equal**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Comparison for `NUMBER` attributes
+     */
     number?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonNumber>;
+    /**
+     * Comparison for `NUMBER_REQUEST_ATTRIBUTE` attributes
+     */
     numberRequestAttribute?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonNumberRequestAttribute>;
+    /**
+     * Comparison for `SERVICE_TYPE` attributes
+     */
     serviceType?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonServiceType>;
+    /**
+     * Comparison for `STRING` attributes
+     */
     string?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonString>;
+    /**
+     * Comparison for `STRING_REQUEST_ATTRIBUTE` attributes
+     */
     stringRequestAttribute?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonStringRequestAttribute>;
+    /**
+     * Comparison for `TAG` attributes
+     */
     tag?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonTag>;
+    /**
+     * Comparison for `ZOS_CALL_TYPE` attributes
+     */
     zosCallType?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonZosCallType>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonBoolean {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value: pulumi.Input<boolean>;
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<pulumi.Input<boolean>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonEsbInputNodeType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonFailedState {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `FAILED` and `FAILED`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `FAILED` and `FAILED`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonFailureReason {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `EXCEPTION_AT_ENTRY_NODE`, `EXCEPTION_ON_ANY_NODE`, `HTTP_CODE` and `REQUEST_ATTRIBUTE`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `EXCEPTION_AT_ENTRY_NODE`, `EXCEPTION_ON_ANY_NODE`, `HTTP_CODE` and `REQUEST_ATTRIBUTE`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonFastString {
+    /**
+     * The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `CONTAINS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonFlawState {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `FLAWED` and `NOT_FLAWED`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `FLAWED` and `NOT_FLAWED`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonGeneric {
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonHttpMethod {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `CONNECT`, `DELETE`, `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT` and `TRACE`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `CONNECT`, `DELETE`, `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT` and `TRACE`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonHttpStatusClass {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `C_1XX`, `C_2XX`, `C_3XX`, `C_4XX`, `C_5XX` and `NO_RESPONSE`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `C_1XX`, `C_2XX`, `C_3XX`, `C_4XX`, `C_5XX` and `NO_RESPONSE`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonIibInputNodeType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonNumber {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `LOWER_THAN` and `LOWER_THAN_OR_EQUAL`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<number>;
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<pulumi.Input<number>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonNumberRequestAttribute {
+    /**
+     * If `true`, the request attribute is matched on child service calls. Default is `false`
+     */
     matchOnChildCalls?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `LOWER_THAN` and `LOWER_THAN_OR_EQUAL`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * No documentation available for this attribute
+     */
     requestAttribute: pulumi.Input<string>;
+    /**
+     * Defines valid sources of request attributes for conditions or placeholders
+     */
     source?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonNumberRequestAttributeSource>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<number>;
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<pulumi.Input<number>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonNumberRequestAttributeSource {
+    /**
+     * Use only request attributes from services that belong to this management zone.. Use either this or `serviceTag`
+     */
     managementZone?: pulumi.Input<string>;
+    /**
+     * Use only request attributes from services that have this tag. Use either this or `managementZone`
+     */
     serviceTag?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonNumberRequestAttributeSourceServiceTag>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonNumberRequestAttributeSourceServiceTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. For custom tags use the `CONTEXTLESS` value. The context is set for tags that are automatically imported by OneAgent (for example, from the AWS console or environment variables). It’s useful for determining the origin of tags when not manually defined, and it also helps to prevent clashes with other existing tags. If the tag is not automatically imported, `CONTEXTLESS` set. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_COMPUTE_ENGINE` and `KUBERNETES`
+     */
     context?: pulumi.Input<string>;
+    /**
+     * The key of the tag. For custom tags, put the tag value here. The key allows categorization of multiple tags. It is possible that there are multiple values for a single key which will all be represented as standalone tags. Therefore, the key does not have the semantic of a map key but is more like a key of a key-value tuple. In some cases, for example custom tags, the key represents the actual tag value and the value field is not set – those are called valueless tags
+     */
     key: pulumi.Input<string>;
+    /**
+     * has no documentation
+     */
     tagKey?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonNumberRequestAttributeSourceServiceTagTagKey>;
+    /**
+     * The value of the tag. Not applicable to custom tags. If a tag does have a separate key and value (in the textual representation they are split by the colon ‘:’), this field is set with the actual value. Key-value pairs can occur for automatically imported tags and tags set by rules if extractors are used
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonNumberRequestAttributeSourceServiceTagTagKey {
+    /**
+     * has no documentation
+     */
     context?: pulumi.Input<string>;
+    /**
+     * has no documentation
+     */
     key?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonServiceType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `BACKGROUND_ACTIVITY`, `CICS_SERVICE`, `CUSTOM_SERVICE`, `DATABASE_SERVICE`, `ENTERPRISE_SERVICE_BUS_SERVICE`, `EXTERNAL`, `IBM_INTEGRATION_BUS_SERVICE`, `IMS_SERVICE`, `MESSAGING_SERVICE`, `RMI_SERVICE`, `RPC_SERVICE`, `WEB_REQUEST_SERVICE` and `WEB_SERVICE`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `BACKGROUND_ACTIVITY`, `CICS_SERVICE`, `CUSTOM_SERVICE`, `DATABASE_SERVICE`, `ENTERPRISE_SERVICE_BUS_SERVICE`, `EXTERNAL`, `IBM_INTEGRATION_BUS_SERVICE`, `IMS_SERVICE`, `MESSAGING_SERVICE`, `RMI_SERVICE`, `RPC_SERVICE`, `WEB_REQUEST_SERVICE` and `WEB_SERVICE`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonString {
+    /**
+     * The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `BEGINS_WITH`, `BEGINS_WITH_ANY_OF`, `CONTAINS`, `ENDS_WITH`, `ENDS_WITH_ANY_OF`, `EQUALS`, `EQUALS_ANY_OF`, `EXISTS` and `REGEX_MATCHES`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonStringRequestAttribute {
+    /**
+     * The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * If `true`, the request attribute is matched on child service calls. Default is `false`
+     */
     matchOnChildCalls?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `BEGINS_WITH`, `BEGINS_WITH_ANY_OF`, `CONTAINS`, `ENDS_WITH`, `ENDS_WITH_ANY_OF`, `EQUALS`, `EQUALS_ANY_OF`, `EXISTS` and `REGEX_MATCHES`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * No documentation available for this attribute
+     */
     requestAttribute: pulumi.Input<string>;
+    /**
+     * Defines valid sources of request attributes for conditions or placeholders
+     */
     source?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonStringRequestAttributeSource>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonStringRequestAttributeSource {
+    /**
+     * Use only request attributes from services that belong to this management zone.. Use either this or `serviceTag`
+     */
     managementZone?: pulumi.Input<string>;
+    /**
+     * Use only request attributes from services that have this tag. Use either this or `managementZone`
+     */
     serviceTag?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonStringRequestAttributeSourceServiceTag>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonStringRequestAttributeSourceServiceTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. For custom tags use the `CONTEXTLESS` value. The context is set for tags that are automatically imported by OneAgent (for example, from the AWS console or environment variables). It’s useful for determining the origin of tags when not manually defined, and it also helps to prevent clashes with other existing tags. If the tag is not automatically imported, `CONTEXTLESS` set. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_COMPUTE_ENGINE` and `KUBERNETES`
+     */
     context?: pulumi.Input<string>;
+    /**
+     * The key of the tag. For custom tags, put the tag value here. The key allows categorization of multiple tags. It is possible that there are multiple values for a single key which will all be represented as standalone tags. Therefore, the key does not have the semantic of a map key but is more like a key of a key-value tuple. In some cases, for example custom tags, the key represents the actual tag value and the value field is not set – those are called valueless tags
+     */
     key: pulumi.Input<string>;
+    /**
+     * has no documentation
+     */
     tagKey?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonStringRequestAttributeSourceServiceTagTagKey>;
+    /**
+     * The value of the tag. Not applicable to custom tags. If a tag does have a separate key and value (in the textual representation they are split by the colon ‘:’), this field is set with the actual value. Key-value pairs can occur for automatically imported tags and tags set by rules if extractors are used
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonStringRequestAttributeSourceServiceTagTagKey {
+    /**
+     * has no documentation
+     */
     context?: pulumi.Input<string>;
+    /**
+     * has no documentation
+     */
     key?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonTag {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `TAG_KEY_EQUALS` and `TAG_KEY_EQUALS_ANY_OF`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The values to compare to
+     */
     value?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonTagValue>;
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonTagValues>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_CLOUD` and `KUBERNETES`
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonTagValues {
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<pulumi.Input<inputs.CalculatedServiceMetricConditionConditionComparisonTagValuesValue>[]>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonTagValuesValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_CLOUD` and `KUBERNETES`
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricConditionConditionComparisonZosCallType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `CTG`, `DPL`, `EXPLICIT_ADK`, `IMS_CONNECT`, `IMS_CONNECT_API`, `IMS_ITRA`, `IMS_MSC`, `IMS_PGM_SWITCH`, `IMS_SHARED_QUEUES`, `IMS_TRANS_EXEC`, `MQ`, `SOAP`, `START`, `TX` and `UNKNOWN`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `CTG`, `DPL`, `EXPLICIT_ADK`, `IMS_CONNECT`, `IMS_CONNECT_API`, `IMS_ITRA`, `IMS_MSC`, `IMS_PGM_SWITCH`, `IMS_SHARED_QUEUES`, `IMS_TRANS_EXEC`, `MQ`, `SOAP`, `START`, `TX` and `UNKNOWN`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface CalculatedServiceMetricDimensionDefinition {
+    /**
+     * The dimension value pattern. You can define custom placeholders in the `placeholders` field and use them here
+     */
     dimension: pulumi.Input<string>;
+    /**
+     * The name of the dimension
+     */
     name: pulumi.Input<string>;
+    /**
+     * The list of custom placeholders to be used in a dimension value pattern
+     */
     placeholders?: pulumi.Input<inputs.CalculatedServiceMetricDimensionDefinitionPlaceholders>;
+    /**
+     * The number of top values to be calculated
+     */
     topX: pulumi.Input<number>;
+    /**
+     * The aggregation of the dimension. Possible values are `AVERAGE`, `COUNT`, `MAX`, `MIN`, `OF_INTEREST_RATIO`, `OTHER_RATIO`, `SINGLE_VALUE` and `SUM`
+     */
     topXAggregation: pulumi.Input<string>;
+    /**
+     * How to calculate the **topX** values. Possible values are `ASCENDING` and `DESCENDING`
+     */
     topXDirection: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricDimensionDefinitionPlaceholders {
+    /**
+     * A custom placeholder to be used in a dimension value pattern
+     */
     placeholders?: pulumi.Input<pulumi.Input<inputs.CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholder>[]>;
 }
 
 export interface CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholder {
+    /**
+     * Which value of the request attribute must be used when it occurs across multiple child requests. Only applicable for the `SERVICE_REQUEST_ATTRIBUTE` attribute, when **useFromChildCalls** is `true`. For the `COUNT` aggregation, the **kind** field is not applicable. Possible values are `COUNT`, `FIRST` and `LAST`.
+     */
     aggregation?: pulumi.Input<string>;
+    /**
+     * The attribute to extract from. You can only use attributes of the **string** type. Possible values are `ACTOR_SYSTEM`, `AKKA_ACTOR_CLASS_NAME`, `AKKA_ACTOR_MESSAGE_TYPE`, `AKKA_ACTOR_PATH`, `APPLICATION_BUILD_VERSION`, `APPLICATION_RELEASE_VERSION`, `AZURE_FUNCTIONS_FUNCTION_NAME`, `AZURE_FUNCTIONS_SITE_NAME`, `CICS_PROGRAM_NAME`, `CICS_SYSTEM_ID`, `CICS_TASK_ID`, `CICS_TRANSACTION_ID`, `CICS_USER_ID`, `CPU_TIME`, `CTG_GATEWAY_URL`, `CTG_PROGRAM`, `CTG_SERVER_NAME`, `CTG_TRANSACTION_ID`, `CUSTOMSERVICE_CLASS`, `CUSTOMSERVICE_METHOD`, `DATABASE_CHILD_CALL_COUNT`, `DATABASE_CHILD_CALL_TIME`, `DATABASE_HOST`, `DATABASE_NAME`, `DATABASE_TYPE`, `DATABASE_URL`, `DISK_IO_TIME`, `ERROR_COUNT`, `ESB_APPLICATION_NAME`, `ESB_INPUT_TYPE`, `ESB_LIBRARY_NAME`, `ESB_MESSAGE_FLOW_NAME`, `EXCEPTION_CLASS`, `EXCEPTION_MESSAGE`, `FAILED_STATE`, `FAILURE_REASON`, `FLAW_STATE`, `HTTP_REQUEST_METHOD`, `HTTP_STATUS`, `HTTP_STATUS_CLASS`, `IMS_PROGRAM_NAME`, `IMS_TRANSACTION_ID`, `IMS_USER_ID`, `IO_TIME`, `IS_KEY_REQUEST`, `LAMBDA_COLDSTART`, `LOCK_TIME`, `MESSAGING_DESTINATION_TYPE`, `MESSAGING_IS_TEMPORARY_QUEUE`, `MESSAGING_QUEUE_NAME`, `MESSAGING_QUEUE_VENDOR`, `NETWORK_IO_TIME`, `NON_DATABASE_CHILD_CALL_COUNT`, `NON_DATABASE_CHILD_CALL_TIME`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_TAG`, `REMOTE_ENDPOINT`, `REMOTE_METHOD`, `REMOTE_SERVICE_NAME`, `REQUEST_NAME`, `REQUEST_TYPE`, `RESPONSE_TIME`, `RESPONSE_TIME_CLIENT`, `RMI_CLASS`, `RMI_METHOD`, `SERVICE_DISPLAY_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REQUEST_ATTRIBUTE`, `SERVICE_TAG`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `SUSPENSION_TIME`, `TOTAL_PROCESSING_TIME`, `WAIT_TIME`, `WEBREQUEST_QUERY`, `WEBREQUEST_RELATIVE_URL`, `WEBREQUEST_URL`, `WEBREQUEST_URL_HOST`, `WEBREQUEST_URL_PATH`, `WEBREQUEST_URL_PORT`, `WEBSERVICE_ENDPOINT`, `WEBSERVICE_METHOD` and `ZOS_CALL_TYPE`
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Depending on the `kind` value:
+     *
+     *
+     * * `REGEX_EXTRACTION`: The regular expression.
+     *
+     *
+     * * `BETWEEN_DELIMITER`: The opening delimiter string to look for.
+     *
+     *
+     * * All other values: The delimiter string to look for
+     */
     delimiterOrRegex?: pulumi.Input<string>;
+    /**
+     * The closing delimiter string to look for. Required if the `kind` value is `BETWEEN_DELIMITER`. Not applicable otherwise
+     */
     endDelimiter?: pulumi.Input<string>;
+    /**
+     * The type of extraction. Defines either usage of regular expression (`regex`) or the position of request attribute value to be extracted. When the `attribute` is `SERVICE_REQUEST_ATTRIBUTE` attribute and `aggregation` is `COUNT`, needs to be set to `ORIGINAL_TEXT`. Possible values are 	`AFTER_DELIMITER`, `BEFORE_DELIMITER`, `BETWEEN_DELIMITER`, `ORIGINAL_TEXT` and `REGEX_EXTRACTION`
+     */
     kind: pulumi.Input<string>;
+    /**
+     * The name of the placeholder. Use it in the naming pattern as `{name}`
+     */
     name: pulumi.Input<string>;
+    /**
+     * The format of the extracted string. Possible values are `ORIGINAL`, `TO_LOWER_CASE` and `TO_UPPER_CASE`
+     */
     normalization?: pulumi.Input<string>;
+    /**
+     * The request attribute to extract from. Required if the `kind` value is `SERVICE_REQUEST_ATTRIBUTE`. Not applicable otherwise
+     */
     requestAttribute?: pulumi.Input<string>;
+    /**
+     * Defines valid sources of request attributes for conditions or placeholders
+     */
     source?: pulumi.Input<inputs.CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSource>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * If `true` request attribute will be taken from a child service call. Only applicable for the `SERVICE_REQUEST_ATTRIBUTE` attribute. Defaults to `false`
+     */
     useFromChildCalls?: pulumi.Input<boolean>;
 }
 
 export interface CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSource {
+    /**
+     * Use only request attributes from services that belong to this management zone.. Use either this or `serviceTag`
+     */
     managementZone?: pulumi.Input<string>;
+    /**
+     * Use only request attributes from services that have this tag. Use either this or `managementZone`
+     */
     serviceTag?: pulumi.Input<inputs.CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSourceServiceTag>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSourceServiceTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. For custom tags use the `CONTEXTLESS` value. The context is set for tags that are automatically imported by OneAgent (for example, from the AWS console or environment variables). It’s useful for determining the origin of tags when not manually defined, and it also helps to prevent clashes with other existing tags. If the tag is not automatically imported, `CONTEXTLESS` set. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_COMPUTE_ENGINE` and `KUBERNETES`
+     */
     context?: pulumi.Input<string>;
+    /**
+     * The key of the tag. For custom tags, put the tag value here. The key allows categorization of multiple tags. It is possible that there are multiple values for a single key which will all be represented as standalone tags. Therefore, the key does not have the semantic of a map key but is more like a key of a key-value tuple. In some cases, for example custom tags, the key represents the actual tag value and the value field is not set – those are called valueless tags
+     */
     key: pulumi.Input<string>;
+    /**
+     * has no documentation
+     */
     tagKey?: pulumi.Input<inputs.CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSourceServiceTagTagKey>;
+    /**
+     * The value of the tag. Not applicable to custom tags. If a tag does have a separate key and value (in the textual representation they are split by the colon ‘:’), this field is set with the actual value. Key-value pairs can occur for automatically imported tags and tags set by rules if extractors are used
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricDimensionDefinitionPlaceholdersPlaceholderSourceServiceTagTagKey {
+    /**
+     * has no documentation
+     */
     context?: pulumi.Input<string>;
+    /**
+     * has no documentation
+     */
     key?: pulumi.Input<string>;
 }
 
 export interface CalculatedServiceMetricMetricDefinition {
+    /**
+     * The metric to be captured. Possible values are `CPU_TIME`, `DATABASE_CHILD_CALL_COUNT`, `DATABASE_CHILD_CALL_TIME`, `DISK_IO_TIME`, `EXCEPTION_COUNT`, `FAILED_REQUEST_COUNT`, `FAILED_REQUEST_COUNT_CLIENT`, `FAILURE_RATE`, `FAILURE_RATE_CLIENT`, `HTTP_4XX_ERROR_COUNT`, `HTTP_4XX_ERROR_COUNT_CLIENT`, `HTTP_5XX_ERROR_COUNT`, `HTTP_5XX_ERROR_COUNT_CLIENT`, `IO_TIME`, `LOCK_TIME`, `NETWORK_IO_TIME`, `NON_DATABASE_CHILD_CALL_COUNT`, `NON_DATABASE_CHILD_CALL_TIME`, `PROCESSING_TIME`, `REQUEST_ATTRIBUTE`, `REQUEST_COUNT`, `RESPONSE_TIME`, `RESPONSE_TIME_CLIENT`, `SUCCESSFUL_REQUEST_COUNT`, `SUCCESSFUL_REQUEST_COUNT_CLIENT` and `WAIT_TIME`
+     */
     metric: pulumi.Input<string>;
+    /**
+     * The request attribute to be captured. Only applicable when the **metric** parameter is set to `REQUEST_ATTRIBUTE`
+     */
     requestAttribute?: pulumi.Input<string>;
 }
 
 export interface CloudappWorkloaddetectionCloudFoundry {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface CloudappWorkloaddetectionDocker {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface CloudappWorkloaddetectionKubernetes {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Define rules to merge similar Kubernetes workloads into process groups. 
+     *
+     *  You can use workload properties like namespace name, base pod name or container name as well as the [environment variables DT_RELEASE_STAGE and DT_RELEASE_PRODUCT](https://dt-url.net/sb02v2a) for grouping processes of similar workloads. The first applicable rule will be applied. If no rule matches, “Namespace name” + “Base pod name” + “Container name” is used as fallback.
+     */
     filters?: pulumi.Input<inputs.CloudappWorkloaddetectionKubernetesFilters>;
 }
 
@@ -2499,21 +5669,51 @@ export interface CloudappWorkloaddetectionKubernetesFilters {
 }
 
 export interface CloudappWorkloaddetectionKubernetesFiltersFilter {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * ID calculation based on
+     */
     inclusionToggles: pulumi.Input<inputs.CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles>;
+    /**
+     * When namespace
+     */
     matchFilter: pulumi.Input<inputs.CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter>;
 }
 
 export interface CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles {
+    /**
+     * E.g. "cloud-credential-operator-" for "cloud-credential-operator-5ff6dbff57-gszgq"
+     */
     incBasepod: pulumi.Input<boolean>;
+    /**
+     * Container name
+     */
     incContainer: pulumi.Input<boolean>;
+    /**
+     * Namespace name
+     */
     incNamespace: pulumi.Input<boolean>;
+    /**
+     * If Product is enabled and has no value, it defaults to Base pod name
+     */
     incProduct: pulumi.Input<boolean>;
+    /**
+     * Stage
+     */
     incStage: pulumi.Input<boolean>;
 }
 
 export interface CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilter {
+    /**
+     * Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_STARTS`, `STARTS`
+     */
     matchOperator: pulumi.Input<string>;
+    /**
+     * Namespace name
+     */
     namespace?: pulumi.Input<string>;
 }
 
@@ -2529,9 +5729,6 @@ export interface CredentialsCredentialUsageSummary {
 }
 
 export interface CredentialsExternal {
-    /**
-     * Required for Hashicorp Certificate. The ID of Credentials within the Certificate Vault holding the certificate
-     */
     certificate?: pulumi.Input<string>;
     /**
      * Required for Azure Client Secret. No further documentation available
@@ -2549,17 +5746,8 @@ export interface CredentialsExternal {
      * No documentation available
      */
     passwordSecretName?: pulumi.Input<string>;
-    /**
-     * Required for Hashicorp App Role or Hashicorp Certificate. No further documentation available
-     */
     pathToCredentials?: pulumi.Input<string>;
-    /**
-     * Required for Hashicorp App Role. No further documentation available
-     */
     roleid?: pulumi.Input<string>;
-    /**
-     * Required for Hashicorp App Role. The ID of Credentials within the Certificate Vault holding the secret id
-     */
     secretid?: pulumi.Input<string>;
     /**
      * Required for Azure Client Secret. No further documentation available
@@ -2573,9 +5761,6 @@ export interface CredentialsExternal {
      * No documentation available
      */
     usernameSecretName?: pulumi.Input<string>;
-    /**
-     * Required for Hashicorp App Role. No further documentation available
-     */
     vaultNamespace?: pulumi.Input<string>;
     /**
      * No documentation available
@@ -2599,12 +5784,21 @@ export interface CustomAnomaliesDimension {
 }
 
 export interface CustomAnomaliesDimensionDimension {
+    /**
+     * No documentation available
+     */
     index?: pulumi.Input<number>;
+    /**
+     * The dimensions key on the metric
+     */
     key?: pulumi.Input<string>;
     /**
-     * The name of the metric event displayed in the UI
+     * No documentation available
      */
     name?: pulumi.Input<string>;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2613,7 +5807,13 @@ export interface CustomAnomaliesDimensionDimension {
 }
 
 export interface CustomAnomaliesDimensionEntity {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: pulumi.Input<inputs.CustomAnomaliesDimensionEntityFilter>;
+    /**
+     * The dimensions key on the metric
+     */
     key?: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2622,16 +5822,31 @@ export interface CustomAnomaliesDimensionEntity {
 }
 
 export interface CustomAnomaliesDimensionEntityFilter {
+    /**
+     * The operator to match on
+     */
     operator: pulumi.Input<string>;
+    /**
+     * The value to match on
+     */
     value: pulumi.Input<string>;
 }
 
 export interface CustomAnomaliesDimensionString {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: pulumi.Input<inputs.CustomAnomaliesDimensionStringFilter>;
+    /**
+     * No documentation available
+     */
     index?: pulumi.Input<number>;
+    /**
+     * The dimensions key on the metric
+     */
     key?: pulumi.Input<string>;
     /**
-     * The name of the metric event displayed in the UI
+     * No documentation available
      */
     name?: pulumi.Input<string>;
     /**
@@ -2641,7 +5856,13 @@ export interface CustomAnomaliesDimensionString {
 }
 
 export interface CustomAnomaliesDimensionStringFilter {
+    /**
+     * The operator to match on
+     */
     operator: pulumi.Input<string>;
+    /**
+     * The value to match on
+     */
     value: pulumi.Input<string>;
 }
 
@@ -2689,6 +5910,9 @@ export interface CustomAnomaliesScope {
 }
 
 export interface CustomAnomaliesScopeCustomDeviceGroupName {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: pulumi.Input<inputs.CustomAnomaliesScopeCustomDeviceGroupNameFilter>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2697,13 +5921,19 @@ export interface CustomAnomaliesScopeCustomDeviceGroupName {
 }
 
 export interface CustomAnomaliesScopeCustomDeviceGroupNameFilter {
+    /**
+     * The operator to match on
+     */
     operator: pulumi.Input<string>;
+    /**
+     * The value to match on
+     */
     value: pulumi.Input<string>;
 }
 
 export interface CustomAnomaliesScopeEntity {
     /**
-     * The ID of this resource.
+     * The monitored entities id to match on
      */
     id: pulumi.Input<string>;
     /**
@@ -2713,6 +5943,9 @@ export interface CustomAnomaliesScopeEntity {
 }
 
 export interface CustomAnomaliesScopeHostGroupName {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: pulumi.Input<inputs.CustomAnomaliesScopeHostGroupNameFilter>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2721,11 +5954,20 @@ export interface CustomAnomaliesScopeHostGroupName {
 }
 
 export interface CustomAnomaliesScopeHostGroupNameFilter {
+    /**
+     * The operator to match on
+     */
     operator: pulumi.Input<string>;
+    /**
+     * The value to match on
+     */
     value: pulumi.Input<string>;
 }
 
 export interface CustomAnomaliesScopeHostName {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: pulumi.Input<inputs.CustomAnomaliesScopeHostNameFilter>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2734,13 +5976,19 @@ export interface CustomAnomaliesScopeHostName {
 }
 
 export interface CustomAnomaliesScopeHostNameFilter {
+    /**
+     * The operator to match on
+     */
     operator: pulumi.Input<string>;
+    /**
+     * The value to match on
+     */
     value: pulumi.Input<string>;
 }
 
 export interface CustomAnomaliesScopeManagementZone {
     /**
-     * The ID of this resource.
+     * The management zone id to match on
      */
     id?: pulumi.Input<string>;
     /**
@@ -2750,6 +5998,9 @@ export interface CustomAnomaliesScopeManagementZone {
 }
 
 export interface CustomAnomaliesScopeName {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: pulumi.Input<inputs.CustomAnomaliesScopeNameFilter>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2758,13 +6009,19 @@ export interface CustomAnomaliesScopeName {
 }
 
 export interface CustomAnomaliesScopeNameFilter {
+    /**
+     * The operator to match on
+     */
     operator: pulumi.Input<string>;
+    /**
+     * The value to match on
+     */
     value: pulumi.Input<string>;
 }
 
 export interface CustomAnomaliesScopeProcessGroupId {
     /**
-     * The ID of this resource.
+     * The process groups id to match on
      */
     id: pulumi.Input<string>;
     /**
@@ -2774,6 +6031,9 @@ export interface CustomAnomaliesScopeProcessGroupId {
 }
 
 export interface CustomAnomaliesScopeProcessGroupName {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: pulumi.Input<inputs.CustomAnomaliesScopeProcessGroupNameFilter>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2782,11 +6042,20 @@ export interface CustomAnomaliesScopeProcessGroupName {
 }
 
 export interface CustomAnomaliesScopeProcessGroupNameFilter {
+    /**
+     * The operator to match on
+     */
     operator: pulumi.Input<string>;
+    /**
+     * The value to match on
+     */
     value: pulumi.Input<string>;
 }
 
 export interface CustomAnomaliesScopeScope {
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2795,6 +6064,9 @@ export interface CustomAnomaliesScopeScope {
 }
 
 export interface CustomAnomaliesScopeTag {
+    /**
+     * A filter for a string value based on the given operator
+     */
     filter: pulumi.Input<inputs.CustomAnomaliesScopeTagFilter>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2803,8 +6075,17 @@ export interface CustomAnomaliesScopeTag {
 }
 
 export interface CustomAnomaliesScopeTagFilter {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -2824,19 +6105,40 @@ export interface CustomAnomaliesStrategy {
 }
 
 export interface CustomAnomaliesStrategyAuto {
+    /**
+     * The condition for the **threshold** value check: `ABOVE` or `BELOW`
+     */
     alertCondition: pulumi.Input<string>;
+    /**
+     * If true, also one-minute samples without data are counted as violating samples
+     */
     alertingOnMissingData?: pulumi.Input<boolean>;
+    /**
+     * The number of one-minute samples within the evaluation window that must go back to normal to close the event
+     */
     dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of one-minute samples that form the sliding evaluation window
+     */
     samples: pulumi.Input<number>;
+    /**
+     * Defines the factor of how many signal fluctuations are valid. Values above the baseline plus the signal fluctuation times the number of tolerated signal fluctuations are alerted
+     */
     signalFluctuations: pulumi.Input<number>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The number of one-minute samples within the evaluation window that must violate the threshold to trigger an event
+     */
     violatingSamples: pulumi.Input<number>;
 }
 
 export interface CustomAnomaliesStrategyGeneric {
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -2845,16 +6147,37 @@ export interface CustomAnomaliesStrategyGeneric {
 }
 
 export interface CustomAnomaliesStrategyStatic {
+    /**
+     * The condition for the **threshold** value check: `ABOVE` or `BELOW`
+     */
     alertCondition: pulumi.Input<string>;
+    /**
+     * If true, also one-minute samples without data are counted as violating samples
+     */
     alertingOnMissingData?: pulumi.Input<boolean>;
+    /**
+     * The number of one-minute samples within the evaluation window that must go back to normal to close the event
+     */
     dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of one-minute samples that form the sliding evaluation window
+     */
     samples: pulumi.Input<number>;
+    /**
+     * The value of the static threshold based on the specified unit
+     */
     threshold: pulumi.Input<number>;
+    /**
+     * The unit of the threshold, matching the metric definition
+     */
     unit: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The number of one-minute samples within the evaluation window that must violate the threshold to trigger an event
+     */
     violatingSamples: pulumi.Input<number>;
 }
 
@@ -2878,12 +6201,24 @@ export interface CustomAppAnomaliesErrorRateIncrease {
 }
 
 export interface CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto {
+    /**
+     * Absolute threshold
+     */
     thresholdAbsolute: pulumi.Input<number>;
+    /**
+     * Relative threshold
+     */
     thresholdRelative: pulumi.Input<number>;
 }
 
 export interface CustomAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed {
+    /**
+     * Possible Values: `Low`, `Medium`, `High`
+     */
     sensitivity: pulumi.Input<string>;
+    /**
+     * Absolute threshold
+     */
     thresholdAbsolute: pulumi.Input<number>;
 }
 
@@ -2907,41 +6242,86 @@ export interface CustomAppAnomaliesSlowUserActions {
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAuto {
+    /**
+     * To avoid over-alerting do not alert for low traffic applications with less than
+     */
     durationAvoidOveralerting: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting>;
+    /**
+     * Alert if the action duration of all user actions degrades beyond **both** the absolute and relative threshold:
+     */
     durationThresholdAll: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll>;
+    /**
+     * Alert if the action duration of the slowest 10% of user actions degrades beyond **both** the absolute and relative threshold:
+     */
     durationThresholdSlowest: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest>;
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting {
+    /**
+     * no documentation available
+     */
     minActionRate: pulumi.Input<number>;
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: pulumi.Input<number>;
+    /**
+     * Relative threshold
+     */
     slowdownPercentage: pulumi.Input<number>;
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: pulumi.Input<number>;
+    /**
+     * Relative threshold
+     */
     slowdownPercentage: pulumi.Input<number>;
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixed {
+    /**
+     * To avoid over-alerting do not alert for low traffic applications with less than
+     */
     durationAvoidOveralerting: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting>;
+    /**
+     * Alert if the action duration of all user actions degrades beyond the absolute threshold:
+     */
     durationThresholdAllFixed: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed>;
+    /**
+     * Alert if the action duration of the slowest 10% of user actions degrades beyond the absolute threshold:
+     */
     durationThresholdSlowest: pulumi.Input<inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest>;
+    /**
+     * Possible Values: `Medium`, `High`, `Low`
+     */
     sensitivity: pulumi.Input<string>;
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting {
+    /**
+     * no documentation available
+     */
     minActionRate: pulumi.Input<number>;
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: pulumi.Input<number>;
 }
 
 export interface CustomAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: pulumi.Input<number>;
 }
 
@@ -2987,13 +6367,28 @@ export interface CustomAppCrashRateCrashRateIncrease {
 }
 
 export interface CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto {
+    /**
+     * Dynatrace learns the typical crash rate for all app versions and will create an alert if the baseline is violated by more than a specified threshold. Analysis happens based on a sliding window of 10 minutes.
+     */
     baselineViolationPercentage: pulumi.Input<number>;
+    /**
+     * Amount of users
+     */
     concurrentUsers: pulumi.Input<number>;
+    /**
+     * Possible Values: `Low`, `Medium`, `High`
+     */
     sensitivity: pulumi.Input<string>;
 }
 
 export interface CustomAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed {
+    /**
+     * Absolute threshold
+     */
     absoluteCrashRate: pulumi.Input<number>;
+    /**
+     * Amount of users
+     */
     concurrentUsers: pulumi.Input<number>;
 }
 
@@ -3036,37 +6431,55 @@ export interface CustomServiceRule {
 }
 
 export interface CustomServiceRuleClass {
+    /**
+     * Matcher applying to the class name (ENDS*WITH, EQUALS or STARTS*WITH). STARTS_WITH can only be used if there is at least one annotation defined. Default value is EQUALS
+     */
     match?: pulumi.Input<string>;
     /**
-     * The name of the custom service, displayed in the UI
+     * The full name of the class / the name to match the class name with
      */
     name: pulumi.Input<string>;
 }
 
 export interface CustomServiceRuleFile {
+    /**
+     * Matcher applying to the file name (ENDS*WITH, EQUALS or STARTS*WITH). Default value is ENDS_WITH (if applicable)
+     */
     match?: pulumi.Input<string>;
     /**
-     * The name of the custom service, displayed in the UI
+     * The full name of the file / the name to match the file name with
      */
     name: pulumi.Input<string>;
 }
 
 export interface CustomServiceRuleMethod {
+    /**
+     * Fully qualified types of argument the method expects
+     */
     arguments?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The ID of this resource.
+     * The ID of the method rule
      */
     id?: pulumi.Input<string>;
+    /**
+     * The modifiers of the method rule. Possible values are `ABSTRACT`, `EXTERN`, `FINAL`, `NATIVE` and `STATIC`
+     */
     modifiers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The name of the custom service, displayed in the UI
+     * The method to instrument
      */
     name: pulumi.Input<string>;
+    /**
+     * Fully qualified type the method returns
+     */
     returns?: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The visibility of the method rule. Possible values are `INTERNAL`, `PACKAGE_PROTECTED`, `PRIVATE`, `PROTECTED` and `PUBLIC`
+     */
     visibility?: pulumi.Input<string>;
 }
 
@@ -3078,8 +6491,17 @@ export interface CustomTagsTags {
 }
 
 export interface CustomTagsTagsFilter {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -3111,13 +6533,13 @@ export interface DashboardDashboardMetadata {
     /**
      * the dashboard is shared (`true`) or private (`false`)
      *
-     * @deprecated Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+     * @deprecated Please use the resource `dynatrace.DashboardSharing` to configure share settings
      */
     shared?: pulumi.Input<boolean>;
     /**
      * represents sharing configuration of a dashboard
      *
-     * @deprecated Please use the resource `dynatrace_dashboard_sharing` to configure share settings
+     * @deprecated Please use the resource `dynatrace.DashboardSharing` to configure share settings
      */
     sharingDetails?: pulumi.Input<inputs.DashboardDashboardMetadataSharingDetails>;
     /**
@@ -3139,8 +6561,19 @@ export interface DashboardDashboardMetadata {
 }
 
 export interface DashboardDashboardMetadataDynamicFilters {
+    /**
+     * A set of all possible global dashboard filters that can be applied to a dashboard
+     */
     filters: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A set of generic tag filters that can be applied to a dashboard
+     */
     genericTagFilters?: pulumi.Input<inputs.DashboardDashboardMetadataDynamicFiltersGenericTagFilters>;
+    /**
+     * A set of entities applied for tag filter suggestions. You can fetch the list of possible values with the [GET all entity types](https://dt-url.net/dw03s7h)request. 
+     *
+     * Only applicable if the **filters** set includes `TAG_KEY:<tagname>`
+     */
     tagSuggestionTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3153,14 +6586,32 @@ export interface DashboardDashboardMetadataDynamicFiltersGenericTagFilters {
 }
 
 export interface DashboardDashboardMetadataDynamicFiltersGenericTagFiltersFilter {
+    /**
+     * Entity types affected by tag
+     */
     entityTypes: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The display name used to identify this generic filter
+     */
     name?: pulumi.Input<string>;
+    /**
+     * The entity type for which the suggestions should be provided.
+     */
     suggestionsFromEntityType?: pulumi.Input<string>;
+    /**
+     * The tag key for this filter
+     */
     tagKey?: pulumi.Input<string>;
 }
 
 export interface DashboardDashboardMetadataFilter {
+    /**
+     * the management zone this dashboard applies to
+     */
     managementZones?: pulumi.Input<pulumi.Input<inputs.DashboardDashboardMetadataFilterManagementZone>[]>;
+    /**
+     * the default timeframe of the dashboard
+     */
     timeframe?: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3169,11 +6620,17 @@ export interface DashboardDashboardMetadataFilter {
 }
 
 export interface DashboardDashboardMetadataFilterManagementZone {
+    /**
+     * a short description of the Dynatrace entity
+     */
     description?: pulumi.Input<string>;
     /**
-     * The ID of this resource.
+     * the ID of the Dynatrace entity
      */
     id: pulumi.Input<string>;
+    /**
+     * the name of the Dynatrace entity
+     */
     name?: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3182,7 +6639,13 @@ export interface DashboardDashboardMetadataFilterManagementZone {
 }
 
 export interface DashboardDashboardMetadataSharingDetails {
+    /**
+     * If `true`, the dashboard is shared via link and authenticated users with the link can view
+     */
     linkShared?: pulumi.Input<boolean>;
+    /**
+     * If `true`, the dashboard is published to anyone on this environment
+     */
     published?: pulumi.Input<boolean>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3214,10 +6677,16 @@ export interface DashboardSharingPermissions {
 
 export interface DashboardSharingPermissionsPermission {
     /**
-     * The ID of this resource.
+     * The ID of the user or group to whom the permission is granted.
      */
     id?: pulumi.Input<string>;
+    /**
+     * The level of the permission:
+     */
     level: pulumi.Input<string>;
+    /**
+     * The type of the permission:
+     */
     type: pulumi.Input<string>;
 }
 
@@ -3226,6 +6695,9 @@ export interface DashboardSharingPublic {
      * A list of management zones that can display data on the publicly shared dashboard.
      */
     managementZones: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A list of URLs for anonymous access to the dashboard indexed by management zone name
+     */
     urls?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }
 
@@ -3314,18 +6786,36 @@ export interface DashboardTile {
 }
 
 export interface DashboardTileBounds {
+    /**
+     * the height of the tile, in pixels
+     */
     height: pulumi.Input<number>;
+    /**
+     * the horizontal distance from the top left corner of the dashboard to the top left corner of the tile, in pixels
+     */
     left: pulumi.Input<number>;
+    /**
+     * the vertical distance from the top left corner of the dashboard to the top left corner of the tile, in pixels
+     */
     top: pulumi.Input<number>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * the width of the tile, in pixels
+     */
     width: pulumi.Input<number>;
 }
 
 export interface DashboardTileFilter {
+    /**
+     * the management zone this tile applies to
+     */
     managementZones?: pulumi.Input<pulumi.Input<inputs.DashboardTileFilterManagementZone>[]>;
+    /**
+     * the default timeframe of the tile
+     */
     timeframe?: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3334,10 +6824,25 @@ export interface DashboardTileFilter {
 }
 
 export interface DashboardTileFilterConfig {
+    /**
+     * Configuration of a custom chart
+     */
     chartConfig?: pulumi.Input<inputs.DashboardTileFilterConfigChartConfig>;
+    /**
+     * The name of the tile, set by user
+     */
     customName: pulumi.Input<string>;
+    /**
+     * The default name of the tile
+     */
     defaultName: pulumi.Input<string>;
+    /**
+     * Configuration of a custom chart
+     */
     filters?: pulumi.Input<inputs.DashboardTileFilterConfigFilters>;
+    /**
+     * The type of the filter. Possible values are `ALB`, `APPLICATION`, `APPLICATION_METHOD`, `APPMON`, `ASG`, `AWS_CREDENTIALS`, `AWS_CUSTOM_SERVICE`, `AWS_LAMBDA_FUNCTION`, `CLOUD_APPLICATION`, `CLOUD_APPLICATION_INSTANCE`, `CLOUD_APPLICATION_NAMESPACE`, `CONTAINER_GROUP_INSTANCE`, `CUSTOM_APPLICATION`, `CUSTOM_DEVICES`, `CUSTOM_SERVICES`, `DATABASE`, `DATABASE_KEY_REQUEST`, `DCRUM_APPLICATION`, `DCRUM_ENTITY`, `DYNAMO_DB`, `EBS`, `EC2`, `ELB`, `ENVIRONMENT`, `ESXI`, `EXTERNAL_SYNTHETIC_TEST`, `GLOBAL_BACKGROUND_ACTIVITY`, `HOST`, `IOT`, `KUBERNETES_CLUSTER`, `KUBERNETES_NODE`, `MDA_SERVICE`, `MIXED`, `MOBILE_APPLICATION`, `MONITORED_ENTITY`, `NLB`, `PG_BACKGROUND_ACTIVITY`, `PROBLEM`, `PROCESS_GROUP_INSTANCE`, `RDS`, `REMOTE_PLUGIN`, `SERVICE`, `SERVICE_KEY_REQUEST`, `SYNTHETIC_BROWSER_MONITOR`, `SYNTHETIC_HTTPCHECK`, `SYNTHETIC_HTTPCHECK_STEP`, `SYNTHETIC_LOCATION`, `SYNTHETIC_TEST`, `SYNTHETIC_TEST_STEP`, `UI_ENTITY`, `VIRTUAL_MACHINE`, `WEB_CHECK`.
+     */
     type: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3346,12 +6851,33 @@ export interface DashboardTileFilterConfig {
 }
 
 export interface DashboardTileFilterConfigChartConfig {
+    /**
+     * The optional custom y-axis limits
+     */
     axisLimits?: pulumi.Input<{[key: string]: pulumi.Input<number>}>;
+    /**
+     * Either one of `Bit`, `BitPerHour`, `BitPerMinute`, `BitPerSecond`, `Byte`, `BytePerHour`, `BytePerMinute`, `BytePerSecond`, `Cores`, `Count`, `Day`, `DecibelMilliWatt`, `GibiByte`, `Giga`, `GigaByte`, `Hour`, `KibiByte`, `KibiBytePerHour`, `KibiBytePerMinute`, `KibiBytePerSecond`, `Kilo`, `KiloByte`, `KiloBytePerHour`, `KiloBytePerMinute`, `KiloBytePerSecond`, `MebiByte`, `MebiBytePerHour`, `MebiBytePerMinute`, `MebiBytePerSecond`, `Mega`, `MegaByte`, `MegaBytePerHour`, `MegaBytePerMinute`, `MegaBytePerSecond`, `MicroSecond`, `MilliCores`, `MilliSecond`, `MilliSecondPerMinute`, `Minute`, `Month`, `NanoSecond`, `NanoSecondPerMinute`, `NotApplicable`, `PerHour`, `PerMinute`, `PerSecond`, `Percent`, `Pixel`, `Promille`, `Ratio`, `Second`, `State`, `Unspecified`, `Week`, `Year`
+     */
     leftAxisCustomUnit?: pulumi.Input<string>;
+    /**
+     * Defines if a legend should be shown
+     */
     legend?: pulumi.Input<boolean>;
+    /**
+     * Additional information about charted metric
+     */
     resultMetadatas?: pulumi.Input<pulumi.Input<inputs.DashboardTileFilterConfigChartConfigResultMetadata>[]>;
+    /**
+     * Either one of `Bit`, `BitPerHour`, `BitPerMinute`, `BitPerSecond`, `Byte`, `BytePerHour`, `BytePerMinute`, `BytePerSecond`, `Cores`, `Count`, `Day`, `DecibelMilliWatt`, `GibiByte`, `Giga`, `GigaByte`, `Hour`, `KibiByte`, `KibiBytePerHour`, `KibiBytePerMinute`, `KibiBytePerSecond`, `Kilo`, `KiloByte`, `KiloBytePerHour`, `KiloBytePerMinute`, `KiloBytePerSecond`, `MebiByte`, `MebiBytePerHour`, `MebiBytePerMinute`, `MebiBytePerSecond`, `Mega`, `MegaByte`, `MegaBytePerHour`, `MegaBytePerMinute`, `MegaBytePerSecond`, `MicroSecond`, `MilliCores`, `MilliSecond`, `MilliSecondPerMinute`, `Minute`, `Month`, `NanoSecond`, `NanoSecondPerMinute`, `NotApplicable`, `PerHour`, `PerMinute`, `PerSecond`, `Percent`, `Pixel`, `Promille`, `Ratio`, `Second`, `State`, `Unspecified`, `Week`, `Year`
+     */
     rightAxisCustomUnit?: pulumi.Input<string>;
+    /**
+     * A list of charted metrics
+     */
     series?: pulumi.Input<pulumi.Input<inputs.DashboardTileFilterConfigChartConfigSeries>[]>;
+    /**
+     * The type of the chart
+     */
     type: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3360,12 +6886,24 @@ export interface DashboardTileFilterConfigChartConfig {
 }
 
 export interface DashboardTileFilterConfigChartConfigResultMetadata {
+    /**
+     * Additional metadata for charted metric
+     */
     configs?: pulumi.Input<pulumi.Input<inputs.DashboardTileFilterConfigChartConfigResultMetadataConfig>[]>;
 }
 
 export interface DashboardTileFilterConfigChartConfigResultMetadataConfig {
+    /**
+     * The color of the metric in the chart, hex format
+     */
     customColor?: pulumi.Input<string>;
+    /**
+     * A generated key by the Dynatrace Server
+     */
     key?: pulumi.Input<string>;
+    /**
+     * The timestamp of the last metadata modification, in UTC milliseconds
+     */
     lastModified?: pulumi.Input<number>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3374,14 +6912,38 @@ export interface DashboardTileFilterConfigChartConfigResultMetadataConfig {
 }
 
 export interface DashboardTileFilterConfigChartConfigSeries {
+    /**
+     * The charted aggregation of the metric
+     */
     aggregation: pulumi.Input<string>;
     aggregationRate?: pulumi.Input<string>;
+    /**
+     * Configuration of the charted metric splitting
+     */
     dimensions?: pulumi.Input<pulumi.Input<inputs.DashboardTileFilterConfigChartConfigSeriesDimension>[]>;
+    /**
+     * The visualization of the timeseries chart
+     */
     entityType: pulumi.Input<string>;
+    /**
+     * The name of the charted metric
+     */
     metric: pulumi.Input<string>;
+    /**
+     * The charted percentile. Only applicable if the **aggregation** is set to `PERCENTILE`
+     */
     percentile?: pulumi.Input<number>;
+    /**
+     * Sort ascending (`true`) or descending (`false`)
+     */
     sortAscending?: pulumi.Input<boolean>;
+    /**
+     * Sort the column (`true`) or (`false`)
+     */
     sortColumn?: pulumi.Input<boolean>;
+    /**
+     * The visualization of the timeseries chart. Possible values are `AREA`, `BAR` and `LINE`.
+     */
     type: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3392,37 +6954,64 @@ export interface DashboardTileFilterConfigChartConfigSeries {
 export interface DashboardTileFilterConfigChartConfigSeriesDimension {
     entityDimension?: pulumi.Input<boolean>;
     /**
-     * The ID of this resource.
+     * The ID of the dimension by which the metric is split
      */
     id: pulumi.Input<string>;
+    /**
+     * The name of the dimension by which the metric is split
+     */
     name?: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The splitting value
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface DashboardTileFilterConfigFilters {
+    /**
+     * the tiles this Dashboard consist of
+     */
     filters?: pulumi.Input<pulumi.Input<inputs.DashboardTileFilterConfigFiltersFilter>[]>;
 }
 
 export interface DashboardTileFilterConfigFiltersFilter {
+    /**
+     * The entity type (e.g. HOST, SERVICE, ...)
+     */
     entityType: pulumi.Input<string>;
+    /**
+     * the tiles this Dashboard consist of
+     */
     matches?: pulumi.Input<pulumi.Input<inputs.DashboardTileFilterConfigFiltersFilterMatch>[]>;
 }
 
 export interface DashboardTileFilterConfigFiltersFilterMatch {
+    /**
+     * The entity type (e.g. HOST, SERVICE, ...)
+     */
     key: pulumi.Input<string>;
+    /**
+     * the tiles this Dashboard consist of
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface DashboardTileFilterManagementZone {
+    /**
+     * a short description of the Dynatrace entity
+     */
     description?: pulumi.Input<string>;
     /**
-     * The ID of this resource.
+     * the ID of the Dynatrace entity
      */
     id: pulumi.Input<string>;
+    /**
+     * the name of the Dynatrace entity
+     */
     name?: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3431,6 +7020,9 @@ export interface DashboardTileFilterManagementZone {
 }
 
 export interface DashboardTileVisualizationConfig {
+    /**
+     * The axis bucketing when enabled groups similar series in the same virtual axis
+     */
     hasAxisBucketing?: pulumi.Input<boolean>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -3443,7 +7035,13 @@ export interface DashboardsAllowlistAllowlist {
 }
 
 export interface DashboardsAllowlistAllowlistUrlpattern {
+    /**
+     * Possible Values: `Equals`, `StartsWith`
+     */
     rule: pulumi.Input<string>;
+    /**
+     * Pattern
+     */
     template: pulumi.Input<string>;
 }
 
@@ -3452,7 +7050,13 @@ export interface DashboardsGeneralDefaultDashboardList {
 }
 
 export interface DashboardsGeneralDefaultDashboardListDefaultDashboard {
+    /**
+     * Preset dashboard to show as default landing page
+     */
     dashboard: pulumi.Input<string>;
+    /**
+     * Show selected dashboard by default for this user group
+     */
     userGroup: pulumi.Input<string>;
 }
 
@@ -3461,7 +7065,13 @@ export interface DashboardsPresetsDashboardPresetsList {
 }
 
 export interface DashboardsPresetsDashboardPresetsListDashboardPreset {
+    /**
+     * Dashboard preset to limit visibility for
+     */
     dashboardPreset: pulumi.Input<string>;
+    /**
+     * User group to show selected dashboard preset to
+     */
     userGroup: pulumi.Input<string>;
 }
 
@@ -3484,12 +7094,36 @@ export interface DataPrivacyDoNotTrack {
 }
 
 export interface DataPrivacyMasking {
+    /**
+     * Possible Values: `All`, `Public`
+     */
     ipAddressMasking?: pulumi.Input<string>;
     /**
      * Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
      */
     ipAddressMaskingEnabled: pulumi.Input<boolean>;
+    /**
+     * Dynatrace captures the URIs and request headers sent from desktop and mobile browsers. Dynatrace also captures full URIs on the server-side to enable detailed performance analysis of your applications. For complete details, visit [Mask personal data in URIs](https://dt-url.net/mask-personal-data-in-URIs).. URIs and request headers contain personal data. When this setting is enabled, Dynatrace automatically detects UUIDs, credit card numbers, email addresses, IP addresses, and other IDs and replaces those values with placeholders. The personal data is then masked in PurePath analysis, error analysis, user action naming for RUM, and elsewhere in Dynatrace.
+     */
     personalDataUriMaskingEnabled: pulumi.Input<boolean>;
+    /**
+     * When Dynatrace detects a user action that triggers a page load or an AJAX/XHR action. To learn more about masking user actions, visit [Mask user actions](https://dt-url.net/mask-user-action).. When Dynatrace detects a user action that triggers a page load or an AJAX/XHR action, it constructs a name for the user action based on:
+     *
+     * - User event type (click on..., loading of page..., or keypress on...)
+     * - Title, caption, label, value, ID, className, or other available property of the related HTML element (for example, an image, button, checkbox, or text input field).
+     *
+     * In most instances, the default approach to user-action naming works well, resulting in user-action names such as:
+     *
+     * - click on "Search" on page /search.html
+     * - keypress on "Feedback" on page /contact.html
+     * - touch on "Homescreen" of page /list.jsf
+     *
+     * In rare circumstances, confidential data (for example, email addresses, usernames, or account numbers) can be unintentionally included in user action names because the confidential data itself is included in an HTML element label, attribute, or other value (for example, click on "my Account Number: 1231231"...). If such confidential data appears in your application's user action names, enable the Mask user action names setting. This setting replaces specific HTML element names and values with generic HTML element names. With user-action name masking enabled, the user action names listed above appear as:
+     *
+     * - click on INPUT on page /search.html
+     * - keypress on TEXTAREA on page /contact.html
+     * - touch on DIV of page /list.jsf
+     */
     userActionMaskingEnabled: pulumi.Input<boolean>;
 }
 
@@ -3523,14 +7157,32 @@ export interface DatabaseAnomaliesFailureRate {
 }
 
 export interface DatabaseAnomaliesFailureRateAuto {
+    /**
+     * Absolute increase of failing service calls to trigger an alert, %
+     */
     absolute: pulumi.Input<number>;
+    /**
+     * Relative increase of failing service calls to trigger an alert, %
+     */
     relative: pulumi.Input<number>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface DatabaseAnomaliesFailureRateThresholds {
+    /**
+     * Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers alert
+     */
     sensitivity: pulumi.Input<string>;
+    /**
+     * Failure rate during any 5-minute period to trigger an alert, %
+     */
     threshold: pulumi.Input<number>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
@@ -3546,13 +7198,28 @@ export interface DatabaseAnomaliesLoad {
 }
 
 export interface DatabaseAnomaliesLoadDrops {
+    /**
+     * Alert if the service stays in abnormal state for at least *X* minutes
+     */
     minutes?: pulumi.Input<number>;
+    /**
+     * Alert if the observed load is more than *X* % of the expected value
+     */
     percent?: pulumi.Input<number>;
 }
 
 export interface DatabaseAnomaliesLoadSpikes {
+    /**
+     * Alert if the service stays in abnormal state for at least *X* minutes
+     */
     minutes?: pulumi.Input<number>;
+    /**
+     * Alert if the observed load is more than *X* % of the expected value
+     */
     percent?: pulumi.Input<number>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
@@ -3569,24 +7236,51 @@ export interface DatabaseAnomaliesResponseTime {
 
 export interface DatabaseAnomaliesResponseTimeAuto {
     /**
-     * Configuration for anomalies regarding load drops and spikes
+     * Minimal service load to detect response time degradation. Response time degradation of services with smaller load won't trigger alerts. Possible values are `FIFTEEN_REQUESTS_PER_MINUTE`, `FIVE_REQUESTS_PER_MINUTE`, `ONE_REQUEST_PER_MINUTE` and `TEN_REQUESTS_PER_MINUTE`
      */
     load: pulumi.Input<string>;
+    /**
+     * Alert if the response time degrades by more than *X* milliseconds
+     */
     milliseconds: pulumi.Input<number>;
+    /**
+     * Alert if the response time degrades by more than *X* %
+     */
     percent: pulumi.Input<number>;
+    /**
+     * Alert if the response time of the slowest 10% degrades by more than *X* milliseconds
+     */
     slowestMilliseconds: pulumi.Input<number>;
+    /**
+     * Alert if the response time of the slowest 10% degrades by more than *X* milliseconds
+     */
     slowestPercent: pulumi.Input<number>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface DatabaseAnomaliesResponseTimeThresholds {
     /**
-     * Configuration for anomalies regarding load drops and spikes
+     * Minimal service load to detect response time degradation. Response time degradation of services with smaller load won't trigger alerts. Possible values are `FIFTEEN_REQUESTS_PER_MINUTE`, `FIVE_REQUESTS_PER_MINUTE`, `ONE_REQUEST_PER_MINUTE` and `TEN_REQUESTS_PER_MINUTE`
      */
     load: pulumi.Input<string>;
+    /**
+     * Response time during any 5-minute period to trigger an alert, in milliseconds
+     */
     milliseconds: pulumi.Input<number>;
+    /**
+     * Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers an alert
+     */
     sensitivity: pulumi.Input<string>;
+    /**
+     * Response time of the 10% slowest during any 5-minute period to trigger an alert, in milliseconds
+     */
     slowestMilliseconds: pulumi.Input<number>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
@@ -3625,24 +7319,54 @@ export interface DatabaseAnomaliesV2FailureRate {
 }
 
 export interface DatabaseAnomaliesV2FailureRateAutoDetection {
+    /**
+     * Absolute threshold
+     */
     absoluteIncrease: pulumi.Input<number>;
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: pulumi.Input<inputs.DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection>;
+    /**
+     * Relative threshold
+     */
     relativeIncrease: pulumi.Input<number>;
 }
 
 export interface DatabaseAnomaliesV2FailureRateAutoDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: pulumi.Input<number>;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: pulumi.Input<number>;
 }
 
 export interface DatabaseAnomaliesV2FailureRateFixedDetection {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: pulumi.Input<inputs.DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection>;
+    /**
+     * no documentation available
+     */
     sensitivity: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     threshold: pulumi.Input<number>;
 }
 
 export interface DatabaseAnomaliesV2FailureRateFixedDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: pulumi.Input<number>;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: pulumi.Input<number>;
 }
 
@@ -3696,43 +7420,94 @@ export interface DatabaseAnomaliesV2ResponseTime {
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeAutoDetection {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection>;
+    /**
+     * Alert if the median response time of all requests degrades beyond **both** the absolute and relative thresholds:
+     */
     responseTimeAll: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll>;
+    /**
+     * Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+     */
     responseTimeSlowest: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest>;
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: pulumi.Input<number>;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: pulumi.Input<number>;
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll {
+    /**
+     * Absolute threshold
+     */
     degradationMilliseconds: pulumi.Input<number>;
+    /**
+     * Relative threshold
+     */
     degradationPercent: pulumi.Input<number>;
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest {
+    /**
+     * Absolute threshold
+     */
     slowestDegradationMilliseconds: pulumi.Input<number>;
+    /**
+     * Relative threshold
+     */
     slowestDegradationPercent: pulumi.Input<number>;
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeFixedDetection {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection>;
+    /**
+     * Alert if the median response time of all requests degrades beyond this threshold within an observation period of 5 minutes:
+     */
     responseTimeAll: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll>;
+    /**
+     * Alert if the response time of the slowest 10% of requests degrades beyond this threshold within an observation period of 5 minutes:
+     */
     responseTimeSlowest: pulumi.Input<inputs.DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest>;
+    /**
+     * no documentation available
+     */
     sensitivity: pulumi.Input<string>;
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: pulumi.Input<number>;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: pulumi.Input<number>;
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll {
+    /**
+     * Threshold
+     */
     degradationMilliseconds: pulumi.Input<number>;
 }
 
 export interface DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest {
+    /**
+     * Threshold
+     */
     slowestDegradationMilliseconds: pulumi.Input<number>;
 }
 
@@ -3816,9 +7591,21 @@ export interface DeclarativeGroupingDetection {
 }
 
 export interface DeclarativeGroupingDetectionProcessDefinition {
+    /**
+     * Process group identifier
+     */
     id: pulumi.Input<string>;
+    /**
+     * This identifier is used by Dynatrace to recognize this process group.
+     */
     processGroupName: pulumi.Input<string>;
+    /**
+     * Possible Values: `never`, `always`, `highResourceUsage`
+     */
     report: pulumi.Input<string>;
+    /**
+     * Define process detection rules by selecting a process property and a condition. Each process group can have multiple detection rules associated with it.
+     */
     rules?: pulumi.Input<inputs.DeclarativeGroupingDetectionProcessDefinitionRules>;
 }
 
@@ -3827,7 +7614,20 @@ export interface DeclarativeGroupingDetectionProcessDefinitionRules {
 }
 
 export interface DeclarativeGroupingDetectionProcessDefinitionRulesRule {
+    /**
+     * - $contains(svc) – Matches if svc appears anywhere in the process property value.
+     * - $eq(svc.exe) – Matches if svc.exe matches the process property value exactly.
+     * - $prefix(svc) – Matches if app matches the prefix of the process property value.
+     * - $suffix(svc.py) – Matches if svc.py matches the suffix of the process property value.
+     *
+     * For example, $suffix(svc.py) would detect processes named loyaltysvc.py and paymentssvc.py.
+     *
+     * For more details, see [Declarative process grouping](https://dt-url.net/j142w57).
+     */
     condition: pulumi.Input<string>;
+    /**
+     * Possible Values: `Executable`, `ExecutablePath`, `CommandLine`
+     */
     property: pulumi.Input<string>;
 }
 
@@ -3850,8 +7650,17 @@ export interface DiskAnomaliesTags {
 }
 
 export interface DiskAnomaliesTagsFilter {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -3871,32 +7680,68 @@ export interface DiskAnomaliesV2Disk {
 }
 
 export interface DiskAnomaliesV2DiskDiskLowInodesDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: pulumi.Input<inputs.DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds>;
+    /**
+     * Detection mode for low inodes number available
+     */
     detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect low inodes number available
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface DiskAnomaliesV2DiskDiskLowInodesDetectionCustomThresholds {
+    /**
+     * Alert if the percentage of available inodes is lower than this threshold in 3 out of 5 samples
+     */
     freeInodesPercentage: pulumi.Input<number>;
 }
 
 export interface DiskAnomaliesV2DiskDiskLowSpaceDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: pulumi.Input<inputs.DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds>;
+    /**
+     * Detection mode for low disk space
+     */
     detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect low disk space
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface DiskAnomaliesV2DiskDiskLowSpaceDetectionCustomThresholds {
+    /**
+     * Alert if free disk space is lower than this percentage in 3 out of 5 samples
+     */
     freeSpacePercentage: pulumi.Input<number>;
 }
 
 export interface DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: pulumi.Input<inputs.DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds>;
+    /**
+     * Detection mode for slow running disks
+     */
     detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect slow-running disks
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds {
+    /**
+     * Alert if disk read time or write time is higher than this threshold in 3 out of 5 samples
+     */
     writeAndReadTime: pulumi.Input<number>;
 }
 
@@ -3927,8 +7772,38 @@ export interface DiskOptionsExclusions {
 }
 
 export interface DiskOptionsExclusionsExclusion {
+    /**
+     * **File system type field:** the type of the file system to be excluded from monitoring. Examples:
+     *
+     * * ext4
+     * * ext3
+     * * btrfs
+     * * ext*
+     *
+     * ⚠️ File system types are case sensitive! 
+     *
+     * The wildcard in the last example means to exclude matching file systems such as types ext4 and ext3
+     */
     filesystem?: pulumi.Input<string>;
+    /**
+     * **Disk or mount point path field:** the path to where the disk to be excluded from monitoring is mounted. Examples:
+     *
+     * * /mnt/my_disk
+     * * /staff/emp1
+     * * C:\
+     * * /staff/*
+     * * /disk*
+     *
+     *  ⚠️ Mount point paths are case sensitive! 
+     *
+     * The wildcard in **&#47;staff/*** means to exclude every child folder of /staff.
+     *
+     * The wildcard in **&#47;disk*** means to exclude every mount point starting with /disk, for example /disk1, /disk99,  /diskabc
+     */
     mountpoint?: pulumi.Input<string>;
+    /**
+     * Possible Values: `OS_TYPE_AIX`, `OS_TYPE_DARWIN`, `OS_TYPE_HPUX`, `OS_TYPE_LINUX`, `OS_TYPE_SOLARIS`, `OS_TYPE_UNKNOWN`, `OS_TYPE_WINDOWS`, `OS_TYPE_ZOS`
+     */
     os: pulumi.Input<string>;
 }
 
@@ -3948,6 +7823,9 @@ export interface DiskSpecificAnomaliesV2DiskLowInodesDetection {
 }
 
 export interface DiskSpecificAnomaliesV2DiskLowInodesDetectionCustomThresholds {
+    /**
+     * Alert if the percentage of available inodes is lower than this threshold in 3 out of 5 samples
+     */
     freeInodesPercentage: pulumi.Input<number>;
 }
 
@@ -3967,6 +7845,9 @@ export interface DiskSpecificAnomaliesV2DiskLowSpaceDetection {
 }
 
 export interface DiskSpecificAnomaliesV2DiskLowSpaceDetectionCustomThresholds {
+    /**
+     * Alert if free disk space is lower than this percentage in 3 out of 5 samples
+     */
     freeSpacePercentage: pulumi.Input<number>;
 }
 
@@ -3986,6 +7867,9 @@ export interface DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetection {
 }
 
 export interface DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholds {
+    /**
+     * Alert if disk read time or write time is higher than this threshold in 3 out of 5 samples
+     */
     writeAndReadTime: pulumi.Input<number>;
 }
 
@@ -4017,27 +7901,57 @@ export interface EnvironmentQuotas {
 }
 
 export interface EnvironmentQuotasDdus {
+    /**
+     * Annual environment quota. Not set if unlimited
+     */
     annual?: pulumi.Input<number>;
+    /**
+     * Monthly environment quota. Not set if unlimited
+     */
     monthly?: pulumi.Input<number>;
 }
 
 export interface EnvironmentQuotasDemUnits {
+    /**
+     * Annual environment quota. Not set if unlimited
+     */
     annual?: pulumi.Input<number>;
+    /**
+     * Monthly environment quota. Not set if unlimited
+     */
     monthly?: pulumi.Input<number>;
 }
 
 export interface EnvironmentQuotasLogs {
+    /**
+     * Annual environment quota. Not set if unlimited
+     */
     annual?: pulumi.Input<number>;
+    /**
+     * Monthly environment quota. Not set if unlimited
+     */
     monthly?: pulumi.Input<number>;
 }
 
 export interface EnvironmentQuotasSynthetic {
+    /**
+     * Annual environment quota. Not set if unlimited
+     */
     annual?: pulumi.Input<number>;
+    /**
+     * Monthly environment quota. Not set if unlimited
+     */
     monthly?: pulumi.Input<number>;
 }
 
 export interface EnvironmentQuotasUserSessions {
+    /**
+     * Annual total User sessions environment quota. Not set if unlimited
+     */
     annual?: pulumi.Input<number>;
+    /**
+     * Monthly total User sessions environment quota. Not set if unlimited
+     */
     monthly?: pulumi.Input<number>;
 }
 
@@ -4055,18 +7969,48 @@ export interface EnvironmentStorage {
 }
 
 export interface EnvironmentStorageLimits {
+    /**
+     * Log monitoring storage usage and limit information on environment level in bytes. Not editable when Log monitoring is not allowed by license or not configured on cluster level. 0 for unlimited.
+     */
     logs?: pulumi.Input<number>;
+    /**
+     * Session replay storage usage and limit information on environment level in bytes. 0 for unlimited.
+     */
     sessionReplay?: pulumi.Input<number>;
+    /**
+     * Session replay storage usage and limit information on environment level in bytes. 0 for unlimited.
+     */
     symbolFiles?: pulumi.Input<number>;
+    /**
+     * Transaction storage usage and limit information on environment level in bytes. 0 for unlimited.
+     */
     transactions?: pulumi.Input<number>;
 }
 
 export interface EnvironmentStorageRetention {
+    /**
+     * Log monitoring retention settings on environment level in days. Not editable when Log monitoring is not allowed by license or not configured on cluster level. Can be set to any value from 5 to 90 days
+     */
     logs?: pulumi.Input<number>;
+    /**
+     * Real user monitoring retention settings on environment level in days. Can be set to any value from 1 to 35 days
+     */
     rum: pulumi.Input<number>;
+    /**
+     * Service code level retention settings on environment level in days. Service code level retention time can't be greater than service request level retention time and both can't exceed one year
+     */
     serviceCodeLevel: pulumi.Input<number>;
+    /**
+     * Service request level retention settings on environment level in days. Service code level retention time can't be greater than service request level retention time and both can't exceed one year
+     */
     serviceRequestLevel: pulumi.Input<number>;
+    /**
+     * Session replay retention settings on environment level in days. Can be set to any value from 1 to 35 days
+     */
     sessionReplay: pulumi.Input<number>;
+    /**
+     * Synthetic monitoring retention settings on environment level in days. Can be set to any value from 1 to 35 days
+     */
     synthetic: pulumi.Input<number>;
 }
 
@@ -4113,15 +8057,36 @@ export interface FailureDetectionParametersExceptionRulesCustomErrorRules {
 }
 
 export interface FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRule {
+    /**
+     * Request attribute condition
+     */
     condition: pulumi.Input<inputs.FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition>;
+    /**
+     * Request attribute
+     */
     requestAttribute: pulumi.Input<string>;
 }
 
 export interface FailureDetectionParametersExceptionRulesCustomErrorRulesCustomErrorRuleCondition {
+    /**
+     * Case sensitive
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Apply this comparison
+     */
     compareOperationType: pulumi.Input<string>;
+    /**
+     * Value
+     */
     doubleValue?: pulumi.Input<number>;
+    /**
+     * Value
+     */
     intValue?: pulumi.Input<number>;
+    /**
+     * Value
+     */
     textValue?: pulumi.Input<string>;
 }
 
@@ -4130,7 +8095,13 @@ export interface FailureDetectionParametersExceptionRulesCustomHandledExceptions
 }
 
 export interface FailureDetectionParametersExceptionRulesCustomHandledExceptionsCustomHandledException {
+    /**
+     * The pattern will match if it is contained within the actual class name.
+     */
     classPattern?: pulumi.Input<string>;
+    /**
+     * Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+     */
     messagePattern?: pulumi.Input<string>;
 }
 
@@ -4139,7 +8110,13 @@ export interface FailureDetectionParametersExceptionRulesIgnoredExceptions {
 }
 
 export interface FailureDetectionParametersExceptionRulesIgnoredExceptionsCustomHandledException {
+    /**
+     * The pattern will match if it is contained within the actual class name.
+     */
     classPattern?: pulumi.Input<string>;
+    /**
+     * Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+     */
     messagePattern?: pulumi.Input<string>;
 }
 
@@ -4148,7 +8125,13 @@ export interface FailureDetectionParametersExceptionRulesSuccessForcingException
 }
 
 export interface FailureDetectionParametersExceptionRulesSuccessForcingExceptionsCustomHandledException {
+    /**
+     * The pattern will match if it is contained within the actual class name.
+     */
     classPattern?: pulumi.Input<string>;
+    /**
+     * Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+     */
     messagePattern?: pulumi.Input<string>;
 }
 
@@ -4176,17 +8159,44 @@ export interface FailureDetectionRulesConditions {
 }
 
 export interface FailureDetectionRulesConditionsCondition {
+    /**
+     * Possible Values: `PG_NAME`, `PG_TAG`, `SERVICE_MANAGEMENT_ZONE`, `SERVICE_NAME`, `SERVICE_TAG`, `SERVICE_TYPE`
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Condition to check the attribute against
+     */
     predicate: pulumi.Input<inputs.FailureDetectionRulesConditionsConditionPredicate>;
 }
 
 export interface FailureDetectionRulesConditionsConditionPredicate {
+    /**
+     * Case sensitive
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Management zones
+     */
     managementZones?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Predicate type
+     */
     predicateType: pulumi.Input<string>;
+    /**
+     * Service types
+     */
     serviceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Tag keys
+     */
     tagKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Tags (exact match)
+     */
     tags?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Names
+     */
     textValues?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -4195,8 +8205,18 @@ export interface GenericRelationshipsSources {
 }
 
 export interface GenericRelationshipsSourcesSource {
+    /**
+     * Specify a filter that needs to match in order for the extraction to happen.. Two different filters are supported: `$eq(value)` will ensure that the source matches exactly 'value', while `$prefix(value)` will ensure that the source begins with exactly 'value'.
+     * If your value contains the characters '(', ')' or '~', you need to escape them by adding a '~' in front of them.
+     */
     condition?: pulumi.Input<string>;
+    /**
+     * Specify all properties which should be compared. If all mapping rules match a relationship between entities will be created.
+     */
     mappingRules?: pulumi.Input<inputs.GenericRelationshipsSourcesSourceMappingRules>;
+    /**
+     * Possible Values: `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+     */
     sourceType: pulumi.Input<string>;
 }
 
@@ -4205,9 +8225,21 @@ export interface GenericRelationshipsSourcesSourceMappingRules {
 }
 
 export interface GenericRelationshipsSourcesSourceMappingRulesMappingRule {
+    /**
+     * The case-sensitive name of a property of the destination type.
+     */
     destinationProperty: pulumi.Input<string>;
+    /**
+     * Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+     */
     destinationTransformation: pulumi.Input<string>;
+    /**
+     * The case-sensitive name of a property of the source type.
+     */
     sourceProperty: pulumi.Input<string>;
+    /**
+     * Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+     */
     sourceTransformation: pulumi.Input<string>;
 }
 
@@ -4216,12 +8248,33 @@ export interface GenericTypesRules {
 }
 
 export interface GenericTypesRulesRule {
+    /**
+     * All attribute extraction rules will be applied and found attributes will be added to the extracted type.
+     */
     attributes?: pulumi.Input<inputs.GenericTypesRulesRuleAttributes>;
+    /**
+     * Define a pattern which is used to set the icon attribute of the entity. The extracted values must reference barista icon ids. You may define placeholders referencing data source dimensions.
+     */
     iconPattern?: pulumi.Input<string>;
+    /**
+     * ID patterns are comprised of static text and placeholders referring to dimensions in the ingest data. An ID pattern **must** contain at least one placeholder to ensure that different entities will be created.. Take care that the pattern results in the same ID for the same entity. For example, using timestamp or counter-like dimensions as part of the ID would lead to the creation of new entities for each ingest data and is strongly discouraged!
+     */
     idPattern: pulumi.Input<string>;
+    /**
+     * Define a pattern which is used to set the name attribute of the entity. You may define placeholders referencing data source dimensions.
+     */
     instanceNamePattern?: pulumi.Input<string>;
+    /**
+     * In addition to the dimensions already referred to in the ID pattern, you may specify additional dimensions which must be present in order to evaluate this rule.
+     */
     requiredDimensions?: pulumi.Input<inputs.GenericTypesRulesRuleRequiredDimensions>;
+    /**
+     * If you want to extract multiple entities of the same type from a single ingest line you need to define multiple rules with different roles.
+     */
     role?: pulumi.Input<string>;
+    /**
+     * Specify all sources which should be evaluated for this rule. A rule is evaluated if any of the specified source filters match.
+     */
     sources: pulumi.Input<inputs.GenericTypesRulesRuleSources>;
 }
 
@@ -4231,10 +8284,16 @@ export interface GenericTypesRulesRuleAttributes {
 
 export interface GenericTypesRulesRuleAttributesAttribute {
     /**
-     * The human readable type name for this entity type.
+     * The human readable attribute name for this extraction rule. Leave blank to use the key as the display name.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * The attribute key is the unique name of the attribute.
+     */
     key: pulumi.Input<string>;
+    /**
+     * Pattern for specifying the value for the extracted attribute. Can be a static value, placeholders or a combination of both.
+     */
     pattern: pulumi.Input<string>;
 }
 
@@ -4243,7 +8302,13 @@ export interface GenericTypesRulesRuleRequiredDimensions {
 }
 
 export interface GenericTypesRulesRuleRequiredDimensionsRequiredDimension {
+    /**
+     * A dimension key which needs to exist in the ingest data to match this filter.
+     */
     key: pulumi.Input<string>;
+    /**
+     * A dimension value pattern which needs to exist in the ingest data to match this filter.
+     */
     valuePattern?: pulumi.Input<string>;
 }
 
@@ -4252,7 +8317,14 @@ export interface GenericTypesRulesRuleSources {
 }
 
 export interface GenericTypesRulesRuleSourcesSource {
+    /**
+     * Specify a filter that needs to match in order for the extraction to happen.. Three different filters are supported: `$eq(value)` will ensure that the source matches exactly 'value', `$prefix(value)` will ensure that the source begins with exactly 'value', '$exists()' will ensure that any source with matching dimension filter exists.
+     * If your value contains the characters '(', ')' or '~', you need to escape them by adding a '~' in front of them.
+     */
     condition?: pulumi.Input<string>;
+    /**
+     * Possible Values: `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+     */
     sourceType: pulumi.Input<string>;
 }
 
@@ -4271,38 +8343,92 @@ export interface GetEntitiesEntitiesArgs {
 }
 
 export interface GetEntitiesEntitiesEntity {
+    /**
+     * The name of the entity, displayed in the UI.
+     */
     displayName?: string;
+    /**
+     * The ID of the entity.
+     */
     entityId?: string;
+    /**
+     * A set of tags assigned to the entity.
+     */
     tags?: inputs.GetEntitiesEntitiesEntityTag[];
+    /**
+     * The type of the entity.
+     */
     type?: string;
 }
 
 export interface GetEntitiesEntitiesEntityArgs {
+    /**
+     * The name of the entity, displayed in the UI.
+     */
     displayName?: pulumi.Input<string>;
+    /**
+     * The ID of the entity.
+     */
     entityId?: pulumi.Input<string>;
+    /**
+     * A set of tags assigned to the entity.
+     */
     tags?: pulumi.Input<pulumi.Input<inputs.GetEntitiesEntitiesEntityTagArgs>[]>;
+    /**
+     * The type of the entity.
+     */
     type?: pulumi.Input<string>;
 }
 
 export interface GetEntitiesEntitiesEntityTag {
+    /**
+     * A tag assigned to the entity
+     */
     tags?: inputs.GetEntitiesEntitiesEntityTagTag[];
 }
 
 export interface GetEntitiesEntitiesEntityTagArgs {
+    /**
+     * A tag assigned to the entity
+     */
     tags?: pulumi.Input<pulumi.Input<inputs.GetEntitiesEntitiesEntityTagTagArgs>[]>;
 }
 
 export interface GetEntitiesEntitiesEntityTagTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+     */
     context: string;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: string;
+    /**
+     * The string representation of the tag
+     */
     stringRepresentation?: string;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: string;
 }
 
 export interface GetEntitiesEntitiesEntityTagTagArgs {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * The string representation of the tag
+     */
     stringRepresentation?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -4311,11 +8437,35 @@ export interface GetSyntheticLocationsLocations {
      * The cloud provider where the location is hosted.
      */
     cloudPlatform?: string;
+    /**
+     * The unique ID of the location
+     */
     entityId?: string;
+    /**
+     * The list of IP addresses assigned to the location. 
+     *
+     *  Only applicable to `PUBLIC` locations
+     */
     ips?: string[];
+    /**
+     * The name of the location
+     */
     name?: string;
+    /**
+     * The release stage of the location
+     */
     stage?: string;
+    /**
+     * The status of the location: 
+     *
+     * * `ENABLED`: The location is displayed as active in the UI. You can assign monitors to the location. 
+     * * `DISABLED`: The location is displayed as inactive in the UI. You can't assign monitors to the location. Monitors already assigned to the location will stay there and will be executed from the location. 
+     * * `HIDDEN`: The location is not displayed in the UI. You can't assign monitors to the location. You can only set location as `HIDDEN` when no monitor is assigned to it
+     */
     status?: string;
+    /**
+     * The type of the location. Supported values are `PUBLIC`, `PRIVATE` and `CLUSTER`
+     */
     type?: string;
 }
 
@@ -4324,11 +8474,35 @@ export interface GetSyntheticLocationsLocationsArgs {
      * The cloud provider where the location is hosted.
      */
     cloudPlatform?: pulumi.Input<string>;
+    /**
+     * The unique ID of the location
+     */
     entityId?: pulumi.Input<string>;
+    /**
+     * The list of IP addresses assigned to the location. 
+     *
+     *  Only applicable to `PUBLIC` locations
+     */
     ips?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The name of the location
+     */
     name?: pulumi.Input<string>;
+    /**
+     * The release stage of the location
+     */
     stage?: pulumi.Input<string>;
+    /**
+     * The status of the location: 
+     *
+     * * `ENABLED`: The location is displayed as active in the UI. You can assign monitors to the location. 
+     * * `DISABLED`: The location is displayed as inactive in the UI. You can't assign monitors to the location. Monitors already assigned to the location will stay there and will be executed from the location. 
+     * * `HIDDEN`: The location is not displayed in the UI. You can't assign monitors to the location. You can only set location as `HIDDEN` when no monitor is assigned to it
+     */
     status?: pulumi.Input<string>;
+    /**
+     * The type of the location. Supported values are `PUBLIC`, `PRIVATE` and `CLUSTER`
+     */
     type?: pulumi.Input<string>;
 }
 
@@ -4355,6 +8529,9 @@ export interface HostAnomaliesCpu {
 }
 
 export interface HostAnomaliesCpuThresholds {
+    /**
+     * Alert if CPU usage is higher than *X*% in 3 out of 5 samples
+     */
     saturation: pulumi.Input<number>;
 }
 
@@ -4374,29 +8551,56 @@ export interface HostAnomaliesDisks {
 }
 
 export interface HostAnomaliesDisksInodes {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Custom thresholds for low disk inodes number. If not set, automatic mode is used
+     */
     thresholds?: pulumi.Input<inputs.HostAnomaliesDisksInodesThresholds>;
 }
 
 export interface HostAnomaliesDisksInodesThresholds {
+    /**
+     * Alert if percentage of available inodes is lower than *X*% in 3 out of 5 samples
+     */
     percentage: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesDisksSpace {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Custom thresholds for low disk space. If not set, automatic mode is used
+     */
     thresholds?: pulumi.Input<inputs.HostAnomaliesDisksSpaceThresholds>;
 }
 
 export interface HostAnomaliesDisksSpaceThresholds {
+    /**
+     * Alert if free disk space is lower than *X*% in 3 out of 5 samples
+     */
     percentage: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesDisksSpeed {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Custom thresholds for slow running disks. If not set, the automatic mode is used
+     */
     thresholds?: pulumi.Input<inputs.HostAnomaliesDisksSpeedThresholds>;
 }
 
 export interface HostAnomaliesDisksSpeedThresholds {
+    /**
+     * Alert if disk read/write time is higher than *X* milliseconds in 3 out of 5 samples
+     */
     writeAndReadTime: pulumi.Input<number>;
 }
 
@@ -4412,7 +8616,13 @@ export interface HostAnomaliesGc {
 }
 
 export interface HostAnomaliesGcThresholds {
+    /**
+     * GC suspension is higher than *X*% in 3 out of 5 samples
+     */
     suspensionPercentage: pulumi.Input<number>;
+    /**
+     * GC time is higher than *X*% in 3 out of 5 samples
+     */
     timePercentage: pulumi.Input<number>;
 }
 
@@ -4428,20 +8638,38 @@ export interface HostAnomaliesJava {
 }
 
 export interface HostAnomaliesJavaOutOfMemory {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Custom thresholds for Java out of memory. If not set, automatic mode is used
+     */
     thresholds?: pulumi.Input<inputs.HostAnomaliesJavaOutOfMemoryThresholds>;
 }
 
 export interface HostAnomaliesJavaOutOfMemoryThresholds {
+    /**
+     * Alert if the number of Java out of memory exceptions is *X* per minute or higher
+     */
     exceptionCount: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesJavaOutOfThreads {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Custom thresholds for Java out of threads detection. If not set, automatic mode is used
+     */
     thresholds?: pulumi.Input<inputs.HostAnomaliesJavaOutOfThreadsThresholds>;
 }
 
 export interface HostAnomaliesJavaOutOfThreadsThresholds {
+    /**
+     * Alert if the number of Java out of threads exceptions is *X* per minute or higher
+     */
     exceptionCount: pulumi.Input<number>;
 }
 
@@ -4457,17 +8685,35 @@ export interface HostAnomaliesMemory {
 }
 
 export interface HostAnomaliesMemoryThresholds {
+    /**
+     * Custom thresholds for Linux
+     */
     linux: pulumi.Input<inputs.HostAnomaliesMemoryThresholdsLinux>;
+    /**
+     * Custom thresholds for Windows
+     */
     windows: pulumi.Input<inputs.HostAnomaliesMemoryThresholdsWindows>;
 }
 
 export interface HostAnomaliesMemoryThresholdsLinux {
+    /**
+     * Memory page fault rate is higher than *X* faults per second
+     */
     pageFaults: pulumi.Input<number>;
+    /**
+     * Memory usage is higher than *X*%
+     */
     usage: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesMemoryThresholdsWindows {
+    /**
+     * Memory page fault rate is higher than *X* faults per second
+     */
     pageFaults: pulumi.Input<number>;
+    /**
+     * Memory usage is higher than *X*%
+     */
     usage: pulumi.Input<number>;
 }
 
@@ -4495,51 +8741,108 @@ export interface HostAnomaliesNetwork {
 }
 
 export interface HostAnomaliesNetworkConnectivity {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Custom thresholds for TCP connection problems. If not set, automatic mode is used.   **All** of these conditions must be met to trigger an alert
+     */
     thresholds?: pulumi.Input<inputs.HostAnomaliesNetworkConnectivityThresholds>;
 }
 
 export interface HostAnomaliesNetworkConnectivityThresholds {
+    /**
+     * Number of failed connections is higher than *X* connections per minute in 3 out of 5 samples
+     */
     failedConnections: pulumi.Input<number>;
+    /**
+     * Percentage of new connection failures is higher than *X*% in 3 out of 5 samples
+     */
     newConnectionFailures: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesNetworkDroppedPackets {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Custom thresholds for dropped packets. If not set, automatic mode is used.   **All** of these conditions must be met to trigger an alert
+     */
     thresholds?: pulumi.Input<inputs.HostAnomaliesNetworkDroppedPacketsThresholds>;
 }
 
 export interface HostAnomaliesNetworkDroppedPacketsThresholds {
+    /**
+     * Receive/transmit dropped packet percentage is higher than *X*% in 3 out of 5 samples
+     */
     droppedPackets: pulumi.Input<number>;
+    /**
+     * Total receive/transmit packets rate is higher than *X* packets per second in 3 out of 5 samples
+     */
     totalPacketsRate: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesNetworkErrors {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Custom thresholds for network errors. If not set, automatic mode is used.   **All** of these conditions must be met to trigger an alert
+     */
     thresholds?: pulumi.Input<inputs.HostAnomaliesNetworkErrorsThresholds>;
 }
 
 export interface HostAnomaliesNetworkErrorsThresholds {
+    /**
+     * Receive/transmit error packet percentage is higher than *X*% in 3 out of 5 samples
+     */
     errorsPercentage: pulumi.Input<number>;
+    /**
+     * Total receive/transmit packets rate is higher than *X* packets per second in 3 out of 5 samples
+     */
     totalPacketsRate: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesNetworkRetransmission {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Custom thresholds for high retransmission rate. If not set, automatic mode is used.   **All** of these conditions must be met to trigger an alert
+     */
     thresholds?: pulumi.Input<inputs.HostAnomaliesNetworkRetransmissionThresholds>;
 }
 
 export interface HostAnomaliesNetworkRetransmissionThresholds {
+    /**
+     * Retransmission rate is higher than *X*% in 3 out of 5 samples
+     */
     retransmissionRate: pulumi.Input<number>;
+    /**
+     * Number of retransmitted packets is higher than *X* packets per minute in 3 out of 5 samples
+     */
     retransmittedPackets: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesNetworkUtilization {
+    /**
+     * The detection is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Custom thresholds for high network utilization. If not set, automatic mode is used
+     */
     thresholds?: pulumi.Input<inputs.HostAnomaliesNetworkUtilizationThresholds>;
 }
 
 export interface HostAnomaliesNetworkUtilizationThresholds {
+    /**
+     * Alert if sent/received traffic utilization is higher than *X*% in 3 out of 5 samples
+     */
     utilization: pulumi.Input<number>;
 }
 
@@ -4575,119 +8878,299 @@ export interface HostAnomaliesV2Host {
 }
 
 export interface HostAnomaliesV2HostConnectionLostDetection {
+    /**
+     * Detect host or monitoring connection lost problems
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Graceful host shutdowns
+     */
     onGracefulShutdowns?: pulumi.Input<string>;
 }
 
 export interface HostAnomaliesV2HostHighCpuSaturationDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: pulumi.Input<inputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds>;
+    /**
+     * Detection mode for CPU saturation
+     */
     detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect CPU saturation on host
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholds {
+    /**
+     * Alert if the CPU usage is higher than this threshold for the defined amount of samples
+     */
     cpuSaturation: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     eventThresholds: pulumi.Input<inputs.HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds>;
 }
 
 export interface HostAnomaliesV2HostHighCpuSaturationDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2HostHighGcActivityDetection {
+    /**
+     * Alert if the GC time **or** the GC suspension is exceeded
+     */
     customThresholds?: pulumi.Input<inputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds>;
+    /**
+     * Detection mode for high GC activity
+     */
     detectionMode?: pulumi.Input<string>;
+    /**
+     * You may also configure high GC activity alerting for .NET processes on [extensions events page](https://www.terraform.io/#settings/anomalydetection/extensionevents).
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface HostAnomaliesV2HostHighGcActivityDetectionCustomThresholds {
+    /**
+     * no documentation available
+     */
     eventThresholds: pulumi.Input<inputs.HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds>;
+    /**
+     * Alert if the GC suspension is higher than this threshold
+     */
     gcSuspensionPercentage: pulumi.Input<number>;
+    /**
+     * Alert if GC time is higher than this threshold
+     */
     gcTimePercentage: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2HostHighGcActivityDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2HostHighMemoryDetection {
+    /**
+     * Alert if **both** the memory usage and the memory page fault rate thresholds are exceeded on Windows or on Unix systems
+     */
     customThresholds?: pulumi.Input<inputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholds>;
+    /**
+     * Detection mode for high memory usage
+     */
     detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect high memory usage on host
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface HostAnomaliesV2HostHighMemoryDetectionCustomThresholds {
+    /**
+     * no documentation available
+     */
     eventThresholds: pulumi.Input<inputs.HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds>;
+    /**
+     * Alert if the memory page fault rate on Unix systems is higher than this threshold for the defined amount of samples
+     */
     pageFaultsPerSecondNonWindows: pulumi.Input<number>;
+    /**
+     * Alert if the memory page fault rate on Windows is higher than this threshold for the defined amount of samples
+     */
     pageFaultsPerSecondWindows: pulumi.Input<number>;
+    /**
+     * Alert if the memory usage on Unix systems is higher than this threshold
+     */
     usedMemoryPercentageNonWindows: pulumi.Input<number>;
+    /**
+     * Alert if the memory usage on Windows is higher than this threshold
+     */
     usedMemoryPercentageWindows: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2HostHighMemoryDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2HostHighSystemLoadDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: pulumi.Input<inputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds>;
+    /**
+     * Possible Values: `Auto`, `Custom`
+     */
     detectionMode?: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholds {
+    /**
+     * no documentation available
+     */
     eventThresholds: pulumi.Input<inputs.HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds>;
+    /**
+     * Alert if the System Load / Logical cpu core is higher than this threshold for the defined amount of samples
+     */
     systemLoad: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2HostHighSystemLoadDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2HostOutOfMemoryDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: pulumi.Input<inputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds>;
+    /**
+     * Detection mode for Java out of memory problem
+     */
     detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect Java out of memory problem
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholds {
+    /**
+     * no documentation available
+     */
     eventThresholds: pulumi.Input<inputs.HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds>;
+    /**
+     * Alert if the number of Java out-of-memory exceptions is at least this value
+     */
     outOfMemoryExceptionsNumber: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2HostOutOfMemoryDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2HostOutOfThreadsDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: pulumi.Input<inputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds>;
+    /**
+     * Detection mode for Java out of threads problem
+     */
     detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect Java out of threads problem
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholds {
+    /**
+     * no documentation available
+     */
     eventThresholds: pulumi.Input<inputs.HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds>;
+    /**
+     * Alert if the number of Java out-of-threads exceptions is at least this value
+     */
     outOfThreadsExceptionsNumber: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2HostOutOfThreadsDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: pulumi.Input<number>;
 }
 
@@ -4715,896 +9198,2317 @@ export interface HostAnomaliesV2Network {
 }
 
 export interface HostAnomaliesV2NetworkHighNetworkDetection {
+    /**
+     * no documentation available
+     */
     customThresholds?: pulumi.Input<inputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds>;
+    /**
+     * Detection mode for high network utilization
+     */
     detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect high network utilization
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholds {
+    /**
+     * Alert if sent/received traffic utilization is higher than this threshold for the defined amount of samples
+     */
     errorsPercentage: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     eventThresholds: pulumi.Input<inputs.HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds>;
 }
 
 export interface HostAnomaliesV2NetworkHighNetworkDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2NetworkNetworkDroppedPacketsDetection {
+    /**
+     * Alert if the dropped packet percentage is higher than the specified threshold **and** the total packets rate is higher than the defined threshold for the defined amount of samples
+     */
     customThresholds?: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds>;
+    /**
+     * Detection mode for high number of dropped packets
+     */
     detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect high number of dropped packets
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholds {
+    /**
+     * Receive/transmit dropped packet percentage threshold
+     */
     droppedPacketsPercentage: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     eventThresholds: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds>;
+    /**
+     * Total packets rate threshold
+     */
     totalPacketsRate: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2NetworkNetworkDroppedPacketsDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2NetworkNetworkErrorsDetection {
+    /**
+     * Alert if the receive/transmit error packet percentage is higher than the specified threshold **and** the total packets rate is higher than the defined threshold for the defined amount of samples
+     */
     customThresholds?: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds>;
+    /**
+     * Detection mode for high number of network errors
+     */
     detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect high number of network errors
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholds {
+    /**
+     * Receive/transmit error packet percentage threshold
+     */
     errorsPercentage: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     eventThresholds: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds>;
+    /**
+     * Total packets rate threshold
+     */
     totalPacketsRate: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2NetworkNetworkHighRetransmissionDetection {
+    /**
+     * Alert if the retransmission rate is higher than the specified threshold **and** the number of retransmitted packets is higher than the defined threshold for the defined amount of samples
+     */
     customThresholds?: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds>;
+    /**
+     * Detection mode for high retransmission rate
+     */
     detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect high retransmission rate
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholds {
+    /**
+     * no documentation available
+     */
     eventThresholds: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds>;
+    /**
+     * Retransmission rate threshold
+     */
     retransmissionRatePercentage: pulumi.Input<number>;
+    /**
+     * Number of retransmitted packets threshold
+     */
     retransmittedPacketsNumberPerMinute: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2NetworkNetworkHighRetransmissionDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2NetworkNetworkTcpProblemsDetection {
+    /**
+     * Alert if the percentage of new connection failures is higher than the specified threshold **and** the number of failed connections is higher than the defined threshold for the defined amount of samples
+     */
     customThresholds?: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds>;
+    /**
+     * Detection mode for TCP connectivity problems
+     */
     detectionMode?: pulumi.Input<string>;
+    /**
+     * Detect TCP connectivity problems for process
+     */
     enabled: pulumi.Input<boolean>;
 }
 
 export interface HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholds {
+    /**
+     * no documentation available
+     */
     eventThresholds: pulumi.Input<inputs.HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds>;
+    /**
+     * Number of failed connections threshold
+     */
     failedConnectionsNumberPerMinute: pulumi.Input<number>;
+    /**
+     * New connection failure threshold
+     */
     newConnectionFailuresPercentage: pulumi.Input<number>;
 }
 
 export interface HostAnomaliesV2NetworkNetworkTcpProblemsDetectionCustomThresholdsEventThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
     dealertingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower the threshold to close an event
+     */
     dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
     violatingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
     violatingSamples: pulumi.Input<number>;
 }
 
 export interface HostNamingCondition {
+    /**
+     * A conditions for the metric usage
+     */
     conditions?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionCondition>[]>;
 }
 
 export interface HostNamingConditionCondition {
     /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     applicationTypeComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionApplicationTypeComparison>[]>;
+    /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     */
     applicationTypes?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionApplicationType>[]>;
+    /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     */
     azureComputeModeComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionAzureComputeModeComparison>[]>;
     /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     *
      * @deprecated You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
      */
     azureComputeModes?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionAzureComputeMode>[]>;
     /**
+     * Comparison for `AZURE_SKU` attributes
+     *
      * @deprecated You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
      */
     azureSkuComparisions?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionAzureSkuComparision>[]>;
+    /**
+     * Comparison for `AZURE_SKU` attributes
+     */
     azureSkus?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionAzureSkus>[]>;
     /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     *
      * @deprecated You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
      */
     baseComparisonBasics?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionBaseComparisonBasic>[]>;
     /**
+     * Fallback for not yet known type
+     *
      * @deprecated 'base_condition_key' is deprecated. You should use 'key'
      */
     baseConditionKeys?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionBaseConditionKey>[]>;
     /**
+     * Comparison for `BITNESS` attributes
+     *
      * @deprecated You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
      */
     bitnessComparisions?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionBitnessComparision>[]>;
+    /**
+     * Comparison for `BITNESS` attributes
+     */
     bitnesses?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionBitness>[]>;
     /**
+     * Comparison for `CLOUD_TYPE` attributes
+     *
      * @deprecated You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
      */
     cloudTypeComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionCloudTypeComparison>[]>;
+    /**
+     * Comparison for `CLOUD_TYPE` attributes
+     */
     cloudTypes?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionCloudType>[]>;
+    /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     */
     comparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionComparison>[]>;
     /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     customApplicationTypeComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionCustomApplicationTypeComparison>[]>;
+    /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     */
     customApplicationTypes?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionCustomApplicationType>[]>;
     /**
+     * Key for Custom Host Metadata
+     *
      * @deprecated 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
      */
     customHostMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionCustomHostMetadataConditionKey>[]>;
+    /**
+     * Key for Custom Host Metadata
+     */
     customHostMetadatas?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionCustomHostMetadata>[]>;
     /**
+     * Key for Custom Process Metadata
+     *
      * @deprecated 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
      */
     customProcessMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionCustomProcessMetadataConditionKey>[]>;
+    /**
+     * Key for Custom Process Metadata
+     */
     customProcessMetadatas?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionCustomProcessMetadata>[]>;
+    /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     */
     databaseTopologies?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionDatabaseTopology>[]>;
     /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     databaseTopologyComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionDatabaseTopologyComparison>[]>;
     /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     *
      * @deprecated You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
      */
     dcrumDecoderComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionDcrumDecoderComparison>[]>;
+    /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     */
     dcrumDecoders?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionDcrumDecoder>[]>;
+    /**
+     * Comparison for `ENTITY_ID` attributes
+     */
     entities?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionEntity>[]>;
     /**
+     * Comparison for `ENTITY_ID` attributes
+     *
      * @deprecated You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
      */
     entityIdComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionEntityIdComparison>[]>;
+    /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     */
     hostTeches?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionHostTech>[]>;
     /**
-     * @deprecated `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+     * `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
+     *
+     * @deprecated `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
      */
     hypervisorTypeComparisions?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionHypervisorTypeComparision>[]>;
+    /**
+     * Comparison for `HYPERVISOR_TYPE` attributes
+     */
     hypervisors?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionHypervisor>[]>;
     /**
+     * Comparison for `INDEXED_NAME` attributes
+     *
      * @deprecated You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedNameComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionIndexedNameComparison>[]>;
+    /**
+     * Comparison for `INDEXED_NAME` attributes
+     */
     indexedNames?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionIndexedName>[]>;
     /**
+     * Comparison for `INDEXED_STRING` attributes
+     *
      * @deprecated You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedStringComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionIndexedStringComparison>[]>;
+    /**
+     * Comparison for `INDEXED_STRING` attributes
+     */
     indexedStrings?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionIndexedString>[]>;
     /**
+     * Comparison for `INDEXED_TAG` attributes
+     *
      * @deprecated You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedTagComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionIndexedTagComparison>[]>;
+    /**
+     * Comparison for `INDEXED_TAG` attributes
+     */
     indexedTags?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionIndexedTag>[]>;
     /**
+     * Comparison for `INTEGER` attributes
+     *
      * @deprecated You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
      */
     integerComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionIntegerComparison>[]>;
+    /**
+     * Comparison for `INTEGER` attributes
+     */
     integers?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionInteger>[]>;
     /**
+     * Comparison for `IP_ADDRESS` attributes
+     *
      * @deprecated You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
      */
     ipaddressComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionIpaddressComparison>[]>;
+    /**
+     * Comparison for `IP_ADDRESS` attributes
+     */
     ipaddresses?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionIpaddress>[]>;
+    /**
+     * Fallback for not yet known type
+     */
     keys?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionKey>[]>;
     /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     *
      * @deprecated You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
      */
     mobilePlatformComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionMobilePlatformComparison>[]>;
+    /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     */
     mobilePlatforms?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionMobilePlatform>[]>;
+    /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     */
     osArches?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionOsArch>[]>;
+    /**
+     * Comparison for `OS_TYPE` attributes
+     */
     osTypes?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionOsType>[]>;
     /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     *
      * @deprecated You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
      */
     osarchitectureComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionOsarchitectureComparison>[]>;
     /**
+     * Comparison for `OS_TYPE` attributes
+     *
      * @deprecated You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
      */
     ostypeComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionOstypeComparison>[]>;
     /**
+     * Comparison for `PAAS_TYPE` attributes
+     *
      * @deprecated You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
      */
     paasTypeComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionPaasTypeComparison>[]>;
+    /**
+     * Comparison for `PAAS_TYPE` attributes
+     */
     paasTypes?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionPaasType>[]>;
     /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     *
      * @deprecated 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
      */
     processMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionProcessMetadataConditionKey>[]>;
+    /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     */
     processMetadatas?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionProcessMetadata>[]>;
+    /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     */
     serviceTopologies?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionServiceTopology>[]>;
     /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTopologyComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionServiceTopologyComparison>[]>;
     /**
+     * Comparison for `SERVICE_TYPE` attributes
+     *
      * @deprecated You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTypeComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionServiceTypeComparison>[]>;
+    /**
+     * Comparison for `SERVICE_TYPE` attributes
+     */
     serviceTypes?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionServiceType>[]>;
     /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     *
      * @deprecated You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleHostTechComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionSimpleHostTechComparison>[]>;
     /**
+     * Comparison for `SIMPLE_TECH` attributes
+     *
      * @deprecated You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleTechComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionSimpleTechComparison>[]>;
     /**
+     * Comparison for `STRING` attributes
+     *
      * @deprecated You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
      */
     stringComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionStringComparison>[]>;
     /**
+     * The key for dynamic attributes of the `STRING` type
+     *
      * @deprecated 'string_condition_key' is deprecated. You should use 'string_key'
      */
     stringConditionKeys?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionStringConditionKey>[]>;
+    /**
+     * The key for dynamic attributes of the `STRING` type
+     */
     stringKeys?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionStringKey>[]>;
+    /**
+     * Comparison for `STRING` attributes
+     */
     strings?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionString>[]>;
     /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     *
      * @deprecated You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
      */
     syntheticEngineTypeComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionSyntheticEngineTypeComparison>[]>;
+    /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     */
     syntheticEngines?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionSyntheticEngine>[]>;
     /**
+     * Comparison for `TAG` attributes
+     *
      * @deprecated You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
      */
     tagComparisons?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionTagComparison>[]>;
+    /**
+     * Comparison for `TAG` attributes
+     */
     tags?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionTag>[]>;
+    /**
+     * Comparison for `SIMPLE_TECH` attributes
+     */
     teches?: pulumi.Input<pulumi.Input<inputs.HostNamingConditionConditionTech>[]>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionApplicationType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionAzureComputeMode {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionAzureComputeModeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionAzureSkuComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be AZURE_SKU
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionAzureSkus {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionBaseComparisonBasic {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * The type of comparison
+     */
     type: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionBaseConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionBitness {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionBitnessComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be BITNESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionCloudType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionCloudTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be CLOUD_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * The type of comparison
+     */
     type: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionCustomApplicationType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionCustomApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be CUSTOM_APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionCustomHostMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.HostNamingConditionConditionCustomHostMetadataDynamicKey>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionCustomHostMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.HostNamingConditionConditionCustomHostMetadataConditionKeyDynamicKey>;
     /**
+     * if specified, needs to be HOST_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionCustomHostMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionCustomHostMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionCustomProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.HostNamingConditionConditionCustomProcessMetadataDynamicKey>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionCustomProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.HostNamingConditionConditionCustomProcessMetadataConditionKeyDynamicKey>;
     /**
+     * if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionCustomProcessMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionCustomProcessMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionDatabaseTopology {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionDatabaseTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be DATABASE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionDcrumDecoder {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionDcrumDecoderComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be DCRUM_DECODER_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionEntity {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionEntityIdComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be ENTITY_ID
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionHostTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.HostNamingConditionConditionHostTechValue>;
 }
 
 export interface HostNamingConditionConditionHostTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionHypervisor {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionHypervisorTypeComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be HYPERVISOR_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionIndexedName {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionIndexedNameComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_NAME
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionIndexedString {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionIndexedStringComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionIndexedTag {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.HostNamingConditionConditionIndexedTagValue>;
 }
 
 export interface HostNamingConditionConditionIndexedTagComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.HostNamingConditionConditionIndexedTagComparisonValue>;
 }
 
 export interface HostNamingConditionConditionIndexedTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionIndexedTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionInteger {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<number>;
 }
 
 export interface HostNamingConditionConditionIntegerComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INTEGER
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<number>;
 }
 
 export interface HostNamingConditionConditionIpaddress {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionIpaddressComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be IP_ADDRESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionMobilePlatform {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionMobilePlatformComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be MOBILE_PLATFORM
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionOsArch {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionOsType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionOsarchitectureComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be OS_ARCHITECTURE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionOstypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be OS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionPaasType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionPaasTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be PAAS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: pulumi.Input<string>;
     /**
+     * if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionServiceTopology {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionServiceTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SERVICE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionServiceType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionServiceTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SERVICE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionSimpleHostTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SIMPLE_HOST_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.HostNamingConditionConditionSimpleHostTechComparisonValue>;
 }
 
 export interface HostNamingConditionConditionSimpleHostTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionSimpleTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SIMPLE_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.HostNamingConditionConditionSimpleTechComparisonValue>;
 }
 
 export interface HostNamingConditionConditionSimpleTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionString {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionStringComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionStringConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: pulumi.Input<string>;
     /**
+     * if specified, needs to be `STRING`
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionStringKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionSyntheticEngine {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionSyntheticEngineTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SYNTHETIC_ENGINE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionTag {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.HostNamingConditionConditionTagValue>;
 }
 
 export interface HostNamingConditionConditionTagComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.HostNamingConditionConditionTagComparisonValue>;
 }
 
 export interface HostNamingConditionConditionTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface HostNamingConditionConditionTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.HostNamingConditionConditionTechValue>;
 }
 
 export interface HostNamingConditionConditionTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
@@ -5620,35 +11524,82 @@ export interface HttpMonitorAnomalyDetection {
 }
 
 export interface HttpMonitorAnomalyDetectionLoadingTimeThreshold {
+    /**
+     * Performance threshold is enabled (`true`) or disabled (`false`)
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * The list of performance threshold rules
+     */
     thresholds?: pulumi.Input<pulumi.Input<inputs.HttpMonitorAnomalyDetectionLoadingTimeThresholdThreshold>[]>;
 }
 
 export interface HttpMonitorAnomalyDetectionLoadingTimeThresholdThreshold {
+    /**
+     * The list of performance threshold rules
+     */
     thresholds: pulumi.Input<pulumi.Input<inputs.HttpMonitorAnomalyDetectionLoadingTimeThresholdThresholdThreshold>[]>;
 }
 
 export interface HttpMonitorAnomalyDetectionLoadingTimeThresholdThresholdThreshold {
+    /**
+     * Specify the event to which an ACTION threshold applies
+     */
     eventIndex?: pulumi.Input<number>;
+    /**
+     * Specify the request to which an ACTION threshold applies
+     */
     requestIndex?: pulumi.Input<number>;
+    /**
+     * The type of the threshold: `TOTAL` (total loading time) or `ACTION` (action loading time)
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Notify if monitor takes longer than *X* milliseconds to load
+     */
     valueMs: pulumi.Input<number>;
 }
 
 export interface HttpMonitorAnomalyDetectionOutageHandling {
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable at all configured locations
+     */
     globalOutage?: pulumi.Input<boolean>;
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Global outage handling configuration.
+     */
     globalOutagePolicies?: pulumi.Input<pulumi.Input<inputs.HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy>[]>;
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location
+     */
     localOutage?: pulumi.Input<boolean>;
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Local outage handling configuration. 
+     *
+     *  Alert if **affectedLocations** of locations are unable to access the web application **consecutiveRuns** times consecutively
+     */
     localOutagePolicies?: pulumi.Input<pulumi.Input<inputs.HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy>[]>;
+    /**
+     * (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Schedule retry if browser monitor execution results in a fail. For HTTP monitors this property is ignored
+     */
     retryOnError?: pulumi.Input<boolean>;
 }
 
 export interface HttpMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicy {
+    /**
+     * The number of consecutive fails to trigger an alert
+     */
     consecutiveRuns: pulumi.Input<number>;
 }
 
 export interface HttpMonitorAnomalyDetectionOutageHandlingLocalOutagePolicy {
+    /**
+     * The number of affected locations to trigger an alert
+     */
     affectedLocations: pulumi.Input<number>;
+    /**
+     * The number of consecutive fails to trigger an alert
+     */
     consecutiveRuns: pulumi.Input<number>;
 }
 
@@ -5657,9 +11608,21 @@ export interface HttpMonitorCookiesCookies {
 }
 
 export interface HttpMonitorCookiesCookiesCookie {
+    /**
+     * Enclose placeholder values in brackets, for example {email}
+     */
     domain: pulumi.Input<string>;
+    /**
+     * Enclose placeholder values in brackets, for example {email}
+     */
     name: pulumi.Input<string>;
+    /**
+     * Enclose placeholder values in brackets, for example {email}
+     */
     path?: pulumi.Input<string>;
+    /**
+     * Enclose placeholder values in brackets, for example {email}
+     */
     value: pulumi.Input<string>;
 }
 
@@ -5668,7 +11631,13 @@ export interface HttpMonitorPerformanceThresholds {
 }
 
 export interface HttpMonitorPerformanceThresholdsThreshold {
+    /**
+     * Request
+     */
     event: pulumi.Input<string>;
+    /**
+     * Threshold (in seconds)
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -5680,50 +11649,133 @@ export interface HttpMonitorScript {
 }
 
 export interface HttpMonitorScriptRequest {
+    /**
+     * Authentication options for this request
+     */
     authentication?: pulumi.Input<inputs.HttpMonitorScriptRequestAuthentication>;
+    /**
+     * The body of the HTTP request.
+     */
     body?: pulumi.Input<string>;
+    /**
+     * The setup of the monitor
+     */
     configuration?: pulumi.Input<inputs.HttpMonitorScriptRequestConfiguration>;
+    /**
+     * A short description of the event to appear in the web UI.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * The HTTP method of the request.
+     */
     method: pulumi.Input<string>;
+    /**
+     * Javascript code to execute after sending the request.
+     */
     postProcessing?: pulumi.Input<string>;
+    /**
+     * Javascript code to execute before sending the request.
+     */
     preProcessing?: pulumi.Input<string>;
+    /**
+     * Adapt request timeout option - the maximum time this request is allowed to consume. Keep in mind the maximum timeout of the complete monitor is 60 seconds
+     */
     requestTimeout?: pulumi.Input<number>;
+    /**
+     * The URL to check.
+     */
     url: pulumi.Input<string>;
+    /**
+     * Validation helps you verify that your HTTP monitor loads the expected content
+     */
     validation?: pulumi.Input<inputs.HttpMonitorScriptRequestValidation>;
 }
 
 export interface HttpMonitorScriptRequestAuthentication {
+    /**
+     * The ID of the credentials within the Dynatrace Credentials Vault.
+     */
     credentials: pulumi.Input<string>;
+    /**
+     * The KDC IP. Valid and required only if the type of authentication is `KERBEROS`.
+     */
     kdcIp?: pulumi.Input<string>;
+    /**
+     * The Realm Name. Valid and required only if the type of authentication is `KERBEROS`.
+     */
     realmName?: pulumi.Input<string>;
+    /**
+     * The type of authentication. Possible values are `BASIC_AUTHENTICATION`, `NTLM` and `KERBEROS`.
+     */
     type: pulumi.Input<string>;
 }
 
 export interface HttpMonitorScriptRequestConfiguration {
+    /**
+     * If set to `false`, then the monitor fails with invalid SSL certificates.
+     */
     acceptAnyCertificate?: pulumi.Input<boolean>;
+    /**
+     * The client certificate, if applicable - eg. CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX
+     */
     clientCertificate?: pulumi.Input<string>;
+    /**
+     * If set to `false`, redirects are reported as successful requests with response code 3xx.
+     *
+     * If not set, the `false` option is used.
+     */
     followRedirects?: pulumi.Input<boolean>;
+    /**
+     * The setup of the monitor
+     */
     headers?: pulumi.Input<inputs.HttpMonitorScriptRequestConfigurationHeaders>;
+    /**
+     * Option not to store and display request and response bodies and header values in execution details, `true` or `false`. If not set, `false`.
+     */
     sensitiveData?: pulumi.Input<boolean>;
+    /**
+     * The User agent of the request
+     */
     userAgent?: pulumi.Input<string>;
 }
 
 export interface HttpMonitorScriptRequestConfigurationHeaders {
+    /**
+     * contains an HTTP header of the request
+     */
     headers: pulumi.Input<pulumi.Input<inputs.HttpMonitorScriptRequestConfigurationHeadersHeader>[]>;
 }
 
 export interface HttpMonitorScriptRequestConfigurationHeadersHeader {
+    /**
+     * The key of the header
+     */
     name: pulumi.Input<string>;
+    /**
+     * The value of the header
+     */
     value: pulumi.Input<string>;
 }
 
 export interface HttpMonitorScriptRequestValidation {
+    /**
+     * A list of validation rules
+     */
     rules: pulumi.Input<pulumi.Input<inputs.HttpMonitorScriptRequestValidationRule>[]>;
 }
 
 export interface HttpMonitorScriptRequestValidationRule {
+    /**
+     * The validation condition. `true` means validation succeeds if the specified content/element is found. `false` means validation fails if the specified content/element is found. Always specify `false` for `certificateExpiryDateConstraint` to fail the monitor if SSL certificate expiry is within the specified number of days
+     */
     passIfFound?: pulumi.Input<boolean>;
+    /**
+     * The type of the rule. Possible values are `patternConstraint`, `regexConstraint`, `httpStatusesList` and `certificateExpiryDateConstraint`
+     */
     type: pulumi.Input<string>;
+    /**
+     * The content to look for
+     */
     value: pulumi.Input<string>;
 }
 
@@ -5735,9 +11787,25 @@ export interface HttpMonitorTag {
 }
 
 export interface HttpMonitorTagTag {
+    /**
+     * The origin of the tag. Supported values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_CLOUD` and `KUBERNETES`.
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag.
+     *
+     * Custom tags have the tag value here.
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the tag. Supported values are `USER`, `RULE_BASED` and `AUTO`.
+     */
     source?: pulumi.Input<string>;
+    /**
+     * The value of the tag.
+     *
+     * Not applicable to custom tags.
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -5749,8 +11817,17 @@ export interface IamGroupPermissions {
 }
 
 export interface IamGroupPermissionsPermission {
+    /**
+     * Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-manage-support-tickets`
+     */
     name: pulumi.Input<string>;
+    /**
+     * If `type` is `account` this attribute should hold the UUID of the account. If `type` is 'tenant`this attribute should hold the ID of the environment (`https://\n\n.live.dynatrace.com`). If`type`is`management-zone`this attribute should hold a value like`\n\n:\n\n. You need to use the attribute `legacyId` when referring to a resource `dynatrace.ManagementZoneV2` or a data source `dynatrace.ManagementZone`.
+     */
     scope: pulumi.Input<string>;
+    /**
+     * The type of this permission. Possible values are `account`, `tenant`, `management-zone`
+     */
     type: pulumi.Input<string>;
 }
 
@@ -5763,9 +11840,12 @@ export interface ImsBridgesQueueManager {
 
 export interface ImsBridgesQueueManagerQueueManager {
     /**
-     * The name of the IMS bridge
+     * The name of the queue manager
      */
     name: pulumi.Input<string>;
+    /**
+     * Queue(s) that belong to the queue manager
+     */
     queueManagerQueues?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -5781,8 +11861,17 @@ export interface K8sClusterAnomaliesCpuRequestsSaturation {
 }
 
 export interface K8sClusterAnomaliesCpuRequestsSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * of cluster CPU capacity for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * amount of requested CPU is above
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -5798,8 +11887,17 @@ export interface K8sClusterAnomaliesMemoryRequestsSaturation {
 }
 
 export interface K8sClusterAnomaliesMemoryRequestsSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * of cluster memory capacity for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * amount of requested memory is above
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -5815,7 +11913,13 @@ export interface K8sClusterAnomaliesMonitoringIssues {
 }
 
 export interface K8sClusterAnomaliesMonitoringIssuesConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * monitoring is not available for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
 }
 
@@ -5831,8 +11935,17 @@ export interface K8sClusterAnomaliesPodsSaturation {
 }
 
 export interface K8sClusterAnomaliesPodsSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * of schedulable pod capacity for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * number of running pods is higher than
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -5848,7 +11961,13 @@ export interface K8sClusterAnomaliesReadinessIssues {
 }
 
 export interface K8sClusterAnomaliesReadinessIssuesConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * cluster is not ready for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
 }
 
@@ -5883,8 +12002,17 @@ export interface K8sNamespaceAnomaliesCpuLimitsQuotaSaturation {
 }
 
 export interface K8sNamespaceAnomaliesCpuLimitsQuotaSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * of quota for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * amount of utilized namespace CPU is above
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -5900,8 +12028,17 @@ export interface K8sNamespaceAnomaliesCpuRequestsQuotaSaturation {
 }
 
 export interface K8sNamespaceAnomaliesCpuRequestsQuotaSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * of quota for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * amount of requested namespace CPU is above
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -5917,8 +12054,17 @@ export interface K8sNamespaceAnomaliesMemoryLimitsQuotaSaturation {
 }
 
 export interface K8sNamespaceAnomaliesMemoryLimitsQuotaSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * of quota for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * amount of utilized namespace memory is above
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -5934,8 +12080,17 @@ export interface K8sNamespaceAnomaliesMemoryRequestsQuotaSaturation {
 }
 
 export interface K8sNamespaceAnomaliesMemoryRequestsQuotaSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * of quota for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * amount of requested namespace memory is above
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -5951,8 +12106,17 @@ export interface K8sNamespaceAnomaliesPodsQuotaSaturation {
 }
 
 export interface K8sNamespaceAnomaliesPodsQuotaSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * of quota for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * number of utilized namespace pods is above
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -5968,8 +12132,17 @@ export interface K8sNodeAnomaliesCpuRequestsSaturation {
 }
 
 export interface K8sNodeAnomaliesCpuRequestsSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * of node CPU capacity for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * amount of requested CPU is higher than
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -5985,8 +12158,17 @@ export interface K8sNodeAnomaliesMemoryRequestsSaturation {
 }
 
 export interface K8sNodeAnomaliesMemoryRequestsSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * of node memory capacity for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * amount of requested memory is higher than
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -6002,7 +12184,13 @@ export interface K8sNodeAnomaliesNodeProblematicCondition {
 }
 
 export interface K8sNodeAnomaliesNodeProblematicConditionConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * node has problematic conditions for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
 }
 
@@ -6018,8 +12206,17 @@ export interface K8sNodeAnomaliesPodsSaturation {
 }
 
 export interface K8sNodeAnomaliesPodsSaturationConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * of node capacity for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * number of pods running on node is higher than
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -6035,7 +12232,13 @@ export interface K8sNodeAnomaliesReadinessIssues {
 }
 
 export interface K8sNodeAnomaliesReadinessIssuesConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * node is not ready for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
 }
 
@@ -6051,8 +12254,17 @@ export interface K8sPvcAnomaliesLowDiskSpaceCritical {
 }
 
 export interface K8sPvcAnomaliesLowDiskSpaceCriticalConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * the available disk space is below
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -6068,8 +12280,17 @@ export interface K8sPvcAnomaliesLowDiskSpaceCriticalPercentage {
 }
 
 export interface K8sPvcAnomaliesLowDiskSpaceCriticalPercentageConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * the available disk space is below
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -6085,8 +12306,17 @@ export interface K8sWorkloadAnomaliesContainerRestarts {
 }
 
 export interface K8sWorkloadAnomaliesContainerRestartsConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * per minute, for any
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * there is at least
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -6102,7 +12332,13 @@ export interface K8sWorkloadAnomaliesDeploymentStuck {
 }
 
 export interface K8sWorkloadAnomaliesDeploymentStuckConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * workload stops progressing for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
 }
 
@@ -6118,8 +12354,17 @@ export interface K8sWorkloadAnomaliesHighCpuThrottling {
 }
 
 export interface K8sWorkloadAnomaliesHighCpuThrottlingConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * of CPU usage for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * amount of CPU throttling is above
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -6135,8 +12380,17 @@ export interface K8sWorkloadAnomaliesHighCpuUsage {
 }
 
 export interface K8sWorkloadAnomaliesHighCpuUsageConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * of defined CPU limits for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * amount of utilized workload CPU is above
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -6152,8 +12406,17 @@ export interface K8sWorkloadAnomaliesHighMemoryUsage {
 }
 
 export interface K8sWorkloadAnomaliesHighMemoryUsageConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * of defined memory limits for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * amount of utilized workload memory is above
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -6169,7 +12432,13 @@ export interface K8sWorkloadAnomaliesNotAllPodsReady {
 }
 
 export interface K8sWorkloadAnomaliesNotAllPodsReadyConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * some workload pods are not ready for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
 }
 
@@ -6185,8 +12454,17 @@ export interface K8sWorkloadAnomaliesPendingPods {
 }
 
 export interface K8sWorkloadAnomaliesPendingPodsConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * stuck in pending state for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
+    /**
+     * there is at least
+     */
     threshold: pulumi.Input<number>;
 }
 
@@ -6202,7 +12480,13 @@ export interface K8sWorkloadAnomaliesPodStuckInTerminating {
 }
 
 export interface K8sWorkloadAnomaliesPodStuckInTerminatingConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * pod termination stops progressing for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
 }
 
@@ -6218,7 +12502,13 @@ export interface K8sWorkloadAnomaliesWorkloadWithoutReadyPods {
 }
 
 export interface K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration {
+    /**
+     * within the last
+     */
     observationPeriodInMinutes: pulumi.Input<number>;
+    /**
+     * workload has no ready pods for at least
+     */
     samplePeriodInMinutes: pulumi.Input<number>;
 }
 
@@ -6227,20 +12517,32 @@ export interface KubernetesEventPatterns {
 }
 
 export interface KubernetesEventPatternsEventPattern {
+    /**
+     * Activate
+     */
     active: pulumi.Input<boolean>;
+    /**
+     * Field selector name
+     */
     label: pulumi.Input<string>;
+    /**
+     * The set of allowed characters for this field has been extended with ActiveGate version 1.259. For more details, see the [documentation](https://dt-url.net/7h23wuk#set-up-event-field-selectors).
+     */
     pattern: pulumi.Input<string>;
 }
 
 export interface LogCustomSourceContext {
-    /**
-     * Define Custom Log Source only within context if provided
-     */
     contexts: pulumi.Input<pulumi.Input<inputs.LogCustomSourceContextContext>[]>;
 }
 
 export interface LogCustomSourceContextContext {
+    /**
+     * Possible Values: `Dt_entity_process_group`
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     values: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -6283,15 +12585,27 @@ export interface LogEventsEventTemplateMetadata {
 }
 
 export interface LogEventsEventTemplateMetadataItem {
+    /**
+     * Type 'dt.' for key hints.
+     */
     metadataKey: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     metadataValue: pulumi.Input<string>;
 }
 
 export interface LogProcessingProcessorDefinition {
+    /**
+     * Processor definition
+     */
     rule: pulumi.Input<string>;
 }
 
 export interface LogProcessingRuleTesting {
+    /**
+     * Sample log in JSON format.
+     */
     sampleLog: pulumi.Input<string>;
 }
 
@@ -6315,8 +12629,17 @@ export interface LogSensitiveDataMaskingMatchers {
 }
 
 export interface LogSensitiveDataMaskingMatchersMatcher {
+    /**
+     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_source`, `Process_technology`
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Possible Values: `MATCHES`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     values: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -6325,8 +12648,17 @@ export interface LogStorageMatchers {
 }
 
 export interface LogStorageMatchersMatcher {
+    /**
+     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_content`, `Log_source`, `Process_technology`
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Possible Values: `MATCHES`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     values: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -6335,8 +12667,17 @@ export interface LogTimestampMatchers {
 }
 
 export interface LogTimestampMatchersMatcher {
+    /**
+     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_source`, `Process_technology`
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Possible Values: `MATCHES`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     values: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -6348,9 +12689,21 @@ export interface MaintenanceFilter {
 }
 
 export interface MaintenanceFilterFilter {
+    /**
+     * A specific entity that should match this maintenance window
+     */
     entityId?: pulumi.Input<string>;
+    /**
+     * The tags you want to use for matching in the format key or key:value
+     */
     entityTags?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Type of entities this maintenance window should match
+     */
     entityType?: pulumi.Input<string>;
+    /**
+     * The IDs of management zones to which the matched entities must belong
+     */
     managementZones?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -6401,58 +12754,136 @@ export interface MaintenanceSchedule {
 }
 
 export interface MaintenanceScheduleDailyRecurrence {
+    /**
+     * The recurrence date range of the maintenance window
+     */
     recurrenceRange: pulumi.Input<inputs.MaintenanceScheduleDailyRecurrenceRecurrenceRange>;
+    /**
+     * The time window of the maintenance window
+     */
     timeWindow: pulumi.Input<inputs.MaintenanceScheduleDailyRecurrenceTimeWindow>;
 }
 
 export interface MaintenanceScheduleDailyRecurrenceRecurrenceRange {
+    /**
+     * The end date of the recurrence range in YYYY-MM-DD format
+     */
     endDate: pulumi.Input<string>;
+    /**
+     * The start date of the recurrence range in YYYY-MM-DD format
+     */
     startDate: pulumi.Input<string>;
 }
 
 export interface MaintenanceScheduleDailyRecurrenceTimeWindow {
+    /**
+     * The end time of the maintenance window validity period in hh:mm:ss format
+     */
     endTime: pulumi.Input<string>;
+    /**
+     * The start time of the maintenance window validity period in hh:mm:ss format
+     */
     startTime: pulumi.Input<string>;
+    /**
+     * The time zone of the start and end time. Default time zone is UTC. You can use either UTC offset `UTC+01:00` format or the IANA Time Zone Database format (for example, `Europe/Vienna`)
+     */
     timeZone: pulumi.Input<string>;
 }
 
 export interface MaintenanceScheduleMonthlyRecurrence {
+    /**
+     * The day of the month for monthly maintenance.  The value of `31` is treated as the last day of the month for months that don't have a 31st day. The value of `30` is also treated as the last day of the month for February
+     */
     dayOfMonth: pulumi.Input<number>;
+    /**
+     * The recurrence date range of the maintenance window
+     */
     recurrenceRange: pulumi.Input<inputs.MaintenanceScheduleMonthlyRecurrenceRecurrenceRange>;
+    /**
+     * The time window of the maintenance window
+     */
     timeWindow: pulumi.Input<inputs.MaintenanceScheduleMonthlyRecurrenceTimeWindow>;
 }
 
 export interface MaintenanceScheduleMonthlyRecurrenceRecurrenceRange {
+    /**
+     * The end date of the recurrence range in YYYY-MM-DD format
+     */
     endDate: pulumi.Input<string>;
+    /**
+     * The start date of the recurrence range in YYYY-MM-DD format
+     */
     startDate: pulumi.Input<string>;
 }
 
 export interface MaintenanceScheduleMonthlyRecurrenceTimeWindow {
+    /**
+     * The end time of the maintenance window validity period in hh:mm:ss format
+     */
     endTime: pulumi.Input<string>;
+    /**
+     * The start time of the maintenance window validity period in hh:mm:ss format
+     */
     startTime: pulumi.Input<string>;
+    /**
+     * The time zone of the start and end time. Default time zone is UTC. You can use either UTC offset `UTC+01:00` format or the IANA Time Zone Database format (for example, `Europe/Vienna`)
+     */
     timeZone: pulumi.Input<string>;
 }
 
 export interface MaintenanceScheduleOnceRecurrence {
+    /**
+     * The end time of the maintenance window validity period in YYYY-MM-DDThh:mm:ss format (for example, `2022-01-01T08:00:00`)
+     */
     endTime: pulumi.Input<string>;
+    /**
+     * The start time of the maintenance window validity period in YYYY-MM-DDThh:mm:ss format (for example, `2022-01-01T08:00:00`)
+     */
     startTime: pulumi.Input<string>;
+    /**
+     * The time zone of the start and end time. Default time zone is UTC. You can use either UTC offset `UTC+01:00` format or the IANA Time Zone Database format (for example, `Europe/Vienna`)
+     */
     timeZone: pulumi.Input<string>;
 }
 
 export interface MaintenanceScheduleWeeklyRecurrence {
+    /**
+     * The day of the week for weekly maintenance.  The format is the full name of the day in upper case, for example `THURSDAY`
+     */
     dayOfWeek: pulumi.Input<string>;
+    /**
+     * The recurrence date range of the maintenance window
+     */
     recurrenceRange: pulumi.Input<inputs.MaintenanceScheduleWeeklyRecurrenceRecurrenceRange>;
+    /**
+     * The time window of the maintenance window
+     */
     timeWindow: pulumi.Input<inputs.MaintenanceScheduleWeeklyRecurrenceTimeWindow>;
 }
 
 export interface MaintenanceScheduleWeeklyRecurrenceRecurrenceRange {
+    /**
+     * The end date of the recurrence range in YYYY-MM-DD format
+     */
     endDate: pulumi.Input<string>;
+    /**
+     * The start date of the recurrence range in YYYY-MM-DD format
+     */
     startDate: pulumi.Input<string>;
 }
 
 export interface MaintenanceScheduleWeeklyRecurrenceTimeWindow {
+    /**
+     * The end time of the maintenance window validity period in hh:mm:ss format
+     */
     endTime: pulumi.Input<string>;
+    /**
+     * The start time of the maintenance window validity period in hh:mm:ss format
+     */
     startTime: pulumi.Input<string>;
+    /**
+     * The time zone of the start and end time. Default time zone is UTC. You can use either UTC offset `UTC+01:00` format or the IANA Time Zone Database format (for example, `Europe/Vienna`)
+     */
     timeZone: pulumi.Input<string>;
 }
 
@@ -6484,9 +12915,21 @@ export interface MaintenanceWindowSchedule {
 }
 
 export interface MaintenanceWindowScheduleRecurrence {
+    /**
+     * The day of the month for monthly maintenance.  The value of `31` is treated as the last day of the month for months that don't have a 31st day. The value of `30` is also treated as the last day of the month for February
+     */
     dayOfMonth?: pulumi.Input<number>;
+    /**
+     * The day of the week for weekly maintenance.  The format is the full name of the day in upper case, for example `THURSDAY`
+     */
     dayOfWeek?: pulumi.Input<string>;
+    /**
+     * The duration of the maintenance window in minutes
+     */
     durationMinutes: pulumi.Input<number>;
+    /**
+     * The start time of the maintenance window in HH:mm format
+     */
     startTime: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -6510,11 +12953,20 @@ export interface MaintenanceWindowScope {
 }
 
 export interface MaintenanceWindowScopeMatch {
+    /**
+     * The ID of a management zone to which the matched entities must belong
+     */
     mzId?: pulumi.Input<string>;
+    /**
+     * The logic that applies when several tags are specified: AND/OR.  If not set, the OR logic is used
+     */
     tagCombination?: pulumi.Input<string>;
+    /**
+     * The tag you want to use for matching.  You can use custom tags from the UI, AWS tags, Cloud Foundry tags, OpenShift/Kubernetes, and tags based on environment variables
+     */
     tags?: pulumi.Input<pulumi.Input<inputs.MaintenanceWindowScopeMatchTag>[]>;
     /**
-     * The type of the maintenance: planned or unplanned
+     * The type of the Dynatrace entities (for example, hosts or services) you want to pick up by matching
      */
     type?: pulumi.Input<string>;
     /**
@@ -6524,837 +12976,2184 @@ export interface MaintenanceWindowScopeMatch {
 }
 
 export interface MaintenanceWindowScopeMatchTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneDimensionalRule {
+    /**
+     * The target of the rule. Possible values are
+     *    - `ANY`
+     *    - `LOG`
+     *    - `METRIC`
+     */
     appliesTo: pulumi.Input<string>;
+    /**
+     * A list of conditions for the management zone. The management zone applies only if **all** conditions are fulfilled
+     */
     conditions?: pulumi.Input<pulumi.Input<inputs.ManagementZoneDimensionalRuleCondition>[]>;
+    /**
+     * The rule is enabled (`true`) or disabled (`false`)
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneDimensionalRuleCondition {
+    /**
+     * The reference value for comparison. For conditions of the `DIMENSION` type, specify the key here
+     */
     key: pulumi.Input<string>;
+    /**
+     * How to compare. Possible values are 
+     *    - `BEGINS_WITH`
+     *    - `EQUALS`
+     */
     match: pulumi.Input<string>;
+    /**
+     * The type of the condition. Possible values are 
+     *    - `DIMENSION`
+     *    - `LOG_FILE_NAME`
+     *    - `METRIC_KEY`
+     */
     type: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the dimension. Only applicable when type is set to `DIMENSION`
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneEntitySelectorBasedRule {
+    /**
+     * The rule is enabled (`true`) or disabled (`false`)
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * The entity selector string, by which the entities are selected
+     */
     selector?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRule {
+    /**
+     * A list of matching rules for the management zone. The management zone applies only if **all** conditions are fulfilled
+     */
     conditions?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleCondition>[]>;
+    /**
+     * The rule is enabled (`true`) or disabled (`false`)
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * How to apply the management zone to underlying entities:
+     *    - `SERVICE_TO_HOST_LIKE`: Apply to underlying hosts of matching services
+     *    - `SERVICE_TO_PROCESS_GROUP_LIKE`: Apply to underlying process groups of matching services
+     *    - `PROCESS_GROUP_TO_HOST`: Apply to underlying hosts of matching process groups
+     *    - `PROCESS_GROUP_TO_SERVICE`: Apply to all services provided by matching process groups
+     *    - `HOST_TO_PROCESS_GROUP_INSTANCE`: Apply to processes running on matching hosts
+     *    - `CUSTOM_DEVICE_GROUP_TO_CUSTOM_DEVICE`: Apply to custom devices in matching custom device groups
+     *    - `AZURE_TO_PG`: Apply to process groups connected to matching Azure entities
+     *    - `AZURE_TO_SERVICE`: Apply to services provided by matching Azure entities
+     */
     propagationTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The type of Dynatrace entities the management zone can be applied to
+     */
     type: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleCondition {
     /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     applicationTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionApplicationTypeComparison>[]>;
+    /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     */
     applicationTypes?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionApplicationType>[]>;
+    /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     */
     azureComputeModeComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionAzureComputeModeComparison>[]>;
     /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     *
      * @deprecated You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
      */
     azureComputeModes?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionAzureComputeMode>[]>;
     /**
+     * Comparison for `AZURE_SKU` attributes
+     *
      * @deprecated You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
      */
     azureSkuComparisions?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionAzureSkuComparision>[]>;
+    /**
+     * Comparison for `AZURE_SKU` attributes
+     */
     azureSkus?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionAzureSkus>[]>;
     /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     *
      * @deprecated You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
      */
     baseComparisonBasics?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionBaseComparisonBasic>[]>;
     /**
+     * Fallback for not yet known type
+     *
      * @deprecated 'base_condition_key' is deprecated. You should use 'key'
      */
     baseConditionKeys?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionBaseConditionKey>[]>;
     /**
+     * Comparison for `BITNESS` attributes
+     *
      * @deprecated You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
      */
     bitnessComparisions?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionBitnessComparision>[]>;
+    /**
+     * Comparison for `BITNESS` attributes
+     */
     bitnesses?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionBitness>[]>;
     /**
+     * Comparison for `CLOUD_TYPE` attributes
+     *
      * @deprecated You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
      */
     cloudTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionCloudTypeComparison>[]>;
+    /**
+     * Comparison for `CLOUD_TYPE` attributes
+     */
     cloudTypes?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionCloudType>[]>;
+    /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     */
     comparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionComparison>[]>;
     /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     customApplicationTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionCustomApplicationTypeComparison>[]>;
+    /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     */
     customApplicationTypes?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionCustomApplicationType>[]>;
     /**
+     * Key for Custom Host Metadata
+     *
      * @deprecated 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
      */
     customHostMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionCustomHostMetadataConditionKey>[]>;
+    /**
+     * Key for Custom Host Metadata
+     */
     customHostMetadatas?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionCustomHostMetadata>[]>;
     /**
+     * Key for Custom Process Metadata
+     *
      * @deprecated 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
      */
     customProcessMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionCustomProcessMetadataConditionKey>[]>;
+    /**
+     * Key for Custom Process Metadata
+     */
     customProcessMetadatas?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionCustomProcessMetadata>[]>;
+    /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     */
     databaseTopologies?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionDatabaseTopology>[]>;
     /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     databaseTopologyComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionDatabaseTopologyComparison>[]>;
     /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     *
      * @deprecated You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
      */
     dcrumDecoderComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionDcrumDecoderComparison>[]>;
+    /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     */
     dcrumDecoders?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionDcrumDecoder>[]>;
+    /**
+     * Comparison for `ENTITY_ID` attributes
+     */
     entities?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionEntity>[]>;
     /**
+     * Comparison for `ENTITY_ID` attributes
+     *
      * @deprecated You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
      */
     entityIdComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionEntityIdComparison>[]>;
+    /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     */
     hostTeches?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionHostTech>[]>;
     /**
-     * @deprecated `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+     * `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
+     *
+     * @deprecated `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
      */
     hypervisorTypeComparisions?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionHypervisorTypeComparision>[]>;
+    /**
+     * Comparison for `HYPERVISOR_TYPE` attributes
+     */
     hypervisors?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionHypervisor>[]>;
     /**
+     * Comparison for `INDEXED_NAME` attributes
+     *
      * @deprecated You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedNameComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionIndexedNameComparison>[]>;
+    /**
+     * Comparison for `INDEXED_NAME` attributes
+     */
     indexedNames?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionIndexedName>[]>;
     /**
+     * Comparison for `INDEXED_STRING` attributes
+     *
      * @deprecated You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedStringComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionIndexedStringComparison>[]>;
+    /**
+     * Comparison for `INDEXED_STRING` attributes
+     */
     indexedStrings?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionIndexedString>[]>;
     /**
+     * Comparison for `INDEXED_TAG` attributes
+     *
      * @deprecated You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedTagComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionIndexedTagComparison>[]>;
+    /**
+     * Comparison for `INDEXED_TAG` attributes
+     */
     indexedTags?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionIndexedTag>[]>;
     /**
+     * Comparison for `INTEGER` attributes
+     *
      * @deprecated You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
      */
     integerComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionIntegerComparison>[]>;
+    /**
+     * Comparison for `INTEGER` attributes
+     */
     integers?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionInteger>[]>;
     /**
+     * Comparison for `IP_ADDRESS` attributes
+     *
      * @deprecated You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
      */
     ipaddressComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionIpaddressComparison>[]>;
+    /**
+     * Comparison for `IP_ADDRESS` attributes
+     */
     ipaddresses?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionIpaddress>[]>;
+    /**
+     * Fallback for not yet known type
+     */
     keys?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionKey>[]>;
     /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     *
      * @deprecated You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
      */
     mobilePlatformComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionMobilePlatformComparison>[]>;
+    /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     */
     mobilePlatforms?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionMobilePlatform>[]>;
+    /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     */
     osArches?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionOsArch>[]>;
+    /**
+     * Comparison for `OS_TYPE` attributes
+     */
     osTypes?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionOsType>[]>;
     /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     *
      * @deprecated You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
      */
     osarchitectureComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionOsarchitectureComparison>[]>;
     /**
+     * Comparison for `OS_TYPE` attributes
+     *
      * @deprecated You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
      */
     ostypeComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionOstypeComparison>[]>;
     /**
+     * Comparison for `PAAS_TYPE` attributes
+     *
      * @deprecated You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
      */
     paasTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionPaasTypeComparison>[]>;
+    /**
+     * Comparison for `PAAS_TYPE` attributes
+     */
     paasTypes?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionPaasType>[]>;
     /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     *
      * @deprecated 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
      */
     processMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionProcessMetadataConditionKey>[]>;
+    /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     */
     processMetadatas?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionProcessMetadata>[]>;
+    /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     */
     serviceTopologies?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionServiceTopology>[]>;
     /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTopologyComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionServiceTopologyComparison>[]>;
     /**
+     * Comparison for `SERVICE_TYPE` attributes
+     *
      * @deprecated You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionServiceTypeComparison>[]>;
+    /**
+     * Comparison for `SERVICE_TYPE` attributes
+     */
     serviceTypes?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionServiceType>[]>;
     /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     *
      * @deprecated You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleHostTechComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionSimpleHostTechComparison>[]>;
     /**
+     * Comparison for `SIMPLE_TECH` attributes
+     *
      * @deprecated You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleTechComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionSimpleTechComparison>[]>;
     /**
+     * Comparison for `STRING` attributes
+     *
      * @deprecated You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
      */
     stringComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionStringComparison>[]>;
     /**
+     * The key for dynamic attributes of the `STRING` type
+     *
      * @deprecated 'string_condition_key' is deprecated. You should use 'string_key'
      */
     stringConditionKeys?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionStringConditionKey>[]>;
+    /**
+     * The key for dynamic attributes of the `STRING` type
+     */
     stringKeys?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionStringKey>[]>;
+    /**
+     * Comparison for `STRING` attributes
+     */
     strings?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionString>[]>;
     /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     *
      * @deprecated You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
      */
     syntheticEngineTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionSyntheticEngineTypeComparison>[]>;
+    /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     */
     syntheticEngines?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionSyntheticEngine>[]>;
     /**
+     * Comparison for `TAG` attributes
+     *
      * @deprecated You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
      */
     tagComparisons?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionTagComparison>[]>;
+    /**
+     * Comparison for `TAG` attributes
+     */
     tags?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionTag>[]>;
+    /**
+     * Comparison for `SIMPLE_TECH` attributes
+     */
     teches?: pulumi.Input<pulumi.Input<inputs.ManagementZoneRuleConditionTech>[]>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionApplicationType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionAzureComputeMode {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionAzureComputeModeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionAzureSkuComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be AZURE_SKU
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionAzureSkus {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionBaseComparisonBasic {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * The type of comparison
+     */
     type: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionBaseConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionBitness {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionBitnessComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be BITNESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionCloudType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionCloudTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be CLOUD_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * The type of comparison
+     */
     type: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionCustomApplicationType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionCustomApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be CUSTOM_APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionCustomHostMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.ManagementZoneRuleConditionCustomHostMetadataDynamicKey>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionCustomHostMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.ManagementZoneRuleConditionCustomHostMetadataConditionKeyDynamicKey>;
     /**
+     * if specified, needs to be HOST_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionCustomHostMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionCustomHostMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionCustomProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.ManagementZoneRuleConditionCustomProcessMetadataDynamicKey>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionCustomProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.ManagementZoneRuleConditionCustomProcessMetadataConditionKeyDynamicKey>;
     /**
+     * if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionCustomProcessMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionCustomProcessMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionDatabaseTopology {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionDatabaseTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be DATABASE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionDcrumDecoder {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionDcrumDecoderComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be DCRUM_DECODER_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionEntity {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionEntityIdComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be ENTITY_ID
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionHostTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.ManagementZoneRuleConditionHostTechValue>;
 }
 
 export interface ManagementZoneRuleConditionHostTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionHypervisor {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionHypervisorTypeComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be HYPERVISOR_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionIndexedName {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionIndexedNameComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_NAME
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionIndexedString {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionIndexedStringComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionIndexedTag {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.ManagementZoneRuleConditionIndexedTagValue>;
 }
 
 export interface ManagementZoneRuleConditionIndexedTagComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.ManagementZoneRuleConditionIndexedTagComparisonValue>;
 }
 
 export interface ManagementZoneRuleConditionIndexedTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionIndexedTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionInteger {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<number>;
 }
 
 export interface ManagementZoneRuleConditionIntegerComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INTEGER
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<number>;
 }
 
 export interface ManagementZoneRuleConditionIpaddress {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionIpaddressComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be IP_ADDRESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionMobilePlatform {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionMobilePlatformComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be MOBILE_PLATFORM
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionOsArch {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionOsType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionOsarchitectureComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be OS_ARCHITECTURE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionOstypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be OS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionPaasType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionPaasTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be PAAS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: pulumi.Input<string>;
     /**
+     * if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionServiceTopology {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionServiceTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SERVICE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionServiceType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionServiceTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SERVICE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionSimpleHostTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SIMPLE_HOST_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.ManagementZoneRuleConditionSimpleHostTechComparisonValue>;
 }
 
 export interface ManagementZoneRuleConditionSimpleHostTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionSimpleTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SIMPLE_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.ManagementZoneRuleConditionSimpleTechComparisonValue>;
 }
 
 export interface ManagementZoneRuleConditionSimpleTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionString {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionStringComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionStringConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: pulumi.Input<string>;
     /**
+     * if specified, needs to be `STRING`
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionStringKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionSyntheticEngine {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionSyntheticEngineTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SYNTHETIC_ENGINE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionTag {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.ManagementZoneRuleConditionTagValue>;
 }
 
 export interface ManagementZoneRuleConditionTagComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.ManagementZoneRuleConditionTagComparisonValue>;
 }
 
 export interface ManagementZoneRuleConditionTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneRuleConditionTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.ManagementZoneRuleConditionTechValue>;
 }
 
 export interface ManagementZoneRuleConditionTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
@@ -7366,56 +15165,155 @@ export interface ManagementZoneV2Rules {
 }
 
 export interface ManagementZoneV2RulesRule {
+    /**
+     * No documentation available
+     */
     attributeRule?: pulumi.Input<inputs.ManagementZoneV2RulesRuleAttributeRule>;
+    /**
+     * No documentation available
+     */
     dimensionRule?: pulumi.Input<inputs.ManagementZoneV2RulesRuleDimensionRule>;
+    /**
+     * Enabled
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Entity selector. The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+     */
     entitySelector?: pulumi.Input<string>;
+    /**
+     * Possible Values: `DIMENSION`, `ME`, `SELECTOR`
+     */
     type: pulumi.Input<string>;
 }
 
 export interface ManagementZoneV2RulesRuleAttributeRule {
+    /**
+     * Conditions
+     */
     attributeConditions: pulumi.Input<inputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditions>;
+    /**
+     * Apply to process groups connected to matching Azure entities
+     */
     azureToPgpropagation?: pulumi.Input<boolean>;
+    /**
+     * Apply to services provided by matching Azure entities
+     */
     azureToServicePropagation?: pulumi.Input<boolean>;
+    /**
+     * Apply to custom devices in a custom device group
+     */
     customDeviceGroupToCustomDevicePropagation?: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `APPMON_SERVER`, `APPMON_SYSTEM_PROFILE`, `AWS_ACCOUNT`, `AWS_APPLICATION_LOAD_BALANCER`, `AWS_AUTO_SCALING_GROUP`, `AWS_CLASSIC_LOAD_BALANCER`, `AWS_NETWORK_LOAD_BALANCER`, `AWS_RELATIONAL_DATABASE_SERVICE`, `AZURE`, `BROWSER_MONITOR`, `CLOUD_APPLICATION`, `CLOUD_APPLICATION_NAMESPACE`, `CLOUD_FOUNDRY_FOUNDATION`, `CUSTOM_APPLICATION`, `CUSTOM_DEVICE`, `CUSTOM_DEVICE_GROUP`, `DATA_CENTER_SERVICE`, `ENTERPRISE_APPLICATION`, `ESXI_HOST`, `EXTERNAL_MONITOR`, `HOST`, `HOST_GROUP`, `HTTP_MONITOR`, `KUBERNETES_CLUSTER`, `KUBERNETES_SERVICE`, `MOBILE_APPLICATION`, `OPENSTACK_ACCOUNT`, `PROCESS_GROUP`, `QUEUE`, `SERVICE`, `WEB_APPLICATION`
+     */
     entityType: pulumi.Input<string>;
+    /**
+     * Apply to processes running on matching hosts
+     */
     hostToPgpropagation?: pulumi.Input<boolean>;
+    /**
+     * Apply to underlying hosts of matching process groups
+     */
     pgToHostPropagation?: pulumi.Input<boolean>;
+    /**
+     * Apply to all services provided by the process groups
+     */
     pgToServicePropagation?: pulumi.Input<boolean>;
+    /**
+     * Apply to underlying hosts of matching services
+     */
     serviceToHostPropagation?: pulumi.Input<boolean>;
+    /**
+     * Apply to underlying process groups of matching services
+     */
     serviceToPgpropagation?: pulumi.Input<boolean>;
 }
 
 export interface ManagementZoneV2RulesRuleAttributeRuleAttributeConditions {
+    /**
+     * Attribute conditions
+     */
     conditions?: pulumi.Input<pulumi.Input<inputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition>[]>;
 }
 
 export interface ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition {
+    /**
+     * Case sensitive
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Dynamic key
+     */
     dynamicKey?: pulumi.Input<string>;
+    /**
+     * Key source
+     */
     dynamicKeySource?: pulumi.Input<string>;
+    /**
+     * Value
+     */
     entityId?: pulumi.Input<string>;
+    /**
+     * Value
+     */
     enumValue?: pulumi.Input<string>;
+    /**
+     * Value
+     */
     integerValue?: pulumi.Input<number>;
+    /**
+     * Possible Values: `APPMON_SERVER_NAME`, `APPMON_SYSTEM_PROFILE_NAME`, `AWS_ACCOUNT_ID`, `AWS_ACCOUNT_NAME`, `AWS_APPLICATION_LOAD_BALANCER_NAME`, `AWS_APPLICATION_LOAD_BALANCER_TAGS`, `AWS_AUTO_SCALING_GROUP_NAME`, `AWS_AUTO_SCALING_GROUP_TAGS`, `AWS_AVAILABILITY_ZONE_NAME`, `AWS_CLASSIC_LOAD_BALANCER_FRONTEND_PORTS`, `AWS_CLASSIC_LOAD_BALANCER_NAME`, `AWS_CLASSIC_LOAD_BALANCER_TAGS`, `AWS_NETWORK_LOAD_BALANCER_NAME`, `AWS_NETWORK_LOAD_BALANCER_TAGS`, `AWS_RELATIONAL_DATABASE_SERVICE_DB_NAME`, `AWS_RELATIONAL_DATABASE_SERVICE_ENDPOINT`, `AWS_RELATIONAL_DATABASE_SERVICE_ENGINE`, `AWS_RELATIONAL_DATABASE_SERVICE_INSTANCE_CLASS`, `AWS_RELATIONAL_DATABASE_SERVICE_NAME`, `AWS_RELATIONAL_DATABASE_SERVICE_PORT`, `AWS_RELATIONAL_DATABASE_SERVICE_TAGS`, `AZURE_ENTITY_NAME`, `AZURE_ENTITY_TAGS`, `AZURE_MGMT_GROUP_NAME`, `AZURE_MGMT_GROUP_UUID`, `AZURE_REGION_NAME`, `AZURE_SCALE_SET_NAME`, `AZURE_SUBSCRIPTION_NAME`, `AZURE_SUBSCRIPTION_UUID`, `AZURE_TENANT_NAME`, `AZURE_TENANT_UUID`, `AZURE_VM_NAME`, `BROWSER_MONITOR_NAME`, `BROWSER_MONITOR_TAGS`, `CLOUD_APPLICATION_LABELS`, `CLOUD_APPLICATION_NAME`, `CLOUD_APPLICATION_NAMESPACE_LABELS`, `CLOUD_APPLICATION_NAMESPACE_NAME`, `CLOUD_FOUNDRY_FOUNDATION_NAME`, `CLOUD_FOUNDRY_ORG_NAME`, `CUSTOM_APPLICATION_NAME`, `CUSTOM_APPLICATION_PLATFORM`, `CUSTOM_APPLICATION_TAGS`, `CUSTOM_APPLICATION_TYPE`, `CUSTOM_DEVICE_DNS_ADDRESS`, `CUSTOM_DEVICE_GROUP_NAME`, `CUSTOM_DEVICE_GROUP_TAGS`, `CUSTOM_DEVICE_IP_ADDRESS`, `CUSTOM_DEVICE_METADATA`, `CUSTOM_DEVICE_NAME`, `CUSTOM_DEVICE_PORT`, `CUSTOM_DEVICE_TAGS`, `CUSTOM_DEVICE_TECHNOLOGY`, `DATA_CENTER_SERVICE_DECODER_TYPE`, `DATA_CENTER_SERVICE_IP_ADDRESS`, `DATA_CENTER_SERVICE_METADATA`, `DATA_CENTER_SERVICE_NAME`, `DATA_CENTER_SERVICE_PORT`, `DATA_CENTER_SERVICE_TAGS`, `DOCKER_CONTAINER_NAME`, `DOCKER_FULL_IMAGE_NAME`, `DOCKER_IMAGE_VERSION`, `EC2_INSTANCE_AMI_ID`, `EC2_INSTANCE_AWS_INSTANCE_TYPE`, `EC2_INSTANCE_AWS_SECURITY_GROUP`, `EC2_INSTANCE_BEANSTALK_ENV_NAME`, `EC2_INSTANCE_ID`, `EC2_INSTANCE_NAME`, `EC2_INSTANCE_PRIVATE_HOST_NAME`, `EC2_INSTANCE_PUBLIC_HOST_NAME`, `EC2_INSTANCE_TAGS`, `ENTERPRISE_APPLICATION_DECODER_TYPE`, `ENTERPRISE_APPLICATION_IP_ADDRESS`, `ENTERPRISE_APPLICATION_METADATA`, `ENTERPRISE_APPLICATION_NAME`, `ENTERPRISE_APPLICATION_PORT`, `ENTERPRISE_APPLICATION_TAGS`, `ESXI_HOST_CLUSTER_NAME`, `ESXI_HOST_HARDWARE_MODEL`, `ESXI_HOST_HARDWARE_VENDOR`, `ESXI_HOST_NAME`, `ESXI_HOST_PRODUCT_NAME`, `ESXI_HOST_PRODUCT_VERSION`, `ESXI_HOST_TAGS`, `EXTERNAL_MONITOR_ENGINE_DESCRIPTION`, `EXTERNAL_MONITOR_ENGINE_NAME`, `EXTERNAL_MONITOR_ENGINE_TYPE`, `EXTERNAL_MONITOR_NAME`, `EXTERNAL_MONITOR_TAGS`, `GEOLOCATION_SITE_NAME`, `GOOGLE_CLOUD_PLATFORM_ZONE_NAME`, `GOOGLE_COMPUTE_INSTANCE_ID`, `GOOGLE_COMPUTE_INSTANCE_MACHINE_TYPE`, `GOOGLE_COMPUTE_INSTANCE_NAME`, `GOOGLE_COMPUTE_INSTANCE_PROJECT`, `GOOGLE_COMPUTE_INSTANCE_PROJECT_ID`, `GOOGLE_COMPUTE_INSTANCE_PUBLIC_IP_ADDRESSES`, `HOST_AIX_LOGICAL_CPU_COUNT`, `HOST_AIX_SIMULTANEOUS_THREADS`, `HOST_AIX_VIRTUAL_CPU_COUNT`, `HOST_ARCHITECTURE`, `HOST_AWS_NAME_TAG`, `HOST_AZURE_COMPUTE_MODE`, `HOST_AZURE_SKU`, `HOST_AZURE_WEB_APPLICATION_HOST_NAMES`, `HOST_AZURE_WEB_APPLICATION_SITE_NAMES`, `HOST_BITNESS`, `HOST_BOSH_AVAILABILITY_ZONE`, `HOST_BOSH_DEPLOYMENT_ID`, `HOST_BOSH_INSTANCE_ID`, `HOST_BOSH_INSTANCE_NAME`, `HOST_BOSH_NAME`, `HOST_BOSH_STEMCELL_VERSION`, `HOST_CLOUD_TYPE`, `HOST_CPU_CORES`, `HOST_CUSTOM_METADATA`, `HOST_DETECTED_NAME`, `HOST_GROUP_ID`, `HOST_GROUP_NAME`, `HOST_HYPERVISOR_TYPE`, `HOST_IP_ADDRESS`, `HOST_KUBERNETES_LABELS`, `HOST_LOGICAL_CPU_CORES`, `HOST_NAME`, `HOST_ONEAGENT_CUSTOM_HOST_NAME`, `HOST_OS_TYPE`, `HOST_OS_VERSION`, `HOST_PAAS_MEMORY_LIMIT`, `HOST_PAAS_TYPE`, `HOST_TAGS`, `HOST_TECHNOLOGY`, `HTTP_MONITOR_NAME`, `HTTP_MONITOR_TAGS`, `KUBERNETES_CLUSTER_NAME`, `KUBERNETES_NODE_NAME`, `KUBERNETES_SERVICE_NAME`, `MOBILE_APPLICATION_NAME`, `MOBILE_APPLICATION_PLATFORM`, `MOBILE_APPLICATION_TAGS`, `NAME_OF_COMPUTE_NODE`, `OPENSTACK_ACCOUNT_NAME`, `OPENSTACK_ACCOUNT_PROJECT_NAME`, `OPENSTACK_AVAILABILITY_ZONE_NAME`, `OPENSTACK_PROJECT_NAME`, `OPENSTACK_REGION_NAME`, `OPENSTACK_VM_INSTANCE_TYPE`, `OPENSTACK_VM_NAME`, `OPENSTACK_VM_SECURITY_GROUP`, `PROCESS_GROUP_AZURE_HOST_NAME`, `PROCESS_GROUP_AZURE_SITE_NAME`, `PROCESS_GROUP_CUSTOM_METADATA`, `PROCESS_GROUP_DETECTED_NAME`, `PROCESS_GROUP_ID`, `PROCESS_GROUP_LISTEN_PORT`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_PREDEFINED_METADATA`, `PROCESS_GROUP_TAGS`, `PROCESS_GROUP_TECHNOLOGY`, `PROCESS_GROUP_TECHNOLOGY_EDITION`, `PROCESS_GROUP_TECHNOLOGY_VERSION`, `QUEUE_NAME`, `QUEUE_TECHNOLOGY`, `QUEUE_VENDOR`, `SERVICE_AKKA_ACTOR_SYSTEM`, `SERVICE_CTG_SERVICE_NAME`, `SERVICE_DATABASE_HOST_NAME`, `SERVICE_DATABASE_NAME`, `SERVICE_DATABASE_TOPOLOGY`, `SERVICE_DATABASE_VENDOR`, `SERVICE_DETECTED_NAME`, `SERVICE_ESB_APPLICATION_NAME`, `SERVICE_IBM_CTG_GATEWAY_URL`, `SERVICE_MESSAGING_LISTENER_CLASS_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REMOTE_ENDPOINT`, `SERVICE_REMOTE_SERVICE_NAME`, `SERVICE_TAGS`, `SERVICE_TECHNOLOGY`, `SERVICE_TECHNOLOGY_EDITION`, `SERVICE_TECHNOLOGY_VERSION`, `SERVICE_TOPOLOGY`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_ENDPOINT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `VMWARE_DATACENTER_NAME`, `VMWARE_VM_NAME`, `WEB_APPLICATION_NAME`, `WEB_APPLICATION_NAME_PATTERN`, `WEB_APPLICATION_TAGS`, `WEB_APPLICATION_TYPE`
+     */
     key: pulumi.Input<string>;
+    /**
+     * Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `IS_IP_IN_RANGE`, `LOWER_THAN`, `LOWER_THAN_OR_EQUAL`, `NOT_BEGINS_WITH`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_GREATER_THAN`, `NOT_GREATER_THAN_OR_EQUAL`, `NOT_IS_IP_IN_RANGE`, `NOT_LOWER_THAN`, `NOT_LOWER_THAN_OR_EQUAL`, `NOT_REGEX_MATCHES`, `NOT_TAG_KEY_EQUALS`, `REGEX_MATCHES`, `TAG_KEY_EQUALS`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Value
+     */
     stringValue?: pulumi.Input<string>;
+    /**
+     * Tag. Format: `[CONTEXT]tagKey:tagValue`
+     */
     tag?: pulumi.Input<string>;
 }
 
 export interface ManagementZoneV2RulesRuleDimensionRule {
+    /**
+     * Possible Values: `ANY`, `LOG`, `METRIC`
+     */
     appliesTo: pulumi.Input<string>;
+    /**
+     * Conditions
+     */
     dimensionConditions?: pulumi.Input<inputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditions>;
 }
 
 export interface ManagementZoneV2RulesRuleDimensionRuleDimensionConditions {
+    /**
+     * Dimension conditions
+     */
     conditions?: pulumi.Input<pulumi.Input<inputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition>[]>;
 }
 
 export interface ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition {
+    /**
+     * Possible Values: `DIMENSION`, `LOG_FILE_NAME`, `METRIC_KEY`
+     */
     conditionType: pulumi.Input<string>;
+    /**
+     * Key
+     */
     key?: pulumi.Input<string>;
+    /**
+     * Possible Values: `BEGINS_WITH`, `EQUALS`
+     */
     ruleMatcher: pulumi.Input<string>;
+    /**
+     * Value
+     */
     value: pulumi.Input<string>;
 }
 
@@ -7443,7 +15341,13 @@ export interface MetricEventsEventTemplate {
 }
 
 export interface MetricEventsEventTemplateMetadata {
+    /**
+     * The key of the metadata item
+     */
     metadataKey: pulumi.Input<string>;
+    /**
+     * The value of the metadata item
+     */
     metadataValue: pulumi.Input<string>;
 }
 
@@ -7518,20 +15422,38 @@ export interface MetricEventsQueryDefinition {
 }
 
 export interface MetricEventsQueryDefinitionDimensionFilter {
+    /**
+     * Dimension filter definitions
+     */
     filters?: pulumi.Input<pulumi.Input<inputs.MetricEventsQueryDefinitionDimensionFilterFilter>[]>;
 }
 
 export interface MetricEventsQueryDefinitionDimensionFilterFilter {
+    /**
+     * The key of the dimension filter
+     */
     dimensionKey: pulumi.Input<string>;
+    /**
+     * The value of the dimension filter
+     */
     dimensionValue: pulumi.Input<string>;
 }
 
 export interface MetricEventsQueryDefinitionEntityFilter {
+    /**
+     * Conditions of entity type to filter
+     */
     conditions?: pulumi.Input<pulumi.Input<inputs.MetricEventsQueryDefinitionEntityFilterCondition>[]>;
+    /**
+     * Dimension key of entity type to filter
+     */
     dimensionKey?: pulumi.Input<string>;
 }
 
 export interface MetricEventsQueryDefinitionEntityFilterCondition {
+    /**
+     * Entity filter conditions
+     */
     conditions?: pulumi.Input<pulumi.Input<inputs.MetricEventsQueryDefinitionEntityFilterConditionCondition>[]>;
 }
 
@@ -7550,6 +15472,9 @@ export interface MetricMetadataDimensionsDimension {
      * Display name
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * Dimension key
+     */
     key: pulumi.Input<string>;
 }
 
@@ -7558,9 +15483,27 @@ export interface MetricMetadataMetricProperties {
      * Whether (true or false) the metric is relevant to a problem's impact.
      */
     impactRelevant?: pulumi.Input<boolean>;
+    /**
+     * The latency of the metric, in minutes. 
+     *
+     *  The latency is the expected reporting delay (for example, caused by constraints of cloud vendors or other third-party data sources) between the observation of a metric data point and its availability in Dynatrace. 
+     *
+     * The allowed value range is from 1 to 60 minutes.
+     */
     latency?: pulumi.Input<number>;
+    /**
+     * The maximum allowed value of the metric.
+     */
     maxValue?: pulumi.Input<number>;
+    /**
+     * The minimum allowed value of the metric.
+     */
     minValue?: pulumi.Input<number>;
+    /**
+     * Whether (true or false) the metric is related to a root cause of a problem.
+     *
+     * A root-cause relevant metric represents a strong indicator for a faulty component.
+     */
     rootCauseRelevant?: pulumi.Input<boolean>;
     /**
      * Possible Values: `Error`, `Score`, `Unknown`
@@ -7588,12 +15531,24 @@ export interface MobileAppAnomaliesErrorRateIncrease {
 }
 
 export interface MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseAuto {
+    /**
+     * Absolute threshold
+     */
     thresholdAbsolute: pulumi.Input<number>;
+    /**
+     * Relative threshold
+     */
     thresholdRelative: pulumi.Input<number>;
 }
 
 export interface MobileAppAnomaliesErrorRateIncreaseErrorRateIncreaseFixed {
+    /**
+     * Possible Values: `Low`, `Medium`, `High`
+     */
     sensitivity: pulumi.Input<string>;
+    /**
+     * Absolute threshold
+     */
     thresholdAbsolute: pulumi.Input<number>;
 }
 
@@ -7617,41 +15572,86 @@ export interface MobileAppAnomaliesSlowUserActions {
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAuto {
+    /**
+     * To avoid over-alerting do not alert for low traffic applications with less than
+     */
     durationAvoidOveralerting: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting>;
+    /**
+     * Alert if the action duration of all user actions degrades beyond **both** the absolute and relative threshold:
+     */
     durationThresholdAll: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll>;
+    /**
+     * Alert if the action duration of the slowest 10% of user actions degrades beyond **both** the absolute and relative threshold:
+     */
     durationThresholdSlowest: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest>;
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralerting {
+    /**
+     * no documentation available
+     */
     minActionRate: pulumi.Input<number>;
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAll {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: pulumi.Input<number>;
+    /**
+     * Relative threshold
+     */
     slowdownPercentage: pulumi.Input<number>;
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowest {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: pulumi.Input<number>;
+    /**
+     * Relative threshold
+     */
     slowdownPercentage: pulumi.Input<number>;
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixed {
+    /**
+     * To avoid over-alerting do not alert for low traffic applications with less than
+     */
     durationAvoidOveralerting: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting>;
+    /**
+     * Alert if the action duration of all user actions degrades beyond the absolute threshold:
+     */
     durationThresholdAllFixed: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed>;
+    /**
+     * Alert if the action duration of the slowest 10% of user actions degrades beyond the absolute threshold:
+     */
     durationThresholdSlowest: pulumi.Input<inputs.MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest>;
+    /**
+     * Possible Values: `Low`, `Medium`, `High`
+     */
     sensitivity: pulumi.Input<string>;
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationAvoidOveralerting {
+    /**
+     * no documentation available
+     */
     minActionRate: pulumi.Input<number>;
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdAllFixed {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: pulumi.Input<number>;
 }
 
 export interface MobileAppAnomaliesSlowUserActionsSlowUserActionsFixedDurationThresholdSlowest {
+    /**
+     * Absolute threshold
+     */
     durationThreshold: pulumi.Input<number>;
 }
 
@@ -7697,13 +15697,28 @@ export interface MobileAppCrashRateCrashRateIncrease {
 }
 
 export interface MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseAuto {
+    /**
+     * Dynatrace learns the typical crash rate for all app versions and will create an alert if the baseline is violated by more than a specified threshold. Analysis happens based on a sliding window of 10 minutes.
+     */
     baselineViolationPercentage: pulumi.Input<number>;
+    /**
+     * Amount of users
+     */
     concurrentUsers: pulumi.Input<number>;
+    /**
+     * Possible Values: `Low`, `Medium`, `High`
+     */
     sensitivity: pulumi.Input<string>;
 }
 
 export interface MobileAppCrashRateCrashRateIncreaseCrashRateIncreaseFixed {
+    /**
+     * Absolute threshold
+     */
     absoluteCrashRate: pulumi.Input<number>;
+    /**
+     * Amount of users
+     */
     concurrentUsers: pulumi.Input<number>;
 }
 
@@ -7730,6 +15745,9 @@ export interface MobileAppRequestErrorsErrorRules {
 }
 
 export interface MobileAppRequestErrorsErrorRulesErrorRule {
+    /**
+     * Exclude response codes
+     */
     errorCodes: pulumi.Input<string>;
 }
 
@@ -7760,27 +15778,72 @@ export interface MobileApplicationProperties {
 }
 
 export interface MobileApplicationPropertiesApiValue {
+    /**
+     * The aggregation type of the property. It defines how multiple values of the property are aggregated. Possible values are `SUM`, `MIN`, `MAX`, `FIRST` and `LAST`
+     */
     aggregation?: pulumi.Input<string>;
+    /**
+     * The cleanup rule of the property. Defines how to extract the data you need from a string value. Specify the [regular expression](https://dt-url.net/k9e0iaq) for the data you need there
+     */
     cleanupRule?: pulumi.Input<string>;
+    /**
+     * The display name of the property
+     */
     displayName?: pulumi.Input<string>;
+    /**
+     * The unique key of the mobile session or user action property
+     */
     key: pulumi.Input<string>;
     /**
-     * The name of the application
+     * The name of the reported value
      */
     name?: pulumi.Input<string>;
+    /**
+     * If `true`, the property is stored as a session property
+     */
     storeAsSessionProperty?: pulumi.Input<boolean>;
+    /**
+     * If `true`, the property is stored as a user action property
+     */
     storeAsUserActionProperty?: pulumi.Input<boolean>;
+    /**
+     * The data type of the property. Possible values are `DOUBLE`, `LONG` and `STRING`
+     */
     type: pulumi.Input<string>;
 }
 
 export interface MobileApplicationPropertiesRequestAttribute {
+    /**
+     * The aggregation type of the property. It defines how multiple values of the property are aggregated. Possible values are `SUM`, `MIN`, `MAX`, `FIRST` and `LAST`
+     */
     aggregation?: pulumi.Input<string>;
+    /**
+     * The cleanup rule of the property. Defines how to extract the data you need from a string value. Specify the [regular expression](https://dt-url.net/k9e0iaq) for the data you need there
+     */
     cleanupRule?: pulumi.Input<string>;
+    /**
+     * The display name of the property
+     */
     displayName?: pulumi.Input<string>;
+    /**
+     * The ID of the request attribute
+     */
     id: pulumi.Input<string>;
+    /**
+     * The unique key of the mobile session or user action property
+     */
     key: pulumi.Input<string>;
+    /**
+     * If `true`, the property is stored as a session property
+     */
     storeAsSessionProperty?: pulumi.Input<boolean>;
+    /**
+     * If `true`, the property is stored as a user action property
+     */
     storeAsUserActionProperty?: pulumi.Input<boolean>;
+    /**
+     * The data type of the property. Possible values are `DOUBLE`, `LONG` and `STRING`. The value MUST match the data type of the Request Attribute.
+     */
     type: pulumi.Input<string>;
 }
 
@@ -7789,6 +15852,9 @@ export interface NetworkTrafficExcludeIp {
 }
 
 export interface NetworkTrafficExcludeIpIpAddressForm {
+    /**
+     * IP address
+     */
     ipAddress: pulumi.Input<string>;
 }
 
@@ -7797,7 +15863,13 @@ export interface NetworkTrafficExcludeNic {
 }
 
 export interface NetworkTrafficExcludeNicNicForm {
+    /**
+     * Network interface
+     */
     interface: pulumi.Input<string>;
+    /**
+     * Possible Values: `OS_TYPE_AIX`, `OS_TYPE_DARWIN`, `OS_TYPE_HPUX`, `OS_TYPE_LINUX`, `OS_TYPE_SOLARIS`, `OS_TYPE_UNKNOWN`, `OS_TYPE_WINDOWS`, `OS_TYPE_ZOS`
+     */
     os: pulumi.Input<string>;
 }
 
@@ -8211,7 +16283,13 @@ export interface NotificationWebHook {
 }
 
 export interface NotificationWebHookHeader {
+    /**
+     * The name of the HTTP header
+     */
     name: pulumi.Input<string>;
+    /**
+     * The value of the HTTP header. May contain an empty value.   Required when creating a new notification.  For the **Authorization** header, GET requests return the `null` value.  If you want update a notification configuration with an **Authorization** header which you want to remain intact, set the **Authorization** header with the `null` value
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -8251,7 +16329,13 @@ export interface NotificationXmatters {
 }
 
 export interface NotificationXmattersHeader {
+    /**
+     * The name of the HTTP header
+     */
     name: pulumi.Input<string>;
+    /**
+     * The value of the HTTP header. May contain an empty value.   Required when creating a new notification.  For the **Authorization** header, GET requests return the `null` value.  If you want update a notification configuration with an **Authorization** header which you want to remain intact, set the **Authorization** header with the `null` value
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -8260,6 +16344,9 @@ export interface OneagentUpdatesMaintenanceWindows {
 }
 
 export interface OneagentUpdatesMaintenanceWindowsMaintenanceWindow {
+    /**
+     * Select a [maintenance window for OneAgent updates](https://www.terraform.io/ui/settings/builtin:deployment.management.update-windows)
+     */
     maintenanceWindow: pulumi.Input<string>;
 }
 
@@ -8268,7 +16355,13 @@ export interface OpentelemetryMetricsAdditionalAttributes {
 }
 
 export interface OpentelemetryMetricsAdditionalAttributesAdditionalAttribute {
+    /**
+     * Attribute key
+     */
     attributeKey: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
 }
 
@@ -8277,7 +16370,13 @@ export interface OpentelemetryMetricsToDropAttributes {
 }
 
 export interface OpentelemetryMetricsToDropAttributesToDropAttribute {
+    /**
+     * Attribute key
+     */
     attributeKey: pulumi.Input<string>;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
 }
 
@@ -8286,8 +16385,30 @@ export interface OsServicesDetectionConditionsLinux {
 }
 
 export interface OsServicesDetectionConditionsLinuxLinuxDetectionCondition {
+    /**
+     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     */
     condition?: pulumi.Input<string>;
+    /**
+     * Possible Values: `ServiceName`, `StartupType`
+     */
     property: pulumi.Input<string>;
+    /**
+     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     *
+     * - `$eq(enabled)` – Matches services with startup type equal to enabled.
+     *
+     * Available logic operations:
+     * - `$not($eq(enabled))` – Matches services with startup type different from enabled.
+     * - `$or($eq(enabled),$eq(disabled))` - Matches services that are either enabled or disabled.
+     *
+     * Use one of the following values as a parameter for this condition:
+     *
+     * - `enabled`
+     * - `enabled-runtime`
+     * - `static`
+     * - `disabled`
+     */
     startupCondition?: pulumi.Input<string>;
 }
 
@@ -8296,8 +16417,33 @@ export interface OsServicesDetectionConditionsWindows {
 }
 
 export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindow {
+    /**
+     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     */
     condition?: pulumi.Input<string>;
+    /**
+     * Possible Values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
+     */
     property: pulumi.Input<string>;
+    /**
+     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     *
+     * - `$eq(manual)` – Matches services that are started manually.
+     *
+     * Available logic operations:
+     * - `$not($eq(auto))` – Matches services with startup type different from Automatic.
+     * - `$or($eq(auto),$eq(manual))` – Matches if service's startup type is either Automatic or Manual.
+     *
+     * Use one of the following values as a parameter for this condition:
+     *
+     * - `manual` for Manual
+     * - `manualTrigger` for Manual (Trigger Start)
+     * - `auto` for Automatic
+     * - `autoDelay` for Automatic (Delayed Start)
+     * - `autoTrigger` for Automatic (Trigger Start)
+     * - `autoDelayTrigger` for Automatic (Delayed Start, Trigger Start)
+     * - `disabled` for Disabled
+     */
     startupCondition?: pulumi.Input<string>;
 }
 
@@ -8306,7 +16452,13 @@ export interface OsServicesMetadata {
 }
 
 export interface OsServicesMetadataItem {
+    /**
+     * Type 'dt.' for key hints.
+     */
     metadataKey: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     metadataValue: pulumi.Input<string>;
 }
 
@@ -8315,20 +16467,32 @@ export interface OwnershipConfigOwnershipIdentifiers {
 }
 
 export interface OwnershipConfigOwnershipIdentifiersOwnershipIdentifier {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Key for ownership metadata and tags
+     */
     key: pulumi.Input<string>;
 }
 
 export interface OwnershipTeamsAdditionalInformation {
-    /**
-     * Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
-     */
     additionalInformations: pulumi.Input<pulumi.Input<inputs.OwnershipTeamsAdditionalInformationAdditionalInformation>[]>;
 }
 
 export interface OwnershipTeamsAdditionalInformationAdditionalInformation {
+    /**
+     * Name
+     */
     key: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     url?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     value: pulumi.Input<string>;
 }
 
@@ -8337,16 +16501,40 @@ export interface OwnershipTeamsContactDetails {
 }
 
 export interface OwnershipTeamsContactDetailsContactDetail {
+    /**
+     * no documentation available
+     */
     email?: pulumi.Input<string>;
+    /**
+     * Possible Values: `EMAIL`, `JIRA`, `MS_TEAMS`, `SLACK`
+     */
     integrationType: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     jira?: pulumi.Input<inputs.OwnershipTeamsContactDetailsContactDetailJira>;
+    /**
+     * Team
+     */
     msTeams?: pulumi.Input<string>;
+    /**
+     * Channel
+     */
     slackChannel?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     url?: pulumi.Input<string>;
 }
 
 export interface OwnershipTeamsContactDetailsContactDetailJira {
+    /**
+     * Default Assignee
+     */
     defaultAssignee: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     project: pulumi.Input<string>;
 }
 
@@ -8355,7 +16543,13 @@ export interface OwnershipTeamsLinks {
 }
 
 export interface OwnershipTeamsLinksLink {
+    /**
+     * Possible Values: `DASHBOARD`, `DOCUMENTATION`, `HEALTH_APP`, `REPOSITORY`, `RUNBOOK`, `URL`, `WIKI`
+     */
     linkType: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     url: pulumi.Input<string>;
 }
 
@@ -8387,6 +16581,9 @@ export interface OwnershipTeamsSupplementaryIdentifiers {
 }
 
 export interface OwnershipTeamsSupplementaryIdentifiersSupplementaryIdentifier {
+    /**
+     * Supplementary Identifier
+     */
     supplementaryIdentifier: pulumi.Input<string>;
 }
 
@@ -8406,7 +16603,13 @@ export interface ProcessAvailabilityMetadata {
 }
 
 export interface ProcessAvailabilityMetadataItem {
+    /**
+     * Type 'dt.' for key hints.
+     */
     key: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     value: pulumi.Input<string>;
 }
 
@@ -8415,7 +16618,20 @@ export interface ProcessAvailabilityRules {
 }
 
 export interface ProcessAvailabilityRulesRule {
+    /**
+     * - $contains(svc) – Matches if svc appears anywhere in the process property value.
+     * - $eq(svc.exe) – Matches if svc.exe matches the process property value exactly.
+     * - $prefix(svc) – Matches if app matches the prefix of the process property value.
+     * - $suffix(svc.py) – Matches if svc.py matches the suffix of the process property value.
+     *
+     * For example, $suffix(svc.py) would detect processes named loyaltysvc.py and paymentssvc.py.
+     *
+     * For more details, see [Process availability](https://dt-url.net/v923x37).
+     */
     condition: pulumi.Input<string>;
+    /**
+     * Possible Values: `Executable`, `ExecutablePath`, `CommandLine`
+     */
     property: pulumi.Input<string>;
 }
 
@@ -8435,8 +16651,17 @@ export interface ProcessGroupDetectionGroupExtraction {
 }
 
 export interface ProcessGroupDetectionGroupExtractionDelimiter {
+    /**
+     * Delimit from
+     */
     from?: pulumi.Input<string>;
+    /**
+     * (e.g. versions, hex, dates, and build numbers)
+     */
     removeIds: pulumi.Input<boolean>;
+    /**
+     * Delimit to
+     */
     to?: pulumi.Input<string>;
 }
 
@@ -8452,8 +16677,17 @@ export interface ProcessGroupDetectionInstanceExtraction {
 }
 
 export interface ProcessGroupDetectionInstanceExtractionDelimiter {
+    /**
+     * Delimit from
+     */
     from?: pulumi.Input<string>;
+    /**
+     * (e.g. versions, hex, dates, and build numbers)
+     */
     removeIds: pulumi.Input<boolean>;
+    /**
+     * Delimit to
+     */
     to?: pulumi.Input<string>;
 }
 
@@ -8492,802 +16726,2076 @@ export interface ProcessMonitoringRuleCondition {
 }
 
 export interface ProcessgroupNamingCondition {
+    /**
+     * A conditions for the metric usage
+     */
     conditions?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionCondition>[]>;
 }
 
 export interface ProcessgroupNamingConditionCondition {
     /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     applicationTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionApplicationTypeComparison>[]>;
+    /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     */
     applicationTypes?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionApplicationType>[]>;
+    /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     */
     azureComputeModeComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionAzureComputeModeComparison>[]>;
     /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     *
      * @deprecated You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
      */
     azureComputeModes?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionAzureComputeMode>[]>;
     /**
+     * Comparison for `AZURE_SKU` attributes
+     *
      * @deprecated You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
      */
     azureSkuComparisions?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionAzureSkuComparision>[]>;
+    /**
+     * Comparison for `AZURE_SKU` attributes
+     */
     azureSkus?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionAzureSkus>[]>;
     /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     *
      * @deprecated You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
      */
     baseComparisonBasics?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionBaseComparisonBasic>[]>;
     /**
+     * Fallback for not yet known type
+     *
      * @deprecated 'base_condition_key' is deprecated. You should use 'key'
      */
     baseConditionKeys?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionBaseConditionKey>[]>;
     /**
+     * Comparison for `BITNESS` attributes
+     *
      * @deprecated You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
      */
     bitnessComparisions?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionBitnessComparision>[]>;
+    /**
+     * Comparison for `BITNESS` attributes
+     */
     bitnesses?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionBitness>[]>;
     /**
+     * Comparison for `CLOUD_TYPE` attributes
+     *
      * @deprecated You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
      */
     cloudTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionCloudTypeComparison>[]>;
+    /**
+     * Comparison for `CLOUD_TYPE` attributes
+     */
     cloudTypes?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionCloudType>[]>;
+    /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     */
     comparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionComparison>[]>;
     /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     customApplicationTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionCustomApplicationTypeComparison>[]>;
+    /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     */
     customApplicationTypes?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionCustomApplicationType>[]>;
     /**
+     * Key for Custom Host Metadata
+     *
      * @deprecated 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
      */
     customHostMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionCustomHostMetadataConditionKey>[]>;
+    /**
+     * Key for Custom Host Metadata
+     */
     customHostMetadatas?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionCustomHostMetadata>[]>;
     /**
+     * Key for Custom Process Metadata
+     *
      * @deprecated 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
      */
     customProcessMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionCustomProcessMetadataConditionKey>[]>;
+    /**
+     * Key for Custom Process Metadata
+     */
     customProcessMetadatas?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionCustomProcessMetadata>[]>;
+    /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     */
     databaseTopologies?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionDatabaseTopology>[]>;
     /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     databaseTopologyComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionDatabaseTopologyComparison>[]>;
     /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     *
      * @deprecated You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
      */
     dcrumDecoderComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionDcrumDecoderComparison>[]>;
+    /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     */
     dcrumDecoders?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionDcrumDecoder>[]>;
+    /**
+     * Comparison for `ENTITY_ID` attributes
+     */
     entities?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionEntity>[]>;
     /**
+     * Comparison for `ENTITY_ID` attributes
+     *
      * @deprecated You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
      */
     entityIdComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionEntityIdComparison>[]>;
+    /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     */
     hostTeches?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionHostTech>[]>;
     /**
-     * @deprecated `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+     * `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
+     *
+     * @deprecated `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
      */
     hypervisorTypeComparisions?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionHypervisorTypeComparision>[]>;
+    /**
+     * Comparison for `HYPERVISOR_TYPE` attributes
+     */
     hypervisors?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionHypervisor>[]>;
     /**
+     * Comparison for `INDEXED_NAME` attributes
+     *
      * @deprecated You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedNameComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionIndexedNameComparison>[]>;
+    /**
+     * Comparison for `INDEXED_NAME` attributes
+     */
     indexedNames?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionIndexedName>[]>;
     /**
+     * Comparison for `INDEXED_STRING` attributes
+     *
      * @deprecated You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedStringComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionIndexedStringComparison>[]>;
+    /**
+     * Comparison for `INDEXED_STRING` attributes
+     */
     indexedStrings?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionIndexedString>[]>;
     /**
+     * Comparison for `INDEXED_TAG` attributes
+     *
      * @deprecated You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedTagComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionIndexedTagComparison>[]>;
+    /**
+     * Comparison for `INDEXED_TAG` attributes
+     */
     indexedTags?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionIndexedTag>[]>;
     /**
+     * Comparison for `INTEGER` attributes
+     *
      * @deprecated You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
      */
     integerComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionIntegerComparison>[]>;
+    /**
+     * Comparison for `INTEGER` attributes
+     */
     integers?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionInteger>[]>;
     /**
+     * Comparison for `IP_ADDRESS` attributes
+     *
      * @deprecated You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
      */
     ipaddressComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionIpaddressComparison>[]>;
+    /**
+     * Comparison for `IP_ADDRESS` attributes
+     */
     ipaddresses?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionIpaddress>[]>;
+    /**
+     * Fallback for not yet known type
+     */
     keys?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionKey>[]>;
     /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     *
      * @deprecated You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
      */
     mobilePlatformComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionMobilePlatformComparison>[]>;
+    /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     */
     mobilePlatforms?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionMobilePlatform>[]>;
+    /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     */
     osArches?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionOsArch>[]>;
+    /**
+     * Comparison for `OS_TYPE` attributes
+     */
     osTypes?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionOsType>[]>;
     /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     *
      * @deprecated You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
      */
     osarchitectureComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionOsarchitectureComparison>[]>;
     /**
+     * Comparison for `OS_TYPE` attributes
+     *
      * @deprecated You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
      */
     ostypeComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionOstypeComparison>[]>;
     /**
+     * Comparison for `PAAS_TYPE` attributes
+     *
      * @deprecated You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
      */
     paasTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionPaasTypeComparison>[]>;
+    /**
+     * Comparison for `PAAS_TYPE` attributes
+     */
     paasTypes?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionPaasType>[]>;
     /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     *
      * @deprecated 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
      */
     processMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionProcessMetadataConditionKey>[]>;
+    /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     */
     processMetadatas?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionProcessMetadata>[]>;
+    /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     */
     serviceTopologies?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionServiceTopology>[]>;
     /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTopologyComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionServiceTopologyComparison>[]>;
     /**
+     * Comparison for `SERVICE_TYPE` attributes
+     *
      * @deprecated You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionServiceTypeComparison>[]>;
+    /**
+     * Comparison for `SERVICE_TYPE` attributes
+     */
     serviceTypes?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionServiceType>[]>;
     /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     *
      * @deprecated You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleHostTechComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionSimpleHostTechComparison>[]>;
     /**
+     * Comparison for `SIMPLE_TECH` attributes
+     *
      * @deprecated You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleTechComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionSimpleTechComparison>[]>;
     /**
+     * Comparison for `STRING` attributes
+     *
      * @deprecated You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
      */
     stringComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionStringComparison>[]>;
     /**
+     * The key for dynamic attributes of the `STRING` type
+     *
      * @deprecated 'string_condition_key' is deprecated. You should use 'string_key'
      */
     stringConditionKeys?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionStringConditionKey>[]>;
+    /**
+     * The key for dynamic attributes of the `STRING` type
+     */
     stringKeys?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionStringKey>[]>;
+    /**
+     * Comparison for `STRING` attributes
+     */
     strings?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionString>[]>;
     /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     *
      * @deprecated You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
      */
     syntheticEngineTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionSyntheticEngineTypeComparison>[]>;
+    /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     */
     syntheticEngines?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionSyntheticEngine>[]>;
     /**
+     * Comparison for `TAG` attributes
+     *
      * @deprecated You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
      */
     tagComparisons?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionTagComparison>[]>;
+    /**
+     * Comparison for `TAG` attributes
+     */
     tags?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionTag>[]>;
+    /**
+     * Comparison for `SIMPLE_TECH` attributes
+     */
     teches?: pulumi.Input<pulumi.Input<inputs.ProcessgroupNamingConditionConditionTech>[]>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionApplicationType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionAzureComputeMode {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionAzureComputeModeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionAzureSkuComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be AZURE_SKU
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionAzureSkus {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionBaseComparisonBasic {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * The type of comparison
+     */
     type: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionBaseConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionBitness {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionBitnessComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be BITNESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionCloudType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionCloudTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be CLOUD_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * The type of comparison
+     */
     type: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomApplicationType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be CUSTOM_APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomHostMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.ProcessgroupNamingConditionConditionCustomHostMetadataDynamicKey>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomHostMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.ProcessgroupNamingConditionConditionCustomHostMetadataConditionKeyDynamicKey>;
     /**
+     * if specified, needs to be HOST_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomHostMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomHostMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.ProcessgroupNamingConditionConditionCustomProcessMetadataDynamicKey>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.ProcessgroupNamingConditionConditionCustomProcessMetadataConditionKeyDynamicKey>;
     /**
+     * if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomProcessMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionCustomProcessMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionDatabaseTopology {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionDatabaseTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be DATABASE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionDcrumDecoder {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionDcrumDecoderComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be DCRUM_DECODER_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionEntity {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionEntityIdComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be ENTITY_ID
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionHostTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.ProcessgroupNamingConditionConditionHostTechValue>;
 }
 
 export interface ProcessgroupNamingConditionConditionHostTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionHypervisor {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionHypervisorTypeComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be HYPERVISOR_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedName {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedNameComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_NAME
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedString {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedStringComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedTag {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.ProcessgroupNamingConditionConditionIndexedTagValue>;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedTagComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.ProcessgroupNamingConditionConditionIndexedTagComparisonValue>;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionIndexedTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionInteger {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<number>;
 }
 
 export interface ProcessgroupNamingConditionConditionIntegerComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INTEGER
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<number>;
 }
 
 export interface ProcessgroupNamingConditionConditionIpaddress {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionIpaddressComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be IP_ADDRESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionMobilePlatform {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionMobilePlatformComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be MOBILE_PLATFORM
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionOsArch {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionOsType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionOsarchitectureComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be OS_ARCHITECTURE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionOstypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be OS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionPaasType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionPaasTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be PAAS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: pulumi.Input<string>;
     /**
+     * if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionServiceTopology {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionServiceTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SERVICE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionServiceType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionServiceTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SERVICE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionSimpleHostTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SIMPLE_HOST_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.ProcessgroupNamingConditionConditionSimpleHostTechComparisonValue>;
 }
 
 export interface ProcessgroupNamingConditionConditionSimpleHostTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionSimpleTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SIMPLE_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.ProcessgroupNamingConditionConditionSimpleTechComparisonValue>;
 }
 
 export interface ProcessgroupNamingConditionConditionSimpleTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionString {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionStringComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionStringConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: pulumi.Input<string>;
     /**
+     * if specified, needs to be `STRING`
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionStringKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionSyntheticEngine {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionSyntheticEngineTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SYNTHETIC_ENGINE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionTag {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.ProcessgroupNamingConditionConditionTagValue>;
 }
 
 export interface ProcessgroupNamingConditionConditionTagComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.ProcessgroupNamingConditionConditionTagComparisonValue>;
 }
 
 export interface ProcessgroupNamingConditionConditionTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ProcessgroupNamingConditionConditionTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.ProcessgroupNamingConditionConditionTechValue>;
 }
 
 export interface ProcessgroupNamingConditionConditionTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
@@ -9299,8 +18807,17 @@ export interface QueueManagerAliasQueue {
 }
 
 export interface QueueManagerAliasQueueAliasQueue {
+    /**
+     * The name of the alias queue
+     */
     aliasQueueName: pulumi.Input<string>;
+    /**
+     * The name of the base queue
+     */
     baseQueueName: pulumi.Input<string>;
+    /**
+     * Name of the cluster(s) this alias should be visible in
+     */
     clusterVisibilities?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -9312,7 +18829,13 @@ export interface QueueManagerClusterQueue {
 }
 
 export interface QueueManagerClusterQueueClusterQueue {
+    /**
+     * Name of the cluster(s) this local queue should be visible in
+     */
     clusterVisibilities?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The name of the local queue
+     */
     localQueueName: pulumi.Input<string>;
 }
 
@@ -9324,9 +18847,21 @@ export interface QueueManagerRemoteQueue {
 }
 
 export interface QueueManagerRemoteQueueRemoteQueue {
+    /**
+     * Name of the cluster(s) this local definition of the remote queue should be visible in
+     */
     clusterVisibilities?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The name of the local queue
+     */
     localQueueName: pulumi.Input<string>;
+    /**
+     * The name of the remote queue manager
+     */
     remoteQueueManager: pulumi.Input<string>;
+    /**
+     * The name of the remote queue
+     */
     remoteQueueName: pulumi.Input<string>;
 }
 
@@ -9375,48 +18910,95 @@ export interface RequestAttributeDataSource {
      * The source of the attribute to capture. Works in conjunction with **parameterName** or **methods** and **technology**
      */
     source: pulumi.Input<string>;
+    /**
+     * The technology of the method to capture if the **source** value is `METHOD_PARAM`. 
+     *
+     *  Not applicable in other cases
+     */
     technology?: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Process values as specified
+     */
     valueProcessing?: pulumi.Input<inputs.RequestAttributeDataSourceValueProcessing>;
 }
 
 export interface RequestAttributeDataSourceCicsSdkMethodNodeCondition {
+    /**
+     * Negate the comparison
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator comparing the extracted value to the comparison value
+     */
     operator: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value: pulumi.Input<string>;
 }
 
 export interface RequestAttributeDataSourceIibLabelMethodNodeCondition {
+    /**
+     * Negate the comparison
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator comparing the extracted value to the comparison value
+     */
     operator: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value: pulumi.Input<string>;
 }
 
 export interface RequestAttributeDataSourceIibMethodNodeCondition {
+    /**
+     * Negate the comparison
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator comparing the extracted value to the comparison value
+     */
     operator: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value: pulumi.Input<string>;
 }
 
 export interface RequestAttributeDataSourceMethod {
+    /**
+     * The index of the argument to capture. Set `0` to capture the return value, `1` or higher to capture a mehtod argument.   Required if the **capture** is set to `ARGUMENT`.  Not applicable in other cases
+     */
     argumentIndex?: pulumi.Input<number>;
+    /**
+     * What to capture from the method
+     */
     capture: pulumi.Input<string>;
+    /**
+     * The getter chain to apply to the captured object. It is required in one of the following cases:  The **capture** is set to `THIS`.    The **capture** is set to `ARGUMENT`, and the argument is not a primitive, a primitive wrapper class, a string, or an array.   Not applicable in other cases
+     */
     deepObjectAccess?: pulumi.Input<string>;
+    /**
+     * Configuration of a method to be captured
+     */
     method?: pulumi.Input<inputs.RequestAttributeDataSourceMethodMethod>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -9425,24 +19007,60 @@ export interface RequestAttributeDataSourceMethod {
 }
 
 export interface RequestAttributeDataSourceMethodMethod {
+    /**
+     * Configuration of a method to be captured
+     */
     argumentTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The class name where the method to capture resides.   Either this or the **fileName** must be set
+     */
     className?: pulumi.Input<string>;
+    /**
+     * The file name where the method to capture resides.   Either this or **className** must be set
+     */
     fileName?: pulumi.Input<string>;
+    /**
+     * The operator of the comparison. If not set, `EQUALS` is used
+     */
     fileNameMatcher?: pulumi.Input<string>;
+    /**
+     * The name of the method to capture
+     */
     methodName: pulumi.Input<string>;
+    /**
+     * The modifiers of the method to capture
+     */
     modifiers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The return type
+     */
     returnType: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The visibility of the method to capture
+     */
     visibility: pulumi.Input<string>;
 }
 
 export interface RequestAttributeDataSourceScope {
+    /**
+     * Only applies to this host group
+     */
     hostGroup?: pulumi.Input<string>;
+    /**
+     * Only applies to this process group. Note that this can't be transferred between different clusters or environments
+     */
     processGroup?: pulumi.Input<string>;
+    /**
+     * Only applies to this service technology
+     */
     serviceTechnology?: pulumi.Input<string>;
+    /**
+     * Only apply to process groups matching this tag
+     */
     tagOfProcessGroup?: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -9451,20 +19069,44 @@ export interface RequestAttributeDataSourceScope {
 }
 
 export interface RequestAttributeDataSourceValueProcessing {
+    /**
+     * Preprocess by extracting a substring from the original value
+     */
     extractSubstring?: pulumi.Input<inputs.RequestAttributeDataSourceValueProcessingExtractSubstring>;
+    /**
+     * Split (preprocessed) string values at this separator
+     */
     splitAt?: pulumi.Input<string>;
+    /**
+     * Prune Whitespaces. Defaults to false
+     */
     trim?: pulumi.Input<boolean>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * IBM integration bus label node name condition for which the value is captured
+     */
     valueCondition?: pulumi.Input<inputs.RequestAttributeDataSourceValueProcessingValueCondition>;
+    /**
+     * Extract value from captured data per regex
+     */
     valueExtractorRegex?: pulumi.Input<string>;
 }
 
 export interface RequestAttributeDataSourceValueProcessingExtractSubstring {
+    /**
+     * The delimiter string
+     */
     delimiter: pulumi.Input<string>;
+    /**
+     * The end-delimiter string.   Required if the **position** value is `BETWEEN`. Otherwise not allowed
+     */
     endDelimiter?: pulumi.Input<string>;
+    /**
+     * The position of the extracted string relative to delimiters
+     */
     position: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
@@ -9473,269 +19115,737 @@ export interface RequestAttributeDataSourceValueProcessingExtractSubstring {
 }
 
 export interface RequestAttributeDataSourceValueProcessingValueCondition {
+    /**
+     * Negate the comparison
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator comparing the extracted value to the comparison value
+     */
     operator: pulumi.Input<string>;
     /**
      * allows for configuring properties that are not explicitly supported by the current version of this provider
      */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value: pulumi.Input<string>;
 }
 
 export interface RequestNamingConditions {
+    /**
+     * A conditions for the metric usage
+     */
     conditions?: pulumi.Input<pulumi.Input<inputs.RequestNamingConditionsCondition>[]>;
 }
 
 export interface RequestNamingConditionsCondition {
+    /**
+     * The attribute to be matched.  Note that for a service property attribute you must use the comparison of the `FAST_STRING` type. Possible values are `ACTOR_SYSTEM`, `AKKA_ACTOR_CLASS_NAME`, `AKKA_ACTOR_MESSAGE_TYPE`, `AKKA_ACTOR_PATH`, `APPLICATION_BUILD_VERSION`, `APPLICATION_RELEASE_VERSION`, `AZURE_FUNCTIONS_FUNCTION_NAME`, `AZURE_FUNCTIONS_SITE_NAME`, `CICS_PROGRAM_NAME`, `CICS_SYSTEM_ID`, `CICS_TASK_ID`, `CICS_TRANSACTION_ID`, `CICS_USER_ID`, `CPU_TIME`, `CTG_GATEWAY_URL`, `CTG_PROGRAM`, `CTG_SERVER_NAME`, `CTG_TRANSACTION_ID`, `CUSTOMSERVICE_CLASS`, `CUSTOMSERVICE_METHOD`, `DATABASE_CHILD_CALL_COUNT`, `DATABASE_CHILD_CALL_TIME`, `DATABASE_HOST`, `DATABASE_NAME`, `DATABASE_TYPE`, `DATABASE_URL`, `DISK_IO_TIME`, `ERROR_COUNT`, `ESB_APPLICATION_NAME`, `ESB_INPUT_TYPE`, `ESB_LIBRARY_NAME`, `ESB_MESSAGE_FLOW_NAME`, `EXCEPTION_CLASS`, `EXCEPTION_MESSAGE`, `FAILED_STATE`, `FAILURE_REASON`, `FLAW_STATE`, `HTTP_REQUEST_METHOD`, `HTTP_STATUS`, `HTTP_STATUS_CLASS`, `IMS_PROGRAM_NAME`, `IMS_TRANSACTION_ID`, `IMS_USER_ID`, `IO_TIME`, `IS_KEY_REQUEST`, `LAMBDA_COLDSTART`, `LOCK_TIME`, `MESSAGING_DESTINATION_TYPE`, `MESSAGING_IS_TEMPORARY_QUEUE`, `MESSAGING_QUEUE_NAME`, `MESSAGING_QUEUE_VENDOR`, `NETWORK_IO_TIME`, `NON_DATABASE_CHILD_CALL_COUNT`, `NON_DATABASE_CHILD_CALL_TIME`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_TAG`, `REMOTE_ENDPOINT`, `REMOTE_METHOD`, `REMOTE_SERVICE_NAME`, `REQUEST_NAME`, `REQUEST_TYPE`, `RESPONSE_TIME`, `RESPONSE_TIME_CLIENT`, `RMI_CLASS`, `RMI_METHOD`, `SERVICE_DISPLAY_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REQUEST_ATTRIBUTE`, `SERVICE_TAG`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `SUSPENSION_TIME`, `TOTAL_PROCESSING_TIME`, `WAIT_TIME`, `WEBREQUEST_QUERY`, `WEBREQUEST_RELATIVE_URL`, `WEBREQUEST_URL`, `WEBREQUEST_URL_HOST`, `WEBREQUEST_URL_PATH`, `WEBREQUEST_URL_PORT`, `WEBSERVICE_ENDPOINT`, `WEBSERVICE_METHOD` and `ZOS_CALL_TYPE`
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Type-specific comparison for attributes
+     */
     comparison: pulumi.Input<inputs.RequestNamingConditionsConditionComparison>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface RequestNamingConditionsConditionComparison {
+    /**
+     * Boolean Comparison for `BOOLEAN` attributes
+     */
     boolean?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonBoolean>;
+    /**
+     * Type-specific comparison information for attributes of type 'ESB_INPUT_NODE_TYPE'
+     */
     esbInputNodeType?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonEsbInputNodeType>;
+    /**
+     * Comparison for `FAILED_STATE` attributes
+     */
     failedState?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonFailedState>;
+    /**
+     * Comparison for `FAILURE_REASON` attributes
+     */
     failureReason?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonFailureReason>;
+    /**
+     * Comparison for `FAST_STRING` attributes. Use it for all service property attributes
+     */
     fastString?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonFastString>;
+    /**
+     * Comparison for `FLAW_STATE` attributes
+     */
     flawState?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonFlawState>;
+    /**
+     * Comparison for `NUMBER` attributes
+     */
     generic?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonGeneric>;
+    /**
+     * Comparison for `HTTP_METHOD` attributes
+     */
     httpMethod?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonHttpMethod>;
+    /**
+     * Comparison for `HTTP_STATUS_CLASS` attributes
+     */
     httpStatusClass?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonHttpStatusClass>;
+    /**
+     * Comparison for `IIB_INPUT_NODE_TYPE` attributes
+     */
     iibInputNodeType?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonIibInputNodeType>;
+    /**
+     * Reverse the comparison **operator**. For example, it turns **equals** into **does not equal**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Comparison for `NUMBER` attributes
+     */
     number?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonNumber>;
+    /**
+     * Comparison for `NUMBER_REQUEST_ATTRIBUTE` attributes
+     */
     numberRequestAttribute?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonNumberRequestAttribute>;
+    /**
+     * Comparison for `SERVICE_TYPE` attributes
+     */
     serviceType?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonServiceType>;
+    /**
+     * Comparison for `STRING` attributes
+     */
     string?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonString>;
+    /**
+     * Comparison for `STRING_REQUEST_ATTRIBUTE` attributes
+     */
     stringRequestAttribute?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonStringRequestAttribute>;
+    /**
+     * Comparison for `TAG` attributes
+     */
     tag?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonTag>;
+    /**
+     * Comparison for `ZOS_CALL_TYPE` attributes
+     */
     zosCallType?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonZosCallType>;
 }
 
 export interface RequestNamingConditionsConditionComparisonBoolean {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value: pulumi.Input<boolean>;
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<pulumi.Input<boolean>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonEsbInputNodeType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonFailedState {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `FAILED` and `FAILED`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `FAILED` and `FAILED`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonFailureReason {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `EXCEPTION_AT_ENTRY_NODE`, `EXCEPTION_ON_ANY_NODE`, `HTTP_CODE` and `REQUEST_ATTRIBUTE`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `EXCEPTION_AT_ENTRY_NODE`, `EXCEPTION_ON_ANY_NODE`, `HTTP_CODE` and `REQUEST_ATTRIBUTE`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonFastString {
+    /**
+     * The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `CONTAINS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonFlawState {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `FLAWED` and `NOT_FLAWED`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `FLAWED` and `NOT_FLAWED`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonGeneric {
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface RequestNamingConditionsConditionComparisonHttpMethod {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `CONNECT`, `DELETE`, `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT` and `TRACE`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `CONNECT`, `DELETE`, `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, `PUT` and `TRACE`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonHttpStatusClass {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `C_1XX`, `C_2XX`, `C_3XX`, `C_4XX`, `C_5XX` and `NO_RESPONSE`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `C_1XX`, `C_2XX`, `C_3XX`, `C_4XX`, `C_5XX` and `NO_RESPONSE`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonIibInputNodeType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `CALLABLE_FLOW_ASYNC_RESPONSE_NODE`, `CALLABLE_FLOW_INPUT_NODE`, `DATABASE_INPUT_NODE`, `DOTNET_INPUT_NODE`, `EMAIL_INPUT_NODE`, `EVENT_INPUT`, `EVENT_INPUT_NODE`, `FILE_INPUT_NODE`, `FTE_INPUT_NODE`, `HTTP_ASYNC_RESPONSE`, `JD_EDWARDS_INPUT_NODE`, `JMS_CLIENT_INPUT_NODE`, `LABEL_NODE`, `MQ_INPUT_NODE`, `PEOPLE_SOFT_INPUT_NODE`, `REST_ASYNC_RESPONSE`, `REST_REQUEST`, `SAP_INPUT_NODE`, `SCA_ASYNC_RESPONSE_NODE`, `SCA_INPUT_NODE`, `SIEBEL_INPUT_NODE`, `SOAP_INPUT_NODE`, `TCPIP_CLIENT_INPUT_NODE`, `TCPIP_CLIENT_REQUEST_NODE`, `TCPIP_SERVER_INPUT_NODE`, `TCPIP_SERVER_REQUEST_NODE`, `TIMEOUT_NOTIFICATION_NODE` and `WS_INPUT_NODE`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonNumber {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `LOWER_THAN` and `LOWER_THAN_OR_EQUAL`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<number>;
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<pulumi.Input<number>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonNumberRequestAttribute {
+    /**
+     * If `true`, the request attribute is matched on child service calls. Default is `false`
+     */
     matchOnChildCalls?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `LOWER_THAN` and `LOWER_THAN_OR_EQUAL`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * No documentation available for this attribute
+     */
     requestAttribute: pulumi.Input<string>;
+    /**
+     * Defines valid sources of request attributes for conditions or placeholders
+     */
     source?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonNumberRequestAttributeSource>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<number>;
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<pulumi.Input<number>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonNumberRequestAttributeSource {
+    /**
+     * Use only request attributes from services that belong to this management zone.. Use either this or `serviceTag`
+     */
     managementZone?: pulumi.Input<string>;
+    /**
+     * Use only request attributes from services that have this tag. Use either this or `managementZone`
+     */
     serviceTag?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonNumberRequestAttributeSourceServiceTag>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface RequestNamingConditionsConditionComparisonNumberRequestAttributeSourceServiceTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. For custom tags use the `CONTEXTLESS` value. The context is set for tags that are automatically imported by OneAgent (for example, from the AWS console or environment variables). It’s useful for determining the origin of tags when not manually defined, and it also helps to prevent clashes with other existing tags. If the tag is not automatically imported, `CONTEXTLESS` set. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_COMPUTE_ENGINE` and `KUBERNETES`
+     */
     context?: pulumi.Input<string>;
+    /**
+     * The key of the tag. For custom tags, put the tag value here. The key allows categorization of multiple tags. It is possible that there are multiple values for a single key which will all be represented as standalone tags. Therefore, the key does not have the semantic of a map key but is more like a key of a key-value tuple. In some cases, for example custom tags, the key represents the actual tag value and the value field is not set – those are called valueless tags
+     */
     key: pulumi.Input<string>;
+    /**
+     * has no documentation
+     */
     tagKey?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonNumberRequestAttributeSourceServiceTagTagKey>;
+    /**
+     * The value of the tag. Not applicable to custom tags. If a tag does have a separate key and value (in the textual representation they are split by the colon ‘:’), this field is set with the actual value. Key-value pairs can occur for automatically imported tags and tags set by rules if extractors are used
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface RequestNamingConditionsConditionComparisonNumberRequestAttributeSourceServiceTagTagKey {
+    /**
+     * has no documentation
+     */
     context?: pulumi.Input<string>;
+    /**
+     * has no documentation
+     */
     key?: pulumi.Input<string>;
 }
 
 export interface RequestNamingConditionsConditionComparisonServiceType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `BACKGROUND_ACTIVITY`, `CICS_SERVICE`, `CUSTOM_SERVICE`, `DATABASE_SERVICE`, `ENTERPRISE_SERVICE_BUS_SERVICE`, `EXTERNAL`, `IBM_INTEGRATION_BUS_SERVICE`, `IMS_SERVICE`, `MESSAGING_SERVICE`, `RMI_SERVICE`, `RPC_SERVICE`, `WEB_REQUEST_SERVICE` and `WEB_SERVICE`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `BACKGROUND_ACTIVITY`, `CICS_SERVICE`, `CUSTOM_SERVICE`, `DATABASE_SERVICE`, `ENTERPRISE_SERVICE_BUS_SERVICE`, `EXTERNAL`, `IBM_INTEGRATION_BUS_SERVICE`, `IMS_SERVICE`, `MESSAGING_SERVICE`, `RMI_SERVICE`, `RPC_SERVICE`, `WEB_REQUEST_SERVICE` and `WEB_SERVICE`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonString {
+    /**
+     * The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `BEGINS_WITH`, `BEGINS_WITH_ANY_OF`, `CONTAINS`, `ENDS_WITH`, `ENDS_WITH_ANY_OF`, `EQUALS`, `EQUALS_ANY_OF`, `EXISTS` and `REGEX_MATCHES`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonStringRequestAttribute {
+    /**
+     * The comparison is case-sensitive (`true`) or not case-sensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * If `true`, the request attribute is matched on child service calls. Default is `false`
+     */
     matchOnChildCalls?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `BEGINS_WITH`, `BEGINS_WITH_ANY_OF`, `CONTAINS`, `ENDS_WITH`, `ENDS_WITH_ANY_OF`, `EQUALS`, `EQUALS_ANY_OF`, `EXISTS` and `REGEX_MATCHES`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * No documentation available for this attribute
+     */
     requestAttribute: pulumi.Input<string>;
+    /**
+     * Defines valid sources of request attributes for conditions or placeholders
+     */
     source?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonStringRequestAttributeSource>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonStringRequestAttributeSource {
+    /**
+     * Use only request attributes from services that belong to this management zone.. Use either this or `serviceTag`
+     */
     managementZone?: pulumi.Input<string>;
+    /**
+     * Use only request attributes from services that have this tag. Use either this or `managementZone`
+     */
     serviceTag?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonStringRequestAttributeSourceServiceTag>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface RequestNamingConditionsConditionComparisonStringRequestAttributeSourceServiceTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. For custom tags use the `CONTEXTLESS` value. The context is set for tags that are automatically imported by OneAgent (for example, from the AWS console or environment variables). It’s useful for determining the origin of tags when not manually defined, and it also helps to prevent clashes with other existing tags. If the tag is not automatically imported, `CONTEXTLESS` set. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_COMPUTE_ENGINE` and `KUBERNETES`
+     */
     context?: pulumi.Input<string>;
+    /**
+     * The key of the tag. For custom tags, put the tag value here. The key allows categorization of multiple tags. It is possible that there are multiple values for a single key which will all be represented as standalone tags. Therefore, the key does not have the semantic of a map key but is more like a key of a key-value tuple. In some cases, for example custom tags, the key represents the actual tag value and the value field is not set – those are called valueless tags
+     */
     key: pulumi.Input<string>;
+    /**
+     * has no documentation
+     */
     tagKey?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonStringRequestAttributeSourceServiceTagTagKey>;
+    /**
+     * The value of the tag. Not applicable to custom tags. If a tag does have a separate key and value (in the textual representation they are split by the colon ‘:’), this field is set with the actual value. Key-value pairs can occur for automatically imported tags and tags set by rules if extractors are used
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface RequestNamingConditionsConditionComparisonStringRequestAttributeSourceServiceTagTagKey {
+    /**
+     * has no documentation
+     */
     context?: pulumi.Input<string>;
+    /**
+     * has no documentation
+     */
     key?: pulumi.Input<string>;
 }
 
 export interface RequestNamingConditionsConditionComparisonTag {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF`, `TAG_KEY_EQUALS` and `TAG_KEY_EQUALS_ANY_OF`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The values to compare to
+     */
     value?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonTagValue>;
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<inputs.RequestNamingConditionsConditionComparisonTagValues>;
 }
 
 export interface RequestNamingConditionsConditionComparisonTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_CLOUD` and `KUBERNETES`
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface RequestNamingConditionsConditionComparisonTagValues {
+    /**
+     * The values to compare to
+     */
     values?: pulumi.Input<pulumi.Input<inputs.RequestNamingConditionsConditionComparisonTagValuesValue>[]>;
 }
 
 export interface RequestNamingConditionsConditionComparisonTagValuesValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_CLOUD` and `KUBERNETES`
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface RequestNamingConditionsConditionComparisonZosCallType {
+    /**
+     * Operator of the comparison. You can reverse it by setting `negate` to `true`. Possible values are `EQUALS`, `EQUALS_ANY_OF` and `EXISTS`
+     */
     operator?: pulumi.Input<string>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are `CTG`, `DPL`, `EXPLICIT_ADK`, `IMS_CONNECT`, `IMS_CONNECT_API`, `IMS_ITRA`, `IMS_MSC`, `IMS_PGM_SWITCH`, `IMS_SHARED_QUEUES`, `IMS_TRANS_EXEC`, `MQ`, `SOAP`, `START`, `TX` and `UNKNOWN`
+     */
     value?: pulumi.Input<string>;
+    /**
+     * The values to compare to. Possible values are `CTG`, `DPL`, `EXPLICIT_ADK`, `IMS_CONNECT`, `IMS_CONNECT_API`, `IMS_ITRA`, `IMS_MSC`, `IMS_PGM_SWITCH`, `IMS_SHARED_QUEUES`, `IMS_TRANS_EXEC`, `MQ`, `SOAP`, `START`, `TX` and `UNKNOWN`
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface RequestNamingPlaceholders {
+    /**
+     * A custom placeholder to be used in a dimension value pattern
+     */
     placeholders?: pulumi.Input<pulumi.Input<inputs.RequestNamingPlaceholdersPlaceholder>[]>;
 }
 
 export interface RequestNamingPlaceholdersPlaceholder {
+    /**
+     * Which value of the request attribute must be used when it occurs across multiple child requests. Only applicable for the `SERVICE_REQUEST_ATTRIBUTE` attribute, when **useFromChildCalls** is `true`. For the `COUNT` aggregation, the **kind** field is not applicable. Possible values are `COUNT`, `FIRST` and `LAST`.
+     */
     aggregation?: pulumi.Input<string>;
+    /**
+     * The attribute to extract from. You can only use attributes of the **string** type. Possible values are `ACTOR_SYSTEM`, `AKKA_ACTOR_CLASS_NAME`, `AKKA_ACTOR_MESSAGE_TYPE`, `AKKA_ACTOR_PATH`, `APPLICATION_BUILD_VERSION`, `APPLICATION_RELEASE_VERSION`, `AZURE_FUNCTIONS_FUNCTION_NAME`, `AZURE_FUNCTIONS_SITE_NAME`, `CICS_PROGRAM_NAME`, `CICS_SYSTEM_ID`, `CICS_TASK_ID`, `CICS_TRANSACTION_ID`, `CICS_USER_ID`, `CPU_TIME`, `CTG_GATEWAY_URL`, `CTG_PROGRAM`, `CTG_SERVER_NAME`, `CTG_TRANSACTION_ID`, `CUSTOMSERVICE_CLASS`, `CUSTOMSERVICE_METHOD`, `DATABASE_CHILD_CALL_COUNT`, `DATABASE_CHILD_CALL_TIME`, `DATABASE_HOST`, `DATABASE_NAME`, `DATABASE_TYPE`, `DATABASE_URL`, `DISK_IO_TIME`, `ERROR_COUNT`, `ESB_APPLICATION_NAME`, `ESB_INPUT_TYPE`, `ESB_LIBRARY_NAME`, `ESB_MESSAGE_FLOW_NAME`, `EXCEPTION_CLASS`, `EXCEPTION_MESSAGE`, `FAILED_STATE`, `FAILURE_REASON`, `FLAW_STATE`, `HTTP_REQUEST_METHOD`, `HTTP_STATUS`, `HTTP_STATUS_CLASS`, `IMS_PROGRAM_NAME`, `IMS_TRANSACTION_ID`, `IMS_USER_ID`, `IO_TIME`, `IS_KEY_REQUEST`, `LAMBDA_COLDSTART`, `LOCK_TIME`, `MESSAGING_DESTINATION_TYPE`, `MESSAGING_IS_TEMPORARY_QUEUE`, `MESSAGING_QUEUE_NAME`, `MESSAGING_QUEUE_VENDOR`, `NETWORK_IO_TIME`, `NON_DATABASE_CHILD_CALL_COUNT`, `NON_DATABASE_CHILD_CALL_TIME`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_TAG`, `REMOTE_ENDPOINT`, `REMOTE_METHOD`, `REMOTE_SERVICE_NAME`, `REQUEST_NAME`, `REQUEST_TYPE`, `RESPONSE_TIME`, `RESPONSE_TIME_CLIENT`, `RMI_CLASS`, `RMI_METHOD`, `SERVICE_DISPLAY_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REQUEST_ATTRIBUTE`, `SERVICE_TAG`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `SUSPENSION_TIME`, `TOTAL_PROCESSING_TIME`, `WAIT_TIME`, `WEBREQUEST_QUERY`, `WEBREQUEST_RELATIVE_URL`, `WEBREQUEST_URL`, `WEBREQUEST_URL_HOST`, `WEBREQUEST_URL_PATH`, `WEBREQUEST_URL_PORT`, `WEBSERVICE_ENDPOINT`, `WEBSERVICE_METHOD` and `ZOS_CALL_TYPE`
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Depending on the `kind` value:
+     *
+     *
+     * * `REGEX_EXTRACTION`: The regular expression.
+     *
+     *
+     * * `BETWEEN_DELIMITER`: The opening delimiter string to look for.
+     *
+     *
+     * * All other values: The delimiter string to look for
+     */
     delimiterOrRegex?: pulumi.Input<string>;
+    /**
+     * The closing delimiter string to look for. Required if the `kind` value is `BETWEEN_DELIMITER`. Not applicable otherwise
+     */
     endDelimiter?: pulumi.Input<string>;
+    /**
+     * The type of extraction. Defines either usage of regular expression (`regex`) or the position of request attribute value to be extracted. When the `attribute` is `SERVICE_REQUEST_ATTRIBUTE` attribute and `aggregation` is `COUNT`, needs to be set to `ORIGINAL_TEXT`. Possible values are 	`AFTER_DELIMITER`, `BEFORE_DELIMITER`, `BETWEEN_DELIMITER`, `ORIGINAL_TEXT` and `REGEX_EXTRACTION`
+     */
     kind: pulumi.Input<string>;
+    /**
+     * The name of the placeholder. Use it in the naming pattern as `{name}`
+     */
     name: pulumi.Input<string>;
+    /**
+     * The format of the extracted string. Possible values are `ORIGINAL`, `TO_LOWER_CASE` and `TO_UPPER_CASE`
+     */
     normalization?: pulumi.Input<string>;
+    /**
+     * The request attribute to extract from. Required if the `kind` value is `SERVICE_REQUEST_ATTRIBUTE`. Not applicable otherwise
+     */
     requestAttribute?: pulumi.Input<string>;
+    /**
+     * Defines valid sources of request attributes for conditions or placeholders
+     */
     source?: pulumi.Input<inputs.RequestNamingPlaceholdersPlaceholderSource>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * If `true` request attribute will be taken from a child service call. Only applicable for the `SERVICE_REQUEST_ATTRIBUTE` attribute. Defaults to `false`
+     */
     useFromChildCalls?: pulumi.Input<boolean>;
 }
 
 export interface RequestNamingPlaceholdersPlaceholderSource {
+    /**
+     * Use only request attributes from services that belong to this management zone.. Use either this or `serviceTag`
+     */
     managementZone?: pulumi.Input<string>;
+    /**
+     * Use only request attributes from services that have this tag. Use either this or `managementZone`
+     */
     serviceTag?: pulumi.Input<inputs.RequestNamingPlaceholdersPlaceholderSourceServiceTag>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface RequestNamingPlaceholdersPlaceholderSourceServiceTag {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. For custom tags use the `CONTEXTLESS` value. The context is set for tags that are automatically imported by OneAgent (for example, from the AWS console or environment variables). It’s useful for determining the origin of tags when not manually defined, and it also helps to prevent clashes with other existing tags. If the tag is not automatically imported, `CONTEXTLESS` set. Possible values are `AWS`, `AWS_GENERIC`, `AZURE`, `CLOUD_FOUNDRY`, `CONTEXTLESS`, `ENVIRONMENT`, `GOOGLE_COMPUTE_ENGINE` and `KUBERNETES`
+     */
     context?: pulumi.Input<string>;
+    /**
+     * The key of the tag. For custom tags, put the tag value here. The key allows categorization of multiple tags. It is possible that there are multiple values for a single key which will all be represented as standalone tags. Therefore, the key does not have the semantic of a map key but is more like a key of a key-value tuple. In some cases, for example custom tags, the key represents the actual tag value and the value field is not set – those are called valueless tags
+     */
     key: pulumi.Input<string>;
+    /**
+     * has no documentation
+     */
     tagKey?: pulumi.Input<inputs.RequestNamingPlaceholdersPlaceholderSourceServiceTagTagKey>;
+    /**
+     * The value of the tag. Not applicable to custom tags. If a tag does have a separate key and value (in the textual representation they are split by the colon ‘:’), this field is set with the actual value. Key-value pairs can occur for automatically imported tags and tags set by rules if extractors are used
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface RequestNamingPlaceholdersPlaceholderSourceServiceTagTagKey {
+    /**
+     * has no documentation
+     */
     context?: pulumi.Input<string>;
+    /**
+     * has no documentation
+     */
     key?: pulumi.Input<string>;
 }
 
 export interface ResourceAttributesKeys {
+    /**
+     * Attribute key allow-list
+     */
     rules?: pulumi.Input<pulumi.Input<inputs.ResourceAttributesKeysRule>[]>;
 }
 
 export interface ResourceAttributesKeysRule {
+    /**
+     * Attribute key **service.name** is automatically captured by default
+     */
     attributeKey: pulumi.Input<string>;
+    /**
+     * If this is true, the value of the specified key is stored.
+     */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Introduce more granular control over the visibility of attribute values.  
+     * Choose **Do not mask** to allow every user to see the actual value and use it in defining other configurations.  
+     * Choose **Mask entire value** to hide the whole value of this attribute from everyone who does not have 'View sensitive request data' permission. These attributes can't be used to define other configurations. 
+     * Choose **Mask only confidential data** to apply automatic masking strategies to your data. These strategies include, for example, credit card numbers, IBAN, IPs, email-addresses, etc. It may not be possible to recognize all sensitive data so please always make sure to verify that sensitive data is actually masked. If sensitive data is not recognized, please use **Mask entire value** instead. Users with 'View sensitive request data' permission will be able to see the entire value, others only the non-sensitive parts. These attributes can't be used to define other configurations.
+     */
     masking: pulumi.Input<string>;
 }
 
@@ -9744,6 +19854,9 @@ export interface RumProviderBreakdownDomainNamePatternList {
 }
 
 export interface RumProviderBreakdownDomainNamePatternListDomainNamePattern {
+    /**
+     * Please type at least part of this content provider's URL. Asterisks (*) can be used as wildcard characters.
+     */
     pattern: pulumi.Input<string>;
 }
 
@@ -9759,14 +19872,32 @@ export interface ServiceAnomaliesFailureRates {
 }
 
 export interface ServiceAnomaliesFailureRatesAuto {
+    /**
+     * Absolute increase of failing service calls to trigger an alert, %
+     */
     absolute: pulumi.Input<number>;
+    /**
+     * Relative increase of failing service calls to trigger an alert, %
+     */
     relative: pulumi.Input<number>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceAnomaliesFailureRatesThresholds {
+    /**
+     * Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers alert
+     */
     sensitivity: pulumi.Input<string>;
+    /**
+     * Failure rate during any 5-minute period to trigger an alert, %
+     */
     threshold: pulumi.Input<number>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
@@ -9793,8 +19924,17 @@ export interface ServiceAnomaliesLoadDrops {
 }
 
 export interface ServiceAnomaliesLoadSpikes {
+    /**
+     * Alert if the service stays in abnormal state for at least *X* minutes
+     */
     minutes?: pulumi.Input<number>;
+    /**
+     * Alert if the observed load is more than *X* % of the expected value
+     */
     percent?: pulumi.Input<number>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
@@ -9811,24 +19951,51 @@ export interface ServiceAnomaliesResponseTimes {
 
 export interface ServiceAnomaliesResponseTimesAuto {
     /**
-     * The configuration of load spikes detection. Detecting load spikes will be disabled if this block is omitted.
+     * Minimal service load to detect response time degradation. Response time degradation of services with smaller load won't trigger alerts. Possible values are `FIFTEEN_REQUESTS_PER_MINUTE`, `FIVE_REQUESTS_PER_MINUTE`, `ONE_REQUEST_PER_MINUTE` and `TEN_REQUESTS_PER_MINUTE`
      */
     load: pulumi.Input<string>;
+    /**
+     * Alert if the response time degrades by more than *X* milliseconds
+     */
     milliseconds: pulumi.Input<number>;
+    /**
+     * Alert if the response time degrades by more than *X* %
+     */
     percent: pulumi.Input<number>;
+    /**
+     * Alert if the response time of the slowest 10% degrades by more than *X* milliseconds
+     */
     slowestMilliseconds: pulumi.Input<number>;
+    /**
+     * Alert if the response time of the slowest 10% degrades by more than *X* milliseconds
+     */
     slowestPercent: pulumi.Input<number>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceAnomaliesResponseTimesThresholds {
     /**
-     * The configuration of load spikes detection. Detecting load spikes will be disabled if this block is omitted.
+     * Minimal service load to detect response time degradation. Response time degradation of services with smaller load won't trigger alerts. Possible values are `FIFTEEN_REQUESTS_PER_MINUTE`, `FIVE_REQUESTS_PER_MINUTE`, `ONE_REQUEST_PER_MINUTE` and `TEN_REQUESTS_PER_MINUTE`
      */
     load: pulumi.Input<string>;
+    /**
+     * Response time during any 5-minute period to trigger an alert, in milliseconds
+     */
     milliseconds: pulumi.Input<number>;
+    /**
+     * Sensitivity of the threshold.  With `low` sensitivity, high statistical confidence is used. Brief violations (for example, due to a surge in load) won't trigger alerts.  With `high` sensitivity, no statistical confidence is used. Each violation triggers an alert
+     */
     sensitivity: pulumi.Input<string>;
+    /**
+     * Response time of the 10% slowest during any 5-minute period to trigger an alert, in milliseconds
+     */
     slowestMilliseconds: pulumi.Input<number>;
+    /**
+     * allows for configuring properties that are not explicitly supported by the current version of this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
@@ -9852,24 +20019,54 @@ export interface ServiceAnomaliesV2FailureRate {
 }
 
 export interface ServiceAnomaliesV2FailureRateAutoDetection {
+    /**
+     * Absolute threshold
+     */
     absoluteIncrease: pulumi.Input<number>;
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: pulumi.Input<inputs.ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection>;
+    /**
+     * Relative threshold
+     */
     relativeIncrease: pulumi.Input<number>;
 }
 
 export interface ServiceAnomaliesV2FailureRateAutoDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: pulumi.Input<number>;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: pulumi.Input<number>;
 }
 
 export interface ServiceAnomaliesV2FailureRateFixedDetection {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: pulumi.Input<inputs.ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection>;
+    /**
+     * Sensitivity
+     */
     sensitivity: pulumi.Input<string>;
+    /**
+     * Threshold
+     */
     threshold: pulumi.Input<number>;
 }
 
 export interface ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: pulumi.Input<number>;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: pulumi.Input<number>;
 }
 
@@ -9923,43 +20120,94 @@ export interface ServiceAnomaliesV2ResponseTime {
 }
 
 export interface ServiceAnomaliesV2ResponseTimeAutoDetection {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection>;
+    /**
+     * All requests. Alert if the average response time of all requests degrades beyond **both** the absolute and relative thresholds:
+     */
     responseTimeAll: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll>;
+    /**
+     * Slowest 10%. Alert if the average response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+     */
     responseTimeSlowest: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest>;
 }
 
 export interface ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: pulumi.Input<number>;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: pulumi.Input<number>;
 }
 
 export interface ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll {
+    /**
+     * Absolute threshold
+     */
     degradationMilliseconds: pulumi.Input<number>;
+    /**
+     * Relative threshold
+     */
     degradationPercent: pulumi.Input<number>;
 }
 
 export interface ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest {
+    /**
+     * Absolute threshold
+     */
     slowestDegradationMilliseconds: pulumi.Input<number>;
+    /**
+     * Relative threshold
+     */
     slowestDegradationPercent: pulumi.Input<number>;
 }
 
 export interface ServiceAnomaliesV2ResponseTimeFixedDetection {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection>;
+    /**
+     * All requests. Alert if the average response time of all requests degrades beyond this threshold:
+     */
     responseTimeAll: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll>;
+    /**
+     * Slowest 10%. Alert if the average response time of the slowest 10% of requests degrades beyond this threshold:
+     */
     responseTimeSlowest: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest>;
+    /**
+     * Sensitivity
+     */
     sensitivity: pulumi.Input<string>;
 }
 
 export interface ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection {
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: pulumi.Input<number>;
+    /**
+     * Only alert if there are at least
+     */
     requestsPerMinute: pulumi.Input<number>;
 }
 
 export interface ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll {
+    /**
+     * Alert if the response time degrades beyond this many ms within an observation period of 5 minutes
+     */
     degradationMilliseconds: pulumi.Input<number>;
 }
 
 export interface ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest {
+    /**
+     * Alert if the response time of the slowest 10% degrades beyond this many ms within an observation period of 5 minutes
+     */
     slowestDegradationMilliseconds: pulumi.Input<number>;
 }
 
@@ -9968,15 +20216,45 @@ export interface ServiceExternalWebRequestConditions {
 }
 
 export interface ServiceExternalWebRequestConditionsCondition {
+    /**
+     * Take the value of this attribute
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Apply this operation
+     */
     compareOperationType: pulumi.Input<string>;
+    /**
+     * Technology
+     */
     frameworks?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Ignore case sensitivity for texts.
+     */
     ignoreCase?: pulumi.Input<boolean>;
+    /**
+     * Value
+     */
     intValue?: pulumi.Input<number>;
+    /**
+     * Values
+     */
     intValues?: pulumi.Input<pulumi.Input<number>[]>;
+    /**
+     * From
+     */
     ipRangeFrom?: pulumi.Input<string>;
+    /**
+     * To
+     */
     ipRangeTo?: pulumi.Input<string>;
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     tagValues?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     textValues?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -10000,13 +20278,28 @@ export interface ServiceExternalWebRequestIdContributors {
 }
 
 export interface ServiceExternalWebRequestIdContributorsApplicationId {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor>;
 }
 
 export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: pulumi.Input<string>;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations>;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride>;
 }
 
@@ -10015,31 +20308,82 @@ export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdCo
 }
 
 export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: pulumi.Input<boolean>;
+    /**
+     * min digit count
+     */
     minDigitCount?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     prefix?: pulumi.Input<string>;
+    /**
+     * replacement
+     */
     replacementValue?: pulumi.Input<string>;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: pulumi.Input<number>;
+    /**
+     * select index
+     */
     selectIndex?: pulumi.Input<number>;
+    /**
+     * split by
+     */
     splitDelimiter?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     suffix?: pulumi.Input<string>;
+    /**
+     * take from end
+     */
     takeFromEnd?: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: pulumi.Input<string>;
 }
 
 export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: pulumi.Input<string>;
 }
 
 export interface ServiceExternalWebRequestIdContributorsContextRoot {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor>;
 }
 
 export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
+     */
     contributionType: pulumi.Input<string>;
+    /**
+     * The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
+     */
     segmentCount?: pulumi.Input<number>;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations>;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride>;
 }
 
@@ -10048,27 +20392,66 @@ export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdCont
 }
 
 export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: pulumi.Input<boolean>;
+    /**
+     * min digit count
+     */
     minDigitCount?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     prefix?: pulumi.Input<string>;
+    /**
+     * replacement
+     */
     replacementValue?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     suffix?: pulumi.Input<string>;
+    /**
+     * Possible Values: `BEFORE`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`
+     */
     transformationType: pulumi.Input<string>;
 }
 
 export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: pulumi.Input<string>;
 }
 
 export interface ServiceExternalWebRequestIdContributorsPublicDomainName {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor>;
 }
 
 export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: pulumi.Input<string>;
+    /**
+     * Use the detected host name instead of the request's domain name.
+     */
     copyFromHostName?: pulumi.Input<boolean>;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformations>;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: pulumi.Input<inputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverride>;
 }
 
@@ -10077,19 +20460,52 @@ export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceI
 }
 
 export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: pulumi.Input<boolean>;
+    /**
+     * min digit count
+     */
     minDigitCount?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     prefix?: pulumi.Input<string>;
+    /**
+     * replacement
+     */
     replacementValue?: pulumi.Input<string>;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: pulumi.Input<number>;
+    /**
+     * select index
+     */
     selectIndex?: pulumi.Input<number>;
+    /**
+     * split by
+     */
     splitDelimiter?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     suffix?: pulumi.Input<string>;
+    /**
+     * take from end
+     */
     takeFromEnd?: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: pulumi.Input<string>;
 }
 
 export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: pulumi.Input<string>;
 }
 
@@ -10098,15 +20514,45 @@ export interface ServiceExternalWebServiceConditions {
 }
 
 export interface ServiceExternalWebServiceConditionsCondition {
+    /**
+     * Take the value of this attribute
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Apply this operation
+     */
     compareOperationType: pulumi.Input<string>;
+    /**
+     * Technology
+     */
     frameworks?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Ignore case sensitivity for texts.
+     */
     ignoreCase?: pulumi.Input<boolean>;
+    /**
+     * Value
+     */
     intValue?: pulumi.Input<number>;
+    /**
+     * Values
+     */
     intValues?: pulumi.Input<pulumi.Input<number>[]>;
+    /**
+     * From
+     */
     ipRangeFrom?: pulumi.Input<string>;
+    /**
+     * To
+     */
     ipRangeTo?: pulumi.Input<string>;
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     tagValues?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     textValues?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -10115,18 +20561,39 @@ export interface ServiceExternalWebServiceIdContributors {
      * Detect the matching requests as web request services instead of web services.
      */
     detectAsWebRequestService: pulumi.Input<boolean>;
+    /**
+     * Let the Port contribute to the Service Id
+     */
     portForServiceId?: pulumi.Input<boolean>;
+    /**
+     * URL path
+     */
     urlPath?: pulumi.Input<inputs.ServiceExternalWebServiceIdContributorsUrlPath>;
 }
 
 export interface ServiceExternalWebServiceIdContributorsUrlPath {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: pulumi.Input<inputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor>;
 }
 
 export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: pulumi.Input<string>;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: pulumi.Input<inputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations>;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: pulumi.Input<inputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride>;
 }
 
@@ -10135,19 +20602,52 @@ export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContribu
 }
 
 export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: pulumi.Input<boolean>;
+    /**
+     * min digit count
+     */
     minDigitCount?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     prefix?: pulumi.Input<string>;
+    /**
+     * replacement
+     */
     replacementValue?: pulumi.Input<string>;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: pulumi.Input<number>;
+    /**
+     * select index
+     */
     selectIndex?: pulumi.Input<number>;
+    /**
+     * split by
+     */
     splitDelimiter?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     suffix?: pulumi.Input<string>;
+    /**
+     * take from end
+     */
     takeFromEnd?: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: pulumi.Input<string>;
 }
 
 export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: pulumi.Input<string>;
 }
 
@@ -10183,15 +20683,36 @@ export interface ServiceFailureExceptionRulesCustomErrorRules {
 }
 
 export interface ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRule {
+    /**
+     * Request attribute condition
+     */
     condition: pulumi.Input<inputs.ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition>;
+    /**
+     * Request attribute
+     */
     requestAttribute: pulumi.Input<string>;
 }
 
 export interface ServiceFailureExceptionRulesCustomErrorRulesCustomErrorRuleCondition {
+    /**
+     * Case sensitive
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Apply this comparison
+     */
     compareOperationType: pulumi.Input<string>;
+    /**
+     * Value
+     */
     doubleValue?: pulumi.Input<number>;
+    /**
+     * Value
+     */
     intValue?: pulumi.Input<number>;
+    /**
+     * Value
+     */
     textValue?: pulumi.Input<string>;
 }
 
@@ -10200,7 +20721,13 @@ export interface ServiceFailureExceptionRulesCustomHandledExceptions {
 }
 
 export interface ServiceFailureExceptionRulesCustomHandledExceptionsCustomHandledException {
+    /**
+     * The pattern will match if it is contained within the actual class name.
+     */
     classPattern?: pulumi.Input<string>;
+    /**
+     * Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+     */
     messagePattern?: pulumi.Input<string>;
 }
 
@@ -10209,7 +20736,13 @@ export interface ServiceFailureExceptionRulesIgnoredExceptions {
 }
 
 export interface ServiceFailureExceptionRulesIgnoredExceptionsCustomHandledException {
+    /**
+     * The pattern will match if it is contained within the actual class name.
+     */
     classPattern?: pulumi.Input<string>;
+    /**
+     * Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+     */
     messagePattern?: pulumi.Input<string>;
 }
 
@@ -10218,7 +20751,13 @@ export interface ServiceFailureExceptionRulesSuccessForcingExceptions {
 }
 
 export interface ServiceFailureExceptionRulesSuccessForcingExceptionsCustomHandledException {
+    /**
+     * The pattern will match if it is contained within the actual class name.
+     */
     classPattern?: pulumi.Input<string>;
+    /**
+     * Optionally, define an exception message pattern. The pattern will match if the actual exception message contains the pattern.
+     */
     messagePattern?: pulumi.Input<string>;
 }
 
@@ -10227,15 +20766,45 @@ export interface ServiceFullWebRequestConditions {
 }
 
 export interface ServiceFullWebRequestConditionsCondition {
+    /**
+     * Take the value of this attribute
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Apply this operation
+     */
     compareOperationType: pulumi.Input<string>;
+    /**
+     * Technology
+     */
     frameworks?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Ignore case sensitivity for texts.
+     */
     ignoreCase?: pulumi.Input<boolean>;
+    /**
+     * Value
+     */
     intValue?: pulumi.Input<number>;
+    /**
+     * Values
+     */
     intValues?: pulumi.Input<pulumi.Input<number>[]>;
+    /**
+     * From
+     */
     ipRangeFrom?: pulumi.Input<string>;
+    /**
+     * To
+     */
     ipRangeTo?: pulumi.Input<string>;
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     tagValues?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     textValues?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -10255,13 +20824,28 @@ export interface ServiceFullWebRequestIdContributors {
 }
 
 export interface ServiceFullWebRequestIdContributorsApplicationId {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor>;
 }
 
 export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: pulumi.Input<string>;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformations>;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride>;
 }
 
@@ -10270,31 +20854,82 @@ export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContri
 }
 
 export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: pulumi.Input<boolean>;
+    /**
+     * min digit count
+     */
     minDigitCount?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     prefix?: pulumi.Input<string>;
+    /**
+     * replacement
+     */
     replacementValue?: pulumi.Input<string>;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: pulumi.Input<number>;
+    /**
+     * select index
+     */
     selectIndex?: pulumi.Input<number>;
+    /**
+     * split by
+     */
     splitDelimiter?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     suffix?: pulumi.Input<string>;
+    /**
+     * take from end
+     */
     takeFromEnd?: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: pulumi.Input<string>;
 }
 
 export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: pulumi.Input<string>;
 }
 
 export interface ServiceFullWebRequestIdContributorsContextRoot {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributor>;
 }
 
 export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
+     */
     contributionType: pulumi.Input<string>;
+    /**
+     * The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
+     */
     segmentCount?: pulumi.Input<number>;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformations>;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverride>;
 }
 
@@ -10303,26 +20938,62 @@ export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContribu
 }
 
 export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: pulumi.Input<boolean>;
+    /**
+     * min digit count
+     */
     minDigitCount?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     prefix?: pulumi.Input<string>;
+    /**
+     * replacement
+     */
     replacementValue?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     suffix?: pulumi.Input<string>;
+    /**
+     * Possible Values: `BEFORE`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`
+     */
     transformationType: pulumi.Input<string>;
 }
 
 export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: pulumi.Input<string>;
 }
 
 export interface ServiceFullWebRequestIdContributorsServerName {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributor>;
 }
 
 export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: pulumi.Input<string>;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformations>;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: pulumi.Input<inputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverride>;
 }
 
@@ -10331,19 +21002,52 @@ export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContribut
 }
 
 export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: pulumi.Input<boolean>;
+    /**
+     * min digit count
+     */
     minDigitCount?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     prefix?: pulumi.Input<string>;
+    /**
+     * replacement
+     */
     replacementValue?: pulumi.Input<string>;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: pulumi.Input<number>;
+    /**
+     * select index
+     */
     selectIndex?: pulumi.Input<number>;
+    /**
+     * split by
+     */
     splitDelimiter?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     suffix?: pulumi.Input<string>;
+    /**
+     * take from end
+     */
     takeFromEnd?: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: pulumi.Input<string>;
 }
 
 export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: pulumi.Input<string>;
 }
 
@@ -10352,38 +21056,98 @@ export interface ServiceFullWebServiceConditions {
 }
 
 export interface ServiceFullWebServiceConditionsCondition {
+    /**
+     * Take the value of this attribute
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Apply this operation
+     */
     compareOperationType: pulumi.Input<string>;
+    /**
+     * Technology
+     */
     frameworks?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Ignore case sensitivity for texts.
+     */
     ignoreCase?: pulumi.Input<boolean>;
+    /**
+     * Value
+     */
     intValue?: pulumi.Input<number>;
+    /**
+     * Values
+     */
     intValues?: pulumi.Input<pulumi.Input<number>[]>;
+    /**
+     * From
+     */
     ipRangeFrom?: pulumi.Input<string>;
+    /**
+     * To
+     */
     ipRangeTo?: pulumi.Input<string>;
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     tagValues?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * If multiple values are specified, at least one of them must match for the condition to match
+     */
     textValues?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface ServiceFullWebServiceIdContributors {
+    /**
+     * Application identifier
+     */
     applicationId?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsApplicationId>;
+    /**
+     * The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+     */
     contextRoot?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsContextRoot>;
     /**
      * Detect the matching requests as full web services (false) or web request services (true).
      */
     detectAsWebRequestService: pulumi.Input<boolean>;
+    /**
+     * Server name
+     */
     serverName?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsServerName>;
+    /**
+     * Web service name
+     */
     webServiceName?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceName>;
+    /**
+     * Web service namespace
+     */
     webServiceNamespace?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNamespace>;
 }
 
 export interface ServiceFullWebServiceIdContributorsApplicationId {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor>;
 }
 
 export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: pulumi.Input<string>;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformations>;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverride>;
 }
 
@@ -10392,31 +21156,82 @@ export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContri
 }
 
 export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: pulumi.Input<boolean>;
+    /**
+     * min digit count
+     */
     minDigitCount?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     prefix?: pulumi.Input<string>;
+    /**
+     * replacement
+     */
     replacementValue?: pulumi.Input<string>;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: pulumi.Input<number>;
+    /**
+     * select index
+     */
     selectIndex?: pulumi.Input<number>;
+    /**
+     * split by
+     */
     splitDelimiter?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     suffix?: pulumi.Input<string>;
+    /**
+     * take from end
+     */
     takeFromEnd?: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: pulumi.Input<string>;
 }
 
 export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: pulumi.Input<string>;
 }
 
 export interface ServiceFullWebServiceIdContributorsContextRoot {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributor>;
 }
 
 export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformURL`, `TransformValue`
+     */
     contributionType: pulumi.Input<string>;
+    /**
+     * The number of segments of the URL to be kept. The URL is divided by slashes (/), the indexing starts with 1 at context root. For example, if you specify 2 for the `www.dynatrace.com/support/help/dynatrace-api/` URL, the value of `support/help` is used.
+     */
     segmentCount?: pulumi.Input<number>;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformations>;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverride>;
 }
 
@@ -10425,26 +21240,62 @@ export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContribu
 }
 
 export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: pulumi.Input<boolean>;
+    /**
+     * min digit count
+     */
     minDigitCount?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     prefix?: pulumi.Input<string>;
+    /**
+     * replacement
+     */
     replacementValue?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     suffix?: pulumi.Input<string>;
+    /**
+     * Possible Values: `BEFORE`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`
+     */
     transformationType: pulumi.Input<string>;
 }
 
 export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: pulumi.Input<string>;
 }
 
 export interface ServiceFullWebServiceIdContributorsServerName {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributor>;
 }
 
 export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: pulumi.Input<string>;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformations>;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverride>;
 }
 
@@ -10453,30 +21304,78 @@ export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContribut
 }
 
 export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: pulumi.Input<boolean>;
+    /**
+     * min digit count
+     */
     minDigitCount?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     prefix?: pulumi.Input<string>;
+    /**
+     * replacement
+     */
     replacementValue?: pulumi.Input<string>;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: pulumi.Input<number>;
+    /**
+     * select index
+     */
     selectIndex?: pulumi.Input<number>;
+    /**
+     * split by
+     */
     splitDelimiter?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     suffix?: pulumi.Input<string>;
+    /**
+     * take from end
+     */
     takeFromEnd?: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: pulumi.Input<string>;
 }
 
 export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: pulumi.Input<string>;
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceName {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor>;
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: pulumi.Input<string>;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformations>;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride>;
 }
 
@@ -10485,30 +21384,78 @@ export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContr
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: pulumi.Input<boolean>;
+    /**
+     * min digit count
+     */
     minDigitCount?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     prefix?: pulumi.Input<string>;
+    /**
+     * replacement
+     */
     replacementValue?: pulumi.Input<string>;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: pulumi.Input<number>;
+    /**
+     * select index
+     */
     selectIndex?: pulumi.Input<number>;
+    /**
+     * split by
+     */
     splitDelimiter?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     suffix?: pulumi.Input<string>;
+    /**
+     * take from end
+     */
     takeFromEnd?: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: pulumi.Input<string>;
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: pulumi.Input<string>;
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceNamespace {
+    /**
+     * Transform this value before letting it contribute to the Service Id
+     */
     enableIdContributor: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     serviceIdContributor?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor>;
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributor {
+    /**
+     * Possible Values: `OriginalValue`, `OverrideValue`, `TransformValue`
+     */
     contributionType: pulumi.Input<string>;
+    /**
+     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     */
     transformations?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations>;
+    /**
+     * The value to be used instead of the detected value.
+     */
     valueOverride?: pulumi.Input<inputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride>;
 }
 
@@ -10517,19 +21464,52 @@ export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceId
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformationsTransformation {
+    /**
+     * include hexadecimal numbers
+     */
     includeHexNumbers?: pulumi.Input<boolean>;
+    /**
+     * min digit count
+     */
     minDigitCount?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
     prefix?: pulumi.Input<string>;
+    /**
+     * replacement
+     */
     replacementValue?: pulumi.Input<string>;
+    /**
+     * How many segments should be taken.
+     */
     segmentCount?: pulumi.Input<number>;
+    /**
+     * select index
+     */
     selectIndex?: pulumi.Input<number>;
+    /**
+     * split by
+     */
     splitDelimiter?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     suffix?: pulumi.Input<string>;
+    /**
+     * take from end
+     */
     takeFromEnd?: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `AFTER`, `BEFORE`, `BETWEEN`, `REMOVE_CREDIT_CARDS`, `REMOVE_IBANS`, `REMOVE_IPS`, `REMOVE_NUMBERS`, `REPLACE_BETWEEN`, `SPLIT_SELECT`, `TAKE_SEGMENTS`
+     */
     transformationType: pulumi.Input<string>;
 }
 
 export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorValueOverride {
+    /**
+     * no documentation available
+     */
     value: pulumi.Input<string>;
 }
 
@@ -10564,802 +21544,2076 @@ export interface ServiceHttpFailureHttpResponseCodes {
 }
 
 export interface ServiceNamingCondition {
+    /**
+     * A conditions for the metric usage
+     */
     conditions?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionCondition>[]>;
 }
 
 export interface ServiceNamingConditionCondition {
     /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     applicationTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionApplicationTypeComparison>[]>;
+    /**
+     * Comparison for `APPLICATION_TYPE` attributes
+     */
     applicationTypes?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionApplicationType>[]>;
+    /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     */
     azureComputeModeComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionAzureComputeModeComparison>[]>;
     /**
+     * Comparison for `AZURE_COMPUTE_MODE` attributes
+     *
      * @deprecated You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.
      */
     azureComputeModes?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionAzureComputeMode>[]>;
     /**
+     * Comparison for `AZURE_SKU` attributes
+     *
      * @deprecated You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.
      */
     azureSkuComparisions?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionAzureSkuComparision>[]>;
+    /**
+     * Comparison for `AZURE_SKU` attributes
+     */
     azureSkus?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionAzureSkus>[]>;
     /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     *
      * @deprecated You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.
      */
     baseComparisonBasics?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionBaseComparisonBasic>[]>;
     /**
+     * Fallback for not yet known type
+     *
      * @deprecated 'base_condition_key' is deprecated. You should use 'key'
      */
     baseConditionKeys?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionBaseConditionKey>[]>;
     /**
+     * Comparison for `BITNESS` attributes
+     *
      * @deprecated You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.
      */
     bitnessComparisions?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionBitnessComparision>[]>;
+    /**
+     * Comparison for `BITNESS` attributes
+     */
     bitnesses?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionBitness>[]>;
     /**
+     * Comparison for `CLOUD_TYPE` attributes
+     *
      * @deprecated You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.
      */
     cloudTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionCloudTypeComparison>[]>;
+    /**
+     * Comparison for `CLOUD_TYPE` attributes
+     */
     cloudTypes?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionCloudType>[]>;
+    /**
+     * A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+     */
     comparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionComparison>[]>;
     /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     *
      * @deprecated You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.
      */
     customApplicationTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionCustomApplicationTypeComparison>[]>;
+    /**
+     * Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+     */
     customApplicationTypes?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionCustomApplicationType>[]>;
     /**
+     * Key for Custom Host Metadata
+     *
      * @deprecated 'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'
      */
     customHostMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionCustomHostMetadataConditionKey>[]>;
+    /**
+     * Key for Custom Host Metadata
+     */
     customHostMetadatas?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionCustomHostMetadata>[]>;
     /**
+     * Key for Custom Process Metadata
+     *
      * @deprecated 'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'
      */
     customProcessMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionCustomProcessMetadataConditionKey>[]>;
+    /**
+     * Key for Custom Process Metadata
+     */
     customProcessMetadatas?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionCustomProcessMetadata>[]>;
+    /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     */
     databaseTopologies?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionDatabaseTopology>[]>;
     /**
+     * Comparison for `DATABASE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     databaseTopologyComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionDatabaseTopologyComparison>[]>;
     /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     *
      * @deprecated You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.
      */
     dcrumDecoderComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionDcrumDecoderComparison>[]>;
+    /**
+     * Comparison for `DCRUM_DECODER_TYPE` attributes
+     */
     dcrumDecoders?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionDcrumDecoder>[]>;
+    /**
+     * Comparison for `ENTITY_ID` attributes
+     */
     entities?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionEntity>[]>;
     /**
+     * Comparison for `ENTITY_ID` attributes
+     *
      * @deprecated You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.
      */
     entityIdComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionEntityIdComparison>[]>;
+    /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     */
     hostTeches?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionHostTech>[]>;
     /**
-     * @deprecated `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+     * `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
+     *
+     * @deprecated `hypervisorTypeComparision` is deprecated. Use `hypervisor` instead
      */
     hypervisorTypeComparisions?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionHypervisorTypeComparision>[]>;
+    /**
+     * Comparison for `HYPERVISOR_TYPE` attributes
+     */
     hypervisors?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionHypervisor>[]>;
     /**
+     * Comparison for `INDEXED_NAME` attributes
+     *
      * @deprecated You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedNameComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionIndexedNameComparison>[]>;
+    /**
+     * Comparison for `INDEXED_NAME` attributes
+     */
     indexedNames?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionIndexedName>[]>;
     /**
+     * Comparison for `INDEXED_STRING` attributes
+     *
      * @deprecated You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedStringComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionIndexedStringComparison>[]>;
+    /**
+     * Comparison for `INDEXED_STRING` attributes
+     */
     indexedStrings?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionIndexedString>[]>;
     /**
+     * Comparison for `INDEXED_TAG` attributes
+     *
      * @deprecated You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.
      */
     indexedTagComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionIndexedTagComparison>[]>;
+    /**
+     * Comparison for `INDEXED_TAG` attributes
+     */
     indexedTags?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionIndexedTag>[]>;
     /**
+     * Comparison for `INTEGER` attributes
+     *
      * @deprecated You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.
      */
     integerComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionIntegerComparison>[]>;
+    /**
+     * Comparison for `INTEGER` attributes
+     */
     integers?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionInteger>[]>;
     /**
+     * Comparison for `IP_ADDRESS` attributes
+     *
      * @deprecated You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.
      */
     ipaddressComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionIpaddressComparison>[]>;
+    /**
+     * Comparison for `IP_ADDRESS` attributes
+     */
     ipaddresses?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionIpaddress>[]>;
+    /**
+     * Fallback for not yet known type
+     */
     keys?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionKey>[]>;
     /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     *
      * @deprecated You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.
      */
     mobilePlatformComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionMobilePlatformComparison>[]>;
+    /**
+     * Comparison for `MOBILE_PLATFORM` attributes
+     */
     mobilePlatforms?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionMobilePlatform>[]>;
+    /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     */
     osArches?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionOsArch>[]>;
+    /**
+     * Comparison for `OS_TYPE` attributes
+     */
     osTypes?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionOsType>[]>;
     /**
+     * Comparison for `OS_ARCHITECTURE` attributes
+     *
      * @deprecated You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.
      */
     osarchitectureComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionOsarchitectureComparison>[]>;
     /**
+     * Comparison for `OS_TYPE` attributes
+     *
      * @deprecated You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.
      */
     ostypeComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionOstypeComparison>[]>;
     /**
+     * Comparison for `PAAS_TYPE` attributes
+     *
      * @deprecated You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.
      */
     paasTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionPaasTypeComparison>[]>;
+    /**
+     * Comparison for `PAAS_TYPE` attributes
+     */
     paasTypes?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionPaasType>[]>;
     /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     *
      * @deprecated 'process_metadata_condition_key' is deprecated. You should use 'process_metadata'
      */
     processMetadataConditionKeys?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionProcessMetadataConditionKey>[]>;
+    /**
+     * The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+     */
     processMetadatas?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionProcessMetadata>[]>;
+    /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     */
     serviceTopologies?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionServiceTopology>[]>;
     /**
+     * Comparison for `SERVICE_TOPOLOGY` attributes
+     *
      * @deprecated You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTopologyComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionServiceTopologyComparison>[]>;
     /**
+     * Comparison for `SERVICE_TYPE` attributes
+     *
      * @deprecated You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.
      */
     serviceTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionServiceTypeComparison>[]>;
+    /**
+     * Comparison for `SERVICE_TYPE` attributes
+     */
     serviceTypes?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionServiceType>[]>;
     /**
+     * Comparison for `SIMPLE_HOST_TECH` attributes
+     *
      * @deprecated You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleHostTechComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionSimpleHostTechComparison>[]>;
     /**
+     * Comparison for `SIMPLE_TECH` attributes
+     *
      * @deprecated You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.
      */
     simpleTechComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionSimpleTechComparison>[]>;
     /**
+     * Comparison for `STRING` attributes
+     *
      * @deprecated You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.
      */
     stringComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionStringComparison>[]>;
     /**
+     * The key for dynamic attributes of the `STRING` type
+     *
      * @deprecated 'string_condition_key' is deprecated. You should use 'string_key'
      */
     stringConditionKeys?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionStringConditionKey>[]>;
+    /**
+     * The key for dynamic attributes of the `STRING` type
+     */
     stringKeys?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionStringKey>[]>;
+    /**
+     * Comparison for `STRING` attributes
+     */
     strings?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionString>[]>;
     /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     *
      * @deprecated You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.
      */
     syntheticEngineTypeComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionSyntheticEngineTypeComparison>[]>;
+    /**
+     * Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+     */
     syntheticEngines?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionSyntheticEngine>[]>;
     /**
+     * Comparison for `TAG` attributes
+     *
      * @deprecated You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.
      */
     tagComparisons?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionTagComparison>[]>;
+    /**
+     * Comparison for `TAG` attributes
+     */
     tags?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionTag>[]>;
+    /**
+     * Comparison for `SIMPLE_TECH` attributes
+     */
     teches?: pulumi.Input<pulumi.Input<inputs.ServiceNamingConditionConditionTech>[]>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionApplicationType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionAzureComputeMode {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionAzureComputeModeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are DEDICATED or SHARED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionAzureSkuComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be AZURE_SKU
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionAzureSkus {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionBaseComparisonBasic {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * The type of comparison
+     */
     type: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionBaseConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionBitness {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionBitnessComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be BITNESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are 32 and 64.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionCloudType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionCloudTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be CLOUD_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AZURE, EC2, GOOGLE_CLOUD_PLATFORM, OPENSTACK, ORACLE and UNRECOGNIZED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * The type of comparison
+     */
     type: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionCustomApplicationType {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionCustomApplicationTypeComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be CUSTOM_APPLICATION_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AMAZON_ECHO, DESKTOP, EMBEDDED, IOT, MICROSOFT_HOLOLENS and UFO.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionCustomHostMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.ServiceNamingConditionConditionCustomHostMetadataDynamicKey>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionCustomHostMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.ServiceNamingConditionConditionCustomHostMetadataConditionKeyDynamicKey>;
     /**
+     * if specified, needs to be HOST_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionCustomHostMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionCustomHostMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are ENVIRONMENT, GOOGLE_COMPUTE_ENGINE and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionCustomProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.ServiceNamingConditionConditionCustomProcessMetadataDynamicKey>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionCustomProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key
+     */
     dynamicKey: pulumi.Input<inputs.ServiceNamingConditionConditionCustomProcessMetadataConditionKeyDynamicKey>;
     /**
+     * if specified, needs to be PROCESS_CUSTOM_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionCustomProcessMetadataConditionKeyDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionCustomProcessMetadataDynamicKey {
+    /**
+     * The actual key of the custom metadata
+     */
     key: pulumi.Input<string>;
+    /**
+     * The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+     */
     source: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionDatabaseTopology {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionDatabaseTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be DATABASE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLUSTER, EMBEDDED, FAILOVER, IPC, LOAD_BALANCING, SINGLE_SERVER and UNSPECIFIED.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionDcrumDecoder {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionDcrumDecoderComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be DCRUM_DECODER_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionEntity {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionEntityIdComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Currently only EQUALS is supported. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be ENTITY_ID
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionHostTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.ServiceNamingConditionConditionHostTechValue>;
 }
 
 export interface ServiceNamingConditionConditionHostTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionHypervisor {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionHypervisorTypeComparision {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be HYPERVISOR_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AHV, HYPER_V, KVM, LPAR, QEMU, VIRTUAL_BOX, VMWARE, WPAR and XEN.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionIndexedName {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionIndexedNameComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS, CONTAINS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_NAME
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionIndexedString {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionIndexedStringComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionIndexedTag {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.ServiceNamingConditionConditionIndexedTagValue>;
 }
 
 export interface ServiceNamingConditionConditionIndexedTagComparison {
+    /**
+     * Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INDEXED_TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.ServiceNamingConditionConditionIndexedTagComparisonValue>;
 }
 
 export interface ServiceNamingConditionConditionIndexedTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionIndexedTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionInteger {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<number>;
 }
 
 export interface ServiceNamingConditionConditionIntegerComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS, EXISTS, GREATER_THAN, GREATER_THAN_OR_EQUAL, LOWER_THAN and LOWER_THAN_OR_EQUAL. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be INTEGER
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<number>;
 }
 
 export interface ServiceNamingConditionConditionIpaddress {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionIpaddressComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS, IS_IP_IN_RANGE and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be IP_ADDRESS
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * Defines the actual set of fields depending on the value
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionMobilePlatform {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionMobilePlatformComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be MOBILE_PLATFORM
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ANDROID, IOS, LINUX, MAC_OS, OTHER, TVOS and WINDOWS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionOsArch {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionOsType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionOsarchitectureComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be OS_ARCHITECTURE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are ARM, IA64, PARISC, PPC, PPCLE, S390, SPARC, X86 and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionOstypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be OS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AIX, DARWIN, HPUX, LINUX, SOLARIS, WINDOWS and ZOS.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionPaasType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionPaasTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be PAAS_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionProcessMetadata {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionProcessMetadataConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are AMAZON_ECR_IMAGE_ACCOUNT_ID,AMAZON_ECR_IMAGE_REGION, AMAZON_LAMBDA_FUNCTION_NAME, AMAZON_REGION, APACHE_CONFIG_PATH, APACHE_SPARK_MASTER_IP_ADDRESS, ASP_DOT_NET_CORE_APPLICATION_PATH, AWS_ECS_CLUSTER, AWS_ECS_CONTAINERNAME, AWS_ECS_FAMILY, AWS_ECS_REVISION, CASSANDRA_CLUSTER_NAME, CATALINA_BASE, CATALINA_HOME, CLOUD_FOUNDRY_APP_ID, CLOUD_FOUNDRY_APP_NAME, CLOUD_FOUNDRY_INSTANCE_INDEX, CLOUD_FOUNDRY_SPACE_ID, CLOUD_FOUNDRY_SPACE_NAME, COLDFUSION_JVM_CONFIG_FILE, COLDFUSION_SERVICE_NAME, COMMAND_LINE_ARGS, DOTNET_COMMAND, DOTNET_COMMAND_PATH, DYNATRACE_CLUSTER_ID, DYNATRACE_NODE_ID, ELASTICSEARCH_CLUSTER_NAME, ELASTICSEARCH_NODE_NAME, EQUINOX_CONFIG_PATH, EXE_NAME, EXE_PATH, GLASS_FISH_DOMAIN_NAME, GLASS_FISH_INSTANCE_NAME, GOOGLE_APP_ENGINE_INSTANCE, GOOGLE_APP_ENGINE_SERVICE, GOOGLE_CLOUD_PROJECT, HYBRIS_BIN_DIRECTORY, HYBRIS_CONFIG_DIRECTORY, HYBRIS_DATA_DIRECTORY, IBM_CICS_REGION, IBM_CTG_NAME, IBM_IMS_CONNECT_REGION, IBM_IMS_CONTROL_REGION, IBM_IMS_MESSAGE_PROCESSING_REGION, IBM_IMS_SOAP_GW_NAME, IBM_INTEGRATION_NODE_NAME, IBM_INTEGRATION_SERVER_NAME, IIS_APP_POOL, IIS_ROLE_NAME, JAVA_JAR_FILE, JAVA_JAR_PATH, JAVA_MAIN_CLASS, JAVA_MAIN_MODULE, JBOSS_HOME, JBOSS_MODE, JBOSS_SERVER_NAME, KUBERNETES_BASE_POD_NAME, KUBERNETES_CONTAINER_NAME, KUBERNETES_FULL_POD_NAME, KUBERNETES_NAMESPACE, KUBERNETES_POD_UID, MSSQL_INSTANCE_NAME, NODE_JS_APP_BASE_DIRECTORY, NODE_JS_APP_NAME, NODE_JS_SCRIPT_NAME, ORACLE_SID, PG_ID_CALC_INPUT_KEY_LINKAGE, PHP_SCRIPT_PATH, PHP_WORKING_DIRECTORY, RUBY_APP_ROOT_PATH, RUBY_SCRIPT_PATH, RULE_RESULT, SOFTWAREAG_INSTALL_ROOT, SOFTWAREAG_PRODUCTPROPNAME, SPRINGBOOT_APP_NAME, SPRINGBOOT_PROFILE_NAME, SPRINGBOOT_STARTUP_CLASS, TIBCO_BUSINESSWORKS_CE_APP_NAME, TIBCO_BUSINESSWORKS_CE_VERSION, TIBCO_BUSINESS_WORKS_APP_NODE_NAME, TIBCO_BUSINESS_WORKS_APP_SPACE_NAME, TIBCO_BUSINESS_WORKS_DOMAIN_NAME, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE, TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH, TIBCO_BUSINESS_WORKS_HOME, VARNISH_INSTANCE_NAME, WEB_LOGIC_CLUSTER_NAME, WEB_LOGIC_DOMAIN_NAME, WEB_LOGIC_HOME, WEB_LOGIC_NAME, WEB_SPHERE_CELL_NAME, WEB_SPHERE_CLUSTER_NAME, WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME
+     */
     dynamicKey: pulumi.Input<string>;
     /**
+     * if specified, needs to be PROCESS_PREDEFINED_METADATA_KEY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionServiceTopology {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionServiceTopologyComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SERVICE_TOPOLOGY
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are EXTERNAL_SERVICE, FULLY_MONITORED and OPAQUE_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionServiceType {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionServiceTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SERVICE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are BACKGROUND_ACTIVITY, CICS_SERVICE, CUSTOM_SERVICE, DATABASE_SERVICE, ENTERPRISE_SERVICE_BUS_SERVICE, EXTERNAL, IBM_INTEGRATION_BUS_SERVICE, IMS_SERVICE, MESSAGING_SERVICE, QUEUE_LISTENER_SERVICE, RMI_SERVICE, RPC_SERVICE, WEB_REQUEST_SERVICE and WEB_SERVICE.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionSimpleHostTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SIMPLE_HOST_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.ServiceNamingConditionConditionSimpleHostTechComparisonValue>;
 }
 
 export interface ServiceNamingConditionConditionSimpleHostTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set. Possible values are APPARMOR, BOSH, BOSHBPM, CLOUDFOUNDRY, CONTAINERD, CRIO, DIEGO_CELL, DOCKER, GARDEN, GRSECURITY, KUBERNETES, OPENSHIFT, OPENSTACK_COMPUTE, OPENSTACK_CONTROLLER and SELINUX
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionSimpleTechComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SIMPLE_TECH
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.ServiceNamingConditionConditionSimpleTechComparisonValue>;
 }
 
 export interface ServiceNamingConditionConditionSimpleTechComparisonValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionString {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionStringComparison {
+    /**
+     * The comparison is case-sensitive (`true`) or insensitive (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are BEGINS_WITH, CONTAINS, ENDS_WITH, EQUALS, EXISTS and REGEX_MATCHES. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be STRING
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionStringConditionKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: pulumi.Input<string>;
     /**
+     * if specified, needs to be `STRING`
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionStringKey {
+    /**
+     * The attribute to be used for comparision
+     */
     attribute: pulumi.Input<string>;
+    /**
+     * The key of the attribute, which need dynamic keys. Not applicable otherwise, as the attibute itself acts as a key. Possible values are
+     *    - `AMAZON_ECR_IMAGE_ACCOUNT_ID`
+     *    - `AMAZON_ECR_IMAGE_REGION`
+     *    - `AMAZON_LAMBDA_FUNCTION_NAME`
+     *    - `AMAZON_REGION`
+     *    - `APACHE_CONFIG_PATH`
+     *    - `APACHE_SPARK_MASTER_IP_ADDRESS`
+     *    - `ASP_DOT_NET_CORE_APPLICATION_PATH`
+     *    - `AWS_ECS_CLUSTER`
+     *    - `AWS_ECS_CONTAINERNAME`
+     *    - `AWS_ECS_FAMILY`
+     *    - `AWS_ECS_REVISION`
+     *    - `CASSANDRA_CLUSTER_NAME`
+     *    - `CATALINA_BASE`
+     *    - `CATALINA_HOME`
+     *    - `CLOUD_FOUNDRY_APP_ID`
+     *    - `CLOUD_FOUNDRY_APP_NAME`
+     *    - `CLOUD_FOUNDRY_INSTANCE_INDEX`
+     *    - `CLOUD_FOUNDRY_SPACE_ID`
+     *    - `CLOUD_FOUNDRY_SPACE_NAME`
+     *    - `COLDFUSION_JVM_CONFIG_FILE`
+     *    - `COLDFUSION_SERVICE_NAME`
+     *    - `COMMAND_LINE_ARGS`
+     *    - `DOTNET_COMMAND`
+     *    - `DOTNET_COMMAND_PATH`
+     *    - `DYNATRACE_CLUSTER_ID`
+     *    - `DYNATRACE_NODE_ID`
+     *    - `ELASTICSEARCH_CLUSTER_NAME`
+     *    - `ELASTICSEARCH_NODE_NAME`
+     *    - `EQUINOX_CONFIG_PATH`
+     *    - `EXE_NAME`
+     *    - `EXE_PATH`
+     *    - `GLASS_FISH_DOMAIN_NAME`
+     *    - `GLASS_FISH_INSTANCE_NAME`
+     *    - `GOOGLE_APP_ENGINE_INSTANCE`
+     *    - `GOOGLE_APP_ENGINE_SERVICE`
+     *    - `GOOGLE_CLOUD_PROJECT`
+     *    - `HYBRIS_BIN_DIRECTORY`
+     *    - `HYBRIS_CONFIG_DIRECTORY`
+     *    - `HYBRIS_DATA_DIRECTORY`
+     *    - `IBM_CICS_REGION`
+     *    - `IBM_CTG_NAME`
+     *    - `IBM_IMS_CONNECT_REGION`
+     *    - `IBM_IMS_CONTROL_REGION`
+     *    - `IBM_IMS_MESSAGE_PROCESSING_REGION`
+     *    - `IBM_IMS_SOAP_GW_NAME`
+     *    - `IBM_INTEGRATION_NODE_NAME`
+     *    - `IBM_INTEGRATION_SERVER_NAME`
+     *    - `IIS_APP_POOL`
+     *    - `IIS_ROLE_NAME`
+     *    - `JAVA_JAR_FILE`
+     *    - `JAVA_JAR_PATH`
+     *    - `JAVA_MAIN_CLASS`
+     *    - `JAVA_MAIN_MODULE`
+     *    - `JBOSS_HOME`
+     *    - `JBOSS_MODE`
+     *    - `JBOSS_SERVER_NAME`
+     *    - `KUBERNETES_BASE_POD_NAME`
+     *    - `KUBERNETES_CONTAINER_NAME`
+     *    - `KUBERNETES_FULL_POD_NAME`
+     *    - `KUBERNETES_NAMESPACE`
+     *    - `KUBERNETES_POD_UID`
+     *    - `MSSQL_INSTANCE_NAME`
+     *    - `NODE_JS_APP_BASE_DIRECTORY`
+     *    - `NODE_JS_APP_NAME`
+     *    - `NODE_JS_SCRIPT_NAME`
+     *    - `ORACLE_SID`
+     *    - `PG_ID_CALC_INPUT_KEY_LINKAGE`
+     *    - `PHP_SCRIPT_PATH`
+     *    - `PHP_WORKING_DIRECTORY`
+     *    - `RUBY_APP_ROOT_PATH`
+     *    - `RUBY_SCRIPT_PATH`
+     *    - `RULE_RESULT`
+     *    - `SOFTWAREAG_INSTALL_ROOT`
+     *    - `SOFTWAREAG_PRODUCTPROPNAME`
+     *    - `SPRINGBOOT_APP_NAME`
+     *    - `SPRINGBOOT_PROFILE_NAME`
+     *    - `SPRINGBOOT_STARTUP_CLASS`
+     *    - `TIBCO_BUSINESSWORKS_CE_APP_NAME`
+     *    - `TIBCO_BUSINESSWORKS_CE_VERSION`
+     *    - `TIBCO_BUSINESS_WORKS_APP_NODE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_APP_SPACE_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_DOMAIN_NAME`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE`
+     *    - `TIBCO_BUSINESS_WORKS_ENGINE_PROPERTY_FILE_PATH`
+     *    - `TIBCO_BUSINESS_WORKS_HOME`
+     *    - `VARNISH_INSTANCE_NAME`
+     *    - `WEB_LOGIC_CLUSTER_NAME`
+     *    - `WEB_LOGIC_DOMAIN_NAME`
+     *    - `WEB_LOGIC_HOME`
+     *    - `WEB_LOGIC_NAME`
+     *    - `WEB_SPHERE_CELL_NAME`
+     *    - `WEB_SPHERE_CLUSTER_NAME`
+     *    - `WEB_SPHERE_NODE_NAME and WEB_SPHERE_SERVER_NAME`
+     */
     dynamicKey: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionSyntheticEngine {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionSyntheticEngineTypeComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are  EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be SYNTHETIC_ENGINE_TYPE
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to. Possible values are CLASSIC and CUSTOM
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionTag {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.ServiceNamingConditionConditionTagValue>;
 }
 
 export interface ServiceNamingConditionConditionTagComparison {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and TAG_KEY_EQUALS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
     /**
+     * if specified, needs to be TAG
+     *
      * @deprecated The value of the attribute type is implicit, therefore shouldn't get specified
      */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Tag of a Dynatrace entity
+     */
     value?: pulumi.Input<inputs.ServiceNamingConditionConditionTagComparisonValue>;
 }
 
 export interface ServiceNamingConditionConditionTagComparisonValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionTagValue {
+    /**
+     * The origin of the tag, such as AWS or Cloud Foundry. Possible values are AWS, AWS_GENERIC, AZURE, CLOUD_FOUNDRY, CONTEXTLESS, ENVIRONMENT, GOOGLE_CLOUD and KUBERNETES. Custom tags use the `CONTEXTLESS` value
+     */
     context: pulumi.Input<string>;
+    /**
+     * The key of the tag. Custom tags have the tag value here
+     */
     key: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value of the tag. Not applicable to custom tags
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface ServiceNamingConditionConditionTech {
+    /**
+     * Reverses the operator. For example it turns the **begins with** into **does not begin with**
+     */
     negate?: pulumi.Input<boolean>;
+    /**
+     * Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+     */
     operator: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * The value to compare to
+     */
     value?: pulumi.Input<inputs.ServiceNamingConditionConditionTechValue>;
 }
 
 export interface ServiceNamingConditionConditionTechValue {
+    /**
+     * Predefined technology, if technology is not predefined, then the verbatim type must be set.
+     */
     type?: pulumi.Input<string>;
+    /**
+     * Any attributes that aren't yet supported by this provider
+     */
     unknowns?: pulumi.Input<string>;
+    /**
+     * Non-predefined technology, use for custom technologies
+     */
     verbatimType?: pulumi.Input<string>;
 }
 
@@ -11395,8 +23649,17 @@ export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRu
 }
 
 export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingAllowListRulesAllowListRule {
+    /**
+     * Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+     */
     attributeExpression?: pulumi.Input<string>;
+    /**
+     * Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+     */
     cssExpression?: pulumi.Input<string>;
+    /**
+     * Possible Values: `ATTRIBUTE`, `ELEMENT`
+     */
     target: pulumi.Input<string>;
 }
 
@@ -11405,9 +23668,21 @@ export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRu
 }
 
 export interface SessionReplayWebPrivacyMaskingPresetsPlaybackMaskingBlockListRulesBlockListRule {
+    /**
+     * Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+     */
     attributeExpression?: pulumi.Input<string>;
+    /**
+     * Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+     */
     cssExpression?: pulumi.Input<string>;
+    /**
+     * Hide user interactions with these elements, including clicks that expand elements, highlighting that results from hovering a cursor over an option, and selection of specific form options.
+     */
     hideUserInteraction?: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `ELEMENT`, `ATTRIBUTE`
+     */
     target: pulumi.Input<string>;
 }
 
@@ -11416,8 +23691,17 @@ export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListR
 }
 
 export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingAllowListRulesAllowListRule {
+    /**
+     * Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+     */
     attributeExpression?: pulumi.Input<string>;
+    /**
+     * Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+     */
     cssExpression?: pulumi.Input<string>;
+    /**
+     * Possible Values: `ATTRIBUTE`, `ELEMENT`
+     */
     target: pulumi.Input<string>;
 }
 
@@ -11426,9 +23710,21 @@ export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListR
 }
 
 export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListRulesBlockListRule {
+    /**
+     * Attribute masking can be applied to web applications that store data within attributes, typically data-NAME attributes in HTML5. When you define attributes, their values are masked while recording but not removed.
+     */
     attributeExpression?: pulumi.Input<string>;
+    /**
+     * Content masking can be applied to webpages where personal data is displayed. When content masking is applied to parent elements, all child elements are masked by default.
+     */
     cssExpression?: pulumi.Input<string>;
+    /**
+     * Hide user interactions with these elements, including clicks that expand elements, highlighting that results from hovering a cursor over an option, and selection of specific form options.
+     */
     hideUserInteraction?: pulumi.Input<boolean>;
+    /**
+     * Possible Values: `ELEMENT`, `ATTRIBUTE`
+     */
     target: pulumi.Input<string>;
 }
 
@@ -11451,10 +23747,25 @@ export interface SpanCaptureRuleMatches {
 }
 
 export interface SpanCaptureRuleMatchesMatch {
+    /**
+     * Whether to match strings case sensitively or not
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Possible values are `EQUALS`, `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_CONTAIN`, `DOES_NOT_START_WITH` and `DOES_NOT_END_WITH`.
+     */
     comparison: pulumi.Input<string>;
+    /**
+     * The name of the attribute if `source` is `ATTRIBUTE`
+     */
     key?: pulumi.Input<string>;
+    /**
+     * What to match against. Possible values are `SPAN_NAME`, `SPAN_KIND`, `ATTRIBUTE`, `INSTRUMENTATION_LIBRARY_NAME` and `INSTRUMENTATION_LIBRARY_VERSION`
+     */
     source: pulumi.Input<string>;
+    /**
+     * The value to compare against. When `source` is `SPAN_KIND` the only allowed values are `INTERNAL`, `SERVER`, `CLIENT`, `PRODUCER` and `CONSUMER`
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -11466,10 +23777,25 @@ export interface SpanContextPropagationMatches {
 }
 
 export interface SpanContextPropagationMatchesMatch {
+    /**
+     * Whether to match strings case sensitively or not
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Possible values are `EQUALS`, `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_CONTAIN`, `DOES_NOT_START_WITH` and `DOES_NOT_END_WITH`.
+     */
     comparison: pulumi.Input<string>;
+    /**
+     * The name of the attribute if `source` is `ATTRIBUTE`
+     */
     key?: pulumi.Input<string>;
+    /**
+     * What to match against. Possible values are `SPAN_NAME`, `SPAN_KIND`, `ATTRIBUTE`, `INSTRUMENTATION_LIBRARY_NAME` and `INSTRUMENTATION_LIBRARY_VERSION`
+     */
     source: pulumi.Input<string>;
+    /**
+     * The value to compare against. When `source` is `SPAN_KIND` the only allowed values are `INTERNAL`, `SERVER`, `CLIENT`, `PRODUCER` and `CONSUMER`
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -11481,82 +23807,217 @@ export interface SpanEntryPointMatches {
 }
 
 export interface SpanEntryPointMatchesMatch {
+    /**
+     * Whether to match strings case sensitively or not
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * Possible values are `EQUALS`, `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `DOES_NOT_EQUAL`, `DOES_NOT_CONTAIN`, `DOES_NOT_START_WITH` and `DOES_NOT_END_WITH`.
+     */
     comparison: pulumi.Input<string>;
+    /**
+     * The name of the attribute if `source` is `ATTRIBUTE`
+     */
     key?: pulumi.Input<string>;
+    /**
+     * What to match against. Possible values are `SPAN_NAME`, `SPAN_KIND`, `ATTRIBUTE`, `INSTRUMENTATION_LIBRARY_NAME` and `INSTRUMENTATION_LIBRARY_VERSION`
+     */
     source: pulumi.Input<string>;
+    /**
+     * The value to compare against. When `source` is `SPAN_KIND` the only allowed values are `INTERNAL`, `SERVER`, `CLIENT`, `PRODUCER` and `CONSUMER`
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface UpdateWindowsDailyRecurrence {
+    /**
+     * Every **X** days:
+     * * `1` = every day,
+     * * `2` = every two days,
+     * * `3` = every three days,
+     * * etc.
+     */
     every: pulumi.Input<number>;
+    /**
+     * Recurrence range
+     */
     recurrenceRange: pulumi.Input<inputs.UpdateWindowsDailyRecurrenceRecurrenceRange>;
+    /**
+     * Update time
+     */
     updateTime: pulumi.Input<inputs.UpdateWindowsDailyRecurrenceUpdateTime>;
 }
 
 export interface UpdateWindowsDailyRecurrenceRecurrenceRange {
+    /**
+     * no documentation available
+     */
     end: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     start: pulumi.Input<string>;
 }
 
 export interface UpdateWindowsDailyRecurrenceUpdateTime {
+    /**
+     * Duration (minutes)
+     */
     duration: pulumi.Input<number>;
+    /**
+     * Start time (24-hour clock)
+     */
     startTime: pulumi.Input<string>;
+    /**
+     * Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+     */
     timeZone: pulumi.Input<string>;
 }
 
 export interface UpdateWindowsMonthlyRecurrence {
+    /**
+     * Every **X** months:
+     * * `1` = every month,
+     * * `2` = every two months,
+     * * `3` = every three months,
+     * * etc.
+     */
     every: pulumi.Input<number>;
+    /**
+     * Recurrence range
+     */
     recurrenceRange: pulumi.Input<inputs.UpdateWindowsMonthlyRecurrenceRecurrenceRange>;
+    /**
+     * Day of the month
+     */
     selectedMonthDay: pulumi.Input<number>;
+    /**
+     * Update time
+     */
     updateTime: pulumi.Input<inputs.UpdateWindowsMonthlyRecurrenceUpdateTime>;
 }
 
 export interface UpdateWindowsMonthlyRecurrenceRecurrenceRange {
+    /**
+     * no documentation available
+     */
     end: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     start: pulumi.Input<string>;
 }
 
 export interface UpdateWindowsMonthlyRecurrenceUpdateTime {
+    /**
+     * Duration (minutes)
+     */
     duration: pulumi.Input<number>;
+    /**
+     * Start time (24-hour clock)
+     */
     startTime: pulumi.Input<string>;
+    /**
+     * Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+     */
     timeZone: pulumi.Input<string>;
 }
 
 export interface UpdateWindowsOnceRecurrence {
+    /**
+     * Update time
+     */
     recurrenceRange: pulumi.Input<inputs.UpdateWindowsOnceRecurrenceRecurrenceRange>;
 }
 
 export interface UpdateWindowsOnceRecurrenceRecurrenceRange {
+    /**
+     * no documentation available
+     */
     end: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     start: pulumi.Input<string>;
 }
 
 export interface UpdateWindowsWeeklyRecurrence {
+    /**
+     * Every **X** weeks:
+     * * `1` = every week,
+     * * `2` = every two weeks,
+     * * `3` = every three weeks,
+     * * etc.
+     */
     every: pulumi.Input<number>;
+    /**
+     * Recurrence range
+     */
     recurrenceRange: pulumi.Input<inputs.UpdateWindowsWeeklyRecurrenceRecurrenceRange>;
+    /**
+     * Day of the week
+     */
     selectedWeekDays: pulumi.Input<inputs.UpdateWindowsWeeklyRecurrenceSelectedWeekDays>;
+    /**
+     * Update time
+     */
     updateTime: pulumi.Input<inputs.UpdateWindowsWeeklyRecurrenceUpdateTime>;
 }
 
 export interface UpdateWindowsWeeklyRecurrenceRecurrenceRange {
+    /**
+     * no documentation available
+     */
     end: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     start: pulumi.Input<string>;
 }
 
 export interface UpdateWindowsWeeklyRecurrenceSelectedWeekDays {
+    /**
+     * no documentation available
+     */
     friday: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     monday: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     saturday: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     sunday: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     thursday: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     tuesday: pulumi.Input<boolean>;
+    /**
+     * no documentation available
+     */
     wednesday: pulumi.Input<boolean>;
 }
 
 export interface UpdateWindowsWeeklyRecurrenceUpdateTime {
+    /**
+     * Duration (minutes)
+     */
     duration: pulumi.Input<number>;
+    /**
+     * Start time (24-hour clock)
+     */
     startTime: pulumi.Input<string>;
+    /**
+     * Possible Values: `GMT_06_00`, `GMT_12_00`, `GMT_10_00`, `GMT_07_00`, `GMT_00_00`, `GMT_11_00`, `GMT_03_00`, `GMT_01_00`, `GMT_05_00`, `GMT_09_00`, `GMT_02_00`, `GMT_04_00`, `GMT_08_00`
+     */
     timeZone: pulumi.Input<string>;
 }
 
@@ -11565,12 +24026,21 @@ export interface UserActionMetricsFilters {
 }
 
 export interface UserActionMetricsFiltersFilter {
+    /**
+     * Field name
+     */
     fieldName: pulumi.Input<string>;
+    /**
+     * Possible Values: `EQUALS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL_TO`, `IN`, `IS_NOT_NULL`, `IS_NULL`, `LESS_THAN`, `LESS_THAN_OR_EQUAL_TO`, `LIKE`, `NOT_EQUAL`, `NOT_LIKE`, `STARTS_WITH`
+     */
     operator: pulumi.Input<string>;
     /**
-     * Defines the type of value to be extracted from the user action. When using **user action counter**, the number of user actions is counted (similar to count(*) when using USQL). When using **user action field value**, the value of a user action field is extracted.
+     * no documentation available
      */
     value?: pulumi.Input<string>;
+    /**
+     * Values
+     */
     valueIns?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -11593,7 +24063,13 @@ export interface UserGroupPermissions {
 }
 
 export interface UserGroupPermissionsGrant {
+    /**
+     * The ids of the environments this permission grants the user access to.
+     */
     environments?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The permission. Possible values are `VIEWER`, `MANAGE_SETTINGS`, `AGENT_INSTALL`, `LOG_VIEWER`, `VIEW_SENSITIVE_REQUEST_DATA`, `CONFIGURE_REQUEST_CAPTURE_DATA`, `REPLAY_SESSION_DATA`, `REPLAY_SESSION_DATA_WITHOUT_MASKING`, `MANAGE_SECURITY_PROBLEMS` and `MANAGE_SUPPORT_TICKETS`.
+     */
     permission: pulumi.Input<string>;
 }
 
@@ -11602,12 +24078,21 @@ export interface UserSessionMetricsFilters {
 }
 
 export interface UserSessionMetricsFiltersFilter {
+    /**
+     * Field name
+     */
     fieldName: pulumi.Input<string>;
+    /**
+     * Possible Values: `EQUALS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL_TO`, `IN`, `IS_NOT_NULL`, `IS_NULL`, `LESS_THAN`, `LESS_THAN_OR_EQUAL_TO`, `LIKE`, `NOT_EQUAL`, `NOT_LIKE`, `STARTS_WITH`
+     */
     operator: pulumi.Input<string>;
     /**
-     * Defines the type of value to be extracted from the user session. When using **User session counter**, the number of user sessions is counted (similar to count(*) when using USQL). When using **User session field value**, the value of a user session field is extracted.
+     * no documentation available
      */
     value?: pulumi.Input<string>;
+    /**
+     * Values
+     */
     valueIns?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
@@ -11638,6 +24123,9 @@ export interface VmwareAnomaliesDroppedPacketsDetection {
 }
 
 export interface VmwareAnomaliesDroppedPacketsDetectionCustomThresholds {
+    /**
+     * Receive/transmit dropped packets rate on NIC is higher than
+     */
     droppedPacketsPerSecond: pulumi.Input<number>;
 }
 
@@ -11657,8 +24145,17 @@ export interface VmwareAnomaliesEsxiHighCpuDetection {
 }
 
 export interface VmwareAnomaliesEsxiHighCpuDetectionCustomThresholds {
+    /**
+     * At least one peak occurred when Hypervisor CPU usage was higher than
+     */
     cpuPeakPercentage: pulumi.Input<number>;
+    /**
+     * CPU usage is higher than
+     */
     cpuUsagePercentage: pulumi.Input<number>;
+    /**
+     * VM CPU ready is higher than
+     */
     vmCpuReadyPercentage: pulumi.Input<number>;
 }
 
@@ -11678,6 +24175,9 @@ export interface VmwareAnomaliesEsxiHighMemoryDetection {
 }
 
 export interface VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholds {
+    /**
+     * ESXi host swap IN/OUT or compression/decompression rate is higher than
+     */
     compressionDecompressionRate: pulumi.Input<number>;
 }
 
@@ -11697,8 +24197,17 @@ export interface VmwareAnomaliesGuestCpuLimitDetection {
 }
 
 export interface VmwareAnomaliesGuestCpuLimitDetectionCustomThresholds {
+    /**
+     * Hypervisor CPU usage is higher than
+     */
     hostCpuUsagePercentage: pulumi.Input<number>;
+    /**
+     * VM CPU ready is higher than
+     */
     vmCpuReadyPercentage: pulumi.Input<number>;
+    /**
+     * VM CPU usage (VM CPU Usage Mhz / VM CPU limit in Mhz) is higher than
+     */
     vmCpuUsagePercentage: pulumi.Input<number>;
 }
 
@@ -11718,6 +24227,9 @@ export interface VmwareAnomaliesLowDatastoreSpaceDetection {
 }
 
 export interface VmwareAnomaliesLowDatastoreSpaceDetectionCustomThresholds {
+    /**
+     * Datastore free space is lower than
+     */
     freeSpacePercentage: pulumi.Input<number>;
 }
 
@@ -11737,6 +24249,9 @@ export interface VmwareAnomaliesOverloadedStorageDetection {
 }
 
 export interface VmwareAnomaliesOverloadedStorageDetectionCustomThresholds {
+    /**
+     * Number of command aborts is higher than
+     */
     commandAbortsNumber: pulumi.Input<number>;
 }
 
@@ -11756,7 +24271,13 @@ export interface VmwareAnomaliesSlowPhysicalStorageDetection {
 }
 
 export interface VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholds {
+    /**
+     * Read/write latency is higher than
+     */
     avgReadWriteLatency: pulumi.Input<number>;
+    /**
+     * Peak value for read/write latency is higher than
+     */
     peakReadWriteLatency: pulumi.Input<number>;
 }
 
@@ -11776,7 +24297,13 @@ export interface VmwareAnomaliesUndersizedStorageDetection {
 }
 
 export interface VmwareAnomaliesUndersizedStorageDetectionCustomThresholds {
+    /**
+     * Average queue command latency is higher than
+     */
     averageQueueCommandLatency: pulumi.Input<number>;
+    /**
+     * Peak queue command latency is higher than
+     */
     peakQueueCommandLatency: pulumi.Input<number>;
 }
 
@@ -11800,20 +24327,47 @@ export interface WebAppAnomaliesErrorRate {
 }
 
 export interface WebAppAnomaliesErrorRateErrorRateAuto {
+    /**
+     * Absolute threshold
+     */
     absoluteIncrease: pulumi.Input<number>;
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: pulumi.Input<inputs.WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection>;
+    /**
+     * Relative threshold
+     */
     relativeIncrease: pulumi.Input<number>;
 }
 
 export interface WebAppAnomaliesErrorRateErrorRateAutoOverAlertingProtection {
+    /**
+     * Only alert if there are at least
+     */
     actionsPerMinute: pulumi.Input<number>;
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: pulumi.Input<number>;
 }
 
 export interface WebAppAnomaliesErrorRateErrorRateFixed {
+    /**
+     * To avoid over-alerting for low traffic applications
+     */
     errorRateReqPerMin: pulumi.Input<number>;
+    /**
+     * Possible Values: `Low`, `Medium`, `High`
+     */
     errorRateSensitivity: pulumi.Input<string>;
+    /**
+     * Alert if this custom error rate threshold is exceeded during any 5-minute-period
+     */
     maxFailureRateIncrease: pulumi.Input<number>;
+    /**
+     * Amount of minutes the observed traffic has to stay in abnormal state before alert
+     */
     minutesAbnormalState: pulumi.Input<number>;
 }
 
@@ -11837,43 +24391,94 @@ export interface WebAppAnomaliesResponseTime {
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeAuto {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: pulumi.Input<inputs.WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection>;
+    /**
+     * Alert if the median response time of all user actions degrades beyond **both** the absolute and relative thresholds:
+     */
     responseTimeAll: pulumi.Input<inputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll>;
+    /**
+     * Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+     */
     responseTimeSlowest: pulumi.Input<inputs.WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest>;
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeAutoOverAlertingProtection {
+    /**
+     * Only alert if there are at least
+     */
     actionsPerMinute: pulumi.Input<number>;
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: pulumi.Input<number>;
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeAll {
+    /**
+     * Absolute threshold
+     */
     degradationMilliseconds: pulumi.Input<number>;
+    /**
+     * Relative threshold
+     */
     degradationPercent: pulumi.Input<number>;
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeAutoResponseTimeSlowest {
+    /**
+     * Absolute threshold
+     */
     slowestDegradationMilliseconds: pulumi.Input<number>;
+    /**
+     * Relative threshold
+     */
     slowestDegradationPercent: pulumi.Input<number>;
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeFixed {
+    /**
+     * Avoid over-alerting
+     */
     overAlertingProtection: pulumi.Input<inputs.WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection>;
+    /**
+     * Alert if the key performance metric of all requests degrades beyond this threshold:
+     */
     responseTimeAll: pulumi.Input<inputs.WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll>;
+    /**
+     * Alert if the key performance metric of the slowest 10% of requests degrades beyond this threshold:
+     */
     responseTimeSlowest: pulumi.Input<inputs.WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest>;
+    /**
+     * Possible Values: `Medium`, `High`, `Low`
+     */
     sensitivity: pulumi.Input<string>;
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeFixedOverAlertingProtection {
+    /**
+     * Only alert if there are at least
+     */
     actionsPerMinute: pulumi.Input<number>;
+    /**
+     * Only alert if the abnormal state remains for at least
+     */
     minutesAbnormalState: pulumi.Input<number>;
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeAll {
+    /**
+     * Alert if the key performance metric degrades beyond this many ms within an observation period of 5 minutes
+     */
     degradationMilliseconds: pulumi.Input<number>;
 }
 
 export interface WebAppAnomaliesResponseTimeResponseTimeFixedResponseTimeSlowest {
+    /**
+     * Alert if the key performance metric of the slowest 10% degrades beyond this many ms within an observation period of 5 minutes
+     */
     slowestDegradationMilliseconds: pulumi.Input<number>;
 }
 
@@ -11889,7 +24494,13 @@ export interface WebAppAnomaliesTrafficDrops {
 }
 
 export interface WebAppAnomaliesTrafficDropsTrafficDrops {
+    /**
+     * Minutes the observed traffic has to stay in abnormal state before alert
+     */
     abnormalStateAbnormalState: pulumi.Input<number>;
+    /**
+     * Alert if the observed traffic is less than this percentage of the expected value
+     */
     trafficDropPercentage: pulumi.Input<number>;
 }
 
@@ -11905,7 +24516,13 @@ export interface WebAppAnomaliesTrafficSpikes {
 }
 
 export interface WebAppAnomaliesTrafficSpikesTrafficSpikes {
+    /**
+     * Minutes an application has to stay in abnormal state before alert
+     */
     minutesAbnormalState: pulumi.Input<number>;
+    /**
+     * Alert if the observed traffic is more than this percentage of the expected value
+     */
     trafficSpikePercentage: pulumi.Input<number>;
 }
 
@@ -11914,16 +24531,40 @@ export interface WebAppCustomErrorsErrorRules {
 }
 
 export interface WebAppCustomErrorsErrorRulesErrorRule {
+    /**
+     * Capture settings
+     */
     captureSettings: pulumi.Input<inputs.WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings>;
+    /**
+     * Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+     */
     keyMatcher: pulumi.Input<string>;
+    /**
+     * A case-insensitive key pattern
+     */
     keyPattern?: pulumi.Input<string>;
+    /**
+     * Possible Values: `ALL`, `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+     */
     valueMatcher: pulumi.Input<string>;
+    /**
+     * A case-insensitive value pattern
+     */
     valuePattern?: pulumi.Input<string>;
 }
 
 export interface WebAppCustomErrorsErrorRulesErrorRuleCaptureSettings {
+    /**
+     * Capture this error
+     */
     capture: pulumi.Input<boolean>;
+    /**
+     * [View more details](https://dt-url.net/hd580p2k)
+     */
     considerForAi?: pulumi.Input<boolean>;
+    /**
+     * Include error in Apdex calculations
+     */
     impactApdex?: pulumi.Input<boolean>;
 }
 
@@ -11954,21 +24595,51 @@ export interface WebAppRequestErrorsErrorRules {
 }
 
 export interface WebAppRequestErrorsErrorRulesErrorRule {
+    /**
+     * Capture settings
+     */
     captureSettings: pulumi.Input<inputs.WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings>;
+    /**
+     * Match by errors that have CSP violations
+     */
     considerCspViolations: pulumi.Input<boolean>;
+    /**
+     * Match by errors that have failed image requests
+     */
     considerFailedImages: pulumi.Input<boolean>;
+    /**
+     * Match by error code
+     */
     errorCodes?: pulumi.Input<string>;
+    /**
+     * Filter settings
+     */
     filterSettings: pulumi.Input<inputs.WebAppRequestErrorsErrorRulesErrorRuleFilterSettings>;
 }
 
 export interface WebAppRequestErrorsErrorRulesErrorRuleCaptureSettings {
+    /**
+     * Capture this error
+     */
     capture: pulumi.Input<boolean>;
+    /**
+     * [View more details](https://dt-url.net/hd580p2k)
+     */
     considerForAi?: pulumi.Input<boolean>;
+    /**
+     * Include error in Apdex calculations
+     */
     impactApdex?: pulumi.Input<boolean>;
 }
 
 export interface WebAppRequestErrorsErrorRulesErrorRuleFilterSettings {
+    /**
+     * Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`
+     */
     filter?: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
     url?: pulumi.Input<string>;
 }
 
@@ -11980,43 +24651,85 @@ export interface WebApplicationConversionGoals {
 }
 
 export interface WebApplicationConversionGoalsGoal {
+    /**
+     * Configuration of a destination-based conversion goal
+     */
     destination?: pulumi.Input<inputs.WebApplicationConversionGoalsGoalDestination>;
     /**
-     * The ID of this resource.
+     * The ID of conversion goal.
      */
     id?: pulumi.Input<string>;
     /**
-     * The name of the web application, displayed in the UI
+     * The name of the conversion goal. Valid length within 1 and 50 characters.
      */
     name: pulumi.Input<string>;
     /**
      * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
      */
     type?: pulumi.Input<string>;
+    /**
+     * Configuration of a destination-based conversion goal
+     */
     userAction?: pulumi.Input<inputs.WebApplicationConversionGoalsGoalUserAction>;
+    /**
+     * Configuration of a destination-based conversion goal
+     */
     visitDuration?: pulumi.Input<inputs.WebApplicationConversionGoalsGoalVisitDuration>;
+    /**
+     * Configuration of a destination-based conversion goal
+     */
     visitNumAction?: pulumi.Input<inputs.WebApplicationConversionGoalsGoalVisitNumAction>;
 }
 
 export interface WebApplicationConversionGoalsGoalDestination {
+    /**
+     * The match is case-sensitive (`true`) or (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
+     */
     matchType?: pulumi.Input<string>;
+    /**
+     * The path to be reached to hit the conversion goal
+     */
     urlOrPath: pulumi.Input<string>;
 }
 
 export interface WebApplicationConversionGoalsGoalUserAction {
+    /**
+     * Type of the action to which the rule applies. Possible values are `Custom`, `Load` and `Xhr`.
+     */
     actionType?: pulumi.Input<string>;
+    /**
+     * The match is case-sensitive (`true`) or (`false`)
+     */
     caseSensitive?: pulumi.Input<boolean>;
+    /**
+     * The type of the entity to which the rule applies. Possible values are `ActionName`, `CssSelector`, `JavaScriptVariable`, `MetaTag`, `PagePath`, `PageTitle`, `PageUrl`, `UrlAnchor` and `XhrUrl`.
+     */
     matchEntity?: pulumi.Input<string>;
+    /**
+     * The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
+     */
     matchType?: pulumi.Input<string>;
+    /**
+     * The value to be matched to hit the conversion goal
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface WebApplicationConversionGoalsGoalVisitDuration {
+    /**
+     * The duration of session to hit the conversion goal, in milliseconds
+     */
     duration: pulumi.Input<number>;
 }
 
 export interface WebApplicationConversionGoalsGoalVisitNumAction {
+    /**
+     * The number of user actions to hit the conversion goal
+     */
     numUserActions?: pulumi.Input<number>;
 }
 
@@ -12051,13 +24764,16 @@ export interface WebApplicationKeyUserAction {
 }
 
 export interface WebApplicationKeyUserActionAction {
+    /**
+     * The domain where the action is performed.
+     */
     domain?: pulumi.Input<string>;
     /**
-     * The name of the web application, displayed in the UI
+     * The name of the action
      */
     name: pulumi.Input<string>;
     /**
-     * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
+     * The type of the action. Possible values are `Custom`, `Load` and `Xhr`.
      */
     type: pulumi.Input<string>;
 }
@@ -12093,17 +24809,29 @@ export interface WebApplicationMetaDataCaptureSettings {
 }
 
 export interface WebApplicationMetaDataCaptureSettingsCapture {
+    /**
+     * The name of the meta data to capture
+     */
     capturingName: pulumi.Input<string>;
     /**
-     * The name of the web application, displayed in the UI
+     * Name for displaying the captured values in Dynatrace
      */
     name: pulumi.Input<string>;
+    /**
+     * `true` if this metadata should be captured regardless of the privacy settings, `false` otherwise
+     */
     publicMetadata?: pulumi.Input<boolean>;
     /**
-     * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
+     * The type of the meta data to capture. Possible values are `COOKIE`, `CSS_SELECTOR`, `JAVA_SCRIPT_FUNCTION`, `JAVA_SCRIPT_VARIABLE`, `META_TAG` and `QUERY_STRING`.
      */
     type: pulumi.Input<string>;
+    /**
+     * The unique ID of the meta data to capture
+     */
     uniqueId?: pulumi.Input<number>;
+    /**
+     * `true` if the last captured value should be used for this metadata. By default the first value will be used.
+     */
     useLastValue?: pulumi.Input<boolean>;
 }
 
@@ -12140,148 +24868,432 @@ export interface WebApplicationMonitoringSettings {
      * To enable RUM for XHR calls to AWS Lambda, define a regular expression matching these calls, Dynatrace can then automatically add a custom header (`x-dtc`) to each such request to the respective endpoints in AWS.
      */
     correlationHeaderInclusionRegex?: pulumi.Input<string>;
+    /**
+     * The location to send monitoring data from the JavaScript tag.
+     *
+     *  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS. 
+     *
+     *  **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
+     */
     customConfigurationProperties?: pulumi.Input<string>;
+    /**
+     * You can exclude some actions from becoming XHR actions.
+     *
+     * Put a regular expression, matching all the required URLs, here.
+     *
+     * If noting specified the feature is disabled
+     */
     excludeXhrRegex?: pulumi.Input<string>;
+    /**
+     * `fetch()` request capture enabled/disabled
+     */
     fetchRequests?: pulumi.Input<boolean>;
     /**
      * Possible valures are `CODE_SNIPPET`, `CODE_SNIPPET_ASYNC`, `INLINE_CODE` and `JAVASCRIPT_TAG`.
      */
     injectionMode: pulumi.Input<string>;
+    /**
+     * Settings for restricting certain ip addresses and for introducing subnet mask. It also restricts the mode
+     */
     ipAddressRestrictionSettings?: pulumi.Input<inputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettings>;
+    /**
+     * Support of various JavaScript frameworks
+     */
     javascriptFrameworkSupport?: pulumi.Input<inputs.WebApplicationMonitoringSettingsJavascriptFrameworkSupport>;
+    /**
+     * Java script injection rules
+     */
     javascriptInjectionRules?: pulumi.Input<inputs.WebApplicationMonitoringSettingsJavascriptInjectionRules>;
+    /**
+     * The location of your application’s custom JavaScript library file. 
+     *
+     *  If nothing specified the root directory of your web server is used. 
+     *
+     *  **Required** for auto-injected applications, not supported by agentless applications. Maximum 512 characters.
+     */
     libraryFileLocation?: pulumi.Input<string>;
+    /**
+     * The location to send monitoring data from the JavaScript tag.
+     *
+     *  Specify either a relative or an absolute URL. If you use an absolute URL, data will be sent using CORS. 
+     *
+     *  **Required** for auto-injected applications, optional for agentless applications. Maximum 512 characters.
+     */
     monitoringDataPath?: pulumi.Input<string>;
+    /**
+     * Time duration for the cache settings
+     */
     scriptTagCacheDurationInHours?: pulumi.Input<number>;
+    /**
+     * Secure attribute usage for Dynatrace cookies enabled/disabled
+     */
     secureCookieAttribute?: pulumi.Input<boolean>;
+    /**
+     * Path to identify the server’s request ID. Maximum 150 characters.
+     */
     serverRequestPathId?: pulumi.Input<string>;
+    /**
+     * `XmlHttpRequest` support enabled/disabled
+     */
     xmlHttpRequest?: pulumi.Input<boolean>;
 }
 
 export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettings {
+    /**
+     * Additional event handlers and wrappers
+     */
     additionalEventHandlers?: pulumi.Input<inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers>;
+    /**
+     * In addition to the event handlers, events called using `addEventListener` or `attachEvent` can be captured. Be careful with this option! Event wrappers can conflict with the JavaScript code on a web page
+     */
     eventWrapperSettings?: pulumi.Input<inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings>;
+    /**
+     * Global event capture settings
+     */
     globalEventCaptureSettings?: pulumi.Input<inputs.WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings>;
+    /**
+     * Instrumentation of unsupported Ajax frameworks enabled/disabled
+     */
     instrumentUnsupportedAjaxFrameworks?: pulumi.Input<boolean>;
+    /**
+     * Maximum character length for action names. Valid values range from 5 to 10000.
+     */
     maxActionNameLength: pulumi.Input<number>;
+    /**
+     * Maximum number of errors to be captured per page. Valid values range from 0 to 50.
+     */
     maxErrorsToCapture: pulumi.Input<number>;
+    /**
+     * Additional special characters that are to be escaped using non-alphanumeric characters in HTML escape format. Maximum length 30 character. Allowed characters are `^`, `\`, `<` and `>`.
+     */
     specialCharactersToEscape?: pulumi.Input<string>;
+    /**
+     * Send the beacon signal as a synchronous XMLHttpRequest using Firefox enabled/disabled
+     */
     syncBeaconFirefox?: pulumi.Input<boolean>;
+    /**
+     * Send the beacon signal as a synchronous XMLHttpRequest using Internet Explorer enabled/disabled
+     */
     syncBeaconInternetExplorer?: pulumi.Input<boolean>;
 }
 
 export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsAdditionalEventHandlers {
+    /**
+     * Blur event handler enabled/disabled
+     */
     blur?: pulumi.Input<boolean>;
+    /**
+     * Change event handler enabled/disabled
+     */
     change?: pulumi.Input<boolean>;
+    /**
+     * Click event handler enabled/disabled
+     */
     click?: pulumi.Input<boolean>;
+    /**
+     * Max. number of DOM nodes to instrument. Valid values range from 0 to 100000.
+     */
     maxDomNodes: pulumi.Input<number>;
+    /**
+     * Mouseup event handler enabled/disabled
+     */
     mouseup?: pulumi.Input<boolean>;
+    /**
+     * toString method enabled/disabled
+     */
     toStringMethod?: pulumi.Input<boolean>;
+    /**
+     * Use mouseup event for clicks enabled/disabled
+     */
     useMouseUpEventForClicks?: pulumi.Input<boolean>;
 }
 
 export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsEventWrapperSettings {
+    /**
+     * Blur enabled/disabled
+     */
     blur?: pulumi.Input<boolean>;
+    /**
+     * Change enabled/disabled
+     */
     change?: pulumi.Input<boolean>;
+    /**
+     * Click enabled/disabled
+     */
     click?: pulumi.Input<boolean>;
+    /**
+     * MouseUp enabled/disabled
+     */
     mouseup?: pulumi.Input<boolean>;
+    /**
+     * TouchEnd enabled/disabled
+     */
     touchEnd?: pulumi.Input<boolean>;
+    /**
+     * TouchStart enabled/disabled
+     */
     touchStart?: pulumi.Input<boolean>;
 }
 
 export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings {
+    /**
+     * Additional events to be captured globally as user input.
+     */
     additionalEventCapturedAsUserInput?: pulumi.Input<string>;
+    /**
+     * Click enabled/disabled
+     */
     click?: pulumi.Input<boolean>;
+    /**
+     * DoubleClick enabled/disabled
+     */
     doubleclick?: pulumi.Input<boolean>;
+    /**
+     * KeyDown enabled/disabled
+     */
     keydown?: pulumi.Input<boolean>;
+    /**
+     * KeyUp enabled/disabled
+     */
     keyup?: pulumi.Input<boolean>;
+    /**
+     * MouseDown enabled/disabled
+     */
     mousedown?: pulumi.Input<boolean>;
+    /**
+     * MouseUp enabled/disabled
+     */
     mouseup?: pulumi.Input<boolean>;
+    /**
+     * Scroll enabled/disabled
+     */
     scroll?: pulumi.Input<boolean>;
 }
 
 export interface WebApplicationMonitoringSettingsBrowserRestrictionSettings {
+    /**
+     * The mode of the list of browser restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+     */
     mode: pulumi.Input<string>;
+    /**
+     * A list of browser restrictions
+     */
     restrictions?: pulumi.Input<inputs.WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions>;
 }
 
 export interface WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions {
+    /**
+     * Browser exclusion rules for the browsers that are to be excluded
+     */
     restrictions: pulumi.Input<pulumi.Input<inputs.WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction>[]>;
 }
 
 export interface WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction {
+    /**
+     * The type of the browser that is used. Possible values are `ANDROID_WEBKIT`, `BOTS_SPIDERS`, `CHROME`, `EDGE`, `FIREFOX`, `INTERNET_EXPLORER,`OPERA`and`SAFARI`
+     */
     browserType: pulumi.Input<string>;
+    /**
+     * The version of the browser that is used
+     */
     browserVersion?: pulumi.Input<string>;
+    /**
+     * No documentation available. Possible values are `EQUALS`, `GREATER_THAN_OR_EQUAL` and `LOWER_THAN_OR_EQUAL`.
+     */
     comparator?: pulumi.Input<string>;
+    /**
+     * The platform on which the browser is being used. Possible values are `ALL`, `DESKTOP` and `MOBILE`
+     */
     platform?: pulumi.Input<string>;
 }
 
 export interface WebApplicationMonitoringSettingsContentCapture {
+    /**
+     * JavaScript errors monitoring enabled/disabled
+     */
     javascriptErrors?: pulumi.Input<boolean>;
+    /**
+     * Settings for resource timings capture
+     */
     resourceTimingSettings?: pulumi.Input<inputs.WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings>;
+    /**
+     * Settings for timed action capture
+     */
     timeoutSettings?: pulumi.Input<inputs.WebApplicationMonitoringSettingsContentCaptureTimeoutSettings>;
+    /**
+     * Visually complete and Speed index support enabled/disabled
+     */
     visuallyCompleteAndSpeedIndex?: pulumi.Input<boolean>;
+    /**
+     * Settings for VisuallyComplete
+     */
     visuallyCompleteSettings?: pulumi.Input<inputs.WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings>;
 }
 
 export interface WebApplicationMonitoringSettingsContentCaptureResourceTimingSettings {
+    /**
+     * Instrumentation delay for monitoring resource and image resource impact in browsers that don't offer W3C resource timings.
+     */
     instrumentationDelay: pulumi.Input<number>;
+    /**
+     * Timing for JavaScript files and images on non-W3C supported browsers enabled/disabled
+     */
     nonW3cResourceTimings?: pulumi.Input<boolean>;
+    /**
+     * Defines how detailed resource timings are captured.
+     *
+     * Only effective if **w3cResourceTimings** or **nonW3cResourceTimings** is enabled. Possible values are `CAPTURE_ALL_SUMMARIES`, `CAPTURE_FULL_DETAILS` and `CAPTURE_LIMITED_SUMMARIES`
+     */
     resourceTimingCaptureType?: pulumi.Input<string>;
+    /**
+     * Limits the number of domains for which W3C resource timings are captured.
+     *
+     * Only effective if **resourceTimingCaptureType** is `CAPTURE_LIMITED_SUMMARIES`. Valid values range from 0 to 50.
+     */
     resourceTimingsDomainLimit?: pulumi.Input<number>;
+    /**
+     * W3C resource timings for third party/CDN enabled/disabled
+     */
     w3cResourceTimings?: pulumi.Input<boolean>;
 }
 
 export interface WebApplicationMonitoringSettingsContentCaptureTimeoutSettings {
+    /**
+     * Defines how deep temporary actions may cascade. 0 disables temporary actions completely. Recommended value if enabled is 3
+     */
     temporaryActionLimit: pulumi.Input<number>;
+    /**
+     * The total timeout of all cascaded timeouts that should still be able to create a temporary action
+     */
     temporaryActionTotalTimeout: pulumi.Input<number>;
+    /**
+     * Timed action support enabled/disabled.
+     */
     timedActionSupport?: pulumi.Input<boolean>;
 }
 
 export interface WebApplicationMonitoringSettingsContentCaptureVisuallyCompleteSettings {
+    /**
+     * A RegularExpression used to exclude images and iframes from being detected by the VC module
+     */
     excludeUrlRegex?: pulumi.Input<string>;
+    /**
+     * Query selector for mutation nodes to ignore in VC and SI calculation
+     */
     ignoredMutationsList?: pulumi.Input<string>;
+    /**
+     * The time in ms the VC module waits for no mutations happening on the page after the load action. Defaults to 1000. Valid values range from 0 to 30000.
+     */
     inactivityTimeout?: pulumi.Input<number>;
+    /**
+     * Determines the time in ms VC waits after an action closes to start calculation. Defaults to 50. Valid values range from 0 to 5000.
+     */
     mutationTimeout?: pulumi.Input<number>;
+    /**
+     * Minimum visible area in pixels of elements to be counted towards VC and SI. Defaults to 50. Valid values range from 0 to 10000.
+     */
     threshold?: pulumi.Input<number>;
 }
 
 export interface WebApplicationMonitoringSettingsIpAddressRestrictionSettings {
+    /**
+     * The mode of the list of ip address restrictions. Possible values area `EXCLUDE` and `INCLUDE`.
+     */
     mode: pulumi.Input<string>;
+    /**
+     * The IP addresses or the IP address ranges to be mapped to the location
+     */
     restrictions?: pulumi.Input<inputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions>;
 }
 
 export interface WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictions {
+    /**
+     * The IP address or the IP address range to be mapped to the location
+     */
     ranges: pulumi.Input<pulumi.Input<inputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange>[]>;
 }
 
 export interface WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRange {
+    /**
+     * The IP address to be mapped.
+     */
     address: pulumi.Input<string>;
+    /**
+     * The **to** address of the IP address range.
+     */
     addressTo?: pulumi.Input<string>;
+    /**
+     * The subnet mask of the IP address range. Valid values range from 0 to 128.
+     */
     subnetMask?: pulumi.Input<number>;
 }
 
 export interface WebApplicationMonitoringSettingsJavascriptFrameworkSupport {
+    /**
+     * ActiveXObject support enabled/disabled
+     */
     activeXObject?: pulumi.Input<boolean>;
+    /**
+     * AngularJS and Angular support enabled/disabled
+     */
     angular?: pulumi.Input<boolean>;
+    /**
+     * Dojo support enabled/disabled
+     */
     dojo?: pulumi.Input<boolean>;
+    /**
+     * ExtJS, Sencha Touch support enabled/disabled
+     */
     extjs?: pulumi.Input<boolean>;
+    /**
+     * ICEfaces support enabled/disabled
+     */
     icefaces?: pulumi.Input<boolean>;
+    /**
+     * jQuery, Backbone.js support enabled/disabled
+     */
     jquery?: pulumi.Input<boolean>;
+    /**
+     * MooTools support enabled/disabled
+     */
     mooTools?: pulumi.Input<boolean>;
+    /**
+     * Prototype support enabled/disabled
+     */
     prototype?: pulumi.Input<boolean>;
 }
 
 export interface WebApplicationMonitoringSettingsJavascriptInjectionRules {
+    /**
+     * Java script injection rule
+     */
     rules: pulumi.Input<pulumi.Input<inputs.WebApplicationMonitoringSettingsJavascriptInjectionRulesRule>[]>;
 }
 
 export interface WebApplicationMonitoringSettingsJavascriptInjectionRulesRule {
+    /**
+     * `fetch()` request capture enabled/disabled
+     */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * The HTML pattern of the java script injection
+     */
     htmlPattern?: pulumi.Input<string>;
+    /**
+     * The url rule of the java script injection. Possible values are `AFTER_SPECIFIC_HTML`, `AUTOMATIC_INJECTION`, `BEFORE_SPECIFIC_HTML` and `DO_NOT_INJECT`.
+     */
     rule: pulumi.Input<string>;
+    /**
+     * The target against which the rule of the java script injection should be matched. Possible values are `PAGE_QUERY` and `URL`.
+     */
     target?: pulumi.Input<string>;
+    /**
+     * The url operator of the java script injection. Possible values are `ALL_PAGES`, `CONTAINS`, `ENDS_WITH`, `EQUALS` and `STARTS_WITH`.
+     */
     urlOperator: pulumi.Input<string>;
+    /**
+     * The url pattern of the java script injection
+     */
     urlPattern?: pulumi.Input<string>;
 }
 
@@ -12312,23 +25324,60 @@ export interface WebApplicationUserActionAndSessionProperties {
 }
 
 export interface WebApplicationUserActionAndSessionPropertiesProperty {
+    /**
+     * The aggregation type of the property.
+     */
     aggregation?: pulumi.Input<string>;
+    /**
+     * The cleanup rule of the property. 
+     *
+     * Defines how to extract the data you need from a string value. Specify the [regular expression](https://dt-url.net/k9e0iaq) for the data you need there
+     */
     cleanupRule?: pulumi.Input<string>;
+    /**
+     * The display name of the property
+     */
     displayName?: pulumi.Input<string>;
     /**
-     * The ID of this resource.
+     * Unique id among all userTags and properties of this application
      */
     id: pulumi.Input<number>;
+    /**
+     * If `true`, the value of this property will always be stored in lower case. Defaults to `false`.
+     */
     ignoreCase?: pulumi.Input<boolean>;
+    /**
+     * Key of the property
+     */
     key: pulumi.Input<string>;
+    /**
+     * If the `type` is `LONG_STRING`, the max length for this property. Must be a multiple of `100`. Defaults to `200`. Maximum is `1000`.
+     */
     longStringLength?: pulumi.Input<number>;
+    /**
+     * If the origin is `META_DATA`, metaData id of the property
+     */
     metadataId?: pulumi.Input<number>;
+    /**
+     * The origin of the property. Possible values are `JAVASCRIPT_API`, `META_DATA` and `SERVER_SIDE_REQUEST_ATTRIBUTE`.
+     */
     origin: pulumi.Input<string>;
+    /**
+     * The ID of the request attribute. 
+     *
+     * Only applicable when the **origin** is set to `SERVER_SIDE_REQUEST_ATTRIBUTE`
+     */
     serverSideRequestAttribute?: pulumi.Input<string>;
+    /**
+     * If `true`, the property is stored as a session property
+     */
     storeAsSessionProperty?: pulumi.Input<boolean>;
+    /**
+     * If `true`, the property is stored as a user action property
+     */
     storeAsUserActionProperty?: pulumi.Input<boolean>;
     /**
-     * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
+     * The data type of the property. Possible values are `DATE`, `DOUBLE`, `LONG`, `LONG_STRING` and `STRING`.
      */
     type: pulumi.Input<string>;
 }
@@ -12369,97 +25418,216 @@ export interface WebApplicationUserActionNamingSettings {
 }
 
 export interface WebApplicationUserActionNamingSettingsCustomActionNamingRules {
+    /**
+     * The settings of naming rule
+     */
     rules: pulumi.Input<pulumi.Input<inputs.WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule>[]>;
 }
 
 export interface WebApplicationUserActionNamingSettingsCustomActionNamingRulesRule {
+    /**
+     * Defines the conditions when the naming rule should apply
+     */
     conditions?: pulumi.Input<inputs.WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions>;
+    /**
+     * Naming pattern. Use Curly brackets `{}` to select placeholders
+     */
     template: pulumi.Input<string>;
+    /**
+     * If set to `true` the conditions will be connected by logical OR instead of logical AND
+     */
     useOrConditions?: pulumi.Input<boolean>;
 }
 
 export interface WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditions {
+    /**
+     * Defines the conditions when the naming rule should apply
+     */
     conditions: pulumi.Input<pulumi.Input<inputs.WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition>[]>;
 }
 
 export interface WebApplicationUserActionNamingSettingsCustomActionNamingRulesRuleConditionsCondition {
+    /**
+     * Must be a defined placeholder wrapped in curly braces
+     */
     operand1: pulumi.Input<string>;
+    /**
+     * Must be null if operator is `IS_EMPTY`, a regex if operator is `MATCHES_REGULAR_ERPRESSION`. In all other cases the value can be a freetext or a placeholder wrapped in curly braces
+     */
     operand2?: pulumi.Input<string>;
+    /**
+     * The operator of the condition. Possible values are `CONTAINS`, `ENDS_WITH`, `EQUALS`, `IS_EMPTY`, `IS_NOT_EMPTY`, `MATCHES_REGULAR_EXPRESSION`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_MATCHES_REGULAR_EXPRESSION`, `NOT_STARTS_WITH` and `STARTS_WITH`.
+     */
     operator: pulumi.Input<string>;
 }
 
 export interface WebApplicationUserActionNamingSettingsLoadActionNamingRules {
+    /**
+     * The settings of naming rule
+     */
     rules: pulumi.Input<pulumi.Input<inputs.WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule>[]>;
 }
 
 export interface WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule {
+    /**
+     * Defines the conditions when the naming rule should apply
+     */
     conditions?: pulumi.Input<inputs.WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions>;
+    /**
+     * Naming pattern. Use Curly brackets `{}` to select placeholders
+     */
     template: pulumi.Input<string>;
+    /**
+     * If set to `true` the conditions will be connected by logical OR instead of logical AND
+     */
     useOrConditions?: pulumi.Input<boolean>;
 }
 
 export interface WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions {
+    /**
+     * Defines the conditions when the naming rule should apply
+     */
     conditions: pulumi.Input<pulumi.Input<inputs.WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition>[]>;
 }
 
 export interface WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition {
+    /**
+     * Must be a defined placeholder wrapped in curly braces
+     */
     operand1: pulumi.Input<string>;
+    /**
+     * Must be null if operator is `IS_EMPTY`, a regex if operator is `MATCHES_REGULAR_ERPRESSION`. In all other cases the value can be a freetext or a placeholder wrapped in curly braces
+     */
     operand2?: pulumi.Input<string>;
+    /**
+     * The operator of the condition. Possible values are `CONTAINS`, `ENDS_WITH`, `EQUALS`, `IS_EMPTY`, `IS_NOT_EMPTY`, `MATCHES_REGULAR_EXPRESSION`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_MATCHES_REGULAR_EXPRESSION`, `NOT_STARTS_WITH` and `STARTS_WITH`.
+     */
     operator: pulumi.Input<string>;
 }
 
 export interface WebApplicationUserActionNamingSettingsPlaceholders {
+    /**
+     * User action placeholders
+     */
     placeholders: pulumi.Input<pulumi.Input<inputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder>[]>;
 }
 
 export interface WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder {
+    /**
+     * The input for the place holder. Possible values are `ELEMENT_IDENTIFIER`, `INPUT_TYPE`, `METADATA`, `PAGE_TITLE`, `PAGE_URL`, `SOURCE_URL`, `TOP_XHR_URL` and `XHR_URL`
+     */
     input: pulumi.Input<string>;
+    /**
+     * The ID of the metadata
+     */
     metadataId?: pulumi.Input<number>;
     /**
-     * The name of the web application, displayed in the UI
+     * Placeholder name. Valid length needs to be between 1 and 50 characters
      */
     name: pulumi.Input<string>;
+    /**
+     * The part to process. Possible values are `ALL`, `ANCHOR` and `PATH`
+     */
     processingPart: pulumi.Input<string>;
+    /**
+     * The processing step settings
+     */
     processingSteps?: pulumi.Input<inputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps>;
+    /**
+     * Use the element identifier that was selected by Dynatrace
+     */
     useGuessedElementIdentifier?: pulumi.Input<boolean>;
 }
 
 export interface WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps {
+    /**
+     * The processing step
+     */
     steps: pulumi.Input<pulumi.Input<inputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep>[]>;
 }
 
 export interface WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep {
+    /**
+     * If set to `true`: Returns the input if `patternBefore` or `patternAfter` cannot be found and the `type` is `SUBSTRING`. Returns the input if `regularExpression` doesn't match and `type` is `EXTRACT_BY_REGULAR_EXPRESSION`.
+     */
     fallbackToInput?: pulumi.Input<boolean>;
+    /**
+     * The pattern after the required value. It will be removed.
+     */
     patternAfter?: pulumi.Input<string>;
+    /**
+     * The required occurrence of **patternAfter**. Possible values are `FIRST` and `LAST`.
+     */
     patternAfterSearchType?: pulumi.Input<string>;
+    /**
+     * The pattern before the required value. It will be removed.
+     */
     patternBefore?: pulumi.Input<string>;
+    /**
+     * The required occurrence of **patternBefore**. Possible values are `FIRST` and `LAST`.
+     */
     patternBeforeSearchType?: pulumi.Input<string>;
+    /**
+     * The pattern to be replaced. 
+     *
+     *  Only applicable if the `type` is `REPLACE_WITH_PATTERN`.
+     */
     patternToReplace?: pulumi.Input<string>;
+    /**
+     * A regular expression for the string to be extracted or replaced. Only applicable if the `type` is `EXTRACT_BY_REGULAR_EXPRESSION` or `REPLACE_WITH_REGULAR_EXPRESSION`.
+     */
     regularExpression?: pulumi.Input<string>;
+    /**
+     * Replacement for the original value
+     */
     replacement?: pulumi.Input<string>;
     /**
-     * The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
+     * An action to be taken by the processing:
      */
     type: pulumi.Input<string>;
 }
 
 export interface WebApplicationUserActionNamingSettingsXhrActionNamingRules {
+    /**
+     * The settings of naming rule
+     */
     rules: pulumi.Input<pulumi.Input<inputs.WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule>[]>;
 }
 
 export interface WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule {
+    /**
+     * Defines the conditions when the naming rule should apply
+     */
     conditions?: pulumi.Input<inputs.WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions>;
+    /**
+     * Naming pattern. Use Curly brackets `{}` to select placeholders
+     */
     template: pulumi.Input<string>;
+    /**
+     * If set to `true` the conditions will be connected by logical OR instead of logical AND
+     */
     useOrConditions?: pulumi.Input<boolean>;
 }
 
 export interface WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions {
+    /**
+     * Defines the conditions when the naming rule should apply
+     */
     conditions: pulumi.Input<pulumi.Input<inputs.WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsCondition>[]>;
 }
 
 export interface WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsCondition {
+    /**
+     * Must be a defined placeholder wrapped in curly braces
+     */
     operand1: pulumi.Input<string>;
+    /**
+     * Must be null if operator is `IS_EMPTY`, a regex if operator is `MATCHES_REGULAR_ERPRESSION`. In all other cases the value can be a freetext or a placeholder wrapped in curly braces
+     */
     operand2?: pulumi.Input<string>;
+    /**
+     * The operator of the condition. Possible values are `CONTAINS`, `ENDS_WITH`, `EQUALS`, `IS_EMPTY`, `IS_NOT_EMPTY`, `MATCHES_REGULAR_EXPRESSION`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_MATCHES_REGULAR_EXPRESSION`, `NOT_STARTS_WITH` and `STARTS_WITH`.
+     */
     operator: pulumi.Input<string>;
 }
 
@@ -12471,14 +25639,26 @@ export interface WebApplicationUserTags {
 }
 
 export interface WebApplicationUserTagsTag {
-    cleanupRule?: pulumi.Input<string>;
     /**
-     * The ID of this resource.
+     * Cleanup rule expression of the userTag
      */
+    cleanupRule?: pulumi.Input<string>;
     id?: pulumi.Input<number>;
+    /**
+     * If `true`, the value of this tag will always be stored in lower case. Defaults to `false`.
+     */
     ignoreCase?: pulumi.Input<boolean>;
+    /**
+     * If it's of type metaData, metaData id of the userTag
+     */
     metadataId?: pulumi.Input<number>;
+    /**
+     * The ID of the RrequestAttribute for the userTag
+     */
     serverSideRequestAttribute?: pulumi.Input<string>;
+    /**
+     * A unique ID among all userTags and properties of this application. Minimum value is 1.
+     */
     uniqueId?: pulumi.Input<number>;
 }
 
@@ -12545,10 +25725,16 @@ export interface WebhookNotificationHeaders {
 
 export interface WebhookNotificationHeadersHeader {
     /**
-     * The name of the notification configuration
+     * The name of the HTTP header
      */
     name: pulumi.Input<string>;
+    /**
+     * The value of the HTTP header as a sensitive property. May contain an empty value. `secretValue` and `value` are mutually exclusive. Only one of those two is allowed to be specified.
+     */
     secretValue?: pulumi.Input<string>;
+    /**
+     * The value of the HTTP header. May contain an empty value. `secretValue` and `value` are mutually exclusive. Only one of those two is allowed to be specified.
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -12561,9 +25747,15 @@ export interface XmattersNotificationHeaders {
 
 export interface XmattersNotificationHeadersHeader {
     /**
-     * The name of the notification configuration
+     * The name of the HTTP header
      */
     name: pulumi.Input<string>;
+    /**
+     * The value of the HTTP header as a sensitive property. May contain an empty value. `secretValue` and `value` are mutually exclusive. Only one of those two is allowed to be specified.
+     */
     secretValue?: pulumi.Input<string>;
+    /**
+     * The value of the HTTP header. May contain an empty value. `secretValue` and `value` are mutually exclusive. Only one of those two is allowed to be specified.
+     */
     value?: pulumi.Input<string>;
 }

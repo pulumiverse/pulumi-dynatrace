@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class EnvironmentQuotasUserSessions
     {
+        /// <summary>
+        /// Annual total User sessions environment quota. Not set if unlimited
+        /// </summary>
         public readonly int? Annual;
+        /// <summary>
+        /// Monthly total User sessions environment quota. Not set if unlimited
+        /// </summary>
         public readonly int? Monthly;
 
         [OutputConstructor]

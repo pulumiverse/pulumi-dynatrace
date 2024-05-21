@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AwsCredentialsSupportingServicesToMonitorMonitoredMetric
     {
+        /// <summary>
+        /// a list of metric's dimensions names
+        /// </summary>
         public readonly ImmutableArray<string> Dimensions;
+        /// <summary>
+        /// the name of the metric of the supporting service
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// the statistic (aggregation) to be used for the metric. AVG*MIN*MAX value is 3 statistics at once: AVERAGE, MINIMUM and MAXIMUM
+        /// </summary>
         public readonly string? Statistic;
         /// <summary>
         /// Any attributes that aren't yet supported by this provider

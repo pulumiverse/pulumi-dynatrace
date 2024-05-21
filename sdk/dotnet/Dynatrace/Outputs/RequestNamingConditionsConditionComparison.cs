@@ -14,23 +14,77 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class RequestNamingConditionsConditionComparison
     {
+        /// <summary>
+        /// Boolean Comparison for `BOOLEAN` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonBoolean? Boolean;
+        /// <summary>
+        /// Type-specific comparison information for attributes of type 'ESB_INPUT_NODE_TYPE'
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonEsbInputNodeType? EsbInputNodeType;
+        /// <summary>
+        /// Comparison for `FAILED_STATE` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonFailedState? FailedState;
+        /// <summary>
+        /// Comparison for `FAILURE_REASON` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonFailureReason? FailureReason;
+        /// <summary>
+        /// Comparison for `FAST_STRING` attributes. Use it for all service property attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonFastString? FastString;
+        /// <summary>
+        /// Comparison for `FLAW_STATE` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonFlawState? FlawState;
+        /// <summary>
+        /// Comparison for `NUMBER` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonGeneric? Generic;
+        /// <summary>
+        /// Comparison for `HTTP_METHOD` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonHttpMethod? HttpMethod;
+        /// <summary>
+        /// Comparison for `HTTP_STATUS_CLASS` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonHttpStatusClass? HttpStatusClass;
+        /// <summary>
+        /// Comparison for `IIB_INPUT_NODE_TYPE` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonIibInputNodeType? IibInputNodeType;
+        /// <summary>
+        /// Reverse the comparison **operator**. For example, it turns **equals** into **does not equal**
+        /// </summary>
         public readonly bool? Negate;
+        /// <summary>
+        /// Comparison for `NUMBER` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonNumber? Number;
+        /// <summary>
+        /// Comparison for `NUMBER_REQUEST_ATTRIBUTE` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonNumberRequestAttribute? NumberRequestAttribute;
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonServiceType? ServiceType;
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonString? String;
+        /// <summary>
+        /// Comparison for `STRING_REQUEST_ATTRIBUTE` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonStringRequestAttribute? StringRequestAttribute;
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonTag? Tag;
+        /// <summary>
+        /// Comparison for `ZOS_CALL_TYPE` attributes
+        /// </summary>
         public readonly Outputs.RequestNamingConditionsConditionComparisonZosCallType? ZosCallType;
 
         [OutputConstructor]

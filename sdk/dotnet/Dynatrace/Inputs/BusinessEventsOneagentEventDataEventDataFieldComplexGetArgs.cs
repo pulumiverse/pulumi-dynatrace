@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BusinessEventsOneagentEventDataEventDataFieldComplexGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Field name to be added to data.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("source", required: true)]
         public Input<Inputs.BusinessEventsOneagentEventDataEventDataFieldComplexSourceGetArgs> Source { get; set; } = null!;
 

@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ProcessgroupNamingConditionConditionSimpleTechComparisonValueArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Predefined technology, if technology is not predefined, then the verbatim type must be set.
+        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 
+        /// <summary>
+        /// Non-predefined technology, use for custom technologies
+        /// </summary>
         [Input("verbatimType")]
         public Input<string>? VerbatimType { get; set; }
 

@@ -74,9 +74,9 @@ def get_alerting_profiles(profiles: Optional[Mapping[str, str]] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getAlertingProfiles:getAlertingProfiles', __args__, opts=opts, typ=GetAlertingProfilesResult).value
 
     return AwaitableGetAlertingProfilesResult(
-        id=__ret__.id,
-        profiles=__ret__.profiles,
-        values=__ret__.values)
+        id=pulumi.get(__ret__, 'id'),
+        profiles=pulumi.get(__ret__, 'profiles'),
+        values=pulumi.get(__ret__, 'values'))
 
 
 @_utilities.lift_output_func(get_alerting_profiles)

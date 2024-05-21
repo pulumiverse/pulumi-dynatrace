@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralertingGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("minActionRate", required: true)]
         public Input<int> MinActionRate { get; set; } = null!;
 

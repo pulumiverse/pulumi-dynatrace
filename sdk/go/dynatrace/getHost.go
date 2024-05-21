@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
@@ -60,7 +61,7 @@ import (
 //
 // ```
 func GetHost(ctx *pulumi.Context, args *GetHostArgs, opts ...pulumi.InvokeOption) (*GetHostResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetHostResult
 	err := ctx.Invoke("dynatrace:index/getHost:getHost", args, &rv, opts...)
 	if err != nil {

@@ -14,10 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CloudappWorkloaddetectionKubernetesFiltersFilterInclusionToggles
     {
+        /// <summary>
+        /// E.g. "cloud-credential-operator-" for "cloud-credential-operator-5ff6dbff57-gszgq"
+        /// </summary>
         public readonly bool IncBasepod;
+        /// <summary>
+        /// Container name
+        /// </summary>
         public readonly bool IncContainer;
+        /// <summary>
+        /// Namespace name
+        /// </summary>
         public readonly bool IncNamespace;
+        /// <summary>
+        /// If Product is enabled and has no value, it defaults to Base pod name
+        /// </summary>
         public readonly bool IncProduct;
+        /// <summary>
+        /// Stage
+        /// </summary>
         public readonly bool IncStage;
 
         [OutputConstructor]

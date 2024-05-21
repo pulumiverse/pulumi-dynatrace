@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ManagementZoneV2RulesRuleAttributeRuleAttributeConditions
     {
+        /// <summary>
+        /// Attribute conditions
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition> Conditions;
 
         [OutputConstructor]

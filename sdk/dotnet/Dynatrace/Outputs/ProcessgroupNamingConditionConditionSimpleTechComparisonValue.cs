@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ProcessgroupNamingConditionConditionSimpleTechComparisonValue
     {
+        /// <summary>
+        /// Predefined technology, if technology is not predefined, then the verbatim type must be set.
+        /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// Non-predefined technology, use for custom technologies
+        /// </summary>
         public readonly string? VerbatimType;
 
         [OutputConstructor]

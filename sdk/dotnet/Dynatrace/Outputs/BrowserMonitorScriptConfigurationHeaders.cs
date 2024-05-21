@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BrowserMonitorScriptConfigurationHeaders
     {
+        /// <summary>
+        /// contains an HTTP header of the request
+        /// </summary>
         public readonly ImmutableArray<Outputs.BrowserMonitorScriptConfigurationHeadersHeader> Headers;
+        /// <summary>
+        /// Restrict applying headers to a set of URLs
+        /// </summary>
         public readonly ImmutableArray<string> Restrictions;
 
         [OutputConstructor]

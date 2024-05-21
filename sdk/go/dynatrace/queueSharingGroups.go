@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type QueueSharingGroups struct {
@@ -28,7 +29,7 @@ func NewQueueSharingGroups(ctx *pulumi.Context,
 		args = &QueueSharingGroupsArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource QueueSharingGroups
 	err := ctx.RegisterResource("dynatrace:index/queueSharingGroups:QueueSharingGroups", name, args, &resource, opts...)
 	if err != nil {

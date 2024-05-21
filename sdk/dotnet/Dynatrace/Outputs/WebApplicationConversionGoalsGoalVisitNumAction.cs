@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationConversionGoalsGoalVisitNumAction
     {
+        /// <summary>
+        /// The number of user actions to hit the conversion goal
+        /// </summary>
         public readonly int? NumUserActions;
 
         [OutputConstructor]

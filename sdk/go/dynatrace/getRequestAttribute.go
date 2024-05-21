@@ -8,10 +8,11 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 func LookupRequestAttribute(ctx *pulumi.Context, args *LookupRequestAttributeArgs, opts ...pulumi.InvokeOption) (*LookupRequestAttributeResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupRequestAttributeResult
 	err := ctx.Invoke("dynatrace:index/getRequestAttribute:getRequestAttribute", args, &rv, opts...)
 	if err != nil {

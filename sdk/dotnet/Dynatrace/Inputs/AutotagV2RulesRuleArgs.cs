@@ -13,21 +13,39 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AutotagV2RulesRuleArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("attributeRule")]
         public Input<Inputs.AutotagV2RulesRuleAttributeRuleArgs>? AttributeRule { get; set; }
 
+        /// <summary>
+        /// This setting is enabled (`true`) or disabled (`false`)
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
+        /// <summary>
+        /// The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+        /// </summary>
         [Input("entitySelector")]
         public Input<string>? EntitySelector { get; set; }
 
+        /// <summary>
+        /// Possible Values: `ME`, `SELECTOR`
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
+        /// <summary>
+        /// Type '{' for placeholder suggestions
+        /// </summary>
         [Input("valueFormat")]
         public Input<string>? ValueFormat { get; set; }
 
+        /// <summary>
+        /// Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+        /// </summary>
         [Input("valueNormalization", required: true)]
         public Input<string> ValueNormalization { get; set; } = null!;
 

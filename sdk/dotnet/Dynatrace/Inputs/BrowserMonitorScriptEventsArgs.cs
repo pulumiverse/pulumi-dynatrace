@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("events")]
         private InputList<Inputs.BrowserMonitorScriptEventsEventArgs>? _events;
+
+        /// <summary>
+        /// An event
+        /// </summary>
         public InputList<Inputs.BrowserMonitorScriptEventsEventArgs> Events
         {
             get => _events ?? (_events = new InputList<Inputs.BrowserMonitorScriptEventsEventArgs>());

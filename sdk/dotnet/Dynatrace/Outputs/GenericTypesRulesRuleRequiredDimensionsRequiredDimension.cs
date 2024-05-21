@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class GenericTypesRulesRuleRequiredDimensionsRequiredDimension
     {
+        /// <summary>
+        /// A dimension key which needs to exist in the ingest data to match this filter.
+        /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// A dimension value pattern which needs to exist in the ingest data to match this filter.
+        /// </summary>
         public readonly string? ValuePattern;
 
         [OutputConstructor]

@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostAnomaliesNetworkConnectivityThresholds
     {
+        /// <summary>
+        /// Number of failed connections is higher than *X* connections per minute in 3 out of 5 samples
+        /// </summary>
         public readonly int FailedConnections;
+        /// <summary>
+        /// Percentage of new connection failures is higher than *X*% in 3 out of 5 samples
+        /// </summary>
         public readonly int NewConnectionFailures;
 
         [OutputConstructor]

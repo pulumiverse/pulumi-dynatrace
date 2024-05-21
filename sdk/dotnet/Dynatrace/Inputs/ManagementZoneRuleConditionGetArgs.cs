@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("applicationTypeComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionApplicationTypeComparisonGetArgs>? _applicationTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'application_type' instead of 'application_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionApplicationTypeComparisonGetArgs> ApplicationTypeComparisons
         {
@@ -24,6 +28,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("applicationTypes")]
         private InputList<Inputs.ManagementZoneRuleConditionApplicationTypeGetArgs>? _applicationTypes;
+
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionApplicationTypeGetArgs> ApplicationTypes
         {
             get => _applicationTypes ?? (_applicationTypes = new InputList<Inputs.ManagementZoneRuleConditionApplicationTypeGetArgs>());
@@ -32,6 +40,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureComputeModeComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionAzureComputeModeComparisonGetArgs>? _azureComputeModeComparisons;
+
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionAzureComputeModeComparisonGetArgs> AzureComputeModeComparisons
         {
             get => _azureComputeModeComparisons ?? (_azureComputeModeComparisons = new InputList<Inputs.ManagementZoneRuleConditionAzureComputeModeComparisonGetArgs>());
@@ -40,6 +52,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureComputeModes")]
         private InputList<Inputs.ManagementZoneRuleConditionAzureComputeModeGetArgs>? _azureComputeModes;
+
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'azure_compute_mode' instead of 'azure_compute_mode_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionAzureComputeModeGetArgs> AzureComputeModes
         {
@@ -49,6 +65,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureSkuComparisions")]
         private InputList<Inputs.ManagementZoneRuleConditionAzureSkuComparisionGetArgs>? _azureSkuComparisions;
+
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         [Obsolete(@"You should use 'azure_sku' instead of 'azure_sku_comparision'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionAzureSkuComparisionGetArgs> AzureSkuComparisions
         {
@@ -58,6 +78,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("azureSkus")]
         private InputList<Inputs.ManagementZoneRuleConditionAzureSkusGetArgs>? _azureSkus;
+
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionAzureSkusGetArgs> AzureSkus
         {
             get => _azureSkus ?? (_azureSkus = new InputList<Inputs.ManagementZoneRuleConditionAzureSkusGetArgs>());
@@ -66,6 +90,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("baseComparisonBasics")]
         private InputList<Inputs.ManagementZoneRuleConditionBaseComparisonBasicGetArgs>? _baseComparisonBasics;
+
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         [Obsolete(@"You should use 'comparison' instead of 'base_comparison_basic'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionBaseComparisonBasicGetArgs> BaseComparisonBasics
         {
@@ -75,6 +103,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("baseConditionKeys")]
         private InputList<Inputs.ManagementZoneRuleConditionBaseConditionKeyGetArgs>? _baseConditionKeys;
+
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         [Obsolete(@"'base_condition_key' is deprecated. You should use 'key'")]
         public InputList<Inputs.ManagementZoneRuleConditionBaseConditionKeyGetArgs> BaseConditionKeys
         {
@@ -84,6 +116,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("bitnessComparisions")]
         private InputList<Inputs.ManagementZoneRuleConditionBitnessComparisionGetArgs>? _bitnessComparisions;
+
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         [Obsolete(@"You should use 'bitness' instead of 'bitness_comparision'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionBitnessComparisionGetArgs> BitnessComparisions
         {
@@ -93,6 +129,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("bitnesses")]
         private InputList<Inputs.ManagementZoneRuleConditionBitnessGetArgs>? _bitnesses;
+
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionBitnessGetArgs> Bitnesses
         {
             get => _bitnesses ?? (_bitnesses = new InputList<Inputs.ManagementZoneRuleConditionBitnessGetArgs>());
@@ -101,6 +141,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("cloudTypeComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionCloudTypeComparisonGetArgs>? _cloudTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'cloud_type' instead of 'cloud_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionCloudTypeComparisonGetArgs> CloudTypeComparisons
         {
@@ -110,6 +154,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("cloudTypes")]
         private InputList<Inputs.ManagementZoneRuleConditionCloudTypeGetArgs>? _cloudTypes;
+
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionCloudTypeGetArgs> CloudTypes
         {
             get => _cloudTypes ?? (_cloudTypes = new InputList<Inputs.ManagementZoneRuleConditionCloudTypeGetArgs>());
@@ -118,6 +166,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("comparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionComparisonGetArgs>? _comparisons;
+
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionComparisonGetArgs> Comparisons
         {
             get => _comparisons ?? (_comparisons = new InputList<Inputs.ManagementZoneRuleConditionComparisonGetArgs>());
@@ -126,6 +178,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customApplicationTypeComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionCustomApplicationTypeComparisonGetArgs>? _customApplicationTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'custom_application_type' instead of 'custom_application_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionCustomApplicationTypeComparisonGetArgs> CustomApplicationTypeComparisons
         {
@@ -135,6 +191,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customApplicationTypes")]
         private InputList<Inputs.ManagementZoneRuleConditionCustomApplicationTypeGetArgs>? _customApplicationTypes;
+
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionCustomApplicationTypeGetArgs> CustomApplicationTypes
         {
             get => _customApplicationTypes ?? (_customApplicationTypes = new InputList<Inputs.ManagementZoneRuleConditionCustomApplicationTypeGetArgs>());
@@ -143,6 +203,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customHostMetadataConditionKeys")]
         private InputList<Inputs.ManagementZoneRuleConditionCustomHostMetadataConditionKeyGetArgs>? _customHostMetadataConditionKeys;
+
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         [Obsolete(@"'custom_host_metadata_condition_key' is deprecated. You should use 'custom_host_metadata'")]
         public InputList<Inputs.ManagementZoneRuleConditionCustomHostMetadataConditionKeyGetArgs> CustomHostMetadataConditionKeys
         {
@@ -152,6 +216,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customHostMetadatas")]
         private InputList<Inputs.ManagementZoneRuleConditionCustomHostMetadataGetArgs>? _customHostMetadatas;
+
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionCustomHostMetadataGetArgs> CustomHostMetadatas
         {
             get => _customHostMetadatas ?? (_customHostMetadatas = new InputList<Inputs.ManagementZoneRuleConditionCustomHostMetadataGetArgs>());
@@ -160,6 +228,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customProcessMetadataConditionKeys")]
         private InputList<Inputs.ManagementZoneRuleConditionCustomProcessMetadataConditionKeyGetArgs>? _customProcessMetadataConditionKeys;
+
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         [Obsolete(@"'custom_process_metadata_condition_key' is deprecated. You should use 'custom_process_metadata'")]
         public InputList<Inputs.ManagementZoneRuleConditionCustomProcessMetadataConditionKeyGetArgs> CustomProcessMetadataConditionKeys
         {
@@ -169,6 +241,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("customProcessMetadatas")]
         private InputList<Inputs.ManagementZoneRuleConditionCustomProcessMetadataGetArgs>? _customProcessMetadatas;
+
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionCustomProcessMetadataGetArgs> CustomProcessMetadatas
         {
             get => _customProcessMetadatas ?? (_customProcessMetadatas = new InputList<Inputs.ManagementZoneRuleConditionCustomProcessMetadataGetArgs>());
@@ -177,6 +253,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("databaseTopologies")]
         private InputList<Inputs.ManagementZoneRuleConditionDatabaseTopologyGetArgs>? _databaseTopologies;
+
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionDatabaseTopologyGetArgs> DatabaseTopologies
         {
             get => _databaseTopologies ?? (_databaseTopologies = new InputList<Inputs.ManagementZoneRuleConditionDatabaseTopologyGetArgs>());
@@ -185,6 +265,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("databaseTopologyComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionDatabaseTopologyComparisonGetArgs>? _databaseTopologyComparisons;
+
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         [Obsolete(@"You should use 'database_topology' instead of 'database_topology_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionDatabaseTopologyComparisonGetArgs> DatabaseTopologyComparisons
         {
@@ -194,6 +278,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("dcrumDecoderComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionDcrumDecoderComparisonGetArgs>? _dcrumDecoderComparisons;
+
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'dcrum_decoder' instead of 'dcrum_decoder_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionDcrumDecoderComparisonGetArgs> DcrumDecoderComparisons
         {
@@ -203,6 +291,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("dcrumDecoders")]
         private InputList<Inputs.ManagementZoneRuleConditionDcrumDecoderGetArgs>? _dcrumDecoders;
+
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionDcrumDecoderGetArgs> DcrumDecoders
         {
             get => _dcrumDecoders ?? (_dcrumDecoders = new InputList<Inputs.ManagementZoneRuleConditionDcrumDecoderGetArgs>());
@@ -211,6 +303,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("entities")]
         private InputList<Inputs.ManagementZoneRuleConditionEntityGetArgs>? _entities;
+
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionEntityGetArgs> Entities
         {
             get => _entities ?? (_entities = new InputList<Inputs.ManagementZoneRuleConditionEntityGetArgs>());
@@ -219,6 +315,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("entityIdComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionEntityIdComparisonGetArgs>? _entityIdComparisons;
+
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         [Obsolete(@"You should use 'entity' instead of 'entity_id_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionEntityIdComparisonGetArgs> EntityIdComparisons
         {
@@ -228,6 +328,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("hostTeches")]
         private InputList<Inputs.ManagementZoneRuleConditionHostTechGetArgs>? _hostTeches;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionHostTechGetArgs> HostTeches
         {
             get => _hostTeches ?? (_hostTeches = new InputList<Inputs.ManagementZoneRuleConditionHostTechGetArgs>());
@@ -236,6 +340,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("hypervisorTypeComparisions")]
         private InputList<Inputs.ManagementZoneRuleConditionHypervisorTypeComparisionGetArgs>? _hypervisorTypeComparisions;
+
+        /// <summary>
+        /// `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+        /// </summary>
         [Obsolete(@"`hypervisor_type_comparision` is deprecated. Use `hypervisor` instead")]
         public InputList<Inputs.ManagementZoneRuleConditionHypervisorTypeComparisionGetArgs> HypervisorTypeComparisions
         {
@@ -245,6 +353,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("hypervisors")]
         private InputList<Inputs.ManagementZoneRuleConditionHypervisorGetArgs>? _hypervisors;
+
+        /// <summary>
+        /// Comparison for `HYPERVISOR_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionHypervisorGetArgs> Hypervisors
         {
             get => _hypervisors ?? (_hypervisors = new InputList<Inputs.ManagementZoneRuleConditionHypervisorGetArgs>());
@@ -253,6 +365,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedNameComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionIndexedNameComparisonGetArgs>? _indexedNameComparisons;
+
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         [Obsolete(@"You should use 'indexed_name' instead of 'indexed_name_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionIndexedNameComparisonGetArgs> IndexedNameComparisons
         {
@@ -262,6 +378,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedNames")]
         private InputList<Inputs.ManagementZoneRuleConditionIndexedNameGetArgs>? _indexedNames;
+
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionIndexedNameGetArgs> IndexedNames
         {
             get => _indexedNames ?? (_indexedNames = new InputList<Inputs.ManagementZoneRuleConditionIndexedNameGetArgs>());
@@ -270,6 +390,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedStringComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionIndexedStringComparisonGetArgs>? _indexedStringComparisons;
+
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         [Obsolete(@"You should use 'indexed_string' instead of 'indexed_string_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionIndexedStringComparisonGetArgs> IndexedStringComparisons
         {
@@ -279,6 +403,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedStrings")]
         private InputList<Inputs.ManagementZoneRuleConditionIndexedStringGetArgs>? _indexedStrings;
+
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionIndexedStringGetArgs> IndexedStrings
         {
             get => _indexedStrings ?? (_indexedStrings = new InputList<Inputs.ManagementZoneRuleConditionIndexedStringGetArgs>());
@@ -287,6 +415,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedTagComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionIndexedTagComparisonGetArgs>? _indexedTagComparisons;
+
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         [Obsolete(@"You should use 'indexed_tag' instead of 'indexed_tag_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionIndexedTagComparisonGetArgs> IndexedTagComparisons
         {
@@ -296,6 +428,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("indexedTags")]
         private InputList<Inputs.ManagementZoneRuleConditionIndexedTagGetArgs>? _indexedTags;
+
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionIndexedTagGetArgs> IndexedTags
         {
             get => _indexedTags ?? (_indexedTags = new InputList<Inputs.ManagementZoneRuleConditionIndexedTagGetArgs>());
@@ -304,6 +440,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("integerComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionIntegerComparisonGetArgs>? _integerComparisons;
+
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         [Obsolete(@"You should use 'integer' instead of 'integer_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionIntegerComparisonGetArgs> IntegerComparisons
         {
@@ -313,6 +453,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("integers")]
         private InputList<Inputs.ManagementZoneRuleConditionIntegerGetArgs>? _integers;
+
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionIntegerGetArgs> Integers
         {
             get => _integers ?? (_integers = new InputList<Inputs.ManagementZoneRuleConditionIntegerGetArgs>());
@@ -321,6 +465,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("ipaddressComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionIpaddressComparisonGetArgs>? _ipaddressComparisons;
+
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         [Obsolete(@"You should use 'ipaddress' instead of 'ipaddress_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionIpaddressComparisonGetArgs> IpaddressComparisons
         {
@@ -330,6 +478,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("ipaddresses")]
         private InputList<Inputs.ManagementZoneRuleConditionIpaddressGetArgs>? _ipaddresses;
+
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionIpaddressGetArgs> Ipaddresses
         {
             get => _ipaddresses ?? (_ipaddresses = new InputList<Inputs.ManagementZoneRuleConditionIpaddressGetArgs>());
@@ -338,6 +490,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("keys")]
         private InputList<Inputs.ManagementZoneRuleConditionKeyGetArgs>? _keys;
+
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionKeyGetArgs> Keys
         {
             get => _keys ?? (_keys = new InputList<Inputs.ManagementZoneRuleConditionKeyGetArgs>());
@@ -346,6 +502,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("mobilePlatformComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionMobilePlatformComparisonGetArgs>? _mobilePlatformComparisons;
+
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         [Obsolete(@"You should use 'mobile_platform' instead of 'mobile_platform_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionMobilePlatformComparisonGetArgs> MobilePlatformComparisons
         {
@@ -355,6 +515,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("mobilePlatforms")]
         private InputList<Inputs.ManagementZoneRuleConditionMobilePlatformGetArgs>? _mobilePlatforms;
+
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionMobilePlatformGetArgs> MobilePlatforms
         {
             get => _mobilePlatforms ?? (_mobilePlatforms = new InputList<Inputs.ManagementZoneRuleConditionMobilePlatformGetArgs>());
@@ -363,6 +527,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("osArches")]
         private InputList<Inputs.ManagementZoneRuleConditionOsArchGetArgs>? _osArches;
+
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionOsArchGetArgs> OsArches
         {
             get => _osArches ?? (_osArches = new InputList<Inputs.ManagementZoneRuleConditionOsArchGetArgs>());
@@ -371,6 +539,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("osTypes")]
         private InputList<Inputs.ManagementZoneRuleConditionOsTypeGetArgs>? _osTypes;
+
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionOsTypeGetArgs> OsTypes
         {
             get => _osTypes ?? (_osTypes = new InputList<Inputs.ManagementZoneRuleConditionOsTypeGetArgs>());
@@ -379,6 +551,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("osarchitectureComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionOsarchitectureComparisonGetArgs>? _osarchitectureComparisons;
+
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'os_arch' instead of 'osarchitecture_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionOsarchitectureComparisonGetArgs> OsarchitectureComparisons
         {
@@ -388,6 +564,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("ostypeComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionOstypeComparisonGetArgs>? _ostypeComparisons;
+
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'os_type' instead of 'ostype_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionOstypeComparisonGetArgs> OstypeComparisons
         {
@@ -397,6 +577,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("paasTypeComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionPaasTypeComparisonGetArgs>? _paasTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'paas_type' instead of 'paas_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionPaasTypeComparisonGetArgs> PaasTypeComparisons
         {
@@ -406,6 +590,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("paasTypes")]
         private InputList<Inputs.ManagementZoneRuleConditionPaasTypeGetArgs>? _paasTypes;
+
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionPaasTypeGetArgs> PaasTypes
         {
             get => _paasTypes ?? (_paasTypes = new InputList<Inputs.ManagementZoneRuleConditionPaasTypeGetArgs>());
@@ -414,6 +602,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("processMetadataConditionKeys")]
         private InputList<Inputs.ManagementZoneRuleConditionProcessMetadataConditionKeyGetArgs>? _processMetadataConditionKeys;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         [Obsolete(@"'process_metadata_condition_key' is deprecated. You should use 'process_metadata'")]
         public InputList<Inputs.ManagementZoneRuleConditionProcessMetadataConditionKeyGetArgs> ProcessMetadataConditionKeys
         {
@@ -423,6 +615,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("processMetadatas")]
         private InputList<Inputs.ManagementZoneRuleConditionProcessMetadataGetArgs>? _processMetadatas;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionProcessMetadataGetArgs> ProcessMetadatas
         {
             get => _processMetadatas ?? (_processMetadatas = new InputList<Inputs.ManagementZoneRuleConditionProcessMetadataGetArgs>());
@@ -431,6 +627,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTopologies")]
         private InputList<Inputs.ManagementZoneRuleConditionServiceTopologyGetArgs>? _serviceTopologies;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionServiceTopologyGetArgs> ServiceTopologies
         {
             get => _serviceTopologies ?? (_serviceTopologies = new InputList<Inputs.ManagementZoneRuleConditionServiceTopologyGetArgs>());
@@ -439,6 +639,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTopologyComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionServiceTopologyComparisonGetArgs>? _serviceTopologyComparisons;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         [Obsolete(@"You should use 'service_topology' instead of 'service_topology_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionServiceTopologyComparisonGetArgs> ServiceTopologyComparisons
         {
@@ -448,6 +652,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTypeComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionServiceTypeComparisonGetArgs>? _serviceTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'service_type' instead of 'service_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionServiceTypeComparisonGetArgs> ServiceTypeComparisons
         {
@@ -457,6 +665,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("serviceTypes")]
         private InputList<Inputs.ManagementZoneRuleConditionServiceTypeGetArgs>? _serviceTypes;
+
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionServiceTypeGetArgs> ServiceTypes
         {
             get => _serviceTypes ?? (_serviceTypes = new InputList<Inputs.ManagementZoneRuleConditionServiceTypeGetArgs>());
@@ -465,6 +677,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("simpleHostTechComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionSimpleHostTechComparisonGetArgs>? _simpleHostTechComparisons;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         [Obsolete(@"You should use 'host_tech' instead of 'simple_host_tech_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionSimpleHostTechComparisonGetArgs> SimpleHostTechComparisons
         {
@@ -474,6 +690,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("simpleTechComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionSimpleTechComparisonGetArgs>? _simpleTechComparisons;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         [Obsolete(@"You should use 'tech' instead of 'simple_tech_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionSimpleTechComparisonGetArgs> SimpleTechComparisons
         {
@@ -483,6 +703,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("stringComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionStringComparisonGetArgs>? _stringComparisons;
+
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         [Obsolete(@"You should use 'string' instead of 'string_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionStringComparisonGetArgs> StringComparisons
         {
@@ -492,6 +716,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("stringConditionKeys")]
         private InputList<Inputs.ManagementZoneRuleConditionStringConditionKeyGetArgs>? _stringConditionKeys;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         [Obsolete(@"'string_condition_key' is deprecated. You should use 'string_key'")]
         public InputList<Inputs.ManagementZoneRuleConditionStringConditionKeyGetArgs> StringConditionKeys
         {
@@ -501,6 +729,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("stringKeys")]
         private InputList<Inputs.ManagementZoneRuleConditionStringKeyGetArgs>? _stringKeys;
+
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionStringKeyGetArgs> StringKeys
         {
             get => _stringKeys ?? (_stringKeys = new InputList<Inputs.ManagementZoneRuleConditionStringKeyGetArgs>());
@@ -509,6 +741,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("strings")]
         private InputList<Inputs.ManagementZoneRuleConditionStringGetArgs>? _strings;
+
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionStringGetArgs> Strings
         {
             get => _strings ?? (_strings = new InputList<Inputs.ManagementZoneRuleConditionStringGetArgs>());
@@ -517,6 +753,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("syntheticEngineTypeComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionSyntheticEngineTypeComparisonGetArgs>? _syntheticEngineTypeComparisons;
+
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         [Obsolete(@"You should use 'synthetic_engine' instead of 'synthetic_engine_type_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionSyntheticEngineTypeComparisonGetArgs> SyntheticEngineTypeComparisons
         {
@@ -526,6 +766,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("syntheticEngines")]
         private InputList<Inputs.ManagementZoneRuleConditionSyntheticEngineGetArgs>? _syntheticEngines;
+
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionSyntheticEngineGetArgs> SyntheticEngines
         {
             get => _syntheticEngines ?? (_syntheticEngines = new InputList<Inputs.ManagementZoneRuleConditionSyntheticEngineGetArgs>());
@@ -534,6 +778,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("tagComparisons")]
         private InputList<Inputs.ManagementZoneRuleConditionTagComparisonGetArgs>? _tagComparisons;
+
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         [Obsolete(@"You should use 'tag' instead of 'tag_comparison'. This attribute still exists for backwards compatibility.")]
         public InputList<Inputs.ManagementZoneRuleConditionTagComparisonGetArgs> TagComparisons
         {
@@ -543,6 +791,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("tags")]
         private InputList<Inputs.ManagementZoneRuleConditionTagGetArgs>? _tags;
+
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionTagGetArgs> Tags
         {
             get => _tags ?? (_tags = new InputList<Inputs.ManagementZoneRuleConditionTagGetArgs>());
@@ -551,12 +803,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("teches")]
         private InputList<Inputs.ManagementZoneRuleConditionTechGetArgs>? _teches;
+
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         public InputList<Inputs.ManagementZoneRuleConditionTechGetArgs> Teches
         {
             get => _teches ?? (_teches = new InputList<Inputs.ManagementZoneRuleConditionTechGetArgs>());
             set => _teches = value;
         }
 
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 

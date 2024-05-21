@@ -13,15 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DashboardTileFilterManagementZoneArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// a short description of the Dynatrace entity
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The ID of this resource.
+        /// the ID of the Dynatrace entity
         /// </summary>
         [Input("id", required: true)]
         public Input<string> Id { get; set; } = null!;
 
+        /// <summary>
+        /// the name of the Dynatrace entity
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

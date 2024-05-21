@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class QueueManagerAliasQueueAliasQueue
     {
+        /// <summary>
+        /// The name of the alias queue
+        /// </summary>
         public readonly string AliasQueueName;
+        /// <summary>
+        /// The name of the base queue
+        /// </summary>
         public readonly string BaseQueueName;
+        /// <summary>
+        /// Name of the cluster(s) this alias should be visible in
+        /// </summary>
         public readonly ImmutableArray<string> ClusterVisibilities;
 
         [OutputConstructor]

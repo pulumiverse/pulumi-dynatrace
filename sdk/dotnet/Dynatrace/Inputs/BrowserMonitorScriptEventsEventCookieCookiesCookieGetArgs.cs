@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BrowserMonitorScriptEventsEventCookieCookiesCookieGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The domain of the cookie.
+        /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
 
+        /// <summary>
+        /// The name of the cookie. The following cookie names are now allowed: `dtCookie`, `dtLatC`, `dtPC`, `rxVisitor`, `rxlatency`, `rxpc`, `rxsession` and `rxvt`
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// The path of the cookie.
+        /// </summary>
         [Input("path")]
         public Input<string>? Path { get; set; }
 
+        /// <summary>
+        /// The value of the cookie. The following symbols are not allowed: `;`, `,`, `\` and `"`.
+        /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
 

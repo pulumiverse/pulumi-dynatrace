@@ -108,7 +108,6 @@ class _OneagentFeaturesState:
                  scope: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering OneagentFeatures resources.
-        :param pulumi.Input[str] _restore_: Used internally by the terraform provider. Do not populate
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[bool] forcible: Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
         :param pulumi.Input[bool] instrumentation: Instrumentation enabled (change needs a process restart)
@@ -131,9 +130,6 @@ class _OneagentFeaturesState:
     @property
     @pulumi.getter
     def _restore_(self) -> Optional[pulumi.Input[str]]:
-        """
-        Used internally by the terraform provider. Do not populate
-        """
         return pulumi.get(self, "_restore_")
 
     @_restore_.setter
@@ -292,7 +288,6 @@ class OneagentFeatures(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] _restore_: Used internally by the terraform provider. Do not populate
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[bool] forcible: Activate this feature also in OneAgents only fulfilling the minimum Opt-In version
         :param pulumi.Input[bool] instrumentation: Instrumentation enabled (change needs a process restart)
@@ -314,9 +309,6 @@ class OneagentFeatures(pulumi.CustomResource):
     @property
     @pulumi.getter
     def _restore_(self) -> pulumi.Output[str]:
-        """
-        Used internally by the terraform provider. Do not populate
-        """
         return pulumi.get(self, "_restore_")
 
     @property

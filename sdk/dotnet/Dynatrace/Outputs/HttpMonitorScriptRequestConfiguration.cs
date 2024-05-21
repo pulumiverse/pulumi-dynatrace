@@ -14,11 +14,31 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HttpMonitorScriptRequestConfiguration
     {
+        /// <summary>
+        /// If set to `false`, then the monitor fails with invalid SSL certificates.
+        /// </summary>
         public readonly bool? AcceptAnyCertificate;
+        /// <summary>
+        /// The client certificate, if applicable - eg. CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX
+        /// </summary>
         public readonly string? ClientCertificate;
+        /// <summary>
+        /// If set to `false`, redirects are reported as successful requests with response code 3xx.
+        /// 
+        /// If not set, the `false` option is used.
+        /// </summary>
         public readonly bool? FollowRedirects;
+        /// <summary>
+        /// The setup of the monitor
+        /// </summary>
         public readonly Outputs.HttpMonitorScriptRequestConfigurationHeaders? Headers;
+        /// <summary>
+        /// Option not to store and display request and response bodies and header values in execution details, `true` or `false`. If not set, `false`.
+        /// </summary>
         public readonly bool? SensitiveData;
+        /// <summary>
+        /// The User agent of the request
+        /// </summary>
         public readonly string? UserAgent;
 
         [OutputConstructor]

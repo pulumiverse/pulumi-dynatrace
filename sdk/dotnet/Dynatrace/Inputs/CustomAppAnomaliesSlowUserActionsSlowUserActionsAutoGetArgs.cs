@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// To avoid over-alerting do not alert for low traffic applications with less than
+        /// </summary>
         [Input("durationAvoidOveralerting", required: true)]
         public Input<Inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationAvoidOveralertingGetArgs> DurationAvoidOveralerting { get; set; } = null!;
 
+        /// <summary>
+        /// Alert if the action duration of all user actions degrades beyond **both** the absolute and relative threshold:
+        /// </summary>
         [Input("durationThresholdAll", required: true)]
         public Input<Inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdAllGetArgs> DurationThresholdAll { get; set; } = null!;
 
+        /// <summary>
+        /// Alert if the action duration of the slowest 10% of user actions degrades beyond **both** the absolute and relative threshold:
+        /// </summary>
         [Input("durationThresholdSlowest", required: true)]
         public Input<Inputs.CustomAppAnomaliesSlowUserActionsSlowUserActionsAutoDurationThresholdSlowestGetArgs> DurationThresholdSlowest { get; set; } = null!;
 

@@ -13,17 +13,20 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationKeyUserActionActionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The domain where the action is performed.
+        /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
         /// <summary>
-        /// The name of the web application, displayed in the UI
+        /// The name of the action
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
+        /// The type of the action. Possible values are `Custom`, `Load` and `Xhr`.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

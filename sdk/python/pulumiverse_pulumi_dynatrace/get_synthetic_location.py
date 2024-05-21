@@ -136,14 +136,14 @@ def get_synthetic_location(cloud_platform: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getSyntheticLocation:getSyntheticLocation', __args__, opts=opts, typ=GetSyntheticLocationResult).value
 
     return AwaitableGetSyntheticLocationResult(
-        cloud_platform=__ret__.cloud_platform,
-        entity_id=__ret__.entity_id,
-        id=__ret__.id,
-        ips=__ret__.ips,
-        name=__ret__.name,
-        stage=__ret__.stage,
-        status=__ret__.status,
-        type=__ret__.type)
+        cloud_platform=pulumi.get(__ret__, 'cloud_platform'),
+        entity_id=pulumi.get(__ret__, 'entity_id'),
+        id=pulumi.get(__ret__, 'id'),
+        ips=pulumi.get(__ret__, 'ips'),
+        name=pulumi.get(__ret__, 'name'),
+        stage=pulumi.get(__ret__, 'stage'),
+        status=pulumi.get(__ret__, 'status'),
+        type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_synthetic_location)

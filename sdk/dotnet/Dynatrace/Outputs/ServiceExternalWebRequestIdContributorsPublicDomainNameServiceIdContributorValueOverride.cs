@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorValueOverride
     {
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

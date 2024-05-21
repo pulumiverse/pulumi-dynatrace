@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type IbmMqFilters struct {
@@ -34,7 +35,7 @@ func NewIbmMqFilters(ctx *pulumi.Context,
 		args = &IbmMqFiltersArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource IbmMqFilters
 	err := ctx.RegisterResource("dynatrace:index/ibmMqFilters:IbmMqFilters", name, args, &resource, opts...)
 	if err != nil {

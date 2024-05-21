@@ -14,70 +14,265 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ServiceNamingConditionCondition
     {
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionApplicationTypeComparison> ApplicationTypeComparisons;
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionApplicationType> ApplicationTypes;
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionAzureComputeModeComparison> AzureComputeModeComparisons;
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionAzureComputeMode> AzureComputeModes;
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionAzureSkuComparision> AzureSkuComparisions;
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionAzureSkus> AzureSkus;
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionBaseComparisonBasic> BaseComparisonBasics;
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionBaseConditionKey> BaseConditionKeys;
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionBitnessComparision> BitnessComparisions;
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionBitness> Bitnesses;
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionCloudTypeComparison> CloudTypeComparisons;
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionCloudType> CloudTypes;
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionComparison> Comparisons;
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionCustomApplicationTypeComparison> CustomApplicationTypeComparisons;
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionCustomApplicationType> CustomApplicationTypes;
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionCustomHostMetadataConditionKey> CustomHostMetadataConditionKeys;
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionCustomHostMetadata> CustomHostMetadatas;
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionCustomProcessMetadataConditionKey> CustomProcessMetadataConditionKeys;
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionCustomProcessMetadata> CustomProcessMetadatas;
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionDatabaseTopology> DatabaseTopologies;
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionDatabaseTopologyComparison> DatabaseTopologyComparisons;
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionDcrumDecoderComparison> DcrumDecoderComparisons;
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionDcrumDecoder> DcrumDecoders;
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionEntity> Entities;
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionEntityIdComparison> EntityIdComparisons;
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionHostTech> HostTeches;
+        /// <summary>
+        /// `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionHypervisorTypeComparision> HypervisorTypeComparisions;
+        /// <summary>
+        /// Comparison for `HYPERVISOR_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionHypervisor> Hypervisors;
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionIndexedNameComparison> IndexedNameComparisons;
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionIndexedName> IndexedNames;
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionIndexedStringComparison> IndexedStringComparisons;
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionIndexedString> IndexedStrings;
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionIndexedTagComparison> IndexedTagComparisons;
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionIndexedTag> IndexedTags;
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionIntegerComparison> IntegerComparisons;
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionInteger> Integers;
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionIpaddressComparison> IpaddressComparisons;
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionIpaddress> Ipaddresses;
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionKey> Keys;
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionMobilePlatformComparison> MobilePlatformComparisons;
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionMobilePlatform> MobilePlatforms;
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionOsArch> OsArches;
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionOsType> OsTypes;
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionOsarchitectureComparison> OsarchitectureComparisons;
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionOstypeComparison> OstypeComparisons;
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionPaasTypeComparison> PaasTypeComparisons;
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionPaasType> PaasTypes;
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionProcessMetadataConditionKey> ProcessMetadataConditionKeys;
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionProcessMetadata> ProcessMetadatas;
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionServiceTopology> ServiceTopologies;
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionServiceTopologyComparison> ServiceTopologyComparisons;
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionServiceTypeComparison> ServiceTypeComparisons;
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionServiceType> ServiceTypes;
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionSimpleHostTechComparison> SimpleHostTechComparisons;
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionSimpleTechComparison> SimpleTechComparisons;
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionStringComparison> StringComparisons;
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionStringConditionKey> StringConditionKeys;
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionStringKey> StringKeys;
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionString> Strings;
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionSyntheticEngineTypeComparison> SyntheticEngineTypeComparisons;
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionSyntheticEngine> SyntheticEngines;
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionTagComparison> TagComparisons;
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionTag> Tags;
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceNamingConditionConditionTech> Teches;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         public readonly string? Unknowns;
 
         [OutputConstructor]

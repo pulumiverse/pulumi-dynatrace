@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class VmwareAnomaliesOverloadedStorageDetectionCustomThresholdsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Number of command aborts is higher than
+        /// </summary>
         [Input("commandAbortsNumber", required: true)]
         public Input<int> CommandAbortsNumber { get; set; } = null!;
 

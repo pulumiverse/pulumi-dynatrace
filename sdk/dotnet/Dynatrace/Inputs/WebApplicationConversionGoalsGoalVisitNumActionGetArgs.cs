@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationConversionGoalsGoalVisitNumActionGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The number of user actions to hit the conversion goal
+        /// </summary>
         [Input("numUserActions")]
         public Input<int>? NumUserActions { get; set; }
 

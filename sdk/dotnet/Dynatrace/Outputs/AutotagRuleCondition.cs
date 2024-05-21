@@ -14,70 +14,265 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class AutotagRuleCondition
     {
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionApplicationTypeComparison> ApplicationTypeComparisons;
+        /// <summary>
+        /// Comparison for `APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionApplicationType> ApplicationTypes;
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionAzureComputeModeComparison> AzureComputeModeComparisons;
+        /// <summary>
+        /// Comparison for `AZURE_COMPUTE_MODE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionAzureComputeMode> AzureComputeModes;
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionAzureSkuComparision> AzureSkuComparisions;
+        /// <summary>
+        /// Comparison for `AZURE_SKU` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionAzureSkus> AzureSkus;
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionBaseComparisonBasic> BaseComparisonBasics;
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionBaseConditionKey> BaseConditionKeys;
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionBitnessComparision> BitnessComparisions;
+        /// <summary>
+        /// Comparison for `BITNESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionBitness> Bitnesses;
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionCloudTypeComparison> CloudTypeComparisons;
+        /// <summary>
+        /// Comparison for `CLOUD_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionCloudType> CloudTypes;
+        /// <summary>
+        /// A comparison that's yet unknown to the provider. Operator and Value need to be encoded using the 'unknowns' property.
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionComparison> Comparisons;
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionCustomApplicationTypeComparison> CustomApplicationTypeComparisons;
+        /// <summary>
+        /// Comparison for `CUSTOM_APPLICATION_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionCustomApplicationType> CustomApplicationTypes;
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionCustomHostMetadataConditionKey> CustomHostMetadataConditionKeys;
+        /// <summary>
+        /// Key for Custom Host Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionCustomHostMetadata> CustomHostMetadatas;
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionCustomProcessMetadataConditionKey> CustomProcessMetadataConditionKeys;
+        /// <summary>
+        /// Key for Custom Process Metadata
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionCustomProcessMetadata> CustomProcessMetadatas;
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionDatabaseTopology> DatabaseTopologies;
+        /// <summary>
+        /// Comparison for `DATABASE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionDatabaseTopologyComparison> DatabaseTopologyComparisons;
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionDcrumDecoderComparison> DcrumDecoderComparisons;
+        /// <summary>
+        /// Comparison for `DCRUM_DECODER_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionDcrumDecoder> DcrumDecoders;
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionEntity> Entities;
+        /// <summary>
+        /// Comparison for `ENTITY_ID` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionEntityIdComparison> EntityIdComparisons;
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionHostTech> HostTeches;
+        /// <summary>
+        /// `hypervisor_type_comparision` is deprecated. Use `hypervisor` instead
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionHypervisorTypeComparision> HypervisorTypeComparisions;
+        /// <summary>
+        /// Comparison for `HYPERVISOR_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionHypervisor> Hypervisors;
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionIndexedNameComparison> IndexedNameComparisons;
+        /// <summary>
+        /// Comparison for `INDEXED_NAME` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionIndexedName> IndexedNames;
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionIndexedStringComparison> IndexedStringComparisons;
+        /// <summary>
+        /// Comparison for `INDEXED_STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionIndexedString> IndexedStrings;
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionIndexedTagComparison> IndexedTagComparisons;
+        /// <summary>
+        /// Comparison for `INDEXED_TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionIndexedTag> IndexedTags;
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionIntegerComparison> IntegerComparisons;
+        /// <summary>
+        /// Comparison for `INTEGER` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionInteger> Integers;
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionIpaddressComparison> IpaddressComparisons;
+        /// <summary>
+        /// Comparison for `IP_ADDRESS` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionIpaddress> Ipaddresses;
+        /// <summary>
+        /// Fallback for not yet known type
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionKey> Keys;
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionMobilePlatformComparison> MobilePlatformComparisons;
+        /// <summary>
+        /// Comparison for `MOBILE_PLATFORM` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionMobilePlatform> MobilePlatforms;
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionOsArch> OsArches;
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionOsType> OsTypes;
+        /// <summary>
+        /// Comparison for `OS_ARCHITECTURE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionOsarchitectureComparison> OsarchitectureComparisons;
+        /// <summary>
+        /// Comparison for `OS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionOstypeComparison> OstypeComparisons;
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionPaasTypeComparison> PaasTypeComparisons;
+        /// <summary>
+        /// Comparison for `PAAS_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionPaasType> PaasTypes;
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionProcessMetadataConditionKey> ProcessMetadataConditionKeys;
+        /// <summary>
+        /// The key for dynamic attributes of the `PROCESS_PREDEFINED_METADATA_KEY` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionProcessMetadata> ProcessMetadatas;
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionServiceTopology> ServiceTopologies;
+        /// <summary>
+        /// Comparison for `SERVICE_TOPOLOGY` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionServiceTopologyComparison> ServiceTopologyComparisons;
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionServiceTypeComparison> ServiceTypeComparisons;
+        /// <summary>
+        /// Comparison for `SERVICE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionServiceType> ServiceTypes;
+        /// <summary>
+        /// Comparison for `SIMPLE_HOST_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionSimpleHostTechComparison> SimpleHostTechComparisons;
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionSimpleTechComparison> SimpleTechComparisons;
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionStringComparison> StringComparisons;
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionStringConditionKey> StringConditionKeys;
+        /// <summary>
+        /// The key for dynamic attributes of the `STRING` type
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionStringKey> StringKeys;
+        /// <summary>
+        /// Comparison for `STRING` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionString> Strings;
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionSyntheticEngineTypeComparison> SyntheticEngineTypeComparisons;
+        /// <summary>
+        /// Comparison for `SYNTHETIC_ENGINE_TYPE` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionSyntheticEngine> SyntheticEngines;
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionTagComparison> TagComparisons;
+        /// <summary>
+        /// Comparison for `TAG` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionTag> Tags;
+        /// <summary>
+        /// Comparison for `SIMPLE_TECH` attributes
+        /// </summary>
         public readonly ImmutableArray<Outputs.AutotagRuleConditionTech> Teches;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         public readonly string? Unknowns;
 
         [OutputConstructor]

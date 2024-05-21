@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AwsAnomaliesElbHighConnectionErrorsDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Number of backend connection errors is higher than
+        /// </summary>
         [Input("connectionErrorsPerMinute", required: true)]
         public Input<int> ConnectionErrorsPerMinute { get; set; } = null!;
 

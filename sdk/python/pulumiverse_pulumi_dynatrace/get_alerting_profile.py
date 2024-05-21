@@ -92,9 +92,9 @@ def get_alerting_profile(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getAlertingProfile:getAlertingProfile', __args__, opts=opts, typ=GetAlertingProfileResult).value
 
     return AwaitableGetAlertingProfileResult(
-        id=__ret__.id,
-        legacy_id=__ret__.legacy_id,
-        name=__ret__.name)
+        id=pulumi.get(__ret__, 'id'),
+        legacy_id=pulumi.get(__ret__, 'legacy_id'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_alerting_profile)

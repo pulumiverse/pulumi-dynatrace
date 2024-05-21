@@ -13,18 +13,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AutotagRuleConditionPaasTypeComparisonArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Reverses the operator. For example it turns the **begins with** into **does not begin with**
+        /// </summary>
         [Input("negate")]
         public Input<bool>? Negate { get; set; }
 
+        /// <summary>
+        /// Operator of the comparison. Possible values are EQUALS and EXISTS. You can reverse it by setting **negate** to `true`
+        /// </summary>
         [Input("operator", required: true)]
         public Input<string> Operator { get; set; } = null!;
 
+        /// <summary>
+        /// if specified, needs to be PAAS_TYPE
+        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 
+        /// <summary>
+        /// The value to compare to. Possible values are AWS_ECS_EC2, AWS_ECS_FARGATE, AWS_LAMBDA, AZURE_FUNCTIONS, AZURE_WEBSITES, CLOUD_FOUNDRY, GOOGLE_APP_ENGINE, HEROKU, KUBERNETES and OPENSHIFT.
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

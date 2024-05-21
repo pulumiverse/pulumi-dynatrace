@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("cookies", required: true)]
         private InputList<Inputs.BrowserMonitorScriptEventsEventCookieCookiesCookieGetArgs>? _cookies;
+
+        /// <summary>
+        /// A request cookie
+        /// </summary>
         public InputList<Inputs.BrowserMonitorScriptEventsEventCookieCookiesCookieGetArgs> Cookies
         {
             get => _cookies ?? (_cookies = new InputList<Inputs.BrowserMonitorScriptEventsEventCookieCookiesCookieGetArgs>());

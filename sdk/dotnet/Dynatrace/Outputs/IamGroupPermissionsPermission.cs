@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class IamGroupPermissionsPermission
     {
+        /// <summary>
+        /// Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-manage-support-tickets`
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// If `type` is `account` this attribute should hold the UUID of the account. If `type` is 'tenant`this attribute should hold the ID of the environment (`https://\n\n.live.dynatrace.com`). If`type`is`management-zone`this attribute should hold a value like`\n\n:\n\n. You need to use the attribute `legacy_id` when referring to a resource `dynatrace.ManagementZoneV2` or a data source `dynatrace.ManagementZone`.
+        /// </summary>
         public readonly string Scope;
+        /// <summary>
+        /// The type of this permission. Possible values are `account`, `tenant`, `management-zone`
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

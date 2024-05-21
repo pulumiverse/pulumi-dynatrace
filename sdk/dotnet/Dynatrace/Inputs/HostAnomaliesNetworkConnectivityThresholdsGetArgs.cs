@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesNetworkConnectivityThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Number of failed connections is higher than *X* connections per minute in 3 out of 5 samples
+        /// </summary>
         [Input("failedConnections", required: true)]
         public Input<int> FailedConnections { get; set; } = null!;
 
+        /// <summary>
+        /// Percentage of new connection failures is higher than *X*% in 3 out of 5 samples
+        /// </summary>
         [Input("newConnectionFailures", required: true)]
         public Input<int> NewConnectionFailures { get; set; } = null!;
 

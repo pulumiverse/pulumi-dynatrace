@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BrowserMonitorScriptEventsEventSelectGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The options to be selected
+        /// </summary>
         [Input("selections", required: true)]
         public Input<Inputs.BrowserMonitorScriptEventsEventSelectSelectionsGetArgs> Selections { get; set; } = null!;
 
+        /// <summary>
+        /// The tab on which the page should open
+        /// </summary>
         [Input("target")]
         public Input<Inputs.BrowserMonitorScriptEventsEventSelectTargetGetArgs>? Target { get; set; }
 
+        /// <summary>
+        /// The validation rules for the event—helps you verify that your browser monitor loads the expected page content or page element
+        /// </summary>
         [Input("validate")]
         public Input<Inputs.BrowserMonitorScriptEventsEventSelectValidateGetArgs>? Validate { get; set; }
 
+        /// <summary>
+        /// The wait condition for the event—defines how long Dynatrace should wait before the next action is executed
+        /// </summary>
         [Input("wait")]
         public Input<Inputs.BrowserMonitorScriptEventsEventSelectWaitGetArgs>? Wait { get; set; }
 

@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ProcessAvailabilityMetadataItem
     {
+        /// <summary>
+        /// Type 'dt.' for key hints.
+        /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

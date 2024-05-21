@@ -13,18 +13,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BusinessEventsProcessingTransformationFieldsTransformationFieldGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Is Array
+        /// </summary>
         [Input("array", required: true)]
         public Input<bool> Array { get; set; } = null!;
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("optional", required: true)]
         public Input<bool> Optional { get; set; } = null!;
 
+        /// <summary>
+        /// Read-only
+        /// </summary>
         [Input("readonly", required: true)]
         public Input<bool> Readonly { get; set; } = null!;
 
+        /// <summary>
+        /// Possible Values: `BOOLEAN`, `DOUBLE`, `DURATION`, `INT`, `IPADDR`, `LONG`, `STRING`, `TIMESTAMP`
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 

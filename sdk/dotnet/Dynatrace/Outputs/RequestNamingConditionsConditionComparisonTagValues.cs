@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class RequestNamingConditionsConditionComparisonTagValues
     {
+        /// <summary>
+        /// The values to compare to
+        /// </summary>
         public readonly ImmutableArray<Outputs.RequestNamingConditionsConditionComparisonTagValuesValue> Values;
 
         [OutputConstructor]

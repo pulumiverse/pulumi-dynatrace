@@ -44,8 +44,7 @@ class KubernetesArgs:
         :param pulumi.Input[bool] open_metrics_builtin_enabled: The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
                may increase the CPU/memory resource consumption of your ActiveGate.
         :param pulumi.Input[bool] open_metrics_pipeline_enabled: For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
-        :param pulumi.Input[bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the [Kubernetes persistent volume
-               claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+        :param pulumi.Input[bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         :param pulumi.Input[str] scope: The scope of this setting (KUBERNETES_CLUSTER)
         :param pulumi.Input[str] active_gate_group: ActiveGate Group
         :param pulumi.Input[str] auth_token: Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
@@ -178,8 +177,7 @@ class KubernetesArgs:
     @pulumi.getter(name="pvcMonitoringEnabled")
     def pvc_monitoring_enabled(self) -> pulumi.Input[bool]:
         """
-        To enable dashboards and alerts, add the [Kubernetes persistent volume
-        claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+        To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         """
         return pulumi.get(self, "pvc_monitoring_enabled")
 
@@ -356,8 +354,7 @@ class _KubernetesState:
         :param pulumi.Input[bool] open_metrics_builtin_enabled: The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
                may increase the CPU/memory resource consumption of your ActiveGate.
         :param pulumi.Input[bool] open_metrics_pipeline_enabled: For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
-        :param pulumi.Input[bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the [Kubernetes persistent volume
-               claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+        :param pulumi.Input[bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         :param pulumi.Input[str] scope: The scope of this setting (KUBERNETES_CLUSTER)
         """
         if active_gate_group is not None:
@@ -598,8 +595,7 @@ class _KubernetesState:
     @pulumi.getter(name="pvcMonitoringEnabled")
     def pvc_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        To enable dashboards and alerts, add the [Kubernetes persistent volume
-        claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+        To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         """
         return pulumi.get(self, "pvc_monitoring_enabled")
 
@@ -669,8 +665,7 @@ class Kubernetes(pulumi.CustomResource):
         :param pulumi.Input[bool] open_metrics_builtin_enabled: The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
                may increase the CPU/memory resource consumption of your ActiveGate.
         :param pulumi.Input[bool] open_metrics_pipeline_enabled: For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
-        :param pulumi.Input[bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the [Kubernetes persistent volume
-               claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+        :param pulumi.Input[bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         :param pulumi.Input[str] scope: The scope of this setting (KUBERNETES_CLUSTER)
         """
         ...
@@ -817,8 +812,7 @@ class Kubernetes(pulumi.CustomResource):
         :param pulumi.Input[bool] open_metrics_builtin_enabled: The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
                may increase the CPU/memory resource consumption of your ActiveGate.
         :param pulumi.Input[bool] open_metrics_pipeline_enabled: For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
-        :param pulumi.Input[bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the [Kubernetes persistent volume
-               claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+        :param pulumi.Input[bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         :param pulumi.Input[str] scope: The scope of this setting (KUBERNETES_CLUSTER)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -982,8 +976,7 @@ class Kubernetes(pulumi.CustomResource):
     @pulumi.getter(name="pvcMonitoringEnabled")
     def pvc_monitoring_enabled(self) -> pulumi.Output[bool]:
         """
-        To enable dashboards and alerts, add the [Kubernetes persistent volume
-        claims](ui/hub/ext/com.dynatrace.extension.kubernetes-pvc) extension to your environment.
+        To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         """
         return pulumi.get(self, "pvc_monitoring_enabled")
 

@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class QueueManagerRemoteQueueRemoteQueue
     {
+        /// <summary>
+        /// Name of the cluster(s) this local definition of the remote queue should be visible in
+        /// </summary>
         public readonly ImmutableArray<string> ClusterVisibilities;
+        /// <summary>
+        /// The name of the local queue
+        /// </summary>
         public readonly string LocalQueueName;
+        /// <summary>
+        /// The name of the remote queue manager
+        /// </summary>
         public readonly string RemoteQueueManager;
+        /// <summary>
+        /// The name of the remote queue
+        /// </summary>
         public readonly string RemoteQueueName;
 
         [OutputConstructor]

@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type OneagentDefaultVersion struct {
@@ -30,7 +31,7 @@ func NewOneagentDefaultVersion(ctx *pulumi.Context,
 	if args.DefaultVersion == nil {
 		return nil, errors.New("invalid value for required argument 'DefaultVersion'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource OneagentDefaultVersion
 	err := ctx.RegisterResource("dynatrace:index/oneagentDefaultVersion:OneagentDefaultVersion", name, args, &resource, opts...)
 	if err != nil {

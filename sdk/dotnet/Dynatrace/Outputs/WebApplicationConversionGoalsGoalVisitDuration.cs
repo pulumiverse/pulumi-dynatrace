@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationConversionGoalsGoalVisitDuration
     {
+        /// <summary>
+        /// The duration of session to hit the conversion goal, in milliseconds
+        /// </summary>
         public readonly int Duration;
 
         [OutputConstructor]

@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction
     {
+        /// <summary>
+        /// The type of the browser that is used. Possible values are `ANDROID_WEBKIT`, `BOTS_SPIDERS`, `CHROME`, `EDGE`, `FIREFOX`, `INTERNET_EXPLORER,`OPERA`and`SAFARI`
+        /// </summary>
         public readonly string BrowserType;
+        /// <summary>
+        /// The version of the browser that is used
+        /// </summary>
         public readonly string? BrowserVersion;
+        /// <summary>
+        /// No documentation available. Possible values are `EQUALS`, `GREATER_THAN_OR_EQUAL` and `LOWER_THAN_OR_EQUAL`.
+        /// </summary>
         public readonly string? Comparator;
+        /// <summary>
+        /// The platform on which the browser is being used. Possible values are `ALL`, `DESKTOP` and `MOBILE`
+        /// </summary>
         public readonly string? Platform;
 
         [OutputConstructor]

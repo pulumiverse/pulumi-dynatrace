@@ -14,8 +14,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DashboardDashboardMetadataDynamicFilters
     {
+        /// <summary>
+        /// A set of all possible global dashboard filters that can be applied to a dashboard
+        /// </summary>
         public readonly ImmutableArray<string> Filters;
+        /// <summary>
+        /// A set of generic tag filters that can be applied to a dashboard
+        /// </summary>
         public readonly Outputs.DashboardDashboardMetadataDynamicFiltersGenericTagFilters? GenericTagFilters;
+        /// <summary>
+        /// A set of entities applied for tag filter suggestions. You can fetch the list of possible values with the [GET all entity types](https://dt-url.net/dw03s7h)request. 
+        /// 
+        /// Only applicable if the **filters** set includes `TAG_KEY:&lt;tagname&gt;`
+        /// </summary>
         public readonly ImmutableArray<string> TagSuggestionTypes;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider

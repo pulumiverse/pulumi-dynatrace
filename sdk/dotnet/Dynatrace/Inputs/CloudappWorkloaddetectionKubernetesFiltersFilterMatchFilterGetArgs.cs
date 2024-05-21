@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class CloudappWorkloaddetectionKubernetesFiltersFilterMatchFilterGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_STARTS`, `STARTS`
+        /// </summary>
         [Input("matchOperator", required: true)]
         public Input<string> MatchOperator { get; set; } = null!;
 
+        /// <summary>
+        /// Namespace name
+        /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 

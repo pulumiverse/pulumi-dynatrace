@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class VmwareAnomaliesEsxiHighMemoryDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// ESXi host swap IN/OUT or compression/decompression rate is higher than
+        /// </summary>
         [Input("compressionDecompressionRate", required: true)]
         public Input<double> CompressionDecompressionRate { get; set; } = null!;
 

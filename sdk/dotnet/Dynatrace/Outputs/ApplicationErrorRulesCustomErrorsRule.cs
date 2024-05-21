@@ -14,12 +14,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ApplicationErrorRulesCustomErrorsRule
     {
+        /// <summary>
+        /// Capture (`true`) or ignore (`false`) the error
+        /// </summary>
         public readonly bool? Capture;
+        /// <summary>
+        /// Include (`true`) or exclude (`false`) the error in Davis AI [problem detection and analysis](https://dt-url.net/a963kd2)
+        /// </summary>
         public readonly bool? CustomAlerting;
+        /// <summary>
+        /// Include (`true`) or exclude (`false`) the error in Apdex calculation
+        /// </summary>
         public readonly bool? ImpactApdex;
+        /// <summary>
+        /// The matching operation for the **keyPattern**. Possible values are `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH` and `EQUALS`
+        /// </summary>
         public readonly string? KeyMatcher;
+        /// <summary>
+        /// The key of the error to look for
+        /// </summary>
         public readonly string? KeyPattern;
+        /// <summary>
+        /// The matching operation for the **valuePattern**. Possible values are `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH` and `EQUALS`.
+        /// </summary>
         public readonly string? ValueMatcher;
+        /// <summary>
+        /// The value of the error to look for
+        /// </summary>
         public readonly string? ValuePattern;
 
         [OutputConstructor]

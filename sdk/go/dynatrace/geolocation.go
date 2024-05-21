@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type Geolocation struct {
@@ -30,7 +31,7 @@ func NewGeolocation(ctx *pulumi.Context,
 	if args.DisplayWorldmap == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayWorldmap'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Geolocation
 	err := ctx.RegisterResource("dynatrace:index/geolocation:Geolocation", name, args, &resource, opts...)
 	if err != nil {

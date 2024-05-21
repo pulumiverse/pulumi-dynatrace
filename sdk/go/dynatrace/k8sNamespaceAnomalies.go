@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type K8sNamespaceAnomalies struct {
@@ -50,7 +51,7 @@ func NewK8sNamespaceAnomalies(ctx *pulumi.Context,
 	if args.PodsQuotaSaturation == nil {
 		return nil, errors.New("invalid value for required argument 'PodsQuotaSaturation'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource K8sNamespaceAnomalies
 	err := ctx.RegisterResource("dynatrace:index/k8sNamespaceAnomalies:K8sNamespaceAnomalies", name, args, &resource, opts...)
 	if err != nil {

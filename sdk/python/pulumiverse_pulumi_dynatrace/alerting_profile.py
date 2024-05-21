@@ -76,6 +76,9 @@ class AlertingProfileArgs:
         """
         `metadata` exists for backwards compatibility but shouldn't get specified anymore
         """
+        warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
+        pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
+
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -183,6 +186,9 @@ class _AlertingProfileState:
         """
         `metadata` exists for backwards compatibility but shouldn't get specified anymore
         """
+        warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
+        pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
+
         return pulumi.get(self, "metadata")
 
     @metadata.setter
@@ -239,7 +245,141 @@ class AlertingProfile(pulumi.CustomResource):
                  unknowns: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Create a AlertingProfile resource with the given unique name, props, and options.
+        The API utilized for this resource is deprecated, please use Alerting instead.
+
+        ## Dynatrace Documentation
+
+        - Alerting profiles - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/notifications-and-alerting/alerting-profiles
+
+        - Alerting profiles API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/alerting-profiles-api
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_pulumi_dynatrace as dynatrace
+
+        _name_ = dynatrace.AlertingProfile("#name#",
+            display_name="#name#",
+            mz_id="",
+            rules=[
+                dynatrace.AlertingProfileRuleArgs(
+                    delay_in_minutes=0,
+                    severity_level="AVAILABILITY",
+                    tag_filters=[dynatrace.AlertingProfileRuleTagFilterArgs(
+                        include_mode="INCLUDE_ALL",
+                        tag_filters=[
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="EnvironmentA",
+                                value="production",
+                            ),
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="Team",
+                                value="test",
+                            ),
+                        ],
+                    )],
+                ),
+                dynatrace.AlertingProfileRuleArgs(
+                    delay_in_minutes=0,
+                    severity_level="CUSTOM_ALERT",
+                    tag_filters=[dynatrace.AlertingProfileRuleTagFilterArgs(
+                        include_mode="INCLUDE_ALL",
+                        tag_filters=[
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="EnvironmentB",
+                                value="production",
+                            ),
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="Team",
+                                value="test",
+                            ),
+                        ],
+                    )],
+                ),
+                dynatrace.AlertingProfileRuleArgs(
+                    delay_in_minutes=0,
+                    severity_level="ERROR",
+                    tag_filters=[dynatrace.AlertingProfileRuleTagFilterArgs(
+                        include_mode="INCLUDE_ALL",
+                        tag_filters=[
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="EnvironmentC",
+                                value="production",
+                            ),
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="Team",
+                                value="test",
+                            ),
+                        ],
+                    )],
+                ),
+                dynatrace.AlertingProfileRuleArgs(
+                    delay_in_minutes=0,
+                    severity_level="MONITORING_UNAVAILABLE",
+                    tag_filters=[dynatrace.AlertingProfileRuleTagFilterArgs(
+                        include_mode="INCLUDE_ALL",
+                        tag_filters=[
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="EnvironmentD",
+                                value="production",
+                            ),
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="Team",
+                                value="test",
+                            ),
+                        ],
+                    )],
+                ),
+                dynatrace.AlertingProfileRuleArgs(
+                    delay_in_minutes=0,
+                    severity_level="PERFORMANCE",
+                    tag_filters=[dynatrace.AlertingProfileRuleTagFilterArgs(
+                        include_mode="INCLUDE_ALL",
+                        tag_filters=[
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="EnvironmentE",
+                                value="production",
+                            ),
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="Team",
+                                value="test",
+                            ),
+                        ],
+                    )],
+                ),
+                dynatrace.AlertingProfileRuleArgs(
+                    delay_in_minutes=0,
+                    severity_level="RESOURCE_CONTENTION",
+                    tag_filters=[dynatrace.AlertingProfileRuleTagFilterArgs(
+                        include_mode="INCLUDE_ALL",
+                        tag_filters=[
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="EnvironmentF",
+                                value="production",
+                            ),
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="Team",
+                                value="test",
+                            ),
+                        ],
+                    )],
+                ),
+            ])
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] display_name: The name of the alerting profile, displayed in the UI
@@ -256,7 +396,141 @@ class AlertingProfile(pulumi.CustomResource):
                  args: AlertingProfileArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a AlertingProfile resource with the given unique name, props, and options.
+        The API utilized for this resource is deprecated, please use Alerting instead.
+
+        ## Dynatrace Documentation
+
+        - Alerting profiles - https://www.dynatrace.com/support/help/how-to-use-dynatrace/problem-detection-and-analysis/notifications-and-alerting/alerting-profiles
+
+        - Alerting profiles API - https://www.dynatrace.com/support/help/dynatrace-api/configuration-api/alerting-profiles-api
+
+        ## Resource Example Usage
+
+        ```python
+        import pulumi
+        import pulumiverse_pulumi_dynatrace as dynatrace
+
+        _name_ = dynatrace.AlertingProfile("#name#",
+            display_name="#name#",
+            mz_id="",
+            rules=[
+                dynatrace.AlertingProfileRuleArgs(
+                    delay_in_minutes=0,
+                    severity_level="AVAILABILITY",
+                    tag_filters=[dynatrace.AlertingProfileRuleTagFilterArgs(
+                        include_mode="INCLUDE_ALL",
+                        tag_filters=[
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="EnvironmentA",
+                                value="production",
+                            ),
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="Team",
+                                value="test",
+                            ),
+                        ],
+                    )],
+                ),
+                dynatrace.AlertingProfileRuleArgs(
+                    delay_in_minutes=0,
+                    severity_level="CUSTOM_ALERT",
+                    tag_filters=[dynatrace.AlertingProfileRuleTagFilterArgs(
+                        include_mode="INCLUDE_ALL",
+                        tag_filters=[
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="EnvironmentB",
+                                value="production",
+                            ),
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="Team",
+                                value="test",
+                            ),
+                        ],
+                    )],
+                ),
+                dynatrace.AlertingProfileRuleArgs(
+                    delay_in_minutes=0,
+                    severity_level="ERROR",
+                    tag_filters=[dynatrace.AlertingProfileRuleTagFilterArgs(
+                        include_mode="INCLUDE_ALL",
+                        tag_filters=[
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="EnvironmentC",
+                                value="production",
+                            ),
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="Team",
+                                value="test",
+                            ),
+                        ],
+                    )],
+                ),
+                dynatrace.AlertingProfileRuleArgs(
+                    delay_in_minutes=0,
+                    severity_level="MONITORING_UNAVAILABLE",
+                    tag_filters=[dynatrace.AlertingProfileRuleTagFilterArgs(
+                        include_mode="INCLUDE_ALL",
+                        tag_filters=[
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="EnvironmentD",
+                                value="production",
+                            ),
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="Team",
+                                value="test",
+                            ),
+                        ],
+                    )],
+                ),
+                dynatrace.AlertingProfileRuleArgs(
+                    delay_in_minutes=0,
+                    severity_level="PERFORMANCE",
+                    tag_filters=[dynatrace.AlertingProfileRuleTagFilterArgs(
+                        include_mode="INCLUDE_ALL",
+                        tag_filters=[
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="EnvironmentE",
+                                value="production",
+                            ),
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="Team",
+                                value="test",
+                            ),
+                        ],
+                    )],
+                ),
+                dynatrace.AlertingProfileRuleArgs(
+                    delay_in_minutes=0,
+                    severity_level="RESOURCE_CONTENTION",
+                    tag_filters=[dynatrace.AlertingProfileRuleTagFilterArgs(
+                        include_mode="INCLUDE_ALL",
+                        tag_filters=[
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="EnvironmentF",
+                                value="production",
+                            ),
+                            dynatrace.AlertingProfileRuleTagFilterTagFilterArgs(
+                                context="CONTEXTLESS",
+                                key="Team",
+                                value="test",
+                            ),
+                        ],
+                    )],
+                ),
+            ])
+        ```
+
         :param str resource_name: The name of the resource.
         :param AlertingProfileArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -291,9 +565,6 @@ class AlertingProfile(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["event_type_filters"] = event_type_filters
-            if metadata is not None and not opts.urn:
-                warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
-                pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
             __props__.__dict__["metadata"] = metadata
             __props__.__dict__["mz_id"] = mz_id
             __props__.__dict__["rules"] = rules
@@ -362,6 +633,9 @@ class AlertingProfile(pulumi.CustomResource):
         """
         `metadata` exists for backwards compatibility but shouldn't get specified anymore
         """
+        warnings.warn("""`metadata` exists for backwards compatibility but shouldn't get specified anymore""", DeprecationWarning)
+        pulumi.log.warn("""metadata is deprecated: `metadata` exists for backwards compatibility but shouldn't get specified anymore""")
+
         return pulumi.get(self, "metadata")
 
     @property

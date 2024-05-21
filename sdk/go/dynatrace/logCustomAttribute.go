@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type LogCustomAttribute struct {
@@ -33,7 +34,7 @@ func NewLogCustomAttribute(ctx *pulumi.Context,
 	if args.Sidebar == nil {
 		return nil, errors.New("invalid value for required argument 'Sidebar'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LogCustomAttribute
 	err := ctx.RegisterResource("dynatrace:index/logCustomAttribute:LogCustomAttribute", name, args, &resource, opts...)
 	if err != nil {

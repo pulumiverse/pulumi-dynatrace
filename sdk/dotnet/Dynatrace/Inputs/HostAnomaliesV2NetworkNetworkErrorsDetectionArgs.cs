@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class HostAnomaliesV2NetworkNetworkErrorsDetectionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Alert if the receive/transmit error packet percentage is higher than the specified threshold **and** the total packets rate is higher than the defined threshold for the defined amount of samples
+        /// </summary>
         [Input("customThresholds")]
         public Input<Inputs.HostAnomaliesV2NetworkNetworkErrorsDetectionCustomThresholdsArgs>? CustomThresholds { get; set; }
 
+        /// <summary>
+        /// Detection mode for high number of network errors
+        /// </summary>
         [Input("detectionMode")]
         public Input<string>? DetectionMode { get; set; }
 
+        /// <summary>
+        /// Detect high number of network errors
+        /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 

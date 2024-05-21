@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class VmwareAnomaliesSlowPhysicalStorageDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Read/write latency is higher than
+        /// </summary>
         [Input("avgReadWriteLatency", required: true)]
         public Input<int> AvgReadWriteLatency { get; set; } = null!;
 
+        /// <summary>
+        /// Peak value for read/write latency is higher than
+        /// </summary>
         [Input("peakReadWriteLatency", required: true)]
         public Input<int> PeakReadWriteLatency { get; set; } = null!;
 

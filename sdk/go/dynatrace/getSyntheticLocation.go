@@ -8,11 +8,12 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The synthetic location data source allows the location ID to be retrieved based off of provided parameters.
 func LookupSyntheticLocation(ctx *pulumi.Context, args *LookupSyntheticLocationArgs, opts ...pulumi.InvokeOption) (*LookupSyntheticLocationResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSyntheticLocationResult
 	err := ctx.Invoke("dynatrace:index/getSyntheticLocation:getSyntheticLocation", args, &rv, opts...)
 	if err != nil {

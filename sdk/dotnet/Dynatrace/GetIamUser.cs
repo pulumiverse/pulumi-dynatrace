@@ -15,9 +15,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// This data source allows you to specify the email address of the user and produces an ordered list of group IDs this user is a member of
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -38,8 +36,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         ///     };
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetIamUserResult> InvokeAsync(GetIamUserArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamUserResult>("dynatrace:index/getIamUser:getIamUser", args ?? new GetIamUserArgs(), options.WithDefaults());
@@ -47,9 +43,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// This data source allows you to specify the email address of the user and produces an ordered list of group IDs this user is a member of
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -70,8 +64,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         ///     };
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetIamUserResult> Invoke(GetIamUserInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIamUserResult>("dynatrace:index/getIamUser:getIamUser", args ?? new GetIamUserInvokeArgs(), options.WithDefaults());

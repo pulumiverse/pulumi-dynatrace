@@ -13,28 +13,47 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class BrowserMonitorAnomalyDetectionOutageHandlingGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable at all configured locations
+        /// </summary>
         [Input("globalOutage")]
         public Input<bool>? GlobalOutage { get; set; }
 
         [Input("globalOutagePolicies")]
         private InputList<Inputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyGetArgs>? _globalOutagePolicies;
+
+        /// <summary>
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Global outage handling configuration.
+        /// </summary>
         public InputList<Inputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyGetArgs> GlobalOutagePolicies
         {
             get => _globalOutagePolicies ?? (_globalOutagePolicies = new InputList<Inputs.BrowserMonitorAnomalyDetectionOutageHandlingGlobalOutagePolicyGetArgs>());
             set => _globalOutagePolicies = value;
         }
 
+        /// <summary>
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) When enabled (`true`), generate a problem and send an alert when the monitor is unavailable for one or more consecutive runs at any location
+        /// </summary>
         [Input("localOutage")]
         public Input<bool>? LocalOutage { get; set; }
 
         [Input("localOutagePolicies")]
         private InputList<Inputs.BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicyGetArgs>? _localOutagePolicies;
+
+        /// <summary>
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Local outage handling configuration. 
+        /// 
+        ///  Alert if **affectedLocations** of locations are unable to access the web application **consecutiveRuns** times consecutively
+        /// </summary>
         public InputList<Inputs.BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicyGetArgs> LocalOutagePolicies
         {
             get => _localOutagePolicies ?? (_localOutagePolicies = new InputList<Inputs.BrowserMonitorAnomalyDetectionOutageHandlingLocalOutagePolicyGetArgs>());
             set => _localOutagePolicies = value;
         }
 
+        /// <summary>
+        /// (Field has overlap with `dynatrace.BrowserMonitorOutage` and `dynatrace.HttpMonitorOutage`) Schedule retry if browser monitor execution results in a fail. For HTTP monitors this property is ignored
+        /// </summary>
         [Input("retryOnError")]
         public Input<bool>? RetryOnError { get; set; }
 

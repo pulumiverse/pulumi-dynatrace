@@ -25,11 +25,11 @@ class ApplicationErrorRulesArgs:
         """
         The set of arguments for constructing a ApplicationErrorRules resource.
         :param pulumi.Input['ApplicationErrorRulesCustomErrorsArgs'] custom_errors: (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
-        :param pulumi.Input['ApplicationErrorRulesHttpErrorsArgs'] http_errors: (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
-               to bottom; the first matching rule applies
-        :param pulumi.Input[bool] ignore_custom_errors_apdex: (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+        :param pulumi.Input['ApplicationErrorRulesHttpErrorsArgs'] http_errors: (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors. Rules are evaluated from top to bottom;
+               the first matching rule applies
+        :param pulumi.Input[bool] ignore_custom_errors_apdex: (Field has overlap with `WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in
                **customErrorRules** in Apdex calculation
-        :param pulumi.Input[bool] ignore_http_errors_apdex: (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+        :param pulumi.Input[bool] ignore_http_errors_apdex: (Field has overlap with `WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in
                **httpErrorRules** in Apdex calculation
         :param pulumi.Input[bool] ignore_js_errors_apdex: Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
         :param pulumi.Input[str] web_application_id: The EntityID of the the WebApplication
@@ -63,8 +63,8 @@ class ApplicationErrorRulesArgs:
     @pulumi.getter(name="httpErrors")
     def http_errors(self) -> Optional[pulumi.Input['ApplicationErrorRulesHttpErrorsArgs']]:
         """
-        (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
-        to bottom; the first matching rule applies
+        (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors. Rules are evaluated from top to bottom;
+        the first matching rule applies
         """
         return pulumi.get(self, "http_errors")
 
@@ -76,7 +76,7 @@ class ApplicationErrorRulesArgs:
     @pulumi.getter(name="ignoreCustomErrorsApdex")
     def ignore_custom_errors_apdex(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+        (Field has overlap with `WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in
         **customErrorRules** in Apdex calculation
         """
         return pulumi.get(self, "ignore_custom_errors_apdex")
@@ -89,7 +89,7 @@ class ApplicationErrorRulesArgs:
     @pulumi.getter(name="ignoreHttpErrorsApdex")
     def ignore_http_errors_apdex(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+        (Field has overlap with `WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in
         **httpErrorRules** in Apdex calculation
         """
         return pulumi.get(self, "ignore_http_errors_apdex")
@@ -135,11 +135,11 @@ class _ApplicationErrorRulesState:
         """
         Input properties used for looking up and filtering ApplicationErrorRules resources.
         :param pulumi.Input['ApplicationErrorRulesCustomErrorsArgs'] custom_errors: (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
-        :param pulumi.Input['ApplicationErrorRulesHttpErrorsArgs'] http_errors: (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
-               to bottom; the first matching rule applies
-        :param pulumi.Input[bool] ignore_custom_errors_apdex: (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+        :param pulumi.Input['ApplicationErrorRulesHttpErrorsArgs'] http_errors: (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors. Rules are evaluated from top to bottom;
+               the first matching rule applies
+        :param pulumi.Input[bool] ignore_custom_errors_apdex: (Field has overlap with `WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in
                **customErrorRules** in Apdex calculation
-        :param pulumi.Input[bool] ignore_http_errors_apdex: (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+        :param pulumi.Input[bool] ignore_http_errors_apdex: (Field has overlap with `WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in
                **httpErrorRules** in Apdex calculation
         :param pulumi.Input[bool] ignore_js_errors_apdex: Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
         :param pulumi.Input[str] web_application_id: The EntityID of the the WebApplication
@@ -173,8 +173,8 @@ class _ApplicationErrorRulesState:
     @pulumi.getter(name="httpErrors")
     def http_errors(self) -> Optional[pulumi.Input['ApplicationErrorRulesHttpErrorsArgs']]:
         """
-        (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
-        to bottom; the first matching rule applies
+        (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors. Rules are evaluated from top to bottom;
+        the first matching rule applies
         """
         return pulumi.get(self, "http_errors")
 
@@ -186,7 +186,7 @@ class _ApplicationErrorRulesState:
     @pulumi.getter(name="ignoreCustomErrorsApdex")
     def ignore_custom_errors_apdex(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+        (Field has overlap with `WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in
         **customErrorRules** in Apdex calculation
         """
         return pulumi.get(self, "ignore_custom_errors_apdex")
@@ -199,7 +199,7 @@ class _ApplicationErrorRulesState:
     @pulumi.getter(name="ignoreHttpErrorsApdex")
     def ignore_http_errors_apdex(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+        (Field has overlap with `WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in
         **httpErrorRules** in Apdex calculation
         """
         return pulumi.get(self, "ignore_http_errors_apdex")
@@ -250,11 +250,11 @@ class ApplicationErrorRules(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['ApplicationErrorRulesCustomErrorsArgs']] custom_errors: (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
-        :param pulumi.Input[pulumi.InputType['ApplicationErrorRulesHttpErrorsArgs']] http_errors: (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
-               to bottom; the first matching rule applies
-        :param pulumi.Input[bool] ignore_custom_errors_apdex: (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+        :param pulumi.Input[pulumi.InputType['ApplicationErrorRulesHttpErrorsArgs']] http_errors: (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors. Rules are evaluated from top to bottom;
+               the first matching rule applies
+        :param pulumi.Input[bool] ignore_custom_errors_apdex: (Field has overlap with `WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in
                **customErrorRules** in Apdex calculation
-        :param pulumi.Input[bool] ignore_http_errors_apdex: (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+        :param pulumi.Input[bool] ignore_http_errors_apdex: (Field has overlap with `WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in
                **httpErrorRules** in Apdex calculation
         :param pulumi.Input[bool] ignore_js_errors_apdex: Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
         :param pulumi.Input[str] web_application_id: The EntityID of the the WebApplication
@@ -327,11 +327,11 @@ class ApplicationErrorRules(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['ApplicationErrorRulesCustomErrorsArgs']] custom_errors: (Field has overlap with `WebAppCustomErrors`) An ordered list of HTTP errors.
-        :param pulumi.Input[pulumi.InputType['ApplicationErrorRulesHttpErrorsArgs']] http_errors: (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
-               to bottom; the first matching rule applies
-        :param pulumi.Input[bool] ignore_custom_errors_apdex: (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+        :param pulumi.Input[pulumi.InputType['ApplicationErrorRulesHttpErrorsArgs']] http_errors: (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors. Rules are evaluated from top to bottom;
+               the first matching rule applies
+        :param pulumi.Input[bool] ignore_custom_errors_apdex: (Field has overlap with `WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in
                **customErrorRules** in Apdex calculation
-        :param pulumi.Input[bool] ignore_http_errors_apdex: (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+        :param pulumi.Input[bool] ignore_http_errors_apdex: (Field has overlap with `WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in
                **httpErrorRules** in Apdex calculation
         :param pulumi.Input[bool] ignore_js_errors_apdex: Exclude (`true`) or include (`false`) JavaScript errors in Apdex calculation
         :param pulumi.Input[str] web_application_id: The EntityID of the the WebApplication
@@ -360,8 +360,8 @@ class ApplicationErrorRules(pulumi.CustomResource):
     @pulumi.getter(name="httpErrors")
     def http_errors(self) -> pulumi.Output[Optional['outputs.ApplicationErrorRulesHttpErrors']]:
         """
-        (Field has overlap with `dynatrace_web_app_request_errors`) An ordered list of HTTP errors. Rules are evaluated from top
-        to bottom; the first matching rule applies
+        (Field has overlap with `WebAppRequestErrors`) An ordered list of HTTP errors. Rules are evaluated from top to bottom;
+        the first matching rule applies
         """
         return pulumi.get(self, "http_errors")
 
@@ -369,7 +369,7 @@ class ApplicationErrorRules(pulumi.CustomResource):
     @pulumi.getter(name="ignoreCustomErrorsApdex")
     def ignore_custom_errors_apdex(self) -> pulumi.Output[Optional[bool]]:
         """
-        (Field has overlap with `dynatrace_web_app_custom_errors`) Exclude (`true`) or include (`false`) custom errors listed in
+        (Field has overlap with `WebAppCustomErrors`) Exclude (`true`) or include (`false`) custom errors listed in
         **customErrorRules** in Apdex calculation
         """
         return pulumi.get(self, "ignore_custom_errors_apdex")
@@ -378,7 +378,7 @@ class ApplicationErrorRules(pulumi.CustomResource):
     @pulumi.getter(name="ignoreHttpErrorsApdex")
     def ignore_http_errors_apdex(self) -> pulumi.Output[Optional[bool]]:
         """
-        (Field has overlap with `dynatrace_web_app_request_errors`) Exclude (`true`) or include (`false`) HTTP errors listed in
+        (Field has overlap with `WebAppRequestErrors`) Exclude (`true`) or include (`false`) HTTP errors listed in
         **httpErrorRules** in Apdex calculation
         """
         return pulumi.get(self, "ignore_http_errors_apdex")

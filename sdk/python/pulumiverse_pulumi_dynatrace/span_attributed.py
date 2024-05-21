@@ -21,8 +21,6 @@ class SpanAttributedArgs:
         The set of arguments for constructing a SpanAttributed resource.
         :param pulumi.Input[str] key: the key of the attribute to capture
         :param pulumi.Input[str] masking: granular control over the visibility of attribute values
-        :param pulumi.Input[bool] persistent: Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
-               are defined by default on every Dynatrace environment.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "masking", masking)
@@ -56,10 +54,6 @@ class SpanAttributedArgs:
     @property
     @pulumi.getter
     def persistent(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
-        are defined by default on every Dynatrace environment.
-        """
         return pulumi.get(self, "persistent")
 
     @persistent.setter
@@ -77,8 +71,6 @@ class _SpanAttributedState:
         Input properties used for looking up and filtering SpanAttributed resources.
         :param pulumi.Input[str] key: the key of the attribute to capture
         :param pulumi.Input[str] masking: granular control over the visibility of attribute values
-        :param pulumi.Input[bool] persistent: Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
-               are defined by default on every Dynatrace environment.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -114,10 +106,6 @@ class _SpanAttributedState:
     @property
     @pulumi.getter
     def persistent(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
-        are defined by default on every Dynatrace environment.
-        """
         return pulumi.get(self, "persistent")
 
     @persistent.setter
@@ -140,8 +128,6 @@ class SpanAttributed(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] key: the key of the attribute to capture
         :param pulumi.Input[str] masking: granular control over the visibility of attribute values
-        :param pulumi.Input[bool] persistent: Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
-               are defined by default on every Dynatrace environment.
         """
         ...
     @overload
@@ -207,8 +193,6 @@ class SpanAttributed(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] key: the key of the attribute to capture
         :param pulumi.Input[str] masking: granular control over the visibility of attribute values
-        :param pulumi.Input[bool] persistent: Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
-               are defined by default on every Dynatrace environment.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -238,9 +222,5 @@ class SpanAttributed(pulumi.CustomResource):
     @property
     @pulumi.getter
     def persistent(self) -> pulumi.Output[bool]:
-        """
-        Prevents the Span Attribute from getting deleted when running `terraform destroy` - to be used for Span Attributes that
-        are defined by default on every Dynatrace environment.
-        """
         return pulumi.get(self, "persistent")
 

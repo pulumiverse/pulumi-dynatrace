@@ -14,9 +14,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ManagementZoneRuleConditionAzureSkus
     {
+        /// <summary>
+        /// Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+        /// </summary>
         public readonly bool? Negate;
+        /// <summary>
+        /// Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+        /// </summary>
         public readonly string Operator;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider
+        /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// The value to compare to. Possible values are BASIC, DYNAMIC, FREE, PREMIUM, SHARED and STANDARD.
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

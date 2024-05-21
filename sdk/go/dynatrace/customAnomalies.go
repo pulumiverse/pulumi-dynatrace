@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type CustomAnomalies struct {
@@ -64,7 +65,7 @@ func NewCustomAnomalies(ctx *pulumi.Context,
 	if args.Strategy == nil {
 		return nil, errors.New("invalid value for required argument 'Strategy'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CustomAnomalies
 	err := ctx.RegisterResource("dynatrace:index/customAnomalies:CustomAnomalies", name, args, &resource, opts...)
 	if err != nil {

@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type CustomUnits struct {
@@ -40,7 +41,7 @@ func NewCustomUnits(ctx *pulumi.Context,
 	if args.Symbol == nil {
 		return nil, errors.New("invalid value for required argument 'Symbol'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CustomUnits
 	err := ctx.RegisterResource("dynatrace:index/customUnits:CustomUnits", name, args, &resource, opts...)
 	if err != nil {

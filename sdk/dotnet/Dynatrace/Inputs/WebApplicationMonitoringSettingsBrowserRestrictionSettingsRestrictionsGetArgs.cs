@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("restrictions", required: true)]
         private InputList<Inputs.WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionGetArgs>? _restrictions;
+
+        /// <summary>
+        /// Browser exclusion rules for the browsers that are to be excluded
+        /// </summary>
         public InputList<Inputs.WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionGetArgs> Restrictions
         {
             get => _restrictions ?? (_restrictions = new InputList<Inputs.WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestrictionGetArgs>());

@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type LogEvents struct {
@@ -43,7 +44,7 @@ func NewLogEvents(ctx *pulumi.Context,
 	if args.Summary == nil {
 		return nil, errors.New("invalid value for required argument 'Summary'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LogEvents
 	err := ctx.RegisterResource("dynatrace:index/logEvents:LogEvents", name, args, &resource, opts...)
 	if err != nil {

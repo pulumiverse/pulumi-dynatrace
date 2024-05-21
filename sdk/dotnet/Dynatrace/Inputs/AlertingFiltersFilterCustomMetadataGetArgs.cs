@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class AlertingFiltersFilterCustomMetadataGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Define filters for event properties. A maximum of 20 properties is allowed.
+        /// </summary>
         [Input("items", required: true)]
         public Input<Inputs.AlertingFiltersFilterCustomMetadataItemsGetArgs> Items { get; set; } = null!;
 

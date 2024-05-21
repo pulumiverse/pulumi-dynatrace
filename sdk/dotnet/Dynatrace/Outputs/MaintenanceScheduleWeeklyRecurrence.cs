@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class MaintenanceScheduleWeeklyRecurrence
     {
+        /// <summary>
+        /// The day of the week for weekly maintenance.  The format is the full name of the day in upper case, for example `THURSDAY`
+        /// </summary>
         public readonly string DayOfWeek;
+        /// <summary>
+        /// The recurrence date range of the maintenance window
+        /// </summary>
         public readonly Outputs.MaintenanceScheduleWeeklyRecurrenceRecurrenceRange RecurrenceRange;
+        /// <summary>
+        /// The time window of the maintenance window
+        /// </summary>
         public readonly Outputs.MaintenanceScheduleWeeklyRecurrenceTimeWindow TimeWindow;
 
         [OutputConstructor]

@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class VmwareAnomaliesUndersizedStorageDetectionCustomThresholds
     {
+        /// <summary>
+        /// Average queue command latency is higher than
+        /// </summary>
         public readonly int AverageQueueCommandLatency;
+        /// <summary>
+        /// Peak queue command latency is higher than
+        /// </summary>
         public readonly int PeakQueueCommandLatency;
 
         [OutputConstructor]

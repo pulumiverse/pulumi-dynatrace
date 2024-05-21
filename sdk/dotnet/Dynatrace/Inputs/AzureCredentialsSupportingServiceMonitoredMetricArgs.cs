@@ -15,12 +15,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("dimensions")]
         private InputList<string>? _dimensions;
+
+        /// <summary>
+        /// a list of metric's dimensions names
+        /// </summary>
         public InputList<string> Dimensions
         {
             get => _dimensions ?? (_dimensions = new InputList<string>());
             set => _dimensions = value;
         }
 
+        /// <summary>
+        /// the name of the metric of the supporting service
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

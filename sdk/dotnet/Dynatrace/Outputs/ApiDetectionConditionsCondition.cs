@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ApiDetectionConditionsCondition
     {
+        /// <summary>
+        /// Possible Values: `FILE_NAME`, `FQCN`, `PACKAGE`
+        /// </summary>
         public readonly string Base;
+        /// <summary>
+        /// Possible Values: `BEGINS_WITH`, `CONTAINS`
+        /// </summary>
         public readonly string Matcher;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly string Pattern;
 
         [OutputConstructor]

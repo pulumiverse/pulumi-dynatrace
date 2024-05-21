@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationConversionGoalsGoalDestination
     {
+        /// <summary>
+        /// The match is case-sensitive (`true`) or (`false`)
+        /// </summary>
         public readonly bool? CaseSensitive;
+        /// <summary>
+        /// The operator of the match. Possible values are `Begins`, `Contains` and `Ends`.
+        /// </summary>
         public readonly string? MatchType;
+        /// <summary>
+        /// The path to be reached to hit the conversion goal
+        /// </summary>
         public readonly string UrlOrPath;
 
         [OutputConstructor]

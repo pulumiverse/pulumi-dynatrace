@@ -14,9 +14,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class OwnershipTeamsAdditionalInformation
     {
-        /// <summary>
-        /// Define key/value pairs that further describe this team — for example, cost center, solution type, or business unit assignments.
-        /// </summary>
         public readonly ImmutableArray<Outputs.OwnershipTeamsAdditionalInformationAdditionalInformation> AdditionalInformations;
 
         [OutputConstructor]

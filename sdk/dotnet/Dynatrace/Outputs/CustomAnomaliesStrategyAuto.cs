@@ -14,15 +14,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class CustomAnomaliesStrategyAuto
     {
+        /// <summary>
+        /// The condition for the **threshold** value check: `ABOVE` or `BELOW`
+        /// </summary>
         public readonly string AlertCondition;
+        /// <summary>
+        /// If true, also one-minute samples without data are counted as violating samples
+        /// </summary>
         public readonly bool? AlertingOnMissingData;
+        /// <summary>
+        /// The number of one-minute samples within the evaluation window that must go back to normal to close the event
+        /// </summary>
         public readonly int DealertingSamples;
+        /// <summary>
+        /// The number of one-minute samples that form the sliding evaluation window
+        /// </summary>
         public readonly int Samples;
+        /// <summary>
+        /// Defines the factor of how many signal fluctuations are valid. Values above the baseline plus the signal fluctuation times the number of tolerated signal fluctuations are alerted
+        /// </summary>
         public readonly double SignalFluctuations;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider
         /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// The number of one-minute samples within the evaluation window that must violate the threshold to trigger an event
+        /// </summary>
         public readonly int ViolatingSamples;
 
         [OutputConstructor]

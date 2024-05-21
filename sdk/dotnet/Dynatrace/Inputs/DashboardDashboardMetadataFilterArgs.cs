@@ -15,12 +15,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("managementZones")]
         private InputList<Inputs.DashboardDashboardMetadataFilterManagementZoneArgs>? _managementZones;
+
+        /// <summary>
+        /// the management zone this dashboard applies to
+        /// </summary>
         public InputList<Inputs.DashboardDashboardMetadataFilterManagementZoneArgs> ManagementZones
         {
             get => _managementZones ?? (_managementZones = new InputList<Inputs.DashboardDashboardMetadataFilterManagementZoneArgs>());
             set => _managementZones = value;
         }
 
+        /// <summary>
+        /// the default timeframe of the dashboard
+        /// </summary>
         [Input("timeframe")]
         public Input<string>? Timeframe { get; set; }
 

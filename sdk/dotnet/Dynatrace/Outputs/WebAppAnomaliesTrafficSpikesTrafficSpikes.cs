@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebAppAnomaliesTrafficSpikesTrafficSpikes
     {
+        /// <summary>
+        /// Minutes an application has to stay in abnormal state before alert
+        /// </summary>
         public readonly double MinutesAbnormalState;
+        /// <summary>
+        /// Alert if the observed traffic is more than this percentage of the expected value
+        /// </summary>
         public readonly double TrafficSpikePercentage;
 
         [OutputConstructor]

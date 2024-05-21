@@ -13,12 +13,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ProcessGroupDetectionInstanceExtractionDelimiterGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Delimit from
+        /// </summary>
         [Input("from")]
         public Input<string>? From { get; set; }
 
+        /// <summary>
+        /// (e.g. versions, hex, dates, and build numbers)
+        /// </summary>
         [Input("removeIds", required: true)]
         public Input<bool> RemoveIds { get; set; } = null!;
 
+        /// <summary>
+        /// Delimit to
+        /// </summary>
         [Input("to")]
         public Input<string>? To { get; set; }
 

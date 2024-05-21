@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("ranges", required: true)]
         private InputList<Inputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArgs>? _ranges;
+
+        /// <summary>
+        /// The IP address or the IP address range to be mapped to the location
+        /// </summary>
         public InputList<Inputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArgs> Ranges
         {
             get => _ranges ?? (_ranges = new InputList<Inputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettingsRestrictionsRangeArgs>());

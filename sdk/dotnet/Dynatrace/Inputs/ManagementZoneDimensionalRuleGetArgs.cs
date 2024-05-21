@@ -13,20 +13,36 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ManagementZoneDimensionalRuleGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The target of the rule. Possible values are
+        ///    - `ANY`
+        ///    - `LOG`
+        ///    - `METRIC`
+        /// </summary>
         [Input("appliesTo", required: true)]
         public Input<string> AppliesTo { get; set; } = null!;
 
         [Input("conditions")]
         private InputList<Inputs.ManagementZoneDimensionalRuleConditionGetArgs>? _conditions;
+
+        /// <summary>
+        /// A list of conditions for the management zone. The management zone applies only if **all** conditions are fulfilled
+        /// </summary>
         public InputList<Inputs.ManagementZoneDimensionalRuleConditionGetArgs> Conditions
         {
             get => _conditions ?? (_conditions = new InputList<Inputs.ManagementZoneDimensionalRuleConditionGetArgs>());
             set => _conditions = value;
         }
 
+        /// <summary>
+        /// The rule is enabled (`true`) or disabled (`false`)
+        /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 

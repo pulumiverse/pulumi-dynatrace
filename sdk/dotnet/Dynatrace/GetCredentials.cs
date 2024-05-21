@@ -15,9 +15,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -101,8 +99,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetCredentialsResult> InvokeAsync(GetCredentialsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCredentialsResult>("dynatrace:index/getCredentials:getCredentials", args ?? new GetCredentialsArgs(), options.WithDefaults());
@@ -110,9 +106,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// The `dynatrace.Credentials` data source queries for Credentials stored within the Credentials Vault using the properties `name`, `scope` and `type`. At least one of `name`, `scope` or `type` needs to be specified as a non empty value. Combinations of the three properties are also possible.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -196,8 +190,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetCredentialsResult> Invoke(GetCredentialsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCredentialsResult>("dynatrace:index/getCredentials:getCredentials", args ?? new GetCredentialsInvokeArgs(), options.WithDefaults());

@@ -14,9 +14,24 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class ManagementZoneDimensionalRule
     {
+        /// <summary>
+        /// The target of the rule. Possible values are
+        ///    - `ANY`
+        ///    - `LOG`
+        ///    - `METRIC`
+        /// </summary>
         public readonly string AppliesTo;
+        /// <summary>
+        /// A list of conditions for the management zone. The management zone applies only if **all** conditions are fulfilled
+        /// </summary>
         public readonly ImmutableArray<Outputs.ManagementZoneDimensionalRuleCondition> Conditions;
+        /// <summary>
+        /// The rule is enabled (`true`) or disabled (`false`)
+        /// </summary>
         public readonly bool? Enabled;
+        /// <summary>
+        /// allows for configuring properties that are not explicitly supported by the current version of this provider
+        /// </summary>
         public readonly string? Unknowns;
 
         [OutputConstructor]

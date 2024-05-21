@@ -19,26 +19,51 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         [Input("cloudPlatform", required: true)]
         public Input<string> CloudPlatform { get; set; } = null!;
 
+        /// <summary>
+        /// The unique ID of the location
+        /// </summary>
         [Input("entityId")]
         public Input<string>? EntityId { get; set; }
 
         [Input("ips", required: true)]
         private InputList<string>? _ips;
+
+        /// <summary>
+        /// The list of IP addresses assigned to the location. 
+        /// 
+        ///  Only applicable to `PUBLIC` locations
+        /// </summary>
         public InputList<string> Ips
         {
             get => _ips ?? (_ips = new InputList<string>());
             set => _ips = value;
         }
 
+        /// <summary>
+        /// The name of the location
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// The release stage of the location
+        /// </summary>
         [Input("stage", required: true)]
         public Input<string> Stage { get; set; } = null!;
 
+        /// <summary>
+        /// The status of the location: 
+        /// 
+        /// * `ENABLED`: The location is displayed as active in the UI. You can assign monitors to the location. 
+        /// * `DISABLED`: The location is displayed as inactive in the UI. You can't assign monitors to the location. Monitors already assigned to the location will stay there and will be executed from the location. 
+        /// * `HIDDEN`: The location is not displayed in the UI. You can't assign monitors to the location. You can only set location as `HIDDEN` when no monitor is assigned to it
+        /// </summary>
         [Input("status", required: true)]
         public Input<string> Status { get; set; } = null!;
 
+        /// <summary>
+        /// The type of the location. Supported values are `PUBLIC`, `PRIVATE` and `CLUSTER`
+        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 

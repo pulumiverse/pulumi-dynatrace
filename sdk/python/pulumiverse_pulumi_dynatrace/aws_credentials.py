@@ -30,8 +30,6 @@ class AwsCredentialsArgs:
         :param pulumi.Input[str] partition_type: The type of the AWS partition
         :param pulumi.Input[bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
         :param pulumi.Input[str] label: The name of the credentials
-        :param pulumi.Input[bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-               manage them via WebUI without interference by Terraform.
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
@@ -101,10 +99,6 @@ class AwsCredentialsArgs:
     @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-        manage them via WebUI without interference by Terraform.
-        """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
@@ -164,8 +158,6 @@ class _AwsCredentialsState:
         :param pulumi.Input['AwsCredentialsAuthenticationDataArgs'] authentication_data: credentials for the AWS authentication
         :param pulumi.Input[str] label: The name of the credentials
         :param pulumi.Input[str] partition_type: The type of the AWS partition
-        :param pulumi.Input[bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-               manage them via WebUI without interference by Terraform.
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
@@ -227,10 +219,6 @@ class _AwsCredentialsState:
     @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-        manage them via WebUI without interference by Terraform.
-        """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
@@ -307,8 +295,6 @@ class AwsCredentials(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['AwsCredentialsAuthenticationDataArgs']] authentication_data: credentials for the AWS authentication
         :param pulumi.Input[str] label: The name of the credentials
         :param pulumi.Input[str] partition_type: The type of the AWS partition
-        :param pulumi.Input[bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-               manage them via WebUI without interference by Terraform.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsSupportingServicesToMonitorArgs']]]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsTagsToMonitorArgs']]]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
@@ -396,8 +382,6 @@ class AwsCredentials(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['AwsCredentialsAuthenticationDataArgs']] authentication_data: credentials for the AWS authentication
         :param pulumi.Input[str] label: The name of the credentials
         :param pulumi.Input[str] partition_type: The type of the AWS partition
-        :param pulumi.Input[bool] supporting_services_managed_in_dynatrace: If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-               manage them via WebUI without interference by Terraform.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsSupportingServicesToMonitorArgs']]]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsTagsToMonitorArgs']]]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
@@ -444,10 +428,6 @@ class AwsCredentials(pulumi.CustomResource):
     @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     def supporting_services_managed_in_dynatrace(self) -> pulumi.Output[Optional[bool]]:
-        """
-        If enabled (`true`) the attribute `supporting_services` will not get synchronized with Dynatrace. You will be able to
-        manage them via WebUI without interference by Terraform.
-        """
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @property

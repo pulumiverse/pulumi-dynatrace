@@ -13,9 +13,22 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class DeclarativeGroupingDetectionProcessDefinitionRulesRuleArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - $contains(svc) – Matches if svc appears anywhere in the process property value.
+        /// - $eq(svc.exe) – Matches if svc.exe matches the process property value exactly.
+        /// - $prefix(svc) – Matches if app matches the prefix of the process property value.
+        /// - $suffix(svc.py) – Matches if svc.py matches the suffix of the process property value.
+        /// 
+        /// For example, $suffix(svc.py) would detect processes named loyaltysvc.py and paymentssvc.py.
+        /// 
+        /// For more details, see [Declarative process grouping](https://dt-url.net/j142w57).
+        /// </summary>
         [Input("condition", required: true)]
         public Input<string> Condition { get; set; } = null!;
 
+        /// <summary>
+        /// Possible Values: `Executable`, `ExecutablePath`, `CommandLine`
+        /// </summary>
         [Input("property", required: true)]
         public Input<string> Property { get; set; } = null!;
 

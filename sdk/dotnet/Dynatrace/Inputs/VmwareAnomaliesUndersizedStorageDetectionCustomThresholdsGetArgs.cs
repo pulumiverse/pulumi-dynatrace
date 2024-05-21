@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class VmwareAnomaliesUndersizedStorageDetectionCustomThresholdsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Average queue command latency is higher than
+        /// </summary>
         [Input("averageQueueCommandLatency", required: true)]
         public Input<int> AverageQueueCommandLatency { get; set; } = null!;
 
+        /// <summary>
+        /// Peak queue command latency is higher than
+        /// </summary>
         [Input("peakQueueCommandLatency", required: true)]
         public Input<int> PeakQueueCommandLatency { get; set; } = null!;
 

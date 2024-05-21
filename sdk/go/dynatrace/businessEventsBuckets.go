@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type BusinessEventsBuckets struct {
@@ -43,7 +44,7 @@ func NewBusinessEventsBuckets(ctx *pulumi.Context,
 	if args.RuleName == nil {
 		return nil, errors.New("invalid value for required argument 'RuleName'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BusinessEventsBuckets
 	err := ctx.RegisterResource("dynatrace:index/businessEventsBuckets:BusinessEventsBuckets", name, args, &resource, opts...)
 	if err != nil {

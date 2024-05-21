@@ -15,6 +15,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     {
         [Input("steps", required: true)]
         private InputList<Inputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepGetArgs>? _steps;
+
+        /// <summary>
+        /// The processing step
+        /// </summary>
         public InputList<Inputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepGetArgs> Steps
         {
             get => _steps ?? (_steps = new InputList<Inputs.WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepGetArgs>());

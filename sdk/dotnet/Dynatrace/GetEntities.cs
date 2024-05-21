@@ -17,9 +17,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -40,8 +38,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         ///     };
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetEntitiesResult> InvokeAsync(GetEntitiesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEntitiesResult>("dynatrace:index/getEntities:getEntities", args ?? new GetEntitiesArgs(), options.WithDefaults());
@@ -51,9 +47,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// 
         /// - `type` (String) Type of the entity, e.g. SERVICE. All available entity types can be retrieved with [/api/v2/entityTypes](https://www.dynatrace.com/support/help/dynatrace-api/environment-api/entity-v2/get-all-entity-types).
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -74,8 +68,6 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         ///     };
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetEntitiesResult> Invoke(GetEntitiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEntitiesResult>("dynatrace:index/getEntities:getEntities", args ?? new GetEntitiesInvokeArgs(), options.WithDefaults());

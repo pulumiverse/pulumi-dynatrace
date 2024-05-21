@@ -64,8 +64,8 @@ def get_request_attribute(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getRequestAttribute:getRequestAttribute', __args__, opts=opts, typ=GetRequestAttributeResult).value
 
     return AwaitableGetRequestAttributeResult(
-        id=__ret__.id,
-        name=__ret__.name)
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_request_attribute)

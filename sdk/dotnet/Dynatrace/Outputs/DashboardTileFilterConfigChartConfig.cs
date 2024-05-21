@@ -14,12 +14,33 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DashboardTileFilterConfigChartConfig
     {
+        /// <summary>
+        /// The optional custom y-axis limits
+        /// </summary>
         public readonly ImmutableDictionary<string, double>? AxisLimits;
+        /// <summary>
+        /// Either one of `Bit`, `BitPerHour`, `BitPerMinute`, `BitPerSecond`, `Byte`, `BytePerHour`, `BytePerMinute`, `BytePerSecond`, `Cores`, `Count`, `Day`, `DecibelMilliWatt`, `GibiByte`, `Giga`, `GigaByte`, `Hour`, `KibiByte`, `KibiBytePerHour`, `KibiBytePerMinute`, `KibiBytePerSecond`, `Kilo`, `KiloByte`, `KiloBytePerHour`, `KiloBytePerMinute`, `KiloBytePerSecond`, `MebiByte`, `MebiBytePerHour`, `MebiBytePerMinute`, `MebiBytePerSecond`, `Mega`, `MegaByte`, `MegaBytePerHour`, `MegaBytePerMinute`, `MegaBytePerSecond`, `MicroSecond`, `MilliCores`, `MilliSecond`, `MilliSecondPerMinute`, `Minute`, `Month`, `NanoSecond`, `NanoSecondPerMinute`, `NotApplicable`, `PerHour`, `PerMinute`, `PerSecond`, `Percent`, `Pixel`, `Promille`, `Ratio`, `Second`, `State`, `Unspecified`, `Week`, `Year`
+        /// </summary>
         public readonly string? LeftAxisCustomUnit;
+        /// <summary>
+        /// Defines if a legend should be shown
+        /// </summary>
         public readonly bool? Legend;
+        /// <summary>
+        /// Additional information about charted metric
+        /// </summary>
         public readonly ImmutableArray<Outputs.DashboardTileFilterConfigChartConfigResultMetadata> ResultMetadatas;
+        /// <summary>
+        /// Either one of `Bit`, `BitPerHour`, `BitPerMinute`, `BitPerSecond`, `Byte`, `BytePerHour`, `BytePerMinute`, `BytePerSecond`, `Cores`, `Count`, `Day`, `DecibelMilliWatt`, `GibiByte`, `Giga`, `GigaByte`, `Hour`, `KibiByte`, `KibiBytePerHour`, `KibiBytePerMinute`, `KibiBytePerSecond`, `Kilo`, `KiloByte`, `KiloBytePerHour`, `KiloBytePerMinute`, `KiloBytePerSecond`, `MebiByte`, `MebiBytePerHour`, `MebiBytePerMinute`, `MebiBytePerSecond`, `Mega`, `MegaByte`, `MegaBytePerHour`, `MegaBytePerMinute`, `MegaBytePerSecond`, `MicroSecond`, `MilliCores`, `MilliSecond`, `MilliSecondPerMinute`, `Minute`, `Month`, `NanoSecond`, `NanoSecondPerMinute`, `NotApplicable`, `PerHour`, `PerMinute`, `PerSecond`, `Percent`, `Pixel`, `Promille`, `Ratio`, `Second`, `State`, `Unspecified`, `Week`, `Year`
+        /// </summary>
         public readonly string? RightAxisCustomUnit;
+        /// <summary>
+        /// A list of charted metrics
+        /// </summary>
         public readonly ImmutableArray<Outputs.DashboardTileFilterConfigChartConfigSeries> Series;
+        /// <summary>
+        /// The type of the chart
+        /// </summary>
         public readonly string Type;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider

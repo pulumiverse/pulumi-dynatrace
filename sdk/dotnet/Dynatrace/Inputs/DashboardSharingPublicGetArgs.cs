@@ -27,6 +27,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
         [Input("urls")]
         private InputMap<string>? _urls;
+
+        /// <summary>
+        /// A list of URLs for anonymous access to the dashboard indexed by management zone name
+        /// </summary>
         public InputMap<string> Urls
         {
             get => _urls ?? (_urls = new InputMap<string>());

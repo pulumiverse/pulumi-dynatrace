@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class GetEntitiesEntitiesEntityTagResult
     {
+        /// <summary>
+        /// A tag assigned to the entity
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetEntitiesEntitiesEntityTagTagResult> Tags;
 
         [OutputConstructor]

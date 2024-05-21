@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class K8sWorkloadAnomaliesPodStuckInTerminatingConfigurationArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// within the last
+        /// </summary>
         [Input("observationPeriodInMinutes", required: true)]
         public Input<int> ObservationPeriodInMinutes { get; set; } = null!;
 
+        /// <summary>
+        /// pod termination stops progressing for at least
+        /// </summary>
         [Input("samplePeriodInMinutes", required: true)]
         public Input<int> SamplePeriodInMinutes { get; set; } = null!;
 

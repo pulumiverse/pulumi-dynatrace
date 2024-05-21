@@ -14,8 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class HostNamingConditionConditionCustomProcessMetadataConditionKeyDynamicKey
     {
+        /// <summary>
+        /// The actual key of the custom metadata
+        /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// The source of the custom metadata. Possible values are CLOUD_FOUNDRY, ENVIRONMENT, GOOGLE_CLOUD, KUBERNETES and PLUGIN
+        /// </summary>
         public readonly string Source;
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+        /// </summary>
         public readonly string? Unknowns;
 
         [OutputConstructor]

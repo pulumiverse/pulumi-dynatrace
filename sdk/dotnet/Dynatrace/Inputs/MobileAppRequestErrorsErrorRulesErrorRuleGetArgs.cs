@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class MobileAppRequestErrorsErrorRulesErrorRuleGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Exclude response codes
+        /// </summary>
         [Input("errorCodes", required: true)]
         public Input<string> ErrorCodes { get; set; } = null!;
 

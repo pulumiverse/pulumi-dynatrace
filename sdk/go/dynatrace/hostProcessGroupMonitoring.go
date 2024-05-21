@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type HostProcessGroupMonitoring struct {
@@ -38,7 +39,7 @@ func NewHostProcessGroupMonitoring(ctx *pulumi.Context,
 	if args.ProcessGroup == nil {
 		return nil, errors.New("invalid value for required argument 'ProcessGroup'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource HostProcessGroupMonitoring
 	err := ctx.RegisterResource("dynatrace:index/hostProcessGroupMonitoring:HostProcessGroupMonitoring", name, args, &resource, opts...)
 	if err != nil {

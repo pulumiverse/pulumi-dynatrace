@@ -18,9 +18,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// Whether (true or false) the metric is relevant to a problem's impact.
         /// </summary>
         public readonly bool? ImpactRelevant;
+        /// <summary>
+        /// The latency of the metric, in minutes. 
+        /// 
+        ///  The latency is the expected reporting delay (for example, caused by constraints of cloud vendors or other third-party data sources) between the observation of a metric data point and its availability in Dynatrace. 
+        /// 
+        /// The allowed value range is from 1 to 60 minutes.
+        /// </summary>
         public readonly int? Latency;
+        /// <summary>
+        /// The maximum allowed value of the metric.
+        /// </summary>
         public readonly double? MaxValue;
+        /// <summary>
+        /// The minimum allowed value of the metric.
+        /// </summary>
         public readonly double? MinValue;
+        /// <summary>
+        /// Whether (true or false) the metric is related to a root cause of a problem.
+        /// 
+        /// A root-cause relevant metric represents a strong indicator for a faulty component.
+        /// </summary>
         public readonly bool? RootCauseRelevant;
         /// <summary>
         /// Possible Values: `Error`, `Score`, `Unknown`

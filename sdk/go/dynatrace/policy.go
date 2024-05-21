@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type Policy struct {
@@ -38,7 +39,7 @@ func NewPolicy(ctx *pulumi.Context,
 	if args.StatementQuery == nil {
 		return nil, errors.New("invalid value for required argument 'StatementQuery'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Policy
 	err := ctx.RegisterResource("dynatrace:index/policy:Policy", name, args, &resource, opts...)
 	if err != nil {

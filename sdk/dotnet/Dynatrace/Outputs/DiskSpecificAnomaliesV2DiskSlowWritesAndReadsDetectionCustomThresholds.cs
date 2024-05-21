@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DiskSpecificAnomaliesV2DiskSlowWritesAndReadsDetectionCustomThresholds
     {
+        /// <summary>
+        /// Alert if disk read time or write time is higher than this threshold in 3 out of 5 samples
+        /// </summary>
         public readonly int WriteAndReadTime;
 
         [OutputConstructor]

@@ -12,8 +12,7 @@
     "repository": "https://github.com/pulumiverse/pulumi-dynatrace",
     "license": "Apache-2.0",
     "scripts": {
-        "build": "tsc",
-        "install": "node scripts/install-pulumi-plugin.js resource dynatrace ${VERSION}"
+        "build": "tsc"
     },
     "dependencies": {
         "@pulumi/pulumi": "^3.0.0"

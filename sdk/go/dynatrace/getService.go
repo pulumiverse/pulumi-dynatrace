@@ -8,6 +8,7 @@ import (
 	"reflect"
 
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 // The service data source allows the service ID to be retrieved by its name and optionally tags / tag-value pairs.
@@ -42,7 +43,7 @@ import (
 //				return err
 //			}
 //			_, err = dynatrace.NewKeyRequests(ctx, "#name#", &dynatrace.KeyRequestsArgs{
-//				Service: *pulumi.String(test.Id),
+//				Service: pulumi.String(test.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -53,7 +54,7 @@ import (
 //
 // ```
 func GetService(ctx *pulumi.Context, args *GetServiceArgs, opts ...pulumi.InvokeOption) (*GetServiceResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetServiceResult
 	err := ctx.Invoke("dynatrace:index/getService:getService", args, &rv, opts...)
 	if err != nil {

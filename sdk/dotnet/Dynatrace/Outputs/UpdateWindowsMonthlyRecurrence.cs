@@ -14,9 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class UpdateWindowsMonthlyRecurrence
     {
+        /// <summary>
+        /// Every **X** months:
+        /// * `1` = every month,
+        /// * `2` = every two months,
+        /// * `3` = every three months,
+        /// * etc.
+        /// </summary>
         public readonly int Every;
+        /// <summary>
+        /// Recurrence range
+        /// </summary>
         public readonly Outputs.UpdateWindowsMonthlyRecurrenceRecurrenceRange RecurrenceRange;
+        /// <summary>
+        /// Day of the month
+        /// </summary>
         public readonly int SelectedMonthDay;
+        /// <summary>
+        /// Update time
+        /// </summary>
         public readonly Outputs.UpdateWindowsMonthlyRecurrenceUpdateTime UpdateTime;
 
         [OutputConstructor]

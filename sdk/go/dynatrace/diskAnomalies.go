@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type DiskAnomalies struct {
@@ -56,7 +57,7 @@ func NewDiskAnomalies(ctx *pulumi.Context,
 	if args.ViolatingSamples == nil {
 		return nil, errors.New("invalid value for required argument 'ViolatingSamples'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DiskAnomalies
 	err := ctx.RegisterResource("dynatrace:index/diskAnomalies:DiskAnomalies", name, args, &resource, opts...)
 	if err != nil {

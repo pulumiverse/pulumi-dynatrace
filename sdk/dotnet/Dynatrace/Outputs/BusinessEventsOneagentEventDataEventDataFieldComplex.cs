@@ -14,7 +14,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class BusinessEventsOneagentEventDataEventDataFieldComplex
     {
+        /// <summary>
+        /// Field name to be added to data.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         public readonly Outputs.BusinessEventsOneagentEventDataEventDataFieldComplexSource Source;
 
         [OutputConstructor]

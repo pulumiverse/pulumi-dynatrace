@@ -14,13 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DashboardTileBounds
     {
+        /// <summary>
+        /// the height of the tile, in pixels
+        /// </summary>
         public readonly int Height;
+        /// <summary>
+        /// the horizontal distance from the top left corner of the dashboard to the top left corner of the tile, in pixels
+        /// </summary>
         public readonly int Left;
+        /// <summary>
+        /// the vertical distance from the top left corner of the dashboard to the top left corner of the tile, in pixels
+        /// </summary>
         public readonly int Top;
         /// <summary>
         /// allows for configuring properties that are not explicitly supported by the current version of this provider
         /// </summary>
         public readonly string? Unknowns;
+        /// <summary>
+        /// the width of the tile, in pixels
+        /// </summary>
         public readonly int Width;
 
         [OutputConstructor]

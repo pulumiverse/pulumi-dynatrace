@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll
     {
+        /// <summary>
+        /// Threshold
+        /// </summary>
         public readonly double DegradationMilliseconds;
 
         [OutputConstructor]

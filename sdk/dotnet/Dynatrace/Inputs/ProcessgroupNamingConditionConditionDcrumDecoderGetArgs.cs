@@ -13,15 +13,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ProcessgroupNamingConditionConditionDcrumDecoderGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Reverses the operator. For example it turns EQUALS into DOES NOT EQUAL
+        /// </summary>
         [Input("negate")]
         public Input<bool>? Negate { get; set; }
 
+        /// <summary>
+        /// Either EQUALS or EXISTS. You can reverse it by setting **negate** to `true`
+        /// </summary>
         [Input("operator", required: true)]
         public Input<string> Operator { get; set; } = null!;
 
+        /// <summary>
+        /// Any attributes that aren't yet supported by this provider but have meanwhile gotten introduced by a newer version of the Dynatrace REST API
+        /// </summary>
         [Input("unknowns")]
         public Input<string>? Unknowns { get; set; }
 
+        /// <summary>
+        /// The value to compare to. Possible values are ALL_OTHER, CITRIX_APPFLOW, CITRIX_ICA, CITRIX_ICA_OVER_SSL, DB2_DRDA, HTTP, HTTPS, HTTP_EXPRESS, INFORMIX, MYSQL, ORACLE, SAP_GUI, SAP_GUI_OVER_HTTP, SAP_GUI_OVER_HTTPS, SAP_HANA_DB, SAP_RFC, SSL and TDS.
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

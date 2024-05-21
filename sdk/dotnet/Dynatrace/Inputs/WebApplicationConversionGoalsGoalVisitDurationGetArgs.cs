@@ -13,6 +13,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class WebApplicationConversionGoalsGoalVisitDurationGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The duration of session to hit the conversion goal, in milliseconds
+        /// </summary>
         [Input("duration", required: true)]
         public Input<int> Duration { get; set; } = null!;
 

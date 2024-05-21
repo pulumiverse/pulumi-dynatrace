@@ -14,6 +14,9 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     [OutputType]
     public sealed class WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictions
     {
+        /// <summary>
+        /// Browser exclusion rules for the browsers that are to be excluded
+        /// </summary>
         public readonly ImmutableArray<Outputs.WebApplicationMonitoringSettingsBrowserRestrictionSettingsRestrictionsRestriction> Restrictions;
 
         [OutputConstructor]

@@ -13,9 +13,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class MetricEventsEventTemplateMetadataArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The key of the metadata item
+        /// </summary>
         [Input("metadataKey", required: true)]
         public Input<string> MetadataKey { get; set; } = null!;
 
+        /// <summary>
+        /// The value of the metadata item
+        /// </summary>
         [Input("metadataValue", required: true)]
         public Input<string> MetadataValue { get; set; } = null!;
 

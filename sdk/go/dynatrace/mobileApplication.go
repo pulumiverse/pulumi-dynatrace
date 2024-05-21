@@ -9,6 +9,7 @@ import (
 
 	"errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
 type MobileApplication struct {
@@ -35,13 +36,13 @@ type MobileApplication struct {
 	OptInMode pulumi.BoolPtrOutput `pulumi:"optInMode"`
 	// User Action and Session Properties
 	Properties MobileApplicationPropertiesPtrOutput `pulumi:"properties"`
-	// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+	// (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
 	SessionReplay pulumi.BoolPtrOutput `pulumi:"sessionReplay"`
 	// The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
 	// and **optInModeEnabled** values set to `true`.
 	SessionReplayOnCrash pulumi.BoolPtrOutput `pulumi:"sessionReplayOnCrash"`
-	// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-	// apps) The percentage of user sessions to be analyzed
+	// (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of
+	// user sessions to be analyzed
 	UserSessionPercentage pulumi.IntPtrOutput `pulumi:"userSessionPercentage"`
 }
 
@@ -58,7 +59,7 @@ func NewMobileApplication(ctx *pulumi.Context,
 	if args.BeaconEndpointType == nil {
 		return nil, errors.New("invalid value for required argument 'BeaconEndpointType'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MobileApplication
 	err := ctx.RegisterResource("dynatrace:index/mobileApplication:MobileApplication", name, args, &resource, opts...)
 	if err != nil {
@@ -102,13 +103,13 @@ type mobileApplicationState struct {
 	OptInMode *bool `pulumi:"optInMode"`
 	// User Action and Session Properties
 	Properties *MobileApplicationProperties `pulumi:"properties"`
-	// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+	// (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
 	SessionReplay *bool `pulumi:"sessionReplay"`
 	// The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
 	// and **optInModeEnabled** values set to `true`.
 	SessionReplayOnCrash *bool `pulumi:"sessionReplayOnCrash"`
-	// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-	// apps) The percentage of user sessions to be analyzed
+	// (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of
+	// user sessions to be analyzed
 	UserSessionPercentage *int `pulumi:"userSessionPercentage"`
 }
 
@@ -134,13 +135,13 @@ type MobileApplicationState struct {
 	OptInMode pulumi.BoolPtrInput
 	// User Action and Session Properties
 	Properties MobileApplicationPropertiesPtrInput
-	// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+	// (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
 	SessionReplay pulumi.BoolPtrInput
 	// The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
 	// and **optInModeEnabled** values set to `true`.
 	SessionReplayOnCrash pulumi.BoolPtrInput
-	// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-	// apps) The percentage of user sessions to be analyzed
+	// (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of
+	// user sessions to be analyzed
 	UserSessionPercentage pulumi.IntPtrInput
 }
 
@@ -170,13 +171,13 @@ type mobileApplicationArgs struct {
 	OptInMode *bool `pulumi:"optInMode"`
 	// User Action and Session Properties
 	Properties *MobileApplicationProperties `pulumi:"properties"`
-	// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+	// (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
 	SessionReplay *bool `pulumi:"sessionReplay"`
 	// The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
 	// and **optInModeEnabled** values set to `true`.
 	SessionReplayOnCrash *bool `pulumi:"sessionReplayOnCrash"`
-	// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-	// apps) The percentage of user sessions to be analyzed
+	// (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of
+	// user sessions to be analyzed
 	UserSessionPercentage *int `pulumi:"userSessionPercentage"`
 }
 
@@ -203,13 +204,13 @@ type MobileApplicationArgs struct {
 	OptInMode pulumi.BoolPtrInput
 	// User Action and Session Properties
 	Properties MobileApplicationPropertiesPtrInput
-	// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+	// (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
 	SessionReplay pulumi.BoolPtrInput
 	// The session replay on crash is enabled (`true`) or disabled (`false`). Enabling requires both **sessionReplayEnabled**
 	// and **optInModeEnabled** values set to `true`.
 	SessionReplayOnCrash pulumi.BoolPtrInput
-	// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-	// apps) The percentage of user sessions to be analyzed
+	// (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of
+	// user sessions to be analyzed
 	UserSessionPercentage pulumi.IntPtrInput
 }
 
@@ -351,7 +352,7 @@ func (o MobileApplicationOutput) Properties() MobileApplicationPropertiesPtrOutp
 	return o.ApplyT(func(v *MobileApplication) MobileApplicationPropertiesPtrOutput { return v.Properties }).(MobileApplicationPropertiesPtrOutput)
 }
 
-// (Field has overlap with `dynatrace_mobile_app_enablement`) The session replay is enabled (`true`) or disabled (`false`).
+// (Field has overlap with `MobileAppEnablement`) The session replay is enabled (`true`) or disabled (`false`).
 func (o MobileApplicationOutput) SessionReplay() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *MobileApplication) pulumi.BoolPtrOutput { return v.SessionReplay }).(pulumi.BoolPtrOutput)
 }
@@ -362,8 +363,8 @@ func (o MobileApplicationOutput) SessionReplayOnCrash() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *MobileApplication) pulumi.BoolPtrOutput { return v.SessionReplayOnCrash }).(pulumi.BoolPtrOutput)
 }
 
-// (Field has overlap with `dynatrace_mobile_app_enablement` for mobile and `dynatrace_custom_app_enablement` for custom
-// apps) The percentage of user sessions to be analyzed
+// (Field has overlap with `MobileAppEnablement` for mobile and `CustomAppEnablement` for custom apps) The percentage of
+// user sessions to be analyzed
 func (o MobileApplicationOutput) UserSessionPercentage() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *MobileApplication) pulumi.IntPtrOutput { return v.UserSessionPercentage }).(pulumi.IntPtrOutput)
 }
