@@ -35,27 +35,27 @@ export class MetricEvents extends pulumi.CustomResource {
     }
 
     /**
-     * Enabled toggle of metric event entry
+     * This setting is enabled (`true`) or disabled (`false`)
      */
-    public readonly enabled!: pulumi.Output<boolean | undefined>;
+    public readonly enabled!: pulumi.Output<boolean>;
     /**
      * Controls the preferred entity type used for triggered events.
      */
     public readonly eventEntityDimensionKey!: pulumi.Output<string | undefined>;
     /**
-     * The event template of the metric event entry
+     * Event template
      */
     public readonly eventTemplate!: pulumi.Output<outputs.MetricEventsEventTemplate>;
     /**
-     * The legacy id of the metric event entry
+     * Config id
      */
     public readonly legacyId!: pulumi.Output<string>;
     /**
-     * The model properties of the metric event entry
+     * Monitoring strategy
      */
     public readonly modelProperties!: pulumi.Output<outputs.MetricEventsModelProperties>;
     /**
-     * The query definition of the metric event entry
+     * Query definition
      */
     public readonly queryDefinition!: pulumi.Output<outputs.MetricEventsQueryDefinition>;
     /**
@@ -85,6 +85,9 @@ export class MetricEvents extends pulumi.CustomResource {
             resourceInputs["summary"] = state ? state.summary : undefined;
         } else {
             const args = argsOrState as MetricEventsArgs | undefined;
+            if ((!args || args.enabled === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'enabled'");
+            }
             if ((!args || args.eventTemplate === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'eventTemplate'");
             }
@@ -115,7 +118,7 @@ export class MetricEvents extends pulumi.CustomResource {
  */
 export interface MetricEventsState {
     /**
-     * Enabled toggle of metric event entry
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled?: pulumi.Input<boolean>;
     /**
@@ -123,19 +126,19 @@ export interface MetricEventsState {
      */
     eventEntityDimensionKey?: pulumi.Input<string>;
     /**
-     * The event template of the metric event entry
+     * Event template
      */
     eventTemplate?: pulumi.Input<inputs.MetricEventsEventTemplate>;
     /**
-     * The legacy id of the metric event entry
+     * Config id
      */
     legacyId?: pulumi.Input<string>;
     /**
-     * The model properties of the metric event entry
+     * Monitoring strategy
      */
     modelProperties?: pulumi.Input<inputs.MetricEventsModelProperties>;
     /**
-     * The query definition of the metric event entry
+     * Query definition
      */
     queryDefinition?: pulumi.Input<inputs.MetricEventsQueryDefinition>;
     /**
@@ -149,27 +152,27 @@ export interface MetricEventsState {
  */
 export interface MetricEventsArgs {
     /**
-     * Enabled toggle of metric event entry
+     * This setting is enabled (`true`) or disabled (`false`)
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled: pulumi.Input<boolean>;
     /**
      * Controls the preferred entity type used for triggered events.
      */
     eventEntityDimensionKey?: pulumi.Input<string>;
     /**
-     * The event template of the metric event entry
+     * Event template
      */
     eventTemplate: pulumi.Input<inputs.MetricEventsEventTemplate>;
     /**
-     * The legacy id of the metric event entry
+     * Config id
      */
     legacyId?: pulumi.Input<string>;
     /**
-     * The model properties of the metric event entry
+     * Monitoring strategy
      */
     modelProperties: pulumi.Input<inputs.MetricEventsModelProperties>;
     /**
-     * The query definition of the metric event entry
+     * Query definition
      */
     queryDefinition: pulumi.Input<inputs.MetricEventsQueryDefinition>;
     /**

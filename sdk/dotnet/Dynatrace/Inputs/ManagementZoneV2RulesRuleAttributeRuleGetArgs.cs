@@ -14,7 +14,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class ManagementZoneV2RulesRuleAttributeRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Conditions
+        /// no documentation available
         /// </summary>
         [Input("attributeConditions", required: true)]
         public Input<Inputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsGetArgs> AttributeConditions { get; set; } = null!;

@@ -20,7 +20,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<string> ConditionType { get; set; } = null!;
 
         /// <summary>
-        /// Key
+        /// no documentation available
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -32,7 +32,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<string> RuleMatcher { get; set; } = null!;
 
         /// <summary>
-        /// Value
+        /// no documentation available
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

@@ -17,10 +17,18 @@ type ProcessAvailability struct {
 
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata ProcessAvailabilityMetadataPtrOutput `pulumi:"metadata"`
-	// Monitored rule name
+	// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+	MinimumProcesses pulumi.IntPtrOutput `pulumi:"minimumProcesses"`
+	// Monitoring rule name
 	Name pulumi.StringOutput `pulumi:"name"`
+	// Select the operating systems on which the monitoring rule should be applied.
+	OperatingSystems pulumi.StringArrayOutput `pulumi:"operatingSystems"`
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
 	// detection rules associated with it.
 	Rules ProcessAvailabilityRulesPtrOutput `pulumi:"rules"`
@@ -63,10 +71,18 @@ func GetProcessAvailability(ctx *pulumi.Context,
 type processAvailabilityState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata *ProcessAvailabilityMetadata `pulumi:"metadata"`
-	// Monitored rule name
+	// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+	MinimumProcesses *int `pulumi:"minimumProcesses"`
+	// Monitoring rule name
 	Name *string `pulumi:"name"`
+	// Select the operating systems on which the monitoring rule should be applied.
+	OperatingSystems []string `pulumi:"operatingSystems"`
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
 	// detection rules associated with it.
 	Rules *ProcessAvailabilityRules `pulumi:"rules"`
@@ -77,10 +93,18 @@ type processAvailabilityState struct {
 type ProcessAvailabilityState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata ProcessAvailabilityMetadataPtrInput
-	// Monitored rule name
+	// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+	MinimumProcesses pulumi.IntPtrInput
+	// Monitoring rule name
 	Name pulumi.StringPtrInput
+	// Select the operating systems on which the monitoring rule should be applied.
+	OperatingSystems pulumi.StringArrayInput
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
 	// detection rules associated with it.
 	Rules ProcessAvailabilityRulesPtrInput
@@ -95,10 +119,18 @@ func (ProcessAvailabilityState) ElementType() reflect.Type {
 type processAvailabilityArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata *ProcessAvailabilityMetadata `pulumi:"metadata"`
-	// Monitored rule name
+	// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+	MinimumProcesses *int `pulumi:"minimumProcesses"`
+	// Monitoring rule name
 	Name *string `pulumi:"name"`
+	// Select the operating systems on which the monitoring rule should be applied.
+	OperatingSystems []string `pulumi:"operatingSystems"`
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
 	// detection rules associated with it.
 	Rules *ProcessAvailabilityRules `pulumi:"rules"`
@@ -110,10 +142,18 @@ type processAvailabilityArgs struct {
 type ProcessAvailabilityArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata ProcessAvailabilityMetadataPtrInput
-	// Monitored rule name
+	// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+	MinimumProcesses pulumi.IntPtrInput
+	// Monitoring rule name
 	Name pulumi.StringPtrInput
+	// Select the operating systems on which the monitoring rule should be applied.
+	OperatingSystems pulumi.StringArrayInput
 	// Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
 	// detection rules associated with it.
 	Rules ProcessAvailabilityRulesPtrInput
@@ -213,14 +253,31 @@ func (o ProcessAvailabilityOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ProcessAvailability) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+// specified during update the order will remain untouched
+func (o ProcessAvailabilityOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *ProcessAvailability) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
+}
+
 // Set of additional key-value properties to be attached to the triggered event.
 func (o ProcessAvailabilityOutput) Metadata() ProcessAvailabilityMetadataPtrOutput {
 	return o.ApplyT(func(v *ProcessAvailability) ProcessAvailabilityMetadataPtrOutput { return v.Metadata }).(ProcessAvailabilityMetadataPtrOutput)
 }
 
-// Monitored rule name
+// Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+func (o ProcessAvailabilityOutput) MinimumProcesses() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ProcessAvailability) pulumi.IntPtrOutput { return v.MinimumProcesses }).(pulumi.IntPtrOutput)
+}
+
+// Monitoring rule name
 func (o ProcessAvailabilityOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProcessAvailability) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// Select the operating systems on which the monitoring rule should be applied.
+func (o ProcessAvailabilityOutput) OperatingSystems() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ProcessAvailability) pulumi.StringArrayOutput { return v.OperatingSystems }).(pulumi.StringArrayOutput)
 }
 
 // Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple

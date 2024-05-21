@@ -27,7 +27,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.MaintenanceScheduleOnceRecurrence? OnceRecurrence;
         /// <summary>
-        /// The time window of the maintenance window
+        /// The type maintenance window, possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
         /// </summary>
         public readonly string Type;
         /// <summary>

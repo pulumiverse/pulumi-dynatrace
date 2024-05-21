@@ -19,30 +19,37 @@ class WebhookNotificationArgs:
                  active: pulumi.Input[bool],
                  payload: pulumi.Input[str],
                  profile: pulumi.Input[str],
-                 url: pulumi.Input[str],
                  headers: Optional[pulumi.Input['WebhookNotificationHeadersArgs']] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  notify_closed_problems: Optional[pulumi.Input[bool]] = None,
-                 notify_event_merges: Optional[pulumi.Input[bool]] = None):
+                 notify_event_merges: Optional[pulumi.Input[bool]] = None,
+                 oauth2_credentials: Optional[pulumi.Input['WebhookNotificationOauth2CredentialsArgs']] = None,
+                 secret_url: Optional[pulumi.Input[str]] = None,
+                 url: Optional[pulumi.Input[str]] = None,
+                 url_contains_secret: Optional[pulumi.Input[bool]] = None,
+                 use_oauth2: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a WebhookNotification resource.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] payload: The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
-        :param pulumi.Input[str] url: The URL of the WebHook endpoint
         :param pulumi.Input['WebhookNotificationHeadersArgs'] headers: A list of the additional HTTP headers
         :param pulumi.Input[bool] insecure: Accept any, including self-signed and invalid, SSL certificate (`true`) or only trusted (`false`) certificates
         :param pulumi.Input[str] legacy_id: The ID of these settings when referred to from resources requiring the REST API V1 keys
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
         :param pulumi.Input[bool] notify_event_merges: Call webhook if new events merge into existing problems
+        :param pulumi.Input['WebhookNotificationOauth2CredentialsArgs'] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+        :param pulumi.Input[str] secret_url: The secret URL of the webhook endpoint.
+        :param pulumi.Input[str] url: The URL of the WebHook endpoint
+        :param pulumi.Input[bool] url_contains_secret: Secret webhook URL
+        :param pulumi.Input[bool] use_oauth2: Use OAuth 2.0 for authentication
         """
         pulumi.set(__self__, "active", active)
         pulumi.set(__self__, "payload", payload)
         pulumi.set(__self__, "profile", profile)
-        pulumi.set(__self__, "url", url)
         if headers is not None:
             pulumi.set(__self__, "headers", headers)
         if insecure is not None:
@@ -55,6 +62,16 @@ class WebhookNotificationArgs:
             pulumi.set(__self__, "notify_closed_problems", notify_closed_problems)
         if notify_event_merges is not None:
             pulumi.set(__self__, "notify_event_merges", notify_event_merges)
+        if oauth2_credentials is not None:
+            pulumi.set(__self__, "oauth2_credentials", oauth2_credentials)
+        if secret_url is not None:
+            pulumi.set(__self__, "secret_url", secret_url)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+        if url_contains_secret is not None:
+            pulumi.set(__self__, "url_contains_secret", url_contains_secret)
+        if use_oauth2 is not None:
+            pulumi.set(__self__, "use_oauth2", use_oauth2)
 
     @property
     @pulumi.getter
@@ -91,18 +108,6 @@ class WebhookNotificationArgs:
     @profile.setter
     def profile(self, value: pulumi.Input[str]):
         pulumi.set(self, "profile", value)
-
-    @property
-    @pulumi.getter
-    def url(self) -> pulumi.Input[str]:
-        """
-        The URL of the WebHook endpoint
-        """
-        return pulumi.get(self, "url")
-
-    @url.setter
-    def url(self, value: pulumi.Input[str]):
-        pulumi.set(self, "url", value)
 
     @property
     @pulumi.getter
@@ -176,6 +181,66 @@ class WebhookNotificationArgs:
     def notify_event_merges(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "notify_event_merges", value)
 
+    @property
+    @pulumi.getter(name="oauth2Credentials")
+    def oauth2_credentials(self) -> Optional[pulumi.Input['WebhookNotificationOauth2CredentialsArgs']]:
+        """
+        To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+        """
+        return pulumi.get(self, "oauth2_credentials")
+
+    @oauth2_credentials.setter
+    def oauth2_credentials(self, value: Optional[pulumi.Input['WebhookNotificationOauth2CredentialsArgs']]):
+        pulumi.set(self, "oauth2_credentials", value)
+
+    @property
+    @pulumi.getter(name="secretUrl")
+    def secret_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The secret URL of the webhook endpoint.
+        """
+        return pulumi.get(self, "secret_url")
+
+    @secret_url.setter
+    def secret_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "secret_url", value)
+
+    @property
+    @pulumi.getter
+    def url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URL of the WebHook endpoint
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "url", value)
+
+    @property
+    @pulumi.getter(name="urlContainsSecret")
+    def url_contains_secret(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Secret webhook URL
+        """
+        return pulumi.get(self, "url_contains_secret")
+
+    @url_contains_secret.setter
+    def url_contains_secret(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "url_contains_secret", value)
+
+    @property
+    @pulumi.getter(name="useOauth2")
+    def use_oauth2(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Use OAuth 2.0 for authentication
+        """
+        return pulumi.get(self, "use_oauth2")
+
+    @use_oauth2.setter
+    def use_oauth2(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "use_oauth2", value)
+
 
 @pulumi.input_type
 class _WebhookNotificationState:
@@ -187,9 +252,13 @@ class _WebhookNotificationState:
                  name: Optional[pulumi.Input[str]] = None,
                  notify_closed_problems: Optional[pulumi.Input[bool]] = None,
                  notify_event_merges: Optional[pulumi.Input[bool]] = None,
+                 oauth2_credentials: Optional[pulumi.Input['WebhookNotificationOauth2CredentialsArgs']] = None,
                  payload: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
-                 url: Optional[pulumi.Input[str]] = None):
+                 secret_url: Optional[pulumi.Input[str]] = None,
+                 url: Optional[pulumi.Input[str]] = None,
+                 url_contains_secret: Optional[pulumi.Input[bool]] = None,
+                 use_oauth2: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering WebhookNotification resources.
         :param pulumi.Input[bool] active: The configuration is enabled (`true`) or disabled (`false`)
@@ -199,9 +268,13 @@ class _WebhookNotificationState:
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
         :param pulumi.Input[bool] notify_event_merges: Call webhook if new events merge into existing problems
+        :param pulumi.Input['WebhookNotificationOauth2CredentialsArgs'] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
         :param pulumi.Input[str] payload: The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
+        :param pulumi.Input[str] secret_url: The secret URL of the webhook endpoint.
         :param pulumi.Input[str] url: The URL of the WebHook endpoint
+        :param pulumi.Input[bool] url_contains_secret: Secret webhook URL
+        :param pulumi.Input[bool] use_oauth2: Use OAuth 2.0 for authentication
         """
         if active is not None:
             pulumi.set(__self__, "active", active)
@@ -217,12 +290,20 @@ class _WebhookNotificationState:
             pulumi.set(__self__, "notify_closed_problems", notify_closed_problems)
         if notify_event_merges is not None:
             pulumi.set(__self__, "notify_event_merges", notify_event_merges)
+        if oauth2_credentials is not None:
+            pulumi.set(__self__, "oauth2_credentials", oauth2_credentials)
         if payload is not None:
             pulumi.set(__self__, "payload", payload)
         if profile is not None:
             pulumi.set(__self__, "profile", profile)
+        if secret_url is not None:
+            pulumi.set(__self__, "secret_url", secret_url)
         if url is not None:
             pulumi.set(__self__, "url", url)
+        if url_contains_secret is not None:
+            pulumi.set(__self__, "url_contains_secret", url_contains_secret)
+        if use_oauth2 is not None:
+            pulumi.set(__self__, "use_oauth2", use_oauth2)
 
     @property
     @pulumi.getter
@@ -309,6 +390,18 @@ class _WebhookNotificationState:
         pulumi.set(self, "notify_event_merges", value)
 
     @property
+    @pulumi.getter(name="oauth2Credentials")
+    def oauth2_credentials(self) -> Optional[pulumi.Input['WebhookNotificationOauth2CredentialsArgs']]:
+        """
+        To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+        """
+        return pulumi.get(self, "oauth2_credentials")
+
+    @oauth2_credentials.setter
+    def oauth2_credentials(self, value: Optional[pulumi.Input['WebhookNotificationOauth2CredentialsArgs']]):
+        pulumi.set(self, "oauth2_credentials", value)
+
+    @property
     @pulumi.getter
     def payload(self) -> Optional[pulumi.Input[str]]:
         """
@@ -333,6 +426,18 @@ class _WebhookNotificationState:
         pulumi.set(self, "profile", value)
 
     @property
+    @pulumi.getter(name="secretUrl")
+    def secret_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The secret URL of the webhook endpoint.
+        """
+        return pulumi.get(self, "secret_url")
+
+    @secret_url.setter
+    def secret_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "secret_url", value)
+
+    @property
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[str]]:
         """
@@ -343,6 +448,30 @@ class _WebhookNotificationState:
     @url.setter
     def url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "url", value)
+
+    @property
+    @pulumi.getter(name="urlContainsSecret")
+    def url_contains_secret(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Secret webhook URL
+        """
+        return pulumi.get(self, "url_contains_secret")
+
+    @url_contains_secret.setter
+    def url_contains_secret(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "url_contains_secret", value)
+
+    @property
+    @pulumi.getter(name="useOauth2")
+    def use_oauth2(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Use OAuth 2.0 for authentication
+        """
+        return pulumi.get(self, "use_oauth2")
+
+    @use_oauth2.setter
+    def use_oauth2(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "use_oauth2", value)
 
 
 class WebhookNotification(pulumi.CustomResource):
@@ -357,9 +486,13 @@ class WebhookNotification(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  notify_closed_problems: Optional[pulumi.Input[bool]] = None,
                  notify_event_merges: Optional[pulumi.Input[bool]] = None,
+                 oauth2_credentials: Optional[pulumi.Input[pulumi.InputType['WebhookNotificationOauth2CredentialsArgs']]] = None,
                  payload: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
+                 secret_url: Optional[pulumi.Input[str]] = None,
                  url: Optional[pulumi.Input[str]] = None,
+                 url_contains_secret: Optional[pulumi.Input[bool]] = None,
+                 use_oauth2: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
         Create a WebhookNotification resource with the given unique name, props, and options.
@@ -372,9 +505,13 @@ class WebhookNotification(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
         :param pulumi.Input[bool] notify_event_merges: Call webhook if new events merge into existing problems
+        :param pulumi.Input[pulumi.InputType['WebhookNotificationOauth2CredentialsArgs']] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
         :param pulumi.Input[str] payload: The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
+        :param pulumi.Input[str] secret_url: The secret URL of the webhook endpoint.
         :param pulumi.Input[str] url: The URL of the WebHook endpoint
+        :param pulumi.Input[bool] url_contains_secret: Secret webhook URL
+        :param pulumi.Input[bool] use_oauth2: Use OAuth 2.0 for authentication
         """
         ...
     @overload
@@ -406,9 +543,13 @@ class WebhookNotification(pulumi.CustomResource):
                  name: Optional[pulumi.Input[str]] = None,
                  notify_closed_problems: Optional[pulumi.Input[bool]] = None,
                  notify_event_merges: Optional[pulumi.Input[bool]] = None,
+                 oauth2_credentials: Optional[pulumi.Input[pulumi.InputType['WebhookNotificationOauth2CredentialsArgs']]] = None,
                  payload: Optional[pulumi.Input[str]] = None,
                  profile: Optional[pulumi.Input[str]] = None,
+                 secret_url: Optional[pulumi.Input[str]] = None,
                  url: Optional[pulumi.Input[str]] = None,
+                 url_contains_secret: Optional[pulumi.Input[bool]] = None,
+                 use_oauth2: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -427,15 +568,19 @@ class WebhookNotification(pulumi.CustomResource):
             __props__.__dict__["name"] = name
             __props__.__dict__["notify_closed_problems"] = notify_closed_problems
             __props__.__dict__["notify_event_merges"] = notify_event_merges
+            __props__.__dict__["oauth2_credentials"] = oauth2_credentials
             if payload is None and not opts.urn:
                 raise TypeError("Missing required property 'payload'")
             __props__.__dict__["payload"] = payload
             if profile is None and not opts.urn:
                 raise TypeError("Missing required property 'profile'")
             __props__.__dict__["profile"] = profile
-            if url is None and not opts.urn:
-                raise TypeError("Missing required property 'url'")
+            __props__.__dict__["secret_url"] = None if secret_url is None else pulumi.Output.secret(secret_url)
             __props__.__dict__["url"] = url
+            __props__.__dict__["url_contains_secret"] = url_contains_secret
+            __props__.__dict__["use_oauth2"] = use_oauth2
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["secretUrl"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(WebhookNotification, __self__).__init__(
             'dynatrace:index/webhookNotification:WebhookNotification',
             resource_name,
@@ -453,9 +598,13 @@ class WebhookNotification(pulumi.CustomResource):
             name: Optional[pulumi.Input[str]] = None,
             notify_closed_problems: Optional[pulumi.Input[bool]] = None,
             notify_event_merges: Optional[pulumi.Input[bool]] = None,
+            oauth2_credentials: Optional[pulumi.Input[pulumi.InputType['WebhookNotificationOauth2CredentialsArgs']]] = None,
             payload: Optional[pulumi.Input[str]] = None,
             profile: Optional[pulumi.Input[str]] = None,
-            url: Optional[pulumi.Input[str]] = None) -> 'WebhookNotification':
+            secret_url: Optional[pulumi.Input[str]] = None,
+            url: Optional[pulumi.Input[str]] = None,
+            url_contains_secret: Optional[pulumi.Input[bool]] = None,
+            use_oauth2: Optional[pulumi.Input[bool]] = None) -> 'WebhookNotification':
         """
         Get an existing WebhookNotification resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -470,9 +619,13 @@ class WebhookNotification(pulumi.CustomResource):
         :param pulumi.Input[str] name: The name of the notification configuration
         :param pulumi.Input[bool] notify_closed_problems: Send email if problem is closed
         :param pulumi.Input[bool] notify_event_merges: Call webhook if new events merge into existing problems
+        :param pulumi.Input[pulumi.InputType['WebhookNotificationOauth2CredentialsArgs']] oauth2_credentials: To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
         :param pulumi.Input[str] payload: The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         :param pulumi.Input[str] profile: The ID of the associated alerting profile
+        :param pulumi.Input[str] secret_url: The secret URL of the webhook endpoint.
         :param pulumi.Input[str] url: The URL of the WebHook endpoint
+        :param pulumi.Input[bool] url_contains_secret: Secret webhook URL
+        :param pulumi.Input[bool] use_oauth2: Use OAuth 2.0 for authentication
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -485,9 +638,13 @@ class WebhookNotification(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         __props__.__dict__["notify_closed_problems"] = notify_closed_problems
         __props__.__dict__["notify_event_merges"] = notify_event_merges
+        __props__.__dict__["oauth2_credentials"] = oauth2_credentials
         __props__.__dict__["payload"] = payload
         __props__.__dict__["profile"] = profile
+        __props__.__dict__["secret_url"] = secret_url
         __props__.__dict__["url"] = url
+        __props__.__dict__["url_contains_secret"] = url_contains_secret
+        __props__.__dict__["use_oauth2"] = use_oauth2
         return WebhookNotification(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -547,6 +704,14 @@ class WebhookNotification(pulumi.CustomResource):
         return pulumi.get(self, "notify_event_merges")
 
     @property
+    @pulumi.getter(name="oauth2Credentials")
+    def oauth2_credentials(self) -> pulumi.Output[Optional['outputs.WebhookNotificationOauth2Credentials']]:
+        """
+        To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+        """
+        return pulumi.get(self, "oauth2_credentials")
+
+    @property
     @pulumi.getter
     def payload(self) -> pulumi.Output[str]:
         """
@@ -563,10 +728,34 @@ class WebhookNotification(pulumi.CustomResource):
         return pulumi.get(self, "profile")
 
     @property
+    @pulumi.getter(name="secretUrl")
+    def secret_url(self) -> pulumi.Output[Optional[str]]:
+        """
+        The secret URL of the webhook endpoint.
+        """
+        return pulumi.get(self, "secret_url")
+
+    @property
     @pulumi.getter
-    def url(self) -> pulumi.Output[str]:
+    def url(self) -> pulumi.Output[Optional[str]]:
         """
         The URL of the WebHook endpoint
         """
         return pulumi.get(self, "url")
+
+    @property
+    @pulumi.getter(name="urlContainsSecret")
+    def url_contains_secret(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Secret webhook URL
+        """
+        return pulumi.get(self, "url_contains_secret")
+
+    @property
+    @pulumi.getter(name="useOauth2")
+    def use_oauth2(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Use OAuth 2.0 for authentication
+        """
+        return pulumi.get(self, "use_oauth2")
 

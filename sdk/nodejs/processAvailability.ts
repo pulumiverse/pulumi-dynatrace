@@ -39,13 +39,27 @@ export class ProcessAvailability extends pulumi.CustomResource {
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+     * specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Set of additional key-value properties to be attached to the triggered event.
      */
     public readonly metadata!: pulumi.Output<outputs.ProcessAvailabilityMetadata | undefined>;
     /**
-     * Monitored rule name
+     * Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+     */
+    public readonly minimumProcesses!: pulumi.Output<number | undefined>;
+    /**
+     * Monitoring rule name
      */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * Select the operating systems on which the monitoring rule should be applied.
+     */
+    public readonly operatingSystems!: pulumi.Output<string[] | undefined>;
     /**
      * Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
      * detection rules associated with it.
@@ -70,8 +84,11 @@ export class ProcessAvailability extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ProcessAvailabilityState | undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["metadata"] = state ? state.metadata : undefined;
+            resourceInputs["minimumProcesses"] = state ? state.minimumProcesses : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["operatingSystems"] = state ? state.operatingSystems : undefined;
             resourceInputs["rules"] = state ? state.rules : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
         } else {
@@ -80,8 +97,11 @@ export class ProcessAvailability extends pulumi.CustomResource {
                 throw new Error("Missing required property 'enabled'");
             }
             resourceInputs["enabled"] = args ? args.enabled : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["metadata"] = args ? args.metadata : undefined;
+            resourceInputs["minimumProcesses"] = args ? args.minimumProcesses : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["operatingSystems"] = args ? args.operatingSystems : undefined;
             resourceInputs["rules"] = args ? args.rules : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
         }
@@ -99,13 +119,27 @@ export interface ProcessAvailabilityState {
      */
     enabled?: pulumi.Input<boolean>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+     * specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
+    /**
      * Set of additional key-value properties to be attached to the triggered event.
      */
     metadata?: pulumi.Input<inputs.ProcessAvailabilityMetadata>;
     /**
-     * Monitored rule name
+     * Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+     */
+    minimumProcesses?: pulumi.Input<number>;
+    /**
+     * Monitoring rule name
      */
     name?: pulumi.Input<string>;
+    /**
+     * Select the operating systems on which the monitoring rule should be applied.
+     */
+    operatingSystems?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
      * detection rules associated with it.
@@ -126,13 +160,27 @@ export interface ProcessAvailabilityArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+     * specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
+    /**
      * Set of additional key-value properties to be attached to the triggered event.
      */
     metadata?: pulumi.Input<inputs.ProcessAvailabilityMetadata>;
     /**
-     * Monitored rule name
+     * Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+     */
+    minimumProcesses?: pulumi.Input<number>;
+    /**
+     * Monitoring rule name
      */
     name?: pulumi.Input<string>;
+    /**
+     * Select the operating systems on which the monitoring rule should be applied.
+     */
+    operatingSystems?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
      * detection rules associated with it.

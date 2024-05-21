@@ -55,11 +55,15 @@ export class OsServices extends pulumi.CustomResource {
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Set of additional key-value properties to be attached to the triggered event.
      */
     public readonly metadata!: pulumi.Output<outputs.OsServicesMetadata | undefined>;
     /**
-     * Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics consume custom metrics (DDUs). Refer to [documentation](https://dt-url.net/vl03xzk) for DDU consumption examples. Each monitored service consumes one custom metric.
+     * Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
      */
     public readonly monitoring!: pulumi.Output<boolean>;
     /**
@@ -109,6 +113,7 @@ export class OsServices extends pulumi.CustomResource {
             resourceInputs["detectionConditionsLinux"] = state ? state.detectionConditionsLinux : undefined;
             resourceInputs["detectionConditionsWindows"] = state ? state.detectionConditionsWindows : undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["metadata"] = state ? state.metadata : undefined;
             resourceInputs["monitoring"] = state ? state.monitoring : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
@@ -136,6 +141,7 @@ export class OsServices extends pulumi.CustomResource {
             resourceInputs["detectionConditionsLinux"] = args ? args.detectionConditionsLinux : undefined;
             resourceInputs["detectionConditionsWindows"] = args ? args.detectionConditionsWindows : undefined;
             resourceInputs["enabled"] = args ? args.enabled : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["metadata"] = args ? args.metadata : undefined;
             resourceInputs["monitoring"] = args ? args.monitoring : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -175,11 +181,15 @@ export interface OsServicesState {
      */
     enabled?: pulumi.Input<boolean>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
+    /**
      * Set of additional key-value properties to be attached to the triggered event.
      */
     metadata?: pulumi.Input<inputs.OsServicesMetadata>;
     /**
-     * Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics consume custom metrics (DDUs). Refer to [documentation](https://dt-url.net/vl03xzk) for DDU consumption examples. Each monitored service consumes one custom metric.
+     * Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
      */
     monitoring?: pulumi.Input<boolean>;
     /**
@@ -237,11 +247,15 @@ export interface OsServicesArgs {
      */
     enabled: pulumi.Input<boolean>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
+    /**
      * Set of additional key-value properties to be attached to the triggered event.
      */
     metadata?: pulumi.Input<inputs.OsServicesMetadata>;
     /**
-     * Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics consume custom metrics (DDUs). Refer to [documentation](https://dt-url.net/vl03xzk) for DDU consumption examples. Each monitored service consumes one custom metric.
+     * Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
      */
     monitoring: pulumi.Input<boolean>;
     /**

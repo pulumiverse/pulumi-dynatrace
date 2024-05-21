@@ -20,8 +20,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         public readonly string? IpAddressMasking;
         /// <summary>
         /// Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
+        /// 
+        /// Once enabled, IP address masking sets the last octet of monitored IPv4 addresses and the last 80 bits of IPv6 addresses to zeroes. GPS coordinates are rounded up to 1 decimal place (~10 km). This masking occurs in memory. Full IP addresses are never written to disk. Location lookups are made using anonymized IP addresses and GPS coordinates.
         /// </summary>
-        public readonly bool IpAddressMaskingEnabled;
+        public readonly bool? IpAddressMaskingEnabled;
         /// <summary>
         /// Dynatrace captures the URIs and request headers sent from desktop and mobile browsers. Dynatrace also captures full URIs on the server-side to enable detailed performance analysis of your applications. For complete details, visit [Mask personal data in URIs](https://dt-url.net/mask-personal-data-in-URIs).. URIs and request headers contain personal data. When this setting is enabled, Dynatrace automatically detects UUIDs, credit card numbers, email addresses, IP addresses, and other IDs and replaces those values with placeholders. The personal data is then masked in PurePath analysis, error analysis, user action naming for RUM, and elsewhere in Dynatrace.
         /// </summary>
@@ -50,7 +52,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         private DataPrivacyMasking(
             string? ipAddressMasking,
 
-            bool ipAddressMaskingEnabled,
+            bool? ipAddressMaskingEnabled,
 
             bool personalDataUriMaskingEnabled,
 

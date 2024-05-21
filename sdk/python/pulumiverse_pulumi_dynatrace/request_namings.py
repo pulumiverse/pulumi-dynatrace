@@ -67,6 +67,8 @@ class RequestNamings(pulumi.CustomResource):
                  ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
         """
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
         ## Dynatrace Documentation
 
         - Set up request naming - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/set-up-request-naming
@@ -84,6 +86,8 @@ class RequestNamings(pulumi.CustomResource):
                  args: Optional[RequestNamingsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+
         ## Dynatrace Documentation
 
         - Set up request naming - https://www.dynatrace.com/support/help/how-to-use-dynatrace/services/service-monitoring-settings/set-up-request-naming

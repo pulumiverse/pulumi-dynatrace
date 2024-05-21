@@ -43,7 +43,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// });
         /// ```
         /// </summary>
-        public static Task<GetEntityResult> InvokeAsync(GetEntityArgs args, InvokeOptions? options = null)
+        public static Task<GetEntityResult> InvokeAsync(GetEntityArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEntityResult>("dynatrace:index/getEntity:getEntity", args ?? new GetEntityArgs(), options.WithDefaults());
 
         /// <summary>
@@ -77,18 +77,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// });
         /// ```
         /// </summary>
-        public static Output<GetEntityResult> Invoke(GetEntityInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetEntityResult> Invoke(GetEntityInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEntityResult>("dynatrace:index/getEntity:getEntity", args ?? new GetEntityInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetEntityArgs : global::Pulumi.InvokeArgs
     {
-        [Input("name", required: true)]
-        public string Name { get; set; } = null!;
+        [Input("entitySelector")]
+        public string? EntitySelector { get; set; }
 
-        [Input("type", required: true)]
-        public string Type { get; set; } = null!;
+        [Input("from")]
+        public string? From { get; set; }
+
+        [Input("name")]
+        public string? Name { get; set; }
+
+        [Input("to")]
+        public string? To { get; set; }
+
+        [Input("type")]
+        public string? Type { get; set; }
 
         public GetEntityArgs()
         {
@@ -98,11 +107,20 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
 
     public sealed class GetEntityInvokeArgs : global::Pulumi.InvokeArgs
     {
-        [Input("name", required: true)]
-        public Input<string> Name { get; set; } = null!;
+        [Input("entitySelector")]
+        public Input<string>? EntitySelector { get; set; }
 
-        [Input("type", required: true)]
-        public Input<string> Type { get; set; } = null!;
+        [Input("from")]
+        public Input<string>? From { get; set; }
+
+        [Input("name")]
+        public Input<string>? Name { get; set; }
+
+        [Input("to")]
+        public Input<string>? To { get; set; }
+
+        [Input("type")]
+        public Input<string>? Type { get; set; }
 
         public GetEntityInvokeArgs()
         {
@@ -114,23 +132,39 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     [OutputType]
     public sealed class GetEntityResult
     {
+        public readonly string? EntitySelector;
+        public readonly string? From;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
-        public readonly string Name;
-        public readonly string Type;
+        public readonly string? Name;
+        public readonly ImmutableDictionary<string, string> Properties;
+        public readonly string? To;
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetEntityResult(
+            string? entitySelector,
+
+            string? from,
+
             string id,
 
-            string name,
+            string? name,
 
-            string type)
+            ImmutableDictionary<string, string> properties,
+
+            string? to,
+
+            string? type)
         {
+            EntitySelector = entitySelector;
+            From = from;
             Id = id;
             Name = name;
+            Properties = properties;
+            To = to;
             Type = type;
         }
     }

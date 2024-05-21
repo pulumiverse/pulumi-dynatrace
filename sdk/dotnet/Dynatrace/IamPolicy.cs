@@ -10,6 +10,70 @@ using Pulumi;
 
 namespace Pulumiverse.PulumiPackage.Dynatrace
 {
+    /// <summary>
+    /// &gt; This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
+    /// 
+    /// &gt; This resource requires the API token scope **Allow IAM policy configuration for environments** (`iam-policies-management`)
+    /// 
+    /// ## Dynatrace Documentation
+    /// 
+    /// - Dynatrace IAM Policy Management - https://www.dynatrace.com/support/help/manage/access-control/user-management-and-sso/manage-groups-and-permissions/iam/iam-policy-mgt
+    /// 
+    /// - Settings API - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions/iam/iam-getting-started
+    /// 
+    /// ## Prerequisites
+    /// 
+    /// Using this resource requires an OAuth client to be configured within your account settings.
+    /// The scopes of the OAuth Client need to include `account-idm-read`, `account-idm-write`, `account-env-read`, `account-env-write`, `iam-policies-management`, `iam:policies:write`, `iam:policies:read`, `iam:bindings:write`, `iam:bindings:read` and `iam:effective-permissions:read`.
+    /// 
+    /// Finally the provider configuration requires the credentials for that OAuth Client.
+    /// The configuration section of your provider needs to look like this.
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    /// });
+    /// ```
+    /// 
+    /// ## Resource Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.PulumiPackage.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var policy = new Dynatrace.IamPolicy("policy", new()
+    ///     {
+    ///         Environment = "siz654##",
+    ///         StatementQuery = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Dynatrace = Pulumiverse.PulumiPackage.Dynatrace;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var policy = new Dynatrace.IamPolicy("policy", new()
+    ///     {
+    ///         Account = "########-####-####-####-############",
+    ///         StatementQuery = "ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [DynatraceResourceType("dynatrace:index/iamPolicy:IamPolicy")]
     public partial class IamPolicy : global::Pulumi.CustomResource
     {
@@ -48,6 +112,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Output("tags")]
         public Output<ImmutableArray<string>> Tags { get; private set; } = null!;
+
+        /// <summary>
+        /// The ID of this resource is a concatenation of multiple pieces of information (policy UUID, accountID, environmentID, ...). There are use cases where you JUST need the UUID of the Policy, though
+        /// </summary>
+        [Output("uuid")]
+        public Output<string> Uuid { get; private set; } = null!;
 
 
         /// <summary>
@@ -187,6 +257,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
             get => _tags ?? (_tags = new InputList<string>());
             set => _tags = value;
         }
+
+        /// <summary>
+        /// The ID of this resource is a concatenation of multiple pieces of information (policy UUID, accountID, environmentID, ...). There are use cases where you JUST need the UUID of the Policy, though
+        /// </summary>
+        [Input("uuid")]
+        public Input<string>? Uuid { get; set; }
 
         public IamPolicyState()
         {

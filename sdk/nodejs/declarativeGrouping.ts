@@ -44,6 +44,12 @@ export class DeclarativeGrouping extends pulumi.CustomResource {
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+     * specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Monitored technology name
      */
     public readonly name!: pulumi.Output<string>;
@@ -67,6 +73,7 @@ export class DeclarativeGrouping extends pulumi.CustomResource {
             const state = argsOrState as DeclarativeGroupingState | undefined;
             resourceInputs["detection"] = state ? state.detection : undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
         } else {
@@ -76,6 +83,7 @@ export class DeclarativeGrouping extends pulumi.CustomResource {
             }
             resourceInputs["detection"] = args ? args.detection : undefined;
             resourceInputs["enabled"] = args ? args.enabled : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
         }
@@ -97,6 +105,12 @@ export interface DeclarativeGroupingState {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+     * specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Monitored technology name
      */
@@ -120,6 +134,12 @@ export interface DeclarativeGroupingArgs {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+     * instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+     * specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Monitored technology name
      */

@@ -14,6 +14,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public partial class Credentials : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+        /// </summary>
+        [Output("allowContextlessRequests")]
+        public Output<bool?> AllowContextlessRequests { get; private set; } = null!;
+
+        /// <summary>
         /// The certificate in the string format.
         /// </summary>
         [Output("certificate")]
@@ -68,7 +74,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
         /// </summary>
         [Output("scope")]
-        public Output<string> Scope { get; private set; } = null!;
+        public Output<string?> Scope { get; private set; } = null!;
+
+        /// <summary>
+        /// The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        /// </summary>
+        [Output("scopes")]
+        public Output<ImmutableArray<string>> Scopes { get; private set; } = null!;
 
         /// <summary>
         /// Token in the string format. Specifying a token implies `Token Authentication`.
@@ -90,7 +102,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public Credentials(string name, CredentialsArgs args, CustomResourceOptions? options = null)
+        public Credentials(string name, CredentialsArgs? args = null, CustomResourceOptions? options = null)
             : base("dynatrace:index/credentials:Credentials", name, args ?? new CredentialsArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -135,6 +147,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
 
     public sealed class CredentialsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+        /// </summary>
+        [Input("allowContextlessRequests")]
+        public Input<bool>? AllowContextlessRequests { get; set; }
+
         /// <summary>
         /// The certificate in the string format.
         /// </summary>
@@ -205,8 +223,20 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
         /// </summary>
-        [Input("scope", required: true)]
-        public Input<string> Scope { get; set; } = null!;
+        [Input("scope")]
+        public Input<string>? Scope { get; set; }
+
+        [Input("scopes")]
+        private InputList<string>? _scopes;
+
+        /// <summary>
+        /// The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        /// </summary>
+        public InputList<string> Scopes
+        {
+            get => _scopes ?? (_scopes = new InputList<string>());
+            set => _scopes = value;
+        }
 
         [Input("token")]
         private Input<string>? _token;
@@ -248,6 +278,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
 
     public sealed class CredentialsState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+        /// </summary>
+        [Input("allowContextlessRequests")]
+        public Input<bool>? AllowContextlessRequests { get; set; }
+
         /// <summary>
         /// The certificate in the string format.
         /// </summary>
@@ -320,6 +356,18 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
+
+        [Input("scopes")]
+        private InputList<string>? _scopes;
+
+        /// <summary>
+        /// The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        /// </summary>
+        public InputList<string> Scopes
+        {
+            get => _scopes ?? (_scopes = new InputList<string>());
+            set => _scopes = value;
+        }
 
         [Input("token")]
         private Input<string>? _token;

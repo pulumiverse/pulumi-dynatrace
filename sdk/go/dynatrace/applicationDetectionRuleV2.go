@@ -17,6 +17,10 @@ type ApplicationDetectionRuleV2 struct {
 
 	// Select an existing application or create a new one.
 	ApplicationId pulumi.StringOutput `pulumi:"applicationId"`
+	// (v1.274) Add a description for your rule
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
 	Matcher pulumi.StringOutput `pulumi:"matcher"`
 	// Pattern
@@ -64,6 +68,10 @@ func GetApplicationDetectionRuleV2(ctx *pulumi.Context,
 type applicationDetectionRuleV2State struct {
 	// Select an existing application or create a new one.
 	ApplicationId *string `pulumi:"applicationId"`
+	// (v1.274) Add a description for your rule
+	Description *string `pulumi:"description"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
 	Matcher *string `pulumi:"matcher"`
 	// Pattern
@@ -73,6 +81,10 @@ type applicationDetectionRuleV2State struct {
 type ApplicationDetectionRuleV2State struct {
 	// Select an existing application or create a new one.
 	ApplicationId pulumi.StringPtrInput
+	// (v1.274) Add a description for your rule
+	Description pulumi.StringPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
 	Matcher pulumi.StringPtrInput
 	// Pattern
@@ -86,6 +98,10 @@ func (ApplicationDetectionRuleV2State) ElementType() reflect.Type {
 type applicationDetectionRuleV2Args struct {
 	// Select an existing application or create a new one.
 	ApplicationId string `pulumi:"applicationId"`
+	// (v1.274) Add a description for your rule
+	Description *string `pulumi:"description"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
 	Matcher string `pulumi:"matcher"`
 	// Pattern
@@ -96,6 +112,10 @@ type applicationDetectionRuleV2Args struct {
 type ApplicationDetectionRuleV2Args struct {
 	// Select an existing application or create a new one.
 	ApplicationId pulumi.StringInput
+	// (v1.274) Add a description for your rule
+	Description pulumi.StringPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`
 	Matcher pulumi.StringInput
 	// Pattern
@@ -192,6 +212,16 @@ func (o ApplicationDetectionRuleV2Output) ToApplicationDetectionRuleV2OutputWith
 // Select an existing application or create a new one.
 func (o ApplicationDetectionRuleV2Output) ApplicationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ApplicationDetectionRuleV2) pulumi.StringOutput { return v.ApplicationId }).(pulumi.StringOutput)
+}
+
+// (v1.274) Add a description for your rule
+func (o ApplicationDetectionRuleV2Output) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApplicationDetectionRuleV2) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o ApplicationDetectionRuleV2Output) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *ApplicationDetectionRuleV2) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // Possible Values: `DOMAIN_CONTAINS`, `DOMAIN_ENDS_WITH`, `DOMAIN_EQUALS`, `DOMAIN_MATCHES`, `DOMAIN_STARTS_WITH`, `URL_CONTAINS`, `URL_ENDS_WITH`, `URL_EQUALS`, `URL_STARTS_WITH`

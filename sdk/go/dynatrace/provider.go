@@ -18,13 +18,26 @@ import (
 type Provider struct {
 	pulumi.ProviderResourceState
 
-	DtApiToken        pulumi.StringPtrOutput `pulumi:"dtApiToken"`
-	DtClusterApiToken pulumi.StringPtrOutput `pulumi:"dtClusterApiToken"`
-	DtClusterUrl      pulumi.StringPtrOutput `pulumi:"dtClusterUrl"`
-	DtEnvUrl          pulumi.StringPtrOutput `pulumi:"dtEnvUrl"`
-	IamAccountId      pulumi.StringPtrOutput `pulumi:"iamAccountId"`
-	IamClientId       pulumi.StringPtrOutput `pulumi:"iamClientId"`
-	IamClientSecret   pulumi.StringPtrOutput `pulumi:"iamClientSecret"`
+	AccountId              pulumi.StringPtrOutput `pulumi:"accountId"`
+	AutomationClientId     pulumi.StringPtrOutput `pulumi:"automationClientId"`
+	AutomationClientSecret pulumi.StringPtrOutput `pulumi:"automationClientSecret"`
+	// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+	// optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+	// `https://#####.apps.dynatrace.com`
+	AutomationEnvUrl pulumi.StringPtrOutput `pulumi:"automationEnvUrl"`
+	// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+	// `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+	// `https://#####.apps.dynatrace.com`
+	AutomationTokenUrl pulumi.StringPtrOutput `pulumi:"automationTokenUrl"`
+	ClientId           pulumi.StringPtrOutput `pulumi:"clientId"`
+	ClientSecret       pulumi.StringPtrOutput `pulumi:"clientSecret"`
+	DtApiToken         pulumi.StringPtrOutput `pulumi:"dtApiToken"`
+	DtClusterApiToken  pulumi.StringPtrOutput `pulumi:"dtClusterApiToken"`
+	DtClusterUrl       pulumi.StringPtrOutput `pulumi:"dtClusterUrl"`
+	DtEnvUrl           pulumi.StringPtrOutput `pulumi:"dtEnvUrl"`
+	IamAccountId       pulumi.StringPtrOutput `pulumi:"iamAccountId"`
+	IamClientId        pulumi.StringPtrOutput `pulumi:"iamClientId"`
+	IamClientSecret    pulumi.StringPtrOutput `pulumi:"iamClientSecret"`
 }
 
 // NewProvider registers a new resource with the given unique name, arguments, and options.
@@ -54,6 +67,21 @@ func NewProvider(ctx *pulumi.Context,
 			args.DtEnvUrl = pulumi.StringPtr(d.(string))
 		}
 	}
+	if args.AccountId != nil {
+		args.AccountId = pulumi.ToSecret(args.AccountId).(pulumi.StringPtrInput)
+	}
+	if args.AutomationClientId != nil {
+		args.AutomationClientId = pulumi.ToSecret(args.AutomationClientId).(pulumi.StringPtrInput)
+	}
+	if args.AutomationClientSecret != nil {
+		args.AutomationClientSecret = pulumi.ToSecret(args.AutomationClientSecret).(pulumi.StringPtrInput)
+	}
+	if args.ClientId != nil {
+		args.ClientId = pulumi.ToSecret(args.ClientId).(pulumi.StringPtrInput)
+	}
+	if args.ClientSecret != nil {
+		args.ClientSecret = pulumi.ToSecret(args.ClientSecret).(pulumi.StringPtrInput)
+	}
 	if args.DtApiToken != nil {
 		args.DtApiToken = pulumi.ToSecret(args.DtApiToken).(pulumi.StringPtrInput)
 	}
@@ -73,6 +101,11 @@ func NewProvider(ctx *pulumi.Context,
 		args.IamClientSecret = pulumi.ToSecret(args.IamClientSecret).(pulumi.StringPtrInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"accountId",
+		"automationClientId",
+		"automationClientSecret",
+		"clientId",
+		"clientSecret",
 		"dtApiToken",
 		"dtClusterApiToken",
 		"dtClusterUrl",
@@ -91,24 +124,50 @@ func NewProvider(ctx *pulumi.Context,
 }
 
 type providerArgs struct {
-	DtApiToken        *string `pulumi:"dtApiToken"`
-	DtClusterApiToken *string `pulumi:"dtClusterApiToken"`
-	DtClusterUrl      *string `pulumi:"dtClusterUrl"`
-	DtEnvUrl          *string `pulumi:"dtEnvUrl"`
-	IamAccountId      *string `pulumi:"iamAccountId"`
-	IamClientId       *string `pulumi:"iamClientId"`
-	IamClientSecret   *string `pulumi:"iamClientSecret"`
+	AccountId              *string `pulumi:"accountId"`
+	AutomationClientId     *string `pulumi:"automationClientId"`
+	AutomationClientSecret *string `pulumi:"automationClientSecret"`
+	// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+	// optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+	// `https://#####.apps.dynatrace.com`
+	AutomationEnvUrl *string `pulumi:"automationEnvUrl"`
+	// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+	// `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+	// `https://#####.apps.dynatrace.com`
+	AutomationTokenUrl *string `pulumi:"automationTokenUrl"`
+	ClientId           *string `pulumi:"clientId"`
+	ClientSecret       *string `pulumi:"clientSecret"`
+	DtApiToken         *string `pulumi:"dtApiToken"`
+	DtClusterApiToken  *string `pulumi:"dtClusterApiToken"`
+	DtClusterUrl       *string `pulumi:"dtClusterUrl"`
+	DtEnvUrl           *string `pulumi:"dtEnvUrl"`
+	IamAccountId       *string `pulumi:"iamAccountId"`
+	IamClientId        *string `pulumi:"iamClientId"`
+	IamClientSecret    *string `pulumi:"iamClientSecret"`
 }
 
 // The set of arguments for constructing a Provider resource.
 type ProviderArgs struct {
-	DtApiToken        pulumi.StringPtrInput
-	DtClusterApiToken pulumi.StringPtrInput
-	DtClusterUrl      pulumi.StringPtrInput
-	DtEnvUrl          pulumi.StringPtrInput
-	IamAccountId      pulumi.StringPtrInput
-	IamClientId       pulumi.StringPtrInput
-	IamClientSecret   pulumi.StringPtrInput
+	AccountId              pulumi.StringPtrInput
+	AutomationClientId     pulumi.StringPtrInput
+	AutomationClientSecret pulumi.StringPtrInput
+	// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+	// optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+	// `https://#####.apps.dynatrace.com`
+	AutomationEnvUrl pulumi.StringPtrInput
+	// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+	// `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+	// `https://#####.apps.dynatrace.com`
+	AutomationTokenUrl pulumi.StringPtrInput
+	ClientId           pulumi.StringPtrInput
+	ClientSecret       pulumi.StringPtrInput
+	DtApiToken         pulumi.StringPtrInput
+	DtClusterApiToken  pulumi.StringPtrInput
+	DtClusterUrl       pulumi.StringPtrInput
+	DtEnvUrl           pulumi.StringPtrInput
+	IamAccountId       pulumi.StringPtrInput
+	IamClientId        pulumi.StringPtrInput
+	IamClientSecret    pulumi.StringPtrInput
 }
 
 func (ProviderArgs) ElementType() reflect.Type {
@@ -146,6 +205,40 @@ func (o ProviderOutput) ToProviderOutput() ProviderOutput {
 
 func (o ProviderOutput) ToProviderOutputWithContext(ctx context.Context) ProviderOutput {
 	return o
+}
+
+func (o ProviderOutput) AccountId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AccountId }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderOutput) AutomationClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AutomationClientId }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderOutput) AutomationClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AutomationClientSecret }).(pulumi.StringPtrOutput)
+}
+
+// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+// optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+// `https://#####.apps.dynatrace.com`
+func (o ProviderOutput) AutomationEnvUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AutomationEnvUrl }).(pulumi.StringPtrOutput)
+}
+
+// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+// `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+// `https://#####.apps.dynatrace.com`
+func (o ProviderOutput) AutomationTokenUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.AutomationTokenUrl }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderOutput) ClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.ClientId }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderOutput) ClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.ClientSecret }).(pulumi.StringPtrOutput)
 }
 
 func (o ProviderOutput) DtApiToken() pulumi.StringPtrOutput {

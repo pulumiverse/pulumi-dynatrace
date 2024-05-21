@@ -14,25 +14,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class ManagementZoneV2RulesRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// No documentation available
+        /// no documentation available
         /// </summary>
         [Input("attributeRule")]
         public Input<Inputs.ManagementZoneV2RulesRuleAttributeRuleGetArgs>? AttributeRule { get; set; }
 
         /// <summary>
-        /// No documentation available
+        /// no documentation available
         /// </summary>
         [Input("dimensionRule")]
         public Input<Inputs.ManagementZoneV2RulesRuleDimensionRuleGetArgs>? DimensionRule { get; set; }
 
         /// <summary>
-        /// Enabled
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// Entity selector. The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+        /// The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
         /// </summary>
         [Input("entitySelector")]
         public Input<string>? EntitySelector { get; set; }

@@ -17,6 +17,8 @@ type ContainerRule struct {
 
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
 	Mode pulumi.StringOutput `pulumi:"mode"`
 	// Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
@@ -71,6 +73,8 @@ func GetContainerRule(ctx *pulumi.Context,
 type containerRuleState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
 	Mode *string `pulumi:"mode"`
 	// Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
@@ -84,6 +88,8 @@ type containerRuleState struct {
 type ContainerRuleState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
 	Mode pulumi.StringPtrInput
 	// Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
@@ -101,6 +107,8 @@ func (ContainerRuleState) ElementType() reflect.Type {
 type containerRuleArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
 	Mode string `pulumi:"mode"`
 	// Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
@@ -115,6 +123,8 @@ type containerRuleArgs struct {
 type ContainerRuleArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Possible Values: `MONITORING_OFF`, `MONITORING_ON`
 	Mode pulumi.StringInput
 	// Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
@@ -215,6 +225,11 @@ func (o ContainerRuleOutput) ToContainerRuleOutputWithContext(ctx context.Contex
 // This setting is enabled (`true`) or disabled (`false`)
 func (o ContainerRuleOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerRule) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o ContainerRuleOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *ContainerRule) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // Possible Values: `MONITORING_OFF`, `MONITORING_ON`

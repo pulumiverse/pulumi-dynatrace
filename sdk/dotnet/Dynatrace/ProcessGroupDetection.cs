@@ -26,6 +26,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<Outputs.ProcessGroupDetectionGroupExtraction> GroupExtraction { get; private set; } = null!;
 
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Output("insertAfter")]
+        public Output<string> InsertAfter { get; private set; } = null!;
+
+        /// <summary>
         /// You can define the properties that should be used to identify your process instances.
         /// </summary>
         [Output("instanceExtraction")]
@@ -97,6 +103,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<Inputs.ProcessGroupDetectionGroupExtractionArgs> GroupExtraction { get; set; } = null!;
 
         /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
+
+        /// <summary>
         /// You can define the properties that should be used to identify your process instances.
         /// </summary>
         [Input("instanceExtraction")]
@@ -127,6 +139,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Input("groupExtraction")]
         public Input<Inputs.ProcessGroupDetectionGroupExtractionGetArgs>? GroupExtraction { get; set; }
+
+        /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
         /// You can define the properties that should be used to identify your process instances.

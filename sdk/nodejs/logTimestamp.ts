@@ -39,6 +39,10 @@ export class LogTimestamp extends pulumi.CustomResource {
      */
     public readonly configItemTitle!: pulumi.Output<string>;
     /**
+     * (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+     */
+    public readonly dateSearchLimit!: pulumi.Output<number | undefined>;
+    /**
      * Date-time pattern
      */
     public readonly dateTimePattern!: pulumi.Output<string>;
@@ -46,6 +50,10 @@ export class LogTimestamp extends pulumi.CustomResource {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     public readonly enabled!: pulumi.Output<boolean>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
     /**
      * no documentation available
      */
@@ -73,8 +81,10 @@ export class LogTimestamp extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as LogTimestampState | undefined;
             resourceInputs["configItemTitle"] = state ? state.configItemTitle : undefined;
+            resourceInputs["dateSearchLimit"] = state ? state.dateSearchLimit : undefined;
             resourceInputs["dateTimePattern"] = state ? state.dateTimePattern : undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["matchers"] = state ? state.matchers : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
             resourceInputs["timezone"] = state ? state.timezone : undefined;
@@ -93,8 +103,10 @@ export class LogTimestamp extends pulumi.CustomResource {
                 throw new Error("Missing required property 'timezone'");
             }
             resourceInputs["configItemTitle"] = args ? args.configItemTitle : undefined;
+            resourceInputs["dateSearchLimit"] = args ? args.dateSearchLimit : undefined;
             resourceInputs["dateTimePattern"] = args ? args.dateTimePattern : undefined;
             resourceInputs["enabled"] = args ? args.enabled : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["matchers"] = args ? args.matchers : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
             resourceInputs["timezone"] = args ? args.timezone : undefined;
@@ -113,6 +125,10 @@ export interface LogTimestampState {
      */
     configItemTitle?: pulumi.Input<string>;
     /**
+     * (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+     */
+    dateSearchLimit?: pulumi.Input<number>;
+    /**
      * Date-time pattern
      */
     dateTimePattern?: pulumi.Input<string>;
@@ -120,6 +136,10 @@ export interface LogTimestampState {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * no documentation available
      */
@@ -143,6 +163,10 @@ export interface LogTimestampArgs {
      */
     configItemTitle: pulumi.Input<string>;
     /**
+     * (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+     */
+    dateSearchLimit?: pulumi.Input<number>;
+    /**
      * Date-time pattern
      */
     dateTimePattern: pulumi.Input<string>;
@@ -150,6 +174,10 @@ export interface LogTimestampArgs {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * no documentation available
      */

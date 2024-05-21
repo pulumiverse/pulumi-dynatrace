@@ -56,7 +56,19 @@ class AwaitableGetIamGroupResult(GetIamGroupResult):
 def get_iam_group(name: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIamGroupResult:
     """
-    Use this data source to access information about an existing resource.
+    The IAM group data source allows the group ID to be retrieved by its name.
+
+    - `name` (String) - The name of the IAM group
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+
+    example = dynatrace.get_iam_group(name="Terraform Example")
+    pulumi.export("groups", example.id)
+    ```
     """
     __args__ = dict()
     __args__['name'] = name
@@ -72,6 +84,18 @@ def get_iam_group(name: Optional[str] = None,
 def get_iam_group_output(name: Optional[pulumi.Input[str]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIamGroupResult]:
     """
-    Use this data source to access information about an existing resource.
+    The IAM group data source allows the group ID to be retrieved by its name.
+
+    - `name` (String) - The name of the IAM group
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+
+    example = dynatrace.get_iam_group(name="Terraform Example")
+    pulumi.export("groups", example.id)
+    ```
     """
     ...

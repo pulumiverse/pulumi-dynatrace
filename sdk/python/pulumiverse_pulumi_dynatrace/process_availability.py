@@ -17,24 +17,38 @@ __all__ = ['ProcessAvailabilityArgs', 'ProcessAvailability']
 class ProcessAvailabilityArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[bool],
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  metadata: Optional[pulumi.Input['ProcessAvailabilityMetadataArgs']] = None,
+                 minimum_processes: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  rules: Optional[pulumi.Input['ProcessAvailabilityRulesArgs']] = None,
                  scope: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ProcessAvailability resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input['ProcessAvailabilityMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event.
-        :param pulumi.Input[str] name: Monitored rule name
+        :param pulumi.Input[int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+        :param pulumi.Input[str] name: Monitoring rule name
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied.
         :param pulumi.Input['ProcessAvailabilityRulesArgs'] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
                detection rules associated with it.
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "enabled", enabled)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
+        if minimum_processes is not None:
+            pulumi.set(__self__, "minimum_processes", minimum_processes)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if operating_systems is not None:
+            pulumi.set(__self__, "operating_systems", operating_systems)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
         if scope is not None:
@@ -53,6 +67,20 @@ class ProcessAvailabilityArgs:
         pulumi.set(self, "enabled", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['ProcessAvailabilityMetadataArgs']]:
         """
@@ -65,16 +93,40 @@ class ProcessAvailabilityArgs:
         pulumi.set(self, "metadata", value)
 
     @property
+    @pulumi.getter(name="minimumProcesses")
+    def minimum_processes(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+        """
+        return pulumi.get(self, "minimum_processes")
+
+    @minimum_processes.setter
+    def minimum_processes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "minimum_processes", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        Monitored rule name
+        Monitoring rule name
         """
         return pulumi.get(self, "name")
 
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="operatingSystems")
+    def operating_systems(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Select the operating systems on which the monitoring rule should be applied.
+        """
+        return pulumi.get(self, "operating_systems")
+
+    @operating_systems.setter
+    def operating_systems(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "operating_systems", value)
 
     @property
     @pulumi.getter
@@ -106,25 +158,39 @@ class ProcessAvailabilityArgs:
 class _ProcessAvailabilityState:
     def __init__(__self__, *,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  metadata: Optional[pulumi.Input['ProcessAvailabilityMetadataArgs']] = None,
+                 minimum_processes: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  rules: Optional[pulumi.Input['ProcessAvailabilityRulesArgs']] = None,
                  scope: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ProcessAvailability resources.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input['ProcessAvailabilityMetadataArgs'] metadata: Set of additional key-value properties to be attached to the triggered event.
-        :param pulumi.Input[str] name: Monitored rule name
+        :param pulumi.Input[int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+        :param pulumi.Input[str] name: Monitoring rule name
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied.
         :param pulumi.Input['ProcessAvailabilityRulesArgs'] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
                detection rules associated with it.
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
+        if minimum_processes is not None:
+            pulumi.set(__self__, "minimum_processes", minimum_processes)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if operating_systems is not None:
+            pulumi.set(__self__, "operating_systems", operating_systems)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
         if scope is not None:
@@ -143,6 +209,20 @@ class _ProcessAvailabilityState:
         pulumi.set(self, "enabled", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter
     def metadata(self) -> Optional[pulumi.Input['ProcessAvailabilityMetadataArgs']]:
         """
@@ -155,16 +235,40 @@ class _ProcessAvailabilityState:
         pulumi.set(self, "metadata", value)
 
     @property
+    @pulumi.getter(name="minimumProcesses")
+    def minimum_processes(self) -> Optional[pulumi.Input[int]]:
+        """
+        Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+        """
+        return pulumi.get(self, "minimum_processes")
+
+    @minimum_processes.setter
+    def minimum_processes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "minimum_processes", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        Monitored rule name
+        Monitoring rule name
         """
         return pulumi.get(self, "name")
 
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="operatingSystems")
+    def operating_systems(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Select the operating systems on which the monitoring rule should be applied.
+        """
+        return pulumi.get(self, "operating_systems")
+
+    @operating_systems.setter
+    def operating_systems(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "operating_systems", value)
 
     @property
     @pulumi.getter
@@ -198,8 +302,11 @@ class ProcessAvailability(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  metadata: Optional[pulumi.Input[pulumi.InputType['ProcessAvailabilityMetadataArgs']]] = None,
+                 minimum_processes: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  rules: Optional[pulumi.Input[pulumi.InputType['ProcessAvailabilityRulesArgs']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -208,8 +315,13 @@ class ProcessAvailability(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input[pulumi.InputType['ProcessAvailabilityMetadataArgs']] metadata: Set of additional key-value properties to be attached to the triggered event.
-        :param pulumi.Input[str] name: Monitored rule name
+        :param pulumi.Input[int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+        :param pulumi.Input[str] name: Monitoring rule name
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied.
         :param pulumi.Input[pulumi.InputType['ProcessAvailabilityRulesArgs']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
                detection rules associated with it.
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -238,8 +350,11 @@ class ProcessAvailability(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  metadata: Optional[pulumi.Input[pulumi.InputType['ProcessAvailabilityMetadataArgs']]] = None,
+                 minimum_processes: Optional[pulumi.Input[int]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  rules: Optional[pulumi.Input[pulumi.InputType['ProcessAvailabilityRulesArgs']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -254,8 +369,11 @@ class ProcessAvailability(pulumi.CustomResource):
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
+            __props__.__dict__["insert_after"] = insert_after
             __props__.__dict__["metadata"] = metadata
+            __props__.__dict__["minimum_processes"] = minimum_processes
             __props__.__dict__["name"] = name
+            __props__.__dict__["operating_systems"] = operating_systems
             __props__.__dict__["rules"] = rules
             __props__.__dict__["scope"] = scope
         super(ProcessAvailability, __self__).__init__(
@@ -269,8 +387,11 @@ class ProcessAvailability(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             metadata: Optional[pulumi.Input[pulumi.InputType['ProcessAvailabilityMetadataArgs']]] = None,
+            minimum_processes: Optional[pulumi.Input[int]] = None,
             name: Optional[pulumi.Input[str]] = None,
+            operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             rules: Optional[pulumi.Input[pulumi.InputType['ProcessAvailabilityRulesArgs']]] = None,
             scope: Optional[pulumi.Input[str]] = None) -> 'ProcessAvailability':
         """
@@ -281,8 +402,13 @@ class ProcessAvailability(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input[pulumi.InputType['ProcessAvailabilityMetadataArgs']] metadata: Set of additional key-value properties to be attached to the triggered event.
-        :param pulumi.Input[str] name: Monitored rule name
+        :param pulumi.Input[int] minimum_processes: Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+        :param pulumi.Input[str] name: Monitoring rule name
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] operating_systems: Select the operating systems on which the monitoring rule should be applied.
         :param pulumi.Input[pulumi.InputType['ProcessAvailabilityRulesArgs']] rules: Define process detection rules by selecting a process property and a condition. Each monitoring rule can have multiple
                detection rules associated with it.
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
@@ -292,8 +418,11 @@ class ProcessAvailability(pulumi.CustomResource):
         __props__ = _ProcessAvailabilityState.__new__(_ProcessAvailabilityState)
 
         __props__.__dict__["enabled"] = enabled
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["metadata"] = metadata
+        __props__.__dict__["minimum_processes"] = minimum_processes
         __props__.__dict__["name"] = name
+        __props__.__dict__["operating_systems"] = operating_systems
         __props__.__dict__["rules"] = rules
         __props__.__dict__["scope"] = scope
         return ProcessAvailability(resource_name, opts=opts, __props__=__props__)
@@ -307,6 +436,16 @@ class ProcessAvailability(pulumi.CustomResource):
         return pulumi.get(self, "enabled")
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @property
     @pulumi.getter
     def metadata(self) -> pulumi.Output[Optional['outputs.ProcessAvailabilityMetadata']]:
         """
@@ -315,12 +454,28 @@ class ProcessAvailability(pulumi.CustomResource):
         return pulumi.get(self, "metadata")
 
     @property
+    @pulumi.getter(name="minimumProcesses")
+    def minimum_processes(self) -> pulumi.Output[Optional[int]]:
+        """
+        Specify a minimum number of processes matching the monitoring rule. If it's not satisfied, an alert will open.
+        """
+        return pulumi.get(self, "minimum_processes")
+
+    @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        Monitored rule name
+        Monitoring rule name
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="operatingSystems")
+    def operating_systems(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        """
+        Select the operating systems on which the monitoring rule should be applied.
+        """
+        return pulumi.get(self, "operating_systems")
 
     @property
     @pulumi.getter

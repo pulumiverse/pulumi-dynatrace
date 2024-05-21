@@ -7,6 +7,72 @@ import * as utilities from "../utilities";
 declare var exports: any;
 const __config = new pulumi.Config("dynatrace");
 
+export declare const accountId: string | undefined;
+Object.defineProperty(exports, "accountId", {
+    get() {
+        return __config.get("accountId");
+    },
+    enumerable: true,
+});
+
+export declare const automationClientId: string | undefined;
+Object.defineProperty(exports, "automationClientId", {
+    get() {
+        return __config.get("automationClientId");
+    },
+    enumerable: true,
+});
+
+export declare const automationClientSecret: string | undefined;
+Object.defineProperty(exports, "automationClientSecret", {
+    get() {
+        return __config.get("automationClientSecret");
+    },
+    enumerable: true,
+});
+
+/**
+ * The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+ * optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+ * `https://#####.apps.dynatrace.com`
+ */
+export declare const automationEnvUrl: string | undefined;
+Object.defineProperty(exports, "automationEnvUrl", {
+    get() {
+        return __config.get("automationEnvUrl");
+    },
+    enumerable: true,
+});
+
+/**
+ * The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+ * `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+ * `https://#####.apps.dynatrace.com`
+ */
+export declare const automationTokenUrl: string | undefined;
+Object.defineProperty(exports, "automationTokenUrl", {
+    get() {
+        return __config.get("automationTokenUrl");
+    },
+    enumerable: true,
+});
+
+export declare const clientId: string | undefined;
+Object.defineProperty(exports, "clientId", {
+    get() {
+        return __config.get("clientId");
+    },
+    enumerable: true,
+});
+
+export declare const clientSecret: string | undefined;
+Object.defineProperty(exports, "clientSecret", {
+    get() {
+        return __config.get("clientSecret");
+    },
+    enumerable: true,
+});
+
 export declare const dtApiToken: string | undefined;
 Object.defineProperty(exports, "dtApiToken", {
     get() {

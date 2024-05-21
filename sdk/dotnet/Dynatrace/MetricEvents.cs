@@ -14,10 +14,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public partial class MetricEvents : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Enabled toggle of metric event entry
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         [Output("enabled")]
-        public Output<bool?> Enabled { get; private set; } = null!;
+        public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
         /// Controls the preferred entity type used for triggered events.
@@ -26,25 +26,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<string?> EventEntityDimensionKey { get; private set; } = null!;
 
         /// <summary>
-        /// The event template of the metric event entry
+        /// Event template
         /// </summary>
         [Output("eventTemplate")]
         public Output<Outputs.MetricEventsEventTemplate> EventTemplate { get; private set; } = null!;
 
         /// <summary>
-        /// The legacy id of the metric event entry
+        /// Config id
         /// </summary>
         [Output("legacyId")]
         public Output<string> LegacyId { get; private set; } = null!;
 
         /// <summary>
-        /// The model properties of the metric event entry
+        /// Monitoring strategy
         /// </summary>
         [Output("modelProperties")]
         public Output<Outputs.MetricEventsModelProperties> ModelProperties { get; private set; } = null!;
 
         /// <summary>
-        /// The query definition of the metric event entry
+        /// Query definition
         /// </summary>
         [Output("queryDefinition")]
         public Output<Outputs.MetricEventsQueryDefinition> QueryDefinition { get; private set; } = null!;
@@ -103,10 +103,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class MetricEventsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Enabled toggle of metric event entry
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
-        [Input("enabled")]
-        public Input<bool>? Enabled { get; set; }
+        [Input("enabled", required: true)]
+        public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
         /// Controls the preferred entity type used for triggered events.
@@ -115,25 +115,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? EventEntityDimensionKey { get; set; }
 
         /// <summary>
-        /// The event template of the metric event entry
+        /// Event template
         /// </summary>
         [Input("eventTemplate", required: true)]
         public Input<Inputs.MetricEventsEventTemplateArgs> EventTemplate { get; set; } = null!;
 
         /// <summary>
-        /// The legacy id of the metric event entry
+        /// Config id
         /// </summary>
         [Input("legacyId")]
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The model properties of the metric event entry
+        /// Monitoring strategy
         /// </summary>
         [Input("modelProperties", required: true)]
         public Input<Inputs.MetricEventsModelPropertiesArgs> ModelProperties { get; set; } = null!;
 
         /// <summary>
-        /// The query definition of the metric event entry
+        /// Query definition
         /// </summary>
         [Input("queryDefinition", required: true)]
         public Input<Inputs.MetricEventsQueryDefinitionArgs> QueryDefinition { get; set; } = null!;
@@ -153,7 +153,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class MetricEventsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Enabled toggle of metric event entry
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -165,25 +165,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? EventEntityDimensionKey { get; set; }
 
         /// <summary>
-        /// The event template of the metric event entry
+        /// Event template
         /// </summary>
         [Input("eventTemplate")]
         public Input<Inputs.MetricEventsEventTemplateGetArgs>? EventTemplate { get; set; }
 
         /// <summary>
-        /// The legacy id of the metric event entry
+        /// Config id
         /// </summary>
         [Input("legacyId")]
         public Input<string>? LegacyId { get; set; }
 
         /// <summary>
-        /// The model properties of the metric event entry
+        /// Monitoring strategy
         /// </summary>
         [Input("modelProperties")]
         public Input<Inputs.MetricEventsModelPropertiesGetArgs>? ModelProperties { get; set; }
 
         /// <summary>
-        /// The query definition of the metric event entry
+        /// Query definition
         /// </summary>
         [Input("queryDefinition")]
         public Input<Inputs.MetricEventsQueryDefinitionGetArgs>? QueryDefinition { get; set; }

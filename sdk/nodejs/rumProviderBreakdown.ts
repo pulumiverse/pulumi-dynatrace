@@ -43,6 +43,10 @@ export class RumProviderBreakdown extends pulumi.CustomResource {
      */
     public readonly iconUrl!: pulumi.Output<string | undefined>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
      */
     public readonly reportPublicImprovement!: pulumi.Output<boolean>;
@@ -70,6 +74,7 @@ export class RumProviderBreakdown extends pulumi.CustomResource {
             const state = argsOrState as RumProviderBreakdownState | undefined;
             resourceInputs["domainNamePatternList"] = state ? state.domainNamePatternList : undefined;
             resourceInputs["iconUrl"] = state ? state.iconUrl : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["reportPublicImprovement"] = state ? state.reportPublicImprovement : undefined;
             resourceInputs["resourceName"] = state ? state.resourceName : undefined;
             resourceInputs["resourceType"] = state ? state.resourceType : undefined;
@@ -89,6 +94,7 @@ export class RumProviderBreakdown extends pulumi.CustomResource {
             }
             resourceInputs["domainNamePatternList"] = args ? args.domainNamePatternList : undefined;
             resourceInputs["iconUrl"] = args ? args.iconUrl : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["reportPublicImprovement"] = args ? args.reportPublicImprovement : undefined;
             resourceInputs["resourceName"] = args ? args.resourceName : undefined;
             resourceInputs["resourceType"] = args ? args.resourceType : undefined;
@@ -110,6 +116,10 @@ export interface RumProviderBreakdownState {
      * Specify an URL for the provider's brand icon
      */
     iconUrl?: pulumi.Input<string>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
      */
@@ -136,6 +146,10 @@ export interface RumProviderBreakdownArgs {
      * Specify an URL for the provider's brand icon
      */
     iconUrl?: pulumi.Input<string>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
      */

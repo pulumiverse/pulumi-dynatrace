@@ -27,7 +27,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly bool? Negate;
         /// <summary>
-        /// Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+        /// Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `REGEX_MATCHES`, `ENDS_WITH` and `STRING_EQUALS`
         /// </summary>
         public readonly string Operator;
         /// <summary>

@@ -41,6 +41,10 @@ export class BusinessEventsBuckets extends pulumi.CustomResource {
      */
     public readonly enabled!: pulumi.Output<boolean>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
     public readonly matcher!: pulumi.Output<string>;
@@ -64,6 +68,7 @@ export class BusinessEventsBuckets extends pulumi.CustomResource {
             const state = argsOrState as BusinessEventsBucketsState | undefined;
             resourceInputs["bucketName"] = state ? state.bucketName : undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["matcher"] = state ? state.matcher : undefined;
             resourceInputs["ruleName"] = state ? state.ruleName : undefined;
         } else {
@@ -82,6 +87,7 @@ export class BusinessEventsBuckets extends pulumi.CustomResource {
             }
             resourceInputs["bucketName"] = args ? args.bucketName : undefined;
             resourceInputs["enabled"] = args ? args.enabled : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["matcher"] = args ? args.matcher : undefined;
             resourceInputs["ruleName"] = args ? args.ruleName : undefined;
         }
@@ -102,6 +108,10 @@ export interface BusinessEventsBucketsState {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled?: pulumi.Input<boolean>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */
@@ -124,6 +134,10 @@ export interface BusinessEventsBucketsArgs {
      * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: pulumi.Input<boolean>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * [See our documentation](https://dt-url.net/bp234rv)
      */

@@ -17,6 +17,8 @@ type SpanCaptureRule struct {
 
 	// Whether to create an entry point or not
 	Action pulumi.StringOutput `pulumi:"action"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Matching strategies for the Span
 	Matches SpanCaptureRuleMatchesOutput `pulumi:"matches"`
 	// The name of the rule
@@ -61,6 +63,8 @@ func GetSpanCaptureRule(ctx *pulumi.Context,
 type spanCaptureRuleState struct {
 	// Whether to create an entry point or not
 	Action *string `pulumi:"action"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Matching strategies for the Span
 	Matches *SpanCaptureRuleMatches `pulumi:"matches"`
 	// The name of the rule
@@ -70,6 +74,8 @@ type spanCaptureRuleState struct {
 type SpanCaptureRuleState struct {
 	// Whether to create an entry point or not
 	Action pulumi.StringPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Matching strategies for the Span
 	Matches SpanCaptureRuleMatchesPtrInput
 	// The name of the rule
@@ -83,6 +89,8 @@ func (SpanCaptureRuleState) ElementType() reflect.Type {
 type spanCaptureRuleArgs struct {
 	// Whether to create an entry point or not
 	Action string `pulumi:"action"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Matching strategies for the Span
 	Matches SpanCaptureRuleMatches `pulumi:"matches"`
 	// The name of the rule
@@ -93,6 +101,8 @@ type spanCaptureRuleArgs struct {
 type SpanCaptureRuleArgs struct {
 	// Whether to create an entry point or not
 	Action pulumi.StringInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Matching strategies for the Span
 	Matches SpanCaptureRuleMatchesInput
 	// The name of the rule
@@ -189,6 +199,11 @@ func (o SpanCaptureRuleOutput) ToSpanCaptureRuleOutputWithContext(ctx context.Co
 // Whether to create an entry point or not
 func (o SpanCaptureRuleOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v *SpanCaptureRule) pulumi.StringOutput { return v.Action }).(pulumi.StringOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o SpanCaptureRuleOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *SpanCaptureRule) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // Matching strategies for the Span

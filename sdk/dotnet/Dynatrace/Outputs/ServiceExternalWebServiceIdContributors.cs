@@ -19,7 +19,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly bool DetectAsWebRequestService;
         /// <summary>
-        /// Let the Port contribute to the Service Id
+        /// Let the port contribute to the Service Id
         /// </summary>
         public readonly bool? PortForServiceId;
         /// <summary>

@@ -19,6 +19,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Output("contents")]
         public Output<string> Contents { get; private set; } = null!;
 
+        /// <summary>
+        /// ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `dynatrace.JsonDashboardBase` for a concrete example.
+        /// </summary>
+        [Output("linkId")]
+        public Output<string> LinkId { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a JsonDashboard resource with the given unique name, arguments, and options.
@@ -72,6 +78,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Input("contents", required: true)]
         public Input<string> Contents { get; set; } = null!;
 
+        /// <summary>
+        /// ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `dynatrace.JsonDashboardBase` for a concrete example.
+        /// </summary>
+        [Input("linkId")]
+        public Input<string>? LinkId { get; set; }
+
         public JsonDashboardArgs()
         {
         }
@@ -85,6 +97,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Input("contents")]
         public Input<string>? Contents { get; set; }
+
+        /// <summary>
+        /// ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `dynatrace.JsonDashboardBase` for a concrete example.
+        /// </summary>
+        [Input("linkId")]
+        public Input<string>? LinkId { get; set; }
 
         public JsonDashboardState()
         {

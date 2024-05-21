@@ -22,7 +22,7 @@ type BrowserMonitor struct {
 	// The frequency of the monitor, in minutes.
 	Frequency pulumi.IntOutput `pulumi:"frequency"`
 	// The key performance metrics configuration
-	KeyPerformanceMetrics BrowserMonitorKeyPerformanceMetricsPtrOutput `pulumi:"keyPerformanceMetrics"`
+	KeyPerformanceMetrics BrowserMonitorKeyPerformanceMetricsOutput `pulumi:"keyPerformanceMetrics"`
 	// A list of locations from which the monitor is executed. To specify a location, use its entity ID.
 	Locations pulumi.StringArrayOutput `pulumi:"locations"`
 	// A set of manually assigned applications.
@@ -45,6 +45,9 @@ func NewBrowserMonitor(ctx *pulumi.Context,
 
 	if args.Frequency == nil {
 		return nil, errors.New("invalid value for required argument 'Frequency'")
+	}
+	if args.KeyPerformanceMetrics == nil {
+		return nil, errors.New("invalid value for required argument 'KeyPerformanceMetrics'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource BrowserMonitor
@@ -124,7 +127,7 @@ type browserMonitorArgs struct {
 	// The frequency of the monitor, in minutes.
 	Frequency int `pulumi:"frequency"`
 	// The key performance metrics configuration
-	KeyPerformanceMetrics *BrowserMonitorKeyPerformanceMetrics `pulumi:"keyPerformanceMetrics"`
+	KeyPerformanceMetrics BrowserMonitorKeyPerformanceMetrics `pulumi:"keyPerformanceMetrics"`
 	// A list of locations from which the monitor is executed. To specify a location, use its entity ID.
 	Locations []string `pulumi:"locations"`
 	// A set of manually assigned applications.
@@ -147,7 +150,7 @@ type BrowserMonitorArgs struct {
 	// The frequency of the monitor, in minutes.
 	Frequency pulumi.IntInput
 	// The key performance metrics configuration
-	KeyPerformanceMetrics BrowserMonitorKeyPerformanceMetricsPtrInput
+	KeyPerformanceMetrics BrowserMonitorKeyPerformanceMetricsInput
 	// A list of locations from which the monitor is executed. To specify a location, use its entity ID.
 	Locations pulumi.StringArrayInput
 	// A set of manually assigned applications.
@@ -264,8 +267,8 @@ func (o BrowserMonitorOutput) Frequency() pulumi.IntOutput {
 }
 
 // The key performance metrics configuration
-func (o BrowserMonitorOutput) KeyPerformanceMetrics() BrowserMonitorKeyPerformanceMetricsPtrOutput {
-	return o.ApplyT(func(v *BrowserMonitor) BrowserMonitorKeyPerformanceMetricsPtrOutput { return v.KeyPerformanceMetrics }).(BrowserMonitorKeyPerformanceMetricsPtrOutput)
+func (o BrowserMonitorOutput) KeyPerformanceMetrics() BrowserMonitorKeyPerformanceMetricsOutput {
+	return o.ApplyT(func(v *BrowserMonitor) BrowserMonitorKeyPerformanceMetricsOutput { return v.KeyPerformanceMetrics }).(BrowserMonitorKeyPerformanceMetricsOutput)
 }
 
 // A list of locations from which the monitor is executed. To specify a location, use its entity ID.

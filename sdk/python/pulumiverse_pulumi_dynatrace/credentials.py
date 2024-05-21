@@ -16,207 +16,7 @@ __all__ = ['CredentialsArgs', 'Credentials']
 @pulumi.input_type
 class CredentialsArgs:
     def __init__(__self__, *,
-                 scope: pulumi.Input[str],
-                 certificate: Optional[pulumi.Input[str]] = None,
-                 credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]] = None,
-                 description: Optional[pulumi.Input[str]] = None,
-                 external: Optional[pulumi.Input['CredentialsExternalArgs']] = None,
-                 format: Optional[pulumi.Input[str]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
-                 owner_access_only: Optional[pulumi.Input[bool]] = None,
-                 password: Optional[pulumi.Input[str]] = None,
-                 public: Optional[pulumi.Input[bool]] = None,
-                 token: Optional[pulumi.Input[str]] = None,
-                 username: Optional[pulumi.Input[str]] = None):
-        """
-        The set of arguments for constructing a Credentials resource.
-        :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
-        :param pulumi.Input[str] certificate: The certificate in the string format.
-        :param pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]] credential_usage_summaries: The list contains summary data related to the use of credentials
-        :param pulumi.Input[str] description: A short description of the credentials set
-        :param pulumi.Input['CredentialsExternalArgs'] external: External Vault Configuration
-        :param pulumi.Input[str] format: The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
-        :param pulumi.Input[str] name: The name of the credentials set
-        :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
-        :param pulumi.Input[bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
-        :param pulumi.Input[str] token: Token in the string format. Specifying a token implies `Token Authentication`.
-        :param pulumi.Input[str] username: The username of the credentials set.
-        """
-        pulumi.set(__self__, "scope", scope)
-        if certificate is not None:
-            pulumi.set(__self__, "certificate", certificate)
-        if credential_usage_summaries is not None:
-            warnings.warn("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""", DeprecationWarning)
-            pulumi.log.warn("""credential_usage_summaries is deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
-        if credential_usage_summaries is not None:
-            pulumi.set(__self__, "credential_usage_summaries", credential_usage_summaries)
-        if description is not None:
-            pulumi.set(__self__, "description", description)
-        if external is not None:
-            pulumi.set(__self__, "external", external)
-        if format is not None:
-            pulumi.set(__self__, "format", format)
-        if name is not None:
-            pulumi.set(__self__, "name", name)
-        if owner_access_only is not None:
-            pulumi.set(__self__, "owner_access_only", owner_access_only)
-        if password is not None:
-            pulumi.set(__self__, "password", password)
-        if public is not None:
-            pulumi.set(__self__, "public", public)
-        if token is not None:
-            pulumi.set(__self__, "token", token)
-        if username is not None:
-            pulumi.set(__self__, "username", username)
-
-    @property
-    @pulumi.getter
-    def scope(self) -> pulumi.Input[str]:
-        """
-        The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
-        """
-        return pulumi.get(self, "scope")
-
-    @scope.setter
-    def scope(self, value: pulumi.Input[str]):
-        pulumi.set(self, "scope", value)
-
-    @property
-    @pulumi.getter
-    def certificate(self) -> Optional[pulumi.Input[str]]:
-        """
-        The certificate in the string format.
-        """
-        return pulumi.get(self, "certificate")
-
-    @certificate.setter
-    def certificate(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "certificate", value)
-
-    @property
-    @pulumi.getter(name="credentialUsageSummaries")
-    def credential_usage_summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]]:
-        """
-        The list contains summary data related to the use of credentials
-        """
-        warnings.warn("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""", DeprecationWarning)
-        pulumi.log.warn("""credential_usage_summaries is deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
-
-        return pulumi.get(self, "credential_usage_summaries")
-
-    @credential_usage_summaries.setter
-    def credential_usage_summaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]]):
-        pulumi.set(self, "credential_usage_summaries", value)
-
-    @property
-    @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        A short description of the credentials set
-        """
-        return pulumi.get(self, "description")
-
-    @description.setter
-    def description(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "description", value)
-
-    @property
-    @pulumi.getter
-    def external(self) -> Optional[pulumi.Input['CredentialsExternalArgs']]:
-        """
-        External Vault Configuration
-        """
-        return pulumi.get(self, "external")
-
-    @external.setter
-    def external(self, value: Optional[pulumi.Input['CredentialsExternalArgs']]):
-        pulumi.set(self, "external", value)
-
-    @property
-    @pulumi.getter
-    def format(self) -> Optional[pulumi.Input[str]]:
-        """
-        The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
-        """
-        return pulumi.get(self, "format")
-
-    @format.setter
-    def format(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "format", value)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the credentials set
-        """
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter(name="ownerAccessOnly")
-    def owner_access_only(self) -> Optional[pulumi.Input[bool]]:
-        """
-        The credentials set is available to every user (`false`) or to owner only (`true`)
-        """
-        return pulumi.get(self, "owner_access_only")
-
-    @owner_access_only.setter
-    def owner_access_only(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "owner_access_only", value)
-
-    @property
-    @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "password")
-
-    @password.setter
-    def password(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "password", value)
-
-    @property
-    @pulumi.getter
-    def public(self) -> Optional[pulumi.Input[bool]]:
-        """
-        For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
-        """
-        return pulumi.get(self, "public")
-
-    @public.setter
-    def public(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "public", value)
-
-    @property
-    @pulumi.getter
-    def token(self) -> Optional[pulumi.Input[str]]:
-        """
-        Token in the string format. Specifying a token implies `Token Authentication`.
-        """
-        return pulumi.get(self, "token")
-
-    @token.setter
-    def token(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "token", value)
-
-    @property
-    @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[str]]:
-        """
-        The username of the credentials set.
-        """
-        return pulumi.get(self, "username")
-
-    @username.setter
-    def username(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "username", value)
-
-
-@pulumi.input_type
-class _CredentialsState:
-    def __init__(__self__, *,
+                 allow_contextless_requests: Optional[pulumi.Input[bool]] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
                  credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -227,10 +27,12 @@ class _CredentialsState:
                  password: Optional[pulumi.Input[str]] = None,
                  public: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
+                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  token: Optional[pulumi.Input[str]] = None,
                  username: Optional[pulumi.Input[str]] = None):
         """
-        Input properties used for looking up and filtering Credentials resources.
+        The set of arguments for constructing a Credentials resource.
+        :param pulumi.Input[bool] allow_contextless_requests: Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
         :param pulumi.Input[str] certificate: The certificate in the string format.
         :param pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]] credential_usage_summaries: The list contains summary data related to the use of credentials
         :param pulumi.Input[str] description: A short description of the credentials set
@@ -240,9 +42,12 @@ class _CredentialsState:
         :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
         :param pulumi.Input[bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
         :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
         :param pulumi.Input[str] token: Token in the string format. Specifying a token implies `Token Authentication`.
         :param pulumi.Input[str] username: The username of the credentials set.
         """
+        if allow_contextless_requests is not None:
+            pulumi.set(__self__, "allow_contextless_requests", allow_contextless_requests)
         if certificate is not None:
             pulumi.set(__self__, "certificate", certificate)
         if credential_usage_summaries is not None:
@@ -265,11 +70,28 @@ class _CredentialsState:
         if public is not None:
             pulumi.set(__self__, "public", public)
         if scope is not None:
+            warnings.warn("""Deprecated(v279), please use `scopes` instead.""", DeprecationWarning)
+            pulumi.log.warn("""scope is deprecated: Deprecated(v279), please use `scopes` instead.""")
+        if scope is not None:
             pulumi.set(__self__, "scope", scope)
+        if scopes is not None:
+            pulumi.set(__self__, "scopes", scopes)
         if token is not None:
             pulumi.set(__self__, "token", token)
         if username is not None:
             pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="allowContextlessRequests")
+    def allow_contextless_requests(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+        """
+        return pulumi.get(self, "allow_contextless_requests")
+
+    @allow_contextless_requests.setter
+    def allow_contextless_requests(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_contextless_requests", value)
 
     @property
     @pulumi.getter
@@ -385,11 +207,266 @@ class _CredentialsState:
         """
         The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
         """
+        warnings.warn("""Deprecated(v279), please use `scopes` instead.""", DeprecationWarning)
+        pulumi.log.warn("""scope is deprecated: Deprecated(v279), please use `scopes` instead.""")
+
         return pulumi.get(self, "scope")
 
     @scope.setter
     def scope(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "scope", value)
+
+    @property
+    @pulumi.getter
+    def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        """
+        return pulumi.get(self, "scopes")
+
+    @scopes.setter
+    def scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "scopes", value)
+
+    @property
+    @pulumi.getter
+    def token(self) -> Optional[pulumi.Input[str]]:
+        """
+        Token in the string format. Specifying a token implies `Token Authentication`.
+        """
+        return pulumi.get(self, "token")
+
+    @token.setter
+    def token(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "token", value)
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[pulumi.Input[str]]:
+        """
+        The username of the credentials set.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "username", value)
+
+
+@pulumi.input_type
+class _CredentialsState:
+    def __init__(__self__, *,
+                 allow_contextless_requests: Optional[pulumi.Input[bool]] = None,
+                 certificate: Optional[pulumi.Input[str]] = None,
+                 credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]] = None,
+                 description: Optional[pulumi.Input[str]] = None,
+                 external: Optional[pulumi.Input['CredentialsExternalArgs']] = None,
+                 format: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 owner_access_only: Optional[pulumi.Input[bool]] = None,
+                 password: Optional[pulumi.Input[str]] = None,
+                 public: Optional[pulumi.Input[bool]] = None,
+                 scope: Optional[pulumi.Input[str]] = None,
+                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 token: Optional[pulumi.Input[str]] = None,
+                 username: Optional[pulumi.Input[str]] = None):
+        """
+        Input properties used for looking up and filtering Credentials resources.
+        :param pulumi.Input[bool] allow_contextless_requests: Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+        :param pulumi.Input[str] certificate: The certificate in the string format.
+        :param pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]] credential_usage_summaries: The list contains summary data related to the use of credentials
+        :param pulumi.Input[str] description: A short description of the credentials set
+        :param pulumi.Input['CredentialsExternalArgs'] external: External Vault Configuration
+        :param pulumi.Input[str] format: The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
+        :param pulumi.Input[str] name: The name of the credentials set
+        :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
+        :param pulumi.Input[bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
+        :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        :param pulumi.Input[str] token: Token in the string format. Specifying a token implies `Token Authentication`.
+        :param pulumi.Input[str] username: The username of the credentials set.
+        """
+        if allow_contextless_requests is not None:
+            pulumi.set(__self__, "allow_contextless_requests", allow_contextless_requests)
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if credential_usage_summaries is not None:
+            warnings.warn("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""", DeprecationWarning)
+            pulumi.log.warn("""credential_usage_summaries is deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
+        if credential_usage_summaries is not None:
+            pulumi.set(__self__, "credential_usage_summaries", credential_usage_summaries)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if external is not None:
+            pulumi.set(__self__, "external", external)
+        if format is not None:
+            pulumi.set(__self__, "format", format)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if owner_access_only is not None:
+            pulumi.set(__self__, "owner_access_only", owner_access_only)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if public is not None:
+            pulumi.set(__self__, "public", public)
+        if scope is not None:
+            warnings.warn("""Deprecated(v279), please use `scopes` instead.""", DeprecationWarning)
+            pulumi.log.warn("""scope is deprecated: Deprecated(v279), please use `scopes` instead.""")
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
+        if scopes is not None:
+            pulumi.set(__self__, "scopes", scopes)
+        if token is not None:
+            pulumi.set(__self__, "token", token)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="allowContextlessRequests")
+    def allow_contextless_requests(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+        """
+        return pulumi.get(self, "allow_contextless_requests")
+
+    @allow_contextless_requests.setter
+    def allow_contextless_requests(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "allow_contextless_requests", value)
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional[pulumi.Input[str]]:
+        """
+        The certificate in the string format.
+        """
+        return pulumi.get(self, "certificate")
+
+    @certificate.setter
+    def certificate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "certificate", value)
+
+    @property
+    @pulumi.getter(name="credentialUsageSummaries")
+    def credential_usage_summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]]:
+        """
+        The list contains summary data related to the use of credentials
+        """
+        warnings.warn("""`credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""", DeprecationWarning)
+        pulumi.log.warn("""credential_usage_summaries is deprecated: `credential_usage_summary` will be removed in future versions. It's not getting filled anymore, because it's runtime data""")
+
+        return pulumi.get(self, "credential_usage_summaries")
+
+    @credential_usage_summaries.setter
+    def credential_usage_summaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CredentialsCredentialUsageSummaryArgs']]]]):
+        pulumi.set(self, "credential_usage_summaries", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        A short description of the credentials set
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def external(self) -> Optional[pulumi.Input['CredentialsExternalArgs']]:
+        """
+        External Vault Configuration
+        """
+        return pulumi.get(self, "external")
+
+    @external.setter
+    def external(self, value: Optional[pulumi.Input['CredentialsExternalArgs']]):
+        pulumi.set(self, "external", value)
+
+    @property
+    @pulumi.getter
+    def format(self) -> Optional[pulumi.Input[str]]:
+        """
+        The certificate format. Possible values are `PEM`, `PKCS12` and `UNKNOWN`.
+        """
+        return pulumi.get(self, "format")
+
+    @format.setter
+    def format(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "format", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The name of the credentials set
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="ownerAccessOnly")
+    def owner_access_only(self) -> Optional[pulumi.Input[bool]]:
+        """
+        The credentials set is available to every user (`false`) or to owner only (`true`)
+        """
+        return pulumi.get(self, "owner_access_only")
+
+    @owner_access_only.setter
+    def owner_access_only(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "owner_access_only", value)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter
+    def public(self) -> Optional[pulumi.Input[bool]]:
+        """
+        For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
+        """
+        return pulumi.get(self, "public")
+
+    @public.setter
+    def public(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "public", value)
+
+    @property
+    @pulumi.getter
+    def scope(self) -> Optional[pulumi.Input[str]]:
+        """
+        The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        """
+        warnings.warn("""Deprecated(v279), please use `scopes` instead.""", DeprecationWarning)
+        pulumi.log.warn("""scope is deprecated: Deprecated(v279), please use `scopes` instead.""")
+
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scope", value)
+
+    @property
+    @pulumi.getter
+    def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        """
+        return pulumi.get(self, "scopes")
+
+    @scopes.setter
+    def scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "scopes", value)
 
     @property
     @pulumi.getter
@@ -421,6 +498,7 @@ class Credentials(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 allow_contextless_requests: Optional[pulumi.Input[bool]] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
                  credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -431,6 +509,7 @@ class Credentials(pulumi.CustomResource):
                  password: Optional[pulumi.Input[str]] = None,
                  public: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
+                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  token: Optional[pulumi.Input[str]] = None,
                  username: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -438,6 +517,7 @@ class Credentials(pulumi.CustomResource):
         Create a Credentials resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] allow_contextless_requests: Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
         :param pulumi.Input[str] certificate: The certificate in the string format.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]] credential_usage_summaries: The list contains summary data related to the use of credentials
         :param pulumi.Input[str] description: A short description of the credentials set
@@ -447,6 +527,7 @@ class Credentials(pulumi.CustomResource):
         :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
         :param pulumi.Input[bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
         :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
         :param pulumi.Input[str] token: Token in the string format. Specifying a token implies `Token Authentication`.
         :param pulumi.Input[str] username: The username of the credentials set.
         """
@@ -454,7 +535,7 @@ class Credentials(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: CredentialsArgs,
+                 args: Optional[CredentialsArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Create a Credentials resource with the given unique name, props, and options.
@@ -473,6 +554,7 @@ class Credentials(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 allow_contextless_requests: Optional[pulumi.Input[bool]] = None,
                  certificate: Optional[pulumi.Input[str]] = None,
                  credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
@@ -483,6 +565,7 @@ class Credentials(pulumi.CustomResource):
                  password: Optional[pulumi.Input[str]] = None,
                  public: Optional[pulumi.Input[bool]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
+                 scopes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  token: Optional[pulumi.Input[str]] = None,
                  username: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -494,6 +577,7 @@ class Credentials(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = CredentialsArgs.__new__(CredentialsArgs)
 
+            __props__.__dict__["allow_contextless_requests"] = allow_contextless_requests
             __props__.__dict__["certificate"] = certificate
             __props__.__dict__["credential_usage_summaries"] = credential_usage_summaries
             __props__.__dict__["description"] = description
@@ -503,9 +587,8 @@ class Credentials(pulumi.CustomResource):
             __props__.__dict__["owner_access_only"] = owner_access_only
             __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
             __props__.__dict__["public"] = public
-            if scope is None and not opts.urn:
-                raise TypeError("Missing required property 'scope'")
             __props__.__dict__["scope"] = scope
+            __props__.__dict__["scopes"] = scopes
             __props__.__dict__["token"] = None if token is None else pulumi.Output.secret(token)
             __props__.__dict__["username"] = None if username is None else pulumi.Output.secret(username)
         secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["password", "token", "username"])
@@ -520,6 +603,7 @@ class Credentials(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            allow_contextless_requests: Optional[pulumi.Input[bool]] = None,
             certificate: Optional[pulumi.Input[str]] = None,
             credential_usage_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
@@ -530,6 +614,7 @@ class Credentials(pulumi.CustomResource):
             password: Optional[pulumi.Input[str]] = None,
             public: Optional[pulumi.Input[bool]] = None,
             scope: Optional[pulumi.Input[str]] = None,
+            scopes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             token: Optional[pulumi.Input[str]] = None,
             username: Optional[pulumi.Input[str]] = None) -> 'Credentials':
         """
@@ -539,6 +624,7 @@ class Credentials(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[bool] allow_contextless_requests: Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
         :param pulumi.Input[str] certificate: The certificate in the string format.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CredentialsCredentialUsageSummaryArgs']]]] credential_usage_summaries: The list contains summary data related to the use of credentials
         :param pulumi.Input[str] description: A short description of the credentials set
@@ -548,6 +634,7 @@ class Credentials(pulumi.CustomResource):
         :param pulumi.Input[bool] owner_access_only: The credentials set is available to every user (`false`) or to owner only (`true`)
         :param pulumi.Input[bool] public: For certificate authentication specifies whether it's public certificate auth (`true`) or not (`false`).
         :param pulumi.Input[str] scope: The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] scopes: The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
         :param pulumi.Input[str] token: Token in the string format. Specifying a token implies `Token Authentication`.
         :param pulumi.Input[str] username: The username of the credentials set.
         """
@@ -555,6 +642,7 @@ class Credentials(pulumi.CustomResource):
 
         __props__ = _CredentialsState.__new__(_CredentialsState)
 
+        __props__.__dict__["allow_contextless_requests"] = allow_contextless_requests
         __props__.__dict__["certificate"] = certificate
         __props__.__dict__["credential_usage_summaries"] = credential_usage_summaries
         __props__.__dict__["description"] = description
@@ -565,9 +653,18 @@ class Credentials(pulumi.CustomResource):
         __props__.__dict__["password"] = password
         __props__.__dict__["public"] = public
         __props__.__dict__["scope"] = scope
+        __props__.__dict__["scopes"] = scopes
         __props__.__dict__["token"] = token
         __props__.__dict__["username"] = username
         return Credentials(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="allowContextlessRequests")
+    def allow_contextless_requests(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+        """
+        return pulumi.get(self, "allow_contextless_requests")
 
     @property
     @pulumi.getter
@@ -643,11 +740,22 @@ class Credentials(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def scope(self) -> pulumi.Output[str]:
+    def scope(self) -> pulumi.Output[Optional[str]]:
         """
         The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
         """
+        warnings.warn("""Deprecated(v279), please use `scopes` instead.""", DeprecationWarning)
+        pulumi.log.warn("""scope is deprecated: Deprecated(v279), please use `scopes` instead.""")
+
         return pulumi.get(self, "scope")
+
+    @property
+    @pulumi.getter
+    def scopes(self) -> pulumi.Output[Optional[Sequence[str]]]:
+        """
+        The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+        """
+        return pulumi.get(self, "scopes")
 
     @property
     @pulumi.getter

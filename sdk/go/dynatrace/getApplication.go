@@ -11,10 +11,46 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// The application data source allows the application ID to be retrieved by its name and optionally tags / tag-value pairs.
+// The application data source allows the application ID to be retrieved by its name.
 //
 // - `name` queries for all applications with the specified name
-// - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			test, err := dynatrace.GetApplication(ctx, &dynatrace.GetApplicationArgs{
+//				Name: "Example",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewApplicationDetectionRule(ctx, "#name#", &dynatrace.ApplicationDetectionRuleArgs{
+//				ApplicationIdentifier: pulumi.String(test.Id),
+//				FilterConfig: &dynatrace.ApplicationDetectionRuleFilterConfigArgs{
+//					ApplicationMatchTarget: pulumi.String("DOMAIN"),
+//					ApplicationMatchType:   pulumi.String("MATCHES"),
+//					Pattern:                pulumi.String("www.google.com"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetApplication(ctx *pulumi.Context, args *GetApplicationArgs, opts ...pulumi.InvokeOption) (*GetApplicationResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetApplicationResult

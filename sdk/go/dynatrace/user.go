@@ -12,11 +12,6 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// ## Dynatrace Documentation
-//
-// - User management and SSO - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso
-//
-// - User management API - https://www.dynatrace.com/support/help/dynatrace-api/account-management-api/user-management-api
 type User struct {
 	pulumi.CustomResourceState
 

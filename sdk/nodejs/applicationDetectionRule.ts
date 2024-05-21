@@ -44,6 +44,8 @@ export class ApplicationDetectionRule extends pulumi.CustomResource {
     public readonly filterConfig!: pulumi.Output<outputs.ApplicationDetectionRuleFilterConfig>;
     /**
      * The unique name of the Application detection rule
+     *
+     * @deprecated Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -100,6 +102,8 @@ export interface ApplicationDetectionRuleState {
     filterConfig?: pulumi.Input<inputs.ApplicationDetectionRuleFilterConfig>;
     /**
      * The unique name of the Application detection rule
+     *
+     * @deprecated Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.
      */
     name?: pulumi.Input<string>;
     /**
@@ -122,6 +126,8 @@ export interface ApplicationDetectionRuleArgs {
     filterConfig: pulumi.Input<inputs.ApplicationDetectionRuleFilterConfig>;
     /**
      * The unique name of the Application detection rule
+     *
+     * @deprecated Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.
      */
     name?: pulumi.Input<string>;
     /**

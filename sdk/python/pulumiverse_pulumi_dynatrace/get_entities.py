@@ -9,7 +9,6 @@ import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 from . import outputs
-from ._inputs import *
 
 __all__ = [
     'GetEntitiesResult',
@@ -23,21 +22,40 @@ class GetEntitiesResult:
     """
     A collection of values returned by getEntities.
     """
-    def __init__(__self__, entities=None, id=None, type=None):
-        if entities and not isinstance(entities, dict):
-            raise TypeError("Expected argument 'entities' to be a dict")
+    def __init__(__self__, entities=None, entity_selector=None, from_=None, id=None, to=None, type=None):
+        if entities and not isinstance(entities, list):
+            raise TypeError("Expected argument 'entities' to be a list")
         pulumi.set(__self__, "entities", entities)
+        if entity_selector and not isinstance(entity_selector, str):
+            raise TypeError("Expected argument 'entity_selector' to be a str")
+        pulumi.set(__self__, "entity_selector", entity_selector)
+        if from_ and not isinstance(from_, str):
+            raise TypeError("Expected argument 'from_' to be a str")
+        pulumi.set(__self__, "from_", from_)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if to and not isinstance(to, str):
+            raise TypeError("Expected argument 'to' to be a str")
+        pulumi.set(__self__, "to", to)
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter
-    def entities(self) -> 'outputs.GetEntitiesEntitiesResult':
+    def entities(self) -> Sequence['outputs.GetEntitiesEntityResult']:
         return pulumi.get(self, "entities")
+
+    @property
+    @pulumi.getter(name="entitySelector")
+    def entity_selector(self) -> Optional[str]:
+        return pulumi.get(self, "entity_selector")
+
+    @property
+    @pulumi.getter(name="from")
+    def from_(self) -> Optional[str]:
+        return pulumi.get(self, "from_")
 
     @property
     @pulumi.getter
@@ -49,7 +67,12 @@ class GetEntitiesResult:
 
     @property
     @pulumi.getter
-    def type(self) -> str:
+    def to(self) -> Optional[str]:
+        return pulumi.get(self, "to")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
         return pulumi.get(self, "type")
 
 
@@ -60,11 +83,16 @@ class AwaitableGetEntitiesResult(GetEntitiesResult):
             yield self
         return GetEntitiesResult(
             entities=self.entities,
+            entity_selector=self.entity_selector,
+            from_=self.from_,
             id=self.id,
+            to=self.to,
             type=self.type)
 
 
-def get_entities(entities: Optional[pulumi.InputType['GetEntitiesEntitiesArgs']] = None,
+def get_entities(entity_selector: Optional[str] = None,
+                 from_: Optional[str] = None,
+                 to: Optional[str] = None,
                  type: Optional[str] = None,
                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEntitiesResult:
     """
@@ -83,20 +111,27 @@ def get_entities(entities: Optional[pulumi.InputType['GetEntitiesEntitiesArgs']]
     ```
     """
     __args__ = dict()
-    __args__['entities'] = entities
+    __args__['entitySelector'] = entity_selector
+    __args__['from'] = from_
+    __args__['to'] = to
     __args__['type'] = type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('dynatrace:index/getEntities:getEntities', __args__, opts=opts, typ=GetEntitiesResult).value
 
     return AwaitableGetEntitiesResult(
         entities=pulumi.get(__ret__, 'entities'),
+        entity_selector=pulumi.get(__ret__, 'entity_selector'),
+        from_=pulumi.get(__ret__, 'from_'),
         id=pulumi.get(__ret__, 'id'),
+        to=pulumi.get(__ret__, 'to'),
         type=pulumi.get(__ret__, 'type'))
 
 
 @_utilities.lift_output_func(get_entities)
-def get_entities_output(entities: Optional[pulumi.Input[Optional[pulumi.InputType['GetEntitiesEntitiesArgs']]]] = None,
-                        type: Optional[pulumi.Input[str]] = None,
+def get_entities_output(entity_selector: Optional[pulumi.Input[Optional[str]]] = None,
+                        from_: Optional[pulumi.Input[Optional[str]]] = None,
+                        to: Optional[pulumi.Input[Optional[str]]] = None,
+                        type: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEntitiesResult]:
     """
     The entities data source allows all entities to be retrieved by its type.

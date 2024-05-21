@@ -11,6 +11,36 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// The `RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
+//
+// - `name` (String) - The name of the request attribute
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			example, err := dynatrace.LookupRequestAttribute(ctx, &dynatrace.LookupRequestAttributeArgs{
+//				Name: "Terraform Example",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("id", example.Id)
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupRequestAttribute(ctx *pulumi.Context, args *LookupRequestAttributeArgs, opts ...pulumi.InvokeOption) (*LookupRequestAttributeResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupRequestAttributeResult

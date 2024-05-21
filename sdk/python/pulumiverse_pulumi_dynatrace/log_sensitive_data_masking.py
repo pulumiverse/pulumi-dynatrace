@@ -18,6 +18,7 @@ class LogSensitiveDataMaskingArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[bool],
                  masking: pulumi.Input['LogSensitiveDataMaskingMaskingArgs'],
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matchers: Optional[pulumi.Input['LogSensitiveDataMaskingMatchersArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None):
@@ -25,12 +26,15 @@ class LogSensitiveDataMaskingArgs:
         The set of arguments for constructing a LogSensitiveDataMasking resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['LogSensitiveDataMaskingMaskingArgs'] masking: no documentation available
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogSensitiveDataMaskingMatchersArgs'] matchers: no documentation available
         :param pulumi.Input[str] name: Name
         :param pulumi.Input[str] scope: The scope of this setting (HOST-########, HOST_GROUP-########). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "masking", masking)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if matchers is not None:
             pulumi.set(__self__, "matchers", matchers)
         if name is not None:
@@ -61,6 +65,18 @@ class LogSensitiveDataMaskingArgs:
     @masking.setter
     def masking(self, value: pulumi.Input['LogSensitiveDataMaskingMaskingArgs']):
         pulumi.set(self, "masking", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter
@@ -103,6 +119,7 @@ class LogSensitiveDataMaskingArgs:
 class _LogSensitiveDataMaskingState:
     def __init__(__self__, *,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  masking: Optional[pulumi.Input['LogSensitiveDataMaskingMaskingArgs']] = None,
                  matchers: Optional[pulumi.Input['LogSensitiveDataMaskingMatchersArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -110,6 +127,7 @@ class _LogSensitiveDataMaskingState:
         """
         Input properties used for looking up and filtering LogSensitiveDataMasking resources.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogSensitiveDataMaskingMaskingArgs'] masking: no documentation available
         :param pulumi.Input['LogSensitiveDataMaskingMatchersArgs'] matchers: no documentation available
         :param pulumi.Input[str] name: Name
@@ -117,6 +135,8 @@ class _LogSensitiveDataMaskingState:
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if masking is not None:
             pulumi.set(__self__, "masking", masking)
         if matchers is not None:
@@ -137,6 +157,18 @@ class _LogSensitiveDataMaskingState:
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter
@@ -193,6 +225,7 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  masking: Optional[pulumi.Input[pulumi.InputType['LogSensitiveDataMaskingMaskingArgs']]] = None,
                  matchers: Optional[pulumi.Input[pulumi.InputType['LogSensitiveDataMaskingMatchersArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -203,6 +236,7 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[pulumi.InputType['LogSensitiveDataMaskingMaskingArgs']] masking: no documentation available
         :param pulumi.Input[pulumi.InputType['LogSensitiveDataMaskingMatchersArgs']] matchers: no documentation available
         :param pulumi.Input[str] name: Name
@@ -232,6 +266,7 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  masking: Optional[pulumi.Input[pulumi.InputType['LogSensitiveDataMaskingMaskingArgs']]] = None,
                  matchers: Optional[pulumi.Input[pulumi.InputType['LogSensitiveDataMaskingMatchersArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -248,6 +283,7 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
+            __props__.__dict__["insert_after"] = insert_after
             if masking is None and not opts.urn:
                 raise TypeError("Missing required property 'masking'")
             __props__.__dict__["masking"] = masking
@@ -265,6 +301,7 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             masking: Optional[pulumi.Input[pulumi.InputType['LogSensitiveDataMaskingMaskingArgs']]] = None,
             matchers: Optional[pulumi.Input[pulumi.InputType['LogSensitiveDataMaskingMatchersArgs']]] = None,
             name: Optional[pulumi.Input[str]] = None,
@@ -277,6 +314,7 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[pulumi.InputType['LogSensitiveDataMaskingMaskingArgs']] masking: no documentation available
         :param pulumi.Input[pulumi.InputType['LogSensitiveDataMaskingMatchersArgs']] matchers: no documentation available
         :param pulumi.Input[str] name: Name
@@ -287,6 +325,7 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
         __props__ = _LogSensitiveDataMaskingState.__new__(_LogSensitiveDataMaskingState)
 
         __props__.__dict__["enabled"] = enabled
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["masking"] = masking
         __props__.__dict__["matchers"] = matchers
         __props__.__dict__["name"] = name
@@ -300,6 +339,14 @@ class LogSensitiveDataMasking(pulumi.CustomResource):
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter

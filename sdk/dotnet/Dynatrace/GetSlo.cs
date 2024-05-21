@@ -105,19 +105,103 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class GetSloResult
     {
         /// <summary>
+        /// Burn rate visualization is enabled (`true`) or disabled (`false`)
+        /// </summary>
+        public readonly bool BurnRateVisualizationEnabled;
+        /// <summary>
+        /// The custom description of the SLO
+        /// </summary>
+        public readonly string Description;
+        /// <summary>
+        /// The SLO is enabled (`true`) or disabled (`false`)
+        /// </summary>
+        public readonly bool Enabled;
+        /// <summary>
+        /// The evaluation type of the SLO. Currently only `AGGREGATE` is supported
+        /// </summary>
+        public readonly string EvaluationType;
+        /// <summary>
+        /// The timeframe during which the SLO is to be evaluated. For the timeframe you can enter expressions like -1h (last hour), -1w (last week) or complex expressions like -2d to now (last two days), -1d/d to now/d (beginning of yesterday to beginning of today).
+        /// </summary>
+        public readonly string EvaluationWindow;
+        /// <summary>
+        /// The threshold defines when a burn rate is marked as fast-burning (high-emergency). Burn rates lower than this threshold (and greater than 1) are highlighted as slow-burn (low-emergency)
+        /// </summary>
+        public readonly double FastBurnThreshold;
+        /// <summary>
+        /// The entity filter for the SLO evaluation. See [syntax of entity selector](https://dt-url.net/entityselector) for details
+        /// </summary>
+        public readonly string Filter;
+        /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The ID of this setting when referred to by the Config REST API V1
+        /// </summary>
+        public readonly string LegacyId;
+        /// <summary>
+        /// The percentage-based metric expression for the calculation of the SLO
+        /// </summary>
+        public readonly string MetricExpression;
+        /// <summary>
+        /// No documentation available
+        /// </summary>
+        public readonly string MetricName;
         public readonly string Name;
+        /// <summary>
+        /// The target value of the SLO
+        /// </summary>
+        public readonly double TargetSuccess;
+        /// <summary>
+        /// The warning value of the SLO. At warning state the SLO is still fulfilled but is getting close to failure
+        /// </summary>
+        public readonly double TargetWarning;
 
         [OutputConstructor]
         private GetSloResult(
+            bool burnRateVisualizationEnabled,
+
+            string description,
+
+            bool enabled,
+
+            string evaluationType,
+
+            string evaluationWindow,
+
+            double fastBurnThreshold,
+
+            string filter,
+
             string id,
 
-            string name)
+            string legacyId,
+
+            string metricExpression,
+
+            string metricName,
+
+            string name,
+
+            double targetSuccess,
+
+            double targetWarning)
         {
+            BurnRateVisualizationEnabled = burnRateVisualizationEnabled;
+            Description = description;
+            Enabled = enabled;
+            EvaluationType = evaluationType;
+            EvaluationWindow = evaluationWindow;
+            FastBurnThreshold = fastBurnThreshold;
+            Filter = filter;
             Id = id;
+            LegacyId = legacyId;
+            MetricExpression = metricExpression;
+            MetricName = metricName;
             Name = name;
+            TargetSuccess = targetSuccess;
+            TargetWarning = targetWarning;
         }
     }
 }

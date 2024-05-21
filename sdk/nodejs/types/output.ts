@@ -52,7 +52,7 @@ export interface AlertingFiltersFilterCustomDescription {
      */
     negate?: boolean;
     /**
-     * Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+     * Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `REGEX_MATCHES`, `ENDS_WITH` and `STRING_EQUALS`
      */
     operator: string;
     /**
@@ -74,9 +74,13 @@ export interface AlertingFiltersFilterCustomMetadataItems {
 
 export interface AlertingFiltersFilterCustomMetadataItemsFilter {
     /**
-     * Type 'dt.' for key hints.
+     * GET /api/v2/eventProperties for list of available keys
      */
     key: string;
+    /**
+     * no documentation available
+     */
+    negate?: boolean;
     /**
      * Value
      */
@@ -97,7 +101,7 @@ export interface AlertingFiltersFilterCustomTitle {
      */
     negate?: boolean;
     /**
-     * Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `CONTAINS_REGEX`, `ENDS_WITH` and `EQUALS`
+     * Operator of the comparison.   You can reverse it by setting **negate** to `true`. Possible values are `BEGINS_WITH`, `CONTAINS`, `REGEX_MATCHES`, `ENDS_WITH` and `STRING_EQUALS`
      */
     operator: string;
     /**
@@ -301,7 +305,7 @@ export interface AlertingRulesRule {
      */
     severityLevel: string;
     /**
-     * A set of tags you want to filter by. You can also specify a tag value alongside the tag name using the syntax `name:value`.
+     * Entities which contain any/all of the configured tags will match this alerting profile. It is recommended to use manual tags.
      */
     tags?: string[];
 }
@@ -649,6 +653,692 @@ export interface ApplicationErrorRulesHttpErrorsRule {
      * The URL to look for
      */
     url?: string;
+}
+
+export interface AppsecNotificationAttackCandidateBasedEmailPayload {
+    /**
+     * The template of the email notifications.  
+     * In case a value of a security problem is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the body might leak information to untrusted parties.  
+     *   
+     * Available placeholders:  
+     * **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example: "A-1234".  
+     * **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+     * **{Type}**: The type of attack, for example: "SQL Injection".  
+     * **{AttackUrl}**: URL of the attack in Dynatrace.  
+     * **{ProcessGroupId}**: Details about the process group attacked.  
+     * **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+     * **{Status}**: The status of the attack, for example: "Exploited"  
+     * **{Timestamp}**: When the attack happened.  
+     * **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+     */
+    body: string;
+    /**
+     * The subject of the email notifications.. Available placeholders:  
+     * **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example, "A-1234".  
+     * **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+     * **{Type}**: The type of attack, for example: "SQL Injection".  
+     * **{AttackUrl}**: URL of the attack in Dynatrace.  
+     * **{ProcessGroupId}**: Details about the process group attacked.  
+     * **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+     * **{Status}**: The status of the attack, for example: "Exploited"  
+     * **{Timestamp}**: When the attack happened.  
+     * **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+     */
+    subject: string;
+}
+
+export interface AppsecNotificationAttackCandidateBasedJiraPayload {
+    /**
+     * The description of the Jira issue to be created by this notification.  
+     * In case a value of an attack is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the description might leak information to untrusted parties.  
+     *   
+     * Available placeholders:  
+     * **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example: "A-1234".  
+     * **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+     * **{Type}**: The type of attack, for example: "SQL Injection".  
+     * **{AttackUrl}**: URL of the attack in Dynatrace.  
+     * **{ProcessGroupId}**: Details about the process group attacked.  
+     * **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+     * **{Status}**: The status of the attack, for example: "Exploited"  
+     * **{Timestamp}**: When the attack happened.  
+     * **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+     */
+    description: string;
+    /**
+     * The summary of the Jira issue to be created by this notification.. **Note:** The Jira summary field must contain less than 255 characters. Any content exceeding this limit after evaluating the placeholders will be discarded.  
+     *   
+     * Available placeholders:  
+     * **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example, "A-1234".  
+     * **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+     * **{Type}**: The type of attack, for example: "SQL Injection".  
+     * **{AttackUrl}**: URL of the attack in Dynatrace.  
+     * **{ProcessGroupId}**: Details about the process group attacked.  
+     * **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+     * **{Status}**: The status of the attack, for example: "Exploited"  
+     * **{Timestamp}**: When the attack happened.  
+     * **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+     */
+    summary: string;
+}
+
+export interface AppsecNotificationAttackCandidateBasedWebhookPayload {
+    /**
+     * This is the content your notification message will include when users view it.  
+     * In case a value of an attack is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the custom payload might leak information to untrusted parties.  
+     *   
+     * Available placeholders:  
+     * **{AttackDisplayId}**: The unique identifier assigned by Dynatrace, for example: "A-1234".  
+     * **{Title}**: Location of the attack, for example: "com.dynatrace.Class.method():120"  
+     * **{Type}**: The type of attack, for example: "SQL Injection".  
+     * **{AttackUrl}**: URL of the attack in Dynatrace.  
+     * **{ProcessGroupId}**: Details about the process group attacked.  
+     * **{EntryPoint}**: The entry point of the attack into the process, for example: "/login". Can be empty.  
+     * **{Status}**: The status of the attack, for example: "Exploited"  
+     * **{Timestamp}**: When the attack happened.  
+     * **{VulnerabilityName}**: Name of the associated code-level vulnerability, for example: "InMemoryDatabaseCaller.getAccountInfo():51". Can be empty.
+     */
+    payload: string;
+}
+
+export interface AppsecNotificationEmailConfiguration {
+    /**
+     * BCC
+     */
+    bccRecipients?: string[];
+    /**
+     * CC
+     */
+    ccRecipients?: string[];
+    /**
+     * To
+     */
+    recipients: string[];
+}
+
+export interface AppsecNotificationJiraConfiguration {
+    /**
+     * The API token for the Jira profile. Using password authentication [was deprecated by Jira](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-basic-auth-and-cookie-based-auth/)
+     */
+    apiToken: string;
+    /**
+     * The type of the Jira issue to be created by this notification.
+     *
+     * To find all available issue types or create your own, in Jira, go to Project settings > Issue types.
+     */
+    issueType: string;
+    /**
+     * The project key of the Jira issue to be created by this notification.
+     */
+    projectKey: string;
+    /**
+     * The URL of the Jira API endpoint.
+     */
+    url: string;
+    /**
+     * The username of the Jira profile.
+     */
+    username: string;
+}
+
+export interface AppsecNotificationSecurityProblemBasedEmailPayload {
+    /**
+     * The template of the email notifications.  
+     * In case a value of a security problem is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the description might leak information to untrusted parties.  
+     *   
+     * Available placeholders:  
+     * **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+     * **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+     * **{Description}**: A more detailed description of the vulnerability.  
+     * **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+     * **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+     * **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+     * **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+     * **{AffectedEntities}**: Details about the entities affected by the security problem in a json array.  
+     * **{ManagementZones}**: Comma-separated list of all management zones affected by the vulnerability at the time of detection.  
+     * **{Tags}**: Comma-separated list of tags that are defined for a vulnerability's affected entities. For example: "PROD, owner:John". Assign the tag's key in square brackets: **{Tags[key]}** to get all associated values. For example: "{Tags[owner]}" will be resolved as "John". Tags without an assigned value will be resolved as empty string.  
+     * **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+     * **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+     * **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+     */
+    body: string;
+    /**
+     * The subject of the email notifications.. Available placeholders:  
+     * **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+     * **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+     * **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+     * **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+     * **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+     * **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+     * **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+     * **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+     * **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+     */
+    subject: string;
+}
+
+export interface AppsecNotificationSecurityProblemBasedJiraPayload {
+    /**
+     * The description of the Jira issue to be created by this notification.  
+     * In case a value of a security problem is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the description might leak information to untrusted parties.  
+     *   
+     * Available placeholders:  
+     * **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+     * **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+     * **{Description}**: A more detailed description of the vulnerability.  
+     * **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+     * **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+     * **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+     * **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+     * **{AffectedEntities}**: Details about the entities affected by the security problem in a json array.  
+     * **{ManagementZones}**: Comma-separated list of all management zones affected by the vulnerability at the time of detection.  
+     * **{Tags}**: Comma-separated list of tags that are defined for a vulnerability's affected entities. For example: "PROD, owner:John". Assign the tag's key in square brackets: **{Tags[key]}** to get all associated values. For example: "{Tags[owner]}" will be resolved as "John". Tags without an assigned value will be resolved as empty string.  
+     * **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+     * **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+     * **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+     */
+    description: string;
+    /**
+     * The summary of the Jira issue to be created by this notification.. **Note:** The Jira summary field must contain less than 255 characters. Any content exceeding this limit after evaluating the placeholders will be discarded.  
+     *   
+     * Available placeholders:  
+     * **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+     * **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+     * **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+     * **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+     * **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+     * **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+     * **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+     * **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+     * **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+     */
+    summary: string;
+}
+
+export interface AppsecNotificationSecurityProblemBasedWebhookPayload {
+    /**
+     * This is the content your notification message will include when users view it.  
+     * In case a value of a security problem is not set, the placeholder will be replaced by an empty string.. **Note:** Security notifications contain sensitive information. Excessive usage of placeholders in the custom payload might leak information to untrusted parties.  
+     *   
+     * Available placeholders:  
+     * **{SecurityProblemId}**: The unique identifier assigned by Dynatrace, for example, "S-1234".  
+     * **{Title}**: A short summary of the type of vulnerability that was found, for example, "Remote Code Execution".  
+     * **{Description}**: A more detailed description of the vulnerability.  
+     * **{CvssScore}**: CVSS score of the identified vulnerability, for example, "10.0". Can be empty. 
+     * **{DavisSecurityScore}**: [Davis Security Score](https://www.dynatrace.com/support/help/how-to-use-dynatrace/application-security/davis-security-score/) is an enhanced risk-calculation score based on the CVSS, for example, "10.0".  
+     * **{Severity}**: The security problem severity, for example, "Critical" or "Medium".  
+     * **{SecurityProblemUrl}**: URL of the security problem in Dynatrace.  
+     * **{AffectedEntities}**: Details about the entities affected by the security problem in a json array.  
+     * **{ManagementZones}**: Comma-separated list of all management zones affected by the vulnerability at the time of detection.  
+     * **{Tags}**: Comma-separated list of tags that are defined for a vulnerability's affected entities. For example: "PROD, owner:John". Assign the tag's key in square brackets: **{Tags[key]}** to get all associated values. For example: "{Tags[owner]}" will be resolved as "John". Tags without an assigned value will be resolved as empty string.  
+     * **{Exposed}**: Describes whether one or more affected process is exposed to the public Internet. Can be "true" or "false".  
+     * **{DataAssetsReachable}**: Describes whether one or more affected process can reach data assets. Can be "true" or "false".  
+     * **{ExploitAvailable}**: Describes whether there's an exploit available for the vulnerability. Can be "true" or "false".
+     */
+    payload: string;
+}
+
+export interface AppsecNotificationWebhookConfiguration {
+    /**
+     * Accept any SSL certificate (including self-signed and invalid certificates)
+     */
+    acceptAnyCertificate: boolean;
+    /**
+     * Use additional HTTP headers to attach any additional information, for example, configuration, authorization, or metadata.  
+     *   
+     * Note that JSON-based webhook endpoints require the addition of the **Content-Type: application/json** header to enable escaping of special characters and to avoid malformed JSON content.
+     */
+    headers?: outputs.AppsecNotificationWebhookConfigurationHeaders;
+    /**
+     * Webhook endpoint URL
+     */
+    url: string;
+}
+
+export interface AppsecNotificationWebhookConfigurationHeaders {
+    headers: outputs.AppsecNotificationWebhookConfigurationHeadersHeader[];
+}
+
+export interface AppsecNotificationWebhookConfigurationHeadersHeader {
+    /**
+     * no documentation available
+     */
+    name: string;
+    /**
+     * Secret HTTP header value
+     */
+    secret: boolean;
+    /**
+     * The secret value of the HTTP header. May contain an empty value.
+     */
+    secretValue?: string;
+    /**
+     * The value of the HTTP header. May contain an empty value.
+     */
+    value?: string;
+}
+
+export interface AttackAllowlistAttackHandling {
+    /**
+     * Possible Values: `MONITOR`, `OFF`
+     */
+    blockingStrategy: string;
+}
+
+export interface AttackAllowlistCriteria {
+    /**
+     * Only consider attacks matching the specified pattern.
+     */
+    attackPattern?: string;
+    /**
+     * Source IP
+     */
+    sourceIp?: string;
+}
+
+export interface AttackAllowlistMetadata {
+    /**
+     * no documentation available
+     */
+    comment: string;
+}
+
+export interface AttackRulesAttackHandling {
+    /**
+     * Possible Values: `BLOCK`, `MONITOR`, `OFF`
+     */
+    blockingStrategy: string;
+}
+
+export interface AttackRulesCriteria {
+    /**
+     * Possible Values: `ANY`, `CMD_INJECTION`, `JNDI_INJECTION`, `SQL_INJECTION`, `SSRF`
+     */
+    attackType: string;
+    /**
+     * Process group
+     */
+    processGroup?: string;
+}
+
+export interface AttackRulesMetadata {
+    /**
+     * no documentation available
+     */
+    comment: string;
+}
+
+export interface AttackSettingsDefaultAttackHandling {
+    /**
+     * (v1.290) Possible Values: `BLOCK`, `MONITOR`, `OFF`
+     */
+    blockingStrategyDotNet?: string;
+    /**
+     * Possible Values: `BLOCK`, `MONITOR`, `OFF`
+     */
+    blockingStrategyJava: string;
+}
+
+export interface AutomationBusinessCalendarHolidays {
+    /**
+     * A (unordered) list of holidays valid in this calendar
+     */
+    holidays: outputs.AutomationBusinessCalendarHolidaysHoliday[];
+}
+
+export interface AutomationBusinessCalendarHolidaysHoliday {
+    /**
+     * The date of this holiday: Example `2017-07-04` for July 4th 2017
+     */
+    date: string;
+    /**
+     * An official name for this holiday
+     */
+    title: string;
+}
+
+export interface AutomationSchedulingRuleFixedOffset {
+    /**
+     * Every day of the scheduling rule referred to with `rule` will be offset by this amount of days
+     */
+    offset: number;
+    /**
+     * Refers to a scheduling rule for which to produce valid days with an offset
+     */
+    rule: string;
+}
+
+export interface AutomationSchedulingRuleGrouping {
+    /**
+     * The IDs of scheduling rules determining the days the schedule should apply to
+     */
+    combines: string[];
+    /**
+     * The IDs of scheduling rules determining the days the schedule is allowed apply to. If specified, only days that are covered by `combine` and `intersect` are valid days for the schedule
+     */
+    intersects?: string[];
+    /**
+     * The IDs of scheduling rules determing the days the schedule must not apply. If specified it reduces down the set of days covered by `combine` and `intersect`
+     */
+    subtracts?: string[];
+}
+
+export interface AutomationSchedulingRuleRecurrence {
+    /**
+     * The recurrence start. Example: `2017-07-04` represents July 4th 2017
+     */
+    datestart: string;
+    /**
+     * Restricts the recurrence to specific days within a month. `1`, `2`, `3`, ... refers to the first, second, third day in the month. You can also specify negative values to refer to values relative to the last day. `-1` refers to the last day, `-2` refers to the second to the last day, ...
+     */
+    daysInMonths?: number[];
+    /**
+     * Restricts the recurrence to specific days within a year. `1`, `2`, `3`, ... refers to the first, second, third day of the year. You can also specify negative values to refer to values relative to the last day. `-1` refers to the last day, `-2` refers to the second to the last day, ...
+     */
+    daysInYears?: number[];
+    /**
+     * Restricts the recurrence to specific days relative to Easter Sunday. `0` will yield the Easter Sunday itself
+     */
+    easters?: number[];
+    /**
+     * Possible values are `YEARLY`, `MONTHLY`, `WEEKLY`, `DAILY`, `HOURLY`, `MINUTELY` and `SECONDLY`. Example: `frequency` = `DAILY` and `interval` = `2` schedules for every other day
+     */
+    frequency: string;
+    /**
+     * The interval between each iteration. Default: 1. Example: `frequency` = `DAILY` and `interval` = `2` schedules for every other day
+     */
+    interval?: number;
+    /**
+     * Restricts the recurrence to specific months. `1` for `January`, `2` for `February`, ..., `12` for `December`
+     */
+    months?: number[];
+    /**
+     * Restricts the recurrence to specific week days. Possible values are `MO`, `TU`, `WE`, `TH`, `FR`, `SA` and `SU`
+     */
+    weekdays?: string[];
+    /**
+     * Restricts the recurrence to specific weeks within a year. `1`, `2`, `3`, ... refers to the first, second, third week of the year. You can also specify negative values to refer to values relative to the last week. `-1` refers to the last week, `-2` refers to the second to the last week, ...
+     */
+    weeks?: number[];
+    /**
+     * Possible values are `WORKING` (Work days), `HOLIDAYS` (Holidays) and `OFF` (Weekends + Holidays)
+     */
+    workdays: string;
+}
+
+export interface AutomationSchedulingRuleRelativeOffset {
+    direction: string;
+    sourceRule: string;
+    targetRule: string;
+}
+
+export interface AutomationWorkflowTasks {
+    /**
+     * TODO: No documentation available
+     */
+    tasks?: outputs.AutomationWorkflowTasksTask[];
+}
+
+export interface AutomationWorkflowTasksTask {
+    /**
+     * Currently known and supported values are `dynatrace.automations:http-function`, `dynatrace.automations:run-javascript` and `dynatrace.automations:execute-dql-query`
+     */
+    action: string;
+    /**
+     * Specifies whether a task should be skipped as a no operation or not
+     */
+    active?: boolean;
+    /**
+     * Required if `withItems` is specified. By default loops execute sequentially with concurrency set to 1. You can increase how often it runs in parallel
+     */
+    concurrency?: string;
+    /**
+     * Conditions that have to be met in order to execute that task
+     */
+    conditions?: outputs.AutomationWorkflowTasksTaskConditions;
+    /**
+     * A description for this task
+     */
+    description?: string;
+    /**
+     * Parameters and values for this task as JSON code. Contents depend on the kind of task - determined by the attribute `action`
+     */
+    input?: string;
+    /**
+     * The name of the task
+     */
+    name: string;
+    /**
+     * Layouting information about the task tile when visualized. If not specified Dynatrace will position the task tiles automatically
+     */
+    position?: outputs.AutomationWorkflowTasksTaskPosition;
+    /**
+     * Configure whether to automatically rerun the task on failure. If not specified no retries will be attempted
+     */
+    retry?: outputs.AutomationWorkflowTasksTaskRetry;
+    /**
+     * Specifies a default task timeout in seconds. 15 * 60 (15min) is used when not set. Minimum 1. Maximum 604800
+     */
+    timeout?: string;
+    /**
+     * Iterates over items in a list, allowing actions to be executed repeatedly. Example: Specifying `item in [1, 2, 3]` here will execute the task three times for the numbers 1, 2 and 3 - with the current number available for scripting using the expression `{{ _.item }}`
+     */
+    withItems?: string;
+}
+
+export interface AutomationWorkflowTasksTaskConditions {
+    /**
+     * A custom condition that needs to be met for the current task to get executed
+     */
+    custom?: string;
+    /**
+     * Possible values are `SKIP` and `STOP`
+     */
+    else?: string;
+    /**
+     * key/value pairs where the `key` is the name of another task and the value the status it needs to be for the current task to get executed. Possible values are `SUCCESS`, `ERROR`, `ANY`, `OK` (Success or Skipped) and `NOK` (Error or Cancelled)
+     */
+    states: {[key: string]: any};
+}
+
+export interface AutomationWorkflowTasksTaskPosition {
+    /**
+     * x-coordinate for layouting
+     */
+    x: number;
+    /**
+     * y-coordinate for layouting
+     */
+    y: number;
+}
+
+export interface AutomationWorkflowTasksTaskRetry {
+    /**
+     * Specifies a maximum number of times that a task can be repeated in case it fails on execution. You can specify either a number between 1 and 99 here or use an expression (`{{}}`). Default: 1
+     */
+    count?: string;
+    /**
+     * Specifies a delay in seconds between subsequent task retries. You can specify either a number between 1 and 3600 here or an expression (`{{...}}`). Default: 1
+     */
+    delay?: string;
+    /**
+     * Specifies whether retrying the failed iterations or the whole loop. Default: true
+     */
+    failedLoopIterationsOnly?: boolean;
+}
+
+export interface AutomationWorkflowTrigger {
+    /**
+     * If specified the workflow is getting triggered based on events
+     */
+    event?: outputs.AutomationWorkflowTriggerEvent;
+    /**
+     * If specified the workflow is getting triggered based on a schedule
+     */
+    schedule?: outputs.AutomationWorkflowTriggerSchedule;
+}
+
+export interface AutomationWorkflowTriggerEvent {
+    /**
+     * If specified the workflow is getting triggered based on a schedule
+     */
+    active?: boolean;
+    /**
+     * If specified the workflow is getting triggered based on events
+     */
+    config?: outputs.AutomationWorkflowTriggerEventConfig;
+}
+
+export interface AutomationWorkflowTriggerEventConfig {
+    /**
+     * Contains trigger configuration based on Davis Events. Either `davisEvent`, `davisProblem`, `davisEvent` or `config` need to set
+     */
+    davisEvent?: outputs.AutomationWorkflowTriggerEventConfigDavisEvent;
+    /**
+     * Contains trigger configuration based on Davis Problems. Either `davisEvent`, `davisProblem`, `davisEvent` or `config` need to set
+     */
+    davisProblem?: outputs.AutomationWorkflowTriggerEventConfigDavisProblem;
+    /**
+     * Contains trigger configuration based on Davis Problems. Either `davisEvent`, `davisProblem`, `davisEvent` or `config` need to set
+     */
+    event?: outputs.AutomationWorkflowTriggerEventConfigEvent;
+    /**
+     * The type of the trigger configuration to expect within attribute `value`. Only required if `config` is set. Must not be set if `davisEvent`, `davisProblem` or `event` are present
+     */
+    type?: string;
+    /**
+     * Contains JSON encoded trigger configuration if the trigger type is neither `davisEvent`, `davisProblem` or `event`. It requires the attribute `type` to be set in combination
+     */
+    value?: string;
+}
+
+export interface AutomationWorkflowTriggerEventConfigDavisEvent {
+    /**
+     * key/value pairs for entity tags to match for. For tags that don't require a value, just specify an empty string as value. Omit this attribute if all entities should match
+     */
+    entityTags?: {[key: string]: string};
+    /**
+     * Specifies whether all or just any of the configured entity tags need to match. Possible values: `all` and `any`. Omit this attribute if all entities should match
+     */
+    entityTagsMatch?: string;
+    /**
+     * If set to `true` closing a problem also is considered an event that triggers the execution
+     */
+    onProblemClose?: boolean;
+    /**
+     * The types of davis events to trigger an execution. Possible values are `CUSTOM_ANNOTATION`, `APPLICATION_UNEXPECTED_HIGH_LOAD`, `APPLICATION_UNEXPECTED_LOW_LOAD`, `APPLICATION_OVERLOAD_PREVENTION`, `APPLICATION_SLOWDOWN`, `AVAILABILITY_EVENT`, `LOG_AVAILABILITY`, `EC2_HIGH_CPU`, `RDS_BACKUP_COMPLETED`, `RDS_BACKUP_STARTED`, `SYNTHETIC_GLOBAL_OUTAGE`, `SYNTHETIC_LOCAL_OUTAGE`, `SYNTHETIC_TEST_LOCATION_SLOWDOWN`, `CUSTOM_CONFIGURATION`, `PROCESS_NA_HIGH_CONN_FAIL_RATE`, `OSI_HIGH_CPU`, `CUSTOM_ALERT`, `CUSTOM_APP_CRASH_RATE_INCREASED`, `CUSTOM_APPLICATION_ERROR_RATE_INCREASED`, `CUSTOM_APPLICATION_UNEXPECTED_HIGH_LOAD`, `CUSTOM_APPLICATION_UNEXPECTED_LOW_LOAD`, `CUSTOM_APPLICATION_OVERLOAD_PREVENTION`, `CUSTOM_APPLICATION_SLOWDOWN`, `PGI_CUSTOM_AVAILABILITY`, `PGI_CUSTOM_ERROR`, `CUSTOM_INFO`, `PGI_CUSTOM_PERFORMANCE`, `CUSTOM_DEPLOYMENT`, `DEPLOYMENT_CHANGED_CHANGE`, `DEPLOYMENT_CHANGED_NEW`, `DEPLOYMENT_CHANGED_REMOVED`, `EBS_VOLUME_HIGH_LATENCY`, `ERROR_EVENT`, `LOG_ERROR`, `ESXI_HOST_CONNECTION_FAILED`, `ESXI_HOST_CONNECTION_LOST`, `ESXI_GUEST_CPU_LIMIT_REACHED`, `ESXI_GUEST_ACTIVE_SWAP_WAIT`, `ESXI_HOST_CPU_SATURATION`, `ESXI_HOST_MEMORY_SATURATION`, `ESXI_HOST_MAINTENANCE`, `ESXI_HOST_NETWORK_PROBLEMS`, `ESXI_HOST_NO_CONNECTION`, `ESXI_HOST_SHUTDOWN`, `ESXI_HOST_DISK_SLOW`, `ESXI_HOST_UP`, `ESXI_HOST_TIMEOUT`, `ESXI_VM_IMPACT_HOST_CPU_SATURATION`, `ESXI_VM_IMPACT_HOST_MEMORY_SATURATION`, `DATABASE_CONNECTION_FAILURE`, `RDS_AZ_FAILOVER_COMPLETED`, `RDS_AZ_FAILOVER_STARTED`, `SERVICE_ERROR_RATE_INCREASED`, `RDS_HIGH_LATENCY`, `OSI_NIC_UTILIZATION_HIGH`, `OSI_NIC_ERRORS_HIGH`, `PGI_HAPROXY_QUEUED_REQUESTS_HIGH`, `PGI_RMQ_HIGH_FILE_DESC_USAGE`, `PGI_RMQ_HIGH_MEM_USAGE`, `PGI_RMQ_HIGH_PROCESS_USAGE`, `PGI_RMQ_HIGH_SOCKETS_USAGE`, `OSI_NIC_DROPPED_PACKETS_HIGH`, `PGI_MYSQL_SLOW_QUERIES_RATE_HIGH`, `PGI_KEYSTONE_SLOW`, `PGI_HAPROXY_SESSION_USAGE_HIGH`, `HOST_LOG_AVAILABILITY`, `HOST_LOG_ERROR`, `OSI_GRACEFULLY_SHUTDOWN`, `HOST_LOG_MATCHED`, `OSI_UNEXPECTEDLY_UNAVAILABLE`, `HOST_LOG_PERFORMANCE`, `HOST_OF_SERVICE_UNAVAILABLE`, `HTTP_CHECK_GLOBAL_OUTAGE`, `HTTP_CHECK_LOCAL_OUTAGE`, `HTTP_CHECK_TEST_LOCATION_SLOWDOWN`, `ESXI_HOST_DISK_QUEUE_SLOW`, `LOG_MATCHED`, `APPLICATION_ERROR_RATE_INCREASED`, `APPLICATION_JS_FRAMEWORK_DETECTED`, `AWS_LAMBDA_HIGH_ERROR_RATE`, `ELB_HIGH_BACKEND_ERROR_RATE`, `ELB_HIGH_FRONTEND_ERROR_RATE`, `ELB_HIGH_UNHEALTHY_HOST_RATE`, `PROCESS_HIGH_GC_ACTIVITY`, `ESXI_HOST_DATASTORE_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_DATA_SPACE`, `OSI_LOW_DISK_SPACE`, `OSI_DOCKER_DEVICEMAPPER_LOW_METADATA_SPACE`, `OSI_DISK_LOW_INODES`, `PGI_RMQ_LOW_DISK_SPACE`, `RDS_LOW_STORAGE_SPACE`, `MARKED_FOR_TERMINATION`, `PROCESS_MEMORY_RESOURCE_EXHAUSTED`, `OSI_HIGH_MEMORY`, `MOBILE_APP_CRASH_RATE_INCREASED`, `MOBILE_APPLICATION_ERROR_RATE_INCREASED`, `MOBILE_APPLICATION_OVERLOAD_PREVENTION`, `MOBILE_APPLICATION_SLOWDOWN`, `MOBILE_APPLICATION_UNEXPECTED_HIGH_LOAD`, `MOBILE_APPLICATION_UNEXPECTED_LOW_LOAD`, `MONITORING_UNAVAILABLE`, `PROCESS_NA_HIGH_LOSS_RATE`, `PGI_KEYSTONE_UNHEALTHY`, `ESXI_HOST_OVERLOADED_STORAGE`, `PERFORMANCE_EVENT`, `LOG_PERFORMANCE`, `PGI_LOG_AVAILABILITY`, `PGI_CRASHED_INFO`, `PROCESS_CRASHED`, `PGI_LOG_ERROR`, `PG_LOW_INSTANCE_COUNT`, `PGI_LOG_MATCHED`, `PGI_MEMDUMP`, `PGI_LOG_PERFORMANCE`, `PROCESS_RESTART`, `PGI_UNAVAILABLE`, `RDS_HIGH_CPU`, `RDS_LOW_MEMORY`, `RDS_OF_SERVICE_UNAVAILABLE`, `RESOURCE_CONTENTION_EVENT`, `SERVICE_SLOWDOWN`, `RDS_RESTART`, `RDS_RESTART_SEQUENCE`, `PGI_OF_SERVICE_UNAVAILABLE`, `OSI_SLOW_DISK`, `SYNTHETIC_NODE_OUTAGE`, `SYNTHETIC_PRIVATE_LOCATION_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_OUTAGE`, `EXTERNAL_SYNTHETIC_TEST_SLOWDOWN`, `PROCESS_THREADS_RESOURCE_EXHAUSTED`, `SERVICE_UNEXPECTED_HIGH_LOAD`, `SERVICE_UNEXPECTED_LOW_LOAD`, `ESXI_VM_DISCONNECTED`, `OPENSTACK_VM_LAUNCH_FAILED`, `ESXI_HOST_VM_MOTION_LEFT`, `ESXI_HOST_VM_MOTION_ARRIVED`, `ESXI_VM_MOTION`, `OPENSTACK_VM_MOTION`, `ESXI_VM_POWER_OFF`, `ESXI_VM_SHUTDOWN`, `OPENSTACK_HOST_VM_SHUTDOWN`, `ESXI_VM_START`, `ESXI_HOST_VM_STARTED`, `OPENSTACK_HOST_VM_STARTED`
+     */
+    types: string[];
+}
+
+export interface AutomationWorkflowTriggerEventConfigDavisProblem {
+    categories: outputs.AutomationWorkflowTriggerEventConfigDavisProblemCategory[];
+    customFilter?: string;
+    /**
+     * key/value pairs for entity tags to match for. For tags that don't require a value, just specify an empty string as value. Omit this attribute if all entities should match
+     */
+    entityTags?: {[key: string]: string};
+    /**
+     * Specifies whether all or just any of the configured entity tags need to match. Possible values: `all` and `any`. Omit this attribute if all entities should match
+     */
+    entityTagsMatch?: string;
+    /**
+     * If set to `true` closing a problem also is considered an event that triggers the execution
+     */
+    onProblemClose?: boolean;
+}
+
+export interface AutomationWorkflowTriggerEventConfigDavisProblemCategory {
+    availability?: boolean;
+    custom?: boolean;
+    error?: boolean;
+    info?: boolean;
+    monitoringUnavailable?: boolean;
+    resource?: boolean;
+    slowdown?: boolean;
+}
+
+export interface AutomationWorkflowTriggerEventConfigEvent {
+    /**
+     * Possible values: `events` or `bizevents`. Default: `events`
+     */
+    eventType?: string;
+    /**
+     * A query based on DQL for events that trigger executions
+     */
+    query: string;
+}
+
+export interface AutomationWorkflowTriggerSchedule {
+    /**
+     * The trigger is enabled (`true`) or not (`false`). Default is `false`
+     */
+    active?: boolean;
+    /**
+     * Advanced restrictions for the schedule to trigger executions
+     */
+    filterParameters?: outputs.AutomationWorkflowTriggerScheduleFilterParameters;
+    /**
+     * Refers to a configured rule that determines at which days the schedule should be active. If not specified it implies that the schedule is valid every day
+     */
+    rule?: string;
+    /**
+     * A time zone the scheduled times to align with. If not specified it will be chosen automatically based on the location of the Dynatrace Server
+     */
+    timeZone: string;
+    /**
+     * Detailed configuration about the timing constraints that trigger the execution
+     */
+    trigger: outputs.AutomationWorkflowTriggerScheduleTrigger;
+}
+
+export interface AutomationWorkflowTriggerScheduleFilterParameters {
+    /**
+     * If specified, the schedule will end triggering executions af the given amount of executions. Minimum: 1, Maximum: 10
+     */
+    count?: number;
+    /**
+     * If specified, the schedule won't trigger executions before the given date
+     */
+    earliestStart?: string;
+    /**
+     * If specified, the schedule won't trigger executions before the given time
+     */
+    earliestStartTime?: string;
+    /**
+     * If specified, the schedule won't trigger exeuctions on the given dates
+     */
+    excludeDates?: string[];
+    /**
+     * If specified, the schedule will trigger executions on the given dates, even if the main configuration prohibits it
+     */
+    includeDates?: string[];
+    /**
+     * If specified, the schedule won't trigger executions after the given date
+     */
+    until?: string;
+}
+
+export interface AutomationWorkflowTriggerScheduleTrigger {
+    /**
+     * Triggers the schedule every n minutes within a given time frame - specifying the end time on any valid day in 24h format (e.g. 14:22:44). Conflicts with `cron` and `time`. Required with `intervalMinutes` and `betweenStart`
+     */
+    betweenEnd?: string;
+    /**
+     * Triggers the schedule every n minutes within a given time frame - specifying the start time on any valid day in 24h format (e.g. 13:22:44). Conflicts with `cron` and `time`. Required with `intervalMinutes` and `betweenEnd`
+     */
+    betweenStart?: string;
+    /**
+     * Configures using cron syntax. Conflicts with `time`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+     */
+    cron?: string;
+    /**
+     * Triggers the schedule every n minutes within a given time frame. Minimum: 1, Maximum: 720. Required with `betweenStart` and `betweenEnd`. Conflicts with `cron` and `time`
+     */
+    intervalMinutes?: number;
+    /**
+     * Specifies a fixed time the schedule will trigger at in 24h format (e.g. `14:23:59`). Conflicts with `cron`, `intervalMinutes`, `betweenStart` and `betweenEnd`
+     */
+    time?: string;
 }
 
 export interface AutotagEntitySelectorBasedRule {
@@ -2782,6 +3472,123 @@ export interface AutotagRuleConditionTechValue {
     verbatimType?: string;
 }
 
+export interface AutotagRulesRules {
+    rules: outputs.AutotagRulesRulesRule[];
+}
+
+export interface AutotagRulesRulesRule {
+    /**
+     * no documentation available
+     */
+    attributeRule?: outputs.AutotagRulesRulesRuleAttributeRule;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+     */
+    entitySelector?: string;
+    /**
+     * Possible Values: `ME`, `SELECTOR`
+     */
+    type: string;
+    /**
+     * Type '{' for placeholder suggestions
+     */
+    valueFormat?: string;
+    /**
+     * Possible Values: `Leavetextas_is`, `Tolowercase`, `Touppercase`
+     */
+    valueNormalization: string;
+}
+
+export interface AutotagRulesRulesRuleAttributeRule {
+    /**
+     * Apply to process groups connected to matching Azure entities
+     */
+    azureToPgpropagation?: boolean;
+    /**
+     * Apply to services provided by matching Azure entities
+     */
+    azureToServicePropagation?: boolean;
+    /**
+     * no documentation available
+     */
+    conditions: outputs.AutotagRulesRulesRuleAttributeRuleConditions;
+    /**
+     * Possible Values: `APPLICATION`, `AWS_APPLICATION_LOAD_BALANCER`, `AWS_CLASSIC_LOAD_BALANCER`, `AWS_NETWORK_LOAD_BALANCER`, `AWS_RELATIONAL_DATABASE_SERVICE`, `AZURE`, `CUSTOM_APPLICATION`, `CUSTOM_DEVICE`, `DCRUM_APPLICATION`, `ESXI_HOST`, `EXTERNAL_SYNTHETIC_TEST`, `HOST`, `HTTP_CHECK`, `MOBILE_APPLICATION`, `PROCESS_GROUP`, `SERVICE`, `SYNTHETIC_TEST`
+     */
+    entityType: string;
+    /**
+     * Apply to processes running on matching hosts
+     */
+    hostToPgpropagation?: boolean;
+    /**
+     * Apply to underlying hosts of matching process groups
+     */
+    pgToHostPropagation?: boolean;
+    /**
+     * Apply to all services provided by the process groups
+     */
+    pgToServicePropagation?: boolean;
+    /**
+     * Apply to underlying hosts of matching services
+     */
+    serviceToHostPropagation?: boolean;
+    /**
+     * Apply to underlying process groups of matching services
+     */
+    serviceToPgpropagation?: boolean;
+}
+
+export interface AutotagRulesRulesRuleAttributeRuleConditions {
+    conditions: outputs.AutotagRulesRulesRuleAttributeRuleConditionsCondition[];
+}
+
+export interface AutotagRulesRulesRuleAttributeRuleConditionsCondition {
+    /**
+     * Case sensitive
+     */
+    caseSensitive?: boolean;
+    /**
+     * Dynamic key
+     */
+    dynamicKey?: string;
+    /**
+     * Key source
+     */
+    dynamicKeySource?: string;
+    /**
+     * Value
+     */
+    entityId?: string;
+    /**
+     * Value
+     */
+    enumValue?: string;
+    /**
+     * Value
+     */
+    integerValue?: number;
+    /**
+     * Possible Values: `APPMON_SERVER_NAME`, `APPMON_SYSTEM_PROFILE_NAME`, `AWS_ACCOUNT_ID`, `AWS_ACCOUNT_NAME`, `AWS_APPLICATION_LOAD_BALANCER_NAME`, `AWS_APPLICATION_LOAD_BALANCER_TAGS`, `AWS_AUTO_SCALING_GROUP_NAME`, `AWS_AUTO_SCALING_GROUP_TAGS`, `AWS_AVAILABILITY_ZONE_NAME`, `AWS_CLASSIC_LOAD_BALANCER_FRONTEND_PORTS`, `AWS_CLASSIC_LOAD_BALANCER_NAME`, `AWS_CLASSIC_LOAD_BALANCER_TAGS`, `AWS_NETWORK_LOAD_BALANCER_NAME`, `AWS_NETWORK_LOAD_BALANCER_TAGS`, `AWS_RELATIONAL_DATABASE_SERVICE_DB_NAME`, `AWS_RELATIONAL_DATABASE_SERVICE_ENDPOINT`, `AWS_RELATIONAL_DATABASE_SERVICE_ENGINE`, `AWS_RELATIONAL_DATABASE_SERVICE_INSTANCE_CLASS`, `AWS_RELATIONAL_DATABASE_SERVICE_NAME`, `AWS_RELATIONAL_DATABASE_SERVICE_PORT`, `AWS_RELATIONAL_DATABASE_SERVICE_TAGS`, `AZURE_ENTITY_NAME`, `AZURE_ENTITY_TAGS`, `AZURE_MGMT_GROUP_NAME`, `AZURE_MGMT_GROUP_UUID`, `AZURE_REGION_NAME`, `AZURE_SCALE_SET_NAME`, `AZURE_SUBSCRIPTION_NAME`, `AZURE_SUBSCRIPTION_UUID`, `AZURE_TENANT_NAME`, `AZURE_TENANT_UUID`, `AZURE_VM_NAME`, `BROWSER_MONITOR_NAME`, `BROWSER_MONITOR_TAGS`, `CLOUD_APPLICATION_LABELS`, `CLOUD_APPLICATION_NAME`, `CLOUD_APPLICATION_NAMESPACE_LABELS`, `CLOUD_APPLICATION_NAMESPACE_NAME`, `CLOUD_FOUNDRY_FOUNDATION_NAME`, `CLOUD_FOUNDRY_ORG_NAME`, `CUSTOM_APPLICATION_NAME`, `CUSTOM_APPLICATION_PLATFORM`, `CUSTOM_APPLICATION_TAGS`, `CUSTOM_APPLICATION_TYPE`, `CUSTOM_DEVICE_DNS_ADDRESS`, `CUSTOM_DEVICE_GROUP_NAME`, `CUSTOM_DEVICE_GROUP_TAGS`, `CUSTOM_DEVICE_IP_ADDRESS`, `CUSTOM_DEVICE_METADATA`, `CUSTOM_DEVICE_NAME`, `CUSTOM_DEVICE_PORT`, `CUSTOM_DEVICE_TAGS`, `CUSTOM_DEVICE_TECHNOLOGY`, `DATA_CENTER_SERVICE_DECODER_TYPE`, `DATA_CENTER_SERVICE_IP_ADDRESS`, `DATA_CENTER_SERVICE_METADATA`, `DATA_CENTER_SERVICE_NAME`, `DATA_CENTER_SERVICE_PORT`, `DATA_CENTER_SERVICE_TAGS`, `DOCKER_CONTAINER_NAME`, `DOCKER_FULL_IMAGE_NAME`, `DOCKER_IMAGE_VERSION`, `EC2_INSTANCE_AMI_ID`, `EC2_INSTANCE_AWS_INSTANCE_TYPE`, `EC2_INSTANCE_AWS_SECURITY_GROUP`, `EC2_INSTANCE_BEANSTALK_ENV_NAME`, `EC2_INSTANCE_ID`, `EC2_INSTANCE_NAME`, `EC2_INSTANCE_PRIVATE_HOST_NAME`, `EC2_INSTANCE_PUBLIC_HOST_NAME`, `EC2_INSTANCE_TAGS`, `ENTERPRISE_APPLICATION_DECODER_TYPE`, `ENTERPRISE_APPLICATION_IP_ADDRESS`, `ENTERPRISE_APPLICATION_METADATA`, `ENTERPRISE_APPLICATION_NAME`, `ENTERPRISE_APPLICATION_PORT`, `ENTERPRISE_APPLICATION_TAGS`, `ESXI_HOST_CLUSTER_NAME`, `ESXI_HOST_HARDWARE_MODEL`, `ESXI_HOST_HARDWARE_VENDOR`, `ESXI_HOST_NAME`, `ESXI_HOST_PRODUCT_NAME`, `ESXI_HOST_PRODUCT_VERSION`, `ESXI_HOST_TAGS`, `EXTERNAL_MONITOR_ENGINE_DESCRIPTION`, `EXTERNAL_MONITOR_ENGINE_NAME`, `EXTERNAL_MONITOR_ENGINE_TYPE`, `EXTERNAL_MONITOR_NAME`, `EXTERNAL_MONITOR_TAGS`, `GEOLOCATION_SITE_NAME`, `GOOGLE_CLOUD_PLATFORM_ZONE_NAME`, `GOOGLE_COMPUTE_INSTANCE_ID`, `GOOGLE_COMPUTE_INSTANCE_MACHINE_TYPE`, `GOOGLE_COMPUTE_INSTANCE_NAME`, `GOOGLE_COMPUTE_INSTANCE_PROJECT`, `GOOGLE_COMPUTE_INSTANCE_PROJECT_ID`, `GOOGLE_COMPUTE_INSTANCE_PUBLIC_IP_ADDRESSES`, `HOST_AIX_LOGICAL_CPU_COUNT`, `HOST_AIX_SIMULTANEOUS_THREADS`, `HOST_AIX_VIRTUAL_CPU_COUNT`, `HOST_ARCHITECTURE`, `HOST_AWS_NAME_TAG`, `HOST_AZURE_COMPUTE_MODE`, `HOST_AZURE_SKU`, `HOST_AZURE_WEB_APPLICATION_HOST_NAMES`, `HOST_AZURE_WEB_APPLICATION_SITE_NAMES`, `HOST_BITNESS`, `HOST_BOSH_AVAILABILITY_ZONE`, `HOST_BOSH_DEPLOYMENT_ID`, `HOST_BOSH_INSTANCE_ID`, `HOST_BOSH_INSTANCE_NAME`, `HOST_BOSH_NAME`, `HOST_BOSH_STEMCELL_VERSION`, `HOST_CLOUD_TYPE`, `HOST_CPU_CORES`, `HOST_CUSTOM_METADATA`, `HOST_DETECTED_NAME`, `HOST_GROUP_ID`, `HOST_GROUP_NAME`, `HOST_HYPERVISOR_TYPE`, `HOST_IP_ADDRESS`, `HOST_KUBERNETES_LABELS`, `HOST_LOGICAL_CPU_CORES`, `HOST_NAME`, `HOST_ONEAGENT_CUSTOM_HOST_NAME`, `HOST_OS_TYPE`, `HOST_OS_VERSION`, `HOST_PAAS_MEMORY_LIMIT`, `HOST_PAAS_TYPE`, `HOST_TAGS`, `HOST_TECHNOLOGY`, `HTTP_MONITOR_NAME`, `HTTP_MONITOR_TAGS`, `KUBERNETES_CLUSTER_NAME`, `KUBERNETES_NODE_NAME`, `KUBERNETES_SERVICE_NAME`, `MOBILE_APPLICATION_NAME`, `MOBILE_APPLICATION_PLATFORM`, `MOBILE_APPLICATION_TAGS`, `NAME_OF_COMPUTE_NODE`, `OPENSTACK_ACCOUNT_NAME`, `OPENSTACK_ACCOUNT_PROJECT_NAME`, `OPENSTACK_AVAILABILITY_ZONE_NAME`, `OPENSTACK_PROJECT_NAME`, `OPENSTACK_REGION_NAME`, `OPENSTACK_VM_INSTANCE_TYPE`, `OPENSTACK_VM_NAME`, `OPENSTACK_VM_SECURITY_GROUP`, `PROCESS_GROUP_AZURE_HOST_NAME`, `PROCESS_GROUP_AZURE_SITE_NAME`, `PROCESS_GROUP_CUSTOM_METADATA`, `PROCESS_GROUP_DETECTED_NAME`, `PROCESS_GROUP_ID`, `PROCESS_GROUP_LISTEN_PORT`, `PROCESS_GROUP_NAME`, `PROCESS_GROUP_PREDEFINED_METADATA`, `PROCESS_GROUP_TAGS`, `PROCESS_GROUP_TECHNOLOGY`, `PROCESS_GROUP_TECHNOLOGY_EDITION`, `PROCESS_GROUP_TECHNOLOGY_VERSION`, `QUEUE_NAME`, `QUEUE_TECHNOLOGY`, `QUEUE_VENDOR`, `SERVICE_AKKA_ACTOR_SYSTEM`, `SERVICE_CTG_SERVICE_NAME`, `SERVICE_DATABASE_HOST_NAME`, `SERVICE_DATABASE_NAME`, `SERVICE_DATABASE_TOPOLOGY`, `SERVICE_DATABASE_VENDOR`, `SERVICE_DETECTED_NAME`, `SERVICE_ESB_APPLICATION_NAME`, `SERVICE_IBM_CTG_GATEWAY_URL`, `SERVICE_MESSAGING_LISTENER_CLASS_NAME`, `SERVICE_NAME`, `SERVICE_PORT`, `SERVICE_PUBLIC_DOMAIN_NAME`, `SERVICE_REMOTE_ENDPOINT`, `SERVICE_REMOTE_SERVICE_NAME`, `SERVICE_TAGS`, `SERVICE_TECHNOLOGY`, `SERVICE_TECHNOLOGY_EDITION`, `SERVICE_TECHNOLOGY_VERSION`, `SERVICE_TOPOLOGY`, `SERVICE_TYPE`, `SERVICE_WEB_APPLICATION_ID`, `SERVICE_WEB_CONTEXT_ROOT`, `SERVICE_WEB_SERVER_ENDPOINT`, `SERVICE_WEB_SERVER_NAME`, `SERVICE_WEB_SERVICE_NAME`, `SERVICE_WEB_SERVICE_NAMESPACE`, `VMWARE_DATACENTER_NAME`, `VMWARE_VM_NAME`, `WEB_APPLICATION_NAME`, `WEB_APPLICATION_NAME_PATTERN`, `WEB_APPLICATION_TAGS`, `WEB_APPLICATION_TYPE`
+     */
+    key: string;
+    /**
+     * Possible Values: `BEGINS_WITH`, `CONTAINS`, `ENDS_WITH`, `EQUALS`, `EXISTS`, `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `IS_IP_IN_RANGE`, `LOWER_THAN`, `LOWER_THAN_OR_EQUAL`, `NOT_BEGINS_WITH`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_GREATER_THAN`, `NOT_GREATER_THAN_OR_EQUAL`, `NOT_IS_IP_IN_RANGE`, `NOT_LOWER_THAN`, `NOT_LOWER_THAN_OR_EQUAL`, `NOT_REGEX_MATCHES`, `NOT_TAG_KEY_EQUALS`, `REGEX_MATCHES`, `TAG_KEY_EQUALS`
+     */
+    operator: string;
+    /**
+     * Value
+     */
+    stringValue?: string;
+    /**
+     * Format: `[CONTEXT]tagKey:tagValue`
+     */
+    tag?: string;
+}
+
 export interface AutotagV2Rules {
     rules: outputs.AutotagV2RulesRule[];
 }
@@ -3155,6 +3962,21 @@ export interface AwsCredentialsTagsToMonitor {
     value?: string;
 }
 
+export interface AwsServiceMetric {
+    /**
+     * a list of metric's dimensions names
+     */
+    dimensions?: string[];
+    /**
+     * the name of the metric of the supporting service
+     */
+    name: string;
+    /**
+     * Possible values are `AVERAGE`, `AVG_MIN_MAX`, `MAXIMUM`, `MINIMUM`, `SAMPLE_COUNT` and `SUM`
+     */
+    statistic?: string;
+}
+
 export interface AzureCredentialsMonitorOnlyExcludingTagPair {
     /**
      * The name of the tag.
@@ -3213,6 +4035,17 @@ export interface AzureCredentialsSupportingServiceMonitoredMetric {
      * Any attributes that aren't yet supported by this provider
      */
     unknowns?: string;
+}
+
+export interface AzureServiceMetric {
+    /**
+     * a list of metric's dimensions names
+     */
+    dimensions?: string[];
+    /**
+     * the name of the metric of the supporting service
+     */
+    name: string;
 }
 
 export interface BrowserMonitorAnomalyDetection {
@@ -3945,6 +4778,10 @@ export interface BrowserMonitorScriptEventsEventKeystrokes {
      * Set to `true` to trigger the blur the `textValue`
      */
     simulateBlurEvent?: boolean;
+    /**
+     * Simulates pressing the 'Return' key after simulating other keystrokes. For example, to submit a form or trigger a login.
+     */
+    simulateReturnKey?: boolean;
     /**
      * The tab on which the page should open
      */
@@ -4771,7 +5608,7 @@ export interface BusinessEventsOneagentEventCategory {
      */
     source?: string;
     /**
-     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
      */
     sourceType: string;
 }
@@ -4801,7 +5638,7 @@ export interface BusinessEventsOneagentEventDataEventDataFieldComplexSource {
      */
     source?: string;
     /**
-     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
      */
     sourceType: string;
 }
@@ -4816,7 +5653,7 @@ export interface BusinessEventsOneagentEventProvider {
      */
     source?: string;
     /**
-     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
      */
     sourceType: string;
 }
@@ -4831,7 +5668,7 @@ export interface BusinessEventsOneagentEventType {
      */
     source?: string;
     /**
-     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     * Possible Values: `Constant_string`, `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
      */
     sourceType: string;
 }
@@ -4861,7 +5698,7 @@ export interface BusinessEventsOneagentTriggersTrigger {
 
 export interface BusinessEventsOneagentTriggersTriggerSource {
     /**
-     * Possible Values: `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Response_body`, `Response_headers`, `Response_statusCode`
+     * Possible Values: `Request_body`, `Request_headers`, `Request_method`, `Request_parameters`, `Request_path`, `Request_url`, `Response_body`, `Response_headers`, `Response_statusCode`
      */
     dataSource: string;
     /**
@@ -4902,6 +5739,134 @@ export interface BusinessEventsProcessingTransformationFieldsTransformationField
      * Possible Values: `BOOLEAN`, `DOUBLE`, `DURATION`, `INT`, `IPADDR`, `LONG`, `STRING`, `TIMESTAMP`
      */
     type: string;
+}
+
+export interface BusinessEventsSecurityContextSecurityContextRule {
+    /**
+     * Matcher
+     */
+    query: string;
+    /**
+     * Rule name
+     */
+    ruleName: string;
+    /**
+     * Literal value to be set
+     */
+    value?: string;
+    /**
+     * Possible Values: `FIELD`, `LITERAL`
+     */
+    valueSource: string;
+    /**
+     * Name of field used to copy value
+     */
+    valueSourceField?: string;
+}
+
+export interface CalculatedMobileMetricDimension {
+    /**
+     * A dimensions for the metric usage
+     */
+    dimensions?: outputs.CalculatedMobileMetricDimensionDimension[];
+}
+
+export interface CalculatedMobileMetricDimensionDimension {
+    /**
+     * The dimension of the metric. Possible values are `ApdexType`, `Browser`, `ErrorContext`, `ErrorOrigin`, `ErrorType`, `GeoLocation`, `StringProperty`, `UserActionType`
+     */
+    dimension: string;
+    /**
+     * The number of top values to be calculated
+     */
+    topX: number;
+}
+
+export interface CalculatedMobileMetricUserActionFilter {
+    /**
+     * Only actions with a duration more than or equal to this value (in milliseconds) are included in the metric calculation.
+     */
+    actionDurationFromMilliseconds?: number;
+    /**
+     * Only actions with a duration less than or equal to this value (in milliseconds) are included in the metric calculation.
+     */
+    actionDurationToMilliseconds?: number;
+    /**
+     * Only actions with the specified Apdex score are included in the metric calculation. Possible values: [ Frustrated, Satisfied, Tolerating, Unknown ]
+     */
+    apdex?: string;
+    /**
+     * Only actions coming from this app version are included in the metric calculation.
+     */
+    appVersion?: string;
+    /**
+     * Only actions coming from this carrier type are included in the metric calculation.
+     */
+    carrier?: string;
+    /**
+     * Only actions of users from this city are included in the metric calculation. Specify geolocation ID here.
+     */
+    city?: string;
+    /**
+     * Only actions coming from this connection type are included in the metric calculation. Possible values: [ LAN, MOBILE, OFFLINE, UNKNOWN, WIFI ]
+     */
+    connectionType?: string;
+    /**
+     * Only actions of users from this continent are included in the metric calculation. Specify geolocation ID here.
+     */
+    continent?: string;
+    /**
+     * Only actions of users from this country are included in the metric calculation. Specify geolocation ID here.
+     */
+    country?: string;
+    /**
+     * Only actions coming from this app version are included in the metric calculation.
+     */
+    device?: string;
+    /**
+     * The request error status of the actions to be included in the metric calculation: `true` or `false`
+     */
+    hasHttpError?: boolean;
+    /**
+     * The error status of the actions to be included in the metric calculation: `true` or `false`
+     */
+    hasReportedError?: boolean;
+    /**
+     * Only actions coming from this internet service provider are included in the metric calculation.
+     */
+    isp?: string;
+    /**
+     * Only actions coming from devices of this manufacturer are included in the metric calculation.
+     */
+    manufacturer?: string;
+    /**
+     * Filter by network technology
+     */
+    networkTechnology?: string;
+    /**
+     * Only actions coming from devices with this display orientation are included in the metric calculation. Possible values: [ LANDSCAPE, PORTRAIT, UNKNOWN ]
+     */
+    orientation?: string;
+    /**
+     * Only actions coming from this OS family are included in the metric calculation.
+     */
+    osFamily?: string;
+    /**
+     * Only actions coming from this OS version are included in the metric calculation.
+     */
+    osVersion?: string;
+    /**
+     * Only actions of users from this region are included in the metric calculation. Specify geolocation ID here.
+     */
+    region?: string;
+    /**
+     * Only actions coming from devices with this display resolution are included in the metric calculation. Possible values: [ CGA, DCI2K, DCI4K, DVGA, FHD, FWVGA, FWXGA, GHDPlus, HD, HQVGA, HQVGA2, HSXGA, HUXGA, HVGA, HXGA, NTSC, PAL, QHD, QQVGA, QSXGA, QUXGA, QVGA, QWXGA, QXGA, SVGA, SXGA, SXGAMinus, SXGAPlus, UGA, UHD16K, UHD4K, UHD8K, UHDPlus, UNKNOWN, UWQHD, UXGA, VGA, WHSXGA, WHUXGA, WHXGA, WQSXGA, WQUXGA, WQVGA, WQVGA2, WQVGA3, WQXGA, WQXGA2, WSVGA, WSVGA2, WSXGA, WSXGAPlus, WUXGA, WVGA, WVGA2, WXGA, WXGA2, WXGA3, WXGAPlus, XGA, XGAPLUS, _1280x854, nHD, qHD ]
+     */
+    resolution?: string;
+    /**
+     * Only actions with this name are included in the metric calculation.
+     */
+    userActionName?: string;
 }
 
 export interface CalculatedServiceMetricCondition {
@@ -5635,6 +6600,261 @@ export interface CalculatedServiceMetricMetricDefinition {
      * The request attribute to be captured. Only applicable when the **metric** parameter is set to `REQUEST_ATTRIBUTE`
      */
     requestAttribute?: string;
+}
+
+export interface CalculatedSyntheticMetricDimension {
+    /**
+     * A dimensions for the metric usage
+     */
+    dimensions?: outputs.CalculatedSyntheticMetricDimensionDimension[];
+}
+
+export interface CalculatedSyntheticMetricDimensionDimension {
+    /**
+     * The dimension of the metric. Possible values are `Event`, `Location`, `ResourceOrigin`
+     */
+    dimension: string;
+    /**
+     * The number of top values to be calculated
+     */
+    topX?: number;
+}
+
+export interface CalculatedSyntheticMetricFilter {
+    /**
+     * Only user actions of the specified type are included in the metric calculation
+     */
+    actionType?: string;
+    /**
+     * Only executions finished with the specified error code are included in the metric calculation.
+     */
+    errorCode?: number;
+    /**
+     * Only the specified browser clickpath event is included in the metric calculation. Specify the Dynatrace entity ID of the event here.
+     */
+    event?: string;
+    /**
+     * The execution status of the monitors to be included in the metric calculation: `true` or `false`
+     */
+    hasError?: boolean;
+    /**
+     * Only executions from the specified location are included in the metric calculation. Specify the Dynatrace entity ID of the location here.
+     */
+    location?: string;
+}
+
+export interface CalculatedWebMetricDimension {
+    /**
+     * A dimensions for the metric usage
+     */
+    dimensions?: outputs.CalculatedWebMetricDimensionDimension[];
+}
+
+export interface CalculatedWebMetricDimensionDimension {
+    /**
+     * The dimension of the metric. Possible values are `ApdexType`, `Browser`, `ErrorContext`, `ErrorOrigin`, `ErrorType`, `GeoLocation`, `StringProperty`, `UserActionType`
+     */
+    dimension: string;
+    /**
+     * The key of the user action property. Only applicable for the StringProperty dimension.
+     */
+    propertyKey?: string;
+    /**
+     * The number of top values to be calculated
+     */
+    topX: number;
+}
+
+export interface CalculatedWebMetricMetricDefinition {
+    /**
+     * The metric to be captured. Possible values are `Apdex`, `ApplicationCache`, `Callback`, `CumulativeLayoutShift`, `DNSLookup`, `DOMComplete`, `DOMContentLoaded`, `DOMInteractive`, `DoubleProperty`, `ErrorCount`, `FirstContentfulPaint`, `FirstInputDelay`, `FirstInputStart`, `FirstPaint`, `HTMLDownloaded`, `LargestContentfulPaint`, `LoadEventEnd`, `LoadEventStart`, `LongProperty`, `LongTasksTime`, `NavigationStart`, `OnDOMContentLoaded`, `OnLoad`, `Processing`, `RedirectTime`, `Request`, `RequestStart`, `Response`, `SecureConnect`, `SpeedIndex`, `TCPConnect`, `TimeToFirstByte`, `UserActionDuration`, `VisuallyComplete`
+     */
+    metric: string;
+    /**
+     * The key of the user action property. Only applicable for DoubleProperty and LongProperty metrics.
+     */
+    propertyKey?: string;
+}
+
+export interface CalculatedWebMetricUserActionFilter {
+    /**
+     * Only actions with a duration more than or equal to this value (in milliseconds) are included in the metric calculation.
+     */
+    actionDurationFromMilliseconds?: number;
+    /**
+     * Only actions with a duration less than or equal to this value (in milliseconds) are included in the metric calculation.
+     */
+    actionDurationToMilliseconds?: number;
+    /**
+     * Only actions with the specified Apdex score are included in the metric calculation. Possible values: [ Frustrated, Satisfied, Tolerating, Unknown ]
+     */
+    apdex?: string;
+    /**
+     * Only user actions coming from the specified browser family are included in the metric calculation.
+     */
+    browserFamily?: string;
+    /**
+     * Only user actions coming from the specified browser type are included in the metric calculation.
+     */
+    browserType?: string;
+    /**
+     * Only user actions coming from the specified browser version are included in the metric calculation.
+     */
+    browserVersion?: string;
+    /**
+     * Only actions of users from this city are included in the metric calculation. Specify geolocation ID here.
+     */
+    city?: string;
+    /**
+     * Only actions of users from this continent are included in the metric calculation. Specify geolocation ID here.
+     */
+    continent?: string;
+    /**
+     * Only actions of users from this country are included in the metric calculation. Specify geolocation ID here.
+     */
+    country?: string;
+    /**
+     * The status of custom actions in the metric calculation: `true` or `false`
+     */
+    customAction?: boolean;
+    /**
+     * The custom error name of the actions to be included in the metric calculation.
+     */
+    customErrorName?: string;
+    /**
+     * The custom error type of the actions to be included in the metric calculation.
+     */
+    customErrorType?: string;
+    /**
+     * Only user actions coming from the specified domain are included in the metric calculation.
+     */
+    domain?: string;
+    /**
+     * The error status of the actions to be included in the metric calculation: `true` or `false`
+     */
+    hasAnyError?: boolean;
+    /**
+     * The custom error status of the actions to be included in the metric calculation: `true` or `false`
+     */
+    hasCustomErrors?: boolean;
+    /**
+     * The request error status of the actions to be included in the metric calculation: `true` or `false`
+     */
+    hasHttpErrors?: boolean;
+    /**
+     * The JavaScript error status of the actions to be included in the metric calculation: `true` or `false`
+     */
+    hasJavascriptErrors?: boolean;
+    /**
+     * The HTTP error status code of the actions to be included in the metric calculation.
+     */
+    httpErrorCode?: number;
+    /**
+     * Can be used in combination with httpErrorCode to define a range of error codes that will be included in the metric calculation.
+     */
+    httpErrorCodeTo?: number;
+    /**
+     * The request path that has been determined to be the origin of an HTTP error of the actions to be included in the metric calculation.
+     */
+    httpPath?: string;
+    /**
+     * Only actions coming from this IP address are included in the metric calculation.
+     */
+    ip?: string;
+    /**
+     * The IPv6 status of the actions to be included in the metric calculation: `true` or `false`
+     */
+    ipV6Traffic?: boolean;
+    /**
+     * The status of load actions in the metric calculation: `true` or `false`
+     */
+    loadAction?: boolean;
+    /**
+     * Only actions coming from this OS family are included in the metric calculation.
+     */
+    osFamily?: string;
+    /**
+     * Only actions coming from this OS version are included in the metric calculation.
+     */
+    osVersion?: string;
+    /**
+     * The status of actions coming from real users in the metric calculation: `true` or `false`
+     */
+    realUser?: boolean;
+    /**
+     * Only actions of users from this region are included in the metric calculation. Specify geolocation ID here.
+     */
+    region?: string;
+    /**
+     * The status of actions coming from robots in the metric calculation: `true` or `false`
+     */
+    robot?: boolean;
+    /**
+     * The status of actions coming from synthetic monitors in the metric calculation: `true` or `false`
+     */
+    synthetic?: boolean;
+    /**
+     * Only actions on the specified group of views are included in the metric calculation.
+     */
+    targetViewGroup?: string;
+    /**
+     * Specifies the match type of the view group filter, e.g. using Contains or Equals. Defaults to Equals.
+     */
+    targetViewGroupNameMatchType?: string;
+    /**
+     * Only actions on the specified view are included in the metric calculation.
+     */
+    targetViewName?: string;
+    /**
+     * Specifies the match type of the view name filter, e.g. using Contains or Equals. Defaults to Equals.
+     */
+    targetViewNameMatchType?: string;
+    /**
+     * Only actions with this name are included in the metric calculation.
+     */
+    userActionName?: string;
+    /**
+     * The definition of a calculated web metric.
+     */
+    userActionProperties?: outputs.CalculatedWebMetricUserActionFilterUserActionProperty[];
+    /**
+     * The status of xhr actions in the metric calculation: `true` or `false`
+     */
+    xhrAction?: boolean;
+    /**
+     * The status of route actions in the metric calculation: `true` or `false`
+     */
+    xhrRouteChangeAction?: boolean;
+}
+
+export interface CalculatedWebMetricUserActionFilterUserActionProperty {
+    /**
+     * User Action Property
+     */
+    properties?: outputs.CalculatedWebMetricUserActionFilterUserActionPropertyProperty[];
+}
+
+export interface CalculatedWebMetricUserActionFilterUserActionPropertyProperty {
+    /**
+     * Only actions that have a value greater than or equal to this are included in the metric calculation.
+     */
+    from?: number;
+    /**
+     * The key of the action property we're checking.
+     */
+    key?: string;
+    /**
+     * Specifies the match type of a string filter, e.g. using Contains or Equals.
+     */
+    matchType?: string;
+    /**
+     * Only actions that have a value less than or equal to this are included in the metric calculation.
+     */
+    to?: number;
+    /**
+     * Only actions that have this value in the specified property are included in the metric calculation.
+     */
+    value?: string;
 }
 
 export interface CloudappWorkloaddetectionCloudFoundry {
@@ -7096,12 +8316,18 @@ export interface DataPrivacyDoNotTrack {
 export interface DataPrivacyMasking {
     /**
      * Possible Values: `All`, `Public`
+     *
+     * @deprecated This property is not supported anymore by the Dynatrace REST API (since schema version 4)
      */
     ipAddressMasking?: string;
     /**
      * Dynatrace captures the IP addresses of your end-users to determine the regions from which they access your application. To learn more, visit [Mask IPs and GPS coordinates](https://dt-url.net/mask-end-users-ip-addresses).. Dynatrace also captures GPS data from mobile apps that provide their users with the option of sharing geolocation data. On the server side, Dynatrace captures IP addresses to enable detailed troubleshooting for Dynatrace service calls.
+     *
+     * Once enabled, IP address masking sets the last octet of monitored IPv4 addresses and the last 80 bits of IPv6 addresses to zeroes. GPS coordinates are rounded up to 1 decimal place (~10 km). This masking occurs in memory. Full IP addresses are never written to disk. Location lookups are made using anonymized IP addresses and GPS coordinates.
+     *
+     * @deprecated This property is not supported anymore by the Dynatrace REST API (since schema version 4)
      */
-    ipAddressMaskingEnabled: boolean;
+    ipAddressMaskingEnabled?: boolean;
     /**
      * Dynatrace captures the URIs and request headers sent from desktop and mobile browsers. Dynatrace also captures full URIs on the server-side to enable detailed performance analysis of your applications. For complete details, visit [Mask personal data in URIs](https://dt-url.net/mask-personal-data-in-URIs).. URIs and request headers contain personal data. When this setting is enabled, Dynatrace automatically detects UUIDs, credit card numbers, email addresses, IP addresses, and other IDs and replaces those values with placeholders. The personal data is then masked in PurePath analysis, error analysis, user action naming for RUM, and elsewhere in Dynatrace.
      */
@@ -7511,6 +8737,61 @@ export interface DatabaseAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowes
     slowestDegradationMilliseconds: number;
 }
 
+export interface DavisAnomalyDetectorsAnalyzer {
+    /**
+     * Input fields for the specified analyzer
+     */
+    input?: outputs.DavisAnomalyDetectorsAnalyzerInput;
+    /**
+     * Fully qualified name of the analyzer
+     */
+    name: string;
+}
+
+export interface DavisAnomalyDetectorsAnalyzerInput {
+    analyzerInputFields: outputs.DavisAnomalyDetectorsAnalyzerInputAnalyzerInputField[];
+}
+
+export interface DavisAnomalyDetectorsAnalyzerInputAnalyzerInputField {
+    /**
+     * no documentation available
+     */
+    key: string;
+    /**
+     * no documentation available
+     */
+    value: string;
+}
+
+export interface DavisAnomalyDetectorsEventTemplate {
+    /**
+     * Set of additional key-value properties to be attached to the triggered event.
+     */
+    properties?: outputs.DavisAnomalyDetectorsEventTemplateProperties;
+}
+
+export interface DavisAnomalyDetectorsEventTemplateProperties {
+    properties: outputs.DavisAnomalyDetectorsEventTemplatePropertiesProperty[];
+}
+
+export interface DavisAnomalyDetectorsEventTemplatePropertiesProperty {
+    /**
+     * no documentation available
+     */
+    key: string;
+    /**
+     * no documentation available
+     */
+    value: string;
+}
+
+export interface DavisAnomalyDetectorsExecutionSettings {
+    /**
+     * Minute offset of sliding evaluation window for metrics with latency
+     */
+    queryOffset?: number;
+}
+
 export interface DduPoolEvents {
     /**
      * Is the limit configuration enabled
@@ -7629,6 +8910,24 @@ export interface DeclarativeGroupingDetectionProcessDefinitionRulesRule {
      * Possible Values: `Executable`, `ExecutablePath`, `CommandLine`
      */
     property: string;
+}
+
+export interface DirectSharesRecipients {
+    /**
+     * Recipient of the direct share
+     */
+    recipients?: outputs.DirectSharesRecipientsRecipient[];
+}
+
+export interface DirectSharesRecipientsRecipient {
+    /**
+     * Identifier of the recipient
+     */
+    id: string;
+    /**
+     * Type of the recipient. Possible values are `group' and`user'
+     */
+    type?: string;
 }
 
 export interface DiskAnomaliesDiskName {
@@ -8215,7 +9514,7 @@ export interface GenericRelationshipsSourcesSource {
      */
     mappingRules?: outputs.GenericRelationshipsSourcesSourceMappingRules;
     /**
-     * Possible Values: `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+     * Possible Values: `BusinessEvents`, `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
      */
     sourceType: string;
 }
@@ -8323,7 +9622,7 @@ export interface GenericTypesRulesRuleSourcesSource {
      */
     condition?: string;
     /**
-     * Possible Values: `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
+     * Possible Values: `BusinessEvents`, `Entities`, `Events`, `Logs`, `Metrics`, `Spans`, `Topology`
      */
     sourceType: string;
 }
@@ -8351,14 +9650,26 @@ export interface GetAlertingProfilesValue {
     name: string;
 }
 
-export interface GetEntitiesEntities {
+export interface GetDocumentsValue {
     /**
-     * A list of monitored entities.
+     * The unique identifier of the document.
      */
-    entities?: outputs.GetEntitiesEntitiesEntity[];
+    id: string;
+    /**
+     * The name of the document.
+     */
+    name: string;
+    /**
+     * The owner of the document. This could be a user or a group that has ownership rights over the document.
+     */
+    owner: string;
+    /**
+     * The type of the document. This could be a specific format or category the document belongs to.
+     */
+    type: string;
 }
 
-export interface GetEntitiesEntitiesEntity {
+export interface GetEntitiesEntity {
     /**
      * The name of the entity, displayed in the UI.
      */
@@ -8368,23 +9679,31 @@ export interface GetEntitiesEntitiesEntity {
      */
     entityId?: string;
     /**
+     * The timestamp at which the entity was last seen, in UTC milliseconds.
+     */
+    lastSeenTms?: number;
+    /**
+     * Properties defining the entity.
+     */
+    properties: {[key: string]: string};
+    /**
      * A set of tags assigned to the entity.
      */
-    tags?: outputs.GetEntitiesEntitiesEntityTag[];
+    tags?: outputs.GetEntitiesEntityTag[];
     /**
      * The type of the entity.
      */
     type?: string;
 }
 
-export interface GetEntitiesEntitiesEntityTag {
+export interface GetEntitiesEntityTag {
     /**
      * A tag assigned to the entity
      */
-    tags?: outputs.GetEntitiesEntitiesEntityTagTag[];
+    tags?: outputs.GetEntitiesEntityTagTag[];
 }
 
-export interface GetEntitiesEntitiesEntityTagTag {
+export interface GetEntitiesEntityTagTag {
     /**
      * The origin of the tag, such as AWS or Cloud Foundry. Custom tags use the `CONTEXTLESS` value
      */
@@ -8401,6 +9720,97 @@ export interface GetEntitiesEntitiesEntityTagTag {
      * The value of the tag. Not applicable to custom tags
      */
     value?: string;
+}
+
+export interface GetHubItemsItem {
+    /**
+     * The activation link for a technology
+     */
+    activationLink: string;
+    /**
+     * The unique ID used by the artifacts contained in releases
+     */
+    artifactId: string;
+    /**
+     * URL for the author's logo
+     */
+    authorLogo: string;
+    /**
+     * Name of the author of the item
+     */
+    authorName: string;
+    /**
+     * Checks if the item is compatible with the cluster version
+     */
+    clusterCompatible: boolean;
+    /**
+     * Whether or not the item is planned to be released soon
+     */
+    comingSoon: boolean;
+    /**
+     * Description of the item
+     */
+    description: string;
+    /**
+     * An absolute link to the documentation page of this item
+     */
+    documentationLink: string;
+    /**
+     * Whether or not the details call will contain description blocks
+     */
+    hasDescriptionBlocks: boolean;
+    /**
+     * Unique Id of the item
+     */
+    itemId: string;
+    /**
+     * The logo of the item. Can be a URL or Base64 encoded. Intended for HTML tags
+     */
+    logo: string;
+    /**
+     * An absolute link to the marketing page of this item
+     */
+    marketingLink: string;
+    /**
+     * Name of the item
+     */
+    name: string;
+    /**
+     * The reason why the item is not compatible with the cluster version
+     */
+    notCompatibleReason: string;
+    /**
+     * Grouping of items with keywords
+     */
+    tags: string[];
+    /**
+     * Represents the type of item. It can be `TECHNOLOGY`, `EXTENSION1` or `EXTENSION2`
+     */
+    type: string;
+}
+
+export interface GetIamPoliciesPolicy {
+    /**
+     * The account UUID the policy is defined for
+     */
+    account?: string;
+    /**
+     * The environment ID the policy is defined for
+     */
+    environment?: string;
+    /**
+     * `true` if this is a global policy`
+     */
+    global?: boolean;
+    id: string;
+    /**
+     * The name of the policy
+     */
+    name: string;
+    /**
+     * The UUID of the policy
+     */
+    uuid: string;
 }
 
 export interface GetManagementZonesValue {
@@ -8420,6 +9830,25 @@ export interface GetManagementZonesValue {
      * The name of the Management Zone
      */
     name: string;
+}
+
+export interface GetRemoteEnvironmentsRemoteEnvironment {
+    /**
+     * Name
+     */
+    name: string;
+    /**
+     * Possible Values: `CLUSTER`, `EXTERNAL`, `INTERNAL`
+     */
+    networkScope: string;
+    /**
+     * Provide a valid token created on the remote environment.
+     */
+    token: string;
+    /**
+     * Specify the full URI to the remote environment. Your local environment will have to be able to connect this URI on a network level.
+     */
+    uri: string;
 }
 
 export interface GetSyntheticLocationsLocations {
@@ -8457,6 +9886,76 @@ export interface GetSyntheticLocationsLocations {
      * The type of the location. Supported values are `PUBLIC`, `PRIVATE` and `CLUSTER`
      */
     type?: string;
+}
+
+export interface GetSyntheticNodesNode {
+    /**
+     * The version of the Active Gate
+     */
+    activeGateVersion: string;
+    /**
+     * Specifies whether the Active Gate  has the Auto update option enabled
+     */
+    autoUpdate: boolean;
+    /**
+     * Specifies whether Browser Monitors are enabled or not
+     */
+    browserMonitors: boolean;
+    /**
+     * The health check status of the synthetic node
+     */
+    healthCheckStatus: string;
+    /**
+     * The hostname of a node
+     */
+    hostname: string;
+    /**
+     * The ID of a node for usage within `dynatrace.SyntheticLocation`
+     */
+    id: string;
+    /**
+     * The known IP addresses of the node
+     */
+    ips: string[];
+    /**
+     * Specifies whether the Active Gate has the One Agent routing enabled
+     */
+    oneAgentRouting: boolean;
+    /**
+     * The Active Gate's host operating system
+     */
+    operatingSystem: string;
+    /**
+     * The version of the synthetic player
+     */
+    playerVersion: string;
+    /**
+     * The status of the synthetic node
+     */
+    status: string;
+    /**
+     * The version of a node
+     */
+    version: string;
+}
+
+export interface GrailMetricsAllowlistAllowRules {
+    allowRules: outputs.GrailMetricsAllowlistAllowRulesAllowRule[];
+}
+
+export interface GrailMetricsAllowlistAllowRulesAllowRule {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * Metric key
+     */
+    metricKey: string;
+    /**
+     * Possible Values: `CONTAINS`, `EQUALS`, `STARTSWITH`
+     */
+    pattern: string;
 }
 
 export interface HostAnomaliesConnections {
@@ -11732,6 +13231,144 @@ export interface HttpMonitorScriptRequestValidationRule {
     value: string;
 }
 
+export interface HttpMonitorScriptScript {
+    /**
+     * A HTTP request to be performed by the monitor.
+     */
+    requests: outputs.HttpMonitorScriptScriptRequest[];
+}
+
+export interface HttpMonitorScriptScriptRequest {
+    /**
+     * Authentication options for this request
+     */
+    authentication?: outputs.HttpMonitorScriptScriptRequestAuthentication;
+    /**
+     * The body of the HTTP request.
+     */
+    body?: string;
+    /**
+     * The setup of the monitor
+     */
+    configuration?: outputs.HttpMonitorScriptScriptRequestConfiguration;
+    /**
+     * A short description of the event to appear in the web UI.
+     */
+    description?: string;
+    /**
+     * The HTTP method of the request.
+     */
+    method: string;
+    /**
+     * Javascript code to execute after sending the request.
+     */
+    postProcessing?: string;
+    /**
+     * Javascript code to execute before sending the request.
+     */
+    preProcessing?: string;
+    /**
+     * Adapt request timeout option - the maximum time this request is allowed to consume. Keep in mind the maximum timeout of the complete monitor is 60 seconds
+     */
+    requestTimeout?: number;
+    /**
+     * The URL to check.
+     */
+    url: string;
+    /**
+     * Validation helps you verify that your HTTP monitor loads the expected content
+     */
+    validation?: outputs.HttpMonitorScriptScriptRequestValidation;
+}
+
+export interface HttpMonitorScriptScriptRequestAuthentication {
+    /**
+     * The ID of the credentials within the Dynatrace Credentials Vault.
+     */
+    credentials: string;
+    /**
+     * The KDC IP. Valid and required only if the type of authentication is `KERBEROS`.
+     */
+    kdcIp?: string;
+    /**
+     * The Realm Name. Valid and required only if the type of authentication is `KERBEROS`.
+     */
+    realmName?: string;
+    /**
+     * The type of authentication. Possible values are `BASIC_AUTHENTICATION`, `NTLM` and `KERBEROS`.
+     */
+    type: string;
+}
+
+export interface HttpMonitorScriptScriptRequestConfiguration {
+    /**
+     * If set to `false`, then the monitor fails with invalid SSL certificates.
+     */
+    acceptAnyCertificate?: boolean;
+    /**
+     * The client certificate, if applicable - eg. CREDENTIALS_VAULT-XXXXXXXXXXXXXXXX
+     */
+    clientCertificate?: string;
+    /**
+     * If set to `false`, redirects are reported as successful requests with response code 3xx.
+     *
+     * If not set, the `false` option is used.
+     */
+    followRedirects?: boolean;
+    /**
+     * The setup of the monitor
+     */
+    headers?: outputs.HttpMonitorScriptScriptRequestConfigurationHeaders;
+    /**
+     * Option not to store and display request and response bodies and header values in execution details, `true` or `false`. If not set, `false`.
+     */
+    sensitiveData?: boolean;
+    /**
+     * The User agent of the request
+     */
+    userAgent?: string;
+}
+
+export interface HttpMonitorScriptScriptRequestConfigurationHeaders {
+    /**
+     * contains an HTTP header of the request
+     */
+    headers: outputs.HttpMonitorScriptScriptRequestConfigurationHeadersHeader[];
+}
+
+export interface HttpMonitorScriptScriptRequestConfigurationHeadersHeader {
+    /**
+     * The key of the header
+     */
+    name: string;
+    /**
+     * The value of the header
+     */
+    value: string;
+}
+
+export interface HttpMonitorScriptScriptRequestValidation {
+    /**
+     * A list of validation rules
+     */
+    rules: outputs.HttpMonitorScriptScriptRequestValidationRule[];
+}
+
+export interface HttpMonitorScriptScriptRequestValidationRule {
+    /**
+     * The validation condition. `true` means validation succeeds if the specified content/element is found. `false` means validation fails if the specified content/element is found. Always specify `false` for `certificateExpiryDateConstraint` to fail the monitor if SSL certificate expiry is within the specified number of days
+     */
+    passIfFound?: boolean;
+    /**
+     * The type of the rule. Possible values are `patternConstraint`, `regexConstraint`, `httpStatusesList` and `certificateExpiryDateConstraint`
+     */
+    type: string;
+    /**
+     * The content to look for
+     */
+    value: string;
+}
+
 export interface HttpMonitorTag {
     /**
      * Tag with source of a Dynatrace entity.
@@ -11762,6 +13399,29 @@ export interface HttpMonitorTagTag {
     value?: string;
 }
 
+export interface HubSubscriptionsTokenSubscriptions {
+    tokenSubscriptions: outputs.HubSubscriptionsTokenSubscriptionsTokenSubscription[];
+}
+
+export interface HubSubscriptionsTokenSubscriptionsTokenSubscription {
+    /**
+     * no documentation available
+     */
+    description?: string;
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+    /**
+     * Name of subscription
+     */
+    name: string;
+    /**
+     * Subscription token
+     */
+    token: string;
+}
+
 export interface IamGroupPermissions {
     /**
      * A Permission
@@ -11771,7 +13431,7 @@ export interface IamGroupPermissions {
 
 export interface IamGroupPermissionsPermission {
     /**
-     * Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-manage-support-tickets`
+     * Possible values: `account-company-info`, `account-user-management`, `account-viewer`, `account-saml-flexible-federation`, `tenant-viewer`, `tenant-manage-settings`, `tenant-agent-install`, `tenant-logviewer`, `tenant-view-sensitive-request-data`, `tenant-configure-request-capture-data`, `tenant-replay-sessions-with-masking`, `tenant-replay-sessions-without-masking`, `tenant-manage-security-problems`, `tenant-view-security-problems`, `tenant-manage-support-tickets`
      */
     name: string;
     /**
@@ -11782,6 +13442,15 @@ export interface IamGroupPermissionsPermission {
      * The type of this permission. Possible values are `account`, `tenant`, `management-zone`
      */
     type: string;
+}
+
+export interface IamPolicyBindingsV2Policy {
+    /**
+     * Either the attribute `id` or the attribute `uuid` of a `dynatrace.IamPolicy`. Initially just the `id` attribute was supported (which is a concatenation of several configuration settings) - and is still supported for backwards compatibility
+     */
+    id: string;
+    metadata?: {[key: string]: string};
+    parameters?: {[key: string]: string};
 }
 
 export interface ImsBridgesQueueManager {
@@ -11941,6 +13610,25 @@ export interface K8sCredentialsEventsFieldSelector {
      * Any attributes that aren't yet supported by this provider
      */
     unknowns?: string;
+}
+
+export interface K8sMonitoringEventPatterns {
+    eventPatterns: outputs.K8sMonitoringEventPatternsEventPattern[];
+}
+
+export interface K8sMonitoringEventPatternsEventPattern {
+    /**
+     * Activate
+     */
+    active: boolean;
+    /**
+     * Field selector name
+     */
+    label: string;
+    /**
+     * The set of allowed characters for this field has been extended with ActiveGate version 1.259. For more details, see the [documentation](https://dt-url.net/7h23wuk#set-up-event-field-selectors).
+     */
+    pattern: string;
 }
 
 export interface K8sNamespaceAnomaliesCpuLimitsQuotaSaturation {
@@ -12373,6 +14061,13 @@ export interface K8sWorkloadAnomaliesHighMemoryUsageConfiguration {
     threshold: number;
 }
 
+export interface K8sWorkloadAnomaliesJobFailureEvents {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
 export interface K8sWorkloadAnomaliesNotAllPodsReady {
     /**
      * Alert if
@@ -12393,6 +14088,13 @@ export interface K8sWorkloadAnomaliesNotAllPodsReadyConfiguration {
      * some workload pods are not ready for at least
      */
     samplePeriodInMinutes: number;
+}
+
+export interface K8sWorkloadAnomaliesOomKills {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
 }
 
 export interface K8sWorkloadAnomaliesPendingPods {
@@ -12419,6 +14121,27 @@ export interface K8sWorkloadAnomaliesPendingPodsConfiguration {
      * there is at least
      */
     threshold: number;
+}
+
+export interface K8sWorkloadAnomaliesPodBackoffEvents {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sWorkloadAnomaliesPodEvictionEvents {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
+}
+
+export interface K8sWorkloadAnomaliesPodPreemptionEvents {
+    /**
+     * This setting is enabled (`true`) or disabled (`false`)
+     */
+    enabled: boolean;
 }
 
 export interface K8sWorkloadAnomaliesPodStuckInTerminating {
@@ -12465,6 +14188,13 @@ export interface K8sWorkloadAnomaliesWorkloadWithoutReadyPodsConfiguration {
     samplePeriodInMinutes: number;
 }
 
+export interface KubernetesAppKubernetesAppOptions {
+    /**
+     * New Kubernetes experience
+     */
+    enableKubernetesApp: boolean;
+}
+
 export interface KubernetesEventPatterns {
     eventPatterns: outputs.KubernetesEventPatternsEventPattern[];
 }
@@ -12484,6 +14214,17 @@ export interface KubernetesEventPatternsEventPattern {
     pattern: string;
 }
 
+export interface LimitOutboundConnectionsAllowedOutboundConnections {
+    /**
+     * If enabled, the Dynatrace JavaScript runtime will only be able to connect to the specified hosts.
+     */
+    enforced: boolean;
+    /**
+     * The Dynatrace JavaScript runtime will only be to connect to these hosts.
+     */
+    hostLists?: string[];
+}
+
 export interface LogCustomSourceContext {
     contexts: outputs.LogCustomSourceContextContext[];
 }
@@ -12501,13 +14242,55 @@ export interface LogCustomSourceContextContext {
 
 export interface LogCustomSourceCustomLogSource {
     /**
+     * Accept binary content
+     */
+    acceptBinary?: boolean;
+    /**
      * Possible Values: `LOG_PATH_PATTERN`, `WINDOWS_EVENT_LOG`
      */
     type: string;
     /**
-     * It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+     * (Required attribute for cluster v1.291 and under) It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
      */
-    values: string[];
+    values?: string[];
+    /**
+     * (Required attribute for cluster v1.292+) It might be either an absolute path to log(s) with optional wildcards or Windows Event Log name.
+     */
+    valuesAndEnrichment?: outputs.LogCustomSourceCustomLogSourceValuesAndEnrichment;
+}
+
+export interface LogCustomSourceCustomLogSourceValuesAndEnrichment {
+    customLogSourceWithEnrichments: outputs.LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichment[];
+}
+
+export interface LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichment {
+    /**
+     * Optional field that allows to define attributes that will enrich logs. ${N} can be used in attribute value to expand the value matched by wildcards where N denotes the number of the wildcard the expand
+     */
+    enrichment?: outputs.LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichmentEnrichment;
+    /**
+     * Values
+     */
+    path: string;
+}
+
+export interface LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichmentEnrichment {
+    enrichments: outputs.LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichmentEnrichmentEnrichment[];
+}
+
+export interface LogCustomSourceCustomLogSourceValuesAndEnrichmentCustomLogSourceWithEnrichmentEnrichmentEnrichment {
+    /**
+     * no documentation available
+     */
+    key?: string;
+    /**
+     * Possible Values: `Attribute`
+     */
+    type: string;
+    /**
+     * no documentation available
+     */
+    value?: string;
 }
 
 export interface LogEventsEventTemplate {
@@ -12562,6 +14345,29 @@ export interface LogProcessingRuleTesting {
     sampleLog: string;
 }
 
+export interface LogSecurityContextSecurityContextRule {
+    /**
+     * Matcher
+     */
+    query: string;
+    /**
+     * Rule name
+     */
+    ruleName: string;
+    /**
+     * Literal value to be set
+     */
+    value?: string;
+    /**
+     * Possible Values: `FIELD`, `LITERAL`
+     */
+    valueSource: string;
+    /**
+     * Name of field used to copy value
+     */
+    valueSourceField?: string;
+}
+
 export interface LogSensitiveDataMaskingMasking {
     /**
      * Maximum one capture group is allowed. If none was given, the whole expression will be treated as a capture group.
@@ -12583,7 +14389,7 @@ export interface LogSensitiveDataMaskingMatchers {
 
 export interface LogSensitiveDataMaskingMatchersMatcher {
     /**
-     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_source`, `Process_technology`
+     * Possible Values: `container.name`, `dt.entity.container_group`, `dt.entity.process_group`, `k8s.container.name`, `k8s.deployment.name`, `k8s.namespace.name`, `log.source`, `process.technology` and `host.tag`
      */
     attribute: string;
     /**
@@ -12602,7 +14408,7 @@ export interface LogStorageMatchers {
 
 export interface LogStorageMatchersMatcher {
     /**
-     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_content`, `Log_source`, `Process_technology`
+     * Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `Host_tag`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_content`, `Log_source`, `Loglevel`, `Process_technology`, `Winlog_eventid`, `Winlog_opcode`, `Winlog_provider`, `Winlog_task`
      */
     attribute: string;
     /**
@@ -12634,51 +14440,48 @@ export interface LogTimestampMatchersMatcher {
     values: string[];
 }
 
-export interface MaintenanceFilter {
-    /**
-     * A list of matching rules for dynamic filter formation.  If several rules are set, the OR logic applies
-     */
-    filters?: outputs.MaintenanceFilterFilter[];
+export interface MaintenanceFilters {
+    filters: outputs.MaintenanceFiltersFilter[];
 }
 
-export interface MaintenanceFilterFilter {
+export interface MaintenanceFiltersFilter {
     /**
-     * A specific entity that should match this maintenance window
+     * A specific entity that should match this maintenance window.. **Note**: If an entity type filter value is set, it must be equal to the type of the selected entity. Otherwise this maintenance window will not match.
      */
     entityId?: string;
     /**
-     * The tags you want to use for matching in the format key or key:value
+     * Entities which contain all of the configured tags will match this maintenance window.
      */
     entityTags?: string[];
     /**
-     * Type of entities this maintenance window should match
+     * Type of entities this maintenance window should match.. If no entity type is selected all entities regardless of the type will match.
      */
     entityType?: string;
     /**
-     * The IDs of management zones to which the matched entities must belong
+     * Entities which are part of all the configured management zones will match this maintenance window.
      */
     managementZones?: string[];
 }
 
 export interface MaintenanceGeneralProperties {
     /**
-     * A short description of the maintenance purpose
+     * A short description of the maintenance purpose.
      */
     description?: string;
     /**
-     * Suppress execution of synthetic monitors during the maintenance
+     * Disables the execution of the synthetic monitors that are within [the scope of this maintenance window](https://dt-url.net/0e0341m).
      */
-    disableSynthetic?: boolean;
+    disableSynthetic: boolean;
     /**
      * The name of the maintenance window, displayed in the UI
      */
     name: string;
     /**
-     * The type of suppression of alerting and problem detection during the maintenance
+     * The type of suppression of alerting and problem detection during the maintenance. Possible Values: `DETECT_PROBLEMS_AND_ALERT`, `DETECT_PROBLEMS_DONT_ALERT`, `DONT_DETECT_PROBLEMS`
      */
     suppression: string;
     /**
-     * The type of the maintenance: planned or unplanned
+     * The type of the maintenance, possible values: `PLANNED` or `UNPLANNED`
      */
     type: string;
 }
@@ -12697,7 +14500,7 @@ export interface MaintenanceSchedule {
      */
     onceRecurrence?: outputs.MaintenanceScheduleOnceRecurrence;
     /**
-     * The time window of the maintenance window
+     * The type maintenance window, possible values: `DAILY`, `MONTHLY`, `ONCE`, `WEEKLY`
      */
     type: string;
     /**
@@ -12745,7 +14548,7 @@ export interface MaintenanceScheduleDailyRecurrenceTimeWindow {
 
 export interface MaintenanceScheduleMonthlyRecurrence {
     /**
-     * The day of the month for monthly maintenance.  The value of `31` is treated as the last day of the month for months that don't have a 31st day. The value of `30` is also treated as the last day of the month for February
+     * The day of the month for monthly maintenance. If the selected day does not fall within the month, the maintenance window will be active on the last day of the month.
      */
     dayOfMonth: number;
     /**
@@ -12801,7 +14604,7 @@ export interface MaintenanceScheduleOnceRecurrence {
 
 export interface MaintenanceScheduleWeeklyRecurrence {
     /**
-     * The day of the week for weekly maintenance.  The format is the full name of the day in upper case, for example `THURSDAY`
+     * The day of the week for weekly maintenance, possible values: `FRIDAY`, `MONDAY`, `SATURDAY`, `SUNDAY`, `THURSDAY`, `TUESDAY`, `WEDNESDAY`
      */
     dayOfWeek: string;
     /**
@@ -15114,24 +16917,24 @@ export interface ManagementZoneV2Rules {
     /**
      * A management zone rule
      */
-    rules?: outputs.ManagementZoneV2RulesRule[];
+    rules: outputs.ManagementZoneV2RulesRule[];
 }
 
 export interface ManagementZoneV2RulesRule {
     /**
-     * No documentation available
+     * no documentation available
      */
     attributeRule?: outputs.ManagementZoneV2RulesRuleAttributeRule;
     /**
-     * No documentation available
+     * no documentation available
      */
     dimensionRule?: outputs.ManagementZoneV2RulesRuleDimensionRule;
     /**
-     * Enabled
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: boolean;
     /**
-     * Entity selector. The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
+     * The documentation of the entity selector can be found [here](https://dt-url.net/apientityselector).
      */
     entitySelector?: string;
     /**
@@ -15142,7 +16945,7 @@ export interface ManagementZoneV2RulesRule {
 
 export interface ManagementZoneV2RulesRuleAttributeRule {
     /**
-     * Conditions
+     * no documentation available
      */
     attributeConditions: outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditions;
     /**
@@ -15187,7 +16990,7 @@ export interface ManagementZoneV2RulesRuleAttributeRuleAttributeConditions {
     /**
      * Attribute conditions
      */
-    conditions?: outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition[];
+    conditions: outputs.ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition[];
 }
 
 export interface ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondition {
@@ -15228,7 +17031,7 @@ export interface ManagementZoneV2RulesRuleAttributeRuleAttributeConditionsCondit
      */
     stringValue?: string;
     /**
-     * Tag. Format: `[CONTEXT]tagKey:tagValue`
+     * Format: `[CONTEXT]tagKey:tagValue`
      */
     tag?: string;
 }
@@ -15248,7 +17051,7 @@ export interface ManagementZoneV2RulesRuleDimensionRuleDimensionConditions {
     /**
      * Dimension conditions
      */
-    conditions?: outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition[];
+    conditions: outputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition[];
 }
 
 export interface ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondition {
@@ -15257,7 +17060,7 @@ export interface ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondit
      */
     conditionType: string;
     /**
-     * Key
+     * no documentation available
      */
     key?: string;
     /**
@@ -15265,7 +17068,7 @@ export interface ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsCondit
      */
     ruleMatcher: string;
     /**
-     * Value
+     * no documentation available
      */
     value: string;
 }
@@ -15280,7 +17083,7 @@ export interface MetricEventsEventTemplate {
      */
     description: string;
     /**
-     * The event type to trigger.
+     * Possible Values: `AVAILABILITY`, `CUSTOM_ALERT`, `CUSTOM_ANNOTATION`, `CUSTOM_CONFIGURATION`, `CUSTOM_DEPLOYMENT`, `ERROR`, `INFO`, `MARKED_FOR_TERMINATION`, `RESOURCE`, `SLOWDOWN`
      */
     eventType: string;
     /**
@@ -15295,18 +17098,18 @@ export interface MetricEventsEventTemplate {
 
 export interface MetricEventsEventTemplateMetadata {
     /**
-     * The key of the metadata item
+     * Type 'dt.' for key hints.
      */
     metadataKey: string;
     /**
-     * The value of the metadata item
+     * no documentation available
      */
     metadataValue: string;
 }
 
 export interface MetricEventsModelProperties {
     /**
-     * The alert condition of the model properties
+     * Possible Values: `ABOVE`, `BELOW`, `OUTSIDE`
      */
     alertCondition: string;
     /**
@@ -15334,7 +17137,7 @@ export interface MetricEventsModelProperties {
      */
     tolerance?: number;
     /**
-     * Metric-key-based query definitions only support static thresholds.
+     * Possible Values: `AUTO_ADAPTIVE_THRESHOLD`, `SEASONAL_BASELINE`, `STATIC_THRESHOLD`
      */
     type: string;
     /**
@@ -15345,11 +17148,11 @@ export interface MetricEventsModelProperties {
 
 export interface MetricEventsQueryDefinition {
     /**
-     * The aggregation of the query definition
+     * Possible Values: `AVG`, `COUNT`, `MAX`, `MEDIAN`, `MIN`, `PERCENTILE90`, `SUM`, `VALUE`
      */
     aggregation?: string;
     /**
-     * The dimension filters of the query definition
+     * Dimension filter
      */
     dimensionFilter?: outputs.MetricEventsQueryDefinitionDimensionFilter;
     /**
@@ -15357,9 +17160,13 @@ export interface MetricEventsQueryDefinition {
      */
     entityFilter?: outputs.MetricEventsQueryDefinitionEntityFilter;
     /**
-     * The metric key of the query definition
+     * The `legacyId` of a Management Zone (as provided by the resource `dynatrace.ManagementZoneV2` or the data source `dynatrace.ManagementZone`)
      */
-    metricKey: string;
+    managementZone?: string;
+    /**
+     * Metric key
+     */
+    metricKey?: string;
     /**
      * To learn more, visit [Metric Selector](https://dt-url.net/metselad)
      */
@@ -15369,50 +17176,57 @@ export interface MetricEventsQueryDefinition {
      */
     queryOffset?: number;
     /**
-     * The type of query definition
+     * Possible Values: `METRIC_KEY`, `METRIC_SELECTOR`
      */
     type: string;
 }
 
 export interface MetricEventsQueryDefinitionDimensionFilter {
-    /**
-     * Dimension filter definitions
-     */
-    filters?: outputs.MetricEventsQueryDefinitionDimensionFilterFilter[];
+    filters: outputs.MetricEventsQueryDefinitionDimensionFilterFilter[];
 }
 
 export interface MetricEventsQueryDefinitionDimensionFilterFilter {
     /**
-     * The key of the dimension filter
+     * Dimension key
      */
     dimensionKey: string;
     /**
-     * The value of the dimension filter
+     * Dimension value
      */
     dimensionValue: string;
+    /**
+     * Possible Values: `CONTAINS_CASE_SENSITIVE`, `DOES_NOT_CONTAIN_CASE_SENSITIVE`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS`, `STARTS_WITH`
+     */
+    operator?: string;
 }
 
 export interface MetricEventsQueryDefinitionEntityFilter {
     /**
-     * Conditions of entity type to filter
+     * no documentation available
      */
-    conditions?: outputs.MetricEventsQueryDefinitionEntityFilterCondition[];
+    conditions?: outputs.MetricEventsQueryDefinitionEntityFilterConditions;
     /**
      * Dimension key of entity type to filter
      */
     dimensionKey?: string;
 }
 
-export interface MetricEventsQueryDefinitionEntityFilterCondition {
-    /**
-     * Entity filter conditions
-     */
-    conditions?: outputs.MetricEventsQueryDefinitionEntityFilterConditionCondition[];
+export interface MetricEventsQueryDefinitionEntityFilterConditions {
+    conditions: outputs.MetricEventsQueryDefinitionEntityFilterConditionsCondition[];
 }
 
-export interface MetricEventsQueryDefinitionEntityFilterConditionCondition {
+export interface MetricEventsQueryDefinitionEntityFilterConditionsCondition {
+    /**
+     * Possible Values: `CONTAINS_CASE_INSENSITIVE`, `CONTAINS_CASE_SENSITIVE`, `DOES_NOT_CONTAIN_CASE_INSENSITIVE`, `DOES_NOT_CONTAIN_CASE_SENSITIVE`, `DOES_NOT_EQUAL`, `DOES_NOT_START_WITH`, `EQUALS`, `STARTS_WITH`
+     */
     operator: string;
+    /**
+     * Possible Values: `CUSTOM_DEVICE_GROUP_NAME`, `ENTITY_ID`, `HOST_GROUP_NAME`, `HOST_NAME`, `MANAGEMENT_ZONE`, `NAME`, `PROCESS_GROUP_ID`, `PROCESS_GROUP_NAME`, `TAG`
+     */
     type: string;
+    /**
+     * no documentation available
+     */
     value: string;
 }
 
@@ -15691,6 +17505,17 @@ export interface MobileAppEnablementSessionReplay {
      * Before enabling, Dynatrace checks your system against the [prerequisites for Session Replay](https://dt-url.net/t23s0ppi).
      */
     onCrash: boolean;
+}
+
+export interface MobileAppKeyPerformanceThresholds {
+    /**
+     * If the action duration is above this value, the Apdex is considered to be **Frustrating**.
+     */
+    frustratingThresholdSeconds: number;
+    /**
+     * If the action duration is below this value, the Apdex is considered to be **Satisfactory**.
+     */
+    tolerableThresholdSeconds: number;
 }
 
 export interface MobileAppRequestErrorsErrorRules {
@@ -16343,9 +18168,17 @@ export interface OsServicesDetectionConditionsLinuxLinuxDetectionCondition {
      */
     condition?: string;
     /**
+     * Custom metadata
+     */
+    hostMetadataCondition?: outputs.OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition;
+    /**
      * Possible Values: `ServiceName`, `StartupType`
      */
-    property: string;
+    property?: string;
+    /**
+     * Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+     */
+    ruleType?: string;
     /**
      * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
      *
@@ -16365,6 +18198,17 @@ export interface OsServicesDetectionConditionsLinuxLinuxDetectionCondition {
     startupCondition?: string;
 }
 
+export interface OsServicesDetectionConditionsLinuxLinuxDetectionConditionHostMetadataCondition {
+    /**
+     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     */
+    metadataCondition: string;
+    /**
+     * Key
+     */
+    metadataKey: string;
+}
+
 export interface OsServicesDetectionConditionsWindows {
     detectionConditionsWindows: outputs.OsServicesDetectionConditionsWindowsDetectionConditionsWindow[];
 }
@@ -16375,9 +18219,17 @@ export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindow {
      */
     condition?: string;
     /**
+     * Custom metadata
+     */
+    hostMetadataCondition?: outputs.OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition;
+    /**
      * Possible Values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
      */
-    property: string;
+    property?: string;
+    /**
+     * Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+     */
+    ruleType?: string;
     /**
      * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
      *
@@ -16398,6 +18250,17 @@ export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindow {
      * - `disabled` for Disabled
      */
     startupCondition?: string;
+}
+
+export interface OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataCondition {
+    /**
+     * This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).
+     */
+    metadataCondition: string;
+    /**
+     * Key
+     */
+    metadataKey: string;
 }
 
 export interface OsServicesMetadata {
@@ -16581,11 +18444,46 @@ export interface ProcessAvailabilityRulesRule {
      *
      * For more details, see [Process availability](https://dt-url.net/v923x37).
      */
-    condition: string;
+    condition?: string;
     /**
-     * Possible Values: `Executable`, `ExecutablePath`, `CommandLine`
+     * Host custom metadata refers to user-defined key-value pairs that you can assign to hosts monitored by Dynatrace.
+     *
+     * By defining custom metadata, you can enrich the monitoring data with context specific to your organization's needs, such as environment names, team ownership, application versions, or any other relevant details.
+     *
+     * See [Define tags and metadata for hosts](https://dt-url.net/w3hv0kbw).
      */
-    property: string;
+    hostMetadataCondition?: outputs.ProcessAvailabilityRulesRuleHostMetadataCondition;
+    /**
+     * Possible Values: `CommandLine`, `Executable`, `ExecutablePath`, `User`
+     */
+    property?: string;
+    /**
+     * Possible Values: `RuleTypeHost`, `RuleTypeProcess`
+     */
+    ruleType?: string;
+}
+
+export interface ProcessAvailabilityRulesRuleHostMetadataCondition {
+    /**
+     * This string has to match a required format.
+     *
+     * - `$contains(production)` – Matches if `production` appears anywhere in the host metadata value.
+     * - `$eq(production)` – Matches if `production` matches the host metadata value exactly.
+     * - `$prefix(production)` – Matches if `production` matches the prefix of the host metadata value.
+     * - `$suffix(production)` – Matches if `production` matches the suffix of the host metadata value.
+     *
+     * Available logic operations:
+     * - `$not($eq(production))` – Matches if the host metadata value is different from `production`.
+     * - `$and($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` and ends with `main`.
+     * - `$or($prefix(production),$suffix(main))` – Matches if host metadata value starts with `production` or ends with `main`.
+     *
+     * Brackets **(** and **)** that are part of the matched property **must be escaped with a tilde (~)**
+     */
+    metadataCondition: string;
+    /**
+     * Key
+     */
+    metadataKey: string;
 }
 
 export interface ProcessGroupDetectionGroupExtraction {
@@ -19778,10 +21676,7 @@ export interface RequestNamingPlaceholdersPlaceholderSourceServiceTagTagKey {
 }
 
 export interface ResourceAttributesKeys {
-    /**
-     * Attribute key allow-list
-     */
-    rules?: outputs.ResourceAttributesKeysRule[];
+    rules: outputs.ResourceAttributesKeysRule[];
 }
 
 export interface ResourceAttributesKeysRule {
@@ -19790,14 +21685,11 @@ export interface ResourceAttributesKeysRule {
      */
     attributeKey: string;
     /**
-     * If this is true, the value of the specified key is stored.
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: boolean;
     /**
-     * Introduce more granular control over the visibility of attribute values.  
-     * Choose **Do not mask** to allow every user to see the actual value and use it in defining other configurations.  
-     * Choose **Mask entire value** to hide the whole value of this attribute from everyone who does not have 'View sensitive request data' permission. These attributes can't be used to define other configurations. 
-     * Choose **Mask only confidential data** to apply automatic masking strategies to your data. These strategies include, for example, credit card numbers, IBAN, IPs, email-addresses, etc. It may not be possible to recognize all sensitive data so please always make sure to verify that sensitive data is actually masked. If sensitive data is not recognized, please use **Mask entire value** instead. Users with 'View sensitive request data' permission will be able to see the entire value, others only the non-sensitive parts. These attributes can't be used to define other configurations.
+     * Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
      */
     masking: string;
 }
@@ -19808,7 +21700,7 @@ export interface RumProviderBreakdownDomainNamePatternList {
 
 export interface RumProviderBreakdownDomainNamePatternListDomainNamePattern {
     /**
-     * Please type at least part of this content provider's URL. Asterisks (*) can be used as wildcard characters.
+     * Use a ends-with pattern for this content provider's domain
      */
     pattern: string;
 }
@@ -19954,19 +21846,19 @@ export interface ServiceAnomaliesResponseTimesThresholds {
 
 export interface ServiceAnomaliesV2FailureRate {
     /**
-     * . Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+     * Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
      */
     autoDetection?: outputs.ServiceAnomaliesV2FailureRateAutoDetection;
     /**
-     * Detection mode for increases in failure rate
+     * Possible Values: `Auto`, `Fixed`
      */
     detectionMode?: string;
     /**
-     * Detect increases in failure rate
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: boolean;
     /**
-     * . Alert if a given failure rate is exceeded during any 5-minute-period
+     * Alert if a given failure rate is exceeded during any 5-minute-period
      */
     fixedDetection?: outputs.ServiceAnomaliesV2FailureRateFixedDetection;
 }
@@ -20003,11 +21895,11 @@ export interface ServiceAnomaliesV2FailureRateFixedDetection {
      */
     overAlertingProtection: outputs.ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtection;
     /**
-     * Sensitivity
+     * Possible Values: `High`, `Low`, `Medium`
      */
     sensitivity: string;
     /**
-     * Threshold
+     * no documentation available
      */
     threshold: number;
 }
@@ -20025,7 +21917,7 @@ export interface ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtecti
 
 export interface ServiceAnomaliesV2LoadDrops {
     /**
-     * Detect service load drops
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: boolean;
     /**
@@ -20040,7 +21932,7 @@ export interface ServiceAnomaliesV2LoadDrops {
 
 export interface ServiceAnomaliesV2LoadSpikes {
     /**
-     * Detect service load spikes
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: boolean;
     /**
@@ -20055,19 +21947,19 @@ export interface ServiceAnomaliesV2LoadSpikes {
 
 export interface ServiceAnomaliesV2ResponseTime {
     /**
-     * No documentation available
+     * no documentation available
      */
     autoDetection?: outputs.ServiceAnomaliesV2ResponseTimeAutoDetection;
     /**
-     * Detection mode for response time degradations
+     * Possible Values: `Auto`, `Fixed`
      */
     detectionMode?: string;
     /**
-     * Detect response time degradations
+     * This setting is enabled (`true`) or disabled (`false`)
      */
     enabled: boolean;
     /**
-     * No documentation available
+     * no documentation available
      */
     fixedDetection?: outputs.ServiceAnomaliesV2ResponseTimeFixedDetection;
 }
@@ -20078,11 +21970,11 @@ export interface ServiceAnomaliesV2ResponseTimeAutoDetection {
      */
     overAlertingProtection: outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection;
     /**
-     * All requests. Alert if the average response time of all requests degrades beyond **both** the absolute and relative thresholds:
+     * Alert if the median response time of all requests degrades beyond **both** the absolute and relative thresholds:
      */
     responseTimeAll: outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll;
     /**
-     * Slowest 10%. Alert if the average response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+     * Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
      */
     responseTimeSlowest: outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest;
 }
@@ -20126,15 +22018,15 @@ export interface ServiceAnomaliesV2ResponseTimeFixedDetection {
      */
     overAlertingProtection: outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionOverAlertingProtection;
     /**
-     * All requests. Alert if the average response time of all requests degrades beyond this threshold:
+     * Alert if the median response time of all requests degrades beyond this threshold:
      */
     responseTimeAll: outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeAll;
     /**
-     * Slowest 10%. Alert if the average response time of the slowest 10% of requests degrades beyond this threshold:
+     * Alert if the response time of the slowest 10% of requests degrades beyond this threshold:
      */
     responseTimeSlowest: outputs.ServiceAnomaliesV2ResponseTimeFixedDetectionResponseTimeSlowest;
     /**
-     * Sensitivity
+     * Possible Values: `High`, `Low`, `Medium`
      */
     sensitivity: string;
 }
@@ -20221,7 +22113,7 @@ export interface ServiceExternalWebRequestIdContributors {
      */
     contextRoot: outputs.ServiceExternalWebRequestIdContributorsContextRoot;
     /**
-     * Let the Port contribute to the Service Id
+     * Let the port contribute to the Service Id
      */
     portForServiceId: boolean;
     /**
@@ -20247,7 +22139,7 @@ export interface ServiceExternalWebRequestIdContributorsApplicationIdServiceIdCo
      */
     contributionType: string;
     /**
-     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     * Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
      */
     transformations?: outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations;
     /**
@@ -20331,7 +22223,7 @@ export interface ServiceExternalWebRequestIdContributorsContextRootServiceIdCont
      */
     segmentCount?: number;
     /**
-     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     * Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
      */
     transformations?: outputs.ServiceExternalWebRequestIdContributorsContextRootServiceIdContributorTransformations;
     /**
@@ -20399,7 +22291,7 @@ export interface ServiceExternalWebRequestIdContributorsPublicDomainNameServiceI
      */
     copyFromHostName?: boolean;
     /**
-     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     * Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
      */
     transformations?: outputs.ServiceExternalWebRequestIdContributorsPublicDomainNameServiceIdContributorTransformations;
     /**
@@ -20515,7 +22407,7 @@ export interface ServiceExternalWebServiceIdContributors {
      */
     detectAsWebRequestService: boolean;
     /**
-     * Let the Port contribute to the Service Id
+     * Let the port contribute to the Service Id
      */
     portForServiceId?: boolean;
     /**
@@ -20541,7 +22433,7 @@ export interface ServiceExternalWebServiceIdContributorsUrlPathServiceIdContribu
      */
     contributionType: string;
     /**
-     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     * Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
      */
     transformations?: outputs.ServiceExternalWebServiceIdContributorsUrlPathServiceIdContributorTransformations;
     /**
@@ -20767,7 +22659,7 @@ export interface ServiceFullWebRequestIdContributors {
      */
     applicationId: outputs.ServiceFullWebRequestIdContributorsApplicationId;
     /**
-     * The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+     * The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the **Service overview page** under **Properties and tags**.
      */
     contextRoot: outputs.ServiceFullWebRequestIdContributorsContextRoot;
     /**
@@ -20793,7 +22685,7 @@ export interface ServiceFullWebRequestIdContributorsApplicationIdServiceIdContri
      */
     contributionType: string;
     /**
-     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     * Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
      */
     transformations?: outputs.ServiceFullWebRequestIdContributorsApplicationIdServiceIdContributorTransformations;
     /**
@@ -20877,7 +22769,7 @@ export interface ServiceFullWebRequestIdContributorsContextRootServiceIdContribu
      */
     segmentCount?: number;
     /**
-     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     * Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
      */
     transformations?: outputs.ServiceFullWebRequestIdContributorsContextRootServiceIdContributorTransformations;
     /**
@@ -20941,7 +22833,7 @@ export interface ServiceFullWebRequestIdContributorsServerNameServiceIdContribut
      */
     contributionType: string;
     /**
-     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     * Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
      */
     transformations?: outputs.ServiceFullWebRequestIdContributorsServerNameServiceIdContributorTransformations;
     /**
@@ -21057,7 +22949,7 @@ export interface ServiceFullWebServiceIdContributors {
      */
     applicationId?: outputs.ServiceFullWebServiceIdContributorsApplicationId;
     /**
-     * The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the Service screen under **Properties and tags**.
+     * The context root is the first segment of the request URL after the Server name. For example, in the `www.dynatrace.com/support/help/dynatrace-api/` URL the context root is `/support`. The context root value can be found on the **Service overview page** under **Properties and tags**.
      */
     contextRoot?: outputs.ServiceFullWebServiceIdContributorsContextRoot;
     /**
@@ -21095,7 +22987,7 @@ export interface ServiceFullWebServiceIdContributorsApplicationIdServiceIdContri
      */
     contributionType: string;
     /**
-     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     * Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
      */
     transformations?: outputs.ServiceFullWebServiceIdContributorsApplicationIdServiceIdContributorTransformations;
     /**
@@ -21179,7 +23071,7 @@ export interface ServiceFullWebServiceIdContributorsContextRootServiceIdContribu
      */
     segmentCount?: number;
     /**
-     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     * Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
      */
     transformations?: outputs.ServiceFullWebServiceIdContributorsContextRootServiceIdContributorTransformations;
     /**
@@ -21243,7 +23135,7 @@ export interface ServiceFullWebServiceIdContributorsServerNameServiceIdContribut
      */
     contributionType: string;
     /**
-     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     * Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
      */
     transformations?: outputs.ServiceFullWebServiceIdContributorsServerNameServiceIdContributorTransformations;
     /**
@@ -21323,7 +23215,7 @@ export interface ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContr
      */
     contributionType: string;
     /**
-     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     * Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
      */
     transformations?: outputs.ServiceFullWebServiceIdContributorsWebServiceNameServiceIdContributorTransformations;
     /**
@@ -21403,7 +23295,7 @@ export interface ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceId
      */
     contributionType: string;
     /**
-     * Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+     * Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
      */
     transformations?: outputs.ServiceFullWebServiceIdContributorsWebServiceNamespaceServiceIdContributorTransformations;
     /**
@@ -23681,6 +25573,71 @@ export interface SessionReplayWebPrivacyMaskingPresetsRecordingMaskingBlockListR
     target: string;
 }
 
+export interface SiteReliabilityGuardianObjectives {
+    objectives: outputs.SiteReliabilityGuardianObjectivesObjective[];
+}
+
+export interface SiteReliabilityGuardianObjectivesObjective {
+    /**
+     * Possible Values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
+     */
+    comparisonOperator: string;
+    /**
+     * no documentation available
+     */
+    description?: string;
+    /**
+     * DQL query
+     */
+    dqlQuery?: string;
+    /**
+     * Objective name
+     */
+    name: string;
+    /**
+     * Possible Values: `DQL`, `REFERENCE_SLO`
+     */
+    objectiveType: string;
+    /**
+     * Please enter the metric key of your desired SLO. SLO metric keys have to start with 'func:slo.'
+     */
+    referenceSlo?: string;
+    /**
+     * no documentation available
+     */
+    target?: number;
+    /**
+     * no documentation available
+     */
+    warning?: number;
+}
+
+export interface SiteReliabilityGuardianVariables {
+    variables: outputs.SiteReliabilityGuardianVariablesVariable[];
+}
+
+export interface SiteReliabilityGuardianVariablesVariable {
+    /**
+     * Value
+     */
+    definition: string;
+    /**
+     * no documentation available
+     */
+    name: string;
+}
+
+export interface SloErrorBudgetBurnRate {
+    /**
+     * The error budget burn rate calculation is enabled (true) or disabled (false).
+     */
+    burnRateVisualizationEnabled?: boolean;
+    /**
+     * The threshold between a slow and a fast burn rate.
+     */
+    fastBurnThreshold?: number;
+}
+
 export interface SloV2ErrorBudgetBurnRate {
     /**
      * Burn rate visualization enabled
@@ -23974,6 +25931,25 @@ export interface UpdateWindowsWeeklyRecurrenceUpdateTime {
     timeZone: string;
 }
 
+export interface UrlBasedSamplingQueryParameters {
+    parameters: outputs.UrlBasedSamplingQueryParametersParameter[];
+}
+
+export interface UrlBasedSamplingQueryParametersParameter {
+    /**
+     * Query parameter name
+     */
+    name: string;
+    /**
+     * Query parameter value
+     */
+    value?: string;
+    /**
+     * Query parameter value is undefined
+     */
+    valueIsUndefined?: boolean;
+}
+
 export interface UserActionMetricsFilters {
     filters: outputs.UserActionMetricsFiltersFilter[];
 }
@@ -24260,6 +26236,66 @@ export interface VmwareAnomaliesUndersizedStorageDetectionCustomThresholds {
     peakQueueCommandLatency: number;
 }
 
+export interface VulnerabilityCodeCriteria {
+    /**
+     * Process group
+     */
+    processGroup?: string;
+}
+
+export interface VulnerabilityCodeMetadata {
+    /**
+     * no documentation available
+     */
+    comment: string;
+}
+
+export interface VulnerabilityCodeVulnerabilityDetectionControl {
+    /**
+     * Possible Values: `MONITORING_OFF`, `MONITORING_ON`
+     */
+    monitoringMode: string;
+}
+
+export interface VulnerabilitySettingsTechnologies {
+    /**
+     * NET
+     */
+    enableDotNet: boolean;
+    /**
+     * NET runtimes
+     */
+    enableDotNetRuntime?: boolean;
+    /**
+     * Go
+     */
+    enableGo: boolean;
+    /**
+     * Java
+     */
+    enableJava: boolean;
+    /**
+     * Java runtimes
+     */
+    enableJavaRuntime?: boolean;
+    /**
+     * Kubernetes
+     */
+    enableKubernetes: boolean;
+    /**
+     * Node.js
+     */
+    enableNodeJs: boolean;
+    /**
+     * Node.js runtimes
+     */
+    enableNodeJsRuntime?: boolean;
+    /**
+     * PHP
+     */
+    enablePhp: boolean;
+}
+
 export interface WebAppAnomaliesErrorRate {
     /**
      * This setting is enabled (`true`) or disabled (`false`)
@@ -24543,6 +26579,61 @@ export interface WebAppEnablementSessionReplay {
     enabled: boolean;
 }
 
+export interface WebAppKeyPerformanceCustomThresholds {
+    /**
+     * If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+     */
+    frustratingThresholdSeconds: number;
+    /**
+     * If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+     */
+    toleratedThresholdSeconds: number;
+}
+
+export interface WebAppKeyPerformanceLoadFallbackThresholds {
+    /**
+     * If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+     */
+    frustratingFallbackThresholdSeconds: number;
+    /**
+     * If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+     */
+    toleratedFallbackThresholdSeconds: number;
+}
+
+export interface WebAppKeyPerformanceLoadThresholds {
+    /**
+     * If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+     */
+    frustratingThresholdSeconds: number;
+    /**
+     * If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+     */
+    toleratedThresholdSeconds: number;
+}
+
+export interface WebAppKeyPerformanceXhrFallbackThresholds {
+    /**
+     * If **User action duration** is above this value, the action is assigned to the Frustrated performance zone.
+     */
+    frustratingFallbackThresholdSeconds: number;
+    /**
+     * If **User action duration** is below this value, the action is assigned to the Satisfied performance zone.
+     */
+    toleratedFallbackThresholdSeconds: number;
+}
+
+export interface WebAppKeyPerformanceXhrThresholds {
+    /**
+     * If the key performance metric is above this value, the action is assigned to the Frustrated performance zone.
+     */
+    frustratingThresholdSeconds: number;
+    /**
+     * If the key performance metric is below this value, the action is assigned to the Satisfied performance zone.
+     */
+    toleratedThresholdSeconds: number;
+}
+
 export interface WebAppRequestErrorsErrorRules {
     errorRules: outputs.WebAppRequestErrorsErrorRulesErrorRule[];
 }
@@ -24792,7 +26883,7 @@ export interface WebApplicationMonitoringSettings {
     /**
      * Add the cross origin = anonymous attribute to capture JavaScript error messages and W3C resource timings
      */
-    addCrossOriginAnonymousAttribute?: boolean;
+    addCrossOriginAnonymousAttribute: boolean;
     /**
      * Advanced JavaScript tag settings
      */
@@ -24846,6 +26937,10 @@ export interface WebApplicationMonitoringSettings {
      */
     injectionMode: string;
     /**
+     * Instrumented web or app server.
+     */
+    instrumentedWebServer?: boolean;
+    /**
      * Settings for restricting certain ip addresses and for introducing subnet mask. It also restricts the mode
      */
     ipAddressRestrictionSettings?: outputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettings;
@@ -24874,9 +26969,13 @@ export interface WebApplicationMonitoringSettings {
      */
     monitoringDataPath?: string;
     /**
+     * Same site cookie attribute
+     */
+    sameSiteCookieAttribute?: string;
+    /**
      * Time duration for the cache settings
      */
-    scriptTagCacheDurationInHours?: number;
+    scriptTagCacheDurationInHours: number;
     /**
      * Secure attribute usage for Dynatrace cookies enabled/disabled
      */
@@ -24885,6 +26984,10 @@ export interface WebApplicationMonitoringSettings {
      * Path to identify the server’s request ID. Maximum 150 characters.
      */
     serverRequestPathId?: string;
+    /**
+     * Send beacon data via CORS.
+     */
+    useCors?: boolean;
     /**
      * `XmlHttpRequest` support enabled/disabled
      */
@@ -24994,6 +27097,10 @@ export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGl
      */
     additionalEventCapturedAsUserInput?: string;
     /**
+     * Change enabled/disabled
+     */
+    change?: boolean;
+    /**
      * Click enabled/disabled
      */
     click?: boolean;
@@ -25021,6 +27128,14 @@ export interface WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGl
      * Scroll enabled/disabled
      */
     scroll?: boolean;
+    /**
+     * TouchEnd enabled/disabled
+     */
+    touchEnd?: boolean;
+    /**
+     * TouchStart enabled/disabled
+     */
+    touchStart?: boolean;
 }
 
 export interface WebApplicationMonitoringSettingsBrowserRestrictionSettings {
@@ -25353,9 +27468,9 @@ export interface WebApplicationUserActionNamingSettings {
      */
     placeholders?: outputs.WebApplicationUserActionNamingSettingsPlaceholders;
     /**
-     * User action naming rules for custom actions
+     * User action naming rules for custom actions. If not specified Dynatrace assumes `__sid`, `cfid`, `cftoken`, `phpsessid` and `sid`.
      */
-    queryParameterCleanups?: string[];
+    queryParameterCleanups: string[];
     /**
      * Deactivate this setting if different domains should not result in separate user actions
      */
@@ -25689,6 +27804,25 @@ export interface WebhookNotificationHeadersHeader {
      * The value of the HTTP header. May contain an empty value. `secretValue` and `value` are mutually exclusive. Only one of those two is allowed to be specified.
      */
     value?: string;
+}
+
+export interface WebhookNotificationOauth2Credentials {
+    /**
+     * Access token URL
+     */
+    accessTokenUrl: string;
+    /**
+     * Client ID
+     */
+    clientId: string;
+    /**
+     * Client secret
+     */
+    clientSecret: string;
+    /**
+     * The scope of access you are requesting
+     */
+    scope?: string;
 }
 
 export interface XmattersNotificationHeaders {

@@ -12,7 +12,9 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
-// The API utilized for this resource is deprecated, please use Maintenance instead.
+// !> This resource API endpoint has been deprecated, please use Maintenance instead.
+//
+// > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 //
 // ## Dynatrace Documentation
 //

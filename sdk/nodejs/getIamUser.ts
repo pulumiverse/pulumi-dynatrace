@@ -44,6 +44,7 @@ export interface GetIamUserResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly uid: string;
 }
 /**
  * This data source allows you to specify the email address of the user and produces an ordered list of group IDs this user is a member of

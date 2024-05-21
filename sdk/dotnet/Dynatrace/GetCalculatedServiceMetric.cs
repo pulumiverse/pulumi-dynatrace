@@ -12,9 +12,63 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
 {
     public static class GetCalculatedServiceMetric
     {
+        /// <summary>
+        /// The calculated service metric data source allows the metric ID to be retrieved by its name.
+        /// 
+        /// - `name` (String) - The name of the calculated service metric
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetCalculatedServiceMetric.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["groups"] = example.Apply(getCalculatedServiceMetricResult =&gt; getCalculatedServiceMetricResult.Id),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
         public static Task<GetCalculatedServiceMetricResult> InvokeAsync(GetCalculatedServiceMetricArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCalculatedServiceMetricResult>("dynatrace:index/getCalculatedServiceMetric:getCalculatedServiceMetric", args ?? new GetCalculatedServiceMetricArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// The calculated service metric data source allows the metric ID to be retrieved by its name.
+        /// 
+        /// - `name` (String) - The name of the calculated service metric
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Dynatrace = Pulumi.Dynatrace;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Dynatrace.GetCalculatedServiceMetric.Invoke(new()
+        ///     {
+        ///         Name = "Terraform Example",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["groups"] = example.Apply(getCalculatedServiceMetricResult =&gt; getCalculatedServiceMetricResult.Id),
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetCalculatedServiceMetricResult> Invoke(GetCalculatedServiceMetricInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCalculatedServiceMetricResult>("dynatrace:index/getCalculatedServiceMetric:getCalculatedServiceMetric", args ?? new GetCalculatedServiceMetricInvokeArgs(), options.WithDefaults());
     }

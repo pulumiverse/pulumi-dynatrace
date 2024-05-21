@@ -33,11 +33,11 @@ export class LogOneagent extends pulumi.CustomResource {
     }
 
     /**
-     * Detect container time zones
+     * Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
      */
     public readonly containerTimezoneHeuristicEnabled!: pulumi.Output<boolean>;
     /**
-     * Detect logs inside containers
+     * Allows detection of log messages written to the containerized application's stdout/stderr streams.
      */
     public readonly containersLogsDetectionEnabled!: pulumi.Output<boolean>;
     /**
@@ -53,11 +53,11 @@ export class LogOneagent extends pulumi.CustomResource {
      */
     public readonly eventLogQueryTimeoutSec!: pulumi.Output<number>;
     /**
-     * Detect IIS logs
+     * Allows detection of logs and event logs written by IIS server.
      */
     public readonly iisdetectionEnabled!: pulumi.Output<boolean>;
     /**
-     * Detect logs on Network File Systems (NFS)
+     * Allows detection of logs written to mounted network storage drives.
      */
     public readonly logScannerLinuxNfsEnabled!: pulumi.Output<boolean>;
     /**
@@ -69,11 +69,11 @@ export class LogOneagent extends pulumi.CustomResource {
      */
     public readonly minBinaryDetectionLimitBytes!: pulumi.Output<number>;
     /**
-     * Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+     * Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
      */
     public readonly monitorOwnLogsEnabled!: pulumi.Output<boolean>;
     /**
-     * Detect open log files
+     * Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
      */
     public readonly openLogFilesDetectionEnabled!: pulumi.Output<boolean>;
     /**
@@ -89,13 +89,9 @@ export class LogOneagent extends pulumi.CustomResource {
      */
     public readonly severityDetectionLinesLimit!: pulumi.Output<number>;
     /**
-     * (Linux: syslog, message log) (Windows: system, application, security event logs)
+     * Linux: syslog, message log Windows: system, application, security event logs
      */
     public readonly systemLogsDetectionEnabled!: pulumi.Output<boolean>;
-    /**
-     * Deprecated for OneAgent 1.247+
-     */
-    public readonly utcasDefaultContainerTimezone!: pulumi.Output<boolean>;
 
     /**
      * Create a LogOneagent resource with the given unique name, arguments, and options.
@@ -125,7 +121,6 @@ export class LogOneagent extends pulumi.CustomResource {
             resourceInputs["severityDetectionLimitBytes"] = state ? state.severityDetectionLimitBytes : undefined;
             resourceInputs["severityDetectionLinesLimit"] = state ? state.severityDetectionLinesLimit : undefined;
             resourceInputs["systemLogsDetectionEnabled"] = state ? state.systemLogsDetectionEnabled : undefined;
-            resourceInputs["utcasDefaultContainerTimezone"] = state ? state.utcasDefaultContainerTimezone : undefined;
         } else {
             const args = argsOrState as LogOneagentArgs | undefined;
             if ((!args || args.containerTimezoneHeuristicEnabled === undefined) && !opts.urn) {
@@ -170,9 +165,6 @@ export class LogOneagent extends pulumi.CustomResource {
             if ((!args || args.systemLogsDetectionEnabled === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'systemLogsDetectionEnabled'");
             }
-            if ((!args || args.utcasDefaultContainerTimezone === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'utcasDefaultContainerTimezone'");
-            }
             resourceInputs["containerTimezoneHeuristicEnabled"] = args ? args.containerTimezoneHeuristicEnabled : undefined;
             resourceInputs["containersLogsDetectionEnabled"] = args ? args.containersLogsDetectionEnabled : undefined;
             resourceInputs["dateSearchLimitBytes"] = args ? args.dateSearchLimitBytes : undefined;
@@ -188,7 +180,6 @@ export class LogOneagent extends pulumi.CustomResource {
             resourceInputs["severityDetectionLimitBytes"] = args ? args.severityDetectionLimitBytes : undefined;
             resourceInputs["severityDetectionLinesLimit"] = args ? args.severityDetectionLinesLimit : undefined;
             resourceInputs["systemLogsDetectionEnabled"] = args ? args.systemLogsDetectionEnabled : undefined;
-            resourceInputs["utcasDefaultContainerTimezone"] = args ? args.utcasDefaultContainerTimezone : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LogOneagent.__pulumiType, name, resourceInputs, opts);
@@ -200,11 +191,11 @@ export class LogOneagent extends pulumi.CustomResource {
  */
 export interface LogOneagentState {
     /**
-     * Detect container time zones
+     * Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
      */
     containerTimezoneHeuristicEnabled?: pulumi.Input<boolean>;
     /**
-     * Detect logs inside containers
+     * Allows detection of log messages written to the containerized application's stdout/stderr streams.
      */
     containersLogsDetectionEnabled?: pulumi.Input<boolean>;
     /**
@@ -220,11 +211,11 @@ export interface LogOneagentState {
      */
     eventLogQueryTimeoutSec?: pulumi.Input<number>;
     /**
-     * Detect IIS logs
+     * Allows detection of logs and event logs written by IIS server.
      */
     iisdetectionEnabled?: pulumi.Input<boolean>;
     /**
-     * Detect logs on Network File Systems (NFS)
+     * Allows detection of logs written to mounted network storage drives.
      */
     logScannerLinuxNfsEnabled?: pulumi.Input<boolean>;
     /**
@@ -236,11 +227,11 @@ export interface LogOneagentState {
      */
     minBinaryDetectionLimitBytes?: pulumi.Input<number>;
     /**
-     * Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+     * Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
      */
     monitorOwnLogsEnabled?: pulumi.Input<boolean>;
     /**
-     * Detect open log files
+     * Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
      */
     openLogFilesDetectionEnabled?: pulumi.Input<boolean>;
     /**
@@ -256,13 +247,9 @@ export interface LogOneagentState {
      */
     severityDetectionLinesLimit?: pulumi.Input<number>;
     /**
-     * (Linux: syslog, message log) (Windows: system, application, security event logs)
+     * Linux: syslog, message log Windows: system, application, security event logs
      */
     systemLogsDetectionEnabled?: pulumi.Input<boolean>;
-    /**
-     * Deprecated for OneAgent 1.247+
-     */
-    utcasDefaultContainerTimezone?: pulumi.Input<boolean>;
 }
 
 /**
@@ -270,11 +257,11 @@ export interface LogOneagentState {
  */
 export interface LogOneagentArgs {
     /**
-     * Detect container time zones
+     * Enables automatic detection of timezone in container's logs if it is not explicitly defined in content or configured.
      */
     containerTimezoneHeuristicEnabled: pulumi.Input<boolean>;
     /**
-     * Detect logs inside containers
+     * Allows detection of log messages written to the containerized application's stdout/stderr streams.
      */
     containersLogsDetectionEnabled: pulumi.Input<boolean>;
     /**
@@ -290,11 +277,11 @@ export interface LogOneagentArgs {
      */
     eventLogQueryTimeoutSec: pulumi.Input<number>;
     /**
-     * Detect IIS logs
+     * Allows detection of logs and event logs written by IIS server.
      */
     iisdetectionEnabled: pulumi.Input<boolean>;
     /**
-     * Detect logs on Network File Systems (NFS)
+     * Allows detection of logs written to mounted network storage drives.
      */
     logScannerLinuxNfsEnabled: pulumi.Input<boolean>;
     /**
@@ -306,11 +293,11 @@ export interface LogOneagentArgs {
      */
     minBinaryDetectionLimitBytes: pulumi.Input<number>;
     /**
-     * Enabling this option may affect your DDU consumption. For more details, see [documentation](https://dt-url.net/hp43ef8).
+     * Enabling this option may affect your licensing costs. For more details, see [documentation](https://dt-url.net/4l02yi8).
      */
     monitorOwnLogsEnabled: pulumi.Input<boolean>;
     /**
-     * Detect open log files
+     * Automatically detect logs written by important processes. For more details, check our [documentation](https://dt-url.net/7v02z76)
      */
     openLogFilesDetectionEnabled: pulumi.Input<boolean>;
     /**
@@ -326,11 +313,7 @@ export interface LogOneagentArgs {
      */
     severityDetectionLinesLimit: pulumi.Input<number>;
     /**
-     * (Linux: syslog, message log) (Windows: system, application, security event logs)
+     * Linux: syslog, message log Windows: system, application, security event logs
      */
     systemLogsDetectionEnabled: pulumi.Input<boolean>;
-    /**
-     * Deprecated for OneAgent 1.247+
-     */
-    utcasDefaultContainerTimezone: pulumi.Input<boolean>;
 }

@@ -20,10 +20,22 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<string>? Condition { get; set; }
 
         /// <summary>
+        /// Custom metadata
+        /// </summary>
+        [Input("hostMetadataCondition")]
+        public Input<Inputs.OsServicesDetectionConditionsWindowsDetectionConditionsWindowHostMetadataConditionArgs>? HostMetadataCondition { get; set; }
+
+        /// <summary>
         /// Possible Values: `DisplayName`, `Manufacturer`, `Path`, `ServiceName`, `StartupType`
         /// </summary>
-        [Input("property", required: true)]
-        public Input<string> Property { get; set; } = null!;
+        [Input("property")]
+        public Input<string>? Property { get; set; }
+
+        /// <summary>
+        /// Possible Values: `RuleTypeHost`, `RuleTypeOsService`
+        /// </summary>
+        [Input("ruleType")]
+        public Input<string>? RuleType { get; set; }
 
         /// <summary>
         /// This string has to match a required format. See [OS services monitoring](https://dt-url.net/vl03xzk).

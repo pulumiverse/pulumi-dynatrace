@@ -19,6 +19,10 @@ type ProcessGroupSimpleDetection struct {
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
 	GroupIdentifier pulumi.StringOutput `pulumi:"groupIdentifier"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Use a variable to identify instances within a process group.
 	InstanceIdentifier pulumi.StringOutput `pulumi:"instanceIdentifier"`
 	// Note: Not all types can be detected at startup.
@@ -73,6 +77,10 @@ type processGroupSimpleDetectionState struct {
 	Enabled *bool `pulumi:"enabled"`
 	// If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
 	GroupIdentifier *string `pulumi:"groupIdentifier"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Use a variable to identify instances within a process group.
 	InstanceIdentifier *string `pulumi:"instanceIdentifier"`
 	// Note: Not all types can be detected at startup.
@@ -86,6 +94,10 @@ type ProcessGroupSimpleDetectionState struct {
 	Enabled pulumi.BoolPtrInput
 	// If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
 	GroupIdentifier pulumi.StringPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Use a variable to identify instances within a process group.
 	InstanceIdentifier pulumi.StringPtrInput
 	// Note: Not all types can be detected at startup.
@@ -103,6 +115,10 @@ type processGroupSimpleDetectionArgs struct {
 	Enabled bool `pulumi:"enabled"`
 	// If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
 	GroupIdentifier string `pulumi:"groupIdentifier"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Use a variable to identify instances within a process group.
 	InstanceIdentifier string `pulumi:"instanceIdentifier"`
 	// Note: Not all types can be detected at startup.
@@ -117,6 +133,10 @@ type ProcessGroupSimpleDetectionArgs struct {
 	Enabled pulumi.BoolInput
 	// If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
 	GroupIdentifier pulumi.StringInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Use a variable to identify instances within a process group.
 	InstanceIdentifier pulumi.StringInput
 	// Note: Not all types can be detected at startup.
@@ -220,6 +240,13 @@ func (o ProcessGroupSimpleDetectionOutput) Enabled() pulumi.BoolOutput {
 // If Dynatrace detects this property at startup of a process, it will use its value to identify process groups more granular.
 func (o ProcessGroupSimpleDetectionOutput) GroupIdentifier() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProcessGroupSimpleDetection) pulumi.StringOutput { return v.GroupIdentifier }).(pulumi.StringOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+// specified during update the order will remain untouched
+func (o ProcessGroupSimpleDetectionOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *ProcessGroupSimpleDetection) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // Use a variable to identify instances within a process group.

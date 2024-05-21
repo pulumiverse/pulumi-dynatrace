@@ -14,16 +14,16 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class MaintenanceGeneralPropertiesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A short description of the maintenance purpose
+        /// A short description of the maintenance purpose.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Suppress execution of synthetic monitors during the maintenance
+        /// Disables the execution of the synthetic monitors that are within [the scope of this maintenance window](https://dt-url.net/0e0341m).
         /// </summary>
-        [Input("disableSynthetic")]
-        public Input<bool>? DisableSynthetic { get; set; }
+        [Input("disableSynthetic", required: true)]
+        public Input<bool> DisableSynthetic { get; set; } = null!;
 
         /// <summary>
         /// The name of the maintenance window, displayed in the UI
@@ -32,13 +32,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// The type of suppression of alerting and problem detection during the maintenance
+        /// The type of suppression of alerting and problem detection during the maintenance. Possible Values: `DETECT_PROBLEMS_AND_ALERT`, `DETECT_PROBLEMS_DONT_ALERT`, `DONT_DETECT_PROBLEMS`
         /// </summary>
         [Input("suppression", required: true)]
         public Input<string> Suppression { get; set; } = null!;
 
         /// <summary>
-        /// The type of the maintenance: planned or unplanned
+        /// The type of the maintenance, possible values: `PLANNED` or `UNPLANNED`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

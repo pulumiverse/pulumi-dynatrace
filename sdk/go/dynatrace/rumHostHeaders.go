@@ -17,6 +17,8 @@ type RumHostHeaders struct {
 
 	// HTTP header format
 	HeaderName pulumi.StringOutput `pulumi:"headerName"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 }
 
 // NewRumHostHeaders registers a new resource with the given unique name, arguments, and options.
@@ -54,11 +56,15 @@ func GetRumHostHeaders(ctx *pulumi.Context,
 type rumHostHeadersState struct {
 	// HTTP header format
 	HeaderName *string `pulumi:"headerName"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 }
 
 type RumHostHeadersState struct {
 	// HTTP header format
 	HeaderName pulumi.StringPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 }
 
 func (RumHostHeadersState) ElementType() reflect.Type {
@@ -68,12 +74,16 @@ func (RumHostHeadersState) ElementType() reflect.Type {
 type rumHostHeadersArgs struct {
 	// HTTP header format
 	HeaderName string `pulumi:"headerName"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 }
 
 // The set of arguments for constructing a RumHostHeaders resource.
 type RumHostHeadersArgs struct {
 	// HTTP header format
 	HeaderName pulumi.StringInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 }
 
 func (RumHostHeadersArgs) ElementType() reflect.Type {
@@ -166,6 +176,11 @@ func (o RumHostHeadersOutput) ToRumHostHeadersOutputWithContext(ctx context.Cont
 // HTTP header format
 func (o RumHostHeadersOutput) HeaderName() pulumi.StringOutput {
 	return o.ApplyT(func(v *RumHostHeaders) pulumi.StringOutput { return v.HeaderName }).(pulumi.StringOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o RumHostHeadersOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *RumHostHeaders) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 type RumHostHeadersArrayOutput struct{ *pulumi.OutputState }

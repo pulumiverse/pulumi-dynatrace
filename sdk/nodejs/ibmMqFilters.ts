@@ -41,11 +41,11 @@ export class IbmMqFilters extends pulumi.CustomResource {
      */
     public readonly cicsMqQueueIdIncludes!: pulumi.Output<string[] | undefined>;
     /**
-     * IMS bridge: Excluded transaction IDs
+     * When you add a transaction ID to the exclude list remaining transactions are still monitored.
      */
     public readonly imsCrTrnIdExcludes!: pulumi.Output<string[] | undefined>;
     /**
-     * IMS bridge: Included transaction IDs
+     * When you add a transaction ID to the include list, all the remaining transactions are ignored.
      */
     public readonly imsCrTrnIdIncludes!: pulumi.Output<string[] | undefined>;
     /**
@@ -103,11 +103,11 @@ export interface IbmMqFiltersState {
      */
     cicsMqQueueIdIncludes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * IMS bridge: Excluded transaction IDs
+     * When you add a transaction ID to the exclude list remaining transactions are still monitored.
      */
     imsCrTrnIdExcludes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * IMS bridge: Included transaction IDs
+     * When you add a transaction ID to the include list, all the remaining transactions are ignored.
      */
     imsCrTrnIdIncludes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -133,11 +133,11 @@ export interface IbmMqFiltersArgs {
      */
     cicsMqQueueIdIncludes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * IMS bridge: Excluded transaction IDs
+     * When you add a transaction ID to the exclude list remaining transactions are still monitored.
      */
     imsCrTrnIdExcludes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * IMS bridge: Included transaction IDs
+     * When you add a transaction ID to the include list, all the remaining transactions are ignored.
      */
     imsCrTrnIdIncludes?: pulumi.Input<pulumi.Input<string>[]>;
     /**

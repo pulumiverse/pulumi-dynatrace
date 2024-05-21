@@ -55,7 +55,7 @@ import (
 //						},
 //					},
 //				},
-//				Script: &dynatrace.HttpMonitorScriptArgs{
+//				Script: &dynatrace.HttpMonitorScriptTypeArgs{
 //					Requests: dynatrace.HttpMonitorScriptRequestArray{
 //						&dynatrace.HttpMonitorScriptRequestArgs{
 //							Description: pulumi.String("google.com"),

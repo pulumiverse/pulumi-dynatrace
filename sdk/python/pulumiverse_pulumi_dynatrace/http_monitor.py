@@ -22,6 +22,7 @@ class HttpMonitorArgs:
                  locations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 no_script: Optional[pulumi.Input[bool]] = None,
                  script: Optional[pulumi.Input['HttpMonitorScriptArgs']] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorTagArgs']]]] = None):
         """
@@ -32,6 +33,7 @@ class HttpMonitorArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] locations: A list of locations from which the monitor is executed. To specify a location, use its entity ID.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] manually_assigned_apps: A set of manually assigned applications.
         :param pulumi.Input[str] name: The name of the monitor.
+        :param pulumi.Input[bool] no_script: No script block - handle requests via `HttpMonitorScript` resource
         :param pulumi.Input['HttpMonitorScriptArgs'] script: The HTTP Script
         :param pulumi.Input[Sequence[pulumi.Input['HttpMonitorTagArgs']]] tags: A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
                source 'USER' will be added automatically.
@@ -47,6 +49,8 @@ class HttpMonitorArgs:
             pulumi.set(__self__, "manually_assigned_apps", manually_assigned_apps)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if no_script is not None:
+            pulumi.set(__self__, "no_script", no_script)
         if script is not None:
             pulumi.set(__self__, "script", script)
         if tags is not None:
@@ -125,6 +129,18 @@ class HttpMonitorArgs:
         pulumi.set(self, "name", value)
 
     @property
+    @pulumi.getter(name="noScript")
+    def no_script(self) -> Optional[pulumi.Input[bool]]:
+        """
+        No script block - handle requests via `HttpMonitorScript` resource
+        """
+        return pulumi.get(self, "no_script")
+
+    @no_script.setter
+    def no_script(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "no_script", value)
+
+    @property
     @pulumi.getter
     def script(self) -> Optional[pulumi.Input['HttpMonitorScriptArgs']]:
         """
@@ -159,6 +175,7 @@ class _HttpMonitorState:
                  locations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 no_script: Optional[pulumi.Input[bool]] = None,
                  script: Optional[pulumi.Input['HttpMonitorScriptArgs']] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['HttpMonitorTagArgs']]]] = None):
         """
@@ -169,6 +186,7 @@ class _HttpMonitorState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] locations: A list of locations from which the monitor is executed. To specify a location, use its entity ID.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] manually_assigned_apps: A set of manually assigned applications.
         :param pulumi.Input[str] name: The name of the monitor.
+        :param pulumi.Input[bool] no_script: No script block - handle requests via `HttpMonitorScript` resource
         :param pulumi.Input['HttpMonitorScriptArgs'] script: The HTTP Script
         :param pulumi.Input[Sequence[pulumi.Input['HttpMonitorTagArgs']]] tags: A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
                source 'USER' will be added automatically.
@@ -185,6 +203,8 @@ class _HttpMonitorState:
             pulumi.set(__self__, "manually_assigned_apps", manually_assigned_apps)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if no_script is not None:
+            pulumi.set(__self__, "no_script", no_script)
         if script is not None:
             pulumi.set(__self__, "script", script)
         if tags is not None:
@@ -263,6 +283,18 @@ class _HttpMonitorState:
         pulumi.set(self, "name", value)
 
     @property
+    @pulumi.getter(name="noScript")
+    def no_script(self) -> Optional[pulumi.Input[bool]]:
+        """
+        No script block - handle requests via `HttpMonitorScript` resource
+        """
+        return pulumi.get(self, "no_script")
+
+    @no_script.setter
+    def no_script(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "no_script", value)
+
+    @property
     @pulumi.getter
     def script(self) -> Optional[pulumi.Input['HttpMonitorScriptArgs']]:
         """
@@ -299,6 +331,7 @@ class HttpMonitor(pulumi.CustomResource):
                  locations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 no_script: Optional[pulumi.Input[bool]] = None,
                  script: Optional[pulumi.Input[pulumi.InputType['HttpMonitorScriptArgs']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorTagArgs']]]]] = None,
                  __props__=None):
@@ -312,6 +345,7 @@ class HttpMonitor(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] locations: A list of locations from which the monitor is executed. To specify a location, use its entity ID.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] manually_assigned_apps: A set of manually assigned applications.
         :param pulumi.Input[str] name: The name of the monitor.
+        :param pulumi.Input[bool] no_script: No script block - handle requests via `HttpMonitorScript` resource
         :param pulumi.Input[pulumi.InputType['HttpMonitorScriptArgs']] script: The HTTP Script
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorTagArgs']]]] tags: A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
                source 'USER' will be added automatically.
@@ -345,6 +379,7 @@ class HttpMonitor(pulumi.CustomResource):
                  locations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
+                 no_script: Optional[pulumi.Input[bool]] = None,
                  script: Optional[pulumi.Input[pulumi.InputType['HttpMonitorScriptArgs']]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorTagArgs']]]]] = None,
                  __props__=None):
@@ -364,6 +399,7 @@ class HttpMonitor(pulumi.CustomResource):
             __props__.__dict__["locations"] = locations
             __props__.__dict__["manually_assigned_apps"] = manually_assigned_apps
             __props__.__dict__["name"] = name
+            __props__.__dict__["no_script"] = no_script
             __props__.__dict__["script"] = script
             __props__.__dict__["tags"] = tags
         super(HttpMonitor, __self__).__init__(
@@ -382,6 +418,7 @@ class HttpMonitor(pulumi.CustomResource):
             locations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
+            no_script: Optional[pulumi.Input[bool]] = None,
             script: Optional[pulumi.Input[pulumi.InputType['HttpMonitorScriptArgs']]] = None,
             tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorTagArgs']]]]] = None) -> 'HttpMonitor':
         """
@@ -397,6 +434,7 @@ class HttpMonitor(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] locations: A list of locations from which the monitor is executed. To specify a location, use its entity ID.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] manually_assigned_apps: A set of manually assigned applications.
         :param pulumi.Input[str] name: The name of the monitor.
+        :param pulumi.Input[bool] no_script: No script block - handle requests via `HttpMonitorScript` resource
         :param pulumi.Input[pulumi.InputType['HttpMonitorScriptArgs']] script: The HTTP Script
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['HttpMonitorTagArgs']]]] tags: A set of tags assigned to the monitor. You can specify only the value of the tag here and the `CONTEXTLESS` context and
                source 'USER' will be added automatically.
@@ -411,6 +449,7 @@ class HttpMonitor(pulumi.CustomResource):
         __props__.__dict__["locations"] = locations
         __props__.__dict__["manually_assigned_apps"] = manually_assigned_apps
         __props__.__dict__["name"] = name
+        __props__.__dict__["no_script"] = no_script
         __props__.__dict__["script"] = script
         __props__.__dict__["tags"] = tags
         return HttpMonitor(resource_name, opts=opts, __props__=__props__)
@@ -462,6 +501,14 @@ class HttpMonitor(pulumi.CustomResource):
         The name of the monitor.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="noScript")
+    def no_script(self) -> pulumi.Output[Optional[bool]]:
+        """
+        No script block - handle requests via `HttpMonitorScript` resource
+        """
+        return pulumi.get(self, "no_script")
 
     @property
     @pulumi.getter

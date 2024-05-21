@@ -15,23 +15,23 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class MaintenanceGeneralProperties
     {
         /// <summary>
-        /// A short description of the maintenance purpose
+        /// A short description of the maintenance purpose.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// Suppress execution of synthetic monitors during the maintenance
+        /// Disables the execution of the synthetic monitors that are within [the scope of this maintenance window](https://dt-url.net/0e0341m).
         /// </summary>
-        public readonly bool? DisableSynthetic;
+        public readonly bool DisableSynthetic;
         /// <summary>
         /// The name of the maintenance window, displayed in the UI
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The type of suppression of alerting and problem detection during the maintenance
+        /// The type of suppression of alerting and problem detection during the maintenance. Possible Values: `DETECT_PROBLEMS_AND_ALERT`, `DETECT_PROBLEMS_DONT_ALERT`, `DONT_DETECT_PROBLEMS`
         /// </summary>
         public readonly string Suppression;
         /// <summary>
-        /// The type of the maintenance: planned or unplanned
+        /// The type of the maintenance, possible values: `PLANNED` or `UNPLANNED`
         /// </summary>
         public readonly string Type;
 
@@ -39,7 +39,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         private MaintenanceGeneralProperties(
             string? description,
 
-            bool? disableSynthetic,
+            bool disableSynthetic,
 
             string name,
 

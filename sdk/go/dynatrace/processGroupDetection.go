@@ -19,6 +19,8 @@ type ProcessGroupDetection struct {
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// You can define the properties that should be used to identify your process groups.
 	GroupExtraction ProcessGroupDetectionGroupExtractionOutput `pulumi:"groupExtraction"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// You can define the properties that should be used to identify your process instances.
 	InstanceExtraction ProcessGroupDetectionInstanceExtractionPtrOutput `pulumi:"instanceExtraction"`
 	// Apply this rule to processes where the selected property contains the specified string.
@@ -68,6 +70,8 @@ type processGroupDetectionState struct {
 	Enabled *bool `pulumi:"enabled"`
 	// You can define the properties that should be used to identify your process groups.
 	GroupExtraction *ProcessGroupDetectionGroupExtraction `pulumi:"groupExtraction"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// You can define the properties that should be used to identify your process instances.
 	InstanceExtraction *ProcessGroupDetectionInstanceExtraction `pulumi:"instanceExtraction"`
 	// Apply this rule to processes where the selected property contains the specified string.
@@ -79,6 +83,8 @@ type ProcessGroupDetectionState struct {
 	Enabled pulumi.BoolPtrInput
 	// You can define the properties that should be used to identify your process groups.
 	GroupExtraction ProcessGroupDetectionGroupExtractionPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// You can define the properties that should be used to identify your process instances.
 	InstanceExtraction ProcessGroupDetectionInstanceExtractionPtrInput
 	// Apply this rule to processes where the selected property contains the specified string.
@@ -94,6 +100,8 @@ type processGroupDetectionArgs struct {
 	Enabled bool `pulumi:"enabled"`
 	// You can define the properties that should be used to identify your process groups.
 	GroupExtraction ProcessGroupDetectionGroupExtraction `pulumi:"groupExtraction"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// You can define the properties that should be used to identify your process instances.
 	InstanceExtraction *ProcessGroupDetectionInstanceExtraction `pulumi:"instanceExtraction"`
 	// Apply this rule to processes where the selected property contains the specified string.
@@ -106,6 +114,8 @@ type ProcessGroupDetectionArgs struct {
 	Enabled pulumi.BoolInput
 	// You can define the properties that should be used to identify your process groups.
 	GroupExtraction ProcessGroupDetectionGroupExtractionInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// You can define the properties that should be used to identify your process instances.
 	InstanceExtraction ProcessGroupDetectionInstanceExtractionPtrInput
 	// Apply this rule to processes where the selected property contains the specified string.
@@ -207,6 +217,11 @@ func (o ProcessGroupDetectionOutput) Enabled() pulumi.BoolOutput {
 // You can define the properties that should be used to identify your process groups.
 func (o ProcessGroupDetectionOutput) GroupExtraction() ProcessGroupDetectionGroupExtractionOutput {
 	return o.ApplyT(func(v *ProcessGroupDetection) ProcessGroupDetectionGroupExtractionOutput { return v.GroupExtraction }).(ProcessGroupDetectionGroupExtractionOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o ProcessGroupDetectionOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *ProcessGroupDetection) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // You can define the properties that should be used to identify your process instances.

@@ -20,7 +20,8 @@ class LogProcessingArgs:
                  processor_definition: pulumi.Input['LogProcessingProcessorDefinitionArgs'],
                  query: pulumi.Input[str],
                  rule_name: pulumi.Input[str],
-                 rule_testing: pulumi.Input['LogProcessingRuleTestingArgs']):
+                 rule_testing: pulumi.Input['LogProcessingRuleTestingArgs'],
+                 insert_after: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a LogProcessing resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
@@ -29,12 +30,17 @@ class LogProcessingArgs:
         :param pulumi.Input[str] query: Matcher
         :param pulumi.Input[str] rule_name: Rule name
         :param pulumi.Input['LogProcessingRuleTestingArgs'] rule_testing: ## Rule testing ### 1. Paste a log / JSON sample
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "processor_definition", processor_definition)
         pulumi.set(__self__, "query", query)
         pulumi.set(__self__, "rule_name", rule_name)
         pulumi.set(__self__, "rule_testing", rule_testing)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
 
     @property
     @pulumi.getter
@@ -97,11 +103,26 @@ class LogProcessingArgs:
     def rule_testing(self, value: pulumi.Input['LogProcessingRuleTestingArgs']):
         pulumi.set(self, "rule_testing", value)
 
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
 
 @pulumi.input_type
 class _LogProcessingState:
     def __init__(__self__, *,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  processor_definition: Optional[pulumi.Input['LogProcessingProcessorDefinitionArgs']] = None,
                  query: Optional[pulumi.Input[str]] = None,
                  rule_name: Optional[pulumi.Input[str]] = None,
@@ -109,6 +130,9 @@ class _LogProcessingState:
         """
         Input properties used for looking up and filtering LogProcessing resources.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input['LogProcessingProcessorDefinitionArgs'] processor_definition: ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
                will find instructions and application [examples](https://dt-url.net/m24305t).
         :param pulumi.Input[str] query: Matcher
@@ -117,6 +141,8 @@ class _LogProcessingState:
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if processor_definition is not None:
             pulumi.set(__self__, "processor_definition", processor_definition)
         if query is not None:
@@ -137,6 +163,20 @@ class _LogProcessingState:
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter(name="processorDefinition")
@@ -194,6 +234,7 @@ class LogProcessing(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  processor_definition: Optional[pulumi.Input[pulumi.InputType['LogProcessingProcessorDefinitionArgs']]] = None,
                  query: Optional[pulumi.Input[str]] = None,
                  rule_name: Optional[pulumi.Input[str]] = None,
@@ -204,6 +245,9 @@ class LogProcessing(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input[pulumi.InputType['LogProcessingProcessorDefinitionArgs']] processor_definition: ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
                will find instructions and application [examples](https://dt-url.net/m24305t).
         :param pulumi.Input[str] query: Matcher
@@ -234,6 +278,7 @@ class LogProcessing(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  processor_definition: Optional[pulumi.Input[pulumi.InputType['LogProcessingProcessorDefinitionArgs']]] = None,
                  query: Optional[pulumi.Input[str]] = None,
                  rule_name: Optional[pulumi.Input[str]] = None,
@@ -250,6 +295,7 @@ class LogProcessing(pulumi.CustomResource):
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
+            __props__.__dict__["insert_after"] = insert_after
             if processor_definition is None and not opts.urn:
                 raise TypeError("Missing required property 'processor_definition'")
             __props__.__dict__["processor_definition"] = processor_definition
@@ -273,6 +319,7 @@ class LogProcessing(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             processor_definition: Optional[pulumi.Input[pulumi.InputType['LogProcessingProcessorDefinitionArgs']]] = None,
             query: Optional[pulumi.Input[str]] = None,
             rule_name: Optional[pulumi.Input[str]] = None,
@@ -285,6 +332,9 @@ class LogProcessing(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input[pulumi.InputType['LogProcessingProcessorDefinitionArgs']] processor_definition: ## Processor definition Add a rule definition using our syntax. [In our documentation](https://dt-url.net/8k03xm2) you
                will find instructions and application [examples](https://dt-url.net/m24305t).
         :param pulumi.Input[str] query: Matcher
@@ -296,6 +346,7 @@ class LogProcessing(pulumi.CustomResource):
         __props__ = _LogProcessingState.__new__(_LogProcessingState)
 
         __props__.__dict__["enabled"] = enabled
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["processor_definition"] = processor_definition
         __props__.__dict__["query"] = query
         __props__.__dict__["rule_name"] = rule_name
@@ -309,6 +360,16 @@ class LogProcessing(pulumi.CustomResource):
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter(name="processorDefinition")

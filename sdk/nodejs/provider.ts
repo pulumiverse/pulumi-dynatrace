@@ -25,6 +25,23 @@ export class Provider extends pulumi.ProviderResource {
         return obj['__pulumiType'] === "pulumi:providers:" + Provider.__pulumiType;
     }
 
+    public readonly accountId!: pulumi.Output<string | undefined>;
+    public readonly automationClientId!: pulumi.Output<string | undefined>;
+    public readonly automationClientSecret!: pulumi.Output<string | undefined>;
+    /**
+     * The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+     * optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+     * `https://#####.apps.dynatrace.com`
+     */
+    public readonly automationEnvUrl!: pulumi.Output<string | undefined>;
+    /**
+     * The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+     * `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+     * `https://#####.apps.dynatrace.com`
+     */
+    public readonly automationTokenUrl!: pulumi.Output<string | undefined>;
+    public readonly clientId!: pulumi.Output<string | undefined>;
+    public readonly clientSecret!: pulumi.Output<string | undefined>;
     public readonly dtApiToken!: pulumi.Output<string | undefined>;
     public readonly dtClusterApiToken!: pulumi.Output<string | undefined>;
     public readonly dtClusterUrl!: pulumi.Output<string | undefined>;
@@ -44,6 +61,13 @@ export class Provider extends pulumi.ProviderResource {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
+            resourceInputs["accountId"] = args?.accountId ? pulumi.secret(args.accountId) : undefined;
+            resourceInputs["automationClientId"] = args?.automationClientId ? pulumi.secret(args.automationClientId) : undefined;
+            resourceInputs["automationClientSecret"] = args?.automationClientSecret ? pulumi.secret(args.automationClientSecret) : undefined;
+            resourceInputs["automationEnvUrl"] = args ? args.automationEnvUrl : undefined;
+            resourceInputs["automationTokenUrl"] = args ? args.automationTokenUrl : undefined;
+            resourceInputs["clientId"] = args?.clientId ? pulumi.secret(args.clientId) : undefined;
+            resourceInputs["clientSecret"] = args?.clientSecret ? pulumi.secret(args.clientSecret) : undefined;
             resourceInputs["dtApiToken"] = (args?.dtApiToken ? pulumi.secret(args.dtApiToken) : undefined) ?? utilities.getEnv("DYNATRACE_API_TOKEN", "DT_API_TOKEN");
             resourceInputs["dtClusterApiToken"] = (args?.dtClusterApiToken ? pulumi.secret(args.dtClusterApiToken) : undefined) ?? utilities.getEnv("DYNATRACE_CLUSTER_API_TOKEN", "DT_CLUSTER_API_TOKEN");
             resourceInputs["dtClusterUrl"] = (args?.dtClusterUrl ? pulumi.secret(args.dtClusterUrl) : undefined) ?? utilities.getEnv("DYNATRACE_CLUSTER_URL", "DT_CLUSTER_URL");
@@ -53,7 +77,7 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["iamClientSecret"] = args?.iamClientSecret ? pulumi.secret(args.iamClientSecret) : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["dtApiToken", "dtClusterApiToken", "dtClusterUrl", "iamAccountId", "iamClientId", "iamClientSecret"] };
+        const secretOpts = { additionalSecretOutputs: ["accountId", "automationClientId", "automationClientSecret", "clientId", "clientSecret", "dtApiToken", "dtClusterApiToken", "dtClusterUrl", "iamAccountId", "iamClientId", "iamClientSecret"] };
         opts = pulumi.mergeOptions(opts, secretOpts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
     }
@@ -63,6 +87,23 @@ export class Provider extends pulumi.ProviderResource {
  * The set of arguments for constructing a Provider resource.
  */
 export interface ProviderArgs {
+    accountId?: pulumi.Input<string>;
+    automationClientId?: pulumi.Input<string>;
+    automationClientSecret?: pulumi.Input<string>;
+    /**
+     * The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+     * optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+     * `https://#####.apps.dynatrace.com`
+     */
+    automationEnvUrl?: pulumi.Input<string>;
+    /**
+     * The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+     * `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+     * `https://#####.apps.dynatrace.com`
+     */
+    automationTokenUrl?: pulumi.Input<string>;
+    clientId?: pulumi.Input<string>;
+    clientSecret?: pulumi.Input<string>;
     dtApiToken?: pulumi.Input<string>;
     dtClusterApiToken?: pulumi.Input<string>;
     dtClusterUrl?: pulumi.Input<string>;

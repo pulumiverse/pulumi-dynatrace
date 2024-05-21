@@ -19,6 +19,8 @@ type RumProviderBreakdown struct {
 	DomainNamePatternList RumProviderBreakdownDomainNamePatternListOutput `pulumi:"domainNamePatternList"`
 	// Specify an URL for the provider's brand icon
 	IconUrl pulumi.StringPtrOutput `pulumi:"iconUrl"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
 	ReportPublicImprovement pulumi.BoolOutput `pulumi:"reportPublicImprovement"`
 	// Resource name
@@ -73,6 +75,8 @@ type rumProviderBreakdownState struct {
 	DomainNamePatternList *RumProviderBreakdownDomainNamePatternList `pulumi:"domainNamePatternList"`
 	// Specify an URL for the provider's brand icon
 	IconUrl *string `pulumi:"iconUrl"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
 	ReportPublicImprovement *bool `pulumi:"reportPublicImprovement"`
 	// Resource name
@@ -86,6 +90,8 @@ type RumProviderBreakdownState struct {
 	DomainNamePatternList RumProviderBreakdownDomainNamePatternListPtrInput
 	// Specify an URL for the provider's brand icon
 	IconUrl pulumi.StringPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
 	ReportPublicImprovement pulumi.BoolPtrInput
 	// Resource name
@@ -103,6 +109,8 @@ type rumProviderBreakdownArgs struct {
 	DomainNamePatternList RumProviderBreakdownDomainNamePatternList `pulumi:"domainNamePatternList"`
 	// Specify an URL for the provider's brand icon
 	IconUrl *string `pulumi:"iconUrl"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
 	ReportPublicImprovement bool `pulumi:"reportPublicImprovement"`
 	// Resource name
@@ -117,6 +125,8 @@ type RumProviderBreakdownArgs struct {
 	DomainNamePatternList RumProviderBreakdownDomainNamePatternListInput
 	// Specify an URL for the provider's brand icon
 	IconUrl pulumi.StringPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.
 	ReportPublicImprovement pulumi.BoolInput
 	// Resource name
@@ -222,6 +232,11 @@ func (o RumProviderBreakdownOutput) DomainNamePatternList() RumProviderBreakdown
 // Specify an URL for the provider's brand icon
 func (o RumProviderBreakdownOutput) IconUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RumProviderBreakdown) pulumi.StringPtrOutput { return v.IconUrl }).(pulumi.StringPtrOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o RumProviderBreakdownOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *RumProviderBreakdown) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // Send the patterns of this provider to Dynatrace to help us improve 3rd-party detection.

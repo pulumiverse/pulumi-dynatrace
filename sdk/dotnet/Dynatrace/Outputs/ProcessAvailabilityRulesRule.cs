@@ -24,20 +24,38 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// 
         /// For more details, see [Process availability](https://dt-url.net/v923x37).
         /// </summary>
-        public readonly string Condition;
+        public readonly string? Condition;
         /// <summary>
-        /// Possible Values: `Executable`, `ExecutablePath`, `CommandLine`
+        /// Host custom metadata refers to user-defined key-value pairs that you can assign to hosts monitored by Dynatrace.
+        /// 
+        /// By defining custom metadata, you can enrich the monitoring data with context specific to your organization's needs, such as environment names, team ownership, application versions, or any other relevant details.
+        /// 
+        /// See [Define tags and metadata for hosts](https://dt-url.net/w3hv0kbw).
         /// </summary>
-        public readonly string Property;
+        public readonly Outputs.ProcessAvailabilityRulesRuleHostMetadataCondition? HostMetadataCondition;
+        /// <summary>
+        /// Possible Values: `CommandLine`, `Executable`, `ExecutablePath`, `User`
+        /// </summary>
+        public readonly string? Property;
+        /// <summary>
+        /// Possible Values: `RuleTypeHost`, `RuleTypeProcess`
+        /// </summary>
+        public readonly string? RuleType;
 
         [OutputConstructor]
         private ProcessAvailabilityRulesRule(
-            string condition,
+            string? condition,
 
-            string property)
+            Outputs.ProcessAvailabilityRulesRuleHostMetadataCondition? hostMetadataCondition,
+
+            string? property,
+
+            string? ruleType)
         {
             Condition = condition;
+            HostMetadataCondition = hostMetadataCondition;
             Property = property;
+            RuleType = ruleType;
         }
     }
 }

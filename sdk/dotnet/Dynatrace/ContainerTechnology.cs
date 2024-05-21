@@ -50,6 +50,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<bool> Garden { get; private set; } = null!;
 
         /// <summary>
+        /// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        /// </summary>
+        [Output("podman")]
+        public Output<bool> Podman { get; private set; } = null!;
+
+        /// <summary>
         /// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Output("scope")]
@@ -145,6 +151,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool> Garden { get; set; } = null!;
 
         /// <summary>
+        /// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        /// </summary>
+        [Input("podman", required: true)]
+        public Input<bool> Podman { get; set; } = null!;
+
+        /// <summary>
         /// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         /// </summary>
         [Input("scope")]
@@ -199,6 +211,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Input("garden")]
         public Input<bool>? Garden { get; set; }
+
+        /// <summary>
+        /// Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+        /// </summary>
+        [Input("podman")]
+        public Input<bool>? Podman { get; set; }
 
         /// <summary>
         /// The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.

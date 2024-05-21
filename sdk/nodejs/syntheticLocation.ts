@@ -76,9 +76,21 @@ export class SyntheticLocation extends pulumi.CustomResource {
      */
     public readonly longitude!: pulumi.Output<number>;
     /**
+     * The maximum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+     */
+    public readonly maxActiveGateCount!: pulumi.Output<number | undefined>;
+    /**
+     * The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+     */
+    public readonly minActiveGateCount!: pulumi.Output<number | undefined>;
+    /**
      * The name of the location
      */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
+     */
+    public readonly nodeSize!: pulumi.Output<string | undefined>;
     /**
      * A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
      * nodes](https://dt-url.net/miy3rpl) call
@@ -114,7 +126,10 @@ export class SyntheticLocation extends pulumi.CustomResource {
             resourceInputs["latitude"] = state ? state.latitude : undefined;
             resourceInputs["locationNodeOutageDelayInMinutes"] = state ? state.locationNodeOutageDelayInMinutes : undefined;
             resourceInputs["longitude"] = state ? state.longitude : undefined;
+            resourceInputs["maxActiveGateCount"] = state ? state.maxActiveGateCount : undefined;
+            resourceInputs["minActiveGateCount"] = state ? state.minActiveGateCount : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["nodeSize"] = state ? state.nodeSize : undefined;
             resourceInputs["nodes"] = state ? state.nodes : undefined;
             resourceInputs["regionCode"] = state ? state.regionCode : undefined;
         } else {
@@ -135,7 +150,10 @@ export class SyntheticLocation extends pulumi.CustomResource {
             resourceInputs["latitude"] = args ? args.latitude : undefined;
             resourceInputs["locationNodeOutageDelayInMinutes"] = args ? args.locationNodeOutageDelayInMinutes : undefined;
             resourceInputs["longitude"] = args ? args.longitude : undefined;
+            resourceInputs["maxActiveGateCount"] = args ? args.maxActiveGateCount : undefined;
+            resourceInputs["minActiveGateCount"] = args ? args.minActiveGateCount : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["nodeSize"] = args ? args.nodeSize : undefined;
             resourceInputs["nodes"] = args ? args.nodes : undefined;
             resourceInputs["regionCode"] = args ? args.regionCode : undefined;
         }
@@ -192,9 +210,21 @@ export interface SyntheticLocationState {
      */
     longitude?: pulumi.Input<number>;
     /**
+     * The maximum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+     */
+    maxActiveGateCount?: pulumi.Input<number>;
+    /**
+     * The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+     */
+    minActiveGateCount?: pulumi.Input<number>;
+    /**
      * The name of the location
      */
     name?: pulumi.Input<string>;
+    /**
+     * Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
+     */
+    nodeSize?: pulumi.Input<string>;
     /**
      * A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
      * nodes](https://dt-url.net/miy3rpl) call
@@ -256,9 +286,21 @@ export interface SyntheticLocationArgs {
      */
     longitude: pulumi.Input<number>;
     /**
+     * The maximum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+     */
+    maxActiveGateCount?: pulumi.Input<number>;
+    /**
+     * The minimum number of Active Gates required for that location. Not required when `deploymentType` is set to `STANDARD`
+     */
+    minActiveGateCount?: pulumi.Input<number>;
+    /**
      * The name of the location
      */
     name?: pulumi.Input<string>;
+    /**
+     * Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deploymentType` is set to `STANDARD`.
+     */
+    nodeSize?: pulumi.Input<string>;
     /**
      * A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
      * nodes](https://dt-url.net/miy3rpl) call

@@ -19,7 +19,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly string ContributionType;
         /// <summary>
-        /// Choose how the value will be transformed before contributing to the Service Id. All of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the Service screen under **Properties and tags**.
+        /// Choose how to transform a value before it contributes to the Service Id. Note that all of the Transformations are always applied. Transformations are applied in the order they are specified, and the output of the previous transformation is the input for the next one. The resulting value contributes to the Service Id and can be found on the **Service overview page** under **Properties and tags**.
         /// </summary>
         public readonly Outputs.ServiceExternalWebRequestIdContributorsApplicationIdServiceIdContributorTransformations? Transformations;
         /// <summary>

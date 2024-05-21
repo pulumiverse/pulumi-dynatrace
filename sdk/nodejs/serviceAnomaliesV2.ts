@@ -51,9 +51,9 @@ export class ServiceAnomaliesV2 extends pulumi.CustomResource {
      */
     public readonly responseTime!: pulumi.Output<outputs.ServiceAnomaliesV2ResponseTime>;
     /**
-     * The scope for the service anomaly detection
+     * The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    public readonly scope!: pulumi.Output<string>;
+    public readonly scope!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ServiceAnomaliesV2 resource with the given unique name, arguments, and options.
@@ -87,9 +87,6 @@ export class ServiceAnomaliesV2 extends pulumi.CustomResource {
             if ((!args || args.responseTime === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'responseTime'");
             }
-            if ((!args || args.scope === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'scope'");
-            }
             resourceInputs["failureRate"] = args ? args.failureRate : undefined;
             resourceInputs["loadDrops"] = args ? args.loadDrops : undefined;
             resourceInputs["loadSpikes"] = args ? args.loadSpikes : undefined;
@@ -122,7 +119,7 @@ export interface ServiceAnomaliesV2State {
      */
     responseTime?: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTime>;
     /**
-     * The scope for the service anomaly detection
+     * The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
     scope?: pulumi.Input<string>;
 }
@@ -148,7 +145,7 @@ export interface ServiceAnomaliesV2Args {
      */
     responseTime: pulumi.Input<inputs.ServiceAnomaliesV2ResponseTime>;
     /**
-     * The scope for the service anomaly detection
+     * The scope of this setting (SERVICE*METHOD, SERVICE, HOST*GROUP). Omit this property if you want to cover the whole environment.
      */
-    scope: pulumi.Input<string>;
+    scope?: pulumi.Input<string>;
 }

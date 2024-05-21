@@ -183,8 +183,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// Metric name
         /// </summary>
-        [Input("metricName", required: true)]
-        public Input<string> MetricName { get; set; } = null!;
+        [Input("metricName")]
+        public Input<string>? MetricName { get; set; }
 
         /// <summary>
         /// SLO name

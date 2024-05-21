@@ -18,6 +18,7 @@ class ContainerRuleArgs:
                  mode: pulumi.Input[str],
                  operator: pulumi.Input[str],
                  property: pulumi.Input[str],
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ContainerRule resource.
@@ -25,12 +26,15 @@ class ContainerRuleArgs:
         :param pulumi.Input[str] mode: Possible Values: `MONITORING_OFF`, `MONITORING_ON`
         :param pulumi.Input[str] operator: Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
         :param pulumi.Input[str] property: Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] value: Condition value
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "mode", mode)
         pulumi.set(__self__, "operator", operator)
         pulumi.set(__self__, "property", property)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if value is not None:
             pulumi.set(__self__, "value", value)
 
@@ -71,6 +75,18 @@ class ContainerRuleArgs:
         pulumi.set(self, "operator", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
         """
@@ -99,6 +115,7 @@ class ContainerRuleArgs:
 class _ContainerRuleState:
     def __init__(__self__, *,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  mode: Optional[pulumi.Input[str]] = None,
                  operator: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input[str]] = None,
@@ -106,6 +123,7 @@ class _ContainerRuleState:
         """
         Input properties used for looking up and filtering ContainerRule resources.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] mode: Possible Values: `MONITORING_OFF`, `MONITORING_ON`
         :param pulumi.Input[str] operator: Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
         :param pulumi.Input[str] property: Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
@@ -113,6 +131,8 @@ class _ContainerRuleState:
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if mode is not None:
             pulumi.set(__self__, "mode", mode)
         if operator is not None:
@@ -133,6 +153,18 @@ class _ContainerRuleState:
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter
@@ -189,6 +221,7 @@ class ContainerRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  mode: Optional[pulumi.Input[str]] = None,
                  operator: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input[str]] = None,
@@ -199,6 +232,7 @@ class ContainerRule(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] mode: Possible Values: `MONITORING_OFF`, `MONITORING_ON`
         :param pulumi.Input[str] operator: Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
         :param pulumi.Input[str] property: Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
@@ -228,6 +262,7 @@ class ContainerRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  mode: Optional[pulumi.Input[str]] = None,
                  operator: Optional[pulumi.Input[str]] = None,
                  property: Optional[pulumi.Input[str]] = None,
@@ -244,6 +279,7 @@ class ContainerRule(pulumi.CustomResource):
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
+            __props__.__dict__["insert_after"] = insert_after
             if mode is None and not opts.urn:
                 raise TypeError("Missing required property 'mode'")
             __props__.__dict__["mode"] = mode
@@ -265,6 +301,7 @@ class ContainerRule(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             mode: Optional[pulumi.Input[str]] = None,
             operator: Optional[pulumi.Input[str]] = None,
             property: Optional[pulumi.Input[str]] = None,
@@ -277,6 +314,7 @@ class ContainerRule(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] mode: Possible Values: `MONITORING_OFF`, `MONITORING_ON`
         :param pulumi.Input[str] operator: Possible Values: `CONTAINS`, `ENDS`, `EQUALS`, `EXISTS`, `NOT_CONTAINS`, `NOT_ENDS`, `NOT_EQUALS`, `NOT_EXISTS`, `NOT_STARTS`, `STARTS`
         :param pulumi.Input[str] property: Possible Values: `CONTAINER_NAME`, `IMAGE_NAME`, `KUBERNETES_BASEPODNAME`, `KUBERNETES_CONTAINERNAME`, `KUBERNETES_FULLPODNAME`, `KUBERNETES_NAMESPACE`, `KUBERNETES_PODUID`
@@ -287,6 +325,7 @@ class ContainerRule(pulumi.CustomResource):
         __props__ = _ContainerRuleState.__new__(_ContainerRuleState)
 
         __props__.__dict__["enabled"] = enabled
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["mode"] = mode
         __props__.__dict__["operator"] = operator
         __props__.__dict__["property"] = property
@@ -300,6 +339,14 @@ class ContainerRule(pulumi.CustomResource):
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter

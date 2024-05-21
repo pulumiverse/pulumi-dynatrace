@@ -14,6 +14,13 @@ __all__ = ['ProviderArgs', 'Provider']
 @pulumi.input_type
 class ProviderArgs:
     def __init__(__self__, *,
+                 account_id: Optional[pulumi.Input[str]] = None,
+                 automation_client_id: Optional[pulumi.Input[str]] = None,
+                 automation_client_secret: Optional[pulumi.Input[str]] = None,
+                 automation_env_url: Optional[pulumi.Input[str]] = None,
+                 automation_token_url: Optional[pulumi.Input[str]] = None,
+                 client_id: Optional[pulumi.Input[str]] = None,
+                 client_secret: Optional[pulumi.Input[str]] = None,
                  dt_api_token: Optional[pulumi.Input[str]] = None,
                  dt_cluster_api_token: Optional[pulumi.Input[str]] = None,
                  dt_cluster_url: Optional[pulumi.Input[str]] = None,
@@ -23,7 +30,27 @@ class ProviderArgs:
                  iam_client_secret: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Provider resource.
+        :param pulumi.Input[str] automation_env_url: The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+               optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+               `https://#####.apps.dynatrace.com`
+        :param pulumi.Input[str] automation_token_url: The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+               `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+               `https://#####.apps.dynatrace.com`
         """
+        if account_id is not None:
+            pulumi.set(__self__, "account_id", account_id)
+        if automation_client_id is not None:
+            pulumi.set(__self__, "automation_client_id", automation_client_id)
+        if automation_client_secret is not None:
+            pulumi.set(__self__, "automation_client_secret", automation_client_secret)
+        if automation_env_url is not None:
+            pulumi.set(__self__, "automation_env_url", automation_env_url)
+        if automation_token_url is not None:
+            pulumi.set(__self__, "automation_token_url", automation_token_url)
+        if client_id is not None:
+            pulumi.set(__self__, "client_id", client_id)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
         if dt_api_token is None:
             dt_api_token = _utilities.get_env('DYNATRACE_API_TOKEN', 'DT_API_TOKEN')
         if dt_api_token is not None:
@@ -46,6 +73,79 @@ class ProviderArgs:
             pulumi.set(__self__, "iam_client_id", iam_client_id)
         if iam_client_secret is not None:
             pulumi.set(__self__, "iam_client_secret", iam_client_secret)
+
+    @property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "account_id")
+
+    @account_id.setter
+    def account_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "account_id", value)
+
+    @property
+    @pulumi.getter(name="automationClientId")
+    def automation_client_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "automation_client_id")
+
+    @automation_client_id.setter
+    def automation_client_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "automation_client_id", value)
+
+    @property
+    @pulumi.getter(name="automationClientSecret")
+    def automation_client_secret(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "automation_client_secret")
+
+    @automation_client_secret.setter
+    def automation_client_secret(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "automation_client_secret", value)
+
+    @property
+    @pulumi.getter(name="automationEnvUrl")
+    def automation_env_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+        optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+        `https://#####.apps.dynatrace.com`
+        """
+        return pulumi.get(self, "automation_env_url")
+
+    @automation_env_url.setter
+    def automation_env_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "automation_env_url", value)
+
+    @property
+    @pulumi.getter(name="automationTokenUrl")
+    def automation_token_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+        `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+        `https://#####.apps.dynatrace.com`
+        """
+        return pulumi.get(self, "automation_token_url")
+
+    @automation_token_url.setter
+    def automation_token_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "automation_token_url", value)
+
+    @property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "client_id")
+
+    @client_id.setter
+    def client_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "client_id", value)
+
+    @property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "client_secret")
+
+    @client_secret.setter
+    def client_secret(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "client_secret", value)
 
     @property
     @pulumi.getter(name="dtApiToken")
@@ -116,6 +216,13 @@ class Provider(pulumi.ProviderResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 account_id: Optional[pulumi.Input[str]] = None,
+                 automation_client_id: Optional[pulumi.Input[str]] = None,
+                 automation_client_secret: Optional[pulumi.Input[str]] = None,
+                 automation_env_url: Optional[pulumi.Input[str]] = None,
+                 automation_token_url: Optional[pulumi.Input[str]] = None,
+                 client_id: Optional[pulumi.Input[str]] = None,
+                 client_secret: Optional[pulumi.Input[str]] = None,
                  dt_api_token: Optional[pulumi.Input[str]] = None,
                  dt_cluster_api_token: Optional[pulumi.Input[str]] = None,
                  dt_cluster_url: Optional[pulumi.Input[str]] = None,
@@ -132,6 +239,12 @@ class Provider(pulumi.ProviderResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] automation_env_url: The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+               optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+               `https://#####.apps.dynatrace.com`
+        :param pulumi.Input[str] automation_token_url: The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+               `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+               `https://#####.apps.dynatrace.com`
         """
         ...
     @overload
@@ -160,6 +273,13 @@ class Provider(pulumi.ProviderResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 account_id: Optional[pulumi.Input[str]] = None,
+                 automation_client_id: Optional[pulumi.Input[str]] = None,
+                 automation_client_secret: Optional[pulumi.Input[str]] = None,
+                 automation_env_url: Optional[pulumi.Input[str]] = None,
+                 automation_token_url: Optional[pulumi.Input[str]] = None,
+                 client_id: Optional[pulumi.Input[str]] = None,
+                 client_secret: Optional[pulumi.Input[str]] = None,
                  dt_api_token: Optional[pulumi.Input[str]] = None,
                  dt_cluster_api_token: Optional[pulumi.Input[str]] = None,
                  dt_cluster_url: Optional[pulumi.Input[str]] = None,
@@ -176,6 +296,13 @@ class Provider(pulumi.ProviderResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ProviderArgs.__new__(ProviderArgs)
 
+            __props__.__dict__["account_id"] = None if account_id is None else pulumi.Output.secret(account_id)
+            __props__.__dict__["automation_client_id"] = None if automation_client_id is None else pulumi.Output.secret(automation_client_id)
+            __props__.__dict__["automation_client_secret"] = None if automation_client_secret is None else pulumi.Output.secret(automation_client_secret)
+            __props__.__dict__["automation_env_url"] = automation_env_url
+            __props__.__dict__["automation_token_url"] = automation_token_url
+            __props__.__dict__["client_id"] = None if client_id is None else pulumi.Output.secret(client_id)
+            __props__.__dict__["client_secret"] = None if client_secret is None else pulumi.Output.secret(client_secret)
             if dt_api_token is None:
                 dt_api_token = _utilities.get_env('DYNATRACE_API_TOKEN', 'DT_API_TOKEN')
             __props__.__dict__["dt_api_token"] = None if dt_api_token is None else pulumi.Output.secret(dt_api_token)
@@ -191,13 +318,58 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["iam_account_id"] = None if iam_account_id is None else pulumi.Output.secret(iam_account_id)
             __props__.__dict__["iam_client_id"] = None if iam_client_id is None else pulumi.Output.secret(iam_client_id)
             __props__.__dict__["iam_client_secret"] = None if iam_client_secret is None else pulumi.Output.secret(iam_client_secret)
-        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["dtApiToken", "dtClusterApiToken", "dtClusterUrl", "iamAccountId", "iamClientId", "iamClientSecret"])
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["accountId", "automationClientId", "automationClientSecret", "clientId", "clientSecret", "dtApiToken", "dtClusterApiToken", "dtClusterUrl", "iamAccountId", "iamClientId", "iamClientSecret"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Provider, __self__).__init__(
             'dynatrace',
             resource_name,
             __props__,
             opts)
+
+    @property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "account_id")
+
+    @property
+    @pulumi.getter(name="automationClientId")
+    def automation_client_id(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "automation_client_id")
+
+    @property
+    @pulumi.getter(name="automationClientSecret")
+    def automation_client_secret(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "automation_client_secret")
+
+    @property
+    @pulumi.getter(name="automationEnvUrl")
+    def automation_env_url(self) -> pulumi.Output[Optional[str]]:
+        """
+        The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+        optional configuration when `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+        `https://#####.apps.dynatrace.com`
+        """
+        return pulumi.get(self, "automation_env_url")
+
+    @property
+    @pulumi.getter(name="automationTokenUrl")
+    def automation_token_url(self) -> pulumi.Output[Optional[str]]:
+        """
+        The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+        `dt_env_url` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+        `https://#####.apps.dynatrace.com`
+        """
+        return pulumi.get(self, "automation_token_url")
+
+    @property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "client_id")
+
+    @property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "client_secret")
 
     @property
     @pulumi.getter(name="dtApiToken")

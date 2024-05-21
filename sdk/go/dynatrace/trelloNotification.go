@@ -70,6 +70,13 @@ func NewTrelloNotification(ctx *pulumi.Context,
 	if args.Text == nil {
 		return nil, errors.New("invalid value for required argument 'Text'")
 	}
+	if args.AuthorizationToken != nil {
+		args.AuthorizationToken = pulumi.ToSecret(args.AuthorizationToken).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"authorizationToken",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource TrelloNotification
 	err := ctx.RegisterResource("dynatrace:index/trelloNotification:TrelloNotification", name, args, &resource, opts...)

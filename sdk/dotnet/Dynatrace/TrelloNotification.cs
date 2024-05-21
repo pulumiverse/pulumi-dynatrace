@@ -103,6 +103,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
             {
                 Version = Utilities.Version,
                 PluginDownloadURL = "github://api.github.com/pulumiverse",
+                AdditionalSecretOutputs =
+                {
+                    "authorizationToken",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -138,11 +142,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Input("applicationKey", required: true)]
         public Input<string> ApplicationKey { get; set; } = null!;
 
+        [Input("authorizationToken")]
+        private Input<string>? _authorizationToken;
+
         /// <summary>
         /// The application token for the Trello account
         /// </summary>
-        [Input("authorizationToken")]
-        public Input<string>? AuthorizationToken { get; set; }
+        public Input<string>? AuthorizationToken
+        {
+            get => _authorizationToken;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _authorizationToken = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The Trello board to which the card should be assigned
@@ -212,11 +226,21 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Input("applicationKey")]
         public Input<string>? ApplicationKey { get; set; }
 
+        [Input("authorizationToken")]
+        private Input<string>? _authorizationToken;
+
         /// <summary>
         /// The application token for the Trello account
         /// </summary>
-        [Input("authorizationToken")]
-        public Input<string>? AuthorizationToken { get; set; }
+        public Input<string>? AuthorizationToken
+        {
+            get => _authorizationToken;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _authorizationToken = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The Trello board to which the card should be assigned

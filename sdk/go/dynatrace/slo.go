@@ -21,12 +21,16 @@ type Slo struct {
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// The SLO is enabled (`false`) or disabled (`true`)
 	Disabled pulumi.BoolPtrOutput `pulumi:"disabled"`
+	// Error budget burn rate configuration of a service-level objective (SLO).
+	ErrorBudgetBurnRate SloErrorBudgetBurnRatePtrOutput `pulumi:"errorBudgetBurnRate"`
 	// The evaluation type of the SLO. Currently only `AGGREGATE` is supported
 	Evaluation pulumi.StringOutput `pulumi:"evaluation"`
 	// The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
 	Filter pulumi.StringPtrOutput `pulumi:"filter"`
 	// The percentage-based metric expression for the calculation of the SLO
 	MetricExpression pulumi.StringPtrOutput `pulumi:"metricExpression"`
+	// The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+	MetricName pulumi.StringPtrOutput `pulumi:"metricName"`
 	// The name of the rule
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The metric for the count of successes (the numerator in rate calculation)
@@ -91,12 +95,16 @@ type sloState struct {
 	Description *string `pulumi:"description"`
 	// The SLO is enabled (`false`) or disabled (`true`)
 	Disabled *bool `pulumi:"disabled"`
+	// Error budget burn rate configuration of a service-level objective (SLO).
+	ErrorBudgetBurnRate *SloErrorBudgetBurnRate `pulumi:"errorBudgetBurnRate"`
 	// The evaluation type of the SLO. Currently only `AGGREGATE` is supported
 	Evaluation *string `pulumi:"evaluation"`
 	// The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
 	Filter *string `pulumi:"filter"`
 	// The percentage-based metric expression for the calculation of the SLO
 	MetricExpression *string `pulumi:"metricExpression"`
+	// The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+	MetricName *string `pulumi:"metricName"`
 	// The name of the rule
 	Name *string `pulumi:"name"`
 	// The metric for the count of successes (the numerator in rate calculation)
@@ -120,12 +128,16 @@ type SloState struct {
 	Description pulumi.StringPtrInput
 	// The SLO is enabled (`false`) or disabled (`true`)
 	Disabled pulumi.BoolPtrInput
+	// Error budget burn rate configuration of a service-level objective (SLO).
+	ErrorBudgetBurnRate SloErrorBudgetBurnRatePtrInput
 	// The evaluation type of the SLO. Currently only `AGGREGATE` is supported
 	Evaluation pulumi.StringPtrInput
 	// The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
 	Filter pulumi.StringPtrInput
 	// The percentage-based metric expression for the calculation of the SLO
 	MetricExpression pulumi.StringPtrInput
+	// The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+	MetricName pulumi.StringPtrInput
 	// The name of the rule
 	Name pulumi.StringPtrInput
 	// The metric for the count of successes (the numerator in rate calculation)
@@ -153,12 +165,16 @@ type sloArgs struct {
 	Description *string `pulumi:"description"`
 	// The SLO is enabled (`false`) or disabled (`true`)
 	Disabled *bool `pulumi:"disabled"`
+	// Error budget burn rate configuration of a service-level objective (SLO).
+	ErrorBudgetBurnRate *SloErrorBudgetBurnRate `pulumi:"errorBudgetBurnRate"`
 	// The evaluation type of the SLO. Currently only `AGGREGATE` is supported
 	Evaluation string `pulumi:"evaluation"`
 	// The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
 	Filter *string `pulumi:"filter"`
 	// The percentage-based metric expression for the calculation of the SLO
 	MetricExpression *string `pulumi:"metricExpression"`
+	// The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+	MetricName *string `pulumi:"metricName"`
 	// The name of the rule
 	Name *string `pulumi:"name"`
 	// The metric for the count of successes (the numerator in rate calculation)
@@ -183,12 +199,16 @@ type SloArgs struct {
 	Description pulumi.StringPtrInput
 	// The SLO is enabled (`false`) or disabled (`true`)
 	Disabled pulumi.BoolPtrInput
+	// Error budget burn rate configuration of a service-level objective (SLO).
+	ErrorBudgetBurnRate SloErrorBudgetBurnRatePtrInput
 	// The evaluation type of the SLO. Currently only `AGGREGATE` is supported
 	Evaluation pulumi.StringInput
 	// The entity filter for the SLO evaluation. Use the [syntax of entity selector](https://dt-url.net/entityselector)
 	Filter pulumi.StringPtrInput
 	// The percentage-based metric expression for the calculation of the SLO
 	MetricExpression pulumi.StringPtrInput
+	// The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+	MetricName pulumi.StringPtrInput
 	// The name of the rule
 	Name pulumi.StringPtrInput
 	// The metric for the count of successes (the numerator in rate calculation)
@@ -307,6 +327,11 @@ func (o SloOutput) Disabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Slo) pulumi.BoolPtrOutput { return v.Disabled }).(pulumi.BoolPtrOutput)
 }
 
+// Error budget burn rate configuration of a service-level objective (SLO).
+func (o SloOutput) ErrorBudgetBurnRate() SloErrorBudgetBurnRatePtrOutput {
+	return o.ApplyT(func(v *Slo) SloErrorBudgetBurnRatePtrOutput { return v.ErrorBudgetBurnRate }).(SloErrorBudgetBurnRatePtrOutput)
+}
+
 // The evaluation type of the SLO. Currently only `AGGREGATE` is supported
 func (o SloOutput) Evaluation() pulumi.StringOutput {
 	return o.ApplyT(func(v *Slo) pulumi.StringOutput { return v.Evaluation }).(pulumi.StringOutput)
@@ -320,6 +345,11 @@ func (o SloOutput) Filter() pulumi.StringPtrOutput {
 // The percentage-based metric expression for the calculation of the SLO
 func (o SloOutput) MetricExpression() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Slo) pulumi.StringPtrOutput { return v.MetricExpression }).(pulumi.StringPtrOutput)
+}
+
+// The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+func (o SloOutput) MetricName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Slo) pulumi.StringPtrOutput { return v.MetricName }).(pulumi.StringPtrOutput)
 }
 
 // The name of the rule

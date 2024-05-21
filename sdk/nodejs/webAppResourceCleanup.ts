@@ -33,6 +33,10 @@ export class WebAppResourceCleanup extends pulumi.CustomResource {
     }
 
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * For example: *Mask journeyId*
      */
     public readonly name!: pulumi.Output<string>;
@@ -58,6 +62,7 @@ export class WebAppResourceCleanup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppResourceCleanupState | undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["regularExpression"] = state ? state.regularExpression : undefined;
             resourceInputs["replaceWith"] = state ? state.replaceWith : undefined;
@@ -69,6 +74,7 @@ export class WebAppResourceCleanup extends pulumi.CustomResource {
             if ((!args || args.replaceWith === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'replaceWith'");
             }
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
             resourceInputs["regularExpression"] = args ? args.regularExpression : undefined;
             resourceInputs["replaceWith"] = args ? args.replaceWith : undefined;
@@ -82,6 +88,10 @@ export class WebAppResourceCleanup extends pulumi.CustomResource {
  * Input properties used for looking up and filtering WebAppResourceCleanup resources.
  */
 export interface WebAppResourceCleanupState {
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * For example: *Mask journeyId*
      */
@@ -100,6 +110,10 @@ export interface WebAppResourceCleanupState {
  * The set of arguments for constructing a WebAppResourceCleanup resource.
  */
 export interface WebAppResourceCleanupArgs {
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * For example: *Mask journeyId*
      */

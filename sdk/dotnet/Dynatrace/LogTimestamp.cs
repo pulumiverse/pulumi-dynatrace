@@ -20,6 +20,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<string> ConfigItemTitle { get; private set; } = null!;
 
         /// <summary>
+        /// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        /// </summary>
+        [Output("dateSearchLimit")]
+        public Output<int?> DateSearchLimit { get; private set; } = null!;
+
+        /// <summary>
         /// Date-time pattern
         /// </summary>
         [Output("dateTimePattern")]
@@ -30,6 +36,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
+
+        /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Output("insertAfter")]
+        public Output<string> InsertAfter { get; private set; } = null!;
 
         /// <summary>
         /// no documentation available
@@ -103,6 +115,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string> ConfigItemTitle { get; set; } = null!;
 
         /// <summary>
+        /// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        /// </summary>
+        [Input("dateSearchLimit")]
+        public Input<int>? DateSearchLimit { get; set; }
+
+        /// <summary>
         /// Date-time pattern
         /// </summary>
         [Input("dateTimePattern", required: true)]
@@ -113,6 +131,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
+
+        /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
         /// no documentation available
@@ -147,6 +171,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? ConfigItemTitle { get; set; }
 
         /// <summary>
+        /// (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        /// </summary>
+        [Input("dateSearchLimit")]
+        public Input<int>? DateSearchLimit { get; set; }
+
+        /// <summary>
         /// Date-time pattern
         /// </summary>
         [Input("dateTimePattern")]
@@ -157,6 +187,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
+
+        /// <summary>
+        /// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        /// </summary>
+        [Input("insertAfter")]
+        public Input<string>? InsertAfter { get; set; }
 
         /// <summary>
         /// no documentation available

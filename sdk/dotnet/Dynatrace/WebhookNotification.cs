@@ -56,6 +56,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<bool?> NotifyEventMerges { get; private set; } = null!;
 
         /// <summary>
+        /// To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+        /// </summary>
+        [Output("oauth2Credentials")]
+        public Output<Outputs.WebhookNotificationOauth2Credentials?> Oauth2Credentials { get; private set; } = null!;
+
+        /// <summary>
         /// The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         /// </summary>
         [Output("payload")]
@@ -68,10 +74,28 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<string> Profile { get; private set; } = null!;
 
         /// <summary>
+        /// The secret URL of the webhook endpoint.
+        /// </summary>
+        [Output("secretUrl")]
+        public Output<string?> SecretUrl { get; private set; } = null!;
+
+        /// <summary>
         /// The URL of the WebHook endpoint
         /// </summary>
         [Output("url")]
-        public Output<string> Url { get; private set; } = null!;
+        public Output<string?> Url { get; private set; } = null!;
+
+        /// <summary>
+        /// Secret webhook URL
+        /// </summary>
+        [Output("urlContainsSecret")]
+        public Output<bool?> UrlContainsSecret { get; private set; } = null!;
+
+        /// <summary>
+        /// Use OAuth 2.0 for authentication
+        /// </summary>
+        [Output("useOauth2")]
+        public Output<bool?> UseOauth2 { get; private set; } = null!;
 
 
         /// <summary>
@@ -97,6 +121,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
             {
                 Version = Utilities.Version,
                 PluginDownloadURL = "github://api.github.com/pulumiverse",
+                AdditionalSecretOutputs =
+                {
+                    "secretUrl",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -163,6 +191,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? NotifyEventMerges { get; set; }
 
         /// <summary>
+        /// To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+        /// </summary>
+        [Input("oauth2Credentials")]
+        public Input<Inputs.WebhookNotificationOauth2CredentialsArgs>? Oauth2Credentials { get; set; }
+
+        /// <summary>
         /// The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         /// </summary>
         [Input("payload", required: true)]
@@ -174,11 +208,39 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Input("profile", required: true)]
         public Input<string> Profile { get; set; } = null!;
 
+        [Input("secretUrl")]
+        private Input<string>? _secretUrl;
+
+        /// <summary>
+        /// The secret URL of the webhook endpoint.
+        /// </summary>
+        public Input<string>? SecretUrl
+        {
+            get => _secretUrl;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _secretUrl = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
         /// <summary>
         /// The URL of the WebHook endpoint
         /// </summary>
-        [Input("url", required: true)]
-        public Input<string> Url { get; set; } = null!;
+        [Input("url")]
+        public Input<string>? Url { get; set; }
+
+        /// <summary>
+        /// Secret webhook URL
+        /// </summary>
+        [Input("urlContainsSecret")]
+        public Input<bool>? UrlContainsSecret { get; set; }
+
+        /// <summary>
+        /// Use OAuth 2.0 for authentication
+        /// </summary>
+        [Input("useOauth2")]
+        public Input<bool>? UseOauth2 { get; set; }
 
         public WebhookNotificationArgs()
         {
@@ -231,6 +293,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? NotifyEventMerges { get; set; }
 
         /// <summary>
+        /// To authenticate your integration, the OAuth 2.0 *Client Credentials* Flow (Grant Type) is used. For details see [Client Credentials Flow](https://dt-url.net/ym22wsm)).
+        /// </summary>
+        [Input("oauth2Credentials")]
+        public Input<Inputs.WebhookNotificationOauth2CredentialsGetArgs>? Oauth2Credentials { get; set; }
+
+        /// <summary>
         /// The content of the notification message. You can use the following placeholders:  * `{ImpactedEntities}`: Details about the entities impacted by the problem in form of a JSON array.  * `{ImpactedEntity}`: The entity impacted by the problem or *X* impacted entities.  * `{PID}`: The ID of the reported problem.  * `{ProblemDetailsHTML}`: All problem event details, including root cause, as an HTML-formatted string.  * `{ProblemDetailsJSON}`: All problem event details, including root cause, as a JSON object.  * `{ProblemDetailsMarkdown}`: All problem event details, including root cause, as a [Markdown-formatted](https://www.markdownguide.org/cheat-sheet/) string.  * `{ProblemDetailsText}`: All problem event details, including root cause, as a text-formatted string.  * `{ProblemID}`: The display number of the reported problem.  * `{ProblemImpact}`: The [impact level](https://www.dynatrace.com/support/help/shortlink/impact-analysis) of the problem. Possible values are `APPLICATION`, `SERVICE`, and `INFRASTRUCTURE`.  * `{ProblemSeverity}`: The [severity level](https://www.dynatrace.com/support/help/shortlink/event-types) of the problem. Possible values are `AVAILABILITY`, `ERROR`, `PERFORMANCE`, `RESOURCE_CONTENTION`, and `CUSTOM_ALERT`.  * `{ProblemTitle}`: A short description of the problem.  * `{ProblemURL}`: The URL of the problem within Dynatrace.  * `{State}`: The state of the problem. Possible values are `OPEN` and `RESOLVED`.  * `{Tags}`: The list of tags that are defined for all impacted entities, separated by commas
         /// </summary>
         [Input("payload")]
@@ -242,11 +310,39 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         [Input("profile")]
         public Input<string>? Profile { get; set; }
 
+        [Input("secretUrl")]
+        private Input<string>? _secretUrl;
+
+        /// <summary>
+        /// The secret URL of the webhook endpoint.
+        /// </summary>
+        public Input<string>? SecretUrl
+        {
+            get => _secretUrl;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _secretUrl = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
         /// <summary>
         /// The URL of the WebHook endpoint
         /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
+
+        /// <summary>
+        /// Secret webhook URL
+        /// </summary>
+        [Input("urlContainsSecret")]
+        public Input<bool>? UrlContainsSecret { get; set; }
+
+        /// <summary>
+        /// Use OAuth 2.0 for authentication
+        /// </summary>
+        [Input("useOauth2")]
+        public Input<bool>? UseOauth2 { get; set; }
 
         public WebhookNotificationState()
         {

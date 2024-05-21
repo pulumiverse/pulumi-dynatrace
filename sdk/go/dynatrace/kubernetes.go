@@ -17,44 +17,57 @@ type Kubernetes struct {
 
 	// ActiveGate Group
 	ActiveGateGroup pulumi.StringPtrOutput `pulumi:"activeGateGroup"`
-	// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-	// [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+	// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
 	AuthToken pulumi.StringPtrOutput `pulumi:"authToken"`
 	// Require valid certificates for communication with API server (recommended)
 	CertificateCheckEnabled pulumi.BoolPtrOutput `pulumi:"certificateCheckEnabled"`
 	// Monitor Kubernetes namespaces, services, workloads, and pods
-	CloudApplicationPipelineEnabled pulumi.BoolOutput `pulumi:"cloudApplicationPipelineEnabled"`
-	// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-	// namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	CloudApplicationPipelineEnabled pulumi.BoolPtrOutput `pulumi:"cloudApplicationPipelineEnabled"`
+	// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
 	ClusterId pulumi.StringPtrOutput `pulumi:"clusterId"`
 	// For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
 	ClusterIdEnabled pulumi.BoolOutput `pulumi:"clusterIdEnabled"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
-	// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw "OpenShift").
+	// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
 	EndpointUrl pulumi.StringPtrOutput `pulumi:"endpointUrl"`
-	// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-	// [documentation](https://dt-url.net/2201p0u).
+	// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	EventPatterns KubernetesEventPatternsPtrOutput `pulumi:"eventPatterns"`
 	// All events are monitored by default unless event filters are specified.
-	EventProcessingActive pulumi.BoolOutput `pulumi:"eventProcessingActive"`
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	EventProcessingActive pulumi.BoolPtrOutput `pulumi:"eventProcessingActive"`
 	// Include only events specified by Events Field Selectors
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	FilterEvents pulumi.BoolPtrOutput `pulumi:"filterEvents"`
 	// Verify hostname in certificate against Kubernetes API URL
 	HostnameVerificationEnabled pulumi.BoolPtrOutput `pulumi:"hostnameVerificationEnabled"`
 	// For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	IncludeAllFdiEvents pulumi.BoolPtrOutput `pulumi:"includeAllFdiEvents"`
 	// Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
 	Label pulumi.StringOutput `pulumi:"label"`
 	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
 	// may increase the CPU/memory resource consumption of your ActiveGate.
-	OpenMetricsBuiltinEnabled pulumi.BoolOutput `pulumi:"openMetricsBuiltinEnabled"`
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	OpenMetricsBuiltinEnabled pulumi.BoolPtrOutput `pulumi:"openMetricsBuiltinEnabled"`
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
-	OpenMetricsPipelineEnabled pulumi.BoolOutput `pulumi:"openMetricsPipelineEnabled"`
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	OpenMetricsPipelineEnabled pulumi.BoolPtrOutput `pulumi:"openMetricsPipelineEnabled"`
 	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
-	PvcMonitoringEnabled pulumi.BoolOutput `pulumi:"pvcMonitoringEnabled"`
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	PvcMonitoringEnabled pulumi.BoolPtrOutput `pulumi:"pvcMonitoringEnabled"`
 	// The scope of this setting (KUBERNETES_CLUSTER)
-	Scope pulumi.StringOutput `pulumi:"scope"`
+	Scope pulumi.StringPtrOutput `pulumi:"scope"`
 }
 
 // NewKubernetes registers a new resource with the given unique name, arguments, and options.
@@ -64,32 +77,14 @@ func NewKubernetes(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.CloudApplicationPipelineEnabled == nil {
-		return nil, errors.New("invalid value for required argument 'CloudApplicationPipelineEnabled'")
-	}
 	if args.ClusterIdEnabled == nil {
 		return nil, errors.New("invalid value for required argument 'ClusterIdEnabled'")
 	}
 	if args.Enabled == nil {
 		return nil, errors.New("invalid value for required argument 'Enabled'")
 	}
-	if args.EventProcessingActive == nil {
-		return nil, errors.New("invalid value for required argument 'EventProcessingActive'")
-	}
 	if args.Label == nil {
 		return nil, errors.New("invalid value for required argument 'Label'")
-	}
-	if args.OpenMetricsBuiltinEnabled == nil {
-		return nil, errors.New("invalid value for required argument 'OpenMetricsBuiltinEnabled'")
-	}
-	if args.OpenMetricsPipelineEnabled == nil {
-		return nil, errors.New("invalid value for required argument 'OpenMetricsPipelineEnabled'")
-	}
-	if args.PvcMonitoringEnabled == nil {
-		return nil, errors.New("invalid value for required argument 'PvcMonitoringEnabled'")
-	}
-	if args.Scope == nil {
-		return nil, errors.New("invalid value for required argument 'Scope'")
 	}
 	if args.AuthToken != nil {
 		args.AuthToken = pulumi.ToSecret(args.AuthToken).(pulumi.StringPtrInput)
@@ -123,41 +118,54 @@ func GetKubernetes(ctx *pulumi.Context,
 type kubernetesState struct {
 	// ActiveGate Group
 	ActiveGateGroup *string `pulumi:"activeGateGroup"`
-	// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-	// [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+	// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
 	AuthToken *string `pulumi:"authToken"`
 	// Require valid certificates for communication with API server (recommended)
 	CertificateCheckEnabled *bool `pulumi:"certificateCheckEnabled"`
 	// Monitor Kubernetes namespaces, services, workloads, and pods
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	CloudApplicationPipelineEnabled *bool `pulumi:"cloudApplicationPipelineEnabled"`
-	// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-	// namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+	// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
 	ClusterId *string `pulumi:"clusterId"`
 	// For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
 	ClusterIdEnabled *bool `pulumi:"clusterIdEnabled"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
-	// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw "OpenShift").
+	// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
 	EndpointUrl *string `pulumi:"endpointUrl"`
-	// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-	// [documentation](https://dt-url.net/2201p0u).
+	// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	EventPatterns *KubernetesEventPatterns `pulumi:"eventPatterns"`
 	// All events are monitored by default unless event filters are specified.
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	EventProcessingActive *bool `pulumi:"eventProcessingActive"`
 	// Include only events specified by Events Field Selectors
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	FilterEvents *bool `pulumi:"filterEvents"`
 	// Verify hostname in certificate against Kubernetes API URL
 	HostnameVerificationEnabled *bool `pulumi:"hostnameVerificationEnabled"`
 	// For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	IncludeAllFdiEvents *bool `pulumi:"includeAllFdiEvents"`
 	// Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
 	Label *string `pulumi:"label"`
 	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
 	// may increase the CPU/memory resource consumption of your ActiveGate.
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	OpenMetricsBuiltinEnabled *bool `pulumi:"openMetricsBuiltinEnabled"`
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	OpenMetricsPipelineEnabled *bool `pulumi:"openMetricsPipelineEnabled"`
 	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	PvcMonitoringEnabled *bool `pulumi:"pvcMonitoringEnabled"`
 	// The scope of this setting (KUBERNETES_CLUSTER)
 	Scope *string `pulumi:"scope"`
@@ -166,41 +174,54 @@ type kubernetesState struct {
 type KubernetesState struct {
 	// ActiveGate Group
 	ActiveGateGroup pulumi.StringPtrInput
-	// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-	// [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+	// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
 	AuthToken pulumi.StringPtrInput
 	// Require valid certificates for communication with API server (recommended)
 	CertificateCheckEnabled pulumi.BoolPtrInput
 	// Monitor Kubernetes namespaces, services, workloads, and pods
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	CloudApplicationPipelineEnabled pulumi.BoolPtrInput
-	// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-	// namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+	// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
 	ClusterId pulumi.StringPtrInput
 	// For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
 	ClusterIdEnabled pulumi.BoolPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
-	// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw "OpenShift").
+	// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
 	EndpointUrl pulumi.StringPtrInput
-	// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-	// [documentation](https://dt-url.net/2201p0u).
+	// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	EventPatterns KubernetesEventPatternsPtrInput
 	// All events are monitored by default unless event filters are specified.
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	EventProcessingActive pulumi.BoolPtrInput
 	// Include only events specified by Events Field Selectors
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	FilterEvents pulumi.BoolPtrInput
 	// Verify hostname in certificate against Kubernetes API URL
 	HostnameVerificationEnabled pulumi.BoolPtrInput
 	// For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	IncludeAllFdiEvents pulumi.BoolPtrInput
 	// Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
 	Label pulumi.StringPtrInput
 	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
 	// may increase the CPU/memory resource consumption of your ActiveGate.
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	OpenMetricsBuiltinEnabled pulumi.BoolPtrInput
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	OpenMetricsPipelineEnabled pulumi.BoolPtrInput
 	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	PvcMonitoringEnabled pulumi.BoolPtrInput
 	// The scope of this setting (KUBERNETES_CLUSTER)
 	Scope pulumi.StringPtrInput
@@ -213,88 +234,114 @@ func (KubernetesState) ElementType() reflect.Type {
 type kubernetesArgs struct {
 	// ActiveGate Group
 	ActiveGateGroup *string `pulumi:"activeGateGroup"`
-	// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-	// [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+	// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
 	AuthToken *string `pulumi:"authToken"`
 	// Require valid certificates for communication with API server (recommended)
 	CertificateCheckEnabled *bool `pulumi:"certificateCheckEnabled"`
 	// Monitor Kubernetes namespaces, services, workloads, and pods
-	CloudApplicationPipelineEnabled bool `pulumi:"cloudApplicationPipelineEnabled"`
-	// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-	// namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	CloudApplicationPipelineEnabled *bool `pulumi:"cloudApplicationPipelineEnabled"`
+	// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
 	ClusterId *string `pulumi:"clusterId"`
 	// For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
 	ClusterIdEnabled bool `pulumi:"clusterIdEnabled"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
-	// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw "OpenShift").
+	// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
 	EndpointUrl *string `pulumi:"endpointUrl"`
-	// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-	// [documentation](https://dt-url.net/2201p0u).
+	// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	EventPatterns *KubernetesEventPatterns `pulumi:"eventPatterns"`
 	// All events are monitored by default unless event filters are specified.
-	EventProcessingActive bool `pulumi:"eventProcessingActive"`
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	EventProcessingActive *bool `pulumi:"eventProcessingActive"`
 	// Include only events specified by Events Field Selectors
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	FilterEvents *bool `pulumi:"filterEvents"`
 	// Verify hostname in certificate against Kubernetes API URL
 	HostnameVerificationEnabled *bool `pulumi:"hostnameVerificationEnabled"`
 	// For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	IncludeAllFdiEvents *bool `pulumi:"includeAllFdiEvents"`
 	// Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
 	Label string `pulumi:"label"`
 	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
 	// may increase the CPU/memory resource consumption of your ActiveGate.
-	OpenMetricsBuiltinEnabled bool `pulumi:"openMetricsBuiltinEnabled"`
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	OpenMetricsBuiltinEnabled *bool `pulumi:"openMetricsBuiltinEnabled"`
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
-	OpenMetricsPipelineEnabled bool `pulumi:"openMetricsPipelineEnabled"`
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	OpenMetricsPipelineEnabled *bool `pulumi:"openMetricsPipelineEnabled"`
 	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
-	PvcMonitoringEnabled bool `pulumi:"pvcMonitoringEnabled"`
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	PvcMonitoringEnabled *bool `pulumi:"pvcMonitoringEnabled"`
 	// The scope of this setting (KUBERNETES_CLUSTER)
-	Scope string `pulumi:"scope"`
+	Scope *string `pulumi:"scope"`
 }
 
 // The set of arguments for constructing a Kubernetes resource.
 type KubernetesArgs struct {
 	// ActiveGate Group
 	ActiveGateGroup pulumi.StringPtrInput
-	// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-	// [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+	// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
 	AuthToken pulumi.StringPtrInput
 	// Require valid certificates for communication with API server (recommended)
 	CertificateCheckEnabled pulumi.BoolPtrInput
 	// Monitor Kubernetes namespaces, services, workloads, and pods
-	CloudApplicationPipelineEnabled pulumi.BoolInput
-	// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-	// namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	CloudApplicationPipelineEnabled pulumi.BoolPtrInput
+	// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
 	ClusterId pulumi.StringPtrInput
 	// For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
 	ClusterIdEnabled pulumi.BoolInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
-	// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw "OpenShift").
+	// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
 	EndpointUrl pulumi.StringPtrInput
-	// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-	// [documentation](https://dt-url.net/2201p0u).
+	// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	EventPatterns KubernetesEventPatternsPtrInput
 	// All events are monitored by default unless event filters are specified.
-	EventProcessingActive pulumi.BoolInput
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	EventProcessingActive pulumi.BoolPtrInput
 	// Include only events specified by Events Field Selectors
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	FilterEvents pulumi.BoolPtrInput
 	// Verify hostname in certificate against Kubernetes API URL
 	HostnameVerificationEnabled pulumi.BoolPtrInput
 	// For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 	IncludeAllFdiEvents pulumi.BoolPtrInput
 	// Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
 	Label pulumi.StringInput
 	// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
 	// may increase the CPU/memory resource consumption of your ActiveGate.
-	OpenMetricsBuiltinEnabled pulumi.BoolInput
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	OpenMetricsBuiltinEnabled pulumi.BoolPtrInput
 	// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
-	OpenMetricsPipelineEnabled pulumi.BoolInput
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	OpenMetricsPipelineEnabled pulumi.BoolPtrInput
 	// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
-	PvcMonitoringEnabled pulumi.BoolInput
+	//
+	// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+	PvcMonitoringEnabled pulumi.BoolPtrInput
 	// The scope of this setting (KUBERNETES_CLUSTER)
-	Scope pulumi.StringInput
+	Scope pulumi.StringPtrInput
 }
 
 func (KubernetesArgs) ElementType() reflect.Type {
@@ -389,8 +436,7 @@ func (o KubernetesOutput) ActiveGateGroup() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Kubernetes) pulumi.StringPtrOutput { return v.ActiveGateGroup }).(pulumi.StringPtrOutput)
 }
 
-// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-// [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
 func (o KubernetesOutput) AuthToken() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Kubernetes) pulumi.StringPtrOutput { return v.AuthToken }).(pulumi.StringPtrOutput)
 }
@@ -401,12 +447,13 @@ func (o KubernetesOutput) CertificateCheckEnabled() pulumi.BoolPtrOutput {
 }
 
 // Monitor Kubernetes namespaces, services, workloads, and pods
-func (o KubernetesOutput) CloudApplicationPipelineEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Kubernetes) pulumi.BoolOutput { return v.CloudApplicationPipelineEnabled }).(pulumi.BoolOutput)
+//
+// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+func (o KubernetesOutput) CloudApplicationPipelineEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Kubernetes) pulumi.BoolPtrOutput { return v.CloudApplicationPipelineEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-// namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
 func (o KubernetesOutput) ClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Kubernetes) pulumi.StringPtrOutput { return v.ClusterId }).(pulumi.StringPtrOutput)
 }
@@ -421,23 +468,28 @@ func (o KubernetesOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Kubernetes) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw "OpenShift").
+// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
 func (o KubernetesOutput) EndpointUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Kubernetes) pulumi.StringPtrOutput { return v.EndpointUrl }).(pulumi.StringPtrOutput)
 }
 
-// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-// [documentation](https://dt-url.net/2201p0u).
+// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
+//
+// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 func (o KubernetesOutput) EventPatterns() KubernetesEventPatternsPtrOutput {
 	return o.ApplyT(func(v *Kubernetes) KubernetesEventPatternsPtrOutput { return v.EventPatterns }).(KubernetesEventPatternsPtrOutput)
 }
 
 // All events are monitored by default unless event filters are specified.
-func (o KubernetesOutput) EventProcessingActive() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Kubernetes) pulumi.BoolOutput { return v.EventProcessingActive }).(pulumi.BoolOutput)
+//
+// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+func (o KubernetesOutput) EventProcessingActive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Kubernetes) pulumi.BoolPtrOutput { return v.EventProcessingActive }).(pulumi.BoolPtrOutput)
 }
 
 // Include only events specified by Events Field Selectors
+//
+// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 func (o KubernetesOutput) FilterEvents() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Kubernetes) pulumi.BoolPtrOutput { return v.FilterEvents }).(pulumi.BoolPtrOutput)
 }
@@ -448,6 +500,8 @@ func (o KubernetesOutput) HostnameVerificationEnabled() pulumi.BoolPtrOutput {
 }
 
 // For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
+//
+// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
 func (o KubernetesOutput) IncludeAllFdiEvents() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Kubernetes) pulumi.BoolPtrOutput { return v.IncludeAllFdiEvents }).(pulumi.BoolPtrOutput)
 }
@@ -459,23 +513,29 @@ func (o KubernetesOutput) Label() pulumi.StringOutput {
 
 // The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
 // may increase the CPU/memory resource consumption of your ActiveGate.
-func (o KubernetesOutput) OpenMetricsBuiltinEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Kubernetes) pulumi.BoolOutput { return v.OpenMetricsBuiltinEnabled }).(pulumi.BoolOutput)
+//
+// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+func (o KubernetesOutput) OpenMetricsBuiltinEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Kubernetes) pulumi.BoolPtrOutput { return v.OpenMetricsBuiltinEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
-func (o KubernetesOutput) OpenMetricsPipelineEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Kubernetes) pulumi.BoolOutput { return v.OpenMetricsPipelineEnabled }).(pulumi.BoolOutput)
+//
+// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+func (o KubernetesOutput) OpenMetricsPipelineEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Kubernetes) pulumi.BoolPtrOutput { return v.OpenMetricsPipelineEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
-func (o KubernetesOutput) PvcMonitoringEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v *Kubernetes) pulumi.BoolOutput { return v.PvcMonitoringEnabled }).(pulumi.BoolOutput)
+//
+// Deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.
+func (o KubernetesOutput) PvcMonitoringEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Kubernetes) pulumi.BoolPtrOutput { return v.PvcMonitoringEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // The scope of this setting (KUBERNETES_CLUSTER)
-func (o KubernetesOutput) Scope() pulumi.StringOutput {
-	return o.ApplyT(func(v *Kubernetes) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
+func (o KubernetesOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Kubernetes) pulumi.StringPtrOutput { return v.Scope }).(pulumi.StringPtrOutput)
 }
 
 type KubernetesArrayOutput struct{ *pulumi.OutputState }

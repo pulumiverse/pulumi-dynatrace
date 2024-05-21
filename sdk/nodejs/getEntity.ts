@@ -25,11 +25,15 @@ import * as utilities from "./utilities";
  * export const id = test.then(test => test.id);
  * ```
  */
-export function getEntity(args: GetEntityArgs, opts?: pulumi.InvokeOptions): Promise<GetEntityResult> {
+export function getEntity(args?: GetEntityArgs, opts?: pulumi.InvokeOptions): Promise<GetEntityResult> {
+    args = args || {};
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("dynatrace:index/getEntity:getEntity", {
+        "entitySelector": args.entitySelector,
+        "from": args.from,
         "name": args.name,
+        "to": args.to,
         "type": args.type,
     }, opts);
 }
@@ -38,20 +42,27 @@ export function getEntity(args: GetEntityArgs, opts?: pulumi.InvokeOptions): Pro
  * A collection of arguments for invoking getEntity.
  */
 export interface GetEntityArgs {
-    name: string;
-    type: string;
+    entitySelector?: string;
+    from?: string;
+    name?: string;
+    to?: string;
+    type?: string;
 }
 
 /**
  * A collection of values returned by getEntity.
  */
 export interface GetEntityResult {
+    readonly entitySelector?: string;
+    readonly from?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
-    readonly name: string;
-    readonly type: string;
+    readonly name?: string;
+    readonly properties: {[key: string]: string};
+    readonly to?: string;
+    readonly type?: string;
 }
 /**
  * The entity data source allows the entity ID to be retrieved by its name and type.
@@ -74,7 +85,7 @@ export interface GetEntityResult {
  * export const id = test.then(test => test.id);
  * ```
  */
-export function getEntityOutput(args: GetEntityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEntityResult> {
+export function getEntityOutput(args?: GetEntityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEntityResult> {
     return pulumi.output(args).apply((a: any) => getEntity(a, opts))
 }
 
@@ -82,6 +93,9 @@ export function getEntityOutput(args: GetEntityOutputArgs, opts?: pulumi.InvokeO
  * A collection of arguments for invoking getEntity.
  */
 export interface GetEntityOutputArgs {
-    name: pulumi.Input<string>;
-    type: pulumi.Input<string>;
+    entitySelector?: pulumi.Input<string>;
+    from?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+    to?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
 }

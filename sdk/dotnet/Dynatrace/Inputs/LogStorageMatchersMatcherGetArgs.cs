@@ -14,7 +14,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class LogStorageMatchersMatcherGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_content`, `Log_source`, `Process_technology`
+        /// Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `Host_tag`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_content`, `Log_source`, `Loglevel`, `Process_technology`, `Winlog_eventid`, `Winlog_opcode`, `Winlog_provider`, `Winlog_task`
         /// </summary>
         [Input("attribute", required: true)]
         public Input<string> Attribute { get; set; } = null!;

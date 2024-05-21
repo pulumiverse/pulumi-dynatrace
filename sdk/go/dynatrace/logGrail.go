@@ -17,6 +17,8 @@ type LogGrail struct {
 
 	// Activate logs powered by Grail.
 	Activated pulumi.BoolOutput `pulumi:"activated"`
+	// Possible Values: `NONE`, `SEVEN_DAYS`, `THIRTY_FIVE_DAYS`
+	ParallelIngestPeriod pulumi.StringOutput `pulumi:"parallelIngestPeriod"`
 }
 
 // NewLogGrail registers a new resource with the given unique name, arguments, and options.
@@ -28,6 +30,9 @@ func NewLogGrail(ctx *pulumi.Context,
 
 	if args.Activated == nil {
 		return nil, errors.New("invalid value for required argument 'Activated'")
+	}
+	if args.ParallelIngestPeriod == nil {
+		return nil, errors.New("invalid value for required argument 'ParallelIngestPeriod'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource LogGrail
@@ -54,11 +59,15 @@ func GetLogGrail(ctx *pulumi.Context,
 type logGrailState struct {
 	// Activate logs powered by Grail.
 	Activated *bool `pulumi:"activated"`
+	// Possible Values: `NONE`, `SEVEN_DAYS`, `THIRTY_FIVE_DAYS`
+	ParallelIngestPeriod *string `pulumi:"parallelIngestPeriod"`
 }
 
 type LogGrailState struct {
 	// Activate logs powered by Grail.
 	Activated pulumi.BoolPtrInput
+	// Possible Values: `NONE`, `SEVEN_DAYS`, `THIRTY_FIVE_DAYS`
+	ParallelIngestPeriod pulumi.StringPtrInput
 }
 
 func (LogGrailState) ElementType() reflect.Type {
@@ -68,12 +77,16 @@ func (LogGrailState) ElementType() reflect.Type {
 type logGrailArgs struct {
 	// Activate logs powered by Grail.
 	Activated bool `pulumi:"activated"`
+	// Possible Values: `NONE`, `SEVEN_DAYS`, `THIRTY_FIVE_DAYS`
+	ParallelIngestPeriod string `pulumi:"parallelIngestPeriod"`
 }
 
 // The set of arguments for constructing a LogGrail resource.
 type LogGrailArgs struct {
 	// Activate logs powered by Grail.
 	Activated pulumi.BoolInput
+	// Possible Values: `NONE`, `SEVEN_DAYS`, `THIRTY_FIVE_DAYS`
+	ParallelIngestPeriod pulumi.StringInput
 }
 
 func (LogGrailArgs) ElementType() reflect.Type {
@@ -166,6 +179,11 @@ func (o LogGrailOutput) ToLogGrailOutputWithContext(ctx context.Context) LogGrai
 // Activate logs powered by Grail.
 func (o LogGrailOutput) Activated() pulumi.BoolOutput {
 	return o.ApplyT(func(v *LogGrail) pulumi.BoolOutput { return v.Activated }).(pulumi.BoolOutput)
+}
+
+// Possible Values: `NONE`, `SEVEN_DAYS`, `THIRTY_FIVE_DAYS`
+func (o LogGrailOutput) ParallelIngestPeriod() pulumi.StringOutput {
+	return o.ApplyT(func(v *LogGrail) pulumi.StringOutput { return v.ParallelIngestPeriod }).(pulumi.StringOutput)
 }
 
 type LogGrailArrayOutput struct{ *pulumi.OutputState }

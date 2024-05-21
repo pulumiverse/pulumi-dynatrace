@@ -12,6 +12,91 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
+//
+// > This resource requires the API token scope **Allow IAM policy configuration for environments** (`iam-policies-management`)
+//
+// ## Dynatrace Documentation
+//
+// - Dynatrace IAM Policy Management - https://www.dynatrace.com/support/help/manage/access-control/user-management-and-sso/manage-groups-and-permissions/iam/iam-policy-mgt
+//
+// - Settings API - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions/iam/iam-getting-started
+//
+// ## Prerequisites
+//
+// Using this resource requires an OAuth client to be configured within your account settings.
+// The scopes of the OAuth Client need to include `account-idm-read`, `account-idm-write`, `account-env-read`, `account-env-write`, `iam-policies-management`, `iam:policies:write`, `iam:policies:read`, `iam:bindings:write`, `iam:bindings:read` and `iam:effective-permissions:read`.
+//
+// Finally the provider configuration requires the credentials for that OAuth Client.
+// The configuration section of your provider needs to look like this.
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Resource Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewIamPolicy(ctx, "policy", &dynatrace.IamPolicyArgs{
+//				Environment:    pulumi.String("siz654##"),
+//				StatementQuery: pulumi.String("ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dynatrace.NewIamPolicy(ctx, "policy", &dynatrace.IamPolicyArgs{
+//				Account:        pulumi.String("########-####-####-####-############"),
+//				StatementQuery: pulumi.String("ALLOW settings:objects:read, settings:schemas:read WHERE settings:schemaId = \"string\";"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type IamPolicy struct {
 	pulumi.CustomResourceState
 
@@ -27,6 +112,8 @@ type IamPolicy struct {
 	StatementQuery pulumi.StringOutput `pulumi:"statementQuery"`
 	// Tags for this policy
 	Tags pulumi.StringArrayOutput `pulumi:"tags"`
+	// The ID of this resource is a concatenation of multiple pieces of information (policy UUID, accountID, environmentID, ...). There are use cases where you JUST need the UUID of the Policy, though
+	Uuid pulumi.StringOutput `pulumi:"uuid"`
 }
 
 // NewIamPolicy registers a new resource with the given unique name, arguments, and options.
@@ -74,6 +161,8 @@ type iamPolicyState struct {
 	StatementQuery *string `pulumi:"statementQuery"`
 	// Tags for this policy
 	Tags []string `pulumi:"tags"`
+	// The ID of this resource is a concatenation of multiple pieces of information (policy UUID, accountID, environmentID, ...). There are use cases where you JUST need the UUID of the Policy, though
+	Uuid *string `pulumi:"uuid"`
 }
 
 type IamPolicyState struct {
@@ -89,6 +178,8 @@ type IamPolicyState struct {
 	StatementQuery pulumi.StringPtrInput
 	// Tags for this policy
 	Tags pulumi.StringArrayInput
+	// The ID of this resource is a concatenation of multiple pieces of information (policy UUID, accountID, environmentID, ...). There are use cases where you JUST need the UUID of the Policy, though
+	Uuid pulumi.StringPtrInput
 }
 
 func (IamPolicyState) ElementType() reflect.Type {
@@ -241,6 +332,11 @@ func (o IamPolicyOutput) StatementQuery() pulumi.StringOutput {
 // Tags for this policy
 func (o IamPolicyOutput) Tags() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *IamPolicy) pulumi.StringArrayOutput { return v.Tags }).(pulumi.StringArrayOutput)
+}
+
+// The ID of this resource is a concatenation of multiple pieces of information (policy UUID, accountID, environmentID, ...). There are use cases where you JUST need the UUID of the Policy, though
+func (o IamPolicyOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v *IamPolicy) pulumi.StringOutput { return v.Uuid }).(pulumi.StringOutput)
 }
 
 type IamPolicyArrayOutput struct{ *pulumi.OutputState }

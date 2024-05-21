@@ -11,6 +11,35 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+func GetAccountId(ctx *pulumi.Context) string {
+	return config.Get(ctx, "dynatrace:accountId")
+}
+func GetAutomationClientId(ctx *pulumi.Context) string {
+	return config.Get(ctx, "dynatrace:automationClientId")
+}
+func GetAutomationClientSecret(ctx *pulumi.Context) string {
+	return config.Get(ctx, "dynatrace:automationClientSecret")
+}
+
+// The URL of the Dynatrace Environment with Platform capabilities turned on (`https://#####.apps.dynatrace.com)`. This is
+// optional configuration when `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+// `https://#####.apps.dynatrace.com`
+func GetAutomationEnvUrl(ctx *pulumi.Context) string {
+	return config.Get(ctx, "dynatrace:automationEnvUrl")
+}
+
+// The URL that provides the Bearer tokens when accessing the Automation REST API. This is optional configuration when
+// `dtEnvUrl` already specifies a SaaS Environment like `https://#####.live.dynatrace.com` or
+// `https://#####.apps.dynatrace.com`
+func GetAutomationTokenUrl(ctx *pulumi.Context) string {
+	return config.Get(ctx, "dynatrace:automationTokenUrl")
+}
+func GetClientId(ctx *pulumi.Context) string {
+	return config.Get(ctx, "dynatrace:clientId")
+}
+func GetClientSecret(ctx *pulumi.Context) string {
+	return config.Get(ctx, "dynatrace:clientSecret")
+}
 func GetDtApiToken(ctx *pulumi.Context) string {
 	v, err := config.Try(ctx, "dynatrace:dtApiToken")
 	if err == nil {

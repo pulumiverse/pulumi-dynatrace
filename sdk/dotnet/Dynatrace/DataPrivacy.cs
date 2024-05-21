@@ -20,25 +20,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<string?> ApplicationId { get; private set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.ApplicationDataPrivacy`) To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
+        /// To provide your end users with the ability to decide for themselves if their activities should be tracked to measure
+        /// application performance and usage, enable opt-in mode.
         /// </summary>
         [Output("dataCollection")]
         public Output<Outputs.DataPrivacyDataCollection> DataCollection { get; private set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.ApplicationDataPrivacy`) Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
+        /// Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual
+        /// users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
         /// </summary>
         [Output("doNotTrack")]
         public Output<Outputs.DataPrivacyDoNotTrack> DoNotTrack { get; private set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.ApplicationDataPrivacy`)
+        /// no documentation available
         /// </summary>
         [Output("masking")]
         public Output<Outputs.DataPrivacyMasking> Masking { get; private set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.ApplicationDataPrivacy`) User tracking
+        /// User tracking
         /// </summary>
         [Output("userTracking")]
         public Output<Outputs.DataPrivacyUserTracking> UserTracking { get; private set; } = null!;
@@ -97,25 +99,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.ApplicationDataPrivacy`) To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
+        /// To provide your end users with the ability to decide for themselves if their activities should be tracked to measure
+        /// application performance and usage, enable opt-in mode.
         /// </summary>
         [Input("dataCollection", required: true)]
         public Input<Inputs.DataPrivacyDataCollectionArgs> DataCollection { get; set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.ApplicationDataPrivacy`) Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
+        /// Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual
+        /// users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
         /// </summary>
         [Input("doNotTrack", required: true)]
         public Input<Inputs.DataPrivacyDoNotTrackArgs> DoNotTrack { get; set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.ApplicationDataPrivacy`)
+        /// no documentation available
         /// </summary>
         [Input("masking", required: true)]
         public Input<Inputs.DataPrivacyMaskingArgs> Masking { get; set; } = null!;
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.ApplicationDataPrivacy`) User tracking
+        /// User tracking
         /// </summary>
         [Input("userTracking", required: true)]
         public Input<Inputs.DataPrivacyUserTrackingArgs> UserTracking { get; set; } = null!;
@@ -135,25 +139,27 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? ApplicationId { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.ApplicationDataPrivacy`) To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
+        /// To provide your end users with the ability to decide for themselves if their activities should be tracked to measure
+        /// application performance and usage, enable opt-in mode.
         /// </summary>
         [Input("dataCollection")]
         public Input<Inputs.DataPrivacyDataCollectionGetArgs>? DataCollection { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.ApplicationDataPrivacy`) Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
+        /// Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual
+        /// users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
         /// </summary>
         [Input("doNotTrack")]
         public Input<Inputs.DataPrivacyDoNotTrackGetArgs>? DoNotTrack { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.ApplicationDataPrivacy`)
+        /// no documentation available
         /// </summary>
         [Input("masking")]
         public Input<Inputs.DataPrivacyMaskingGetArgs>? Masking { get; set; }
 
         /// <summary>
-        /// (Field has overlap with `dynatrace.ApplicationDataPrivacy`) User tracking
+        /// User tracking
         /// </summary>
         [Input("userTracking")]
         public Input<Inputs.DataPrivacyUserTrackingGetArgs>? UserTracking { get; set; }

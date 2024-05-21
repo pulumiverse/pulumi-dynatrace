@@ -30,6 +30,9 @@ class ApplicationDetectionRuleArgs:
         pulumi.set(__self__, "application_identifier", application_identifier)
         pulumi.set(__self__, "filter_config", filter_config)
         if name is not None:
+            warnings.warn("""Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""", DeprecationWarning)
+            pulumi.log.warn("""name is deprecated: Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""")
+        if name is not None:
             pulumi.set(__self__, "name", name)
         if order is not None:
             pulumi.set(__self__, "order", order)
@@ -64,6 +67,9 @@ class ApplicationDetectionRuleArgs:
         """
         The unique name of the Application detection rule
         """
+        warnings.warn("""Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""", DeprecationWarning)
+        pulumi.log.warn("""name is deprecated: Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""")
+
         return pulumi.get(self, "name")
 
     @name.setter
@@ -102,6 +108,9 @@ class _ApplicationDetectionRuleState:
         if filter_config is not None:
             pulumi.set(__self__, "filter_config", filter_config)
         if name is not None:
+            warnings.warn("""Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""", DeprecationWarning)
+            pulumi.log.warn("""name is deprecated: Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""")
+        if name is not None:
             pulumi.set(__self__, "name", name)
         if order is not None:
             pulumi.set(__self__, "order", order)
@@ -136,6 +145,9 @@ class _ApplicationDetectionRuleState:
         """
         The unique name of the Application detection rule
         """
+        warnings.warn("""Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""", DeprecationWarning)
+        pulumi.log.warn("""name is deprecated: Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""")
+
         return pulumi.get(self, "name")
 
     @name.setter
@@ -276,6 +288,9 @@ class ApplicationDetectionRule(pulumi.CustomResource):
         """
         The unique name of the Application detection rule
         """
+        warnings.warn("""Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""", DeprecationWarning)
+        pulumi.log.warn("""name is deprecated: Dynatrace computes that value automatically. Any attempts to specify that value will are getting ignored.""")
+
         return pulumi.get(self, "name")
 
     @property

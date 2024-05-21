@@ -71,6 +71,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly string InjectionMode;
         /// <summary>
+        /// Instrumented web or app server.
+        /// </summary>
+        public readonly bool? InstrumentedWebServer;
+        /// <summary>
         /// Settings for restricting certain ip addresses and for introducing subnet mask. It also restricts the mode
         /// </summary>
         public readonly Outputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettings? IpAddressRestrictionSettings;
@@ -99,6 +103,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly string? MonitoringDataPath;
         /// <summary>
+        /// Same site cookie attribute
+        /// </summary>
+        public readonly string? SameSiteCookieAttribute;
+        /// <summary>
         /// Time duration for the cache settings
         /// </summary>
         public readonly int? ScriptTagCacheDurationInHours;
@@ -110,6 +118,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// Path to identify the server’s request ID. Maximum 150 characters.
         /// </summary>
         public readonly string? ServerRequestPathId;
+        /// <summary>
+        /// Send beacon data via CORS.
+        /// </summary>
+        public readonly bool? UseCors;
         /// <summary>
         /// `XmlHttpRequest` support enabled/disabled
         /// </summary>
@@ -141,6 +153,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
 
             string injectionMode,
 
+            bool? instrumentedWebServer,
+
             Outputs.WebApplicationMonitoringSettingsIpAddressRestrictionSettings? ipAddressRestrictionSettings,
 
             Outputs.WebApplicationMonitoringSettingsJavascriptFrameworkSupport? javascriptFrameworkSupport,
@@ -151,11 +165,15 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
 
             string? monitoringDataPath,
 
+            string? sameSiteCookieAttribute,
+
             int? scriptTagCacheDurationInHours,
 
             bool? secureCookieAttribute,
 
             string? serverRequestPathId,
+
+            bool? useCors,
 
             bool? xmlHttpRequest)
         {
@@ -171,14 +189,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
             ExcludeXhrRegex = excludeXhrRegex;
             FetchRequests = fetchRequests;
             InjectionMode = injectionMode;
+            InstrumentedWebServer = instrumentedWebServer;
             IpAddressRestrictionSettings = ipAddressRestrictionSettings;
             JavascriptFrameworkSupport = javascriptFrameworkSupport;
             JavascriptInjectionRules = javascriptInjectionRules;
             LibraryFileLocation = libraryFileLocation;
             MonitoringDataPath = monitoringDataPath;
+            SameSiteCookieAttribute = sameSiteCookieAttribute;
             ScriptTagCacheDurationInHours = scriptTagCacheDurationInHours;
             SecureCookieAttribute = secureCookieAttribute;
             ServerRequestPathId = serverRequestPathId;
+            UseCors = useCors;
             XmlHttpRequest = xmlHttpRequest;
         }
     }

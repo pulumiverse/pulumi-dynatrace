@@ -14,20 +14,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public partial class PgAlerting : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// **if any process becomes unavailable:**
-        /// Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+        /// Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
         /// </summary>
         [Output("alertingMode")]
         public Output<string?> AlertingMode { get; private set; } = null!;
 
         /// <summary>
-        /// Enable process group availability monitoring
+        /// Enable (`true`) or disable (`false`) process group availability monitoring
         /// </summary>
         [Output("enabled")]
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Open a new problem if the number of active process instances in the group is fewer than:
+        /// Open a new problem if the number of active process instances in the group is fewer than X
         /// </summary>
         [Output("minimumInstanceThreshold")]
         public Output<int?> MinimumInstanceThreshold { get; private set; } = null!;
@@ -86,20 +85,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class PgAlertingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// **if any process becomes unavailable:**
-        /// Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+        /// Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
         /// </summary>
         [Input("alertingMode")]
         public Input<string>? AlertingMode { get; set; }
 
         /// <summary>
-        /// Enable process group availability monitoring
+        /// Enable (`true`) or disable (`false`) process group availability monitoring
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// Open a new problem if the number of active process instances in the group is fewer than:
+        /// Open a new problem if the number of active process instances in the group is fewer than X
         /// </summary>
         [Input("minimumInstanceThreshold")]
         public Input<int>? MinimumInstanceThreshold { get; set; }
@@ -119,20 +117,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class PgAlertingState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// **if any process becomes unavailable:**
-        /// Dynatrace will open a new problem if a single process in this group shuts down or crashes.
+        /// Possible Values: `ON_INSTANCE_COUNT_VIOLATION`, `ON_PGI_UNAVAILABILITY`
         /// </summary>
         [Input("alertingMode")]
         public Input<string>? AlertingMode { get; set; }
 
         /// <summary>
-        /// Enable process group availability monitoring
+        /// Enable (`true`) or disable (`false`) process group availability monitoring
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Open a new problem if the number of active process instances in the group is fewer than:
+        /// Open a new problem if the number of active process instances in the group is fewer than X
         /// </summary>
         [Input("minimumInstanceThreshold")]
         public Input<int>? MinimumInstanceThreshold { get; set; }

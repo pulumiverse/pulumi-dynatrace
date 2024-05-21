@@ -16,89 +16,103 @@ __all__ = ['KubernetesArgs', 'Kubernetes']
 @pulumi.input_type
 class KubernetesArgs:
     def __init__(__self__, *,
-                 cloud_application_pipeline_enabled: pulumi.Input[bool],
                  cluster_id_enabled: pulumi.Input[bool],
                  enabled: pulumi.Input[bool],
-                 event_processing_active: pulumi.Input[bool],
                  label: pulumi.Input[str],
-                 open_metrics_builtin_enabled: pulumi.Input[bool],
-                 open_metrics_pipeline_enabled: pulumi.Input[bool],
-                 pvc_monitoring_enabled: pulumi.Input[bool],
-                 scope: pulumi.Input[str],
                  active_gate_group: Optional[pulumi.Input[str]] = None,
                  auth_token: Optional[pulumi.Input[str]] = None,
                  certificate_check_enabled: Optional[pulumi.Input[bool]] = None,
+                 cloud_application_pipeline_enabled: Optional[pulumi.Input[bool]] = None,
                  cluster_id: Optional[pulumi.Input[str]] = None,
                  endpoint_url: Optional[pulumi.Input[str]] = None,
                  event_patterns: Optional[pulumi.Input['KubernetesEventPatternsArgs']] = None,
+                 event_processing_active: Optional[pulumi.Input[bool]] = None,
                  filter_events: Optional[pulumi.Input[bool]] = None,
                  hostname_verification_enabled: Optional[pulumi.Input[bool]] = None,
-                 include_all_fdi_events: Optional[pulumi.Input[bool]] = None):
+                 include_all_fdi_events: Optional[pulumi.Input[bool]] = None,
+                 open_metrics_builtin_enabled: Optional[pulumi.Input[bool]] = None,
+                 open_metrics_pipeline_enabled: Optional[pulumi.Input[bool]] = None,
+                 pvc_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
+                 scope: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Kubernetes resource.
-        :param pulumi.Input[bool] cloud_application_pipeline_enabled: Monitor Kubernetes namespaces, services, workloads, and pods
         :param pulumi.Input[bool] cluster_id_enabled: For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[bool] event_processing_active: All events are monitored by default unless event filters are specified.
         :param pulumi.Input[str] label: Renaming the cluster breaks configurations that are based on its name (e.g., management zones, and alerting).
+        :param pulumi.Input[str] active_gate_group: ActiveGate Group
+        :param pulumi.Input[str] auth_token: Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
+        :param pulumi.Input[bool] certificate_check_enabled: Require valid certificates for communication with API server (recommended)
+        :param pulumi.Input[bool] cloud_application_pipeline_enabled: Monitor Kubernetes namespaces, services, workloads, and pods
+        :param pulumi.Input[str] cluster_id: Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+        :param pulumi.Input[str] endpoint_url: Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
+        :param pulumi.Input['KubernetesEventPatternsArgs'] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
+        :param pulumi.Input[bool] event_processing_active: All events are monitored by default unless event filters are specified.
+        :param pulumi.Input[bool] filter_events: Include only events specified by Events Field Selectors
+        :param pulumi.Input[bool] hostname_verification_enabled: Verify hostname in certificate against Kubernetes API URL
+        :param pulumi.Input[bool] include_all_fdi_events: For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         :param pulumi.Input[bool] open_metrics_builtin_enabled: The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
                may increase the CPU/memory resource consumption of your ActiveGate.
         :param pulumi.Input[bool] open_metrics_pipeline_enabled: For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         :param pulumi.Input[bool] pvc_monitoring_enabled: To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         :param pulumi.Input[str] scope: The scope of this setting (KUBERNETES_CLUSTER)
-        :param pulumi.Input[str] active_gate_group: ActiveGate Group
-        :param pulumi.Input[str] auth_token: Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-               [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
-        :param pulumi.Input[bool] certificate_check_enabled: Require valid certificates for communication with API server (recommended)
-        :param pulumi.Input[str] cluster_id: Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-               namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
-        :param pulumi.Input[str] endpoint_url: Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw
-               "OpenShift").
-        :param pulumi.Input['KubernetesEventPatternsArgs'] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the
-               [documentation](https://dt-url.net/2201p0u).
-        :param pulumi.Input[bool] filter_events: Include only events specified by Events Field Selectors
-        :param pulumi.Input[bool] hostname_verification_enabled: Verify hostname in certificate against Kubernetes API URL
-        :param pulumi.Input[bool] include_all_fdi_events: For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         """
-        pulumi.set(__self__, "cloud_application_pipeline_enabled", cloud_application_pipeline_enabled)
         pulumi.set(__self__, "cluster_id_enabled", cluster_id_enabled)
         pulumi.set(__self__, "enabled", enabled)
-        pulumi.set(__self__, "event_processing_active", event_processing_active)
         pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "open_metrics_builtin_enabled", open_metrics_builtin_enabled)
-        pulumi.set(__self__, "open_metrics_pipeline_enabled", open_metrics_pipeline_enabled)
-        pulumi.set(__self__, "pvc_monitoring_enabled", pvc_monitoring_enabled)
-        pulumi.set(__self__, "scope", scope)
         if active_gate_group is not None:
             pulumi.set(__self__, "active_gate_group", active_gate_group)
         if auth_token is not None:
             pulumi.set(__self__, "auth_token", auth_token)
         if certificate_check_enabled is not None:
             pulumi.set(__self__, "certificate_check_enabled", certificate_check_enabled)
+        if cloud_application_pipeline_enabled is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""cloud_application_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+        if cloud_application_pipeline_enabled is not None:
+            pulumi.set(__self__, "cloud_application_pipeline_enabled", cloud_application_pipeline_enabled)
         if cluster_id is not None:
             pulumi.set(__self__, "cluster_id", cluster_id)
         if endpoint_url is not None:
             pulumi.set(__self__, "endpoint_url", endpoint_url)
         if event_patterns is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""event_patterns is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+        if event_patterns is not None:
             pulumi.set(__self__, "event_patterns", event_patterns)
+        if event_processing_active is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""event_processing_active is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+        if event_processing_active is not None:
+            pulumi.set(__self__, "event_processing_active", event_processing_active)
+        if filter_events is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""filter_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
         if filter_events is not None:
             pulumi.set(__self__, "filter_events", filter_events)
         if hostname_verification_enabled is not None:
             pulumi.set(__self__, "hostname_verification_enabled", hostname_verification_enabled)
         if include_all_fdi_events is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""include_all_fdi_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+        if include_all_fdi_events is not None:
             pulumi.set(__self__, "include_all_fdi_events", include_all_fdi_events)
-
-    @property
-    @pulumi.getter(name="cloudApplicationPipelineEnabled")
-    def cloud_application_pipeline_enabled(self) -> pulumi.Input[bool]:
-        """
-        Monitor Kubernetes namespaces, services, workloads, and pods
-        """
-        return pulumi.get(self, "cloud_application_pipeline_enabled")
-
-    @cloud_application_pipeline_enabled.setter
-    def cloud_application_pipeline_enabled(self, value: pulumi.Input[bool]):
-        pulumi.set(self, "cloud_application_pipeline_enabled", value)
+        if open_metrics_builtin_enabled is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""open_metrics_builtin_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+        if open_metrics_builtin_enabled is not None:
+            pulumi.set(__self__, "open_metrics_builtin_enabled", open_metrics_builtin_enabled)
+        if open_metrics_pipeline_enabled is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""open_metrics_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+        if open_metrics_pipeline_enabled is not None:
+            pulumi.set(__self__, "open_metrics_pipeline_enabled", open_metrics_pipeline_enabled)
+        if pvc_monitoring_enabled is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""pvc_monitoring_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+        if pvc_monitoring_enabled is not None:
+            pulumi.set(__self__, "pvc_monitoring_enabled", pvc_monitoring_enabled)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
 
     @property
     @pulumi.getter(name="clusterIdEnabled")
@@ -125,18 +139,6 @@ class KubernetesArgs:
         pulumi.set(self, "enabled", value)
 
     @property
-    @pulumi.getter(name="eventProcessingActive")
-    def event_processing_active(self) -> pulumi.Input[bool]:
-        """
-        All events are monitored by default unless event filters are specified.
-        """
-        return pulumi.get(self, "event_processing_active")
-
-    @event_processing_active.setter
-    def event_processing_active(self, value: pulumi.Input[bool]):
-        pulumi.set(self, "event_processing_active", value)
-
-    @property
     @pulumi.getter
     def label(self) -> pulumi.Input[str]:
         """
@@ -147,55 +149,6 @@ class KubernetesArgs:
     @label.setter
     def label(self, value: pulumi.Input[str]):
         pulumi.set(self, "label", value)
-
-    @property
-    @pulumi.getter(name="openMetricsBuiltinEnabled")
-    def open_metrics_builtin_enabled(self) -> pulumi.Input[bool]:
-        """
-        The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
-        may increase the CPU/memory resource consumption of your ActiveGate.
-        """
-        return pulumi.get(self, "open_metrics_builtin_enabled")
-
-    @open_metrics_builtin_enabled.setter
-    def open_metrics_builtin_enabled(self, value: pulumi.Input[bool]):
-        pulumi.set(self, "open_metrics_builtin_enabled", value)
-
-    @property
-    @pulumi.getter(name="openMetricsPipelineEnabled")
-    def open_metrics_pipeline_enabled(self) -> pulumi.Input[bool]:
-        """
-        For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
-        """
-        return pulumi.get(self, "open_metrics_pipeline_enabled")
-
-    @open_metrics_pipeline_enabled.setter
-    def open_metrics_pipeline_enabled(self, value: pulumi.Input[bool]):
-        pulumi.set(self, "open_metrics_pipeline_enabled", value)
-
-    @property
-    @pulumi.getter(name="pvcMonitoringEnabled")
-    def pvc_monitoring_enabled(self) -> pulumi.Input[bool]:
-        """
-        To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
-        """
-        return pulumi.get(self, "pvc_monitoring_enabled")
-
-    @pvc_monitoring_enabled.setter
-    def pvc_monitoring_enabled(self, value: pulumi.Input[bool]):
-        pulumi.set(self, "pvc_monitoring_enabled", value)
-
-    @property
-    @pulumi.getter
-    def scope(self) -> pulumi.Input[str]:
-        """
-        The scope of this setting (KUBERNETES_CLUSTER)
-        """
-        return pulumi.get(self, "scope")
-
-    @scope.setter
-    def scope(self, value: pulumi.Input[str]):
-        pulumi.set(self, "scope", value)
 
     @property
     @pulumi.getter(name="activeGateGroup")
@@ -213,8 +166,7 @@ class KubernetesArgs:
     @pulumi.getter(name="authToken")
     def auth_token(self) -> Optional[pulumi.Input[str]]:
         """
-        Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-        [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+        Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
         """
         return pulumi.get(self, "auth_token")
 
@@ -235,11 +187,25 @@ class KubernetesArgs:
         pulumi.set(self, "certificate_check_enabled", value)
 
     @property
+    @pulumi.getter(name="cloudApplicationPipelineEnabled")
+    def cloud_application_pipeline_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Monitor Kubernetes namespaces, services, workloads, and pods
+        """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""cloud_application_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
+        return pulumi.get(self, "cloud_application_pipeline_enabled")
+
+    @cloud_application_pipeline_enabled.setter
+    def cloud_application_pipeline_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "cloud_application_pipeline_enabled", value)
+
+    @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-        namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+        Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -251,8 +217,7 @@ class KubernetesArgs:
     @pulumi.getter(name="endpointUrl")
     def endpoint_url(self) -> Optional[pulumi.Input[str]]:
         """
-        Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw
-        "OpenShift").
+        Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
         """
         return pulumi.get(self, "endpoint_url")
 
@@ -264,9 +229,11 @@ class KubernetesArgs:
     @pulumi.getter(name="eventPatterns")
     def event_patterns(self) -> Optional[pulumi.Input['KubernetesEventPatternsArgs']]:
         """
-        Define Kubernetes event filters to ingest events into your environment. For more details, see the
-        [documentation](https://dt-url.net/2201p0u).
+        Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""event_patterns is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "event_patterns")
 
     @event_patterns.setter
@@ -274,11 +241,29 @@ class KubernetesArgs:
         pulumi.set(self, "event_patterns", value)
 
     @property
+    @pulumi.getter(name="eventProcessingActive")
+    def event_processing_active(self) -> Optional[pulumi.Input[bool]]:
+        """
+        All events are monitored by default unless event filters are specified.
+        """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""event_processing_active is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
+        return pulumi.get(self, "event_processing_active")
+
+    @event_processing_active.setter
+    def event_processing_active(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "event_processing_active", value)
+
+    @property
     @pulumi.getter(name="filterEvents")
     def filter_events(self) -> Optional[pulumi.Input[bool]]:
         """
         Include only events specified by Events Field Selectors
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""filter_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "filter_events")
 
     @filter_events.setter
@@ -303,11 +288,72 @@ class KubernetesArgs:
         """
         For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""include_all_fdi_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "include_all_fdi_events")
 
     @include_all_fdi_events.setter
     def include_all_fdi_events(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "include_all_fdi_events", value)
+
+    @property
+    @pulumi.getter(name="openMetricsBuiltinEnabled")
+    def open_metrics_builtin_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
+        may increase the CPU/memory resource consumption of your ActiveGate.
+        """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""open_metrics_builtin_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
+        return pulumi.get(self, "open_metrics_builtin_enabled")
+
+    @open_metrics_builtin_enabled.setter
+    def open_metrics_builtin_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "open_metrics_builtin_enabled", value)
+
+    @property
+    @pulumi.getter(name="openMetricsPipelineEnabled")
+    def open_metrics_pipeline_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
+        """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""open_metrics_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
+        return pulumi.get(self, "open_metrics_pipeline_enabled")
+
+    @open_metrics_pipeline_enabled.setter
+    def open_metrics_pipeline_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "open_metrics_pipeline_enabled", value)
+
+    @property
+    @pulumi.getter(name="pvcMonitoringEnabled")
+    def pvc_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
+        """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""pvc_monitoring_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
+        return pulumi.get(self, "pvc_monitoring_enabled")
+
+    @pvc_monitoring_enabled.setter
+    def pvc_monitoring_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "pvc_monitoring_enabled", value)
+
+    @property
+    @pulumi.getter
+    def scope(self) -> Optional[pulumi.Input[str]]:
+        """
+        The scope of this setting (KUBERNETES_CLUSTER)
+        """
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
@@ -334,18 +380,14 @@ class _KubernetesState:
         """
         Input properties used for looking up and filtering Kubernetes resources.
         :param pulumi.Input[str] active_gate_group: ActiveGate Group
-        :param pulumi.Input[str] auth_token: Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-               [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+        :param pulumi.Input[str] auth_token: Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
         :param pulumi.Input[bool] certificate_check_enabled: Require valid certificates for communication with API server (recommended)
         :param pulumi.Input[bool] cloud_application_pipeline_enabled: Monitor Kubernetes namespaces, services, workloads, and pods
-        :param pulumi.Input[str] cluster_id: Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-               namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+        :param pulumi.Input[str] cluster_id: Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
         :param pulumi.Input[bool] cluster_id_enabled: For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[str] endpoint_url: Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw
-               "OpenShift").
-        :param pulumi.Input['KubernetesEventPatternsArgs'] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the
-               [documentation](https://dt-url.net/2201p0u).
+        :param pulumi.Input[str] endpoint_url: Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
+        :param pulumi.Input['KubernetesEventPatternsArgs'] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         :param pulumi.Input[bool] event_processing_active: All events are monitored by default unless event filters are specified.
         :param pulumi.Input[bool] filter_events: Include only events specified by Events Field Selectors
         :param pulumi.Input[bool] hostname_verification_enabled: Verify hostname in certificate against Kubernetes API URL
@@ -364,6 +406,9 @@ class _KubernetesState:
         if certificate_check_enabled is not None:
             pulumi.set(__self__, "certificate_check_enabled", certificate_check_enabled)
         if cloud_application_pipeline_enabled is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""cloud_application_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+        if cloud_application_pipeline_enabled is not None:
             pulumi.set(__self__, "cloud_application_pipeline_enabled", cloud_application_pipeline_enabled)
         if cluster_id is not None:
             pulumi.set(__self__, "cluster_id", cluster_id)
@@ -374,21 +419,42 @@ class _KubernetesState:
         if endpoint_url is not None:
             pulumi.set(__self__, "endpoint_url", endpoint_url)
         if event_patterns is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""event_patterns is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+        if event_patterns is not None:
             pulumi.set(__self__, "event_patterns", event_patterns)
         if event_processing_active is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""event_processing_active is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+        if event_processing_active is not None:
             pulumi.set(__self__, "event_processing_active", event_processing_active)
+        if filter_events is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""filter_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
         if filter_events is not None:
             pulumi.set(__self__, "filter_events", filter_events)
         if hostname_verification_enabled is not None:
             pulumi.set(__self__, "hostname_verification_enabled", hostname_verification_enabled)
         if include_all_fdi_events is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""include_all_fdi_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+        if include_all_fdi_events is not None:
             pulumi.set(__self__, "include_all_fdi_events", include_all_fdi_events)
         if label is not None:
             pulumi.set(__self__, "label", label)
         if open_metrics_builtin_enabled is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""open_metrics_builtin_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+        if open_metrics_builtin_enabled is not None:
             pulumi.set(__self__, "open_metrics_builtin_enabled", open_metrics_builtin_enabled)
         if open_metrics_pipeline_enabled is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""open_metrics_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+        if open_metrics_pipeline_enabled is not None:
             pulumi.set(__self__, "open_metrics_pipeline_enabled", open_metrics_pipeline_enabled)
+        if pvc_monitoring_enabled is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""pvc_monitoring_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
         if pvc_monitoring_enabled is not None:
             pulumi.set(__self__, "pvc_monitoring_enabled", pvc_monitoring_enabled)
         if scope is not None:
@@ -410,8 +476,7 @@ class _KubernetesState:
     @pulumi.getter(name="authToken")
     def auth_token(self) -> Optional[pulumi.Input[str]]:
         """
-        Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-        [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+        Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
         """
         return pulumi.get(self, "auth_token")
 
@@ -437,6 +502,9 @@ class _KubernetesState:
         """
         Monitor Kubernetes namespaces, services, workloads, and pods
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""cloud_application_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "cloud_application_pipeline_enabled")
 
     @cloud_application_pipeline_enabled.setter
@@ -447,8 +515,7 @@ class _KubernetesState:
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-        namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+        Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -484,8 +551,7 @@ class _KubernetesState:
     @pulumi.getter(name="endpointUrl")
     def endpoint_url(self) -> Optional[pulumi.Input[str]]:
         """
-        Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw
-        "OpenShift").
+        Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
         """
         return pulumi.get(self, "endpoint_url")
 
@@ -497,9 +563,11 @@ class _KubernetesState:
     @pulumi.getter(name="eventPatterns")
     def event_patterns(self) -> Optional[pulumi.Input['KubernetesEventPatternsArgs']]:
         """
-        Define Kubernetes event filters to ingest events into your environment. For more details, see the
-        [documentation](https://dt-url.net/2201p0u).
+        Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""event_patterns is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "event_patterns")
 
     @event_patterns.setter
@@ -512,6 +580,9 @@ class _KubernetesState:
         """
         All events are monitored by default unless event filters are specified.
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""event_processing_active is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "event_processing_active")
 
     @event_processing_active.setter
@@ -524,6 +595,9 @@ class _KubernetesState:
         """
         Include only events specified by Events Field Selectors
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""filter_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "filter_events")
 
     @filter_events.setter
@@ -548,6 +622,9 @@ class _KubernetesState:
         """
         For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""include_all_fdi_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "include_all_fdi_events")
 
     @include_all_fdi_events.setter
@@ -573,6 +650,9 @@ class _KubernetesState:
         The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
         may increase the CPU/memory resource consumption of your ActiveGate.
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""open_metrics_builtin_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "open_metrics_builtin_enabled")
 
     @open_metrics_builtin_enabled.setter
@@ -585,6 +665,9 @@ class _KubernetesState:
         """
         For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""open_metrics_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "open_metrics_pipeline_enabled")
 
     @open_metrics_pipeline_enabled.setter
@@ -597,6 +680,9 @@ class _KubernetesState:
         """
         To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""pvc_monitoring_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "pvc_monitoring_enabled")
 
     @pvc_monitoring_enabled.setter
@@ -645,18 +731,14 @@ class Kubernetes(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] active_gate_group: ActiveGate Group
-        :param pulumi.Input[str] auth_token: Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-               [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+        :param pulumi.Input[str] auth_token: Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
         :param pulumi.Input[bool] certificate_check_enabled: Require valid certificates for communication with API server (recommended)
         :param pulumi.Input[bool] cloud_application_pipeline_enabled: Monitor Kubernetes namespaces, services, workloads, and pods
-        :param pulumi.Input[str] cluster_id: Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-               namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+        :param pulumi.Input[str] cluster_id: Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
         :param pulumi.Input[bool] cluster_id_enabled: For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[str] endpoint_url: Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw
-               "OpenShift").
-        :param pulumi.Input[pulumi.InputType['KubernetesEventPatternsArgs']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the
-               [documentation](https://dt-url.net/2201p0u).
+        :param pulumi.Input[str] endpoint_url: Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
+        :param pulumi.Input[pulumi.InputType['KubernetesEventPatternsArgs']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         :param pulumi.Input[bool] event_processing_active: All events are monitored by default unless event filters are specified.
         :param pulumi.Input[bool] filter_events: Include only events specified by Events Field Selectors
         :param pulumi.Input[bool] hostname_verification_enabled: Verify hostname in certificate against Kubernetes API URL
@@ -721,8 +803,6 @@ class Kubernetes(pulumi.CustomResource):
             __props__.__dict__["active_gate_group"] = active_gate_group
             __props__.__dict__["auth_token"] = None if auth_token is None else pulumi.Output.secret(auth_token)
             __props__.__dict__["certificate_check_enabled"] = certificate_check_enabled
-            if cloud_application_pipeline_enabled is None and not opts.urn:
-                raise TypeError("Missing required property 'cloud_application_pipeline_enabled'")
             __props__.__dict__["cloud_application_pipeline_enabled"] = cloud_application_pipeline_enabled
             __props__.__dict__["cluster_id"] = cluster_id
             if cluster_id_enabled is None and not opts.urn:
@@ -733,8 +813,6 @@ class Kubernetes(pulumi.CustomResource):
             __props__.__dict__["enabled"] = enabled
             __props__.__dict__["endpoint_url"] = endpoint_url
             __props__.__dict__["event_patterns"] = event_patterns
-            if event_processing_active is None and not opts.urn:
-                raise TypeError("Missing required property 'event_processing_active'")
             __props__.__dict__["event_processing_active"] = event_processing_active
             __props__.__dict__["filter_events"] = filter_events
             __props__.__dict__["hostname_verification_enabled"] = hostname_verification_enabled
@@ -742,17 +820,9 @@ class Kubernetes(pulumi.CustomResource):
             if label is None and not opts.urn:
                 raise TypeError("Missing required property 'label'")
             __props__.__dict__["label"] = label
-            if open_metrics_builtin_enabled is None and not opts.urn:
-                raise TypeError("Missing required property 'open_metrics_builtin_enabled'")
             __props__.__dict__["open_metrics_builtin_enabled"] = open_metrics_builtin_enabled
-            if open_metrics_pipeline_enabled is None and not opts.urn:
-                raise TypeError("Missing required property 'open_metrics_pipeline_enabled'")
             __props__.__dict__["open_metrics_pipeline_enabled"] = open_metrics_pipeline_enabled
-            if pvc_monitoring_enabled is None and not opts.urn:
-                raise TypeError("Missing required property 'pvc_monitoring_enabled'")
             __props__.__dict__["pvc_monitoring_enabled"] = pvc_monitoring_enabled
-            if scope is None and not opts.urn:
-                raise TypeError("Missing required property 'scope'")
             __props__.__dict__["scope"] = scope
         secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["authToken"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
@@ -792,18 +862,14 @@ class Kubernetes(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] active_gate_group: ActiveGate Group
-        :param pulumi.Input[str] auth_token: Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-               [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+        :param pulumi.Input[str] auth_token: Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
         :param pulumi.Input[bool] certificate_check_enabled: Require valid certificates for communication with API server (recommended)
         :param pulumi.Input[bool] cloud_application_pipeline_enabled: Monitor Kubernetes namespaces, services, workloads, and pods
-        :param pulumi.Input[str] cluster_id: Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-               namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+        :param pulumi.Input[str] cluster_id: Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
         :param pulumi.Input[bool] cluster_id_enabled: For more information on local Kubernetes API monitoring, see the [documentation](https://dt-url.net/6q62uep).
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[str] endpoint_url: Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw
-               "OpenShift").
-        :param pulumi.Input[pulumi.InputType['KubernetesEventPatternsArgs']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the
-               [documentation](https://dt-url.net/2201p0u).
+        :param pulumi.Input[str] endpoint_url: Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
+        :param pulumi.Input[pulumi.InputType['KubernetesEventPatternsArgs']] event_patterns: Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         :param pulumi.Input[bool] event_processing_active: All events are monitored by default unless event filters are specified.
         :param pulumi.Input[bool] filter_events: Include only events specified by Events Field Selectors
         :param pulumi.Input[bool] hostname_verification_enabled: Verify hostname in certificate against Kubernetes API URL
@@ -851,8 +917,7 @@ class Kubernetes(pulumi.CustomResource):
     @pulumi.getter(name="authToken")
     def auth_token(self) -> pulumi.Output[Optional[str]]:
         """
-        Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-        [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+        Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
         """
         return pulumi.get(self, "auth_token")
 
@@ -866,18 +931,20 @@ class Kubernetes(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="cloudApplicationPipelineEnabled")
-    def cloud_application_pipeline_enabled(self) -> pulumi.Output[bool]:
+    def cloud_application_pipeline_enabled(self) -> pulumi.Output[Optional[bool]]:
         """
         Monitor Kubernetes namespaces, services, workloads, and pods
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""cloud_application_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "cloud_application_pipeline_enabled")
 
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[Optional[str]]:
         """
-        Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-        namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+        Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
         """
         return pulumi.get(self, "cluster_id")
 
@@ -901,8 +968,7 @@ class Kubernetes(pulumi.CustomResource):
     @pulumi.getter(name="endpointUrl")
     def endpoint_url(self) -> pulumi.Output[Optional[str]]:
         """
-        Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw
-        "OpenShift").
+        Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
         """
         return pulumi.get(self, "endpoint_url")
 
@@ -910,17 +976,22 @@ class Kubernetes(pulumi.CustomResource):
     @pulumi.getter(name="eventPatterns")
     def event_patterns(self) -> pulumi.Output[Optional['outputs.KubernetesEventPatterns']]:
         """
-        Define Kubernetes event filters to ingest events into your environment. For more details, see the
-        [documentation](https://dt-url.net/2201p0u).
+        Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""event_patterns is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "event_patterns")
 
     @property
     @pulumi.getter(name="eventProcessingActive")
-    def event_processing_active(self) -> pulumi.Output[bool]:
+    def event_processing_active(self) -> pulumi.Output[Optional[bool]]:
         """
         All events are monitored by default unless event filters are specified.
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""event_processing_active is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "event_processing_active")
 
     @property
@@ -929,6 +1000,9 @@ class Kubernetes(pulumi.CustomResource):
         """
         Include only events specified by Events Field Selectors
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""filter_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "filter_events")
 
     @property
@@ -945,6 +1019,9 @@ class Kubernetes(pulumi.CustomResource):
         """
         For a list of included events, see the [documentation](https://dt-url.net/l61d02no).
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""include_all_fdi_events is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "include_all_fdi_events")
 
     @property
@@ -957,32 +1034,41 @@ class Kubernetes(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="openMetricsBuiltinEnabled")
-    def open_metrics_builtin_enabled(self) -> pulumi.Output[bool]:
+    def open_metrics_builtin_enabled(self) -> pulumi.Output[Optional[bool]]:
         """
         The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
         may increase the CPU/memory resource consumption of your ActiveGate.
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""open_metrics_builtin_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "open_metrics_builtin_enabled")
 
     @property
     @pulumi.getter(name="openMetricsPipelineEnabled")
-    def open_metrics_pipeline_enabled(self) -> pulumi.Output[bool]:
+    def open_metrics_pipeline_enabled(self) -> pulumi.Output[Optional[bool]]:
         """
         For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""open_metrics_pipeline_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "open_metrics_pipeline_enabled")
 
     @property
     @pulumi.getter(name="pvcMonitoringEnabled")
-    def pvc_monitoring_enabled(self) -> pulumi.Output[bool]:
+    def pvc_monitoring_enabled(self) -> pulumi.Output[Optional[bool]]:
         """
         To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""pvc_monitoring_enabled is deprecated: This field has been moved to a new schema, please utilize the resource `K8sMonitoring` to configure this field.""")
+
         return pulumi.get(self, "pvc_monitoring_enabled")
 
     @property
     @pulumi.getter
-    def scope(self) -> pulumi.Output[str]:
+    def scope(self) -> pulumi.Output[Optional[str]]:
         """
         The scope of this setting (KUBERNETES_CLUSTER)
         """

@@ -11,6 +11,8 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// !> The data source API endpoint has been deprecated, please use getEntity with entity type `HOST` instead.
+//
 // The host data source allows the host ID to be retrieved by its name and optionally tags / tag-value pairs.
 //
 // - `name` queries for all hosts with the specified name

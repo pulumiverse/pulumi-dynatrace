@@ -21,9 +21,9 @@ type OwnershipTeams struct {
 	ContactDetails OwnershipTeamsContactDetailsPtrOutput `pulumi:"contactDetails"`
 	// Description
 	Description pulumi.StringPtrOutput `pulumi:"description"`
-	// This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+	// This field should only be used for the automation purpose when importing team information.
 	ExternalId pulumi.StringPtrOutput `pulumi:"externalId"`
-	// The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+	// The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
 	// Include links to online resources where information relevant to this team’s responsibilities can be found.
 	Links OwnershipTeamsLinksPtrOutput `pulumi:"links"`
@@ -77,9 +77,9 @@ type ownershipTeamsState struct {
 	ContactDetails *OwnershipTeamsContactDetails `pulumi:"contactDetails"`
 	// Description
 	Description *string `pulumi:"description"`
-	// This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+	// This field should only be used for the automation purpose when importing team information.
 	ExternalId *string `pulumi:"externalId"`
-	// The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+	// The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
 	Identifier *string `pulumi:"identifier"`
 	// Include links to online resources where information relevant to this team’s responsibilities can be found.
 	Links *OwnershipTeamsLinks `pulumi:"links"`
@@ -98,9 +98,9 @@ type OwnershipTeamsState struct {
 	ContactDetails OwnershipTeamsContactDetailsPtrInput
 	// Description
 	Description pulumi.StringPtrInput
-	// This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+	// This field should only be used for the automation purpose when importing team information.
 	ExternalId pulumi.StringPtrInput
-	// The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+	// The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
 	Identifier pulumi.StringPtrInput
 	// Include links to online resources where information relevant to this team’s responsibilities can be found.
 	Links OwnershipTeamsLinksPtrInput
@@ -123,9 +123,9 @@ type ownershipTeamsArgs struct {
 	ContactDetails *OwnershipTeamsContactDetails `pulumi:"contactDetails"`
 	// Description
 	Description *string `pulumi:"description"`
-	// This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+	// This field should only be used for the automation purpose when importing team information.
 	ExternalId *string `pulumi:"externalId"`
-	// The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+	// The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
 	Identifier string `pulumi:"identifier"`
 	// Include links to online resources where information relevant to this team’s responsibilities can be found.
 	Links *OwnershipTeamsLinks `pulumi:"links"`
@@ -145,9 +145,9 @@ type OwnershipTeamsArgs struct {
 	ContactDetails OwnershipTeamsContactDetailsPtrInput
 	// Description
 	Description pulumi.StringPtrInput
-	// This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+	// This field should only be used for the automation purpose when importing team information.
 	ExternalId pulumi.StringPtrInput
-	// The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+	// The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
 	Identifier pulumi.StringInput
 	// Include links to online resources where information relevant to this team’s responsibilities can be found.
 	Links OwnershipTeamsLinksPtrInput
@@ -261,12 +261,12 @@ func (o OwnershipTeamsOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OwnershipTeams) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// This field should only be used for the automation purpose when importing team information. Once the external ID is created it can’t be changed.
+// This field should only be used for the automation purpose when importing team information.
 func (o OwnershipTeamsOutput) ExternalId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *OwnershipTeams) pulumi.StringPtrOutput { return v.ExternalId }).(pulumi.StringPtrOutput)
 }
 
-// The team identifier is used to reference the team from any entity in Dynatrace. This identifier can’t be edited once the team has been created.
+// The team identifier is used to reference the team from any entity in Dynatrace. If you are using Kubernetes labels, keep in mind the 63 character limit that they enforce.
 func (o OwnershipTeamsOutput) Identifier() pulumi.StringOutput {
 	return o.ApplyT(func(v *OwnershipTeams) pulumi.StringOutput { return v.Identifier }).(pulumi.StringOutput)
 }

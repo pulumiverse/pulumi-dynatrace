@@ -4,6 +4,23 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * The `dynatrace.RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
+ *
+ * - `name` (String) - The name of the request attribute
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const example = dynatrace.getRequestAttribute({
+ *     name: "Terraform Example",
+ * });
+ * export const id = example.then(example => example.id);
+ * ```
+ */
 export function getRequestAttribute(args: GetRequestAttributeArgs, opts?: pulumi.InvokeOptions): Promise<GetRequestAttributeResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -29,6 +46,23 @@ export interface GetRequestAttributeResult {
     readonly id: string;
     readonly name: string;
 }
+/**
+ * The `dynatrace.RequestAttribute` data source allows the request attribute ID to be retrieved by its name.
+ *
+ * - `name` (String) - The name of the request attribute
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ *
+ * const example = dynatrace.getRequestAttribute({
+ *     name: "Terraform Example",
+ * });
+ * export const id = example.then(example => example.id);
+ * ```
+ */
 export function getRequestAttributeOutput(args: GetRequestAttributeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRequestAttributeResult> {
     return pulumi.output(args).apply((a: any) => getRequestAttribute(a, opts))
 }

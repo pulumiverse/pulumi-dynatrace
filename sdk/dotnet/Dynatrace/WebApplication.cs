@@ -77,7 +77,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// Settings regarding Session Replay
         /// </summary>
         [Output("sessionReplayConfig")]
-        public Output<Outputs.WebApplicationSessionReplayConfig?> SessionReplayConfig { get; private set; } = null!;
+        public Output<Outputs.WebApplicationSessionReplayConfig> SessionReplayConfig { get; private set; } = null!;
 
         /// <summary>
         /// The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
@@ -198,6 +198,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// User Action names to be flagged as Key User Actions
         /// </summary>
+        [Obsolete(@"Configuring Key User Actions within `dynatrace.WebApplication` is discouraged. Use the dedicated resource `dynatrace.KeyUserAction` instead.")]
         public InputList<Inputs.WebApplicationKeyUserActionArgs> KeyUserActions
         {
             get => _keyUserActions ?? (_keyUserActions = new InputList<Inputs.WebApplicationKeyUserActionArgs>());
@@ -326,6 +327,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// User Action names to be flagged as Key User Actions
         /// </summary>
+        [Obsolete(@"Configuring Key User Actions within `dynatrace.WebApplication` is discouraged. Use the dedicated resource `dynatrace.KeyUserAction` instead.")]
         public InputList<Inputs.WebApplicationKeyUserActionGetArgs> KeyUserActions
         {
             get => _keyUserActions ?? (_keyUserActions = new InputList<Inputs.WebApplicationKeyUserActionGetArgs>());

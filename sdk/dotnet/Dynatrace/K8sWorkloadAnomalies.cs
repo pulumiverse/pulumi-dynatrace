@@ -46,14 +46,44 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// no documentation available
         /// </summary>
+        [Output("jobFailureEvents")]
+        public Output<Outputs.K8sWorkloadAnomaliesJobFailureEvents> JobFailureEvents { get; private set; } = null!;
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Output("notAllPodsReady")]
         public Output<Outputs.K8sWorkloadAnomaliesNotAllPodsReady> NotAllPodsReady { get; private set; } = null!;
 
         /// <summary>
         /// no documentation available
         /// </summary>
+        [Output("oomKills")]
+        public Output<Outputs.K8sWorkloadAnomaliesOomKills> OomKills { get; private set; } = null!;
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Output("pendingPods")]
         public Output<Outputs.K8sWorkloadAnomaliesPendingPods> PendingPods { get; private set; } = null!;
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
+        [Output("podBackoffEvents")]
+        public Output<Outputs.K8sWorkloadAnomaliesPodBackoffEvents> PodBackoffEvents { get; private set; } = null!;
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
+        [Output("podEvictionEvents")]
+        public Output<Outputs.K8sWorkloadAnomaliesPodEvictionEvents> PodEvictionEvents { get; private set; } = null!;
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
+        [Output("podPreemptionEvents")]
+        public Output<Outputs.K8sWorkloadAnomaliesPodPreemptionEvents> PodPreemptionEvents { get; private set; } = null!;
 
         /// <summary>
         /// no documentation available
@@ -153,14 +183,44 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// no documentation available
         /// </summary>
+        [Input("jobFailureEvents", required: true)]
+        public Input<Inputs.K8sWorkloadAnomaliesJobFailureEventsArgs> JobFailureEvents { get; set; } = null!;
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("notAllPodsReady", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesNotAllPodsReadyArgs> NotAllPodsReady { get; set; } = null!;
 
         /// <summary>
         /// no documentation available
         /// </summary>
+        [Input("oomKills", required: true)]
+        public Input<Inputs.K8sWorkloadAnomaliesOomKillsArgs> OomKills { get; set; } = null!;
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("pendingPods", required: true)]
         public Input<Inputs.K8sWorkloadAnomaliesPendingPodsArgs> PendingPods { get; set; } = null!;
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
+        [Input("podBackoffEvents", required: true)]
+        public Input<Inputs.K8sWorkloadAnomaliesPodBackoffEventsArgs> PodBackoffEvents { get; set; } = null!;
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
+        [Input("podEvictionEvents", required: true)]
+        public Input<Inputs.K8sWorkloadAnomaliesPodEvictionEventsArgs> PodEvictionEvents { get; set; } = null!;
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
+        [Input("podPreemptionEvents", required: true)]
+        public Input<Inputs.K8sWorkloadAnomaliesPodPreemptionEventsArgs> PodPreemptionEvents { get; set; } = null!;
 
         /// <summary>
         /// no documentation available
@@ -221,14 +281,44 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// no documentation available
         /// </summary>
+        [Input("jobFailureEvents")]
+        public Input<Inputs.K8sWorkloadAnomaliesJobFailureEventsGetArgs>? JobFailureEvents { get; set; }
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("notAllPodsReady")]
         public Input<Inputs.K8sWorkloadAnomaliesNotAllPodsReadyGetArgs>? NotAllPodsReady { get; set; }
 
         /// <summary>
         /// no documentation available
         /// </summary>
+        [Input("oomKills")]
+        public Input<Inputs.K8sWorkloadAnomaliesOomKillsGetArgs>? OomKills { get; set; }
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
         [Input("pendingPods")]
         public Input<Inputs.K8sWorkloadAnomaliesPendingPodsGetArgs>? PendingPods { get; set; }
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
+        [Input("podBackoffEvents")]
+        public Input<Inputs.K8sWorkloadAnomaliesPodBackoffEventsGetArgs>? PodBackoffEvents { get; set; }
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
+        [Input("podEvictionEvents")]
+        public Input<Inputs.K8sWorkloadAnomaliesPodEvictionEventsGetArgs>? PodEvictionEvents { get; set; }
+
+        /// <summary>
+        /// no documentation available
+        /// </summary>
+        [Input("podPreemptionEvents")]
+        public Input<Inputs.K8sWorkloadAnomaliesPodPreemptionEventsGetArgs>? PodPreemptionEvents { get; set; }
 
         /// <summary>
         /// no documentation available

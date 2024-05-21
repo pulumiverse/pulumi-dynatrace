@@ -19,11 +19,11 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly Outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionOverAlertingProtection OverAlertingProtection;
         /// <summary>
-        /// All requests. Alert if the average response time of all requests degrades beyond **both** the absolute and relative thresholds:
+        /// Alert if the median response time of all requests degrades beyond **both** the absolute and relative thresholds:
         /// </summary>
         public readonly Outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeAll ResponseTimeAll;
         /// <summary>
-        /// Slowest 10%. Alert if the average response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
+        /// Alert if the response time of the slowest 10% of requests degrades beyond **both** the absolute and relative thresholds:
         /// </summary>
         public readonly Outputs.ServiceAnomaliesV2ResponseTimeAutoDetectionResponseTimeSlowest ResponseTimeSlowest;
 

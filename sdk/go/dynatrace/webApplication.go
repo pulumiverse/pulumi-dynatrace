@@ -22,6 +22,8 @@ type WebApplication struct {
 	// Defines the Custom Action Apdex settings of an application
 	CustomActionApdexSettings WebApplicationCustomActionApdexSettingsOutput `pulumi:"customActionApdexSettings"`
 	// User Action names to be flagged as Key User Actions
+	//
+	// Deprecated: Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.
 	KeyUserActions WebApplicationKeyUserActionArrayOutput `pulumi:"keyUserActions"`
 	// Defines the Load Action Apdex settings of an application
 	LoadActionApdexSettings WebApplicationLoadActionApdexSettingsOutput `pulumi:"loadActionApdexSettings"`
@@ -36,7 +38,7 @@ type WebApplication struct {
 	// (Field has overlap with `WebAppEnablement`) Real user monitoring enabled/disabled
 	RealUserMonitoringEnabled pulumi.BoolPtrOutput `pulumi:"realUserMonitoringEnabled"`
 	// Settings regarding Session Replay
-	SessionReplayConfig WebApplicationSessionReplayConfigPtrOutput `pulumi:"sessionReplayConfig"`
+	SessionReplayConfig WebApplicationSessionReplayConfigOutput `pulumi:"sessionReplayConfig"`
 	// The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`
 	Type pulumi.StringOutput `pulumi:"type"`
 	// URL injection pattern for manual web application
@@ -119,6 +121,8 @@ type webApplicationState struct {
 	// Defines the Custom Action Apdex settings of an application
 	CustomActionApdexSettings *WebApplicationCustomActionApdexSettings `pulumi:"customActionApdexSettings"`
 	// User Action names to be flagged as Key User Actions
+	//
+	// Deprecated: Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.
 	KeyUserActions []WebApplicationKeyUserAction `pulumi:"keyUserActions"`
 	// Defines the Load Action Apdex settings of an application
 	LoadActionApdexSettings *WebApplicationLoadActionApdexSettings `pulumi:"loadActionApdexSettings"`
@@ -160,6 +164,8 @@ type WebApplicationState struct {
 	// Defines the Custom Action Apdex settings of an application
 	CustomActionApdexSettings WebApplicationCustomActionApdexSettingsPtrInput
 	// User Action names to be flagged as Key User Actions
+	//
+	// Deprecated: Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.
 	KeyUserActions WebApplicationKeyUserActionArrayInput
 	// Defines the Load Action Apdex settings of an application
 	LoadActionApdexSettings WebApplicationLoadActionApdexSettingsPtrInput
@@ -205,6 +211,8 @@ type webApplicationArgs struct {
 	// Defines the Custom Action Apdex settings of an application
 	CustomActionApdexSettings WebApplicationCustomActionApdexSettings `pulumi:"customActionApdexSettings"`
 	// User Action names to be flagged as Key User Actions
+	//
+	// Deprecated: Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.
 	KeyUserActions []WebApplicationKeyUserAction `pulumi:"keyUserActions"`
 	// Defines the Load Action Apdex settings of an application
 	LoadActionApdexSettings WebApplicationLoadActionApdexSettings `pulumi:"loadActionApdexSettings"`
@@ -247,6 +255,8 @@ type WebApplicationArgs struct {
 	// Defines the Custom Action Apdex settings of an application
 	CustomActionApdexSettings WebApplicationCustomActionApdexSettingsInput
 	// User Action names to be flagged as Key User Actions
+	//
+	// Deprecated: Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.
 	KeyUserActions WebApplicationKeyUserActionArrayInput
 	// Defines the Load Action Apdex settings of an application
 	LoadActionApdexSettings WebApplicationLoadActionApdexSettingsInput
@@ -385,6 +395,8 @@ func (o WebApplicationOutput) CustomActionApdexSettings() WebApplicationCustomAc
 }
 
 // User Action names to be flagged as Key User Actions
+//
+// Deprecated: Configuring Key User Actions within `WebApplication` is discouraged. Use the dedicated resource `KeyUserAction` instead.
 func (o WebApplicationOutput) KeyUserActions() WebApplicationKeyUserActionArrayOutput {
 	return o.ApplyT(func(v *WebApplication) WebApplicationKeyUserActionArrayOutput { return v.KeyUserActions }).(WebApplicationKeyUserActionArrayOutput)
 }
@@ -422,8 +434,8 @@ func (o WebApplicationOutput) RealUserMonitoringEnabled() pulumi.BoolPtrOutput {
 }
 
 // Settings regarding Session Replay
-func (o WebApplicationOutput) SessionReplayConfig() WebApplicationSessionReplayConfigPtrOutput {
-	return o.ApplyT(func(v *WebApplication) WebApplicationSessionReplayConfigPtrOutput { return v.SessionReplayConfig }).(WebApplicationSessionReplayConfigPtrOutput)
+func (o WebApplicationOutput) SessionReplayConfig() WebApplicationSessionReplayConfigOutput {
+	return o.ApplyT(func(v *WebApplication) WebApplicationSessionReplayConfigOutput { return v.SessionReplayConfig }).(WebApplicationSessionReplayConfigOutput)
 }
 
 // The type of the web application. Possible values are `AUTO_INJECTED`, `BROWSER_EXTENSION_INJECTED` and `MANUALLY_INJECTED`

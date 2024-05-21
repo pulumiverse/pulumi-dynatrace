@@ -58,7 +58,7 @@ def get_mobile_application(name: Optional[str] = None,
     """
     The `MobileApplication` data source allows the mobile application ID to be retrieved by its name.
 
-    - `name` (String) - The name of the dashboard
+    - `name` (String) - The name of the mobile application
 
     ## Example Usage
 
@@ -86,7 +86,7 @@ def get_mobile_application_output(name: Optional[pulumi.Input[str]] = None,
     """
     The `MobileApplication` data source allows the mobile application ID to be retrieved by its name.
 
-    - `name` (String) - The name of the dashboard
+    - `name` (String) - The name of the mobile application
 
     ## Example Usage
 

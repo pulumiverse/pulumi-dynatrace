@@ -27,7 +27,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly string SeverityLevel;
         /// <summary>
-        /// A set of tags you want to filter by. You can also specify a tag value alongside the tag name using the syntax `name:value`.
+        /// Entities which contain any/all of the configured tags will match this alerting profile. It is recommended to use manual tags.
         /// </summary>
         public readonly ImmutableArray<string> Tags;
 

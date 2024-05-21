@@ -19,9 +19,9 @@ class QueueSharingGroupsArgs:
                  shared_queues: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a QueueSharingGroups resource.
-        :param pulumi.Input[str] name: The name of the queue sharing group
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] queue_managers: Queue manager(s) that belong to the queue sharing group
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] shared_queues: Shared queue(s) that belong to the queue sharing group
+        :param pulumi.Input[str] name: Queue sharing group name
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] queue_managers: Queue managers
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] shared_queues: Shared queues
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -34,7 +34,7 @@ class QueueSharingGroupsArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the queue sharing group
+        Queue sharing group name
         """
         return pulumi.get(self, "name")
 
@@ -46,7 +46,7 @@ class QueueSharingGroupsArgs:
     @pulumi.getter(name="queueManagers")
     def queue_managers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Queue manager(s) that belong to the queue sharing group
+        Queue managers
         """
         return pulumi.get(self, "queue_managers")
 
@@ -58,7 +58,7 @@ class QueueSharingGroupsArgs:
     @pulumi.getter(name="sharedQueues")
     def shared_queues(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Shared queue(s) that belong to the queue sharing group
+        Shared queues
         """
         return pulumi.get(self, "shared_queues")
 
@@ -75,9 +75,9 @@ class _QueueSharingGroupsState:
                  shared_queues: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering QueueSharingGroups resources.
-        :param pulumi.Input[str] name: The name of the queue sharing group
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] queue_managers: Queue manager(s) that belong to the queue sharing group
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] shared_queues: Shared queue(s) that belong to the queue sharing group
+        :param pulumi.Input[str] name: Queue sharing group name
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] queue_managers: Queue managers
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] shared_queues: Shared queues
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -90,7 +90,7 @@ class _QueueSharingGroupsState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the queue sharing group
+        Queue sharing group name
         """
         return pulumi.get(self, "name")
 
@@ -102,7 +102,7 @@ class _QueueSharingGroupsState:
     @pulumi.getter(name="queueManagers")
     def queue_managers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Queue manager(s) that belong to the queue sharing group
+        Queue managers
         """
         return pulumi.get(self, "queue_managers")
 
@@ -114,7 +114,7 @@ class _QueueSharingGroupsState:
     @pulumi.getter(name="sharedQueues")
     def shared_queues(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Shared queue(s) that belong to the queue sharing group
+        Shared queues
         """
         return pulumi.get(self, "shared_queues")
 
@@ -136,9 +136,9 @@ class QueueSharingGroups(pulumi.CustomResource):
         Create a QueueSharingGroups resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] name: The name of the queue sharing group
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] queue_managers: Queue manager(s) that belong to the queue sharing group
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] shared_queues: Shared queue(s) that belong to the queue sharing group
+        :param pulumi.Input[str] name: Queue sharing group name
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] queue_managers: Queue managers
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] shared_queues: Shared queues
         """
         ...
     @overload
@@ -198,9 +198,9 @@ class QueueSharingGroups(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] name: The name of the queue sharing group
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] queue_managers: Queue manager(s) that belong to the queue sharing group
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] shared_queues: Shared queue(s) that belong to the queue sharing group
+        :param pulumi.Input[str] name: Queue sharing group name
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] queue_managers: Queue managers
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] shared_queues: Shared queues
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -215,7 +215,7 @@ class QueueSharingGroups(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        The name of the queue sharing group
+        Queue sharing group name
         """
         return pulumi.get(self, "name")
 
@@ -223,7 +223,7 @@ class QueueSharingGroups(pulumi.CustomResource):
     @pulumi.getter(name="queueManagers")
     def queue_managers(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        Queue manager(s) that belong to the queue sharing group
+        Queue managers
         """
         return pulumi.get(self, "queue_managers")
 
@@ -231,7 +231,7 @@ class QueueSharingGroups(pulumi.CustomResource):
     @pulumi.getter(name="sharedQueues")
     def shared_queues(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        Shared queue(s) that belong to the queue sharing group
+        Shared queues
         """
         return pulumi.get(self, "shared_queues")
 

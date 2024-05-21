@@ -17,13 +17,15 @@ type DataPrivacy struct {
 
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrOutput `pulumi:"applicationId"`
-	// (Field has overlap with `ApplicationDataPrivacy`) To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
+	// To provide your end users with the ability to decide for themselves if their activities should be tracked to measure
+	// application performance and usage, enable opt-in mode.
 	DataCollection DataPrivacyDataCollectionOutput `pulumi:"dataCollection"`
-	// (Field has overlap with `ApplicationDataPrivacy`) Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
+	// Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual
+	// users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
 	DoNotTrack DataPrivacyDoNotTrackOutput `pulumi:"doNotTrack"`
-	// (Field has overlap with `ApplicationDataPrivacy`)
+	// no documentation available
 	Masking DataPrivacyMaskingOutput `pulumi:"masking"`
-	// (Field has overlap with `ApplicationDataPrivacy`) User tracking
+	// User tracking
 	UserTracking DataPrivacyUserTrackingOutput `pulumi:"userTracking"`
 }
 
@@ -71,26 +73,30 @@ func GetDataPrivacy(ctx *pulumi.Context,
 type dataPrivacyState struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`
-	// (Field has overlap with `ApplicationDataPrivacy`) To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
+	// To provide your end users with the ability to decide for themselves if their activities should be tracked to measure
+	// application performance and usage, enable opt-in mode.
 	DataCollection *DataPrivacyDataCollection `pulumi:"dataCollection"`
-	// (Field has overlap with `ApplicationDataPrivacy`) Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
+	// Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual
+	// users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
 	DoNotTrack *DataPrivacyDoNotTrack `pulumi:"doNotTrack"`
-	// (Field has overlap with `ApplicationDataPrivacy`)
+	// no documentation available
 	Masking *DataPrivacyMasking `pulumi:"masking"`
-	// (Field has overlap with `ApplicationDataPrivacy`) User tracking
+	// User tracking
 	UserTracking *DataPrivacyUserTracking `pulumi:"userTracking"`
 }
 
 type DataPrivacyState struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrInput
-	// (Field has overlap with `ApplicationDataPrivacy`) To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
+	// To provide your end users with the ability to decide for themselves if their activities should be tracked to measure
+	// application performance and usage, enable opt-in mode.
 	DataCollection DataPrivacyDataCollectionPtrInput
-	// (Field has overlap with `ApplicationDataPrivacy`) Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
+	// Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual
+	// users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
 	DoNotTrack DataPrivacyDoNotTrackPtrInput
-	// (Field has overlap with `ApplicationDataPrivacy`)
+	// no documentation available
 	Masking DataPrivacyMaskingPtrInput
-	// (Field has overlap with `ApplicationDataPrivacy`) User tracking
+	// User tracking
 	UserTracking DataPrivacyUserTrackingPtrInput
 }
 
@@ -101,13 +107,15 @@ func (DataPrivacyState) ElementType() reflect.Type {
 type dataPrivacyArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId *string `pulumi:"applicationId"`
-	// (Field has overlap with `ApplicationDataPrivacy`) To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
+	// To provide your end users with the ability to decide for themselves if their activities should be tracked to measure
+	// application performance and usage, enable opt-in mode.
 	DataCollection DataPrivacyDataCollection `pulumi:"dataCollection"`
-	// (Field has overlap with `ApplicationDataPrivacy`) Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
+	// Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual
+	// users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
 	DoNotTrack DataPrivacyDoNotTrack `pulumi:"doNotTrack"`
-	// (Field has overlap with `ApplicationDataPrivacy`)
+	// no documentation available
 	Masking DataPrivacyMasking `pulumi:"masking"`
-	// (Field has overlap with `ApplicationDataPrivacy`) User tracking
+	// User tracking
 	UserTracking DataPrivacyUserTracking `pulumi:"userTracking"`
 }
 
@@ -115,13 +123,15 @@ type dataPrivacyArgs struct {
 type DataPrivacyArgs struct {
 	// The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
 	ApplicationId pulumi.StringPtrInput
-	// (Field has overlap with `ApplicationDataPrivacy`) To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
+	// To provide your end users with the ability to decide for themselves if their activities should be tracked to measure
+	// application performance and usage, enable opt-in mode.
 	DataCollection DataPrivacyDataCollectionInput
-	// (Field has overlap with `ApplicationDataPrivacy`) Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
+	// Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual
+	// users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
 	DoNotTrack DataPrivacyDoNotTrackInput
-	// (Field has overlap with `ApplicationDataPrivacy`)
+	// no documentation available
 	Masking DataPrivacyMaskingInput
-	// (Field has overlap with `ApplicationDataPrivacy`) User tracking
+	// User tracking
 	UserTracking DataPrivacyUserTrackingInput
 }
 
@@ -217,22 +227,24 @@ func (o DataPrivacyOutput) ApplicationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DataPrivacy) pulumi.StringPtrOutput { return v.ApplicationId }).(pulumi.StringPtrOutput)
 }
 
-// (Field has overlap with `ApplicationDataPrivacy`) To provide your end users with the ability to decide for themselves if their activities should be tracked to measure application performance and usage, enable opt-in mode.
+// To provide your end users with the ability to decide for themselves if their activities should be tracked to measure
+// application performance and usage, enable opt-in mode.
 func (o DataPrivacyOutput) DataCollection() DataPrivacyDataCollectionOutput {
 	return o.ApplyT(func(v *DataPrivacy) DataPrivacyDataCollectionOutput { return v.DataCollection }).(DataPrivacyDataCollectionOutput)
 }
 
-// (Field has overlap with `ApplicationDataPrivacy`) Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
+// Most modern web browsers have a privacy feature called ["Do Not Track"](https://dt-url.net/sb3n0pnl) that individual
+// users may have enabled on their devices. Customize how Dynatrace should behave when it encounters this setting.
 func (o DataPrivacyOutput) DoNotTrack() DataPrivacyDoNotTrackOutput {
 	return o.ApplyT(func(v *DataPrivacy) DataPrivacyDoNotTrackOutput { return v.DoNotTrack }).(DataPrivacyDoNotTrackOutput)
 }
 
-// (Field has overlap with `ApplicationDataPrivacy`)
+// no documentation available
 func (o DataPrivacyOutput) Masking() DataPrivacyMaskingOutput {
 	return o.ApplyT(func(v *DataPrivacy) DataPrivacyMaskingOutput { return v.Masking }).(DataPrivacyMaskingOutput)
 }
 
-// (Field has overlap with `ApplicationDataPrivacy`) User tracking
+// User tracking
 func (o DataPrivacyOutput) UserTracking() DataPrivacyUserTrackingOutput {
 	return o.ApplyT(func(v *DataPrivacy) DataPrivacyUserTrackingOutput { return v.UserTracking }).(DataPrivacyUserTrackingOutput)
 }

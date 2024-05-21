@@ -25,9 +25,11 @@ type OsServices struct {
 	DetectionConditionsWindows OsServicesDetectionConditionsWindowsPtrOutput `pulumi:"detectionConditionsWindows"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata OsServicesMetadataPtrOutput `pulumi:"metadata"`
-	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics consume custom metrics (DDUs). Refer to [documentation](https://dt-url.net/vl03xzk) for DDU consumption examples. Each monitored service consumes one custom metric.
+	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
 	Monitoring pulumi.BoolOutput `pulumi:"monitoring"`
 	// Rule name
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -99,9 +101,11 @@ type osServicesState struct {
 	DetectionConditionsWindows *OsServicesDetectionConditionsWindows `pulumi:"detectionConditionsWindows"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata *OsServicesMetadata `pulumi:"metadata"`
-	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics consume custom metrics (DDUs). Refer to [documentation](https://dt-url.net/vl03xzk) for DDU consumption examples. Each monitored service consumes one custom metric.
+	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
 	Monitoring *bool `pulumi:"monitoring"`
 	// Rule name
 	Name *string `pulumi:"name"`
@@ -132,9 +136,11 @@ type OsServicesState struct {
 	DetectionConditionsWindows OsServicesDetectionConditionsWindowsPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata OsServicesMetadataPtrInput
-	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics consume custom metrics (DDUs). Refer to [documentation](https://dt-url.net/vl03xzk) for DDU consumption examples. Each monitored service consumes one custom metric.
+	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
 	Monitoring pulumi.BoolPtrInput
 	// Rule name
 	Name pulumi.StringPtrInput
@@ -169,9 +175,11 @@ type osServicesArgs struct {
 	DetectionConditionsWindows *OsServicesDetectionConditionsWindows `pulumi:"detectionConditionsWindows"`
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata *OsServicesMetadata `pulumi:"metadata"`
-	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics consume custom metrics (DDUs). Refer to [documentation](https://dt-url.net/vl03xzk) for DDU consumption examples. Each monitored service consumes one custom metric.
+	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
 	Monitoring bool `pulumi:"monitoring"`
 	// Rule name
 	Name *string `pulumi:"name"`
@@ -203,9 +211,11 @@ type OsServicesArgs struct {
 	DetectionConditionsWindows OsServicesDetectionConditionsWindowsPtrInput
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Set of additional key-value properties to be attached to the triggered event.
 	Metadata OsServicesMetadataPtrInput
-	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics consume custom metrics (DDUs). Refer to [documentation](https://dt-url.net/vl03xzk) for DDU consumption examples. Each monitored service consumes one custom metric.
+	// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
 	Monitoring pulumi.BoolInput
 	// Rule name
 	Name pulumi.StringPtrInput
@@ -337,12 +347,17 @@ func (o OsServicesOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *OsServices) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o OsServicesOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *OsServices) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
+}
+
 // Set of additional key-value properties to be attached to the triggered event.
 func (o OsServicesOutput) Metadata() OsServicesMetadataPtrOutput {
 	return o.ApplyT(func(v *OsServices) OsServicesMetadataPtrOutput { return v.Metadata }).(OsServicesMetadataPtrOutput)
 }
 
-// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics consume custom metrics (DDUs). Refer to [documentation](https://dt-url.net/vl03xzk) for DDU consumption examples. Each monitored service consumes one custom metric.
+// Toggle the switch in order to enable or disable availability metric monitoring for this policy. Availability metrics produce custom metrics. Refer to [documentation](https://dt-url.net/vl03xzk) for consumption examples. Each monitored service consumes one custom metric.
 func (o OsServicesOutput) Monitoring() pulumi.BoolOutput {
 	return o.ApplyT(func(v *OsServices) pulumi.BoolOutput { return v.Monitoring }).(pulumi.BoolOutput)
 }

@@ -7,43 +7,70 @@ import typing
 # Export this package's modules as members:
 from .activegate_token import *
 from .activegate_updates import *
+from .ag_token import *
 from .aix_extension import *
 from .alerting import *
 from .alerting_profile import *
 from .ansible_tower_notification import *
 from .api_detection import *
 from .api_token import *
+from .app_monitoring import *
 from .application_anomalies import *
 from .application_data_privacy import *
 from .application_detection_rule import *
 from .application_detection_rule_v2 import *
 from .application_error_rules import *
+from .appsec_notification import *
+from .attack_alerting import *
+from .attack_allowlist import *
+from .attack_rules import *
+from .attack_settings import *
+from .attribute_allow_list import *
+from .attribute_block_list import *
+from .attribute_masking import *
+from .attributes_preferences import *
 from .audit_log import *
+from .automation_business_calendar import *
+from .automation_scheduling_rule import *
+from .automation_workflow import *
+from .automation_workflow_jira import *
+from .automation_workflow_slack import *
 from .autotag import *
+from .autotag_rules import *
 from .autotag_v2 import *
 from .aws_anomalies import *
 from .aws_credentials import *
+from .aws_service import *
 from .azure_credentials import *
+from .azure_service import *
 from .browser_monitor import *
 from .browser_monitor_outage import *
 from .browser_monitor_performance import *
+from .builtin_process_monitoring import *
 from .business_events_buckets import *
 from .business_events_metrics import *
 from .business_events_oneagent import *
 from .business_events_processing import *
+from .business_events_security_context import *
+from .calculated_mobile_metric import *
 from .calculated_service_metric import *
+from .calculated_synthetic_metric import *
+from .calculated_web_metric import *
 from .cloud_foundry import *
 from .cloudapp_workloaddetection import *
 from .cloudfoundry_credentials import *
 from .connectivity_alerts import *
 from .container_builtin_rule import *
+from .container_registry import *
 from .container_rule import *
 from .container_technology import *
+from .crashdump_analytics import *
 from .credentials import *
 from .custom_anomalies import *
 from .custom_app_anomalies import *
 from .custom_app_crash_rate import *
 from .custom_app_enablement import *
+from .custom_device import *
 from .custom_service import *
 from .custom_tags import *
 from .custom_units import *
@@ -55,14 +82,19 @@ from .dashboards_presets import *
 from .data_privacy import *
 from .database_anomalies import *
 from .database_anomalies_v2 import *
+from .davis_anomaly_detectors import *
+from .db_app_feature_flags import *
 from .ddu_pool import *
 from .declarative_grouping import *
+from .direct_shares import *
 from .disk_analytics import *
 from .disk_anomalies import *
 from .disk_anomalies_v2 import *
 from .disk_anomaly_rules import *
 from .disk_options import *
 from .disk_specific_anomalies_v2 import *
+from .document import *
+from .ebpf_service_discovery import *
 from .email_notification import *
 from .environment import *
 from .eula_settings import *
@@ -72,72 +104,117 @@ from .failure_detection_parameters import *
 from .failure_detection_rules import *
 from .frequent_issues import *
 from .generic_relationships import *
+from .generic_setting import *
 from .generic_types import *
 from .geolocation import *
 from .get_alerting_profile import *
 from .get_alerting_profiles import *
 from .get_application import *
+from .get_attack_alerting import *
+from .get_aws_credentials import *
 from .get_aws_iam_external import *
+from .get_aws_supported_services import *
+from .get_azure_credentials import *
+from .get_azure_supported_services import *
 from .get_calculated_service_metric import *
 from .get_credentials import *
 from .get_dashboard import *
+from .get_documents import *
 from .get_entities import *
 from .get_entity import *
+from .get_failure_detection_parameters import *
 from .get_host import *
+from .get_hub_items import *
 from .get_iam_group import *
+from .get_iam_groups import *
+from .get_iam_policies import *
+from .get_iam_policy import *
 from .get_iam_user import *
+from .get_lambda_agent_version import *
 from .get_management_zone import *
+from .get_management_zone_v2 import *
 from .get_management_zones import *
 from .get_mobile_application import *
 from .get_process import *
 from .get_process_group import *
+from .get_remote_environments import *
 from .get_request_attribute import *
 from .get_request_naming import *
 from .get_service import *
 from .get_slo import *
 from .get_synthetic_location import *
 from .get_synthetic_locations import *
+from .get_synthetic_nodes import *
+from .get_tenant import *
+from .get_update_windows import *
+from .get_vulnerability_alerting import *
+from .grail_metrics_allowall import *
+from .grail_metrics_allowlist import *
+from .grail_security_context import *
 from .host_anomalies import *
 from .host_anomalies_v2 import *
 from .host_monitoring import *
+from .host_monitoring_advanced import *
+from .host_monitoring_mode import *
 from .host_naming import *
 from .host_process_group_monitoring import *
 from .http_monitor import *
 from .http_monitor_cookies import *
 from .http_monitor_outage import *
 from .http_monitor_performance import *
+from .http_monitor_script import *
+from .hub_extension_active_version import *
+from .hub_extension_config import *
+from .hub_subscriptions import *
 from .iam_group import *
 from .iam_permission import *
 from .iam_policy import *
 from .iam_policy_bindings import *
+from .iam_policy_bindings_v2 import *
 from .iam_user import *
 from .ibm_mq_filters import *
 from .ims_bridges import *
+from .infraops_app_feature_flags import *
+from .ip_address_masking import *
 from .issue_tracking import *
 from .jira_notification import *
 from .json_dashboard import *
+from .json_dashboard_base import *
 from .k8s_cluster_anomalies import *
 from .k8s_credentials import *
+from .k8s_monitoring import *
 from .k8s_namespace_anomalies import *
 from .k8s_node_anomalies import *
 from .k8s_pvc_anomalies import *
 from .k8s_workload_anomalies import *
 from .key_requests import *
+from .key_user_action import *
 from .kubernetes import *
+from .kubernetes_app import *
+from .limit_outbound_connections import *
 from .log_buckets import *
 from .log_custom_attribute import *
 from .log_custom_source import *
+from .log_debug_settings import *
 from .log_events import *
 from .log_grail import *
 from .log_metrics import *
 from .log_oneagent import *
 from .log_processing import *
+from .log_security_context import *
 from .log_sensitive_data_masking import *
 from .log_storage import *
 from .log_timestamp import *
 from .mainframe_transaction_monitoring import *
 from .maintenance import *
 from .maintenance_window import *
+from .managed_backup import *
+from .managed_internet_proxy import *
+from .managed_network_zones import *
+from .managed_preferences import *
+from .managed_public_endpoints import *
+from .managed_remote_access import *
+from .managed_smtp import *
 from .management_zone import *
 from .management_zone_v2 import *
 from .metric_events import *
@@ -147,8 +224,10 @@ from .mgmz_permission import *
 from .mobile_app_anomalies import *
 from .mobile_app_crash_rate import *
 from .mobile_app_enablement import *
+from .mobile_app_key_performance import *
 from .mobile_app_request_errors import *
 from .mobile_application import *
+from .mobile_notifications import *
 from .monitored_technologies_apache import *
 from .monitored_technologies_dotnet import *
 from .monitored_technologies_go import *
@@ -168,6 +247,7 @@ from .network_zones import *
 from .notification import *
 from .oneagent_default_version import *
 from .oneagent_features import *
+from .oneagent_side_masking import *
 from .oneagent_updates import *
 from .opentelemetry_metrics import *
 from .ops_genie_notification import *
@@ -177,6 +257,7 @@ from .ownership_teams import *
 from .pager_duty_notification import *
 from .pg_alerting import *
 from .pg_anomalies import *
+from .platform_bucket import *
 from .policy import *
 from .policy_bindings import *
 from .process_availability import *
@@ -215,6 +296,7 @@ from .service_naming import *
 from .service_now_notification import *
 from .session_replay_resource_capture import *
 from .session_replay_web_privacy import *
+from .site_reliability_guardian import *
 from .slack_notification import *
 from .slo import *
 from .slo_normalization import *
@@ -223,12 +305,16 @@ from .span_attributed import *
 from .span_capture_rule import *
 from .span_context_propagation import *
 from .span_entry_point import *
+from .span_events import *
 from .synthetic_availability import *
 from .synthetic_location import *
 from .token_settings import *
 from .transaction_start_filters import *
 from .trello_notification import *
+from .unified_services_metrics import *
+from .unified_services_opentel import *
 from .update_windows import *
+from .url_based_sampling import *
 from .usability_analytics import *
 from .user import *
 from .user_action_metrics import *
@@ -237,13 +323,24 @@ from .user_group import *
 from .user_session_metrics import *
 from .user_settings import *
 from .victor_ops_notification import *
+from .vmware import *
 from .vmware_anomalies import *
+from .vulnerability_alerting import *
+from .vulnerability_code import *
+from .vulnerability_settings import *
+from .vulnerability_third_party import *
 from .web_app_anomalies import *
+from .web_app_beacon_endpoint import *
 from .web_app_beacon_origins import *
+from .web_app_custom_config_properties import *
 from .web_app_custom_errors import *
 from .web_app_enablement import *
+from .web_app_injection_cookie import *
 from .web_app_javascript_updates import *
 from .web_app_javascript_version import *
+from .web_app_key_performance_custom import *
+from .web_app_key_performance_load import *
+from .web_app_key_performance_xhr import *
 from .web_app_request_errors import *
 from .web_app_resource_cleanup import *
 from .web_app_resource_types import *
@@ -277,6 +374,14 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/activegateUpdates:ActivegateUpdates": "ActivegateUpdates"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/agToken",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/agToken:AgToken": "AgToken"
   }
  },
  {
@@ -329,6 +434,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/appMonitoring",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/appMonitoring:AppMonitoring": "AppMonitoring"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/applicationAnomalies",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
@@ -369,6 +482,78 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/appsecNotification",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/appsecNotification:AppsecNotification": "AppsecNotification"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/attackAlerting",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/attackAlerting:AttackAlerting": "AttackAlerting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/attackAllowlist",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/attackAllowlist:AttackAllowlist": "AttackAllowlist"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/attackRules",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/attackRules:AttackRules": "AttackRules"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/attackSettings",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/attackSettings:AttackSettings": "AttackSettings"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/attributeAllowList",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/attributeAllowList:AttributeAllowList": "AttributeAllowList"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/attributeBlockList",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/attributeBlockList:AttributeBlockList": "AttributeBlockList"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/attributeMasking",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/attributeMasking:AttributeMasking": "AttributeMasking"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/attributesPreferences",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/attributesPreferences:AttributesPreferences": "AttributesPreferences"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/auditLog",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
@@ -377,10 +562,58 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/automationBusinessCalendar",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/automationBusinessCalendar:AutomationBusinessCalendar": "AutomationBusinessCalendar"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/automationSchedulingRule",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/automationSchedulingRule:AutomationSchedulingRule": "AutomationSchedulingRule"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/automationWorkflow",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/automationWorkflow:AutomationWorkflow": "AutomationWorkflow"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/automationWorkflowJira",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/automationWorkflowJira:AutomationWorkflowJira": "AutomationWorkflowJira"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/automationWorkflowSlack",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/automationWorkflowSlack:AutomationWorkflowSlack": "AutomationWorkflowSlack"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/autotag",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/autotag:Autotag": "Autotag"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/autotagRules",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/autotagRules:AutotagRules": "AutotagRules"
   }
  },
  {
@@ -409,10 +642,26 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/awsService",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/awsService:AwsService": "AwsService"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/azureCredentials",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/azureCredentials:AzureCredentials": "AzureCredentials"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/azureService",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/azureService:AzureService": "AzureService"
   }
  },
  {
@@ -437,6 +686,14 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/browserMonitorPerformance:BrowserMonitorPerformance": "BrowserMonitorPerformance"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/builtinProcessMonitoring",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/builtinProcessMonitoring:BuiltinProcessMonitoring": "BuiltinProcessMonitoring"
   }
  },
  {
@@ -473,10 +730,42 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/businessEventsSecurityContext",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/businessEventsSecurityContext:BusinessEventsSecurityContext": "BusinessEventsSecurityContext"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/calculatedMobileMetric",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/calculatedMobileMetric:CalculatedMobileMetric": "CalculatedMobileMetric"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/calculatedServiceMetric",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/calculatedServiceMetric:CalculatedServiceMetric": "CalculatedServiceMetric"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/calculatedSyntheticMetric",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/calculatedSyntheticMetric:CalculatedSyntheticMetric": "CalculatedSyntheticMetric"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/calculatedWebMetric",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/calculatedWebMetric:CalculatedWebMetric": "CalculatedWebMetric"
   }
  },
  {
@@ -521,6 +810,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/containerRegistry",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/containerRegistry:ContainerRegistry": "ContainerRegistry"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/containerRule",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
@@ -533,6 +830,14 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/containerTechnology:ContainerTechnology": "ContainerTechnology"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/crashdumpAnalytics",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/crashdumpAnalytics:CrashdumpAnalytics": "CrashdumpAnalytics"
   }
  },
  {
@@ -573,6 +878,14 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/customAppEnablement:CustomAppEnablement": "CustomAppEnablement"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/customDevice",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/customDevice:CustomDevice": "CustomDevice"
   }
  },
  {
@@ -665,6 +978,22 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/davisAnomalyDetectors",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/davisAnomalyDetectors:DavisAnomalyDetectors": "DavisAnomalyDetectors"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/dbAppFeatureFlags",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/dbAppFeatureFlags:DbAppFeatureFlags": "DbAppFeatureFlags"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/dduPool",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
@@ -677,6 +1006,14 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/declarativeGrouping:DeclarativeGrouping": "DeclarativeGrouping"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/directShares",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/directShares:DirectShares": "DirectShares"
   }
  },
  {
@@ -725,6 +1062,22 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/diskSpecificAnomaliesV2:DiskSpecificAnomaliesV2": "DiskSpecificAnomaliesV2"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/document",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/document:Document": "Document"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/ebpfServiceDiscovery",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/ebpfServiceDiscovery:EbpfServiceDiscovery": "EbpfServiceDiscovery"
   }
  },
  {
@@ -801,6 +1154,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/genericSetting",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/genericSetting:GenericSetting": "GenericSetting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/genericTypes",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
@@ -813,6 +1174,30 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/geolocation:Geolocation": "Geolocation"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/grailMetricsAllowall",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/grailMetricsAllowall:GrailMetricsAllowall": "GrailMetricsAllowall"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/grailMetricsAllowlist",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/grailMetricsAllowlist:GrailMetricsAllowlist": "GrailMetricsAllowlist"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/grailSecurityContext",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/grailSecurityContext:GrailSecurityContext": "GrailSecurityContext"
   }
  },
  {
@@ -837,6 +1222,22 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/hostMonitoring:HostMonitoring": "HostMonitoring"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/hostMonitoringAdvanced",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/hostMonitoringAdvanced:HostMonitoringAdvanced": "HostMonitoringAdvanced"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/hostMonitoringMode",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/hostMonitoringMode:HostMonitoringMode": "HostMonitoringMode"
   }
  },
  {
@@ -889,6 +1290,38 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/httpMonitorScript",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/httpMonitorScript:HttpMonitorScript": "HttpMonitorScript"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/hubExtensionActiveVersion",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/hubExtensionActiveVersion:HubExtensionActiveVersion": "HubExtensionActiveVersion"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/hubExtensionConfig",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/hubExtensionConfig:HubExtensionConfig": "HubExtensionConfig"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/hubSubscriptions",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/hubSubscriptions:HubSubscriptions": "HubSubscriptions"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/iamGroup",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
@@ -921,6 +1354,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/iamPolicyBindingsV2",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/iamPolicyBindingsV2:IamPolicyBindingsV2": "IamPolicyBindingsV2"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/iamUser",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
@@ -941,6 +1382,22 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/imsBridges:ImsBridges": "ImsBridges"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/infraopsAppFeatureFlags",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/infraopsAppFeatureFlags:InfraopsAppFeatureFlags": "InfraopsAppFeatureFlags"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/ipAddressMasking",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/ipAddressMasking:IpAddressMasking": "IpAddressMasking"
   }
  },
  {
@@ -969,6 +1426,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/jsonDashboardBase",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/jsonDashboardBase:JsonDashboardBase": "JsonDashboardBase"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/k8sClusterAnomalies",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
@@ -981,6 +1446,14 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/k8sCredentials:K8sCredentials": "K8sCredentials"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/k8sMonitoring",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/k8sMonitoring:K8sMonitoring": "K8sMonitoring"
   }
  },
  {
@@ -1025,10 +1498,34 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/keyUserAction",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/keyUserAction:KeyUserAction": "KeyUserAction"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/kubernetes",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/kubernetes:Kubernetes": "Kubernetes"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/kubernetesApp",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/kubernetesApp:KubernetesApp": "KubernetesApp"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/limitOutboundConnections",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/limitOutboundConnections:LimitOutboundConnections": "LimitOutboundConnections"
   }
  },
  {
@@ -1053,6 +1550,14 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/logCustomSource:LogCustomSource": "LogCustomSource"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/logDebugSettings",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/logDebugSettings:LogDebugSettings": "LogDebugSettings"
   }
  },
  {
@@ -1093,6 +1598,14 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/logProcessing:LogProcessing": "LogProcessing"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/logSecurityContext",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/logSecurityContext:LogSecurityContext": "LogSecurityContext"
   }
  },
  {
@@ -1141,6 +1654,62 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/maintenanceWindow:MaintenanceWindow": "MaintenanceWindow"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/managedBackup",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/managedBackup:ManagedBackup": "ManagedBackup"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/managedInternetProxy",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/managedInternetProxy:ManagedInternetProxy": "ManagedInternetProxy"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/managedNetworkZones",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/managedNetworkZones:ManagedNetworkZones": "ManagedNetworkZones"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/managedPreferences",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/managedPreferences:ManagedPreferences": "ManagedPreferences"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/managedPublicEndpoints",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/managedPublicEndpoints:ManagedPublicEndpoints": "ManagedPublicEndpoints"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/managedRemoteAccess",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/managedRemoteAccess:ManagedRemoteAccess": "ManagedRemoteAccess"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/managedSmtp",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/managedSmtp:ManagedSmtp": "ManagedSmtp"
   }
  },
  {
@@ -1217,6 +1786,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/mobileAppKeyPerformance",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/mobileAppKeyPerformance:MobileAppKeyPerformance": "MobileAppKeyPerformance"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/mobileAppRequestErrors",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
@@ -1229,6 +1806,14 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/mobileApplication:MobileApplication": "MobileApplication"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/mobileNotifications",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/mobileNotifications:MobileNotifications": "MobileNotifications"
   }
  },
  {
@@ -1385,6 +1970,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/oneagentSideMasking",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/oneagentSideMasking:OneagentSideMasking": "OneagentSideMasking"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/oneagentUpdates",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
@@ -1453,6 +2046,14 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/pgAnomalies:PgAnomalies": "PgAnomalies"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/platformBucket",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/platformBucket:PlatformBucket": "PlatformBucket"
   }
  },
  {
@@ -1753,6 +2354,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/siteReliabilityGuardian",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/siteReliabilityGuardian:SiteReliabilityGuardian": "SiteReliabilityGuardian"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/slackNotification",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
@@ -1817,6 +2426,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/spanEvents",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/spanEvents:SpanEvents": "SpanEvents"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/syntheticAvailability",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
@@ -1857,10 +2474,34 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/unifiedServicesMetrics",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/unifiedServicesMetrics:UnifiedServicesMetrics": "UnifiedServicesMetrics"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/unifiedServicesOpentel",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/unifiedServicesOpentel:UnifiedServicesOpentel": "UnifiedServicesOpentel"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/updateWindows",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/updateWindows:UpdateWindows": "UpdateWindows"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/urlBasedSampling",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/urlBasedSampling:UrlBasedSampling": "UrlBasedSampling"
   }
  },
  {
@@ -1929,10 +2570,50 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/vmware",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/vmware:Vmware": "Vmware"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/vmwareAnomalies",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/vmwareAnomalies:VmwareAnomalies": "VmwareAnomalies"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/vulnerabilityAlerting",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/vulnerabilityAlerting:VulnerabilityAlerting": "VulnerabilityAlerting"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/vulnerabilityCode",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/vulnerabilityCode:VulnerabilityCode": "VulnerabilityCode"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/vulnerabilitySettings",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/vulnerabilitySettings:VulnerabilitySettings": "VulnerabilitySettings"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/vulnerabilityThirdParty",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/vulnerabilityThirdParty:VulnerabilityThirdParty": "VulnerabilityThirdParty"
   }
  },
  {
@@ -1945,10 +2626,26 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/webAppBeaconEndpoint",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/webAppBeaconEndpoint:WebAppBeaconEndpoint": "WebAppBeaconEndpoint"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/webAppBeaconOrigins",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/webAppBeaconOrigins:WebAppBeaconOrigins": "WebAppBeaconOrigins"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/webAppCustomConfigProperties",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/webAppCustomConfigProperties:WebAppCustomConfigProperties": "WebAppCustomConfigProperties"
   }
  },
  {
@@ -1969,6 +2666,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/webAppInjectionCookie",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/webAppInjectionCookie:WebAppInjectionCookie": "WebAppInjectionCookie"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/webAppJavascriptUpdates",
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
@@ -1981,6 +2686,30 @@ _utilities.register(
   "fqn": "pulumiverse_pulumi_dynatrace",
   "classes": {
    "dynatrace:index/webAppJavascriptVersion:WebAppJavascriptVersion": "WebAppJavascriptVersion"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/webAppKeyPerformanceCustom",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/webAppKeyPerformanceCustom:WebAppKeyPerformanceCustom": "WebAppKeyPerformanceCustom"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/webAppKeyPerformanceLoad",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/webAppKeyPerformanceLoad:WebAppKeyPerformanceLoad": "WebAppKeyPerformanceLoad"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/webAppKeyPerformanceXhr",
+  "fqn": "pulumiverse_pulumi_dynatrace",
+  "classes": {
+   "dynatrace:index/webAppKeyPerformanceXhr:WebAppKeyPerformanceXhr": "WebAppKeyPerformanceXhr"
   }
  },
  {

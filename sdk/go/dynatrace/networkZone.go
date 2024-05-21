@@ -18,7 +18,7 @@ type NetworkZone struct {
 	AlternativeZones pulumi.StringArrayOutput `pulumi:"alternativeZones"`
 	// A short description of the network zone
 	Description pulumi.StringPtrOutput `pulumi:"description"`
-	// Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+	// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The number of ActiveGates in the network zone.
 	NumOfConfiguredActivegates pulumi.IntPtrOutput `pulumi:"numOfConfiguredActivegates"`
@@ -64,7 +64,7 @@ type networkZoneState struct {
 	AlternativeZones []string `pulumi:"alternativeZones"`
 	// A short description of the network zone
 	Description *string `pulumi:"description"`
-	// Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+	// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
 	Name *string `pulumi:"name"`
 	// The number of ActiveGates in the network zone.
 	NumOfConfiguredActivegates *int `pulumi:"numOfConfiguredActivegates"`
@@ -81,7 +81,7 @@ type NetworkZoneState struct {
 	AlternativeZones pulumi.StringArrayInput
 	// A short description of the network zone
 	Description pulumi.StringPtrInput
-	// Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+	// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
 	Name pulumi.StringPtrInput
 	// The number of ActiveGates in the network zone.
 	NumOfConfiguredActivegates pulumi.IntPtrInput
@@ -102,7 +102,7 @@ type networkZoneArgs struct {
 	AlternativeZones []string `pulumi:"alternativeZones"`
 	// A short description of the network zone
 	Description *string `pulumi:"description"`
-	// Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+	// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
 	Name *string `pulumi:"name"`
 	// The number of ActiveGates in the network zone.
 	NumOfConfiguredActivegates *int `pulumi:"numOfConfiguredActivegates"`
@@ -120,7 +120,7 @@ type NetworkZoneArgs struct {
 	AlternativeZones pulumi.StringArrayInput
 	// A short description of the network zone
 	Description pulumi.StringPtrInput
-	// Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+	// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
 	Name pulumi.StringPtrInput
 	// The number of ActiveGates in the network zone.
 	NumOfConfiguredActivegates pulumi.IntPtrInput
@@ -229,7 +229,7 @@ func (o NetworkZoneOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NetworkZone) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+// Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
 func (o NetworkZoneOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkZone) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

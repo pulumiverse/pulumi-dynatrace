@@ -13,7 +13,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsArgs : global::Pulumi.ResourceArgs
     {
-        [Input("conditions")]
+        [Input("conditions", required: true)]
         private InputList<Inputs.ManagementZoneV2RulesRuleDimensionRuleDimensionConditionsConditionArgs>? _conditions;
 
         /// <summary>

@@ -32,6 +32,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<bool?> Disabled { get; private set; } = null!;
 
         /// <summary>
+        /// Error budget burn rate configuration of a service-level objective (SLO).
+        /// </summary>
+        [Output("errorBudgetBurnRate")]
+        public Output<Outputs.SloErrorBudgetBurnRate?> ErrorBudgetBurnRate { get; private set; } = null!;
+
+        /// <summary>
         /// The evaluation type of the SLO. Currently only `AGGREGATE` is supported
         /// </summary>
         [Output("evaluation")]
@@ -48,6 +54,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Output("metricExpression")]
         public Output<string?> MetricExpression { get; private set; } = null!;
+
+        /// <summary>
+        /// The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+        /// </summary>
+        [Output("metricName")]
+        public Output<string?> MetricName { get; private set; } = null!;
 
         /// <summary>
         /// The name of the rule
@@ -151,6 +163,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? Disabled { get; set; }
 
         /// <summary>
+        /// Error budget burn rate configuration of a service-level objective (SLO).
+        /// </summary>
+        [Input("errorBudgetBurnRate")]
+        public Input<Inputs.SloErrorBudgetBurnRateArgs>? ErrorBudgetBurnRate { get; set; }
+
+        /// <summary>
         /// The evaluation type of the SLO. Currently only `AGGREGATE` is supported
         /// </summary>
         [Input("evaluation", required: true)]
@@ -167,6 +185,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Input("metricExpression")]
         public Input<string>? MetricExpression { get; set; }
+
+        /// <summary>
+        /// The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+        /// </summary>
+        [Input("metricName")]
+        public Input<string>? MetricName { get; set; }
 
         /// <summary>
         /// The name of the rule
@@ -231,6 +255,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? Disabled { get; set; }
 
         /// <summary>
+        /// Error budget burn rate configuration of a service-level objective (SLO).
+        /// </summary>
+        [Input("errorBudgetBurnRate")]
+        public Input<Inputs.SloErrorBudgetBurnRateGetArgs>? ErrorBudgetBurnRate { get; set; }
+
+        /// <summary>
         /// The evaluation type of the SLO. Currently only `AGGREGATE` is supported
         /// </summary>
         [Input("evaluation")]
@@ -247,6 +277,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// </summary>
         [Input("metricExpression")]
         public Input<string>? MetricExpression { get; set; }
+
+        /// <summary>
+        /// The name that is used to create SLO func metrics keys. Once created, metric name cannot be changed.
+        /// </summary>
+        [Input("metricName")]
+        public Input<string>? MetricName { get; set; }
 
         /// <summary>
         /// The name of the rule

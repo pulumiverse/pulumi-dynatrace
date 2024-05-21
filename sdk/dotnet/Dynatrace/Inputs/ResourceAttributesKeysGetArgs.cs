@@ -13,12 +13,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class ResourceAttributesKeysGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("rules")]
+        [Input("rules", required: true)]
         private InputList<Inputs.ResourceAttributesKeysRuleGetArgs>? _rules;
-
-        /// <summary>
-        /// Attribute key allow-list
-        /// </summary>
         public InputList<Inputs.ResourceAttributesKeysRuleGetArgs> Rules
         {
             get => _rules ?? (_rules = new InputList<Inputs.ResourceAttributesKeysRuleGetArgs>());

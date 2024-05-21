@@ -15,6 +15,11 @@ export type ActivegateUpdates = import("./activegateUpdates").ActivegateUpdates;
 export const ActivegateUpdates: typeof import("./activegateUpdates").ActivegateUpdates = null as any;
 utilities.lazyLoad(exports, ["ActivegateUpdates"], () => require("./activegateUpdates"));
 
+export { AgTokenArgs, AgTokenState } from "./agToken";
+export type AgToken = import("./agToken").AgToken;
+export const AgToken: typeof import("./agToken").AgToken = null as any;
+utilities.lazyLoad(exports, ["AgToken"], () => require("./agToken"));
+
 export { AixExtensionArgs, AixExtensionState } from "./aixExtension";
 export type AixExtension = import("./aixExtension").AixExtension;
 export const AixExtension: typeof import("./aixExtension").AixExtension = null as any;
@@ -45,6 +50,11 @@ export type ApiToken = import("./apiToken").ApiToken;
 export const ApiToken: typeof import("./apiToken").ApiToken = null as any;
 utilities.lazyLoad(exports, ["ApiToken"], () => require("./apiToken"));
 
+export { AppMonitoringArgs, AppMonitoringState } from "./appMonitoring";
+export type AppMonitoring = import("./appMonitoring").AppMonitoring;
+export const AppMonitoring: typeof import("./appMonitoring").AppMonitoring = null as any;
+utilities.lazyLoad(exports, ["AppMonitoring"], () => require("./appMonitoring"));
+
 export { ApplicationAnomaliesArgs, ApplicationAnomaliesState } from "./applicationAnomalies";
 export type ApplicationAnomalies = import("./applicationAnomalies").ApplicationAnomalies;
 export const ApplicationAnomalies: typeof import("./applicationAnomalies").ApplicationAnomalies = null as any;
@@ -70,15 +80,90 @@ export type ApplicationErrorRules = import("./applicationErrorRules").Applicatio
 export const ApplicationErrorRules: typeof import("./applicationErrorRules").ApplicationErrorRules = null as any;
 utilities.lazyLoad(exports, ["ApplicationErrorRules"], () => require("./applicationErrorRules"));
 
+export { AppsecNotificationArgs, AppsecNotificationState } from "./appsecNotification";
+export type AppsecNotification = import("./appsecNotification").AppsecNotification;
+export const AppsecNotification: typeof import("./appsecNotification").AppsecNotification = null as any;
+utilities.lazyLoad(exports, ["AppsecNotification"], () => require("./appsecNotification"));
+
+export { AttackAlertingArgs, AttackAlertingState } from "./attackAlerting";
+export type AttackAlerting = import("./attackAlerting").AttackAlerting;
+export const AttackAlerting: typeof import("./attackAlerting").AttackAlerting = null as any;
+utilities.lazyLoad(exports, ["AttackAlerting"], () => require("./attackAlerting"));
+
+export { AttackAllowlistArgs, AttackAllowlistState } from "./attackAllowlist";
+export type AttackAllowlist = import("./attackAllowlist").AttackAllowlist;
+export const AttackAllowlist: typeof import("./attackAllowlist").AttackAllowlist = null as any;
+utilities.lazyLoad(exports, ["AttackAllowlist"], () => require("./attackAllowlist"));
+
+export { AttackRulesArgs, AttackRulesState } from "./attackRules";
+export type AttackRules = import("./attackRules").AttackRules;
+export const AttackRules: typeof import("./attackRules").AttackRules = null as any;
+utilities.lazyLoad(exports, ["AttackRules"], () => require("./attackRules"));
+
+export { AttackSettingsArgs, AttackSettingsState } from "./attackSettings";
+export type AttackSettings = import("./attackSettings").AttackSettings;
+export const AttackSettings: typeof import("./attackSettings").AttackSettings = null as any;
+utilities.lazyLoad(exports, ["AttackSettings"], () => require("./attackSettings"));
+
+export { AttributeAllowListArgs, AttributeAllowListState } from "./attributeAllowList";
+export type AttributeAllowList = import("./attributeAllowList").AttributeAllowList;
+export const AttributeAllowList: typeof import("./attributeAllowList").AttributeAllowList = null as any;
+utilities.lazyLoad(exports, ["AttributeAllowList"], () => require("./attributeAllowList"));
+
+export { AttributeBlockListArgs, AttributeBlockListState } from "./attributeBlockList";
+export type AttributeBlockList = import("./attributeBlockList").AttributeBlockList;
+export const AttributeBlockList: typeof import("./attributeBlockList").AttributeBlockList = null as any;
+utilities.lazyLoad(exports, ["AttributeBlockList"], () => require("./attributeBlockList"));
+
+export { AttributeMaskingArgs, AttributeMaskingState } from "./attributeMasking";
+export type AttributeMasking = import("./attributeMasking").AttributeMasking;
+export const AttributeMasking: typeof import("./attributeMasking").AttributeMasking = null as any;
+utilities.lazyLoad(exports, ["AttributeMasking"], () => require("./attributeMasking"));
+
+export { AttributesPreferencesArgs, AttributesPreferencesState } from "./attributesPreferences";
+export type AttributesPreferences = import("./attributesPreferences").AttributesPreferences;
+export const AttributesPreferences: typeof import("./attributesPreferences").AttributesPreferences = null as any;
+utilities.lazyLoad(exports, ["AttributesPreferences"], () => require("./attributesPreferences"));
+
 export { AuditLogArgs, AuditLogState } from "./auditLog";
 export type AuditLog = import("./auditLog").AuditLog;
 export const AuditLog: typeof import("./auditLog").AuditLog = null as any;
 utilities.lazyLoad(exports, ["AuditLog"], () => require("./auditLog"));
 
+export { AutomationBusinessCalendarArgs, AutomationBusinessCalendarState } from "./automationBusinessCalendar";
+export type AutomationBusinessCalendar = import("./automationBusinessCalendar").AutomationBusinessCalendar;
+export const AutomationBusinessCalendar: typeof import("./automationBusinessCalendar").AutomationBusinessCalendar = null as any;
+utilities.lazyLoad(exports, ["AutomationBusinessCalendar"], () => require("./automationBusinessCalendar"));
+
+export { AutomationSchedulingRuleArgs, AutomationSchedulingRuleState } from "./automationSchedulingRule";
+export type AutomationSchedulingRule = import("./automationSchedulingRule").AutomationSchedulingRule;
+export const AutomationSchedulingRule: typeof import("./automationSchedulingRule").AutomationSchedulingRule = null as any;
+utilities.lazyLoad(exports, ["AutomationSchedulingRule"], () => require("./automationSchedulingRule"));
+
+export { AutomationWorkflowArgs, AutomationWorkflowState } from "./automationWorkflow";
+export type AutomationWorkflow = import("./automationWorkflow").AutomationWorkflow;
+export const AutomationWorkflow: typeof import("./automationWorkflow").AutomationWorkflow = null as any;
+utilities.lazyLoad(exports, ["AutomationWorkflow"], () => require("./automationWorkflow"));
+
+export { AutomationWorkflowJiraArgs, AutomationWorkflowJiraState } from "./automationWorkflowJira";
+export type AutomationWorkflowJira = import("./automationWorkflowJira").AutomationWorkflowJira;
+export const AutomationWorkflowJira: typeof import("./automationWorkflowJira").AutomationWorkflowJira = null as any;
+utilities.lazyLoad(exports, ["AutomationWorkflowJira"], () => require("./automationWorkflowJira"));
+
+export { AutomationWorkflowSlackArgs, AutomationWorkflowSlackState } from "./automationWorkflowSlack";
+export type AutomationWorkflowSlack = import("./automationWorkflowSlack").AutomationWorkflowSlack;
+export const AutomationWorkflowSlack: typeof import("./automationWorkflowSlack").AutomationWorkflowSlack = null as any;
+utilities.lazyLoad(exports, ["AutomationWorkflowSlack"], () => require("./automationWorkflowSlack"));
+
 export { AutotagArgs, AutotagState } from "./autotag";
 export type Autotag = import("./autotag").Autotag;
 export const Autotag: typeof import("./autotag").Autotag = null as any;
 utilities.lazyLoad(exports, ["Autotag"], () => require("./autotag"));
+
+export { AutotagRulesArgs, AutotagRulesState } from "./autotagRules";
+export type AutotagRules = import("./autotagRules").AutotagRules;
+export const AutotagRules: typeof import("./autotagRules").AutotagRules = null as any;
+utilities.lazyLoad(exports, ["AutotagRules"], () => require("./autotagRules"));
 
 export { AutotagV2Args, AutotagV2State } from "./autotagV2";
 export type AutotagV2 = import("./autotagV2").AutotagV2;
@@ -95,10 +180,20 @@ export type AwsCredentials = import("./awsCredentials").AwsCredentials;
 export const AwsCredentials: typeof import("./awsCredentials").AwsCredentials = null as any;
 utilities.lazyLoad(exports, ["AwsCredentials"], () => require("./awsCredentials"));
 
+export { AwsServiceArgs, AwsServiceState } from "./awsService";
+export type AwsService = import("./awsService").AwsService;
+export const AwsService: typeof import("./awsService").AwsService = null as any;
+utilities.lazyLoad(exports, ["AwsService"], () => require("./awsService"));
+
 export { AzureCredentialsArgs, AzureCredentialsState } from "./azureCredentials";
 export type AzureCredentials = import("./azureCredentials").AzureCredentials;
 export const AzureCredentials: typeof import("./azureCredentials").AzureCredentials = null as any;
 utilities.lazyLoad(exports, ["AzureCredentials"], () => require("./azureCredentials"));
+
+export { AzureServiceArgs, AzureServiceState } from "./azureService";
+export type AzureService = import("./azureService").AzureService;
+export const AzureService: typeof import("./azureService").AzureService = null as any;
+utilities.lazyLoad(exports, ["AzureService"], () => require("./azureService"));
 
 export { BrowserMonitorArgs, BrowserMonitorState } from "./browserMonitor";
 export type BrowserMonitor = import("./browserMonitor").BrowserMonitor;
@@ -114,6 +209,11 @@ export { BrowserMonitorPerformanceArgs, BrowserMonitorPerformanceState } from ".
 export type BrowserMonitorPerformance = import("./browserMonitorPerformance").BrowserMonitorPerformance;
 export const BrowserMonitorPerformance: typeof import("./browserMonitorPerformance").BrowserMonitorPerformance = null as any;
 utilities.lazyLoad(exports, ["BrowserMonitorPerformance"], () => require("./browserMonitorPerformance"));
+
+export { BuiltinProcessMonitoringArgs, BuiltinProcessMonitoringState } from "./builtinProcessMonitoring";
+export type BuiltinProcessMonitoring = import("./builtinProcessMonitoring").BuiltinProcessMonitoring;
+export const BuiltinProcessMonitoring: typeof import("./builtinProcessMonitoring").BuiltinProcessMonitoring = null as any;
+utilities.lazyLoad(exports, ["BuiltinProcessMonitoring"], () => require("./builtinProcessMonitoring"));
 
 export { BusinessEventsBucketsArgs, BusinessEventsBucketsState } from "./businessEventsBuckets";
 export type BusinessEventsBuckets = import("./businessEventsBuckets").BusinessEventsBuckets;
@@ -135,10 +235,30 @@ export type BusinessEventsProcessing = import("./businessEventsProcessing").Busi
 export const BusinessEventsProcessing: typeof import("./businessEventsProcessing").BusinessEventsProcessing = null as any;
 utilities.lazyLoad(exports, ["BusinessEventsProcessing"], () => require("./businessEventsProcessing"));
 
+export { BusinessEventsSecurityContextArgs, BusinessEventsSecurityContextState } from "./businessEventsSecurityContext";
+export type BusinessEventsSecurityContext = import("./businessEventsSecurityContext").BusinessEventsSecurityContext;
+export const BusinessEventsSecurityContext: typeof import("./businessEventsSecurityContext").BusinessEventsSecurityContext = null as any;
+utilities.lazyLoad(exports, ["BusinessEventsSecurityContext"], () => require("./businessEventsSecurityContext"));
+
+export { CalculatedMobileMetricArgs, CalculatedMobileMetricState } from "./calculatedMobileMetric";
+export type CalculatedMobileMetric = import("./calculatedMobileMetric").CalculatedMobileMetric;
+export const CalculatedMobileMetric: typeof import("./calculatedMobileMetric").CalculatedMobileMetric = null as any;
+utilities.lazyLoad(exports, ["CalculatedMobileMetric"], () => require("./calculatedMobileMetric"));
+
 export { CalculatedServiceMetricArgs, CalculatedServiceMetricState } from "./calculatedServiceMetric";
 export type CalculatedServiceMetric = import("./calculatedServiceMetric").CalculatedServiceMetric;
 export const CalculatedServiceMetric: typeof import("./calculatedServiceMetric").CalculatedServiceMetric = null as any;
 utilities.lazyLoad(exports, ["CalculatedServiceMetric"], () => require("./calculatedServiceMetric"));
+
+export { CalculatedSyntheticMetricArgs, CalculatedSyntheticMetricState } from "./calculatedSyntheticMetric";
+export type CalculatedSyntheticMetric = import("./calculatedSyntheticMetric").CalculatedSyntheticMetric;
+export const CalculatedSyntheticMetric: typeof import("./calculatedSyntheticMetric").CalculatedSyntheticMetric = null as any;
+utilities.lazyLoad(exports, ["CalculatedSyntheticMetric"], () => require("./calculatedSyntheticMetric"));
+
+export { CalculatedWebMetricArgs, CalculatedWebMetricState } from "./calculatedWebMetric";
+export type CalculatedWebMetric = import("./calculatedWebMetric").CalculatedWebMetric;
+export const CalculatedWebMetric: typeof import("./calculatedWebMetric").CalculatedWebMetric = null as any;
+utilities.lazyLoad(exports, ["CalculatedWebMetric"], () => require("./calculatedWebMetric"));
 
 export { CloudFoundryArgs, CloudFoundryState } from "./cloudFoundry";
 export type CloudFoundry = import("./cloudFoundry").CloudFoundry;
@@ -165,6 +285,11 @@ export type ContainerBuiltinRule = import("./containerBuiltinRule").ContainerBui
 export const ContainerBuiltinRule: typeof import("./containerBuiltinRule").ContainerBuiltinRule = null as any;
 utilities.lazyLoad(exports, ["ContainerBuiltinRule"], () => require("./containerBuiltinRule"));
 
+export { ContainerRegistryArgs, ContainerRegistryState } from "./containerRegistry";
+export type ContainerRegistry = import("./containerRegistry").ContainerRegistry;
+export const ContainerRegistry: typeof import("./containerRegistry").ContainerRegistry = null as any;
+utilities.lazyLoad(exports, ["ContainerRegistry"], () => require("./containerRegistry"));
+
 export { ContainerRuleArgs, ContainerRuleState } from "./containerRule";
 export type ContainerRule = import("./containerRule").ContainerRule;
 export const ContainerRule: typeof import("./containerRule").ContainerRule = null as any;
@@ -174,6 +299,11 @@ export { ContainerTechnologyArgs, ContainerTechnologyState } from "./containerTe
 export type ContainerTechnology = import("./containerTechnology").ContainerTechnology;
 export const ContainerTechnology: typeof import("./containerTechnology").ContainerTechnology = null as any;
 utilities.lazyLoad(exports, ["ContainerTechnology"], () => require("./containerTechnology"));
+
+export { CrashdumpAnalyticsArgs, CrashdumpAnalyticsState } from "./crashdumpAnalytics";
+export type CrashdumpAnalytics = import("./crashdumpAnalytics").CrashdumpAnalytics;
+export const CrashdumpAnalytics: typeof import("./crashdumpAnalytics").CrashdumpAnalytics = null as any;
+utilities.lazyLoad(exports, ["CrashdumpAnalytics"], () => require("./crashdumpAnalytics"));
 
 export { CredentialsArgs, CredentialsState } from "./credentials";
 export type Credentials = import("./credentials").Credentials;
@@ -199,6 +329,11 @@ export { CustomAppEnablementArgs, CustomAppEnablementState } from "./customAppEn
 export type CustomAppEnablement = import("./customAppEnablement").CustomAppEnablement;
 export const CustomAppEnablement: typeof import("./customAppEnablement").CustomAppEnablement = null as any;
 utilities.lazyLoad(exports, ["CustomAppEnablement"], () => require("./customAppEnablement"));
+
+export { CustomDeviceArgs, CustomDeviceState } from "./customDevice";
+export type CustomDevice = import("./customDevice").CustomDevice;
+export const CustomDevice: typeof import("./customDevice").CustomDevice = null as any;
+utilities.lazyLoad(exports, ["CustomDevice"], () => require("./customDevice"));
 
 export { CustomServiceArgs, CustomServiceState } from "./customService";
 export type CustomService = import("./customService").CustomService;
@@ -255,6 +390,16 @@ export type DatabaseAnomaliesV2 = import("./databaseAnomaliesV2").DatabaseAnomal
 export const DatabaseAnomaliesV2: typeof import("./databaseAnomaliesV2").DatabaseAnomaliesV2 = null as any;
 utilities.lazyLoad(exports, ["DatabaseAnomaliesV2"], () => require("./databaseAnomaliesV2"));
 
+export { DavisAnomalyDetectorsArgs, DavisAnomalyDetectorsState } from "./davisAnomalyDetectors";
+export type DavisAnomalyDetectors = import("./davisAnomalyDetectors").DavisAnomalyDetectors;
+export const DavisAnomalyDetectors: typeof import("./davisAnomalyDetectors").DavisAnomalyDetectors = null as any;
+utilities.lazyLoad(exports, ["DavisAnomalyDetectors"], () => require("./davisAnomalyDetectors"));
+
+export { DbAppFeatureFlagsArgs, DbAppFeatureFlagsState } from "./dbAppFeatureFlags";
+export type DbAppFeatureFlags = import("./dbAppFeatureFlags").DbAppFeatureFlags;
+export const DbAppFeatureFlags: typeof import("./dbAppFeatureFlags").DbAppFeatureFlags = null as any;
+utilities.lazyLoad(exports, ["DbAppFeatureFlags"], () => require("./dbAppFeatureFlags"));
+
 export { DduPoolArgs, DduPoolState } from "./dduPool";
 export type DduPool = import("./dduPool").DduPool;
 export const DduPool: typeof import("./dduPool").DduPool = null as any;
@@ -264,6 +409,11 @@ export { DeclarativeGroupingArgs, DeclarativeGroupingState } from "./declarative
 export type DeclarativeGrouping = import("./declarativeGrouping").DeclarativeGrouping;
 export const DeclarativeGrouping: typeof import("./declarativeGrouping").DeclarativeGrouping = null as any;
 utilities.lazyLoad(exports, ["DeclarativeGrouping"], () => require("./declarativeGrouping"));
+
+export { DirectSharesArgs, DirectSharesState } from "./directShares";
+export type DirectShares = import("./directShares").DirectShares;
+export const DirectShares: typeof import("./directShares").DirectShares = null as any;
+utilities.lazyLoad(exports, ["DirectShares"], () => require("./directShares"));
 
 export { DiskAnalyticsArgs, DiskAnalyticsState } from "./diskAnalytics";
 export type DiskAnalytics = import("./diskAnalytics").DiskAnalytics;
@@ -294,6 +444,16 @@ export { DiskSpecificAnomaliesV2Args, DiskSpecificAnomaliesV2State } from "./dis
 export type DiskSpecificAnomaliesV2 = import("./diskSpecificAnomaliesV2").DiskSpecificAnomaliesV2;
 export const DiskSpecificAnomaliesV2: typeof import("./diskSpecificAnomaliesV2").DiskSpecificAnomaliesV2 = null as any;
 utilities.lazyLoad(exports, ["DiskSpecificAnomaliesV2"], () => require("./diskSpecificAnomaliesV2"));
+
+export { DocumentArgs, DocumentState } from "./document";
+export type Document = import("./document").Document;
+export const Document: typeof import("./document").Document = null as any;
+utilities.lazyLoad(exports, ["Document"], () => require("./document"));
+
+export { EbpfServiceDiscoveryArgs, EbpfServiceDiscoveryState } from "./ebpfServiceDiscovery";
+export type EbpfServiceDiscovery = import("./ebpfServiceDiscovery").EbpfServiceDiscovery;
+export const EbpfServiceDiscovery: typeof import("./ebpfServiceDiscovery").EbpfServiceDiscovery = null as any;
+utilities.lazyLoad(exports, ["EbpfServiceDiscovery"], () => require("./ebpfServiceDiscovery"));
 
 export { EmailNotificationArgs, EmailNotificationState } from "./emailNotification";
 export type EmailNotification = import("./emailNotification").EmailNotification;
@@ -340,6 +500,11 @@ export type GenericRelationships = import("./genericRelationships").GenericRelat
 export const GenericRelationships: typeof import("./genericRelationships").GenericRelationships = null as any;
 utilities.lazyLoad(exports, ["GenericRelationships"], () => require("./genericRelationships"));
 
+export { GenericSettingArgs, GenericSettingState } from "./genericSetting";
+export type GenericSetting = import("./genericSetting").GenericSetting;
+export const GenericSetting: typeof import("./genericSetting").GenericSetting = null as any;
+utilities.lazyLoad(exports, ["GenericSetting"], () => require("./genericSetting"));
+
 export { GenericTypesArgs, GenericTypesState } from "./genericTypes";
 export type GenericTypes = import("./genericTypes").GenericTypes;
 export const GenericTypes: typeof import("./genericTypes").GenericTypes = null as any;
@@ -365,10 +530,35 @@ export const getApplication: typeof import("./getApplication").getApplication = 
 export const getApplicationOutput: typeof import("./getApplication").getApplicationOutput = null as any;
 utilities.lazyLoad(exports, ["getApplication","getApplicationOutput"], () => require("./getApplication"));
 
+export { GetAttackAlertingArgs, GetAttackAlertingResult, GetAttackAlertingOutputArgs } from "./getAttackAlerting";
+export const getAttackAlerting: typeof import("./getAttackAlerting").getAttackAlerting = null as any;
+export const getAttackAlertingOutput: typeof import("./getAttackAlerting").getAttackAlertingOutput = null as any;
+utilities.lazyLoad(exports, ["getAttackAlerting","getAttackAlertingOutput"], () => require("./getAttackAlerting"));
+
+export { GetAwsCredentialsArgs, GetAwsCredentialsResult, GetAwsCredentialsOutputArgs } from "./getAwsCredentials";
+export const getAwsCredentials: typeof import("./getAwsCredentials").getAwsCredentials = null as any;
+export const getAwsCredentialsOutput: typeof import("./getAwsCredentials").getAwsCredentialsOutput = null as any;
+utilities.lazyLoad(exports, ["getAwsCredentials","getAwsCredentialsOutput"], () => require("./getAwsCredentials"));
+
 export { GetAwsIamExternalResult } from "./getAwsIamExternal";
 export const getAwsIamExternal: typeof import("./getAwsIamExternal").getAwsIamExternal = null as any;
 export const getAwsIamExternalOutput: typeof import("./getAwsIamExternal").getAwsIamExternalOutput = null as any;
 utilities.lazyLoad(exports, ["getAwsIamExternal","getAwsIamExternalOutput"], () => require("./getAwsIamExternal"));
+
+export { GetAwsSupportedServicesArgs, GetAwsSupportedServicesResult, GetAwsSupportedServicesOutputArgs } from "./getAwsSupportedServices";
+export const getAwsSupportedServices: typeof import("./getAwsSupportedServices").getAwsSupportedServices = null as any;
+export const getAwsSupportedServicesOutput: typeof import("./getAwsSupportedServices").getAwsSupportedServicesOutput = null as any;
+utilities.lazyLoad(exports, ["getAwsSupportedServices","getAwsSupportedServicesOutput"], () => require("./getAwsSupportedServices"));
+
+export { GetAzureCredentialsArgs, GetAzureCredentialsResult, GetAzureCredentialsOutputArgs } from "./getAzureCredentials";
+export const getAzureCredentials: typeof import("./getAzureCredentials").getAzureCredentials = null as any;
+export const getAzureCredentialsOutput: typeof import("./getAzureCredentials").getAzureCredentialsOutput = null as any;
+utilities.lazyLoad(exports, ["getAzureCredentials","getAzureCredentialsOutput"], () => require("./getAzureCredentials"));
+
+export { GetAzureSupportedServicesArgs, GetAzureSupportedServicesResult, GetAzureSupportedServicesOutputArgs } from "./getAzureSupportedServices";
+export const getAzureSupportedServices: typeof import("./getAzureSupportedServices").getAzureSupportedServices = null as any;
+export const getAzureSupportedServicesOutput: typeof import("./getAzureSupportedServices").getAzureSupportedServicesOutput = null as any;
+utilities.lazyLoad(exports, ["getAzureSupportedServices","getAzureSupportedServicesOutput"], () => require("./getAzureSupportedServices"));
 
 export { GetCalculatedServiceMetricArgs, GetCalculatedServiceMetricResult, GetCalculatedServiceMetricOutputArgs } from "./getCalculatedServiceMetric";
 export const getCalculatedServiceMetric: typeof import("./getCalculatedServiceMetric").getCalculatedServiceMetric = null as any;
@@ -385,6 +575,11 @@ export const getDashboard: typeof import("./getDashboard").getDashboard = null a
 export const getDashboardOutput: typeof import("./getDashboard").getDashboardOutput = null as any;
 utilities.lazyLoad(exports, ["getDashboard","getDashboardOutput"], () => require("./getDashboard"));
 
+export { GetDocumentsArgs, GetDocumentsResult, GetDocumentsOutputArgs } from "./getDocuments";
+export const getDocuments: typeof import("./getDocuments").getDocuments = null as any;
+export const getDocumentsOutput: typeof import("./getDocuments").getDocumentsOutput = null as any;
+utilities.lazyLoad(exports, ["getDocuments","getDocumentsOutput"], () => require("./getDocuments"));
+
 export { GetEntitiesArgs, GetEntitiesResult, GetEntitiesOutputArgs } from "./getEntities";
 export const getEntities: typeof import("./getEntities").getEntities = null as any;
 export const getEntitiesOutput: typeof import("./getEntities").getEntitiesOutput = null as any;
@@ -395,25 +590,60 @@ export const getEntity: typeof import("./getEntity").getEntity = null as any;
 export const getEntityOutput: typeof import("./getEntity").getEntityOutput = null as any;
 utilities.lazyLoad(exports, ["getEntity","getEntityOutput"], () => require("./getEntity"));
 
+export { GetFailureDetectionParametersArgs, GetFailureDetectionParametersResult, GetFailureDetectionParametersOutputArgs } from "./getFailureDetectionParameters";
+export const getFailureDetectionParameters: typeof import("./getFailureDetectionParameters").getFailureDetectionParameters = null as any;
+export const getFailureDetectionParametersOutput: typeof import("./getFailureDetectionParameters").getFailureDetectionParametersOutput = null as any;
+utilities.lazyLoad(exports, ["getFailureDetectionParameters","getFailureDetectionParametersOutput"], () => require("./getFailureDetectionParameters"));
+
 export { GetHostArgs, GetHostResult, GetHostOutputArgs } from "./getHost";
 export const getHost: typeof import("./getHost").getHost = null as any;
 export const getHostOutput: typeof import("./getHost").getHostOutput = null as any;
 utilities.lazyLoad(exports, ["getHost","getHostOutput"], () => require("./getHost"));
+
+export { GetHubItemsArgs, GetHubItemsResult, GetHubItemsOutputArgs } from "./getHubItems";
+export const getHubItems: typeof import("./getHubItems").getHubItems = null as any;
+export const getHubItemsOutput: typeof import("./getHubItems").getHubItemsOutput = null as any;
+utilities.lazyLoad(exports, ["getHubItems","getHubItemsOutput"], () => require("./getHubItems"));
 
 export { GetIamGroupArgs, GetIamGroupResult, GetIamGroupOutputArgs } from "./getIamGroup";
 export const getIamGroup: typeof import("./getIamGroup").getIamGroup = null as any;
 export const getIamGroupOutput: typeof import("./getIamGroup").getIamGroupOutput = null as any;
 utilities.lazyLoad(exports, ["getIamGroup","getIamGroupOutput"], () => require("./getIamGroup"));
 
+export { GetIamGroupsResult } from "./getIamGroups";
+export const getIamGroups: typeof import("./getIamGroups").getIamGroups = null as any;
+export const getIamGroupsOutput: typeof import("./getIamGroups").getIamGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getIamGroups","getIamGroupsOutput"], () => require("./getIamGroups"));
+
+export { GetIamPoliciesArgs, GetIamPoliciesResult, GetIamPoliciesOutputArgs } from "./getIamPolicies";
+export const getIamPolicies: typeof import("./getIamPolicies").getIamPolicies = null as any;
+export const getIamPoliciesOutput: typeof import("./getIamPolicies").getIamPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getIamPolicies","getIamPoliciesOutput"], () => require("./getIamPolicies"));
+
+export { GetIamPolicyArgs, GetIamPolicyResult, GetIamPolicyOutputArgs } from "./getIamPolicy";
+export const getIamPolicy: typeof import("./getIamPolicy").getIamPolicy = null as any;
+export const getIamPolicyOutput: typeof import("./getIamPolicy").getIamPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getIamPolicy","getIamPolicyOutput"], () => require("./getIamPolicy"));
+
 export { GetIamUserArgs, GetIamUserResult, GetIamUserOutputArgs } from "./getIamUser";
 export const getIamUser: typeof import("./getIamUser").getIamUser = null as any;
 export const getIamUserOutput: typeof import("./getIamUser").getIamUserOutput = null as any;
 utilities.lazyLoad(exports, ["getIamUser","getIamUserOutput"], () => require("./getIamUser"));
 
+export { GetLambdaAgentVersionArgs, GetLambdaAgentVersionResult, GetLambdaAgentVersionOutputArgs } from "./getLambdaAgentVersion";
+export const getLambdaAgentVersion: typeof import("./getLambdaAgentVersion").getLambdaAgentVersion = null as any;
+export const getLambdaAgentVersionOutput: typeof import("./getLambdaAgentVersion").getLambdaAgentVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getLambdaAgentVersion","getLambdaAgentVersionOutput"], () => require("./getLambdaAgentVersion"));
+
 export { GetManagementZoneArgs, GetManagementZoneResult, GetManagementZoneOutputArgs } from "./getManagementZone";
 export const getManagementZone: typeof import("./getManagementZone").getManagementZone = null as any;
 export const getManagementZoneOutput: typeof import("./getManagementZone").getManagementZoneOutput = null as any;
 utilities.lazyLoad(exports, ["getManagementZone","getManagementZoneOutput"], () => require("./getManagementZone"));
+
+export { GetManagementZoneV2Args, GetManagementZoneV2Result, GetManagementZoneV2OutputArgs } from "./getManagementZoneV2";
+export const getManagementZoneV2: typeof import("./getManagementZoneV2").getManagementZoneV2 = null as any;
+export const getManagementZoneV2Output: typeof import("./getManagementZoneV2").getManagementZoneV2Output = null as any;
+utilities.lazyLoad(exports, ["getManagementZoneV2","getManagementZoneV2Output"], () => require("./getManagementZoneV2"));
 
 export { GetManagementZonesResult } from "./getManagementZones";
 export const getManagementZones: typeof import("./getManagementZones").getManagementZones = null as any;
@@ -434,6 +664,11 @@ export { GetProcessGroupArgs, GetProcessGroupResult, GetProcessGroupOutputArgs }
 export const getProcessGroup: typeof import("./getProcessGroup").getProcessGroup = null as any;
 export const getProcessGroupOutput: typeof import("./getProcessGroup").getProcessGroupOutput = null as any;
 utilities.lazyLoad(exports, ["getProcessGroup","getProcessGroupOutput"], () => require("./getProcessGroup"));
+
+export { GetRemoteEnvironmentsResult } from "./getRemoteEnvironments";
+export const getRemoteEnvironments: typeof import("./getRemoteEnvironments").getRemoteEnvironments = null as any;
+export const getRemoteEnvironmentsOutput: typeof import("./getRemoteEnvironments").getRemoteEnvironmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getRemoteEnvironments","getRemoteEnvironmentsOutput"], () => require("./getRemoteEnvironments"));
 
 export { GetRequestAttributeArgs, GetRequestAttributeResult, GetRequestAttributeOutputArgs } from "./getRequestAttribute";
 export const getRequestAttribute: typeof import("./getRequestAttribute").getRequestAttribute = null as any;
@@ -465,6 +700,41 @@ export const getSyntheticLocations: typeof import("./getSyntheticLocations").get
 export const getSyntheticLocationsOutput: typeof import("./getSyntheticLocations").getSyntheticLocationsOutput = null as any;
 utilities.lazyLoad(exports, ["getSyntheticLocations","getSyntheticLocationsOutput"], () => require("./getSyntheticLocations"));
 
+export { GetSyntheticNodesResult } from "./getSyntheticNodes";
+export const getSyntheticNodes: typeof import("./getSyntheticNodes").getSyntheticNodes = null as any;
+export const getSyntheticNodesOutput: typeof import("./getSyntheticNodes").getSyntheticNodesOutput = null as any;
+utilities.lazyLoad(exports, ["getSyntheticNodes","getSyntheticNodesOutput"], () => require("./getSyntheticNodes"));
+
+export { GetTenantResult } from "./getTenant";
+export const getTenant: typeof import("./getTenant").getTenant = null as any;
+export const getTenantOutput: typeof import("./getTenant").getTenantOutput = null as any;
+utilities.lazyLoad(exports, ["getTenant","getTenantOutput"], () => require("./getTenant"));
+
+export { GetUpdateWindowsArgs, GetUpdateWindowsResult, GetUpdateWindowsOutputArgs } from "./getUpdateWindows";
+export const getUpdateWindows: typeof import("./getUpdateWindows").getUpdateWindows = null as any;
+export const getUpdateWindowsOutput: typeof import("./getUpdateWindows").getUpdateWindowsOutput = null as any;
+utilities.lazyLoad(exports, ["getUpdateWindows","getUpdateWindowsOutput"], () => require("./getUpdateWindows"));
+
+export { GetVulnerabilityAlertingArgs, GetVulnerabilityAlertingResult, GetVulnerabilityAlertingOutputArgs } from "./getVulnerabilityAlerting";
+export const getVulnerabilityAlerting: typeof import("./getVulnerabilityAlerting").getVulnerabilityAlerting = null as any;
+export const getVulnerabilityAlertingOutput: typeof import("./getVulnerabilityAlerting").getVulnerabilityAlertingOutput = null as any;
+utilities.lazyLoad(exports, ["getVulnerabilityAlerting","getVulnerabilityAlertingOutput"], () => require("./getVulnerabilityAlerting"));
+
+export { GrailMetricsAllowallArgs, GrailMetricsAllowallState } from "./grailMetricsAllowall";
+export type GrailMetricsAllowall = import("./grailMetricsAllowall").GrailMetricsAllowall;
+export const GrailMetricsAllowall: typeof import("./grailMetricsAllowall").GrailMetricsAllowall = null as any;
+utilities.lazyLoad(exports, ["GrailMetricsAllowall"], () => require("./grailMetricsAllowall"));
+
+export { GrailMetricsAllowlistArgs, GrailMetricsAllowlistState } from "./grailMetricsAllowlist";
+export type GrailMetricsAllowlist = import("./grailMetricsAllowlist").GrailMetricsAllowlist;
+export const GrailMetricsAllowlist: typeof import("./grailMetricsAllowlist").GrailMetricsAllowlist = null as any;
+utilities.lazyLoad(exports, ["GrailMetricsAllowlist"], () => require("./grailMetricsAllowlist"));
+
+export { GrailSecurityContextArgs, GrailSecurityContextState } from "./grailSecurityContext";
+export type GrailSecurityContext = import("./grailSecurityContext").GrailSecurityContext;
+export const GrailSecurityContext: typeof import("./grailSecurityContext").GrailSecurityContext = null as any;
+utilities.lazyLoad(exports, ["GrailSecurityContext"], () => require("./grailSecurityContext"));
+
 export { HostAnomaliesArgs, HostAnomaliesState } from "./hostAnomalies";
 export type HostAnomalies = import("./hostAnomalies").HostAnomalies;
 export const HostAnomalies: typeof import("./hostAnomalies").HostAnomalies = null as any;
@@ -479,6 +749,16 @@ export { HostMonitoringArgs, HostMonitoringState } from "./hostMonitoring";
 export type HostMonitoring = import("./hostMonitoring").HostMonitoring;
 export const HostMonitoring: typeof import("./hostMonitoring").HostMonitoring = null as any;
 utilities.lazyLoad(exports, ["HostMonitoring"], () => require("./hostMonitoring"));
+
+export { HostMonitoringAdvancedArgs, HostMonitoringAdvancedState } from "./hostMonitoringAdvanced";
+export type HostMonitoringAdvanced = import("./hostMonitoringAdvanced").HostMonitoringAdvanced;
+export const HostMonitoringAdvanced: typeof import("./hostMonitoringAdvanced").HostMonitoringAdvanced = null as any;
+utilities.lazyLoad(exports, ["HostMonitoringAdvanced"], () => require("./hostMonitoringAdvanced"));
+
+export { HostMonitoringModeArgs, HostMonitoringModeState } from "./hostMonitoringMode";
+export type HostMonitoringMode = import("./hostMonitoringMode").HostMonitoringMode;
+export const HostMonitoringMode: typeof import("./hostMonitoringMode").HostMonitoringMode = null as any;
+utilities.lazyLoad(exports, ["HostMonitoringMode"], () => require("./hostMonitoringMode"));
 
 export { HostNamingArgs, HostNamingState } from "./hostNaming";
 export type HostNaming = import("./hostNaming").HostNaming;
@@ -510,6 +790,26 @@ export type HttpMonitorPerformance = import("./httpMonitorPerformance").HttpMoni
 export const HttpMonitorPerformance: typeof import("./httpMonitorPerformance").HttpMonitorPerformance = null as any;
 utilities.lazyLoad(exports, ["HttpMonitorPerformance"], () => require("./httpMonitorPerformance"));
 
+export { HttpMonitorScriptArgs, HttpMonitorScriptState } from "./httpMonitorScript";
+export type HttpMonitorScript = import("./httpMonitorScript").HttpMonitorScript;
+export const HttpMonitorScript: typeof import("./httpMonitorScript").HttpMonitorScript = null as any;
+utilities.lazyLoad(exports, ["HttpMonitorScript"], () => require("./httpMonitorScript"));
+
+export { HubExtensionActiveVersionArgs, HubExtensionActiveVersionState } from "./hubExtensionActiveVersion";
+export type HubExtensionActiveVersion = import("./hubExtensionActiveVersion").HubExtensionActiveVersion;
+export const HubExtensionActiveVersion: typeof import("./hubExtensionActiveVersion").HubExtensionActiveVersion = null as any;
+utilities.lazyLoad(exports, ["HubExtensionActiveVersion"], () => require("./hubExtensionActiveVersion"));
+
+export { HubExtensionConfigArgs, HubExtensionConfigState } from "./hubExtensionConfig";
+export type HubExtensionConfig = import("./hubExtensionConfig").HubExtensionConfig;
+export const HubExtensionConfig: typeof import("./hubExtensionConfig").HubExtensionConfig = null as any;
+utilities.lazyLoad(exports, ["HubExtensionConfig"], () => require("./hubExtensionConfig"));
+
+export { HubSubscriptionsArgs, HubSubscriptionsState } from "./hubSubscriptions";
+export type HubSubscriptions = import("./hubSubscriptions").HubSubscriptions;
+export const HubSubscriptions: typeof import("./hubSubscriptions").HubSubscriptions = null as any;
+utilities.lazyLoad(exports, ["HubSubscriptions"], () => require("./hubSubscriptions"));
+
 export { IamGroupArgs, IamGroupState } from "./iamGroup";
 export type IamGroup = import("./iamGroup").IamGroup;
 export const IamGroup: typeof import("./iamGroup").IamGroup = null as any;
@@ -530,6 +830,11 @@ export type IamPolicyBindings = import("./iamPolicyBindings").IamPolicyBindings;
 export const IamPolicyBindings: typeof import("./iamPolicyBindings").IamPolicyBindings = null as any;
 utilities.lazyLoad(exports, ["IamPolicyBindings"], () => require("./iamPolicyBindings"));
 
+export { IamPolicyBindingsV2Args, IamPolicyBindingsV2State } from "./iamPolicyBindingsV2";
+export type IamPolicyBindingsV2 = import("./iamPolicyBindingsV2").IamPolicyBindingsV2;
+export const IamPolicyBindingsV2: typeof import("./iamPolicyBindingsV2").IamPolicyBindingsV2 = null as any;
+utilities.lazyLoad(exports, ["IamPolicyBindingsV2"], () => require("./iamPolicyBindingsV2"));
+
 export { IamUserArgs, IamUserState } from "./iamUser";
 export type IamUser = import("./iamUser").IamUser;
 export const IamUser: typeof import("./iamUser").IamUser = null as any;
@@ -544,6 +849,16 @@ export { ImsBridgesArgs, ImsBridgesState } from "./imsBridges";
 export type ImsBridges = import("./imsBridges").ImsBridges;
 export const ImsBridges: typeof import("./imsBridges").ImsBridges = null as any;
 utilities.lazyLoad(exports, ["ImsBridges"], () => require("./imsBridges"));
+
+export { InfraopsAppFeatureFlagsArgs, InfraopsAppFeatureFlagsState } from "./infraopsAppFeatureFlags";
+export type InfraopsAppFeatureFlags = import("./infraopsAppFeatureFlags").InfraopsAppFeatureFlags;
+export const InfraopsAppFeatureFlags: typeof import("./infraopsAppFeatureFlags").InfraopsAppFeatureFlags = null as any;
+utilities.lazyLoad(exports, ["InfraopsAppFeatureFlags"], () => require("./infraopsAppFeatureFlags"));
+
+export { IpAddressMaskingArgs, IpAddressMaskingState } from "./ipAddressMasking";
+export type IpAddressMasking = import("./ipAddressMasking").IpAddressMasking;
+export const IpAddressMasking: typeof import("./ipAddressMasking").IpAddressMasking = null as any;
+utilities.lazyLoad(exports, ["IpAddressMasking"], () => require("./ipAddressMasking"));
 
 export { IssueTrackingArgs, IssueTrackingState } from "./issueTracking";
 export type IssueTracking = import("./issueTracking").IssueTracking;
@@ -560,6 +875,11 @@ export type JsonDashboard = import("./jsonDashboard").JsonDashboard;
 export const JsonDashboard: typeof import("./jsonDashboard").JsonDashboard = null as any;
 utilities.lazyLoad(exports, ["JsonDashboard"], () => require("./jsonDashboard"));
 
+export { JsonDashboardBaseArgs, JsonDashboardBaseState } from "./jsonDashboardBase";
+export type JsonDashboardBase = import("./jsonDashboardBase").JsonDashboardBase;
+export const JsonDashboardBase: typeof import("./jsonDashboardBase").JsonDashboardBase = null as any;
+utilities.lazyLoad(exports, ["JsonDashboardBase"], () => require("./jsonDashboardBase"));
+
 export { K8sClusterAnomaliesArgs, K8sClusterAnomaliesState } from "./k8sClusterAnomalies";
 export type K8sClusterAnomalies = import("./k8sClusterAnomalies").K8sClusterAnomalies;
 export const K8sClusterAnomalies: typeof import("./k8sClusterAnomalies").K8sClusterAnomalies = null as any;
@@ -569,6 +889,11 @@ export { K8sCredentialsArgs, K8sCredentialsState } from "./k8sCredentials";
 export type K8sCredentials = import("./k8sCredentials").K8sCredentials;
 export const K8sCredentials: typeof import("./k8sCredentials").K8sCredentials = null as any;
 utilities.lazyLoad(exports, ["K8sCredentials"], () => require("./k8sCredentials"));
+
+export { K8sMonitoringArgs, K8sMonitoringState } from "./k8sMonitoring";
+export type K8sMonitoring = import("./k8sMonitoring").K8sMonitoring;
+export const K8sMonitoring: typeof import("./k8sMonitoring").K8sMonitoring = null as any;
+utilities.lazyLoad(exports, ["K8sMonitoring"], () => require("./k8sMonitoring"));
 
 export { K8sNamespaceAnomaliesArgs, K8sNamespaceAnomaliesState } from "./k8sNamespaceAnomalies";
 export type K8sNamespaceAnomalies = import("./k8sNamespaceAnomalies").K8sNamespaceAnomalies;
@@ -595,10 +920,25 @@ export type KeyRequests = import("./keyRequests").KeyRequests;
 export const KeyRequests: typeof import("./keyRequests").KeyRequests = null as any;
 utilities.lazyLoad(exports, ["KeyRequests"], () => require("./keyRequests"));
 
+export { KeyUserActionArgs, KeyUserActionState } from "./keyUserAction";
+export type KeyUserAction = import("./keyUserAction").KeyUserAction;
+export const KeyUserAction: typeof import("./keyUserAction").KeyUserAction = null as any;
+utilities.lazyLoad(exports, ["KeyUserAction"], () => require("./keyUserAction"));
+
 export { KubernetesArgs, KubernetesState } from "./kubernetes";
 export type Kubernetes = import("./kubernetes").Kubernetes;
 export const Kubernetes: typeof import("./kubernetes").Kubernetes = null as any;
 utilities.lazyLoad(exports, ["Kubernetes"], () => require("./kubernetes"));
+
+export { KubernetesAppArgs, KubernetesAppState } from "./kubernetesApp";
+export type KubernetesApp = import("./kubernetesApp").KubernetesApp;
+export const KubernetesApp: typeof import("./kubernetesApp").KubernetesApp = null as any;
+utilities.lazyLoad(exports, ["KubernetesApp"], () => require("./kubernetesApp"));
+
+export { LimitOutboundConnectionsArgs, LimitOutboundConnectionsState } from "./limitOutboundConnections";
+export type LimitOutboundConnections = import("./limitOutboundConnections").LimitOutboundConnections;
+export const LimitOutboundConnections: typeof import("./limitOutboundConnections").LimitOutboundConnections = null as any;
+utilities.lazyLoad(exports, ["LimitOutboundConnections"], () => require("./limitOutboundConnections"));
 
 export { LogBucketsArgs, LogBucketsState } from "./logBuckets";
 export type LogBuckets = import("./logBuckets").LogBuckets;
@@ -614,6 +954,11 @@ export { LogCustomSourceArgs, LogCustomSourceState } from "./logCustomSource";
 export type LogCustomSource = import("./logCustomSource").LogCustomSource;
 export const LogCustomSource: typeof import("./logCustomSource").LogCustomSource = null as any;
 utilities.lazyLoad(exports, ["LogCustomSource"], () => require("./logCustomSource"));
+
+export { LogDebugSettingsArgs, LogDebugSettingsState } from "./logDebugSettings";
+export type LogDebugSettings = import("./logDebugSettings").LogDebugSettings;
+export const LogDebugSettings: typeof import("./logDebugSettings").LogDebugSettings = null as any;
+utilities.lazyLoad(exports, ["LogDebugSettings"], () => require("./logDebugSettings"));
 
 export { LogEventsArgs, LogEventsState } from "./logEvents";
 export type LogEvents = import("./logEvents").LogEvents;
@@ -639,6 +984,11 @@ export { LogProcessingArgs, LogProcessingState } from "./logProcessing";
 export type LogProcessing = import("./logProcessing").LogProcessing;
 export const LogProcessing: typeof import("./logProcessing").LogProcessing = null as any;
 utilities.lazyLoad(exports, ["LogProcessing"], () => require("./logProcessing"));
+
+export { LogSecurityContextArgs, LogSecurityContextState } from "./logSecurityContext";
+export type LogSecurityContext = import("./logSecurityContext").LogSecurityContext;
+export const LogSecurityContext: typeof import("./logSecurityContext").LogSecurityContext = null as any;
+utilities.lazyLoad(exports, ["LogSecurityContext"], () => require("./logSecurityContext"));
 
 export { LogSensitiveDataMaskingArgs, LogSensitiveDataMaskingState } from "./logSensitiveDataMasking";
 export type LogSensitiveDataMasking = import("./logSensitiveDataMasking").LogSensitiveDataMasking;
@@ -669,6 +1019,41 @@ export { MaintenanceWindowArgs, MaintenanceWindowState } from "./maintenanceWind
 export type MaintenanceWindow = import("./maintenanceWindow").MaintenanceWindow;
 export const MaintenanceWindow: typeof import("./maintenanceWindow").MaintenanceWindow = null as any;
 utilities.lazyLoad(exports, ["MaintenanceWindow"], () => require("./maintenanceWindow"));
+
+export { ManagedBackupArgs, ManagedBackupState } from "./managedBackup";
+export type ManagedBackup = import("./managedBackup").ManagedBackup;
+export const ManagedBackup: typeof import("./managedBackup").ManagedBackup = null as any;
+utilities.lazyLoad(exports, ["ManagedBackup"], () => require("./managedBackup"));
+
+export { ManagedInternetProxyArgs, ManagedInternetProxyState } from "./managedInternetProxy";
+export type ManagedInternetProxy = import("./managedInternetProxy").ManagedInternetProxy;
+export const ManagedInternetProxy: typeof import("./managedInternetProxy").ManagedInternetProxy = null as any;
+utilities.lazyLoad(exports, ["ManagedInternetProxy"], () => require("./managedInternetProxy"));
+
+export { ManagedNetworkZonesArgs, ManagedNetworkZonesState } from "./managedNetworkZones";
+export type ManagedNetworkZones = import("./managedNetworkZones").ManagedNetworkZones;
+export const ManagedNetworkZones: typeof import("./managedNetworkZones").ManagedNetworkZones = null as any;
+utilities.lazyLoad(exports, ["ManagedNetworkZones"], () => require("./managedNetworkZones"));
+
+export { ManagedPreferencesArgs, ManagedPreferencesState } from "./managedPreferences";
+export type ManagedPreferences = import("./managedPreferences").ManagedPreferences;
+export const ManagedPreferences: typeof import("./managedPreferences").ManagedPreferences = null as any;
+utilities.lazyLoad(exports, ["ManagedPreferences"], () => require("./managedPreferences"));
+
+export { ManagedPublicEndpointsArgs, ManagedPublicEndpointsState } from "./managedPublicEndpoints";
+export type ManagedPublicEndpoints = import("./managedPublicEndpoints").ManagedPublicEndpoints;
+export const ManagedPublicEndpoints: typeof import("./managedPublicEndpoints").ManagedPublicEndpoints = null as any;
+utilities.lazyLoad(exports, ["ManagedPublicEndpoints"], () => require("./managedPublicEndpoints"));
+
+export { ManagedRemoteAccessArgs, ManagedRemoteAccessState } from "./managedRemoteAccess";
+export type ManagedRemoteAccess = import("./managedRemoteAccess").ManagedRemoteAccess;
+export const ManagedRemoteAccess: typeof import("./managedRemoteAccess").ManagedRemoteAccess = null as any;
+utilities.lazyLoad(exports, ["ManagedRemoteAccess"], () => require("./managedRemoteAccess"));
+
+export { ManagedSmtpArgs, ManagedSmtpState } from "./managedSmtp";
+export type ManagedSmtp = import("./managedSmtp").ManagedSmtp;
+export const ManagedSmtp: typeof import("./managedSmtp").ManagedSmtp = null as any;
+utilities.lazyLoad(exports, ["ManagedSmtp"], () => require("./managedSmtp"));
 
 export { ManagementZoneArgs, ManagementZoneState } from "./managementZone";
 export type ManagementZone = import("./managementZone").ManagementZone;
@@ -715,6 +1100,11 @@ export type MobileAppEnablement = import("./mobileAppEnablement").MobileAppEnabl
 export const MobileAppEnablement: typeof import("./mobileAppEnablement").MobileAppEnablement = null as any;
 utilities.lazyLoad(exports, ["MobileAppEnablement"], () => require("./mobileAppEnablement"));
 
+export { MobileAppKeyPerformanceArgs, MobileAppKeyPerformanceState } from "./mobileAppKeyPerformance";
+export type MobileAppKeyPerformance = import("./mobileAppKeyPerformance").MobileAppKeyPerformance;
+export const MobileAppKeyPerformance: typeof import("./mobileAppKeyPerformance").MobileAppKeyPerformance = null as any;
+utilities.lazyLoad(exports, ["MobileAppKeyPerformance"], () => require("./mobileAppKeyPerformance"));
+
 export { MobileAppRequestErrorsArgs, MobileAppRequestErrorsState } from "./mobileAppRequestErrors";
 export type MobileAppRequestErrors = import("./mobileAppRequestErrors").MobileAppRequestErrors;
 export const MobileAppRequestErrors: typeof import("./mobileAppRequestErrors").MobileAppRequestErrors = null as any;
@@ -724,6 +1114,11 @@ export { MobileApplicationArgs, MobileApplicationState } from "./mobileApplicati
 export type MobileApplication = import("./mobileApplication").MobileApplication;
 export const MobileApplication: typeof import("./mobileApplication").MobileApplication = null as any;
 utilities.lazyLoad(exports, ["MobileApplication"], () => require("./mobileApplication"));
+
+export { MobileNotificationsArgs, MobileNotificationsState } from "./mobileNotifications";
+export type MobileNotifications = import("./mobileNotifications").MobileNotifications;
+export const MobileNotifications: typeof import("./mobileNotifications").MobileNotifications = null as any;
+utilities.lazyLoad(exports, ["MobileNotifications"], () => require("./mobileNotifications"));
 
 export { MonitoredTechnologiesApacheArgs, MonitoredTechnologiesApacheState } from "./monitoredTechnologiesApache";
 export type MonitoredTechnologiesApache = import("./monitoredTechnologiesApache").MonitoredTechnologiesApache;
@@ -820,6 +1215,11 @@ export type OneagentFeatures = import("./oneagentFeatures").OneagentFeatures;
 export const OneagentFeatures: typeof import("./oneagentFeatures").OneagentFeatures = null as any;
 utilities.lazyLoad(exports, ["OneagentFeatures"], () => require("./oneagentFeatures"));
 
+export { OneagentSideMaskingArgs, OneagentSideMaskingState } from "./oneagentSideMasking";
+export type OneagentSideMasking = import("./oneagentSideMasking").OneagentSideMasking;
+export const OneagentSideMasking: typeof import("./oneagentSideMasking").OneagentSideMasking = null as any;
+utilities.lazyLoad(exports, ["OneagentSideMasking"], () => require("./oneagentSideMasking"));
+
 export { OneagentUpdatesArgs, OneagentUpdatesState } from "./oneagentUpdates";
 export type OneagentUpdates = import("./oneagentUpdates").OneagentUpdates;
 export const OneagentUpdates: typeof import("./oneagentUpdates").OneagentUpdates = null as any;
@@ -864,6 +1264,11 @@ export { PgAnomaliesArgs, PgAnomaliesState } from "./pgAnomalies";
 export type PgAnomalies = import("./pgAnomalies").PgAnomalies;
 export const PgAnomalies: typeof import("./pgAnomalies").PgAnomalies = null as any;
 utilities.lazyLoad(exports, ["PgAnomalies"], () => require("./pgAnomalies"));
+
+export { PlatformBucketArgs, PlatformBucketState } from "./platformBucket";
+export type PlatformBucket = import("./platformBucket").PlatformBucket;
+export const PlatformBucket: typeof import("./platformBucket").PlatformBucket = null as any;
+utilities.lazyLoad(exports, ["PlatformBucket"], () => require("./platformBucket"));
 
 export { PolicyArgs, PolicyState } from "./policy";
 export type Policy = import("./policy").Policy;
@@ -1055,6 +1460,11 @@ export type SessionReplayWebPrivacy = import("./sessionReplayWebPrivacy").Sessio
 export const SessionReplayWebPrivacy: typeof import("./sessionReplayWebPrivacy").SessionReplayWebPrivacy = null as any;
 utilities.lazyLoad(exports, ["SessionReplayWebPrivacy"], () => require("./sessionReplayWebPrivacy"));
 
+export { SiteReliabilityGuardianArgs, SiteReliabilityGuardianState } from "./siteReliabilityGuardian";
+export type SiteReliabilityGuardian = import("./siteReliabilityGuardian").SiteReliabilityGuardian;
+export const SiteReliabilityGuardian: typeof import("./siteReliabilityGuardian").SiteReliabilityGuardian = null as any;
+utilities.lazyLoad(exports, ["SiteReliabilityGuardian"], () => require("./siteReliabilityGuardian"));
+
 export { SlackNotificationArgs, SlackNotificationState } from "./slackNotification";
 export type SlackNotification = import("./slackNotification").SlackNotification;
 export const SlackNotification: typeof import("./slackNotification").SlackNotification = null as any;
@@ -1095,6 +1505,11 @@ export type SpanEntryPoint = import("./spanEntryPoint").SpanEntryPoint;
 export const SpanEntryPoint: typeof import("./spanEntryPoint").SpanEntryPoint = null as any;
 utilities.lazyLoad(exports, ["SpanEntryPoint"], () => require("./spanEntryPoint"));
 
+export { SpanEventsArgs, SpanEventsState } from "./spanEvents";
+export type SpanEvents = import("./spanEvents").SpanEvents;
+export const SpanEvents: typeof import("./spanEvents").SpanEvents = null as any;
+utilities.lazyLoad(exports, ["SpanEvents"], () => require("./spanEvents"));
+
 export { SyntheticAvailabilityArgs, SyntheticAvailabilityState } from "./syntheticAvailability";
 export type SyntheticAvailability = import("./syntheticAvailability").SyntheticAvailability;
 export const SyntheticAvailability: typeof import("./syntheticAvailability").SyntheticAvailability = null as any;
@@ -1120,10 +1535,25 @@ export type TrelloNotification = import("./trelloNotification").TrelloNotificati
 export const TrelloNotification: typeof import("./trelloNotification").TrelloNotification = null as any;
 utilities.lazyLoad(exports, ["TrelloNotification"], () => require("./trelloNotification"));
 
+export { UnifiedServicesMetricsArgs, UnifiedServicesMetricsState } from "./unifiedServicesMetrics";
+export type UnifiedServicesMetrics = import("./unifiedServicesMetrics").UnifiedServicesMetrics;
+export const UnifiedServicesMetrics: typeof import("./unifiedServicesMetrics").UnifiedServicesMetrics = null as any;
+utilities.lazyLoad(exports, ["UnifiedServicesMetrics"], () => require("./unifiedServicesMetrics"));
+
+export { UnifiedServicesOpentelArgs, UnifiedServicesOpentelState } from "./unifiedServicesOpentel";
+export type UnifiedServicesOpentel = import("./unifiedServicesOpentel").UnifiedServicesOpentel;
+export const UnifiedServicesOpentel: typeof import("./unifiedServicesOpentel").UnifiedServicesOpentel = null as any;
+utilities.lazyLoad(exports, ["UnifiedServicesOpentel"], () => require("./unifiedServicesOpentel"));
+
 export { UpdateWindowsArgs, UpdateWindowsState } from "./updateWindows";
 export type UpdateWindows = import("./updateWindows").UpdateWindows;
 export const UpdateWindows: typeof import("./updateWindows").UpdateWindows = null as any;
 utilities.lazyLoad(exports, ["UpdateWindows"], () => require("./updateWindows"));
+
+export { UrlBasedSamplingArgs, UrlBasedSamplingState } from "./urlBasedSampling";
+export type UrlBasedSampling = import("./urlBasedSampling").UrlBasedSampling;
+export const UrlBasedSampling: typeof import("./urlBasedSampling").UrlBasedSampling = null as any;
+utilities.lazyLoad(exports, ["UrlBasedSampling"], () => require("./urlBasedSampling"));
 
 export { UsabilityAnalyticsArgs, UsabilityAnalyticsState } from "./usabilityAnalytics";
 export type UsabilityAnalytics = import("./usabilityAnalytics").UsabilityAnalytics;
@@ -1165,20 +1595,55 @@ export type VictorOpsNotification = import("./victorOpsNotification").VictorOpsN
 export const VictorOpsNotification: typeof import("./victorOpsNotification").VictorOpsNotification = null as any;
 utilities.lazyLoad(exports, ["VictorOpsNotification"], () => require("./victorOpsNotification"));
 
+export { VmwareArgs, VmwareState } from "./vmware";
+export type Vmware = import("./vmware").Vmware;
+export const Vmware: typeof import("./vmware").Vmware = null as any;
+utilities.lazyLoad(exports, ["Vmware"], () => require("./vmware"));
+
 export { VmwareAnomaliesArgs, VmwareAnomaliesState } from "./vmwareAnomalies";
 export type VmwareAnomalies = import("./vmwareAnomalies").VmwareAnomalies;
 export const VmwareAnomalies: typeof import("./vmwareAnomalies").VmwareAnomalies = null as any;
 utilities.lazyLoad(exports, ["VmwareAnomalies"], () => require("./vmwareAnomalies"));
+
+export { VulnerabilityAlertingArgs, VulnerabilityAlertingState } from "./vulnerabilityAlerting";
+export type VulnerabilityAlerting = import("./vulnerabilityAlerting").VulnerabilityAlerting;
+export const VulnerabilityAlerting: typeof import("./vulnerabilityAlerting").VulnerabilityAlerting = null as any;
+utilities.lazyLoad(exports, ["VulnerabilityAlerting"], () => require("./vulnerabilityAlerting"));
+
+export { VulnerabilityCodeArgs, VulnerabilityCodeState } from "./vulnerabilityCode";
+export type VulnerabilityCode = import("./vulnerabilityCode").VulnerabilityCode;
+export const VulnerabilityCode: typeof import("./vulnerabilityCode").VulnerabilityCode = null as any;
+utilities.lazyLoad(exports, ["VulnerabilityCode"], () => require("./vulnerabilityCode"));
+
+export { VulnerabilitySettingsArgs, VulnerabilitySettingsState } from "./vulnerabilitySettings";
+export type VulnerabilitySettings = import("./vulnerabilitySettings").VulnerabilitySettings;
+export const VulnerabilitySettings: typeof import("./vulnerabilitySettings").VulnerabilitySettings = null as any;
+utilities.lazyLoad(exports, ["VulnerabilitySettings"], () => require("./vulnerabilitySettings"));
+
+export { VulnerabilityThirdPartyArgs, VulnerabilityThirdPartyState } from "./vulnerabilityThirdParty";
+export type VulnerabilityThirdParty = import("./vulnerabilityThirdParty").VulnerabilityThirdParty;
+export const VulnerabilityThirdParty: typeof import("./vulnerabilityThirdParty").VulnerabilityThirdParty = null as any;
+utilities.lazyLoad(exports, ["VulnerabilityThirdParty"], () => require("./vulnerabilityThirdParty"));
 
 export { WebAppAnomaliesArgs, WebAppAnomaliesState } from "./webAppAnomalies";
 export type WebAppAnomalies = import("./webAppAnomalies").WebAppAnomalies;
 export const WebAppAnomalies: typeof import("./webAppAnomalies").WebAppAnomalies = null as any;
 utilities.lazyLoad(exports, ["WebAppAnomalies"], () => require("./webAppAnomalies"));
 
+export { WebAppBeaconEndpointArgs, WebAppBeaconEndpointState } from "./webAppBeaconEndpoint";
+export type WebAppBeaconEndpoint = import("./webAppBeaconEndpoint").WebAppBeaconEndpoint;
+export const WebAppBeaconEndpoint: typeof import("./webAppBeaconEndpoint").WebAppBeaconEndpoint = null as any;
+utilities.lazyLoad(exports, ["WebAppBeaconEndpoint"], () => require("./webAppBeaconEndpoint"));
+
 export { WebAppBeaconOriginsArgs, WebAppBeaconOriginsState } from "./webAppBeaconOrigins";
 export type WebAppBeaconOrigins = import("./webAppBeaconOrigins").WebAppBeaconOrigins;
 export const WebAppBeaconOrigins: typeof import("./webAppBeaconOrigins").WebAppBeaconOrigins = null as any;
 utilities.lazyLoad(exports, ["WebAppBeaconOrigins"], () => require("./webAppBeaconOrigins"));
+
+export { WebAppCustomConfigPropertiesArgs, WebAppCustomConfigPropertiesState } from "./webAppCustomConfigProperties";
+export type WebAppCustomConfigProperties = import("./webAppCustomConfigProperties").WebAppCustomConfigProperties;
+export const WebAppCustomConfigProperties: typeof import("./webAppCustomConfigProperties").WebAppCustomConfigProperties = null as any;
+utilities.lazyLoad(exports, ["WebAppCustomConfigProperties"], () => require("./webAppCustomConfigProperties"));
 
 export { WebAppCustomErrorsArgs, WebAppCustomErrorsState } from "./webAppCustomErrors";
 export type WebAppCustomErrors = import("./webAppCustomErrors").WebAppCustomErrors;
@@ -1190,6 +1655,11 @@ export type WebAppEnablement = import("./webAppEnablement").WebAppEnablement;
 export const WebAppEnablement: typeof import("./webAppEnablement").WebAppEnablement = null as any;
 utilities.lazyLoad(exports, ["WebAppEnablement"], () => require("./webAppEnablement"));
 
+export { WebAppInjectionCookieArgs, WebAppInjectionCookieState } from "./webAppInjectionCookie";
+export type WebAppInjectionCookie = import("./webAppInjectionCookie").WebAppInjectionCookie;
+export const WebAppInjectionCookie: typeof import("./webAppInjectionCookie").WebAppInjectionCookie = null as any;
+utilities.lazyLoad(exports, ["WebAppInjectionCookie"], () => require("./webAppInjectionCookie"));
+
 export { WebAppJavascriptUpdatesArgs, WebAppJavascriptUpdatesState } from "./webAppJavascriptUpdates";
 export type WebAppJavascriptUpdates = import("./webAppJavascriptUpdates").WebAppJavascriptUpdates;
 export const WebAppJavascriptUpdates: typeof import("./webAppJavascriptUpdates").WebAppJavascriptUpdates = null as any;
@@ -1199,6 +1669,21 @@ export { WebAppJavascriptVersionArgs, WebAppJavascriptVersionState } from "./web
 export type WebAppJavascriptVersion = import("./webAppJavascriptVersion").WebAppJavascriptVersion;
 export const WebAppJavascriptVersion: typeof import("./webAppJavascriptVersion").WebAppJavascriptVersion = null as any;
 utilities.lazyLoad(exports, ["WebAppJavascriptVersion"], () => require("./webAppJavascriptVersion"));
+
+export { WebAppKeyPerformanceCustomArgs, WebAppKeyPerformanceCustomState } from "./webAppKeyPerformanceCustom";
+export type WebAppKeyPerformanceCustom = import("./webAppKeyPerformanceCustom").WebAppKeyPerformanceCustom;
+export const WebAppKeyPerformanceCustom: typeof import("./webAppKeyPerformanceCustom").WebAppKeyPerformanceCustom = null as any;
+utilities.lazyLoad(exports, ["WebAppKeyPerformanceCustom"], () => require("./webAppKeyPerformanceCustom"));
+
+export { WebAppKeyPerformanceLoadArgs, WebAppKeyPerformanceLoadState } from "./webAppKeyPerformanceLoad";
+export type WebAppKeyPerformanceLoad = import("./webAppKeyPerformanceLoad").WebAppKeyPerformanceLoad;
+export const WebAppKeyPerformanceLoad: typeof import("./webAppKeyPerformanceLoad").WebAppKeyPerformanceLoad = null as any;
+utilities.lazyLoad(exports, ["WebAppKeyPerformanceLoad"], () => require("./webAppKeyPerformanceLoad"));
+
+export { WebAppKeyPerformanceXhrArgs, WebAppKeyPerformanceXhrState } from "./webAppKeyPerformanceXhr";
+export type WebAppKeyPerformanceXhr = import("./webAppKeyPerformanceXhr").WebAppKeyPerformanceXhr;
+export const WebAppKeyPerformanceXhr: typeof import("./webAppKeyPerformanceXhr").WebAppKeyPerformanceXhr = null as any;
+utilities.lazyLoad(exports, ["WebAppKeyPerformanceXhr"], () => require("./webAppKeyPerformanceXhr"));
 
 export { WebAppRequestErrorsArgs, WebAppRequestErrorsState } from "./webAppRequestErrors";
 export type WebAppRequestErrors = import("./webAppRequestErrors").WebAppRequestErrors;
@@ -1248,6 +1733,8 @@ const _module = {
                 return new ActivegateToken(name, <any>undefined, { urn })
             case "dynatrace:index/activegateUpdates:ActivegateUpdates":
                 return new ActivegateUpdates(name, <any>undefined, { urn })
+            case "dynatrace:index/agToken:AgToken":
+                return new AgToken(name, <any>undefined, { urn })
             case "dynatrace:index/aixExtension:AixExtension":
                 return new AixExtension(name, <any>undefined, { urn })
             case "dynatrace:index/alerting:Alerting":
@@ -1260,6 +1747,8 @@ const _module = {
                 return new ApiDetection(name, <any>undefined, { urn })
             case "dynatrace:index/apiToken:ApiToken":
                 return new ApiToken(name, <any>undefined, { urn })
+            case "dynatrace:index/appMonitoring:AppMonitoring":
+                return new AppMonitoring(name, <any>undefined, { urn })
             case "dynatrace:index/applicationAnomalies:ApplicationAnomalies":
                 return new ApplicationAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/applicationDataPrivacy:ApplicationDataPrivacy":
@@ -1270,24 +1759,60 @@ const _module = {
                 return new ApplicationDetectionRuleV2(name, <any>undefined, { urn })
             case "dynatrace:index/applicationErrorRules:ApplicationErrorRules":
                 return new ApplicationErrorRules(name, <any>undefined, { urn })
+            case "dynatrace:index/appsecNotification:AppsecNotification":
+                return new AppsecNotification(name, <any>undefined, { urn })
+            case "dynatrace:index/attackAlerting:AttackAlerting":
+                return new AttackAlerting(name, <any>undefined, { urn })
+            case "dynatrace:index/attackAllowlist:AttackAllowlist":
+                return new AttackAllowlist(name, <any>undefined, { urn })
+            case "dynatrace:index/attackRules:AttackRules":
+                return new AttackRules(name, <any>undefined, { urn })
+            case "dynatrace:index/attackSettings:AttackSettings":
+                return new AttackSettings(name, <any>undefined, { urn })
+            case "dynatrace:index/attributeAllowList:AttributeAllowList":
+                return new AttributeAllowList(name, <any>undefined, { urn })
+            case "dynatrace:index/attributeBlockList:AttributeBlockList":
+                return new AttributeBlockList(name, <any>undefined, { urn })
+            case "dynatrace:index/attributeMasking:AttributeMasking":
+                return new AttributeMasking(name, <any>undefined, { urn })
+            case "dynatrace:index/attributesPreferences:AttributesPreferences":
+                return new AttributesPreferences(name, <any>undefined, { urn })
             case "dynatrace:index/auditLog:AuditLog":
                 return new AuditLog(name, <any>undefined, { urn })
+            case "dynatrace:index/automationBusinessCalendar:AutomationBusinessCalendar":
+                return new AutomationBusinessCalendar(name, <any>undefined, { urn })
+            case "dynatrace:index/automationSchedulingRule:AutomationSchedulingRule":
+                return new AutomationSchedulingRule(name, <any>undefined, { urn })
+            case "dynatrace:index/automationWorkflow:AutomationWorkflow":
+                return new AutomationWorkflow(name, <any>undefined, { urn })
+            case "dynatrace:index/automationWorkflowJira:AutomationWorkflowJira":
+                return new AutomationWorkflowJira(name, <any>undefined, { urn })
+            case "dynatrace:index/automationWorkflowSlack:AutomationWorkflowSlack":
+                return new AutomationWorkflowSlack(name, <any>undefined, { urn })
             case "dynatrace:index/autotag:Autotag":
                 return new Autotag(name, <any>undefined, { urn })
+            case "dynatrace:index/autotagRules:AutotagRules":
+                return new AutotagRules(name, <any>undefined, { urn })
             case "dynatrace:index/autotagV2:AutotagV2":
                 return new AutotagV2(name, <any>undefined, { urn })
             case "dynatrace:index/awsAnomalies:AwsAnomalies":
                 return new AwsAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/awsCredentials:AwsCredentials":
                 return new AwsCredentials(name, <any>undefined, { urn })
+            case "dynatrace:index/awsService:AwsService":
+                return new AwsService(name, <any>undefined, { urn })
             case "dynatrace:index/azureCredentials:AzureCredentials":
                 return new AzureCredentials(name, <any>undefined, { urn })
+            case "dynatrace:index/azureService:AzureService":
+                return new AzureService(name, <any>undefined, { urn })
             case "dynatrace:index/browserMonitor:BrowserMonitor":
                 return new BrowserMonitor(name, <any>undefined, { urn })
             case "dynatrace:index/browserMonitorOutage:BrowserMonitorOutage":
                 return new BrowserMonitorOutage(name, <any>undefined, { urn })
             case "dynatrace:index/browserMonitorPerformance:BrowserMonitorPerformance":
                 return new BrowserMonitorPerformance(name, <any>undefined, { urn })
+            case "dynatrace:index/builtinProcessMonitoring:BuiltinProcessMonitoring":
+                return new BuiltinProcessMonitoring(name, <any>undefined, { urn })
             case "dynatrace:index/businessEventsBuckets:BusinessEventsBuckets":
                 return new BusinessEventsBuckets(name, <any>undefined, { urn })
             case "dynatrace:index/businessEventsMetrics:BusinessEventsMetrics":
@@ -1296,8 +1821,16 @@ const _module = {
                 return new BusinessEventsOneagent(name, <any>undefined, { urn })
             case "dynatrace:index/businessEventsProcessing:BusinessEventsProcessing":
                 return new BusinessEventsProcessing(name, <any>undefined, { urn })
+            case "dynatrace:index/businessEventsSecurityContext:BusinessEventsSecurityContext":
+                return new BusinessEventsSecurityContext(name, <any>undefined, { urn })
+            case "dynatrace:index/calculatedMobileMetric:CalculatedMobileMetric":
+                return new CalculatedMobileMetric(name, <any>undefined, { urn })
             case "dynatrace:index/calculatedServiceMetric:CalculatedServiceMetric":
                 return new CalculatedServiceMetric(name, <any>undefined, { urn })
+            case "dynatrace:index/calculatedSyntheticMetric:CalculatedSyntheticMetric":
+                return new CalculatedSyntheticMetric(name, <any>undefined, { urn })
+            case "dynatrace:index/calculatedWebMetric:CalculatedWebMetric":
+                return new CalculatedWebMetric(name, <any>undefined, { urn })
             case "dynatrace:index/cloudFoundry:CloudFoundry":
                 return new CloudFoundry(name, <any>undefined, { urn })
             case "dynatrace:index/cloudappWorkloaddetection:CloudappWorkloaddetection":
@@ -1308,10 +1841,14 @@ const _module = {
                 return new ConnectivityAlerts(name, <any>undefined, { urn })
             case "dynatrace:index/containerBuiltinRule:ContainerBuiltinRule":
                 return new ContainerBuiltinRule(name, <any>undefined, { urn })
+            case "dynatrace:index/containerRegistry:ContainerRegistry":
+                return new ContainerRegistry(name, <any>undefined, { urn })
             case "dynatrace:index/containerRule:ContainerRule":
                 return new ContainerRule(name, <any>undefined, { urn })
             case "dynatrace:index/containerTechnology:ContainerTechnology":
                 return new ContainerTechnology(name, <any>undefined, { urn })
+            case "dynatrace:index/crashdumpAnalytics:CrashdumpAnalytics":
+                return new CrashdumpAnalytics(name, <any>undefined, { urn })
             case "dynatrace:index/credentials:Credentials":
                 return new Credentials(name, <any>undefined, { urn })
             case "dynatrace:index/customAnomalies:CustomAnomalies":
@@ -1322,6 +1859,8 @@ const _module = {
                 return new CustomAppCrashRate(name, <any>undefined, { urn })
             case "dynatrace:index/customAppEnablement:CustomAppEnablement":
                 return new CustomAppEnablement(name, <any>undefined, { urn })
+            case "dynatrace:index/customDevice:CustomDevice":
+                return new CustomDevice(name, <any>undefined, { urn })
             case "dynatrace:index/customService:CustomService":
                 return new CustomService(name, <any>undefined, { urn })
             case "dynatrace:index/customTags:CustomTags":
@@ -1344,10 +1883,16 @@ const _module = {
                 return new DatabaseAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/databaseAnomaliesV2:DatabaseAnomaliesV2":
                 return new DatabaseAnomaliesV2(name, <any>undefined, { urn })
+            case "dynatrace:index/davisAnomalyDetectors:DavisAnomalyDetectors":
+                return new DavisAnomalyDetectors(name, <any>undefined, { urn })
+            case "dynatrace:index/dbAppFeatureFlags:DbAppFeatureFlags":
+                return new DbAppFeatureFlags(name, <any>undefined, { urn })
             case "dynatrace:index/dduPool:DduPool":
                 return new DduPool(name, <any>undefined, { urn })
             case "dynatrace:index/declarativeGrouping:DeclarativeGrouping":
                 return new DeclarativeGrouping(name, <any>undefined, { urn })
+            case "dynatrace:index/directShares:DirectShares":
+                return new DirectShares(name, <any>undefined, { urn })
             case "dynatrace:index/diskAnalytics:DiskAnalytics":
                 return new DiskAnalytics(name, <any>undefined, { urn })
             case "dynatrace:index/diskAnomalies:DiskAnomalies":
@@ -1360,6 +1905,10 @@ const _module = {
                 return new DiskOptions(name, <any>undefined, { urn })
             case "dynatrace:index/diskSpecificAnomaliesV2:DiskSpecificAnomaliesV2":
                 return new DiskSpecificAnomaliesV2(name, <any>undefined, { urn })
+            case "dynatrace:index/document:Document":
+                return new Document(name, <any>undefined, { urn })
+            case "dynatrace:index/ebpfServiceDiscovery:EbpfServiceDiscovery":
+                return new EbpfServiceDiscovery(name, <any>undefined, { urn })
             case "dynatrace:index/emailNotification:EmailNotification":
                 return new EmailNotification(name, <any>undefined, { urn })
             case "dynatrace:index/environment:Environment":
@@ -1378,16 +1927,28 @@ const _module = {
                 return new FrequentIssues(name, <any>undefined, { urn })
             case "dynatrace:index/genericRelationships:GenericRelationships":
                 return new GenericRelationships(name, <any>undefined, { urn })
+            case "dynatrace:index/genericSetting:GenericSetting":
+                return new GenericSetting(name, <any>undefined, { urn })
             case "dynatrace:index/genericTypes:GenericTypes":
                 return new GenericTypes(name, <any>undefined, { urn })
             case "dynatrace:index/geolocation:Geolocation":
                 return new Geolocation(name, <any>undefined, { urn })
+            case "dynatrace:index/grailMetricsAllowall:GrailMetricsAllowall":
+                return new GrailMetricsAllowall(name, <any>undefined, { urn })
+            case "dynatrace:index/grailMetricsAllowlist:GrailMetricsAllowlist":
+                return new GrailMetricsAllowlist(name, <any>undefined, { urn })
+            case "dynatrace:index/grailSecurityContext:GrailSecurityContext":
+                return new GrailSecurityContext(name, <any>undefined, { urn })
             case "dynatrace:index/hostAnomalies:HostAnomalies":
                 return new HostAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/hostAnomaliesV2:HostAnomaliesV2":
                 return new HostAnomaliesV2(name, <any>undefined, { urn })
             case "dynatrace:index/hostMonitoring:HostMonitoring":
                 return new HostMonitoring(name, <any>undefined, { urn })
+            case "dynatrace:index/hostMonitoringAdvanced:HostMonitoringAdvanced":
+                return new HostMonitoringAdvanced(name, <any>undefined, { urn })
+            case "dynatrace:index/hostMonitoringMode:HostMonitoringMode":
+                return new HostMonitoringMode(name, <any>undefined, { urn })
             case "dynatrace:index/hostNaming:HostNaming":
                 return new HostNaming(name, <any>undefined, { urn })
             case "dynatrace:index/hostProcessGroupMonitoring:HostProcessGroupMonitoring":
@@ -1400,6 +1961,14 @@ const _module = {
                 return new HttpMonitorOutage(name, <any>undefined, { urn })
             case "dynatrace:index/httpMonitorPerformance:HttpMonitorPerformance":
                 return new HttpMonitorPerformance(name, <any>undefined, { urn })
+            case "dynatrace:index/httpMonitorScript:HttpMonitorScript":
+                return new HttpMonitorScript(name, <any>undefined, { urn })
+            case "dynatrace:index/hubExtensionActiveVersion:HubExtensionActiveVersion":
+                return new HubExtensionActiveVersion(name, <any>undefined, { urn })
+            case "dynatrace:index/hubExtensionConfig:HubExtensionConfig":
+                return new HubExtensionConfig(name, <any>undefined, { urn })
+            case "dynatrace:index/hubSubscriptions:HubSubscriptions":
+                return new HubSubscriptions(name, <any>undefined, { urn })
             case "dynatrace:index/iamGroup:IamGroup":
                 return new IamGroup(name, <any>undefined, { urn })
             case "dynatrace:index/iamPermission:IamPermission":
@@ -1408,22 +1977,32 @@ const _module = {
                 return new IamPolicy(name, <any>undefined, { urn })
             case "dynatrace:index/iamPolicyBindings:IamPolicyBindings":
                 return new IamPolicyBindings(name, <any>undefined, { urn })
+            case "dynatrace:index/iamPolicyBindingsV2:IamPolicyBindingsV2":
+                return new IamPolicyBindingsV2(name, <any>undefined, { urn })
             case "dynatrace:index/iamUser:IamUser":
                 return new IamUser(name, <any>undefined, { urn })
             case "dynatrace:index/ibmMqFilters:IbmMqFilters":
                 return new IbmMqFilters(name, <any>undefined, { urn })
             case "dynatrace:index/imsBridges:ImsBridges":
                 return new ImsBridges(name, <any>undefined, { urn })
+            case "dynatrace:index/infraopsAppFeatureFlags:InfraopsAppFeatureFlags":
+                return new InfraopsAppFeatureFlags(name, <any>undefined, { urn })
+            case "dynatrace:index/ipAddressMasking:IpAddressMasking":
+                return new IpAddressMasking(name, <any>undefined, { urn })
             case "dynatrace:index/issueTracking:IssueTracking":
                 return new IssueTracking(name, <any>undefined, { urn })
             case "dynatrace:index/jiraNotification:JiraNotification":
                 return new JiraNotification(name, <any>undefined, { urn })
             case "dynatrace:index/jsonDashboard:JsonDashboard":
                 return new JsonDashboard(name, <any>undefined, { urn })
+            case "dynatrace:index/jsonDashboardBase:JsonDashboardBase":
+                return new JsonDashboardBase(name, <any>undefined, { urn })
             case "dynatrace:index/k8sClusterAnomalies:K8sClusterAnomalies":
                 return new K8sClusterAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/k8sCredentials:K8sCredentials":
                 return new K8sCredentials(name, <any>undefined, { urn })
+            case "dynatrace:index/k8sMonitoring:K8sMonitoring":
+                return new K8sMonitoring(name, <any>undefined, { urn })
             case "dynatrace:index/k8sNamespaceAnomalies:K8sNamespaceAnomalies":
                 return new K8sNamespaceAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/k8sNodeAnomalies:K8sNodeAnomalies":
@@ -1434,14 +2013,22 @@ const _module = {
                 return new K8sWorkloadAnomalies(name, <any>undefined, { urn })
             case "dynatrace:index/keyRequests:KeyRequests":
                 return new KeyRequests(name, <any>undefined, { urn })
+            case "dynatrace:index/keyUserAction:KeyUserAction":
+                return new KeyUserAction(name, <any>undefined, { urn })
             case "dynatrace:index/kubernetes:Kubernetes":
                 return new Kubernetes(name, <any>undefined, { urn })
+            case "dynatrace:index/kubernetesApp:KubernetesApp":
+                return new KubernetesApp(name, <any>undefined, { urn })
+            case "dynatrace:index/limitOutboundConnections:LimitOutboundConnections":
+                return new LimitOutboundConnections(name, <any>undefined, { urn })
             case "dynatrace:index/logBuckets:LogBuckets":
                 return new LogBuckets(name, <any>undefined, { urn })
             case "dynatrace:index/logCustomAttribute:LogCustomAttribute":
                 return new LogCustomAttribute(name, <any>undefined, { urn })
             case "dynatrace:index/logCustomSource:LogCustomSource":
                 return new LogCustomSource(name, <any>undefined, { urn })
+            case "dynatrace:index/logDebugSettings:LogDebugSettings":
+                return new LogDebugSettings(name, <any>undefined, { urn })
             case "dynatrace:index/logEvents:LogEvents":
                 return new LogEvents(name, <any>undefined, { urn })
             case "dynatrace:index/logGrail:LogGrail":
@@ -1452,6 +2039,8 @@ const _module = {
                 return new LogOneagent(name, <any>undefined, { urn })
             case "dynatrace:index/logProcessing:LogProcessing":
                 return new LogProcessing(name, <any>undefined, { urn })
+            case "dynatrace:index/logSecurityContext:LogSecurityContext":
+                return new LogSecurityContext(name, <any>undefined, { urn })
             case "dynatrace:index/logSensitiveDataMasking:LogSensitiveDataMasking":
                 return new LogSensitiveDataMasking(name, <any>undefined, { urn })
             case "dynatrace:index/logStorage:LogStorage":
@@ -1464,6 +2053,20 @@ const _module = {
                 return new Maintenance(name, <any>undefined, { urn })
             case "dynatrace:index/maintenanceWindow:MaintenanceWindow":
                 return new MaintenanceWindow(name, <any>undefined, { urn })
+            case "dynatrace:index/managedBackup:ManagedBackup":
+                return new ManagedBackup(name, <any>undefined, { urn })
+            case "dynatrace:index/managedInternetProxy:ManagedInternetProxy":
+                return new ManagedInternetProxy(name, <any>undefined, { urn })
+            case "dynatrace:index/managedNetworkZones:ManagedNetworkZones":
+                return new ManagedNetworkZones(name, <any>undefined, { urn })
+            case "dynatrace:index/managedPreferences:ManagedPreferences":
+                return new ManagedPreferences(name, <any>undefined, { urn })
+            case "dynatrace:index/managedPublicEndpoints:ManagedPublicEndpoints":
+                return new ManagedPublicEndpoints(name, <any>undefined, { urn })
+            case "dynatrace:index/managedRemoteAccess:ManagedRemoteAccess":
+                return new ManagedRemoteAccess(name, <any>undefined, { urn })
+            case "dynatrace:index/managedSmtp:ManagedSmtp":
+                return new ManagedSmtp(name, <any>undefined, { urn })
             case "dynatrace:index/managementZone:ManagementZone":
                 return new ManagementZone(name, <any>undefined, { urn })
             case "dynatrace:index/managementZoneV2:ManagementZoneV2":
@@ -1482,10 +2085,14 @@ const _module = {
                 return new MobileAppCrashRate(name, <any>undefined, { urn })
             case "dynatrace:index/mobileAppEnablement:MobileAppEnablement":
                 return new MobileAppEnablement(name, <any>undefined, { urn })
+            case "dynatrace:index/mobileAppKeyPerformance:MobileAppKeyPerformance":
+                return new MobileAppKeyPerformance(name, <any>undefined, { urn })
             case "dynatrace:index/mobileAppRequestErrors:MobileAppRequestErrors":
                 return new MobileAppRequestErrors(name, <any>undefined, { urn })
             case "dynatrace:index/mobileApplication:MobileApplication":
                 return new MobileApplication(name, <any>undefined, { urn })
+            case "dynatrace:index/mobileNotifications:MobileNotifications":
+                return new MobileNotifications(name, <any>undefined, { urn })
             case "dynatrace:index/monitoredTechnologiesApache:MonitoredTechnologiesApache":
                 return new MonitoredTechnologiesApache(name, <any>undefined, { urn })
             case "dynatrace:index/monitoredTechnologiesDotnet:MonitoredTechnologiesDotnet":
@@ -1524,6 +2131,8 @@ const _module = {
                 return new OneagentDefaultVersion(name, <any>undefined, { urn })
             case "dynatrace:index/oneagentFeatures:OneagentFeatures":
                 return new OneagentFeatures(name, <any>undefined, { urn })
+            case "dynatrace:index/oneagentSideMasking:OneagentSideMasking":
+                return new OneagentSideMasking(name, <any>undefined, { urn })
             case "dynatrace:index/oneagentUpdates:OneagentUpdates":
                 return new OneagentUpdates(name, <any>undefined, { urn })
             case "dynatrace:index/opentelemetryMetrics:OpentelemetryMetrics":
@@ -1542,6 +2151,8 @@ const _module = {
                 return new PgAlerting(name, <any>undefined, { urn })
             case "dynatrace:index/pgAnomalies:PgAnomalies":
                 return new PgAnomalies(name, <any>undefined, { urn })
+            case "dynatrace:index/platformBucket:PlatformBucket":
+                return new PlatformBucket(name, <any>undefined, { urn })
             case "dynatrace:index/policy:Policy":
                 return new Policy(name, <any>undefined, { urn })
             case "dynatrace:index/policyBindings:PolicyBindings":
@@ -1616,6 +2227,8 @@ const _module = {
                 return new SessionReplayResourceCapture(name, <any>undefined, { urn })
             case "dynatrace:index/sessionReplayWebPrivacy:SessionReplayWebPrivacy":
                 return new SessionReplayWebPrivacy(name, <any>undefined, { urn })
+            case "dynatrace:index/siteReliabilityGuardian:SiteReliabilityGuardian":
+                return new SiteReliabilityGuardian(name, <any>undefined, { urn })
             case "dynatrace:index/slackNotification:SlackNotification":
                 return new SlackNotification(name, <any>undefined, { urn })
             case "dynatrace:index/slo:Slo":
@@ -1632,6 +2245,8 @@ const _module = {
                 return new SpanContextPropagation(name, <any>undefined, { urn })
             case "dynatrace:index/spanEntryPoint:SpanEntryPoint":
                 return new SpanEntryPoint(name, <any>undefined, { urn })
+            case "dynatrace:index/spanEvents:SpanEvents":
+                return new SpanEvents(name, <any>undefined, { urn })
             case "dynatrace:index/syntheticAvailability:SyntheticAvailability":
                 return new SyntheticAvailability(name, <any>undefined, { urn })
             case "dynatrace:index/syntheticLocation:SyntheticLocation":
@@ -1642,8 +2257,14 @@ const _module = {
                 return new TransactionStartFilters(name, <any>undefined, { urn })
             case "dynatrace:index/trelloNotification:TrelloNotification":
                 return new TrelloNotification(name, <any>undefined, { urn })
+            case "dynatrace:index/unifiedServicesMetrics:UnifiedServicesMetrics":
+                return new UnifiedServicesMetrics(name, <any>undefined, { urn })
+            case "dynatrace:index/unifiedServicesOpentel:UnifiedServicesOpentel":
+                return new UnifiedServicesOpentel(name, <any>undefined, { urn })
             case "dynatrace:index/updateWindows:UpdateWindows":
                 return new UpdateWindows(name, <any>undefined, { urn })
+            case "dynatrace:index/urlBasedSampling:UrlBasedSampling":
+                return new UrlBasedSampling(name, <any>undefined, { urn })
             case "dynatrace:index/usabilityAnalytics:UsabilityAnalytics":
                 return new UsabilityAnalytics(name, <any>undefined, { urn })
             case "dynatrace:index/user:User":
@@ -1660,20 +2281,42 @@ const _module = {
                 return new UserSettings(name, <any>undefined, { urn })
             case "dynatrace:index/victorOpsNotification:VictorOpsNotification":
                 return new VictorOpsNotification(name, <any>undefined, { urn })
+            case "dynatrace:index/vmware:Vmware":
+                return new Vmware(name, <any>undefined, { urn })
             case "dynatrace:index/vmwareAnomalies:VmwareAnomalies":
                 return new VmwareAnomalies(name, <any>undefined, { urn })
+            case "dynatrace:index/vulnerabilityAlerting:VulnerabilityAlerting":
+                return new VulnerabilityAlerting(name, <any>undefined, { urn })
+            case "dynatrace:index/vulnerabilityCode:VulnerabilityCode":
+                return new VulnerabilityCode(name, <any>undefined, { urn })
+            case "dynatrace:index/vulnerabilitySettings:VulnerabilitySettings":
+                return new VulnerabilitySettings(name, <any>undefined, { urn })
+            case "dynatrace:index/vulnerabilityThirdParty:VulnerabilityThirdParty":
+                return new VulnerabilityThirdParty(name, <any>undefined, { urn })
             case "dynatrace:index/webAppAnomalies:WebAppAnomalies":
                 return new WebAppAnomalies(name, <any>undefined, { urn })
+            case "dynatrace:index/webAppBeaconEndpoint:WebAppBeaconEndpoint":
+                return new WebAppBeaconEndpoint(name, <any>undefined, { urn })
             case "dynatrace:index/webAppBeaconOrigins:WebAppBeaconOrigins":
                 return new WebAppBeaconOrigins(name, <any>undefined, { urn })
+            case "dynatrace:index/webAppCustomConfigProperties:WebAppCustomConfigProperties":
+                return new WebAppCustomConfigProperties(name, <any>undefined, { urn })
             case "dynatrace:index/webAppCustomErrors:WebAppCustomErrors":
                 return new WebAppCustomErrors(name, <any>undefined, { urn })
             case "dynatrace:index/webAppEnablement:WebAppEnablement":
                 return new WebAppEnablement(name, <any>undefined, { urn })
+            case "dynatrace:index/webAppInjectionCookie:WebAppInjectionCookie":
+                return new WebAppInjectionCookie(name, <any>undefined, { urn })
             case "dynatrace:index/webAppJavascriptUpdates:WebAppJavascriptUpdates":
                 return new WebAppJavascriptUpdates(name, <any>undefined, { urn })
             case "dynatrace:index/webAppJavascriptVersion:WebAppJavascriptVersion":
                 return new WebAppJavascriptVersion(name, <any>undefined, { urn })
+            case "dynatrace:index/webAppKeyPerformanceCustom:WebAppKeyPerformanceCustom":
+                return new WebAppKeyPerformanceCustom(name, <any>undefined, { urn })
+            case "dynatrace:index/webAppKeyPerformanceLoad:WebAppKeyPerformanceLoad":
+                return new WebAppKeyPerformanceLoad(name, <any>undefined, { urn })
+            case "dynatrace:index/webAppKeyPerformanceXhr:WebAppKeyPerformanceXhr":
+                return new WebAppKeyPerformanceXhr(name, <any>undefined, { urn })
             case "dynatrace:index/webAppRequestErrors:WebAppRequestErrors":
                 return new WebAppRequestErrors(name, <any>undefined, { urn })
             case "dynatrace:index/webAppResourceCleanup:WebAppResourceCleanup":
@@ -1693,43 +2336,70 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("dynatrace", "index/activegateToken", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/activegateUpdates", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/agToken", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/aixExtension", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/alerting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/alertingProfile", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/ansibleTowerNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/apiDetection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/apiToken", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/appMonitoring", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/applicationAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/applicationDataPrivacy", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/applicationDetectionRule", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/applicationDetectionRuleV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/applicationErrorRules", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/appsecNotification", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/attackAlerting", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/attackAllowlist", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/attackRules", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/attackSettings", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/attributeAllowList", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/attributeBlockList", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/attributeMasking", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/attributesPreferences", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/auditLog", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/automationBusinessCalendar", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/automationSchedulingRule", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/automationWorkflow", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/automationWorkflowJira", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/automationWorkflowSlack", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/autotag", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/autotagRules", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/autotagV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/awsAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/awsCredentials", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/awsService", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/azureCredentials", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/azureService", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/browserMonitor", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/browserMonitorOutage", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/browserMonitorPerformance", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/builtinProcessMonitoring", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsBuckets", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsMetrics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsOneagent", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsProcessing", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/businessEventsSecurityContext", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/calculatedMobileMetric", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/calculatedServiceMetric", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/calculatedSyntheticMetric", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/calculatedWebMetric", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/cloudFoundry", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/cloudappWorkloaddetection", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/cloudfoundryCredentials", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/connectivityAlerts", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/containerBuiltinRule", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/containerRegistry", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/containerRule", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/containerTechnology", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/crashdumpAnalytics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/credentials", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/customAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/customAppAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/customAppCrashRate", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/customAppEnablement", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/customDevice", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/customService", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/customTags", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/customUnits", _module)
@@ -1741,14 +2411,19 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/dashboardsPresets", _m
 pulumi.runtime.registerResourceModule("dynatrace", "index/dataPrivacy", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/databaseAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/databaseAnomaliesV2", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/davisAnomalyDetectors", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/dbAppFeatureFlags", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/dduPool", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/declarativeGrouping", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/directShares", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskAnalytics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskAnomaliesV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskAnomalyRules", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskOptions", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskSpecificAnomaliesV2", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/document", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/ebpfServiceDiscovery", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/emailNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/environment", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/eulaSettings", _module)
@@ -1758,49 +2433,76 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/failureDetectionParame
 pulumi.runtime.registerResourceModule("dynatrace", "index/failureDetectionRules", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/frequentIssues", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/genericRelationships", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/genericSetting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/genericTypes", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/geolocation", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/grailMetricsAllowall", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/grailMetricsAllowlist", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/grailSecurityContext", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hostAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hostAnomaliesV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hostMonitoring", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/hostMonitoringAdvanced", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/hostMonitoringMode", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hostNaming", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/hostProcessGroupMonitoring", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/httpMonitor", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/httpMonitorCookies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/httpMonitorOutage", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/httpMonitorPerformance", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/httpMonitorScript", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/hubExtensionActiveVersion", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/hubExtensionConfig", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/hubSubscriptions", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamGroup", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamPermission", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamPolicy", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamPolicyBindings", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/iamPolicyBindingsV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/iamUser", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/ibmMqFilters", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/imsBridges", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/infraopsAppFeatureFlags", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/ipAddressMasking", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/issueTracking", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/jiraNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/jsonDashboard", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/jsonDashboardBase", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/k8sClusterAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/k8sCredentials", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/k8sMonitoring", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/k8sNamespaceAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/k8sNodeAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/k8sPvcAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/k8sWorkloadAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/keyRequests", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/keyUserAction", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/kubernetes", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/kubernetesApp", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/limitOutboundConnections", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logBuckets", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logCustomAttribute", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logCustomSource", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/logDebugSettings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logEvents", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logGrail", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logMetrics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logOneagent", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logProcessing", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/logSecurityContext", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logSensitiveDataMasking", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logStorage", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/logTimestamp", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/mainframeTransactionMonitoring", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/maintenance", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/maintenanceWindow", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/managedBackup", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/managedInternetProxy", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/managedNetworkZones", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/managedPreferences", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/managedPublicEndpoints", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/managedRemoteAccess", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/managedSmtp", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/managementZone", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/managementZoneV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/metricEvents", _module)
@@ -1810,8 +2512,10 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/mgmzPermission", _modu
 pulumi.runtime.registerResourceModule("dynatrace", "index/mobileAppAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/mobileAppCrashRate", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/mobileAppEnablement", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/mobileAppKeyPerformance", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/mobileAppRequestErrors", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/mobileApplication", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/mobileNotifications", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesApache", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesDotnet", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/monitoredTechnologiesGo", _module)
@@ -1831,6 +2535,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/networkZones", _module
 pulumi.runtime.registerResourceModule("dynatrace", "index/notification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentDefaultVersion", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentFeatures", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentSideMasking", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/oneagentUpdates", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/opentelemetryMetrics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/opsGenieNotification", _module)
@@ -1840,6 +2545,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/ownershipTeams", _modu
 pulumi.runtime.registerResourceModule("dynatrace", "index/pagerDutyNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/pgAlerting", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/pgAnomalies", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/platformBucket", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/policy", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/policyBindings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/processAvailability", _module)
@@ -1877,6 +2583,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/serviceNaming", _modul
 pulumi.runtime.registerResourceModule("dynatrace", "index/serviceNowNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/sessionReplayResourceCapture", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/sessionReplayWebPrivacy", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/siteReliabilityGuardian", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/slackNotification", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/slo", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/sloNormalization", _module)
@@ -1885,12 +2592,16 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/spanAttributed", _modu
 pulumi.runtime.registerResourceModule("dynatrace", "index/spanCaptureRule", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/spanContextPropagation", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/spanEntryPoint", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/spanEvents", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/syntheticAvailability", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/syntheticLocation", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/tokenSettings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/transactionStartFilters", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/trelloNotification", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/unifiedServicesMetrics", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/unifiedServicesOpentel", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/updateWindows", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/urlBasedSampling", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/usabilityAnalytics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/user", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/userActionMetrics", _module)
@@ -1899,13 +2610,24 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/userGroup", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/userSessionMetrics", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/userSettings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/victorOpsNotification", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/vmware", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/vmwareAnomalies", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/vulnerabilityAlerting", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/vulnerabilityCode", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/vulnerabilitySettings", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/vulnerabilityThirdParty", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppAnomalies", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/webAppBeaconEndpoint", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppBeaconOrigins", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/webAppCustomConfigProperties", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppCustomErrors", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppEnablement", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/webAppInjectionCookie", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppJavascriptUpdates", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppJavascriptVersion", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/webAppKeyPerformanceCustom", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/webAppKeyPerformanceLoad", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/webAppKeyPerformanceXhr", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppRequestErrors", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppResourceCleanup", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/webAppResourceTypes", _module)

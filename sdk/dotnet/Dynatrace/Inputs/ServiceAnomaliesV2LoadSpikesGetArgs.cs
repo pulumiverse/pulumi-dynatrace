@@ -14,7 +14,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class ServiceAnomaliesV2LoadSpikesGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Detect service load spikes
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         [Input("enabled", required: true)]
         public Input<bool> Enabled { get; set; } = null!;

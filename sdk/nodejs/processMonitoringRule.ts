@@ -47,6 +47,10 @@ export class ProcessMonitoringRule extends pulumi.CustomResource {
      */
     public readonly hostGroupId!: pulumi.Output<string | undefined>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Possible Values: `MONITORING_ON`, `MONITORING_OFF`
      */
     public readonly mode!: pulumi.Output<string>;
@@ -67,6 +71,7 @@ export class ProcessMonitoringRule extends pulumi.CustomResource {
             resourceInputs["condition"] = state ? state.condition : undefined;
             resourceInputs["enabled"] = state ? state.enabled : undefined;
             resourceInputs["hostGroupId"] = state ? state.hostGroupId : undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["mode"] = state ? state.mode : undefined;
         } else {
             const args = argsOrState as ProcessMonitoringRuleArgs | undefined;
@@ -82,6 +87,7 @@ export class ProcessMonitoringRule extends pulumi.CustomResource {
             resourceInputs["condition"] = args ? args.condition : undefined;
             resourceInputs["enabled"] = args ? args.enabled : undefined;
             resourceInputs["hostGroupId"] = args ? args.hostGroupId : undefined;
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["mode"] = args ? args.mode : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -106,6 +112,10 @@ export interface ProcessMonitoringRuleState {
      */
     hostGroupId?: pulumi.Input<string>;
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
+    /**
      * Possible Values: `MONITORING_ON`, `MONITORING_OFF`
      */
     mode?: pulumi.Input<string>;
@@ -127,6 +137,10 @@ export interface ProcessMonitoringRuleArgs {
      * The scope of this settings. If the settings should cover the whole environment, just don't specify any scope
      */
     hostGroupId?: pulumi.Input<string>;
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Possible Values: `MONITORING_ON`, `MONITORING_OFF`
      */

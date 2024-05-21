@@ -245,7 +245,9 @@ class AlertingProfile(pulumi.CustomResource):
                  unknowns: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        The API utilized for this resource is deprecated, please use Alerting instead.
+        !> This resource API endpoint has been deprecated, please use Alerting instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
         ## Dynatrace Documentation
 
@@ -396,7 +398,9 @@ class AlertingProfile(pulumi.CustomResource):
                  args: AlertingProfileArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        The API utilized for this resource is deprecated, please use Alerting instead.
+        !> This resource API endpoint has been deprecated, please use Alerting instead.
+
+        > This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
 
         ## Dynatrace Documentation
 

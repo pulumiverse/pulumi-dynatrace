@@ -15,9 +15,9 @@ import (
 type SpanAttributed struct {
 	pulumi.CustomResourceState
 
-	// the key of the attribute to capture
+	// Key of the span attribute to store
 	Key pulumi.StringOutput `pulumi:"key"`
-	// granular control over the visibility of attribute values
+	// Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
 	Masking    pulumi.StringOutput `pulumi:"masking"`
 	Persistent pulumi.BoolOutput   `pulumi:"persistent"`
 }
@@ -58,17 +58,17 @@ func GetSpanAttributed(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SpanAttributed resources.
 type spanAttributedState struct {
-	// the key of the attribute to capture
+	// Key of the span attribute to store
 	Key *string `pulumi:"key"`
-	// granular control over the visibility of attribute values
+	// Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
 	Masking    *string `pulumi:"masking"`
 	Persistent *bool   `pulumi:"persistent"`
 }
 
 type SpanAttributedState struct {
-	// the key of the attribute to capture
+	// Key of the span attribute to store
 	Key pulumi.StringPtrInput
-	// granular control over the visibility of attribute values
+	// Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
 	Masking    pulumi.StringPtrInput
 	Persistent pulumi.BoolPtrInput
 }
@@ -78,18 +78,18 @@ func (SpanAttributedState) ElementType() reflect.Type {
 }
 
 type spanAttributedArgs struct {
-	// the key of the attribute to capture
+	// Key of the span attribute to store
 	Key string `pulumi:"key"`
-	// granular control over the visibility of attribute values
+	// Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
 	Masking    string `pulumi:"masking"`
 	Persistent *bool  `pulumi:"persistent"`
 }
 
 // The set of arguments for constructing a SpanAttributed resource.
 type SpanAttributedArgs struct {
-	// the key of the attribute to capture
+	// Key of the span attribute to store
 	Key pulumi.StringInput
-	// granular control over the visibility of attribute values
+	// Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
 	Masking    pulumi.StringInput
 	Persistent pulumi.BoolPtrInput
 }
@@ -181,12 +181,12 @@ func (o SpanAttributedOutput) ToSpanAttributedOutputWithContext(ctx context.Cont
 	return o
 }
 
-// the key of the attribute to capture
+// Key of the span attribute to store
 func (o SpanAttributedOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *SpanAttributed) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
 }
 
-// granular control over the visibility of attribute values
+// Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
 func (o SpanAttributedOutput) Masking() pulumi.StringOutput {
 	return o.ApplyT(func(v *SpanAttributed) pulumi.StringOutput { return v.Masking }).(pulumi.StringOutput)
 }

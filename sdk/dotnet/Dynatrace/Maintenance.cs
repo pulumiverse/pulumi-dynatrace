@@ -14,16 +14,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public partial class Maintenance : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The maintenance window is enabled or disabled
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         [Output("enabled")]
-        public Output<bool?> Enabled { get; private set; } = null!;
+        public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// The filters of the maintenance window
+        /// ## Filters
+        /// Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
         /// </summary>
         [Output("filters")]
-        public Output<ImmutableArray<Outputs.MaintenanceFilter>> Filters { get; private set; } = null!;
+        public Output<Outputs.MaintenanceFilters?> Filters { get; private set; } = null!;
 
         /// <summary>
         /// The general properties of the maintenance window
@@ -91,22 +92,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class MaintenanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The maintenance window is enabled or disabled
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
-        [Input("enabled")]
-        public Input<bool>? Enabled { get; set; }
-
-        [Input("filters")]
-        private InputList<Inputs.MaintenanceFilterArgs>? _filters;
+        [Input("enabled", required: true)]
+        public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// The filters of the maintenance window
+        /// ## Filters
+        /// Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
         /// </summary>
-        public InputList<Inputs.MaintenanceFilterArgs> Filters
-        {
-            get => _filters ?? (_filters = new InputList<Inputs.MaintenanceFilterArgs>());
-            set => _filters = value;
-        }
+        [Input("filters")]
+        public Input<Inputs.MaintenanceFiltersArgs>? Filters { get; set; }
 
         /// <summary>
         /// The general properties of the maintenance window
@@ -135,22 +131,17 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class MaintenanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The maintenance window is enabled or disabled
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
-        [Input("filters")]
-        private InputList<Inputs.MaintenanceFilterGetArgs>? _filters;
-
         /// <summary>
-        /// The filters of the maintenance window
+        /// ## Filters
+        /// Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
         /// </summary>
-        public InputList<Inputs.MaintenanceFilterGetArgs> Filters
-        {
-            get => _filters ?? (_filters = new InputList<Inputs.MaintenanceFilterGetArgs>());
-            set => _filters = value;
-        }
+        [Input("filters")]
+        public Input<Inputs.MaintenanceFiltersGetArgs>? Filters { get; set; }
 
         /// <summary>
         /// The general properties of the maintenance window

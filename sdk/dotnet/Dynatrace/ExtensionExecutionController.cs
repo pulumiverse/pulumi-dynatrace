@@ -20,7 +20,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Enable local PIPE/HTTP metric and Log Ingest API
+        /// Enable local HTTP Metric, Log and Event Ingest API
         /// </summary>
         [Output("ingestActive")]
         public Output<bool?> IngestActive { get; private set; } = null!;
@@ -97,7 +97,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// Enable local PIPE/HTTP metric and Log Ingest API
+        /// Enable local HTTP Metric, Log and Event Ingest API
         /// </summary>
         [Input("ingestActive")]
         public Input<bool>? IngestActive { get; set; }
@@ -135,7 +135,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Enable local PIPE/HTTP metric and Log Ingest API
+        /// Enable local HTTP Metric, Log and Event Ingest API
         /// </summary>
         [Input("ingestActive")]
         public Input<bool>? IngestActive { get; set; }

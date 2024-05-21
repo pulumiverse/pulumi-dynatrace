@@ -43,7 +43,7 @@ export class Alerting extends pulumi.CustomResource {
      */
     public readonly legacyId!: pulumi.Output<string>;
     /**
-     * The ID of the management zone to which the alerting profile applies
+     * Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
      */
     public readonly managementZone!: pulumi.Output<string | undefined>;
     /**
@@ -99,7 +99,7 @@ export interface AlertingState {
      */
     legacyId?: pulumi.Input<string>;
     /**
-     * The ID of the management zone to which the alerting profile applies
+     * Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
      */
     managementZone?: pulumi.Input<string>;
     /**
@@ -125,7 +125,7 @@ export interface AlertingArgs {
      */
     legacyId?: pulumi.Input<string>;
     /**
-     * The ID of the management zone to which the alerting profile applies
+     * Entities which are part of the configured management zones will match this alerting profile. It is recommended to use manual tags instead.
      */
     managementZone?: pulumi.Input<string>;
     /**

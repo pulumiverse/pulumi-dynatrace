@@ -33,15 +33,15 @@ export class QueueSharingGroups extends pulumi.CustomResource {
     }
 
     /**
-     * The name of the queue sharing group
+     * Queue sharing group name
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * Queue manager(s) that belong to the queue sharing group
+     * Queue managers
      */
     public readonly queueManagers!: pulumi.Output<string[] | undefined>;
     /**
-     * Shared queue(s) that belong to the queue sharing group
+     * Shared queues
      */
     public readonly sharedQueues!: pulumi.Output<string[] | undefined>;
 
@@ -77,15 +77,15 @@ export class QueueSharingGroups extends pulumi.CustomResource {
  */
 export interface QueueSharingGroupsState {
     /**
-     * The name of the queue sharing group
+     * Queue sharing group name
      */
     name?: pulumi.Input<string>;
     /**
-     * Queue manager(s) that belong to the queue sharing group
+     * Queue managers
      */
     queueManagers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Shared queue(s) that belong to the queue sharing group
+     * Shared queues
      */
     sharedQueues?: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -95,15 +95,15 @@ export interface QueueSharingGroupsState {
  */
 export interface QueueSharingGroupsArgs {
     /**
-     * The name of the queue sharing group
+     * Queue sharing group name
      */
     name?: pulumi.Input<string>;
     /**
-     * Queue manager(s) that belong to the queue sharing group
+     * Queue managers
      */
     queueManagers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * Shared queue(s) that belong to the queue sharing group
+     * Shared queues
      */
     sharedQueues?: pulumi.Input<pulumi.Input<string>[]>;
 }

@@ -13,12 +13,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 
     public sealed class MetricEventsQueryDefinitionDimensionFilterGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("filters")]
+        [Input("filters", required: true)]
         private InputList<Inputs.MetricEventsQueryDefinitionDimensionFilterFilterGetArgs>? _filters;
-
-        /// <summary>
-        /// Dimension filter definitions
-        /// </summary>
         public InputList<Inputs.MetricEventsQueryDefinitionDimensionFilterFilterGetArgs> Filters
         {
             get => _filters ?? (_filters = new InputList<Inputs.MetricEventsQueryDefinitionDimensionFilterFilterGetArgs>());

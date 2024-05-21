@@ -15,17 +15,17 @@ import (
 type MetricEvents struct {
 	pulumi.CustomResourceState
 
-	// Enabled toggle of metric event entry
-	Enabled pulumi.BoolPtrOutput `pulumi:"enabled"`
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled pulumi.BoolOutput `pulumi:"enabled"`
 	// Controls the preferred entity type used for triggered events.
 	EventEntityDimensionKey pulumi.StringPtrOutput `pulumi:"eventEntityDimensionKey"`
-	// The event template of the metric event entry
+	// Event template
 	EventTemplate MetricEventsEventTemplateOutput `pulumi:"eventTemplate"`
-	// The legacy id of the metric event entry
+	// Config id
 	LegacyId pulumi.StringOutput `pulumi:"legacyId"`
-	// The model properties of the metric event entry
+	// Monitoring strategy
 	ModelProperties MetricEventsModelPropertiesOutput `pulumi:"modelProperties"`
-	// The query definition of the metric event entry
+	// Query definition
 	QueryDefinition MetricEventsQueryDefinitionOutput `pulumi:"queryDefinition"`
 	// The textual summary of the metric event entry
 	Summary pulumi.StringOutput `pulumi:"summary"`
@@ -38,6 +38,9 @@ func NewMetricEvents(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
+	if args.Enabled == nil {
+		return nil, errors.New("invalid value for required argument 'Enabled'")
+	}
 	if args.EventTemplate == nil {
 		return nil, errors.New("invalid value for required argument 'EventTemplate'")
 	}
@@ -73,34 +76,34 @@ func GetMetricEvents(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MetricEvents resources.
 type metricEventsState struct {
-	// Enabled toggle of metric event entry
+	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
 	// Controls the preferred entity type used for triggered events.
 	EventEntityDimensionKey *string `pulumi:"eventEntityDimensionKey"`
-	// The event template of the metric event entry
+	// Event template
 	EventTemplate *MetricEventsEventTemplate `pulumi:"eventTemplate"`
-	// The legacy id of the metric event entry
+	// Config id
 	LegacyId *string `pulumi:"legacyId"`
-	// The model properties of the metric event entry
+	// Monitoring strategy
 	ModelProperties *MetricEventsModelProperties `pulumi:"modelProperties"`
-	// The query definition of the metric event entry
+	// Query definition
 	QueryDefinition *MetricEventsQueryDefinition `pulumi:"queryDefinition"`
 	// The textual summary of the metric event entry
 	Summary *string `pulumi:"summary"`
 }
 
 type MetricEventsState struct {
-	// Enabled toggle of metric event entry
+	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
 	// Controls the preferred entity type used for triggered events.
 	EventEntityDimensionKey pulumi.StringPtrInput
-	// The event template of the metric event entry
+	// Event template
 	EventTemplate MetricEventsEventTemplatePtrInput
-	// The legacy id of the metric event entry
+	// Config id
 	LegacyId pulumi.StringPtrInput
-	// The model properties of the metric event entry
+	// Monitoring strategy
 	ModelProperties MetricEventsModelPropertiesPtrInput
-	// The query definition of the metric event entry
+	// Query definition
 	QueryDefinition MetricEventsQueryDefinitionPtrInput
 	// The textual summary of the metric event entry
 	Summary pulumi.StringPtrInput
@@ -111,17 +114,17 @@ func (MetricEventsState) ElementType() reflect.Type {
 }
 
 type metricEventsArgs struct {
-	// Enabled toggle of metric event entry
-	Enabled *bool `pulumi:"enabled"`
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled bool `pulumi:"enabled"`
 	// Controls the preferred entity type used for triggered events.
 	EventEntityDimensionKey *string `pulumi:"eventEntityDimensionKey"`
-	// The event template of the metric event entry
+	// Event template
 	EventTemplate MetricEventsEventTemplate `pulumi:"eventTemplate"`
-	// The legacy id of the metric event entry
+	// Config id
 	LegacyId *string `pulumi:"legacyId"`
-	// The model properties of the metric event entry
+	// Monitoring strategy
 	ModelProperties MetricEventsModelProperties `pulumi:"modelProperties"`
-	// The query definition of the metric event entry
+	// Query definition
 	QueryDefinition MetricEventsQueryDefinition `pulumi:"queryDefinition"`
 	// The textual summary of the metric event entry
 	Summary string `pulumi:"summary"`
@@ -129,17 +132,17 @@ type metricEventsArgs struct {
 
 // The set of arguments for constructing a MetricEvents resource.
 type MetricEventsArgs struct {
-	// Enabled toggle of metric event entry
-	Enabled pulumi.BoolPtrInput
+	// This setting is enabled (`true`) or disabled (`false`)
+	Enabled pulumi.BoolInput
 	// Controls the preferred entity type used for triggered events.
 	EventEntityDimensionKey pulumi.StringPtrInput
-	// The event template of the metric event entry
+	// Event template
 	EventTemplate MetricEventsEventTemplateInput
-	// The legacy id of the metric event entry
+	// Config id
 	LegacyId pulumi.StringPtrInput
-	// The model properties of the metric event entry
+	// Monitoring strategy
 	ModelProperties MetricEventsModelPropertiesInput
-	// The query definition of the metric event entry
+	// Query definition
 	QueryDefinition MetricEventsQueryDefinitionInput
 	// The textual summary of the metric event entry
 	Summary pulumi.StringInput
@@ -232,9 +235,9 @@ func (o MetricEventsOutput) ToMetricEventsOutputWithContext(ctx context.Context)
 	return o
 }
 
-// Enabled toggle of metric event entry
-func (o MetricEventsOutput) Enabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *MetricEvents) pulumi.BoolPtrOutput { return v.Enabled }).(pulumi.BoolPtrOutput)
+// This setting is enabled (`true`) or disabled (`false`)
+func (o MetricEventsOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *MetricEvents) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
 }
 
 // Controls the preferred entity type used for triggered events.
@@ -242,22 +245,22 @@ func (o MetricEventsOutput) EventEntityDimensionKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MetricEvents) pulumi.StringPtrOutput { return v.EventEntityDimensionKey }).(pulumi.StringPtrOutput)
 }
 
-// The event template of the metric event entry
+// Event template
 func (o MetricEventsOutput) EventTemplate() MetricEventsEventTemplateOutput {
 	return o.ApplyT(func(v *MetricEvents) MetricEventsEventTemplateOutput { return v.EventTemplate }).(MetricEventsEventTemplateOutput)
 }
 
-// The legacy id of the metric event entry
+// Config id
 func (o MetricEventsOutput) LegacyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MetricEvents) pulumi.StringOutput { return v.LegacyId }).(pulumi.StringOutput)
 }
 
-// The model properties of the metric event entry
+// Monitoring strategy
 func (o MetricEventsOutput) ModelProperties() MetricEventsModelPropertiesOutput {
 	return o.ApplyT(func(v *MetricEvents) MetricEventsModelPropertiesOutput { return v.ModelProperties }).(MetricEventsModelPropertiesOutput)
 }
 
-// The query definition of the metric event entry
+// Query definition
 func (o MetricEventsOutput) QueryDefinition() MetricEventsQueryDefinitionOutput {
 	return o.ApplyT(func(v *MetricEvents) MetricEventsQueryDefinitionOutput { return v.QueryDefinition }).(MetricEventsQueryDefinitionOutput)
 }

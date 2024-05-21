@@ -33,6 +33,10 @@ export class WebAppResourceTypes extends pulumi.CustomResource {
     }
 
     /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    public readonly insertAfter!: pulumi.Output<string>;
+    /**
      * Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
      */
     public readonly primaryResourceType!: pulumi.Output<string>;
@@ -58,6 +62,7 @@ export class WebAppResourceTypes extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as WebAppResourceTypesState | undefined;
+            resourceInputs["insertAfter"] = state ? state.insertAfter : undefined;
             resourceInputs["primaryResourceType"] = state ? state.primaryResourceType : undefined;
             resourceInputs["regularExpression"] = state ? state.regularExpression : undefined;
             resourceInputs["secondaryResourceType"] = state ? state.secondaryResourceType : undefined;
@@ -69,6 +74,7 @@ export class WebAppResourceTypes extends pulumi.CustomResource {
             if ((!args || args.regularExpression === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'regularExpression'");
             }
+            resourceInputs["insertAfter"] = args ? args.insertAfter : undefined;
             resourceInputs["primaryResourceType"] = args ? args.primaryResourceType : undefined;
             resourceInputs["regularExpression"] = args ? args.regularExpression : undefined;
             resourceInputs["secondaryResourceType"] = args ? args.secondaryResourceType : undefined;
@@ -82,6 +88,10 @@ export class WebAppResourceTypes extends pulumi.CustomResource {
  * Input properties used for looking up and filtering WebAppResourceTypes resources.
  */
 export interface WebAppResourceTypesState {
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
      */
@@ -100,6 +110,10 @@ export interface WebAppResourceTypesState {
  * The set of arguments for constructing a WebAppResourceTypes resource.
  */
 export interface WebAppResourceTypesArgs {
+    /**
+     * Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+     */
+    insertAfter?: pulumi.Input<string>;
     /**
      * Possible Values: `CSS`, `IMAGE`, `OTHER`, `SCRIPT`
      */

@@ -128,9 +128,6 @@ export class SloV2 extends pulumi.CustomResource {
             if ((!args || args.metricExpression === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'metricExpression'");
             }
-            if ((!args || args.metricName === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'metricName'");
-            }
             if ((!args || args.targetSuccess === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'targetSuccess'");
             }
@@ -248,7 +245,7 @@ export interface SloV2Args {
     /**
      * Metric name
      */
-    metricName: pulumi.Input<string>;
+    metricName?: pulumi.Input<string>;
     /**
      * SLO name
      */

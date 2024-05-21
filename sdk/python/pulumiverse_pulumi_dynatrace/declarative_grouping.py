@@ -18,6 +18,7 @@ class DeclarativeGroupingArgs:
     def __init__(__self__, *,
                  enabled: pulumi.Input[bool],
                  detection: Optional[pulumi.Input['DeclarativeGroupingDetectionArgs']] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None):
         """
@@ -25,12 +26,17 @@ class DeclarativeGroupingArgs:
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['DeclarativeGroupingDetectionArgs'] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
                group.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input[str] name: Monitored technology name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "enabled", enabled)
         if detection is not None:
             pulumi.set(__self__, "detection", detection)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if scope is not None:
@@ -62,6 +68,20 @@ class DeclarativeGroupingArgs:
         pulumi.set(self, "detection", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -91,6 +111,7 @@ class _DeclarativeGroupingState:
     def __init__(__self__, *,
                  detection: Optional[pulumi.Input['DeclarativeGroupingDetectionArgs']] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None):
         """
@@ -98,6 +119,9 @@ class _DeclarativeGroupingState:
         :param pulumi.Input['DeclarativeGroupingDetectionArgs'] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
                group.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input[str] name: Monitored technology name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -105,6 +129,8 @@ class _DeclarativeGroupingState:
             pulumi.set(__self__, "detection", detection)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if scope is not None:
@@ -134,6 +160,20 @@ class _DeclarativeGroupingState:
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter
@@ -167,6 +207,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  detection: Optional[pulumi.Input[pulumi.InputType['DeclarativeGroupingDetectionArgs']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -177,6 +218,9 @@ class DeclarativeGrouping(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DeclarativeGroupingDetectionArgs']] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
                group.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input[str] name: Monitored technology name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -205,6 +249,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  detection: Optional[pulumi.Input[pulumi.InputType['DeclarativeGroupingDetectionArgs']]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -220,6 +265,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
+            __props__.__dict__["insert_after"] = insert_after
             __props__.__dict__["name"] = name
             __props__.__dict__["scope"] = scope
         super(DeclarativeGrouping, __self__).__init__(
@@ -234,6 +280,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             detection: Optional[pulumi.Input[pulumi.InputType['DeclarativeGroupingDetectionArgs']]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             scope: Optional[pulumi.Input[str]] = None) -> 'DeclarativeGrouping':
         """
@@ -246,6 +293,9 @@ class DeclarativeGrouping(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DeclarativeGroupingDetectionArgs']] detection: Enter a descriptive process group display name and a unique identifier that Dynatrace can use to recognize this process
                group.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+               instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+               specified during update the order will remain untouched
         :param pulumi.Input[str] name: Monitored technology name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -255,6 +305,7 @@ class DeclarativeGrouping(pulumi.CustomResource):
 
         __props__.__dict__["detection"] = detection
         __props__.__dict__["enabled"] = enabled
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["name"] = name
         __props__.__dict__["scope"] = scope
         return DeclarativeGrouping(resource_name, opts=opts, __props__=__props__)
@@ -275,6 +326,16 @@ class DeclarativeGrouping(pulumi.CustomResource):
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+        instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+        specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter

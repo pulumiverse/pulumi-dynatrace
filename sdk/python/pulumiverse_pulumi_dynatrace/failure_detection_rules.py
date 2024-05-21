@@ -20,6 +20,7 @@ class FailureDetectionRulesArgs:
                  enabled: pulumi.Input[bool],
                  parameter_id: pulumi.Input[str],
                  description: Optional[pulumi.Input[str]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a FailureDetectionRules resource.
@@ -27,6 +28,7 @@ class FailureDetectionRulesArgs:
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] parameter_id: Failure detection parameters
         :param pulumi.Input[str] description: Rule description
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: Rule name
         """
         pulumi.set(__self__, "conditions", conditions)
@@ -34,6 +36,8 @@ class FailureDetectionRulesArgs:
         pulumi.set(__self__, "parameter_id", parameter_id)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -86,6 +90,18 @@ class FailureDetectionRulesArgs:
         pulumi.set(self, "description", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -104,6 +120,7 @@ class _FailureDetectionRulesState:
                  conditions: Optional[pulumi.Input['FailureDetectionRulesConditionsArgs']] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  parameter_id: Optional[pulumi.Input[str]] = None):
         """
@@ -111,6 +128,7 @@ class _FailureDetectionRulesState:
         :param pulumi.Input['FailureDetectionRulesConditionsArgs'] conditions: Conditions
         :param pulumi.Input[str] description: Rule description
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: Rule name
         :param pulumi.Input[str] parameter_id: Failure detection parameters
         """
@@ -120,6 +138,8 @@ class _FailureDetectionRulesState:
             pulumi.set(__self__, "description", description)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if parameter_id is not None:
@@ -162,6 +182,18 @@ class _FailureDetectionRulesState:
         pulumi.set(self, "enabled", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -194,6 +226,7 @@ class FailureDetectionRules(pulumi.CustomResource):
                  conditions: Optional[pulumi.Input[pulumi.InputType['FailureDetectionRulesConditionsArgs']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  parameter_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -204,6 +237,7 @@ class FailureDetectionRules(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['FailureDetectionRulesConditionsArgs']] conditions: Conditions
         :param pulumi.Input[str] description: Rule description
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: Rule name
         :param pulumi.Input[str] parameter_id: Failure detection parameters
         """
@@ -233,6 +267,7 @@ class FailureDetectionRules(pulumi.CustomResource):
                  conditions: Optional[pulumi.Input[pulumi.InputType['FailureDetectionRulesConditionsArgs']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  parameter_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -251,6 +286,7 @@ class FailureDetectionRules(pulumi.CustomResource):
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
+            __props__.__dict__["insert_after"] = insert_after
             __props__.__dict__["name"] = name
             if parameter_id is None and not opts.urn:
                 raise TypeError("Missing required property 'parameter_id'")
@@ -268,6 +304,7 @@ class FailureDetectionRules(pulumi.CustomResource):
             conditions: Optional[pulumi.Input[pulumi.InputType['FailureDetectionRulesConditionsArgs']]] = None,
             description: Optional[pulumi.Input[str]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             parameter_id: Optional[pulumi.Input[str]] = None) -> 'FailureDetectionRules':
         """
@@ -280,6 +317,7 @@ class FailureDetectionRules(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['FailureDetectionRulesConditionsArgs']] conditions: Conditions
         :param pulumi.Input[str] description: Rule description
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: Rule name
         :param pulumi.Input[str] parameter_id: Failure detection parameters
         """
@@ -290,6 +328,7 @@ class FailureDetectionRules(pulumi.CustomResource):
         __props__.__dict__["conditions"] = conditions
         __props__.__dict__["description"] = description
         __props__.__dict__["enabled"] = enabled
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["name"] = name
         __props__.__dict__["parameter_id"] = parameter_id
         return FailureDetectionRules(resource_name, opts=opts, __props__=__props__)
@@ -317,6 +356,14 @@ class FailureDetectionRules(pulumi.CustomResource):
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter

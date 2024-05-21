@@ -11,6 +11,36 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// The IAM group data source allows the group ID to be retrieved by its name.
+//
+// - `name` (String) - The name of the IAM group
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			example, err := dynatrace.LookupIamGroup(ctx, &dynatrace.LookupIamGroupArgs{
+//				Name: "Terraform Example",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("groups", example.Id)
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupIamGroup(ctx *pulumi.Context, args *LookupIamGroupArgs, opts ...pulumi.InvokeOption) (*LookupIamGroupResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupIamGroupResult

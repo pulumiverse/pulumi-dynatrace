@@ -11,6 +11,36 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// The calculated service metric data source allows the metric ID to be retrieved by its name.
+//
+// - `name` (String) - The name of the calculated service metric
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			example, err := dynatrace.LookupCalculatedServiceMetric(ctx, &dynatrace.LookupCalculatedServiceMetricArgs{
+//				Name: "Terraform Example",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("groups", example.Id)
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupCalculatedServiceMetric(ctx *pulumi.Context, args *LookupCalculatedServiceMetricArgs, opts ...pulumi.InvokeOption) (*LookupCalculatedServiceMetricResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCalculatedServiceMetricResult

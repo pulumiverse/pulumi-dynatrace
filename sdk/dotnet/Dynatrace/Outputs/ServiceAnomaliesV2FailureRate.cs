@@ -15,19 +15,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class ServiceAnomaliesV2FailureRate
     {
         /// <summary>
-        /// . Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
+        /// Alert if the percentage of failing service calls increases by **both** the absolute and relative thresholds:
         /// </summary>
         public readonly Outputs.ServiceAnomaliesV2FailureRateAutoDetection? AutoDetection;
         /// <summary>
-        /// Detection mode for increases in failure rate
+        /// Possible Values: `Auto`, `Fixed`
         /// </summary>
         public readonly string? DetectionMode;
         /// <summary>
-        /// Detect increases in failure rate
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// . Alert if a given failure rate is exceeded during any 5-minute-period
+        /// Alert if a given failure rate is exceeded during any 5-minute-period
         /// </summary>
         public readonly Outputs.ServiceAnomaliesV2FailureRateFixedDetection? FixedDetection;
 

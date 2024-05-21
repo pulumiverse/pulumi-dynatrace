@@ -35,6 +35,10 @@ export class DiskOptions extends pulumi.CustomResource {
     }
 
     /**
+     * Deactivate NFS monitoring on all supported systems
+     */
+    public readonly disableNfsDiskMonitoring!: pulumi.Output<boolean | undefined>;
+    /**
      * OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
      * disks from the monitoring list.
      */
@@ -43,7 +47,7 @@ export class DiskOptions extends pulumi.CustomResource {
      * When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
      * Requires OneAgent 1.209 or later
      */
-    public readonly nfsShowAll!: pulumi.Output<boolean>;
+    public readonly nfsShowAll!: pulumi.Output<boolean | undefined>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
@@ -56,20 +60,19 @@ export class DiskOptions extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: DiskOptionsArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args?: DiskOptionsArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: DiskOptionsArgs | DiskOptionsState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DiskOptionsState | undefined;
+            resourceInputs["disableNfsDiskMonitoring"] = state ? state.disableNfsDiskMonitoring : undefined;
             resourceInputs["exclusions"] = state ? state.exclusions : undefined;
             resourceInputs["nfsShowAll"] = state ? state.nfsShowAll : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
         } else {
             const args = argsOrState as DiskOptionsArgs | undefined;
-            if ((!args || args.nfsShowAll === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'nfsShowAll'");
-            }
+            resourceInputs["disableNfsDiskMonitoring"] = args ? args.disableNfsDiskMonitoring : undefined;
             resourceInputs["exclusions"] = args ? args.exclusions : undefined;
             resourceInputs["nfsShowAll"] = args ? args.nfsShowAll : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
@@ -83,6 +86,10 @@ export class DiskOptions extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DiskOptions resources.
  */
 export interface DiskOptionsState {
+    /**
+     * Deactivate NFS monitoring on all supported systems
+     */
+    disableNfsDiskMonitoring?: pulumi.Input<boolean>;
     /**
      * OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
      * disks from the monitoring list.
@@ -104,6 +111,10 @@ export interface DiskOptionsState {
  */
 export interface DiskOptionsArgs {
     /**
+     * Deactivate NFS monitoring on all supported systems
+     */
+    disableNfsDiskMonitoring?: pulumi.Input<boolean>;
+    /**
      * OneAgent automatically detects and monitors all your mount points, however you can create exception rules to remove
      * disks from the monitoring list.
      */
@@ -112,7 +123,7 @@ export interface DiskOptionsArgs {
      * When disabled OneAgent will try to deduplicate some of nfs disks. Disabled by default, applies only to Linux hosts.
      * Requires OneAgent 1.209 or later
      */
-    nfsShowAll: pulumi.Input<boolean>;
+    nfsShowAll?: pulumi.Input<boolean>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */

@@ -17,6 +17,8 @@ type SpanContextPropagation struct {
 
 	// Whether to create an entry point or not
 	Action pulumi.StringOutput `pulumi:"action"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// Matching strategies for the Span
 	Matches SpanContextPropagationMatchesOutput `pulumi:"matches"`
 	// The name of the rule
@@ -61,6 +63,8 @@ func GetSpanContextPropagation(ctx *pulumi.Context,
 type spanContextPropagationState struct {
 	// Whether to create an entry point or not
 	Action *string `pulumi:"action"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Matching strategies for the Span
 	Matches *SpanContextPropagationMatches `pulumi:"matches"`
 	// The name of the rule
@@ -70,6 +74,8 @@ type spanContextPropagationState struct {
 type SpanContextPropagationState struct {
 	// Whether to create an entry point or not
 	Action pulumi.StringPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Matching strategies for the Span
 	Matches SpanContextPropagationMatchesPtrInput
 	// The name of the rule
@@ -83,6 +89,8 @@ func (SpanContextPropagationState) ElementType() reflect.Type {
 type spanContextPropagationArgs struct {
 	// Whether to create an entry point or not
 	Action string `pulumi:"action"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// Matching strategies for the Span
 	Matches SpanContextPropagationMatches `pulumi:"matches"`
 	// The name of the rule
@@ -93,6 +101,8 @@ type spanContextPropagationArgs struct {
 type SpanContextPropagationArgs struct {
 	// Whether to create an entry point or not
 	Action pulumi.StringInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// Matching strategies for the Span
 	Matches SpanContextPropagationMatchesInput
 	// The name of the rule
@@ -189,6 +199,11 @@ func (o SpanContextPropagationOutput) ToSpanContextPropagationOutputWithContext(
 // Whether to create an entry point or not
 func (o SpanContextPropagationOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v *SpanContextPropagation) pulumi.StringOutput { return v.Action }).(pulumi.StringOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+func (o SpanContextPropagationOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *SpanContextPropagation) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // Matching strategies for the Span

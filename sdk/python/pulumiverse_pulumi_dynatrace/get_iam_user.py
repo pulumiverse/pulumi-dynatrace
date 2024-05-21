@@ -21,7 +21,7 @@ class GetIamUserResult:
     """
     A collection of values returned by getIamUser.
     """
-    def __init__(__self__, email=None, groups=None, id=None):
+    def __init__(__self__, email=None, groups=None, id=None, uid=None):
         if email and not isinstance(email, str):
             raise TypeError("Expected argument 'email' to be a str")
         pulumi.set(__self__, "email", email)
@@ -31,6 +31,9 @@ class GetIamUserResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if uid and not isinstance(uid, str):
+            raise TypeError("Expected argument 'uid' to be a str")
+        pulumi.set(__self__, "uid", uid)
 
     @property
     @pulumi.getter
@@ -50,6 +53,11 @@ class GetIamUserResult:
         """
         return pulumi.get(self, "id")
 
+    @property
+    @pulumi.getter
+    def uid(self) -> str:
+        return pulumi.get(self, "uid")
+
 
 class AwaitableGetIamUserResult(GetIamUserResult):
     # pylint: disable=using-constant-test
@@ -59,7 +67,8 @@ class AwaitableGetIamUserResult(GetIamUserResult):
         return GetIamUserResult(
             email=self.email,
             groups=self.groups,
-            id=self.id)
+            id=self.id,
+            uid=self.uid)
 
 
 def get_iam_user(email: Optional[str] = None,
@@ -85,7 +94,8 @@ def get_iam_user(email: Optional[str] = None,
     return AwaitableGetIamUserResult(
         email=pulumi.get(__ret__, 'email'),
         groups=pulumi.get(__ret__, 'groups'),
-        id=pulumi.get(__ret__, 'id'))
+        id=pulumi.get(__ret__, 'id'),
+        uid=pulumi.get(__ret__, 'uid'))
 
 
 @_utilities.lift_output_func(get_iam_user)

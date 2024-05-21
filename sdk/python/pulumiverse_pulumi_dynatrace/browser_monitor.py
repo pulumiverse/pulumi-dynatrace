@@ -17,9 +17,9 @@ __all__ = ['BrowserMonitorArgs', 'BrowserMonitor']
 class BrowserMonitorArgs:
     def __init__(__self__, *,
                  frequency: pulumi.Input[int],
+                 key_performance_metrics: pulumi.Input['BrowserMonitorKeyPerformanceMetricsArgs'],
                  anomaly_detection: Optional[pulumi.Input['BrowserMonitorAnomalyDetectionArgs']] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 key_performance_metrics: Optional[pulumi.Input['BrowserMonitorKeyPerformanceMetricsArgs']] = None,
                  locations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  manually_assigned_apps: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -28,9 +28,9 @@ class BrowserMonitorArgs:
         """
         The set of arguments for constructing a BrowserMonitor resource.
         :param pulumi.Input[int] frequency: The frequency of the monitor, in minutes.
+        :param pulumi.Input['BrowserMonitorKeyPerformanceMetricsArgs'] key_performance_metrics: The key performance metrics configuration
         :param pulumi.Input['BrowserMonitorAnomalyDetectionArgs'] anomaly_detection: The anomaly detection configuration.
         :param pulumi.Input[bool] enabled: The monitor is enabled (`true`) or disabled (`false`).
-        :param pulumi.Input['BrowserMonitorKeyPerformanceMetricsArgs'] key_performance_metrics: The key performance metrics configuration
         :param pulumi.Input[Sequence[pulumi.Input[str]]] locations: A list of locations from which the monitor is executed. To specify a location, use its entity ID.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] manually_assigned_apps: A set of manually assigned applications.
         :param pulumi.Input[str] name: The name of the monitor.
@@ -39,12 +39,11 @@ class BrowserMonitorArgs:
                source 'USER' will be added automatically.
         """
         pulumi.set(__self__, "frequency", frequency)
+        pulumi.set(__self__, "key_performance_metrics", key_performance_metrics)
         if anomaly_detection is not None:
             pulumi.set(__self__, "anomaly_detection", anomaly_detection)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
-        if key_performance_metrics is not None:
-            pulumi.set(__self__, "key_performance_metrics", key_performance_metrics)
         if locations is not None:
             pulumi.set(__self__, "locations", locations)
         if manually_assigned_apps is not None:
@@ -69,6 +68,18 @@ class BrowserMonitorArgs:
         pulumi.set(self, "frequency", value)
 
     @property
+    @pulumi.getter(name="keyPerformanceMetrics")
+    def key_performance_metrics(self) -> pulumi.Input['BrowserMonitorKeyPerformanceMetricsArgs']:
+        """
+        The key performance metrics configuration
+        """
+        return pulumi.get(self, "key_performance_metrics")
+
+    @key_performance_metrics.setter
+    def key_performance_metrics(self, value: pulumi.Input['BrowserMonitorKeyPerformanceMetricsArgs']):
+        pulumi.set(self, "key_performance_metrics", value)
+
+    @property
     @pulumi.getter(name="anomalyDetection")
     def anomaly_detection(self) -> Optional[pulumi.Input['BrowserMonitorAnomalyDetectionArgs']]:
         """
@@ -91,18 +102,6 @@ class BrowserMonitorArgs:
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
-
-    @property
-    @pulumi.getter(name="keyPerformanceMetrics")
-    def key_performance_metrics(self) -> Optional[pulumi.Input['BrowserMonitorKeyPerformanceMetricsArgs']]:
-        """
-        The key performance metrics configuration
-        """
-        return pulumi.get(self, "key_performance_metrics")
-
-    @key_performance_metrics.setter
-    def key_performance_metrics(self, value: Optional[pulumi.Input['BrowserMonitorKeyPerformanceMetricsArgs']]):
-        pulumi.set(self, "key_performance_metrics", value)
 
     @property
     @pulumi.getter
@@ -396,6 +395,8 @@ class BrowserMonitor(pulumi.CustomResource):
             if frequency is None and not opts.urn:
                 raise TypeError("Missing required property 'frequency'")
             __props__.__dict__["frequency"] = frequency
+            if key_performance_metrics is None and not opts.urn:
+                raise TypeError("Missing required property 'key_performance_metrics'")
             __props__.__dict__["key_performance_metrics"] = key_performance_metrics
             __props__.__dict__["locations"] = locations
             __props__.__dict__["manually_assigned_apps"] = manually_assigned_apps
@@ -480,7 +481,7 @@ class BrowserMonitor(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="keyPerformanceMetrics")
-    def key_performance_metrics(self) -> pulumi.Output[Optional['outputs.BrowserMonitorKeyPerformanceMetrics']]:
+    def key_performance_metrics(self) -> pulumi.Output['outputs.BrowserMonitorKeyPerformanceMetrics']:
         """
         The key performance metrics configuration
         """

@@ -18,9 +18,9 @@ type IbmMqFilters struct {
 	CicsMqQueueIdExcludes pulumi.StringArrayOutput `pulumi:"cicsMqQueueIdExcludes"`
 	// CICS: Included MQ queues
 	CicsMqQueueIdIncludes pulumi.StringArrayOutput `pulumi:"cicsMqQueueIdIncludes"`
-	// IMS bridge: Excluded transaction IDs
+	// When you add a transaction ID to the exclude list remaining transactions are still monitored.
 	ImsCrTrnIdExcludes pulumi.StringArrayOutput `pulumi:"imsCrTrnIdExcludes"`
-	// IMS bridge: Included transaction IDs
+	// When you add a transaction ID to the include list, all the remaining transactions are ignored.
 	ImsCrTrnIdIncludes pulumi.StringArrayOutput `pulumi:"imsCrTrnIdIncludes"`
 	// IMS: Excluded MQ queues
 	ImsMqQueueIdExcludes pulumi.StringArrayOutput `pulumi:"imsMqQueueIdExcludes"`
@@ -62,9 +62,9 @@ type ibmMqFiltersState struct {
 	CicsMqQueueIdExcludes []string `pulumi:"cicsMqQueueIdExcludes"`
 	// CICS: Included MQ queues
 	CicsMqQueueIdIncludes []string `pulumi:"cicsMqQueueIdIncludes"`
-	// IMS bridge: Excluded transaction IDs
+	// When you add a transaction ID to the exclude list remaining transactions are still monitored.
 	ImsCrTrnIdExcludes []string `pulumi:"imsCrTrnIdExcludes"`
-	// IMS bridge: Included transaction IDs
+	// When you add a transaction ID to the include list, all the remaining transactions are ignored.
 	ImsCrTrnIdIncludes []string `pulumi:"imsCrTrnIdIncludes"`
 	// IMS: Excluded MQ queues
 	ImsMqQueueIdExcludes []string `pulumi:"imsMqQueueIdExcludes"`
@@ -77,9 +77,9 @@ type IbmMqFiltersState struct {
 	CicsMqQueueIdExcludes pulumi.StringArrayInput
 	// CICS: Included MQ queues
 	CicsMqQueueIdIncludes pulumi.StringArrayInput
-	// IMS bridge: Excluded transaction IDs
+	// When you add a transaction ID to the exclude list remaining transactions are still monitored.
 	ImsCrTrnIdExcludes pulumi.StringArrayInput
-	// IMS bridge: Included transaction IDs
+	// When you add a transaction ID to the include list, all the remaining transactions are ignored.
 	ImsCrTrnIdIncludes pulumi.StringArrayInput
 	// IMS: Excluded MQ queues
 	ImsMqQueueIdExcludes pulumi.StringArrayInput
@@ -96,9 +96,9 @@ type ibmMqFiltersArgs struct {
 	CicsMqQueueIdExcludes []string `pulumi:"cicsMqQueueIdExcludes"`
 	// CICS: Included MQ queues
 	CicsMqQueueIdIncludes []string `pulumi:"cicsMqQueueIdIncludes"`
-	// IMS bridge: Excluded transaction IDs
+	// When you add a transaction ID to the exclude list remaining transactions are still monitored.
 	ImsCrTrnIdExcludes []string `pulumi:"imsCrTrnIdExcludes"`
-	// IMS bridge: Included transaction IDs
+	// When you add a transaction ID to the include list, all the remaining transactions are ignored.
 	ImsCrTrnIdIncludes []string `pulumi:"imsCrTrnIdIncludes"`
 	// IMS: Excluded MQ queues
 	ImsMqQueueIdExcludes []string `pulumi:"imsMqQueueIdExcludes"`
@@ -112,9 +112,9 @@ type IbmMqFiltersArgs struct {
 	CicsMqQueueIdExcludes pulumi.StringArrayInput
 	// CICS: Included MQ queues
 	CicsMqQueueIdIncludes pulumi.StringArrayInput
-	// IMS bridge: Excluded transaction IDs
+	// When you add a transaction ID to the exclude list remaining transactions are still monitored.
 	ImsCrTrnIdExcludes pulumi.StringArrayInput
-	// IMS bridge: Included transaction IDs
+	// When you add a transaction ID to the include list, all the remaining transactions are ignored.
 	ImsCrTrnIdIncludes pulumi.StringArrayInput
 	// IMS: Excluded MQ queues
 	ImsMqQueueIdExcludes pulumi.StringArrayInput
@@ -219,12 +219,12 @@ func (o IbmMqFiltersOutput) CicsMqQueueIdIncludes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *IbmMqFilters) pulumi.StringArrayOutput { return v.CicsMqQueueIdIncludes }).(pulumi.StringArrayOutput)
 }
 
-// IMS bridge: Excluded transaction IDs
+// When you add a transaction ID to the exclude list remaining transactions are still monitored.
 func (o IbmMqFiltersOutput) ImsCrTrnIdExcludes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *IbmMqFilters) pulumi.StringArrayOutput { return v.ImsCrTrnIdExcludes }).(pulumi.StringArrayOutput)
 }
 
-// IMS bridge: Included transaction IDs
+// When you add a transaction ID to the include list, all the remaining transactions are ignored.
 func (o IbmMqFiltersOutput) ImsCrTrnIdIncludes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *IbmMqFilters) pulumi.StringArrayOutput { return v.ImsCrTrnIdIncludes }).(pulumi.StringArrayOutput)
 }

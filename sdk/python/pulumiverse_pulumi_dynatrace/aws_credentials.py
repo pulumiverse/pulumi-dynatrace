@@ -20,6 +20,7 @@ class AwsCredentialsArgs:
                  partition_type: pulumi.Input[str],
                  tagged_only: pulumi.Input[bool],
                  label: Optional[pulumi.Input[str]] = None,
+                 remove_defaults: Optional[pulumi.Input[bool]] = None,
                  supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
                  supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]] = None,
                  tags_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]]] = None,
@@ -30,6 +31,7 @@ class AwsCredentialsArgs:
         :param pulumi.Input[str] partition_type: The type of the AWS partition
         :param pulumi.Input[bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
         :param pulumi.Input[str] label: The name of the credentials
+        :param pulumi.Input[bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
         :param pulumi.Input[str] unknowns: Any attributes that aren't yet supported by this provider
@@ -39,8 +41,16 @@ class AwsCredentialsArgs:
         pulumi.set(__self__, "tagged_only", tagged_only)
         if label is not None:
             pulumi.set(__self__, "label", label)
+        if remove_defaults is not None:
+            pulumi.set(__self__, "remove_defaults", remove_defaults)
+        if supporting_services_managed_in_dynatrace is not None:
+            warnings.warn("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""", DeprecationWarning)
+            pulumi.log.warn("""supporting_services_managed_in_dynatrace is deprecated: Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
         if supporting_services_managed_in_dynatrace is not None:
             pulumi.set(__self__, "supporting_services_managed_in_dynatrace", supporting_services_managed_in_dynatrace)
+        if supporting_services_to_monitors is not None:
+            warnings.warn("""Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""", DeprecationWarning)
+            pulumi.log.warn("""supporting_services_to_monitors is deprecated: Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""")
         if supporting_services_to_monitors is not None:
             pulumi.set(__self__, "supporting_services_to_monitors", supporting_services_to_monitors)
         if tags_to_monitors is not None:
@@ -97,8 +107,23 @@ class AwsCredentialsArgs:
         pulumi.set(self, "label", value)
 
     @property
+    @pulumi.getter(name="removeDefaults")
+    def remove_defaults(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+        """
+        return pulumi.get(self, "remove_defaults")
+
+    @remove_defaults.setter
+    def remove_defaults(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "remove_defaults", value)
+
+    @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[bool]]:
+        warnings.warn("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""", DeprecationWarning)
+        pulumi.log.warn("""supporting_services_managed_in_dynatrace is deprecated: Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
+
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
@@ -111,6 +136,9 @@ class AwsCredentialsArgs:
         """
         supporting services to be monitored
         """
+        warnings.warn("""Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""", DeprecationWarning)
+        pulumi.log.warn("""supporting_services_to_monitors is deprecated: Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""")
+
         return pulumi.get(self, "supporting_services_to_monitors")
 
     @supporting_services_to_monitors.setter
@@ -148,6 +176,7 @@ class _AwsCredentialsState:
                  authentication_data: Optional[pulumi.Input['AwsCredentialsAuthenticationDataArgs']] = None,
                  label: Optional[pulumi.Input[str]] = None,
                  partition_type: Optional[pulumi.Input[str]] = None,
+                 remove_defaults: Optional[pulumi.Input[bool]] = None,
                  supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
                  supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]]] = None,
                  tagged_only: Optional[pulumi.Input[bool]] = None,
@@ -158,6 +187,7 @@ class _AwsCredentialsState:
         :param pulumi.Input['AwsCredentialsAuthenticationDataArgs'] authentication_data: credentials for the AWS authentication
         :param pulumi.Input[str] label: The name of the credentials
         :param pulumi.Input[str] partition_type: The type of the AWS partition
+        :param pulumi.Input[bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsSupportingServicesToMonitorArgs']]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
         :param pulumi.Input[Sequence[pulumi.Input['AwsCredentialsTagsToMonitorArgs']]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
@@ -169,8 +199,16 @@ class _AwsCredentialsState:
             pulumi.set(__self__, "label", label)
         if partition_type is not None:
             pulumi.set(__self__, "partition_type", partition_type)
+        if remove_defaults is not None:
+            pulumi.set(__self__, "remove_defaults", remove_defaults)
+        if supporting_services_managed_in_dynatrace is not None:
+            warnings.warn("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""", DeprecationWarning)
+            pulumi.log.warn("""supporting_services_managed_in_dynatrace is deprecated: Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
         if supporting_services_managed_in_dynatrace is not None:
             pulumi.set(__self__, "supporting_services_managed_in_dynatrace", supporting_services_managed_in_dynatrace)
+        if supporting_services_to_monitors is not None:
+            warnings.warn("""Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""", DeprecationWarning)
+            pulumi.log.warn("""supporting_services_to_monitors is deprecated: Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""")
         if supporting_services_to_monitors is not None:
             pulumi.set(__self__, "supporting_services_to_monitors", supporting_services_to_monitors)
         if tagged_only is not None:
@@ -217,8 +255,23 @@ class _AwsCredentialsState:
         pulumi.set(self, "partition_type", value)
 
     @property
+    @pulumi.getter(name="removeDefaults")
+    def remove_defaults(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+        """
+        return pulumi.get(self, "remove_defaults")
+
+    @remove_defaults.setter
+    def remove_defaults(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "remove_defaults", value)
+
+    @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     def supporting_services_managed_in_dynatrace(self) -> Optional[pulumi.Input[bool]]:
+        warnings.warn("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""", DeprecationWarning)
+        pulumi.log.warn("""supporting_services_managed_in_dynatrace is deprecated: Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
+
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @supporting_services_managed_in_dynatrace.setter
@@ -231,6 +284,9 @@ class _AwsCredentialsState:
         """
         supporting services to be monitored
         """
+        warnings.warn("""Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""", DeprecationWarning)
+        pulumi.log.warn("""supporting_services_to_monitors is deprecated: Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""")
+
         return pulumi.get(self, "supporting_services_to_monitors")
 
     @supporting_services_to_monitors.setter
@@ -282,6 +338,7 @@ class AwsCredentials(pulumi.CustomResource):
                  authentication_data: Optional[pulumi.Input[pulumi.InputType['AwsCredentialsAuthenticationDataArgs']]] = None,
                  label: Optional[pulumi.Input[str]] = None,
                  partition_type: Optional[pulumi.Input[str]] = None,
+                 remove_defaults: Optional[pulumi.Input[bool]] = None,
                  supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
                  supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsSupportingServicesToMonitorArgs']]]]] = None,
                  tagged_only: Optional[pulumi.Input[bool]] = None,
@@ -295,6 +352,7 @@ class AwsCredentials(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['AwsCredentialsAuthenticationDataArgs']] authentication_data: credentials for the AWS authentication
         :param pulumi.Input[str] label: The name of the credentials
         :param pulumi.Input[str] partition_type: The type of the AWS partition
+        :param pulumi.Input[bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsSupportingServicesToMonitorArgs']]]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsTagsToMonitorArgs']]]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
@@ -326,6 +384,7 @@ class AwsCredentials(pulumi.CustomResource):
                  authentication_data: Optional[pulumi.Input[pulumi.InputType['AwsCredentialsAuthenticationDataArgs']]] = None,
                  label: Optional[pulumi.Input[str]] = None,
                  partition_type: Optional[pulumi.Input[str]] = None,
+                 remove_defaults: Optional[pulumi.Input[bool]] = None,
                  supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
                  supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsSupportingServicesToMonitorArgs']]]]] = None,
                  tagged_only: Optional[pulumi.Input[bool]] = None,
@@ -347,6 +406,7 @@ class AwsCredentials(pulumi.CustomResource):
             if partition_type is None and not opts.urn:
                 raise TypeError("Missing required property 'partition_type'")
             __props__.__dict__["partition_type"] = partition_type
+            __props__.__dict__["remove_defaults"] = remove_defaults
             __props__.__dict__["supporting_services_managed_in_dynatrace"] = supporting_services_managed_in_dynatrace
             __props__.__dict__["supporting_services_to_monitors"] = supporting_services_to_monitors
             if tagged_only is None and not opts.urn:
@@ -367,6 +427,7 @@ class AwsCredentials(pulumi.CustomResource):
             authentication_data: Optional[pulumi.Input[pulumi.InputType['AwsCredentialsAuthenticationDataArgs']]] = None,
             label: Optional[pulumi.Input[str]] = None,
             partition_type: Optional[pulumi.Input[str]] = None,
+            remove_defaults: Optional[pulumi.Input[bool]] = None,
             supporting_services_managed_in_dynatrace: Optional[pulumi.Input[bool]] = None,
             supporting_services_to_monitors: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsSupportingServicesToMonitorArgs']]]]] = None,
             tagged_only: Optional[pulumi.Input[bool]] = None,
@@ -382,6 +443,7 @@ class AwsCredentials(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['AwsCredentialsAuthenticationDataArgs']] authentication_data: credentials for the AWS authentication
         :param pulumi.Input[str] label: The name of the credentials
         :param pulumi.Input[str] partition_type: The type of the AWS partition
+        :param pulumi.Input[bool] remove_defaults: Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsSupportingServicesToMonitorArgs']]]] supporting_services_to_monitors: supporting services to be monitored
         :param pulumi.Input[bool] tagged_only: Monitor only resources which have specified AWS tags (`true`) or all resources (`false`)
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AwsCredentialsTagsToMonitorArgs']]]] tags_to_monitors: AWS tags to be monitored. You can specify up to 10 tags. Only applicable when the **tagged_only** parameter is set to `true`
@@ -394,6 +456,7 @@ class AwsCredentials(pulumi.CustomResource):
         __props__.__dict__["authentication_data"] = authentication_data
         __props__.__dict__["label"] = label
         __props__.__dict__["partition_type"] = partition_type
+        __props__.__dict__["remove_defaults"] = remove_defaults
         __props__.__dict__["supporting_services_managed_in_dynatrace"] = supporting_services_managed_in_dynatrace
         __props__.__dict__["supporting_services_to_monitors"] = supporting_services_to_monitors
         __props__.__dict__["tagged_only"] = tagged_only
@@ -426,8 +489,19 @@ class AwsCredentials(pulumi.CustomResource):
         return pulumi.get(self, "partition_type")
 
     @property
+    @pulumi.getter(name="removeDefaults")
+    def remove_defaults(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `AwsService` subsequently won't get touched.
+        """
+        return pulumi.get(self, "remove_defaults")
+
+    @property
     @pulumi.getter(name="supportingServicesManagedInDynatrace")
     def supporting_services_managed_in_dynatrace(self) -> pulumi.Output[Optional[bool]]:
+        warnings.warn("""Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""", DeprecationWarning)
+        pulumi.log.warn("""supporting_services_managed_in_dynatrace is deprecated: Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates""")
+
         return pulumi.get(self, "supporting_services_managed_in_dynatrace")
 
     @property
@@ -436,6 +510,9 @@ class AwsCredentials(pulumi.CustomResource):
         """
         supporting services to be monitored
         """
+        warnings.warn("""Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""", DeprecationWarning)
+        pulumi.log.warn("""supporting_services_to_monitors is deprecated: Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `AwsService`""")
+
         return pulumi.get(self, "supporting_services_to_monitors")
 
     @property

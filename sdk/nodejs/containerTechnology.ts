@@ -57,6 +57,10 @@ export class ContainerTechnology extends pulumi.CustomResource {
      */
     public readonly garden!: pulumi.Output<boolean>;
     /**
+     * Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+     */
+    public readonly podman!: pulumi.Output<boolean>;
+    /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
     public readonly scope!: pulumi.Output<string | undefined>;
@@ -84,6 +88,7 @@ export class ContainerTechnology extends pulumi.CustomResource {
             resourceInputs["docker"] = state ? state.docker : undefined;
             resourceInputs["dockerWindows"] = state ? state.dockerWindows : undefined;
             resourceInputs["garden"] = state ? state.garden : undefined;
+            resourceInputs["podman"] = state ? state.podman : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
             resourceInputs["winc"] = state ? state.winc : undefined;
         } else {
@@ -106,6 +111,9 @@ export class ContainerTechnology extends pulumi.CustomResource {
             if ((!args || args.garden === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'garden'");
             }
+            if ((!args || args.podman === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'podman'");
+            }
             if ((!args || args.winc === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'winc'");
             }
@@ -115,6 +123,7 @@ export class ContainerTechnology extends pulumi.CustomResource {
             resourceInputs["docker"] = args ? args.docker : undefined;
             resourceInputs["dockerWindows"] = args ? args.dockerWindows : undefined;
             resourceInputs["garden"] = args ? args.garden : undefined;
+            resourceInputs["podman"] = args ? args.podman : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
             resourceInputs["winc"] = args ? args.winc : undefined;
         }
@@ -151,6 +160,10 @@ export interface ContainerTechnologyState {
      * Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
      */
     garden?: pulumi.Input<boolean>;
+    /**
+     * Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+     */
+    podman?: pulumi.Input<boolean>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */
@@ -189,6 +202,10 @@ export interface ContainerTechnologyArgs {
      * Platform: Cloud Foundry Status: Released Operating system: Linux Min agent version: 1.133
      */
     garden: pulumi.Input<boolean>;
+    /**
+     * Platform: Podman Status: Released Operating system: Linux Min agent version: 1.267
+     */
+    podman: pulumi.Input<boolean>;
     /**
      * The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
      */

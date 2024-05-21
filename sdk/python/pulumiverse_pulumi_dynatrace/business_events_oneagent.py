@@ -20,19 +20,23 @@ class BusinessEventsOneagentArgs:
                  event: pulumi.Input['BusinessEventsOneagentEventArgs'],
                  rule_name: pulumi.Input[str],
                  triggers: pulumi.Input['BusinessEventsOneagentTriggersArgs'],
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a BusinessEventsOneagent resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['BusinessEventsOneagentEventArgs'] event: Event meta data
         :param pulumi.Input[str] rule_name: Rule name
-        :param pulumi.Input['BusinessEventsOneagentTriggersArgs'] triggers: Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+        :param pulumi.Input['BusinessEventsOneagentTriggersArgs'] triggers: Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "event", event)
         pulumi.set(__self__, "rule_name", rule_name)
         pulumi.set(__self__, "triggers", triggers)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if scope is not None:
             pulumi.set(__self__, "scope", scope)
 
@@ -76,13 +80,25 @@ class BusinessEventsOneagentArgs:
     @pulumi.getter
     def triggers(self) -> pulumi.Input['BusinessEventsOneagentTriggersArgs']:
         """
-        Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+        Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         return pulumi.get(self, "triggers")
 
     @triggers.setter
     def triggers(self, value: pulumi.Input['BusinessEventsOneagentTriggersArgs']):
         pulumi.set(self, "triggers", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter
@@ -102,6 +118,7 @@ class _BusinessEventsOneagentState:
     def __init__(__self__, *,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  event: Optional[pulumi.Input['BusinessEventsOneagentEventArgs']] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  rule_name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  triggers: Optional[pulumi.Input['BusinessEventsOneagentTriggersArgs']] = None):
@@ -109,14 +126,17 @@ class _BusinessEventsOneagentState:
         Input properties used for looking up and filtering BusinessEventsOneagent resources.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['BusinessEventsOneagentEventArgs'] event: Event meta data
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] rule_name: Rule name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input['BusinessEventsOneagentTriggersArgs'] triggers: Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+        :param pulumi.Input['BusinessEventsOneagentTriggersArgs'] triggers: Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
         if event is not None:
             pulumi.set(__self__, "event", event)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if rule_name is not None:
             pulumi.set(__self__, "rule_name", rule_name)
         if scope is not None:
@@ -149,6 +169,18 @@ class _BusinessEventsOneagentState:
         pulumi.set(self, "event", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter(name="ruleName")
     def rule_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -176,7 +208,7 @@ class _BusinessEventsOneagentState:
     @pulumi.getter
     def triggers(self) -> Optional[pulumi.Input['BusinessEventsOneagentTriggersArgs']]:
         """
-        Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+        Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         return pulumi.get(self, "triggers")
 
@@ -192,6 +224,7 @@ class BusinessEventsOneagent(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  event: Optional[pulumi.Input[pulumi.InputType['BusinessEventsOneagentEventArgs']]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  rule_name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  triggers: Optional[pulumi.Input[pulumi.InputType['BusinessEventsOneagentTriggersArgs']]] = None,
@@ -202,9 +235,10 @@ class BusinessEventsOneagent(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[pulumi.InputType['BusinessEventsOneagentEventArgs']] event: Event meta data
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] rule_name: Rule name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[pulumi.InputType['BusinessEventsOneagentTriggersArgs']] triggers: Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+        :param pulumi.Input[pulumi.InputType['BusinessEventsOneagentTriggersArgs']] triggers: Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         ...
     @overload
@@ -231,6 +265,7 @@ class BusinessEventsOneagent(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
                  event: Optional[pulumi.Input[pulumi.InputType['BusinessEventsOneagentEventArgs']]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  rule_name: Optional[pulumi.Input[str]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  triggers: Optional[pulumi.Input[pulumi.InputType['BusinessEventsOneagentTriggersArgs']]] = None,
@@ -249,6 +284,7 @@ class BusinessEventsOneagent(pulumi.CustomResource):
             if event is None and not opts.urn:
                 raise TypeError("Missing required property 'event'")
             __props__.__dict__["event"] = event
+            __props__.__dict__["insert_after"] = insert_after
             if rule_name is None and not opts.urn:
                 raise TypeError("Missing required property 'rule_name'")
             __props__.__dict__["rule_name"] = rule_name
@@ -268,6 +304,7 @@ class BusinessEventsOneagent(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
             event: Optional[pulumi.Input[pulumi.InputType['BusinessEventsOneagentEventArgs']]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             rule_name: Optional[pulumi.Input[str]] = None,
             scope: Optional[pulumi.Input[str]] = None,
             triggers: Optional[pulumi.Input[pulumi.InputType['BusinessEventsOneagentTriggersArgs']]] = None) -> 'BusinessEventsOneagent':
@@ -280,9 +317,10 @@ class BusinessEventsOneagent(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[pulumi.InputType['BusinessEventsOneagentEventArgs']] event: Event meta data
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] rule_name: Rule name
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
-        :param pulumi.Input[pulumi.InputType['BusinessEventsOneagentTriggersArgs']] triggers: Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+        :param pulumi.Input[pulumi.InputType['BusinessEventsOneagentTriggersArgs']] triggers: Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -290,6 +328,7 @@ class BusinessEventsOneagent(pulumi.CustomResource):
 
         __props__.__dict__["enabled"] = enabled
         __props__.__dict__["event"] = event
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["rule_name"] = rule_name
         __props__.__dict__["scope"] = scope
         __props__.__dict__["triggers"] = triggers
@@ -312,6 +351,14 @@ class BusinessEventsOneagent(pulumi.CustomResource):
         return pulumi.get(self, "event")
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @property
     @pulumi.getter(name="ruleName")
     def rule_name(self) -> pulumi.Output[str]:
         """
@@ -331,7 +378,7 @@ class BusinessEventsOneagent(pulumi.CustomResource):
     @pulumi.getter
     def triggers(self) -> pulumi.Output['outputs.BusinessEventsOneagentTriggers']:
         """
-        Define conditions to trigger business events from incoming web requests. Whenever one condition applies the event gets captured.
+        Define conditions to trigger business events from incoming web requests. Triggers are connected by AND logic per capture rule. If you set multiple trigger rules, all of them need to be fulfilled to capture a business event.
         """
         return pulumi.get(self, "triggers")
 

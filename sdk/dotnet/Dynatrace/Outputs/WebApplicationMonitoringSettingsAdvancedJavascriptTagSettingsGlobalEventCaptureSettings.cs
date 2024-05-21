@@ -19,6 +19,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly string? AdditionalEventCapturedAsUserInput;
         /// <summary>
+        /// Change enabled/disabled
+        /// </summary>
+        public readonly bool? Change;
+        /// <summary>
         /// Click enabled/disabled
         /// </summary>
         public readonly bool? Click;
@@ -46,10 +50,20 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// Scroll enabled/disabled
         /// </summary>
         public readonly bool? Scroll;
+        /// <summary>
+        /// TouchEnd enabled/disabled
+        /// </summary>
+        public readonly bool? TouchEnd;
+        /// <summary>
+        /// TouchStart enabled/disabled
+        /// </summary>
+        public readonly bool? TouchStart;
 
         [OutputConstructor]
         private WebApplicationMonitoringSettingsAdvancedJavascriptTagSettingsGlobalEventCaptureSettings(
             string? additionalEventCapturedAsUserInput,
+
+            bool? change,
 
             bool? click,
 
@@ -63,9 +77,14 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
 
             bool? mouseup,
 
-            bool? scroll)
+            bool? scroll,
+
+            bool? touchEnd,
+
+            bool? touchStart)
         {
             AdditionalEventCapturedAsUserInput = additionalEventCapturedAsUserInput;
+            Change = change;
             Click = click;
             Doubleclick = doubleclick;
             Keydown = keydown;
@@ -73,6 +92,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
             Mousedown = mousedown;
             Mouseup = mouseup;
             Scroll = scroll;
+            TouchEnd = touchEnd;
+            TouchStart = touchStart;
         }
     }
 }

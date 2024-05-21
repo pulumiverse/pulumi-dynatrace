@@ -46,9 +46,18 @@ export class AwsCredentials extends pulumi.CustomResource {
      * The type of the AWS partition
      */
     public readonly partitionType!: pulumi.Output<string>;
+    /**
+     * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
+     */
+    public readonly removeDefaults!: pulumi.Output<boolean | undefined>;
+    /**
+     * @deprecated Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
+     */
     public readonly supportingServicesManagedInDynatrace!: pulumi.Output<boolean | undefined>;
     /**
      * supporting services to be monitored
+     *
+     * @deprecated Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `dynatrace.AwsService`
      */
     public readonly supportingServicesToMonitors!: pulumi.Output<outputs.AwsCredentialsSupportingServicesToMonitor[] | undefined>;
     /**
@@ -80,6 +89,7 @@ export class AwsCredentials extends pulumi.CustomResource {
             resourceInputs["authenticationData"] = state ? state.authenticationData : undefined;
             resourceInputs["label"] = state ? state.label : undefined;
             resourceInputs["partitionType"] = state ? state.partitionType : undefined;
+            resourceInputs["removeDefaults"] = state ? state.removeDefaults : undefined;
             resourceInputs["supportingServicesManagedInDynatrace"] = state ? state.supportingServicesManagedInDynatrace : undefined;
             resourceInputs["supportingServicesToMonitors"] = state ? state.supportingServicesToMonitors : undefined;
             resourceInputs["taggedOnly"] = state ? state.taggedOnly : undefined;
@@ -99,6 +109,7 @@ export class AwsCredentials extends pulumi.CustomResource {
             resourceInputs["authenticationData"] = args ? args.authenticationData : undefined;
             resourceInputs["label"] = args ? args.label : undefined;
             resourceInputs["partitionType"] = args ? args.partitionType : undefined;
+            resourceInputs["removeDefaults"] = args ? args.removeDefaults : undefined;
             resourceInputs["supportingServicesManagedInDynatrace"] = args ? args.supportingServicesManagedInDynatrace : undefined;
             resourceInputs["supportingServicesToMonitors"] = args ? args.supportingServicesToMonitors : undefined;
             resourceInputs["taggedOnly"] = args ? args.taggedOnly : undefined;
@@ -126,9 +137,18 @@ export interface AwsCredentialsState {
      * The type of the AWS partition
      */
     partitionType?: pulumi.Input<string>;
+    /**
+     * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
+     */
+    removeDefaults?: pulumi.Input<boolean>;
+    /**
+     * @deprecated Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
+     */
     supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
     /**
      * supporting services to be monitored
+     *
+     * @deprecated Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `dynatrace.AwsService`
      */
     supportingServicesToMonitors?: pulumi.Input<pulumi.Input<inputs.AwsCredentialsSupportingServicesToMonitor>[]>;
     /**
@@ -161,9 +181,18 @@ export interface AwsCredentialsArgs {
      * The type of the AWS partition
      */
     partitionType: pulumi.Input<string>;
+    /**
+     * Instructs the provider to remove the supporting services Dynatrace applies by default to newly created AWS Credentials. Supporting Services applied by via `dynatrace.AwsService` subsequently won't get touched.
+     */
+    removeDefaults?: pulumi.Input<boolean>;
+    /**
+     * @deprecated Supporting Services are no longer getting managed via this resource. Regardless of the value set here, this resource won't affect the supporting services during updates
+     */
     supportingServicesManagedInDynatrace?: pulumi.Input<boolean>;
     /**
      * supporting services to be monitored
+     *
+     * @deprecated Managing supporting services directly within AWS Credentials has been deprecated within the REST API. This attribute just exists for backwards compatibility. It no longer has an effect. For managing services use the resource `dynatrace.AwsService`
      */
     supportingServicesToMonitors?: pulumi.Input<pulumi.Input<inputs.AwsCredentialsSupportingServicesToMonitor>[]>;
     /**

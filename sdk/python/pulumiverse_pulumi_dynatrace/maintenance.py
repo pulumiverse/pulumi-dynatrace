@@ -16,27 +16,39 @@ __all__ = ['MaintenanceArgs', 'Maintenance']
 @pulumi.input_type
 class MaintenanceArgs:
     def __init__(__self__, *,
+                 enabled: pulumi.Input[bool],
                  general_properties: pulumi.Input['MaintenanceGeneralPropertiesArgs'],
                  schedule: pulumi.Input['MaintenanceScheduleArgs'],
-                 enabled: Optional[pulumi.Input[bool]] = None,
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterArgs']]]] = None,
+                 filters: Optional[pulumi.Input['MaintenanceFiltersArgs']] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Maintenance resource.
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input['MaintenanceGeneralPropertiesArgs'] general_properties: The general properties of the maintenance window
         :param pulumi.Input['MaintenanceScheduleArgs'] schedule: The schedule of the maintenance window
-        :param pulumi.Input[bool] enabled: The maintenance window is enabled or disabled
-        :param pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterArgs']]] filters: The filters of the maintenance window
+        :param pulumi.Input['MaintenanceFiltersArgs'] filters: ## Filters
+               Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
         :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         """
+        pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "general_properties", general_properties)
         pulumi.set(__self__, "schedule", schedule)
-        if enabled is not None:
-            pulumi.set(__self__, "enabled", enabled)
         if filters is not None:
             pulumi.set(__self__, "filters", filters)
         if legacy_id is not None:
             pulumi.set(__self__, "legacy_id", legacy_id)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[bool]:
+        """
+        This setting is enabled (`true`) or disabled (`false`)
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enabled", value)
 
     @property
     @pulumi.getter(name="generalProperties")
@@ -64,26 +76,15 @@ class MaintenanceArgs:
 
     @property
     @pulumi.getter
-    def enabled(self) -> Optional[pulumi.Input[bool]]:
+    def filters(self) -> Optional[pulumi.Input['MaintenanceFiltersArgs']]:
         """
-        The maintenance window is enabled or disabled
-        """
-        return pulumi.get(self, "enabled")
-
-    @enabled.setter
-    def enabled(self, value: Optional[pulumi.Input[bool]]):
-        pulumi.set(self, "enabled", value)
-
-    @property
-    @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterArgs']]]]:
-        """
-        The filters of the maintenance window
+        ## Filters
+        Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
         """
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterArgs']]]]):
+    def filters(self, value: Optional[pulumi.Input['MaintenanceFiltersArgs']]):
         pulumi.set(self, "filters", value)
 
     @property
@@ -103,14 +104,15 @@ class MaintenanceArgs:
 class _MaintenanceState:
     def __init__(__self__, *,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterArgs']]]] = None,
+                 filters: Optional[pulumi.Input['MaintenanceFiltersArgs']] = None,
                  general_properties: Optional[pulumi.Input['MaintenanceGeneralPropertiesArgs']] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
                  schedule: Optional[pulumi.Input['MaintenanceScheduleArgs']] = None):
         """
         Input properties used for looking up and filtering Maintenance resources.
-        :param pulumi.Input[bool] enabled: The maintenance window is enabled or disabled
-        :param pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterArgs']]] filters: The filters of the maintenance window
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input['MaintenanceFiltersArgs'] filters: ## Filters
+               Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
         :param pulumi.Input['MaintenanceGeneralPropertiesArgs'] general_properties: The general properties of the maintenance window
         :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input['MaintenanceScheduleArgs'] schedule: The schedule of the maintenance window
@@ -130,7 +132,7 @@ class _MaintenanceState:
     @pulumi.getter
     def enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        The maintenance window is enabled or disabled
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
@@ -140,14 +142,15 @@ class _MaintenanceState:
 
     @property
     @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterArgs']]]]:
+    def filters(self) -> Optional[pulumi.Input['MaintenanceFiltersArgs']]:
         """
-        The filters of the maintenance window
+        ## Filters
+        Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
         """
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceFilterArgs']]]]):
+    def filters(self, value: Optional[pulumi.Input['MaintenanceFiltersArgs']]):
         pulumi.set(self, "filters", value)
 
     @property
@@ -193,7 +196,7 @@ class Maintenance(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaintenanceFilterArgs']]]]] = None,
+                 filters: Optional[pulumi.Input[pulumi.InputType['MaintenanceFiltersArgs']]] = None,
                  general_properties: Optional[pulumi.Input[pulumi.InputType['MaintenanceGeneralPropertiesArgs']]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
                  schedule: Optional[pulumi.Input[pulumi.InputType['MaintenanceScheduleArgs']]] = None,
@@ -202,8 +205,9 @@ class Maintenance(pulumi.CustomResource):
         Create a Maintenance resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] enabled: The maintenance window is enabled or disabled
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaintenanceFilterArgs']]]] filters: The filters of the maintenance window
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[pulumi.InputType['MaintenanceFiltersArgs']] filters: ## Filters
+               Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
         :param pulumi.Input[pulumi.InputType['MaintenanceGeneralPropertiesArgs']] general_properties: The general properties of the maintenance window
         :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input[pulumi.InputType['MaintenanceScheduleArgs']] schedule: The schedule of the maintenance window
@@ -232,7 +236,7 @@ class Maintenance(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaintenanceFilterArgs']]]]] = None,
+                 filters: Optional[pulumi.Input[pulumi.InputType['MaintenanceFiltersArgs']]] = None,
                  general_properties: Optional[pulumi.Input[pulumi.InputType['MaintenanceGeneralPropertiesArgs']]] = None,
                  legacy_id: Optional[pulumi.Input[str]] = None,
                  schedule: Optional[pulumi.Input[pulumi.InputType['MaintenanceScheduleArgs']]] = None,
@@ -245,6 +249,8 @@ class Maintenance(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = MaintenanceArgs.__new__(MaintenanceArgs)
 
+            if enabled is None and not opts.urn:
+                raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
             __props__.__dict__["filters"] = filters
             if general_properties is None and not opts.urn:
@@ -265,7 +271,7 @@ class Maintenance(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
-            filters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaintenanceFilterArgs']]]]] = None,
+            filters: Optional[pulumi.Input[pulumi.InputType['MaintenanceFiltersArgs']]] = None,
             general_properties: Optional[pulumi.Input[pulumi.InputType['MaintenanceGeneralPropertiesArgs']]] = None,
             legacy_id: Optional[pulumi.Input[str]] = None,
             schedule: Optional[pulumi.Input[pulumi.InputType['MaintenanceScheduleArgs']]] = None) -> 'Maintenance':
@@ -276,8 +282,9 @@ class Maintenance(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[bool] enabled: The maintenance window is enabled or disabled
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MaintenanceFilterArgs']]]] filters: The filters of the maintenance window
+        :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[pulumi.InputType['MaintenanceFiltersArgs']] filters: ## Filters
+               Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
         :param pulumi.Input[pulumi.InputType['MaintenanceGeneralPropertiesArgs']] general_properties: The general properties of the maintenance window
         :param pulumi.Input[str] legacy_id: The ID of this setting when referred to by the Config REST API V1
         :param pulumi.Input[pulumi.InputType['MaintenanceScheduleArgs']] schedule: The schedule of the maintenance window
@@ -295,17 +302,18 @@ class Maintenance(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def enabled(self) -> pulumi.Output[Optional[bool]]:
+    def enabled(self) -> pulumi.Output[bool]:
         """
-        The maintenance window is enabled or disabled
+        This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
 
     @property
     @pulumi.getter
-    def filters(self) -> pulumi.Output[Optional[Sequence['outputs.MaintenanceFilter']]]:
+    def filters(self) -> pulumi.Output[Optional['outputs.MaintenanceFilters']]:
         """
-        The filters of the maintenance window
+        ## Filters
+        Add filters to limit the scope of maintenance to only select matching entities. If no filter is defined, the maintenance window is valid for the whole environment. Each filter is evaluated separately (**OR**).
         """
         return pulumi.get(self, "filters")
 

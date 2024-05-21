@@ -20,6 +20,8 @@ class LogTimestampArgs:
                  date_time_pattern: pulumi.Input[str],
                  enabled: pulumi.Input[bool],
                  timezone: pulumi.Input[str],
+                 date_search_limit: Optional[pulumi.Input[int]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matchers: Optional[pulumi.Input['LogTimestampMatchersArgs']] = None,
                  scope: Optional[pulumi.Input[str]] = None):
         """
@@ -28,6 +30,8 @@ class LogTimestampArgs:
         :param pulumi.Input[str] date_time_pattern: Date-time pattern
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
         :param pulumi.Input[str] timezone: Timezone
+        :param pulumi.Input[int] date_search_limit: (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogTimestampMatchersArgs'] matchers: no documentation available
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         """
@@ -35,6 +39,10 @@ class LogTimestampArgs:
         pulumi.set(__self__, "date_time_pattern", date_time_pattern)
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "timezone", timezone)
+        if date_search_limit is not None:
+            pulumi.set(__self__, "date_search_limit", date_search_limit)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if matchers is not None:
             pulumi.set(__self__, "matchers", matchers)
         if scope is not None:
@@ -89,6 +97,30 @@ class LogTimestampArgs:
         pulumi.set(self, "timezone", value)
 
     @property
+    @pulumi.getter(name="dateSearchLimit")
+    def date_search_limit(self) -> Optional[pulumi.Input[int]]:
+        """
+        (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        """
+        return pulumi.get(self, "date_search_limit")
+
+    @date_search_limit.setter
+    def date_search_limit(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "date_search_limit", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter
     def matchers(self) -> Optional[pulumi.Input['LogTimestampMatchersArgs']]:
         """
@@ -117,26 +149,34 @@ class LogTimestampArgs:
 class _LogTimestampState:
     def __init__(__self__, *,
                  config_item_title: Optional[pulumi.Input[str]] = None,
+                 date_search_limit: Optional[pulumi.Input[int]] = None,
                  date_time_pattern: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matchers: Optional[pulumi.Input['LogTimestampMatchersArgs']] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  timezone: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering LogTimestamp resources.
         :param pulumi.Input[str] config_item_title: Name
+        :param pulumi.Input[int] date_search_limit: (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[str] date_time_pattern: Date-time pattern
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['LogTimestampMatchersArgs'] matchers: no documentation available
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[str] timezone: Timezone
         """
         if config_item_title is not None:
             pulumi.set(__self__, "config_item_title", config_item_title)
+        if date_search_limit is not None:
+            pulumi.set(__self__, "date_search_limit", date_search_limit)
         if date_time_pattern is not None:
             pulumi.set(__self__, "date_time_pattern", date_time_pattern)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if matchers is not None:
             pulumi.set(__self__, "matchers", matchers)
         if scope is not None:
@@ -155,6 +195,18 @@ class _LogTimestampState:
     @config_item_title.setter
     def config_item_title(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "config_item_title", value)
+
+    @property
+    @pulumi.getter(name="dateSearchLimit")
+    def date_search_limit(self) -> Optional[pulumi.Input[int]]:
+        """
+        (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        """
+        return pulumi.get(self, "date_search_limit")
+
+    @date_search_limit.setter
+    def date_search_limit(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "date_search_limit", value)
 
     @property
     @pulumi.getter(name="dateTimePattern")
@@ -179,6 +231,18 @@ class _LogTimestampState:
     @enabled.setter
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter
@@ -223,8 +287,10 @@ class LogTimestamp(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_item_title: Optional[pulumi.Input[str]] = None,
+                 date_search_limit: Optional[pulumi.Input[int]] = None,
                  date_time_pattern: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matchers: Optional[pulumi.Input[pulumi.InputType['LogTimestampMatchersArgs']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  timezone: Optional[pulumi.Input[str]] = None,
@@ -234,8 +300,10 @@ class LogTimestamp(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] config_item_title: Name
+        :param pulumi.Input[int] date_search_limit: (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[str] date_time_pattern: Date-time pattern
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[pulumi.InputType['LogTimestampMatchersArgs']] matchers: no documentation available
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[str] timezone: Timezone
@@ -264,8 +332,10 @@ class LogTimestamp(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  config_item_title: Optional[pulumi.Input[str]] = None,
+                 date_search_limit: Optional[pulumi.Input[int]] = None,
                  date_time_pattern: Optional[pulumi.Input[str]] = None,
                  enabled: Optional[pulumi.Input[bool]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matchers: Optional[pulumi.Input[pulumi.InputType['LogTimestampMatchersArgs']]] = None,
                  scope: Optional[pulumi.Input[str]] = None,
                  timezone: Optional[pulumi.Input[str]] = None,
@@ -281,12 +351,14 @@ class LogTimestamp(pulumi.CustomResource):
             if config_item_title is None and not opts.urn:
                 raise TypeError("Missing required property 'config_item_title'")
             __props__.__dict__["config_item_title"] = config_item_title
+            __props__.__dict__["date_search_limit"] = date_search_limit
             if date_time_pattern is None and not opts.urn:
                 raise TypeError("Missing required property 'date_time_pattern'")
             __props__.__dict__["date_time_pattern"] = date_time_pattern
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
+            __props__.__dict__["insert_after"] = insert_after
             __props__.__dict__["matchers"] = matchers
             __props__.__dict__["scope"] = scope
             if timezone is None and not opts.urn:
@@ -303,8 +375,10 @@ class LogTimestamp(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             config_item_title: Optional[pulumi.Input[str]] = None,
+            date_search_limit: Optional[pulumi.Input[int]] = None,
             date_time_pattern: Optional[pulumi.Input[str]] = None,
             enabled: Optional[pulumi.Input[bool]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             matchers: Optional[pulumi.Input[pulumi.InputType['LogTimestampMatchersArgs']]] = None,
             scope: Optional[pulumi.Input[str]] = None,
             timezone: Optional[pulumi.Input[str]] = None) -> 'LogTimestamp':
@@ -316,8 +390,10 @@ class LogTimestamp(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] config_item_title: Name
+        :param pulumi.Input[int] date_search_limit: (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
         :param pulumi.Input[str] date_time_pattern: Date-time pattern
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[pulumi.InputType['LogTimestampMatchersArgs']] matchers: no documentation available
         :param pulumi.Input[str] scope: The scope of this setting (HOST, HOST_GROUP). Omit this property if you want to cover the whole environment.
         :param pulumi.Input[str] timezone: Timezone
@@ -327,8 +403,10 @@ class LogTimestamp(pulumi.CustomResource):
         __props__ = _LogTimestampState.__new__(_LogTimestampState)
 
         __props__.__dict__["config_item_title"] = config_item_title
+        __props__.__dict__["date_search_limit"] = date_search_limit
         __props__.__dict__["date_time_pattern"] = date_time_pattern
         __props__.__dict__["enabled"] = enabled
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["matchers"] = matchers
         __props__.__dict__["scope"] = scope
         __props__.__dict__["timezone"] = timezone
@@ -341,6 +419,14 @@ class LogTimestamp(pulumi.CustomResource):
         Name
         """
         return pulumi.get(self, "config_item_title")
+
+    @property
+    @pulumi.getter(name="dateSearchLimit")
+    def date_search_limit(self) -> pulumi.Output[Optional[int]]:
+        """
+        (v1.275) Defines the number of characters in every log line (starting from the first character in the line) where the timestamp is searched.
+        """
+        return pulumi.get(self, "date_search_limit")
 
     @property
     @pulumi.getter(name="dateTimePattern")
@@ -357,6 +443,14 @@ class LogTimestamp(pulumi.CustomResource):
         This setting is enabled (`true`) or disabled (`false`)
         """
         return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter

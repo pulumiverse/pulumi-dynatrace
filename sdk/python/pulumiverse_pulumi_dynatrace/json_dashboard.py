@@ -14,12 +14,16 @@ __all__ = ['JsonDashboardArgs', 'JsonDashboard']
 @pulumi.input_type
 class JsonDashboardArgs:
     def __init__(__self__, *,
-                 contents: pulumi.Input[str]):
+                 contents: pulumi.Input[str],
+                 link_id: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a JsonDashboard resource.
         :param pulumi.Input[str] contents: Contains the JSON Code of the Dashboard
+        :param pulumi.Input[str] link_id: ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
         """
         pulumi.set(__self__, "contents", contents)
+        if link_id is not None:
+            pulumi.set(__self__, "link_id", link_id)
 
     @property
     @pulumi.getter
@@ -33,17 +37,33 @@ class JsonDashboardArgs:
     def contents(self, value: pulumi.Input[str]):
         pulumi.set(self, "contents", value)
 
+    @property
+    @pulumi.getter(name="linkId")
+    def link_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
+        """
+        return pulumi.get(self, "link_id")
+
+    @link_id.setter
+    def link_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "link_id", value)
+
 
 @pulumi.input_type
 class _JsonDashboardState:
     def __init__(__self__, *,
-                 contents: Optional[pulumi.Input[str]] = None):
+                 contents: Optional[pulumi.Input[str]] = None,
+                 link_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering JsonDashboard resources.
         :param pulumi.Input[str] contents: Contains the JSON Code of the Dashboard
+        :param pulumi.Input[str] link_id: ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
         """
         if contents is not None:
             pulumi.set(__self__, "contents", contents)
+        if link_id is not None:
+            pulumi.set(__self__, "link_id", link_id)
 
     @property
     @pulumi.getter
@@ -57,6 +77,18 @@ class _JsonDashboardState:
     def contents(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "contents", value)
 
+    @property
+    @pulumi.getter(name="linkId")
+    def link_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
+        """
+        return pulumi.get(self, "link_id")
+
+    @link_id.setter
+    def link_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "link_id", value)
+
 
 class JsonDashboard(pulumi.CustomResource):
     @overload
@@ -64,12 +96,14 @@ class JsonDashboard(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  contents: Optional[pulumi.Input[str]] = None,
+                 link_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         Create a JsonDashboard resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] contents: Contains the JSON Code of the Dashboard
+        :param pulumi.Input[str] link_id: ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
         """
         ...
     @overload
@@ -95,6 +129,7 @@ class JsonDashboard(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  contents: Optional[pulumi.Input[str]] = None,
+                 link_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -107,6 +142,7 @@ class JsonDashboard(pulumi.CustomResource):
             if contents is None and not opts.urn:
                 raise TypeError("Missing required property 'contents'")
             __props__.__dict__["contents"] = contents
+            __props__.__dict__["link_id"] = link_id
         super(JsonDashboard, __self__).__init__(
             'dynatrace:index/jsonDashboard:JsonDashboard',
             resource_name,
@@ -117,7 +153,8 @@ class JsonDashboard(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            contents: Optional[pulumi.Input[str]] = None) -> 'JsonDashboard':
+            contents: Optional[pulumi.Input[str]] = None,
+            link_id: Optional[pulumi.Input[str]] = None) -> 'JsonDashboard':
         """
         Get an existing JsonDashboard resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -126,12 +163,14 @@ class JsonDashboard(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] contents: Contains the JSON Code of the Dashboard
+        :param pulumi.Input[str] link_id: ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _JsonDashboardState.__new__(_JsonDashboardState)
 
         __props__.__dict__["contents"] = contents
+        __props__.__dict__["link_id"] = link_id
         return JsonDashboard(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -141,4 +180,12 @@ class JsonDashboard(pulumi.CustomResource):
         Contains the JSON Code of the Dashboard
         """
         return pulumi.get(self, "contents")
+
+    @property
+    @pulumi.getter(name="linkId")
+    def link_id(self) -> pulumi.Output[str]:
+        """
+        ID of the dashboard, used with the json*dashboard*base resource and variables to create circular dependencies between dashboards for hyperlinks. See the documentation for `JsonDashboardBase` for a concrete example.
+        """
+        return pulumi.get(self, "link_id")
 

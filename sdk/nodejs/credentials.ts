@@ -35,6 +35,10 @@ export class Credentials extends pulumi.CustomResource {
     }
 
     /**
+     * Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+     */
+    public readonly allowContextlessRequests!: pulumi.Output<boolean | undefined>;
+    /**
      * The certificate in the string format.
      */
     public readonly certificate!: pulumi.Output<string | undefined>;
@@ -71,8 +75,14 @@ export class Credentials extends pulumi.CustomResource {
     public readonly public!: pulumi.Output<boolean | undefined>;
     /**
      * The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+     *
+     * @deprecated Deprecated(v279), please use `scopes` instead.
      */
-    public readonly scope!: pulumi.Output<string>;
+    public readonly scope!: pulumi.Output<string | undefined>;
+    /**
+     * The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+     */
+    public readonly scopes!: pulumi.Output<string[] | undefined>;
     /**
      * Token in the string format. Specifying a token implies `Token Authentication`.
      */
@@ -89,12 +99,13 @@ export class Credentials extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: CredentialsArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args?: CredentialsArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: CredentialsArgs | CredentialsState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CredentialsState | undefined;
+            resourceInputs["allowContextlessRequests"] = state ? state.allowContextlessRequests : undefined;
             resourceInputs["certificate"] = state ? state.certificate : undefined;
             resourceInputs["credentialUsageSummaries"] = state ? state.credentialUsageSummaries : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
@@ -105,13 +116,12 @@ export class Credentials extends pulumi.CustomResource {
             resourceInputs["password"] = state ? state.password : undefined;
             resourceInputs["public"] = state ? state.public : undefined;
             resourceInputs["scope"] = state ? state.scope : undefined;
+            resourceInputs["scopes"] = state ? state.scopes : undefined;
             resourceInputs["token"] = state ? state.token : undefined;
             resourceInputs["username"] = state ? state.username : undefined;
         } else {
             const args = argsOrState as CredentialsArgs | undefined;
-            if ((!args || args.scope === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'scope'");
-            }
+            resourceInputs["allowContextlessRequests"] = args ? args.allowContextlessRequests : undefined;
             resourceInputs["certificate"] = args ? args.certificate : undefined;
             resourceInputs["credentialUsageSummaries"] = args ? args.credentialUsageSummaries : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -122,6 +132,7 @@ export class Credentials extends pulumi.CustomResource {
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["public"] = args ? args.public : undefined;
             resourceInputs["scope"] = args ? args.scope : undefined;
+            resourceInputs["scopes"] = args ? args.scopes : undefined;
             resourceInputs["token"] = args?.token ? pulumi.secret(args.token) : undefined;
             resourceInputs["username"] = args?.username ? pulumi.secret(args.username) : undefined;
         }
@@ -137,6 +148,10 @@ export class Credentials extends pulumi.CustomResource {
  */
 export interface CredentialsState {
     /**
+     * Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+     */
+    allowContextlessRequests?: pulumi.Input<boolean>;
+    /**
      * The certificate in the string format.
      */
     certificate?: pulumi.Input<string>;
@@ -173,8 +188,14 @@ export interface CredentialsState {
     public?: pulumi.Input<boolean>;
     /**
      * The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+     *
+     * @deprecated Deprecated(v279), please use `scopes` instead.
      */
     scope?: pulumi.Input<string>;
+    /**
+     * The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+     */
+    scopes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Token in the string format. Specifying a token implies `Token Authentication`.
      */
@@ -190,6 +211,10 @@ export interface CredentialsState {
  */
 export interface CredentialsArgs {
     /**
+     * Allow ad-hoc functions to access the credential details (requires the APP_ENGINE scope).
+     */
+    allowContextlessRequests?: pulumi.Input<boolean>;
+    /**
      * The certificate in the string format.
      */
     certificate?: pulumi.Input<string>;
@@ -226,8 +251,14 @@ export interface CredentialsArgs {
     public?: pulumi.Input<boolean>;
     /**
      * The scope of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+     *
+     * @deprecated Deprecated(v279), please use `scopes` instead.
      */
-    scope: pulumi.Input<string>;
+    scope?: pulumi.Input<string>;
+    /**
+     * The set of scopes of the credentials set. Possible values are `ALL`, `EXTENSION` and `SYNTHETIC`
+     */
+    scopes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Token in the string format. Specifying a token implies `Token Authentication`.
      */

@@ -77,10 +77,28 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<double> Longitude { get; private set; } = null!;
 
         /// <summary>
+        /// The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        /// </summary>
+        [Output("maxActiveGateCount")]
+        public Output<int?> MaxActiveGateCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        /// </summary>
+        [Output("minActiveGateCount")]
+        public Output<int?> MinActiveGateCount { get; private set; } = null!;
+
+        /// <summary>
         /// The name of the location
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
+
+        /// <summary>
+        /// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
+        /// </summary>
+        [Output("nodeSize")]
+        public Output<string?> NodeSize { get; private set; } = null!;
 
         /// <summary>
         /// A list of synthetic nodes belonging to the location. You can retrieve the list of available nodes with the [GET all
@@ -208,10 +226,28 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<double> Longitude { get; set; } = null!;
 
         /// <summary>
+        /// The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        /// </summary>
+        [Input("maxActiveGateCount")]
+        public Input<int>? MaxActiveGateCount { get; set; }
+
+        /// <summary>
+        /// The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        /// </summary>
+        [Input("minActiveGateCount")]
+        public Input<int>? MinActiveGateCount { get; set; }
+
+        /// <summary>
         /// The name of the location
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
+        /// </summary>
+        [Input("nodeSize")]
+        public Input<string>? NodeSize { get; set; }
 
         [Input("nodes")]
         private InputList<string>? _nodes;
@@ -306,10 +342,28 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<double>? Longitude { get; set; }
 
         /// <summary>
+        /// The maximum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        /// </summary>
+        [Input("maxActiveGateCount")]
+        public Input<int>? MaxActiveGateCount { get; set; }
+
+        /// <summary>
+        /// The minimum number of Active Gates required for that location. Not required when `deployment_type` is set to `STANDARD`
+        /// </summary>
+        [Input("minActiveGateCount")]
+        public Input<int>? MinActiveGateCount { get; set; }
+
+        /// <summary>
         /// The name of the location
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// Possible values: `UNSUPPORTED`, `XS`, `S` and `M`. Not required when `deployment_type` is set to `STANDARD`.
+        /// </summary>
+        [Input("nodeSize")]
+        public Input<string>? NodeSize { get; set; }
 
         [Input("nodes")]
         private InputList<string>? _nodes;

@@ -60,9 +60,33 @@ type LookupSloArgs struct {
 
 // A collection of values returned by getSlo.
 type LookupSloResult struct {
+	// Burn rate visualization is enabled (`true`) or disabled (`false`)
+	BurnRateVisualizationEnabled bool `pulumi:"burnRateVisualizationEnabled"`
+	// The custom description of the SLO
+	Description string `pulumi:"description"`
+	// The SLO is enabled (`true`) or disabled (`false`)
+	Enabled bool `pulumi:"enabled"`
+	// The evaluation type of the SLO. Currently only `AGGREGATE` is supported
+	EvaluationType string `pulumi:"evaluationType"`
+	// The timeframe during which the SLO is to be evaluated. For the timeframe you can enter expressions like -1h (last hour), -1w (last week) or complex expressions like -2d to now (last two days), -1d/d to now/d (beginning of yesterday to beginning of today).
+	EvaluationWindow string `pulumi:"evaluationWindow"`
+	// The threshold defines when a burn rate is marked as fast-burning (high-emergency). Burn rates lower than this threshold (and greater than 1) are highlighted as slow-burn (low-emergency)
+	FastBurnThreshold float64 `pulumi:"fastBurnThreshold"`
+	// The entity filter for the SLO evaluation. See [syntax of entity selector](https://dt-url.net/entityselector) for details
+	Filter string `pulumi:"filter"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string `pulumi:"id"`
-	Name string `pulumi:"name"`
+	Id string `pulumi:"id"`
+	// The ID of this setting when referred to by the Config REST API V1
+	LegacyId string `pulumi:"legacyId"`
+	// The percentage-based metric expression for the calculation of the SLO
+	MetricExpression string `pulumi:"metricExpression"`
+	// No documentation available
+	MetricName string `pulumi:"metricName"`
+	Name       string `pulumi:"name"`
+	// The target value of the SLO
+	TargetSuccess float64 `pulumi:"targetSuccess"`
+	// The warning value of the SLO. At warning state the SLO is still fulfilled but is getting close to failure
+	TargetWarning float64 `pulumi:"targetWarning"`
 }
 
 func LookupSloOutput(ctx *pulumi.Context, args LookupSloOutputArgs, opts ...pulumi.InvokeOption) LookupSloResultOutput {
@@ -102,13 +126,73 @@ func (o LookupSloResultOutput) ToLookupSloResultOutputWithContext(ctx context.Co
 	return o
 }
 
+// Burn rate visualization is enabled (`true`) or disabled (`false`)
+func (o LookupSloResultOutput) BurnRateVisualizationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSloResult) bool { return v.BurnRateVisualizationEnabled }).(pulumi.BoolOutput)
+}
+
+// The custom description of the SLO
+func (o LookupSloResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSloResult) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The SLO is enabled (`true`) or disabled (`false`)
+func (o LookupSloResultOutput) Enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSloResult) bool { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// The evaluation type of the SLO. Currently only `AGGREGATE` is supported
+func (o LookupSloResultOutput) EvaluationType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSloResult) string { return v.EvaluationType }).(pulumi.StringOutput)
+}
+
+// The timeframe during which the SLO is to be evaluated. For the timeframe you can enter expressions like -1h (last hour), -1w (last week) or complex expressions like -2d to now (last two days), -1d/d to now/d (beginning of yesterday to beginning of today).
+func (o LookupSloResultOutput) EvaluationWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSloResult) string { return v.EvaluationWindow }).(pulumi.StringOutput)
+}
+
+// The threshold defines when a burn rate is marked as fast-burning (high-emergency). Burn rates lower than this threshold (and greater than 1) are highlighted as slow-burn (low-emergency)
+func (o LookupSloResultOutput) FastBurnThreshold() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupSloResult) float64 { return v.FastBurnThreshold }).(pulumi.Float64Output)
+}
+
+// The entity filter for the SLO evaluation. See [syntax of entity selector](https://dt-url.net/entityselector) for details
+func (o LookupSloResultOutput) Filter() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSloResult) string { return v.Filter }).(pulumi.StringOutput)
+}
+
 // The provider-assigned unique ID for this managed resource.
 func (o LookupSloResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSloResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The ID of this setting when referred to by the Config REST API V1
+func (o LookupSloResultOutput) LegacyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSloResult) string { return v.LegacyId }).(pulumi.StringOutput)
+}
+
+// The percentage-based metric expression for the calculation of the SLO
+func (o LookupSloResultOutput) MetricExpression() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSloResult) string { return v.MetricExpression }).(pulumi.StringOutput)
+}
+
+// No documentation available
+func (o LookupSloResultOutput) MetricName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSloResult) string { return v.MetricName }).(pulumi.StringOutput)
+}
+
 func (o LookupSloResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSloResult) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The target value of the SLO
+func (o LookupSloResultOutput) TargetSuccess() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupSloResult) float64 { return v.TargetSuccess }).(pulumi.Float64Output)
+}
+
+// The warning value of the SLO. At warning state the SLO is still fulfilled but is getting close to failure
+func (o LookupSloResultOutput) TargetWarning() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupSloResult) float64 { return v.TargetWarning }).(pulumi.Float64Output)
 }
 
 func init() {

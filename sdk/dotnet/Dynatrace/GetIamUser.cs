@@ -102,6 +102,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string Uid;
 
         [OutputConstructor]
         private GetIamUserResult(
@@ -109,11 +110,14 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
 
             ImmutableArray<string> groups,
 
-            string id)
+            string id,
+
+            string uid)
         {
             Email = email;
             Groups = groups;
             Id = id;
+            Uid = uid;
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly string ConditionType;
         /// <summary>
-        /// Key
+        /// no documentation available
         /// </summary>
         public readonly string? Key;
         /// <summary>
@@ -27,7 +27,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly string RuleMatcher;
         /// <summary>
-        /// Value
+        /// no documentation available
         /// </summary>
         public readonly string Value;
 

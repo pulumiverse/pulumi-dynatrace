@@ -24,8 +24,8 @@ class IbmMqFiltersArgs:
         The set of arguments for constructing a IbmMqFilters resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] cics_mq_queue_id_excludes: CICS: Excluded MQ queues
         :param pulumi.Input[Sequence[pulumi.Input[str]]] cics_mq_queue_id_includes: CICS: Included MQ queues
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_excludes: IMS bridge: Excluded transaction IDs
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_includes: IMS bridge: Included transaction IDs
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_excludes: When you add a transaction ID to the exclude list remaining transactions are still monitored.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_includes: When you add a transaction ID to the include list, all the remaining transactions are ignored.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_mq_queue_id_excludes: IMS: Excluded MQ queues
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_mq_queue_id_includes: IMS: Included MQ queues
         """
@@ -70,7 +70,7 @@ class IbmMqFiltersArgs:
     @pulumi.getter(name="imsCrTrnIdExcludes")
     def ims_cr_trn_id_excludes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        IMS bridge: Excluded transaction IDs
+        When you add a transaction ID to the exclude list remaining transactions are still monitored.
         """
         return pulumi.get(self, "ims_cr_trn_id_excludes")
 
@@ -82,7 +82,7 @@ class IbmMqFiltersArgs:
     @pulumi.getter(name="imsCrTrnIdIncludes")
     def ims_cr_trn_id_includes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        IMS bridge: Included transaction IDs
+        When you add a transaction ID to the include list, all the remaining transactions are ignored.
         """
         return pulumi.get(self, "ims_cr_trn_id_includes")
 
@@ -128,8 +128,8 @@ class _IbmMqFiltersState:
         Input properties used for looking up and filtering IbmMqFilters resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] cics_mq_queue_id_excludes: CICS: Excluded MQ queues
         :param pulumi.Input[Sequence[pulumi.Input[str]]] cics_mq_queue_id_includes: CICS: Included MQ queues
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_excludes: IMS bridge: Excluded transaction IDs
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_includes: IMS bridge: Included transaction IDs
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_excludes: When you add a transaction ID to the exclude list remaining transactions are still monitored.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_includes: When you add a transaction ID to the include list, all the remaining transactions are ignored.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_mq_queue_id_excludes: IMS: Excluded MQ queues
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_mq_queue_id_includes: IMS: Included MQ queues
         """
@@ -174,7 +174,7 @@ class _IbmMqFiltersState:
     @pulumi.getter(name="imsCrTrnIdExcludes")
     def ims_cr_trn_id_excludes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        IMS bridge: Excluded transaction IDs
+        When you add a transaction ID to the exclude list remaining transactions are still monitored.
         """
         return pulumi.get(self, "ims_cr_trn_id_excludes")
 
@@ -186,7 +186,7 @@ class _IbmMqFiltersState:
     @pulumi.getter(name="imsCrTrnIdIncludes")
     def ims_cr_trn_id_includes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        IMS bridge: Included transaction IDs
+        When you add a transaction ID to the include list, all the remaining transactions are ignored.
         """
         return pulumi.get(self, "ims_cr_trn_id_includes")
 
@@ -237,8 +237,8 @@ class IbmMqFilters(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] cics_mq_queue_id_excludes: CICS: Excluded MQ queues
         :param pulumi.Input[Sequence[pulumi.Input[str]]] cics_mq_queue_id_includes: CICS: Included MQ queues
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_excludes: IMS bridge: Excluded transaction IDs
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_includes: IMS bridge: Included transaction IDs
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_excludes: When you add a transaction ID to the exclude list remaining transactions are still monitored.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_includes: When you add a transaction ID to the include list, all the remaining transactions are ignored.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_mq_queue_id_excludes: IMS: Excluded MQ queues
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_mq_queue_id_includes: IMS: Included MQ queues
         """
@@ -311,8 +311,8 @@ class IbmMqFilters(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] cics_mq_queue_id_excludes: CICS: Excluded MQ queues
         :param pulumi.Input[Sequence[pulumi.Input[str]]] cics_mq_queue_id_includes: CICS: Included MQ queues
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_excludes: IMS bridge: Excluded transaction IDs
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_includes: IMS bridge: Included transaction IDs
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_excludes: When you add a transaction ID to the exclude list remaining transactions are still monitored.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_cr_trn_id_includes: When you add a transaction ID to the include list, all the remaining transactions are ignored.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_mq_queue_id_excludes: IMS: Excluded MQ queues
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ims_mq_queue_id_includes: IMS: Included MQ queues
         """
@@ -348,7 +348,7 @@ class IbmMqFilters(pulumi.CustomResource):
     @pulumi.getter(name="imsCrTrnIdExcludes")
     def ims_cr_trn_id_excludes(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        IMS bridge: Excluded transaction IDs
+        When you add a transaction ID to the exclude list remaining transactions are still monitored.
         """
         return pulumi.get(self, "ims_cr_trn_id_excludes")
 
@@ -356,7 +356,7 @@ class IbmMqFilters(pulumi.CustomResource):
     @pulumi.getter(name="imsCrTrnIdIncludes")
     def ims_cr_trn_id_includes(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        IMS bridge: Included transaction IDs
+        When you add a transaction ID to the include list, all the remaining transactions are ignored.
         """
         return pulumi.get(self, "ims_cr_trn_id_includes")
 

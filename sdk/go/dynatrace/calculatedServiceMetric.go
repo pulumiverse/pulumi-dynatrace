@@ -25,6 +25,8 @@ type CalculatedServiceMetric struct {
 	Enabled pulumi.BoolPtrOutput `pulumi:"enabled"`
 	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
 	EntityId pulumi.StringPtrOutput `pulumi:"entityId"`
+	// Metric should (true) or not (false) ignore muted requests.
+	IgnoreMutedRequests pulumi.BoolPtrOutput `pulumi:"ignoreMutedRequests"`
 	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
 	ManagementZones pulumi.StringArrayOutput `pulumi:"managementZones"`
 	// The definition of a calculated service metric
@@ -94,6 +96,8 @@ type calculatedServiceMetricState struct {
 	Enabled *bool `pulumi:"enabled"`
 	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
 	EntityId *string `pulumi:"entityId"`
+	// Metric should (true) or not (false) ignore muted requests.
+	IgnoreMutedRequests *bool `pulumi:"ignoreMutedRequests"`
 	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
 	ManagementZones []string `pulumi:"managementZones"`
 	// The definition of a calculated service metric
@@ -128,6 +132,8 @@ type CalculatedServiceMetricState struct {
 	Enabled pulumi.BoolPtrInput
 	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
 	EntityId pulumi.StringPtrInput
+	// Metric should (true) or not (false) ignore muted requests.
+	IgnoreMutedRequests pulumi.BoolPtrInput
 	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
 	ManagementZones pulumi.StringArrayInput
 	// The definition of a calculated service metric
@@ -166,6 +172,8 @@ type calculatedServiceMetricArgs struct {
 	Enabled *bool `pulumi:"enabled"`
 	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
 	EntityId *string `pulumi:"entityId"`
+	// Metric should (true) or not (false) ignore muted requests.
+	IgnoreMutedRequests *bool `pulumi:"ignoreMutedRequests"`
 	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
 	ManagementZones []string `pulumi:"managementZones"`
 	// The definition of a calculated service metric
@@ -201,6 +209,8 @@ type CalculatedServiceMetricArgs struct {
 	Enabled pulumi.BoolPtrInput
 	// Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
 	EntityId pulumi.StringPtrInput
+	// Metric should (true) or not (false) ignore muted requests.
+	IgnoreMutedRequests pulumi.BoolPtrInput
 	// Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field
 	ManagementZones pulumi.StringArrayInput
 	// The definition of a calculated service metric
@@ -336,6 +346,11 @@ func (o CalculatedServiceMetricOutput) Enabled() pulumi.BoolPtrOutput {
 // Restricts the metric usage to the specified service. This field is mutually exclusive with the `managementZones` field
 func (o CalculatedServiceMetricOutput) EntityId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CalculatedServiceMetric) pulumi.StringPtrOutput { return v.EntityId }).(pulumi.StringPtrOutput)
+}
+
+// Metric should (true) or not (false) ignore muted requests.
+func (o CalculatedServiceMetricOutput) IgnoreMutedRequests() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *CalculatedServiceMetric) pulumi.BoolPtrOutput { return v.IgnoreMutedRequests }).(pulumi.BoolPtrOutput)
 }
 
 // Restricts the metric usage to specified management zones. This field is mutually exclusive with the `entityId` field

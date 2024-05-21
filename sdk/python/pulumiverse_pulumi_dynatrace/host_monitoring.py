@@ -14,33 +14,29 @@ __all__ = ['HostMonitoringArgs', 'HostMonitoring']
 @pulumi.input_type
 class HostMonitoringArgs:
     def __init__(__self__, *,
-                 auto_injection: pulumi.Input[bool],
                  enabled: pulumi.Input[bool],
-                 full_stack: pulumi.Input[bool],
-                 host_id: pulumi.Input[str]):
+                 host_id: pulumi.Input[str],
+                 auto_injection: Optional[pulumi.Input[bool]] = None,
+                 full_stack: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a HostMonitoring resource.
-        :param pulumi.Input[bool] auto_injection: An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
         :param pulumi.Input[bool] enabled: This setting is enabled (`true`) or disabled (`false`)
-        :param pulumi.Input[bool] full_stack: Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
         :param pulumi.Input[str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
+        :param pulumi.Input[bool] auto_injection: An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
+        :param pulumi.Input[bool] full_stack: Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
         """
-        pulumi.set(__self__, "auto_injection", auto_injection)
         pulumi.set(__self__, "enabled", enabled)
-        pulumi.set(__self__, "full_stack", full_stack)
         pulumi.set(__self__, "host_id", host_id)
-
-    @property
-    @pulumi.getter(name="autoInjection")
-    def auto_injection(self) -> pulumi.Input[bool]:
-        """
-        An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
-        """
-        return pulumi.get(self, "auto_injection")
-
-    @auto_injection.setter
-    def auto_injection(self, value: pulumi.Input[bool]):
-        pulumi.set(self, "auto_injection", value)
+        if auto_injection is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""auto_injection is deprecated: This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.""")
+        if auto_injection is not None:
+            pulumi.set(__self__, "auto_injection", auto_injection)
+        if full_stack is not None:
+            warnings.warn("""This attribute is not supported anymore by the Dynatrace API""", DeprecationWarning)
+            pulumi.log.warn("""full_stack is deprecated: This attribute is not supported anymore by the Dynatrace API""")
+        if full_stack is not None:
+            pulumi.set(__self__, "full_stack", full_stack)
 
     @property
     @pulumi.getter
@@ -55,18 +51,6 @@ class HostMonitoringArgs:
         pulumi.set(self, "enabled", value)
 
     @property
-    @pulumi.getter(name="fullStack")
-    def full_stack(self) -> pulumi.Input[bool]:
-        """
-        Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
-        """
-        return pulumi.get(self, "full_stack")
-
-    @full_stack.setter
-    def full_stack(self, value: pulumi.Input[bool]):
-        pulumi.set(self, "full_stack", value)
-
-    @property
     @pulumi.getter(name="hostId")
     def host_id(self) -> pulumi.Input[str]:
         """
@@ -77,6 +61,36 @@ class HostMonitoringArgs:
     @host_id.setter
     def host_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "host_id", value)
+
+    @property
+    @pulumi.getter(name="autoInjection")
+    def auto_injection(self) -> Optional[pulumi.Input[bool]]:
+        """
+        An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
+        """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""auto_injection is deprecated: This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.""")
+
+        return pulumi.get(self, "auto_injection")
+
+    @auto_injection.setter
+    def auto_injection(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "auto_injection", value)
+
+    @property
+    @pulumi.getter(name="fullStack")
+    def full_stack(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
+        """
+        warnings.warn("""This attribute is not supported anymore by the Dynatrace API""", DeprecationWarning)
+        pulumi.log.warn("""full_stack is deprecated: This attribute is not supported anymore by the Dynatrace API""")
+
+        return pulumi.get(self, "full_stack")
+
+    @full_stack.setter
+    def full_stack(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "full_stack", value)
 
 
 @pulumi.input_type
@@ -94,9 +108,15 @@ class _HostMonitoringState:
         :param pulumi.Input[str] host_id: The scope of this settings. If the settings should cover the whole environment, just don't specify any scope.
         """
         if auto_injection is not None:
+            warnings.warn("""This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.""", DeprecationWarning)
+            pulumi.log.warn("""auto_injection is deprecated: This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.""")
+        if auto_injection is not None:
             pulumi.set(__self__, "auto_injection", auto_injection)
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
+        if full_stack is not None:
+            warnings.warn("""This attribute is not supported anymore by the Dynatrace API""", DeprecationWarning)
+            pulumi.log.warn("""full_stack is deprecated: This attribute is not supported anymore by the Dynatrace API""")
         if full_stack is not None:
             pulumi.set(__self__, "full_stack", full_stack)
         if host_id is not None:
@@ -108,6 +128,9 @@ class _HostMonitoringState:
         """
         An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""auto_injection is deprecated: This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.""")
+
         return pulumi.get(self, "auto_injection")
 
     @auto_injection.setter
@@ -132,6 +155,9 @@ class _HostMonitoringState:
         """
         Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
         """
+        warnings.warn("""This attribute is not supported anymore by the Dynatrace API""", DeprecationWarning)
+        pulumi.log.warn("""full_stack is deprecated: This attribute is not supported anymore by the Dynatrace API""")
+
         return pulumi.get(self, "full_stack")
 
     @full_stack.setter
@@ -206,14 +232,10 @@ class HostMonitoring(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = HostMonitoringArgs.__new__(HostMonitoringArgs)
 
-            if auto_injection is None and not opts.urn:
-                raise TypeError("Missing required property 'auto_injection'")
             __props__.__dict__["auto_injection"] = auto_injection
             if enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'enabled'")
             __props__.__dict__["enabled"] = enabled
-            if full_stack is None and not opts.urn:
-                raise TypeError("Missing required property 'full_stack'")
             __props__.__dict__["full_stack"] = full_stack
             if host_id is None and not opts.urn:
                 raise TypeError("Missing required property 'host_id'")
@@ -256,10 +278,13 @@ class HostMonitoring(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="autoInjection")
-    def auto_injection(self) -> pulumi.Output[bool]:
+    def auto_injection(self) -> pulumi.Output[Optional[bool]]:
         """
         An auto-injection disabled with [oneagentctl](https://dt-url.net/oneagentctl) takes precedence over this setting and cannot be changed from the Dynatrace web UI.
         """
+        warnings.warn("""This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.""", DeprecationWarning)
+        pulumi.log.warn("""auto_injection is deprecated: This field has been moved to a new schema, please utilize the resource `HostMonitoringAdvanced` to configure this field.""")
+
         return pulumi.get(self, "auto_injection")
 
     @property
@@ -272,10 +297,13 @@ class HostMonitoring(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="fullStack")
-    def full_stack(self) -> pulumi.Output[bool]:
+    def full_stack(self) -> pulumi.Output[Optional[bool]]:
         """
         Dynatrace uses full-stack monitoring by default, to monitor every aspect of your environment, including all processes, services, and applications detected on your hosts.
         """
+        warnings.warn("""This attribute is not supported anymore by the Dynatrace API""", DeprecationWarning)
+        pulumi.log.warn("""full_stack is deprecated: This attribute is not supported anymore by the Dynatrace API""")
+
         return pulumi.get(self, "full_stack")
 
     @property

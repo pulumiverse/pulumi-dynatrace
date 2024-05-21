@@ -5,6 +5,10 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 /**
+ * > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
+ *
+ * > This resource requires the API token scopes **Allow read access for identity resources (users and groups)** (`account-idm-read`) and **Allow write access for identity resources (users and groups)** (`account-idm-write`)
+ *
  * ## Dynatrace Documentation
  *
  * - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -64,6 +68,7 @@ export class IamUser extends pulumi.CustomResource {
 
     public readonly email!: pulumi.Output<string>;
     public readonly groups!: pulumi.Output<string[] | undefined>;
+    public /*out*/ readonly uid!: pulumi.Output<string>;
 
     /**
      * Create a IamUser resource with the given unique name, arguments, and options.
@@ -80,6 +85,7 @@ export class IamUser extends pulumi.CustomResource {
             const state = argsOrState as IamUserState | undefined;
             resourceInputs["email"] = state ? state.email : undefined;
             resourceInputs["groups"] = state ? state.groups : undefined;
+            resourceInputs["uid"] = state ? state.uid : undefined;
         } else {
             const args = argsOrState as IamUserArgs | undefined;
             if ((!args || args.email === undefined) && !opts.urn) {
@@ -87,6 +93,7 @@ export class IamUser extends pulumi.CustomResource {
             }
             resourceInputs["email"] = args ? args.email : undefined;
             resourceInputs["groups"] = args ? args.groups : undefined;
+            resourceInputs["uid"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(IamUser.__pulumiType, name, resourceInputs, opts);
@@ -99,6 +106,7 @@ export class IamUser extends pulumi.CustomResource {
 export interface IamUserState {
     email?: pulumi.Input<string>;
     groups?: pulumi.Input<pulumi.Input<string>[]>;
+    uid?: pulumi.Input<string>;
 }
 
 /**

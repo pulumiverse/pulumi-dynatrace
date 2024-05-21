@@ -33,9 +33,14 @@ type AzureCredentials struct {
 	MonitorOnlyTagPairs AzureCredentialsMonitorOnlyTagPairArrayOutput `pulumi:"monitorOnlyTagPairs"`
 	// Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
 	MonitorOnlyTaggedEntities pulumi.BoolOutput `pulumi:"monitorOnlyTaggedEntities"`
+	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
+	RemoveDefaults pulumi.BoolPtrOutput `pulumi:"removeDefaults"`
 	// A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
-	SupportingServices                   AzureCredentialsSupportingServiceArrayOutput `pulumi:"supportingServices"`
-	SupportingServicesManagedInDynatrace pulumi.BoolPtrOutput                         `pulumi:"supportingServicesManagedInDynatrace"`
+	//
+	// Deprecated: Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.
+	SupportingServices AzureCredentialsSupportingServiceArrayOutput `pulumi:"supportingServices"`
+	// Deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.
+	SupportingServicesManagedInDynatrace pulumi.BoolPtrOutput `pulumi:"supportingServicesManagedInDynatrace"`
 	// Any attributes that aren't yet supported by this provider
 	Unknowns pulumi.StringPtrOutput `pulumi:"unknowns"`
 }
@@ -101,9 +106,14 @@ type azureCredentialsState struct {
 	MonitorOnlyTagPairs []AzureCredentialsMonitorOnlyTagPair `pulumi:"monitorOnlyTagPairs"`
 	// Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
 	MonitorOnlyTaggedEntities *bool `pulumi:"monitorOnlyTaggedEntities"`
+	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
+	RemoveDefaults *bool `pulumi:"removeDefaults"`
 	// A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
-	SupportingServices                   []AzureCredentialsSupportingService `pulumi:"supportingServices"`
-	SupportingServicesManagedInDynatrace *bool                               `pulumi:"supportingServicesManagedInDynatrace"`
+	//
+	// Deprecated: Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.
+	SupportingServices []AzureCredentialsSupportingService `pulumi:"supportingServices"`
+	// Deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.
+	SupportingServicesManagedInDynatrace *bool `pulumi:"supportingServicesManagedInDynatrace"`
 	// Any attributes that aren't yet supported by this provider
 	Unknowns *string `pulumi:"unknowns"`
 }
@@ -127,8 +137,13 @@ type AzureCredentialsState struct {
 	MonitorOnlyTagPairs AzureCredentialsMonitorOnlyTagPairArrayInput
 	// Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
 	MonitorOnlyTaggedEntities pulumi.BoolPtrInput
+	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
+	RemoveDefaults pulumi.BoolPtrInput
 	// A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
-	SupportingServices                   AzureCredentialsSupportingServiceArrayInput
+	//
+	// Deprecated: Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.
+	SupportingServices AzureCredentialsSupportingServiceArrayInput
+	// Deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.
 	SupportingServicesManagedInDynatrace pulumi.BoolPtrInput
 	// Any attributes that aren't yet supported by this provider
 	Unknowns pulumi.StringPtrInput
@@ -157,9 +172,14 @@ type azureCredentialsArgs struct {
 	MonitorOnlyTagPairs []AzureCredentialsMonitorOnlyTagPair `pulumi:"monitorOnlyTagPairs"`
 	// Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
 	MonitorOnlyTaggedEntities bool `pulumi:"monitorOnlyTaggedEntities"`
+	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
+	RemoveDefaults *bool `pulumi:"removeDefaults"`
 	// A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
-	SupportingServices                   []AzureCredentialsSupportingService `pulumi:"supportingServices"`
-	SupportingServicesManagedInDynatrace *bool                               `pulumi:"supportingServicesManagedInDynatrace"`
+	//
+	// Deprecated: Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.
+	SupportingServices []AzureCredentialsSupportingService `pulumi:"supportingServices"`
+	// Deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.
+	SupportingServicesManagedInDynatrace *bool `pulumi:"supportingServicesManagedInDynatrace"`
 	// Any attributes that aren't yet supported by this provider
 	Unknowns *string `pulumi:"unknowns"`
 }
@@ -184,8 +204,13 @@ type AzureCredentialsArgs struct {
 	MonitorOnlyTagPairs AzureCredentialsMonitorOnlyTagPairArrayInput
 	// Monitor only resources that have specified Azure tags (`true`) or all resources (`false`).
 	MonitorOnlyTaggedEntities pulumi.BoolInput
+	// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
+	RemoveDefaults pulumi.BoolPtrInput
 	// A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
-	SupportingServices                   AzureCredentialsSupportingServiceArrayInput
+	//
+	// Deprecated: Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.
+	SupportingServices AzureCredentialsSupportingServiceArrayInput
+	// Deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.
 	SupportingServicesManagedInDynatrace pulumi.BoolPtrInput
 	// Any attributes that aren't yet supported by this provider
 	Unknowns pulumi.StringPtrInput
@@ -325,11 +350,19 @@ func (o AzureCredentialsOutput) MonitorOnlyTaggedEntities() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AzureCredentials) pulumi.BoolOutput { return v.MonitorOnlyTaggedEntities }).(pulumi.BoolOutput)
 }
 
+// Instructs the provider to remove the supporting services Dynatrace applies by default to newly created Azure Credentials. Supporting Services applied by via `AzureService` subsequently won't get touched.
+func (o AzureCredentialsOutput) RemoveDefaults() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AzureCredentials) pulumi.BoolPtrOutput { return v.RemoveDefaults }).(pulumi.BoolPtrOutput)
+}
+
 // A list of Azure supporting services to be monitored. For each service there's a sublist of its metrics and the metrics' dimensions that should be monitored. All of these elements (services, metrics, dimensions) must have corresponding static definitions on the server.
+//
+// Deprecated: Assigning supported services directly when creating Azure Credentials is deprecated. Use the resource `AzureService` instead.
 func (o AzureCredentialsOutput) SupportingServices() AzureCredentialsSupportingServiceArrayOutput {
 	return o.ApplyT(func(v *AzureCredentials) AzureCredentialsSupportingServiceArrayOutput { return v.SupportingServices }).(AzureCredentialsSupportingServiceArrayOutput)
 }
 
+// Deprecated: This attribute is deprecated and has no effect any more. It always defaults to `true`.
 func (o AzureCredentialsOutput) SupportingServicesManagedInDynatrace() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AzureCredentials) pulumi.BoolPtrOutput { return v.SupportingServicesManagedInDynatrace }).(pulumi.BoolPtrOutput)
 }

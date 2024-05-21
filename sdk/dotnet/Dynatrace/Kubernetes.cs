@@ -20,8 +20,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<string?> ActiveGateGroup { get; private set; } = null!;
 
         /// <summary>
-        /// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-        /// [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+        /// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
         /// </summary>
         [Output("authToken")]
         public Output<string?> AuthToken { get; private set; } = null!;
@@ -36,11 +35,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// Monitor Kubernetes namespaces, services, workloads, and pods
         /// </summary>
         [Output("cloudApplicationPipelineEnabled")]
-        public Output<bool> CloudApplicationPipelineEnabled { get; private set; } = null!;
+        public Output<bool?> CloudApplicationPipelineEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-        /// namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+        /// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
         /// </summary>
         [Output("clusterId")]
         public Output<string?> ClusterId { get; private set; } = null!;
@@ -58,15 +56,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<bool> Enabled { get; private set; } = null!;
 
         /// <summary>
-        /// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw
-        /// "OpenShift").
+        /// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
         /// </summary>
         [Output("endpointUrl")]
         public Output<string?> EndpointUrl { get; private set; } = null!;
 
         /// <summary>
-        /// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-        /// [documentation](https://dt-url.net/2201p0u).
+        /// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         /// </summary>
         [Output("eventPatterns")]
         public Output<Outputs.KubernetesEventPatterns?> EventPatterns { get; private set; } = null!;
@@ -75,7 +71,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// All events are monitored by default unless event filters are specified.
         /// </summary>
         [Output("eventProcessingActive")]
-        public Output<bool> EventProcessingActive { get; private set; } = null!;
+        public Output<bool?> EventProcessingActive { get; private set; } = null!;
 
         /// <summary>
         /// Include only events specified by Events Field Selectors
@@ -106,25 +102,25 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// may increase the CPU/memory resource consumption of your ActiveGate.
         /// </summary>
         [Output("openMetricsBuiltinEnabled")]
-        public Output<bool> OpenMetricsBuiltinEnabled { get; private set; } = null!;
+        public Output<bool?> OpenMetricsBuiltinEnabled { get; private set; } = null!;
 
         /// <summary>
         /// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         /// </summary>
         [Output("openMetricsPipelineEnabled")]
-        public Output<bool> OpenMetricsPipelineEnabled { get; private set; } = null!;
+        public Output<bool?> OpenMetricsPipelineEnabled { get; private set; } = null!;
 
         /// <summary>
         /// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         /// </summary>
         [Output("pvcMonitoringEnabled")]
-        public Output<bool> PvcMonitoringEnabled { get; private set; } = null!;
+        public Output<bool?> PvcMonitoringEnabled { get; private set; } = null!;
 
         /// <summary>
         /// The scope of this setting (KUBERNETES_CLUSTER)
         /// </summary>
         [Output("scope")]
-        public Output<string> Scope { get; private set; } = null!;
+        public Output<string?> Scope { get; private set; } = null!;
 
 
         /// <summary>
@@ -187,8 +183,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         private Input<string>? _authToken;
 
         /// <summary>
-        /// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-        /// [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+        /// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
         /// </summary>
         public Input<string>? AuthToken
         {
@@ -209,12 +204,11 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// Monitor Kubernetes namespaces, services, workloads, and pods
         /// </summary>
-        [Input("cloudApplicationPipelineEnabled", required: true)]
-        public Input<bool> CloudApplicationPipelineEnabled { get; set; } = null!;
+        [Input("cloudApplicationPipelineEnabled")]
+        public Input<bool>? CloudApplicationPipelineEnabled { get; set; }
 
         /// <summary>
-        /// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-        /// namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+        /// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
@@ -232,15 +226,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool> Enabled { get; set; } = null!;
 
         /// <summary>
-        /// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw
-        /// "OpenShift").
+        /// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
         /// </summary>
         [Input("endpointUrl")]
         public Input<string>? EndpointUrl { get; set; }
 
         /// <summary>
-        /// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-        /// [documentation](https://dt-url.net/2201p0u).
+        /// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         /// </summary>
         [Input("eventPatterns")]
         public Input<Inputs.KubernetesEventPatternsArgs>? EventPatterns { get; set; }
@@ -248,8 +240,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// <summary>
         /// All events are monitored by default unless event filters are specified.
         /// </summary>
-        [Input("eventProcessingActive", required: true)]
-        public Input<bool> EventProcessingActive { get; set; } = null!;
+        [Input("eventProcessingActive")]
+        public Input<bool>? EventProcessingActive { get; set; }
 
         /// <summary>
         /// Include only events specified by Events Field Selectors
@@ -279,26 +271,26 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         /// The workload resource metrics are based on a subset of cAdvisor metrics. Depending on your Kubernetes cluster size, this
         /// may increase the CPU/memory resource consumption of your ActiveGate.
         /// </summary>
-        [Input("openMetricsBuiltinEnabled", required: true)]
-        public Input<bool> OpenMetricsBuiltinEnabled { get; set; } = null!;
+        [Input("openMetricsBuiltinEnabled")]
+        public Input<bool>? OpenMetricsBuiltinEnabled { get; set; }
 
         /// <summary>
         /// For annotation guidance, see the [documentation](https://dt-url.net/g42i0ppw).
         /// </summary>
-        [Input("openMetricsPipelineEnabled", required: true)]
-        public Input<bool> OpenMetricsPipelineEnabled { get; set; } = null!;
+        [Input("openMetricsPipelineEnabled")]
+        public Input<bool>? OpenMetricsPipelineEnabled { get; set; }
 
         /// <summary>
         /// To enable dashboards and alerts, add the Kubernetes persistent volume claims extension to your environment.
         /// </summary>
-        [Input("pvcMonitoringEnabled", required: true)]
-        public Input<bool> PvcMonitoringEnabled { get; set; } = null!;
+        [Input("pvcMonitoringEnabled")]
+        public Input<bool>? PvcMonitoringEnabled { get; set; }
 
         /// <summary>
         /// The scope of this setting (KUBERNETES_CLUSTER)
         /// </summary>
-        [Input("scope", required: true)]
-        public Input<string> Scope { get; set; } = null!;
+        [Input("scope")]
+        public Input<string>? Scope { get; set; }
 
         public KubernetesArgs()
         {
@@ -318,8 +310,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         private Input<string>? _authToken;
 
         /// <summary>
-        /// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq "Kubernetes") or
-        /// [OpenShift](https://dt-url.net/7l43xtp "OpenShift").
+        /// Create a bearer token for [Kubernetes](https://dt-url.net/og43szq) or [OpenShift](https://dt-url.net/7l43xtp).
         /// </summary>
         public Input<string>? AuthToken
         {
@@ -344,8 +335,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? CloudApplicationPipelineEnabled { get; set; }
 
         /// <summary>
-        /// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system
-        /// namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
+        /// Unique ID of the cluster, the containerized ActiveGate is deployed to. Defaults to the UUID of the kube-system namespace. The cluster ID of containerized ActiveGates is shown on the Deployment status screen.
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
@@ -363,15 +353,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj "Kubernetes") or [OpenShift](https://dt-url.net/d623xgw
-        /// "OpenShift").
+        /// Get the API URL for [Kubernetes](https://dt-url.net/kz23snj) or [OpenShift](https://dt-url.net/d623xgw).
         /// </summary>
         [Input("endpointUrl")]
         public Input<string>? EndpointUrl { get; set; }
 
         /// <summary>
-        /// Define Kubernetes event filters to ingest events into your environment. For more details, see the
-        /// [documentation](https://dt-url.net/2201p0u).
+        /// Define Kubernetes event filters to ingest events into your environment. For more details, see the [documentation](https://dt-url.net/2201p0u).
         /// </summary>
         [Input("eventPatterns")]
         public Input<Inputs.KubernetesEventPatternsGetArgs>? EventPatterns { get; set; }

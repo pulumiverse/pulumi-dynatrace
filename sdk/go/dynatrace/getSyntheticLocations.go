@@ -12,6 +12,80 @@ import (
 )
 
 // The synthetic locations data source allows the location IDs to be retrieved based off of provided parameters.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			test, err := dynatrace.GetSyntheticLocations(ctx, &dynatrace.GetSyntheticLocationsArgs{
+//				Name: pulumi.StringRef("Sydney"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = dynatrace.NewHttpMonitor(ctx, "#name#", &dynatrace.HttpMonitorArgs{
+//				Enabled:   pulumi.Bool(true),
+//				Frequency: pulumi.Int(60),
+//				Locations: pulumi.StringArray{
+//					pulumi.String(test.Locations.EntityId),
+//				},
+//				AnomalyDetections: dynatrace.HttpMonitorAnomalyDetectionArray{
+//					&dynatrace.HttpMonitorAnomalyDetectionArgs{
+//						LoadingTimeThresholds: dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArray{
+//							&dynatrace.HttpMonitorAnomalyDetectionLoadingTimeThresholdArgs{
+//								Enabled: pulumi.Bool(true),
+//							},
+//						},
+//						OutageHandlings: dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArray{
+//							&dynatrace.HttpMonitorAnomalyDetectionOutageHandlingArgs{
+//								GlobalOutage: pulumi.Bool(true),
+//								LocalOutage:  pulumi.Bool(false),
+//								RetryOnError: pulumi.Bool(false),
+//							},
+//						},
+//					},
+//				},
+//				Script: &dynatrace.HttpMonitorScriptTypeArgs{
+//					Requests: dynatrace.HttpMonitorScriptRequestArray{
+//						&dynatrace.HttpMonitorScriptRequestArgs{
+//							Description: pulumi.String("google.com"),
+//							Method:      pulumi.String("GET"),
+//							Url:         pulumi.String("https://www.google.com"),
+//							Configuration: &dynatrace.HttpMonitorScriptRequestConfigurationArgs{
+//								AcceptAnyCertificate: pulumi.Bool(true),
+//								FollowRedirects:      pulumi.Bool(true),
+//							},
+//							Validation: &dynatrace.HttpMonitorScriptRequestValidationArgs{
+//								Rules: dynatrace.HttpMonitorScriptRequestValidationRuleArray{
+//									&dynatrace.HttpMonitorScriptRequestValidationRuleArgs{
+//										Type:        pulumi.String("httpStatusesList"),
+//										PassIfFound: pulumi.Bool(false),
+//										Value:       pulumi.String(">=400"),
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetSyntheticLocations(ctx *pulumi.Context, args *GetSyntheticLocationsArgs, opts ...pulumi.InvokeOption) (*GetSyntheticLocationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSyntheticLocationsResult

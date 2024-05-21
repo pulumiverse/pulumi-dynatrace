@@ -14,19 +14,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public partial class QueueSharingGroups : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The name of the queue sharing group
+        /// Queue sharing group name
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Queue manager(s) that belong to the queue sharing group
+        /// Queue managers
         /// </summary>
         [Output("queueManagers")]
         public Output<ImmutableArray<string>> QueueManagers { get; private set; } = null!;
 
         /// <summary>
-        /// Shared queue(s) that belong to the queue sharing group
+        /// Shared queues
         /// </summary>
         [Output("sharedQueues")]
         public Output<ImmutableArray<string>> SharedQueues { get; private set; } = null!;
@@ -79,7 +79,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class QueueSharingGroupsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the queue sharing group
+        /// Queue sharing group name
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -88,7 +88,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         private InputList<string>? _queueManagers;
 
         /// <summary>
-        /// Queue manager(s) that belong to the queue sharing group
+        /// Queue managers
         /// </summary>
         public InputList<string> QueueManagers
         {
@@ -100,7 +100,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         private InputList<string>? _sharedQueues;
 
         /// <summary>
-        /// Shared queue(s) that belong to the queue sharing group
+        /// Shared queues
         /// </summary>
         public InputList<string> SharedQueues
         {
@@ -117,7 +117,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
     public sealed class QueueSharingGroupsState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the queue sharing group
+        /// Queue sharing group name
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -126,7 +126,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         private InputList<string>? _queueManagers;
 
         /// <summary>
-        /// Queue manager(s) that belong to the queue sharing group
+        /// Queue managers
         /// </summary>
         public InputList<string> QueueManagers
         {
@@ -138,7 +138,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         private InputList<string>? _sharedQueues;
 
         /// <summary>
-        /// Shared queue(s) that belong to the queue sharing group
+        /// Shared queues
         /// </summary>
         public InputList<string> SharedQueues
         {

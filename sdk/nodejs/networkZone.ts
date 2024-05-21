@@ -41,7 +41,7 @@ export class NetworkZone extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string | undefined>;
     /**
-     * Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+     * Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -109,7 +109,7 @@ export interface NetworkZoneState {
      */
     description?: pulumi.Input<string>;
     /**
-     * Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+     * Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
      */
     name?: pulumi.Input<string>;
     /**
@@ -143,7 +143,7 @@ export interface NetworkZoneArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+     * Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
      */
     name?: pulumi.Input<string>;
     /**

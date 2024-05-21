@@ -56,7 +56,19 @@ class AwaitableGetCalculatedServiceMetricResult(GetCalculatedServiceMetricResult
 def get_calculated_service_metric(name: Optional[str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCalculatedServiceMetricResult:
     """
-    Use this data source to access information about an existing resource.
+    The calculated service metric data source allows the metric ID to be retrieved by its name.
+
+    - `name` (String) - The name of the calculated service metric
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+
+    example = dynatrace.get_calculated_service_metric(name="Terraform Example")
+    pulumi.export("groups", example.id)
+    ```
     """
     __args__ = dict()
     __args__['name'] = name
@@ -72,6 +84,18 @@ def get_calculated_service_metric(name: Optional[str] = None,
 def get_calculated_service_metric_output(name: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCalculatedServiceMetricResult]:
     """
-    Use this data source to access information about an existing resource.
+    The calculated service metric data source allows the metric ID to be retrieved by its name.
+
+    - `name` (String) - The name of the calculated service metric
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+
+    example = dynatrace.get_calculated_service_metric(name="Terraform Example")
+    pulumi.export("groups", example.id)
+    ```
     """
     ...

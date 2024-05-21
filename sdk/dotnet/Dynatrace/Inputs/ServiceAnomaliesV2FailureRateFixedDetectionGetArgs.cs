@@ -20,13 +20,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
         public Input<Inputs.ServiceAnomaliesV2FailureRateFixedDetectionOverAlertingProtectionGetArgs> OverAlertingProtection { get; set; } = null!;
 
         /// <summary>
-        /// Sensitivity
+        /// Possible Values: `High`, `Low`, `Medium`
         /// </summary>
         [Input("sensitivity", required: true)]
         public Input<string> Sensitivity { get; set; } = null!;
 
         /// <summary>
-        /// Threshold
+        /// no documentation available
         /// </summary>
         [Input("threshold", required: true)]
         public Input<double> Threshold { get; set; } = null!;

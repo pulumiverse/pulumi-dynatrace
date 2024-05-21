@@ -33,11 +33,11 @@ export class SpanAttributed extends pulumi.CustomResource {
     }
 
     /**
-     * the key of the attribute to capture
+     * Key of the span attribute to store
      */
     public readonly key!: pulumi.Output<string>;
     /**
-     * granular control over the visibility of attribute values
+     * Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
      */
     public readonly masking!: pulumi.Output<string>;
     public readonly persistent!: pulumi.Output<boolean>;
@@ -80,11 +80,11 @@ export class SpanAttributed extends pulumi.CustomResource {
  */
 export interface SpanAttributedState {
     /**
-     * the key of the attribute to capture
+     * Key of the span attribute to store
      */
     key?: pulumi.Input<string>;
     /**
-     * granular control over the visibility of attribute values
+     * Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
      */
     masking?: pulumi.Input<string>;
     persistent?: pulumi.Input<boolean>;
@@ -95,11 +95,11 @@ export interface SpanAttributedState {
  */
 export interface SpanAttributedArgs {
     /**
-     * the key of the attribute to capture
+     * Key of the span attribute to store
      */
     key: pulumi.Input<string>;
     /**
-     * granular control over the visibility of attribute values
+     * Possible Values: `MASK_ENTIRE_VALUE`, `MASK_ONLY_CONFIDENTIAL_DATA`, `NOT_MASKED`
      */
     masking: pulumi.Input<string>;
     persistent?: pulumi.Input<boolean>;

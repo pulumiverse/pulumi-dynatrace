@@ -28,6 +28,10 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         /// </summary>
         public readonly bool? SimulateBlurEvent;
         /// <summary>
+        /// Simulates pressing the 'Return' key after simulating other keystrokes. For example, to submit a form or trigger a login.
+        /// </summary>
+        public readonly bool? SimulateReturnKey;
+        /// <summary>
         /// The tab on which the page should open
         /// </summary>
         public readonly Outputs.BrowserMonitorScriptEventsEventKeystrokesTarget? Target;
@@ -52,6 +56,8 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
 
             bool? simulateBlurEvent,
 
+            bool? simulateReturnKey,
+
             Outputs.BrowserMonitorScriptEventsEventKeystrokesTarget? target,
 
             string? text,
@@ -63,6 +69,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
             Credential = credential;
             Masked = masked;
             SimulateBlurEvent = simulateBlurEvent;
+            SimulateReturnKey = simulateReturnKey;
             Target = target;
             Text = text;
             Validate = validate;

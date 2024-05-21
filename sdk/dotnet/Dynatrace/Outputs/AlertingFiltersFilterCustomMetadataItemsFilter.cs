@@ -15,9 +15,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class AlertingFiltersFilterCustomMetadataItemsFilter
     {
         /// <summary>
-        /// Type 'dt.' for key hints.
+        /// GET /api/v2/eventProperties for list of available keys
         /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// no documentation available
+        /// </summary>
+        public readonly bool? Negate;
         /// <summary>
         /// Value
         /// </summary>
@@ -27,9 +31,12 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
         private AlertingFiltersFilterCustomMetadataItemsFilter(
             string key,
 
+            bool? negate,
+
             string value)
         {
             Key = key;
+            Negate = negate;
             Value = value;
         }
     }

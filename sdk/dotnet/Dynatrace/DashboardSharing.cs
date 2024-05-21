@@ -11,6 +11,10 @@ using Pulumi;
 namespace Pulumiverse.PulumiPackage.Dynatrace
 {
     /// <summary>
+    /// &gt; This is a child resource of dynatrace_json_dashboard, therefore it is automatically retrieved with the dashboard.
+    /// 
+    /// &gt; This resource requires the API token scopes **Read configuration** (`ReadConfig`) and **Write configuration** (`WriteConfig`)
+    /// 
     /// ## Dynatrace Documentation
     /// 
     /// - Share Dynatrace dashboards - https://www.dynatrace.com/support/help/how-to-use-dynatrace/dashboards-and-charts/dashboards/share-dashboards
@@ -27,10 +31,16 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<string> DashboardId { get; private set; } = null!;
 
         /// <summary>
-        /// The dashboard is shared (`true`) or private (`false`)
+        /// The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `dynatrace.Dashboard` and `dynatrace.JsonDashboard`. Otherwise you will encounter non-empty plans.
         /// </summary>
         [Output("enabled")]
         public Output<bool?> Enabled { get; private set; } = null!;
+
+        /// <summary>
+        /// Reserved for internal use by the provider
+        /// </summary>
+        [Output("muted")]
+        public Output<bool> Muted { get; private set; } = null!;
 
         /// <summary>
         /// Access permissions of the dashboard
@@ -39,7 +49,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<Outputs.DashboardSharingPermissions?> Permissions { get; private set; } = null!;
 
         /// <summary>
-        /// If `true` the dashboard will be marked as preset
+        /// If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `dynatrace.Dashboard` and `dynatrace.JsonDashboard`. Otherwise you will encounter non-empty plans.
         /// </summary>
         [Output("preset")]
         public Output<bool?> Preset { get; private set; } = null!;
@@ -104,7 +114,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string> DashboardId { get; set; } = null!;
 
         /// <summary>
-        /// The dashboard is shared (`true`) or private (`false`)
+        /// The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `dynatrace.Dashboard` and `dynatrace.JsonDashboard`. Otherwise you will encounter non-empty plans.
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
@@ -116,7 +126,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<Inputs.DashboardSharingPermissionsArgs>? Permissions { get; set; }
 
         /// <summary>
-        /// If `true` the dashboard will be marked as preset
+        /// If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `dynatrace.Dashboard` and `dynatrace.JsonDashboard`. Otherwise you will encounter non-empty plans.
         /// </summary>
         [Input("preset")]
         public Input<bool>? Preset { get; set; }
@@ -142,10 +152,16 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<string>? DashboardId { get; set; }
 
         /// <summary>
-        /// The dashboard is shared (`true`) or private (`false`)
+        /// The dashboard is shared (`true`) or private (`false`). Make sure that this value is aligned with the attribute `shared` of the resources `dynatrace.Dashboard` and `dynatrace.JsonDashboard`. Otherwise you will encounter non-empty plans.
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
+
+        /// <summary>
+        /// Reserved for internal use by the provider
+        /// </summary>
+        [Input("muted")]
+        public Input<bool>? Muted { get; set; }
 
         /// <summary>
         /// Access permissions of the dashboard
@@ -154,7 +170,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Input<Inputs.DashboardSharingPermissionsGetArgs>? Permissions { get; set; }
 
         /// <summary>
-        /// If `true` the dashboard will be marked as preset
+        /// If `true` the dashboard will be marked as preset. Setting this attribute to `true` will automatically enforce a specific set of permissions - Dashboards flagged as Preset are shared by default. Make sure that this value is aligned with the attribute `preset` of the resources `dynatrace.Dashboard` and `dynatrace.JsonDashboard`. Otherwise you will encounter non-empty plans.
         /// </summary>
         [Input("preset")]
         public Input<bool>? Preset { get; set; }

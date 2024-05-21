@@ -17,6 +17,10 @@ type BusinessEventsProcessing struct {
 
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolOutput `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter pulumi.StringOutput `pulumi:"insertAfter"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringOutput `pulumi:"matcher"`
 	// Rule name
@@ -76,6 +80,10 @@ func GetBusinessEventsProcessing(ctx *pulumi.Context,
 type businessEventsProcessingState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled *bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher *string `pulumi:"matcher"`
 	// Rule name
@@ -91,6 +99,10 @@ type businessEventsProcessingState struct {
 type BusinessEventsProcessingState struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolPtrInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringPtrInput
 	// Rule name
@@ -110,6 +122,10 @@ func (BusinessEventsProcessingState) ElementType() reflect.Type {
 type businessEventsProcessingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled bool `pulumi:"enabled"`
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter *string `pulumi:"insertAfter"`
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher string `pulumi:"matcher"`
 	// Rule name
@@ -126,6 +142,10 @@ type businessEventsProcessingArgs struct {
 type BusinessEventsProcessingArgs struct {
 	// This setting is enabled (`true`) or disabled (`false`)
 	Enabled pulumi.BoolInput
+	// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+	// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+	// specified during update the order will remain untouched
+	InsertAfter pulumi.StringPtrInput
 	// [See our documentation](https://dt-url.net/bp234rv)
 	Matcher pulumi.StringInput
 	// Rule name
@@ -228,6 +248,13 @@ func (o BusinessEventsProcessingOutput) ToBusinessEventsProcessingOutputWithCont
 // This setting is enabled (`true`) or disabled (`false`)
 func (o BusinessEventsProcessingOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *BusinessEventsProcessing) pulumi.BoolOutput { return v.Enabled }).(pulumi.BoolOutput)
+}
+
+// Because this resource allows for ordering you may specify the ID of the resource instance that comes before this
+// instance regarding order. If not specified when creating the setting will be added to the end of the list. If not
+// specified during update the order will remain untouched
+func (o BusinessEventsProcessingOutput) InsertAfter() pulumi.StringOutput {
+	return o.ApplyT(func(v *BusinessEventsProcessing) pulumi.StringOutput { return v.InsertAfter }).(pulumi.StringOutput)
 }
 
 // [See our documentation](https://dt-url.net/bp234rv)

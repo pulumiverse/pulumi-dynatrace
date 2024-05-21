@@ -56,10 +56,26 @@ class AwaitableGetApplicationResult(GetApplicationResult):
 def get_application(name: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApplicationResult:
     """
-    The application data source allows the application ID to be retrieved by its name and optionally tags / tag-value pairs.
+    The application data source allows the application ID to be retrieved by its name.
 
     - `name` queries for all applications with the specified name
-    - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+    import pulumiverse_pulumi_dynatrace as dynatrace
+
+    test = dynatrace.get_application(name="Example")
+    _name_ = dynatrace.ApplicationDetectionRule("#name#",
+        application_identifier=test.id,
+        filter_config=dynatrace.ApplicationDetectionRuleFilterConfigArgs(
+            application_match_target="DOMAIN",
+            application_match_type="MATCHES",
+            pattern="www.google.com",
+        ))
+    ```
     """
     __args__ = dict()
     __args__['name'] = name
@@ -75,9 +91,25 @@ def get_application(name: Optional[str] = None,
 def get_application_output(name: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApplicationResult]:
     """
-    The application data source allows the application ID to be retrieved by its name and optionally tags / tag-value pairs.
+    The application data source allows the application ID to be retrieved by its name.
 
     - `name` queries for all applications with the specified name
-    - `tags` (optional) refers to the tags that need to be present for the application (inclusive)
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_dynatrace as dynatrace
+    import pulumiverse_pulumi_dynatrace as dynatrace
+
+    test = dynatrace.get_application(name="Example")
+    _name_ = dynatrace.ApplicationDetectionRule("#name#",
+        application_identifier=test.id,
+        filter_config=dynatrace.ApplicationDetectionRuleFilterConfigArgs(
+            application_match_target="DOMAIN",
+            application_match_type="MATCHES",
+            pattern="www.google.com",
+        ))
+    ```
     """
     ...

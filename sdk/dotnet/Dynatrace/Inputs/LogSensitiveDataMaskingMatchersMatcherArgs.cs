@@ -14,7 +14,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
     public sealed class LogSensitiveDataMaskingMatchersMatcherArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Possible Values: `Container_name`, `Dt_entity_container_group`, `Dt_entity_process_group`, `K8s_container_name`, `K8s_deployment_name`, `K8s_namespace_name`, `Log_source`, `Process_technology`
+        /// Possible Values: `container.name`, `dt.entity.container_group`, `dt.entity.process_group`, `k8s.container.name`, `k8s.deployment.name`, `k8s.namespace.name`, `log.source`, `process.technology` and `host.tag`
         /// </summary>
         [Input("attribute", required: true)]
         public Input<string> Attribute { get; set; } = null!;

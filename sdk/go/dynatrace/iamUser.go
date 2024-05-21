@@ -12,6 +12,10 @@ import (
 	"github.com/pulumiverse/pulumi-dynatrace/sdk/go/dynatrace/internal"
 )
 
+// > This resource is excluded by default in the export utility since it is part of the account management API. You can, of course, specify that resource explicitly in order to export it. In that case, don't forget to specify the environment variables `DT_CLIENT_ID`, `DT_ACCOUNT_ID` and `DT_CLIENT_SECRET` for authentication.
+//
+// > This resource requires the API token scopes **Allow read access for identity resources (users and groups)** (`account-idm-read`) and **Allow write access for identity resources (users and groups)** (`account-idm-write`)
+//
 // ## Dynatrace Documentation
 //
 // - Dynatrace IAM - https://www.dynatrace.com/support/help/how-to-use-dynatrace/user-management-and-sso/manage-groups-and-permissions
@@ -75,6 +79,7 @@ type IamUser struct {
 
 	Email  pulumi.StringOutput      `pulumi:"email"`
 	Groups pulumi.StringArrayOutput `pulumi:"groups"`
+	Uid    pulumi.StringOutput      `pulumi:"uid"`
 }
 
 // NewIamUser registers a new resource with the given unique name, arguments, and options.
@@ -112,11 +117,13 @@ func GetIamUser(ctx *pulumi.Context,
 type iamUserState struct {
 	Email  *string  `pulumi:"email"`
 	Groups []string `pulumi:"groups"`
+	Uid    *string  `pulumi:"uid"`
 }
 
 type IamUserState struct {
 	Email  pulumi.StringPtrInput
 	Groups pulumi.StringArrayInput
+	Uid    pulumi.StringPtrInput
 }
 
 func (IamUserState) ElementType() reflect.Type {
@@ -227,6 +234,10 @@ func (o IamUserOutput) Email() pulumi.StringOutput {
 
 func (o IamUserOutput) Groups() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *IamUser) pulumi.StringArrayOutput { return v.Groups }).(pulumi.StringArrayOutput)
+}
+
+func (o IamUserOutput) Uid() pulumi.StringOutput {
+	return o.ApplyT(func(v *IamUser) pulumi.StringOutput { return v.Uid }).(pulumi.StringOutput)
 }
 
 type IamUserArrayOutput struct{ *pulumi.OutputState }

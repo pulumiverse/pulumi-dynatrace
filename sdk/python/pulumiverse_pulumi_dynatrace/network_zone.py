@@ -25,7 +25,7 @@ class NetworkZoneArgs:
         The set of arguments for constructing a NetworkZone resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] alternative_zones: A list of alternative network zones.
         :param pulumi.Input[str] description: A short description of the network zone
-        :param pulumi.Input[str] name: Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+        :param pulumi.Input[str] name: Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         :param pulumi.Input[int] num_of_configured_activegates: The number of ActiveGates in the network zone.
         :param pulumi.Input[int] num_of_configured_oneagents: The number of OneAgents that are configured to use the network zone as primary.
         :param pulumi.Input[int] num_of_oneagents_from_other_zones: The number of OneAgents from other network zones that are using ActiveGates in the network zone.
@@ -74,7 +74,7 @@ class NetworkZoneArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+        Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         """
         return pulumi.get(self, "name")
 
@@ -145,7 +145,7 @@ class _NetworkZoneState:
         Input properties used for looking up and filtering NetworkZone resources.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] alternative_zones: A list of alternative network zones.
         :param pulumi.Input[str] description: A short description of the network zone
-        :param pulumi.Input[str] name: Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+        :param pulumi.Input[str] name: Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         :param pulumi.Input[int] num_of_configured_activegates: The number of ActiveGates in the network zone.
         :param pulumi.Input[int] num_of_configured_oneagents: The number of OneAgents that are configured to use the network zone as primary.
         :param pulumi.Input[int] num_of_oneagents_from_other_zones: The number of OneAgents from other network zones that are using ActiveGates in the network zone.
@@ -194,7 +194,7 @@ class _NetworkZoneState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+        Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         """
         return pulumi.get(self, "name")
 
@@ -270,7 +270,7 @@ class NetworkZone(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] alternative_zones: A list of alternative network zones.
         :param pulumi.Input[str] description: A short description of the network zone
-        :param pulumi.Input[str] name: Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+        :param pulumi.Input[str] name: Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         :param pulumi.Input[int] num_of_configured_activegates: The number of ActiveGates in the network zone.
         :param pulumi.Input[int] num_of_configured_oneagents: The number of OneAgents that are configured to use the network zone as primary.
         :param pulumi.Input[int] num_of_oneagents_from_other_zones: The number of OneAgents from other network zones that are using ActiveGates in the network zone.
@@ -348,7 +348,7 @@ class NetworkZone(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] alternative_zones: A list of alternative network zones.
         :param pulumi.Input[str] description: A short description of the network zone
-        :param pulumi.Input[str] name: Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+        :param pulumi.Input[str] name: Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         :param pulumi.Input[int] num_of_configured_activegates: The number of ActiveGates in the network zone.
         :param pulumi.Input[int] num_of_configured_oneagents: The number of OneAgents that are configured to use the network zone as primary.
         :param pulumi.Input[int] num_of_oneagents_from_other_zones: The number of OneAgents from other network zones that are using ActiveGates in the network zone.
@@ -387,7 +387,7 @@ class NetworkZone(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        Name of the network zone, not case sensitive. Dynatrace stores the name in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
+        Name of the network zone cannot be modified once created. Dynatrace stores the field in lowercase, allowed characters: alphanumeric, hyphen, underscore, dot
         """
         return pulumi.get(self, "name")
 

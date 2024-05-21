@@ -15,19 +15,19 @@ namespace Pulumiverse.PulumiPackage.Dynatrace.Outputs
     public sealed class ServiceAnomaliesV2ResponseTime
     {
         /// <summary>
-        /// No documentation available
+        /// no documentation available
         /// </summary>
         public readonly Outputs.ServiceAnomaliesV2ResponseTimeAutoDetection? AutoDetection;
         /// <summary>
-        /// Detection mode for response time degradations
+        /// Possible Values: `Auto`, `Fixed`
         /// </summary>
         public readonly string? DetectionMode;
         /// <summary>
-        /// Detect response time degradations
+        /// This setting is enabled (`true`) or disabled (`false`)
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// No documentation available
+        /// no documentation available
         /// </summary>
         public readonly Outputs.ServiceAnomaliesV2ResponseTimeFixedDetection? FixedDetection;
 

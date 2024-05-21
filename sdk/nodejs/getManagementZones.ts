@@ -6,6 +6,44 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * The management zones data source allows retrieval of all management zones.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
+ *
+ * const test = dynatrace.getManagementZones({});
+ * const _name_ = new dynatrace.CalculatedServiceMetric("#name#", {
+ *     enabled: true,
+ *     managementZones: [test.then(test => test.values?.[0]?.id)],
+ *     metricKey: "calc:service.#name#",
+ *     unit: "MILLI_SECOND_PER_MINUTE",
+ *     conditions: [{
+ *         conditions: [{
+ *             attribute: "HTTP_REQUEST_METHOD",
+ *             comparison: {
+ *                 negate: false,
+ *                 httpMethod: {
+ *                     operator: "EQUALS_ANY_OF",
+ *                     values: [
+ *                         "POST",
+ *                         "GET",
+ *                     ],
+ *                 },
+ *             },
+ *         }],
+ *     }],
+ *     metricDefinition: {
+ *         metric: "REQUEST_ATTRIBUTE",
+ *         requestAttribute: "foo",
+ *     },
+ * });
+ * ```
+ */
 export function getManagementZones(opts?: pulumi.InvokeOptions): Promise<GetManagementZonesResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -23,6 +61,44 @@ export interface GetManagementZonesResult {
     readonly id: string;
     readonly values: outputs.GetManagementZonesValue[];
 }
+/**
+ * The management zones data source allows retrieval of all management zones.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as dynatrace from "@pulumi/dynatrace";
+ * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
+ *
+ * const test = dynatrace.getManagementZones({});
+ * const _name_ = new dynatrace.CalculatedServiceMetric("#name#", {
+ *     enabled: true,
+ *     managementZones: [test.then(test => test.values?.[0]?.id)],
+ *     metricKey: "calc:service.#name#",
+ *     unit: "MILLI_SECOND_PER_MINUTE",
+ *     conditions: [{
+ *         conditions: [{
+ *             attribute: "HTTP_REQUEST_METHOD",
+ *             comparison: {
+ *                 negate: false,
+ *                 httpMethod: {
+ *                     operator: "EQUALS_ANY_OF",
+ *                     values: [
+ *                         "POST",
+ *                         "GET",
+ *                     ],
+ *                 },
+ *             },
+ *         }],
+ *     }],
+ *     metricDefinition: {
+ *         metric: "REQUEST_ATTRIBUTE",
+ *         requestAttribute: "foo",
+ *     },
+ * });
+ * ```
+ */
 export function getManagementZonesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementZonesResult> {
     return pulumi.output(getManagementZones(opts))
 }

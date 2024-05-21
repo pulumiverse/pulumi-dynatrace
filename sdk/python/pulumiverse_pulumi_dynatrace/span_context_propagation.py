@@ -18,15 +18,19 @@ class SpanContextPropagationArgs:
     def __init__(__self__, *,
                  action: pulumi.Input[str],
                  matches: pulumi.Input['SpanContextPropagationMatchesArgs'],
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a SpanContextPropagation resource.
         :param pulumi.Input[str] action: Whether to create an entry point or not
         :param pulumi.Input['SpanContextPropagationMatchesArgs'] matches: Matching strategies for the Span
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[str] name: The name of the rule
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "matches", matches)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -55,6 +59,18 @@ class SpanContextPropagationArgs:
         pulumi.set(self, "matches", value)
 
     @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -71,16 +87,20 @@ class SpanContextPropagationArgs:
 class _SpanContextPropagationState:
     def __init__(__self__, *,
                  action: Optional[pulumi.Input[str]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matches: Optional[pulumi.Input['SpanContextPropagationMatchesArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering SpanContextPropagation resources.
         :param pulumi.Input[str] action: Whether to create an entry point or not
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input['SpanContextPropagationMatchesArgs'] matches: Matching strategies for the Span
         :param pulumi.Input[str] name: The name of the rule
         """
         if action is not None:
             pulumi.set(__self__, "action", action)
+        if insert_after is not None:
+            pulumi.set(__self__, "insert_after", insert_after)
         if matches is not None:
             pulumi.set(__self__, "matches", matches)
         if name is not None:
@@ -97,6 +117,18 @@ class _SpanContextPropagationState:
     @action.setter
     def action(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "action", value)
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> Optional[pulumi.Input[str]]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
+
+    @insert_after.setter
+    def insert_after(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "insert_after", value)
 
     @property
     @pulumi.getter
@@ -129,6 +161,7 @@ class SpanContextPropagation(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: Optional[pulumi.Input[str]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matches: Optional[pulumi.Input[pulumi.InputType['SpanContextPropagationMatchesArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -137,6 +170,7 @@ class SpanContextPropagation(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] action: Whether to create an entry point or not
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[pulumi.InputType['SpanContextPropagationMatchesArgs']] matches: Matching strategies for the Span
         :param pulumi.Input[str] name: The name of the rule
         """
@@ -164,6 +198,7 @@ class SpanContextPropagation(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: Optional[pulumi.Input[str]] = None,
+                 insert_after: Optional[pulumi.Input[str]] = None,
                  matches: Optional[pulumi.Input[pulumi.InputType['SpanContextPropagationMatchesArgs']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -178,6 +213,7 @@ class SpanContextPropagation(pulumi.CustomResource):
             if action is None and not opts.urn:
                 raise TypeError("Missing required property 'action'")
             __props__.__dict__["action"] = action
+            __props__.__dict__["insert_after"] = insert_after
             if matches is None and not opts.urn:
                 raise TypeError("Missing required property 'matches'")
             __props__.__dict__["matches"] = matches
@@ -193,6 +229,7 @@ class SpanContextPropagation(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             action: Optional[pulumi.Input[str]] = None,
+            insert_after: Optional[pulumi.Input[str]] = None,
             matches: Optional[pulumi.Input[pulumi.InputType['SpanContextPropagationMatchesArgs']]] = None,
             name: Optional[pulumi.Input[str]] = None) -> 'SpanContextPropagation':
         """
@@ -203,6 +240,7 @@ class SpanContextPropagation(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] action: Whether to create an entry point or not
+        :param pulumi.Input[str] insert_after: Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
         :param pulumi.Input[pulumi.InputType['SpanContextPropagationMatchesArgs']] matches: Matching strategies for the Span
         :param pulumi.Input[str] name: The name of the rule
         """
@@ -211,6 +249,7 @@ class SpanContextPropagation(pulumi.CustomResource):
         __props__ = _SpanContextPropagationState.__new__(_SpanContextPropagationState)
 
         __props__.__dict__["action"] = action
+        __props__.__dict__["insert_after"] = insert_after
         __props__.__dict__["matches"] = matches
         __props__.__dict__["name"] = name
         return SpanContextPropagation(resource_name, opts=opts, __props__=__props__)
@@ -222,6 +261,14 @@ class SpanContextPropagation(pulumi.CustomResource):
         Whether to create an entry point or not
         """
         return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="insertAfter")
+    def insert_after(self) -> pulumi.Output[str]:
+        """
+        Because this resource allows for ordering you may specify the ID of the resource instance that comes before this instance regarding order. If not specified when creating the setting will be added to the end of the list. If not specified during update the order will remain untouched
+        """
+        return pulumi.get(self, "insert_after")
 
     @property
     @pulumi.getter

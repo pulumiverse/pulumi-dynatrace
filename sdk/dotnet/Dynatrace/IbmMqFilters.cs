@@ -26,13 +26,13 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         public Output<ImmutableArray<string>> CicsMqQueueIdIncludes { get; private set; } = null!;
 
         /// <summary>
-        /// IMS bridge: Excluded transaction IDs
+        /// When you add a transaction ID to the exclude list remaining transactions are still monitored.
         /// </summary>
         [Output("imsCrTrnIdExcludes")]
         public Output<ImmutableArray<string>> ImsCrTrnIdExcludes { get; private set; } = null!;
 
         /// <summary>
-        /// IMS bridge: Included transaction IDs
+        /// When you add a transaction ID to the include list, all the remaining transactions are ignored.
         /// </summary>
         [Output("imsCrTrnIdIncludes")]
         public Output<ImmutableArray<string>> ImsCrTrnIdIncludes { get; private set; } = null!;
@@ -124,7 +124,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         private InputList<string>? _imsCrTrnIdExcludes;
 
         /// <summary>
-        /// IMS bridge: Excluded transaction IDs
+        /// When you add a transaction ID to the exclude list remaining transactions are still monitored.
         /// </summary>
         public InputList<string> ImsCrTrnIdExcludes
         {
@@ -136,7 +136,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         private InputList<string>? _imsCrTrnIdIncludes;
 
         /// <summary>
-        /// IMS bridge: Included transaction IDs
+        /// When you add a transaction ID to the include list, all the remaining transactions are ignored.
         /// </summary>
         public InputList<string> ImsCrTrnIdIncludes
         {
@@ -204,7 +204,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         private InputList<string>? _imsCrTrnIdExcludes;
 
         /// <summary>
-        /// IMS bridge: Excluded transaction IDs
+        /// When you add a transaction ID to the exclude list remaining transactions are still monitored.
         /// </summary>
         public InputList<string> ImsCrTrnIdExcludes
         {
@@ -216,7 +216,7 @@ namespace Pulumiverse.PulumiPackage.Dynatrace
         private InputList<string>? _imsCrTrnIdIncludes;
 
         /// <summary>
-        /// IMS bridge: Included transaction IDs
+        /// When you add a transaction ID to the include list, all the remaining transactions are ignored.
         /// </summary>
         public InputList<string> ImsCrTrnIdIncludes
         {
