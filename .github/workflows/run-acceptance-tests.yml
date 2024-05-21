@@ -182,11 +182,6 @@ jobs:
         - 8.0.x
         goversion:
         - 1.22.x
-        language:
-        - nodejs
-        - python
-        - dotnet
-        - go
         nodeversion:
         - 20.x
         pythonversion:
