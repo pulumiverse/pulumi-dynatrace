@@ -13,13 +13,13 @@ This package is available in many languages in standard packaging formats.
 To use from JavaScript or TypeScript in Node.js, install using either `npm`:
 
 ```
-$ npm install @lbrlabs/pulumi-dynatrace
+$ npm install @pulumivers/pulumi-dynatrace
 ```
 
 or `yarn`:
 
 ```
-$ yarn add @lbrlabs/pulumi-dynatrace
+$ yarn add @pulumivers/pulumi-dynatrace
 ```
 
 ### Python
@@ -27,7 +27,7 @@ $ yarn add @lbrlabs/pulumi-dynatrace
 To use from Python, install using `pip`:
 
 ```
-$ pip install lbrlabs-pulumi-dynatrace
+$ pip install pulumivers-pulumi-dynatrace
 ```
 
 ### Go
@@ -35,7 +35,7 @@ $ pip install lbrlabs-pulumi-dynatrace
 To use from Go, use `go get` to grab the latest version of the library
 
 ```
-$ go get github.com/lbrlabs/pulumi-dynatrace/sdk/go/...
+$ go get github.com/pulumivers/pulumi-dynatrace/sdk/go/...
 ```
 
 ### .NET
@@ -44,7 +44,7 @@ To use from Dotnet, use `dotnet add package` to install into your project. You m
 
 
 ```
-$ dotnet add package lbrlabs.PulumiPackage.Dynatrace
+$ dotnet add package pulumivers.PulumiPackage.Dynatrace
 ```
 
 ## Reference

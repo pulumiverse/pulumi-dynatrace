@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Pulumi.Serialization;
 using Pulumi;
 
-namespace Lbrlabs.PulumiPackage.Dynatrace
+namespace Pulumiverse.PulumiPackage.Dynatrace
 {
     public static class GetCredentials
     {
@@ -23,8 +23,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
         /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.PulumiPackage.Dynatrace;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
@@ -118,8 +118,8 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
         /// using Dynatrace = Pulumi.Dynatrace;
+        /// using Dynatrace = Pulumiverse.PulumiPackage.Dynatrace;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {

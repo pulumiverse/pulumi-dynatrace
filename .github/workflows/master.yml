@@ -10,7 +10,7 @@ env:
   PULUMI_API: https://api.pulumi.com
   PULUMI_GO_DEP_ROOT: ${{ github.workspace }}/..
   PULUMI_LOCAL_NUGET: ${{ github.workspace }}/nuget
-  PULUMI_TEST_OWNER: "lbrlabs"
+  PULUMI_TEST_OWNER: "pulumiverse"
   PYPI_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
   PYPI_USERNAME: "__token__"
   TRAVIS_OS_NAME: linux
@@ -99,7 +99,7 @@ jobs:
         - dotnet
         - go
         nodeversion:
-        - 14.x
+        - 20.x
         pythonversion:
         - "3.7"
   prerequisites:
@@ -165,7 +165,7 @@ jobs:
         goversion:
         - 1.20.x
         nodeversion:
-        - 14.x
+        - 20.x
         pythonversion:
         - "3.7"
   publish:
@@ -204,7 +204,7 @@ jobs:
         goversion:
         - 1.20.x
         nodeversion:
-        - 14.x
+        - 20.x
         pythonversion:
         - "3.7"
   publish_sdk:
@@ -287,7 +287,7 @@ jobs:
         goversion:
         - 1.20.x
         nodeversion:
-        - 14.x
+        - 20.x
         pythonversion:
         - "3.7"
   test:
@@ -377,7 +377,7 @@ jobs:
         - dotnet
         - go
         nodeversion:
-        - 14.x
+        - 20.x
         pythonversion:
         - "3.7"
 name: master

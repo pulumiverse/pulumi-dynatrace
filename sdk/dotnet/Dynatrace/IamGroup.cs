@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Pulumi.Serialization;
 using Pulumi;
 
-namespace Lbrlabs.PulumiPackage.Dynatrace
+namespace Pulumiverse.PulumiPackage.Dynatrace
 {
     /// <summary>
     /// ## Dynatrace Documentation
@@ -40,7 +40,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
-    /// using Dynatrace = Lbrlabs.PulumiPackage.Dynatrace;
+    /// using Dynatrace = Pulumiverse.PulumiPackage.Dynatrace;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
@@ -101,7 +101,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
-                PluginDownloadURL = "github://api.github.com/lbrlabs",
+                PluginDownloadURL = "github://api.github.com/pulumiverse",
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.

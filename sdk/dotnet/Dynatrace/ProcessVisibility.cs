@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Pulumi.Serialization;
 using Pulumi;
 
-namespace Lbrlabs.PulumiPackage.Dynatrace
+namespace Pulumiverse.PulumiPackage.Dynatrace
 {
     [DynatraceResourceType("dynatrace:index/processVisibility:ProcessVisibility")]
     public partial class ProcessVisibility : global::Pulumi.CustomResource
@@ -54,7 +54,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
-                PluginDownloadURL = "github://api.github.com/lbrlabs",
+                PluginDownloadURL = "github://api.github.com/pulumiverse",
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.

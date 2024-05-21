@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Pulumi.Serialization;
 using Pulumi;
 
-namespace Lbrlabs.PulumiPackage.Dynatrace
+namespace Pulumiverse.PulumiPackage.Dynatrace
 {
     public static class GetMobileApplication
     {

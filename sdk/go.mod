@@ -1,4 +1,4 @@
-module github.com/lbrlabs/pulumi-dynatrace/sdk
+module github.com/pulumiverse/pulumi-dynatrace/sdk
 
 go 1.19
 

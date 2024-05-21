@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Pulumi.Serialization;
 using Pulumi;
 
-namespace Lbrlabs.PulumiPackage.Dynatrace
+namespace Pulumiverse.PulumiPackage.Dynatrace
 {
     [DynatraceResourceType("dynatrace:index/k8sCredentials:K8sCredentials")]
     public partial class K8sCredentials : global::Pulumi.CustomResource
@@ -120,7 +120,7 @@ namespace Lbrlabs.PulumiPackage.Dynatrace
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
-                PluginDownloadURL = "github://api.github.com/lbrlabs",
+                PluginDownloadURL = "github://api.github.com/pulumiverse",
                 AdditionalSecretOutputs =
                 {
                     "authToken",

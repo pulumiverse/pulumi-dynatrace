@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Pulumi.Serialization;
 using Pulumi;
 
-namespace Lbrlabs.PulumiPackage.Dynatrace.Inputs
+namespace Pulumiverse.PulumiPackage.Dynatrace.Inputs
 {
 
     public sealed class AutotagV2RulesRuleGetArgs : global::Pulumi.ResourceArgs

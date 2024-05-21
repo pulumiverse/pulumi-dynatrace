@@ -12,8 +12,8 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
  * import * as dynatrace from "@pulumi/dynatrace";
+ * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
  *
  * const default = dynatrace.getAlertingProfile({
  *     name: "Default",
@@ -63,8 +63,8 @@ export interface GetAlertingProfileResult {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@lbrlabs/pulumi-dynatrace";
  * import * as dynatrace from "@pulumi/dynatrace";
+ * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
  *
  * const default = dynatrace.getAlertingProfile({
  *     name: "Default",

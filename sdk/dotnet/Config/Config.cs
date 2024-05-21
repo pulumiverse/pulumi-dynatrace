@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Immutable;
 
-namespace Lbrlabs.PulumiPackage.Dynatrace
+namespace Pulumiverse.PulumiPackage.Dynatrace
 {
     public static class Config
     {

@@ -21,7 +21,6 @@ import (
 	"unicode"
 
 	dynatrace "github.com/dynatrace-oss/terraform-provider-dynatrace/provider"
-	"github.com/lbrlabs/pulumi-dynatrace/provider/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/x"
 	shim "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim"
@@ -29,6 +28,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/contract"
+	"github.com/pulumiverse/pulumi-dynatrace/provider/pkg/version"
 )
 
 // all of the token components used below.
@@ -97,14 +97,14 @@ func Provider() tfbridge.ProviderInfo {
 		P:                 p,
 		Name:              "dynatrace",
 		DisplayName:       "Dynatrace",
-		Publisher:         "Lbrlabs",
-		LogoURL:           "https://raw.githubusercontent.com/lbrlabs/pulumi-dynatrace/master/assets/logo.png",
-		PluginDownloadURL: "github://api.github.com/lbrlabs",
+		Publisher:         "Pulumiverse",
+		LogoURL:           "https://raw.githubusercontent.com/pulumiverse/pulumi-dynatrace/master/assets/logo.png",
+		PluginDownloadURL: "github://api.github.com/pulumiverse",
 		Description:       "A Pulumi package for creating and managing Dynatrace cloud resources.",
-		Keywords:          []string{"pulumi", "dynatrace", "category/infrastructure", "lbrlabs"},
+		Keywords:          []string{"pulumi", "dynatrace", "category/infrastructure", "pulumiverse"},
 		License:           "Apache-2.0",
 		Homepage:          "https://www.pulumi.com",
-		Repository:        "https://github.com/lbrlabs/pulumi-dynatrace",
+		Repository:        "https://github.com/pulumiverse/pulumi-dynatrace",
 		GitHubOrg:         "dynatrace-oss",
 		Config: map[string]*tfbridge.SchemaInfo{
 			"dt_env_url": {
@@ -293,18 +293,18 @@ func Provider() tfbridge.ProviderInfo {
 				"@types/node": "^10.0.0", // so we can access strongly typed node definitions.
 				"@types/mime": "^2.0.0",
 			},
-			PackageName: "@lbrlabs/pulumi-dynatrace",
+			PackageName: "@pulumiverse/pulumi-dynatrace",
 		},
 		Python: &tfbridge.PythonInfo{
 			// List any Python dependencies and their version ranges
 			Requires: map[string]string{
 				"pulumi": ">=3.0.0,<4.0.0",
 			},
-			PackageName: "lbrlabs_pulumi_dynatrace",
+			PackageName: "pulumiverse_pulumi_dynatrace",
 		},
 		Golang: &tfbridge.GolangInfo{
 			ImportBasePath: filepath.Join(
-				fmt.Sprintf("github.com/pulumi/pulumi-%[1]s/sdk/", mainPkg),
+				fmt.Sprintf("github.com/pulumiverse/pulumi-%[1]s/sdk/", mainPkg),
 				tfbridge.GetModuleMajorVersion(version.Version),
 				"go",
 				mainPkg,
@@ -315,7 +315,7 @@ func Provider() tfbridge.ProviderInfo {
 			PackageReferences: map[string]string{
 				"Pulumi": "3.*",
 			},
-			RootNamespace: "Lbrlabs.PulumiPackage",
+			RootNamespace: "Pulumiverse.PulumiPackage",
 		},
 	}
 
