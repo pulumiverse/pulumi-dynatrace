@@ -172,7 +172,7 @@ jobs:
     - name: Install Go
       uses: actions/setup-go@v5
       with:
-        go-version: ${{matrix.goversion}}
+        go-version: 1.22.x
     - name: Install pulumictl
       uses: jaxxstorm/action-install-gh-release@v1.12.0
       with:
@@ -186,22 +186,6 @@ jobs:
       with:
         args: release --rm-dist --timeout 60m0s
         version: latest
-    strategy:
-      fail-fast: true
-      matrix:
-        dotnetversion:
-        - 8.0.x
-        goversion:
-        - 1.22.x
-        language:
-        - nodejs
-        - python
-        - dotnet
-        - go
-        nodeversion:
-        - 20.x
-        pythonversion:
-        - "3.11"
   publish_sdk:
     name: publish_sdk
     needs: publish
