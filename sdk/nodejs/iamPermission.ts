@@ -30,7 +30,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * const permA = new dynatrace.IamPermission("permA", {
  *     account: "023733f0-86d8-47d1-88bd-7f5cc2e22eb8",

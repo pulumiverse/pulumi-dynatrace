@@ -14,7 +14,7 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumi/dynatrace";
- * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * const test = dynatrace.getManagementZones({});
  * const _name_ = new dynatrace.CalculatedServiceMetric("#name#", {
@@ -69,7 +69,7 @@ export interface GetManagementZonesResult {
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumi/dynatrace";
- * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * const test = dynatrace.getManagementZones({});
  * const _name_ = new dynatrace.CalculatedServiceMetric("#name#", {

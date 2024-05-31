@@ -28,7 +28,7 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumi/dynatrace";
- * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * export = async () => {
  *     const tERRAFORMSAMPLE = new dynatrace.AwsCredentials("tERRAFORMSAMPLE", {

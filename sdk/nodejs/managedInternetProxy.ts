@@ -17,7 +17,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * const test = new dynatrace.ManagedInternetProxy("test", {
  *     nonProxyHosts: ["string"],

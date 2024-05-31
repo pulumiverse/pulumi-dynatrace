@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * const _name_ = new dynatrace.CustomDevice("#name#", {
  *     customDeviceId: "customDeviceId",

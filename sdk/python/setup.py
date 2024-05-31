@@ -17,7 +17,7 @@ def readme():
         return "dynatrace Pulumi Package - Development Version"
 
 
-setup(name='pulumiverse_pulumi_dynatrace',
+setup(name='pulumiverse_dynatrace',
       python_requires='>=3.8',
       version=VERSION,
       description="A Pulumi package for creating and managing Dynatrace cloud resources.",
@@ -31,7 +31,7 @@ setup(name='pulumiverse_pulumi_dynatrace',
       license='Apache-2.0',
       packages=find_packages(),
       package_data={
-          'pulumiverse_pulumi_dynatrace': [
+          'pulumiverse_dynatrace': [
               'py.typed',
               'pulumi-plugin.json',
           ]

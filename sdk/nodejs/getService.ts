@@ -19,7 +19,7 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumi/dynatrace";
- * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * const test = dynatrace.getService({
  *     name: "Example",
@@ -83,7 +83,7 @@ export interface GetServiceResult {
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as dynatrace from "@pulumi/dynatrace";
- * import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
+ * import * as dynatrace from "@pulumiverse/dynatrace";
  *
  * const test = dynatrace.getService({
  *     name: "Example",
