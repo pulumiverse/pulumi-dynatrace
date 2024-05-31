@@ -193,6 +193,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DiskAnomaliesV2{}
 	case "dynatrace:index/diskAnomalyRules:DiskAnomalyRules":
 		r = &DiskAnomalyRules{}
+	case "dynatrace:index/diskEdgeAnomalyDetectors:DiskEdgeAnomalyDetectors":
+		r = &DiskEdgeAnomalyDetectors{}
 	case "dynatrace:index/diskOptions:DiskOptions":
 		r = &DiskOptions{}
 	case "dynatrace:index/diskSpecificAnomaliesV2:DiskSpecificAnomaliesV2":
@@ -279,6 +281,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ImsBridges{}
 	case "dynatrace:index/infraopsAppFeatureFlags:InfraopsAppFeatureFlags":
 		r = &InfraopsAppFeatureFlags{}
+	case "dynatrace:index/infraopsAppSettings:InfraopsAppSettings":
+		r = &InfraopsAppSettings{}
 	case "dynatrace:index/ipAddressMasking:IpAddressMasking":
 		r = &IpAddressMasking{}
 	case "dynatrace:index/issueTracking:IssueTracking":
@@ -475,6 +479,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &QueueSharingGroups{}
 	case "dynatrace:index/remoteEnvironments:RemoteEnvironments":
 		r = &RemoteEnvironments{}
+	case "dynatrace:index/report:Report":
+		r = &Report{}
 	case "dynatrace:index/requestAttribute:RequestAttribute":
 		r = &RequestAttribute{}
 	case "dynatrace:index/requestNaming:RequestNaming":
@@ -1084,6 +1090,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"dynatrace",
+		"index/diskEdgeAnomalyDetectors",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
 		"index/diskOptions",
 		&module{version},
 	)
@@ -1295,6 +1306,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/infraopsAppFeatureFlags",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/infraopsAppSettings",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -1785,6 +1801,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"dynatrace",
 		"index/remoteEnvironments",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"dynatrace",
+		"index/report",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

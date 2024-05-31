@@ -435,6 +435,11 @@ export type DiskAnomalyRules = import("./diskAnomalyRules").DiskAnomalyRules;
 export const DiskAnomalyRules: typeof import("./diskAnomalyRules").DiskAnomalyRules = null as any;
 utilities.lazyLoad(exports, ["DiskAnomalyRules"], () => require("./diskAnomalyRules"));
 
+export { DiskEdgeAnomalyDetectorsArgs, DiskEdgeAnomalyDetectorsState } from "./diskEdgeAnomalyDetectors";
+export type DiskEdgeAnomalyDetectors = import("./diskEdgeAnomalyDetectors").DiskEdgeAnomalyDetectors;
+export const DiskEdgeAnomalyDetectors: typeof import("./diskEdgeAnomalyDetectors").DiskEdgeAnomalyDetectors = null as any;
+utilities.lazyLoad(exports, ["DiskEdgeAnomalyDetectors"], () => require("./diskEdgeAnomalyDetectors"));
+
 export { DiskOptionsArgs, DiskOptionsState } from "./diskOptions";
 export type DiskOptions = import("./diskOptions").DiskOptions;
 export const DiskOptions: typeof import("./diskOptions").DiskOptions = null as any;
@@ -854,6 +859,11 @@ export { InfraopsAppFeatureFlagsArgs, InfraopsAppFeatureFlagsState } from "./inf
 export type InfraopsAppFeatureFlags = import("./infraopsAppFeatureFlags").InfraopsAppFeatureFlags;
 export const InfraopsAppFeatureFlags: typeof import("./infraopsAppFeatureFlags").InfraopsAppFeatureFlags = null as any;
 utilities.lazyLoad(exports, ["InfraopsAppFeatureFlags"], () => require("./infraopsAppFeatureFlags"));
+
+export { InfraopsAppSettingsArgs, InfraopsAppSettingsState } from "./infraopsAppSettings";
+export type InfraopsAppSettings = import("./infraopsAppSettings").InfraopsAppSettings;
+export const InfraopsAppSettings: typeof import("./infraopsAppSettings").InfraopsAppSettings = null as any;
+utilities.lazyLoad(exports, ["InfraopsAppSettings"], () => require("./infraopsAppSettings"));
 
 export { IpAddressMaskingArgs, IpAddressMaskingState } from "./ipAddressMasking";
 export type IpAddressMasking = import("./ipAddressMasking").IpAddressMasking;
@@ -1349,6 +1359,11 @@ export { RemoteEnvironmentsArgs, RemoteEnvironmentsState } from "./remoteEnviron
 export type RemoteEnvironments = import("./remoteEnvironments").RemoteEnvironments;
 export const RemoteEnvironments: typeof import("./remoteEnvironments").RemoteEnvironments = null as any;
 utilities.lazyLoad(exports, ["RemoteEnvironments"], () => require("./remoteEnvironments"));
+
+export { ReportArgs, ReportState } from "./report";
+export type Report = import("./report").Report;
+export const Report: typeof import("./report").Report = null as any;
+utilities.lazyLoad(exports, ["Report"], () => require("./report"));
 
 export { RequestAttributeArgs, RequestAttributeState } from "./requestAttribute";
 export type RequestAttribute = import("./requestAttribute").RequestAttribute;
@@ -1901,6 +1916,8 @@ const _module = {
                 return new DiskAnomaliesV2(name, <any>undefined, { urn })
             case "dynatrace:index/diskAnomalyRules:DiskAnomalyRules":
                 return new DiskAnomalyRules(name, <any>undefined, { urn })
+            case "dynatrace:index/diskEdgeAnomalyDetectors:DiskEdgeAnomalyDetectors":
+                return new DiskEdgeAnomalyDetectors(name, <any>undefined, { urn })
             case "dynatrace:index/diskOptions:DiskOptions":
                 return new DiskOptions(name, <any>undefined, { urn })
             case "dynatrace:index/diskSpecificAnomaliesV2:DiskSpecificAnomaliesV2":
@@ -1987,6 +2004,8 @@ const _module = {
                 return new ImsBridges(name, <any>undefined, { urn })
             case "dynatrace:index/infraopsAppFeatureFlags:InfraopsAppFeatureFlags":
                 return new InfraopsAppFeatureFlags(name, <any>undefined, { urn })
+            case "dynatrace:index/infraopsAppSettings:InfraopsAppSettings":
+                return new InfraopsAppSettings(name, <any>undefined, { urn })
             case "dynatrace:index/ipAddressMasking:IpAddressMasking":
                 return new IpAddressMasking(name, <any>undefined, { urn })
             case "dynatrace:index/issueTracking:IssueTracking":
@@ -2183,6 +2202,8 @@ const _module = {
                 return new QueueSharingGroups(name, <any>undefined, { urn })
             case "dynatrace:index/remoteEnvironments:RemoteEnvironments":
                 return new RemoteEnvironments(name, <any>undefined, { urn })
+            case "dynatrace:index/report:Report":
+                return new Report(name, <any>undefined, { urn })
             case "dynatrace:index/requestAttribute:RequestAttribute":
                 return new RequestAttribute(name, <any>undefined, { urn })
             case "dynatrace:index/requestNaming:RequestNaming":
@@ -2420,6 +2441,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/diskAnalytics", _modul
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskAnomalies", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskAnomaliesV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskAnomalyRules", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/diskEdgeAnomalyDetectors", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskOptions", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/diskSpecificAnomaliesV2", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/document", _module)
@@ -2463,6 +2485,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/iamUser", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/ibmMqFilters", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/imsBridges", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/infraopsAppFeatureFlags", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/infraopsAppSettings", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/ipAddressMasking", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/issueTracking", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/jiraNotification", _module)
@@ -2561,6 +2584,7 @@ pulumi.runtime.registerResourceModule("dynatrace", "index/processgroupNaming", _
 pulumi.runtime.registerResourceModule("dynatrace", "index/queueManager", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/queueSharingGroups", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/remoteEnvironments", _module)
+pulumi.runtime.registerResourceModule("dynatrace", "index/report", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/requestAttribute", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/requestNaming", _module)
 pulumi.runtime.registerResourceModule("dynatrace", "index/requestNamings", _module)

@@ -13,6 +13,1397 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule struct {
+	// Defines the conditions when the naming rule should apply
+	Conditions *WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions `pulumi:"conditions"`
+	// Naming pattern. Use Curly brackets `{}` to select placeholders
+	Template string `pulumi:"template"`
+	// If set to `true` the conditions will be connected by logical OR instead of logical AND
+	UseOrConditions *bool `pulumi:"useOrConditions"`
+}
+
+// WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleInput is an input type that accepts WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArgs and WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleInput` via:
+//
+//	WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArgs{...}
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArgs struct {
+	// Defines the conditions when the naming rule should apply
+	Conditions WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrInput `pulumi:"conditions"`
+	// Naming pattern. Use Curly brackets `{}` to select placeholders
+	Template pulumi.StringInput `pulumi:"template"`
+	// If set to `true` the conditions will be connected by logical OR instead of logical AND
+	UseOrConditions pulumi.BoolPtrInput `pulumi:"useOrConditions"`
+}
+
+func (WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArgs) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput {
+	return i.ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArgs) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput)
+}
+
+// WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayInput is an input type that accepts WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArray and WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayInput` via:
+//
+//	WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArray{ WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArgs{...} }
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArray []WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleInput
+
+func (WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArray) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput {
+	return i.ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArray) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput {
+	return o
+}
+
+// Defines the conditions when the naming rule should apply
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput) Conditions() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule) *WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions {
+		return v.Conditions
+	}).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput)
+}
+
+// Naming pattern. Use Curly brackets `{}` to select placeholders
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput) Template() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule) string { return v.Template }).(pulumi.StringOutput)
+}
+
+// If set to `true` the conditions will be connected by logical OR instead of logical AND
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput) UseOrConditions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule) *bool {
+		return v.UseOrConditions
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput) Index(i pulumi.IntInput) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule {
+		return vs[0].([]WebApplicationUserActionNamingSettingsLoadActionNamingRulesRule)[vs[1].(int)]
+	}).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput)
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions struct {
+	// Defines the conditions when the naming rule should apply
+	Conditions []WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition `pulumi:"conditions"`
+}
+
+// WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsInput is an input type that accepts WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs and WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsInput` via:
+//
+//	WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs{...}
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs struct {
+	// Defines the conditions when the naming rule should apply
+	Conditions WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayInput `pulumi:"conditions"`
+}
+
+func (WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput {
+	return i.ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput)
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput).ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrInput is an input type that accepts WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs, WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtr and WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrInput` via:
+//
+//	        WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput
+}
+
+type webApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrType WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs
+
+func WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtr(v *WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrInput {
+	return (*webApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrType)(v)
+}
+
+func (*webApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions)(nil)).Elem()
+}
+
+func (i *webApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrType) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrType) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput {
+	return o.ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions) *WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions {
+		return &v
+	}).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput)
+}
+
+// Defines the conditions when the naming rule should apply
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput) Conditions() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions) []WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition {
+		return v.Conditions
+	}).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput) Elem() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions
+		return ret
+	}).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput)
+}
+
+// Defines the conditions when the naming rule should apply
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput) Conditions() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditions) []WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition {
+		if v == nil {
+			return nil
+		}
+		return v.Conditions
+	}).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition struct {
+	// Must be a defined placeholder wrapped in curly braces
+	Operand1 string `pulumi:"operand1"`
+	// Must be null if operator is `IS_EMPTY`, a regex if operator is `MATCHES_REGULAR_ERPRESSION`. In all other cases the value can be a freetext or a placeholder wrapped in curly braces
+	Operand2 *string `pulumi:"operand2"`
+	// The operator of the condition. Possible values are `CONTAINS`, `ENDS_WITH`, `EQUALS`, `IS_EMPTY`, `IS_NOT_EMPTY`, `MATCHES_REGULAR_EXPRESSION`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_MATCHES_REGULAR_EXPRESSION`, `NOT_STARTS_WITH` and `STARTS_WITH`.
+	Operator string `pulumi:"operator"`
+}
+
+// WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionInput is an input type that accepts WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArgs and WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionInput` via:
+//
+//	WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArgs{...}
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArgs struct {
+	// Must be a defined placeholder wrapped in curly braces
+	Operand1 pulumi.StringInput `pulumi:"operand1"`
+	// Must be null if operator is `IS_EMPTY`, a regex if operator is `MATCHES_REGULAR_ERPRESSION`. In all other cases the value can be a freetext or a placeholder wrapped in curly braces
+	Operand2 pulumi.StringPtrInput `pulumi:"operand2"`
+	// The operator of the condition. Possible values are `CONTAINS`, `ENDS_WITH`, `EQUALS`, `IS_EMPTY`, `IS_NOT_EMPTY`, `MATCHES_REGULAR_EXPRESSION`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_MATCHES_REGULAR_EXPRESSION`, `NOT_STARTS_WITH` and `STARTS_WITH`.
+	Operator pulumi.StringInput `pulumi:"operator"`
+}
+
+func (WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArgs) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput {
+	return i.ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArgs) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput)
+}
+
+// WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayInput is an input type that accepts WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArray and WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayInput` via:
+//
+//	WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArray{ WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArgs{...} }
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput
+	ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArray []WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionInput
+
+func (WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArray) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput {
+	return i.ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArray) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput {
+	return o
+}
+
+// Must be a defined placeholder wrapped in curly braces
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput) Operand1() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition) string {
+		return v.Operand1
+	}).(pulumi.StringOutput)
+}
+
+// Must be null if operator is `IS_EMPTY`, a regex if operator is `MATCHES_REGULAR_ERPRESSION`. In all other cases the value can be a freetext or a placeholder wrapped in curly braces
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput) Operand2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition) *string {
+		return v.Operand2
+	}).(pulumi.StringPtrOutput)
+}
+
+// The operator of the condition. Possible values are `CONTAINS`, `ENDS_WITH`, `EQUALS`, `IS_EMPTY`, `IS_NOT_EMPTY`, `MATCHES_REGULAR_EXPRESSION`, `NOT_CONTAINS`, `NOT_ENDS_WITH`, `NOT_EQUALS`, `NOT_MATCHES_REGULAR_EXPRESSION`, `NOT_STARTS_WITH` and `STARTS_WITH`.
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition) string {
+		return v.Operator
+	}).(pulumi.StringOutput)
+}
+
+type WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput() WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput) ToWebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput) Index(i pulumi.IntInput) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition {
+		return vs[0].([]WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsCondition)[vs[1].(int)]
+	}).(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput)
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholders struct {
+	// User action placeholders
+	Placeholders []WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder `pulumi:"placeholders"`
+}
+
+// WebApplicationUserActionNamingSettingsPlaceholdersInput is an input type that accepts WebApplicationUserActionNamingSettingsPlaceholdersArgs and WebApplicationUserActionNamingSettingsPlaceholdersOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsPlaceholdersInput` via:
+//
+//	WebApplicationUserActionNamingSettingsPlaceholdersArgs{...}
+type WebApplicationUserActionNamingSettingsPlaceholdersInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsPlaceholdersOutput() WebApplicationUserActionNamingSettingsPlaceholdersOutput
+	ToWebApplicationUserActionNamingSettingsPlaceholdersOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsPlaceholdersOutput
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersArgs struct {
+	// User action placeholders
+	Placeholders WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayInput `pulumi:"placeholders"`
+}
+
+func (WebApplicationUserActionNamingSettingsPlaceholdersArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholders)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersArgs) ToWebApplicationUserActionNamingSettingsPlaceholdersOutput() WebApplicationUserActionNamingSettingsPlaceholdersOutput {
+	return i.ToWebApplicationUserActionNamingSettingsPlaceholdersOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersArgs) ToWebApplicationUserActionNamingSettingsPlaceholdersOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsPlaceholdersOutput)
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersArgs) ToWebApplicationUserActionNamingSettingsPlaceholdersPtrOutput() WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsPlaceholdersPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersArgs) ToWebApplicationUserActionNamingSettingsPlaceholdersPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsPlaceholdersOutput).ToWebApplicationUserActionNamingSettingsPlaceholdersPtrOutputWithContext(ctx)
+}
+
+// WebApplicationUserActionNamingSettingsPlaceholdersPtrInput is an input type that accepts WebApplicationUserActionNamingSettingsPlaceholdersArgs, WebApplicationUserActionNamingSettingsPlaceholdersPtr and WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsPlaceholdersPtrInput` via:
+//
+//	        WebApplicationUserActionNamingSettingsPlaceholdersArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationUserActionNamingSettingsPlaceholdersPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsPlaceholdersPtrOutput() WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput
+	ToWebApplicationUserActionNamingSettingsPlaceholdersPtrOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput
+}
+
+type webApplicationUserActionNamingSettingsPlaceholdersPtrType WebApplicationUserActionNamingSettingsPlaceholdersArgs
+
+func WebApplicationUserActionNamingSettingsPlaceholdersPtr(v *WebApplicationUserActionNamingSettingsPlaceholdersArgs) WebApplicationUserActionNamingSettingsPlaceholdersPtrInput {
+	return (*webApplicationUserActionNamingSettingsPlaceholdersPtrType)(v)
+}
+
+func (*webApplicationUserActionNamingSettingsPlaceholdersPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsPlaceholders)(nil)).Elem()
+}
+
+func (i *webApplicationUserActionNamingSettingsPlaceholdersPtrType) ToWebApplicationUserActionNamingSettingsPlaceholdersPtrOutput() WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsPlaceholdersPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationUserActionNamingSettingsPlaceholdersPtrType) ToWebApplicationUserActionNamingSettingsPlaceholdersPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsPlaceholdersOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholders)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersOutput() WebApplicationUserActionNamingSettingsPlaceholdersOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPtrOutput() WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput {
+	return o.ToWebApplicationUserActionNamingSettingsPlaceholdersPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationUserActionNamingSettingsPlaceholders) *WebApplicationUserActionNamingSettingsPlaceholders {
+		return &v
+	}).(WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput)
+}
+
+// User action placeholders
+func (o WebApplicationUserActionNamingSettingsPlaceholdersOutput) Placeholders() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholders) []WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder {
+		return v.Placeholders
+	}).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsPlaceholders)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPtrOutput() WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput) Elem() WebApplicationUserActionNamingSettingsPlaceholdersOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsPlaceholders) WebApplicationUserActionNamingSettingsPlaceholders {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationUserActionNamingSettingsPlaceholders
+		return ret
+	}).(WebApplicationUserActionNamingSettingsPlaceholdersOutput)
+}
+
+// User action placeholders
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput) Placeholders() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsPlaceholders) []WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder {
+		if v == nil {
+			return nil
+		}
+		return v.Placeholders
+	}).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder struct {
+	// The input for the place holder. Possible values are `ELEMENT_IDENTIFIER`, `INPUT_TYPE`, `METADATA`, `PAGE_TITLE`, `PAGE_URL`, `SOURCE_URL`, `TOP_XHR_URL` and `XHR_URL`
+	Input string `pulumi:"input"`
+	// The ID of the metadata
+	MetadataId *int `pulumi:"metadataId"`
+	// Placeholder name. Valid length needs to be between 1 and 50 characters
+	Name string `pulumi:"name"`
+	// The part to process. Possible values are `ALL`, `ANCHOR` and `PATH`
+	ProcessingPart string `pulumi:"processingPart"`
+	// The processing step settings
+	ProcessingSteps *WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps `pulumi:"processingSteps"`
+	// Use the element identifier that was selected by Dynatrace
+	UseGuessedElementIdentifier *bool `pulumi:"useGuessedElementIdentifier"`
+}
+
+// WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderInput is an input type that accepts WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArgs and WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderInput` via:
+//
+//	WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArgs{...}
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput
+	ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArgs struct {
+	// The input for the place holder. Possible values are `ELEMENT_IDENTIFIER`, `INPUT_TYPE`, `METADATA`, `PAGE_TITLE`, `PAGE_URL`, `SOURCE_URL`, `TOP_XHR_URL` and `XHR_URL`
+	Input pulumi.StringInput `pulumi:"input"`
+	// The ID of the metadata
+	MetadataId pulumi.IntPtrInput `pulumi:"metadataId"`
+	// Placeholder name. Valid length needs to be between 1 and 50 characters
+	Name pulumi.StringInput `pulumi:"name"`
+	// The part to process. Possible values are `ALL`, `ANCHOR` and `PATH`
+	ProcessingPart pulumi.StringInput `pulumi:"processingPart"`
+	// The processing step settings
+	ProcessingSteps WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrInput `pulumi:"processingSteps"`
+	// Use the element identifier that was selected by Dynatrace
+	UseGuessedElementIdentifier pulumi.BoolPtrInput `pulumi:"useGuessedElementIdentifier"`
+}
+
+func (WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArgs) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput {
+	return i.ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArgs) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput)
+}
+
+// WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayInput is an input type that accepts WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArray and WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayInput` via:
+//
+//	WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArray{ WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArgs{...} }
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput
+	ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArray []WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderInput
+
+func (WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArray) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput {
+	return i.ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArray) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput {
+	return o
+}
+
+// The input for the place holder. Possible values are `ELEMENT_IDENTIFIER`, `INPUT_TYPE`, `METADATA`, `PAGE_TITLE`, `PAGE_URL`, `SOURCE_URL`, `TOP_XHR_URL` and `XHR_URL`
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput) Input() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder) string { return v.Input }).(pulumi.StringOutput)
+}
+
+// The ID of the metadata
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput) MetadataId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder) *int { return v.MetadataId }).(pulumi.IntPtrOutput)
+}
+
+// Placeholder name. Valid length needs to be between 1 and 50 characters
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The part to process. Possible values are `ALL`, `ANCHOR` and `PATH`
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput) ProcessingPart() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder) string { return v.ProcessingPart }).(pulumi.StringOutput)
+}
+
+// The processing step settings
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput) ProcessingSteps() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder) *WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps {
+		return v.ProcessingSteps
+	}).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput)
+}
+
+// Use the element identifier that was selected by Dynatrace
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput) UseGuessedElementIdentifier() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder) *bool {
+		return v.UseGuessedElementIdentifier
+	}).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput) Index(i pulumi.IntInput) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder {
+		return vs[0].([]WebApplicationUserActionNamingSettingsPlaceholdersPlaceholder)[vs[1].(int)]
+	}).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput)
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps struct {
+	// The processing step
+	Steps []WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep `pulumi:"steps"`
+}
+
+// WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsInput is an input type that accepts WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs and WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsInput` via:
+//
+//	WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs{...}
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput
+	ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs struct {
+	// The processing step
+	Steps WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayInput `pulumi:"steps"`
+}
+
+func (WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput {
+	return i.ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput)
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput).ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrInput is an input type that accepts WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs, WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtr and WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrInput` via:
+//
+//	        WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput
+	ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput
+}
+
+type webApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrType WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs
+
+func WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtr(v *WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrInput {
+	return (*webApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrType)(v)
+}
+
+func (*webApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps)(nil)).Elem()
+}
+
+func (i *webApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrType) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrType) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput {
+	return o.ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps) *WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps {
+		return &v
+	}).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput)
+}
+
+// The processing step
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput) Steps() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps) []WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep {
+		return v.Steps
+	}).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput) Elem() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps
+		return ret
+	}).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput)
+}
+
+// The processing step
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput) Steps() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingSteps) []WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep {
+		if v == nil {
+			return nil
+		}
+		return v.Steps
+	}).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep struct {
+	// If set to `true`: Returns the input if `patternBefore` or `patternAfter` cannot be found and the `type` is `SUBSTRING`. Returns the input if `regularExpression` doesn't match and `type` is `EXTRACT_BY_REGULAR_EXPRESSION`.
+	FallbackToInput *bool `pulumi:"fallbackToInput"`
+	// The pattern after the required value. It will be removed.
+	PatternAfter *string `pulumi:"patternAfter"`
+	// The required occurrence of **patternAfter**. Possible values are `FIRST` and `LAST`.
+	PatternAfterSearchType *string `pulumi:"patternAfterSearchType"`
+	// The pattern before the required value. It will be removed.
+	PatternBefore *string `pulumi:"patternBefore"`
+	// The required occurrence of **patternBefore**. Possible values are `FIRST` and `LAST`.
+	PatternBeforeSearchType *string `pulumi:"patternBeforeSearchType"`
+	// The pattern to be replaced.
+	//
+	//  Only applicable if the `type` is `REPLACE_WITH_PATTERN`.
+	PatternToReplace *string `pulumi:"patternToReplace"`
+	// A regular expression for the string to be extracted or replaced. Only applicable if the `type` is `EXTRACT_BY_REGULAR_EXPRESSION` or `REPLACE_WITH_REGULAR_EXPRESSION`.
+	RegularExpression *string `pulumi:"regularExpression"`
+	// Replacement for the original value
+	Replacement *string `pulumi:"replacement"`
+	// An action to be taken by the processing:
+	Type string `pulumi:"type"`
+}
+
+// WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepInput is an input type that accepts WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArgs and WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepInput` via:
+//
+//	WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArgs{...}
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput
+	ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArgs struct {
+	// If set to `true`: Returns the input if `patternBefore` or `patternAfter` cannot be found and the `type` is `SUBSTRING`. Returns the input if `regularExpression` doesn't match and `type` is `EXTRACT_BY_REGULAR_EXPRESSION`.
+	FallbackToInput pulumi.BoolPtrInput `pulumi:"fallbackToInput"`
+	// The pattern after the required value. It will be removed.
+	PatternAfter pulumi.StringPtrInput `pulumi:"patternAfter"`
+	// The required occurrence of **patternAfter**. Possible values are `FIRST` and `LAST`.
+	PatternAfterSearchType pulumi.StringPtrInput `pulumi:"patternAfterSearchType"`
+	// The pattern before the required value. It will be removed.
+	PatternBefore pulumi.StringPtrInput `pulumi:"patternBefore"`
+	// The required occurrence of **patternBefore**. Possible values are `FIRST` and `LAST`.
+	PatternBeforeSearchType pulumi.StringPtrInput `pulumi:"patternBeforeSearchType"`
+	// The pattern to be replaced.
+	//
+	//  Only applicable if the `type` is `REPLACE_WITH_PATTERN`.
+	PatternToReplace pulumi.StringPtrInput `pulumi:"patternToReplace"`
+	// A regular expression for the string to be extracted or replaced. Only applicable if the `type` is `EXTRACT_BY_REGULAR_EXPRESSION` or `REPLACE_WITH_REGULAR_EXPRESSION`.
+	RegularExpression pulumi.StringPtrInput `pulumi:"regularExpression"`
+	// Replacement for the original value
+	Replacement pulumi.StringPtrInput `pulumi:"replacement"`
+	// An action to be taken by the processing:
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArgs) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput {
+	return i.ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArgs) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput)
+}
+
+// WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayInput is an input type that accepts WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArray and WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayInput` via:
+//
+//	WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArray{ WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArgs{...} }
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput
+	ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArray []WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepInput
+
+func (WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArray) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput {
+	return i.ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArray) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput {
+	return o
+}
+
+// If set to `true`: Returns the input if `patternBefore` or `patternAfter` cannot be found and the `type` is `SUBSTRING`. Returns the input if `regularExpression` doesn't match and `type` is `EXTRACT_BY_REGULAR_EXPRESSION`.
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput) FallbackToInput() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep) *bool {
+		return v.FallbackToInput
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The pattern after the required value. It will be removed.
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput) PatternAfter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep) *string {
+		return v.PatternAfter
+	}).(pulumi.StringPtrOutput)
+}
+
+// The required occurrence of **patternAfter**. Possible values are `FIRST` and `LAST`.
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput) PatternAfterSearchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep) *string {
+		return v.PatternAfterSearchType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The pattern before the required value. It will be removed.
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput) PatternBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep) *string {
+		return v.PatternBefore
+	}).(pulumi.StringPtrOutput)
+}
+
+// The required occurrence of **patternBefore**. Possible values are `FIRST` and `LAST`.
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput) PatternBeforeSearchType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep) *string {
+		return v.PatternBeforeSearchType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The pattern to be replaced.
+//
+//	Only applicable if the `type` is `REPLACE_WITH_PATTERN`.
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput) PatternToReplace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep) *string {
+		return v.PatternToReplace
+	}).(pulumi.StringPtrOutput)
+}
+
+// A regular expression for the string to be extracted or replaced. Only applicable if the `type` is `EXTRACT_BY_REGULAR_EXPRESSION` or `REPLACE_WITH_REGULAR_EXPRESSION`.
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput) RegularExpression() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep) *string {
+		return v.RegularExpression
+	}).(pulumi.StringPtrOutput)
+}
+
+// Replacement for the original value
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput) Replacement() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep) *string {
+		return v.Replacement
+	}).(pulumi.StringPtrOutput)
+}
+
+// An action to be taken by the processing:
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput() WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput) ToWebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput) Index(i pulumi.IntInput) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep {
+		return vs[0].([]WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStep)[vs[1].(int)]
+	}).(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput)
+}
+
+type WebApplicationUserActionNamingSettingsXhrActionNamingRules struct {
+	// The settings of naming rule
+	Rules []WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule `pulumi:"rules"`
+}
+
+// WebApplicationUserActionNamingSettingsXhrActionNamingRulesInput is an input type that accepts WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs and WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsXhrActionNamingRulesInput` via:
+//
+//	WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs{...}
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput
+	ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput
+}
+
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs struct {
+	// The settings of naming rule
+	Rules WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayInput `pulumi:"rules"`
+}
+
+func (WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsXhrActionNamingRules)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput {
+	return i.ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput)
+}
+
+func (i WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput).ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutputWithContext(ctx)
+}
+
+// WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrInput is an input type that accepts WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs, WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtr and WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrInput` via:
+//
+//	        WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput
+	ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput
+}
+
+type webApplicationUserActionNamingSettingsXhrActionNamingRulesPtrType WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs
+
+func WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtr(v *WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs) WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrInput {
+	return (*webApplicationUserActionNamingSettingsXhrActionNamingRulesPtrType)(v)
+}
+
+func (*webApplicationUserActionNamingSettingsXhrActionNamingRulesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsXhrActionNamingRules)(nil)).Elem()
+}
+
+func (i *webApplicationUserActionNamingSettingsXhrActionNamingRulesPtrType) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationUserActionNamingSettingsXhrActionNamingRulesPtrType) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsXhrActionNamingRules)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput {
+	return o.ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationUserActionNamingSettingsXhrActionNamingRules) *WebApplicationUserActionNamingSettingsXhrActionNamingRules {
+		return &v
+	}).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput)
+}
+
+// The settings of naming rule
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput) Rules() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsXhrActionNamingRules) []WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule {
+		return v.Rules
+	}).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsXhrActionNamingRules)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput) Elem() WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsXhrActionNamingRules) WebApplicationUserActionNamingSettingsXhrActionNamingRules {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationUserActionNamingSettingsXhrActionNamingRules
+		return ret
+	}).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput)
+}
+
+// The settings of naming rule
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput) Rules() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsXhrActionNamingRules) []WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule {
+		if v == nil {
+			return nil
+		}
+		return v.Rules
+	}).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule struct {
+	// Defines the conditions when the naming rule should apply
+	Conditions *WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions `pulumi:"conditions"`
+	// Naming pattern. Use Curly brackets `{}` to select placeholders
+	Template string `pulumi:"template"`
+	// If set to `true` the conditions will be connected by logical OR instead of logical AND
+	UseOrConditions *bool `pulumi:"useOrConditions"`
+}
+
+// WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleInput is an input type that accepts WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArgs and WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleInput` via:
+//
+//	WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArgs{...}
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput
+	ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput
+}
+
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArgs struct {
+	// Defines the conditions when the naming rule should apply
+	Conditions WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrInput `pulumi:"conditions"`
+	// Naming pattern. Use Curly brackets `{}` to select placeholders
+	Template pulumi.StringInput `pulumi:"template"`
+	// If set to `true` the conditions will be connected by logical OR instead of logical AND
+	UseOrConditions pulumi.BoolPtrInput `pulumi:"useOrConditions"`
+}
+
+func (WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArgs) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput {
+	return i.ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArgs) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput)
+}
+
+// WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayInput is an input type that accepts WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArray and WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayInput` via:
+//
+//	WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArray{ WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArgs{...} }
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput
+	ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput
+}
+
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArray []WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleInput
+
+func (WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArray) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput {
+	return i.ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArray) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput {
+	return o
+}
+
+// Defines the conditions when the naming rule should apply
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput) Conditions() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule) *WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions {
+		return v.Conditions
+	}).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput)
+}
+
+// Naming pattern. Use Curly brackets `{}` to select placeholders
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput) Template() pulumi.StringOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule) string { return v.Template }).(pulumi.StringOutput)
+}
+
+// If set to `true` the conditions will be connected by logical OR instead of logical AND
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput) UseOrConditions() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule) *bool { return v.UseOrConditions }).(pulumi.BoolPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput) Index(i pulumi.IntInput) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule {
+		return vs[0].([]WebApplicationUserActionNamingSettingsXhrActionNamingRulesRule)[vs[1].(int)]
+	}).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput)
+}
+
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions struct {
+	// Defines the conditions when the naming rule should apply
+	Conditions []WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsCondition `pulumi:"conditions"`
+}
+
+// WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsInput is an input type that accepts WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs and WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsInput` via:
+//
+//	WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs{...}
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput
+	ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput
+}
+
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs struct {
+	// Defines the conditions when the naming rule should apply
+	Conditions WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsConditionArrayInput `pulumi:"conditions"`
+}
+
+func (WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions)(nil)).Elem()
+}
+
+func (i WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput {
+	return i.ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput)
+}
+
+func (i WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput).ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutputWithContext(ctx)
+}
+
+// WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrInput is an input type that accepts WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs, WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtr and WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput values.
+// You can construct a concrete instance of `WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrInput` via:
+//
+//	        WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrInput interface {
+	pulumi.Input
+
+	ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput
+	ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutputWithContext(context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput
+}
+
+type webApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrType WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs
+
+func WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtr(v *WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrInput {
+	return (*webApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrType)(v)
+}
+
+func (*webApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions)(nil)).Elem()
+}
+
+func (i *webApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrType) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput {
+	return i.ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutputWithContext(context.Background())
+}
+
+func (i *webApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrType) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput)
+}
+
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput {
+	return o.ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutputWithContext(context.Background())
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions) *WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions {
+		return &v
+	}).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput)
+}
+
+// Defines the conditions when the naming rule should apply
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput) Conditions() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsConditionArrayOutput {
+	return o.ApplyT(func(v WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions) []WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsCondition {
+		return v.Conditions
+	}).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsConditionArrayOutput)
+}
+
+type WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput struct{ *pulumi.OutputState }
+
+func (WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions)(nil)).Elem()
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput) ToWebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutputWithContext(ctx context.Context) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput {
+	return o
+}
+
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput) Elem() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions) WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions {
+		if v != nil {
+			return *v
+		}
+		var ret WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions
+		return ret
+	}).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput)
+}
+
+// Defines the conditions when the naming rule should apply
+func (o WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput) Conditions() WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsConditionArrayOutput {
+	return o.ApplyT(func(v *WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditions) []WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsCondition {
+		if v == nil {
+			return nil
+		}
+		return v.Conditions
+	}).(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsConditionArrayOutput)
+}
+
 type WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsCondition struct {
 	// Must be a defined placeholder wrapped in curly braces
 	Operand1 string `pulumi:"operand1"`
@@ -3283,6 +4674,26 @@ func (o GetSyntheticNodesNodeArrayOutput) Index(i pulumi.IntInput) GetSyntheticN
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholdersInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsPlaceholdersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholdersPtrInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsPlaceholdersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsXhrActionNamingRulesInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsXhrActionNamingRulesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsConditionInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsConditionArrayInput)(nil)).Elem(), WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WebApplicationUserTagsInput)(nil)).Elem(), WebApplicationUserTagsArgs{})
@@ -3325,6 +4736,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticLocationsLocationsPtrInput)(nil)).Elem(), GetSyntheticLocationsLocationsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeInput)(nil)).Elem(), GetSyntheticNodesNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSyntheticNodesNodeArrayInput)(nil)).Elem(), GetSyntheticNodesNodeArray{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleArrayOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsLoadActionNamingRulesRuleConditionsConditionArrayOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsPlaceholdersOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsPlaceholdersPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderArrayOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsPlaceholdersPlaceholderProcessingStepsStepArrayOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsXhrActionNamingRulesOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsXhrActionNamingRulesPtrOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleArrayOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsOutput{})
+	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsPtrOutput{})
 	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsConditionOutput{})
 	pulumi.RegisterOutputType(WebApplicationUserActionNamingSettingsXhrActionNamingRulesRuleConditionsConditionArrayOutput{})
 	pulumi.RegisterOutputType(WebApplicationUserTagsOutput{})

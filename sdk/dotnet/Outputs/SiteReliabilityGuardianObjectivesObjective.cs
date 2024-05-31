@@ -15,6 +15,10 @@ namespace Pulumiverse.Dynatrace.Outputs
     public sealed class SiteReliabilityGuardianObjectivesObjective
     {
         /// <summary>
+        /// Enable auto adaptive threshold
+        /// </summary>
+        public readonly bool? AutoAdaptiveThresholdEnabled;
+        /// <summary>
         /// Possible Values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
         /// </summary>
         public readonly string ComparisonOperator;
@@ -49,6 +53,8 @@ namespace Pulumiverse.Dynatrace.Outputs
 
         [OutputConstructor]
         private SiteReliabilityGuardianObjectivesObjective(
+            bool? autoAdaptiveThresholdEnabled,
+
             string comparisonOperator,
 
             string? description,
@@ -65,6 +71,7 @@ namespace Pulumiverse.Dynatrace.Outputs
 
             double? warning)
         {
+            AutoAdaptiveThresholdEnabled = autoAdaptiveThresholdEnabled;
             ComparisonOperator = comparisonOperator;
             Description = description;
             DqlQuery = dqlQuery;
