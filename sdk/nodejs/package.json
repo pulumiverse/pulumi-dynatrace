@@ -1,5 +1,5 @@
 {
-    "name": "@pulumiverse/pulumi-dynatrace",
+    "name": "@pulumiverse/dynatrace",
     "version": "${VERSION}",
     "description": "A Pulumi package for creating and managing Dynatrace cloud resources.",
     "keywords": [
