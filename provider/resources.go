@@ -300,14 +300,14 @@ func Provider() tfbridge.ProviderInfo {
 				"@types/node": "^10.0.0", // so we can access strongly typed node definitions.
 				"@types/mime": "^2.0.0",
 			},
-			PackageName: "@pulumiverse/pulumi-dynatrace",
+			PackageName: "@pulumiverse/dynatrace",
 		},
 		Python: &tfbridge.PythonInfo{
 			// List any Python dependencies and their version ranges
 			Requires: map[string]string{
 				"pulumi": ">=3.0.0,<4.0.0",
 			},
-			PackageName: "pulumiverse_pulumi_dynatrace",
+			PackageName: "pulumiverse_dynatrace",
 		},
 		Golang: &tfbridge.GolangInfo{
 			ImportBasePath: filepath.Join(
@@ -322,7 +322,7 @@ func Provider() tfbridge.ProviderInfo {
 			PackageReferences: map[string]string{
 				"Pulumi": "3.*",
 			},
-			RootNamespace: "Pulumiverse.PulumiPackage",
+			RootNamespace: "Pulumiverse",
 		},
 	}
 
