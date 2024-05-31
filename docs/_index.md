@@ -13,14 +13,14 @@ The Dynatrace provider must be configured with credentials to deploy and update 
 {{% choosable language typescript %}}
 
 ```typescript
-import * as dynatrace from "@pulumiverse/pulumi-dynatrace";
+import * as dynatrace from "@pulumiverse/dynatrace";
 ```
 
 {{% /choosable %}}
 {{% choosable language python %}}
 
 ```python
-import pulumiverse_pulumi_dynatrace as dynatrace
+import pulumiverse_dynatrace as dynatrace
 ```
 
 {{% /choosable %}}
@@ -39,7 +39,7 @@ import (
 
 ```csharp
 using Pulumi;
-using Pulumiverse.PulumiPackage.Dynatrace;
+using Pulumiverse.Dynatrace;
 
 ```
 
