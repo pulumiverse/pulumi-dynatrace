@@ -13,7 +13,7 @@ This package is available in many languages in standard packaging formats.
 To use from JavaScript or TypeScript in Node.js, install using either `npm`:
 
 ```
-$ npm install @pulumivers/pulumi-dynatrace
+$ npm install @pulumiverse/pulumi-dynatrace
 ```
 
 or `yarn`:
