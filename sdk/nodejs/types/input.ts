@@ -9066,6 +9066,116 @@ export interface DiskAnomalyRulesSampleLimit {
     violatingSamples: pulumi.Input<number>;
 }
 
+export interface DiskEdgeAnomalyDetectorsAlerts {
+    alerts: pulumi.Input<pulumi.Input<inputs.DiskEdgeAnomalyDetectorsAlertsAlert>[]>;
+}
+
+export interface DiskEdgeAnomalyDetectorsAlertsAlert {
+    /**
+     * no documentation available
+     */
+    sampleCountThresholds?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholds>;
+    /**
+     * no documentation available
+     */
+    sampleCountThresholdsImmediately?: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholdsImmediately>;
+    /**
+     * no documentation available
+     */
+    thresholdMebibytes?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
+    thresholdMilliseconds?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
+    thresholdNumber?: pulumi.Input<number>;
+    /**
+     * no documentation available
+     */
+    thresholdPercent?: pulumi.Input<number>;
+    /**
+     * Possible Values: `AVAILABLE_DISK_SPACE_MEBIBYTES_BELOW`, `AVAILABLE_DISK_SPACE_PERCENT_BELOW`, `AVAILABLE_INODES_NUMBER_BELOW`, `AVAILABLE_INODES_PERCENT_BELOW`, `READ_ONLY_FILE_SYSTEM`, `READ_TIME_EXCEEDING`, `WRITE_TIME_EXCEEDING`
+     */
+    trigger: pulumi.Input<string>;
+}
+
+export interface DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholds {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
+    dealertingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower than the threshold to close an event
+     */
+    dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
+    violatingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
+    violatingSamples: pulumi.Input<number>;
+}
+
+export interface DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholdsImmediately {
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window for dealerting.
+     */
+    dealertingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must be lower than the threshold to close an event
+     */
+    dealertingSamples: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+     */
+    violatingEvaluationWindow: pulumi.Input<number>;
+    /**
+     * The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+     */
+    violatingSamples: pulumi.Input<number>;
+}
+
+export interface DiskEdgeAnomalyDetectorsEventProperties {
+    eventProperties: pulumi.Input<pulumi.Input<inputs.DiskEdgeAnomalyDetectorsEventPropertiesEventProperty>[]>;
+}
+
+export interface DiskEdgeAnomalyDetectorsEventPropertiesEventProperty {
+    /**
+     * Type 'dt.' for key hints.
+     */
+    metadataKey: pulumi.Input<string>;
+    /**
+     * no documentation available
+     */
+    metadataValue: pulumi.Input<string>;
+}
+
+export interface DiskEdgeAnomalyDetectorsHostMetadataConditions {
+    hostMetadataConditions: pulumi.Input<pulumi.Input<inputs.DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataCondition>[]>;
+}
+
+export interface DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataCondition {
+    /**
+     * no documentation available
+     */
+    hostMetadataCondition: pulumi.Input<inputs.DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMetadataCondition>;
+}
+
+export interface DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMetadataCondition {
+    /**
+     * This string has to match a required format.
+     */
+    metadataCondition: pulumi.Input<string>;
+    /**
+     * Key
+     */
+    metadataKey: pulumi.Input<string>;
+}
+
 export interface DiskOptionsExclusions {
     exclusions: pulumi.Input<pulumi.Input<inputs.DiskOptionsExclusionsExclusion>[]>;
 }
@@ -20478,6 +20588,21 @@ export interface QueueManagerRemoteQueueRemoteQueue {
     remoteQueueName: pulumi.Input<string>;
 }
 
+export interface ReportSubscriptions {
+    /**
+     * A list of monthly subscribers.
+     * Monthly subscribers receive the report on the first Monday of the month at midnight.
+     * You can specify email addresses or Dynatrace user IDs here.
+     */
+    months?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A list of weekly subscribers.
+     * Weekly subscribers receive the report every Monday at midnight.
+     * You can specify email addresses or Dynatrace user IDs here.
+     */
+    weeks?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
 export interface RequestAttributeDataSource {
     /**
      * Specifies the location where the values are captured and stored.  Required if the **source** is one of the following: `GET_PARAMETER`, `URI`, `REQUEST_HEADER`, `RESPONSE_HEADER`.   Not applicable in other cases.   If the **source** value is `REQUEST_HEADER` or `RESPONSE_HEADER`, the `CAPTURE_AND_STORE_ON_BOTH` location is not allowed
@@ -25340,6 +25465,10 @@ export interface SiteReliabilityGuardianObjectives {
 }
 
 export interface SiteReliabilityGuardianObjectivesObjective {
+    /**
+     * Enable auto adaptive threshold
+     */
+    autoAdaptiveThresholdEnabled?: pulumi.Input<boolean>;
     /**
      * Possible Values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
      */

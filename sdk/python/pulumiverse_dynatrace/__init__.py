@@ -91,6 +91,7 @@ from .disk_analytics import *
 from .disk_anomalies import *
 from .disk_anomalies_v2 import *
 from .disk_anomaly_rules import *
+from .disk_edge_anomaly_detectors import *
 from .disk_options import *
 from .disk_specific_anomalies_v2 import *
 from .document import *
@@ -175,6 +176,7 @@ from .iam_user import *
 from .ibm_mq_filters import *
 from .ims_bridges import *
 from .infraops_app_feature_flags import *
+from .infraops_app_settings import *
 from .ip_address_masking import *
 from .issue_tracking import *
 from .jira_notification import *
@@ -274,6 +276,7 @@ from .provider import *
 from .queue_manager import *
 from .queue_sharing_groups import *
 from .remote_environments import *
+from .report import *
 from .request_attribute import *
 from .request_naming import *
 from .request_namings import *
@@ -1050,6 +1053,14 @@ _utilities.register(
  },
  {
   "pkg": "dynatrace",
+  "mod": "index/diskEdgeAnomalyDetectors",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/diskEdgeAnomalyDetectors:DiskEdgeAnomalyDetectors": "DiskEdgeAnomalyDetectors"
+  }
+ },
+ {
+  "pkg": "dynatrace",
   "mod": "index/diskOptions",
   "fqn": "pulumiverse_dynatrace",
   "classes": {
@@ -1390,6 +1401,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/infraopsAppFeatureFlags:InfraopsAppFeatureFlags": "InfraopsAppFeatureFlags"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/infraopsAppSettings",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/infraopsAppSettings:InfraopsAppSettings": "InfraopsAppSettings"
   }
  },
  {
@@ -2174,6 +2193,14 @@ _utilities.register(
   "fqn": "pulumiverse_dynatrace",
   "classes": {
    "dynatrace:index/remoteEnvironments:RemoteEnvironments": "RemoteEnvironments"
+  }
+ },
+ {
+  "pkg": "dynatrace",
+  "mod": "index/report",
+  "fqn": "pulumiverse_dynatrace",
+  "classes": {
+   "dynatrace:index/report:Report": "Report"
   }
  },
  {
