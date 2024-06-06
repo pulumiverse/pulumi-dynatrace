@@ -1354,6 +1354,8 @@ github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25Kn
 github.com/dustin/go-humanize v1.0.1/go.mod h1:Mu1zIs6XwVuF/gI1OepvI0qD18qycQx+mFykh5fBlto=
 github.com/dynatrace-oss/terraform-provider-dynatrace v1.58.0 h1:8NoWEB0JKqIG7uX3iXdmZHkJYfzrr2+5TpSk1ZvgpKU=
 github.com/dynatrace-oss/terraform-provider-dynatrace v1.58.0/go.mod h1:uX8UeTPHQEurNGZU+PgwgSLwOJmUEtPe5REstSS5LoU=
+github.com/dynatrace-oss/terraform-provider-dynatrace v1.58.4 h1:byDCoe9ZFJFWVTJeMkfyT/ocxfrnaK8RoCvQFB0F4D4=
+github.com/dynatrace-oss/terraform-provider-dynatrace v1.58.4/go.mod h1:uX8UeTPHQEurNGZU+PgwgSLwOJmUEtPe5REstSS5LoU=
 github.com/dynatrace/dynatrace-configuration-as-code-core v0.5.0 h1:20SpRBiUSQ09fK5v6XW+TOrvR1545eXqxusWTLnbKp4=
 github.com/dynatrace/dynatrace-configuration-as-code-core v0.5.0/go.mod h1:HOrpE06WT/s/LEEohGhRlY/26coFLVhWTu0UkouXJEo=
 github.com/edsrzf/mmap-go v1.1.0 h1:6EUwBLQ/Mcr1EYLE4Tn1VdW1A4ckqCQWZBw8Hr0kjpQ=
