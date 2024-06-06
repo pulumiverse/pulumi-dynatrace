@@ -535,6 +535,15 @@ __all__ = [
     'DiskAnomaliesV2DiskDiskSlowWritesAndReadsDetectionCustomThresholds',
     'DiskAnomalyRulesDiskNameFilter',
     'DiskAnomalyRulesSampleLimit',
+    'DiskEdgeAnomalyDetectorsAlerts',
+    'DiskEdgeAnomalyDetectorsAlertsAlert',
+    'DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholds',
+    'DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholdsImmediately',
+    'DiskEdgeAnomalyDetectorsEventProperties',
+    'DiskEdgeAnomalyDetectorsEventPropertiesEventProperty',
+    'DiskEdgeAnomalyDetectorsHostMetadataConditions',
+    'DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataCondition',
+    'DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMetadataCondition',
     'DiskOptionsExclusions',
     'DiskOptionsExclusionsExclusion',
     'DiskSpecificAnomaliesV2DiskLowInodesDetection',
@@ -1133,6 +1142,7 @@ __all__ = [
     'QueueManagerClusterQueueClusterQueue',
     'QueueManagerRemoteQueue',
     'QueueManagerRemoteQueueRemoteQueue',
+    'ReportSubscriptions',
     'RequestAttributeDataSource',
     'RequestAttributeDataSourceCicsSdkMethodNodeCondition',
     'RequestAttributeDataSourceIibLabelMethodNodeCondition',
@@ -31202,6 +31212,472 @@ class DiskAnomalyRulesSampleLimit(dict):
         Minimum number of violating samples
         """
         return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class DiskEdgeAnomalyDetectorsAlerts(dict):
+    def __init__(__self__, *,
+                 alerts: Sequence['outputs.DiskEdgeAnomalyDetectorsAlertsAlert']):
+        pulumi.set(__self__, "alerts", alerts)
+
+    @property
+    @pulumi.getter
+    def alerts(self) -> Sequence['outputs.DiskEdgeAnomalyDetectorsAlertsAlert']:
+        return pulumi.get(self, "alerts")
+
+
+@pulumi.output_type
+class DiskEdgeAnomalyDetectorsAlertsAlert(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sampleCountThresholds":
+            suggest = "sample_count_thresholds"
+        elif key == "sampleCountThresholdsImmediately":
+            suggest = "sample_count_thresholds_immediately"
+        elif key == "thresholdMebibytes":
+            suggest = "threshold_mebibytes"
+        elif key == "thresholdMilliseconds":
+            suggest = "threshold_milliseconds"
+        elif key == "thresholdNumber":
+            suggest = "threshold_number"
+        elif key == "thresholdPercent":
+            suggest = "threshold_percent"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskEdgeAnomalyDetectorsAlertsAlert. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskEdgeAnomalyDetectorsAlertsAlert.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskEdgeAnomalyDetectorsAlertsAlert.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 trigger: str,
+                 sample_count_thresholds: Optional['outputs.DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholds'] = None,
+                 sample_count_thresholds_immediately: Optional['outputs.DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholdsImmediately'] = None,
+                 threshold_mebibytes: Optional[float] = None,
+                 threshold_milliseconds: Optional[float] = None,
+                 threshold_number: Optional[float] = None,
+                 threshold_percent: Optional[float] = None):
+        """
+        :param str trigger: Possible Values: `AVAILABLE_DISK_SPACE_MEBIBYTES_BELOW`, `AVAILABLE_DISK_SPACE_PERCENT_BELOW`, `AVAILABLE_INODES_NUMBER_BELOW`, `AVAILABLE_INODES_PERCENT_BELOW`, `READ_ONLY_FILE_SYSTEM`, `READ_TIME_EXCEEDING`, `WRITE_TIME_EXCEEDING`
+        :param 'DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholdsArgs' sample_count_thresholds: no documentation available
+        :param 'DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholdsImmediatelyArgs' sample_count_thresholds_immediately: no documentation available
+        :param float threshold_mebibytes: no documentation available
+        :param float threshold_milliseconds: no documentation available
+        :param float threshold_number: no documentation available
+        :param float threshold_percent: no documentation available
+        """
+        pulumi.set(__self__, "trigger", trigger)
+        if sample_count_thresholds is not None:
+            pulumi.set(__self__, "sample_count_thresholds", sample_count_thresholds)
+        if sample_count_thresholds_immediately is not None:
+            pulumi.set(__self__, "sample_count_thresholds_immediately", sample_count_thresholds_immediately)
+        if threshold_mebibytes is not None:
+            pulumi.set(__self__, "threshold_mebibytes", threshold_mebibytes)
+        if threshold_milliseconds is not None:
+            pulumi.set(__self__, "threshold_milliseconds", threshold_milliseconds)
+        if threshold_number is not None:
+            pulumi.set(__self__, "threshold_number", threshold_number)
+        if threshold_percent is not None:
+            pulumi.set(__self__, "threshold_percent", threshold_percent)
+
+    @property
+    @pulumi.getter
+    def trigger(self) -> str:
+        """
+        Possible Values: `AVAILABLE_DISK_SPACE_MEBIBYTES_BELOW`, `AVAILABLE_DISK_SPACE_PERCENT_BELOW`, `AVAILABLE_INODES_NUMBER_BELOW`, `AVAILABLE_INODES_PERCENT_BELOW`, `READ_ONLY_FILE_SYSTEM`, `READ_TIME_EXCEEDING`, `WRITE_TIME_EXCEEDING`
+        """
+        return pulumi.get(self, "trigger")
+
+    @property
+    @pulumi.getter(name="sampleCountThresholds")
+    def sample_count_thresholds(self) -> Optional['outputs.DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholds']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "sample_count_thresholds")
+
+    @property
+    @pulumi.getter(name="sampleCountThresholdsImmediately")
+    def sample_count_thresholds_immediately(self) -> Optional['outputs.DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholdsImmediately']:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "sample_count_thresholds_immediately")
+
+    @property
+    @pulumi.getter(name="thresholdMebibytes")
+    def threshold_mebibytes(self) -> Optional[float]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "threshold_mebibytes")
+
+    @property
+    @pulumi.getter(name="thresholdMilliseconds")
+    def threshold_milliseconds(self) -> Optional[float]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "threshold_milliseconds")
+
+    @property
+    @pulumi.getter(name="thresholdNumber")
+    def threshold_number(self) -> Optional[float]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "threshold_number")
+
+    @property
+    @pulumi.getter(name="thresholdPercent")
+    def threshold_percent(self) -> Optional[float]:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "threshold_percent")
+
+
+@pulumi.output_type
+class DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholds(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dealertingEvaluationWindow":
+            suggest = "dealerting_evaluation_window"
+        elif key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "violatingEvaluationWindow":
+            suggest = "violating_evaluation_window"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholds. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholds.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholds.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: int,
+                 dealerting_samples: int,
+                 violating_evaluation_window: int,
+                 violating_samples: int):
+        """
+        :param int dealerting_evaluation_window: The number of **10-second samples** that form the sliding evaluation window for dealerting.
+        :param int dealerting_samples: The number of **10-second samples** within the evaluation window that must be lower than the threshold to close an event
+        :param int violating_evaluation_window: The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+        :param int violating_samples: The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+        """
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> int:
+        """
+        The number of **10-second samples** that form the sliding evaluation window for dealerting.
+        """
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> int:
+        """
+        The number of **10-second samples** within the evaluation window that must be lower than the threshold to close an event
+        """
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> int:
+        """
+        The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+        """
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        """
+        The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+        """
+        return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholdsImmediately(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dealertingEvaluationWindow":
+            suggest = "dealerting_evaluation_window"
+        elif key == "dealertingSamples":
+            suggest = "dealerting_samples"
+        elif key == "violatingEvaluationWindow":
+            suggest = "violating_evaluation_window"
+        elif key == "violatingSamples":
+            suggest = "violating_samples"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholdsImmediately. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholdsImmediately.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskEdgeAnomalyDetectorsAlertsAlertSampleCountThresholdsImmediately.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dealerting_evaluation_window: int,
+                 dealerting_samples: int,
+                 violating_evaluation_window: int,
+                 violating_samples: int):
+        """
+        :param int dealerting_evaluation_window: The number of **10-second samples** that form the sliding evaluation window for dealerting.
+        :param int dealerting_samples: The number of **10-second samples** within the evaluation window that must be lower than the threshold to close an event
+        :param int violating_evaluation_window: The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+        :param int violating_samples: The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+        """
+        pulumi.set(__self__, "dealerting_evaluation_window", dealerting_evaluation_window)
+        pulumi.set(__self__, "dealerting_samples", dealerting_samples)
+        pulumi.set(__self__, "violating_evaluation_window", violating_evaluation_window)
+        pulumi.set(__self__, "violating_samples", violating_samples)
+
+    @property
+    @pulumi.getter(name="dealertingEvaluationWindow")
+    def dealerting_evaluation_window(self) -> int:
+        """
+        The number of **10-second samples** that form the sliding evaluation window for dealerting.
+        """
+        return pulumi.get(self, "dealerting_evaluation_window")
+
+    @property
+    @pulumi.getter(name="dealertingSamples")
+    def dealerting_samples(self) -> int:
+        """
+        The number of **10-second samples** within the evaluation window that must be lower than the threshold to close an event
+        """
+        return pulumi.get(self, "dealerting_samples")
+
+    @property
+    @pulumi.getter(name="violatingEvaluationWindow")
+    def violating_evaluation_window(self) -> int:
+        """
+        The number of **10-second samples** that form the sliding evaluation window to detect violating samples.
+        """
+        return pulumi.get(self, "violating_evaluation_window")
+
+    @property
+    @pulumi.getter(name="violatingSamples")
+    def violating_samples(self) -> int:
+        """
+        The number of **10-second samples** within the evaluation window that must exceed the threshold to trigger an event
+        """
+        return pulumi.get(self, "violating_samples")
+
+
+@pulumi.output_type
+class DiskEdgeAnomalyDetectorsEventProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventProperties":
+            suggest = "event_properties"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskEdgeAnomalyDetectorsEventProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskEdgeAnomalyDetectorsEventProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskEdgeAnomalyDetectorsEventProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 event_properties: Sequence['outputs.DiskEdgeAnomalyDetectorsEventPropertiesEventProperty']):
+        pulumi.set(__self__, "event_properties", event_properties)
+
+    @property
+    @pulumi.getter(name="eventProperties")
+    def event_properties(self) -> Sequence['outputs.DiskEdgeAnomalyDetectorsEventPropertiesEventProperty']:
+        return pulumi.get(self, "event_properties")
+
+
+@pulumi.output_type
+class DiskEdgeAnomalyDetectorsEventPropertiesEventProperty(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metadataKey":
+            suggest = "metadata_key"
+        elif key == "metadataValue":
+            suggest = "metadata_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskEdgeAnomalyDetectorsEventPropertiesEventProperty. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskEdgeAnomalyDetectorsEventPropertiesEventProperty.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskEdgeAnomalyDetectorsEventPropertiesEventProperty.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 metadata_key: str,
+                 metadata_value: str):
+        """
+        :param str metadata_key: Type 'dt.' for key hints.
+        :param str metadata_value: no documentation available
+        """
+        pulumi.set(__self__, "metadata_key", metadata_key)
+        pulumi.set(__self__, "metadata_value", metadata_value)
+
+    @property
+    @pulumi.getter(name="metadataKey")
+    def metadata_key(self) -> str:
+        """
+        Type 'dt.' for key hints.
+        """
+        return pulumi.get(self, "metadata_key")
+
+    @property
+    @pulumi.getter(name="metadataValue")
+    def metadata_value(self) -> str:
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "metadata_value")
+
+
+@pulumi.output_type
+class DiskEdgeAnomalyDetectorsHostMetadataConditions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hostMetadataConditions":
+            suggest = "host_metadata_conditions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskEdgeAnomalyDetectorsHostMetadataConditions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskEdgeAnomalyDetectorsHostMetadataConditions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskEdgeAnomalyDetectorsHostMetadataConditions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 host_metadata_conditions: Sequence['outputs.DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataCondition']):
+        pulumi.set(__self__, "host_metadata_conditions", host_metadata_conditions)
+
+    @property
+    @pulumi.getter(name="hostMetadataConditions")
+    def host_metadata_conditions(self) -> Sequence['outputs.DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataCondition']:
+        return pulumi.get(self, "host_metadata_conditions")
+
+
+@pulumi.output_type
+class DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hostMetadataCondition":
+            suggest = "host_metadata_condition"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 host_metadata_condition: 'outputs.DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMetadataCondition'):
+        """
+        :param 'DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMetadataConditionArgs' host_metadata_condition: no documentation available
+        """
+        pulumi.set(__self__, "host_metadata_condition", host_metadata_condition)
+
+    @property
+    @pulumi.getter(name="hostMetadataCondition")
+    def host_metadata_condition(self) -> 'outputs.DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMetadataCondition':
+        """
+        no documentation available
+        """
+        return pulumi.get(self, "host_metadata_condition")
+
+
+@pulumi.output_type
+class DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMetadataCondition(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metadataCondition":
+            suggest = "metadata_condition"
+        elif key == "metadataKey":
+            suggest = "metadata_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMetadataCondition. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMetadataCondition.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiskEdgeAnomalyDetectorsHostMetadataConditionsHostMetadataConditionHostMetadataCondition.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 metadata_condition: str,
+                 metadata_key: str):
+        """
+        :param str metadata_condition: This string has to match a required format.
+        :param str metadata_key: Key
+        """
+        pulumi.set(__self__, "metadata_condition", metadata_condition)
+        pulumi.set(__self__, "metadata_key", metadata_key)
+
+    @property
+    @pulumi.getter(name="metadataCondition")
+    def metadata_condition(self) -> str:
+        """
+        This string has to match a required format.
+        """
+        return pulumi.get(self, "metadata_condition")
+
+    @property
+    @pulumi.getter(name="metadataKey")
+    def metadata_key(self) -> str:
+        """
+        Key
+        """
+        return pulumi.get(self, "metadata_key")
 
 
 @pulumi.output_type
@@ -67966,6 +68442,45 @@ class QueueManagerRemoteQueueRemoteQueue(dict):
 
 
 @pulumi.output_type
+class ReportSubscriptions(dict):
+    def __init__(__self__, *,
+                 months: Optional[Sequence[str]] = None,
+                 weeks: Optional[Sequence[str]] = None):
+        """
+        :param Sequence[str] months: A list of monthly subscribers.
+               Monthly subscribers receive the report on the first Monday of the month at midnight.
+               You can specify email addresses or Dynatrace user IDs here.
+        :param Sequence[str] weeks: A list of weekly subscribers.
+               Weekly subscribers receive the report every Monday at midnight.
+               You can specify email addresses or Dynatrace user IDs here.
+        """
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if weeks is not None:
+            pulumi.set(__self__, "weeks", weeks)
+
+    @property
+    @pulumi.getter
+    def months(self) -> Optional[Sequence[str]]:
+        """
+        A list of monthly subscribers.
+        Monthly subscribers receive the report on the first Monday of the month at midnight.
+        You can specify email addresses or Dynatrace user IDs here.
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter
+    def weeks(self) -> Optional[Sequence[str]]:
+        """
+        A list of weekly subscribers.
+        Weekly subscribers receive the report every Monday at midnight.
+        You can specify email addresses or Dynatrace user IDs here.
+        """
+        return pulumi.get(self, "weeks")
+
+
+@pulumi.output_type
 class RequestAttributeDataSource(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -84088,6 +84603,8 @@ class SiteReliabilityGuardianObjectivesObjective(dict):
             suggest = "comparison_operator"
         elif key == "objectiveType":
             suggest = "objective_type"
+        elif key == "autoAdaptiveThresholdEnabled":
+            suggest = "auto_adaptive_threshold_enabled"
         elif key == "dqlQuery":
             suggest = "dql_query"
         elif key == "referenceSlo":
@@ -84108,6 +84625,7 @@ class SiteReliabilityGuardianObjectivesObjective(dict):
                  comparison_operator: str,
                  name: str,
                  objective_type: str,
+                 auto_adaptive_threshold_enabled: Optional[bool] = None,
                  description: Optional[str] = None,
                  dql_query: Optional[str] = None,
                  reference_slo: Optional[str] = None,
@@ -84117,6 +84635,7 @@ class SiteReliabilityGuardianObjectivesObjective(dict):
         :param str comparison_operator: Possible Values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
         :param str name: Objective name
         :param str objective_type: Possible Values: `DQL`, `REFERENCE_SLO`
+        :param bool auto_adaptive_threshold_enabled: Enable auto adaptive threshold
         :param str description: no documentation available
         :param str dql_query: DQL query
         :param str reference_slo: Please enter the metric key of your desired SLO. SLO metric keys have to start with 'func:slo.'
@@ -84126,6 +84645,8 @@ class SiteReliabilityGuardianObjectivesObjective(dict):
         pulumi.set(__self__, "comparison_operator", comparison_operator)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "objective_type", objective_type)
+        if auto_adaptive_threshold_enabled is not None:
+            pulumi.set(__self__, "auto_adaptive_threshold_enabled", auto_adaptive_threshold_enabled)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if dql_query is not None:
@@ -84160,6 +84681,14 @@ class SiteReliabilityGuardianObjectivesObjective(dict):
         Possible Values: `DQL`, `REFERENCE_SLO`
         """
         return pulumi.get(self, "objective_type")
+
+    @property
+    @pulumi.getter(name="autoAdaptiveThresholdEnabled")
+    def auto_adaptive_threshold_enabled(self) -> Optional[bool]:
+        """
+        Enable auto adaptive threshold
+        """
+        return pulumi.get(self, "auto_adaptive_threshold_enabled")
 
     @property
     @pulumi.getter

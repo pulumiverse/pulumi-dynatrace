@@ -14,6 +14,12 @@ namespace Pulumiverse.Dynatrace.Inputs
     public sealed class SiteReliabilityGuardianObjectivesObjectiveArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Enable auto adaptive threshold
+        /// </summary>
+        [Input("autoAdaptiveThresholdEnabled")]
+        public Input<bool>? AutoAdaptiveThresholdEnabled { get; set; }
+
+        /// <summary>
         /// Possible Values: `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`
         /// </summary>
         [Input("comparisonOperator", required: true)]
