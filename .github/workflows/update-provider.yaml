@@ -1,0 +1,25 @@
+name: Upgrade provider
+
+on:
+  workflow_dispatch:
+  schedule:
+    # At 05:00 on Tuesday
+    - cron: 0 5 * * 2
+
+jobs:
+  upgrade_provider:
+    name: upgrade-provider
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    steps:
+      - name: Call upgrade provider action
+        uses: pulumi/pulumi-upgrade-provider-action@v0.0.12
+        with:
+          kind: provider
+          email: piers@pulumi.com
+          username: "Piers Karsenbarg"
+        env:
+          GH_TOKEN: ${{ secrets.UPGRADE_PROVIDER_TOKEN }}
