@@ -1,0 +1,49 @@
+version: 2
+updates:
+  - package-ecosystem: "gomod"
+    schedule:
+      interval: "weekly"
+      time: "08:00"
+      day: "monday"
+    commit-message:
+      prefix: "provider"
+      include: "scope"
+    directory: "/"
+    groups:
+      modules:
+        applies-to: version-updates
+        update-types:
+          - minor
+          - patch
+    ignore:
+      - dependency-name: "github.com/pulumi/pulumi/sdk/*"
+  - package-ecosystem: "gomod"
+    directory: "/sdk"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+      time: "08:00"
+    commit-message:
+      prefix: "sdk"
+      include: "scope"
+    groups:
+      modules:
+        applies-to: version-updates
+        update-types:
+          - minor
+          - patch
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+      time: "08:00"
+    commit-message:
+      prefix: "gha"
+      include: "scope"
+    groups:
+      modules:
+        applies-to: version-updates
+        update-types:
+          - minor
+          - patch
