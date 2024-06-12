@@ -56108,11 +56108,11 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
         :param bool azure_to_pgpropagation: Apply to process groups connected to matching Azure entities
         :param bool azure_to_service_propagation: Apply to services provided by matching Azure entities
         :param bool custom_device_group_to_custom_device_propagation: Apply to custom devices in a custom device group
-        :param bool host_to_pgpropagation: Apply to processes running on matching hosts
-        :param bool pg_to_host_propagation: Apply to underlying hosts of matching process groups
-        :param bool pg_to_service_propagation: Apply to all services provided by the process groups
-        :param bool service_to_host_propagation: Apply to underlying hosts of matching services
-        :param bool service_to_pgpropagation: Apply to underlying process groups of matching services
+        :param bool host_to_pgpropagation: Apply to processes running on matching hosts. `entity_type` must be set to `HOST`
+        :param bool pg_to_host_propagation: Apply to underlying hosts of matching process groups. `entity_type` must be set to `PROCESS_GROUP`
+        :param bool pg_to_service_propagation: Apply to all services provided by the process groups. `entity_type` must be set to `PROCESS_GROUP`
+        :param bool service_to_host_propagation: Apply to underlying hosts of matching services. `entity_type` must be set to `SERVICE`
+        :param bool service_to_pgpropagation: Apply to underlying process groups of matching services. `entity_type` must be set to `SERVICE`
         """
         pulumi.set(__self__, "attribute_conditions", attribute_conditions)
         pulumi.set(__self__, "entity_type", entity_type)
@@ -56177,7 +56177,7 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
     @pulumi.getter(name="hostToPgpropagation")
     def host_to_pgpropagation(self) -> Optional[bool]:
         """
-        Apply to processes running on matching hosts
+        Apply to processes running on matching hosts. `entity_type` must be set to `HOST`
         """
         return pulumi.get(self, "host_to_pgpropagation")
 
@@ -56185,7 +56185,7 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
     @pulumi.getter(name="pgToHostPropagation")
     def pg_to_host_propagation(self) -> Optional[bool]:
         """
-        Apply to underlying hosts of matching process groups
+        Apply to underlying hosts of matching process groups. `entity_type` must be set to `PROCESS_GROUP`
         """
         return pulumi.get(self, "pg_to_host_propagation")
 
@@ -56193,7 +56193,7 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
     @pulumi.getter(name="pgToServicePropagation")
     def pg_to_service_propagation(self) -> Optional[bool]:
         """
-        Apply to all services provided by the process groups
+        Apply to all services provided by the process groups. `entity_type` must be set to `PROCESS_GROUP`
         """
         return pulumi.get(self, "pg_to_service_propagation")
 
@@ -56201,7 +56201,7 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
     @pulumi.getter(name="serviceToHostPropagation")
     def service_to_host_propagation(self) -> Optional[bool]:
         """
-        Apply to underlying hosts of matching services
+        Apply to underlying hosts of matching services. `entity_type` must be set to `SERVICE`
         """
         return pulumi.get(self, "service_to_host_propagation")
 
@@ -56209,7 +56209,7 @@ class ManagementZoneV2RulesRuleAttributeRule(dict):
     @pulumi.getter(name="serviceToPgpropagation")
     def service_to_pgpropagation(self) -> Optional[bool]:
         """
-        Apply to underlying process groups of matching services
+        Apply to underlying process groups of matching services. `entity_type` must be set to `SERVICE`
         """
         return pulumi.get(self, "service_to_pgpropagation")
 
